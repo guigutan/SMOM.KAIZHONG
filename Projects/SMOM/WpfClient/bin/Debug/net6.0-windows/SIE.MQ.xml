@@ -1,0 +1,1036 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.MQ</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.MQueue.Declares.IDeclare">
+            <summary>
+            定义一个声明。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.Declares.IDeclare.Name">
+            <summary>
+            获取声明的名称。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.Declares.IDeclare.Arguments">
+            <summary>
+            获取声明的参数集合。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.Declares.IDeclare.Sources">
+            <summary>
+            获取声明的来源交换机集合。
+            </summary>
+        </member>
+        <member name="M:SIE.MQueue.Declares.IDeclare.Build(SIE.MQueue.IChannelProxy)">
+            <summary>
+            在当前通道上创建一个声明。
+            </summary>
+            <param name="channelProxy">通道代理。</param>
+        </member>
+        <member name="T:SIE.MQueue.Declares.DeclareBase">
+            <summary>
+            表示一个声明的基类。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.Declares.DeclareBase.Name">
+            <inheritdoc />
+        </member>
+        <member name="P:SIE.MQueue.Declares.DeclareBase.Arguments">
+            <inheritdoc />
+        </member>
+        <member name="P:SIE.MQueue.Declares.DeclareBase.Sources">
+            <inheritdoc />
+        </member>
+        <member name="M:SIE.MQueue.Declares.DeclareBase.#ctor(System.String)">
+            <summary>
+            初始化一个 <see cref="T:SIE.MQueue.Declares.DeclareBase"/> 类的新实例。
+            </summary>
+            <param name="name">声明的名称。</param>
+        </member>
+        <member name="M:SIE.MQueue.Declares.DeclareBase.Build(SIE.MQueue.IChannelProxy)">
+            <inheritdoc />
+        </member>
+        <member name="M:SIE.MQueue.Declares.DeclareBase.OnBind(SIE.MQueue.IChannelProxy,SIE.MQueue.Declares.IExchangeSource)">
+            <summary>
+            绑定时发生。
+            </summary>
+            <param name="channelProxy">通道代理。</param>
+            <param name="source">绑定的源。</param>
+        </member>
+        <member name="M:SIE.MQueue.Declares.DeclareBase.OnBuild(SIE.MQueue.IChannelProxy)">
+            <summary>
+            创建声明时发生。
+            </summary>
+            <param name="channelProxy">通道代理。</param>
+        </member>
+        <member name="T:SIE.MQueue.Declares.IExchangeDeclare">
+            <summary>
+            定义一个交换机声明。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.Declares.IExchangeDeclare.Type">
+            <summary>
+            获取或设置交换机类型。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.Declares.IExchangeDeclare.AutoDelete">
+            <summary>
+            获取或设置一个值，表示自动删除。
+            </summary>
+            <value>若为 <see langword="true"/> 值时，当最后一个队列与之解除绑定时将删除交换机。</value>
+        </member>
+        <member name="P:SIE.MQueue.Declares.IExchangeDeclare.Durable">
+            <summary>
+            获取或设置一个值，表示是否持久化。
+            </summary>
+            <value>若为 <see langword="true"/> 值时，交换机在重新启动后继续有效。</value>
+        </member>
+        <member name="T:SIE.MQueue.Declares.ExchangeDeclare">
+            <summary>
+            表示一个交换机声明。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.Declares.ExchangeDeclare.Type">
+            <inheritdoc />
+        </member>
+        <member name="P:SIE.MQueue.Declares.ExchangeDeclare.Durable">
+            <inheritdoc />
+        </member>
+        <member name="P:SIE.MQueue.Declares.ExchangeDeclare.AutoDelete">
+            <inheritdoc />
+        </member>
+        <member name="M:SIE.MQueue.Declares.ExchangeDeclare.#ctor(System.String)">
+            <summary>
+            初始化一个 <see cref="T:SIE.MQueue.Declares.ExchangeDeclare"/> 类的新实例。
+            </summary>
+            <param name="exchange">交换机的名称。</param>
+        </member>
+        <member name="M:SIE.MQueue.Declares.ExchangeDeclare.OnBuild(SIE.MQueue.IChannelProxy)">
+            <inheritdoc />
+        </member>
+        <member name="M:SIE.MQueue.Declares.ExchangeDeclare.OnBind(SIE.MQueue.IChannelProxy,SIE.MQueue.Declares.IExchangeSource)">
+            <inheritdoc />
+        </member>
+        <member name="T:SIE.MQueue.Declares.IExchangeSource">
+            <summary>
+            定义一个交换机来源。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.Declares.IExchangeSource.RouterKey">
+            <summary>
+            获取路由键名。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.Declares.IExchangeSource.Exchange">
+            <summary>
+            获取来源的交换机声明。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.Declares.IExchangeSource.Arguments">
+            <summary>
+            获取绑定的参数集合。
+            </summary>
+        </member>
+        <member name="T:SIE.MQueue.Declares.ExchangeSource">
+            <summary>
+            表示一个交换机来源。
+            </summary>
+        </member>
+        <member name="M:SIE.MQueue.Declares.ExchangeSource.#ctor(System.String,SIE.MQueue.Declares.IExchangeDeclare,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            初始化一个 <see cref="T:SIE.MQueue.Declares.ExchangeSource"/> 类的新实例。
+            </summary>
+            <param name="routerKey">路由键名。</param>
+            <param name="source">来源的交换机声明。</param>
+            <param name="arguments">绑定的参数集合。</param>
+        </member>
+        <member name="P:SIE.MQueue.Declares.ExchangeSource.RouterKey">
+            <inheritdoc />
+        </member>
+        <member name="P:SIE.MQueue.Declares.ExchangeSource.Exchange">
+            <inheritdoc />
+        </member>
+        <member name="P:SIE.MQueue.Declares.ExchangeSource.Arguments">
+            <inheritdoc />
+        </member>
+        <member name="T:SIE.MQueue.Declares.IQueueDeclare">
+            <summary>
+            定义一个队列的声明。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.Declares.IQueueDeclare.AutoDelete">
+            <summary>
+            获取或设置一个值，表示是否自动删除。
+            </summary>
+            <remarks>
+            <para>至少有一个消息者连接到这个队列，之后所有与这个队列连接的消息都断开时，才会自动删除。</para>
+            <para>生产者客户端创建这个队列，或者没有消息者客户端连接这个队列时，不会自动删除这个队列。</para>
+            </remarks>
+            <value>若为 <see langword="true"/> 值时，当消息者连接断开连接后将删除队列。</value>
+        </member>
+        <member name="P:SIE.MQueue.Declares.IQueueDeclare.Durable">
+            <summary>
+            获取或设置一个值，表示是否持久化。
+            </summary>
+            <value>若为 <see langword="true"/> 值时，队列在重新启动后继续有效。</value>
+        </member>
+        <member name="P:SIE.MQueue.Declares.IQueueDeclare.Exclusive">
+            <summary>
+            获取或设置一个值，表示是否排他队列。
+            </summary>
+            <value>若为 <see langword="true"/> 值时，该队列公对首次声明它的连接可见，并在连接断开时自动删除。</value>
+        </member>
+        <member name="T:SIE.MQueue.Declares.QueueDeclare">
+            <summary>
+            表示一个队列的声明。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.Declares.QueueDeclare.Durable">
+            <inheritdoc />
+        </member>
+        <member name="P:SIE.MQueue.Declares.QueueDeclare.AutoDelete">
+            <inheritdoc />
+        </member>
+        <member name="P:SIE.MQueue.Declares.QueueDeclare.Exclusive">
+            <inheritdoc />
+        </member>
+        <member name="M:SIE.MQueue.Declares.QueueDeclare.#ctor(System.String)">
+            <summary>
+            初始化一个 <see cref="T:SIE.MQueue.Declares.QueueDeclare"/> 类的新实例。
+            </summary>
+            <param name="queue">队列的名称。</param>
+        </member>
+        <member name="M:SIE.MQueue.Declares.QueueDeclare.OnBuild(SIE.MQueue.IChannelProxy)">
+            <inheritdoc />
+        </member>
+        <member name="M:SIE.MQueue.Declares.QueueDeclare.OnBind(SIE.MQueue.IChannelProxy,SIE.MQueue.Declares.IExchangeSource)">
+            <inheritdoc />
+        </member>
+        <member name="T:SIE.MQueue.IChannelProxy">
+            <summary>
+            定义一个通道代理。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.IChannelProxy.Id">
+            <summary>
+            获取唯一编号。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.IChannelProxy.Connection">
+            <summary>
+            获取连接代理。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.IChannelProxy.Channel">
+            <summary>
+            获取通道。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.IChannelProxy.LastActiveTime">
+            <summary>
+            获取最后活动时间。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.IChannelProxy.IsBusy">
+            <summary>
+            获取一个值，表示通道是否处于忙碌状态。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.IChannelProxy.IsOpen">
+            <summary>
+            获取一个值，表示通道是否已连接。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.IChannelProxy.Reason">
+            <summary>
+            获取忙碌原因。
+            </summary>
+        </member>
+        <member name="M:SIE.MQueue.IChannelProxy.TryBusy(System.String)">
+            <summary>
+            尝试将通道设置为忙碌。
+            </summary>
+            <param name="reason">忙碌原因。</param>
+            <returns>设置成功返回 <see langword="true"/> 值，否则返回 <see langword="false"/> 值。</returns>
+        </member>
+        <member name="M:SIE.MQueue.IChannelProxy.TryFree">
+            <summary>
+            尝试将通道设置为空闲。
+            </summary>
+            <returns>设置成功返回 <see langword="true"/> 值，否则返回 <see langword="false"/> 值。</returns>
+        </member>
+        <member name="T:SIE.MQueue.IChannelProxyPool">
+            <summary>
+            定义一个通道代理池。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.IChannelProxyPool.Manager">
+            <summary>
+            获取消息管理器。
+            </summary>
+        </member>
+        <member name="M:SIE.MQueue.IChannelProxyPool.GetChannel(System.String,SIE.MQueue.IMessage)">
+            <summary>
+            获取通道代理。
+            </summary>
+            <param name="connectionName">连接名称。</param>
+            <param name="message">消息。</param>
+            <returns>通道代理。</returns>
+        </member>
+        <member name="T:SIE.MQueue.IConnectionProxy">
+            <summary>
+            定义一个连接的代理。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.IConnectionProxy.Id">
+            <summary>
+            获取连接代理的编号。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.IConnectionProxy.IsOpen">
+            <summary>
+            获取一个值，表示连接是否已连接。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.IConnectionProxy.Connection">
+            <summary>
+            获取连接。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.IConnectionProxy.UsageChannelCount">
+            <summary>
+            获取通道使用量。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.IConnectionProxy.ChannelCount">
+            <summary>
+            获取通道总量。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.IConnectionProxy.BusyCount">
+            <summary>
+            获取通道忙碌总量。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.IConnectionProxy.FreeCount">
+            <summary>
+            获取通道空闲总量。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.IConnectionProxy.Channels">
+            <summary>
+            获取所有的通道代理。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.IConnectionProxy.Factory">
+            <summary>
+            获取连接代理工厂。
+            </summary>
+        </member>
+        <member name="M:SIE.MQueue.IConnectionProxy.IncrementChannel">
+            <summary>
+            递增一个忙碌的通道。
+            </summary>
+            <returns>通道忙碌总量。</returns>
+        </member>
+        <member name="M:SIE.MQueue.IConnectionProxy.DecrementChannel">
+            <summary>
+            递减一个忙碌的通道。
+            </summary>
+            <returns>通道忙碌总量。</returns>
+        </member>
+        <member name="M:SIE.MQueue.IConnectionProxy.GetChannel(System.Boolean)">
+            <summary>
+            获取一个通道代理。
+            </summary>
+            <param name="awalysNewChannel">必然返回新的通道代理。</param>
+            <returns>通道代理。</returns>
+        </member>
+        <member name="M:SIE.MQueue.IConnectionProxy.FreeChannels(System.Int32)">
+            <summary>
+            关闭所有满足条件的空闲通道。
+            </summary>
+            <param name="inactiveSeconds">空闲秒数。</param>
+        </member>
+        <member name="M:SIE.MQueue.IConnectionProxy.IsDeclareBuild(SIE.MQueue.IMessage)">
+            <summary>
+            判断指定的消息是否已在当前连接声明。
+            </summary>
+            <param name="message">消息。</param>
+            <returns>已声明返回 <see langword="true"/> 值，否则返回 <see langword="false"/> 值。</returns>
+        </member>
+        <member name="T:SIE.MQueue.IConnectionProxyFactory">
+            <summary>
+            定义一个连接代理工厂。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.IConnectionProxyFactory.Name">
+            <summary>
+            获取连接的名称。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.IConnectionProxyFactory.Manager">
+            <summary>
+            获取消息管理器。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.IConnectionProxyFactory.Factory">
+            <summary>
+            获取连接工厂。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.IConnectionProxyFactory.CreatedCount">
+            <summary>
+            获取已经创建的连接数量。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.IConnectionProxyFactory.Connections">
+            <summary>
+            获取所有的连接代理。
+            </summary>
+        </member>
+        <member name="M:SIE.MQueue.IConnectionProxyFactory.Create">
+            <summary>
+            创建一个基于客户端提供程序名称的连接代理。
+            </summary>
+            <returns>连接代理。</returns>
+        </member>
+        <member name="T:SIE.MQueue.IDeclareFactory">
+            <summary>
+            定义一个声明工厂。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.IDeclareFactory.Exchanges">
+            <summary>
+            获取所有的交换机。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.IDeclareFactory.Queues">
+            <summary>
+            获取所有的队列。
+            </summary>
+        </member>
+        <member name="M:SIE.MQueue.IDeclareFactory.Queue(System.String)">
+            <summary>
+            创建或获取指定名称的队列。
+            </summary>
+            <param name="queueName">队列名称。</param>
+            <returns>队列的声明。</returns>
+        </member>
+        <member name="M:SIE.MQueue.IDeclareFactory.Exchange(System.String)">
+            <summary>
+            创建或获取指定名称的交换机。
+            </summary>
+            <param name="exchangeName">交换机名称。</param>
+            <returns>交换机的声明。</returns>
+        </member>
+        <member name="T:SIE.MQueue.IMessage">
+            <summary>
+            定义一个消息。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.IMessage.Id">
+            <summary>
+            获取消息编号。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.IMessage.ConnectionName">
+            <summary>
+            获取或设置一个值，表示连接名称。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.IMessage.Exchange">
+            <summary>
+            获取交换机名称。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.IMessage.Queue">
+            <summary>
+            获取队列名称。
+            </summary>
+        </member>
+        <member name="M:SIE.MQueue.IMessage.Build(SIE.MQueue.IDeclareFactory)">
+            <summary>
+            生成队列。
+            </summary>
+            <param name="declareFactory">声明工厂。</param>
+            <returns>队列。</returns>
+        </member>
+        <member name="T:SIE.MQueue.TypedMessage">
+            <summary>
+            表示一个类型化的消息。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.TypedMessage.Id">
+            <inheritdoc />
+        </member>
+        <member name="P:SIE.MQueue.TypedMessage.ConnectionName">
+            <inheritdoc />
+        </member>
+        <member name="P:SIE.MQueue.TypedMessage.Exchange">
+            <inheritdoc />
+        </member>
+        <member name="P:SIE.MQueue.TypedMessage.Queue">
+            <inheritdoc />
+        </member>
+        <member name="P:SIE.MQueue.TypedMessage.BodyType">
+            <summary>
+            获取消息内容的类型。
+            </summary>
+        </member>
+        <member name="M:SIE.MQueue.TypedMessage.#ctor(System.Type)">
+            <summary>
+            初始化一个 <see cref="T:SIE.MQueue.TypedMessage"/> 类的新实例。
+            </summary>
+            <param name="bodyType">消息的实体类型。</param>
+        </member>
+        <member name="M:SIE.MQueue.TypedMessage.Build(SIE.MQueue.IDeclareFactory)">
+            <inheritdoc />
+        </member>
+        <member name="T:SIE.MQueue.IMessageBinder">
+            <summary>
+            定义一个消息绑定器。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.IMessageBinder.Order">
+            <summary>
+            获取绑定排序。
+            </summary>
+            <value>值越小越先执行。</value>
+        </member>
+        <member name="M:SIE.MQueue.IMessageBinder.Bind(SIE.MQueue.IDeclareFactory,SIE.MQueue.IMessage,SIE.MQueue.Declares.IQueueDeclare)">
+            <summary>
+            绑定消息。
+            </summary>
+            <param name="declareFactory">声明工厂。</param>
+            <param name="message">消息。</param>
+            <param name="queue">队列。</param>
+            <returns>队列。</returns>
+        </member>
+        <member name="T:SIE.MQueue.AllowDelayedAttribute">
+            <summary>
+            表示一个允许延迟消费消息的特性。
+            </summary>
+        </member>
+        <member name="T:SIE.MQueue.AllowTopicAttribute">
+            <summary>
+            表示一个允许Topic模式消息的特性
+            </summary>
+        </member>
+        <member name="T:SIE.MQueue.AllowFanoutAttribute">
+            <summary>
+            表示一个允许Fanout模式消息的特性
+            </summary>
+        </member>
+        <member name="T:SIE.MQueue.IMessageBus">
+            <summary>
+            定义一个消息总线。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.IMessageBus.Context">
+            <summary>
+            创建或获取消息总线的上下文。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.IMessageBus.ContextTransaction">
+            <summary>
+            创建或获取带事务的消息总线的上下文。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.IMessageBus.IsContextCreated">
+            <summary>
+            获取一个值，表示消息总线的上下文是否已创建。
+            </summary>
+        </member>
+        <member name="T:SIE.MQueue.IMessageBusContext">
+            <summary>
+            定义一个消息总线上下文。
+            </summary>
+        </member>
+        <member name="M:SIE.MQueue.IMessageBusContext.OpenTransaction">
+            <summary>
+            （幂等操作）打开事务。
+            </summary>
+            <returns>消息总线上下文。</returns>
+        </member>
+        <member name="M:SIE.MQueue.IMessageBusContext.Commit">
+            <summary>
+            提交事务。
+            </summary>
+        </member>
+        <member name="M:SIE.MQueue.IMessageBusContext.Rollback">
+            <summary>
+            回滚事务。
+            </summary>
+        </member>
+        <member name="T:SIE.MQueue.IMessageBusCore">
+            <summary>
+            定义一个核心的消息总线。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.IMessageBusCore.Manager">
+            <summary>
+            获取消息管理器。
+            </summary>
+        </member>
+        <member name="M:SIE.MQueue.IMessageBusCore.CallAsync``1(SIE.MQueue.IMessage,System.Func{SIE.MQueue.IChannelProxy,SIE.MQueue.IMessage,``0},System.String)">
+            <summary>
+            异步调用消息总线。
+            </summary>
+            <typeparam name="TTask">异步任务。</typeparam>
+            <param name="message">消息。</param>
+            <param name="channelAction">通道方法。</param>
+            <param name="connectionName">连接名称。</param>
+            <returns>异步任务。</returns>
+        </member>
+        <member name="M:SIE.MQueue.IMessageBusCore.BatchPublish``1(System.Collections.Generic.IEnumerable{``0},SIE.MQueue.PublishOptions,System.Threading.CancellationToken)">
+            <summary>
+            批量发布消息。
+            </summary>
+            <typeparam name="TBody">实体的数据类型。</typeparam>
+            <param name="bodies">实体列表。</param>
+            <param name="options">发布选项。</param>
+            <param name="cancellationToken">取消标识。</param>
+            <returns>异步任务。</returns>
+        </member>
+        <member name="M:SIE.MQueue.IMessageBusCore.PublishAsync``1(``0,SIE.MQueue.PublishOptions,System.Threading.CancellationToken)">
+            <summary>
+            发布消息。
+            </summary>
+            <typeparam name="TBody">实体的数据类型。</typeparam>
+            <param name="body">实体。</param>
+            <param name="options">发布选项。</param>
+            <param name="cancellationToken">取消标识。</param>
+            <returns>异步任务。</returns>
+        </member>
+        <member name="M:SIE.MQueue.IMessageBusCore.SubscribeAsync``1(RabbitMQ.Client.Events.AsyncEventHandler{SIE.MQueue.SubscribeEventArgs{``0}},SIE.MQueue.SubscribeOptions,System.Threading.CancellationToken)">
+            <summary>
+            订阅消息。
+            </summary>
+            <typeparam name="TBody">实体的数据类型。</typeparam>
+            <param name="handler">处理方法。</param>
+            <param name="options">订阅选项。</param>
+            <param name="cancellationToken">取消标识。</param>
+            <returns>一个需要手动取消的异步任务。</returns>
+        </member>
+        <member name="T:SIE.MQueue.IMessageFactory">
+            <summary>
+            定义一个消息工厂。
+            </summary>
+        </member>
+        <member name="M:SIE.MQueue.IMessageFactory.Get(System.String)">
+            <summary>
+            获取指定编号的消息。
+            </summary>
+            <param name="id">消息编号。</param>
+            <returns>消息。</returns>
+        </member>
+        <member name="M:SIE.MQueue.IMessageFactory.Set(SIE.MQueue.IMessage)">
+            <summary>
+            设置消息。
+            </summary>
+            <param name="message">消息。</param>
+            <returns>消息工厂。</returns>
+        </member>
+        <member name="M:SIE.MQueue.IMessageFactory.Get``1">
+            <summary>
+            获取指定实体的消息。
+            </summary>
+            <typeparam name="TBody">实体的数据类型。</typeparam>
+            <returns>消息。</returns>
+        </member>
+        <member name="T:SIE.MQueue.IMessageManager">
+            <summary>
+            定义一个消息管理器。
+            </summary>
+        </member>
+        <member name="E:SIE.MQueue.IMessageManager.Changed">
+            <summary>
+            配置变化时发生。
+            </summary>
+        </member>
+        <member name="E:SIE.MQueue.IMessageManager.Error">
+            <summary>
+            错误时发生。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.IMessageManager.Options">
+            <summary>
+            获取配置。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.IMessageManager.Default">
+            <summary>
+            获取默认的连接代理工厂。
+            </summary>
+        </member>
+        <member name="M:SIE.MQueue.IMessageManager.Get(System.String)">
+            <summary>
+            获取指定名称的连接工厂。
+            </summary>
+            <param name="name">名称。</param>
+            <returns>连接代理工厂。</returns>
+        </member>
+        <member name="P:SIE.MQueue.IMessageManager.Factories">
+            <summary>
+            获取连接代理工厂列表。
+            </summary>
+        </member>
+        <member name="M:SIE.MQueue.IMessageManager.EmitError(System.Object,System.Exception)">
+            <summary>
+            触发异常。
+            </summary>
+            <param name="sender">事件来源。</param>
+            <param name="exception">异常信息。</param>
+        </member>
+        <member name="T:SIE.MQueue.IMessageSerializer">
+            <summary>
+            定义一个消息序列化工具。
+            </summary>
+        </member>
+        <member name="M:SIE.MQueue.IMessageSerializer.Deserialize(System.Type,System.Byte[])">
+            <summary>
+            反序列化。
+            </summary>
+            <param name="type">类型。</param>
+            <param name="bytes">字节数组。</param>
+            <returns>反序列化后的实例。</returns>
+        </member>
+        <member name="M:SIE.MQueue.IMessageSerializer.Serialize(System.Object)">
+            <summary>
+            序列化实例。
+            </summary>
+            <param name="body">实体。</param>
+            <returns>字节数组。</returns>
+        </member>
+        <member name="T:SIE.MQueue.MessageOptions">
+            <summary>
+            表示一个消息的配置。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.MessageOptions.PreheatCount">
+            <summary>
+            获取或设置一个值，表示预热通道数。
+            </summary>
+            <value>默认为 10 值"，表示开启 1 个连接的 10 个通道。设置为 0 值时，表示关闭预热。</value>
+        </member>
+        <member name="P:SIE.MQueue.MessageOptions.MaxChannelPerConnection">
+            <summary>
+            获取或设置一个值，表示每个连接最多可以创建的通道数量。
+            </summary>
+            <value>默认为 211 个通道。</value>
+        </member>
+        <member name="P:SIE.MQueue.MessageOptions.ChannelInactiveSeconds">
+            <summary>
+            获取或设置一个值，表示通道空闲失效时间。
+            </summary>
+            <value>默认为 180 秒。</value>
+        </member>
+        <member name="P:SIE.MQueue.MessageOptions.PublishRetryCount">
+            <summary>
+            获取或设置一个值，表示发布重试的次数。
+            </summary>
+            <value>默认为 3 次。</value>
+        </member>
+        <member name="P:SIE.MQueue.MessageOptions.PublishRetrySeconds">
+            <summary>
+            获取或设置一个值，表示发布每次重试的间隔。
+            </summary>
+            <value>默认为 3 秒。</value>
+        </member>
+        <member name="P:SIE.MQueue.MessageOptions.ChannelCreateRetryCount">
+            <summary>
+            获取或设置一个值，表示通道创建重试的次数。
+            </summary>
+            <value>默认为 3 次。</value>
+        </member>
+        <member name="P:SIE.MQueue.MessageOptions.ChannelCreateRetrySeconds">
+            <summary>
+            获取或设置一个值，表示通道创建每次重试的间隔。
+            </summary>
+            <value>默认为 3 秒。</value>
+        </member>
+        <member name="P:SIE.MQueue.MessageOptions.ConnectionCreateRetryCount">
+            <summary>
+            获取或设置一个值，表示连接创建重试的次数。
+            </summary>
+            <value>默认为 3 次。</value>
+        </member>
+        <member name="P:SIE.MQueue.MessageOptions.ConnectionCreateRetrySeconds">
+            <summary>
+            获取或设置一个值，表示连接创建每次重试的间隔。
+            </summary>
+            <value>默认为 3 秒。</value>
+        </member>
+        <member name="M:SIE.MQueue.Module.CheckConfig">
+            <summary>
+            检查配置文件配置项是否存在
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.MQueue.MQueueExtensions">
+            <summary>
+            表示消息队列的扩展库。
+            </summary>
+        </member>
+        <member name="M:SIE.MQueue.MQueueExtensions.UseTypeTopic(SIE.MQueue.Declares.IExchangeDeclare)">
+            <summary>
+            设置交换机为 <see cref="F:RabbitMQ.Client.ExchangeType.Topic"/> 类型。
+            </summary>
+            <param name="declare">交换机。</param>
+            <returns>交换机。</returns>
+        </member>
+        <member name="M:SIE.MQueue.MQueueExtensions.UseTypeHeaders(SIE.MQueue.Declares.IExchangeDeclare)">
+            <summary>
+            设置交换机为 <see cref="F:RabbitMQ.Client.ExchangeType.Headers"/> 类型。
+            </summary>
+            <param name="declare">交换机。</param>
+            <returns>交换机。</returns>
+        </member>
+        <member name="M:SIE.MQueue.MQueueExtensions.UseTypeDirect(SIE.MQueue.Declares.IExchangeDeclare)">
+            <summary>
+            设置交换机为 <see cref="F:RabbitMQ.Client.ExchangeType.Direct"/> 类型。
+            </summary>
+            <param name="declare">交换机。</param>
+            <returns>交换机。</returns>
+        </member>
+        <member name="M:SIE.MQueue.MQueueExtensions.UseTypeFanout(SIE.MQueue.Declares.IExchangeDeclare)">
+            <summary>
+            设置交换机为 <see cref="F:RabbitMQ.Client.ExchangeType.Fanout"/> 类型。
+            </summary>
+            <param name="declare">交换机。</param>
+            <returns>交换机。</returns>
+        </member>
+        <member name="M:SIE.MQueue.MQueueExtensions.UseTypeDelayed(SIE.MQueue.Declares.IExchangeDeclare,System.String)">
+            <summary>
+            设置交换机为延迟消息类型。
+            </summary>
+            <param name="declare">交换机。</param>
+            <param name="type">交换机转发类型。</param>
+            <returns>交换机。</returns>
+        </member>
+        <member name="M:SIE.MQueue.MQueueExtensions.Arg``1(``0,System.String,System.Object)">
+            <summary>
+            添加一个参数。
+            </summary>
+            <typeparam name="TDeclare">交换机的数据类型。</typeparam>
+            <param name="declare">交换机。</param>
+            <param name="key">参数键名。</param>
+            <param name="value">参数键值。</param>
+            <returns>交换机。</returns>
+        </member>
+        <member name="M:SIE.MQueue.MQueueExtensions.Bind``1(``0,SIE.MQueue.Declares.IExchangeDeclare,System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            绑定指定的交换机到当前声明。
+            </summary>
+            <typeparam name="TDeclare">交换机的数据类型。</typeparam>
+            <param name="declare">声明。</param>
+            <param name="source">来源交换机。</param>
+            <param name="routerKey">路由键名。</param>
+            <param name="arguments">参数。</param>
+            <returns>声明。</returns>
+        </member>
+        <member name="M:SIE.MQueue.MQueueExtensions.PublishAsync``1(SIE.MQueue.IMessageBusCore,``0,System.String,System.Threading.CancellationToken)">
+            <summary>
+            发布消息。
+            </summary>
+            <typeparam name="TBody">实体的数据类型。</typeparam>
+            <param name="bus">消息总线。</param>
+            <param name="body">实体。</param>
+            <param name="routerKey">路由键名。</param>
+            <param name="cancellationToken">取消标识。</param>
+            <returns>异步任务。</returns>
+        </member>
+        <member name="M:SIE.MQueue.MQueueExtensions.PublishAsync``1(SIE.MQueue.IMessageBusCore,``0,System.Double,System.Threading.CancellationToken)">
+            <summary>
+            发布延迟消息。
+            </summary>
+            <typeparam name="TBody">实体的数据类型。</typeparam>
+            <param name="bus">消息总线。</param>
+            <param name="body">实体。</param>
+            <param name="delaySeconds">延迟时间（秒）。</param>
+            <param name="cancellationToken">取消标识。</param>
+            <returns>异步任务。</returns>
+        </member>
+        <member name="M:SIE.MQueue.MQueueExtensions.PublishAsync``1(SIE.MQueue.IMessageBusCore,``0,System.DateTime,System.Threading.CancellationToken)">
+            <summary>
+            发布延迟消息。
+            </summary>
+            <typeparam name="TBody">实体的数据类型。</typeparam>
+            <param name="bus">消息总线。</param>
+            <param name="body">实体。</param>
+            <param name="delayDateTime">预计延迟时间。</param>
+            <param name="cancellationToken">取消标识。</param>
+            <returns>异步任务。</returns>
+        </member>
+        <member name="M:SIE.MQueue.MQueueExtensions.PublishAsync``1(SIE.MQueue.IMessageBusCore,``0,System.TimeSpan,System.Threading.CancellationToken)">
+            <summary>
+            发布延迟消息。
+            </summary>
+            <typeparam name="TBody">实体的数据类型。</typeparam>
+            <param name="bus">消息总线。</param>
+            <param name="body">实体。</param>
+            <param name="delayTimeSpan">预计延迟时间。</param>
+            <param name="cancellationToken">取消标识。</param>
+            <returns>异步任务。</returns>
+        </member>
+        <member name="M:SIE.MQueue.MQueueExtensions.PublishAsync``1(SIE.MQueue.IMessageBusCore,``0,System.String,System.Double,System.Threading.CancellationToken)">
+            <summary>
+            发布延迟消息。
+            </summary>
+            <typeparam name="TBody">实体的数据类型。</typeparam>
+            <param name="bus">消息总线。</param>
+            <param name="body">实体。</param>
+            <param name="routerKey">路由键名。</param>
+            <param name="delaySeconds">延迟时间（秒）。</param>
+            <param name="cancellationToken">取消标识。</param>
+            <returns>异步任务。</returns>
+        </member>
+        <member name="M:SIE.MQueue.MQueueExtensions.PublishAsync``1(SIE.MQueue.IMessageBusCore,``0,System.String,System.DateTime,System.Threading.CancellationToken)">
+            <summary>
+            发布延迟消息。
+            </summary>
+            <typeparam name="TBody">实体的数据类型。</typeparam>
+            <param name="bus">消息总线。</param>
+            <param name="body">实体。</param>
+            <param name="routerKey">路由键名。</param>
+            <param name="delayDateTime">预计延迟时间。</param>
+            <param name="cancellationToken">取消标识。</param>
+            <returns>异步任务。</returns>
+        </member>
+        <member name="M:SIE.MQueue.MQueueExtensions.PublishAsync``1(SIE.MQueue.IMessageBusCore,``0,System.String,System.TimeSpan,System.Threading.CancellationToken)">
+            <summary>
+            发布延迟消息。
+            </summary>
+            <typeparam name="TBody">实体的数据类型。</typeparam>
+            <param name="bus">消息总线。</param>
+            <param name="body">实体。</param>
+            <param name="routerKey">路由键名。</param>
+            <param name="delayTimeSpan">预计延迟时间。</param>
+            <param name="cancellationToken">取消标识。</param>
+            <returns>异步任务。</returns>
+        </member>
+        <member name="T:SIE.MQueue.PublishOptions">
+            <summary>
+            表示一个发布的选项。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.PublishOptions.ConnectionName">
+            <summary>
+            获取或设置一个值，表示连接名称。
+            </summary>
+            <value>当没有设置值时，将取默认连接。</value>
+        </member>
+        <member name="P:SIE.MQueue.PublishOptions.Exchange">
+            <summary>
+            获取或设置一个值，表示交换机名称。
+            </summary>
+            <value>当没有设置值时，将根据输入类型自动生成交换机。</value>
+        </member>
+        <member name="P:SIE.MQueue.PublishOptions.RouterKey">
+            <summary>
+            获取或设置一个值，表示路由键名。
+            </summary>
+            <value>当没有设置值时，将使用 <see cref="F:System.String.Empty"/> 作为的路由键名。</value>
+        </member>
+        <member name="P:SIE.MQueue.PublishOptions.Mandatory">
+            <summary>
+            获取或设置一个值，表示是否强制消费。
+            </summary>
+            <value>设置为 <see langword="true"/> 值时，如果交换机根据自身类型和消息 <see cref="P:SIE.MQueue.PublishOptions.RouterKey"/> 无法找到一个符合条件的队列，那么会调用 <see cref="E:RabbitMQ.Client.IModel.BasicReturn"/> 方法将消息返回给生产者；当设置为 <see langword="false"/> 值时，出现上述情形会直接将消息扔掉。</value>
+        </member>
+        <member name="P:SIE.MQueue.PublishOptions.DelayTimeSpan">
+            <summary>
+            获取或设置一个值，表示延迟时间。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.PublishOptions.PropertiesSetup">
+            <summary>
+            获取或设置一个值，表示属性配置。
+            </summary>
+        </member>
+        <member name="T:SIE.MQueue.SubscribeOptions">
+            <summary>
+            表示一个订阅的选项。
+            </summary>
+        </member>
+        <member name="P:SIE.MQueue.SubscribeOptions.ConnectionName">
+            <summary>
+            获取或设置一个值，表示连接名称。
+            </summary>
+            <remarks>详细文档请参考<see href="https://www.throwable.club/2018/11/28/rabbitmq-extension-consumer-prefetch/">消费者消息预读取</see>链接。</remarks>
+            <value>当没有设置值时，将取默认连接。</value>
+        </member>
+        <member name="P:SIE.MQueue.SubscribeOptions.QosPrefetchCount">
+            <summary>
+            获取或设置一个值，表示预读取的消息数量上限。
+            </summary>
+            <value>默认为 0 值，表示无上限。</value>
+        </member>
+        <member name="P:SIE.MQueue.SubscribeOptions.AutoAck">
+            <summary>
+            获取或设置一个值，表示是否自动应答。
+            </summary>
+            <value>默认为 <see langword="true"/> 值"/>，表示自动应答。</value>
+        </member>
+        <member name="P:SIE.MQueue.SubscribeOptions.Mandatory">
+            <summary>
+            获取或设置一个值，表示是否强制消费。
+            </summary>
+            <value>设置为 <see langword="true"/> 值时，如果交换机根据自身类型和消息路由无法找到一个符合条件的队列，那么会调用 <see cref="E:RabbitMQ.Client.IModel.BasicReturn"/> 方法将消息返回给生产者；当设置为 <see langword="false"/> 值时，出现上述情形会直接将消息扔掉。</value>
+        </member>
+        <member name="T:Microsoft.Extensions.DependencyInjection.MQueueStartup">
+            <summary>
+            表示消息队列的启动库。
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.MQueueStartup.AddMQueue(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{SIE.MQueue.IDeclareFactory})">
+            <summary>
+            添加消息队列。
+            </summary>
+            <param name="services">服务容器。</param>
+            <param name="declareSetup">声明配置。</param>
+            <returns>服务容器。</returns>
+        </member>
+        <member name="T:Microsoft.Extensions.Hosting.MessageBackgroundServiceBase`1">
+            <summary>
+            表示一个消息后台服务的基类。
+            </summary>
+            <typeparam name="TBody">实体的数据类型。</typeparam>
+        </member>
+        <member name="M:Microsoft.Extensions.Hosting.MessageBackgroundServiceBase`1.#ctor(SIE.MQueue.IMessageBus,Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            初始化一个 <see cref="T:Microsoft.Extensions.Hosting.MessageBackgroundServiceBase`1"/> 类的新实例。
+            </summary>
+            <param name="bus">消息总线。</param>
+            <param name="logger">服务的日志。</param>
+        </member>
+        <member name="P:Microsoft.Extensions.Hosting.MessageBackgroundServiceBase`1.Bus">
+            <summary>
+            获取消息总线。
+            </summary>
+        </member>
+        <member name="P:Microsoft.Extensions.Hosting.MessageBackgroundServiceBase`1.Timeout">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.Extensions.Hosting.MessageBackgroundServiceBase`1.SubscribeOptions">
+            <summary>
+            获取或设置一个值，表示订阅选项。
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.Hosting.MessageBackgroundServiceBase`1.OnExecuteAsync(Microsoft.Extensions.Hosting.ScheduleServiceState)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.Extensions.Hosting.MessageBackgroundServiceBase`1.OnSubscribe(SIE.MQueue.IMessageBusContext,SIE.MQueue.SubscribeEventArgs{`0})">
+            <summary>
+            消息订阅。
+            </summary>
+            <param name="context">消息总线上下文。</param>
+            <param name="args">订阅参数。</param>
+            <returns>异步任务。</returns>
+        </member>
+    </members>
+</doc>

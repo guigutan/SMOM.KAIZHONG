@@ -1,0 +1,985 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Web.EMS.MeteringEquipment</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.EntityPropertyViewMetaExtension">
+            <summary>
+            扩展
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.MeteringEquipment.EntityPropertyViewMetaExtension.MeteringEquipmentAccountId">
+            <summary>
+            计量设备台账ID
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.MeteringEquipment.EntityPropertyViewMetaExtension.IsDowngrade">
+            <summary>
+            是否降级
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.EntityPropertyViewMetaExtension.UsePrecisionClassLevelEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig},System.String,System.String)">
+            <summary>
+            获取精度级别类型下拉编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <param name="meteringEquipmentAccountId"></param>
+             <param name="isDowngrade"></param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.Calibrations.CalibrationAttachmentViewConfig">
+            <summary>
+            计量设备定检附件视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.MeteringEquipment.Calibrations.CalibrationAttachmentViewConfig.SeeView">
+            <summary>
+            添加记录
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.Calibrations.CalibrationAttachmentViewConfig.ConfigView">
+            <summary>
+            附件视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.Calibrations.CalibrationAttachmentViewConfig.UseReadOnlyCommand">
+            <summary>
+            readonlyCommand
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.Calibrations.CalibrationDetailViewConfig">
+            <summary>
+            计量设备检验明细视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.MeteringEquipment.Calibrations.CalibrationDetailViewConfig.InputCalibration">
+            <summary>
+            自定义添加视图
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.MeteringEquipment.Calibrations.CalibrationDetailViewConfig.ReadonlyView">
+            <summary>
+            只读视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.Calibrations.CalibrationDetailViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.Calibrations.CalibrationDetailViewConfig.ConfigListView">
+            <summary>
+            录入
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.Calibrations.CalibrationDetailViewConfig.ConfigReadOnlyView">
+            <summary>
+            检验明细只读视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.Calibrations.CalibrationEquipmentViewConfig">
+            <summary>
+            计量设备定检设备明细视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.MeteringEquipment.Calibrations.CalibrationEquipmentViewConfig.InputView">
+            <summary>
+            录入视图
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.MeteringEquipment.Calibrations.CalibrationEquipmentViewConfig.ReadonlyView">
+            <summary>
+            只读视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.Calibrations.CalibrationEquipmentViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.Calibrations.CalibrationEquipmentViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.Calibrations.CalibrationEquipmentViewConfig.ConfigInputView">
+            <summary>
+             录入配置
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.Calibrations.CalibrationEquipmentViewConfig.ConfigReadOnlyView">
+            <summary>
+            检验明细只读视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.Calibrations.CalibrationItemViewConfig">
+            <summary>
+            计量设备定检项目视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.MeteringEquipment.Calibrations.CalibrationItemViewConfig.ReadonlyView">
+            <summary>
+            只读视图
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.MeteringEquipment.Calibrations.CalibrationItemViewConfig.charWidth">
+            <summary>
+            字符显示宽度
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.Calibrations.CalibrationItemViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.Calibrations.CalibrationItemViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.Calibrations.CalibrationItemViewConfig.ConfigReadOnlyView">
+            <summary>
+            只读视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.Calibrations.CalibrationItemViewConfig.ConfigSelectionView">
+            <summary>
+            下拉选择视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.Calibrations.CalibrationResumeViewConfig">
+            <summary>
+            计量设备定检操作记录视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.Calibrations.CalibrationResumeViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.Calibrations.CalibrationViewConfig">
+            <summary>
+            计量设备定检视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.MeteringEquipment.Calibrations.CalibrationViewConfig.InputReportView">
+            <summary>
+            添加记录
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.MeteringEquipment.Calibrations.CalibrationViewConfig.SeeReportView">
+            <summary>
+            查看记录
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.MeteringEquipment.Calibrations.CalibrationViewConfig.ApprovalView">
+            <summary>
+            审核视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.Calibrations.CalibrationViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.Calibrations.CalibrationViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.Calibrations.CalibrationViewConfig.ConfigDetailsView">
+            <summary>
+            添加计量设备定检
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.Calibrations.CalibrationViewConfig.ConfigInputReportView">
+            <summary>
+            录入检验报告
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.Calibrations.CalibrationViewConfig.ConfigApprovalView">
+            <summary>
+            审核视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.Calibrations.CalibrationViewConfig.ConfigSeeReportView">
+            <summary>
+            查看记录页面
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.Calibrations.Commands.AuditRejectCommand">
+            <summary>
+            审核驳回
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.Calibrations.Commands.AuditRejectCommand.DoSave(SIE.Domain.Entity)">
+            <summary>
+            保存
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.Calibrations.Commands.AuditSubmitCommand">
+            <summary>
+            审核保存
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.Calibrations.Commands.AuditSubmitCommand.DoSave(SIE.Domain.Entity)">
+            <summary>
+            保存
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.Calibrations.Commands.CalibrationCommands">
+            <summary>
+            计量设备定检命令集
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.MeteringEquipment.Calibrations.Commands.CalibrationCommands.CalibrationSaveCommand">
+            <summary>
+            添加记录页保存按钮
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.MeteringEquipment.Calibrations.Commands.CalibrationCommands.InputReportCommand">
+            <summary>
+            录入校验记录
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.MeteringEquipment.Calibrations.Commands.CalibrationCommands.CalibrationDetailSaveCommand">
+            <summary>
+            明细页保存(添加润滑记录)
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.MeteringEquipment.Calibrations.Commands.CalibrationCommands.CalibrationDetailSubmitCommand">
+            <summary>
+            明细页提交(添加润滑记录)
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.MeteringEquipment.Calibrations.Commands.CalibrationCommands.AllPassCommand">
+            <summary>
+            全部合格
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.MeteringEquipment.Calibrations.Commands.CalibrationCommands.ResetResultCommand">
+            <summary>
+            重置结果
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.MeteringEquipment.Calibrations.Commands.CalibrationCommands.SeeReportCommand">
+            <summary>
+            查看
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.MeteringEquipment.Calibrations.Commands.CalibrationCommands.AuditCommand">
+            <summary>
+            审核
+            </summary>
+            
+        </member>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.Calibrations.Commands.CalibrationDetailSaveCommand">
+            <summary>
+            保存录入检验报告
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.Calibrations.Commands.CalibrationDetailSaveCommand.DoSave(SIE.Domain.Entity)">
+            <summary>
+            保存验证
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.Calibrations.Commands.CalibrationDetailSubmitCommand">
+            <summary>
+            提交录入明细报告
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.Calibrations.Commands.CalibrationDetailSubmitCommand.DoSave(SIE.Domain.Entity)">
+            <summary>
+            执行保存
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.Calibrations.Commands.CalibrationSaveCommand">
+            <summary>
+            添加保存
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.Calibrations.Commands.CalibrationSaveCommand.Saving(SIE.EMS.MeteringEquipment.Calibrations.Calibration)">
+            <summary>
+            保存特种设备定检
+            </summary>
+            <param name="stock">实体</param>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.Calibrations.Commands.CalibrationSaveCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>命令执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.Calibrations.Criterias.CalibrationCriteriaViewConfig">
+            <summary>
+            计量设备定检查询
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.Calibrations.Criterias.CalibrationCriteriaViewConfig.ConfigQueryView">
+            <summary>
+             配置查询视图 
+             </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.Calibrations.Criterias.SelCalibrationEquipmentModelCriteriaViewConfig">
+            <summary>
+            选择设备清单
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.Calibrations.Criterias.SelCalibrationEquipmentModelCriteriaViewConfig.ConfigQueryView">
+            <summary>
+             配置查询视图 
+             </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.Calibrations.Criterias.SelCalibrationItemModelCriteriaViewConfig">
+            <summary>
+            选择检验项目
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.Calibrations.Criterias.SelCalibrationItemModelCriteriaViewConfig.ConfigQueryView">
+            <summary>
+             配置查询视图 
+             </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.Calibrations.DataQuery.CalibrationDataQuery">
+            <summary>
+            计量设备定检帮助类
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.Calibrations.DataQuery.CalibrationDataQuery.GetCalibrationNo">
+            <summary>
+            获取润滑记录编码
+            </summary>
+            <returns>润滑记录编码</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.Calibrations.ViewModels.SelCalibrationEquipmentModelViewConfig">
+            <summary>
+            选择设备清单视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.Calibrations.ViewModels.SelCalibrationEquipmentModelViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.Calibrations.ViewModels.SelCalibrationItemModelViewConfig">
+            <summary>
+            选择点检项目视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.Calibrations.ViewModels.SelCalibrationItemModelViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.Common.DataQuery.ApprovalDataQuery">
+            <summary>
+            审批
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.Common.DataQuery.ApprovalDataQuery.GetEnableApproval(System.Int32)">
+            <summary>
+            获取是否启用审批流程
+            </summary>
+            <param name="typeQty">界面类型（1：计量设备定检）</param>
+            <returns>是否启用审批流程</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.EquipModelExtensions.Commands.SelModelCalibrationCommand">
+            <summary>
+            计量校验规程(选择)按钮
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.EquipModelExtensions.Commands.SelModelCalibrationCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.EquipModelExtensions.EquipModelCalibrationViewConfig">
+            <summary>
+            设备型号计量校验规程视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.MeteringEquipment.EquipModelExtensions.EquipModelCalibrationViewConfig.CoulmnWidth">
+            <summary>
+            字符显示宽度
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.EquipModelExtensions.EquipModelCalibrationViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.EquipModelExtensions.EquipModelExtensionViewConfig">
+            <summary>
+            设备型号扩展
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.EquipModelExtensions.EquipModelExtensionViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.EquipModelExtensions.EquipModelExtensionViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentMenuInit">
+            <summary>
+            菜单初始化
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentMenuInit.GetMenuDtos">
+            <summary>
+            获取菜单列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.Commands.EquipAccountCalibrationSaveCommand">
+            <summary>
+            保存检验规程
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.Commands.EquipAccountCalibrationSaveCommand.DoSave(SIE.Domain.EntityList)">
+            <summary>
+            保存
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.Commands.MeterEquipAccountLubricationProjectSaveCommand">
+            <summary>
+            保存
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.Commands.MeterEquipAccountLubricationProjectSaveCommand.DoSave(SIE.Domain.EntityList)">
+            <summary>
+            保存
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.Commands.MeterEquipAccountLubricationProjectSaveCommand.IsAppend(System.Text.StringBuilder)">
+            <summary>
+            是否追加分隔符
+            </summary>
+            <param name="sb"></param>
+        </member>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.Commands.MeterEquipAccountSlotSaveCommand">
+            <summary>
+            设备缸槽保存
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.Commands.MeterEquipAccountSlotSaveCommand.DoSave(SIE.Domain.EntityList)">
+            <summary>
+            
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.Commands.MeteringEquipSaveCommand">
+            <summary>
+            计量设备台账保存命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.Commands.MeteringEquipSaveCommand.DoSave(SIE.Domain.Entity)">
+            <summary>
+            保存设备台账
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.Commands.MeteringEquipSaveCommand.OnSaved(SIE.Domain.Entity)">
+            <summary>
+            保存后添加到设备与人员权限中
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.Commands.MeteringEquipSaveCommand.ValidateEquipmentAccount(SIE.EMS.MeteringEquipment.MeteringEquipmentAccounts.MeteringEquipmentAccount)">
+            <summary>
+            验证设备信息
+            </summary>
+            <param name="MeteringEquipmentAccount">设备台账</param>
+            <exception cref="T:SIE.Domain.Validation.ValidationException"></exception>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.Commands.MeteringEquipSaveCommand.GenerateEquipAccountResume(System.String,SIE.Core.Enums.AccountState,System.String,System.String)">
+            <summary>
+            创建履历实体
+            </summary>
+            <param name="changed">变更类型</param>
+            <param name="state">设备状态</param>
+            <param name="oldValue">旧值</param>
+            <param name="newValue">新值</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.Commands.MeteringEquipSaveCommand.GenerateEquipAccountResumes(SIE.EMS.MeteringEquipment.MeteringEquipmentAccounts.MeteringEquipmentAccount)">
+             <summary>
+            创建履历列表
+             </summary>
+             <param name="newEntity"></param>
+             <returns></returns>
+        </member>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.Commands.SelEquipAccountCalibrationCommand">
+            <summary>
+            选择计量设备台账定项目
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.Commands.SelEquipAccountCalibrationCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.Commands.SelMeterAccountPhysicalUnionCommand">
+            <summary>
+            选择物联参数
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.Commands.SelMeterAccountPhysicalUnionCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行选择
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.Commands.SelMeterAccountProcessCommand">
+            <summary>
+            选择工序
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.Commands.SelMeterAccountProcessCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行选择
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.Commands.SynMeteringModelCommand">
+            <summary>
+            同步型号数据命令（增加同步位置列表）
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.Commands.SynMeteringModelCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.EquipAccountCalibrationViewConfig">
+            <summary>
+            计量校验规程视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.EquipAccountCalibrationViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.ExtensionViewConfig.EquipBomDetailExtensionViewConfig">
+            <summary>
+            扩展设备BOM明细视图
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.ExtensionViewConfig.EquipBomDetailExtensionViewConfig.AccountEquipBomDetailViewGroup">
+            <summary>
+            设备台账设备BOM明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.ExtensionViewConfig.EquipBomDetailExtensionViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.ExtensionViewConfig.EquipBomDetailExtensionViewConfig.ConfigAccountEquipBomDetailView">
+            <summary>
+            配置特种设备台账设备BOM明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.ExtensionViewConfig.EquipModelTechParameterExtensionViewConfig">
+            <summary>
+            设备型号技术参数
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.ExtensionViewConfig.EquipModelTechParameterExtensionViewConfig.charWidth">
+            <summary>
+            字符显示宽度
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.ExtensionViewConfig.EquipModelTechParameterExtensionViewConfig.ReadOnlyView">
+            <summary>
+            只读配置页
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.ExtensionViewConfig.EquipModelTechParameterExtensionViewConfig.ConfigView">
+            <summary>
+            配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.ExtensionViewConfig.EquipModelTechParameterExtensionViewConfig.ConfigEquipAccountView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.ExtensionViewConfig.MeteringEquipAccountAttachmentViewConfig">
+            <summary>
+            设备台账附件资料视图配置
+            </summary>    
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.ExtensionViewConfig.MeteringEquipAccountAttachmentViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.ExtensionViewConfig.MeteringEquipAccountCheckProjectViewConfig">
+            <summary>
+            设备台账点检项目视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.ExtensionViewConfig.MeteringEquipAccountCheckProjectViewConfig.CheckPlanProjectList">
+             <summary>
+            新增点检计划-项目列表
+             </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.ExtensionViewConfig.MeteringEquipAccountCheckProjectViewConfig.EquipAccountDetailViewGroup">
+             <summary>
+            设备表单视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.ExtensionViewConfig.MeteringEquipAccountCheckProjectViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.ExtensionViewConfig.MeteringEquipAccountCheckProjectViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.ExtensionViewConfig.MeteringEquipAccountCheckProjectViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.ExtensionViewConfig.MeteringEquipAccountCheckProjectViewConfig.CheckPlanProjectListView">
+            <summary>
+            配置新增点检计划-项目列表
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.ExtensionViewConfig.MeteringEquipAccountLubricationProjectViewConfig">
+            <summary>
+            设备型号润滑项目视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.ExtensionViewConfig.MeteringEquipAccountLubricationProjectViewConfig.charWidth">
+            <summary>
+            字符显示宽度
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.ExtensionViewConfig.MeteringEquipAccountLubricationProjectViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.ExtensionViewConfig.MeteringEquipAccountMaintainProjectViewConfig">
+            <summary>
+            设备台账保养项目视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.ExtensionViewConfig.MeteringEquipAccountMaintainProjectViewConfig.AddMaintainProject">
+            <summary>
+            保养计划添加保养项目视图
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.ExtensionViewConfig.MeteringEquipAccountMaintainProjectViewConfig.EquipAccountDetailViewGroup">
+             <summary>
+            设备表单视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.ExtensionViewConfig.MeteringEquipAccountMaintainProjectViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.ExtensionViewConfig.MeteringEquipAccountMaintainProjectViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.ExtensionViewConfig.MeteringEquipAccountMaintainProjectViewConfig.AddMaintainProjectView">
+            <summary>
+            保养计划添加保养项目视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.ExtensionViewConfig.MeteringEquipAccountRepairStandardViewConfig">
+            <summary>
+            维修定标视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.ExtensionViewConfig.MeteringEquipAccountRepairStandardViewConfig.ConfigListView">
+            <summary>
+            列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.ExtensionViewConfig.MeteringEquipParamViewConfig">
+            <summary>
+            仪器参数视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.ExtensionViewConfig.MeteringEquipParamViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.ExtensionViewConfig.MeteringEquipParamViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.ExtensionViewConfig.MeteringEquipParamViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.MeterEquipAccountLocationViewConfig">
+            <summary>
+            计量设备台账位置视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.MeterEquipAccountLocationViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.MeterEquipAccountPhysicalUnionViewConfig">
+            <summary>
+            设备台账物联参数视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.MeterEquipAccountPhysicalUnionViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.MeterEquipAccountProcessViewConfig">
+            <summary>
+            设备台账工序视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.MeterEquipAccountProcessViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.MeterEquipAccountResumeViewConfig">
+            <summary>
+            设备履历视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.MeterEquipAccountResumeViewConfig.charDisplayWidth">
+            <summary>
+            字体显示宽度
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.MeterEquipAccountResumeViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.MeterEquipAccountSlotViewConfig">
+            <summary>
+            缸槽视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.MeterEquipAccountSlotViewConfig.EquipAccountSloListViewGroup">
+            <summary>
+            设备台账缸槽列表视图
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.MeterEquipAccountSlotViewConfig.MeteringEquipmentSloListViewGroup">
+            <summary>
+            计量设备缸槽列表视图
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.MeterEquipAccountSlotViewConfig.SpecialEquipmentAccountViewGroup">
+            <summary>
+            特种设备缸槽列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.MeterEquipAccountSlotViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.MeterEquipAccountSlotViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.MeterEquipAccountSlotViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.MeterEquipAccountSlotViewConfig.ConfigQueryView">
+            <summary>
+            查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.MeterEquipAccountSlotViewConfig.EquipAccountSloListView">
+            <summary>
+            设备台账缸槽列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.MeterEquipRepairBillViewConfig">
+            <summary>
+            计量设备台账维修纪录视图
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.MeterEquipRepairBillViewConfig.MeterEquipAccountRepairView">
+            <summary>
+            设备台账维修单视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.MeterEquipRepairBillViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.MeterEquipRepairBillViewConfig.ConfigEquipAccountRepair">
+            <summary>
+            设备台账维修单视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.MeteringEquipmentAccountCriteriaViewConfig">
+            <summary>
+            计量设备台账查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.MeteringEquipmentAccountCriteriaViewConfig.ConfigView">
+            <summary>
+            默认查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.MeteringEquipmentAccountViewConfig">
+            <summary>
+            计量设备台账视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.MeteringEquipmentAccountViewConfig.CoulmnWidth">
+            <summary>
+            字符显示宽度
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.MeteringEquipmentAccountViewConfig.EditViewGroup">
+            <summary>
+            修改视图
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.MeteringEquipmentAccountViewConfig.MeteringEquipmentAccountGroup">
+            <summary>
+            特种设备台账视图
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.MeteringEquipmentAccountViewConfig.EISBaseDataViewGroup">
+            <summary>
+            电子行业基础数据
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.MeteringEquipmentAccountViewConfig.EISBaseDataAddViewGroup">
+            <summary>
+            电子行业基础数据ADD
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.MeteringEquipmentAccountViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.MeteringEquipmentAccountViewConfig.MeteringEquipmentAccountView">
+            <summary>
+            计量设备台账
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.MeteringEquipmentAccountViewConfig.ConfigListViewChildrenOne">
+            <summary>
+            计量设备台账增加子页签
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.MeteringEquipmentAccountViewConfig.ConfigListViewChildrenTwo">
+            <summary>
+            计量设备台账增加子页签
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.MeteringEquipmentAccountViewConfig.EISBaseDataView">
+            <summary>
+            电子行业基础数据
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.MeteringEquipmentAccountViewConfig.ConfigDetailsView">
+            <summary>
+             配置明细视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.MeteringEquipmentAccountViewConfig.ConfigDetailsViewChildren">
+            <summary>
+            配置子视图属性
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.MeteringEquipmentAccounts.MeteringEquipmentAccountViewConfig.ConfigSelectionView">
+            <summary>
+            下拉选择
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.Module">
+            <summary>
+            模块配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化模块
+            </summary>
+            <param name="app">应用程序</param>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.Module.App_ModuleOperations(System.Object,System.EventArgs)">
+            <summary>
+            模块定义
+            </summary>
+            <param name="sender">应用程序</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="T:SIE.Web.EMS.MeteringEquipment.WorkFlows.WorkFlowRecordViewConfig">
+            <summary>
+            审核记录
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.MeteringEquipment.WorkFlows.WorkFlowRecordViewConfig.RegSeeView">
+            <summary>
+            附加查看-审核进度
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.WorkFlows.WorkFlowRecordViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.MeteringEquipment.WorkFlows.WorkFlowRecordViewConfig.ConfigRegSeeView">
+            <summary>
+            附加查看-审核进度
+            </summary>
+        </member>
+    </members>
+</doc>

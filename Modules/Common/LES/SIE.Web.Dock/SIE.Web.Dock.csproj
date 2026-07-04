@@ -1,0 +1,103 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+	<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	<GenerateDocumentationFile>True</GenerateDocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.Dock.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.Dock.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="DockMap\**" />
+    <Compile Remove="ProductBases\**" />
+    <Compile Remove="YardMaintains\**" />
+    <EmbeddedResource Remove="DockMap\**" />
+    <EmbeddedResource Remove="ProductBases\**" />
+    <EmbeddedResource Remove="YardMaintains\**" />
+    <None Remove="DockMap\**" />
+    <None Remove="ProductBases\**" />
+    <None Remove="YardMaintains\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="DockAppoints\Commands\AddDockAppointCommand.js" />
+    <None Remove="DockAppoints\Commands\CancelAppointCommand.js" />
+    <None Remove="DockAppoints\Commands\EditDockAppointCommand.js" />
+    <None Remove="DockAppoints\Commands\PrintDockAppointCommand.js" />
+    <None Remove="DockAppoints\Scripts\DockAppointAction.js" />
+    <None Remove="DockMaintains\Commands\DeleteDockMaintainCommand.js" />
+    <None Remove="DockMaintains\Commands\DeleteDockWhCommand.js" />
+    <None Remove="DockMaintains\Commands\SelectWarehouseCommand.js" />
+    <None Remove="DockQueues\Commands\AddAppointDockQueueCommand.js" />
+    <None Remove="DockQueues\Commands\AddSceneDockQueueCommand.js" />
+    <None Remove="DockQueues\Commands\AssignDockCommand.js" />
+    <None Remove="DockQueues\Commands\CancelDockQueueCommand.js" />
+    <None Remove="DockQueues\Commands\CheckInQueueCommand.js" />
+    <None Remove="DockQueues\Commands\CheckOutQueueCommand.js" />
+    <None Remove="DockQueues\Commands\DelayDockQueueCommand.js" />
+    <None Remove="DockQueues\Commands\DownDockQueueCommand.js" />
+    <None Remove="DockQueues\Commands\PrintDockQueueCommand.js" />
+    <None Remove="DockQueues\Commands\UpDockQueueCommand.js" />
+    <None Remove="DockRunMts\Commands\SaveDockRunMtCommand.js" />
+    <None Remove="DockRunMts\Control\ExceptTimeEditor.js" />
+    <None Remove="Editors\StringTimeEditor.js" />
+    <None Remove="YardMaintains\Commands\DeleteYardMaintainCommand.js" />
+    <None Remove="YardZones\Commands\AddAddressCommand.js" />
+    <None Remove="YardZones\Commands\DeleteYardZoneCommand.js" />
+    <None Remove="YardZones\Commands\EditAddressCommand.js" />
+    <None Remove="YardZones\Commands\SaveYardZoneCommand.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="YardMaintains\Commands\YardMaintainCommand.cs" />
+    <Compile Include="YardMaintains\YardMaintainCriteriaViewConfig.cs" />
+    <Compile Include="YardMaintains\YardMaintainViewConfig.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DockAppoints\Commands\AddDockAppointCommand.js" />
+    <EmbeddedResource Include="DockAppoints\Commands\CancelAppointCommand.js" />
+    <EmbeddedResource Include="DockAppoints\Commands\EditDockAppointCommand.js" />
+    <EmbeddedResource Include="DockAppoints\Commands\PrintDockAppointCommand.js" />
+    <EmbeddedResource Include="DockAppoints\Scripts\DockAppointAction.js" />
+    <EmbeddedResource Include="DockMaintains\Commands\DeleteDockMaintainCommand.js" />
+    <EmbeddedResource Include="DockMaintains\Commands\DeleteDockWhCommand.js" />
+    <EmbeddedResource Include="DockMaintains\Commands\SelectWarehouseCommand.js" />
+    <EmbeddedResource Include="DockQueues\Commands\AddAppointDockQueueCommand.js" />
+    <EmbeddedResource Include="DockQueues\Commands\AddSceneDockQueueCommand.js" />
+    <EmbeddedResource Include="DockQueues\Commands\AssignDockCommand.js" />
+    <EmbeddedResource Include="DockQueues\Commands\CancelDockQueueCommand.js" />
+    <EmbeddedResource Include="DockQueues\Commands\CheckInQueueCommand.js" />
+    <EmbeddedResource Include="DockQueues\Commands\CheckOutQueueCommand.js" />
+    <EmbeddedResource Include="DockQueues\Commands\DelayDockQueueCommand.js" />
+    <EmbeddedResource Include="DockQueues\Commands\DownDockQueueCommand.js" />
+    <EmbeddedResource Include="DockQueues\Commands\PrintDockQueueCommand.js" />
+    <EmbeddedResource Include="DockQueues\Commands\UpDockQueueCommand.js" />
+    <EmbeddedResource Include="DockRunMts\Commands\SaveDockRunMtCommand.js" />
+    <EmbeddedResource Include="DockRunMts\Control\ExceptTimeEditor.js" />
+    <EmbeddedResource Include="YardMaintains\Commands\DeleteYardMaintainCommand.js" />
+    <EmbeddedResource Include="YardZones\Commands\AddAddressCommand.js" />
+    <EmbeddedResource Include="YardZones\Commands\DeleteYardZoneCommand.js" />
+    <EmbeddedResource Include="YardZones\Commands\EditAddressCommand.js" />
+    <EmbeddedResource Include="YardZones\Commands\SaveYardZoneCommand.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="YardMaintains\Commands\AddAddressCommand.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="YardMaintains\Commands\EditAddressCommand.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CSM\SIE.CSM\SIE.CSM.csproj" />
+    <ProjectReference Include="..\..\CSM\SIE.Web.CSM\SIE.Web.CSM.csproj" />
+    <ProjectReference Include="..\SIE.Dock\SIE.Dock.csproj" />
+  </ItemGroup>
+</Project>

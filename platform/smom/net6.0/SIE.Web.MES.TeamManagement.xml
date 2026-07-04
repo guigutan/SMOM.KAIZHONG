@@ -1,0 +1,1150 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Web.MES.TeamManagement</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Web.MES.TeamManagement.EntityPropertyViewMetaExtension">
+            <summary>
+            班组管理编辑器类
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.EntityPropertyViewMetaExtension.UseMultiFilterEnumEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.MES.TeamManagement.Editors.MultiFilterEnumBoxConfig})">
+            <summary>
+            使用多分类过滤枚举编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>Web视图元数据</returns>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.EntityPropertyViewMetaExtension.UseResourceWorkShopEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig})">
+            <summary>
+            车间编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.ClockingIns.ClockInDetailViewConfig">
+            <summary>
+            打卡记录视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ClockingIns.ClockInDetailViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ClockingIns.ClockInDetailViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ClockingIns.ClockInDetailViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ClockingIns.ClockInDetailViewConfig.ConfigSelectionView">
+            <summary>
+            配置下拉视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.ClockingIns.ClockInMachineViewConfig">
+            <summary>
+            考勤机管理视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ClockingIns.ClockInMachineViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ClockingIns.ClockInMachineViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ClockingIns.ClockInMachineViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ClockingIns.ClockInMachineViewConfig.ConfigSelectionView">
+            <summary>
+            配置下拉视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ClockingIns.ClockInMachineViewConfig.ConfigQueryView">
+            <summary>
+            查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ClockingIns.ClockInMachineViewConfig.ConfigImportView">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.ClockingIns.EmployeeAttentSaveCommand">
+            <summary>
+            员工出勤保存命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ClockingIns.EmployeeAttentSaveCommand.DoSave(SIE.Domain.EntityList)">
+            <summary>
+            保存前操作
+            </summary>
+            <param name="data">员工出勤统计集合</param>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ClockingIns.EmployeeAttentSaveCommand.OnSaved(SIE.Domain.EntityList)">
+            <summary>
+            保存后操作
+            </summary>
+            <param name="data">员工出勤统计集合</param>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.ClockingIns.GetAttRecordCommand">
+            <summary>
+            获取打卡记录
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ClockingIns.GetAttRecordCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行方法
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>结果</returns>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.ClockingIns.MachineLinkCommand">
+            <summary>
+            考勤机连接命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ClockingIns.MachineLinkCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行方法
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>考勤机信息</returns>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.ClockingIns.MachineSaveCommand">
+            <summary>
+            考勤机报存命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.ClockingIns.EmployeeAttentDataQueryer">
+            <summary>
+            客制查询数据处理
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ClockingIns.EmployeeAttentDataQueryer.GetEmployeeAttentData(System.Int32,System.Int32,System.Int32,SIE.MES.TeamManagement.ClockingIns.EmployeeClockInAttentCriteria)">
+            <summary>
+            获取评分记录数据
+            </summary>
+            <param name="year">年</param>
+            <param name="month">月</param>
+            <param name="day">日</param>
+            <param name="criter">查询实体</param>
+            <returns>评分记录信息</returns>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ClockingIns.EmployeeAttentDataQueryer.GetYearAndMonth">
+            <summary>
+            获取数据库时间
+            </summary>
+            <returns>集合</returns>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ClockingIns.EmployeeAttentDataQueryer.GetDayByMonth(System.Int32)">
+            <summary>
+            按月获取天数
+            </summary>
+            <param name="month">月</param>
+            <returns>集合</returns>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.ClockingIns.EmployeeClockInAttentCriteriaViewConfig">
+            <summary>
+            人员工时统计查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ClockingIns.EmployeeClockInAttentCriteriaViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.ClockingIns.EmployeeClockInAttentViewConfig">
+            <summary>
+            人员出勤统计
+            </summary>
+        </member>
+        <member name="F:SIE.Web.MES.TeamManagement.ClockingIns.EmployeeClockInAttentViewConfig.AttentViewGroup">
+            <summary>
+             出勤工时统计
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ClockingIns.EmployeeClockInAttentViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ClockingIns.EmployeeClockInAttentViewConfig.AttentTimeView">
+            <summary>
+            人员工时统计报表
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.ClockingIns.EmployeeClockInCriteriaViewConfig">
+            <summary>
+            物料查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ClockingIns.EmployeeClockInCriteriaViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.ClockingIns.EmployeeClockInSetViewConfig">
+            <summary>
+            员工出勤配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ClockingIns.EmployeeClockInSetViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.ClockingIns.EmployeeClockInViewConfig">
+            <summary>
+            员工出勤视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.MES.TeamManagement.ClockingIns.EmployeeClockInViewConfig.CusListView">
+            <summary>
+             员工出勤视图
+            </summary>
+        </member>
+        <member name="F:SIE.Web.MES.TeamManagement.ClockingIns.EmployeeClockInViewConfig.WorkGroupView">
+            <summary>
+            班组缺编查看工单视图ViewGroup
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ClockingIns.EmployeeClockInViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ClockingIns.EmployeeClockInViewConfig.ConfigCusListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ClockingIns.EmployeeClockInViewConfig.ConfigWorkGroupView">
+            <summary>
+            班组缺编视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ClockingIns.EmployeeClockInViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ClockingIns.EmployeeClockInViewConfig.ConfigSelectionView">
+            <summary>
+            配置下拉视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.Editors.MultiFilterEnumBoxConfig">
+            <summary>
+            多分类过滤枚举配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.MES.TeamManagement.Editors.MultiFilterEnumBoxConfig.EditorName">
+            <summary>
+            编辑器名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.TeamManagement.Editors.MultiFilterEnumBoxConfig.Filters">
+            <summary>
+            分类过滤条件
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.Editors.MultiFilterEnumBoxConfig.InitStore">
+            <summary>
+            初始化数据源
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.TeamManagementMenuInit">
+            <summary>
+            菜单初始化
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.TeamManagementMenuInit.GetMenuDtos">
+            <summary>
+            获取菜单列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.ShiftSchedules.Module">
+            <summary>
+            模块配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ShiftSchedules.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化模块
+            </summary>
+            <param name="app">应用程序</param>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ShiftSchedules.Module.App_ModuleOperations(System.Object,System.EventArgs)">
+            <summary>
+            模块定义
+            </summary>
+            <param name="sender">应用程序</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ShiftSchedules.Module.AddPropertyEditor(SIE.IApp)">
+            <summary>
+            添加属性编辑器
+            </summary>
+            <param name="app">应用程序</param>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.ShiftSchedules.HeforehandScheduleCommand">
+            <summary>
+            预排班命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ShiftSchedules.HeforehandScheduleCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            预排班命令执行
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">范围</param>
+            <returns>预排班结果</returns>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.ShiftSchedules.ScheduleImportCommand">
+            <summary>
+            班组排班导入命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ShiftSchedules.ScheduleImportCommand.GetImportCompleted">
+            <summary>
+            导入完成
+            </summary>
+            <returns>完成事件</returns>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ShiftSchedules.ScheduleImportCommand.GetImportHandleType">
+            <summary>
+            获取导入处理类
+            </summary>
+            <returns>排班导入处理类</returns>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ShiftSchedules.ScheduleImportCommand.GetImportTempleData">
+            <summary>
+            模板
+            </summary>
+            <returns>示例数据</returns>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.ShiftSchedules.Helpers.ScheduleHelper">
+            <summary>
+            排班帮助类
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ShiftSchedules.Helpers.ScheduleHelper.GetStoreEntityJsons(System.Collections.Generic.List{SIE.MES.TeamManagement.ShiftSchedules.Models.ScheduleStore},System.Collections.Generic.Dictionary{System.Double,System.String})">
+            <summary>
+            排班信息转EntityJson
+            </summary>
+            <param name="stores">排班信息列表</param>
+            <param name="shiftConfig">班次颜色配置</param>
+            <returns>Json列表</returns>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ShiftSchedules.Helpers.ScheduleHelper.GetShiftEntityJsons(System.Collections.Generic.List{SIE.MES.TeamManagement.ShiftSchedules.Models.SchduleShift})">
+            <summary>
+            获取排班班次信息
+            </summary>
+            <param name="schduleShifts">班次列表</param>
+            <returns>班次信息json列表</returns>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.ShiftSchedules.ScheduleCriteriaViewConfig">
+            <summary>
+            排班查询实体视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ShiftSchedules.ScheduleCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.ShiftSchedules.ShiftScheduleDataQueryer">
+            <summary>
+            排班数据查询器
+            </summary>  
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ShiftSchedules.ShiftScheduleDataQueryer.GetShiftScheduleTables(SIE.MES.TeamManagement.ShiftSchedules.ShiftScheduleTableCriteria)">
+            <summary>
+            获取排班表信息
+            SIE.Web.MES.TeamManagement.ShiftSchedules.ScheduleQuery.js 调用
+            </summary>
+            <param name="criteria">班组排班表查询实体</param> 
+            <returns>排班表信息列表</returns> 
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ShiftSchedules.ShiftScheduleDataQueryer.GetSchedules">
+            <summary>
+            获取排班信息，日历默认请求,解决切换月份数据重复
+            SIE.Web.MES.TeamManagement.ShiftSchedules.ScheduleCommand.js调用
+            </summary>
+            <returns>排班信息Json列表</returns>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ShiftSchedules.ShiftScheduleDataQueryer.GetShiftSchedules(SIE.MES.TeamManagement.ShiftSchedules.ScheduleCriteria,System.Collections.Generic.Dictionary{System.Double,System.String})">
+            <summary>
+            获取排班信息
+            SIE.Web.MES.TeamManagement.ShiftSchedules.ScheduleCommand.js调用
+            </summary>
+            <param name="criteria">排班查询实体</param>
+            <param name="shiftConfig">班次颜色配置</param>
+            <returns>排班信息Json列表</returns>  
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ShiftSchedules.ShiftScheduleDataQueryer.GetShifts(SIE.MES.TeamManagement.ShiftSchedules.ScheduleCriteria)">
+            <summary>
+            获取排班班次信息
+            SIE.Web.MES.TeamManagement.ShiftSchedules.ScheduleCommand.js调用
+            </summary>
+            <param name="criteria">排班查询实体</param>
+            <returns>班次信息json列表</returns>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ShiftSchedules.ShiftScheduleDataQueryer.SaveShiftSchedules(System.Collections.Generic.List{SIE.MES.TeamManagement.ShiftSchedules.Models.ScheduleStore})">
+            <summary>
+            保存班组排班信息
+            SIE.Web.MES.TeamManagement.ShiftSchedules.ScheduleCommand.js 调用
+            </summary>
+            <param name="stores">排班信息集合</param> 
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ShiftSchedules.ShiftScheduleDataQueryer.ExportShiftSchedule(SIE.MES.TeamManagement.ShiftSchedules.ShiftScheduleTableCriteria)">
+            <summary>
+            导出排班表
+            SIE.Web.MES.TeamManagement.ShiftSchedules.ScheduleExportCommand.js调用
+            </summary>
+            <param name="criteria">班组排班表查询实体</param>
+            <returns>导出数据</returns>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ShiftSchedules.ShiftScheduleDataQueryer.ChangeWorkGroup(SIE.MES.TeamManagement.ShiftSchedules.Models.ScheduleStore)">
+            <summary>
+            切换排班班组
+            </summary>
+            <param name="store">排班信息</param>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ShiftSchedules.ShiftScheduleDataQueryer.GetHeforehandScheduleInfos(SIE.MES.TeamManagement.ShiftSchedules.ScheduleCriteria,System.Int32,System.Double,System.Double,System.Collections.Generic.Dictionary{System.Double,System.String})">
+            <summary>
+            获取预处理数据列表
+            </summary>
+            <param name="criteria">查询条件</param>
+            <param name="week">周</param>
+            <param name="workGroupId">班组</param>
+            <param name="ShiftId">班次</param>
+            <param name="shiftConfig">班次配置</param>
+            <returns>预处理数据列表</returns>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.ShiftSchedules.HeforehandScheduleInfo">
+            <summary>
+            预处理数据信息
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.TeamManagement.ShiftSchedules.HeforehandScheduleInfo.id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.TeamManagement.ShiftSchedules.HeforehandScheduleInfo.startDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.TeamManagement.ShiftSchedules.HeforehandScheduleInfo.endDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.TeamManagement.ShiftSchedules.HeforehandScheduleInfo.title">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.TeamManagement.ShiftSchedules.HeforehandScheduleInfo.allDay">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.TeamManagement.ShiftSchedules.HeforehandScheduleInfo.color">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.TeamManagement.ShiftSchedules.HeforehandScheduleInfo.calendarId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.TeamManagement.ShiftSchedules.HeforehandScheduleInfo.ShiftId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.TeamManagement.ShiftSchedules.HeforehandScheduleInfo.WorkGroupId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.TeamManagement.ShiftSchedules.HeforehandScheduleInfo.WorkGroupName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.TeamManagement.ShiftSchedules.HeforehandScheduleInfo.WipResourceId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.TeamManagement.ShiftSchedules.HeforehandScheduleInfo.WorkShopId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.TeamManagement.ShiftSchedules.HeforehandScheduleInfo.ShiftTypeId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.TeamManagement.ShiftSchedules.HeforehandScheduleInfo.IsNew">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.TeamManagement.ShiftSchedules.HeforehandScheduleInfo.Leisure">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.TeamManagement.ShiftSchedules.HeforehandScheduleInfo.Count">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.ShiftSchedules.ShiftScheduleTableCriteriaViewConfig">
+            <summary>
+            排班表查询实体视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ShiftSchedules.ShiftScheduleTableCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.ShiftSchedules.ShiftScheduleTemplate">
+            <summary>
+            排班表模板
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ShiftSchedules.ShiftScheduleTemplate.DefineBlocks">
+            <summary>
+            定义块
+            </summary>
+            <returns>聚合块</returns>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.ShiftSchedules.ShiftScheduleViewConfig">
+            <summary>
+            排班表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ShiftSchedules.ShiftScheduleViewConfig.ConfigListView">
+            <summary>
+            班组排班，界面客制，命令不变
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.ShiftSchedules.ShiftScheduleViewModelViewConfig">
+            <summary>
+            排班视图模型视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ShiftSchedules.ShiftScheduleViewModelViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ShiftSchedules.ShiftScheduleViewModelViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.ShiftSchedules.ViewModels.ChangeWorkGroupViewModel">
+            <summary>
+            班组切换视图模型
+            </summary>
+        </member>
+        <member name="F:SIE.Web.MES.TeamManagement.ShiftSchedules.ViewModels.ChangeWorkGroupViewModel.WorkGroupIdProperty">
+            <summary>
+            班组Id
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.TeamManagement.ShiftSchedules.ViewModels.ChangeWorkGroupViewModel.WorkGroupId">
+            <summary>
+            班组Id
+            </summary>
+        </member>
+        <member name="F:SIE.Web.MES.TeamManagement.ShiftSchedules.ViewModels.ChangeWorkGroupViewModel.WorkGroupProperty">
+            <summary>
+            班组
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.TeamManagement.ShiftSchedules.ViewModels.ChangeWorkGroupViewModel.WorkGroup">
+            <summary>
+            班组
+            </summary>
+        </member>
+        <member name="F:SIE.Web.MES.TeamManagement.ShiftSchedules.ViewModels.ChangeWorkGroupViewModel.ClearProperty">
+            <summary>
+            清除班组
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.TeamManagement.ShiftSchedules.ViewModels.ChangeWorkGroupViewModel.Clear">
+            <summary>
+            清除班组
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.ShiftSchedules.ViewModels.ChangeWorkGroupViewConfig">
+            <summary>
+            班组切换视图模型视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ShiftSchedules.ViewModels.ChangeWorkGroupViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.OnLoans.OnLoanDetailDataQuery">
+            <summary>
+            借调明细数据查询类
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.OnLoans.OnLoanDetailDataQuery.GetOnLoanDetails(System.Double)">
+            <summary>
+            获取班组借调明细集合
+            </summary>
+            <param name="onLoanId"> 班组借调Id</param>
+            <returns>班组借调明细集合</returns>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.OnLoans.OnLoanDetailViewConfig">
+            <summary>
+            借调明细视图配置类
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.OnLoans.OnLoanDetailViewConfig.ConfigView">
+            <summary>
+            配置通用视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.OnLoans.OnLoanDetailViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.OnLoans.OnLoanDetailViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.OnLoans.OnLoanDetailViewConfig.ConfigQueryView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.OnLoans.WorkGroupOnLoanViewConfig">
+            <summary>
+            班组借调视图配置类
+            </summary>
+        </member>
+        <member name="F:SIE.Web.MES.TeamManagement.OnLoans.WorkGroupOnLoanViewConfig.AttentViewGroup">
+            <summary>
+             出勤工时统计
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.OnLoans.WorkGroupOnLoanViewConfig.ConfigView">
+            <summary>
+            配置通用视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.OnLoans.WorkGroupOnLoanViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.OnLoans.WorkGroupOnLoanViewConfig.ConfigAttentViewGroupView">
+            <summary>
+            出勤工时统计
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.OnLoans.WorkGroupOnLoanViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.OnLoans.WorkGroupOnLoanViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.RatedItems.RatedItemCategoryViewConfig">
+            <summary>
+            评分项目分类视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.RatedItems.RatedItemCategoryViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.RatedItems.RatedItemCategoryViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.RatedItems.RatedItemCategoryViewConfig.ConfigQueryView">
+            <summary>
+            查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.RatedItems.RatedItemCategoryViewConfig.ConfigSelectionView">
+            <summary>
+            下拉视图配
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.RatedItems.RatedItemCategoryViewConfig.ConfigImportView">
+            <summary>
+            配置导入视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.RatedItems.RatedItemConfig">
+            <summary>
+            评分项目视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.RatedItems.RatedItemConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.RatedItems.RatedItemConfig.ConfigSelectionView">
+            <summary>
+            下拉视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.RatedItems.RatedItemConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.RatedItems.RatedItemConfig.ConfigImportView">
+            <summary>
+            配置导入视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.ScoreRecords.AchieveLevelSettingViewConfig">
+            <summary>
+            绩效等级配置视图配置类
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ScoreRecords.AchieveLevelSettingViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ScoreRecords.AchieveLevelSettingViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.ScoreRecords.AchieveLevelSetIniCommand">
+            <summary>
+            评分绩效等级初始化按钮
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ScoreRecords.AchieveLevelSetIniCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            评分绩效等级初始化执行发放
+            </summary>
+            <param name="args">视图参数</param>
+            <param name="scope">视图参数类型</param>
+            <returns>绩效等级配置集合</returns>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.ScoreRecords.DataQuery.AchieveLevelSettingDataQuery">
+            <summary>
+            获取评分绩效配置数据查询类
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ScoreRecords.DataQuery.AchieveLevelSettingDataQuery.GetAchieveLevelSettings">
+            <summary>
+            获取评分绩效配置集合
+            </summary>
+            <returns>评分绩效配置集合</returns>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.ScoreRecords.PetitionAttachmentViewConfig">
+            <summary>
+            申诉附件视图配置类
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ScoreRecords.PetitionAttachmentViewConfig.ConfigView">
+            <summary>
+            配置通用视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ScoreRecords.PetitionAttachmentViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.ScoreRecords.PetitionRecordViewConfig">
+            <summary>
+            申诉记录视图配置类
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ScoreRecords.PetitionRecordViewConfig.ConfigView">
+            <summary>
+            配置通用视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ScoreRecords.PetitionRecordViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.ScoreRecords.ProcessRecordViewConfig">
+            <summary>
+            处理记录视图配置类
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ScoreRecords.ProcessRecordViewConfig.ConfigView">
+            <summary>
+            配置通用视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ScoreRecords.ProcessRecordViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.ScoreRecords.ScoreAttachmentViewConfig">
+            <summary>
+            评分记录附件视图配置类
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ScoreRecords.ScoreAttachmentViewConfig.ConfigView">
+            <summary>
+            配置通用视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ScoreRecords.ScoreAttachmentViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.ScoreRecords.ScoreRecordCriteriaViewConfig">
+            <summary>
+            评分记录查询视图配置类
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ScoreRecords.ScoreRecordCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.ScoreRecords.ScoreRecordViewConfig">
+            <summary>
+            评分记录视图配置类
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ScoreRecords.ScoreRecordViewConfig.ConfigView">
+            <summary>
+            配置通用视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ScoreRecords.ScoreRecordViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ScoreRecords.ScoreRecordViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.ScoreRecords.ScoreRecordViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.SikllAuthentications.Commands.ExamResultImportCommand">
+            <summary>
+            考试结果导入
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.SikllAuthentications.Commands.ExamResultImportCommand.GetImportCompleted">
+            <summary>
+            导入完成
+            </summary>
+            <returns>ImportCompleted</returns>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.SikllAuthentications.Commands.ExamResultImportCommand.GetImportHandleType">
+            <summary>
+            获取导入处理类型
+            </summary>
+            <returns>类型</returns>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.SikllAuthentications.Commands.ExamResultImportCommand.GetImportTempleData">
+            <summary>
+            获取导入模板数据
+            </summary>
+            <returns>模板数据</returns>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.SikllAuthentications.Commands.OperationRecordImportCommand">
+            <summary>
+            实操记录导入
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.SikllAuthentications.Commands.OperationRecordImportCommand.GetImportCompleted">
+            <summary>
+            导入完成
+            </summary>
+            <returns>ImportCompleted</returns>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.SikllAuthentications.Commands.OperationRecordImportCommand.GetImportHandleType">
+            <summary>
+            获取导入处理类型
+            </summary>
+            <returns>type</returns>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.SikllAuthentications.Commands.OperationRecordImportCommand.GetImportTempleData">
+            <summary>
+            获取导入模板数据
+            </summary>
+            <returns>模板数据</returns>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.SikllAuthentications.Commands.TrainingRecordImportCommand">
+            <summary>
+            培训记录导入
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.SikllAuthentications.Commands.TrainingRecordImportCommand.GetImportCompleted">
+            <summary>
+            导入完成
+            </summary>
+            <returns>ImportCompleted</returns>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.SikllAuthentications.Commands.TrainingRecordImportCommand.GetImportHandleType">
+            <summary>
+            获取导入处理类型
+            </summary>
+            <returns>type</returns>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.SikllAuthentications.Commands.TrainingRecordImportCommand.GetImportTempleData">
+            <summary>
+            获取导入模板数据
+            </summary>
+            <returns>模板数据</returns>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.SikllAuthentications.ExamResultViewConfig">
+            <summary>
+            考试结果视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.SikllAuthentications.ExamResultViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.SikllAuthentications.ExamResultViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.SikllAuthentications.ExamResultViewConfig.ConfigSelectionView">
+            <summary>
+            配置下拉视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.SikllAuthentications.ExamResultViewConfig.ConfigImportView">
+            <summary>
+            配置导入视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.SikllAuthentications.OperationRecordViewConfig">
+            <summary>
+            实操记录视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.SikllAuthentications.OperationRecordViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.SikllAuthentications.OperationRecordViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.SikllAuthentications.OperationRecordViewConfig.ConfigSelectionView">
+            <summary>
+            配置下拉视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.SikllAuthentications.OperationRecordViewConfig.ConfigImportView">
+            <summary>
+            配置导入视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.SikllAuthentications.SkillAuthenticationCriteriaViewConfig">
+            <summary>
+            认证技能查询视图配置类
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.SikllAuthentications.SkillAuthenticationCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.SikllAuthentications.SkillAuthenticationViewConfig">
+            <summary>
+            员工技能认证管理视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.MES.TeamManagement.SikllAuthentications.SkillAuthenticationViewConfig._commonString">
+            <summary>
+            Common字符串
+            </summary>
+        </member>
+        <member name="F:SIE.Web.MES.TeamManagement.SikllAuthentications.SkillAuthenticationViewConfig._requiredString">
+            <summary>
+            Required字符串
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.SikllAuthentications.SkillAuthenticationViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.SikllAuthentications.SkillAuthenticationViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.SikllAuthentications.SkillAuthenticationViewConfig.ConfigSelectionView">
+            <summary>
+            配置下拉视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.SikllAuthentications.TrainingRecordViewConfig">
+            <summary>
+            培训记录视图配置
+            </summary> 
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.SikllAuthentications.TrainingRecordViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.SikllAuthentications.TrainingRecordViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.SikllAuthentications.TrainingRecordViewConfig.ConfigSelectionView">
+            <summary>
+            配置下拉视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.SikllAuthentications.TrainingRecordViewConfig.ConfigImportView">
+            <summary>
+            配置导入视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.Vacancies.VacancyDataQueryer">
+            <summary>
+            班组缺编查询器
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.Vacancies.VacancyDataQueryer.GetVacancyData(System.Int32,System.Int32,System.Int32,SIE.MES.TeamManagement.Vacancies.WorkGroupVacancyCriteria)">
+            <summary>
+            获取班组缺编导出数据
+            </summary>
+            <param name="year">年</param>
+            <param name="month">月</param>
+            <param name="day">日</param>
+            <param name="criter">查询实体</param>
+            <returns>班组缺编记录信息</returns>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.Vacancies.WoModelViewConfig">
+            <summary>
+            班组缺编查看工单视图配置
+            </summary>    
+        </member>
+        <member name="F:SIE.Web.MES.TeamManagement.Vacancies.WoModelViewConfig.WorkGroupView">
+            <summary>
+            班组缺编查看工单视图ViewGroup
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.Vacancies.WoModelViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.Vacancies.WoModelViewConfig.WorkGroupConfigListView">
+            <summary>
+            默认工单视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.Vacancies.WorkGroupVacancyCriteriaViewConfig">
+            <summary>
+            班组缺编查询块视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.Vacancies.WorkGroupVacancyCriteriaViewConfig.ConfigView">
+            <summary>
+            视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TeamManagement.Vacancies.WorkGroupVacancyViewConfig">
+            <summary>
+            班组缺编统计
+            </summary>
+        </member>
+        <member name="F:SIE.Web.MES.TeamManagement.Vacancies.WorkGroupVacancyViewConfig.WorkGroupView">
+            <summary>
+            班组缺编查看工单视图ViewGroup
+            </summary>
+        </member>
+        <member name="F:SIE.Web.MES.TeamManagement.Vacancies.WorkGroupVacancyViewConfig.ShiftTimesProperty">
+            <summary>
+            班次时间
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.Vacancies.WorkGroupVacancyViewConfig.GetShiftTimes(SIE.Domain.Entity)">
+            <summary>
+            班次时间
+            </summary>
+            <param name="me">实体</param>
+            <returns>str</returns>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.Vacancies.WorkGroupVacancyViewConfig.ConfigView">
+            <summary>
+            视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.Vacancies.WorkGroupVacancyViewConfig.ConfigListView">
+            <summary>
+            班组缺编统计
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TeamManagement.Vacancies.WorkGroupVacancyViewConfig.ConfigSelectionView">
+            <summary>
+            选择视图
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,287 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.LES.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.LES.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Distributions\**" />
+    <Compile Remove="LesStockCount\**" />
+    <Compile Remove="MaterialReceptions\**" />
+    <Compile Remove="RetreatItemManage\**" />
+    <Compile Remove="StockPlans\DataQueryer\**" />
+    <EmbeddedResource Remove="Distributions\**" />
+    <EmbeddedResource Remove="LesStockCount\**" />
+    <EmbeddedResource Remove="MaterialReceptions\**" />
+    <EmbeddedResource Remove="RetreatItemManage\**" />
+    <EmbeddedResource Remove="StockPlans\DataQueryer\**" />
+    <None Remove="Distributions\**" />
+    <None Remove="LesStockCount\**" />
+    <None Remove="MaterialReceptions\**" />
+    <None Remove="RetreatItemManage\**" />
+    <None Remove="StockPlans\DataQueryer\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Configs\ReturnMaterialConfigValueViewConfig.cs" />
+    <Compile Remove="LesStockCounts\LesLotViewConfig.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="LesStockCounts\Commands\AddAdjustWorkOrderCommand.js" />
+    <None Remove="LesStockCounts\Commands\AddLesStockCountCommand.js" />
+    <None Remove="LesStockCounts\Commands\AddSCDetailCommand.js" />
+    <None Remove="LesStockCounts\Commands\AduitLesCountFromCommand.js" />
+    <None Remove="LesStockCounts\Commands\BatchAnalysisSCDetailCommand.js" />
+    <None Remove="LesStockCounts\Commands\CloseLesCountCommand.js" />
+    <None Remove="LesStockCounts\Commands\CloseLesStockCountCommand.js" />
+    <None Remove="LesStockCounts\Commands\CloseSCDetailCommand.js" />
+    <None Remove="LesStockCounts\Commands\DefaultSCDetailCommand.js" />
+    <None Remove="LesStockCounts\Commands\DeleteAdjustWorkOrderCommand.js" />
+    <None Remove="LesStockCounts\Commands\DeleteLesStockCountCommand.js" />
+    <None Remove="LesStockCounts\Commands\DeleteSCDetailCommand.js" />
+    <None Remove="LesStockCounts\Commands\EditAdjustWorkOrderCommand.js" />
+    <None Remove="LesStockCounts\Commands\EditLesStockCountCommand.js" />
+    <None Remove="LesStockCounts\Commands\EditSCDetailCommand.js" />
+    <None Remove="LesStockCounts\Commands\FinishCountCommand.js" />
+    <None Remove="LesStockCounts\Commands\FinishStockCountsCommand.js" />
+    <None Remove="LesStockCounts\Commands\InputSCDetailQtyCommand.js" />
+    <None Remove="LesStockCounts\Commands\PrintLesStockCountCommand.js" />
+    <None Remove="LesStockCounts\Commands\SaveLesCountFromCommand.js" />
+    <None Remove="LesStockCounts\Commands\SCDetailImportCommand.js" />
+    <None Remove="LesStockCounts\Controls\LesActualQtyNumberfield.js" />
+    <None Remove="LesStockCounts\Controls\LesLineNoNumberfield.js" />
+    <None Remove="LesStockCounts\Controls\MultiLesWhComboPopup.js" />
+    <None Remove="LesStockCounts\Scripts\AdjustQtyNumberfield.js" />
+    <None Remove="LesStockCounts\Scripts\DiffAdjustBehavior.js" />
+    <None Remove="LesStockCounts\Scripts\LesProcessModeRadioGroupEditor.js" />
+    <None Remove="LesStockCounts\Scripts\LesStockCountBehavior.js" />
+    <None Remove="LesStockCounts\Scripts\LesStockCountDetailBehavior.js" />
+    <None Remove="LesStockCounts\Scripts\LesStockCountDtlAction.js" />
+    <None Remove="LinesideWarehouses\Commands\LinesideWarehouseAddCommand.js" />
+    <None Remove="LinesideWarehouses\Commands\LinesideWarehouseSaveCommand.js" />
+    <None Remove="LinesideWarehouses\Scripts\LinesideWarehouseBehavior.js" />
+    <None Remove="MaterialPreparations\Commands\AddWorkOrderPrepareCommand.js" />
+    <None Remove="MaterialPreparations\Commands\AddWorkShopPrepareCommand.js" />
+    <None Remove="MaterialPreparations\Commands\CancelPrepareCommand.js" />
+    <None Remove="MaterialPreparations\Commands\ClearAllPrepareQtyCommand.js" />
+    <None Remove="MaterialPreparations\Commands\DeletePrepareCommand.js" />
+    <None Remove="MaterialPreparations\Commands\EditPrepareCommand.js" />
+    <None Remove="MaterialPreparations\Commands\ListSubmitPreCommand.js" />
+    <None Remove="MaterialPreparations\Commands\MaterialPreExportCommand.js" />
+    <None Remove="MaterialPreparations\Commands\SavePrepareCommand.js" />
+    <None Remove="MaterialPreparations\Commands\SelectItemCommand.js" />
+    <None Remove="MaterialPreparations\Commands\SelectPrepareDetailCommand.js" />
+    <None Remove="MaterialPreparations\Commands\SubmitPrepareCommand.js" />
+    <None Remove="MaterialPreparations\Commands\SyncAllPrepareQtyCommand.js" />
+    <None Remove="MaterialPreparations\Commands\WithDrawPreDetailCommand.js" />
+    <None Remove="MaterialPreparations\Commands\WithDrawPrepareCommand.js" />
+    <None Remove="MaterialPreparations\Commands\WorkOrderMpViewExportCommand.js" />
+    <None Remove="MaterialPreparations\Scripts\SelectWorkOrderEditor.js" />
+    <None Remove="MaterialPreparations\Scripts\WorkOrderModeEnumEditor.js" />
+    <None Remove="MaterialPreparations\Scripts\WorkOrderPrepareBehavior.js" />
+    <None Remove="MaterialPreparations\Scripts\WorkOrderPrepareDetailBehavior.js" />
+    <None Remove="MaterialPreparations\Scripts\WorkShopPrepareBehavior.js" />
+    <None Remove="MaterialReturnApplys\Commands\CancelReturnCommand.js" />
+    <None Remove="MaterialReturnApplys\Commands\MaterialReAddCommand.js" />
+    <None Remove="MaterialReturnApplys\Commands\MaterialReturnCancelCommand.js" />
+    <None Remove="MaterialReturnApplys\Commands\MaterialReturnDeleteCommand.js" />
+    <None Remove="MaterialReturnApplys\Commands\MaterialReturnEditCommand.js" />
+    <None Remove="MaterialReturnApplys\Commands\MaterialReturnExportCommand.js" />
+    <None Remove="MaterialReturnApplys\Commands\MaterialReturnListSubmitCommand.js" />
+    <None Remove="MaterialReturnApplys\Commands\MaterialReturnSaveCommand.js" />
+    <None Remove="MaterialReturnApplys\Commands\MaterialReturnSubmitCommand.js" />
+    <None Remove="MaterialReturnApplys\Commands\SelectReDetailCommand.js" />
+    <None Remove="MaterialReturnApplys\Commands\ViewLabelCommand.js" />
+    <None Remove="MaterialReturnApplys\Scripts\MaterialReturnBehavior.js" />
+    <None Remove="MaterialReturnApplys\Scripts\MaterialReturnDetailBehavior.js" />
+    <None Remove="MaterialReturnApplys\Scripts\SelectWorkOrderEditor.js" />
+    <None Remove="PrepareItems\Commands\AddPrepareItemPullCommand.js" />
+    <None Remove="PrepareItems\Commands\AddPrepareItemPushCommand.js" />
+    <None Remove="PrepareItems\Commands\EditPrepareItemPushCommand.js" />
+    <None Remove="PrepareItems\Commands\ImportPrepareItemPullCommand.js" />
+    <None Remove="PrepareItems\Commands\ImportPrepareItemPushCommand.js" />
+    <None Remove="PrepareItems\Commands\SavePrepareItemPullCommand.js" />
+    <None Remove="PrepareItems\Commands\SavePrepareItemPushCommand.js" />
+    <None Remove="StockOrders\Commands\AddStockOrderCommand.js" />
+    <None Remove="StockOrders\Commands\AddStockOrderDetailCommand.js" />
+    <None Remove="StockOrders\Commands\AduitStockOrderCommand.js" />
+    <None Remove="StockOrders\Commands\EditStockOrderCommand.js" />
+    <None Remove="StockOrders\Commands\ForceCloseStockOrderCommand.js" />
+    <None Remove="StockOrders\Commands\IssuedStockOrderCommand.js" />
+    <None Remove="StockOrders\Commands\MulAddStockOrderDetailCommand.js" />
+    <None Remove="StockOrders\Commands\MulAddStockOrderDetailPushCommand.js" />
+    <None Remove="StockOrders\Commands\ReCallStockOrderCommand.js" />
+    <None Remove="StockOrders\Commands\SaveStockOrderCommand.js" />
+    <None Remove="StockOrders\Commands\StockOrderMergeIssuedAddCommand.js" />
+    <None Remove="StockOrders\Commands\StockOrderMergeIssuedDeleteCommand.js" />
+    <None Remove="StockOrders\Commands\StockOrderMergeIssuedEditCommand.js" />
+    <None Remove="StockOrders\Commands\StockOrderMergeIssuedEnableCommand.js" />
+    <None Remove="StockOrders\Commands\StockOrderMergeTimesAddCommand.js" />
+    <None Remove="StockOrders\Commands\StockOrderMergeTimesDeleteCommand.js" />
+    <None Remove="StockOrders\Commands\StockOrderMergeTimesEditCommand.js" />
+    <None Remove="StockOrders\Commands\SubmitStockOrderCommand.js" />
+    <None Remove="StockOrders\Scripts\CommonFun.js" />
+    <None Remove="StockOrders\Scripts\Enum.js" />
+    <None Remove="StockOrders\Scripts\SelectWorkOrderEditor.js" />
+    <None Remove="StockOrders\Scripts\StockOrderAction.js" />
+    <None Remove="StockOrders\Scripts\StockOrderBehavior.js" />
+    <None Remove="StockOrders\Scripts\StockOrderMergeIssuedBehavior.js" />
+    <None Remove="StockOrders\Scripts\StockOrderMergeTimesBehavior.js" />
+    <None Remove="StockPlans\Commands\AddStockPlanCommand.js" />
+    <None Remove="StockPlans\Commands\AssignWarehouseCommand.js" />
+    <None Remove="StockPlans\Commands\AuditStockPlanCommand.js" />
+    <None Remove="StockPlans\Commands\CreateSoCommand.js" />
+    <None Remove="StockPlans\Commands\DeleteStockPlanCommand.js" />
+    <None Remove="StockPlans\Commands\ForceCompleteCommand.js" />
+    <None Remove="StockPlans\Commands\InitMergeCreateRuleCommand.js" />
+    <None Remove="StockPlans\Commands\KittingCommands.js" />
+    <None Remove="StockPlans\Commands\MergeCreateCommand.js" />
+    <None Remove="StockPlans\Commands\SaveStockPlanCommand.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="MaterialPreparations\Commands\EditPrepareCommand.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="LinesideWarehouses\Commands\LinesideWarehouseAddCommand.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="LesStockCounts\Commands\BatchAnalysisSCDetailCommand.js" />
+    <EmbeddedResource Include="LesStockCounts\Commands\AddLesStockCountCommand.js" />
+    <EmbeddedResource Include="LesStockCounts\Commands\AddAdjustWorkOrderCommand.js" />
+    <EmbeddedResource Include="LesStockCounts\Commands\AddSCDetailCommand.js" />
+    <EmbeddedResource Include="LesStockCounts\Commands\AduitLesCountFromCommand.js" />
+    <EmbeddedResource Include="LesStockCounts\Commands\CloseLesCountCommand.js" />
+    <EmbeddedResource Include="LesStockCounts\Commands\CloseLesStockCountCommand.js" />
+    <EmbeddedResource Include="LesStockCounts\Commands\CloseSCDetailCommand.js" />
+    <EmbeddedResource Include="LesStockCounts\Commands\DefaultSCDetailCommand.js" />
+    <EmbeddedResource Include="LesStockCounts\Commands\DeleteLesStockCountCommand.js" />
+    <EmbeddedResource Include="LesStockCounts\Commands\DeleteAdjustWorkOrderCommand.js" />
+    <EmbeddedResource Include="LesStockCounts\Commands\DeleteSCDetailCommand.js" />
+    <EmbeddedResource Include="LesStockCounts\Commands\EditLesStockCountCommand.js" />
+    <EmbeddedResource Include="LesStockCounts\Commands\EditAdjustWorkOrderCommand.js" />
+    <EmbeddedResource Include="LesStockCounts\Commands\EditSCDetailCommand.js" />
+    <EmbeddedResource Include="LesStockCounts\Commands\FinishCountCommand.js" />
+    <EmbeddedResource Include="LesStockCounts\Commands\FinishStockCountsCommand.js" />
+    <EmbeddedResource Include="LesStockCounts\Commands\InputSCDetailQtyCommand.js" />
+    <EmbeddedResource Include="LesStockCounts\Commands\PrintLesStockCountCommand.js" />
+    <EmbeddedResource Include="LesStockCounts\Commands\SaveLesCountFromCommand.js" />
+    <EmbeddedResource Include="LesStockCounts\Commands\SCDetailImportCommand.js" />
+    <EmbeddedResource Include="LesStockCounts\Controls\LesActualQtyNumberfield.js" />
+    <EmbeddedResource Include="LesStockCounts\Controls\LesLineNoNumberfield.js" />
+    <EmbeddedResource Include="LesStockCounts\Controls\MultiLesWhComboPopup.js" />
+    <EmbeddedResource Include="LesStockCounts\Scripts\DiffAdjustBehavior.js" />
+    <EmbeddedResource Include="LesStockCounts\Scripts\LesStockCountBehavior.js" />
+    <EmbeddedResource Include="LesStockCounts\Scripts\LesStockCountDtlAction.js" />
+    <EmbeddedResource Include="LesStockCounts\Scripts\LesStockCountDetailBehavior.js" />
+    <EmbeddedResource Include="LesStockCounts\Scripts\AdjustQtyNumberfield.js" />
+    <EmbeddedResource Include="LinesideWarehouses\Commands\LinesideWarehouseSaveCommand.js" />
+    <EmbeddedResource Include="LinesideWarehouses\Scripts\LinesideWarehouseBehavior.js" />
+    <EmbeddedResource Include="MaterialPreparations\Commands\AddWorkOrderPrepareCommand.js" />
+    <EmbeddedResource Include="MaterialPreparations\Commands\AddWorkShopPrepareCommand.js" />
+    <EmbeddedResource Include="MaterialPreparations\Commands\CancelPrepareCommand.js" />
+    <EmbeddedResource Include="MaterialPreparations\Commands\ClearAllPrepareQtyCommand.js" />
+    <EmbeddedResource Include="MaterialPreparations\Commands\DeletePrepareCommand.js" />
+    <EmbeddedResource Include="MaterialPreparations\Commands\EditPrepareCommand.js" />
+    <EmbeddedResource Include="MaterialPreparations\Commands\ListSubmitPreCommand.js" />
+    <EmbeddedResource Include="MaterialPreparations\Commands\MaterialPreExportCommand.js" />
+    <EmbeddedResource Include="MaterialPreparations\Commands\SavePrepareCommand.js" />
+    <EmbeddedResource Include="MaterialPreparations\Commands\SelectItemCommand.js" />
+    <EmbeddedResource Include="MaterialPreparations\Commands\SelectPrepareDetailCommand.js" />
+    <EmbeddedResource Include="MaterialPreparations\Commands\SubmitPrepareCommand.js" />
+    <EmbeddedResource Include="MaterialPreparations\Commands\SyncAllPrepareQtyCommand.js" />
+    <EmbeddedResource Include="MaterialPreparations\Commands\WithDrawPreDetailCommand.js" />
+    <EmbeddedResource Include="MaterialPreparations\Commands\WithDrawPrepareCommand.js" />
+    <EmbeddedResource Include="MaterialPreparations\Commands\WorkOrderMpViewExportCommand.js" />
+    <EmbeddedResource Include="MaterialPreparations\Scripts\SelectWorkOrderEditor.js" />
+    <EmbeddedResource Include="MaterialPreparations\Scripts\WorkOrderModeEnumEditor.js" />
+    <EmbeddedResource Include="MaterialPreparations\Scripts\WorkOrderPrepareBehavior.js" />
+    <EmbeddedResource Include="MaterialPreparations\Scripts\WorkOrderPrepareDetailBehavior.js" />
+    <EmbeddedResource Include="MaterialPreparations\Scripts\WorkShopPrepareBehavior.js" />
+    <EmbeddedResource Include="MaterialReceives\Commands\PartReceiveDetailCommand.js" />
+    <EmbeddedResource Include="MaterialReceives\Commands\ReceiveDetailCommand.js" />
+    <EmbeddedResource Include="MaterialReceives\Commands\RejectDetailCommand.js" />
+    <EmbeddedResource Include="MaterialReceives\Commands\RejectCommand.js" />
+    <EmbeddedResource Include="MaterialReceives\Commands\ReceiveCommand.js" />
+    <EmbeddedResource Include="MaterialReturnApplys\Commands\CancelReturnCommand.js" />
+    <EmbeddedResource Include="MaterialReturnApplys\Commands\MaterialReAddCommand.js" />
+    <EmbeddedResource Include="MaterialReturnApplys\Commands\MaterialReturnCancelCommand.js" />
+    <EmbeddedResource Include="MaterialReturnApplys\Commands\MaterialReturnDeleteCommand.js" />
+    <EmbeddedResource Include="MaterialReturnApplys\Commands\MaterialReturnEditCommand.js" />
+    <EmbeddedResource Include="MaterialReturnApplys\Commands\MaterialReturnExportCommand.js" />
+    <EmbeddedResource Include="MaterialReturnApplys\Commands\MaterialReturnListSubmitCommand.js" />
+    <EmbeddedResource Include="MaterialReturnApplys\Commands\MaterialReturnSaveCommand.js" />
+    <EmbeddedResource Include="MaterialReturnApplys\Commands\MaterialReturnSubmitCommand.js" />
+    <EmbeddedResource Include="MaterialReturnApplys\Commands\SelectReDetailCommand.js" />
+    <EmbeddedResource Include="MaterialReturnApplys\Commands\ViewLabelCommand.js" />
+    <EmbeddedResource Include="MaterialReturnApplys\Scripts\MaterialReturnBehavior.js" />
+    <EmbeddedResource Include="MaterialReturnApplys\Scripts\MaterialReturnDetailBehavior.js" />
+    <EmbeddedResource Include="MaterialReturnApplys\Scripts\SelectWorkOrderEditor.js" />
+    <EmbeddedResource Include="PrepareItems\Commands\AddPrepareItemPullCommand.js" />
+    <EmbeddedResource Include="PrepareItems\Commands\AddPrepareItemPushCommand.js" />
+    <EmbeddedResource Include="PrepareItems\Commands\EditPrepareItemPushCommand.js" />
+    <EmbeddedResource Include="PrepareItems\Commands\ImportPrepareItemPullCommand.js" />
+    <EmbeddedResource Include="PrepareItems\Commands\ImportPrepareItemPushCommand.js" />
+    <EmbeddedResource Include="PrepareItems\Commands\SavePrepareItemPushCommand.js" />
+    <EmbeddedResource Include="PrepareItems\Commands\SavePrepareItemPullCommand.js" />
+    <EmbeddedResource Include="StockOrders\Commands\AddStockOrderDetailCommand.js" />
+    <EmbeddedResource Include="StockOrders\Commands\AddStockOrderCommand.js" />
+    <EmbeddedResource Include="StockOrders\Commands\AduitStockOrderCommand.js" />
+    <EmbeddedResource Include="StockOrders\Commands\ForceCloseStockOrderCommand.js" />
+    <EmbeddedResource Include="StockOrders\Commands\IssuedStockOrderCommand.js" />
+    <EmbeddedResource Include="StockOrders\Commands\MulAddStockOrderDetailCommand.js" />
+    <EmbeddedResource Include="StockOrders\Commands\MulAddStockOrderDetailPushCommand.js" />
+    <EmbeddedResource Include="StockOrders\Commands\SaveStockOrderCommand.js" />
+    <EmbeddedResource Include="StockOrders\Commands\StockOrderMergeIssuedAddCommand.js" />
+    <EmbeddedResource Include="StockOrders\Commands\StockOrderMergeIssuedDeleteCommand.js" />
+    <EmbeddedResource Include="StockOrders\Commands\StockOrderMergeIssuedEditCommand.js" />
+    <EmbeddedResource Include="StockOrders\Commands\StockOrderMergeIssuedEnableCommand.js">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StockOrders\Commands\StockOrderMergeTimesAddCommand.js" />
+    <EmbeddedResource Include="StockOrders\Commands\StockOrderMergeTimesDeleteCommand.js" />
+    <EmbeddedResource Include="StockOrders\Commands\StockOrderMergeTimesEditCommand.js" />
+    <EmbeddedResource Include="StockOrders\Commands\SubmitStockOrderCommand.js" />
+    <EmbeddedResource Include="StockOrders\Commands\ReCallStockOrderCommand.js" />
+    <EmbeddedResource Include="StockOrders\Commands\EditStockOrderCommand.js" />
+    <EmbeddedResource Include="StockOrders\Scripts\CommonFun.js" />
+    <EmbeddedResource Include="StockOrders\Scripts\Enum.js" />
+    <EmbeddedResource Include="StockOrders\Scripts\SelectWorkOrderEditor.js" />
+    <EmbeddedResource Include="StockOrders\Scripts\StockOrderAction.js" />
+    <EmbeddedResource Include="StockOrders\Scripts\StockOrderBehavior.js" />
+    <EmbeddedResource Include="StockOrders\Scripts\StockOrderMergeIssuedBehavior.js" />
+    <EmbeddedResource Include="StockOrders\Scripts\StockOrderMergeTimesBehavior.js" />
+    <EmbeddedResource Include="StockPlans\Commands\AddStockPlanCommand.js" />
+    <EmbeddedResource Include="StockPlans\Commands\AssignWarehouseCommand.js" />
+    <EmbeddedResource Include="StockPlans\Commands\AuditStockPlanCommand.js" />
+    <EmbeddedResource Include="StockPlans\Commands\CreateSoCommand.js" />
+    <EmbeddedResource Include="StockPlans\Commands\DeleteStockPlanCommand.js" />
+    <EmbeddedResource Include="StockPlans\Commands\ForceCompleteCommand.js" />
+    <EmbeddedResource Include="StockPlans\Commands\InitMergeCreateRuleCommand.js" />
+    <EmbeddedResource Include="StockPlans\Commands\KittingCommands.js" />
+    <EmbeddedResource Include="StockPlans\Commands\MergeCreateCommand.js" />
+    <EmbeddedResource Include="StockPlans\Commands\SaveStockPlanCommand.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Items\SIE.Web.Items\SIE.Web.Items.csproj" />
+    <ProjectReference Include="..\..\Resources\SIE.Web.Resources\SIE.Web.Resources.csproj" />
+    <ProjectReference Include="..\..\ShipPlans\SIE.Web.ShipPlan\SIE.Web.ShipPlan.csproj" />
+    <ProjectReference Include="..\SIE.LES\SIE.LES.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Configs\" />
+    <Folder Include="LesStockCounts\DataQueryer\" />
+    <Folder Include="MaterialReceives\ViewModel\" />
+  </ItemGroup>
+</Project>

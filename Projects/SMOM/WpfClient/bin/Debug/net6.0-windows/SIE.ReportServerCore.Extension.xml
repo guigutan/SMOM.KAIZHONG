@@ -1,0 +1,173 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.ReportServerCore.Extension</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.ReportServerCore.Extension.Models.ReportModel">
+            <summary>
+            模板设计Model
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Extension.Models.ReportModel.RedirectUrl">
+            <summary>
+            重定向地址
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Extension.Models.ReportModel.ReportID">
+            <summary>
+            模板ID
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Extension.Models.ReportModel.VisionID">
+            <summary>
+            版本ID
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Extension.Models.ReportModel.ActionType">
+            <summary>
+            执行类型
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Extension.Models.ReportModel.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Extension.Models.ReportModel.Report">
+            <summary>
+            报表模板
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Extension.Models.ReportModel.Patch">
+            <summary>
+            路径
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Extension.Models.ReportModel.JsSaveMethodName">
+            <summary>
+            保存的函数名称
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Extension.Models.ReportModel.CustomDataSource">
+            <summary>
+            自定义数据源-报表实体
+            </summary>
+        </member>
+        <member name="T:SIE.ReportServerCore.Extension.Parameters.XParameter">
+            <summary>
+            参数类
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Extension.Parameters.XParameter.Name">
+            <summary>
+            参数名称
+            <value> 类型为<see cref="T:System.String" />字符类型 .
+            </value>
+            <code>声明使用时字母数字下划线的组合</code>
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Extension.Parameters.XParameter.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Extension.Parameters.XParameter.Type">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Extension.Parameters.XParameter.Visible">
+            <summary>
+            是否可见（默认False)
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Extension.Parameters.XParameter.Value">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="T:SIE.ReportServerCore.Extension.Parameters.XParameterCollection">
+            <summary>
+            参数集合
+            <para>集合 <see cref="T:SIE.ReportServerCore.Extension.Parameters" /> objects.
+            </para>
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Extension.Parameters.XParameterCollection.IsLoading">
+            <summary>
+            是否加载中
+            </summary>
+        </member>
+        <member name="M:SIE.ReportServerCore.Extension.Parameters.XParameterCollection.GetByName(System.String)">
+            <summary>
+            获取参数名称
+            </summary>
+            <param name="parameterName">参数名称</param>
+            <returns>与parameterName相对应的参数名称</returns>
+        </member>
+        <member name="M:SIE.ReportServerCore.Extension.Parameters.XParameterCollection.AddRange(SIE.ReportServerCore.Extension.Parameters.XParameter[])">
+            <summary>
+            将参数添加到参数集合中
+            </summary>
+            <param name="parameters">参数</param>
+        </member>
+        <member name="F:SIE.ReportServerCore.Extension.AssemblyInformation.ModuleName">
+            <summary>
+            模块名称
+            </summary>
+        </member>
+        <member name="T:SIE.ReportServerCore.Extension.Reports.XReportExtension">
+            <summary>
+            报表扩展类
+            </summary>
+        </member>
+        <member name="M:SIE.ReportServerCore.Extension.Reports.XReportExtension.AttachPramameter(DevExpress.XtraReports.UI.XtraReport,SIE.ReportServerCore.Extension.Parameters.XParameterCollection)">
+            <summary>
+            报表附加参数
+            </summary>
+            <param name="report">报表</param>
+            <param name="parameters">参数</param>
+        </member>
+        <member name="M:SIE.ReportServerCore.Extension.Reports.XReportExtension.GetReportPreviewImage(DevExpress.XtraReports.UI.XtraReport)">
+            <summary>
+            获取预览图片内存流
+            </summary>
+            <param name="report"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ReportServerCore.Extension.Reports.XReportExtension.GetReportPreviewImageBytes(DevExpress.XtraReports.UI.XtraReport)">
+            <summary>
+            获取预览图片字节
+            </summary>
+            <param name="report"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ReportServerCore.Extension.Reports.XReportExtension.AttachParameter(DevExpress.XtraReports.UI.XtraReport,System.Double,System.Nullable{System.Int32})">
+            <summary>
+            附加参数:ReportHelper中方法AttachPramameter迁移此处
+            </summary>
+            <param name="report"></param>
+        </member>
+        <member name="M:SIE.ReportServerCore.Extension.Reports.XReportExtension.CreatXtraReport">
+            <summary>
+            创建一个报表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ReportServerCore.Extension.Reports.XReportExtension.CreatXtraReport(System.String)">
+            <summary>
+            创建报表
+            </summary>
+            <param name="name">名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ReportServerCore.Extension.Reports.XReportExtension.LoadReport(System.Byte[])">
+            <summary>
+            加载数据
+            </summary>
+            <param name="ms">报表数据流</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

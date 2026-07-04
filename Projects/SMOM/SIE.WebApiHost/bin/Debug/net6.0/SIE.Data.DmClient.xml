@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Data.DmClient</name>
+    </assembly>
+    <members>
+        <member name="M:SIE.Data.DmClient.DamengDbTypeHelper.ConvertFromCLRType(System.Type)">
+            <summary>
+            布尔类型存储为CHAR(1)处理
+            </summary>
+            <param name="clrType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Data.DmClient.DamengDbTypeHelper.ConvertToDamengTypeString(System.Data.DbType,System.String)">
+            <summary>
+            把 DbType 转换为 达梦的数据类型
+            </summary>
+            <param name="fieldType">Type of the field.</param>
+            <param name="length">The length.</param>
+            <returns></returns>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:SIE.Data.DmClient.DamengDbTypeHelper.ConvertFromDamengTypeString(System.String)">
+            <summary>
+            把 Oracle 中的数据类型 转换为 DbType
+            </summary>
+            <param name="lowerSqlType">Type of the lower SQL.</param>
+            <returns></returns>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:SIE.Data.DmClient.DamengMigrationProvider.LimitDamengIdentifier(System.String)">
+            <summary>
+            达梦 的标识符都不能超过 64 个字符。这个方法可以把传入的字符串剪裁到 64 个字符，并尽量保持信息。
+            </summary>
+            <param name="identifier"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Data.DmClient.DamengMigrationProvider.SequenceName(System.String,System.String)">
+            <summary>
+            返回指定的表对应的序列的名称。
+            </summary>
+            <param name="tableName"></param>
+            <param name="pkName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Data.DmClient.DamengMigrationProvider.PrepareIdentifier(System.String)">
+            <summary>
+            准备标识符名。
+            </summary>
+            <param name="identifier"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Data.DmClient.DamengSqlDialect.GetParameterName(System.Object)">
+            <summary>
+            生成SQL执行命名参数
+            </summary>
+            <param name="name">序号数字或列名称字符</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Data.DmClient.DamengSqlGenerator.ModifyToPagingTree(SIE.Data.SqlTree.SqlSelect,SIE.PagingInfo)">
+            <summary>
+            使用 ROWNUM 来进行分页。
+            </summary>
+            <param name="raw">The raw.</param>
+            <param name="pagingInfo">The paging information.</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException">pagingInfo</exception>
+            <exception cref="T:System.InvalidProgramException">必须排序后才能使用分页功能。</exception>
+        </member>
+        <member name="P:SIE.Data.DmClient.DamengSqlTable.UseSnowflake">
+            <summary>
+            使用雪花算法
+            </summary>
+        </member>
+        <member name="F:SIE.Data.DmClient.DamengSqlTable.MAX_ITEMS_IN_INCLAUSE">
+            <summary>
+            ORACLE 中 IN 语句的最大参数个数是 1000 个。
+            </summary>
+        </member>
+        <member name="M:SIE.Data.DmClient.DamengSqlTable.TryBatchQuery(SIE.Data.IDbAccesser,SIE.Domain.IEntitySelectArgs)">
+            <summary>
+            只有一些特定的查询，可以进行分批查询。
+            </summary>
+            <param name="dba">The dba.</param>
+            <param name="args">The arguments.</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Data.DmClient.Module">
+            <summary>
+            模块配置
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,55 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup Label="Globals">
+		<SccProjectName>SAK</SccProjectName>
+		<SccProvider>SAK</SccProvider>
+		<SccAuxPath>SAK</SccAuxPath>
+		<SccLocalPath>SAK</SccLocalPath>
+	</PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<OutputPath>..\..\..\..\platform\smom\</OutputPath>
+		<DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.SO.xml</DocumentationFile>
+		<GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<OutputPath>..\..\..\..\..\platform\smom\</OutputPath>
+		<DocumentationFile>..\..\..\..\..\platform\smom\net6.0\SIE.Web.SO.xml</DocumentationFile>
+	</PropertyGroup>
+	<ItemGroup>
+		<None Remove="Common\Commands\ImportDataCommonCommand.js" />
+		<None Remove="SaleOrders\Behaviors\DetailPropertyChangedBehavior.js" />
+		<None Remove="SaleOrders\Commands\ExportSaleOrderCommand.js" />
+		<None Remove="SaleOrders\Commands\ImportSaleOrderCommand.js" />
+		<None Remove="SaleOrders\Commands\SaleOrderAddCommand.js" />
+		<None Remove="SaleOrders\Commands\SaleOrderDeleteCommand.js" />
+		<None Remove="SaleOrders\Commands\SaleOrderDetailAddCommand.js" />
+		<None Remove="SaleOrders\Commands\SaleOrderDetailDeleteCommand.js" />
+		<None Remove="SaleOrders\Commands\SaleOrderDetailEditCommand.js" />
+		<None Remove="SaleOrders\Commands\SaleOrderEditCommand.js" />
+		<None Remove="SaleOrders\Commands\SaleOrderSaveCommand.js" />
+		<None Remove="SaleOrders\Commands\SpecialProcessSaveCommand.js" />
+		<None Remove="SaleOrders\Scripts\Enum.js" />
+	</ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Include="Common\Commands\ImportDataCommonCommand.js" />
+		<EmbeddedResource Include="SaleOrders\Behaviors\DetailPropertyChangedBehavior.js" />
+		<EmbeddedResource Include="SaleOrders\Commands\ExportSaleOrderCommand.js" />
+		<EmbeddedResource Include="SaleOrders\Commands\ImportSaleOrderCommand.js" />
+		<EmbeddedResource Include="SaleOrders\Commands\SaleOrderAddCommand.js" />
+		<EmbeddedResource Include="SaleOrders\Commands\SaleOrderDeleteCommand.js" />
+		<EmbeddedResource Include="SaleOrders\Commands\SaleOrderDetailAddCommand.js" />
+		<EmbeddedResource Include="SaleOrders\Commands\SaleOrderDetailDeleteCommand.js" />
+		<EmbeddedResource Include="SaleOrders\Commands\SaleOrderDetailEditCommand.js" />
+		<EmbeddedResource Include="SaleOrders\Commands\SaleOrderEditCommand.js" />
+		<EmbeddedResource Include="SaleOrders\Commands\SaleOrderSaveCommand.js" />
+		<EmbeddedResource Include="SaleOrders\Commands\SpecialProcessSaveCommand.js" />
+		<EmbeddedResource Include="SaleOrders\Scripts\Enum.js" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\Items\SIE.Web.Items\SIE.Web.Items.csproj" />
+		<ProjectReference Include="..\SIE.SO\SIE.SO.csproj" />
+	</ItemGroup>
+</Project>

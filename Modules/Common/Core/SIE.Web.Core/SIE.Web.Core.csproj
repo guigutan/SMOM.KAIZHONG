@@ -1,0 +1,166 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <CodeAnalysisRuleSet>SIE.Web.Core.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.Core.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.Core.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Configs\ElecSignConfigViewConfig.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="ApiLogs\Commands\LookUpContextCommand.js" />
+    <None Remove="ApiLogs\Scripts\ApiLogBehavior.js" />
+    <None Remove="Common\Behaviors\GridClickOnceToClickBehavior.js" />
+    <None Remove="Common\Commands\ImmediateDeleteCommand.js" />
+    <None Remove="Common\Commands\Import\ImportMasterSubordinateCommand.js" />
+    <None Remove="Common\Commands\PrintExportCommand.js" />
+    <None Remove="Common\Commands\UploadZipAttachmentCommand.js" />
+    <None Remove="Common\Enums.js" />
+    <None Remove="Common\ImmediateDeleteCommand.js" />
+    <None Remove="Common\Scripts\CommonFuns.js" />
+    <None Remove="Common\Scripts\Helpers\DataTableExportExcelHelper.js" />
+    <None Remove="Common\Scripts\KzXlsx.js" />
+    <None Remove="Editors\EnumFilterEditor.js" />
+    <None Remove="Editors\GridComboPopupClickOnce.js" />
+    <None Remove="Prints\Commands\RePrintCommands.js" />
+    <None Remove="ProjectMaintains\Commands\DeleteProjectMaintainCommand.js" />
+    <None Remove="QmsStaticConst\Behaviors\ControlChartConstBehavior.js" />
+    <None Remove="QmsStaticConst\Behaviors\StaticConstBehavior.js" />
+    <None Remove="QmsStaticConst\Behaviors\StaticConstD2Behavior.js" />
+    <None Remove="QmsStaticConst\Behaviors\StaticConstK1Behavior.js" />
+    <None Remove="QmsStaticConst\Behaviors\StaticConstK2Behavior.js" />
+    <None Remove="QmsStaticConst\Behaviors\StaticConstK3Behavior.js" />
+    <None Remove="QmsStaticConst\Behaviors\StaticConstTBehavior.js" />
+    <None Remove="QmsStaticConst\Commands\AddConstCommand.js" />
+    <None Remove="QmsStaticConst\Commands\ConstT\AddColumn.js" />
+    <None Remove="QmsStaticConst\Commands\ConstT\AddRow.js" />
+    <None Remove="QmsStaticConst\Commands\ConstT\DeleteColumn.js" />
+    <None Remove="QmsStaticConst\Commands\ConstT\DeleteRow.js" />
+    <None Remove="QmsStaticConst\Commands\ControlChartConst\DeleteCommand.js" />
+    <None Remove="QmsStaticConst\Commands\D2\AddColumn.js" />
+    <None Remove="QmsStaticConst\Commands\D2\AddRow.js" />
+    <None Remove="QmsStaticConst\Commands\D2\DeleteColumn.js" />
+    <None Remove="QmsStaticConst\Commands\D2\DeleteRow.js" />
+    <None Remove="QmsStaticConst\Commands\ImportCommand.js" />
+    <None Remove="QmsStaticConst\Commands\K1\DeleteCommand.js" />
+    <None Remove="QmsStaticConst\Commands\K2\DeleteCommand.js" />
+    <None Remove="QmsStaticConst\Commands\K3\DeleteCommand.js" />
+    <None Remove="QmsStaticConst\Commands\SaveConstCommand.js" />
+    <None Remove="QmsStaticConst\Scripts\Common.js" />
+    <None Remove="QmsStaticConst\Scripts\StaticConstD2Controller.js" />
+    <None Remove="QmsStaticConst\Scripts\StaticConstSerializer.js" />
+    <None Remove="QmsStaticConst\Scripts\StaticConstTController.js" />
+    <None Remove="Reports\LineChart.js" />
+    <None Remove="Reports\LineChartInfo.js" />
+    <None Remove="Reports\PassRateGrid.js" />
+    <None Remove="Reports\PieChart.js" />
+    <None Remove="Reports\PietController.js" />
+    <None Remove="Reports\PivotController.js" />
+    <None Remove="Reports\PivotExporter.js" />
+    <None Remove="Reports\RateReportLayoutBase.js" />
+    <None Remove="Reports\ReportModel.js" />
+    <None Remove="Scripts\CurrencyFieldEditor.js" />
+    <None Remove="Scripts\Signature.js" />
+    <None Remove="Scripts\Static.js" />
+    <None Remove="Scripts\YearComponent.js" />
+    <None Remove="Scripts\YearEditor.js" />
+    <None Remove="Scripts\YearMonthEditor.js" />
+    <None Remove="UserAgreements\Commands\EnableAgreementCommand.js" />
+    <None Remove="UserAgreements\Commands\UploadAgreementCommand.js" />
+    <None Remove="UserAgreements\Controls\UserAgreementFileControl.js" />
+    <None Remove="UserAgreements\Controls\UserAgreementTreeControl.js" />
+    <None Remove="UserAgreements\Controls\UserAgreementTreeController.js" />
+    <None Remove="UserAgreements\Layouts\UserAgreementsLayout.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\..\..\.sonarlint\sie.smom\CSharp\SonarLint.xml" Link="SonarLint.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ApiLogs\Commands\LookUpContextCommand.js" />
+    <EmbeddedResource Include="ApiLogs\Scripts\ApiLogBehavior.js" />
+    <EmbeddedResource Include="Common\Behaviors\GridClickOnceToClickBehavior.js" />
+    <EmbeddedResource Include="Common\Commands\ImmediateDeleteCommand.js" />
+    <EmbeddedResource Include="Common\Commands\Import\ImportMasterSubordinateCommand.js" />
+    <EmbeddedResource Include="Common\Commands\PrintExportCommand.js" />
+    <EmbeddedResource Include="Common\Commands\UploadZipAttachmentCommand.js" />
+    <EmbeddedResource Include="Common\Enums.js" />
+    <EmbeddedResource Include="Common\Scripts\CommonFuns.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Common\Scripts\Helpers\DataTableExportExcelHelper.js" />
+    <EmbeddedResource Include="Common\Scripts\KzXlsx.js" />
+    <EmbeddedResource Include="Editors\EnumFilterEditor.js" />
+    <EmbeddedResource Include="Editors\GridComboPopupClickOnce.js" />
+    <EmbeddedResource Include="Prints\Commands\InitDefaultTplCommand.js" />
+    <EmbeddedResource Include="Prints\Commands\RePrintCommands.js" />
+    <EmbeddedResource Include="ProjectMaintains\Commands\DeleteProjectMaintainCommand.js" />
+    <EmbeddedResource Include="QmsStaticConst\Behaviors\ControlChartConstBehavior.js" />
+    <EmbeddedResource Include="QmsStaticConst\Behaviors\StaticConstBehavior.js" />
+    <EmbeddedResource Include="QmsStaticConst\Behaviors\StaticConstD2Behavior.js" />
+    <EmbeddedResource Include="QmsStaticConst\Behaviors\StaticConstK1Behavior.js" />
+    <EmbeddedResource Include="QmsStaticConst\Behaviors\StaticConstK2Behavior.js" />
+    <EmbeddedResource Include="QmsStaticConst\Behaviors\StaticConstK3Behavior.js" />
+    <EmbeddedResource Include="QmsStaticConst\Behaviors\StaticConstTBehavior.js" />
+    <EmbeddedResource Include="QmsStaticConst\Commands\AddConstCommand.js" />
+    <EmbeddedResource Include="QmsStaticConst\Commands\ConstT\AddColumn.js" />
+    <EmbeddedResource Include="QmsStaticConst\Commands\ConstT\AddRow.js" />
+    <EmbeddedResource Include="QmsStaticConst\Commands\ConstT\DeleteColumn.js" />
+    <EmbeddedResource Include="QmsStaticConst\Commands\ConstT\DeleteRow.js" />
+    <EmbeddedResource Include="QmsStaticConst\Commands\ControlChartConst\DeleteCommand.js" />
+    <EmbeddedResource Include="QmsStaticConst\Commands\D2\AddColumn.js" />
+    <EmbeddedResource Include="QmsStaticConst\Commands\D2\AddRow.js" />
+    <EmbeddedResource Include="QmsStaticConst\Commands\D2\DeleteColumn.js" />
+    <EmbeddedResource Include="QmsStaticConst\Commands\D2\DeleteRow.js" />
+    <EmbeddedResource Include="QmsStaticConst\Commands\ImportCommand.js" />
+    <EmbeddedResource Include="QmsStaticConst\Commands\K1\DeleteCommand.js" />
+    <EmbeddedResource Include="QmsStaticConst\Commands\K2\DeleteCommand.js" />
+    <EmbeddedResource Include="QmsStaticConst\Commands\K3\DeleteCommand.js" />
+    <EmbeddedResource Include="QmsStaticConst\Commands\SaveConstCommand.js" />
+    <EmbeddedResource Include="QmsStaticConst\Scripts\Common.js" />
+    <EmbeddedResource Include="QmsStaticConst\Scripts\StaticConstD2Controller.js" />
+    <EmbeddedResource Include="QmsStaticConst\Scripts\StaticConstSerializer.js" />
+    <EmbeddedResource Include="QmsStaticConst\Scripts\StaticConstTController.js" />
+    <EmbeddedResource Include="Reports\PieChart.js" />
+    <EmbeddedResource Include="Reports\LineChart.js" />
+    <EmbeddedResource Include="Reports\LineChartInfo.js" />
+    <EmbeddedResource Include="Reports\PassRateGrid.js" />
+    <EmbeddedResource Include="Reports\PietController.js" />
+    <EmbeddedResource Include="Reports\PivotController.js" />
+    <EmbeddedResource Include="Reports\PivotExporter.js" />
+    <EmbeddedResource Include="Reports\RateReportLayoutBase.js" />
+    <EmbeddedResource Include="Reports\ReportModel.js" />
+    <EmbeddedResource Include="Scripts\CurrencyFieldEditor.js" />
+    <EmbeddedResource Include="Scripts\Signature.js" />
+    <EmbeddedResource Include="Scripts\Static.js" />
+    <EmbeddedResource Include="Scripts\YearComponent.js" />
+    <EmbeddedResource Include="Scripts\YearEditor.js" />
+    <EmbeddedResource Include="Scripts\YearMonthEditor.js" />
+    <EmbeddedResource Include="UserAgreements\Commands\EnableAgreementCommand.js" />
+    <EmbeddedResource Include="UserAgreements\Commands\UploadAgreementCommand.js" />
+    <EmbeddedResource Include="UserAgreements\Controls\UserAgreementFileControl.js" />
+    <EmbeddedResource Include="UserAgreements\Controls\UserAgreementTreeControl.js" />
+    <EmbeddedResource Include="UserAgreements\Controls\UserAgreementTreeController.js" />
+    <EmbeddedResource Include="UserAgreements\Layouts\UserAgreementsLayout.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="SIE.Rbac" Version="10.0.5" />
+    <PackageReference Include="SIE.Web.Common" Version="10.0.5" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SIE.Core\SIE.Core.csproj" />
+  </ItemGroup>
+</Project>

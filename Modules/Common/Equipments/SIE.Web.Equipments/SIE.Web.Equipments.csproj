@@ -1,0 +1,144 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <CodeAnalysisRuleSet></CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.Equipments.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.Equipments.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Abnormal\Behaviors\AbnormalAlertSysConfigBehavior.js" />
+    <None Remove="Abnormal\Commands\AbnormalCauseAddCommand.js" />
+    <None Remove="Abnormal\Commands\AbnormalCauseImportCommand.js" />
+    <None Remove="Abnormal\Commands\AbnormalCauseRestoreCommand.js" />
+    <None Remove="Abnormal\Control\AbnormalCauseComboList.js" />
+    <None Remove="Common\Scripts\ApprovalBehavior.js" />
+    <None Remove="DeviceIOTParas\Commands\SelectMDCCommand.js" />
+    <None Remove="DeviceIOTParas\Commands\SelectStandBookCommand.js" />
+    <None Remove="EquipAccounts\Commands\AddAccountCommand.js" />
+    <None Remove="EquipAccounts\Commands\AddChildAccountCommand.js" />
+    <None Remove="EquipAccounts\Commands\CopyAccountCommand.js" />
+    <None Remove="EquipAccounts\Commands\DeleteEquipAccountAttachmentCommand.js" />
+    <None Remove="EquipAccounts\Commands\DowngradeAccountCommand.js" />
+    <None Remove="EquipAccounts\Commands\EditAccountCommand.js" />
+    <None Remove="EquipAccounts\Commands\EditSaveAccountCommand.js" />
+    <None Remove="EquipAccounts\Commands\EquipAccountImportCommand.js" />
+    <None Remove="EquipAccounts\Commands\EquipAccountSlotSaveCommand.js" />
+    <None Remove="EquipAccounts\Commands\EquipResumeSearchCommand.js" />
+    <None Remove="EquipAccounts\Commands\GetRealTimeDataCommand.js" />
+    <None Remove="EquipAccounts\Commands\OpenResumeBillViewCommand.js" />
+    <None Remove="EquipAccounts\Commands\SelAccountPhysicalUnionCommand.js" />
+    <None Remove="EquipAccounts\Commands\SelAccountProcessCommand.js" />
+    <None Remove="EquipAccounts\Commands\SetEquipLogoCommand.js" />    
+    <None Remove="EquipAccounts\Commands\UpgradeAccountCommand.js" />    
+    <None Remove="EquipAccounts\Commands\UploadEqpAttachmentCommand.js" />
+    <None Remove="EquipAccounts\Scripts\AddEquipAccountBehavior.js" />
+    <None Remove="EquipAccounts\Scripts\EquipAccountListViewBehavior.js" />
+    <None Remove="EquipAccounts\Scripts\EquipAccountResumeBehavior.js" />
+    <None Remove="EquipAccounts\Scripts\EquipAccountTabBehavior.js" />
+    <None Remove="EquipAccounts\Scripts\MutilCatalogEditor.js" />
+    <None Remove="EquipFaults\Commands\EquipFaultAndDefectCopyCommand.js" />
+    <None Remove="EquipFaults\Commands\EquipFaultAndDefectImportCommand.js" />
+    <None Remove="EquipmentCards\Behaviors\AddEquipmentCardBehavior.js" />
+    <None Remove="EquipmentCards\Behaviors\EquipmentCardsListBehavior.js" />
+    <None Remove="EquipmentCards\Behaviors\SetEquipmentCardDirtyBehavior.js" />
+    <None Remove="EquipmentCards\Commands\AuditEquipCardCommand.js" />
+    <None Remove="EquipmentCards\Commands\CancelEquipCardCommand.js" />
+    <None Remove="EquipmentCards\Commands\DeleteEquipCardCommand.js" />
+    <None Remove="EquipmentCards\Commands\EditEquipmentCardCommand.js" />
+    <None Remove="EquipmentCards\Commands\EditSaveEquipCardCommand.js" />
+    <None Remove="EquipmentCards\Commands\EquipmentCardImportCommand.js" />
+    <None Remove="EquipmentCards\Commands\SaveEquipCardCommand.js" />
+    <None Remove="EquipmentCards\Commands\SeeViewCommand.js" />
+    <None Remove="EquipmentCards\Commands\SubmitEquipCardCommand.js" />
+    <None Remove="EquipmentCards\Scripts\Enum.js" />
+    <None Remove="EquipModels\Commands\EquipModelImportCommand.js" />
+    <None Remove="EquipModels\Commands\EquipModelSaveCommand.js" />
+    <None Remove="EquipModels\Commands\OpenEquipAccountCommand.js" />
+    <None Remove="EquipModels\Commands\OpenEquipBOMCommand.js" />
+    <None Remove="EquipModels\Commands\OpenEquipTypeCommand.js" />
+    <None Remove="EquipModels\Layouts\EquipModelUIGenerator.js" />    
+    <None Remove="EquipTypes\Behaviors\EquipTypePropertyChangedBehavior.js" />    
+    <None Remove="EquipTypes\Commands\EquipTypeImportCommand.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\..\..\.sonarlint\sie.smom\CSharp\SonarLint.xml" Link="SonarLint.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Abnormal\Behaviors\AbnormalAlertSysConfigBehavior.js" />
+    <EmbeddedResource Include="Abnormal\Commands\AbnormalCauseAddCommand.js" />
+    <EmbeddedResource Include="Abnormal\Commands\AbnormalCauseImportCommand.js" />
+    <EmbeddedResource Include="Abnormal\Commands\AbnormalCauseRestoreCommand.js" />
+    <EmbeddedResource Include="Abnormal\Control\AbnormalCauseComboList.js" />
+    <EmbeddedResource Include="Common\Scripts\ApprovalBehavior.js" />
+    <EmbeddedResource Include="DeviceIOTParas\Commands\SelectMDCCommand.js" />
+    <EmbeddedResource Include="DeviceIOTParas\Commands\SelectStandBookCommand.js" />
+    <EmbeddedResource Include="EquipAccounts\Commands\AddAccountCommand.js" />
+    <EmbeddedResource Include="EquipAccounts\Commands\AddChildAccountCommand.js" />
+    <EmbeddedResource Include="EquipAccounts\Commands\CopyAccountCommand.js" />
+    <EmbeddedResource Include="EquipAccounts\Commands\DowngradeAccountCommand.js" />
+    <EmbeddedResource Include="EquipAccounts\Commands\EditAccountCommand.js" />
+    <EmbeddedResource Include="EquipAccounts\Commands\EditSaveAccountCommand.js" />
+    <EmbeddedResource Include="EquipAccounts\Commands\EquipAccountSlotSaveCommand.js" />
+    <EmbeddedResource Include="EquipAccounts\Commands\EquipAccountImportCommand.js" />
+    <EmbeddedResource Include="EquipAccounts\Commands\EquipResumeSearchCommand.js" />
+    <EmbeddedResource Include="EquipAccounts\Commands\GetRealTimeDataCommand.js" />
+    <EmbeddedResource Include="EquipAccounts\Commands\OpenResumeBillViewCommand.js" />
+    <EmbeddedResource Include="EquipAccounts\Commands\DeleteEquipAccountAttachmentCommand.js" />
+    <EmbeddedResource Include="EquipAccounts\Commands\SelAccountPhysicalUnionCommand.js" />
+    <EmbeddedResource Include="EquipAccounts\Commands\SelAccountProductCommand.js" />
+    <EmbeddedResource Include="EquipAccounts\Commands\SelAccountProcessCommand.js" />
+    <EmbeddedResource Include="EquipAccounts\Commands\SetEquipLogoCommand.js" />
+    <EmbeddedResource Include="EquipAccounts\Commands\UpgradeAccountCommand.js" />
+    <EmbeddedResource Include="EquipAccounts\Commands\UploadEqpAttachmentCommand.js" />
+    <EmbeddedResource Include="EquipAccounts\Scripts\AddEquipAccountBehavior.js" />
+    <EmbeddedResource Include="EquipAccounts\Scripts\EquipAccountListViewBehavior.js" />
+    <EmbeddedResource Include="EquipAccounts\Scripts\EquipAccountResumeBehavior.js" />
+    <EmbeddedResource Include="EquipAccounts\Scripts\EquipAccountTabBehavior.js" />
+    <EmbeddedResource Include="EquipmentCards\Behaviors\AddEquipmentCardBehavior.js" />
+    <EmbeddedResource Include="EquipmentCards\Behaviors\EquipmentCardsListBehavior.js" />
+    <EmbeddedResource Include="EquipmentCards\Behaviors\SetEquipmentCardDirtyBehavior.js" />
+    <EmbeddedResource Include="EquipmentCards\Commands\AuditEquipCardCommand.js" />
+    <EmbeddedResource Include="EquipmentCards\Commands\CancelEquipCardCommand.js" />
+    <EmbeddedResource Include="EquipmentCards\Commands\DeleteEquipCardCommand.js" />
+    <EmbeddedResource Include="EquipmentCards\Commands\EditEquipmentCardCommand.js" />
+    <EmbeddedResource Include="EquipmentCards\Commands\EditSaveEquipCardCommand.js" />
+    <EmbeddedResource Include="EquipmentCards\Commands\EquipmentCardImportCommand.js" />
+    <EmbeddedResource Include="EquipmentCards\Commands\SaveEquipCardCommand.js" />
+    <EmbeddedResource Include="EquipmentCards\Commands\SeeViewCommand.js" />
+    <EmbeddedResource Include="EquipmentCards\Commands\SubmitEquipCardCommand.js" />
+    <EmbeddedResource Include="EquipmentCards\Scripts\Enum.js" />
+    <EmbeddedResource Include="EquipModels\Scripts\MutilCatalogEditor.js" />
+    <EmbeddedResource Include="EquipFaults\Commands\EquipFaultAndDefectCopyCommand.js" />
+    <EmbeddedResource Include="EquipFaults\Commands\EquipFaultAndDefectImportCommand.js" />
+    <EmbeddedResource Include="EquipModels\Commands\EquipModelImportCommand.js" />
+    <EmbeddedResource Include="EquipModels\Commands\EquipModelSaveCommand.js" />
+    <EmbeddedResource Include="EquipModels\Commands\OpenEquipAccountCommand.js" />
+    <EmbeddedResource Include="EquipModels\Commands\OpenEquipBOMCommand.js" />
+    <EmbeddedResource Include="EquipModels\Commands\OpenEquipTypeCommand.js" />
+    <EmbeddedResource Include="EquipModels\Layouts\EquipModelUIGenerator.js" />    
+    <EmbeddedResource Include="EquipTypes\Behaviors\EquipTypePropertyChangedBehavior.js" />
+	  <EmbeddedResource Include="EquipModels\Scripts\EquipModelBehavior.js" />
+	  <EmbeddedResource Include="EquipTypes\Commands\EquipTypeImportCommand.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\SIE.Web.Core\SIE.Web.Core.csproj" />
+    <ProjectReference Include="..\..\Resources\SIE.Web.Resources\SIE.Web.Resources.csproj" />
+    <ProjectReference Include="..\SIE.Equipments\SIE.Equipments.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="EquipModels\Scripts\EquipModelBehavior.js" />
+  </ItemGroup>
+</Project>

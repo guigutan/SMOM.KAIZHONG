@@ -1,0 +1,716 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Web.ReportServerCore</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Web.ReportServerCore.Controllers.ReportsController">
+            <summary>
+            报表控制器
+            </summary>
+            <seealso cref="T:Microsoft.AspNetCore.Mvc.Controller" />
+        </member>
+        <member name="P:SIE.Web.ReportServerCore.Controllers.ReportsController.XParameters">
+            <summary>
+            参数集合
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Controllers.ReportsController.Display(System.Double)">
+            <summary>
+            显示报表定义
+            </summary>
+            <param name="id">The identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Controllers.ReportsController.PreviewReport(System.Double,System.Nullable{System.Double})">
+            <summary>
+            文档定义预览
+            </summary>
+            <param name="id">文档ID</param>
+            <param name="version">版本号</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Controllers.ReportsController.GetReportView(SIE.ReportServerCore.Documents.DocumentBase,System.Nullable{System.Double})">
+            <summary>
+            获取报表视图
+            </summary>
+            <param name="docVo"></param>
+            <param name="version">版本号</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Controllers.ReportsController.DocumentDesigner(System.Double,System.Double,System.String,System.String,System.String)">
+            <summary>
+            文档定义设计器
+            </summary>
+            <param name="reportId">文档模板ID</param>
+            <param name="revisonId">版本ID</param>
+            <param name="reportName">文档名称</param>
+            <param name="content">报表BASE64字符串</param>
+            <param name="actionType">执行类型：AddDocument/DesigerDocument</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Controllers.ReportsController.DocumentDesignerSaveLayout(System.Double,System.Double,System.String,System.String,System.Boolean)">
+            <summary>
+            保存设计模板
+            </summary>
+            <param name="reportId">报表id</param>
+            <param name="revisonId">版本</param>
+            <param name="comment">修订说明</param>
+            <param name="url"></param>
+            <param name="isDown">是否另存为</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Controllers.ReportsController.ReportImport(System.Double,System.Double,System.String,System.String)">
+            <summary>
+            导入报表
+            </summary>
+            <param name="reportId">报表id</param>
+            <param name="revisonId">版本</param>
+            <param name="content">上传文件内容</param>
+            <param name="fileSize">文件大小</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.ReportServerCore.DataModels.DataViewViewConfig">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.DataModels.DataViewViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.DataModels.DataViewViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.DataModels.DataViewViewConfig.ConfigDetailsView">
+            <summary>
+            表单视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.DataModels.DataViewViewConfig.ConfigQueryView">
+            <summary>
+            查询视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ReportServerCore.DataModels.Utils.DataViewHelper">
+            <summary>
+            数据源帮助类
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.DataModels.Utils.DataViewHelper.VerifySqlConnection(SIE.ReportServerCore.DataModels.DataView)">
+            <summary>
+            验证实体属性连接是否可用
+            </summary>
+            <param name="sqlDataView">数据源</param>
+            <returns>true/false</returns>
+        </member>
+        <member name="P:SIE.Web.ReportServerCore.Documents.Commands.AddReportCommand.XParameters">
+            <summary>
+            参数集合
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ReportServerCore.Documents.Commands.DesignerCommand">
+            <summary>
+            模板设计命令
+            </summary>
+        </member>
+        <member name="F:SIE.Web.ReportServerCore.Documents.Commands.PublishDocumentCommand.failMesList">
+            <summary>
+            发布失败信息列表
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Documents.Commands.PublishDocumentCommand.PublishDocbs(System.Collections.Generic.IList{SIE.ReportServerCore.Documents.DocumentBase},System.Int32)">
+            <summary>
+            发布布局模板
+            </summary>
+            <param name="sourceDocList">文档</param>
+            <param name="invorg">库存组织</param>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Documents.Commands.PublishDocumentCommand.PublishDocLastLayout(System.Nullable{System.Int32},SIE.ReportServerCore.Documents.DocumentBase,SIE.ReportServerCore.Documents.DocumentBase)">
+            <summary>
+            发布最新文档模板
+            </summary>
+            <param name="invorgId">组织id</param>
+            <param name="sourceEntity">来源文档实体</param>
+            <param name="targetEntity">目标文档实体</param>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Documents.Commands.PublishDocumentCommand.SaveDocumentBase(System.Nullable{System.Int32},SIE.ReportServerCore.Documents.DocumentBase)">
+            <summary>
+            保存文档信息
+            </summary>
+            <param name="invorgId">组织id</param>
+            <param name="sourceEntity">源实体</param>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Documents.Commands.PublishDocumentCommand.SaveLayoutRevision(SIE.ReportServerCore.Documents.DocumentBase,SIE.ReportServerCore.Documents.DocumentBase)">
+            <summary>
+            保存布局修订信息
+            </summary>
+            <param name="sourceEntity">源实体</param>
+            <param name="targetEntity">目标实体</param>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Documents.Commands.PublishDocumentCommand.IsClearTemplaceInfo(SIE.ReportServerCore.Documents.DocumentBase,SIE.ReportServerCore.Documents.DocumentBase,System.Boolean)">
+            <summary>
+            是否清除模板信息
+            </summary>
+            <param name="sourceEntity">目标实体</param>
+            <param name="clear">清除模板信息</param>
+        </member>
+        <member name="T:SIE.Web.ReportServerCore.Documents.Commands.FailMessage">
+            <summary>
+            发布失败信息
+            </summary>
+        </member>
+        <member name="P:SIE.Web.ReportServerCore.Documents.Commands.FailMessage.DocumentName">
+            <summary>
+            文档名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.ReportServerCore.Documents.Commands.FailMessage.InvorgId">
+            <summary>
+            库存组织ID
+            </summary>
+        </member>
+        <member name="P:SIE.Web.ReportServerCore.Documents.Commands.DocumentBaseViewArgs.Codes">
+            <summary>
+            库存组织编码
+            </summary>
+            <value>
+            The nums.
+            </value>
+        </member>
+        <member name="P:SIE.Web.ReportServerCore.Documents.Commands.DocumentBaseViewArgs.DocumentBaseList">
+            <summary>
+            文档定义列表
+            </summary>
+            <value>
+            The document base list.
+            </value>
+        </member>
+        <member name="T:SIE.Web.ReportServerCore.Documents.Commands.RevertToCommand">
+            <summary>
+            回滚到版本命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ReportServerCore.Documents.Commands.UploadCommand">
+            <summary>
+            上传模板命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ReportServerCore.Documents.DataQueryer.DocumentDataQueryer">
+            <summary>
+            文档定义Queryer
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Documents.DataQueryer.DocumentDataQueryer.GetDocumentTemplate">
+            <summary>
+            获取文档模板
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.ReportServerCore.Documents.DocumentBaseViewConfig">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.ReportServerCore.Documents.DocumentBaseViewConfig.ServerSourceListView">
+            <summary>
+            自定义视图-资源文档
+            </summary>
+        </member>
+        <member name="F:SIE.Web.ReportServerCore.Documents.DocumentBaseViewConfig.TemplateOperationUserNamLabelPropety">
+            <summary>
+            操作人友好显示
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Documents.DocumentBaseViewConfig.TemplateOperationUserNamLabel(SIE.ReportServerCore.Documents.DocumentBase)">
+            <summary>
+            操作人友好显示
+            </summary>
+            <param name="me">文档</param>
+            <returns>string</returns>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Documents.DocumentBaseViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Documents.DocumentBaseViewConfig.ConfigServerSourceListView">
+            <summary>
+            配置视图-资源文档
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ReportServerCore.Documents.DocumentCategoryViewConfig">
+            <summary>
+            文档分类视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Documents.DocumentCategoryViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Documents.DocumentCategoryViewConfig.ConfigQueryView">
+            <summary>
+            查询视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ReportServerCore.Documents.LayoutRevisionViewConfig">
+            <summary>
+            布局视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Documents.LayoutRevisionViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.ReportServerCore.Documents.Models.DocumentTemplateModel.DocumentIdProperty">
+            <summary>
+            文档ID
+            </summary>
+        </member>
+        <member name="P:SIE.Web.ReportServerCore.Documents.Models.DocumentTemplateModel.DocumentId">
+            <summary>
+            文档ID
+            </summary>
+        </member>
+        <member name="F:SIE.Web.ReportServerCore.Documents.Models.DocumentTemplateModel.NameProperty">
+            <summary>
+            模板名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.ReportServerCore.Documents.Models.DocumentTemplateModel.Name">
+            <summary>
+            模板名称
+            </summary>
+        </member>
+        <member name="F:SIE.Web.ReportServerCore.Documents.Models.DocumentTemplateModel.PreviewImgProperty">
+            <summary>
+            预览图
+            </summary>
+        </member>
+        <member name="P:SIE.Web.ReportServerCore.Documents.Models.DocumentTemplateModel.PreviewImg">
+            <summary>
+            预览图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ReportServerCore.Documents.Models.DocumentViewModel">
+            <summary>
+            文档新增ViewModel
+            </summary>
+        </member>
+        <member name="F:SIE.Web.ReportServerCore.Documents.Models.DocumentViewModel.NameProperty">
+            <summary>
+            文档名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.ReportServerCore.Documents.Models.DocumentViewModel.Name">
+            <summary>
+            文档名称
+            </summary>
+        </member>
+        <member name="F:SIE.Web.ReportServerCore.Documents.Models.DocumentViewModel.DescriptionProperty">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:SIE.Web.ReportServerCore.Documents.Models.DocumentViewModel.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="F:SIE.Web.ReportServerCore.Documents.Models.DocumentViewModel.CategoryIdProperty">
+            <summary>
+            文档类别Id
+            </summary>
+        </member>
+        <member name="P:SIE.Web.ReportServerCore.Documents.Models.DocumentViewModel.CategoryId">
+            <summary>
+            文档类别Id
+            </summary>
+        </member>
+        <member name="F:SIE.Web.ReportServerCore.Documents.Models.DocumentViewModel.CategoryProperty">
+            <summary>
+            文档类别
+            </summary>
+        </member>
+        <member name="P:SIE.Web.ReportServerCore.Documents.Models.DocumentViewModel.Category">
+            <summary>
+            文档类别
+            </summary>
+        </member>
+        <member name="F:SIE.Web.ReportServerCore.Documents.Models.DocumentViewModel.CommentProperty">
+            <summary>
+            修订说明
+            </summary>
+        </member>
+        <member name="P:SIE.Web.ReportServerCore.Documents.Models.DocumentViewModel.Comment">
+            <summary>
+            修订说明
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ReportServerCore.Documents.Models.DocumentViewModelConfig">
+            <summary>
+            ViewModel实体元数据配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Documents.Models.DocumentViewModelConfig.AddValidations(SIE.MetaModel.IValidationDeclarer)">
+            <summary>
+            增加验证规则
+            </summary>
+            <param name="rules">验证规则</param>
+        </member>
+        <member name="T:SIE.Web.ReportServerCore.DocumentTemplates.DocumentTemplateViewConfig">
+            <summary>
+            文档模板视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ReportServerCore.Menus.ReportServerCoreWebMenuInit">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Menus.ReportServerCoreWebMenuInit.GetMenuDtos">
+            <summary>
+            获取菜单列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Module.ConfigSystemServiceSource">
+            <summary>
+            配置报表可用服务源(默认添加一个配置的系统级别)
+            </summary>
+        </member>
+        <member name="F:SIE.Web.ReportServerCore.AssemblyInformation.ModuleName">
+            <summary>
+            模块名称
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Services.Commands.ServerResourcesSyncCommand.ConvertModel(System.Collections.Generic.IEnumerable{SIE.Web.ReportServerCore.Services.ViewModels.ServerResourcesViewModel})">
+            <summary>
+            转移模型
+            </summary>
+            <param name="models"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.ReportServerCore.Services.ServerSourceDataHelper">
+            <summary>
+            服务资源数据帮助类
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Services.ServerSourceDataHelper.IsSupportVersion(SIE.ReportServerCore.Services.ServerSourceCriteria)">
+            <summary>
+            是否支持的版本
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Services.ServerSourceDataHelper.GetDocumentsForLocalApp(SIE.ReportServerCore.Services.ServerSourceCriteria)">
+            <summary>
+            通过本地服务获取文档
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Services.ServerSourceDataHelper.GetDocumentsForApi(SIE.ReportServerCore.Services.ServerSourceCriteria)">
+            <summary>
+            通过Api获取文档
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Services.ServerSourceDataHelper.ConvertServerModel(SIE.ReportServerCore.Services.ServerSourceCriteria,System.Collections.Generic.List{SIE.Documents.DTOs.DocumentDto})">
+            <summary>
+            服务应用转换模型
+            </summary>
+            <param name="criteria"></param>
+            <param name="documents"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Services.ServerSourceDataHelper.ConvertModel(SIE.ReportServerCore.Services.ServerSourceCriteria,SIE.Domain.EntityList{SIE.ReportServerCore.Documents.DocumentBase})">
+            <summary>
+            本地应用转换模型
+            </summary>
+            <param name="criteria"></param>
+            <param name="documents"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Services.ServerSourceDataHelper.SyncDocumentsSubmit(System.Collections.Generic.IList{SIE.ReportServerCore.Documents.DocumentBase})">
+            <summary>
+            同步文档提交
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ReportServerCore.Services.ServerSourceDocumentCriteria">
+            <summary>
+            服务资源查询实体
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Services.ServerSourceDocumentCriteria.Fetch">
+            <summary>
+            数据获取
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.ReportServerCore.Services.ServerSourceDocumentViewConfig">
+            <summary>
+            服务资源ViewConfig
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Services.ServerSourceDocumentViewConfig.ConfigView">
+            <summary>
+            重写通用视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ReportServerCore.Services.ServerSourceViewConfig">
+            <summary>
+            服务源定义视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.ReportServerCore.Services.ServerSourceViewConfig.ReadOnlyProperty">
+            <summary>
+            是否只读
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Services.ServerSourceViewConfig.ReadOnly(SIE.ReportServerCore.Services.ServerSource)">
+            <summary>
+            是否只读
+            </summary>
+            <param name="me">服务源</param>
+            <returns>用户维护的为false，其他为true</returns>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Services.ServerSourceViewConfig.ConfigQueryView">
+            <summary>
+            查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Services.ServerSourceViewConfig.ConfigSelectionView">
+            <summary>
+            选择视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ReportServerCore.Services.ViewModels.ServerResourcesViewModel">
+            <summary>
+            服务资源VO
+            </summary>
+        </member>
+        <member name="F:SIE.Web.ReportServerCore.Services.ViewModels.ServerResourcesViewModel.DocumentNameProperty">
+            <summary>
+            文档名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.ReportServerCore.Services.ViewModels.ServerResourcesViewModel.DocumentName">
+            <summary>
+            文档名称
+            </summary>
+        </member>
+        <member name="F:SIE.Web.ReportServerCore.Services.ViewModels.ServerResourcesViewModel.DocumentDescProperty">
+            <summary>
+            文档描述
+            </summary>
+        </member>
+        <member name="P:SIE.Web.ReportServerCore.Services.ViewModels.ServerResourcesViewModel.DocumentDesc">
+            <summary>
+            文档描述
+            </summary>
+        </member>
+        <member name="F:SIE.Web.ReportServerCore.Services.ViewModels.ServerResourcesViewModel.DocumentTypeProperty">
+            <summary>
+            文档类型
+            </summary>
+        </member>
+        <member name="P:SIE.Web.ReportServerCore.Services.ViewModels.ServerResourcesViewModel.DocumentType">
+            <summary>
+            文档类型
+            </summary>
+        </member>
+        <member name="F:SIE.Web.ReportServerCore.Services.ViewModels.ServerResourcesViewModel.EntityTypeProperty">
+            <summary>
+            实体类型
+            </summary>
+        </member>
+        <member name="P:SIE.Web.ReportServerCore.Services.ViewModels.ServerResourcesViewModel.EntityType">
+            <summary>
+            实体类型
+            </summary>
+        </member>
+        <member name="F:SIE.Web.ReportServerCore.Services.ViewModels.ServerResourcesViewModel.LayoutRervionProperty">
+            <summary>
+            布局
+            </summary>
+        </member>
+        <member name="P:SIE.Web.ReportServerCore.Services.ViewModels.ServerResourcesViewModel.LastLayout">
+            <summary>
+            布局
+            </summary>
+        </member>
+        <member name="F:SIE.Web.ReportServerCore.Services.ViewModels.ServerResourcesViewModel.DocumentCategoryProperty">
+            <summary>
+            文档分类别
+            </summary>
+        </member>
+        <member name="P:SIE.Web.ReportServerCore.Services.ViewModels.ServerResourcesViewModel.DocumentCategory">
+            <summary>
+            文档分类别
+            </summary>
+        </member>
+        <member name="F:SIE.Web.ReportServerCore.Services.ViewModels.ServerResourcesViewModel.InvOrgIdProperty">
+            <summary>
+            库存组织
+            </summary>
+        </member>
+        <member name="P:SIE.Web.ReportServerCore.Services.ViewModels.ServerResourcesViewModel.InvOrgId">
+            <summary>
+            库存组织
+            </summary>
+        </member>
+        <member name="F:SIE.Web.ReportServerCore.Services.ViewModels.ServerResourcesViewModel.IsTemplateProperty">
+            <summary>
+            是否模板
+            </summary>
+        </member>
+        <member name="P:SIE.Web.ReportServerCore.Services.ViewModels.ServerResourcesViewModel.IsTemplate">
+            <summary>
+            是否模板
+            </summary>
+        </member>
+        <member name="F:SIE.Web.ReportServerCore.Services.ViewModels.ServerResourcesViewModel.TemplateNameProperty">
+            <summary>
+            模板名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.ReportServerCore.Services.ViewModels.ServerResourcesViewModel.TemplateName">
+            <summary>
+            模板名称
+            </summary>
+        </member>
+        <member name="F:SIE.Web.ReportServerCore.Services.ViewModels.ServerResourcesViewModel.TemplateDescProperty">
+            <summary>
+            模板说明
+            </summary>
+        </member>
+        <member name="P:SIE.Web.ReportServerCore.Services.ViewModels.ServerResourcesViewModel.TemplateDesc">
+            <summary>
+            模板说明
+            </summary>
+        </member>
+        <member name="F:SIE.Web.ReportServerCore.Services.ViewModels.ServerResourcesViewModel.TemplateOperationUserNameProperty">
+            <summary>
+            模板操作人员
+            </summary>
+        </member>
+        <member name="P:SIE.Web.ReportServerCore.Services.ViewModels.ServerResourcesViewModel.TemplateOperationUserName">
+            <summary>
+            模板操作人员
+            </summary>
+        </member>
+        <member name="F:SIE.Web.ReportServerCore.Services.ViewModels.ServerResourcesViewModel.TemplateOperationDateProperty">
+            <summary>
+            模板操作时间
+            </summary>
+        </member>
+        <member name="P:SIE.Web.ReportServerCore.Services.ViewModels.ServerResourcesViewModel.TemplateOperationDate">
+            <summary>
+            模板操作时间
+            </summary>
+        </member>
+        <member name="F:SIE.Web.ReportServerCore.Services.ViewModels.ServerResourcesViewModel.TemplateRatingProperty">
+            <summary>
+            模板推荐星数
+            </summary>
+        </member>
+        <member name="P:SIE.Web.ReportServerCore.Services.ViewModels.ServerResourcesViewModel.TemplateRating">
+            <summary>
+            模板推荐星数
+            </summary>
+        </member>
+        <member name="F:SIE.Web.ReportServerCore.Services.ViewModels.ServerResourcesViewModel.GuidProperty">
+            <summary>
+            唯一id
+            </summary>
+        </member>
+        <member name="P:SIE.Web.ReportServerCore.Services.ViewModels.ServerResourcesViewModel.Uuid">
+            <summary>
+            唯一id
+            </summary>
+        </member>
+        <member name="F:SIE.Web.ReportServerCore.Services.ViewModels.ServerResourcesViewModel.SourceUuidProperty">
+            <summary>
+            源唯一ID
+            </summary>
+        </member>
+        <member name="P:SIE.Web.ReportServerCore.Services.ViewModels.ServerResourcesViewModel.SourceUuid">
+            <summary>
+            源唯一ID
+            </summary>
+        </member>
+        <member name="F:SIE.Web.ReportServerCore.Services.ViewModels.ServerResourcesViewModel.ServerSourceProperty">
+            <summary>
+            服务源
+            </summary>
+        </member>
+        <member name="P:SIE.Web.ReportServerCore.Services.ViewModels.ServerResourcesViewModel.ServerSource">
+            <summary>
+            服务源
+            </summary>
+        </member>
+        <member name="F:SIE.Web.ReportServerCore.Services.ViewModels.ServerResourcesViewModel.ServerSourceSourceLevelProperty">
+            <summary>
+            源级别
+            </summary>
+        </member>
+        <member name="P:SIE.Web.ReportServerCore.Services.ViewModels.ServerResourcesViewModel.ServerSourceSourceLevel">
+            <summary>
+            源级别
+            </summary>
+        </member>
+        <member name="F:SIE.Web.ReportServerCore.Services.ViewModels.ServerResourcesViewModel.ServerSourceSourceProperty">
+            <summary>
+            源地址
+            </summary>
+        </member>
+        <member name="P:SIE.Web.ReportServerCore.Services.ViewModels.ServerResourcesViewModel.ServerSourceSource">
+            <summary>
+            源地址
+            </summary>
+        </member>
+        <member name="F:SIE.Web.ReportServerCore.Services.ViewModels.ServerResourcesViewModel.LastLayoutVersionProperty">
+            <summary>
+            修订版本号
+            </summary>
+        </member>
+        <member name="P:SIE.Web.ReportServerCore.Services.ViewModels.ServerResourcesViewModel.LastLayoutVersion">
+            <summary>
+            修订版本号
+            </summary>
+        </member>
+        <member name="F:SIE.Web.ReportServerCore.Services.ViewModels.ServerResourcesViewModel.LayoutContentProperty">
+            <summary>
+            布局内容
+            </summary>
+        </member>
+        <member name="P:SIE.Web.ReportServerCore.Services.ViewModels.ServerResourcesViewModel.LayoutContent">
+            <summary>
+            布局内容
+            </summary>
+        </member>
+        <member name="F:SIE.Web.ReportServerCore.Services.ViewModels.ServerResourcesViewModel.PreviewBytesProperty">
+            <summary>
+            预览图
+            </summary>
+        </member>
+        <member name="P:SIE.Web.ReportServerCore.Services.ViewModels.ServerResourcesViewModel.PreviewBytes">
+            <summary>
+            预览图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Services.ViewModels.ServerResourcesViewModel.ServerResourcesViewModelConfig.AddValidations(SIE.MetaModel.IValidationDeclarer)">
+            <summary>
+            验证规则
+            </summary>
+            <param name="rules">验证规则的声明器</param>
+        </member>
+    </members>
+</doc>

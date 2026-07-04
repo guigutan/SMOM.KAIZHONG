@@ -1,0 +1,68 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <CodeAnalysisRuleSet>..\..\..\..\.sonarlint\sie.smomcsharp.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.DIST.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.DIST.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Distribution\Commands\BillLabelPrintCommand.js" />
+    <None Remove="GoodsIssue\Commands\DistributionCommand.js" />
+    <None Remove="GoodsIssue\Commands\GoodsIssueAddCommand.js" />
+    <None Remove="GoodsIssue\Commands\GoodsIssueDeleteCommand.js" />
+    <None Remove="GoodsIssue\Commands\GoodsIssueEditCommand.js" />
+    <None Remove="GoodsIssue\Commands\GoodsIssuePropertyValueAddCommand.js" />
+    <None Remove="GoodsIssue\Commands\GoodsIssuePropertyValueCommand.js" />
+    <None Remove="GoodsIssue\Commands\GoodsIssueSaveCommand.js" />
+    <None Remove="GoodsIssue\Commands\RestartCommand.js" />
+    <None Remove="GoodsIssue\Commands\SubmitCommand.js" />
+    <None Remove="GoodsIssue\Common\GoodsIssueCommonFun.js" />
+    <None Remove="GoodsIssue\Editors\GoodsIssuePropertyCombox.js" />
+    <None Remove="GoodsIssue\Editors\GoodsIssueSnEditor.js" />
+    <None Remove="GoodsIssue\Editors\GoodsIssueTipsEditor.js" />
+    <None Remove="GoodsIssue\Editors\PropertyValueEditor.js" />
+    <None Remove="GoodsIssue\Layouts\GoodsIssueLayout.js" />
+    <None Remove="GoodsIssue\Scripts\GoodsIssueBahavor.js" />
+    <None Remove="GoodsIssue\Scripts\GoodsIssueViewModelBahavor.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\..\..\.sonarlint\sie.smom\CSharp\SonarLint.xml" Link="SonarLint.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Distribution\Commands\BillLabelPrintCommand.js" />
+    <EmbeddedResource Include="GoodsIssue\Commands\GoodsIssuePropertyValueAddCommand.js" />
+    <EmbeddedResource Include="GoodsIssue\Commands\DistributionCommand.js" />
+    <EmbeddedResource Include="GoodsIssue\Commands\GoodsIssueAddCommand.js" />
+    <EmbeddedResource Include="GoodsIssue\Commands\GoodsIssueDeleteCommand.js" />
+    <EmbeddedResource Include="GoodsIssue\Commands\GoodsIssueEditCommand.js" />
+    <EmbeddedResource Include="GoodsIssue\Commands\GoodsIssuePropertyValueCommand.js" />
+    <EmbeddedResource Include="GoodsIssue\Commands\GoodsIssueSaveCommand.js" />
+    <EmbeddedResource Include="GoodsIssue\Commands\RestartCommand.js" />
+    <EmbeddedResource Include="GoodsIssue\Commands\SubmitCommand.js" />
+    <EmbeddedResource Include="GoodsIssue\Common\GoodsIssueCommonFun.js" />
+    <EmbeddedResource Include="GoodsIssue\Editors\GoodsIssuePropertyCombox.js" />
+    <EmbeddedResource Include="GoodsIssue\Editors\GoodsIssueSnEditor.js" />
+    <EmbeddedResource Include="GoodsIssue\Editors\GoodsIssueTipsEditor.js" />
+    <EmbeddedResource Include="GoodsIssue\Layouts\GoodsIssueLayout.js" />
+    <EmbeddedResource Include="GoodsIssue\Scripts\GoodsIssueBahavor.js" />
+    <EmbeddedResource Include="GoodsIssue\Scripts\GoodsIssueViewModelBahavor.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\Items\SIE.Web.Items\SIE.Web.Items.csproj" />
+    <ProjectReference Include="..\SIE.DIST\SIE.DIST.csproj" />
+    <ProjectReference Include="..\..\..\Common\Packages\SIE.Web.Packages\SIE.Web.Packages.csproj" />
+  </ItemGroup>
+</Project>

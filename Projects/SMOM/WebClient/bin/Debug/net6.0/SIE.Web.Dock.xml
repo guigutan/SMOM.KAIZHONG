@@ -1,0 +1,708 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Web.Dock</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Web.Dock.EntityPropertyViewMetaExtension">
+            <summary>
+            实体属性视图元数据扩展
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.EntityPropertyViewMetaExtension.UseSelectAppointDockEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig,``0})">
+            <summary>
+            预约月台编辑器，用于返回预约月台字符串
+            </summary>
+            <typeparam name="T">T</typeparam>
+            <param name="meta">meta</param>
+            <param name="action">action</param>
+            <returns>预约月台编辑器</returns>
+        </member>
+        <member name="M:SIE.Web.Dock.EntityPropertyViewMetaExtension.UseSelectUseHoursEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.Dock.SelectUseHoursConfig})">
+            <summary>
+            预计可用时间编辑器，用于返回预计可用时间
+            </summary>
+            <typeparam name="T">T</typeparam>
+            <param name="meta">meta</param>
+            <param name="action">action</param>
+            <returns>预约月台编辑器</returns>
+        </member>
+        <member name="T:SIE.Web.Dock.DockAppoints.Commands.AddDockAppointCommand">
+            <summary>
+            添加命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.DockAppoints.Commands.AddDockAppointCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Dock.DockAppoints.Commands.EditDockAppointCommand">
+            <summary>
+            修改命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.DockAppoints.Commands.EditDockAppointCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Dock.DockAppoints.Commands.CancelAppointCommand">
+            <summary>
+            取消预约
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.DockAppoints.Commands.CancelAppointCommand.Excute(SIE.Dock.Datas.DockAppointData,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Dock.DockAppoints.Commands.PrintDockAppointCommand">
+            <summary>
+            打印命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.DockAppoints.Commands.PrintDockAppointCommand.Excute(SIE.Dock.Datas.DockAppointData,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">打印数据</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Dock.DockAppoints.Configs.DockAppointNoConfigValueViewConfig">
+            <summary>
+            月台预约配置项视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.DockAppoints.Configs.DockAppointNoConfigValueViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Dock.DockAppoints.DataQueryer.DockAppointDataQueryer">
+            <summary>
+            月台预约查询器
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.DockAppoints.DataQueryer.DockAppointDataQueryer.GetDockAppointDefaultTemplate">
+            <summary>
+            获取配置的模板的值
+            </summary>
+            <returns>模板数据</returns>
+        </member>
+        <member name="M:SIE.Web.Dock.DockAppoints.DataQueryer.DockAppointDataQueryer.SaveDockAppointData(SIE.Dock.DockAppoints.DockAppoint)">
+            <summary>
+            保存月台预约数据
+            </summary>
+            <param name="data">月台预约数据</param>
+        </member>
+        <member name="M:SIE.Web.Dock.DockAppoints.DataQueryer.DockAppointDataQueryer.UpdateDockAppointData(SIE.Dock.DockAppoints.DockAppoint)">
+            <summary>
+            更新月台预约数据
+            </summary>
+            <param name="data">月台预约数据</param>
+        </member>
+        <member name="T:SIE.Web.Dock.DockAppoints.DockAppointCriteriaViewConfig">
+            <summary>
+            月台预约查询实体视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.DockAppoints.DockAppointCriteriaViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Dock.DockAppoints.DockAppointViewConfig">
+            <summary>
+            月台预约视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.DockAppoints.DockAppointViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.DockAppoints.DockAppointViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.DockAppoints.DockAppointViewConfig.ConfigDetailsView">
+            <summary>
+             配置明细视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.DockAppoints.DockAppointViewConfig.ConfigReadOnlyView">
+            <summary>
+             配置明细视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.DockAppoints.DockAppointViewConfig.ConfigSelectionView">
+            <summary>
+            选择视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Dock.DockMaintains.Commands.DeleteDockMaintainCommand">
+            <summary>
+            删除命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Dock.DockMaintains.Commands.SelectWarehouseCommand">
+            <summary>
+            选择仓库命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.DockMaintains.Commands.SelectWarehouseCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Dock.DockMaintains.Commands.DeleteDockWhCommand">
+            <summary>
+            适应仓库删除命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.DockMaintains.Commands.DeleteDockWhCommand.Excute(System.Double[],System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Dock.DockMaintains.DockMaintainCriteriaViewConfig">
+            <summary>
+            月台维护查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.DockMaintains.DockMaintainCriteriaViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.Dock.DockMaintains.DockMaintainViewConfig">
+            <summary>
+            月台维护视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.DockMaintains.DockMaintainViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.DockMaintains.DockMaintainViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.Dock.DockMaintains.DockMaintainWhViewConfig">
+            <summary>
+            月台维护适应仓库视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.DockMaintains.DockMaintainWhViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.DockMaintains.DockMaintainWhViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.Dock.DockQueues.Commands.AddSceneDockQueueCommand">
+            <summary>
+            现场取号命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.DockQueues.Commands.AddSceneDockQueueCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Dock.DockQueues.Commands.AddAppointDockQueueCommand">
+            <summary>
+            预约取号命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.DockQueues.Commands.AddAppointDockQueueCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Dock.DockQueues.Commands.CancelDockQueueCommand">
+            <summary>
+            取消
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.DockQueues.Commands.CancelDockQueueCommand.Excute(SIE.Dock.Datas.DockAppointData,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Dock.DockQueues.Commands.AssignDockCommand">
+            <summary>
+            分配月台命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.DockQueues.Commands.AssignDockCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Dock.DockQueues.Commands.DelayDockQueueCommand">
+            <summary>
+            推迟命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.DockQueues.Commands.DelayDockQueueCommand.Excute(System.Double[],System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>true</returns>
+        </member>
+        <member name="T:SIE.Web.Dock.DockQueues.Commands.CheckInQueueCommand">
+            <summary>
+            签到命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.DockQueues.Commands.CheckInQueueCommand.Excute(System.Double[],System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>true</returns>
+        </member>
+        <member name="T:SIE.Web.Dock.DockQueues.Commands.CheckOutQueueCommand">
+            <summary>
+            签出命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.DockQueues.Commands.CheckOutQueueCommand.Excute(System.Double[],System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>true</returns>
+        </member>
+        <member name="T:SIE.Web.Dock.DockQueues.Commands.UpDockQueueCommand">
+            <summary>
+            升级命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.DockQueues.Commands.UpDockQueueCommand.Excute(System.Double[],System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>true</returns>
+        </member>
+        <member name="T:SIE.Web.Dock.DockQueues.Commands.DownDockQueueCommand">
+            <summary>
+            降级命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.DockQueues.Commands.DownDockQueueCommand.Excute(System.Double[],System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>true</returns>
+        </member>
+        <member name="T:SIE.Web.Dock.DockQueues.Commands.PrintDockQueueCommand">
+            <summary>
+            打印命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.DockQueues.Commands.PrintDockQueueCommand.Excute(SIE.Dock.Datas.DockAppointData,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">打印数据</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Dock.DockQueues.Configs.DockQueueNumberConfigValueViewConfig">
+            <summary>
+            月台排队配置项视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.DockQueues.Configs.DockQueueNumberConfigValueViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Dock.DockQueues.DataQueryer.DockQueueDataQueryer">
+            <summary>
+            月台排队查询器
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.DockQueues.DataQueryer.DockQueueDataQueryer.GetDockQueueDefaultTemplate">
+            <summary>
+            获取配置的模板的值
+            </summary>
+            <returns>模板数据</returns>
+        </member>
+        <member name="M:SIE.Web.Dock.DockQueues.DataQueryer.DockQueueDataQueryer.SaveDockQueueData(SIE.Dock.DockQueues.DockQueue)">
+            <summary>
+            保存月台预约数据
+            </summary>
+            <param name="data">月台预约数据</param>
+        </member>
+        <member name="T:SIE.Web.Dock.DockQueues.DockQueueCriteriaViewConfig">
+            <summary>
+            月台排队查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.DockQueues.DockQueueCriteriaViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.Dock.DockQueues.DockQueueViewConfig">
+            <summary>
+            月台排队视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.DockQueues.DockQueueViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.DockQueues.DockQueueViewConfig.ConfigDetailsView">
+            <summary>
+             配置明细视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.Dock.DockRunMts.Commands.SaveDockRunMtCommand">
+            <summary>
+            保存
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.DockRunMts.Commands.SaveDockRunMtCommand.OnSaving(SIE.Domain.EntityList)">
+            <summary>
+            保存
+            </summary>
+            <param name="data">实体列表</param>
+        </member>
+        <member name="T:SIE.Web.Dock.DockRunMts.DockRunMtCriteriaViewConfig">
+            <summary>
+            月台运行维护查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.DockRunMts.DockRunMtCriteriaViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.Dock.DockRunMts.DockRunMtViewConfig">
+            <summary>
+            月台运行维护视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.DockRunMts.DockRunMtViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.Dock.DockRunMts.ExcepTimeViewConfig">
+            <summary>
+            例外时段视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.DockRunMts.ExcepTimeViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.Dock.DockRunMts.WorkTimeViewConfig">
+            <summary>
+            工作时段视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.DockRunMts.WorkTimeViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.Dock.SelectUseHoursConfig">
+            <summary>
+            下拉列表筛选编辑器
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.SelectUseHoursConfig.InitStore">
+            <summary>
+            初始化数据
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.SelectUseHoursConfig.ToJson(SIE.Web.Json.LiteJsonWriter)">
+            <summary>
+            序列化
+            </summary>
+            <param name="json"></param>
+        </member>
+        <member name="T:SIE.Web.Dock.Menus.DockMenuInit">
+            <summary>
+            菜单初始化
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.Menus.DockMenuInit.GetMenuDtos">
+            <summary>
+            获取菜单列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Dock.Module">
+            <summary>
+            模块配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化模块
+            </summary>
+            <param name="app">应用程序</param>
+        </member>
+        <member name="M:SIE.Web.Dock.Module.App_ModuleOperations(System.Object,System.EventArgs)">
+            <summary>
+            配置菜单
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="T:SIE.Web.Dock.ViewModels.AssignDockViewModelViewConfig">
+            <summary>
+            分配月台ViewModel视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.ViewModels.AssignDockViewModelViewConfig.ConfigDetailsView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Dock.ViewModels.CancelAppointViewModelViewConfig">
+            <summary>
+            取消预约ViewModel视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.ViewModels.CancelAppointViewModelViewConfig.ConfigDetailsView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Dock.ViewModels.DockAppointPrintViewModelViewConfig">
+            <summary>
+            月台预约打印
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.ViewModels.DockAppointPrintViewModelViewConfig.ConfigDetailsView">
+            <summary>
+            表单视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Dock.ViewModels.DockQueuePrintViewModelViewConfig">
+            <summary>
+            月台排队打印
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.ViewModels.DockQueuePrintViewModelViewConfig.ConfigDetailsView">
+            <summary>
+            表单视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Dock.ViewModels.SelectAppointDockViewModelViewConfig">
+            <summary>
+            选择预约月台ViewModel视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.ViewModels.SelectAppointDockViewModelViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.ViewModels.SelectAppointDockViewModelViewConfig.ConfigSelectionView">
+            <summary>
+            下拉视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Dock.WxPackage.WxReceive">
+            <summary>
+            微信推送接受接口、只能用Get请求 且不能封装
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.WxPackage.WxReceive.GetWxMessage(System.String,System.String,System.String,System.String)">
+            <summary>
+            微信接入接口(必须是GET方法)
+            </summary>
+            <param name="signature">微信加密签名，signature结合了开发者填写的 token 参数和请求中的 timestamp 参数、nonce参数。</param>
+            <param name="timestamp">时间戳</param>
+            <param name="nonce">随机数</param>
+            <param name="echostr">随机字符串</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Dock.YardZones.Commands.AddAddressCommand">
+            <summary>
+            添加
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.YardZones.Commands.AddAddressCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.Dock.YardZones.Commands.EditAddressCommand">
+            <summary>
+            编辑
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.YardZones.Commands.EditAddressCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.Dock.YardZones.Commands.DeleteYardZoneCommand">
+            <summary>
+            删除命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Dock.YardZones.Commands.SaveYardZoneCommand">
+            <summary>
+            保存命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.YardZones.Commands.SaveYardZoneCommand.OnSaving(SIE.Domain.EntityList)">
+            <summary>
+            保存
+            </summary>
+            <param name="data">实体列表</param>
+        </member>
+        <member name="T:SIE.Web.Dock.YardZones.DockHandlingViewConfig">
+            <summary>
+            月台装卸能力视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.YardZones.DockHandlingViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.Dock.YardZones.YardZoneCriteriaViewConfig">
+            <summary>
+            园片区维护查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.YardZones.YardZoneCriteriaViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Dock.YardZones.YardZoneViewConfig">
+            <summary>
+            园片区维护视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.YardZones.YardZoneViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.YardZones.YardZoneViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.Dock.YardMaintains.Commands.AddAddressCommand">
+            <summary>
+            添加
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.YardMaintains.Commands.AddAddressCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.Dock.YardMaintains.Commands.EditAddressCommand">
+            <summary>
+            编辑
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.YardMaintains.Commands.EditAddressCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.Dock.YardMaintains.Commands.DeleteYardMaintainCommand">
+            <summary>
+            删除命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Dock.YardMaintains.YardMaintainCriteriaViewConfig">
+            <summary>
+            园区维护查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.YardMaintains.YardMaintainCriteriaViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Dock.YardMaintains.YardMaintainViewConfig">
+            <summary>
+            园区维护视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.YardMaintains.YardMaintainViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Dock.YardMaintains.YardMaintainViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+    </members>
+</doc>

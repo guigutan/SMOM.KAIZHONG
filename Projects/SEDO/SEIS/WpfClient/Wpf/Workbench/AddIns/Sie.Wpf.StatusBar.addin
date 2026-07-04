@@ -1,0 +1,18 @@
+<AddIn name        = "SieStudio"
+       author      = "huchuqiang"
+       copyright   = "prj:///doc/copyright.txt"
+       url         = "http://siestudio.chinasie.com"
+       description = "SieStudio Workbench StatusBar"
+       addInManagerHidden = "true">
+	<Manifest>
+		<!--定义-->
+		<Identity name="SieStudio" version="@AssemblyVersion"/> 
+	</Manifest>
+  <Runtime>
+    <Import assembly = ":SIE.Wpf"/>
+  </Runtime>
+  <!-- StatusBar -->
+  <Path name = "/Main/Workbench/StatusBar">
+    <StatusBarItem id = "StatusBar" type="Builder" class="SIE.Wpf.Workbench.Bars.ProductStatusBar"/>
+  </Path>
+</AddIn>

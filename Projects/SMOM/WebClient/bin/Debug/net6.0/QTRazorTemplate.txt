@@ -1,0 +1,6 @@
+@if (!Model.HasEnd){
+    <span style="font-size: 14px;"><span>条码[</span><span>@Model.Sn</span><span>]在开始工序[</span><span>@Model.StartProcess</span><span>]开始状态[</span><span>@Model.StartState</span><span>]采集后，超时[</span><span>@Model.OverTime</span><span>(min)]未采集结束工序[</span><span>@Model.EndProcess</span><span>]结束状态[</span><span>@Model.EndState</span><span>]，请注意及时采集！</span></span>
+}
+else{
+    <span style="font-size: 14px;"><span>条码[</span><span>@Model.Sn</span><span>]在开始工序[</span><span>@Model.StartProcess</span><span>]开始状态[</span><span>@Model.StartState</span><span>]结束工序[</span><span>@Model.EndProcess</span><span>]结束状态[</span><span>@Model.EndState</span><span>]超时[</span><span>@Model.OverTime</span><span>(min)]，请注意！</span></span>
+}

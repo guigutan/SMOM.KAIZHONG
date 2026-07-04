@@ -1,0 +1,3937 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Barcodes</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Barcodes.BarcodeEntityRepository`1">
+            <summary>
+            本程序集的数据提供者
+            </summary>
+            <typeparam name="T">泛型实体参数</typeparam>
+        </member>
+        <member name="T:SIE.Barcodes.BarcodeEntityDataProvider">
+            <summary>
+            数据提供者
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeEntityDataProvider.ConnectionStringName">
+            <summary>
+            数据库连接字符串的名称
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeEntityDataProvider.ConnectionStringSettingName">
+            <summary>
+            数据库连接字符串的名称
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.Barcode">
+            <summary>
+            条码
+            </summary>
+            <summary>
+            条码
+            </summary>
+        </member>
+        <member name="M:SIE.Barcodes.Barcode.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Barcode.PrintDateProperty">
+            <summary>
+            打印日期
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Barcode.PrintDate">
+            <summary>
+            打印日期
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Barcode.PrintTimesProperty">
+            <summary>
+            打印次数
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Barcode.PrintTimes">
+            <summary>
+            打印次数
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Barcode.StateProperty">
+            <summary>
+            打印状态
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Barcode.PrintedState">
+            <summary>
+            打印状态
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Barcode.RangeIdProperty">
+            <summary>
+             条码范围Id
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Barcode.RangeId">
+            <summary>
+             条码范围Id
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Barcode.RangeProperty">
+            <summary>
+             条码范围
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Barcode.Range">
+            <summary>
+             条码范围
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Barcode.PrintByIdProperty">
+            <summary>
+            打印员Id
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Barcode.PrintById">
+            <summary>
+            打印员Id
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Barcode.PrintByProperty">
+            <summary>
+            打印员
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Barcode.PrintBy">
+            <summary>
+            打印员
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Barcode.WorkOrderIdProperty">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Barcode.WorkOrderId">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Barcode.WorkOrderProperty">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Barcode.WorkOrder">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Barcode.AssignStateProperty">
+            <summary>
+            指派状态
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Barcode.AssignState">
+            <summary>
+            指派状态
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Barcode.StartSnProperty">
+            <summary>
+            开始条码
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Barcode.StartSn">
+            <summary>
+            开始条码
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Barcode.EndSnProperty">
+            <summary>
+            结束条码
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Barcode.EndSn">
+            <summary>
+            结束条码
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Barcode.WONoProperty">
+            <summary>
+            工单号
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Barcode.WONo">
+            <summary>
+            工单号
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Barcode.PrinterNameProperty">
+            <summary>
+            打印人
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Barcode.PrinterName">
+            <summary>
+            打印人
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Barcode.ProductCodeProperty">
+            <summary>
+            产品编码
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Barcode.ProductCode">
+            <summary>
+            产品编码
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Barcode.ProductNameProperty">
+            <summary>
+            产品名称
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Barcode.ProductName">
+            <summary>
+            产品编码
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Barcode.SubmitCode">
+            <summary>
+            完成标识，当扫码输入OK时，表示完成扫码
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.BarcodeConfig">
+            <summary>
+            条码 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeConfig.ConfigMeta">
+            <summary>
+            对Meta属性的配置
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.Barcodes.BarcodeBelongLog">
+            <summary>
+            条码归属日志
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Barcodes.BarcodeBelongLog.SnProperty">
+            <summary>
+            条码号
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Barcodes.BarcodeBelongLog.Sn">
+            <summary>
+            条码号
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Barcodes.BarcodeBelongLog.WorkOrderIdProperty">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Barcodes.BarcodeBelongLog.WorkOrderId">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Barcodes.BarcodeBelongLog.WorkOrderProperty">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Barcodes.BarcodeBelongLog.WorkOrder">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Barcodes.BarcodeBelongLog.OrgWorkOrderIdProperty">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Barcodes.BarcodeBelongLog.OrgWorkOrderId">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Barcodes.BarcodeBelongLog.OrgWorkOrderProperty">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Barcodes.BarcodeBelongLog.OrgWorkOrder">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Barcodes.BarcodeBelongLog.OperatorIdProperty">
+            <summary>
+            操作人Id
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Barcodes.BarcodeBelongLog.OperatorId">
+            <summary>
+            操作人Id
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Barcodes.BarcodeBelongLog.OperatorProperty">
+            <summary>
+            操作人
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Barcodes.BarcodeBelongLog.Operator">
+            <summary>
+            操作人
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Barcodes.BarcodeBelongLog.OperatDateProperty">
+            <summary>
+            操作日期
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Barcodes.BarcodeBelongLog.OperatDate">
+            <summary>
+            操作日期
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.Barcodes.BarcodeBelongLogConfig">
+            <summary>
+            条码归属日志 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Barcodes.Barcodes.BarcodeBelongLogConfig.ConfigMeta">
+            <summary>
+            对Meta属性的配置
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.Barcodes.OutwayBarcodeInfo">
+            <summary>
+            外部条码信息
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Barcodes.OutwayBarcodeInfo.Sn">
+            <summary>
+            条码
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Barcodes.OutwayBarcodeInfo.Qty">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Barcodes.OutwayBarcodeInfo.WoNo">
+            <summary>
+            工单号
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.Barcodes.BarcodeController">
+            <summary>
+            条码API
+            </summary>
+        </member>
+        <member name="M:SIE.Barcodes.Barcodes.BarcodeController.GenerateBarcode(System.Collections.Generic.List{SIE.Barcodes.Barcodes.OutwayBarcodeInfo})">
+            <summary>
+            外部生成条码
+            </summary>
+            <param name="outwayBarcodeInfoList"></param>
+        </member>
+        <member name="M:SIE.Barcodes.Barcodes.BarcodeController.SendPrintEvents(SIE.Domain.EntityList{SIE.Barcodes.Barcode},SIE.Domain.EntityList{SIE.Barcodes.PrintWorkOrder})">
+            <summary>
+            推送打印条码消息到边端
+            </summary>
+            <param name="saveBarcodeList"></param>
+            <param name="printWoList"></param>
+        </member>
+        <member name="T:SIE.Barcodes.Barcodes.Enums.AssignState">
+            <summary>
+            指派状态
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Barcodes.Enums.AssignState.UnAssign">
+            <summary>
+            未指派
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Barcodes.Enums.AssignState.PartAssign">
+            <summary>
+            部分指派
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Barcodes.Enums.AssignState.Assigned">
+            <summary>
+            已指派
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.Barcodes.UniqueBarcode">
+            <summary>
+            唯一条码
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Barcodes.UniqueBarcode.SnProperty">
+            <summary>
+            条码号
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Barcodes.UniqueBarcode.Sn">
+            <summary>
+            条码号
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Barcodes.UniqueBarcode.InvOrgIdProperty">
+            <summary>
+            库存组织
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Barcodes.UniqueBarcode.InvOrgId">
+            <summary>
+            注释Id
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Barcodes.UniqueBarcode.InvOrgProperty">
+            <summary>
+            注释
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Barcodes.UniqueBarcode.InvOrg">
+            <summary>
+            注释
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Barcodes.UniqueBarcode.InvOrgNameProperty">
+            <summary>
+            库存组织名称
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Barcodes.UniqueBarcode.InvOrgName">
+            <summary>
+            库存组织名称
+            </summary>
+        </member>
+        <member name="M:SIE.Barcodes.Barcodes.UniqueBarcodeConfig.ConfigMeta">
+            <summary>
+            对Meta属性的配置
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.Barcodes.ViewModels.BarcodeBelongViewModel">
+            <summary>
+            条码归属 ViewModel
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Barcodes.ViewModels.BarcodeBelongViewModel.SnProperty">
+            <summary>
+            条码号
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Barcodes.ViewModels.BarcodeBelongViewModel.Sn">
+            <summary>
+            条码号
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Barcodes.ViewModels.BarcodeBelongViewModel.WorkOrderIdProperty">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Barcodes.ViewModels.BarcodeBelongViewModel.WorkOrderId">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Barcodes.ViewModels.BarcodeBelongViewModel.WorkOrderProperty">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Barcodes.ViewModels.BarcodeBelongViewModel.WorkOrder">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Barcodes.ViewModels.BarcodeBelongViewModel.OrgWorkOrderIdProperty">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Barcodes.ViewModels.BarcodeBelongViewModel.OrgWorkOrderId">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Barcodes.ViewModels.BarcodeBelongViewModel.OrgWorkOrderProperty">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Barcodes.ViewModels.BarcodeBelongViewModel.OrgWorkOrder">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Barcodes.ViewModels.BarcodeBelongViewModel.BarcodeIdProperty">
+            <summary>
+            条码明细Id
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Barcodes.ViewModels.BarcodeBelongViewModel.BarcodeId">
+            <summary>
+            条码明细Id
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Barcodes.ViewModels.BarcodeBelongViewModel.BarcodeProperty">
+            <summary>
+            条码明细
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Barcodes.ViewModels.BarcodeBelongViewModel.Barcode">
+            <summary>
+            条码明细
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Barcodes.ViewModels.BarcodeBelongViewModel.OrgWorkOrderNoProperty">
+            <summary>
+            原工单号
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Barcodes.ViewModels.BarcodeBelongViewModel.OrgWorkOrderNo">
+            <summary>
+            原工单号
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Barcodes.ViewModels.BarcodeBelongViewModel.PlanQtyProperty">
+            <summary>
+            计划数量
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Barcodes.ViewModels.BarcodeBelongViewModel.PlanQty">
+            <summary>
+            计划数量
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Barcodes.ViewModels.BarcodeBelongViewModel.PrintedQtyProperty">
+            <summary>
+            已打印数量
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Barcodes.ViewModels.BarcodeBelongViewModel.PrintedQty">
+            <summary>
+            已打印数量
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.Barcodes.ViewModels.RstBarcodePrint">
+            <summary>
+            条码打印返回结果
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Barcodes.ViewModels.RstBarcodePrint.Type">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Barcodes.ViewModels.RstBarcodePrint.ErrMsg">
+            <summary>
+            错误信息
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Barcodes.ViewModels.RstBarcodePrint.Url">
+            <summary>
+            路径
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.BarcodeController">
+            <summary>
+            条码控制器
+            </summary>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeController.GetBarcode(System.String)">
+            <summary>
+            获取条码
+            </summary>
+            <param name="sn">SN号</param>
+            <returns>条码</returns>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeController.GetBarcode(System.Double)">
+            <summary>
+            根据条码明细id获取条码明细(贪婪加载工单)
+            </summary>
+            <param name="id">条码明细id</param>
+            <returns>条码明细</returns>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeController.GetBarcodeWorkOrderId(System.String)">
+            <summary>
+            获取条码
+            </summary>
+            <param name="sn">SN号</param>
+            <returns>条码</returns>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeController.IsBarcodeEnabled(System.String)">
+            <summary>
+            查询条码是否属于有效条码
+            </summary>
+            <param name="sn">SN号</param>
+            <returns>条码</returns>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeController.GetBarcodeOrderId(System.String)">
+            <summary>
+            查询条码所属工单Id
+            </summary>
+            <param name="sn">SN号</param>
+            <returns>工单Id</returns>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeController.GetBarcodeLoadWithProduct(System.String)">
+            <summary>
+            获取条码
+            </summary>
+            <param name="sn">SN号</param>
+            <returns>条码</returns>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeController.GetBarcodeQty(System.String)">
+            <summary>
+            获取条码数量
+            </summary>
+            <param name="sn">条码号</param>
+            <returns>条码数量</returns>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeController.GetBarcodes(SIE.Barcodes.BarcodeCriteria)">
+            <summary>
+            查询条码
+            </summary>
+            <param name="criteria">条码查询实体</param>
+            <exception cref="T:System.ArgumentNullException">参数为空</exception>
+            <returns>条码列表</returns>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeController.GetBarcodes(System.Double,System.Nullable{System.Boolean})">
+            <summary>
+            获取条码列表
+            </summary>
+            <param name="workOrderId">工单ID</param>
+            <param name="isScraped">是否报废</param>
+            <returns>条码列表</returns>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeController.GetBarcodes(System.Collections.Generic.List{System.Double})">
+            <summary>
+            获取生产工单Id所对应的所有条码信息列表
+            </summary>
+            <param name="workOrderIds">生产工单Ids列表</param>
+            <returns>条码信息列表</returns>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeController.GetBarcodes(System.Double,System.Collections.Generic.List{SIE.Domain.OrderInfo},SIE.PagingInfo)">
+            <summary>
+            根据工单ID获取条码消息
+            </summary>
+            <param name="workorderId">工单ID</param> 
+            <param name="sortInfo">排序</param>
+            <param name="pagingInfo">分页信息</param>
+            <returns>条码信息</returns>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeController.BarcodeReceive(System.Double,System.String,System.String)">
+            <summary>
+            条码领用
+            </summary>
+            <param name="rangeId">条码范围ID</param>
+            <param name="userName">用户名</param>
+            <param name="pwd">密码</param>
+            <exception cref="T:SIE.Domain.Validation.ValidationException">用户名为空、条码已领用</exception>
+            <exception cref="T:SIE.Domain.EntityNotFoundException">条码不存在</exception>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeController.ExistsSn(System.String)">
+            <summary>
+            条码是否存在
+            </summary>
+            <param name="sn">SN号</param>
+            <returns>True:条码存在 False:条码不存在</returns>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeController.UinqueExists(System.String)">
+            <summary>
+            是否跨库存组织存在
+            </summary>
+            <param name="sn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeController.Exists(System.String,SIE.Core.WorkOrders.WorkOrderType)">
+            <summary>
+            条码是否存在
+            </summary>
+            <param name="sn">条码</param>
+            <param name="type">工单类型</param>
+            <returns>true:条码存在 ; false:条码不存在</returns>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeController.Exists(System.String,System.Boolean)">
+            <summary>
+            条码是否已经报废
+            </summary>
+            <param name="sn">条码</param>
+            <param name="isScraped">是否报废</param>
+            <returns>true: 已经报废; false:未报废</returns>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeController.Exists(System.String,System.Double)">
+            <summary>
+            检验是否存在条码和工单
+            </summary>
+            <param name="sn">SN号</param>
+            <param name="workOrderId">工单Id</param>
+            <returns>True：存在条码  False:不存在条码</returns>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeController.GetBarcodesByIds(System.Collections.Generic.List{System.Double})">
+            <summary>
+            获取条码Id所对应的所有条码信息列表
+            </summary>
+            <param name="barcodeIds">条码Ids列表</param>
+            <returns>条码信息列表</returns>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeController.GetBarcodesBySns(System.Collections.Generic.List{System.String})">
+            <summary>
+            获取条码号列表所对应的所有条码信息列表
+            </summary>
+            <param name="sns">条码号列表</param>
+            <returns>条码信息列表</returns>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeController.GetBarcodeCount(System.Double)">
+            <summary>
+            获取工单条码数量
+            </summary>
+            <param name="workOrderId">工单Id</param> 
+            <returns>条码数量</returns>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeController.GetScrapBarcodeCount(System.Double)">
+            <summary>
+            获取工单报废条码数量
+            </summary>
+            <param name="workOrderId">工单Id</param>
+            <returns>报废条码数量</returns>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeController.ImportBarcode(System.Double,System.Collections.Generic.List{System.String})">
+            <summary>
+            条码导入
+            </summary>
+            <param name="workOrderId">工单Id</param>
+            <param name="sns">条码</param>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeController.PrintBarcodes(SIE.Barcodes.PrinterInfo)">
+            <summary>
+            创建工单条码
+            </summary>
+            <param name="info">打印信息</param>
+            <returns>错误信息和条码列表</returns>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeController.Print(SIE.Barcodes.PrinterInfo)">
+            <summary>
+            创建工单条码
+            </summary>
+            <param name="info">打印信息</param>
+            <returns>条码列表</returns>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeController.ValidateSameBarcode(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            验证条码重复
+            </summary>
+            <param name="barcodes">条码</param>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeController.SplitBarcodes(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            拆分条码
+            </summary>
+            <param name="barcodes">条码集合</param>
+            <returns>拆分后条码</returns>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeController.BarcodeScrap(SIE.Domain.EntityList{SIE.Barcodes.Barcode},System.String)">
+            <summary>
+            条码报废
+            </summary>
+            <param name="barcodeList">待报废条码列表</param>
+            <param name="reason">报废原因</param>
+            <exception cref="T:SIE.Domain.Validation.ValidationException">报废原因为空、报废条码为空、多次报废</exception>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeController.BarcodeScrap(System.Collections.Generic.List{System.String},System.String)">
+            <summary>
+            条码报废
+            </summary>
+            <param name="barcodes">待报废条码列表</param>
+            <param name="reason">报废原因</param>
+            <exception cref="T:SIE.Domain.Validation.ValidationException">报废原因为空、报废条码为空、多次报废</exception>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeController.ValidateBarcodeScrap(SIE.Domain.EntityList{SIE.Barcodes.Barcode},System.String)">
+            <summary>
+            验证证条码报废
+            </summary>
+            <param name="barcodeList">待报废条码列表</param>
+            <param name="reason">报废原因</param>
+            <exception cref="T:SIE.Domain.Validation.ValidationException">报废原因为空、报废条码为空、多次报废</exception>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeController.ReprintBarcode(SIE.Domain.EntityList{SIE.Barcodes.Barcode},SIE.Barcodes.BarcodeLogType,System.String,System.Int32)">
+            <summary>
+            条码补打
+            </summary>
+            <param name="barcodeList">选中条码列表</param>
+            <param name="type">打印类型</param>
+            <param name="reason">补打原因</param>
+            <param name="times">补打次数</param>
+            <returns>补打结果</returns>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeController.Reprint(SIE.Domain.EntityList{SIE.Barcodes.Barcode},SIE.Barcodes.BarcodeLogType,System.String,System.Int32)">
+            <summary>
+            补打
+            </summary>
+            <param name="barcodeList">条码列表</param>
+            <param name="type">打印类型</param>
+            <param name="reason">原因</param>
+            <param name="times">打印次数</param>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeController.BarcodePending(SIE.Domain.EntityList{SIE.Barcodes.Barcode},System.String)">
+            <summary>
+            条码挂起
+            </summary>
+            <param name="barcodeList">待挂起条码列表</param>
+            <param name="reason">挂起原因</param>
+            <exception cref="T:SIE.Domain.Validation.ValidationException">挂起原因为空</exception>
+            <exception cref="T:SIE.Domain.Validation.ValidationException">待挂起条码列表不允许为空</exception>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeController.BarcodeResume(System.Double[])">
+            <summary>
+            条码恢复
+            </summary>
+            <param name="ids">待恢复条码列表</param>
+            <exception cref="T:SIE.Domain.Validation.ValidationException">挂起原因为空</exception>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeController.CountGenerateBarcode(System.Double)">
+            <summary>
+            计算工单已生成条码数
+            </summary>
+            <param name="workorderId">工单ID</param>
+            <returns>条码信息</returns>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeController.GetPrintTemplateByWo(System.Double)">
+            <summary>
+            获取工单的标签打印模板
+            </summary>
+            <param name="workOrderId">工单ID</param>
+            <returns>标签打印模板</returns>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeController.GetPrintTemplatesByRuleId(System.Double,System.String,SIE.PagingInfo,System.String)">
+            <summary>
+            根据规则Id查询打印模板
+            </summary>
+            <param name="ruleId">规则Id</param>
+            <param name="entityType">打印条码类型</param>
+            <param name="info">分页信息</param>
+            <param name="keyword">关键词</param>
+            <returns>打印模板列表</returns>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeController.GetPrintTemplatesByType(System.String,SIE.PagingInfo,System.String)">
+            <summary>
+            根据打印条码类型获取打印模板
+            </summary>
+            <param name="entityType">打印条码类型</param>
+            <param name="info">分页信息</param>
+            <param name="keyword">关键词</param>
+            <returns>打印模板列表</returns>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeController.GetBarcodeRanges(System.Double)">
+            <summary>
+            查询条码范围
+            </summary>
+            <param name="workOrderId">工单Id</param>
+            <returns>条码范围</returns>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeController.GetBarcodeRanges(System.Collections.Generic.List{System.Double})">
+            <summary>
+            根据生产订单Id列表获取条码范围列表
+            </summary>
+            <param name="workOrderIds">生产订单Id列表</param>
+            <returns>条码范围列表</returns>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeController.GetBarcodeRanges(SIE.Barcodes.BarcodeRangeCriteria)">
+            <summary>
+            默认查询条码领用方法
+            </summary>
+            <param name="criteria">查询条件</param>
+            <exception cref="T:System.ArgumentNullException">参数为空</exception>
+            <returns>BarcodeRange列表</returns>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeController.GetBarcodeLogs(SIE.Barcodes.BarcodeLogCriteria)">
+            <summary>
+            默认查询条码打印日志方法
+            </summary>
+            <param name="criteria">查询条件</param>
+            <exception cref="T:System.ArgumentNullException">参数为空</exception>
+            <returns>BarcodeLog列表</returns>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeController.GetWorkOrders(SIE.Barcodes.PrintWorkOrderCriteria)">
+            <summary>
+            根据条码打印条件获取工单
+            </summary>
+            <param name="criteria">条码打印查询实体</param>
+            <exception cref="T:System.ArgumentNullException">参数为空</exception>
+            <returns>工单列表</returns>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeController.ValidateBarcodePrint(SIE.Barcodes.PrinterInfo,SIE.Barcodes.PrintWorkOrder)">
+            <summary>
+            验证条码打印
+            </summary>
+            <param name="info">打印信息</param>
+            <param name="workOrder">打印工单</param>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeController.ValidatePrintWorkOrder(System.Double,System.Int32,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            验证导入条码工单
+            </summary>
+            <param name="workOrderId">工单id</param>
+            <param name="count">条码数量</param>
+            <param name="sns">条码列表</param> 
+            <returns>打印工单</returns>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeController.GetPrintWorkOrder(System.Double)">
+            <summary>
+            通过工单Id获取条码打印
+            </summary>
+            <param name="workOrderId">工单Id</param>
+            <returns>条码打印</returns>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeController.GetBarcodeInfo(System.Collections.Generic.List{System.String})">
+            <summary>
+            入库获取条码数据
+            </summary>
+            <param name="sns">条码</param>
+            <returns>条码数据</returns>
+            <remarks>WMS创建ASN调用</remarks>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeController.SaveGetBarcodeInfoLog(System.Collections.Generic.List{System.String})">
+            <summary>
+            保存入库获取条码数据日志
+            </summary>
+            <param name="sns">条码</param>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeController.BarcodeBelong(SIE.Barcodes.Barcodes.ViewModels.BarcodeBelongViewModel)">
+            <summary>
+            条码归属
+            </summary>
+            <param name="barBelongVM">条码归属ViewModel</param>
+            <returns>错误信息</returns>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeController.BarcodeBelong(SIE.Barcodes.Barcode,SIE.Core.WorkOrders.WorkOrder)">
+            <summary>
+            条码归属
+            </summary>
+            <param name="barcode">条码</param> 
+            <param name="belongWorkOrder">归属工单</param>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeController.CreateBarcodeBelongLog(SIE.Barcodes.Barcode,System.Double,System.Double)">
+            <summary>
+            创建保存条码归属日志
+            </summary>
+            <param name="barcode">条码</param>
+            <param name="orgWoId">原工单Id</param>
+            <param name="belongWoId">归属工单Id</param>
+        </member>
+        <member name="T:SIE.Barcodes.BarcodeCriteria">
+            <summary>
+            条码查询实体
+            </summary>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeCriteria.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeCriteria.WorkOrderNoProperty">
+            <summary>
+            工单号
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeCriteria.WorkOrderNo">
+            <summary>
+            工单号
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeCriteria.SnProperty">
+            <summary>
+            条码号
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeCriteria.Sn">
+            <summary>
+            条码号
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeCriteria.PrinterIdProperty">
+            <summary>
+            打印人Id
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeCriteria.PrinterId">
+            <summary>
+            打印人Id
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeCriteria.PrinterProperty">
+            <summary>
+            打印人
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeCriteria.Printer">
+            <summary>
+            打印人
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeCriteria.PrintDateProperty">
+            <summary>
+            打印时间
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeCriteria.PrintDate">
+            <summary>
+            打印时间
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeCriteria.StateProperty">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeCriteria.State">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeCriteria.ScrapedByIdProperty">
+            <summary>
+            报废人Id
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeCriteria.ScrapedById">
+            <summary>
+            报废人Id
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeCriteria.ScrapedByProperty">
+            <summary>
+            报废人
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeCriteria.ScrapedBy">
+            <summary>
+            报废人
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeCriteria.ScrapedDateProperty">
+            <summary>
+            报废日期
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeCriteria.ScrapedDate">
+            <summary>
+            报废日期
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeCriteria.IsScrapedProperty">
+            <summary>
+            是否报废
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeCriteria.IsScraped">
+            <summary>
+            是否报废
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeCriteria.IsPendingProperty">
+            <summary>
+            是否挂起
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeCriteria.IsPending">
+            <summary>
+            是否挂起
+            </summary>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeCriteria.Fetch">
+            <summary>
+            查询方法
+            </summary>
+            <returns>条码列表</returns>
+        </member>
+        <member name="T:SIE.Barcodes.BarcodeLog">
+            <summary>
+            条码日志
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeLog.QtyProperty">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeLog.Qty">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeLog.OperatDateProperty">
+            <summary>
+            操作日期
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeLog.OperatDate">
+            <summary>
+            操作日期
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeLog.ReasonProperty">
+            <summary>
+            原因
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeLog.Reason">
+            <summary>
+            原因
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeLog.BarcodeIdProperty">
+            <summary>
+            条码Id
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeLog.BarcodeId">
+            <summary>
+            条码Id
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeLog.BarcodeProperty">
+            <summary>
+            条码
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeLog.Barcode">
+            <summary>
+            条码
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeLog.OperatorIdProperty">
+            <summary>
+            操作人Id
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeLog.OperatorId">
+            <summary>
+            操作人Id
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeLog.OperatorProperty">
+            <summary>
+            操作人
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeLog.Operator">
+            <summary>
+            操作人
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeLog.TypeProperty">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeLog.Type">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeLog.WorkOrderIdProperty">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeLog.WorkOrderId">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeLog.WorkOrderProperty">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeLog.WorkOrder">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeLog.BarcodeLogWONoProperty">
+            <summary>
+            条码日志工单号
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeLog.BarcodeLogWONo">
+            <summary>
+            条码日志工单号
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeLog.BarcodeLogBarcodeSnProperty">
+            <summary>
+            条码日志条码号
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeLog.BarcodeLogBarcodeSn">
+            <summary>
+            条码日志条码号
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeLog.BarcodeLogOperatorNameProperty">
+            <summary>
+            条码日志操作人
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeLog.BarcodeLogOperatorName">
+            <summary>
+            条码日志操作人
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.BarcodeLogConfig">
+            <summary>
+            条码日志 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeLogConfig.ConfigMeta">
+            <summary>
+            对Meta属性的配置
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.BarcodeLogCriteria">
+            <summary>
+            条码打印日志 查询实体
+            </summary>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeLogCriteria.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeLogCriteria.WorkOrderNoProperty">
+            <summary>
+            工单号
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeLogCriteria.WorkOrderNo">
+            <summary>
+            工单号
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeLogCriteria.OperatDateProperty">
+            <summary>
+            操作日期
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeLogCriteria.OperatDate">
+            <summary>
+            操作日期
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeLogCriteria.BarcodeProperty">
+            <summary>
+            条码
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeLogCriteria.Barcode">
+            <summary>
+            条码
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeLogCriteria.OperatorIdProperty">
+            <summary>
+            操作人Id
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeLogCriteria.OperatorId">
+            <summary>
+            操作人Id
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeLogCriteria.OperatorProperty">
+            <summary>
+            操作人
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeLogCriteria.Operator">
+            <summary>
+            操作人
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeLogCriteria.TypeProperty">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeLogCriteria.Type">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeLogCriteria.Fetch">
+            <summary>
+            重写查询方法
+            </summary>
+            <returns>条码日志列表</returns>
+        </member>
+        <member name="T:SIE.Barcodes.BarcodeLogType">
+            <summary>
+            打印类型
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeLogType.Scraped">
+            <summary>
+            报废
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeLogType.Remedy">
+            <summary>
+            补打
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeLogType.OutBox">
+            <summary>
+            外箱条码打印
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeLogType.Pending">
+            <summary>
+            挂起
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeLogType.Resume">
+            <summary>
+            恢复
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.BarcodePending">
+            <summary>
+            条码挂起
+            因为模块不支持两个相同的实体，所以此处进行继承
+            因为视图配置加载时会默认加载父类的视图配置方法 所以此实体的视图配置在BarcodeViewConfig文件中进行
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.BarcodeRange">
+            <summary>
+            条码领用
+            </summary>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeRange.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeRange.PrintQtyProperty">
+            <summary>
+            打印数量
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeRange.PrintQty">
+            <summary>
+            打印数量
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeRange.ScrapedQtyProperty">
+            <summary>
+            作废数量
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeRange.ScrapedQty">
+            <summary>
+            作废数量
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeRange.ReceiveDateProperty">
+            <summary>
+            领用时间
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeRange.ReceiveDate">
+            <summary>
+            领用时间
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeRange.StartSnProperty">
+            <summary>
+            开始条码
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeRange.StartSn">
+            <summary>
+            开始条码
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeRange.EndSnProperty">
+            <summary>
+            结束条码
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeRange.EndSn">
+            <summary>
+            结束条码
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeRange.ReceiveByIdProperty">
+            <summary>
+            领用人Id
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeRange.ReceiveById">
+            <summary>
+            领用人Id
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeRange.ReceiveByProperty">
+            <summary>
+            领用人
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeRange.ReceiveBy">
+            <summary>
+            领用人
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeRange.RuleIdProperty">
+            <summary>
+            编码规则Id
+            </summary> 
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeRange.RuleId">
+            <summary>
+            编码规则Id
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeRange.RuleProperty">
+            <summary>
+            编码规则
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeRange.Rule">
+            <summary>
+            编码规则
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeRange.StateProperty">
+            <summary>
+            领用状态
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeRange.State">
+            <summary>
+            领用状态
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeRange.WorkOrderIdProperty">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeRange.WorkOrderId">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeRange.WorkOrderProperty">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeRange.WorkOrder">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeRange.TemplateIdProperty">
+            <summary>
+            打印模板Id
+            </summary> 
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeRange.TemplateId">
+            <summary>
+            打印模板Id
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeRange.TemplateProperty">
+            <summary>
+            打印模板
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeRange.Template">
+            <summary>
+            打印模板
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeRange.WONoProperty">
+            <summary>
+            工单号
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeRange.WONo">
+            <summary>
+            工单号
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeRange.ProductNameProperty">
+            <summary>
+            产品名称
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeRange.ProductName">
+            <summary>
+            产品名称
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.BarcodeRangeConfig">
+            <summary>
+            条码领用 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeRangeConfig.ConfigMeta">
+            <summary>
+            对Meta属性的配置
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.BarcodeRangeCriteria">
+            <summary>
+            条码领用 查询实体
+            </summary>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeRangeCriteria.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeRangeCriteria.WorkOrderNoProperty">
+            <summary>
+            工单号
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeRangeCriteria.WorkOrderNo">
+            <summary>
+            工单号
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeRangeCriteria.ReceiveByIdProperty">
+            <summary>
+            领用人Id
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeRangeCriteria.ReceiveById">
+            <summary>
+            领用人Id
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeRangeCriteria.ReceiveByProperty">
+            <summary>
+            领用人
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeRangeCriteria.ReceiveBy">
+            <summary>
+            领用人
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeRangeCriteria.ReceiveDateProperty">
+            <summary>
+            领用时间
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.BarcodeRangeCriteria.ReceiveDate">
+            <summary>
+            领用时间
+            </summary>
+        </member>
+        <member name="M:SIE.Barcodes.BarcodeRangeCriteria.Fetch">
+            <summary>
+            重写查询方法
+            </summary>
+            <returns>条码范围列表</returns>
+        </member>
+        <member name="T:SIE.Barcodes.BarcodeReprint">
+            <summary>
+            条码补打
+            因为模块不支持两个相同的实体，所以此处进行继承
+            因为视图配置加载时会默认加载父类的视图配置方法 所以此实体的视图配置在BarcodeViewConfig文件中进行
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.BarcodeState">
+            <summary>
+            条码状态
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeState.Notprint">
+            <summary>
+            未打印
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.BarcodeState.Printed">
+            <summary>
+            已打印
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.PrinterInfo">
+            <summary>
+            打印信息
+            </summary>
+        </member>
+        <member name="M:SIE.Barcodes.PrinterInfo.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Barcodes.PrinterInfo.#ctor(System.Double,System.Double,System.Double,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            打印信息
+            </summary>
+            <param name="workOrderId">工单Id</param>
+            <param name="ruleId">编码规则Id</param>
+            <param name="templateId">打印模板Id</param>
+            <param name="printQty">打印数量</param>
+            <param name="singleQty">单张数量</param>
+            <param name="printedQty">已打印数据</param>
+        </member>
+        <member name="P:SIE.Barcodes.PrinterInfo.WorkOrderId">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.PrinterInfo.NumberRuleId">
+            <summary>
+            编码规则Id
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.PrinterInfo.PrintQty">
+            <summary>
+            打印数量
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.PrinterInfo.SingleQty">
+            <summary>
+            单张数量
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.PrinterInfo.PrintTemplateId">
+            <summary>
+            打印模板Id
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.PrinterInfo.PrintedQty">
+            <summary>
+            已打印数量
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.PrintWorkOrder">
+            <summary>
+            条码打印实体
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.WorkOrderConfig">
+            <summary>
+            工单 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Barcodes.WorkOrderConfig.ConfigMeta">
+            <summary>
+            对Meta属性的配置
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.PrintWorkOrderCriteria">
+            <summary>
+            单体物料工单查询实体
+            </summary>
+        </member>
+        <member name="M:SIE.Barcodes.PrintWorkOrderCriteria.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.PrintWorkOrderCriteria.CreateDateProperty">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.PrintWorkOrderCriteria.CreateDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.PrintWorkOrderCriteria.CreateByIdProperty">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.PrintWorkOrderCriteria.CreateById">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.PrintWorkOrderCriteria.CreateByProperty">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.PrintWorkOrderCriteria.CreateBy">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="M:SIE.Barcodes.PrintWorkOrderCriteria.Fetch">
+            <summary>
+            查询方法
+            </summary>
+            <returns>实体列表</returns>
+        </member>
+        <member name="T:SIE.Barcodes.ReceiveState">
+            <summary>
+            领用状态
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.ReceiveState.NoReceive">
+            <summary>
+            未领用
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.ReceiveState.Received">
+            <summary>
+            已领用
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.Configs.BelongWoValidationConfig">
+            <summary>
+            归属工单验证配置
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Configs.BelongWoValidationConfig.DefaultValue">
+            <summary>
+            默认值
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.Configs.BelongWoValidationConfigValue">
+            <summary>
+            工单归属验证配置值
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Configs.BelongWoValidationConfigValue.ValidationModelProperty">
+            <summary>
+            工单归属验证模式
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Configs.BelongWoValidationConfigValue.ValidationModel">
+            <summary>
+            工单归属验证模式
+            </summary>
+        </member>
+        <member name="M:SIE.Barcodes.Configs.BelongWoValidationConfigValue.Display">
+            <summary>
+            显示
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Barcodes.Configs.BelongWoValidationModel">
+            <summary>
+            工单归属验证模式
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Configs.BelongWoValidationModel.SameProductionOrder">
+            <summary>
+            原工单与归属工单属于同一个生产订单
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Configs.BelongWoValidationModel.BelongBom">
+            <summary>
+            原工单产品编码必须是归属工单的产品BOM物料
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Configs.CheckBcRangeStateConfig.defaultValue">
+            <summary>
+            默认值
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Configs.CheckBcRangeStateConfig.DefaultValue">
+            <summary>
+            默认值
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Configs.CheckBcRangeStateConfigValue.IsCheckProperty">
+            <summary>
+            是否校验
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Configs.CheckBcRangeStateConfigValue.IsCheck">
+            <summary>
+            是否校验
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.DbMigrations._20200807_000000_InitIndex">
+            <summary>
+            初始化表复合索引
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.DbMigrations._20200807_000000_InitIndex.DbSetting">
+            <summary>
+            数据库链接
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.DbMigrations._20200807_000000_InitIndex.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.DbMigrations._20200807_000000_InitIndex.Type">
+            <summary>
+            手动升级的类型：数据
+            </summary>
+        </member>
+        <member name="M:SIE.Barcodes.DbMigrations._20200807_000000_InitIndex.Down">
+            <summary>
+            数据库回滚
+            </summary>
+        </member>
+        <member name="M:SIE.Barcodes.DbMigrations._20200807_000000_InitIndex.Up">
+            <summary>
+            数据库升级
+            </summary>
+        </member>
+        <member name="M:SIE.Barcodes.DbMigrations._20200807_000000_InitIndex.BarcodeAddIndex">
+            <summary>
+            条码表添加复合索引
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.DbMigrations._20220608_000000_InitBarcodeData">
+            <summary>
+            数据库升级
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.DbMigrations._20220608_000000_InitBarcodeData.DbSetting">
+            <summary>
+            数据库
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.DbMigrations._20220608_000000_InitBarcodeData.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.DbMigrations._20220608_000000_InitBarcodeData.Type">
+            <summary>
+            手动升级的类型：数据
+            </summary>
+        </member>
+        <member name="M:SIE.Barcodes.DbMigrations._20220608_000000_InitBarcodeData.Down">
+            <summary>
+            数据库回滚
+            </summary>
+        </member>
+        <member name="M:SIE.Barcodes.DbMigrations._20220608_000000_InitBarcodeData.Up">
+            <summary>
+            数据库升级
+            </summary>
+        </member>
+        <member name="M:SIE.Barcodes.DbMigrations._20220608_000000_InitBarcodeData.InitBarcodeNoConfig">
+            <summary>
+            初始化 生产条码编码规则
+            </summary>
+        </member>
+        <member name="M:SIE.Barcodes.DbMigrations._20220608_000000_InitBarcodeData.InitPanelPrintConfig">
+            <summary>
+            初始化 拼板码编码规则
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.Module">
+            <summary>
+            比较简单的通用权限系统
+            </summary>
+        </member>
+        <member name="M:SIE.Barcodes.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化程序集
+            </summary>
+            <param name="app">Application</param>
+        </member>
+        <member name="T:SIE.Barcodes.Panels.Configs.PanelPrintConfig">
+            <summary>
+            拼板码打印规则配置
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.Configs.PanelPrintConfig.defaultValue">
+            <summary>
+            默认值
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.Configs.PanelPrintConfig.DefaultValue">
+            <summary>
+            默认值 
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.Panels.Configs.PanelPrintConfigValue">
+            <summary>
+            拼板码打印规则配置
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.Configs.PanelPrintConfigValue.NumberRuleIdProperty">
+            <summary>
+            编码规则ID
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.Configs.PanelPrintConfigValue.NumberRuleId">
+            <summary>
+            编码规则ID
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.Configs.PanelPrintConfigValue.BacodeRuleProperty">
+            <summary>
+            编码规则
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.Configs.PanelPrintConfigValue.BacodeRule">
+            <summary>
+            编码规则
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.Configs.PanelPrintConfigValue.LabelTemplateIdProperty">
+            <summary>
+            条码模板Id
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.Configs.PanelPrintConfigValue.LabelTemplateId">
+            <summary>
+            条码模板Id
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.Configs.PanelPrintConfigValue.LabelTemplateProperty">
+            <summary>
+            条码模板
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.Configs.PanelPrintConfigValue.LabelTemplate">
+            <summary>
+            条码模板
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.Panels.Panel">
+            <summary>
+            拼板码
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.Panel.CodeProperty">
+            <summary>
+            拼板码号
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.Panel.Code">
+            <summary>
+            拼板码号
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.Panel.PrintDateProperty">
+            <summary>
+            打印日期
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.Panel.PrintDate">
+            <summary>
+            打印日期
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.Panel.PrintQtyProperty">
+            <summary>
+            打印次数
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.Panel.PrintQty">
+            <summary>
+            打印次数
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.Panel.ForkPlateQtyProperty">
+            <summary>
+            叉板数
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.Panel.ForkPlateQty">
+            <summary>
+            叉板数
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.Panel.ForkPlateProperty">
+            <summary>
+            叉板，多个叉板使用空格隔开
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.Panel.ForkPlate">
+            <summary>
+            叉板
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.Panel.BindQtyProperty">
+            <summary>
+            绑定数量
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.Panel.BindQty">
+            <summary>
+            绑定数量
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.Panel.IsScrapProperty">
+            <summary>
+            是否报废
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.Panel.IsScrap">
+            <summary>
+            是否报废
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.Panel.IsPendingProperty">
+            <summary>
+            是否挂起
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.Panel.IsPending">
+            <summary>
+            是否挂起
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.Panel.ScrapReasonProperty">
+            <summary>
+            报废原因
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.Panel.ScrapReason">
+            <summary>
+            报废原因
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.Panel.RangeIdProperty">
+            <summary>
+            条码范围Id
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.Panel.RangeId">
+            <summary>
+            条码范围Id
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.Panel.RangeProperty">
+            <summary>
+            条码范围
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.Panel.Range">
+            <summary>
+            条码范围
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.Panel.WorkOrderIdProperty">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.Panel.WorkOrderId">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.Panel.WorkOrderProperty">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.Panel.WorkOrder">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.Panel.StateProperty">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.Panel.State">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.Panel.PrintByIdProperty">
+            <summary>
+            打印人Id
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.Panel.PrintById">
+            <summary>
+            打印人Id
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.Panel.PrintByProperty">
+            <summary>
+            打印人
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.Panel.PrintBy">
+            <summary>
+            打印人
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.Panel.StartSnProperty">
+            <summary>
+            开始条码
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.Panel.StartSn">
+            <summary>
+            开始条码
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.Panel.EndSnProperty">
+            <summary>
+            结束条码
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.Panel.EndSn">
+            <summary>
+            结束条码
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.Panel.WONoProperty">
+            <summary>
+            工单号
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.Panel.WONo">
+            <summary>
+            工单号
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.Panels.PanelConfig">
+            <summary>
+            拼板码 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Barcodes.Panels.PanelConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.Panels.PanelBelongLog">
+            <summary>
+            拼板码归属日志
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.PanelBelongLog.SnProperty">
+            <summary>
+            条码号
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.PanelBelongLog.Sn">
+            <summary>
+            条码号
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.PanelBelongLog.WorkOrderIdProperty">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.PanelBelongLog.WorkOrderId">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.PanelBelongLog.WorkOrderProperty">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.PanelBelongLog.WorkOrder">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.PanelBelongLog.OrgWorkOrderIdProperty">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.PanelBelongLog.OrgWorkOrderId">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.PanelBelongLog.OrgWorkOrderProperty">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.PanelBelongLog.OrgWorkOrder">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.PanelBelongLog.OperatorIdProperty">
+            <summary>
+            操作人Id
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.PanelBelongLog.OperatorId">
+            <summary>
+            操作人Id
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.PanelBelongLog.OperatorProperty">
+            <summary>
+            操作人
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.PanelBelongLog.Operator">
+            <summary>
+            操作人
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.PanelBelongLog.OperatDateProperty">
+            <summary>
+            操作日期
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.PanelBelongLog.OperatDate">
+            <summary>
+            操作日期
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.Panels.PanelBelongLogConfig">
+            <summary>
+            拼板码归属日志 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Barcodes.Panels.PanelBelongLogConfig.ConfigMeta">
+            <summary>
+            对Meta属性的配置
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.Panels.PanelController">
+            <summary>
+            拼板码控制器
+            </summary>
+        </member>
+        <member name="M:SIE.Barcodes.Panels.PanelController.GetPanel(System.Double)">
+            <summary>
+            根据拼板码明细id获取拼板码明细(贪婪加载工单)
+            </summary>
+            <param name="id">拼板码明细id</param>
+            <returns>拼板码明细</returns>
+        </member>
+        <member name="M:SIE.Barcodes.Panels.PanelController.GetPanel(System.String)">
+            <summary>
+            根据拼板码编码获取拼板码(贪婪加载工单)
+            </summary>
+            <param name="code">编码</param>
+            <returns>拼板码</returns>
+        </member>
+        <member name="M:SIE.Barcodes.Panels.PanelController.IsExistPanel(System.String)">
+            <summary>
+            判断条码是否为拼板码
+            </summary>
+            <param name="code">条码</param>
+            <returns>条码为拼板码返回true，否则返回false</returns>
+        </member>
+        <member name="M:SIE.Barcodes.Panels.PanelController.GetWorkOrders(SIE.Barcodes.Panels.PanelWorkOrderCriteria)">
+            <summary>
+            拼板码打印界面-查询工单
+            </summary>
+            <param name="criteria">工单查询实体</param>
+            <returns>工单列表</returns>
+        </member>
+        <member name="M:SIE.Barcodes.Panels.PanelController.GetPanelRanges(SIE.Barcodes.Panels.PanelRangeCriteria)">
+            <summary>
+            Get panel
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Barcodes.Panels.PanelController.PanelRangeReceive(System.Double,System.String,System.String)">
+            <summary>
+            Range receive
+            </summary>
+            <param name="rangeId"></param>
+            <param name="userName"></param>
+            <param name="pwd"></param>
+        </member>
+        <member name="M:SIE.Barcodes.Panels.PanelController.GetPanelWorkOrder(System.Double)">
+            <summary>
+            通过工单Id获取拼板码打印
+            </summary>
+            <param name="workOrderId">工单Id</param>
+            <returns>拼板码打印</returns>
+        </member>
+        <member name="M:SIE.Barcodes.Panels.PanelController.GetPanelsByWorkOrderId(System.Double,SIE.PagingInfo,System.Collections.Generic.IList{SIE.Domain.OrderInfo})">
+            <summary>
+            根据工单号获取拼板码列表
+            </summary>
+            <param name="workOrderId">工单号</param>
+            <param name="pagingInfo">分页参数</param>
+            <param name="sortInfo">排序参数</param>
+            <returns>拼板码列表</returns>
+        </member>
+        <member name="M:SIE.Barcodes.Panels.PanelController.GetPanelsByIds(System.Collections.Generic.List{System.Double})">
+            <summary>
+            获取拼板条码Id所对应的所有拼板码信息列表
+            </summary>
+            <param name="panelIds">拼板码Ids列表</param>
+            <returns>拼板码信息列表</returns>
+        </member>
+        <member name="M:SIE.Barcodes.Panels.PanelController.GetScrapPanelCount(System.Double)">
+            <summary>
+            获取工单报废拼板码数量
+            </summary>
+            <param name="workOrderId">工单Id</param>
+            <returns>报废拼板码数量</returns>
+        </member>
+        <member name="M:SIE.Barcodes.Panels.PanelController.PrintPanels(SIE.Barcodes.PrinterInfo)">
+            <summary>
+            创建工单拼板码
+            </summary>
+            <param name="info">打印信息</param>
+            <returns>错误信息和拼板码列表</returns>
+        </member>
+        <member name="M:SIE.Barcodes.Panels.PanelController.Print(SIE.Barcodes.PrinterInfo)">
+            <summary>
+            创建工单拼板码
+            </summary>
+            <param name="info">打印信息</param>
+            <returns>拼板码列表</returns>
+        </member>
+        <member name="M:SIE.Barcodes.Panels.PanelController.ReprintPanel(SIE.Domain.EntityList{SIE.Barcodes.Panels.Panel},System.String,System.Int32)">
+            <summary>
+            拼板码补打
+            </summary>
+            <param name="panelList">选中条码列表</param>
+            <param name="reason">补打原因</param>
+            <param name="times">补打次数</param> 
+            <returns>补打结果</returns>
+        </member>
+        <member name="M:SIE.Barcodes.Panels.PanelController.PanelScrap(SIE.Domain.EntityList{SIE.Barcodes.Panels.Panel},System.String)">
+            <summary>
+            拼板码报废
+            </summary>
+            <param name="panelList">待报废拼板码列表</param>
+            <param name="reason">报废原因</param>
+        </member>
+        <member name="M:SIE.Barcodes.Panels.PanelController.PanelScrap(System.String,System.String)">
+            <summary>
+            拼板码报废
+            </summary>
+            <param name="panelCode">拼板码编码</param>
+            <param name="reason">报废原因</param>
+            <exception cref="T:System.ArgumentException">拼板码为空、报废原因为空</exception>
+            <exception cref="T:SIE.Domain.Validation.ValidationException">拼板码为空、拼板码已报废</exception>
+        </member>
+        <member name="M:SIE.Barcodes.Panels.PanelController.PanelPending(SIE.Domain.EntityList{SIE.Barcodes.Panels.Panel})">
+            <summary>
+            拼板码挂起
+            </summary>
+            <param name="panelList">待挂起拼板码列表</param>
+        </member>
+        <member name="M:SIE.Barcodes.Panels.PanelController.PanelUnPending(SIE.Domain.EntityList{SIE.Barcodes.Panels.Panel})">
+            <summary>
+            挂起恢复
+            </summary>
+            <param name="panelList">待恢复拼板码列表</param>
+        </member>
+        <member name="M:SIE.Barcodes.Panels.PanelController.ValidatePanelScrap(SIE.Domain.EntityList{SIE.Barcodes.Panels.Panel},System.String)">
+            <summary>
+            验证证拼板码报废
+            </summary>
+            <param name="panelList">待报废拼板码列表</param>
+            <param name="reason">报废原因</param>
+        </member>
+        <member name="M:SIE.Barcodes.Panels.PanelController.GetPanelPrintConfig">
+            <summary>
+            获取拼板码打印配置
+            </summary>
+            <returns>拼板码打印配置值</returns>
+        </member>
+        <member name="M:SIE.Barcodes.Panels.PanelController.PanelBelong(SIE.Barcodes.Panels.ViewModels.PanelBelongViewModel)">
+            <summary>
+            拼板码归属
+            </summary>
+            <param name="panelBelongVM">拼板码归属ViewModel</param>
+            <returns>错误信息</returns>
+        </member>
+        <member name="M:SIE.Barcodes.Panels.PanelController.PanelBelong(SIE.Barcodes.Panels.Panel,System.Nullable{System.Double})">
+            <summary>
+            拼板码归属
+            </summary>
+            <param name="panel">拼板码</param>
+            <param name="belongWorkOrderId">归属工单ID</param>
+        </member>
+        <member name="M:SIE.Barcodes.Panels.PanelController.CreatePanelBelongLog(SIE.Barcodes.Panels.Panel,SIE.Core.WorkOrders.WorkOrder,SIE.Core.WorkOrders.WorkOrder)">
+            <summary>
+            创建保存拼板码归属日志
+            </summary>
+            <param name="panel">拼板码</param>
+            <param name="orgWo">原工单</param>
+            <param name="belongWo">归属工单</param>
+        </member>
+        <member name="T:SIE.Barcodes.Panels.PanelPrintable">
+            <summary>
+            拼板码
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.Panels.PanelRange">
+            <summary>
+            拼板码范围
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.PanelRange.StartNoProperty">
+            <summary>
+            开始拼板码号
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.PanelRange.StartNo">
+            <summary>
+            开始拼板码号
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.PanelRange.EndNoProperty">
+            <summary>
+            结束拼板码号
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.PanelRange.EndNo">
+            <summary>
+            结束拼板码号
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.PanelRange.PrintQtyProperty">
+            <summary>
+            打印数量
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.PanelRange.PrintQty">
+            <summary>
+            打印数量
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.PanelRange.ScrapedQtyProperty">
+            <summary>
+            作废数量
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.PanelRange.ScrapedQty">
+            <summary>
+            作废数量
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.PanelRange.StateProperty">
+            <summary>
+            领用状态
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.PanelRange.State">
+            <summary>
+            领用状态
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.PanelRange.ReceiveDateProperty">
+            <summary>
+            领用时间
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.PanelRange.ReceiveDate">
+            <summary>
+            领用时间
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.PanelRange.ReceiveByIdProperty">
+            <summary>
+            领用人Id
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.PanelRange.ReceiveById">
+            <summary>
+            领用人Id
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.PanelRange.ReceiveByProperty">
+            <summary>
+            领用人
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.PanelRange.ReceiveBy">
+            <summary>
+            领用人
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.PanelRange.WorkOrderIdProperty">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.PanelRange.WorkOrderId">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.PanelRange.WorkOrderProperty">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.PanelRange.WorkOrder">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.PanelRange.WONoProperty">
+            <summary>
+            工单号
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.PanelRange.WONo">
+            <summary>
+            工单号
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.PanelRange.ProductNameProperty">
+            <summary>
+            产品名称
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.PanelRange.ProductName">
+            <summary>
+            产品名称
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.Panels.PanelRangeConfig">
+            <summary>
+            拼板码范围 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Barcodes.Panels.PanelRangeConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.Panels.PanelRangeCriteria">
+            <summary>
+            条码领用 查询实体
+            </summary>
+        </member>
+        <member name="M:SIE.Barcodes.Panels.PanelRangeCriteria.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.PanelRangeCriteria.WorkOrderIdProperty">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.PanelRangeCriteria.WorkOrderId">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.PanelRangeCriteria.WorkOrderProperty">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.PanelRangeCriteria.WorkOrder">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.PanelRangeCriteria.PanelCodeProperty">
+            <summary>
+            拼板码
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.PanelRangeCriteria.PanelCode">
+            <summary>
+            拼板码
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.PanelRangeCriteria.ReceiveByIdProperty">
+            <summary>
+            领用人Id
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.PanelRangeCriteria.ReceiveById">
+            <summary>
+            领用人Id
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.PanelRangeCriteria.ReceiveByProperty">
+            <summary>
+            领用人
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.PanelRangeCriteria.ReceiveBy">
+            <summary>
+            领用人
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.PanelRangeCriteria.ReceiveDateProperty">
+            <summary>
+            领用时间
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.PanelRangeCriteria.ReceiveDate">
+            <summary>
+            领用时间
+            </summary>
+        </member>
+        <member name="M:SIE.Barcodes.Panels.PanelRangeCriteria.Fetch">
+            <summary>
+            重写查询方法
+            </summary>
+            <returns>条码范围列表</returns>
+        </member>
+        <member name="T:SIE.Barcodes.Panels.PanelState">
+            <summary>
+            拼板码状态
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.PanelState.ToPrint">
+            <summary>
+            未打印
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.PanelState.Printed">
+            <summary>
+            已打印
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.Panels.PanelWorkOrder">
+            <summary>
+            拼板码打印工单
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.Panels.PanelWorkOrderCriteria">
+            <summary>
+            拼板码打印查询
+            </summary>
+        </member>
+        <member name="M:SIE.Barcodes.Panels.PanelWorkOrderCriteria.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.PanelWorkOrderCriteria.NoProperty">
+            <summary>
+            工单号
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.PanelWorkOrderCriteria.No">
+            <summary>
+            工单号
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.PanelWorkOrderCriteria.PlanBeginDateProperty">
+            <summary>
+            计划开始时间
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.PanelWorkOrderCriteria.PlanBeginDate">
+            <summary>
+            计划开始时间
+            </summary>
+        </member>
+        <member name="M:SIE.Barcodes.Panels.PanelWorkOrderCriteria.Fetch">
+            <summary>
+            重写此方法实现查询
+            </summary>
+            <returns>工单列表</returns>
+        </member>
+        <member name="T:SIE.Barcodes.Panels.ViewModels.PanelBelongViewModel">
+            <summary>
+            条码归属 ViewModel
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.ViewModels.PanelBelongViewModel.SnProperty">
+            <summary>
+            条码号
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.ViewModels.PanelBelongViewModel.Sn">
+            <summary>
+            条码号
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.ViewModels.PanelBelongViewModel.WorkOrderIdProperty">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.ViewModels.PanelBelongViewModel.WorkOrderId">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.ViewModels.PanelBelongViewModel.WorkOrderProperty">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.ViewModels.PanelBelongViewModel.WorkOrder">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.ViewModels.PanelBelongViewModel.OrgWorkOrderIdProperty">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.ViewModels.PanelBelongViewModel.OrgWorkOrderId">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.ViewModels.PanelBelongViewModel.OrgWorkOrderProperty">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.ViewModels.PanelBelongViewModel.OrgWorkOrder">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.ViewModels.PanelBelongViewModel.PanelIdProperty">
+            <summary>
+            拼板码明细Id
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.ViewModels.PanelBelongViewModel.PanelId">
+            <summary>
+            拼板码明细Id
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.ViewModels.PanelBelongViewModel.PanelProperty">
+            <summary>
+            拼板码明细
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.ViewModels.PanelBelongViewModel.Panel">
+            <summary>
+            拼板码明细
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.ViewModels.PanelBelongViewModel.OrgWorkOrderNoProperty">
+            <summary>
+            原工单号
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.ViewModels.PanelBelongViewModel.OrgWorkOrderNo">
+            <summary>
+            原工单号
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.ViewModels.PanelBelongViewModel.PlanQtyProperty">
+            <summary>
+            计划数量
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.ViewModels.PanelBelongViewModel.PlanQty">
+            <summary>
+            计划数量
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.Panels.ViewModels.PanelBelongViewModel.PrintedQtyProperty">
+            <summary>
+            已打印数量
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.Panels.ViewModels.PanelBelongViewModel.PrintedQty">
+            <summary>
+            已打印数量
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.Printables.BarcodePrintable">
+            <summary>
+            单体条码
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.Printables.WipBatchPrintable">
+            <summary>
+            生产批次
+            </summary>
+        </member>
+        <member name="M:SIE.Barcodes.Printables.WipBatchPrintable.ConverterData(System.Object)">
+            <summary>
+            转换数据
+            </summary>
+            <param name="data">对象</param>
+            <returns>字符串</returns>
+        </member>
+        <member name="M:SIE.Barcodes.Printables.WipBatchPrintable.GetBatchNo14to22(System.String)">
+            <summary>
+            截取BatchNo的14至22位内容
+            </summary>
+            <param name="batchNo"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Barcodes.QrCodes.QrCodeController">
+            <summary>
+            二维码控制器
+            </summary>
+        </member>
+        <member name="M:SIE.Barcodes.QrCodes.QrCodeController.GetQrCode(System.String,System.Int32)">
+            <summary>
+            获取二维码
+            </summary>
+            <param name="content"></param>
+            <param name="pixel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Barcodes.QrCodes.QrCodeController.GetQrCodeBase64(System.String,System.Boolean,System.Int32)">
+            <summary>
+            获取二维码
+            </summary>
+            <param name="content">内容</param>
+            <param name="pixel">显示倍数</param>
+            <param name="isImage">是否图像，如果是，补全base64格式前缀</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Barcodes.QrCodes.QrCodeController.ToBase64(System.Drawing.Bitmap)">
+            <summary>
+            转换成64位
+            </summary>
+            <param name="bmp"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Barcodes.WipBatchs.BatchBarcodeInfo">
+            <summary>
+            批次条码信息
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.BatchBarcodeInfo.WorkOrderId">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.BatchBarcodeInfo.NumberRuleId">
+            <summary>
+            批次编码规则ID
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.BatchBarcodeInfo.BatchQty">
+            <summary>
+            批次数量
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.BatchBarcodeInfo.GeneratingQty">
+            <summary>
+            生成数量
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.BatchBarcodeInfo.GenerateChild">
+            <summary>
+            是否生产子批次
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.BatchBarcodeInfo.ChildNumberRuleId">
+            <summary>
+            子批次编码规则Id
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.BatchBarcodeInfo.ChildBatchQty">
+            <summary>
+            子批次数量
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.WipBatchs.BatchMergeRule">
+            <summary>
+            批次合并规则
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.BatchMergeRule.IsSelectedProperty">
+            <summary>
+            是否选择
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.BatchMergeRule.IsSelected">
+            <summary>
+            是否选择
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.BatchMergeRule.MergeParamProperty">
+            <summary>
+            合并参数
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.BatchMergeRule.MergeParam">
+            <summary>
+            合并参数
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.BatchMergeRule.BatchMergeSolutionsIdProperty">
+            <summary>
+            批次合并方案Id
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.BatchMergeRule.BatchMergeSolutionsId">
+            <summary>
+            批次合并方案Id
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.BatchMergeRule.BatchMergeSolutionsProperty">
+            <summary>
+            批次合并方案
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.BatchMergeRule.BatchMergeSolutions">
+            <summary>
+            批次合并方案
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.WipBatchs.BatchMergeRuleConfig">
+            <summary>
+            批次合并规则 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Barcodes.WipBatchs.BatchMergeRuleConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.WipBatchs.BatchMergeSolutions">
+            <summary>
+            批次合并方案
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.BatchMergeSolutions.NameProperty">
+            <summary>
+            方案名称
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.BatchMergeSolutions.Name">
+            <summary>
+            方案名称
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.BatchMergeSolutions.DescriptionProperty">
+            <summary>
+            方案描述
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.BatchMergeSolutions.Description">
+            <summary>
+            方案描述
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.BatchMergeSolutions.IsDefaultProperty">
+            <summary>
+            是否缺省
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.BatchMergeSolutions.IsDefault">
+            <summary>
+            是否缺省
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.BatchMergeSolutions.RuleListProperty">
+            <summary>
+            批次合并规则列表
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.BatchMergeSolutions.RuleList">
+            <summary>
+            批次合并规则列表
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.WipBatchs.BatchMergeSolutionsConfig">
+            <summary>
+            批次合并方案 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Barcodes.WipBatchs.BatchMergeSolutionsConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.WipBatchs.BatchState">
+            <summary>
+            批次状态
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.BatchState.Generated">
+            <summary>
+            已生成
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.BatchState.In">
+            <summary>
+            已入站
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.BatchState.Removed">
+            <summary>
+            已移除
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.BatchState.Out">
+            <summary>
+            已出站
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.WipBatchs.BatchType">
+            <summary>
+            批次类型
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.BatchType.Rework">
+            <summary>
+            返工
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.BatchType.Scraped">
+            <summary>
+            报废
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.BatchType.Suspect">
+            <summary>
+            可疑品
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.BatchType.Good">
+            <summary>
+            良品
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.WipBatchs.BatchWorkOrder">
+            <summary>
+            批次工单
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.BatchWorkOrder.GeneratedQtyProperty">
+            <summary>
+            已生成数量
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.BatchWorkOrder.GeneratedQty">
+            <summary>
+            已生成数量
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.BatchWorkOrder.ScrapQtyProperty">
+            <summary>
+            报废数量
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.BatchWorkOrder.ScrapQty">
+            <summary>
+            报废数量
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.BatchWorkOrder.ProductCodeProperty">
+            <summary>
+            产品编码
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.BatchWorkOrder.ProductCode">
+            <summary>
+            产品编码
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.BatchWorkOrder.ProductNameProperty">
+            <summary>
+            产品名称
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.BatchWorkOrder.ProductName">
+            <summary>
+            产品名称
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.WipBatchs.BatchWorkOrderConfig">
+            <summary>
+            批次工单 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Barcodes.WipBatchs.BatchWorkOrderConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.WipBatchs.BatchWorkOrderCriteria">
+            <summary>
+            批次物料工单查询实体
+            </summary>
+        </member>
+        <member name="M:SIE.Barcodes.WipBatchs.BatchWorkOrderCriteria.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.BatchWorkOrderCriteria.CreateDateProperty">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.BatchWorkOrderCriteria.CreateDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.BatchWorkOrderCriteria.CreateByIdProperty">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.BatchWorkOrderCriteria.CreateById">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.BatchWorkOrderCriteria.CreateByProperty">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.BatchWorkOrderCriteria.CreateBy">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.BatchWorkOrderCriteria.BatchNoProperty">
+            <summary>
+            批次号
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.BatchWorkOrderCriteria.BatchNo">
+            <summary>
+            批次号
+            </summary>
+        </member>
+        <member name="M:SIE.Barcodes.WipBatchs.BatchWorkOrderCriteria.Fetch">
+            <summary>
+            查询方法
+            </summary>
+            <returns>列表</returns>
+        </member>
+        <member name="T:SIE.Barcodes.WipBatchs.MergeParam">
+            <summary>
+            合并参数
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.MergeParam.WorkOrder">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.MergeParam.Custom">
+            <summary>
+            自定义
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.WipBatchs.SubWipBatch">
+            <summary>
+            子生产批次
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.SubWipBatch.WipBatchIdProperty">
+            <summary>
+            生产批次Id
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.SubWipBatch.WipBatchId">
+            <summary>
+            生产批次Id
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.SubWipBatch.WipBatchProperty">
+            <summary>
+            生产批次
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.SubWipBatch.WipBatch">
+            <summary>
+            生产批次
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.SubWipBatch.WipBatchNoProperty">
+            <summary>
+            批次编码
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.SubWipBatch.WipBatchNo">
+            <summary>
+            批次编码
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.WipBatchs.SubWipBatchEntityConfig">
+            <summary>
+            子生产批次 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Barcodes.WipBatchs.SubWipBatchEntityConfig.ConfigMeta">
+            <summary>
+            对Meta属性的配置
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.WipBatchs.WipBatch">
+            <summary>
+            生产批次
+            </summary>
+        </member>
+        <member name="M:SIE.Barcodes.WipBatchs.WipBatch.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.WipBatch.BatchNoProperty">
+            <summary>
+            批次号
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.WipBatch.BatchNo">
+            <summary>
+            批次号
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.WipBatch.IsScrapedProperty">
+            <summary>
+            是否报废
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.WipBatch.IsScraped">
+            <summary>
+            是否报废
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.WipBatch.QtyProperty">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.WipBatch.Qty">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.WipBatch.BoxesQtyProperty">
+            <summary>
+            满箱数量
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.WipBatch.BoxesQty">
+            <summary>
+            满箱数量
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.WipBatch.IsMantissaProperty">
+            <summary>
+            是否尾数
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.WipBatch.IsMantissa">
+            <summary>
+            是否尾数
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.WipBatch.PrintDateProperty">
+            <summary>
+            打印日期
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.WipBatch.PrintDate">
+            <summary>
+            打印日期
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.WipBatch.PrintTimesProperty">
+            <summary>
+            打印次数
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.WipBatch.PrintTimes">
+            <summary>
+            打印次数
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.WipBatch.StateProperty">
+            <summary>
+            打印状态
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.WipBatch.PrintedState">
+            <summary>
+            打印状态
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.WipBatch.BatchStateProperty">
+            <summary>
+            批次状态
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.WipBatch.BatchState">
+            <summary>
+            批次状态
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.WipBatch.IsGenerateChildProperty">
+            <summary>
+            是否生成子批次号
+            生成了子批次号后只能通过子批次入站
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.WipBatch.IsGenerateChild">
+            <summary>
+            是否生成子批次号
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.WipBatch.IsGenerateProperty">
+            <summary>
+            是否批次生成,用于区分批次是批次生成创建的还是批次拆分创建
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.WipBatch.IsGenerate">
+            <summary>
+            是否批次生成,用于区分批次是批次生成创建的还是批次拆分创建
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.WipBatch.RangeIdProperty">
+            <summary>
+             条码范围Id
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.WipBatch.RangeId">
+            <summary>
+             条码范围Id
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.WipBatch.RangeProperty">
+            <summary>
+             条码范围
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.WipBatch.Range">
+            <summary>
+             条码范围
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.WipBatch.PrintByIdProperty">
+            <summary>
+            打印员Id
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.WipBatch.PrintById">
+            <summary>
+            打印员Id
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.WipBatch.PrintByProperty">
+            <summary>
+            打印员
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.WipBatch.PrintBy">
+            <summary>
+            打印员
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.WipBatch.WorkOrderIdProperty">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.WipBatch.WorkOrderId">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.WipBatch.WorkOrderProperty">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.WipBatch.WorkOrder">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.WipBatch.IsChildProperty">
+            <summary>
+            是否子批
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.WipBatch.IsChild">
+            <summary>
+            是否子批
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.WipBatch.BatchListProperty">
+            <summary>
+            子生产批次列表
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.WipBatch.BatchList">
+            <summary>
+            子生产批次列表
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.WipBatch.RemainQtyProperty">
+            <summary>
+            剩余数量
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.WipBatch.RemainQty">
+            <summary>
+            剩余数量
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.WipBatch.ScrapQtyProperty">
+            <summary>
+            报废数量
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.WipBatch.ScrapQty">
+            <summary>
+            报废数量
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.WipBatch.IsuseProperty">
+            <summary>
+            是否已使用
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.WipBatch.Isuse">
+            <summary>
+            是否已使用
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.WipBatch.SourceNoProperty">
+            <summary>
+            来源标签
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.WipBatch.SourceNo">
+            <summary>
+            来源标签
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.WipBatch.ReportRecordIdsProperty">
+            <summary>
+            报工记录Id
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.WipBatch.ReportRecordIds">
+            <summary>
+            报工记录Id
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.WipBatch.IsSuspectProductProperty">
+            <summary>
+            是否可疑品
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.WipBatch.IsSuspectProduct">
+            <summary>
+            是否可疑品
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.WipBatch.IsReworkProperty">
+            <summary>
+            是否返工
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.WipBatch.IsRework">
+            <summary>
+            是否返工
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.WipBatch.DispatchTaskIdProperty">
+            <summary>
+            任务单Id
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.WipBatch.DispatchTaskId">
+            <summary>
+            任务单Id
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.WipBatch.PackingTaskIdProperty">
+            <summary>
+            包装任务单Id
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.WipBatch.PackingTaskId">
+            <summary>
+            包装任务单Id
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.WipBatch.ResourceCodeProperty">
+            <summary>
+            资源编码
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.WipBatch.ResourceCode">
+            <summary>
+            资源编码
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.WipBatch.ProcessCodeProperty">
+            <summary>
+            模板工序
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.WipBatch.ProcessCode">
+            <summary>
+            模板工序
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.WipBatch.GenerateProcessCodeProperty">
+            <summary>
+            生成工序
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.WipBatch.GenerateProcessCode">
+            <summary>
+            生成工序
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.WipBatch.IsUploadIotProperty">
+            <summary>
+            是否已上传IOT
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.WipBatch.IsUploadIot">
+            <summary>
+            是否已上传IOT
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.WipBatch.IsOutsourcingProperty">
+            <summary>
+            是否委外生成标签
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.WipBatch.IsOutsourcing">
+            <summary>
+            是否委外生成标签
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.WipBatch.IsUploadProperty">
+            <summary>
+            是否上传事务
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.WipBatch.IsUpload">
+            <summary>
+            是否上传事务
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.WipBatch.ReLoadCountProperty">
+            <summary>
+            重传次数
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.WipBatch.ReLoadCount">
+            <summary>
+            重传次数
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.WipBatch.IsPressureSnPrintProperty">
+            <summary>
+            CS打印生成
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.WipBatch.IsPressureSnPrint">
+            <summary>
+            CS打印生成
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.WipBatch.EditQtyProcessCodeProperty">
+            <summary>
+            修改数量工序
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.WipBatch.EditQtyProcessCode">
+            <summary>
+            修改数量工序
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.WipBatch.ReportQtyProperty">
+            <summary>
+            批次完工数量
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.WipBatch.ReportQty">
+            <summary>
+            批次完工数量
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.WipBatch.PreReportQtyProperty">
+            <summary>
+            前工序完工数量
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.WipBatch.PreReportQty">
+            <summary>
+            前工序完工数量
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.WipBatch.InProcessQtyProperty">
+            <summary>
+            在制数量
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.WipBatch.InProcessQty">
+            <summary>
+            在制数量
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.WipBatch.PrintProcessCodeProperty">
+            <summary>
+            打印工序
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.WipBatch.PrintProcessCode">
+            <summary>
+            打印工序
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.WipBatch.StartSnProperty">
+            <summary>
+            开始条码
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.WipBatch.StartSn">
+            <summary>
+            开始条码
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.WipBatch.EndSnProperty">
+            <summary>
+            结束条码
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.WipBatch.EndSn">
+            <summary>
+            结束条码
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.WipBatch.PrintByNameProperty">
+            <summary>
+            打印员
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.WipBatch.PrintByName">
+            <summary>
+            批次编码
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.WipBatch.WorkOrderNoProperty">
+            <summary>
+            工单号
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.WipBatch.WorkOrderNo">
+            <summary>
+            工单号
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.WipBatch.ProductIdProperty">
+            <summary>
+            产品Id
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.WipBatch.ProductId">
+            <summary>
+            产品Id
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.WipBatch.ProductCodeProperty">
+            <summary>
+            产品编码
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.WipBatch.ProductCode">
+            <summary>
+            产品编码
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.WipBatch.ProductNameProperty">
+            <summary>
+            产品名称
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.WipBatch.ProductName">
+            <summary>
+            产品名称
+            </summary>
+        </member>
+        <member name="F:SIE.Barcodes.WipBatchs.WipBatch.ShortDescriptionProperty">
+            <summary>
+            旧物料号
+            </summary>
+        </member>
+        <member name="P:SIE.Barcodes.WipBatchs.WipBatch.ShortDescription">
+            <summary>
+            旧物料号
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.WipBatchs.WipBatchEntityConfig">
+            <summary>
+            生产批次 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Barcodes.WipBatchs.WipBatchEntityConfig.ConfigMeta">
+            <summary>
+            对Meta属性的配置
+            </summary>
+        </member>
+        <member name="T:SIE.Barcodes.WipBatchs.WipBatchController">
+            <summary>
+            生产批次控制器
+            </summary>
+        </member>
+        <member name="M:SIE.Barcodes.WipBatchs.WipBatchController.SyncWipBatch(System.Collections.Generic.List{SIE.Barcodes.WipBatchs.WipBatch},System.String)">
+            <summary>
+            委外同步可疑品标签
+            </summary>
+            <param name="wipBatches"></param>
+            <param name="invOrg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Barcodes.WipBatchs.WipBatchController.GetWipBatchesByPackingTaskIds(System.Collections.Generic.List{System.Double})">
+            <summary>
+            根据包装任务单获取标签
+            </summary>
+            <param name="taskIds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Barcodes.WipBatchs.WipBatchController.GetWipBatchType(SIE.Barcodes.WipBatchs.WipBatch)">
+            <summary>
+            计算标签类型
+            </summary>
+            <param name="wipBatch"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Barcodes.WipBatchs.WipBatchController.GetWorkOrders(SIE.Barcodes.WipBatchs.BatchWorkOrderCriteria)">
+            <summary>
+            根据条码打印条件获取工单
+            </summary>
+            <param name="criteria">条码打印查询实体</param>
+            <returns>工单列表</returns>
+        </member>
+        <member name="M:SIE.Barcodes.WipBatchs.WipBatchController.SetDefault(System.Double,System.Boolean)">
+            <summary>
+            设置合并规则方案缺省
+            </summary>
+            <param name="id">方案Id</param>
+            <param name="flag">true/false</param>
+            <returns>BatchMergeSolutions</returns>
+        </member>
+        <member name="M:SIE.Barcodes.WipBatchs.WipBatchController.GetDefaultSolution">
+            <summary>
+            获取是缺省的合并规则方案
+            </summary>
+            <returns>合并规则方案</returns>
+        </member>
+        <member name="M:SIE.Barcodes.WipBatchs.WipBatchController.BatchsGenerating(SIE.Barcodes.WipBatchs.BatchBarcodeInfo)">
+            <summary>
+            批次生成
+            </summary>
+            <param name="info">批次条码信息</param>
+            <returns>工单</returns>
+        </member>
+        <member name="M:SIE.Barcodes.WipBatchs.WipBatchController.SaveBatchBarcodes(SIE.Barcodes.WipBatchs.BatchBarcodeInfo,SIE.Barcodes.WipBatchs.BatchWorkOrder,System.Int32,System.String)">
+            <summary>
+            创建并保存批次条码
+            </summary>
+            <param name="info">批次条码信息</param>
+            <param name="batchWo">批次工单</param>
+            <param name="printQty">打印数量</param>
+            <returns>批次列表</returns>
+        </member>
+        <member name="M:SIE.Barcodes.WipBatchs.WipBatchController.SaveChildBarcodes(SIE.Barcodes.WipBatchs.BatchBarcodeInfo,SIE.Barcodes.WipBatchs.BatchWorkOrder,System.Int32,SIE.Domain.EntityList{SIE.Barcodes.WipBatchs.WipBatch})">
+            <summary>
+            保存子批次条码
+            </summary>
+            <param name="info">批次条码信息</param>
+            <param name="batchWo">批次工单</param>
+            <param name="printQty">打印数量</param>
+            <param name="batchBarcodes">批次条码列表</param>
+            <returns>子批次列表</returns>
+        </member>
+        <member name="M:SIE.Barcodes.WipBatchs.WipBatchController.SavePrintedBarcodes(SIE.Barcodes.WipBatchs.BatchWorkOrder,SIE.Domain.EntityList{SIE.Barcodes.WipBatchs.WipBatch})">
+            <summary>
+            保存已打印条码
+            </summary>
+            <param name="workOrder">批次工单</param>
+            <param name="barcodes">已打印条码</param>
+            <returns>处理批次工单</returns>
+        </member>
+        <member name="M:SIE.Barcodes.WipBatchs.WipBatchController.RemoveBarcodesOnFailedPrint(SIE.Barcodes.WipBatchs.BatchWorkOrder,SIE.Domain.EntityList{SIE.Barcodes.WipBatchs.WipBatch})">
+            <summary>
+            打印失败时删除已生成条码
+            </summary>
+            <param name="workOrder">批次工单</param>
+            <param name="barcodes">已打印条码</param>
+            <returns>处理批次工单</returns>
+        </member>
+        <member name="M:SIE.Barcodes.WipBatchs.WipBatchController.ValidateBatchBarcode(System.String)">
+            <summary>
+            验证批次条码是否可入站
+            </summary>
+            <param name="batchNo">条码</param>
+        </member>
+        <member name="M:SIE.Barcodes.WipBatchs.WipBatchController.GetWipBatch(System.String)">
+            <summary>
+            获取条码
+            </summary>
+            <param name="batchNo">批次号</param>
+            <returns>条码</returns>
+        </member>
+        <member name="M:SIE.Barcodes.WipBatchs.WipBatchController.GetWipBatchs(System.Collections.Generic.List{System.String})">
+            <summary>
+            获取条码
+            </summary>
+            <param name="batchNos">批次号</param>
+            <returns>条码</returns>
+        </member>
+        <member name="M:SIE.Barcodes.WipBatchs.WipBatchController.GetWipBatches(System.Collections.Generic.List{System.String})">
+            <summary>
+            获取批次条码
+            </summary>
+            <param name="batchNos">批次条码信息</param>
+            <returns>批次条码</returns>
+        </member>
+        <member name="M:SIE.Barcodes.WipBatchs.WipBatchController.GetWipBatches(System.Collections.Generic.List{System.Double})">
+            <summary>
+            根据Id获取批次条码
+            </summary>
+            <param name="Ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Barcodes.WipBatchs.WipBatchController.UpdateBatchBarcode(System.String,SIE.Barcodes.WipBatchs.BatchState)">
+            <summary>
+            更新批次条码批次状态
+            </summary>
+            <param name="sn">批次条码</param>
+            <param name="batchState">批次状态</param>
+            <returns>更新结果</returns>
+        </member>
+        <member name="M:SIE.Barcodes.WipBatchs.WipBatchController.GetMidBarcode(System.String)">
+            <summary>
+            获取子批次条码对应的中批次条码号
+            </summary>
+            <param name="sn">子批次号</param>
+            <returns>中批次条码号</returns>
+        </member>
+        <member name="M:SIE.Barcodes.WipBatchs.WipBatchController.GetWipBatchsByWorkOrder(System.Double,System.Nullable{System.Boolean},System.Collections.Generic.List{SIE.Domain.OrderInfo},SIE.PagingInfo)">
+            <summary>
+            根据工单ID获取条码消息
+            </summary>
+            <param name="workorderId">工单ID</param>
+            <param name="isChild">是否子批次</param>
+            <param name="sortInfo">排序</param>
+            <param name="pagingInfo">分页信息</param>
+            <returns>条码信息</returns>
+        </member>
+        <member name="M:SIE.Barcodes.WipBatchs.WipBatchController.CountGenerateBarcode(System.Double)">
+            <summary>
+            计算工单已生成条码数
+            </summary>
+            <param name="workorderId">工单ID</param>
+            <returns>条码信息</returns>
+        </member>
+        <member name="M:SIE.Barcodes.WipBatchs.WipBatchController.GetSubWipBatchsByBatchId(System.Double)">
+            <summary>
+            根据生产批次获取子批次
+            </summary>
+            <param name="batchId">批次ID</param>
+            <returns>子批次列表</returns>
+        </member>
+        <member name="M:SIE.Barcodes.WipBatchs.WipBatchController.GetWipBatchsByBatchIds``1(System.Collections.Generic.List{System.Double},SIE.Domain.EagerLoadOptions)">
+            <summary>
+            根据生产批次Id集合获取批次列表
+            </summary>
+            <param name="batchIds">批次ID列表</param>
+            <returns>子批次列表</returns>
+        </member>
+        <member name="M:SIE.Barcodes.WipBatchs.WipBatchController.GetGenerateSubWipBatches(System.Double,System.Collections.Generic.IList{SIE.Domain.OrderInfo},SIE.PagingInfo)">
+            <summary>
+            获取批次生成的子批次
+            </summary>
+            <param name="batchId">批次ID</param>
+            <param name="orderInfos">排序条件</param>
+            <param name="pagingInfo">分页条件</param>
+            <returns>子批次列表</returns>
+        </member>
+        <member name="M:SIE.Barcodes.WipBatchs.WipBatchController.ReprintWipBatch(System.Collections.Generic.List{System.Double})">
+            <summary>
+            补打生产批次
+            </summary>
+            <param name="batchIds">批次ID列表</param>
+            <returns>生产批次列表</returns>
+        </member>
+        <member name="M:SIE.Barcodes.WipBatchs.WipBatchController.ReprintSubWipBatch(System.Collections.Generic.List{System.Double})">
+            <summary>
+            补打子生产批次
+            </summary>
+            <param name="subBatchIds">子批次ID列表</param>
+            <returns>子生产批次列表</returns>
+        </member>
+        <member name="M:SIE.Barcodes.WipBatchs.WipBatchController.CreateSplitWipBatch(SIE.Barcodes.WipBatchs.WipBatch,System.Decimal,System.String)">
+            <summary>
+            拆分批准标签
+            </summary>
+            <param name="source"></param>
+            <param name="qty">拆分数量</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Barcodes.WipBatchs.WipBatchController.GetSplitWipBatchCount(System.String)">
+            <summary>
+            获取批次标签拆分个数
+            </summary>
+            <param name="sourceNo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Barcodes.WipBatchs.WipBatchController.GetWipBatchPc(System.String)">
+            <summary>
+            获取条码
+            </summary>
+            <param name="batchNo">批次号</param>
+            <returns>条码</returns>
+        </member>
+        <member name="M:SIE.Barcodes.WipBatchs.WipBatchController.GetWipBatchSumBatchQty(System.Double)">
+            <summary>
+            获取批次子表 数量
+            </summary>
+            <param name="woId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Barcodes.WipBatchs.WipBatchController.GetWorkOrder(System.Nullable{System.Double})">
+            <summary>
+            获取工单
+            </summary>
+            <param name="WoId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Barcodes.WipBatchs.WipBatchController.GetItem(System.Double)">
+            <summary>
+            获取产品
+            </summary>
+            <param name="itemId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Barcodes.WipBatchs.WipBatchController.SaveWipBatch(SIE.Barcodes.WipBatchs.WipBatch)">
+            <summary>
+            新增批次标签
+            </summary>
+            <param name="wipBatch"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Barcodes.WipBatchs.WipBatchController.GetWipBatchReport(System.String)">
+            <summary>
+            包装报工拆分查询
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

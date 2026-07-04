@@ -1,0 +1,2185 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.ERPInterface.Ebs</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.ERPInterface.Ebs.EbsUploadBaseController">
+            <summary>
+            EBS上传数据基类
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.EbsUploadBaseController.GetEbsUploadDataBase(SIE.ERPInterface.Common.Logs.UploadTransaction,SIE.ERPInterface.Common.Datas.EbsUploadDataBase)">
+            <summary>
+            获取上传的基类实体
+            </summary>
+            <param name="f"></param>
+            <param name="item">下载数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.EbsUploadBaseController.GetRequireStr(SIE.ERPInterface.Common.Datas.EbsUploadDataBase,System.String)">
+            <summary>
+            获取上传的报文
+            </summary>
+            <param name="f"></param>
+            <param name="customerStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.EbsUploadBaseController.SetUploadStr``1(System.Collections.Generic.List{``0})">
+            <summary>
+            设置上传EBS的报文内容
+            </summary>
+            <param name="uploadDatas"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.EbsUploadBaseController.AddEbsUploadLog``1(System.Collections.Generic.List{``0},System.Collections.Generic.List{SIE.ERPInterface.Common.Logs.ErpUploadLog},SIE.ERPInterface.Common.Datas.EbsParameter)">
+            <summary>
+            添加日志上传记录
+            </summary>
+            <param name="uploadDatas">上传的数据</param>
+            <param name="ebsUploadLogs">日志</param>
+            <param name="ebsp">参数</param>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.EbsUploadBaseController.UpdateEbsUploadLog(System.Collections.Generic.List{System.Double},SIE.ERPInterface.Common.Enums.ProcessState)">
+            <summary>
+            更新事务上传记录
+            </summary>
+            <param name="logIds">事务ID</param>
+            <param name="state">状态</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.Connection.DbHelper">
+            <summary>
+            数据库执行帮助类
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Connection.DbHelper.ExecuteSqlForDataTable(System.String)">
+            <summary>
+            SQL查询数据
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Connection.DbHelper.ExecuteSqlScalar(System.String)">
+            <summary>
+            SQL查询数据
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Connection.DbHelper.ExecuteNonQuery(System.String)">
+            <summary>
+            执行sql语句
+            </summary>
+            <param name="sql"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Connection.DbHelper.ExecuteProcedure(System.String,System.Nullable{System.DateTime},System.String)">
+            <summary>
+            执行存储过程查询
+            </summary>
+            <param name="procedureName">存储过程名</param>
+            <param name="dateTime">时间戳</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.Connection.EbsHelper">
+            <summary>
+            Ebs帮助类，调用最新使用的rest服务，
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Connection.EbsHelper.GetEbsParameter(System.Boolean)">
+            <summary>
+            获取EBS配置
+            </summary>
+            <param name="isOrg">区分库存组织</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Connection.EbsHelper.ExecuteEbsBase``1(SIE.ERPInterface.Common.Datas.EbsParameter)">
+            <summary>
+            POST ERP接口
+            </summary>
+            <param name="para"></param>      
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Connection.EbsHelper.ExecuteEbs``1(SIE.ERPInterface.Common.Datas.EbsParameter)">
+            <summary>
+            获取ERP数据
+            </summary>
+            <typeparam name="T">泛型</typeparam>
+            <param name="ebsPara">Ebs报文参数</param>
+            <returns>Ebs返回报文</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Connection.EbsHelper.UploadExecuteEbsBase(SIE.ERPInterface.Common.Datas.EbsParameter)">
+            <summary>
+            POST ERP接口
+            </summary>
+            <param name="para"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Connection.EbsHelper.SetEbsUploadLogData(SIE.ERPInterface.Common.Datas.EbsReturnData,SIE.ERPInterface.Common.Datas.ProcessResult)">
+            <summary>
+            设置上传记录的数据
+            </summary>
+            <param name="returnData">返回的数据</param>      
+            <param name="result">处理结果</param>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Connection.EbsHelper.SaveJobTime(SIE.ERPInterface.Common.Datas.EbsParameter,SIE.ERPInterface.Common.Logs.DownloadJobTimeDetail)">
+            <summary>
+            保存接口任务时间戳
+            </summary>
+            <param name="para">EBS报文参数</param>
+            <param name="jobTimeDetail">接口任务时间戳明细</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.Connection.SoapHelper">
+            <summary>
+            Soap帮助类
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Connection.SoapHelper.GetSoapParameter">
+            <summary>
+            获取SOAP配置
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Connection.SoapHelper.ExecuteSoap(SIE.ERPInterface.Common.Datas.SoapParameter,System.Boolean)">
+            <summary>
+            POST ERP接口
+            </summary>
+            <param name="para"></param>
+            <param name="isDownLoad"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Connection.SoapHelper.AnalyzeResponse(SIE.ERPInterface.Common.Datas.SoapResult,System.String)">
+            <summary>
+            解析接收报文
+            </summary>
+            <param name="result">结果</param>
+            <param name="responseStr">接收报文</param>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Connection.SoapHelper.GenerateRequestStr(SIE.ERPInterface.Common.Datas.SoapParameter,System.String)">
+            <summary>
+            构建SOAP报文
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Connection.SoapHelper.GenerateCDATA``1(``0,System.Boolean)">
+            <summary>
+            构建CDATA
+            </summary>
+            <param name="soapPara"></param>
+            <param name="isDownLoad"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Connection.SoapHelper.GenerateDownloadXMLData(SIE.ERPInterface.Common.Datas.SoapDownloadParameter)">
+            <summary>
+            构建下载XML Data
+            </summary>
+            <param name="para"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Connection.SoapHelper.GenerateUploadXMLData(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.SoapUploadParameterDtl})">
+            <summary>
+            构建上传XML Data
+            </summary>
+            <param name="dtlList"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.Download.AccountAliases.EbsAccountController">
+            <summary>
+            单位下载
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Download.AccountAliases.EbsAccountController.Download(System.Nullable{System.Int32},System.Boolean)">
+            <summary>
+            下载单位数据
+            </summary>
+            <param name="invOrgId"></param>
+            <param name="isManual">是否手工下载</param>        
+            <returns>处理结果</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.Download.Suppliers.DbCustomerAddrController">
+            <summary>
+            从ERP下载客户地址到中间表
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Download.Suppliers.DbCustomerAddrController.DownloadToInf(System.Boolean,System.String)">
+            <summary>
+            下载到中间表
+            </summary>
+            <param name="isManual">是否手工下载</param>
+            <param name="keyWord">查询关键字</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.Download.Suppliers.SoapCustomerAddrController">
+            <summary>
+            从ERP下载客户地址到中间表
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Download.Suppliers.SoapCustomerAddrController.DownloadToInf(System.Boolean,System.String)">
+            <summary>
+            下载到中间表
+            </summary>
+            <param name="isManual">是否手工下载</param>
+            <param name="keyWord">查询关键字</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.Download.Suppliers.DbSupplerAddrController">
+            <summary>
+            从ERP下载供应商地址到中间表
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Download.Suppliers.DbSupplerAddrController.DownloadToInf(System.Boolean,System.String)">
+            <summary>
+            下载到中间表
+            </summary>
+            <param name="isManual">是否手工下载</param>
+            <param name="keyWord">查询关键字</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.Download.Suppliers.DbSupplierController">
+            <summary>
+            从ERP下载客户到中间表
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Download.Suppliers.DbSupplierController.DownloadToInf(System.Boolean,System.String)">
+            <summary>
+            下载到中间表
+            </summary>
+            <param name="isManual">是否手工下载</param>
+            <param name="keyWord">查询关键字</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Download.Suppliers.DbSupplierController.CreateInfData(System.Data.DataRow)">
+            <summary>
+            创建接口数据
+            </summary>
+            <param name="row">数据行</param>
+            <returns>接口数据</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.Download.Suppliers.EbsSupplierController">
+            <summary>
+            供应商数据下载
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Download.Suppliers.EbsSupplierController.Download(System.Nullable{System.Int32},System.Boolean)">
+            <summary>
+            供应商数据下载
+            </summary>
+            <param name="invOrgId">库存组织</param>
+            <param name="isManual">是否手工下载</param>        
+            <returns>处理结果</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.Download.Suppliers.SoapSupplierAddrController">
+            <summary>
+            从ERP下载供应商地址到中间表
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Download.Suppliers.SoapSupplierAddrController.DownloadToInf(System.Boolean,System.String)">
+            <summary>
+            下载到中间表
+            </summary>
+            <param name="isManual">是否手工下载</param>
+            <param name="keyWord">查询关键字</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.Download.Suppliers.SoapSupplierController">
+            <summary>
+            供应商下载控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Download.Suppliers.SoapSupplierController.DownloadToInf(System.Boolean,System.String)">
+            <summary>
+            下载到中间表
+            </summary>
+            <param name="isManual">是否手工下载</param>
+            <param name="keyWord">查询关键字</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.Download.Customers.DbCustomerController">
+            <summary>
+            从ERP下载客户到中间表
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Download.Customers.DbCustomerController.DownloadToInf(System.Boolean,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="isManual"></param>
+            <param name="keyWord"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Download.Customers.DbCustomerController.CreateInfData(System.Data.DataRow)">
+            <summary>
+            创建接口数据
+            </summary>
+            <param name="row">数据行</param>
+            <returns>接口数据</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.Download.Customers.EbsCustomerController">
+            <summary>
+            客户数据下载
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Download.Customers.EbsCustomerController.Download(System.Nullable{System.Int32},System.Boolean)">
+            <summary>
+            客户数据下载(需要先下载供应商数据)
+            </summary>
+            <param name="invOrgId">组织</param>
+            <param name="isManual">是否手工下载</param>        
+            <returns>处理结果</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.Download.Employees.EbsEmployeeController">
+            <summary>
+            员工数据下载
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Download.Employees.EbsEmployeeController.Download(System.Nullable{System.Int32},System.Boolean)">
+            <summary>
+            员工数据下载 
+            </summary>
+            <param name="isManual">是否手工下载</param>        
+            <returns>处理结果</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.Download.Enterprises.EbsEnterpriseController">
+            <summary>
+            企业模型数据下载
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Download.Enterprises.EbsEnterpriseController.Download(System.Nullable{System.Int32},System.Boolean)">
+            <summary>
+            企业模型数据下载
+            </summary>
+            <param name="isManual">是否手工下载</param>        
+            <returns>处理结果</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.Download.Enterprises.EbsEnterpriseLevelController">
+            <summary>
+            Ebs企业层级控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Download.Enterprises.EbsEnterpriseLevelController.InitLevel">
+            <summary>
+            初始化层级
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.Download.Items.DbItemCateController">
+            <summary>
+            从ERP下载物料分类到中间表
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Download.Items.DbItemCateController.DownloadToInf(System.Boolean,System.String)">
+            <summary>
+            下载到中间表
+            </summary>
+            <param name="isManual">是否手工下载</param>
+            <param name="keyWord">查询关键字</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Download.Items.DbItemController.DownloadToInf(System.Boolean,System.String)">
+            <summary>
+            从ERP下载物料到中间表
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Download.Items.DbItemController.CreateInfData(System.Data.DataRow)">
+            <summary>
+            创建接口数据
+            </summary>
+            <param name="row">数据行</param>
+            <returns>接口数据</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.Download.Items.EbsItemCateController">
+            <summary>
+            物料分类下载
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Download.Items.EbsItemCateController.Download(System.Nullable{System.Int32},System.Boolean)">
+            <summary>
+            下载物料分类数据
+            </summary>
+            <param name="invOrgId">库存组织</param>
+            <param name="isManual">是否手工下载</param>        
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Download.Items.EbsItemCateController.AddItemCategoryLevel(SIE.Items.ItemCategoryLevel)">
+            <summary>
+            添加物料分类层级信息
+            </summary>
+            <param name="itemCategoryLevel">物料分类层级</param>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Download.Items.EbsItemCateController.AddItemCategoryLevel(SIE.Items.ItemCategoryLevel,System.String,System.Double)">
+            <summary>
+            添加物料分类层级信息
+            </summary>
+            <param name="itemCategoryLevel">物料分类层级</param>
+            <param name="type">类型</param>
+            <param name="parentId">父节点ID</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.Download.Items.EbsItemController">
+            <summary>
+            物料下载控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Download.Items.EbsItemController.DownloadToInf(System.Nullable{System.Int32},System.Boolean)">
+            <summary>
+            下载到中间表
+            </summary>
+            <param name="isManual">是否手工下载</param>       
+            <returns>处理结果</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.Download.Items.EbsItemUnitChangeController">
+            <summary>
+            单位转换下载
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Download.Items.EbsItemUnitChangeController.Download(System.Nullable{System.Int32},System.Boolean)">
+            <summary>
+            下载单位数据
+            </summary>
+            <param name="isManual">是否手工下载</param>        
+            <returns>处理结果</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.Download.Items.EbsUnitController">
+            <summary>
+            单位下载
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Download.Items.EbsUnitController.Download(System.Nullable{System.Int32},System.Boolean)">
+            <summary>
+            下载单位数据
+            </summary>
+            <param name="invOrgId"></param>
+            <param name="isManual">是否手工下载</param>        
+            <returns>处理结果</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.Download.Items.SoapItemCateController">
+            <summary>
+            从ERP下载物料分类到中间表
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Download.Items.SoapItemCateController.DownloadToInf(System.Boolean,System.String)">
+            <summary>
+            下载到中间表
+            </summary>
+            <param name="isManual">是否手工下载</param>
+            <param name="keyWord">查询关键字</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.Download.Items.SoapItemController">
+            <summary>
+            物料下载控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Download.Items.SoapItemController.DownloadToInf(System.Boolean,System.String)">
+            <summary>
+            下载到中间表
+            </summary>
+            <param name="isManual">是否手工下载</param>
+            <param name="keyWord">查询关键字</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.Download.OnHands.EbsOnHandController">
+            <summary>
+            库存现有量下载控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Download.OnHands.EbsOnHandController.Download(System.Collections.Generic.List{System.String},System.String)">
+            <summary>
+            库存现有量下载
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Download.OnHands.EbsOnHandController.GetEbsParams(System.Collections.Generic.List{System.String},System.String)">
+            <summary>
+            获取上传报文
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.Download.ProductBoms.SoapProductBomController">
+            <summary>
+            产品BOM下载控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Download.ProductBoms.SoapProductBomController.DownloadToInf(System.Boolean,System.String)">
+            <summary>
+            下载到中间表
+            </summary>
+            <param name="isManual">是否手工下载</param>
+            <param name="keyWord">查询关键字</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Download.ProductBoms.SoapProductBomController.DownloadProductBomDtlERPToInf">
+            <summary>
+            从ERP下载产品BOM明细到中间表
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.Download.ProductionOrders.SoapProductOrderController">
+            <summary>
+            生产订单下载控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Download.ProductionOrders.SoapProductOrderController.DownloadToInf(System.Boolean,System.String)">
+            <summary>
+            下载到中间表
+            </summary>
+            <param name="isManual">是否手工下载</param>
+            <param name="keyWord">查询关键字</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.Download.ProductOrderBoms.SoapPoBomController">
+            <summary>
+            生产订单BOM下载控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Download.ProductOrderBoms.SoapPoBomController.DownloadToInf(System.Boolean,System.String)">
+            <summary>
+            下载到中间表
+            </summary>
+            <param name="isManual">是否手工下载</param>
+            <param name="keyWord">查询关键字</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.Download.Projects.EbsProjectNoController">
+            <summary>
+            项目号数据下载
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Download.Projects.EbsProjectNoController.Download(System.Nullable{System.Int32},System.Boolean)">
+            <summary>
+            项目号数据下载
+            </summary>
+            <param name="invOrgId"></param>
+            <param name="isManual">是否手工下载</param>        
+            <returns>处理结果</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.Download.PurchaseOrders.DbPoController">
+            <summary>
+            从ERP下载采购订单到中间表
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Download.PurchaseOrders.DbPoController.CreatePoInfData(System.Data.DataRow)">
+            <summary>
+            创建采购订单接口数据
+            </summary>
+            <param name="row">数据行</param>
+            <returns>接口数据</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Download.PurchaseOrders.DbPoController.DownloadToInf(System.Boolean,System.String)">
+            <summary>
+            下载到中间表
+            </summary>
+            <param name="isManual">是否手工下载</param>
+            <param name="keyWord">查询关键字</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.Download.PurchaseOrders.DbPoDisController">
+            <summary>
+            从ERP下载采购订单分配行到中间表
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Download.PurchaseOrders.DbPoDisController.CreatePoDisInfData(System.Data.DataRow)">
+            <summary>
+            创建采购订单分配行接口数据
+            </summary>
+            <param name="row">数据行</param>
+            <returns>接口数据</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Download.PurchaseOrders.DbPoDisController.DownloadToInf(System.Boolean,System.String)">
+            <summary>
+            下载到中间表
+            </summary>
+            <param name="isManual">是否手工下载</param>
+            <param name="keyWord">查询关键字</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.Download.PurchaseOrders.DbPoDtlController">
+            <summary>
+            从ERP下载采购订单明细到中间表
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Download.PurchaseOrders.DbPoDtlController.CreatePoDtlInfData(System.Data.DataRow)">
+            <summary>
+            创建采购订单明细接口数据
+            </summary>
+            <param name="row">数据行</param>
+            <returns>接口数据</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Download.PurchaseOrders.DbPoDtlController.DownloadToInf(System.Boolean,System.String)">
+            <summary>
+            下载到中间表
+            </summary>
+            <param name="isManual">是否手工下载</param>
+            <param name="keyWord">查询关键字</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.Download.PurchaseOrders.DbPoLocController">
+            <summary>
+            从ERP下载采购订单发运行到中间表
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Download.PurchaseOrders.DbPoLocController.CreatePoLocInfData(System.Data.DataRow)">
+            <summary>
+            创建采购订单发运行接口数据
+            </summary>
+            <param name="row">数据行</param>
+            <returns>接口数据</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Download.PurchaseOrders.DbPoLocController.DownloadToInf(System.Boolean,System.String)">
+            <summary>
+            下载到中间表
+            </summary>
+            <param name="isManual">是否手工下载</param>
+            <param name="keyWord">查询关键字</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.Download.PurchaseOrders.SoapPoController">
+            <summary>
+            采购订单下载控制
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Download.PurchaseOrders.SoapPoController.DownloadToInf(System.Boolean,System.String)">
+            <summary>
+            下载到中间表
+            </summary>
+            <param name="isManual">是否手工下载</param>
+            <param name="keyWord">查询关键字</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Download.PurchaseOrders.SoapPoController.DownloadPoDtlERPToInf">
+            <summary>
+            从ERP下载采购订单明细到中间表
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.Download.Receipts.SoapAsnController">
+            <summary>
+            ASN订单下载控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Download.Receipts.SoapAsnController.DownloadToInf(System.Boolean,System.String)">
+            <summary>
+            下载到中间表
+            </summary>
+            <param name="isManual">是否手工下载</param>
+            <param name="keyWord">查询关键字</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Download.Receipts.SoapAsnController.DownloadAsnDtlERPToInf">
+            <summary>
+            从ERP下载ASN明细到中间表
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.Download.Shipments.SoapShipmentController">
+            <summary>
+            发运单下载控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Download.Shipments.SoapShipmentController.DownloadToInf(System.Boolean,System.String)">
+            <summary>
+            下载到中间表
+            </summary>
+            <param name="isManual">是否手工下载</param>
+            <param name="keyWord">查询关键字</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Download.Shipments.SoapShipmentController.DownloadShipmentDtlERPToInf">
+            <summary>
+            从ERP下载发运单明细到中间表
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.Download.TaskNos.EbsTaskNoController">
+            <summary>
+            任务数据下载
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.EbsInterfaceEntityRepository`1">
+            <summary>
+            指定仓库的数据提供者
+            </summary>
+            <typeparam name="T">实体仓库</typeparam>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.EbsInterfaceEntityDataProvider">
+            <summary>
+            数据提供者
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Ebs.EbsInterfaceEntityDataProvider.ConnectionStringName">
+            <summary>
+            数据库连接字符串的名称
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Ebs.EbsInterfaceEntityDataProvider.ConnectionStringSettingName">
+            <summary>
+            数据库连接字符串的名称
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.Module">
+            <summary>
+            当前工程所对应的模块类
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化
+            </summary>
+            <param name="app">应用程序对象</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.UploadEbs.AllocateIn.EbsAllocateInController">
+            <summary>
+            库存调拨
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.UploadEbs.AllocateIn.EbsAllocateInController.UploadToEbs(System.Collections.Generic.List{System.Tuple{SIE.Core.Enums.OrderType,SIE.Inventory.Transactions.TransactionType,System.Nullable{System.Double},System.String}})">
+            <summary>
+            上传数据到EBS
+            </summary>
+            <param name="tuples"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.UploadEbs.AllocateIn.EbsDirectAllocateController">
+            <summary>
+            库存调拨
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.UploadEbs.AllocateIn.EbsDirectAllocateController.UploadToEbs(System.Collections.Generic.List{System.Tuple{SIE.Core.Enums.OrderType,SIE.Inventory.Transactions.TransactionType,System.Nullable{System.Double},System.String}})">
+            <summary>
+            上传数据到EBS
+            </summary>
+            <param name="tuples"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.UploadEbs.CrossAllocate.EbsCrossAllocateController">
+            <summary>
+            跨组织调拨接口
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.UploadEbs.CrossAllocate.EbsCrossAllocateController.UploadToEbs(System.Collections.Generic.List{System.Tuple{SIE.Core.Enums.OrderType,SIE.Inventory.Transactions.TransactionType,System.Nullable{System.Double},System.String}},System.Int32)">
+            <summary>
+            上传数据到EBS
+            </summary>
+            <param name="tuples"></param>
+            <param name="type">1- 出库 2-入库</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.UploadEbs.FinishedIn.EbsFinishedInController">
+            <summary>
+            完工入库(成品/半成品)
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.UploadEbs.FinishedIn.EbsFinishedInController.UploadToEbs(System.Collections.Generic.List{System.Tuple{SIE.Core.Enums.OrderType,SIE.Inventory.Transactions.TransactionType,System.Nullable{System.Double},System.String}},SIE.Core.Enums.OrderType)">
+            <summary>
+            上传数据到EBS
+            </summary>
+            <param name="tuples">单据大类，事务类型</param>
+            <param name="type">类型</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.UploadEbs.OtherIn.EbsOtherInController">
+            <summary>
+            其他入库回传ERP
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.UploadEbs.OtherIn.EbsOtherInController.UploadToEbs(System.Collections.Generic.List{System.Tuple{SIE.Core.Enums.OrderType,SIE.Inventory.Transactions.TransactionType,System.Nullable{System.Double},System.String}})">
+            <summary>
+            上传数据到EBS
+            </summary>
+            <param name="tuples">单据大类，事务类型</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.UploadEbs.OtherOut.EbsOtherOutController">
+            <summary>
+            杂项出库控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.UploadEbs.OtherOut.EbsOtherOutController.UploadToEbs(System.Collections.Generic.List{System.Tuple{SIE.Core.Enums.OrderType,SIE.Inventory.Transactions.TransactionType,System.Nullable{System.Double},System.String}})">
+            <summary>
+            上传数据到EBS
+            </summary>
+            <param name="tuples">单据大类，事务类型</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.UploadEbs.ProductReturn.EbsProductReturnController">
+            <summary>
+            生产退料控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.UploadEbs.ProductReturn.EbsProductReturnController.UploadToEbs(System.Collections.Generic.List{System.Tuple{SIE.Core.Enums.OrderType,SIE.Inventory.Transactions.TransactionType,System.Nullable{System.Double},System.String}})">
+            <summary>
+            上传数据到EBS
+            </summary>
+            <param name="tuples">单据大类，事务类型</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.UploadEbs.PurchaseIn.EbsInComeController">
+            <summary>
+            来料暂收控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.UploadEbs.PurchaseIn.EbsInComeController.UploadToEbs(System.Collections.Generic.List{System.Tuple{SIE.Core.Enums.OrderType,SIE.Inventory.Transactions.TransactionType,System.Nullable{System.Double},System.String}})">
+            <summary>
+            采购订单入库暂收上传数据到EBS
+            </summary>
+            <param name="tuples">单据大类，事务类型</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.UploadEbs.PurchaseIn.EbsPurchaseInController">
+            <summary>
+            采购入库回传ERP
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.UploadEbs.PurchaseIn.EbsPurchaseInController.UploadToEbs(System.Collections.Generic.List{System.Tuple{SIE.Core.Enums.OrderType,SIE.Inventory.Transactions.TransactionType,System.Nullable{System.Double},System.String}})">
+            <summary>
+            上传数据到EBS
+            </summary>
+            <param name="tuples">单据大类，事务类型</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.UploadEbs.SaleReturn.EbsSaleReturnController">
+            <summary>
+            销售退货入库控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.UploadEbs.SaleReturn.EbsSaleReturnController.UploadToEbs(System.Collections.Generic.List{System.Tuple{SIE.Core.Enums.OrderType,SIE.Inventory.Transactions.TransactionType,System.Nullable{System.Double},System.String}})">
+            <summary>
+            上传数据到EBS
+            </summary>
+            <param name="tuples">单据大类，事务类型</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.UploadEbs.SupplierReturn.EbsPoReceiveSupplierReturnController">
+            <summary>
+            采购暂收退货供应商控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.UploadEbs.SupplierReturn.EbsPoReceiveSupplierReturnController.UploadToEbs(System.Collections.Generic.List{System.Tuple{SIE.Core.Enums.OrderType,SIE.Inventory.Transactions.TransactionType,System.Nullable{System.Double},System.String}})">
+            <summary>
+            上传数据到EBS
+            </summary>
+            <param name="tuples">单据大类，事务类型</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.UploadEbs.SupplierReturn.EbsSupplierReturnController">
+            <summary>
+            采购退货控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.UploadEbs.SupplierReturn.EbsSupplierReturnController.UploadToEbs(System.Collections.Generic.List{System.Tuple{SIE.Core.Enums.OrderType,SIE.Inventory.Transactions.TransactionType,System.Nullable{System.Double},System.String}})">
+            <summary>
+            上传数据到EBS
+            </summary>
+            <param name="tuples">单据大类，事务类型</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.UploadEbs.WorkFeed.EbsWorkFeedController">
+            <summary>
+            工单发料控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.UploadEbs.WorkFeed.EbsWorkFeedController.UploadToEbs(System.Collections.Generic.List{System.Tuple{SIE.Core.Enums.OrderType,SIE.Inventory.Transactions.TransactionType,System.Nullable{System.Double},System.String}})">
+            <summary>
+            上传数据到EBS
+            </summary>
+            <param name="tuples">单据大类，事务类型</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.Upload.EbsSaleOutController">
+            <summary>
+            销售出库控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Upload.EbsSaleOutController.UploadToEbs(System.Collections.Generic.List{System.Tuple{SIE.Core.Enums.OrderType,SIE.Inventory.Transactions.TransactionType,System.Nullable{System.Double},System.String}})">
+            <summary>
+            上传数据到EBS
+            </summary>
+            <param name="tuples">单据大类，事务类型</param>       
+            <returns>处理结果</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.Upload.SoapFinishedController">
+            <summary>
+            成品入库事务上传 控制器
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.Upload.SoapIqcController">
+            <summary>
+            来料检验事务上传 控制器
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.Upload.SoapMaterialReturnController">
+            <summary>
+            生产退料事务上传 控制器
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.Upload.SoapOtherController">
+            <summary>
+            其他出入库事务上传 控制器
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.Upload.SoapPurchaseInController">
+            <summary>
+            来料入库事务上传 控制器
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.Upload.SoapReceiveController">
+            <summary>
+            来料接收事务上传 控制器
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.Upload.SoapSaleOutController">
+            <summary>
+            销售出库事务上传
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Ebs.Upload.SoapSaleOutController.UploadReceiveInfToErp(System.Collections.Generic.List{System.Tuple{SIE.Core.Enums.OrderType,SIE.Inventory.Transactions.TransactionType,System.Nullable{System.Double},System.String}})">
+            <summary>
+            从SMOM中间表上传销售出库事务到ERP
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.Upload.SoapSaleReturnController">
+            <summary>
+            销售退货事务上传 控制器
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.Upload.SoapSupplierReturnController">
+            <summary>
+            供应商退货事务上传 控制器
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Ebs.Upload.SoapWorkFeedController">
+            <summary>
+            工单发料事务上传 控制器
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Download.Customers.SoapCustomerController">
+            <summary>
+            客户下载控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Download.Customers.SoapCustomerController.DownloadToInf(System.Boolean,System.String)">
+            <summary>
+            从ERP下载客户到中间表
+            </summary>
+            <param name="isManual"></param>
+            <param name="keyWord"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Download.Employees.SoapEmployeeController">
+            <summary>
+            员工下载控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Download.Employees.SoapEmployeeController.DownloadToInf(System.Boolean,System.String)">
+            <summary>
+            下载到中间表
+            </summary>
+            <param name="isManual">是否手工下载</param>
+            <param name="keyWord">查询关键字</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Download.Enterprises.SoapEnterpriseController">
+            <summary>
+            企业模型下载控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Download.Enterprises.SoapEnterpriseController.DownloadToInf(System.Boolean,System.String)">
+            <summary>
+            下载到中间表
+            </summary>
+            <param name="isManual">是否手工下载</param>
+            <param name="keyWord">查询关键字</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Download.InvOrgs.InvOrgDownloadController">
+            <summary>
+            组织下载控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Download.InvOrgs.InvOrgDownloadController.Download(System.Boolean)">
+            <summary>
+            下载库存组织数据
+            </summary>
+            <param name="isManual">是否手工下载</param>        
+            <returns>处理结果</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Download.Transactions.SoapTransactionController">
+            <summary>
+            ERP事务下载控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Download.Transactions.SoapTransactionController.DownloadToInf(System.Boolean,System.String)">
+            <summary>
+            下载到中间表
+            </summary>
+            <param name="isManual">是否手工下载</param>
+            <param name="keyWord">查询关键字</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Download.Warehouses.EbsWarehouseController">
+            <summary>
+            ERP子库下载
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Download.Warehouses.EbsWarehouseController.Download(System.Nullable{System.Int32},System.Boolean)">
+            <summary>
+            下载ERP子库数据
+            </summary>
+            <param name="invOrgId">库存组织</param>
+            <param name="isManual">是否手工下载</param>        
+            <returns>处理结果</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Download.Warehouses.SoapWarehouseController">
+            <summary>
+            仓库下载控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Download.Warehouses.SoapWarehouseController.DownloadToInf(System.Boolean,System.String)">
+            <summary>
+            下载到中间表
+            </summary>
+            <param name="isManual">是否手工下载</param>
+            <param name="keyWord">查询关键字</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Download.Warehouses.SoapWarehouseController.DownloadStorageAreaERPToInf">
+            <summary>
+            从ERP下载库区到中间表
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Download.Warehouses.SoapWarehouseController.DownloadStorageLocationERPToInf">
+            <summary>
+            从ERP下载库区位中间表
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Download.WorkOrders.SoapWorkOrderController">
+            <summary>
+            工单下载控制器
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Download.WorkOrders.SoapWorkOrderController.CodeLabel">
+            <summary>
+            接口类型
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Download.WorkOrders.SoapWorkOrderController.ExecuteSaveInfData(SIE.ERPInterface.Common.Datas.SoapParameter,System.Boolean,System.String)">
+            <summary>
+            执行数据保存中间表
+            </summary>
+            <param name="soapPara"></param>
+            <param name="isManual"></param>
+            <param name="keyWord">查询关键字</param>
+        </member>
+        <member name="M:SIE.ERPInterface.Download.WorkOrders.SoapWorkOrderController.DownloadToInf(System.Boolean,System.String)">
+            <summary>
+            下载到中间表
+            </summary>
+            <param name="isManual">是否手工下载</param>
+            <param name="keyWord">查询关键字</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Download.WorkOrders.SoapWorkOrderController.DownloadWorkOrderBomERPToInf">
+            <summary>
+            从ERP下载工单BOM中间表
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributions">
+            <summary>
+            采购订单分配行
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributions.PoErpIdProperty">
+            <summary>
+            采购订单ERPID
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributions.PoErpId">
+            <summary>
+            采购订单ERPID
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributions.PoLineErpIdProperty">
+            <summary>
+            采购订单行ERPID
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributions.PoLineErpId">
+            <summary>
+            采购订单行ERPID
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributions.PoNoProperty">
+            <summary>
+            采购订单号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributions.PoNo">
+            <summary>
+            采购订单号
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributions.PoLineNoProperty">
+            <summary>
+            采购订单行号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributions.PoLineNo">
+            <summary>
+            采购订单行号
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributions.LineLocationErpIdProperty">
+            <summary>
+            采购订单发运行ERPID
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributions.LineLocationErpId">
+            <summary>
+            采购订单发运行ERPID
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributions.LineLocationNoProperty">
+            <summary>
+            采购订单发运行号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributions.LineLocationNo">
+            <summary>
+            采购订单发运行号
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributions.PoReleaseIdProperty">
+            <summary>
+            来源分配ID
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributions.PoReleaseId">
+            <summary>
+            来源分配ID
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributions.DeliverToLocationIdProperty">
+            <summary>
+            采购申请单分配ID
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributions.DeliverToLocationId">
+            <summary>
+            采购申请单分配ID
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributions.DeliverToPersonIdProperty">
+            <summary>
+            收货人
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributions.DeliverToPersonId">
+            <summary>
+            收货人
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributions.QuantityOrderedProperty">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributions.QuantityOrdered">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributions.QuantityDeliveredProperty">
+            <summary>
+            已交货数量
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributions.QuantityDelivered">
+            <summary>
+            已交货数量
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributions.QuantityBilledProperty">
+            <summary>
+            开票数量
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributions.QuantityBilled">
+            <summary>
+            开票数量
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributions.QuantityCancelledProperty">
+            <summary>
+            取消数量
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributions.QuantityCancelled">
+            <summary>
+            取消数量
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributions.SetOfBooksIdProperty">
+            <summary>
+            帐套ID
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributions.SetOfBooksId">
+            <summary>
+            帐套ID
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributions.RateProperty">
+            <summary>
+            汇率
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributions.Rate">
+            <summary>
+            汇率
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributions.RateDateProperty">
+            <summary>
+            汇率日期
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributions.RateDate">
+            <summary>
+            汇率日期
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributions.EncumberedFlagProperty">
+            <summary>
+            负担标志
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributions.EncumberedFlag">
+            <summary>
+            负担标志
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributions.WoNoProperty">
+            <summary>
+            外协工单号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributions.WoNo">
+            <summary>
+            外协工单号
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributions.WoErpIdProperty">
+            <summary>
+            外协工单ERPID
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributions.WoErpId">
+            <summary>
+            外协工单ERPID
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributions.WipOperationSeqNumProperty">
+            <summary>
+            工序
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributions.WipOperationSeqNum">
+            <summary>
+            工序
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributions.WipResourceSeqNumProperty">
+            <summary>
+            工序序号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributions.WipResourceSeqNum">
+            <summary>
+            工序序号
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributions.UpdateByCodeProperty">
+            <summary>
+            更新人编码
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributions.UpdateByCode">
+            <summary>
+            更新人编码
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributions.ErpIdProperty">
+            <summary>
+            ERP ID
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributions.ErpId">
+            <summary>
+            ERP ID
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributionsConfig">
+            <summary>
+            采购订单分配行 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributionsConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributionsInf">
+            <summary>
+            采购订单分配行中间表
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributionsInf.PoErpIdProperty">
+            <summary>
+            采购订单ERPID
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributionsInf.PoErpId">
+            <summary>
+            采购订单ERPID
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributionsInf.PoLineErpIdProperty">
+            <summary>
+            采购订单行ERPID
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributionsInf.PoLineErpId">
+            <summary>
+            采购订单行ERPID
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributionsInf.PoNoProperty">
+            <summary>
+            采购订单号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributionsInf.PoNo">
+            <summary>
+            采购订单号
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributionsInf.PoLineNoProperty">
+            <summary>
+            采购订单行号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributionsInf.PoLineNo">
+            <summary>
+            采购订单行号
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributionsInf.LineLocationErpIdProperty">
+            <summary>
+            采购订单发运行ERPID
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributionsInf.LineLocationErpId">
+            <summary>
+            采购订单发运行ERPID
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributionsInf.LineLocationNoProperty">
+            <summary>
+            采购订单发运行号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributionsInf.LineLocationNo">
+            <summary>
+            采购订单发运行号
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributionsInf.PoReleaseIdProperty">
+            <summary>
+            来源分配ID
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributionsInf.PoReleaseId">
+            <summary>
+            来源分配ID
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributionsInf.DeliverToLocationIdProperty">
+            <summary>
+            采购申请单分配ID
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributionsInf.DeliverToLocationId">
+            <summary>
+            采购申请单分配ID
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributionsInf.DeliverToPersonIdProperty">
+            <summary>
+            收货人
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributionsInf.DeliverToPersonId">
+            <summary>
+            收货人
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributionsInf.QuantityOrderedProperty">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributionsInf.QuantityOrdered">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributionsInf.QuantityDeliveredProperty">
+            <summary>
+            已交货数量
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributionsInf.QuantityDelivered">
+            <summary>
+            已交货数量
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributionsInf.QuantityBilledProperty">
+            <summary>
+            开票数量
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributionsInf.QuantityBilled">
+            <summary>
+            开票数量
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributionsInf.QuantityCancelledProperty">
+            <summary>
+            取消数量
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributionsInf.QuantityCancelled">
+            <summary>
+            取消数量
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributionsInf.SetOfBooksIdProperty">
+            <summary>
+            帐套ID
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributionsInf.SetOfBooksId">
+            <summary>
+            帐套ID
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributionsInf.RateProperty">
+            <summary>
+            汇率
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributionsInf.Rate">
+            <summary>
+            汇率
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributionsInf.RateDateProperty">
+            <summary>
+            汇率日期
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributionsInf.RateDate">
+            <summary>
+            汇率日期
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributionsInf.EncumberedFlagProperty">
+            <summary>
+            负担标志
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributionsInf.EncumberedFlag">
+            <summary>
+            负担标志
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributionsInf.WoNoProperty">
+            <summary>
+            外协工单号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributionsInf.WoNo">
+            <summary>
+            外协工单号
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributionsInf.WoErpIdProperty">
+            <summary>
+            外协工单ERPID
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributionsInf.WoErpId">
+            <summary>
+            外协工单ERPID
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributionsInf.WipOperationSeqNumProperty">
+            <summary>
+            工序
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributionsInf.WipOperationSeqNum">
+            <summary>
+            工序
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributionsInf.WipResourceSeqNumProperty">
+            <summary>
+            工序序号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributionsInf.WipResourceSeqNum">
+            <summary>
+            工序序号
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributionsInf.UpdateByCodeProperty">
+            <summary>
+            更新人编码
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributionsInf.UpdateByCode">
+            <summary>
+            更新人编码
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributionsInfConfig">
+            <summary>
+            采购订单分配行中间表 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderDistributionsInfConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations">
+            <summary>
+            采购订单发运行
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.LocNoProperty">
+            <summary>
+            发运号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.LocNo">
+            <summary>
+            发运号
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.PoErpIdProperty">
+            <summary>
+            采购订单ERPID
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.PoErpId">
+            <summary>
+            采购订单ERPID
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.PoLineErpIdProperty">
+            <summary>
+            采购订单行ERPID
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.PoLineErpId">
+            <summary>
+            采购订单行ERPID
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.PoNoProperty">
+            <summary>
+            采购订单号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.PoNo">
+            <summary>
+            采购订单号
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.PoLineNoProperty">
+            <summary>
+            采购订单行号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.PoLineNo">
+            <summary>
+            采购订单行号
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.PoReleaseIdProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.PoReleaseId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.QuantityProperty">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.Quantity">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.NeedByDateProperty">
+            <summary>
+            需求日期
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.NeedByDate">
+            <summary>
+            需求日期
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.PromisedDateProperty">
+            <summary>
+            承诺日期
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.PromisedDate">
+            <summary>
+            承诺日期
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.QuantityReceivedProperty">
+            <summary>
+            接收数量
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.QuantityReceived">
+            <summary>
+            接收数量
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.QuantityAcceptedProperty">
+            <summary>
+            接受数量
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.QuantityAccepted">
+            <summary>
+            接受数量
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.QuantityRejectedProperty">
+            <summary>
+            拒绝数量
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.QuantityRejected">
+            <summary>
+            拒绝数量
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.QuantityBilledProperty">
+            <summary>
+            开票数量
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.QuantityBilled">
+            <summary>
+            开票数量
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.QuantityCancelledProperty">
+            <summary>
+            取消数量
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.QuantityCancelled">
+            <summary>
+            取消数量
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.QuantityShippedProperty">
+            <summary>
+            发运数量
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.QuantityShipped">
+            <summary>
+            发运数量
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.LeadTimeProperty">
+            <summary>
+            前导日期
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.LeadTime">
+            <summary>
+            前导日期
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.LeadTimeUnitProperty">
+            <summary>
+            前导时间单位
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.LeadTimeUnit">
+            <summary>
+            前导时间单位
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.StartDateProperty">
+            <summary>
+            开始日期
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.StartDate">
+            <summary>
+            开始日期
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.EndDateProperty">
+            <summary>
+            结束日期
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.EndDate">
+            <summary>
+            结束日期
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.ClosedFlagProperty">
+            <summary>
+            关闭标记
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.ClosedFlag">
+            <summary>
+            关闭标记
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.ClosedCodeProperty">
+            <summary>
+            关闭编码
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.ClosedCode">
+            <summary>
+            关闭编码
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.ClosedReasonProperty">
+            <summary>
+            关闭原因
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.ClosedReason">
+            <summary>
+            关闭原因
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.ClosedDateProperty">
+            <summary>
+            关闭日期
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.ClosedDate">
+            <summary>
+            关闭日期
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.ShipmentTypeProperty">
+            <summary>
+            送货方式
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.ShipmentType">
+            <summary>
+            送货方式
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.QtyRcvToleranceProperty">
+            <summary>
+            允差
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.QtyRcvTolerance">
+            <summary>
+            允差
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.ReceivingRoutingIdProperty">
+            <summary>
+            接收类型
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.ReceivingRoutingId">
+            <summary>
+            接收类型
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.WoNoProperty">
+            <summary>
+            外协工单号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.WoNo">
+            <summary>
+            外协工单号
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.UpdateByCodeProperty">
+            <summary>
+            更新人编码
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.UpdateByCode">
+            <summary>
+            更新人编码
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.ErpIdProperty">
+            <summary>
+            ERP ID
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocations.ErpId">
+            <summary>
+            ERP ID
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsConfig">
+            <summary>
+            采购订单发运行 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf">
+            <summary>
+            采购订单发运行中间表
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.LocNoProperty">
+            <summary>
+            发运号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.LocNo">
+            <summary>
+            发运号
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.PoErpIdProperty">
+            <summary>
+            采购订单ERPID
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.PoErpId">
+            <summary>
+            采购订单ERPID
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.PoLineErpIdProperty">
+            <summary>
+            采购订单行ERPID
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.PoLineErpId">
+            <summary>
+            采购订单行ERPID
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.PoNoProperty">
+            <summary>
+            采购订单号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.PoNo">
+            <summary>
+            采购订单号
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.PoLineNoProperty">
+            <summary>
+            采购订单行号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.PoLineNo">
+            <summary>
+            采购订单行号
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.PoReleaseIdProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.PoReleaseId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.QuantityProperty">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.Quantity">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.NeedByDateProperty">
+            <summary>
+            需求日期
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.NeedByDate">
+            <summary>
+            需求日期
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.PromisedDateProperty">
+            <summary>
+            承诺日期
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.PromisedDate">
+            <summary>
+            承诺日期
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.QuantityReceivedProperty">
+            <summary>
+            接收数量
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.QuantityReceived">
+            <summary>
+            接收数量
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.QuantityAcceptedProperty">
+            <summary>
+            接受数量
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.QuantityAccepted">
+            <summary>
+            接受数量
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.QuantityRejectedProperty">
+            <summary>
+            拒绝数量
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.QuantityRejected">
+            <summary>
+            拒绝数量
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.QuantityBilledProperty">
+            <summary>
+            开票数量
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.QuantityBilled">
+            <summary>
+            开票数量
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.QuantityCancelledProperty">
+            <summary>
+            取消数量
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.QuantityCancelled">
+            <summary>
+            取消数量
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.QuantityShippedProperty">
+            <summary>
+            发运数量
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.QuantityShipped">
+            <summary>
+            发运数量
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.LeadTimeProperty">
+            <summary>
+            前导日期
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.LeadTime">
+            <summary>
+            前导日期
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.LeadTimeUnitProperty">
+            <summary>
+            前导时间单位
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.LeadTimeUnit">
+            <summary>
+            前导时间单位
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.StartDateProperty">
+            <summary>
+            开始日期
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.StartDate">
+            <summary>
+            开始日期
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.EndDateProperty">
+            <summary>
+            结束日期
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.EndDate">
+            <summary>
+            结束日期
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.ClosedFlagProperty">
+            <summary>
+            关闭标记
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.ClosedFlag">
+            <summary>
+            关闭标记
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.ClosedCodeProperty">
+            <summary>
+            关闭编码
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.ClosedCode">
+            <summary>
+            关闭编码
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.ClosedReasonProperty">
+            <summary>
+            关闭原因
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.ClosedReason">
+            <summary>
+            关闭原因
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.ClosedDateProperty">
+            <summary>
+            关闭日期
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.ClosedDate">
+            <summary>
+            关闭日期
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.ShipmentTypeProperty">
+            <summary>
+            送货方式
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.ShipmentType">
+            <summary>
+            送货方式
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.QtyRcvToleranceProperty">
+            <summary>
+            允差
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.QtyRcvTolerance">
+            <summary>
+            允差
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.ReceivingRoutingIdProperty">
+            <summary>
+            接收类型
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.ReceivingRoutingId">
+            <summary>
+            接收类型
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.WoNoProperty">
+            <summary>
+            外协工单号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.WoNo">
+            <summary>
+            外协工单号
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.UpdateByCodeProperty">
+            <summary>
+            更新人编码
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInf.UpdateByCode">
+            <summary>
+            更新人编码
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInfConfig">
+            <summary>
+            采购订单发运行中间表 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.EBS.InfDataEntitys.Download.PurchaseOrderLocationsInfConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.WCS.DbMigrations._20240221_170901_ERP">
+            <summary>
+            WCS初始化脚本
+            </summary>
+        </member>
+        <member name="P:SIE.WCS.DbMigrations._20240221_170901_ERP.DbSetting">
+            <summary>
+            数据库设置
+            </summary>
+        </member>
+        <member name="P:SIE.WCS.DbMigrations._20240221_170901_ERP.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:SIE.WCS.DbMigrations._20240221_170901_ERP.Type">
+            <summary>
+            手动升级的类型：数据
+            </summary>
+        </member>
+        <member name="M:SIE.WCS.DbMigrations._20240221_170901_ERP.Down">
+            <summary>
+            不支持 Down
+            </summary>
+        </member>
+        <member name="M:SIE.WCS.DbMigrations._20240221_170901_ERP.Up">
+            <summary>
+            注入
+            </summary>
+        </member>
+    </members>
+</doc>

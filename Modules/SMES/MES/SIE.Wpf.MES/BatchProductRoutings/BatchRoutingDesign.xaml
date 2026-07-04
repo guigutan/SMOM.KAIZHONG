@@ -1,0 +1,103 @@
+﻿<UserControl x:Class="SIE.Wpf.MES.BatchProductRoutings.BatchRoutingDesign"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+             xmlns:dxdo="http://schemas.devexpress.com/winfx/2008/xaml/docking"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:process="clr-namespace:SIE.Wpf.Tech.Processs;assembly=SIE.Wpf.Tech"
+             xmlns:ui="http://schemas.siestudio.com/winfx/xaml/controls"
+             xmlns:uic="http://schemas.siestudio.com/winfx/xaml/core"
+             xmlns:local="clr-namespace:SIE.Wpf.MES.BatchProductRoutings"
+             xmlns:property="clr-namespace:SIE.Wpf.Tech.Routings.DesignPropertys;assembly=SIE.Wpf.Tech"
+             xmlns:technology="clr-namespace:SIE.Wpf.Tech.Routings.Technologys.Controls;assembly=SIE.Wpf.Tech"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.CommandBindings>
+            <CommandBinding Command="{x:Static local:BatchRoutingDesign.Save}" CanExecute="Save_CanExecute" Executed="Save_Executed"/>
+            <CommandBinding Command="{x:Static local:BatchRoutingDesign.Pause}" CanExecute="Pause_CanExecute" Executed="Pause_Executed"/>
+            <CommandBinding Command="{x:Static local:BatchRoutingDesign.Enable}" CanExecute="Enable_CanExecute" Executed="Enable_Executed"/>
+            <CommandBinding Command="{x:Static local:BatchRoutingDesign.SetCurrent}" CanExecute="SetCurrent_CanExecute" Executed="SetCurrent_Executed"/>
+            <CommandBinding Command="{x:Static local:BatchRoutingDesign.HorizontalCenter}" CanExecute="HorizontalCenter_CanExecute" Executed="HorizontalCenter_Executed"/>
+            <CommandBinding Command="{x:Static local:BatchRoutingDesign.VerticalCenter}" CanExecute="VerticalCenter_CanExecute" Executed="VerticalCenter_Executed"/>
+            <CommandBinding Command="{x:Static local:BatchRoutingDesign.HorizontalDistribution}" CanExecute="HorizontalDistribution_CanExecute" Executed="HorizontalDistribution_Executed"/>
+            <CommandBinding Command="{x:Static local:BatchRoutingDesign.VerticalDistribution}" CanExecute="VerticalDistribution_CanExecute" Executed="VerticalDistribution_Executed"/>
+        </Grid.CommandBindings>
+        <dxdo:DockLayoutManager>
+            <dxdo:LayoutGroup Orientation="Horizontal" AllowSplitters="True" AllowClose="False">
+                <dxdo:LayoutPanel Caption="{Binding [工艺流程],Source={uic:L10N}}" AllowDock="False" AllowClose="False" AllowFloat="False" AllowHide="False">
+                    <DockPanel SizeChanged="DockPanel_SizeChanged">
+                        <ItemsControl DockPanel.Dock="Top">
+                            <StackPanel Orientation="Horizontal">
+                                <dx:SimpleButton Command="{x:Static local:BatchRoutingDesign.Pause}" Margin="5,5">
+                                    <StackPanel Orientation="Horizontal">
+                                        <ui:PackIcon Kind="TimerPause" Width="15"></ui:PackIcon>
+                                        <TextBlock Text="{Binding [暂停],Source={uic:L10N}}" VerticalAlignment="Center"></TextBlock>
+                                    </StackPanel>
+                                </dx:SimpleButton>
+                                <dx:SimpleButton Command="{x:Static local:BatchRoutingDesign.SetCurrent}" Margin="0,5,5,5">
+                                    <StackPanel Orientation="Horizontal">
+                                        <ui:PackIcon Kind="LocationCheckin" Width="15"></ui:PackIcon>
+                                        <TextBlock Text="{Binding [设为当前工序],Source={uic:L10N}}" VerticalAlignment="Center"></TextBlock>
+                                    </StackPanel>
+                                </dx:SimpleButton>
+                                <dx:SimpleButton Command="{x:Static local:BatchRoutingDesign.Save}" Margin="0,5,5,5">
+                                    <StackPanel Orientation="Horizontal">
+                                        <ui:PackIcon Kind="SaveEntity" Width="15"></ui:PackIcon>
+                                        <TextBlock Text="{Binding [保存],Source={uic:L10N}}" VerticalAlignment="Center"></TextBlock>
+                                    </StackPanel>
+                                </dx:SimpleButton>
+                                <dx:SimpleButton Command="{x:Static local:BatchRoutingDesign.Enable}" Margin="0,5,5,5">
+                                    <StackPanel Orientation="Horizontal">
+                                        <ui:PackIcon Kind="Play" Width="15"></ui:PackIcon>
+                                        <TextBlock Text="{Binding [启用],Source={uic:L10N}}" VerticalAlignment="Center"></TextBlock>
+                                    </StackPanel>
+                                </dx:SimpleButton>
+                                <dx:SimpleButton Command="{x:Static local:BatchRoutingDesign.HorizontalCenter}" Margin="0,5,5,5">
+                                    <StackPanel Orientation="Horizontal">
+                                        <ui:PackIcon Kind="FormatHorizontalAlignCenter" Width="15"></ui:PackIcon>
+                                        <TextBlock Text="{Binding [左右居中],Source={uic:L10N}}" VerticalAlignment="Center"></TextBlock>
+                                    </StackPanel>
+                                </dx:SimpleButton>
+                                <dx:SimpleButton Command="{x:Static local:BatchRoutingDesign.VerticalCenter}" Margin="0,5,5,5">
+                                    <StackPanel Orientation="Horizontal">
+                                        <ui:PackIcon Kind="FormatVerticalAlignCenter" Width="11"></ui:PackIcon>
+                                        <TextBlock Text="{Binding [上下居中],Source={uic:L10N}}" VerticalAlignment="Center"></TextBlock>
+                                    </StackPanel>
+                                </dx:SimpleButton>
+                                <dx:SimpleButton Command="{x:Static local:BatchRoutingDesign.HorizontalDistribution}" Margin="0,5,5,5">
+                                    <StackPanel Orientation="Horizontal">
+                                        <ui:PackIcon Kind="TransverseDistribution" Width="11"></ui:PackIcon>
+                                        <TextBlock Text="{Binding [横向分布],Source={uic:L10N}}" VerticalAlignment="Center"></TextBlock>
+                                    </StackPanel>
+                                </dx:SimpleButton>
+                                <dx:SimpleButton Command="{x:Static local:BatchRoutingDesign.VerticalDistribution}" Margin="0,5,5,5">
+                                    <StackPanel Orientation="Horizontal">
+                                        <ui:PackIcon Kind="LongitudinalDistribution" Width="11"></ui:PackIcon>
+                                        <TextBlock Text="{Binding [纵向分布],Source={uic:L10N}}" VerticalAlignment="Center"></TextBlock>
+                                    </StackPanel>
+                                </dx:SimpleButton>
+                            </StackPanel>
+                        </ItemsControl>
+                        <technology:Container x:Name="container"/>
+                    </DockPanel>
+                </dxdo:LayoutPanel>
+                <dxdo:LayoutGroup  AllowClose="False" ItemWidth="250">
+                    <dxdo:TabbedGroup ItemWidth="240" AllowDock="True" AllowClose="False" SelectedTabIndex="0" >
+                        <dxdo:LayoutPanel Caption="{Binding [工序信息],Source={uic:L10N}}" AllowClose="False">
+                            <process:ProcessTree/>
+                        </dxdo:LayoutPanel>
+                        <dxdo:LayoutPanel Caption="{Binding [流程属性],Source={uic:L10N}}" AllowClose="False">
+                            <Grid>
+                                <property:ActivityProperty x:Name="activityProperty"/>
+                                <property:ContainerProperty x:Name="containerProperty"/>
+                                <property:RuleProperty x:Name="ruleProperty"/>
+                            </Grid>
+                        </dxdo:LayoutPanel>
+                    </dxdo:TabbedGroup>
+                </dxdo:LayoutGroup>
+            </dxdo:LayoutGroup>
+        </dxdo:DockLayoutManager> 
+    </Grid>
+</UserControl>

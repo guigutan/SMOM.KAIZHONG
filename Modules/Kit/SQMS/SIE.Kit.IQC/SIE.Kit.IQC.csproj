@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Kit.IQC.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Kit.IQC.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="IqcBills\ElecIqcBill.cs" />
+    <Compile Remove="IqcBills\ElecIqcBillCriteria.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\SQMS\IQC\SIE.IQC\SIE.IQC.csproj" />
+    <ProjectReference Include="..\..\Common\UrgentOrder\SIE.Kit.UrgentOrder\SIE.Kit.UrgentOrder.csproj" />
+    <ProjectReference Include="..\SIE.Kit.QMS\SIE.Kit.QMS.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="IqcBills\" />
+    <Folder Include="Properties\" />
+  </ItemGroup>
+</Project>

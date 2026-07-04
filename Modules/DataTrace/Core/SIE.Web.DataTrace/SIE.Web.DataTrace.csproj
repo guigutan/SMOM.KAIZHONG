@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup Label="Globals">
+		<SccProjectName>SAK</SccProjectName>
+		<SccProvider>SAK</SccProvider>
+		<SccAuxPath>SAK</SccAuxPath>
+		<SccLocalPath>SAK</SccLocalPath>
+	</PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<OutputPath>..\..\..\..\platform\smom\</OutputPath>
+		<DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.DataTrace.xml</DocumentationFile>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<OutputPath>..\..\..\..\platform\smom\</OutputPath>
+		<DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.DataTrace.xml</DocumentationFile>
+	</PropertyGroup>
+	<ItemGroup>
+	  <None Remove="TraceMainDatas\Commands\UploadAttachmentCommand.js" />
+	  <None Remove="TraceMainDatas\Commands\ViewMutiDocumenttCommand.js" />
+	</ItemGroup>
+	<ItemGroup>
+	  <EmbeddedResource Include="TraceMainDatas\Commands\UploadAttachmentCommand.js" />
+	  <EmbeddedResource Include="TraceMainDatas\Commands\ViewMutiDocumenttCommand.js" />
+	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\..\..\Common\Core\SIE.Web.Core\SIE.Web.Core.csproj" />
+	  <ProjectReference Include="..\SIE.DataTrace\SIE.DataTrace.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="TraceMainDatas\TraceEvent\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <PackageReference Include="SIE.SimpleListReport" Version="10.0.5" />
+	  <PackageReference Include="SIE.Web.DataSync" Version="10.0.5" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+	</ItemGroup>
+</Project>

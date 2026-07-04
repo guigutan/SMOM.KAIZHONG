@@ -1,0 +1,3079 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.ERPInterface.Smom</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.ERPInterface.Smom.Download.DownloadCustomerAddrController">
+            <summary>
+            客户地址下载控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadCustomerAddrController.DownloadCustomerAddrToBusiness(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.CustomerAddressData},System.Int32)">
+            <summary>
+            从API下载客户地址到业务表
+            </summary>
+            <param name="customerAddrDatas"></param>
+            <param name="invOrg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadCustomerAddrController.DownloadCustomerAddrInfToBusiness(System.Boolean)">
+            <summary>
+            从中间表下载客户地址到业务表
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadCustomerAddrController.GenerateCustomerAddrPara(System.Collections.Generic.IEnumerable{SIE.ERPInterface.Common.InfDataEntitys.Download.CustomerAddressInf})">
+            <summary>
+            生成客户地址实体
+            </summary>
+            <param name="customerAddrInfs">中间表实体地址数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadCustomerAddrController.SaveCustomerAddress(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.CustomerAddressData})">
+            <summary>
+            保存数据到客户地址
+            </summary>
+            <param name="datas"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadCustomerAddrController.SaveCustomerAddress(SIE.ERPInterface.Common.Datas.CustomerAddressData,System.Collections.Generic.Dictionary{System.String,SIE.CSM.Customers.CustomerAddress},System.Collections.Generic.Dictionary{System.String,SIE.CSM.Customers.Customer},System.String)">
+            <summary>
+            执行数据保存
+            </summary>
+            <param name="data">数据实体</param>
+            <param name="dic">客户地址数据字典</param>
+            <param name="dicCustomer">客户数据字典</param>
+            <param name="addressType">客户地址类型</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.Download.DownloadCustomerController">
+            <summary>
+            客户下载控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadCustomerController.DownloadCustomerToBusiness(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.CustomerData},System.Int32)">
+            <summary>
+            从API下载客户到业务表
+            </summary>
+            <param name="customerDatas"></param>
+            <param name="invOrg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadCustomerController.DownloadCustomerInfToBusiness(System.Boolean)">
+            <summary>
+            从中间表下载客户到业务表
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadCustomerController.DownloadManual(System.String)">
+            <summary>
+            手动下载
+            </summary>
+            <param name="keyWord">查询关键字</param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadCustomerController.GenerateCustomerPara(System.Collections.Generic.IEnumerable{SIE.ERPInterface.Common.InfDataEntitys.Download.CustomerInf})">
+            <summary>
+            生成客户实体
+            </summary>
+            <param name="customerInfs">中间表实体数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadCustomerController.SaveCustomers(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.CustomerData})">
+            <summary>
+            保存数据到客户
+            </summary>
+            <param name="datas"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadCustomerController.SaveCustomer(SIE.ERPInterface.Common.Datas.CustomerData,System.Collections.Generic.Dictionary{System.String,SIE.CSM.Customers.Customer},System.Collections.Generic.Dictionary{System.String,SIE.CSM.Suppliers.Supplier},System.String)">
+            <summary>
+            执行数据保存
+            </summary>
+            <param name="data">数据实体</param>
+            <param name="dic">客户数据字典</param>
+            <param name="dicSupplier">供应商数据字典</param>
+            <param name="customerType">类型</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.Download.Defects.DownloadDefectController">
+            <summary>
+            缺陷控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.Defects.DownloadDefectController.DownloadDefectCategoryToBusiness(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ErpInfoDatas.DefectCategoryData},System.Int32)">
+            <summary>
+            从API下载缺陷分类到业务表
+            </summary>
+            <param name="defectCategoryDatas"></param>
+            <param name="invOrg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.Defects.DownloadDefectController.SaveDefectCategory(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ErpInfoDatas.DefectCategoryData})">
+            <summary>
+            保存数据
+            </summary>
+            <param name="datas"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.Defects.DownloadDefectController.GenerateNewDefectCategory(SIE.ERPInterface.Common.Datas.ErpInfoDatas.DefectCategoryData)">
+            <summary>
+            创建缺陷分类 
+            </summary>
+            <param name="p"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.Defects.DownloadDefectController.DownloadDefectGradeToBusiness(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ErpInfoDatas.DefectGradeData},System.Int32)">
+            <summary>
+            从API下载缺陷等级到业务表
+            </summary>
+            <param name="defectGradeDatas"></param>
+            <param name="invOrg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.Defects.DownloadDefectController.SaveDefectGrade(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ErpInfoDatas.DefectGradeData})">
+            <summary>
+            保存数据
+            </summary>
+            <param name="datas"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.Defects.DownloadDefectController.GenerateNewDefectGrade(SIE.ERPInterface.Common.Datas.ErpInfoDatas.DefectGradeData,System.Collections.Generic.Dictionary{System.String,System.Enum})">
+            <summary>
+            创建缺陷等级
+            </summary>
+            <param name="p"></param>
+            <param name="defectSeverityDic"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.Defects.DownloadDefectController.ValidDefectGradeData(SIE.ERPInterface.Common.Datas.ErpInfoDatas.DefectGradeData,System.Collections.Generic.Dictionary{System.String,System.Enum})">
+            <summary>
+            校验缺陷等级数据
+            </summary>
+            <param name="p"></param>
+            <param name="defectSeverityDic"></param>
+            <exception cref="T:SIE.Domain.Validation.ValidationException"></exception>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.Defects.DownloadDefectController.DownloadDefectCodeToBusiness(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ErpInfoDatas.DefectCodeData},System.Int32)">
+            <summary>
+            从API下载缺陷代码到业务表
+            </summary>
+            <param name="defectCodeDatas"></param>
+            <param name="invOrg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.Defects.DownloadDefectController.SaveDefects(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ErpInfoDatas.DefectCodeData})">
+            <summary>
+            保存数据
+            </summary>
+            <param name="datas"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.Defects.DownloadDefectController.GenerateNewDefectCode(SIE.ERPInterface.Common.Datas.ErpInfoDatas.DefectCodeData,System.Collections.Generic.Dictionary{System.String,SIE.Defects.DefectGrade},System.Collections.Generic.Dictionary{System.String,SIE.Defects.DefectCategory},System.Collections.Generic.Dictionary{System.String,System.Enum})">
+            <summary>
+            创建缺陷代码
+            </summary>
+            <param name="p"></param>
+            <param name="defectGradeDic"></param>
+            <param name="defectCategoryDic"></param>
+            <param name="qualityDic"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.Defects.DownloadDefectController.ValidDefectData(SIE.ERPInterface.Common.Datas.ErpInfoDatas.DefectCodeData,System.Collections.Generic.Dictionary{System.String,SIE.Defects.DefectGrade},System.Collections.Generic.Dictionary{System.String,SIE.Defects.DefectCategory},System.Collections.Generic.Dictionary{System.String,System.Enum})">
+            <summary>
+            数据校验
+            </summary>
+            <param name="p"></param>
+            <param name="defectGradeDic"></param>
+            <param name="defectCategoryDic"></param>
+            <param name="qualityDic"></param>
+            <exception cref="T:SIE.Domain.Validation.ValidationException"></exception>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.Download.DownloadDeliveryPlanController">
+            <summary>
+            下载发货计划控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadDeliveryPlanController.DownloadDeliveryPlanToBusiness(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.DeliveryPlanData},System.Int32)">
+            <summary>
+            从API下载企业模型到业务表
+            </summary>
+            <param name="planDatas"></param>
+            /// <param name="invOrg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadDeliveryPlanController.SaveDeliveryPlans(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.DeliveryPlanData})">
+            <summary>
+            保存库存调拨数据
+            </summary>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.Download.EbsDownloadDeliveryPlanController">
+            <summary>
+            下载发货计划控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.EbsDownloadDeliveryPlanController.DownloadDeliveryPlanToBusiness(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.EbsDeliveryPlanData},System.String)">
+            <summary>
+            从API下载企业模型到业务表
+            </summary>
+            <param name="planDatas"></param>
+            /// <param name="extentInvOrg">ERP库存组织Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.EbsDownloadDeliveryPlanController.SaveDeliveryPlans(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.EbsDeliveryPlanData})">
+            <summary>
+            保存库存调拨数据
+            </summary>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.EbsDownloadDeliveryPlanController.UpdateQty(SIE.ShipPlan.DeliveryPlan,SIE.ERPInterface.Common.Datas.EbsDeliveryPlanData,System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ErpErrorData})">
+            <summary>
+            更新数量
+            </summary>      
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.EbsDownloadDeliveryPlanController.ValidateData(SIE.ERPInterface.Common.Datas.EbsDeliveryPlanData,System.Collections.Generic.Dictionary{System.String,SIE.Items.Item})">
+            <summary>
+            验证数据
+            </summary>       
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.EbsDownloadDeliveryPlanController.SetSecondQty(SIE.Items.Item,SIE.ERPInterface.Common.Datas.EbsDeliveryPlanData,SIE.Domain.EntityList{SIE.Items.ItemUnit})">
+            <summary>
+            设置辅助单位数量
+            </summary>        
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.EbsDownloadDeliveryPlanController.HandleCancelOrderDtls(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.EbsDeliveryPlanData},SIE.Domain.EntityList{SIE.ShipPlan.DeliveryPlan},System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ErpErrorData})">
+            <summary>
+            处理ERP取消的单据明细
+            </summary>
+            <param name="datas"></param>
+            <param name="plans"></param>
+            <param name="errors"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.EbsDownloadDeliveryPlanController.DownloadSaveWrokFeedToBusiness(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.EbsDeliveryPlanData},System.String)">
+            <summary>
+            从API下载企业模型到业务表
+            </summary>
+            <param name="planDatas"></param>
+            /// <param name="extentInvOrg">ERP库存组织Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.EbsDownloadDeliveryPlanController.SaveWrokFeed(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.EbsDeliveryPlanData})">
+            <summary>
+            保存库存调拨数据
+            </summary>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.Download.DownloadEmployeeController">
+            <summary>
+            员工下载控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadEmployeeController.DownloadEmployeeToBusiness(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.EmployeeData},System.Int32)">
+            <summary>
+            从API下载员工到业务表
+            </summary>
+            <param name="employeeDatas"></param>
+            <param name="invOrg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadEmployeeController.DownloadEmployeeInfToBusiness(System.Boolean,System.Boolean)">
+            <summary>
+            从中间表下载员工到业务表
+            <param name="isCreateAccount">是否创建账号</param>
+            <param name="isManual">是否手动</param>
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadEmployeeController.GenerateEmployeePara(System.Collections.Generic.IEnumerable{SIE.ERPInterface.Common.InfDataEntitys.Download.EmployeeInf},System.Boolean)">
+            <summary>
+            生成员工实体
+            </summary>
+            <param name="employeeInfs">中间表实体数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadEmployeeController.DownloadManual(System.String)">
+            <summary>
+            手动下载
+            </summary>
+            <param name="keyWord">查询关键字</param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadEmployeeController.SaveEmployee(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.EmployeeData})">
+            <summary>
+            保存数据到员工
+            </summary>
+            <param name="datas"></param>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.Download.DownloadEnterpriseController">
+            <summary>
+            企业模型下载控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadEnterpriseController.DownloadEnterpriseToBusiness(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.EnterpriseData},System.Int32)">
+            <summary>
+            从API下载企业模型到业务表
+            </summary>
+            <param name="enterpriseDatas"></param>
+            /// <param name="invOrg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadEnterpriseController.DownloadEnterpriseInfToBusiness(System.Boolean)">
+            <summary>
+            从中间表下载企业模型到业务表
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadEnterpriseController.GenerateEnterprisePara(System.Collections.Generic.IEnumerable{SIE.ERPInterface.Common.InfDataEntitys.Download.EnterpriseInf})">
+            <summary>
+            生成企业模型实体
+            </summary>
+            <param name="enterpriseInfs">中间表实体数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadEnterpriseController.SaveEnterprises(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.EnterpriseData})">
+            <summary>
+            ERP保存企业模型数据
+            </summary>
+            <param name="datas">通信数据类</param>
+            <returns>错误信息</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadEnterpriseController.SaveEnterprise(SIE.ERPInterface.Common.Datas.EnterpriseData,System.Collections.Generic.Dictionary{System.String,SIE.Resources.Enterprises.Enterprise},System.Collections.Generic.Dictionary{System.String,SIE.Resources.Enterprises.EnterpriseLevel})">
+            <summary>
+            执行数据保存
+            </summary>
+            <param name="data">数据实体</param>
+            <param name="dic">数据字典</param>
+            <param name="dicLevel">数据字典</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.Download.DownloadInventoryAllocateController">
+            <summary>
+            下载库存调拨控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadInventoryAllocateController.DownloadAllocateToBusiness(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.InventoryAllocateData},System.Int32)">
+            <summary>
+            从API下载企业模型到业务表
+            </summary>
+            <param name="allocateDatas"></param>
+            /// <param name="invOrg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadInventoryAllocateController.SaveInventoryAllocates(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.InventoryAllocateData})">
+            <summary>
+            保存库存调拨数据
+            </summary>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.Download.DownloadItemCateController">
+            <summary>
+            物料分类下载控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadItemCateController.DownloadItemCateToBusiness(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ItemCategoryData},System.Int32)">
+            <summary>
+            从API下载物料分类到业务表
+            </summary>
+            <param name="itemCateDatas"></param>
+            <param name="invOrg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadItemCateController.DownloadItemCateToBusiness(System.Boolean)">
+            <summary>
+            从中间表下载物料分类到业务表
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadItemCateController.GenerateItemCatePara(System.Collections.Generic.IEnumerable{SIE.ERPInterface.Common.InfDataEntitys.Download.ItemCategoryInf})">
+            <summary>
+            生成物料分类实体
+            </summary>
+            <param name="itemCateInfs">中间表数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadItemCateController.SaveItemCategorys(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ItemCategoryData})">
+            <summary>
+            ERP保存数据到物料分类
+            </summary>
+            <param name="datas">通信数据类</param>
+            <returns>错误信息</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadItemCateController.SaveItemCategory(SIE.ERPInterface.Common.Datas.ItemCategoryData,System.Collections.Generic.Dictionary{System.String,SIE.Items.ItemCategory},System.Collections.Generic.Dictionary{System.String,SIE.Items.ItemCategoryLevel})">
+            <summary>
+            执行数据保存
+            </summary>
+            <param name="data">数据实体</param>
+            <param name="dic">数据字典</param>
+            <param name="dicLevel">分类层级数据字典</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.Download.DownloadItemController">
+            <summary>
+            物料下载控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadItemController.DownloadItemToBusiness(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ItemData},System.Int32)">
+            <summary>
+            从API下载物料到业务表
+            </summary>
+            <param name="itemDatas"></param>
+            <param name="invOrg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadItemController.DownloadItemInfToBusiness(System.Boolean)">
+            <summary>
+            从中间表下载物料到业务表
+            </summary>
+            <param name="isManual"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadItemController.DownloadManual(System.String)">
+            <summary>
+            手动下载
+            </summary>
+            <param name="keyWord">查询关键字</param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadItemController.SaveUnits(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.UnitData})">
+            <summary>
+            ERP保存单位数据
+            </summary>
+            <param name="datas">通信数据类</param>
+            <returns>错误信息</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadItemController.SaveItems(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ItemData})">
+            <summary>
+            ERP保存物料
+            </summary>
+            <param name="datas">erp数据</param>
+            <returns>错误信息</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadItemController.GenerateItemPara(System.Collections.Generic.IEnumerable{SIE.ERPInterface.Common.InfDataEntitys.Download.ItemInf})">
+            <summary>
+            生成物料参数
+            </summary>
+            <param name="itemInfs">中间表数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadItemController.SaveUnit(SIE.ERPInterface.Common.Datas.UnitData,System.Collections.Generic.Dictionary{System.String,SIE.Items.Unit})">
+            <summary>
+            执行单位数据保存
+            </summary>
+            <param name="data">数据实体</param>
+            <param name="dic">数据字典</param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadItemController.SaveItem(SIE.ERPInterface.Common.Datas.ItemData,System.Collections.Generic.Dictionary{System.String,SIE.Items.Item},System.Collections.Generic.Dictionary{System.String,SIE.Items.Unit},System.Collections.Generic.Dictionary{System.String,SIE.Resources.Employees.Employee},System.Collections.Generic.Dictionary{System.String,SIE.Items.ItemCategory})">
+            <summary>
+            执行物料数据保存
+            </summary>
+            <param name="data">数据实体</param>
+            <param name="dic">物料数据字典</param>
+            <param name="dicUnit">单位数据字典</param>
+            <param name="dicEmployee">员工数据字典</param>
+            <param name="dicCate">分类数据字典</param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadItemController.SetItemValue(SIE.Items.Item,SIE.ERPInterface.Common.Datas.ItemData)">
+            <summary>
+            设置物料的值
+            </summary>
+            <param name="item">物料</param>
+            <param name="p">ERP值</param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadAndonLineController.SaveAndonLineFactory(System.Collections.Generic.List{SIE.KZ.Base.Interfaces.Datas.AndonLineData})">
+            <summary>
+            保存分类到业务表
+            </summary>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadAndonLineController.SaveAndonLine(SIE.KZ.Base.Interfaces.Datas.AndonLineData,SIE.Equipments.EquipAccounts.EquipAccount,SIE.Resources.WorkCenters.WorkCenter,SIE.Resources.Enterprises.Enterprise,SIE.Resources.Enterprises.Enterprise,SIE.MES.Andon.AndonUphold)">
+            <summary>
+            保存
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadAndonLineController.Valid(SIE.KZ.Base.Interfaces.Datas.AndonLineData,SIE.KZ.Base.Interfaces.Datas.OuterSystemRetVO@)">
+            <summary>
+            校验
+            </summary>
+            <param name="data"></param>
+            <param name="result"></param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadBlueLabelController.SaveBlueLabels(System.Collections.Generic.List{SIE.KZ.Base.Interfaces.Datas.BlueLabelData})" -->
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadBlueLabelController.CreateBlueLable(SIE.KZ.Base.Interfaces.Datas.BlueLabelData,SIE.MES.BlueLable.BlueLable,SIE.Items.Item,SIE.Resources.Enterprises.Enterprise,System.Int32)">
+            <summary>
+            创建蓝标
+            </summary>
+            <param name="data"></param>
+            <param name="blueLable"></param>
+            <param name="item"></param>
+            <param name="factory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadCheckerItemController.SaveCheckerItemFactory(System.Collections.Generic.List{SIE.KZ.Base.Interfaces.Datas.CheckerItemData})">
+            <summary>
+            保存分类到业务表
+            </summary>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadCheckerItemController.SaveCheckerItem(SIE.KZ.Base.Interfaces.Datas.CheckerItemData,SIE.MES.Checker.CheckerUphold,SIE.Items.Item,SIE.Tech.Processs.Process)">
+            <summary>
+            保存
+            </summary>
+            <param name="data"></param>
+            <param name="checkerUphold"></param>
+            <param name="item"></param>
+            <param name="process"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadCheckerItemController.Valid(SIE.KZ.Base.Interfaces.Datas.CheckerItemData,SIE.KZ.Base.Interfaces.Datas.OuterSystemRetVO@)">
+            <summary>
+            校验
+            </summary>
+            <param name="data"></param>
+            <param name="result"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadCheckerUpholdController.SaveCheckerUpholdFactory(System.Collections.Generic.List{SIE.KZ.Base.Interfaces.Datas.CheckerUpholdData})">
+            <summary>
+            保存分类到业务表
+            </summary>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadCheckerUpholdController.Valid(SIE.KZ.Base.Interfaces.Datas.CheckerUpholdData,SIE.KZ.Base.Interfaces.Datas.OuterSystemRetVO@)">
+            <summary>
+            校验
+            </summary>
+            <param name="data"></param>
+            <param name="result"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadCheckerUpholdController.SafeConvertToDateTime(System.String,System.DateTime@)">
+            <summary>
+            通用字符串转DateTime（兼容多种格式+过滤非法日期）
+            </summary>
+            <param name="dateStr">待转换字符串（如2025-13-40、2025/13/40、20251340、2025-13-40 14:30:59等）</param>
+            <param name="result">转换后的DateTime（失败则为DateTime.MinValue）</param>
+            <returns>是否转换成功</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadCheckerUpholdController.NormalizeDateFormat(System.String)">
+            <summary>
+            格式归一化：替换/为-，移除多余字符，分离日期和时间
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadCheckerUpholdController.IsValidDate(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            校验年月日是否合法（避免13月、40日等非法值）
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadEmployeeController.SaveEmployees(System.Collections.Generic.List{SIE.KZ.Base.Interfaces.Datas.EmployeeData})">
+            <summary>
+            从API下载数据到业务表
+            </summary>
+            <param name="datas"></param>
+            <param name="erpDataInfLog">日志</param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadEmployeeController.SaveEmployees(System.Collections.Generic.List{SIE.KZ.Base.Interfaces.Datas.EmployeeData},SIE.KZ.Base.Interfaces.InfNcDataLogGroup@)" -->
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadEmployeeController.CreateEmployee(SIE.Resources.Employees.Employee,SIE.KZ.Base.Interfaces.Datas.EmployeeData,SIE.Rbac.Users.User,SIE.Rbac.InvOrgs.InvOrg)">
+            <summary>
+            赋值
+            </summary>
+            <param name="employee"></param>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadEnterpriseController.CreateEnterprise(SIE.Domain.EntityList{SIE.Resources.Enterprises.Enterprise}@,SIE.KZ.Base.Interfaces.Datas.EnterpriseData,SIE.Domain.EntityList{SIE.Resources.Enterprises.EnterpriseLevel}@)">
+            <summary>
+            创建数据
+            </summary>
+            <param name="enterprises"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadEquipAccountController.SaveEquipAccount(System.Collections.Generic.List{SIE.KZ.Base.Interfaces.Datas.EquipAccountData})" -->
+        <!-- Badly formed XML comment ignored for member "M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadEquipAccountController.SaveEquipAccount(System.Collections.Generic.List{SIE.KZ.Base.Interfaces.Datas.EquipAccountData},SIE.KZ.Base.Interfaces.InfNcDataLogGroup@)" -->
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadEquipAccountController.CreateequipModel(SIE.Equipments.EquipModels.EquipModel,System.String,System.String)">
+            <summary>
+            创建设备型号维护
+            </summary>
+            <param name="equipModel"></param>
+            <param name="key"></param>
+            <returns></returns>
+            <exception cref="T:SIE.Domain.Validation.ValidationException"></exception>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadEquipAccountItemController.SaveEquipAccountItemFactory(System.Collections.Generic.List{SIE.KZ.Base.Interfaces.Datas.EquipAccountItemData})">
+            <summary>
+            保存分类到业务表
+            </summary>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadEquipAccountItemController.SaveEquipAccountItem(SIE.KZ.Base.Interfaces.Datas.EquipAccountItemData,SIE.Equipments.EquipAccounts.EquipAccount,SIE.Items.Item,SIE.Tech.Processs.Process)">
+            <summary>
+            保存
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadEquipAccountItemController.Valid(SIE.KZ.Base.Interfaces.Datas.EquipAccountItemData,SIE.KZ.Base.Interfaces.Datas.OuterSystemRetVO@)">
+            <summary>
+            校验
+            </summary>
+            <param name="data"></param>
+            <param name="result"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadFixtureItemController.SaveFixtureItemFactory(System.Collections.Generic.List{SIE.KZ.Base.Interfaces.Datas.FixtureItemData})">
+            <summary>
+            保存分类到业务表
+            </summary>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadFixtureItemController.SaveFixtureItem(SIE.KZ.Base.Interfaces.Datas.FixtureItemData,SIE.MES.Fixture.FixtureUphold,SIE.Items.Item,SIE.Tech.Processs.Process)">
+            <summary>
+            保存
+            </summary>
+            <param name="data"></param>
+            <param name="fixtureUphold"></param>
+            <param name="item"></param>
+            <param name="process"></param>
+            <exception cref="T:SIE.Domain.Validation.ValidationException"></exception>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadFixtureItemController.Valid(SIE.KZ.Base.Interfaces.Datas.FixtureItemData,SIE.KZ.Base.Interfaces.Datas.OuterSystemRetVO@)">
+            <summary>
+            校验
+            </summary>
+            <param name="data"></param>
+            <param name="result"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadFixtureUpholdController.SaveFixtureUpholdFactory(System.Collections.Generic.List{SIE.KZ.Base.Interfaces.Datas.FixtureUpholdData})">
+            <summary>
+            保存分类到业务表
+            </summary>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadFixtureUpholdController.SaveFixtureUphold(SIE.KZ.Base.Interfaces.Datas.FixtureUpholdData,SIE.Resources.Enterprises.Enterprise)">
+            <summary>
+            保存
+            </summary>
+            <param name="data"></param>
+            <param name="factory"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadFixtureUpholdController.Valid(SIE.KZ.Base.Interfaces.Datas.FixtureUpholdData,SIE.KZ.Base.Interfaces.Datas.OuterSystemRetVO@)">
+            <summary>
+            校验
+            </summary>
+            <param name="data"></param>
+            <param name="result"></param>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadItemCategoryController">
+            <summary>
+            分类下载器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadItemCategoryController.SaveItemCategorysFactory(System.Collections.Generic.List{SIE.KZ.Base.Interfaces.Datas.ItemCategoryData})">
+            <summary>
+            保存分类到业务表
+            </summary>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadItemCategoryController.SaveItemCategorys(System.Collections.Generic.List{SIE.KZ.Base.Interfaces.Datas.ItemCategoryData},SIE.KZ.Base.Interfaces.InfNcDataLogGroup@)" -->
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadItemController.SaveItemsFactory(System.Collections.Generic.List{SIE.KZ.Base.Interfaces.Datas.ItemData})">
+            <summary>
+            从API下载数据到业务表
+            </summary>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadItemController.SaveItems(System.Collections.Generic.List{SIE.KZ.Base.Interfaces.Datas.ItemData},SIE.KZ.Base.Interfaces.InfNcDataLogGroup@)">
+            <summary>
+            从API下载数据到业务表
+            </summary>
+            <param name="datas"></param>
+            <param name="erpDataInfLog">日志</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadItemController.CreateUnit(System.String)">
+            <summary>
+            创建单位
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadItemController.ValidateData(SIE.KZ.Base.Interfaces.Datas.ItemData,System.Collections.Generic.Dictionary{System.String,SIE.Items.Unit},System.Collections.Generic.Dictionary{System.String,SIE.Items.ItemCategory})">
+            <summary>
+            验证数据
+            </summary>
+            <param name="item"></param>
+            <param name="unitsDic"></param>
+            <param name="productProjectMdmCodeDic"></param>
+            <param name="mdmItemCategoryLookup"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadItemLabelController">
+            <summary>
+            物料标签下载控制器
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadItemLabelController.SaveItemLabel(System.Collections.Generic.List{SIE.KZ.Base.Interfaces.Datas.ItemLabelData})" -->
+        <!-- Badly formed XML comment ignored for member "M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadItemLabelController.SaveItemLabel(System.Collections.Generic.List{SIE.KZ.Base.Interfaces.Datas.ItemLabelData},SIE.KZ.Base.Interfaces.InfNcDataLogGroup@)" -->
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadItemLabelController.CreateStorageLocation(System.String,SIE.Warehouses.StorageArea)">
+            <summary>
+            创建库位
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadItemLabelController.CreateItemLabel(SIE.KZ.Base.Interfaces.Datas.ItemLabelData,SIE.Packages.ItemLabels.ItemLabel,SIE.Items.Item,System.Boolean,SIE.Resources.Enterprises.Enterprise)">
+            <summary>
+            创建物料标签
+            </summary>
+            <param name="data"></param>
+            <param name="itemLabel"></param>
+            <param name="item"></param>
+            <param name="isSer"></param>
+            <param name="storageLocation"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadOrgLevelController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadOrgLevelController.SaveOrgLevels(System.Collections.Generic.List{SIE.MES.OrgLevels.OrgLevelInfo},SIE.KZ.Base.Interfaces.InfNcDataLogGroup@)">
+            <summary>
+            从API下载数据到业务表
+            </summary>
+            <param name="datas"></param>
+            <param name="erpDataInfLog"></param>
+            <returns></returns>
+            <exception cref="T:SIE.Domain.Validation.ValidationException"></exception>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadOrgLevelController.CreateOrglevel(SIE.MES.OrgLevels.OrgLevel,SIE.MES.OrgLevels.OrgLevelInfo,SIE.Rbac.InvOrgs.InvOrg)">
+            <summary>
+            赋值
+            </summary>
+            <param name="orglevel"></param>
+            <param name="item"></param>
+            <param name="invOrg"></param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadProcessController.SaveProcesss(System.Collections.Generic.List{SIE.KZ.Base.Interfaces.Datas.ProcessData})" -->
+        <!-- Badly formed XML comment ignored for member "M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadProcessController.SaveProcesss(System.Collections.Generic.List{SIE.KZ.Base.Interfaces.Datas.ProcessData},SIE.KZ.Base.Interfaces.InfNcDataLogGroup@)" -->
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadProductLineController.SaveProductLineFactory(System.Collections.Generic.List{SIE.KZ.Base.Interfaces.Datas.ProductLineData})">
+            <summary>
+            保存分类到业务表
+            </summary>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadProductLineController.SaveProductLine(SIE.KZ.Base.Interfaces.Datas.ProductLineData,SIE.Items.Item,SIE.Resources.WipResources.WipResource,SIE.Tech.Processs.Process)">
+            <summary>
+            
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadProductLineController.Valid(SIE.KZ.Base.Interfaces.Datas.ProductLineData,SIE.KZ.Base.Interfaces.Datas.OuterSystemRetVO@)">
+            <summary>
+            校验
+            </summary>
+            <param name="data"></param>
+            <param name="result"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadReworkLayoutVersionController.SaveEquipAccountItemFactory(SIE.KZ.Base.Interfaces.Datas.Rlvd)">
+            <summary>
+            保存分类到业务表
+            </summary>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadReworkLayoutVersionController.Valid(SIE.KZ.Base.Interfaces.Datas.ReworkLayoutVersionData,SIE.KZ.Base.Interfaces.Datas.OuterSystemRetVO@)">
+            <summary>
+            校验
+            </summary>
+            <param name="data"></param>
+            <param name="result"></param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadSkillsController.SaveSkills(System.Collections.Generic.List{SIE.KZ.Base.Interfaces.Datas.SkillData})" -->
+        <!-- Badly formed XML comment ignored for member "M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadSkillsController.SaveSkills(System.Collections.Generic.List{SIE.KZ.Base.Interfaces.Datas.SkillData},SIE.KZ.Base.Interfaces.InfNcDataLogGroup@)" -->
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadThresholdController.SaveThresholdFactory(System.Collections.Generic.List{SIE.KZ.Base.Interfaces.Datas.ThresholdData})">
+            <summary>
+            保存分类到业务表
+            </summary>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadThresholdController.SaveThreshold(SIE.KZ.Base.Interfaces.Datas.ThresholdData,SIE.Items.Item,SIE.Tech.Processs.Process,System.Decimal)">
+            <summary>
+            保存可疑品阈值
+            </summary>
+            <param name="data"></param>
+            <param name="item"></param>
+            <param name="process"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadThresholdController.Valid(SIE.KZ.Base.Interfaces.Datas.ThresholdData,SIE.KZ.Base.Interfaces.Datas.OuterSystemRetVO@)">
+            <summary>
+            校验
+            </summary>
+            <param name="data"></param>
+            <param name="result"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadWorkCenterController.SaveWorkCenters(System.Collections.Generic.List{SIE.KZ.Base.Interfaces.Datas.WorkCenterData},System.String)">
+            <summary>
+            从API下载数据到业务表
+            </summary>
+            <param name="datas"></param>
+            <param name="erpDataInfLog">日志</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadWorkCenterController.SaveWorkCenters(System.Collections.Generic.List{SIE.KZ.Base.Interfaces.Datas.WorkCenterData},SIE.KZ.Base.Interfaces.InfNcDataLogGroup@)">
+            <summary>
+            从API下载数据到业务表
+            </summary>
+            <param name="datas"></param>
+            <param name="erpDataInfLog">日志</param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadWorkOrderController.SaveWorkOrder(SIE.KZ.Base.Interfaces.Datas.WorkOrderData)" -->
+        <!-- Badly formed XML comment ignored for member "M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadWorkOrderController.SaveWorkOrder(SIE.KZ.Base.Interfaces.Datas.WorkOrderData,SIE.KZ.Base.Interfaces.InfNcDataLogGroup@)" -->
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadWorkOrderController.OpenWorkOrder(SIE.MES.WorkOrders.WorkOrder@)">
+            <summary>
+            打开工单
+            </summary>
+            <param name="workOrder"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadWorkOrderController.CreateOutsourcingRequest(SIE.MES.WorkOrders.WorkOrder,SIE.Rbac.InvOrgs.InvOrg)">
+            <summary>
+            创建工序委外需求单
+            </summary>
+            <param name="workOrder"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadWorkOrderController.CreateWorkOrderOutputProductList(SIE.MES.WorkOrders.WorkOrder)">
+            <summary>
+            创建联副产品
+            </summary>
+            <param name="workOrder"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadWorkOrderController.GenerateTasks(SIE.MES.WorkOrders.WorkOrder,System.Boolean,SIE.Rbac.InvOrgs.InvOrg)">
+            <summary>
+            创建任务单
+            </summary>
+            <param name="workOrder"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadWorkOrderController.CreateLayout(SIE.MES.WorkOrders.WorkOrder,System.Collections.Generic.List{SIE.KZ.Base.Interfaces.Datas.LayoutInf})">
+            <summary>
+            创建工艺路线
+            </summary>
+            <param name="workOrder"></param>
+            <param name="layoutInfs"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadWorkOrderController.HandleBomAndPackData(SIE.MES.WorkOrders.WorkOrder)">
+            <summary>
+            工单bom和包装规则数据处理(用于前端正确显示)
+            </summary>
+            <param name="workOrder">工单</param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadWorkOrderController.CreateWorkOrderRoutingProcess(SIE.MES.WorkOrders.WorkOrder,System.String)">
+            <summary>
+            生成工序清单
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.DownloadWorkOrderController.SyncParentItem(SIE.KZ.Base.Interfaces.Datas.ParentItemInf,SIE.Items.Item)">
+            <summary>
+            同步父级物料
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.Download.KaiZhong.RoutingData.seq">
+            <summary>
+            序号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.Download.KaiZhong.RoutingData.BackSeq">
+            <summary>
+            返回序号(下个序号)
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.Download.KaiZhong.UpdateReportResultController">
+            <summary>
+            更新报工结果控制器
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:SIE.ERPInterface.Smom.Download.KaiZhong.UpdateReportResultController.SaveReportResult(System.Collections.Generic.List{SIE.KZ.Base.Interfaces.Datas.ReportReturnData})" -->
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.UpdateReportResultController.SaveReportResult(System.Collections.Generic.List{SIE.KZ.Base.Interfaces.Datas.ReportReturnData},SIE.KZ.Base.Interfaces.InfNcDataLogGroup@)">
+            <summary>
+            保存
+            </summary>
+            <param name="datas"></param>
+            <param name="erpDataInfLog"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.KaiZhong.UpdateReportResultController.HandleReportResult(SIE.KZ.Base.Interfaces.Datas.ReportReturnData)">
+            <summary>
+            处理结果
+            </summary>
+            <param name="reportReturnData"></param>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.Download.DownloadProductBomController">
+            <summary>
+            产品BOM下载控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadProductBomController.DownloadProductBomToBusiness(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ProductBomData},System.Int32)">
+            <summary>
+            从API下载产品BOM到业务表
+            </summary>
+            <param name="productBomDatas"></param>
+            <param name="invOrg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadProductBomController.DownloadProductBomInfToBusiness(System.Boolean)">
+            <summary>
+            从中间表下载产品BOM到业务表
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadProductBomController.DownloadManual(System.String)">
+            <summary>
+            手动下载
+            </summary>
+            <param name="keyWord">查询关键字</param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadProductBomController.GenerateProductBomPara(System.Collections.Generic.IEnumerable{SIE.ERPInterface.Common.InfDataEntitys.Download.ProductBomInf},System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{SIE.ERPInterface.Common.InfDataEntitys.Download.ProductBomDetailInf}})">
+            <summary>
+            生成产品BOM实体
+            </summary>
+            <param name="productBomInfs">中间表实体数据</param>
+            <param name="bomDtlInfs">中间表明细实体数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadProductBomController.SaveProductBoms(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ProductBomData})">
+            <summary>
+            ERP保存产品BOM数据
+            </summary>
+            <param name="datas">通信数据类</param>
+            <returns>错误信息</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadProductBomController.SaveProductBom(SIE.ERPInterface.Common.Datas.ProductBomData,System.Collections.Generic.Dictionary{System.String,SIE.Items.ProductBom},System.Collections.Generic.Dictionary{System.String,SIE.Items.Item},System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{SIE.Items.ProductBomDetail}})">
+            <summary>
+            执行数据保存
+            </summary>
+            <param name="data">数据实体</param>
+            <param name="dic">数据字典</param>
+            <param name="dicItem">数据字典</param>
+            <param name="dicBomDetails">数据字典</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.Download.DownloadProductBomDtlController">
+            <summary>
+            产品BOM明细下载控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadProductBomDtlController.DownloadProductBomDtlToBusiness(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ProductBomDetailData},System.Int32)">
+            <summary>
+            从API下载产品BOM到业务表
+            </summary>
+            <param name="productBomDtlDatas"></param>
+            <param name="invOrg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadProductBomDtlController.DownloadProductBomDtlInfToBusiness(System.Boolean)">
+            <summary>
+            从中间表下载产品BOM到业务表
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadProductBomDtlController.GenerateProductBomDtlPara(System.Collections.Generic.IEnumerable{SIE.ERPInterface.Common.InfDataEntitys.Download.ProductBomDetailInf})">
+            <summary>
+            生成产品BOM明细实体
+            </summary>
+            <param name="productBomDtlInfs">中间表实体数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadProductBomDtlController.SaveProductBomDetails(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ProductBomDetailData})">
+            <summary>
+            保存产品BOM明细
+            </summary>
+            <param name="datas">ERP数据</param>
+            <returns>错误信息</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadProductBomDtlController.SaveProductBomDetail(SIE.ERPInterface.Common.Datas.ProductBomDetailData,System.Collections.Generic.Dictionary{System.String,SIE.Items.ProductBomDetail},System.Collections.Generic.Dictionary{System.String,SIE.Items.Item},SIE.Items.ProductBom)">
+            <summary>
+            执行数据保存
+            </summary>
+            <param name="data">数据实体</param>
+            <param name="dic">数据字典</param>
+            <param name="dicItem">数据字典</param>
+            <param name="bom">产品BOM</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.Download.DownloadProductOrderController">
+            <summary>
+            生产订单下载控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadProductOrderController.DownloadProOrderToBusiness(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ProductOrderData},System.Int32)">
+            <summary>
+            从API下载生产订单到业务表
+            </summary>
+            <param name="poDatas">生产订单数据</param>
+            <param name="invOrg">库存组织</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadProductOrderController.DownloadProOrderInfToBusiness(System.Boolean)">
+            <summary>
+            从中间表下载生产订单到业务表
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadProductOrderController.GenerateProOrderPara(System.Collections.Generic.IEnumerable{SIE.ERPInterface.Common.InfDataEntitys.Download.ProductOrderInf})">
+            <summary>
+            生成生产订单实体
+            </summary>
+            <param name="poInfs">中间表实体数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadProductOrderController.DownloadManual(System.String)">
+            <summary>
+            手动下载
+            </summary>
+            <param name="keyWord">查询关键字</param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadProductOrderController.DownLoadProductOrders(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ProductOrderData})">
+            <summary>
+            保存生产订单接口
+            </summary>
+            <param name="datas">生产订单数据</param>
+            <returns>返回错误列表</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.Download.SaveProductOrderHandle">
+            <summary>
+            生产订单控制器
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.Download.SaveProductOrderHandle.errorDatas">
+            <summary>
+            错误信息
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.Download.SaveProductOrderHandle.ItemDic">
+            <summary>
+            物料字典 key:物料编号 value:物料
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.Download.SaveProductOrderHandle.EnterpriseDic">
+            <summary>
+            企业模型字典 key:工厂编号 value:企业模型
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.Download.SaveProductOrderHandle.CustomerDic">
+            <summary>
+            客户字典 key:客户编号 value:客户
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.Download.SaveProductOrderHandle._itemController">
+            <summary>
+            物料控制器
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.Download.SaveProductOrderHandle._enterpriseController">
+            <summary>
+            企业模型控制器
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.Download.SaveProductOrderHandle._customController">
+            <summary>
+            客户控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.SaveProductOrderHandle.SaveProductOrders(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ProductOrderData})">
+            <summary>
+            用于接口中心下载数据保存到SMOM 生产订单表中
+            </summary>
+            <param name="poData">生产订单表</param>
+            <returns>错误数据列表</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.SaveProductOrderHandle.SaveProductOrder(SIE.ERPInterface.Common.Datas.ProductOrderData)">
+            <summary>
+            保存生产订单信息
+            </summary>
+            <param name="poData">生产订单信息</param>
+            <returns>返回错误信息</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.SaveProductOrderHandle.LoadData(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ProductOrderData})">
+            <summary>
+            加载所需数据
+            </summary>
+            <param name="poDatas">生产订单数据</param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.SaveProductOrderHandle.ValidateData(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ProductOrderData})">
+            <summary>
+            验证数据
+            </summary>
+            <param name="poDatas">生产订单数据</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.Download.DownloadPoBomController">
+            <summary>
+            生产订单BOM下载控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadPoBomController.DownloadPoBomToBusiness(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ProductionOrderBomData},System.Int32)">
+            <summary>
+            从API下载生产订单BOM到业务表
+            </summary>
+            <param name="poBomDatas"></param>
+            <param name="invOrg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadPoBomController.DownloadPoBomInfToBusiness(System.Boolean)">
+            <summary>
+            从中间表下载生产订单BOM到业务表
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadPoBomController.GeneratePoBomPara(System.Collections.Generic.IEnumerable{SIE.ERPInterface.Common.InfDataEntitys.Download.ProductOrderBomInf})">
+            <summary>
+            生成生产订单BOM实体
+            </summary>
+            <param name="poBomInfs">中间表实体数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadPoBomController.DownloadManual(System.String)">
+            <summary>
+            手动下载
+            </summary>
+            <param name="keyWord">查询关键字</param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadPoBomController.SaveProductionOrderBoms(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ProductionOrderBomData})">
+            <summary>
+            保存生产订单BOM接口
+            </summary>
+            <param name="datas">生产订单BOM数据</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.Download.SaveProductionOrderBomsHandle">
+            <summary>
+            生产订单BOM控制器
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.Download.SaveProductionOrderBomsHandle.errorDatas">
+            <summary>
+            错误信息
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.Download.SaveProductionOrderBomsHandle._itemController">
+            <summary>
+            物料控制器
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.Download.SaveProductionOrderBomsHandle._processTechController">
+            <summary>
+            制程控制器
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.Download.SaveProductionOrderBomsHandle.ItemDic">
+            <summary>
+            物料字典 key:物料编号 value:物料
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.Download.SaveProductionOrderBomsHandle.ProcessTechDic">
+            <summary>
+            制程工艺字典 key:制程工艺编号 value：制程工艺
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.SaveProductionOrderBomsHandle.SaveProductionOrderBoms(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ProductionOrderBomData})">
+            <summary>
+            用于接口中心下载数据保存到SMOM 生产订单BOM表中
+            </summary>
+            <param name="datas">生产订单BOM</param>
+            <returns>错误数据列表</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.SaveProductionOrderBomsHandle.SaveProductionOrderBom(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ProductionOrderBomData})">
+            <summary>
+            保存生产订单BOM信息
+            </summary>
+            <param name="poBomDatas">生产订单BOM信息</param>
+            <returns>返回错误信息</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.SaveProductionOrderBomsHandle.LoadData(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ProductionOrderBomData})">
+            <summary>
+            加载所需数据
+            </summary>
+            <param name="datas">生产订单BOM数据</param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.SaveProductionOrderBomsHandle.ValidateData(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ProductionOrderBomData})">
+            <summary>
+            验证数据
+            </summary>
+            <param name="datas">生产订单BOM数据</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.Download.DownloadPoController">
+            <summary>
+            采购订单下载控制
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadPoController.DownloadPoToBusiness(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.PoData},System.Int32)">
+            <summary>
+            从API下载采购订单到业务表
+            </summary>
+            <param name="poDatas"></param>
+            <param name="invOrg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadPoController.DownloadPoInfToBusiness(System.Boolean)">
+            <summary>
+            从中间表下载采购订单到业务表
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadPoController.GeneratePoPara(System.Collections.Generic.IEnumerable{SIE.ERPInterface.Common.InfDataEntitys.Download.PurchaseOrderInf},System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{SIE.ERPInterface.Common.InfDataEntitys.Download.PurchaseOrderDetailInf}})">
+            <summary>
+            生成采购订单实体
+            </summary>
+            <param name="poInfs">中间表实体数据</param>
+            <param name="poDtlInfs">中间表明细实体数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadPoController.DownloadManual(System.String)">
+            <summary>
+            手动下载
+            </summary>
+            <param name="keyWord">查询关键字</param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadPoController.SavePurchaseOrders(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.PoData})">
+            <summary>
+            用于接口中心下载数据保存到SMOM PO表中
+            </summary>
+            <param name="datas">采购数据</param>
+            <returns>错误数据列表</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.Download.DownloadPoDtlController">
+            <summary>
+            采购订单明细下载控制
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadPoDtlController.DownloadPoDtlToBusiness(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.PoDetailData},System.Int32)">
+            <summary>
+            从API下载采购订单明细到业务表
+            </summary>
+            <param name="poDtlDatas"></param>
+            <param name="invOrg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadPoDtlController.DownloadPoDtlInfToBusiness(System.Boolean)">
+            <summary>
+            从中间表下载采购订单明细到业务表
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadPoDtlController.GeneratePoDtlPara(System.Collections.Generic.IEnumerable{SIE.ERPInterface.Common.InfDataEntitys.Download.PurchaseOrderDetailInf})">
+            <summary>
+            生成采购订单明细实体
+            </summary>
+            <param name="poDtlInfs">中间表实体数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadPoDtlController.SavePurchaseOrderDetails(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.PoDetailData})">
+            <summary>
+            更新明细行
+            </summary>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.Download.PurchaseOrders.EbsDownloadPoController">
+            <summary>
+            采购订单明细下载控制
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.PurchaseOrders.EbsDownloadPoController.DownloadPurOrderToBusiness(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.SmomOrder.EbsPurOrderData},System.String)">
+            <summary>
+            从API下载企业模型到业务表
+            </summary>
+            <param name="planDatas"></param>
+            <param name="extentInvOrg">ERP库存组织Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.PurchaseOrders.EbsDownloadPoController.SavePurOrderNo(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.SmomOrder.EbsPurOrderData})">
+            <summary>
+            保存
+            </summary>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.Download.QmsStandards.CategoryInspStandardTransfer">
+            <summary>
+            分类检验标准校验
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.Download.QmsStandards.CategoryInspStandardTransfer.dicQualityCategory">
+            <summary>
+            质量分类"质量分类编码"-"质量分类ID"
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.QmsStandards.CategoryInspStandardTransfer.ValidData(SIE.ERPInterface.Common.Datas.ErpInfoDatas.InspStandards.InspStandardDataBase)">
+            <summary>
+            数据校验
+            </summary>
+            <param name="p"></param>
+            <exception cref="T:SIE.Domain.Validation.ValidationException"></exception>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.QmsStandards.CategoryInspStandardTransfer.ValidQualityCategory(SIE.ERPInterface.Common.Datas.ErpInfoDatas.InspStandards.CategoryInspStandardData)">
+            <summary>
+            验证质量分类
+            </summary>
+            <returns>返回是否验证通过</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.Download.QmsStandards.DownloadQmsStandardController">
+            <summary>
+            QMS检验标准控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.QmsStandards.DownloadQmsStandardController.DownloadItemInspStandardsToBusiness(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ErpInfoDatas.InspStandards.ItemInspStandardData},System.Int32)">
+            <summary>
+            从API下载物料检验标准到业务表
+            </summary>
+            <param name="itemInspStandards"></param>
+            <param name="invOrg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.QmsStandards.DownloadQmsStandardController.SaveItemInspStandards(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ErpInfoDatas.InspStandards.ItemInspStandardData})">
+            <summary>
+            保存数据
+            </summary>
+            <param name="datas"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.QmsStandards.DownloadQmsStandardController.DownloadCategoryInspStandardsToBusiness(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ErpInfoDatas.InspStandards.CategoryInspStandardData},System.Int32)">
+            <summary>
+            从API下载分类检验标准到业务表
+            </summary>
+            <param name="categoryInspStandards"></param>
+            <param name="invOrg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.QmsStandards.DownloadQmsStandardController.SaveCategoryInspStandards(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ErpInfoDatas.InspStandards.CategoryInspStandardData})">
+            <summary>
+            保存数据
+            </summary>
+            <param name="datas"></param>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.Download.QmsStandards.InspStandardTransferBase">
+            <summary>
+            物料检验标准校验基类
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.Download.QmsStandards.InspStandardTransferBase.dicInspectionTypeRange">
+            <summary>
+            检验类型范围
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.Download.QmsStandards.InspStandardTransferBase.dicCategoryRange">
+            <summary>
+            检验类别范围 名称-编码
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.Download.QmsStandards.InspStandardTransferBase.dicCheckTagRange">
+            <summary>
+            检测标识范围
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.Download.QmsStandards.InspStandardTransferBase.dicInspectionModeRange">
+            <summary>
+            检验方式范围 检验类型-(检验方式名称-检验方式ID)
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.Download.QmsStandards.InspStandardTransferBase.dicDefectGradeRange">
+            <summary>
+            缺陷等级
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.Download.QmsStandards.InspStandardTransferBase.dicUnit">
+            <summary>
+            单位
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.Download.QmsStandards.InspStandardTransferBase.dicLimitLowComare">
+            <summary>
+            下限比较符
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.Download.QmsStandards.InspStandardTransferBase.dicLimitMaxCompare">
+            <summary>
+            上限比较符
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.Download.QmsStandards.InspStandardTransferBase.dicInspectionCategoryRange">
+            <summary>
+            项目类别范围
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.Download.QmsStandards.InspStandardTransferBase.dicPeriodTypeRange">
+            <summary>
+            周期类型范围
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.Download.QmsStandards.InspStandardTransferBase.dicProcess">
+            <summary>
+            工序范围 "工序名称"-"工序ID"
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.Download.QmsStandards.InspStandardTransferBase.dicCustomerName">
+            <summary>
+            客户信息"客户名称"-"客户ID"
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.QmsStandards.InspStandardTransferBase.Transfer(SIE.ERPInterface.Common.Datas.ErpInfoDatas.InspStandards.InspStandardDataBase)">
+            <summary>
+            转换
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.QmsStandards.InspStandardTransferBase.GenerateNewInspStandard(SIE.ERPInterface.Common.Datas.ErpInfoDatas.InspStandards.InspStandardDataBase)">
+            <summary>
+            创建物料检验标准
+            </summary>
+            <param name="stdDataBase"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.QmsStandards.InspStandardTransferBase.ValidData(SIE.ERPInterface.Common.Datas.ErpInfoDatas.InspStandards.InspStandardDataBase)">
+            <summary>
+            数据校验
+            </summary>
+            <param name="p"></param>
+            <exception cref="T:SIE.Domain.Validation.ValidationException"></exception>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.QmsStandards.InspStandardTransferBase.ValidInspectionType(SIE.ERPInterface.Common.Datas.ErpInfoDatas.InspStandards.InspStandardDataBase)">
+            <summary>
+            验证检验类型
+            </summary>
+            <param name="p"></param>
+            <returns>返回是否验证通过</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.QmsStandards.InspStandardTransferBase.ValidStandardName(SIE.ERPInterface.Common.Datas.ErpInfoDatas.InspStandards.InspStandardDataBase)">
+            <summary>
+            验证标准名称
+            </summary>
+            <param name="p"></param>
+            <returns>返回是否验证通过</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.QmsStandards.InspStandardTransferBase.ValidName(SIE.ERPInterface.Common.Datas.ErpInfoDatas.InspStandards.InspStandardDataDetailBase)">
+            <summary>
+            验证项目名称
+            </summary>
+            <param name="p"></param>
+            <returns>返回是否验证通过</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.QmsStandards.InspStandardTransferBase.ValidTestTool(SIE.ERPInterface.Common.Datas.ErpInfoDatas.InspStandards.InspStandardDataDetailBase)">
+            <summary>
+            验证检验工具
+            </summary>
+            <param name="p"></param>
+            <returns>返回是否验证通过</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.QmsStandards.InspStandardTransferBase.ValidInspectionBasis(SIE.ERPInterface.Common.Datas.ErpInfoDatas.InspStandards.InspStandardDataDetailBase)">
+            <summary>
+            验证检验依据
+            </summary>
+            <param name="p"></param>
+            <returns>返回是否验证通过</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.QmsStandards.InspStandardTransferBase.ValidTechnicalRequirements(SIE.ERPInterface.Common.Datas.ErpInfoDatas.InspStandards.InspStandardDataDetailBase)">
+            <summary>
+            验证技术要求
+            </summary>
+            <param name="p"></param>
+            <returns>返回是否验证通过</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.QmsStandards.InspStandardTransferBase.ValidCategory(SIE.ERPInterface.Common.Datas.ErpInfoDatas.InspStandards.InspStandardDataDetailBase)">
+            <summary>
+            验证检验类别
+            </summary>
+            <param name="p"></param>
+            <returns>返回是否验证通过</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.QmsStandards.InspStandardTransferBase.ValidCheckTag(SIE.ERPInterface.Common.Datas.ErpInfoDatas.InspStandards.InspStandardDataDetailBase)">
+            <summary>
+            验证检验标识
+            </summary>
+            <param name="p"></param>
+            <returns>返回是否验证通过</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.QmsStandards.InspStandardTransferBase.ValidInspectionMode(SIE.ERPInterface.Common.Datas.ErpInfoDatas.InspStandards.InspStandardDataDetailBase,SIE.ERPInterface.Common.Datas.ErpInfoDatas.InspStandards.InspStandardDataBase)">
+            <summary>
+            验证检验方式
+            </summary>
+            <param name="p"></param>
+            <param name="main"></param>
+            <returns>返回是否验证通过</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.QmsStandards.InspStandardTransferBase.ValidDefectGrade(SIE.ERPInterface.Common.Datas.ErpInfoDatas.InspStandards.InspStandardDataDetailBase)">
+            <summary>
+            验证缺陷等级
+            </summary>
+            <param name="p"></param>
+            <returns>返回是否验证通过</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.QmsStandards.InspStandardTransferBase.ValidSamplingStepCode(SIE.ERPInterface.Common.Datas.ErpInfoDatas.InspStandards.InspStandardDataDetailBase)">
+            <summary>
+            验证抽样过程
+            </summary>
+            <param name="p"></param>
+            <returns>是否通过</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.QmsStandards.InspStandardTransferBase.ValidLIMIT_LOW(SIE.ERPInterface.Common.Datas.ErpInfoDatas.InspStandards.InspStandardDataDetailBase)">
+            <summary>
+            验证规格下限
+            </summary>
+            <param name="obj">规格下限</param>
+            <param name="messageTip">错误信息</param>
+            <param name="dr">验证数据的当前行对象</param>
+            <returns>返回是否验证通过</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.QmsStandards.InspStandardTransferBase.ValidLIMIT_MAX(SIE.ERPInterface.Common.Datas.ErpInfoDatas.InspStandards.InspStandardDataDetailBase)">
+            <summary>
+            验证规格上限
+            </summary>
+            <param name="p"></param>
+            <returns>返回是否验证通过</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.QmsStandards.InspStandardTransferBase.ValidUnit(SIE.ERPInterface.Common.Datas.ErpInfoDatas.InspStandards.InspStandardDataDetailBase)">
+            <summary>
+            验证单位名称
+            </summary>
+            <param name="p"></param>
+            <returns>返回是否验证通过</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.QmsStandards.InspStandardTransferBase.ValidInspectionCategory(SIE.ERPInterface.Common.Datas.ErpInfoDatas.InspStandards.InspStandardDataDetailBase)">
+            <summary>
+            验证项目类别
+            </summary>
+            <param name="p"></param>
+            <returns>返回是否验证通过</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.QmsStandards.InspStandardTransferBase.ValidPeriodType(SIE.ERPInterface.Common.Datas.ErpInfoDatas.InspStandards.InspStandardDataDetailBase)">
+            <summary>
+            验证周期类型
+            </summary>
+            <param name="p"></param>
+            <returns>返回是否验证通过</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.QmsStandards.InspStandardTransferBase.ValidProcess(SIE.ERPInterface.Common.Datas.ErpInfoDatas.InspStandards.InspStandardDataDetailBase,SIE.ERPInterface.Common.Datas.ErpInfoDatas.InspStandards.InspStandardDataBase)">
+            <summary>
+            验证工序
+            </summary>
+            <param name="p"></param>
+            <param name="main"></param>
+            <returns>返回是否验证通过</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.QmsStandards.InspStandardTransferBase.ValidCustomer(SIE.ERPInterface.Common.Datas.ErpInfoDatas.InspStandards.InspStandardDataBase)">
+            <summary>
+            验证客户
+            </summary>
+            <param name="main"></param>
+            <returns>返回是否验证通过</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.QmsStandards.InspStandardTransferBase.ValidInspDetail(SIE.ERPInterface.Common.Datas.ErpInfoDatas.InspStandards.InspStandardDataDetailBase,SIE.ERPInterface.Common.Datas.ErpInfoDatas.InspStandards.InspStandardDataBase)">
+            <summary>
+            验证明细
+            </summary>
+            <param name="inspDetail"></param>
+            <param name="mainData"></param>
+            <param name="dr"></param>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.Download.QmsStandards.ItemInspStandardTransfer">
+            <summary>
+            物料检验标准校验
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.Download.QmsStandards.ItemInspStandardTransfer.dicItemCode">
+            <summary>
+            产品信息"产品编码"-"产品ID"
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.QmsStandards.ItemInspStandardTransfer.ValidData(SIE.ERPInterface.Common.Datas.ErpInfoDatas.InspStandards.InspStandardDataBase)">
+            <summary>
+            数据校验
+            </summary>
+            <param name="p"></param>
+            <exception cref="T:SIE.Domain.Validation.ValidationException"></exception>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.QmsStandards.ItemInspStandardTransfer.ValidItem(SIE.ERPInterface.Common.Datas.ErpInfoDatas.InspStandards.ItemInspStandardData)">
+            <summary>
+            验证产品
+            </summary>
+            <returns>返回是否验证通过</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.Download.DownloadAsnController">
+            <summary>
+            ASN订单下载控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadAsnController.DownloadAsnToBusiness(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.AsnData},System.Int32)">
+            <summary>
+            从API下载ASN单到业务表
+            </summary>
+            <param name="asnDatas"></param>
+            <param name="invOrg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadAsnController.DownloadAsnInfToBusiness(System.Boolean)">
+            <summary>
+            从中间表下载ASN到业务表
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadAsnController.GenerateAsnPara(System.Collections.Generic.IEnumerable{SIE.ERPInterface.Common.InfDataEntitys.Download.AsnInf},System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{SIE.ERPInterface.Common.InfDataEntitys.Download.AsnDetailInf}})">
+            <summary>
+            生成ASN行实体
+            </summary>
+            <param name="asnInfs">中间表实体数据</param>
+            <param name="asnDtlInfs">中间表明细实体数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadAsnController.DownloadManual(System.String)">
+            <summary>
+            手动下载
+            </summary>
+            <param name="keyWord">查询关键字</param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadAsnController.SaveASNs(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.AsnData})">
+            <summary>
+            用于接口中心下载数据保存到SMOM ASN表中
+            </summary>
+            <returns>错误数据列表</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.Download.DownloadAsnDtlController">
+            <summary>
+            ASN订单明细下载控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadAsnDtlController.DownloadAsnDtlToBusiness(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.AsnDetailData},System.Int32)">
+            <summary>
+            从API下载ASN明细到业务表
+            </summary>
+            <param name="asnDtlDatas"></param>
+            <param name="invOrg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadAsnDtlController.DownloadAsnDtlInfToBusiness(System.Boolean)">
+            <summary>
+            从中间表下载ASN明细到业务表
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadAsnDtlController.GenerateAsnDtlPara(System.Collections.Generic.IEnumerable{SIE.ERPInterface.Common.InfDataEntitys.Download.AsnDetailInf})">
+            <summary>
+            生成ASN明细实体
+            </summary>
+            <param name="asnDtlInfs">中间表实体数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadAsnDtlController.SaveASNDetails(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.AsnDetailData})">
+            <summary>
+            更新明细行
+            </summary>
+            <param name="datas">ASN数据列表</param>
+            <returns>错误信息列表</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.Download.Receipts.EbsDownloadAsnController">
+            <summary>
+            ASN下载控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.Receipts.EbsDownloadAsnController.DownloadSaleReturnToBusiness(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.EbsToSmomAsnDetailData},System.String)">
+            <summary>
+            从API下载企业模型到业务表
+            </summary>
+            <param name="planDatas"></param>
+            <param name="extentInvOrg">ERP库存组织Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.Receipts.EbsDownloadAsnController.SaveSaleReturn(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.EbsToSmomAsnDetailData})">
+            <summary>
+            保存库存调拨数据
+            </summary>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.Receipts.EbsDownloadAsnController.SetCancelData(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.EbsToSmomAsnDetailData},System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ErpErrorData})">
+            <summary>
+            设置取消的数据
+            </summary>      
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.Download.DownloadShipmentController">
+            <summary>
+            发运单下载控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadShipmentController.DownloadOrderToBusiness(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ShippingOrderData},System.Int32)">
+            <summary>
+            从API下载发运单到业务表
+            </summary>
+            <param name="shippingOrderDatas"></param>
+            <param name="invOrg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadShipmentController.DownloadSOInfToBusiness(System.Boolean)">
+            <summary>
+            从中间表下载发运单到业务表
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadShipmentController.GenerateShippingOrderPara(System.Collections.Generic.IEnumerable{SIE.ERPInterface.Common.InfDataEntitys.Download.ShippingOrderInf},System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{SIE.ERPInterface.Common.InfDataEntitys.Download.ShippingOrderDetailInf}})">
+            <summary>
+            生成发运单实体
+            </summary>
+            <param name="orderInfs">中间表实体数据</param>
+            <param name="orderDtlInfs">中间表明细实体数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadShipmentController.DownloadManual(System.String)">
+            <summary>
+            手动下载
+            </summary>
+            <param name="keyWord">查询关键字</param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadShipmentController.SaveShippingOrders(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ShippingOrderData})">
+            <summary>
+            用于接口中心下载数据保存到SMOM 发运单表中
+            </summary>
+            <returns>错误数据列表</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.Download.DownloadShipmentDtlController">
+            <summary>
+            发运单明细下载控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadShipmentDtlController.DownloadOrderDtlToBusiness(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ShippingOrderDetailData},System.Int32)">
+            <summary>
+            从API下载发运单明细到业务表
+            </summary>
+            <param name="orderDtlDatas"></param>
+            <param name="invOrg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadShipmentDtlController.DownloadOrderDtlInfToBusiness(System.Boolean)">
+            <summary>
+            从中间表下载发运单明细到业务表
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadShipmentDtlController.GenerateShippingOrderDtlPara(System.Collections.Generic.IEnumerable{SIE.ERPInterface.Common.InfDataEntitys.Download.ShippingOrderDetailInf})">
+            <summary>
+            生成发运单明细实体
+            </summary>
+            <param name="orderDtlInfs">中间表实体数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadShipmentDtlController.SaveShippingOrderDetails(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ShippingOrderDetailData})">
+            <summary>
+            更新明细行
+            </summary>
+            <param name="datas">ASN数据列表</param>
+            <returns>错误信息列表</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.Download.DownloadSupplierAddrController">
+            <summary>
+            供应商地址下载控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadSupplierAddrController.DownloadSupplierAddrToBusiness(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.SupplierAddressData},System.Int32)">
+            <summary>
+            从API下载供应商地址到业务表
+            </summary>
+            <param name="supplierAddrDatas"></param>
+            <param name="invOrg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadSupplierAddrController.DownloadSupplierAddrInfToBusiness(System.Boolean)">
+            <summary>
+            从中间表下载供应商地址到业务表
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadSupplierAddrController.GenerateSupplierAddrPara(System.Collections.Generic.IEnumerable{SIE.ERPInterface.Common.InfDataEntitys.Download.SupplierAddressInf})">
+            <summary>
+            生成供应商地址实体
+            </summary>
+            <param name="supplierAddrInfs">中间表实体地址数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadSupplierAddrController.SaveSupplierAddress(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.SupplierAddressData})">
+            <summary>
+            保存数据到供应商地址
+            </summary>
+            <param name="datas">供应商地址信息</param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadSupplierAddrController.SaveSupplierAddress(SIE.ERPInterface.Common.Datas.SupplierAddressData,System.Collections.Generic.Dictionary{System.String,SIE.CSM.Suppliers.SupplierAddress},System.Collections.Generic.Dictionary{System.String,SIE.CSM.Suppliers.Supplier},System.String)">
+            <summary>
+            执行数据保存
+            </summary>
+            <param name="data">数据实体</param>
+            <param name="dic">供应商地址数据字典</param>
+            <param name="dicSupplier">供应商数据字典</param>
+            <param name="addressType">供应商地址类型</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.Download.DownloadSupplierController">
+            <summary>
+            供应商下载控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadSupplierController.DownloadSupplierToBusiness(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.SupplierData},System.Int32)">
+            <summary>
+            从API下载供应商到业务表
+            </summary>
+            <param name="supplierDatas"></param>
+            <param name="invOrg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadSupplierController.DownloadSupplierInfToBusiness(System.Boolean)">
+            <summary>
+            从中间表下载供应商到业务表
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadSupplierController.GenerateSupplierPara(System.Collections.Generic.IEnumerable{SIE.ERPInterface.Common.InfDataEntitys.Download.SupplierInf})">
+            <summary>
+            生成供应商实体
+            </summary>
+            <param name="supplierInfs">中间表实体数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadSupplierController.DownloadManual(System.String)">
+            <summary>
+            手动下载
+            </summary>
+            <param name="keyWord">查询关键字</param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadSupplierController.SaveSuppliers(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.SupplierData})">
+            <summary>
+            保存数据到供应商
+            </summary>
+            <param name="datas">ERP接口数据</param>
+            <returns>错误信息</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadSupplierController.SaveSupplier(SIE.ERPInterface.Common.Datas.SupplierData,System.Collections.Generic.Dictionary{System.String,SIE.CSM.Suppliers.Supplier},System.String)">
+            <summary>
+            执行数据保存
+            </summary>
+            <param name="data">数据实体</param>
+            <param name="dic">数据字典</param>
+            <param name="supplierType">供应商类型</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.Download.DownloadTransactionController">
+            <summary>
+            ERP事务下载控制器
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.Download.DownloadStorageAreaController">
+            <summary>
+            库区下载控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadStorageAreaController.DownloadStorageAreaToBusiness(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.StorageAreaData},System.Int32)">
+            <summary>
+            从API下载库区到业务表
+            </summary>
+            <param name="storageAreaDatas"></param>
+            <param name="invOrg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadStorageAreaController.DownloadStorageAreaInfToBusiness(System.Boolean)">
+            <summary>
+            从中间表下载库区到业务表
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadStorageAreaController.GenerateStorageAreaPara(System.Collections.Generic.IEnumerable{SIE.ERPInterface.Common.InfDataEntitys.Download.StorageAreaInf})">
+            <summary>
+            生成库区实体
+            </summary>
+            <param name="storageAreaInfs">中间表实体数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadStorageAreaController.SaveStorageArea(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.StorageAreaData})">
+            <summary>
+            保存数据到库区
+            </summary>
+            <param name="datas">库区列表数据</param>
+            <returns>错误列表信息</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.Download.DownloadStorageLocationController">
+            <summary>
+            库位下载控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadStorageLocationController.DownloadStorageLocToBusiness(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.StorageLocationData},System.Int32)">
+            <summary>
+            从API下载库位到业务表
+            </summary>
+            <param name="storageLocDatas"></param>
+            <param name="invOrg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadStorageLocationController.DownloadStorageLocInfToBusiness(System.Boolean)">
+            <summary>
+            从中间表下载库位到业务表
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadStorageLocationController.GenerateStorageLocationPara(System.Collections.Generic.IEnumerable{SIE.ERPInterface.Common.InfDataEntitys.Download.StorageLocationInf})">
+            <summary>
+            生成库位实体
+            </summary>
+            <param name="storageLocationInfs">中间表实体数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadStorageLocationController.SaveStorageLocation(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.StorageLocationData})">
+            <summary>
+            保存数据到库位
+            </summary>
+            <param name="datas">库位列表数据</param>
+            <returns>错误列表信息</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.Download.DownloadWarehouseController">
+            <summary>
+            仓库下载控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadWarehouseController.DownloadWarehouseToBusiness(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.WarehouseData},System.Int32)">
+            <summary>
+            从API下载仓库到业务表
+            </summary>
+            <param name="warehouseDatas"></param>
+            <param name="invOrg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadWarehouseController.DownloadWarehouseInfToBusiness(System.Boolean)">
+            <summary>
+            从中间表下载仓库到业务表
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadWarehouseController.GenerateWarehousePara(System.Collections.Generic.IEnumerable{SIE.ERPInterface.Common.InfDataEntitys.Download.WarehouseInf})">
+            <summary>
+            生成仓库实体
+            </summary>
+            <param name="warehouseInfs">中间表实体数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadWarehouseController.DownloadManual(System.String)">
+            <summary>
+            手动下载
+            </summary>
+            <param name="keyWord">查询关键字</param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadWarehouseController.SaveWarehouse(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.WarehouseData})">
+            <summary>
+            保存数据到仓库
+            </summary>
+            <param name="datas">仓库列表数据</param>
+            <returns>错误列表信息</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.Download.DownloadWorkOrderBomController">
+            <summary>
+            工单BOM下载控制器
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.Download.DownloadWorkOrderBomController._commonController">
+            <summary>
+            通用控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadWorkOrderBomController.DownloadWorkOrderBomToBusiness(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.WorkOrderBomData},System.Int32)">
+            <summary>
+            从API下载工单BOM到业务表
+            </summary>
+            <param name="workOrderBomDatas"></param>
+            <param name="invOrg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadWorkOrderBomController.DownloadWorkOrderBomInfToBusiness(System.Boolean)">
+            <summary>
+            从中间表下载工单BOM到业务表
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadWorkOrderBomController.GenerateWorkOrderBomPara(System.Collections.Generic.IEnumerable{SIE.ERPInterface.Common.InfDataEntitys.Download.WorkOrderBomInf})">
+            <summary>
+            生成工单BOM实体
+            </summary>
+            <param name="workOrderBomInfs">中间表实体数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadWorkOrderBomController.SaveWorkOrderBoms(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.WorkOrderBomData})">
+            <summary>
+            ERP保存工单BOM数据
+            </summary>
+            <param name="erpInfoDatas">ERP工单数据集合</param>
+            <returns>错误信息列表</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadWorkOrderBomController.UpdateWorkOrderBom(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.WorkOrderBomData},System.Collections.Generic.List{SIE.MES.WorkOrders.WorkOrderBom},System.Collections.Generic.Dictionary{System.String,SIE.Items.Item},SIE.MES.WorkOrders.WorkOrder)">
+            <summary>
+            更新工单BOM
+            </summary>
+            <param name="erpBomList">ERP工单BOM数据</param>
+            <param name="bomList">工单BOM集合</param>
+            <param name="dicItem">物料数据字典</param>
+            <param name="workOrder">工单</param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadWorkOrderBomController.GetBomRelatedDatas(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.WorkOrderBomData},System.Collections.Generic.Dictionary{System.String,SIE.MES.WorkOrders.WorkOrder}@,System.Collections.Generic.Dictionary{System.Double,System.Collections.Generic.List{SIE.MES.WorkOrders.WorkOrderBom}}@,System.Collections.Generic.Dictionary{System.String,SIE.Items.Item}@)">
+            <summary>
+            获取工单BOM相关联数量集
+            </summary>
+            <param name="erpInfoDatas">ERP工单BOM数据集合</param>
+            <param name="dicWorkOrder">工单数据字典</param>
+            <param name="dicBom">工单BOM字典</param>
+            <param name="dicItem">物料数据字典</param> 
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.Download.DownloadWorkOrderController">
+            <summary>
+            工单下载控制器
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.Download.DownloadWorkOrderController._commonController">
+            <summary>
+            通用控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadWorkOrderController.DownloadWorkOrderToBusiness(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.WorkOrderData},System.Int32)">
+            <summary>
+            从API下载工单到业务表
+            </summary>
+            <param name="workOrderDatas"></param>
+            <param name="invOrg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadWorkOrderController.DownloadWorkOrderInfToBusiness(System.Boolean)">
+            <summary>
+            从中间表下载工单到业务表
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadWorkOrderController.GenerateWorkOrderPara(System.Collections.Generic.IEnumerable{SIE.ERPInterface.Common.InfDataEntitys.Download.WorkOrderInf},System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{SIE.ERPInterface.Common.InfDataEntitys.Download.WorkOrderBomInf}})">
+            <summary>
+            生成工单实体
+            </summary>
+            <param name="workOrderInfs">中间表实体数据</param>
+            <param name="workOrderBomInfs">中间表明细实体数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadWorkOrderController.DownloadManual(System.String)">
+            <summary>
+            手动下载
+            </summary>
+            <param name="keyWord">查询关键字</param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadWorkOrderController.SaveWorkOrders(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.WorkOrderData})">
+            <summary>
+            ERP保存工单数据
+            </summary>
+            <param name="erpInfoDatas">ERP工单数据集合</param>
+            <returns>错误信息列表</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadWorkOrderController.ValidateWorkOrderSave(SIE.MES.WorkOrders.WorkOrder)">
+            <summary>
+            验证工单保存
+            </summary>
+            <param name="workOrder">工单</param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadWorkOrderController.GetWorkOrderRelatedDatas(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.WorkOrderData},System.Collections.Generic.Dictionary{System.String,SIE.MES.WorkOrders.WorkOrder}@,System.Collections.Generic.Dictionary{System.Double,System.Collections.Generic.List{SIE.MES.WorkOrders.WorkOrderBom}}@,System.Collections.Generic.Dictionary{System.String,SIE.Items.Item}@,System.Collections.Generic.Dictionary{System.String,SIE.MES.WorkOrders.ErpWorkOrder}@,System.Collections.Generic.Dictionary{System.String,SIE.Resources.Enterprises.Enterprise}@,System.Collections.Generic.Dictionary{System.String,SIE.Resources.WipResources.WipResource}@,System.Collections.Generic.Dictionary{System.String,SIE.Resources.Employees.Employee}@)">
+            <summary>
+            获取工单相关联数量集
+            </summary>
+            <param name="erpInfoDatas">ERP工单数据集合</param>
+            <param name="dicWorkOrder">工单数据字典</param>
+            <param name="dicBom">工单BOM字典</param>
+            <param name="dicItem">物料数据字典</param>
+            <param name="dicErpWorkOrder">ERP工单数据字典</param>
+            <param name="dicWorkshop">车间数据字典</param>
+            <param name="dicResource">资源数据字典</param>
+            <param name="dicEmployee">员工数据字典</param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadWorkOrderController.ValidateWorkOrderData(SIE.ERPInterface.Common.Datas.WorkOrderData,System.Collections.Generic.Dictionary{System.String,SIE.MES.WorkOrders.WorkOrder},System.Collections.Generic.Dictionary{System.String,SIE.Items.Item},System.Collections.Generic.Dictionary{System.String,SIE.MES.WorkOrders.ErpWorkOrder},System.Collections.Generic.Dictionary{System.String,SIE.Resources.Enterprises.Enterprise},System.Collections.Generic.Dictionary{System.String,SIE.Resources.WipResources.WipResource},System.Collections.Generic.Dictionary{System.String,SIE.Resources.Employees.Employee},SIE.MES.WorkOrders.WorkOrder@,SIE.Items.Item@,SIE.Resources.Enterprises.Enterprise@,SIE.Resources.WipResources.WipResource@,SIE.Resources.Employees.Employee@,SIE.MES.WorkOrders.ErpWorkOrder@)">
+            <summary>
+            验证工单数据
+            </summary>
+            <param name="data">ERP工单数据</param>
+            <param name="dicWorkOrder">工单数据字典</param>
+            <param name="dicItem">物料数据字典</param>
+            <param name="dicErpWorkOrder">ERP工单数据字典</param>
+            <param name="dicWorkshop">车间数据字典</param>
+            <param name="dicResource">资源数据字典</param>
+            <param name="dicEmployee">员工数据字典</param>
+            <param name="workOrder">工单</param>
+            <param name="product">产品</param>
+            <param name="workshop">车间</param>
+            <param name="resource">资源</param>
+            <param name="maker">制单人</param>
+            <param name="erpWorkOrder">ERP工单</param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadWorkOrderController.CreateWorkOrder(SIE.ERPInterface.Common.Datas.WorkOrderData,System.Collections.Generic.Dictionary{System.String,SIE.Items.Item},System.DateTime,SIE.Items.Item,SIE.Resources.Enterprises.Enterprise,SIE.Resources.WipResources.WipResource,SIE.Resources.Employees.Employee,SIE.MES.WorkOrders.ErpWorkOrder)">
+            <summary>
+            创建工单
+            </summary>
+            <param name="data">ERP工单数据</param>
+            <param name="dicItem">物料</param>
+            <param name="makeDate">制单时间</param>
+            <param name="product">产品</param>
+            <param name="workshop">车间</param>
+            <param name="resource">资源</param>
+            <param name="maker">制单人</param>
+            <param name="erpWorkOrder">ERP工单</param>
+            <returns>工单</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadWorkOrderController.CreateWorkOrderBom(SIE.ERPInterface.Common.Datas.WorkOrderData,System.Collections.Generic.Dictionary{System.String,SIE.Items.Item},SIE.MES.WorkOrders.WorkOrder)">
+            <summary>
+            创建工单BOM
+            </summary>
+            <param name="data">ERP工单数据</param>
+            <param name="dicItem">物料数据字典</param>
+            <param name="workOrder">工单</param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadWorkOrderController.UpdateWorkOrder(SIE.ERPInterface.Common.Datas.WorkOrderData,System.Collections.Generic.List{SIE.MES.WorkOrders.WorkOrderBom},System.Collections.Generic.Dictionary{System.String,SIE.Items.Item},SIE.MES.WorkOrders.WorkOrder,SIE.Resources.Enterprises.Enterprise,SIE.Resources.WipResources.WipResource,SIE.MES.WorkOrders.ErpWorkOrder)">
+            <summary>
+            更新工单
+            </summary>
+            <param name="data">ERP工单数据</param>
+            <param name="boms">工单BOM集合</param>
+            <param name="dicItem">物料数据字典</param>
+            <param name="workOrder">工单</param>
+            <param name="workshop">车间</param>
+            <param name="resource">资源</param> 
+            <param name="erpWorkOrder">ERP工单</param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.DownloadWorkOrderController.DeleteWorkOrder(SIE.ERPInterface.Common.Datas.WorkOrderData,SIE.MES.WorkOrders.WorkOrder)">
+            <summary>
+            删除工单
+            </summary>
+            <param name="data">ERP工单数据</param>
+            <param name="workOrder">工单</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.Download.WorkOrders.EbsDownloadWorkOrderController">
+            <summary>
+            ebs工单保存
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.Download.WorkOrders.EbsDownloadWorkOrderController._commonController">
+            <summary>
+            通用控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.WorkOrders.EbsDownloadWorkOrderController.DownloadWorkOrderToBusiness(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.SmomOrder.EbsWorkOrderData},System.String)">
+            <summary>
+            从API下载工单到业务表
+            </summary>
+            <param name="workOrderDatas"></param>
+            <param name="extentInvOrg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.WorkOrders.EbsDownloadWorkOrderController.SaveWorkOrders(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.SmomOrder.EbsWorkOrderData})">
+            <summary>
+            ERP保存工单数据
+            </summary>
+            <param name="erpInfoDatas">ERP工单数据集合</param>
+            <returns>错误信息列表</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.WorkOrders.EbsDownloadWorkOrderController.SaveWoLogs(SIE.Domain.EntityList{SIE.MES.WorkOrders.WorkOrder},SIE.Domain.EntityList{SIE.MES.WorkOrders.WorkOrder},System.Nullable{System.DateTime})">
+            <summary>
+            生成工单日志生成工单日志
+            </summary>
+            <param name="erpInsertWorkOrderList">新增工单</param>
+            <param name="erpEditWorkOrderList">修改工单</param>
+            <param name="dateTime">日志时间</param>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.WorkOrders.EbsDownloadWorkOrderController.EbsChangeToTask(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.SmomOrder.EbsWorkOrderData},System.Collections.Generic.Dictionary{System.String,SIE.Items.Item})">
+            <summary>
+            使用工艺路线生成器做数据转换
+            </summary>
+            <param name="erpInfoDatas">传入信息</param>
+            <param name="dicItem">物料字典</param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.WorkOrders.EbsDownloadWorkOrderController.BatchSave(SIE.Domain.EntityList{SIE.MES.WorkOrders.WorkOrderRoutingLayout},SIE.Domain.EntityList{SIE.Core.Items.LabelPrintTemplate},SIE.Domain.EntityList{SIE.MES.WorkOrders.WorkOrder},SIE.Domain.EntityList{SIE.MES.WorkOrders.WorkOrderBom},SIE.Domain.EntityList{SIE.MES.WorkOrders.WorkOrder},SIE.Domain.EntityList{SIE.MES.WorkOrders.WorkOrderBom},System.Nullable{System.DateTime})">
+            <summary>
+            批量保存
+            </summary>
+            <param name="workOrderRoutingLayouts">新增工单工艺路线布局</param>
+            <param name="labelPrintTemplates">新增工单打印模板</param>
+            <param name="erpInsertWorkOrderList">新增工单信息</param>
+            <param name="erpInsertWorkOrderBomList">新增工单bom信息</param>
+            <param name="erpEditWorkOrderList">修改工单信息</param>
+            <param name="erpEditWorkOrderBomList">修改工单bom信息</param>
+            <param name="dateTime">日期时间</param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.WorkOrders.EbsDownloadWorkOrderController.GetWorkOrderRelatedDatas(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.SmomOrder.EbsWorkOrderData},System.Collections.Generic.Dictionary{System.String,SIE.MES.WorkOrders.WorkOrder}@,System.Collections.Generic.Dictionary{System.Double,System.Collections.Generic.List{SIE.MES.WorkOrders.WorkOrderBom}}@,System.Collections.Generic.Dictionary{System.String,SIE.Items.Item}@,System.Collections.Generic.Dictionary{System.String,SIE.Resources.Enterprises.Enterprise}@,System.Collections.Generic.Dictionary{System.String,SIE.Resources.Enterprises.Enterprise}@,System.Collections.Generic.Dictionary{System.String,SIE.Resources.WipResources.WipResource}@,SIE.Resources.Employees.Employee@)">
+            <summary>
+            获取工单相关联数量集
+            </summary>
+            <param name="erpInfoDatas">ERP工单数据集合</param>
+            <param name="dicWorkOrder">工单数据字典</param>
+            <param name="dicBom">工单BOM字典</param>
+            <param name="dicItem">物料数据字典</param>
+            <param name="dicFactory">工厂数据字典</param>
+            <param name="dicWorkshop">车间数据字典</param>
+            <param name="dicResource">资源数据字典</param>
+            <param name="erpEmployee">写入员工</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:SIE.ERPInterface.Smom.Download.WorkOrders.EbsDownloadWorkOrderController.ValidateWorkOrderData(SIE.ERPInterface.Common.Datas.SmomOrder.EbsWorkOrderData,System.Collections.Generic.Dictionary{System.String,SIE.MES.WorkOrders.WorkOrder},System.Collections.Generic.Dictionary{System.String,SIE.Items.Item},System.Collections.Generic.Dictionary{System.String,SIE.Resources.Enterprises.Enterprise},System.Collections.Generic.Dictionary{System.String,SIE.Resources.Enterprises.Enterprise},System.Collections.Generic.Dictionary{System.String,SIE.Resources.WipResources.WipResource},SIE.MES.WorkOrders.WorkOrder@,SIE.Items.Item@,SIE.Resources.Enterprises.Enterprise@,SIE.Resources.Enterprises.Enterprise@,SIE.Resources.WipResources.WipResource@)" -->
+        <member name="M:SIE.ERPInterface.Smom.Download.WorkOrders.EbsDownloadWorkOrderController.CreateWorkOrder(SIE.ERPInterface.Common.Datas.SmomOrder.EbsWorkOrderData,System.Collections.Generic.Dictionary{System.String,SIE.Items.Item},System.DateTime,SIE.Items.Item,SIE.Resources.Enterprises.Enterprise,SIE.Resources.Enterprises.Enterprise,SIE.Resources.WipResources.WipResource,SIE.Resources.Employees.Employee,SIE.MES.WorkOrders.WorkOrderPackageGenerators.WoPackageGenerator,SIE.Domain.EntityList{SIE.Core.Items.LabelPrintTemplate},SIE.MES.WorkOrders.Routings.WoRoutingGenerator,SIE.Domain.EntityList{SIE.MES.WorkOrders.WorkOrderRoutingLayout})">
+            <summary>
+            创建工单
+            </summary>
+            <param name="data">ERP工单数据</param>
+            <param name="dicItem">物料</param>
+            <param name="makeDate">制单时间</param>
+            <param name="product">产品</param>
+            <param name="factory">工厂</param>
+            <param name="workShop">车间</param>
+            <param name="resource">资源</param>
+            <param name="employee">员工</param>
+            <param name="woPackageGenerator">包装规则生成器</param>
+            <param name="labelPrintTemplates">工单打印模板</param>
+            <param name="woRoutingGenerator">工艺路线生成器</param>
+            <param name="workOrderRoutingLayouts">工艺路线布局</param>
+            <returns>工单</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.WorkOrders.EbsDownloadWorkOrderController.CreateWorkOrderLayout(SIE.MES.WorkOrders.WorkOrder,SIE.MES.WorkOrders.Routings.WoRoutingGenerator,SIE.Domain.EntityList{SIE.MES.WorkOrders.WorkOrderRoutingLayout})">
+            <summary>
+            设置工艺路线
+            </summary>
+            <param name="workOrder">工单</param>
+            <param name="woRoutingGenerator">工艺路线生成器</param>
+            <param name="workOrderRoutingLayouts">生成工艺路线布局</param>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.WorkOrders.EbsDownloadWorkOrderController.CreateWorkOrderPkgRule(SIE.MES.WorkOrders.WorkOrder,SIE.MES.WorkOrders.WorkOrderPackageGenerators.WoPackageGenerator)">
+            <summary>
+            生成工单包装规则
+            </summary>
+            <param name="workOrder">工单</param>
+            <param name="woPackageGenerator">包装规则生成器</param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.WorkOrders.EbsDownloadWorkOrderController.CreateWorkOrderBom(SIE.ERPInterface.Common.Datas.SmomOrder.EbsWorkOrderData,System.Collections.Generic.Dictionary{System.String,SIE.Items.Item},SIE.MES.WorkOrders.WorkOrder)">
+            <summary>
+            创建工单BOM
+            </summary>
+            <param name="data">ERP工单数据</param>
+            <param name="dicItem">物料数据字典</param>
+            <param name="workOrder">工单</param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.WorkOrders.EbsDownloadWorkOrderController.WorkOrderCanEdit(SIE.MES.WorkOrders.WorkOrder,SIE.ERPInterface.Common.Datas.SmomOrder.EbsWorkOrderData,SIE.Items.Item,System.String@)">
+            <summary>
+            校验工单是否可以修改
+            </summary>
+            <param name="workOrder">修改工单</param>
+            <param name="data">修改工单数据</param>
+            <param name="product">修改工单数据产品</param>
+            <param name="errMsg">错误信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.WorkOrders.EbsDownloadWorkOrderController.UpdateWorkOrder(SIE.ERPInterface.Common.Datas.SmomOrder.EbsWorkOrderData,System.Collections.Generic.List{SIE.MES.WorkOrders.WorkOrderBom},System.Collections.Generic.List{SIE.MES.WorkOrders.WorkOrderBom},System.Collections.Generic.Dictionary{System.String,SIE.Items.Item},SIE.MES.WorkOrders.WorkOrder)">
+            <summary>
+            更新工单
+            </summary>
+            <param name="data">ERP工单数据</param>
+            <param name="existboms">原工单BOM集合</param>
+            <param name="insertboms">修改新增工单BOM集合</param>
+            <param name="dicItem">物料数据字典</param>
+            <param name="workOrder">工单</param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.WorkOrders.EbsDownloadWorkOrderController.UpdateWorkOrderBom(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.SmomOrder.EbsWorkOrderBomData},System.Collections.Generic.List{SIE.MES.WorkOrders.WorkOrderBom},System.Collections.Generic.List{SIE.MES.WorkOrders.WorkOrderBom},System.Collections.Generic.Dictionary{System.String,SIE.Items.Item},SIE.MES.WorkOrders.WorkOrder)">
+            <summary>
+            更新工单bom(对于传入的数据，没有的需要删除)
+            </summary>
+            <param name="bomList">erp传入工单bom</param>
+            <param name="existboms">原工单bom</param>
+            <param name="insertboms">修改新增工单BOM集合</param>
+            <param name="dicItem">物料</param>
+            <param name="workOrder">工单</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.WorkOrders.EbsDownloadWorkOrderController.ErpWorkOrderStateMap(System.Int32,SIE.Core.WorkOrders.WorkOrderState)">
+            <summary>
+            Ebs工单状态转化
+            </summary>
+            <param name="ErpState">Erp状态（1未释放 3已释放 4完成 7已取消 12已关闭）</param>
+            <param name="woState"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.Download.ErpWorkOrderPropertyChanged">
+            <summary>
+            ERP接口创建工单属性变更
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.ErpWorkOrderPropertyChanged.WorkOrderOnPropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            工单属性变更事件
+            </summary>
+            <param name="sender">工单</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.ErpWorkOrderPropertyChanged.GenerateWorkOrderBoms(SIE.MES.WorkOrders.WorkOrder)">
+            <summary>
+            生成工单bom清单
+            ERP接口存在bom则不自动创建
+            </summary>
+            <param name="workOrder">工单</param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Download.ErpWorkOrderPropertyChanged.PlanQtyChanged(SIE.MES.WorkOrders.WorkOrder)">
+            <summary>
+            计划数量变更
+            </summary>
+            <param name="workOrder">工单</param>  
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.InventoryControl.datas.EbsToLot">
+            <summary>
+            ERP批次对照WMS批次
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.datas.EbsToLot.ToLotCode">
+            <summary>
+            批次号
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.datas.EbsToLot.ToProductionBatch">
+            <summary>
+            生产批次
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.datas.EbsToLot.ToLotAtt8">
+            <summary>
+            批次属性8
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.datas.EbsToLot.ToLotAtt9">
+            <summary>
+            批次属性9
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.datas.EbsToLot.ToLotAtt10">
+            <summary>
+            批次属性10
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.datas.EbsToLot.ToLotAtt11">
+            <summary>
+            批次属性11
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.datas.EbsToLot.ToLotAtt12">
+            <summary>
+            批次属性12
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.InventoryControl.datas.EbsToWareHouse">
+            <summary>
+            ERP子库对照关系
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.datas.EbsToWareHouse.OneToOne">
+            <summary>
+            1:1
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.datas.EbsToWareHouse.OneToN">
+            <summary>
+            1:N
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.datas.EbsToWareHouse.NToOne">
+            <summary>
+            N:1
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.InventoryControl.datas.RealLotOnHand">
+            <summary>
+            库存对照表库存数据
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.datas.RealLotOnHand.RealLotCode">
+            <summary>
+            对照后的批次信息
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.InventoryControl.datas.GroupKey">
+            <summary>
+            分组的Key
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.datas.GroupKey.WarehouseId">
+            <summary>
+            仓库ID
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.datas.GroupKey.RealLotCode">
+            <summary>
+            ERP批次
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.datas.GroupKey.ItemId">
+            <summary>
+            物料ID
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.InventoryControl.InventoryControlDetailViewModel">
+            <summary>
+            库存对照表子表
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.InventoryControlDetailViewModel.LineNoProperty">
+            <summary>
+            序号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventoryControlDetailViewModel.LineNo">
+            <summary>
+            序号
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.InventoryControlDetailViewModel.ErpWareHouseCodeProperty">
+            <summary>
+            ERP子库
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventoryControlDetailViewModel.ErpWareHouseCode">
+            <summary>
+            ERP子库
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.InventoryControlDetailViewModel.WareHouseCodeProperty">
+            <summary>
+            仓库名称
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventoryControlDetailViewModel.WareHouseCode">
+            <summary>
+            仓库名称
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.InventoryControlDetailViewModel.QtyProperty">
+            <summary>
+            现有量
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventoryControlDetailViewModel.Qty">
+            <summary>
+            现有量
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.InventoryControlDetailViewModel.DifferenceQtyProperty">
+            <summary>
+            差异数
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventoryControlDetailViewModel.DifferenceQty">
+            <summary>
+            差异数
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.InventoryControlDetailViewModel.RecQtyProperty">
+            <summary>
+            暂收数
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventoryControlDetailViewModel.RecQty">
+            <summary>
+            暂收数
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.InventoryControlDetailViewModel.ErpQtyProperty">
+            <summary>
+            ERP现有量
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventoryControlDetailViewModel.ErpQty">
+            <summary>
+            ERP现有量
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.InventoryControlDetailViewModel.ParentLineNoProperty">
+            <summary>
+            父序号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventoryControlDetailViewModel.ParentLineNo">
+            <summary>
+            父序号
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.InventoryControl.InventoryControlErpDetaiViewModel">
+            <summary>
+            库存对照表子表
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.InventoryControlErpDetaiViewModel.LineNoProperty">
+            <summary>
+            序号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventoryControlErpDetaiViewModel.LineNo">
+            <summary>
+            序号
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.InventoryControlErpDetaiViewModel.ErpWareHouseCodeProperty">
+            <summary>
+            ERP子库
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventoryControlErpDetaiViewModel.ErpWareHouseCode">
+            <summary>
+            ERP子库
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.InventoryControlErpDetaiViewModel.WareHouseCodeProperty">
+            <summary>
+            仓库名称
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventoryControlErpDetaiViewModel.WareHouseCode">
+            <summary>
+            仓库名称
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.InventoryControlErpDetaiViewModel.QtyProperty">
+            <summary>
+            现有量
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventoryControlErpDetaiViewModel.Qty">
+            <summary>
+            现有量
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.InventoryControlErpDetaiViewModel.DifferenceQtyProperty">
+            <summary>
+            差异数
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventoryControlErpDetaiViewModel.DifferenceQty">
+            <summary>
+            差异数
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.InventoryControlErpDetaiViewModel.ErpQtyProperty">
+            <summary>
+            ERP现有量
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventoryControlErpDetaiViewModel.ErpQty">
+            <summary>
+            ERP现有量
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.InventoryControlErpDetaiViewModel.ParentLineNoProperty">
+            <summary>
+            父序号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventoryControlErpDetaiViewModel.ParentLineNo">
+            <summary>
+            父序号
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.InventoryControl.InventoryControlSetting">
+            <summary>
+            库存对照表设置
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.InventoryControlSetting.IsItemProperty">
+            <summary>
+            物料
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventoryControlSetting.IsItem">
+            <summary>
+            物料
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.InventoryControlSetting.IsLotProperty">
+            <summary>
+            批次
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventoryControlSetting.IsLot">
+            <summary>
+            批次
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.InventoryControlSetting.IsWareHouseProperty">
+            <summary>
+            仓库
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventoryControlSetting.IsWareHouse">
+            <summary>
+            仓库
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.InventoryControlSetting.IsOkInvProperty">
+            <summary>
+            合格库存
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventoryControlSetting.IsOkInv">
+            <summary>
+            合格库存
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.InventoryControlSetting.IsNgInvProperty">
+            <summary>
+            不合格库存
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventoryControlSetting.IsNgInv">
+            <summary>
+            不合格库存
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.InventoryControlSetting.EbsToWarehouseProperty">
+            <summary>
+            仓库:ERP子库
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventoryControlSetting.EbsToWarehouse">
+            <summary>
+            仓库:ERP子库
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.InventoryControlSetting.EbsToLotProperty">
+            <summary>
+            ERP批次对照
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventoryControlSetting.EbsToLot">
+            <summary>
+            仓库:ERP子库
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.InventoryControl.InventoryControlSettingConfig">
+            <summary>
+            ASN明细 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.InventoryControl.InventoryControlSettingConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModel">
+            <summary>
+            库存对照表视图
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModel.ItemCodeProperty">
+            <summary>
+            物料编码
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModel.ItemCode">
+            <summary>
+            物料编码
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModel.ItemNameProperty">
+            <summary>
+            物料名称
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModel.ItemName">
+            <summary>
+            物料名称
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModel.ErpLotCodeProperty">
+            <summary>
+            ERP批次号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModel.ErpLotCode">
+            <summary>
+            ERP批次号
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModel.QtyProperty">
+            <summary>
+            现有量
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModel.Qty">
+            <summary>
+            现有量
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModel.ErpQtyProperty">
+            <summary>
+            ERP现有量
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModel.ErpQty">
+            <summary>
+            ERP现有量
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModel.DifferenceQtyProperty">
+            <summary>
+            差异数
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModel.DifferenceQty">
+            <summary>
+            差异数
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModel.TemporaryQtyProperty">
+            <summary>
+            暂收库存
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModel.TemporaryQty">
+            <summary>
+            暂收库存
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModel.WareHouseCodeProperty">
+            <summary>
+            仓库名称
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModel.WareHouseCode">
+            <summary>
+            仓库名称
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModel.WareHouseIdProperty">
+            <summary>
+            仓库Id
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModel.WareHouseId">
+            <summary>
+            仓库名称
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModel.ItemIdProperty">
+            <summary>
+            物料ID
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModel.ItemId">
+            <summary>
+            物料ID
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModel.ErpWareHouseCodeProperty">
+            <summary>
+            ERP子库
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModel.ErpWareHouseCode">
+            <summary>
+            ERP子库
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModel.UnitCodeProperty">
+            <summary>
+            单位名称
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModel.UnitCode">
+            <summary>
+            单位名称
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModel.SpecificationModelProperty">
+            <summary>
+            规格型号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModel.SpecificationModel">
+            <summary>
+            规格型号
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModel.LineNoProperty">
+            <summary>
+            序号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModel.LineNo">
+            <summary>
+            序号
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModel.LotCodeProperty">
+            <summary>
+            批次号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModel.LotCode">
+            <summary>
+            批次号
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModelCriteria">
+            <summary>
+            库存对照表查询实体 查询实体
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModelCriteria.WarehouseIdProperty">
+            <summary>
+            仓库Id
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModelCriteria.WarehouseId">
+            <summary>
+            仓库Id
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModelCriteria.WarehouseProperty">
+            <summary>
+            仓库
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModelCriteria.Warehouse">
+            <summary>
+            仓库
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModelCriteria.ErpWarehouseIdProperty">
+            <summary>
+            仓库Id
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModelCriteria.ErpWarehouseId">
+            <summary>
+            仓库Id
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModelCriteria.ErpWarehouseProperty">
+            <summary>
+            仓库
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModelCriteria.ErpWarehouse">
+            <summary>
+            仓库
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModelCriteria.WarehouseCodeProperty">
+            <summary>
+            仓库
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModelCriteria.WarehouseCode">
+            <summary>
+            仓库
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModelCriteria.ErpWarehouseCodeProperty">
+            <summary>
+            ERP子库
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModelCriteria.ErpWarehouseCode">
+            <summary>
+            ERP子库
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModelCriteria.ItemCodeProperty">
+            <summary>
+            物料编码
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModelCriteria.ItemCode">
+            <summary>
+            物料编码
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModelCriteria.ItemNameProperty">
+            <summary>
+            物料名称
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModelCriteria.ItemName">
+            <summary>
+            物料名称
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModelCriteria.ErpLotCodeProperty">
+            <summary>
+            ERP批次号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModelCriteria.ErpLotCode">
+            <summary>
+            ERP批次号
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModelCriteria.IsShowDifferentProperty">
+            <summary>
+            只显示差异库存
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModelCriteria.IsShowDifferent">
+            <summary>
+            只显示差异库存
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModelCriteria.NoShowZeroProperty">
+            <summary>
+            不含0库存
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModelCriteria.IsShowZero">
+            <summary>
+            不含0库存
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModelCriteria.Fetch">
+            <summary>
+            获取查询结果
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.InventoryControl.InventroyControlAllData">
+            <summary>
+            库存对照表所有视图
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventroyControlAllData.ParentListData">
+            <summary>
+            库存对照表父列表
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventroyControlAllData.DetailListData">
+            <summary>
+            (WMS)库存对照表子列表
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Smom.InventoryControl.InventroyControlAllData.ErpListData">
+            <summary>
+            (ERP)库存对照表子列表
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.IOT.IotController">
+            <summary>
+            IOT 控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.IOT.IotController.SetIotTaskInfo(SIE.EventMessages.IOT.IotTaskInfo)">
+            <summary>
+            设置IOT设备初始任务信息
+            </summary>
+            <param name="taskInfo">任务信息</param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.IOT.IotController.GetIotTaskInfo(SIE.EventMessages.IOT.IotTaskInfo)">
+            <summary>
+            获取IOT设备任务信息
+            </summary>
+            <param name="taskInfo">任务信息</param>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.IOT.IotController.SetIotTaskInfos(System.Collections.Generic.List{SIE.EventMessages.IOT.IotTaskInfo},System.String)">
+            <summary>
+            下发多任务单至IOT
+            </summary>
+            <param name="taskInfo"></param>
+            <param name="resourceCode"></param>
+            <exception cref="T:SIE.Domain.Validation.ValidationException"></exception>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.IOT.IotController.GetIotTaskInfos(System.String)">
+            <summary>
+            从IOT读取多任务单数据
+            </summary>
+            <param name="resourceCode"></param>
+            <returns></returns>
+            <exception cref="T:SIE.Domain.Validation.ValidationException"></exception>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.IOT.IotController.SaveAxisChangeRecords(System.Collections.Generic.List{SIE.MES.TaskManagement.IOT.Data.AxisChangeInfo})">
+            <summary>
+            保存IOT押出换轴记录
+            </summary>
+            <param name="datas"></param>
+        </member>
+        <member name="T:SIE.ERPInterface.Smom.Module">
+            <summary>
+            当前工程所对应的模块类
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Smom.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化
+            </summary>
+            <param name="app">应用程序对象</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Common.InventoryControl.InventoryControlController">
+            <summary>
+            库存对照表控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Common.InventoryControl.InventoryControlController.GetInventoryControlSetting">
+            <summary>
+            获取库存对照表设置
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Common.InventoryControl.InventoryControlController.GetInventoryControlSettingData(System.Double)">
+            <summary>
+            获取库存对照表设置
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Common.InventoryControl.InventoryControlController.GetInventoryControlViewModelData(SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModelCriteria)">
+            <summary>
+            获取库存对照表列表数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Common.InventoryControl.InventoryControlController.GetWmsWareHouseByErpWareHouse(System.Collections.Generic.List{System.String})">
+            <summary>
+            根据ERP子库获取对应的仓库
+            </summary>
+            <param name="ErpWareCodes">获取仓库</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Common.InventoryControl.InventoryControlController.GetLotLpnOnhands(SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModelCriteria,SIE.ERPInterface.Smom.InventoryControl.InventoryControlSetting)">
+            <summary>
+            查询库存
+            </summary>
+            <param name="criteria">库存对照表查询条件</param>
+            <param name="Setting">库存对照表设置</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Common.InventoryControl.InventoryControlController.GetInventoryControlViewModels(SIE.Domain.EntityList{SIE.Inventory.Onhands.LotLpnOnhand},System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.EbsData.ErpOnHandData},SIE.Domain.EntityList{SIE.Warehouses.ErpWarehouseDetail},SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModelCriteria,SIE.ERPInterface.Smom.InventoryControl.InventoryControlSetting,SIE.ERPInterface.Smom.InventoryControl.InventroyControlAllData)">
+            <summary>
+            设置列表数据
+            </summary>
+            <param name="lotLpnOnhands">批次和LPN库存</param>
+            <param name="erpDatas">ERP库存</param>
+            <param name="DicWareHouse">ERP子库字典</param>
+            <param name="criteria">查询条件</param>
+            <param name="Setting">设置</param>
+            <param name="result">库存对照表数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Common.InventoryControl.InventoryControlController.SetWmsNoHandData(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.EbsData.ErpOnHandData},SIE.ERPInterface.Smom.InventoryControl.InventoryControlSetting,SIE.ERPInterface.Smom.InventoryControl.InventroyControlAllData,SIE.Domain.EntityList{SIE.Inventory.Onhands.LotLpnOnhand},System.Int32,SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModelCriteria)">
+            <summary>
+            设置ERP有但是wms没有的数据
+            </summary>
+            <param name="erpOnHandDatas">ERP库存数据</param>
+            <param name="Setting">设置</param>
+            <param name="result">列表数据</param>
+            <param name="lotLpnOnhands">WMS库存数据</param>
+            <param name="LineNo">行号</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Common.InventoryControl.InventoryControlController.SetInventoryControlItemData(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.EbsData.ErpOnHandData},SIE.Domain.EntityList{SIE.Warehouses.ErpWarehouseDetail},SIE.ERPInterface.Smom.InventoryControl.InventoryControlViewModelCriteria,SIE.ERPInterface.Smom.InventoryControl.InventoryControlSetting,SIE.ERPInterface.Smom.InventoryControl.InventroyControlAllData,System.Int32,System.Collections.Generic.List{SIE.Inventory.Onhands.LotLpnOnhand})">
+            <summary>
+            获取每一行的数据
+            </summary>
+            <param name="erpDatas">ERP库存数据</param>
+            <param name="DicWareHouse">ERP子库</param>
+            <param name="criteria">查询条件</param>
+            <param name="Setting">库存对照表设置</param>
+            <param name="result">返回加过</param>
+            <param name="LineNo">行号</param>
+            <param name="p">wms库存数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Common.InventoryControl.InventoryControlController.SetErpInvDetail(System.String,System.Decimal,System.Int32,System.Int32)">
+            <summary>
+            设置ERP子库数据
+            </summary>
+            <param name="warehouseCode">ERP数据</param>
+            <param name="qty">ERP数据</param>
+            <param name="LineNo">父行号</param>
+            <param name="detailLineNo">明细行号</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Common.InventoryControl.InventoryControlController.setOnHandData(SIE.Domain.EntityList{SIE.Inventory.Onhands.LotLpnOnhand},SIE.ERPInterface.Smom.InventoryControl.InventoryControlSetting)">
+            <summary>
+            设置ERP批次号与库存的对照关系
+            </summary>
+            <param name="onHandDatas">库存数据</param>
+            <param name="setting">设置</param>
+        </member>
+        <member name="M:SIE.ERPInterface.Common.InventoryControl.InventoryControlController.GetErpOnHands(System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.String,System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.EbsData.ErpOnHandData})">
+            <summary>
+            过滤ERP库存数据
+            </summary>
+            <param name="LotCodes">批次号</param>
+            <param name="ErpCodes">子库</param>
+            <param name="ItemCode">物料</param>
+            <param name="erpDatas">erp库存数据</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

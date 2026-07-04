@@ -1,0 +1,3019 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.CSM</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.CSM.Common.BaseData">
+            <summary>
+            基础数据结构
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Common.BaseData.Id">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Common.BaseData.Code">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Common.BaseData.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="T:SIE.CSM.Common.BaseType">
+            <summary>
+            类型对象，一般用于枚举返回到PDA
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Common.BaseType.Value">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Common.BaseType.Name">
+            <summary>
+            显示值
+            </summary>
+        </member>
+        <member name="T:SIE.CSM.Common.SimpleNoIqcItem">
+            <summary>
+            简单免检清单类
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Common.SimpleNoIqcItem.ItemId">
+            <summary>
+            物料ID
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Common.SimpleNoIqcItem.InspectionFree">
+            <summary>
+            是否免检
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Common.SimpleNoIqcItem.EffectiveStartTime">
+            <summary>
+            免检开始时间
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Common.SimpleNoIqcItem.EffectiveEndTime">
+            <summary>
+            免检结束时间
+            </summary>
+        </member>
+        <member name="T:SIE.CSM.Common.RegionalInfo">
+            <summary>
+            区域信息
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Common.RegionalInfo.RegionProperty">
+            <summary>
+            区域
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Common.RegionalInfo.Region">
+            <summary>
+            区域
+            </summary>
+        </member>
+        <member name="T:SIE.CSM.Common.RegionalInfoConfig">
+            <summary>
+            区域信息 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.Common.RegionalInfoConfig.ConfigMeta">
+            <summary>
+            数据库区域信息表名
+            </summary>
+        </member>
+        <member name="T:SIE.CSM.Common.RegionalInfoController">
+            <summary>
+            区域信息控制器
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.Common.RegionalInfoController.GetRegionalInfos(System.String,System.String,SIE.PagingInfo,System.String)">
+            <summary>
+            获取区域信息
+            </summary>
+            <param name="upperLevelRegion">上一级区域信息</param>
+            <param name="upperLevel2Region">上两级区域信息</param>
+            <param name="pagingInfo">分页信息</param>
+            <param name="keyword">查询关键字</param>
+            <returns>区域信息</returns>
+        </member>
+        <member name="M:SIE.CSM.Common.RegionalInfoController.GetRegionList(System.String,System.String)">
+            <summary>
+            根据上一级区域信息获取下一级区域信息
+            </summary>     
+            <param name="upperLevelRegion">上一级区域信息</param>
+            <param name="upperLevel2Region">上两级区域信息</param>
+            <returns>区域信息</returns>
+        </member>
+        <member name="M:SIE.CSM.Common.RegionalInfoController.GetRegionDic(System.String,System.String)">
+            <summary>
+            根据上一级区域信息获取下一级区域信息
+            </summary>     
+            <param name="upperLevelRegion">上一级区域信息</param>
+            <param name="upperLevel2Region">上两级区域信息</param>
+            <returns>区域信息</returns>
+        </member>
+        <member name="T:SIE.CSM.CsmEntityRepository`1">
+            <summary>
+            本程序集的数提供者
+            </summary>
+            <typeparam name="T">仓库</typeparam>
+        </member>
+        <member name="T:SIE.CSM.CsmEntityDataProvider">
+            <summary>
+            //指定此程序集实体的默认仓库
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.CsmEntityDataProvider.ConnectionStringName">
+            <summary>
+            数据库链接字符串
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.CsmEntityDataProvider.ConnectionStringSettingName">
+            <summary>
+            仓库链接
+            </summary>
+        </member>
+        <member name="T:SIE.CSM.Customers.Algorithms.CustomerCodeSegmentAlgorithm">
+            <summary>
+            客户编码段
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.Customers.Algorithms.CustomerCodeSegmentAlgorithm.GetCode">
+            <summary>
+            获取编码
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.CSM.Customers.Algorithms.ICusomterCodeSegment">
+            <summary>
+            客户编码段接口
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.Customers.Algorithms.ICusomterCodeSegment.GetCustomerCode">
+            <summary>
+            获取客户编码段编码
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.CSM.Customers.Customer">
+            <summary>
+            客户
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Customers.Customer.CatalogCustomerType">
+            <summary>
+            快码类型：客户类型
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.Customers.Customer.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Customers.Customer.CodeProperty">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Customers.Customer.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Customers.Customer.NameProperty">
+            <summary>
+            全称
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Customers.Customer.Name">
+            <summary>
+            全称
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Customers.Customer.ShortNameProperty">
+            <summary>
+            简称
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Customers.Customer.ShortName">
+            <summary>
+            简称
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Customers.Customer.RegionProperty">
+            <summary>
+            所在区域
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Customers.Customer.Region">
+            <summary>
+            所在区域
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Customers.Customer.StateProperty">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Customers.Customer.State">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Customers.Customer.EnglishNameProperty">
+            <summary>
+            英文名称
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Customers.Customer.EnglishName">
+            <summary>
+            英文名称
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Customers.Customer.DescriptionProperty">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Customers.Customer.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Customers.Customer.CustomerTypeProperty">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Customers.Customer.CustomerType">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Customers.Customer.OwnCodeProperty">
+            <summary>
+            己方编码
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Customers.Customer.OwnCode">
+            <summary>
+            己方编码
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Customers.Customer.OwnNameProperty">
+            <summary>
+            己方名称
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Customers.Customer.OwnName">
+            <summary>
+            己方名称
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Customers.Customer.DutyParagraphProperty">
+            <summary>
+            税号
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Customers.Customer.DutyParagraph">
+            <summary>
+            税号
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Customers.Customer.ContactsProperty">
+            <summary>
+            联系人
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Customers.Customer.Contacts">
+            <summary>
+            联系人
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Customers.Customer.ContactsNumberProperty">
+            <summary>
+            联系电话
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Customers.Customer.ContactsNumber">
+            <summary>
+            联系电话
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Customers.Customer.ContactsAddressProperty">
+            <summary>
+            联系地址
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Customers.Customer.ContactsAddress">
+            <summary>
+            联系地址
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Customers.Customer.EMailProperty">
+            <summary>
+            电子邮箱
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Customers.Customer.EMail">
+            <summary>
+            电子邮箱
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Customers.Customer.ZipCodeProperty">
+            <summary>
+            邮编
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Customers.Customer.ZipCode">
+            <summary>
+            邮编
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Customers.Customer.SourceTypeProperty">
+            <summary>
+            来源
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Customers.Customer.SourceType">
+            <summary>
+            来源
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Customers.Customer.RemarkProperty">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Customers.Customer.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Customers.Customer.SourceKeyProperty">
+            <summary>
+            来源主键, 一般用于接口平台事务上传
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Customers.Customer.SourceKey">
+            <summary>
+            来源主键, 一般用于接口平台事务上传
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Customers.Customer.CustomerAddressListProperty">
+            <summary>
+            地址
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Customers.Customer.CustomerAddressList">
+            <summary>
+            地址
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Customers.Customer.SupplierIdProperty">
+            <summary>
+            供应商Id
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Customers.Customer.SupplierId">
+            <summary>
+            供应商Id
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Customers.Customer.SupplierProperty">
+            <summary>
+            供应商
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Customers.Customer.Supplier">
+            <summary>
+            供应商
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Customers.Customer.SupplierCodeProperty">
+            <summary>
+            供应商编码
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Customers.Customer.SupplierCode">
+            <summary>
+            供应商编码
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Customers.Customer.SupplierNameProperty">
+            <summary>
+            供应商名称
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Customers.Customer.SupplierName">
+            <summary>
+            供应商名称
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.Customers.Customer.OnPropertyChanged(SIE.ManagedProperty.ManagedPropertyChangedEventArgs)">
+            <summary>
+            属性变更
+            </summary>
+            <param name="e">e</param>
+        </member>
+        <member name="T:SIE.CSM.Customers.CustomerUnit">
+            <summary>
+            客户扩展
+            </summary>
+        </member>
+        <member name="T:SIE.CSM.Customers.CustomerConfig">
+            <summary>
+            客户 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.Customers.CustomerConfig.ConfigMeta">
+            <summary>
+            数据库客户表名
+            </summary>
+        </member>
+        <member name="T:SIE.CSM.Customers.CustomerAddress">
+            <summary>
+            客户地址
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.Customers.CustomerAddress.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Customers.CustomerAddress.ContactsProperty">
+            <summary>
+            联系人
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Customers.CustomerAddress.Contacts">
+            <summary>
+            联系人
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Customers.CustomerAddress.PhoneProperty">
+            <summary>
+            电话
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Customers.CustomerAddress.Phone">
+            <summary>
+            电话
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Customers.CustomerAddress.ZipCodeProperty">
+            <summary>
+            邮编
+            </summary>、
+        </member>
+        <member name="P:SIE.CSM.Customers.CustomerAddress.ZipCode">
+            <summary>
+            邮编
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Customers.CustomerAddress.EmailProperty">
+            <summary>
+            电子邮箱
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Customers.CustomerAddress.Email">
+            <summary>
+            电子邮箱
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Customers.CustomerAddress.StateProperty">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Customers.CustomerAddress.State">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Customers.CustomerAddress.AddressTypeProperty">
+            <summary>
+            地址类型
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Customers.CustomerAddress.AddressType">
+            <summary>
+            地址类型
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Customers.CustomerAddress.NameProperty">
+            <summary>
+            公司名称
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Customers.CustomerAddress.Name">
+            <summary>
+            公司名称
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Customers.CustomerAddress.FaxProperty">
+            <summary>
+            传真
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Customers.CustomerAddress.Fax">
+            <summary>
+            传真
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Customers.CustomerAddress.RemarkProperty">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Customers.CustomerAddress.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Customers.CustomerAddress.IsDefaultProperty">
+            <summary>
+            默认
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Customers.CustomerAddress.IsDefault">
+            <summary>
+            默认
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Customers.CustomerAddress.SourceKeyProperty">
+            <summary>
+            来源主键, 一般用于接口平台事务上传
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Customers.CustomerAddress.SourceKey">
+            <summary>
+            来源主键, 一般用于接口平台事务上传
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Customers.CustomerAddress.CustomerIdProperty">
+            <summary>
+            客户与地址关系Id
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Customers.CustomerAddress.CustomerId">
+            <summary>
+            客户与地址关系Id
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Customers.CustomerAddress.CustomerProperty">
+            <summary>
+            客户与地址关系
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Customers.CustomerAddress.Customer">
+            <summary>
+            客户与地址关系
+            </summary>
+        </member>
+        <member name="T:SIE.CSM.Customers.CustomerAddressConfig">
+            <summary>
+            客户地址 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.Customers.CustomerAddressConfig.AddValidations(SIE.MetaModel.IValidationDeclarer)">
+            <summary>
+             员工电话号码和邮箱格式验证
+            </summary>
+            <param name="rules">规则</param>
+        </member>
+        <member name="M:SIE.CSM.Customers.CustomerAddressConfig.ConfigMeta">
+            <summary>
+            客户地址数据库表名
+            </summary>
+        </member>
+        <member name="T:SIE.CSM.Customers.CustomerAddressSubmitting">
+            <summary>
+            新增时，默认第一个客户地址为默认地址
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.Customers.CustomerAddressSubmitting.Invoke(SIE.CSM.Customers.CustomerAddress,SIE.Domain.EntitySubmittingEventArgs)">
+            <summary>
+            客戶地址保存前事件
+            </summary>
+            <param name="entity">客户地址</param>
+            <param name="e">实体提交参数</param>
+        </member>
+        <member name="T:SIE.CSM.Customers.CustomerSubmitted">
+            <summary>
+            新增时，默认第一个客户地址为默认地址
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.Customers.CustomerSubmitted.Invoke(SIE.CSM.Customers.Customer,SIE.Domain.EntitySubmittedEventArgs)">
+            <summary>
+            客戶地址保存前事件
+            </summary>
+            <param name="entity">客户地址</param>
+            <param name="e">实体提交参数</param>
+        </member>
+        <member name="T:SIE.CSM.Customers.CustomerController">
+            <summary>
+            客户控制器
+            </summary>
+            <summary>
+            客户控制器
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.Customers.CustomerController.GetAllShipper">
+            <summary>
+            获取所有货主的信息
+            </summary>
+            <returns>货主集合</returns>
+        </member>
+        <member name="M:SIE.CSM.Customers.CustomerController.CheckCustomerData(System.String)">
+            <summary>
+            验证货主的信息
+            </summary>
+            <param name="code">货主</param>
+        </member>
+        <member name="M:SIE.CSM.Customers.CustomerController.GetCustomerDatas(System.String,System.Int32)">
+            <summary>
+            获取可用的客户列表
+            </summary>     
+            <param name="code">货主编码</param>
+            <param name="type">类型</param>
+            <returns>可用的客户列表</returns>
+        </member>
+        <member name="M:SIE.CSM.Customers.CustomerController.GetStroerDatas(System.String)">
+            <summary>
+            获取可用的客户列表
+            </summary>     
+            <param name="code">货主编码</param>
+            <returns>可用的客户列表</returns>
+        </member>
+        <member name="M:SIE.CSM.Customers.CustomerController.GetCustomerDatas(SIE.CSM.Customers.CustomerCriteria)">
+            <summary>
+            获取客户
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.CSM.Customers.CustomerController.GetCustomerFromName(System.String)">
+            <summary>
+            通过客户名获取客户
+            </summary>
+            <param name="name">客户名</param>
+            <returns>返回对应客户</returns>
+        </member>
+        <member name="M:SIE.CSM.Customers.CustomerController.GetCustomerFromCode(System.String)">
+            <summary>
+            通过客户编号获取客户
+            </summary>
+            <param name="code">客户名</param>
+            <returns>返回对应客户</returns>
+        </member>
+        <member name="M:SIE.CSM.Customers.CustomerController.CheckExistTypeAndSupplier(SIE.CSM.Customers.CustomerType,System.Double)">
+            <summary>
+            检查客户类型+供应商是否唯一
+            </summary>
+            <param name="cusType">客户类型</param>
+            <param name="supplierId">供应商</param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:SIE.CSM.Customers.CustomerController.GetCustomer(System.String)">
+            <summary>
+            获取客户
+            </summary>
+            <param name="str">客户名</param>
+            <returns>返回对应客户</returns>
+        </member>
+        <member name="M:SIE.CSM.Customers.CustomerController.GetCustomerByCodes(System.Collections.Generic.List{System.String})">
+            <summary>
+            根据客户编码集合获取客户集合
+            </summary>
+            <param name="codes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.CSM.Customers.CustomerController.GetCustomer(SIE.CSM.Customers.CustomerType,System.String,SIE.PagingInfo)">
+            <summary>
+            根据客户类型获取客户数据
+            </summary>
+            <param name="customerType">客户类型</param>
+            <param name="keyword">关键字</param>
+            <param name="pagingInfo">分页信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.CSM.Customers.CustomerController.GetCustomer(SIE.CSM.Customers.CustomerType,System.String)">
+            <summary>
+            获取客户信息
+            </summary>
+            <param name="type">类型</param>
+            <param name="code">编码</param>
+            <returns>客户信息</returns>
+        </member>
+        <member name="M:SIE.CSM.Customers.CustomerController.GetCustomerList(System.Collections.Generic.List{System.Double})">
+            <summary>
+            通过客户Id列表 获取客户列表
+            </summary>
+            <param name="ids">客户id列表</param>
+            <returns>客户列表</returns>
+        </member>
+        <member name="M:SIE.CSM.Customers.CustomerController.GetEnableCustomer(System.String)">
+            <summary>
+            获取可用的客户列表
+            </summary>     
+            <returns>可用的客户列表</returns>
+        </member>
+        <member name="M:SIE.CSM.Customers.CustomerController.GetEnableCustomers(SIE.PagingInfo,System.String)">
+            <summary>
+            获取可用的客户列表
+            </summary>
+            <param name="pagingInfo">分页</param>
+            <param name="keyword">关键字</param>        
+            <returns>可用的客户列表</returns>
+        </member>
+        <member name="M:SIE.CSM.Customers.CustomerController.GetEnableCustomers(System.String)">
+            <summary>
+            获取可用的客户列表
+            </summary>     
+            <returns>可用的客户列表</returns>
+        </member>
+        <member name="M:SIE.CSM.Customers.CustomerController.GetEnableCustomerDatas(SIE.PagingInfo,System.String,System.Boolean)">
+            <summary>
+            获取可用的客户列表
+            </summary>
+            <param name="isCarrier">是否过滤</param>
+            <param name="pagingInfo">分页</param>
+            <param name="keyword">关键字</param>        
+            <returns>可用的客户列表</returns>
+        </member>
+        <member name="M:SIE.CSM.Customers.CustomerController.GetEnableCustomerCount(System.String)">
+            <summary>
+            获取可用的客户行数
+            </summary>     
+            <returns>可用的客户列表</returns>
+        </member>
+        <member name="M:SIE.CSM.Customers.CustomerController.GetCustomerWithSupplier(SIE.CSM.Customers.CustomerType,System.String,SIE.PagingInfo)">
+            <summary>
+            根据客户类型获取客户数据
+            </summary>
+            <param name="customerType">客户类型</param>
+            <param name="keyword">关键字</param>
+            <param name="pagingInfo">分页信息</param>
+            <returns></returns>
+            <remarks>筛选如果货主有关联供应商，供应商必须是可用</remarks>
+        </member>
+        <member name="M:SIE.CSM.Customers.CustomerController.GetCustomerHasSupplier(SIE.CSM.Customers.CustomerType,System.String,SIE.PagingInfo)">
+            <summary>
+            根据客户类型获取客户数据
+            </summary>
+            <param name="customerType">客户类型</param>
+            <param name="keyword">关键字</param>
+            <param name="pagingInfo">分页信息</param>
+            <returns></returns>
+            <remarks>筛选如果货主有关联供应商，供应商必须是可用</remarks>
+        </member>
+        <member name="M:SIE.CSM.Customers.CustomerController.SetDefaultAddress(System.Double,System.Double)">
+            <summary>
+            设置指定客户指定地址为默认地址
+            </summary>
+            <param name="customerId">指定客户Id</param>
+            <param name="customerAddressId">指定地址Id</param>
+        </member>
+        <member name="M:SIE.CSM.Customers.CustomerController.CanSetDefaultAddress(System.Double)">
+            <summary>
+            是否可以设置默认地址
+            </summary>
+            <param name="customerId">客户Id</param>
+            <returns>返回是否可以设置默认地址</returns>
+        </member>
+        <member name="M:SIE.CSM.Customers.CustomerController.GetDefaultAddress(System.Double)">
+            <summary>
+            获取客户默认地址
+            </summary>
+            <param name="customerId">客户Id</param>
+            <returns>返回客户默认地址</returns>
+        </member>
+        <member name="M:SIE.CSM.Customers.CustomerController.GetCustomerData(SIE.CSM.Customers.CustomerType,System.Nullable{System.Double})">
+            <summary>
+            获取客户信息
+            </summary>
+            <param name="type">类型</param>
+            <param name="supplieId">供应商Id</param>
+            <returns>客户信息</returns>
+        </member>
+        <member name="M:SIE.CSM.Customers.CustomerController.GetCustoerCount(System.Double,System.Nullable{System.Double})">
+            <summary>
+            根据供应商获取客户条数
+            </summary>
+            <param name="customerId">排除当前客户</param>
+            <param name="supplieId">供应商</param>
+            <returns>客户条数</returns>
+        </member>
+        <member name="M:SIE.CSM.Customers.CustomerController.GetCustomers(System.Collections.Generic.List{System.String},System.Nullable{SIE.CSM.Customers.CustomerType})">
+            <summary>
+            获取客户By 编码集合
+            </summary>
+            <param name="codes">编码</param>
+            <param name="type">类型</param>
+            <returns>客户集合</returns>
+        </member>
+        <member name="M:SIE.CSM.Customers.CustomerController.GetCustomers(System.Collections.Generic.List{System.Double},System.Nullable{SIE.CSM.Customers.CustomerType},SIE.Domain.EagerLoadOptions)">
+            <summary>
+            获取客户By 编码集合
+            </summary>
+            <param name="suppliers">供应商ID集合</param>
+            <param name="type">客户类型</param>
+            <param name="elo">是否贪婪加载</param>
+            <returns>客户集合</returns>
+        </member>
+        <member name="M:SIE.CSM.Customers.CustomerController.GetCustomersBySupplierIds(System.Collections.Generic.List{System.Double},System.Nullable{SIE.CSM.Customers.CustomerType},SIE.Domain.EagerLoadOptions)">
+            <summary>
+            获取客户By 编码集合
+            </summary>
+            <param name="suppliers">供应商ID集合</param>
+            <param name="type">客户类型</param>
+            <param name="elo">是否贪婪加载</param>
+            <returns>客户集合</returns>
+        </member>
+        <member name="M:SIE.CSM.Customers.CustomerController.GetCustomers(SIE.PagingInfo,System.String)">
+            <summary>
+            根据名称或编码获取客户列表
+            </summary>
+            <param name="paging"></param>
+            <param name="keyword"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.CSM.Customers.CustomerController.GetCustomerTypeCustomers(System.Collections.Generic.List{System.String})">
+            <summary>
+            获取客户By 编码集合
+            </summary>
+            <param name="codes">编码</param>
+            <returns>客户集合</returns>
+        </member>
+        <member name="M:SIE.CSM.Customers.CustomerController.GetCustomerAddress(System.Collections.Generic.List{System.String})">
+            <summary>
+            获取客户地址By 详细地址集合
+            </summary>
+            <param name="codes">详细地址</param>
+            <returns>客户地址集合</returns>
+        </member>
+        <member name="M:SIE.CSM.Customers.CustomerController.GetCustomerInvOrgList(System.Collections.Generic.List{System.String})">
+            <summary>
+            通过客户编码列表 获取客户列表(忽略库存组织）
+            </summary>
+            <param name="codes">客户编码列表</param>
+            <returns>客户列表</returns>
+        </member>
+        <member name="M:SIE.CSM.Customers.CustomerController.GetCustomersbyCodeOrName(System.Collections.Generic.List{System.String})">
+            <summary>
+            通过客户编号或者客户名称获取客户信息
+            </summary>
+            <param name="codeOrNames">客户编号或者客户名称</param>
+            <returns>返回客户信息</returns>
+        </member>
+        <member name="M:SIE.CSM.Customers.CustomerController.GetCustomerDataBySupplieId(System.Nullable{System.Double})">
+            <summary>
+            获取货主信息
+            </summary>
+            <param name="supplieId">供应商Id</param>
+            <returns>客户信息</returns>
+        </member>
+        <member name="M:SIE.CSM.Customers.CustomerController.GetCustomersBySupplieId(SIE.CSM.Customers.CustomerType,System.Double,System.String,SIE.PagingInfo)">
+            <summary>
+            获取客户信息
+            </summary>
+            <param name="type">类型</param>
+            <param name="supplieId">供应商Id</param>
+            <param name="keyword"></param>
+            <param name="pagingInfo"></param>
+            <returns>客户信息</returns>
+        </member>
+        <member name="M:SIE.CSM.Customers.CustomerController.GetCustomerIdAndNameDic(System.Collections.Generic.List{System.Double})">
+            <summary>
+            获取客户id和名称字典
+            </summary>
+            <param name="customerIds"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.CSM.Customers.CustomerCriteria">
+            <summary>
+            客户查询实体
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Customers.CustomerCriteria.CodeProperty">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Customers.CustomerCriteria.Code">
+            <summary>
+            生产部门
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Customers.CustomerCriteria.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Customers.CustomerCriteria.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Customers.CustomerCriteria.CustomerTypeProperty">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Customers.CustomerCriteria.CustomerType">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Customers.CustomerCriteria.StateProperty">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Customers.CustomerCriteria.State">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Customers.CustomerCriteria.IsCarrierProperty">
+            <summary>
+            是否承运人
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Customers.CustomerCriteria.IsCarrier">
+            <summary>
+            是否承运人
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.Customers.CustomerCriteria.Fetch">
+            <summary>
+            查询逻辑
+            </summary>
+            <returns>返回查询后的数据</returns>
+        </member>
+        <member name="T:SIE.CSM.Customers.UndeleteCustomerEnable">
+            <summary>
+            客户验证规则
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.Customers.UndeleteCustomerEnable.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.Customers.UndeleteCustomerEnable.Validate(SIE.Domain.IEntity,SIE.MetaModel.RuleArgs)">
+            <summary>
+            重写实体规则验证方法
+            </summary>
+            <param name="entity">实体</param>
+            <param name="e">规则参数</param>
+        </member>
+        <member name="T:SIE.CSM.Customers.CustomerMustSupplierEnable">
+            <summary>
+            客户类型的数据必须录入供应商
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.Customers.CustomerMustSupplierEnable.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.Customers.CustomerMustSupplierEnable.Validate(SIE.Domain.IEntity,SIE.MetaModel.RuleArgs)">
+            <summary>
+            重写实体规则验证方法
+            </summary>
+            <param name="entity">实体</param>
+            <param name="e">规则参数</param>
+        </member>
+        <member name="T:SIE.CSM.Customers.CustomerRule">
+            <summary>
+            客户验证规则
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.Customers.CustomerRule.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.Customers.CustomerRule.Validate(SIE.Domain.IEntity,SIE.MetaModel.RuleArgs)">
+            <summary>
+            重写实体规则验证方法
+            </summary>
+            <param name="entity">实体</param>
+            <param name="e">规则参数</param>
+        </member>
+        <member name="T:SIE.CSM.Customers.CustomerSubmitting">
+            <summary>
+            客户保存事件
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.Customers.CustomerSubmitting.Invoke(SIE.CSM.Customers.Customer,SIE.Domain.EntitySubmittingEventArgs)">
+            <summary>
+            客户保存事件
+            </summary>
+            <param name="entity"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:SIE.CSM.Customers.CustomerType">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Customers.CustomerType.CUSTOMER">
+            <summary>
+            客户
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Customers.CustomerType.SHIPPER">
+            <summary>
+            货主
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Customers.CustomerType.CARRIER">
+            <summary>
+            承运人
+            </summary>
+        </member>
+        <member name="T:SIE.CSM.Customers.SimpleCustomerViewModel">
+            <summary>
+            客户 简易ViewModel
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Customers.SimpleCustomerViewModel.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Customers.SimpleCustomerViewModel.Code">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Customers.SimpleCustomerViewModel.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="T:SIE.CSM.DbMigrations._20180401_200001_InitCatalogType">
+            <summary>
+            初始化
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.DbMigrations._20180401_200001_InitCatalogType.DbSetting">
+            <summary>
+            数据库设置
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.DbMigrations._20180401_200001_InitCatalogType.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.DbMigrations._20180401_200001_InitCatalogType.Type">
+            <summary>
+            手动升级的类型：数据
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.DbMigrations._20180401_200001_InitCatalogType.Down">
+            <summary>
+            不支持 Down
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.DbMigrations._20180401_200001_InitCatalogType.Up">
+            <summary>
+            注入
+            </summary>
+        </member>
+        <member name="T:SIE.CSM.DbMigrations._20180710_170001_InitSupplierType">
+            <summary>
+            初始化快码
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.DbMigrations._20180710_170001_InitSupplierType.DbSetting">
+            <summary>
+            数据库设置
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.DbMigrations._20180710_170001_InitSupplierType.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.DbMigrations._20180710_170001_InitSupplierType.Type">
+            <summary>
+            手动升级的类型：数据
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.DbMigrations._20180710_170001_InitSupplierType.Down">
+            <summary>
+            不支持 Down
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.DbMigrations._20180710_170001_InitSupplierType.Up">
+            <summary>
+            注入
+            </summary>
+        </member>
+        <member name="T:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristics">
+            <summary>
+            物料检验特性维护
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristics.RecurringInspectionProperty">
+            <summary>
+            物料周期检
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristics.RecurringInspection">
+            <summary>
+            物料周期检
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristics.IntervalPeriodProperty">
+            <summary>
+            间隔周期
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristics.IntervalPeriod">
+            <summary>
+            间隔周期
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristics.FactoryInspectionProperty">
+            <summary>
+            驻厂检
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristics.FactoryInspection">
+            <summary>
+            驻厂检
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristics.ConfirmInspectionProperty">
+            <summary>
+            确认检
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristics.ConfirmInspection">
+            <summary>
+            确认检
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristics.ForceSupplierShipBillProperty">
+            <summary>
+            强制供方出货
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristics.ForceSupplierShipBill">
+            <summary>
+            强制供方出货
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristics.SupplierStateProperty">
+            <summary>
+            供方状态
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristics.SupplierState">
+            <summary>
+            供方状态
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristics.PeriodTypeProperty">
+            <summary>
+            周期类型
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristics.PeriodType">
+            <summary>
+            周期类型
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristics.InspectDateBeginProperty">
+            <summary>
+            检验开始时间
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristics.InspectDateBegin">
+            <summary>
+            检验开始时间
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristics.SkipBatchesProperty">
+            <summary>
+            已跳过批次数
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristics.SkipBatches">
+            <summary>
+            已跳过批次数
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristics.SupplierIdProperty">
+            <summary>
+            供应商Id
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristics.SupplierId">
+            <summary>
+            供应商Id
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristics.SupplierProperty">
+            <summary>
+            供应商
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristics.Supplier">
+            <summary>
+            供应商
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristics.ItemIdProperty">
+            <summary>
+            物料Id
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristics.ItemId">
+            <summary>
+            物料Id
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristics.ItemProperty">
+            <summary>
+            物料
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristics.Item">
+            <summary>
+            物料
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristics.InspectionFreeProperty">
+            <summary>
+            免检
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristics.InspectionFree">
+            <summary>
+            免检
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristics.EffectiveStartTimeProperty">
+            <summary>
+            免检生效时间
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristics.EffectiveStartTime">
+            <summary>
+            免检生效时间
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristics.EffectiveEndTimeProperty">
+            <summary>
+            免检失效时间
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristics.EffectiveEndTime">
+            <summary>
+            免检失效时间
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristics.ItemNameProperty">
+            <summary>
+            物料名称
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristics.ItemName">
+            <summary>
+            物料名称
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristics.SupplierNameProperty">
+            <summary>
+            供应商名称
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristics.SupplierName">
+            <summary>
+            供应商名称
+            </summary>
+        </member>
+        <member name="T:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristicsConfig">
+            <summary>
+            物料检验特性维护 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristicsConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristicsController">
+            <summary>
+            检验特性控制器
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristicsController.QueryItemInspCharacteristis(SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristicsCriteria)">
+            <summary>
+            获取物料检验特性信息列表
+            </summary>
+            <param name="criteria">物料检验特性查询实体</param>
+            <returns>物料检验特性信息列表</returns>
+        </member>
+        <member name="M:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristicsController.SaveItemInspCharacteristics(SIE.Domain.EntityList)">
+            <summary>
+            供应商选择物料后往物料检验特性表插入数据
+            </summary>
+            <param name="data">供应商选择的物料列表</param>
+        </member>
+        <member name="M:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristicsController.SaveBatchSettings(System.Collections.Generic.List{SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristics},SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristics)">
+            <summary>
+            保存批量设置信息
+            </summary>
+            <param name="list">需要批量设置的物料检验特性维护列表</param>
+            <param name="data">物料检验特性维护</param>
+        </member>
+        <member name="M:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristicsController.GetInspCharacteristics(System.Double,System.Double)">
+            <summary>
+            根据供应商+物料获取检验特性信息
+            </summary>
+            <param name="supplierId">供应商Id</param>
+            <param name="itemId">物料Id</param>
+            <returns>与供应商+物料关联的检验特性信息</returns>
+        </member>
+        <member name="M:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristicsController.GetInspCharacteristics(System.Collections.Generic.List{System.Double},System.Collections.Generic.List{System.Double})">
+            <summary>
+            根据供应商+物料获取检验特性信息
+            </summary>
+            <param name="supplierIds">供应商Id</param>
+            <param name="itemIds">物料Id</param>
+            <returns>与供应商+物料关联的检验特性信息</returns>
+        </member>
+        <member name="M:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristicsController.GetNoIqcItems(System.Collections.Generic.List{System.Double},System.Double,SIE.Domain.EagerLoadOptions)">
+            <summary>
+            获取免检清单物料
+            </summary>
+            <param name="ItemIds">物料ID集合</param>
+            <param name="supplierId">供应商ID</param>
+            <param name="elo">是否贪婪加载</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristicsController.GetInspCharacteristicsList(System.Double)">
+            <summary>
+            根据供应商获取检验特性信息
+            </summary>
+            <param name="supplierId">供应商Id</param>
+            <returns>与供应商+物料关联的检验特性信息</returns>
+        </member>
+        <member name="T:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristicsCriteria">
+            <summary>
+            物料检验特性查询实体
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristicsCriteria.ItemIdProperty">
+            <summary>
+            物料Id
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristicsCriteria.ItemId">
+            <summary>
+            物料Id
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristicsCriteria.ItemProperty">
+            <summary>
+            物料编码
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristicsCriteria.Item">
+            <summary>
+            物料编码
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristicsCriteria.ItemNameProperty">
+            <summary>
+            物料名称
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristicsCriteria.ItemName">
+            <summary>
+            物料名称
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristicsCriteria.SupplierIdProperty">
+            <summary>
+            供应商Id
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristicsCriteria.SupplierId">
+            <summary>
+            供应商Id
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristicsCriteria.SupplierProperty">
+            <summary>
+            供应商编码
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristicsCriteria.Supplier">
+            <summary>
+            供应商编码
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristicsCriteria.SupplierNameProperty">
+            <summary>
+            供应商名称
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristicsCriteria.SupplierName">
+            <summary>
+            供应商名称
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristicsCriteria.SupplierStateProperty">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristicsCriteria.SupplierState">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristicsCriteria.Fetch">
+            <summary>
+            查询物料检验特性信息
+            </summary>
+            <returns>物料检验特性信息列表</returns>
+        </member>
+        <member name="T:SIE.CSM.ItemInspCharacteristicses.ItemInspCharactRecurInspRules">
+            <summary>
+            物料检验特性-物料周期检完整性验证规则
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.ItemInspCharacteristicses.ItemInspCharactRecurInspRules.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.ItemInspCharacteristicses.ItemInspCharactRecurInspRules.Validate(SIE.Domain.IEntity,SIE.MetaModel.RuleArgs)">
+            <summary>
+            验证
+            </summary>
+            <param name="entity"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:SIE.CSM.ItemInspCharacteristicses.ItemInspCharactDisableRules">
+            <summary>
+            物料检验特性-供方状态为禁用,不允许设置物料特性
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.ItemInspCharacteristicses.ItemInspCharactDisableRules.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.ItemInspCharacteristicses.ItemInspCharactDisableRules.Validate(SIE.Domain.IEntity,SIE.MetaModel.RuleArgs)">
+            <summary>
+            验证
+            </summary>
+            <param name="entity"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:SIE.CSM.ItemInspCharacteristicses.ItemInspCharactSingleRules">
+            <summary>
+            物料检验特性-供方状态为禁用,不允许设置物料特性
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.ItemInspCharacteristicses.ItemInspCharactSingleRules.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.ItemInspCharacteristicses.ItemInspCharactSingleRules.Validate(SIE.Domain.IEntity,SIE.MetaModel.RuleArgs)">
+            <summary>
+            验证
+            </summary>
+            <param name="entity"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:SIE.CSM.ItemInspCharacteristicses.EffectiveEndTimeRule">
+            <summary>
+            失效时间验证规则
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.ItemInspCharacteristicses.EffectiveEndTimeRule.Validate(SIE.Domain.IEntity,SIE.MetaModel.RuleArgs)">
+            <summary>
+            验证逻辑
+            </summary>
+            <param name="entity">实体</param>
+            <param name="e">规则参数</param>
+        </member>
+        <member name="T:SIE.CSM.ItemInspCharacteristicses.EffectiveStartTimeRule">
+            <summary>
+            失效时间验证规则
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.ItemInspCharacteristicses.EffectiveStartTimeRule.Validate(SIE.Domain.IEntity,SIE.MetaModel.RuleArgs)">
+            <summary>
+            验证逻辑
+            </summary>
+            <param name="entity">实体</param>
+            <param name="e">规则参数</param>
+        </member>
+        <member name="T:SIE.CSM.ItemInspCharacteristicses.PeriodType">
+            <summary>
+            周期类型
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.ItemInspCharacteristicses.PeriodType.Day">
+            <summary>
+            天
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.ItemInspCharacteristicses.PeriodType.Batch">
+            <summary>
+            批
+            </summary>
+        </member>
+        <member name="T:SIE.CSM.ItemInspCharacteristicses.SupplierNoReferenceIqcBillRule">
+            <summary>
+            供应商被引用不允许删除
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.ItemInspCharacteristicses.SupplierNoReferenceIqcBillRule.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.ItemInspCharacteristicses.SupplierNoReferenceIqcBillRule.Validate(SIE.Domain.IEntity,SIE.MetaModel.RuleArgs)">
+            <summary>
+            验证逻辑
+            </summary>
+            <param name="entity">实体</param>
+            <param name="e">规则参数</param>
+        </member>
+        <member name="T:SIE.CSM.ItemInspCharacteristicses.UpdateSupplierState">
+            <summary>
+            禁用供应商时更新供方状态
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.ItemInspCharacteristicses.UpdateSupplierState.Invoke(SIE.CSM.Suppliers.Supplier,SIE.Domain.EntitySubmittedEventArgs)">
+            <summary>
+            禁用供应商时，同步更新物料检验特性表中的相应数据的供方状态
+            </summary>
+            <param name="entity">供应商</param>
+            <param name="e">提交事件参数</param>
+        </member>
+        <member name="T:SIE.CSM.ItemInspCharacteristicses.UpdateItemInspCharacterSupplierState">
+            <summary>
+            删除供应商所选择的物料时更新物料检验特性表的供方状态
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.ItemInspCharacteristicses.UpdateItemInspCharacterSupplierState.Invoke(SIE.CSM.Suppliers.SupplierItem,SIE.Domain.EntitySubmittedEventArgs)">
+            <summary>
+            删除供应商与物料关系表中的记录时，同步更新物料检验特性表中相应数据的供方状态
+            </summary>
+            <param name="entity">供应商与物料关系表</param>
+            <param name="e">提交事件参数</param>
+        </member>
+        <member name="T:SIE.CSM.Module">
+            <summary>
+            Domian
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.Module.Initialize(SIE.IApp)">
+            <summary>
+            Domain
+            </summary>
+            <param name="app">app</param>
+        </member>
+        <member name="T:SIE.CSM.Suppliers.Algorithms.ISupplierCodeSegment">
+            <summary>
+            供应商编码段接口
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.Algorithms.ISupplierCodeSegment.GetSupplierCode">
+            <summary>
+            获取供应商编码段编码
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.CSM.Suppliers.Algorithms.SupplierCodeSegmentAlgorithm">
+            <summary>
+            供应商编码段
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.Algorithms.SupplierCodeSegmentAlgorithm.GetCode">
+            <summary>
+            获取编码
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.CSM.Suppliers.Configs.SupplierIsAutoCreateConfig">
+            <summary>
+            是否自动创建供应商用户配置
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.Configs.SupplierIsAutoCreateConfig.defaultValue">
+            <summary>
+            默认值
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Configs.SupplierIsAutoCreateConfig.DefaultValue">
+            <summary>
+            默认值
+            </summary>
+        </member>
+        <member name="T:SIE.CSM.Suppliers.Configs.SupplierIsAutoCreateConfigValue">
+            <summary>
+            是否自动创建供应商用户
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.Configs.SupplierIsAutoCreateConfigValue.IsAutoCreateProperty">
+            <summary>
+            是否自动创建供应商用户
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Configs.SupplierIsAutoCreateConfigValue.IsAutoCreate">
+            <summary>
+            是否自动创建供应商用户
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.Configs.SupplierIsAutoCreateConfigValue.Display">
+            <summary>
+            显示接口配置
+            </summary>
+            <returns>返回接口配置</returns>
+        </member>
+        <member name="T:SIE.CSM.Suppliers.Configs.SupplierOutsourcingConfig">
+            <summary>
+            委外业务参数配置项
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.Configs.SupplierOutsourcingConfig.defaultValue">
+            <summary>
+            默认值
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Configs.SupplierOutsourcingConfig.DefaultValue">
+            <summary>
+            默认值
+            </summary>
+        </member>
+        <member name="T:SIE.CSM.Suppliers.Configs.SupplierOutsourcingConfigValue">
+            <summary>
+            委外参数配置
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.Configs.SupplierOutsourcingConfigValue.Display">
+            <summary>
+            显示接口配置
+            </summary>
+            <returns>返回接口配置</returns>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.Configs.SupplierOutsourcingConfigValue.OutsourcingInLocIdProperty">
+            <summary>
+            委外发料调入库位ID
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Configs.SupplierOutsourcingConfigValue.OutsourcingInLocId">
+            <summary>
+            委外发料调入库位ID
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.Configs.SupplierOutsourcingConfigValue.OutsourcingInLocProperty">
+            <summary>
+            委外发料调入库位
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Configs.SupplierOutsourcingConfigValue.OutsourcingInLoc">
+            <summary>
+            委外发料调入库位
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.Configs.SupplierOutsourcingConfigValue.OutsourcingOutLocIdProperty">
+            <summary>
+            委外扣料库位ID
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Configs.SupplierOutsourcingConfigValue.OutsourcingOutLocId">
+            <summary>
+            委外扣料库位ID
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.Configs.SupplierOutsourcingConfigValue.OutsourcingOutLocProperty">
+            <summary>
+            委外扣料库位
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Configs.SupplierOutsourcingConfigValue.OutsourcingOutLoc">
+            <summary>
+            委外扣料库位
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.Configs.SupplierOutsourcingConfigValue.OutsourcingReceiveProperty">
+            <summary>
+            委外收货扣料处理
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Configs.SupplierOutsourcingConfigValue.OutsourcingReceive">
+            <summary>
+            委外收货扣料处理
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.Configs.SupplierOutsourcingConfigValue.OutsourcingUseTimeProperty">
+            <summary>
+            委外扣料时点
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Configs.SupplierOutsourcingConfigValue.OutsourcingUseTime">
+            <summary>
+            委外扣料时点
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.Configs.SupplierOutsourcingConfigValue.IsHasStorerProperty">
+            <summary>
+            委外库存带货主管理
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Configs.SupplierOutsourcingConfigValue.IsHasStorer">
+            <summary>
+            委外库存带货主管理
+            </summary>
+        </member>
+        <member name="T:SIE.CSM.Suppliers.Datas.SupplierConfigValue">
+            <summary>
+            供应商配置项值
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Datas.SupplierConfigValue.OutsourcingInLocId">
+            <summary>
+            委外调入库位Id
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Datas.SupplierConfigValue.OutsourcingInLocName">
+            <summary>
+            委外调入库位名称
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Datas.SupplierConfigValue.OutsourcingInLocCode">
+            <summary>
+            委外调入库位编码
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Datas.SupplierConfigValue.OutsourcingOutLocId">
+            <summary>
+            委外扣料库位Id
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Datas.SupplierConfigValue.OutsourcingOutLocName">
+            <summary>
+            委外扣料库位名称
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Datas.SupplierConfigValue.OutsourcingOutLocCode">
+            <summary>
+            委外扣料库位编码
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Datas.SupplierConfigValue.OutsourcingUseTime">
+            <summary>
+            扣料时点
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Datas.SupplierConfigValue.OutsourcingReceiveType">
+            <summary>
+            委外扣料处理
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Datas.SupplierConfigValue.IsHasStorer">
+            <summary>
+            库存是否管理货主
+            </summary>
+        </member>
+        <member name="T:SIE.CSM.Suppliers.OutsourcingReceiveType">
+            <summary>
+            委外收货扣料处理
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.OutsourcingReceiveType.UseAllHand">
+            <summary>
+            库存能耗尽耗
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.OutsourcingReceiveType.OnlyCreateBill">
+            <summary>
+            仅创建耗料单
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.OutsourcingReceiveType.CreateBillAndAllot">
+            <summary>
+            创建耗料单并分配库存
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.OutsourcingReceiveType.NoHandDisabled">
+            <summary>
+            耗料不足禁止收货
+            </summary>
+        </member>
+        <member name="T:SIE.CSM.Suppliers.OutsourcingTimeType">
+            <summary>
+            委外扣料时点
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.OutsourcingTimeType.Receipt">
+            <summary>
+            收货
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.OutsourcingTimeType.InspectionOK">
+            <summary>
+            质检合格
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.OutsourcingTimeType.FinishInspection">
+            <summary>
+            质检完成
+            </summary>
+        </member>
+        <member name="T:SIE.CSM.Suppliers.PurchaseSupplyType">
+            <summary>
+            采购供应模式
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.PurchaseSupplyType.General">
+            <summary>
+            普通
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.PurchaseSupplyType.VMI">
+            <summary>
+            VMI
+            </summary>
+        </member>
+        <member name="T:SIE.CSM.Suppliers.Supplier">
+            <summary>
+            供应商
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Supplier.SupperType">
+            <summary>
+            快码类型
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Supplier.CatalogAreaType">
+            <summary>
+            快码类型：地区类型
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.Supplier.#ctor">
+            <summary>
+            无参的构造函数
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.Supplier.CodeProperty">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Supplier.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.Supplier.NameProperty">
+            <summary>
+            全称
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Supplier.Name">
+            <summary>
+            全称
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.Supplier.DescriptionProperty">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Supplier.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.Supplier.TypeProperty">
+            <summary>
+            类型
+            </summary>        
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Supplier.Type">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.Supplier.StateProperty">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Supplier.State">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.Supplier.ShortNameProperty">
+            <summary>
+            简称
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Supplier.ShortName">
+            <summary>
+            简称
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.Supplier.EnglishNameProperty">
+            <summary>
+            英文名称
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Supplier.EnglishName">
+            <summary>
+            英文名称
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.Supplier.PurchaseInvProperty">
+            <summary>
+            采购组织
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Supplier.PurchaseInv">
+            <summary>
+            采购组织
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.Supplier.RegionProperty">
+            <summary>
+            所在区域
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Supplier.Region">
+            <summary>
+            所在区域
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.Supplier.DutyParagraphProperty">
+            <summary>
+            税号
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Supplier.DutyParagraph">
+            <summary>
+            税号
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.Supplier.ContactsProperty">
+            <summary>
+            联系人
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Supplier.Contacts">
+            <summary>
+            联系人
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.Supplier.ContactNumberProperty">
+            <summary>
+            联系电话
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Supplier.ContactNumber">
+            <summary>
+            联系电话
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.Supplier.ContactAddressProperty">
+            <summary>
+            联系地址
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Supplier.ContactAddress">
+            <summary>
+            联系地址
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.Supplier.EMailProperty">
+            <summary>
+            电子邮箱
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Supplier.EMail">
+            <summary>
+            电子邮箱
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.Supplier.ZipCodeProperty">
+            <summary>
+            邮编
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Supplier.ZipCode">
+            <summary>
+            邮编
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.Supplier.RemarkProperty">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Supplier.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.Supplier.IsPortalProperty">
+            <summary>
+            是否门户
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Supplier.IsPortal">
+            <summary>
+            是否门户
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.Supplier.SourceTypeProperty">
+            <summary>
+            来源
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Supplier.SourceType">
+            <summary>
+            来源
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.Supplier.SourceKeyProperty">
+            <summary>
+            来源主键, 一般用于接口平台事务上传
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Supplier.SourceKey">
+            <summary>
+            来源主键, 一般用于接口平台事务上传
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.Supplier.AddressListProperty">
+            <summary>
+            供应商与地址关系
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Supplier.AddressList">
+            <summary>
+            供应商与地址关系
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.Supplier.ItemListProperty">
+            <summary>
+            供应商与物料关系
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Supplier.ItemList">
+            <summary>
+            供应商与物料关系
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.Supplier.OutsourcingInLocIdProperty">
+            <summary>
+            委外发料调入库位ID
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Supplier.OutsourcingInLocId">
+            <summary>
+            委外发料调入库位ID
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.Supplier.OutsourcingInLocProperty">
+            <summary>
+            委外发料调入库位
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Supplier.OutsourcingInLoc">
+            <summary>
+            委外发料调入库位
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.Supplier.OutsourcingOutLocIdProperty">
+            <summary>
+            委外扣料库位ID
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Supplier.OutsourcingOutLocId">
+            <summary>
+            委外扣料库位ID
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.Supplier.OutsourcingOutLocProperty">
+            <summary>
+            委外扣料库位
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Supplier.OutsourcingOutLoc">
+            <summary>
+            委外扣料库位
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.Supplier.OutsourcingReceiveProperty">
+            <summary>
+            委外收货扣料处理
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Supplier.OutsourcingReceive">
+            <summary>
+            委外收货扣料处理
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.Supplier.OutsourcingUseTimeProperty">
+            <summary>
+            委外扣料时点
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Supplier.OutsourcingUseTime">
+            <summary>
+            委外扣料时点
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.Supplier.IsHasStorerProperty">
+            <summary>
+            委外库存带货主管理
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Supplier.IsHasStorer">
+            <summary>
+            委外库存带货主管理
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.Supplier.OutsourcingInLocNameProperty">
+            <summary>
+            调入库位名称
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Supplier.OutsourcingInLocName">
+            <summary>
+            调入库位名称
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.Supplier.OutInWarehouseIdProperty">
+            <summary>
+            调入仓库
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Supplier.OutInWarehouseId">
+            <summary>
+            调入仓库
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.Supplier.OutInWarehouseNameProperty">
+            <summary>
+            调入仓库名称
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Supplier.OutInWarehouseName">
+            <summary>
+            调入仓库名称
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.Supplier.OutInWarehouseTypeProperty">
+            <summary>
+            调入仓库类型
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Supplier.OutInWarehouseType">
+            <summary>
+            调入仓库类型
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.Supplier.OutsourcingOutWhIdProperty">
+            <summary>
+            委外扣料库位仓库
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Supplier.OutsourcingOutWhId">
+            <summary>
+            委外扣料库位仓库
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.Supplier.OutsourcingOutWhTypeProperty">
+            <summary>
+            委外扣料仓库类型
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.Supplier.OutsourcingOutWhType">
+            <summary>
+            委外扣料仓库类型
+            </summary>
+        </member>
+        <member name="T:SIE.CSM.Suppliers.SupplierConfig">
+            <summary>
+            供应商 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierConfig.AddValidations(SIE.MetaModel.IValidationDeclarer)">
+            <summary>
+            验证规则
+            </summary>
+            <param name="rules">电话号码验证规则</param>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierConfig.ConfigMeta">
+            <summary>
+            供应商数据库表名
+            </summary>
+        </member>
+        <member name="T:SIE.CSM.Suppliers.SupplierAddress">
+            <summary>
+            供应商地址
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.SupplierAddress.CatalogAddressType">
+            <summary>
+            快码类型：地址类型
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierAddress.#ctor">
+            <summary>
+            初始化数据
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.SupplierAddress.OrgIdProperty">
+            <summary>
+            业务实体ID
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.SupplierAddress.OrgId">
+            <summary>
+            业务实体ID
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.SupplierAddress.NameProperty">
+            <summary>
+            公司名称
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.SupplierAddress.Name">
+            <summary>
+            公司名称
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.SupplierAddress.ContactsProperty">
+            <summary>
+            联系人
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.SupplierAddress.Contacts">
+            <summary>
+            联系人
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.SupplierAddress.PhoneProperty">
+            <summary>
+            电话
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.SupplierAddress.Phone">
+            <summary>
+            电话
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.SupplierAddress.FaxProperty">
+            <summary>
+            传真
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.SupplierAddress.Fax">
+            <summary>
+            传真
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.SupplierAddress.ZipCodeProperty">
+            <summary>
+            邮编
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.SupplierAddress.ZipCode">
+            <summary>
+            邮编
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.SupplierAddress.AddressTypeProperty">
+            <summary>
+            地址类型
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.SupplierAddress.AddressType">
+            <summary>
+            地址类型
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.SupplierAddress.EMailProperty">
+            <summary>
+            电子邮箱
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.SupplierAddress.EMail">
+            <summary>
+            电子邮箱
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.SupplierAddress.RemarkProperty">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.SupplierAddress.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.SupplierAddress.StateProperty">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.SupplierAddress.State">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.SupplierAddress.IsDefaultProperty">
+            <summary>
+            默认
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.SupplierAddress.IsDefault">
+            <summary>
+            默认
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.SupplierAddress.SourceKeyProperty">
+            <summary>
+            来源主键, 一般用于接口平台事务上传
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.SupplierAddress.SourceKey">
+            <summary>
+            来源主键, 一般用于接口平台事务上传
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.SupplierAddress.SupplierIdProperty">
+            <summary>
+            供应商与地址关系Id
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.SupplierAddress.SupplierId">
+            <summary>
+            供应商与地址关系Id
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.SupplierAddress.SupplierProperty">
+            <summary>
+            供应商与地址关系
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.SupplierAddress.Supplier">
+            <summary>
+            供应商与地址关系
+            </summary>
+        </member>
+        <member name="T:SIE.CSM.Suppliers.SupplierAddressConfig">
+            <summary>
+            供应商地址 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierAddressConfig.AddValidations(SIE.MetaModel.IValidationDeclarer)">
+            <summary>
+            验证规则
+            </summary>
+            <param name="rules">电话号码验证规则</param>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierAddressConfig.ConfigMeta">
+            <summary>
+            数据库表名
+            </summary>
+        </member>
+        <member name="T:SIE.CSM.Suppliers.SupplierAddressSubmitting">
+            <summary>
+            新增时，默认第一个供应商地址为默认地址
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierAddressSubmitting.Invoke(SIE.CSM.Suppliers.SupplierAddress,SIE.Domain.EntitySubmittingEventArgs)">
+            <summary>
+            供应商地址保存前事件
+            </summary>
+            <param name="entity">供应商地址</param>
+            <param name="e">实体提交参数</param>
+        </member>
+        <member name="T:SIE.CSM.Suppliers.SupplierController">
+            <summary>
+            供应商控制器
+            </summary>
+            <summary>
+            供应商控制器
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierController.GetAllSupplier">
+            <summary>
+            获取所有供应商的信息
+            </summary>       
+            <returns>供应商集合</returns>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierController.GetSupplierInfo(System.String)">
+            <summary>
+            获取供应商信息
+            </summary>
+            <param name="code">供应商编码</param>
+            <returns>供应商信息</returns>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierController.GetSupplierInfos(SIE.Core.ApiModels.PagingKeywordQueryInfo)">
+            <summary>
+            获取供应商信息列表
+            </summary>
+            <param name="queryInfo">查询</param>
+            <returns>供应商信息</returns>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierController.GetSuppliers(SIE.PagingInfo,System.String,System.Nullable{System.Double})">
+            <summary>
+            根据物料查找对应的供应商
+            </summary>
+            <param name="pagingInfo">分页信息</param>
+            <param name="keyword">查询关键字</param>
+            <param name="itemId">物料ID</param>
+            <returns>供应商列表</returns>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierController.GetSuppliers(System.String)">
+            <summary>
+            查询供应商基础信息
+            </summary>
+            <param name="keyword"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierController.GetSuppliers(SIE.PagingInfo,System.String)">
+            <summary>
+            查找供应商
+            </summary>
+            <param name="pagingInfo">分页信息</param>
+            <param name="keyword">查询关键字</param>
+            <returns>供应商列表</returns>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierController.GetSupplierList(SIE.PagingInfo,System.String)">
+            <summary>
+            下拉框获取所有供应商列表
+            </summary>
+            <param name="pagingInfo"></param>
+            <param name="keyword"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierController.GetSuppliers(System.Nullable{System.Double},SIE.PagingInfo,System.Nullable{SIE.Domain.State},System.String,System.Nullable{System.Double})">
+            <summary>
+            查找与用户对应的供应商列表
+            </summary>
+            <param name="userId">查询对应的id</param>
+            <param name="info">分页信息</param>
+            <param name="state">状态信息</param>
+            <param name="code">供应商编码</param>
+            <param name="itemId">物料ID</param>
+            <returns>供应商列表</returns>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierController.GetSuppliers(System.Collections.Generic.List{System.String})">
+            <summary>
+            获取供应商By 编码集合
+            </summary>
+            <param name="codes">编码</param>
+            <returns>供应商集合</returns>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierController.GetSupplierByIds(System.Collections.Generic.List{System.Double})">
+            <summary>
+            获取供应商By 编码集合
+            </summary>
+            <param name="ids">ID集合</param>
+            <returns>供应商集合</returns>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierController.GetOutLocSupplierByIds(System.Collections.Generic.List{System.Double})">
+            <summary>
+            获取委外扣料供应商By 编码集合
+            </summary>
+            <param name="ids">ID集合</param>
+            <returns>供应商集合</returns>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierController.GetItems(SIE.PagingInfo,System.String,System.Nullable{System.Double},System.Nullable{SIE.Items.ItemType},System.Nullable{SIE.Domain.State})">
+            <summary>
+            根据供应商查找对应的物料
+            </summary>
+            <param name="pagingInfo">分页信息</param>
+            <param name="keyword">查询关键字</param>
+            <param name="supplierId">供应商ID</param>
+            <param name="itemType">物料类型</param>
+            <param name="state">物料状态</param>
+            <returns>物料列表</returns>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierController.GetItemsSupportItemTypeList(SIE.PagingInfo,System.String,System.Nullable{System.Double},System.Collections.Generic.List{System.Int32},System.Nullable{SIE.Domain.State})">
+            <summary>
+            根据供应商查找对应的物料
+            </summary>
+            <param name="pagingInfo">分页信息</param>
+            <param name="keyword">查询关键字</param>
+            <param name="supplierId">供应商ID</param>
+            <param name="itemTypeList">物料类型</param>
+            <param name="state">物料状态</param>
+            <returns>物料列表</returns>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierController.GetItemList(System.Double)">
+            <summary>
+            查找与供应商对应的物料
+            </summary>
+            <param name="supplierId">查询对应的id</param>
+            <returns>供应商物料</returns>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierController.GetSupplierItem(System.Double,System.Double)">
+            <summary>
+            查找与供应商对应的物料
+            </summary>
+            <param name="supplierId">供应商Id</param>
+            <param name="itemId">物料Id</param>
+            <returns>供应商物料</returns>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierController.GetSupplier(System.String)">
+            <summary>
+            获取供应商
+            </summary>
+            <param name="code">编码</param>
+            <returns>供应商</returns>
+            <exception cref="T:System.ArgumentNullException">空异常</exception>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierController.GetSupplier(System.Double,SIE.Domain.EagerLoadOptions)">
+            <summary>
+            获取供应商
+            </summary>
+            <param name="supplierId">供应商Id</param>
+            <returns>供应商</returns>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierController.GetUsersBySupplierId(System.Double,System.Collections.Generic.List{SIE.Domain.OrderInfo},SIE.PagingInfo)">
+            <summary>
+            获取供应商与用户关系列表
+            </summary>
+            <param name="supplierId">供应商标识</param>
+            <param name="sortInfo">排序信息</param>
+            <param name="pagingInfo">分页信息</param>
+            <returns>供应商与用户关系列表</returns>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierController.GetUsersBySupplierId(System.Double,System.Collections.Generic.IList{SIE.Domain.OrderInfo},SIE.PagingInfo)">
+            <summary>
+            获取供应商与用户关系列表
+            </summary>
+            <param name="supplierId">供应商标识</param>
+            <param name="sortInfo">排序信息</param>
+            <param name="pagingInfo">分页信息</param>
+            <returns>供应商与用户关系列表</returns>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierController.GetUsersBySupplierIds(System.Collections.Generic.List{System.Double})">
+            <summary>
+            获取供应商与用户关系列表
+            </summary>
+            <param name="supplierIds">供应商ID集合</param>
+            <returns>供应商与用户关系列表</returns>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierController.GetItemsBySupplierCode(SIE.PagingInfo,System.String,System.String,System.Collections.Generic.List{System.Int32})">
+            <summary>
+            根据供应商编码查找对应的物料
+            </summary>
+            <param name="pagingInfo">分页信息</param>
+            <param name="keyword">查询关键字</param>
+            <param name="supplierCode">供应商编码</param>
+            <param name="itemTypeList">物料类型</param>
+            <returns>物料列表</returns>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierController.GetUserLinkSupplier">
+            <summary>
+            获取用户关联供应商
+            关联一个供应商时返回供应商，其余返回空
+            </summary>
+            <returns>供应商</returns>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierController.GetSupplierList">
+            <summary>
+            获取所有供应商
+            </summary>
+            <returns>所有供应商</returns>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierController.GetSupplierList(System.Collections.Generic.List{System.Double})">
+            <summary>
+            获取指定供应商
+            </summary>
+            <param name="supplierIdList">供应商Id集合</param>
+            <returns>返回指定供应商</returns>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierController.SetDefaultAddress(System.Double,System.Double)">
+            <summary>
+            设置指定供应商指定地址为默认地址
+            </summary>
+            <param name="supplierId">指定供应商Id</param>
+            <param name="supplierAddressId">指定地址Id</param>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierController.CanSetDefaultAddress(System.Double)">
+            <summary>
+            是否可以设置默认地址
+            </summary>
+            <param name="supplierId">供应商Id</param>
+            <returns>返回是否可以设置默认地址</returns>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierController.GetDefaultAddress(System.Double)">
+            <summary>
+            获取供应商默认地址
+            </summary>
+            <param name="supplierId">供应商Id</param>
+            <returns>返回客户默认地址</returns>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierController.GetVMIItem(System.Double,SIE.PagingInfo,System.String)">
+            <summary>
+            获取指定供应商VMI对应的物料
+            </summary>
+            <param name="supplierId">供应商Id</param>
+            <param name="pagingInfo">分页对象</param>
+            <param name="keyword">关键字</param>
+            <returns>返回物料数据</returns>
+            <remarks>20241011,BUG发现2023年文档更新了VMI所有物料都可以选</remarks>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierController.GetEanbleSupplierList(System.Collections.Generic.List{System.Double})">
+            <summary>
+            获取指定启用的供应商
+            </summary>
+            <param name="supplierIdList">供应商Id集合</param>
+            <returns>返回指定启用的供应商</returns>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierController.GetUsersBySupplierData(System.Double,System.Collections.Generic.IList{SIE.Domain.OrderInfo},SIE.PagingInfo)">
+            <summary>
+            获取当前登录用户所关联的所有供应商
+            </summary>
+            <param name="userId">用户Id</param>
+            <param name="sortInfo">排序信息</param>
+            <param name="pagingInfo">分页信息</param>
+            <returns>用户与供应商关系列表</returns>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierController.GetUsersBySupplier(System.Double)">
+            <summary>
+            获取当前登录用户所关联的所有供应商
+            </summary>
+            <param name="userId">用户Id</param>
+            <returns>用户与供应商关系列表</returns>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierController.GetSupplierDatas(SIE.PagingInfo,System.String,System.Nullable{SIE.Domain.State},System.Nullable{System.Boolean})">
+            <summary>
+            查找与供应商门户用户对应的供应商列表
+            </summary>
+            <param name="userId">查询对应的id</param>
+            <param name="info">分页信息</param>
+            <param name="keyword">查询关键字</param>
+            <param name="state">状态信息</param>
+            <param name="isPortal">是否供应商门户</param>
+            <returns>供应商列表</returns>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierController.GetSupplierAddress(System.Collections.Generic.List{System.String})">
+            <summary>
+            获取供应商地址 by供应商编码集合
+            </summary>
+            <param name="supplierCodes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierController.DeleteSupplierItem(System.Collections.Generic.List{SIE.CSM.Suppliers.SupplierItem})">
+            <summary>
+            删除供应商物料
+            </summary>
+            <param name="selectedItems">物料实体</param>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierController.EnableSupplierPortal(System.Collections.Generic.List{System.Double})">
+            <summary>
+            启用门户
+            </summary>
+            <param name="ids">供应商ID集合</param>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierController.AutoCreateSupplierUserAndEmployee(SIE.CSM.Suppliers.Supplier,SIE.Rbac.InvOrgs.InvOrg,System.Boolean,SIE.Rbac.Users.SecurityPolicy,SIE.Domain.EntityList{SIE.CSM.Suppliers.ViewModels.SupplierPswViewModel})">
+            <summary>
+            自动创建供应商用户和员工
+            </summary>
+            <param name="supplier">供应商</param>
+            <param name="invOrg">当前库存组织</param>
+            <param name="randomPsw">是否随机密码</param>
+            <param name="policy">密码强度</param>
+            <param name="supplierPswViewModels">供应商和密码视图</param>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierController.DisableSupplierPortal(System.Collections.Generic.List{System.Double})">
+            <summary>
+            禁用门户
+            </summary>
+            <param name="ids">供应商ID集合</param>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierController.EnableSupplier(System.Double)">
+            <summary>
+            启用供应商
+            </summary>
+            <param name="id">供应商ID</param>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierController.DisableSupplier(System.Double)">
+            <summary>
+            禁用供应商
+            </summary>
+            <param name="id">供应商ID</param>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierController.SearchSupplierList(SIE.PagingInfo,System.String,SIE.Domain.State)">
+            <summary>
+            查询供应商信息
+            </summary>
+            <param name="page">分页信息</param>
+            <param name="SupplerCodeLike">供应商编码</param>
+            <param name="State">状态</param>
+            <returns>供应商信息</returns>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierController.SetSupplierConfigValue">
+            <summary>
+            根据配置项设置供应商默认值
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.CSM.Suppliers.SupplierItem">
+            <summary>
+            供应商与物料关系
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.SupplierItem.RemarkProperty">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.SupplierItem.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.SupplierItem.PurchaseSupplyTypeProperty">
+            <summary>
+            采购供应模式
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.SupplierItem.PurchaseSupplyType">
+            <summary>
+            采购供应模式
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.SupplierItem.SupplierIdProperty">
+            <summary>
+            供应商与物料关系Id
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.SupplierItem.SupplierId">
+            <summary>
+            供应商与物料关系Id
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.SupplierItem.SupplierProperty">
+            <summary>
+            供应商与物料关系
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.SupplierItem.Supplier">
+            <summary>
+            供应商与物料关系
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.SupplierItem.ItemIdProperty">
+            <summary>
+            物料与供应商关系Id
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.SupplierItem.ItemId">
+            <summary>
+            物料与供应商关系Id
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.SupplierItem.ItemProperty">
+            <summary>
+            物料与供应商关系
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.SupplierItem.Item">
+            <summary>
+            物料与供应商关系
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.SupplierItem.MPNProperty">
+            <summary>
+            MPN
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.SupplierItem.MPN">
+            <summary>
+            MPN
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.SupplierItem.ItemNameProperty">
+            <summary>
+            物料名称
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.SupplierItem.ItemName">
+            <summary>
+            物料名称
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.SupplierItem.ItemCodeProperty">
+            <summary>
+            物料编码
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.SupplierItem.ItemCode">
+            <summary>
+            物料编码
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.SupplierItem.ItemDescriptionProperty">
+            <summary>
+            规格型号
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.SupplierItem.ItemSpecificationModel">
+            <summary>
+            规格型号
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.SupplierItem.SupplierNameProperty">
+            <summary>
+            供应商名称
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.SupplierItem.SupplierName">
+            <summary>
+            供应商名称
+            </summary>
+        </member>
+        <member name="T:SIE.CSM.Suppliers.SupplierItemConfig">
+            <summary>
+            供应商与物料关系 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierItemConfig.AddValidations(SIE.MetaModel.IValidationDeclarer)">
+            <summary>
+            供应商与物料关系验证
+            </summary>
+            <param name="rules"> 验证规则</param>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierItemConfig.ConfigMeta">
+            <summary>
+            链接用户与供应商关系表
+            </summary>
+        </member>
+        <member name="T:SIE.CSM.Suppliers.UndeleteSupplierEnableRules">
+            <summary>
+            供应商已启用不能删除
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.UndeleteSupplierEnableRules.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.UndeleteSupplierEnableRules.Validate(SIE.Domain.IEntity,SIE.MetaModel.RuleArgs)">
+            <summary>
+            重写实体规则验证方法
+            </summary>
+            <param name="entity">实体</param>
+            <param name="e">规则参数</param>
+        </member>
+        <member name="T:SIE.CSM.Suppliers.UndeleteInvolveSupplierItem">
+            <summary>
+            物料被供应商物料引用不允许删除
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.UndeleteInvolveSupplierItem.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="T:SIE.CSM.Suppliers.SupplierUserNotDuplicateRule">
+            <summary>
+            供应商与用户关系非重验证
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierUserNotDuplicateRule.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="T:SIE.CSM.Suppliers.SupplierUser">
+            <summary>
+            供应商与用户关系
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.SupplierUser.UserIdProperty">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.SupplierUser.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.SupplierUser.UserProperty">
+            <summary>
+            用户
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.SupplierUser.User">
+            <summary>
+            用户
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.SupplierUser.SupplierIdProperty">
+            <summary>
+            供应商与用户关系Id
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.SupplierUser.SupplierId">
+            <summary>
+            供应商与用户关系Id
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.SupplierUser.SupplierProperty">
+            <summary>
+            供应商与用户关系
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.SupplierUser.Supplier">
+            <summary>
+            供应商与用户关系
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.SupplierUser.EmployeeCodeProperty">
+            <summary>
+            工号
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.SupplierUser.EmployeeCode">
+            <summary>
+            工号
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.SupplierUser.EmployeeNameProperty">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.SupplierUser.EmployeeName">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.SupplierUser.UserCodeProperty">
+            <summary>
+            用户账号
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.SupplierUser.UserCode">
+            <summary>
+            用户账号
+            </summary>
+        </member>
+        <member name="F:SIE.CSM.Suppliers.SupplierUser.UserStateProperty">
+            <summary>
+            用户状态
+            </summary>
+        </member>
+        <member name="P:SIE.CSM.Suppliers.SupplierUser.UserState">
+            <summary>
+            用户状态
+            </summary>
+        </member>
+        <member name="T:SIE.CSM.Suppliers.SupplierUserConfig">
+            <summary>
+            供应商与用户关系 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.CSM.Suppliers.SupplierUserConfig.ConfigMeta">
+            <summary>
+            供应商表名
+            </summary>
+        </member>
+        <member name="T:SIE.CSM.Suppliers.ViewModels.SupplierPswViewModel">
+            <summary>
+            供应商随机密码视图
+            </summary>
+        </member>
+    </members>
+</doc>

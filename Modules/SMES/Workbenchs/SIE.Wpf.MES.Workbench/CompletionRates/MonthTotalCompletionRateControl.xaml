@@ -1,0 +1,70 @@
+﻿<sd:ComponentItem x:Class="SIE.Wpf.MES.Workbench.CompletionRates.MonthTotalCompletionRateControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SIE.Wpf.MES.Workbench.CompletionRates"
+             xmlns:sd="clr-namespace:SIE.Wpf.Common.Diagram;assembly=SIE.Wpf.Common"
+             xmlns:uic="http://schemas.siestudio.com/winfx/xaml/core"                  
+             xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/charts"
+             xmlns:uit="http://schemas.siestudio.com/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             sd:DiagramDesigner.ToolBarTitle="{Binding [生产-月度总量达成],Source={uic:L10N}}"
+             sd:DiagramDesigner.DefaultSize="341,150"
+             d:DesignHeight="150" d:DesignWidth="341">
+    <sd:ComponentItem.Resources>
+        <Style x:Key="LabelStyle" TargetType="Label">
+            <Setter Property="Foreground" Value="#666666"/>
+            <Setter Property="FontSize" Value="16"></Setter>
+        </Style>
+    </sd:ComponentItem.Resources>
+    <Grid Background="{DynamicResource {uit:BrushesThemeKey ResourceKey=Background}}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="28"></RowDefinition>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Label Name="titleName" Content="{Binding [月度总量达成], Source={uic:L10N}}" Grid.Row="0" Padding="5,0,0,0" Grid.Column="0" FontSize="20" FontWeight="Bold" Foreground="#666666"></Label>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.2*"></ColumnDefinition>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <dxc:ChartControl AutoLayout="True" Background="{x:Null}"  BorderThickness="0"  >
+                <dxc:ChartControl.Palette>
+                    <dxc:CustomPalette>
+                        <dxc:CustomPalette.Colors>
+                            <Color>#F07412</Color>
+                            <Color>#128BEF</Color>
+                        </dxc:CustomPalette.Colors>
+                    </dxc:CustomPalette>
+                </dxc:ChartControl.Palette>
+                <dxc:ChartControl.Diagram>
+                    <dxc:SimpleDiagram2D  Margin="-10">
+                        <dxc:NestedDonutSeries2D Name="nestedChart" HoleRadiusPercent="80">
+                            <dxc:SeriesPoint Argument="未完成" x:Name="seriesLess" Value="50"></dxc:SeriesPoint>
+                            <dxc:SeriesPoint Argument="已完成" x:Name="seriesComplete" Value="0"></dxc:SeriesPoint>
+                        </dxc:NestedDonutSeries2D>
+                    </dxc:SimpleDiagram2D>
+                </dxc:ChartControl.Diagram>
+            </dxc:ChartControl>
+            <Label Content="0%" Name="laPercent" Foreground="#128BEF" FontSize="22" Margin="0,0,0,0"  VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+            <Grid Grid.Column="1" Background="Transparent" Margin="-20,0,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.8*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Style="{StaticResource LabelStyle}" Margin="0,0,5,0" HorizontalAlignment="Right" VerticalAlignment="Bottom" Content="{Binding [目标],Source={uic:L10N}}"></Label>
+                <Label Name="laTarget" Grid.Column="1" Margin="0,0,0,0" FontSize="16" Foreground="#128BEF" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Content=""></Label>
+                <Label Grid.Row="1" Style="{StaticResource LabelStyle}" Margin="0,5,5,0"  HorizontalAlignment="Right" VerticalAlignment="Top" Content="{Binding [已完成],Source={uic:L10N}}"></Label>
+                <Label Name="laComplete" Grid.Row="1" FontSize="16" Margin="0,5,0,0" Grid.Column="1" Foreground="#128BEF" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Content=""></Label>
+            </Grid>
+        </Grid>
+         
+    </Grid>
+</sd:ComponentItem>

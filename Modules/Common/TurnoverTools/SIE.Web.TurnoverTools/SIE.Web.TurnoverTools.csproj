@@ -1,0 +1,59 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup Label="Globals">
+		<SccProjectName>SAK</SccProjectName>
+		<SccProvider>SAK</SccProvider>
+		<SccAuxPath>SAK</SccAuxPath>
+		<SccLocalPath>SAK</SccLocalPath>
+	</PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<OutputPath>..\..\..\..\platform\smom\</OutputPath>
+		<DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.Kit.TurnoverTools.xml</DocumentationFile>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<OutputPath>..\..\..\..\platform\smom\</OutputPath>
+		<DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.Kit.TurnoverTools.xml</DocumentationFile>
+	</PropertyGroup>
+	<ItemGroup>
+		<None Remove="TurnoverTools\Commands\CancelModelDedicatedCommand.js" />
+		<None Remove="TurnoverTools\Commands\SelTurnoverToolModelInProductCommand.js" />
+		<None Remove="TurnoverTools\Commands\SetModelDedicatedCommand.js" />
+		<None Remove="TurnoverTools\Commands\TurnoverToolCopyCommand.js" />
+		<None Remove="TurnoverTools\Commands\TurnoverToolDeleteCommand.js" />
+		<None Remove="TurnoverTools\Commands\TurnoverToolImportCommand.js" />
+		<None Remove="TurnoverTools\Commands\TurnoverToolModelImportCommand.js" />
+		<None Remove="TurnoverTools\Commands\TurnoverToolModelTableCommand.js" />
+		<None Remove="TurnoverTools\Commands\TurnoverToolRecoveryCommand.js" />
+		<None Remove="TurnoverTools\Commands\TurnoverToolRepairCommand.js" />
+		<None Remove="TurnoverTools\Commands\TurnoverToolScrapCommand.js" />
+		<None Remove="TurnoverTools\Templates\周转工具型号维护导入模板.xlsx" />
+		<None Remove="TurnoverTools\Templates\周转工具导入模板.xlsx" />
+	</ItemGroup>
+	<ItemGroup>
+	  <AdditionalFiles Include="..\..\..\..\.sonarlint\sie.smom\CSharp\SonarLint.xml" Link="SonarLint.xml" />
+	</ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Include="TurnoverTools\Commands\CancelModelDedicatedCommand.js" />
+		<EmbeddedResource Include="TurnoverTools\Commands\SelTurnoverToolModelInProductCommand.js" />
+		<EmbeddedResource Include="TurnoverTools\Commands\SetModelDedicatedCommand.js" />
+		<EmbeddedResource Include="TurnoverTools\Commands\TurnoverToolCopyCommand.js" />
+		<EmbeddedResource Include="TurnoverTools\Commands\TurnoverToolDeleteCommand.js" />
+		<EmbeddedResource Include="TurnoverTools\Commands\TurnoverToolImportCommand.js" />
+		<EmbeddedResource Include="TurnoverTools\Commands\TurnoverToolModelImportCommand.js" />
+		<EmbeddedResource Include="TurnoverTools\Commands\TurnoverToolModelTableCommand.js" />
+		<EmbeddedResource Include="TurnoverTools\Commands\TurnoverToolRecoveryCommand.js" />
+		<EmbeddedResource Include="TurnoverTools\Commands\TurnoverToolRepairCommand.js" />
+		<EmbeddedResource Include="TurnoverTools\Commands\TurnoverToolScrapCommand.js" />
+		<EmbeddedResource Include="TurnoverTools\Templates\周转工具型号维护导入模板.xlsx" />
+		<EmbeddedResource Include="TurnoverTools\Templates\周转工具导入模板.xlsx" />
+	</ItemGroup>
+	<ItemGroup>
+	  <PackageReference Include="SIE.Web.Common" Version="10.0.5" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\SIE.TurnoverTools\SIE.TurnoverTools.csproj" />
+	</ItemGroup>
+</Project>

@@ -1,0 +1,71 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<OutputPath>..\..\..\..\platform\smom\</OutputPath>
+		<DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.ESop.xml</DocumentationFile>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<OutputPath>..\..\..\..\platform\smom\</OutputPath>
+		<DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.ESop.xml</DocumentationFile>
+	</PropertyGroup>
+	<ItemGroup>
+	  <None Remove="Displays\Commands\InitESopCommand.js" />
+	  <None Remove="Documents\Commands\DocumentSaveCommand.js" />
+	  <None Remove="Documents\Commands\DownloadCommand.js" />
+	  <None Remove="Documents\Commands\SelCheckProjectCommand.js" />
+	  <None Remove="Documents\Commands\SelDocumentsItem.js" />
+	  <None Remove="Documents\Commands\SelWoCommand.js" />
+	  <None Remove="Documents\Scripts\DocFileUploadContextEditor.js" />
+	  <None Remove="Documents\Scripts\HeaderFileUploadContextEditor.js" />
+	  <None Remove="Documents\Scripts\ListFileUploadContextEditor.js" />
+	  <None Remove="EngDocuments\Commands\DownLoadCommand.js" />
+	  <None Remove="EngDocuments\Commands\EngDocDeleteCommand.js" />
+	  <None Remove="EngDocuments\Commands\EngDocSaveCommand.js" />
+	  <None Remove="EngDocuments\Commands\EngDocUseTypeCommand.js" />
+	  <None Remove="EngDocuments\Commands\FileUseDetailSaveCommand.js" />
+	  <None Remove="EngDocuments\Commands\SelForWoCommand.js" />
+	  <None Remove="EngDocuments\Scripts\Common.js" />
+	  <None Remove="EngDocuments\Scripts\EngDocDetailEditor.js" />
+	  <None Remove="EngDocuments\Scripts\FileUseTypeSelDocEditor.js" />
+	</ItemGroup>
+	<ItemGroup>
+	  <EmbeddedResource Include="Displays\Commands\InitESopCommand.js" />
+	  <EmbeddedResource Include="Documents\Commands\DocumentSaveCommand.js" />
+	  <EmbeddedResource Include="Documents\Commands\DownloadCommand.js" />
+	  <EmbeddedResource Include="Documents\Commands\SelWoCommand.js" />
+	  <EmbeddedResource Include="Documents\Commands\SelCheckProjectCommand.js" />
+	  <EmbeddedResource Include="Documents\Commands\SelDocumentsItem.js" />
+	  <EmbeddedResource Include="Documents\Scripts\ListFileUploadContextEditor.js" />
+	  <EmbeddedResource Include="Documents\Scripts\DocFileUploadContextEditor.js" />
+	  <EmbeddedResource Include="Documents\Scripts\HeaderFileUploadContextEditor.js" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Remove="Displays\Commands\SelectDisplayPointProcessCommand.js" />
+	</ItemGroup>
+	<ItemGroup>
+	  <EmbeddedResource Include="Displays\Commands\SelectDisplayPointProcessCommand.js" />
+	  <EmbeddedResource Include="EngDocuments\Commands\DownLoadCommand.js" />
+	  <EmbeddedResource Include="EngDocuments\Commands\EngDocDeleteCommand.js" />
+	  <EmbeddedResource Include="EngDocuments\Commands\EngDocSaveCommand.js" />
+	  <EmbeddedResource Include="EngDocuments\Commands\EngDocUseTypeCommand.js" />
+	  <EmbeddedResource Include="EngDocuments\Commands\FileUseDetailSaveCommand.js" />
+	  <EmbeddedResource Include="EngDocuments\Commands\SelForWoCommand.js" />
+	  <EmbeddedResource Include="EngDocuments\Scripts\Common.js" />
+	  <EmbeddedResource Include="EngDocuments\Scripts\EngDocDetailEditor.js" />
+	  <EmbeddedResource Include="EngDocuments\Scripts\FileUseTypeSelDocEditor.js" />
+	</ItemGroup>
+	<ItemGroup>
+	  <PackageReference Include="SIE.Web.Common" Version="10.0.5" />
+	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\SIE.ESop\SIE.ESop.csproj" />
+	</ItemGroup>
+</Project>

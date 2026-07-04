@@ -1,0 +1,964 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.DataTrace</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.DataTrace.Activities.Core.DataTraceActivityBase">
+            <summary>
+            追溯节点基类
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.Activities.Core.DataTraceActivityBase.isDataTrace">
+            <summary>
+            是否追溯节点
+            </summary>
+        </member>
+        <member name="M:SIE.DataTrace.Activities.Core.DataTraceActivityBase.IsDataSyncFinished(Elsa.Services.Models.ActivityExecutionContext)">
+            <summary>
+            数据同步是否已完成
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.DataTrace.Activities.Core.DataTraceActivityBase.OnResume(Elsa.Services.Models.ActivityExecutionContext)">
+            <summary>
+            恢复
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.DataTrace.Activities.Core.DataTraceActivityInfo">
+            <summary>
+            数据追溯节点输出信息
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.Activities.Core.DataTraceActivityInfo.ActivityId">
+            <summary>
+            追溯节点ID
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.Activities.Core.DataTraceActivityInfo.EntityType">
+            <summary>
+            追溯实体类型
+            </summary>
+        </member>
+        <member name="T:SIE.DataTrace.Activities.Core.DataTraceVariable">
+            <summary>
+            追溯主数据上下文变量类型
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.Activities.Core.DataTraceVariable.TraceMainDataId">
+            <summary>
+            追溯主数据ID
+            </summary>
+        </member>
+        <member name="T:SIE.DataTrace.Activities.DataTraceWorkFlowController">
+            <summary>
+            数据追溯工作流控制器
+            </summary>
+        </member>
+        <member name="M:SIE.DataTrace.Activities.DataTraceWorkFlowController.TriggerDataTraceActivity(SIE.DataTrace.DataSync.Core.DataSyncParam)">
+            <summary>
+            触发追溯节点
+            </summary>
+            <param name="model"></param>
+        </member>
+        <member name="M:SIE.DataTrace.Activities.DataTraceWorkFlowController.TriggerActivity(System.String,System.String)">
+            <summary>
+            触发流程
+            </summary>
+            <param name="activityId"></param>
+            <param name="wfInstanceId"></param>
+            <exception cref="T:SIE.Domain.Validation.ValidationException"></exception>
+        </member>
+        <member name="M:SIE.DataTrace.Activities.DataTraceWorkFlowController.TriggerDataTraceActivityByEntity(System.Double,System.Double,System.String)">
+            <summary>
+            根据实体类型去触发流程相关节点
+            </summary>
+            <param name="flowInstanceId"></param>
+            <param name="traceMainDataId"></param>
+            <param name="entityType"></param>
+        </member>
+        <member name="T:SIE.DataTrace.Activities.MessageQueue.DataTraceMqController">
+            <summary>
+            数据追溯流程触发-发送消息控制器
+            </summary>
+        </member>
+        <member name="M:SIE.DataTrace.Activities.MessageQueue.DataTraceMqController.SendDataTraceWorkFlowQueue(System.Double,System.String,System.Double)">
+            <summary>
+            发送数据追溯流程触发消息-拉取方式-指定节点ID
+            </summary>
+        </member>
+        <member name="M:SIE.DataTrace.Activities.MessageQueue.DataTraceMqController.SendDataTraceWorkFlowQueueByEntityType(System.Double,System.String,System.Double)">
+            <summary>
+            发送数据追溯流程触发消息-推送方式-指定实体类型
+            </summary>
+        </member>
+        <member name="T:SIE.DataTrace.Activities.MessageQueue.DataTraceWorkFlowListener">
+            <summary>
+            数据追溯工作流程监听器
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.Activities.MessageQueue.DataTraceWorkFlowListener.Instance">
+            <summary>
+            实例
+            </summary>
+        </member>
+        <member name="M:SIE.DataTrace.Activities.MessageQueue.DataTraceWorkFlowListener.Start">
+            <summary>
+            订阅追溯流程接收信息
+            </summary>
+        </member>
+        <member name="M:SIE.DataTrace.Activities.MessageQueue.DataTraceWorkFlowListener.TriggerWorkFlowByActivity(SIE.MQueue.SubscribeEventArgs{SIE.DataTrace.Activities.MessageQueue.DataTraceWorkFlowQueueInfo})">
+            <summary>
+            触发追溯流程节点流转-根据节点ID
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:SIE.DataTrace.Activities.MessageQueue.DataTraceWorkFlowListener.TriggerWorkFlowByEntity(SIE.MQueue.SubscribeEventArgs{SIE.DataTrace.Activities.MessageQueue.DataTraceWorkFlowQueueEntityInfo})">
+            <summary>
+            触发追溯流程节点流转-根据实体类型
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:SIE.DataTrace.Activities.MessageQueue.DataTraceWorkFlowListener.Dispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="M:SIE.DataTrace.Activities.MessageQueue.DataTraceWorkFlowListener.Dispose(System.Boolean)">
+            <summary>
+            释放数据
+            </summary>
+        </member>
+        <member name="T:SIE.DataTrace.Activities.MessageQueue.DataTraceWorkFlowQueueEntityInfo">
+            <summary>
+            数据追溯流程触发信息-实体类型
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.Activities.MessageQueue.DataTraceWorkFlowQueueEntityInfo.TraceMainDataId">
+            <summary>
+            追溯主数据ID
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.Activities.MessageQueue.DataTraceWorkFlowQueueEntityInfo.FlowInstanceId">
+            <summary>
+            流程进度ID
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.Activities.MessageQueue.DataTraceWorkFlowQueueEntityInfo.EntityType">
+            <summary>
+            实体类型
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.Activities.MessageQueue.DataTraceWorkFlowQueueEntityInfo.InvOrg">
+            <summary>
+            库存组织
+            </summary>
+        </member>
+        <member name="T:SIE.DataTrace.Activities.MessageQueue.DataTraceWorkFlowQueueInfo">
+            <summary>
+            数据追溯流程触发信息
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.Activities.MessageQueue.DataTraceWorkFlowQueueInfo.TraceMainDataId">
+            <summary>
+            追溯主数据ID
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.Activities.MessageQueue.DataTraceWorkFlowQueueInfo.FlowInstanceId">
+            <summary>
+            流程进度ID
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.Activities.MessageQueue.DataTraceWorkFlowQueueInfo.ActivityId">
+            <summary>
+            节点ID
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.Activities.MessageQueue.DataTraceWorkFlowQueueInfo.InvOrg">
+            <summary>
+            库存组织
+            </summary>
+        </member>
+        <member name="T:SIE.DataTrace.DataSyncPush.Core.DataTracePushActivity">
+            <summary>
+            追溯节点基类-推送方法同步数据
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.DataSyncPush.Core.DataTracePushActivity.isPush">
+            <summary>
+            同步方式是否推送方式
+            </summary>
+        </member>
+        <member name="M:SIE.DataTrace.DataSyncPush.Core.DataTracePushActivity.IsDataSyncFinished(Elsa.Services.Models.ActivityExecutionContext)">
+            <summary>
+            数据同步是否已完成
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.DataTrace.DataSyncPush.DataTraceSyncPushController">
+            <summary>
+            追溯数据-推送方式流程控制器
+            </summary>
+        </member>
+        <member name="M:SIE.DataTrace.DataSyncPush.DataTraceSyncPushController.TriggerDataTracePushActivity``1(SIE.DataTrace.TraceMainDatas.TraceMainData)">
+            <summary>
+            触发工作流程里挂起中的推送追溯节点
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="mainData"></param>
+        </member>
+        <member name="T:SIE.DataTrace.DataSync.Core.DataSyncParam">
+            <summary>
+            数据同步参数
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.DataSync.Core.DataSyncParam.TraceMainDataId">
+            <summary>
+            追溯主数据ID
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.DataSync.Core.DataSyncParam.FlowInstanceId">
+            <summary>
+            流程进度ID
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.DataSync.Core.DataSyncParam.ActivityId">
+            <summary>
+            节点ID
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.DataSync.Core.DataSyncParam.WorkOrderId">
+            <summary>
+            工单ID
+            </summary>
+        </member>
+        <member name="T:SIE.DataTrace.DataSync.Core.DataTraceCatchActivity">
+            <summary>
+            追溯节点基类-拉取方法同步数据
+            </summary>
+        </member>
+        <member name="M:SIE.DataTrace.DataSync.Core.DataTraceCatchActivity.OnArriveActivityExecute(Elsa.Services.Models.ActivityExecutionContext)">
+            <summary>
+            节点到达时可执行生成同步任务
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:SIE.DataTrace.DataSync.Core.DataTraceCatchActivity.OnGenerateDataSyncTask(Elsa.Services.Models.ActivityExecutionContext)">
+            <summary>
+            生成数据同步任务
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:SIE.DataTrace.DataSync.DataTraceSyncCatchHandlerBase">
+            <summary>
+            追溯数据-拉取方式基类
+            </summary>
+        </member>
+        <member name="M:SIE.DataTrace.DataSync.DataTraceSyncCatchHandlerBase.IsSyncFinished(SIE.DataSync.DataSyncTasks.DataSyncTask,System.Object)">
+            <summary>
+            是否同步完成
+            </summary>
+            <param name="task"></param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.DataTrace.DataTraceAudits.Activity.DataTraceAuditActivity">
+            <summary>
+            追溯节点
+            </summary>
+        </member>
+        <member name="M:SIE.DataTrace.DataTraceAudits.Activity.DataTraceAuditActivity.OnArriveActivityExecute(Elsa.Services.Models.ActivityExecutionContext)">
+            <summary>
+            到达节点时处理
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:SIE.DataTrace.DataTraceAudits.Activity.DataTraceAuditActivity.ReturnResult(Elsa.Services.Models.ActivityExecutionContext)">
+            <summary>
+            返回节点结果
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.DataTrace.DataTraceAudits.DataTraceAuditController">
+            <summary>
+            数据追溯审核控制器
+            </summary>
+        </member>
+        <member name="M:SIE.DataTrace.DataTraceAudits.DataTraceAuditController.SaveDataTraceSignature(System.Double,System.Double,System.String,System.String,System.Double)">
+            <summary>
+            保存追溯审核签名信息
+            </summary>
+            <param name="traceMainDataId"></param>
+            <param name="flowInstanceId"></param>
+            <param name="activityId"></param>
+            <param name="entityType"></param>
+            <param name="flowTaskId"></param>
+        </member>
+        <member name="M:SIE.DataTrace.DataTraceAudits.DataTraceAuditController.SaveNewTraceSignature(System.Double,System.Double,System.String,System.String,SIE.WorkFlow.Activities.Audit.AuditActivity)">
+            <summary>
+            新增追溯签名实体
+            </summary>
+            <param name="traceMainDataId"></param>
+            <param name="flowInstanceId"></param>
+            <param name="activityId"></param>
+            <param name="entityType"></param>
+            <param name="audit"></param>
+        </member>
+        <member name="M:SIE.DataTrace.DataTraceAudits.DataTraceAuditController.GetDataTraceAuditSignId(System.Double,System.String)">
+            <summary>
+            获取数据追溯签名人ID
+            </summary>
+            <param name="traceMainDataId"></param>
+            <param name="entityType"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.DataTrace.DataTraceAudits.DataTraceSignature">
+            <summary>
+            数据追溯签名
+            </summary>
+        </member>
+        <member name="F:SIE.DataTrace.DataTraceAudits.DataTraceSignature.SignatureByIdProperty">
+            <summary>
+            签名人Id
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.DataTraceAudits.DataTraceSignature.SignatureById">
+            <summary>
+            签名人Id
+            </summary>
+        </member>
+        <member name="F:SIE.DataTrace.DataTraceAudits.DataTraceSignature.SignatureByProperty">
+            <summary>
+            签名人
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.DataTraceAudits.DataTraceSignature.SignatureBy">
+            <summary>
+            签名人
+            </summary>
+        </member>
+        <member name="F:SIE.DataTrace.DataTraceAudits.DataTraceSignature.SignatureRecordIdProperty">
+            <summary>
+            签名记录Id
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.DataTraceAudits.DataTraceSignature.SignatureRecordId">
+            <summary>
+            签名记录Id
+            </summary>
+        </member>
+        <member name="F:SIE.DataTrace.DataTraceAudits.DataTraceSignature.SignatureRecordProperty">
+            <summary>
+            签名记录
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.DataTraceAudits.DataTraceSignature.SignatureRecord">
+            <summary>
+            签名记录
+            </summary>
+        </member>
+        <member name="F:SIE.DataTrace.DataTraceAudits.DataTraceSignature.TraceMainDataIdProperty">
+            <summary>
+            追溯主数据Id
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.DataTraceAudits.DataTraceSignature.TraceMainDataId">
+            <summary>
+            追溯主数据Id
+            </summary>
+        </member>
+        <member name="F:SIE.DataTrace.DataTraceAudits.DataTraceSignature.TraceMainDataProperty">
+            <summary>
+            追溯主数据
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.DataTraceAudits.DataTraceSignature.TraceMainData">
+            <summary>
+            追溯主数据
+            </summary>
+        </member>
+        <member name="F:SIE.DataTrace.DataTraceAudits.DataTraceSignature.FlowInstanceIdProperty">
+            <summary>
+            流程进度Id
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.DataTraceAudits.DataTraceSignature.FlowInstanceId">
+            <summary>
+            流程进度Id
+            </summary>
+        </member>
+        <member name="F:SIE.DataTrace.DataTraceAudits.DataTraceSignature.FlowInstanceProperty">
+            <summary>
+            流程进度
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.DataTraceAudits.DataTraceSignature.FlowInstance">
+            <summary>
+            流程进度
+            </summary>
+        </member>
+        <member name="F:SIE.DataTrace.DataTraceAudits.DataTraceSignature.ActivityIdProperty">
+            <summary>
+            节点ID
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.DataTraceAudits.DataTraceSignature.ActivityId">
+            <summary>
+            节点ID
+            </summary>
+        </member>
+        <member name="F:SIE.DataTrace.DataTraceAudits.DataTraceSignature.DataTraceActivityIdProperty">
+            <summary>
+            追溯节点ID
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.DataTraceAudits.DataTraceSignature.DataTraceActivityId">
+            <summary>
+            追溯节点ID
+            </summary>
+        </member>
+        <member name="F:SIE.DataTrace.DataTraceAudits.DataTraceSignature.TraceEntityTypeProperty">
+            <summary>
+            追溯节点实体类型
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.DataTraceAudits.DataTraceSignature.TraceEntityType">
+            <summary>
+            追溯节点实体类型
+            </summary>
+        </member>
+        <member name="T:SIE.DataTrace.DataTraceAudits.TraceMainDataConfig">
+            <summary>
+            数据追溯签名 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.DataTrace.DataTraceAudits.TraceMainDataConfig.ConfigMeta">
+            <summary>
+            实体配置
+            </summary>
+        </member>
+        <member name="T:SIE.DataTrace.DataTraceEntityRepository`1">
+            <summary>
+            本程序集的数据提供者
+            </summary>
+            <typeparam name="T">t</typeparam>
+        </member>
+        <member name="T:SIE.DataTrace.DataTraceEntityDataProvider">
+            <summary>
+            数据追溯实体数据提供者
+            </summary>
+        </member>
+        <member name="F:SIE.DataTrace.DataTraceEntityDataProvider.ConnectionStringName">
+            <summary>
+            数据库连接字符串的名称
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.DataTraceEntityDataProvider.ConnectionStringSettingName">
+            <summary>
+            数据库连接字符串的名称
+            </summary>
+        </member>
+        <member name="T:SIE.DataTrace.DbMigrations._20231011_000000_DataTrace">
+            <summary>
+            数据追溯数据库初始化
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.DbMigrations._20231011_000000_DataTrace.DbSetting">
+            <summary>
+            数据库设置
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.DbMigrations._20231011_000000_DataTrace.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.DbMigrations._20231011_000000_DataTrace.Type">
+            <summary>
+            手动升级的类型：数据
+            </summary>
+        </member>
+        <member name="M:SIE.DataTrace.DbMigrations._20231011_000000_DataTrace.Down">
+            <summary>
+            不支持 Down
+            </summary>
+        </member>
+        <member name="M:SIE.DataTrace.DbMigrations._20231011_000000_DataTrace.Up">
+            <summary>
+            注入
+            </summary>
+        </member>
+        <member name="M:SIE.DataTrace.DbMigrations._20231011_000000_DataTrace.InitDataTraceMainDataBillNoConfig">
+            <summary>
+            初始化追溯主数据编码规则和配置项
+            </summary>
+        </member>
+        <member name="T:SIE.DataTrace.Module">
+            <summary>
+            模块设置
+            </summary>
+        </member>
+        <member name="M:SIE.DataTrace.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化
+            </summary>
+            <param name="app">app</param>
+        </member>
+        <member name="M:SIE.DataTrace.Module.All_ModulesIntialized(System.Object,System.EventArgs)">
+            <summary>
+            app启动后事件
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="T:SIE.DataTrace.TraceMainDatas.TraceDataPrintDataViewmodel">
+            <summary>
+            追溯节点-数据模板
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.TraceMainDatas.TraceDataPrintDataViewmodel.Template">
+            <summary>
+            打印模板
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.TraceMainDatas.TraceDataPrintDataViewmodel.ListData">
+            <summary>
+            列表数据
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.TraceMainDatas.TraceFileViewmodel.TraceMainId">
+            <summary>
+            追溯主数据
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.TraceMainDatas.TraceFileViewmodel.TraceMainNo">
+            <summary>
+            追溯主数据单号
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.TraceMainDatas.TraceFileViewmodel.InvOrg">
+            <summary>
+            库存组织
+            </summary>
+        </member>
+        <member name="T:SIE.DataTrace.TraceMainDatas.TraceDataPrintTempViewmodel">
+            <summary>
+            追溯主数据
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.TraceMainDatas.TraceDataPrintTempViewmodel.path">
+            <summary>
+            路径
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.TraceMainDatas.TraceDataPrintTempViewmodel.Content">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.TraceMainDatas.TraceDataPrintTempViewmodel.Type">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="T:SIE.DataTrace.TraceMainDatas.TraceMainData">
+            <summary>
+            追溯主数据
+            </summary>
+        </member>
+        <member name="F:SIE.DataTrace.TraceMainDatas.TraceMainData.NoProperty">
+            <summary>
+            单号
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.TraceMainDatas.TraceMainData.No">
+            <summary>
+            单号
+            </summary>
+        </member>
+        <member name="F:SIE.DataTrace.TraceMainDatas.TraceMainData.FlowInstanceIdProperty">
+            <summary>
+            流程进度Id
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.TraceMainDatas.TraceMainData.FlowInstanceId">
+            <summary>
+            流程进度Id
+            </summary>
+        </member>
+        <member name="F:SIE.DataTrace.TraceMainDatas.TraceMainData.FlowInstanceProperty">
+            <summary>
+            流程进度
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.TraceMainDatas.TraceMainData.FlowInstance">
+            <summary>
+            流程进度
+            </summary>
+        </member>
+        <member name="F:SIE.DataTrace.TraceMainDatas.TraceMainData.ContextProperty">
+            <summary>
+            上下文
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.TraceMainDatas.TraceMainData.Context">
+            <summary>
+            上下文
+            </summary>
+        </member>
+        <member name="F:SIE.DataTrace.TraceMainDatas.TraceMainData.AttachmentListProperty">
+            <summary>
+            附件
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.TraceMainDatas.TraceMainData.AttachmentList">
+            <summary>
+            附件
+            </summary>
+        </member>
+        <member name="F:SIE.DataTrace.TraceMainDatas.TraceMainData.WorkFlowTypeProperty">
+            <summary>
+            追溯流程类型
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.TraceMainDatas.TraceMainData.WorkFlowType">
+            <summary>
+            追溯流程类型
+            </summary>
+        </member>
+        <member name="F:SIE.DataTrace.TraceMainDatas.TraceMainData.CorrelationIdProperty">
+            <summary>
+            关联ID
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.TraceMainDatas.TraceMainData.CorrelationId">
+            <summary>
+            关联ID
+            </summary>
+        </member>
+        <member name="F:SIE.DataTrace.TraceMainDatas.TraceMainData.WorkFlowStatusProperty">
+            <summary>
+            流程进度状态
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.TraceMainDatas.TraceMainData.WorkFlowStatus">
+            <summary>
+            流程进度状态
+            </summary>
+        </member>
+        <member name="T:SIE.DataTrace.TraceMainDatas.TraceMainDataConfig">
+            <summary>
+            追溯主数据 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.DataTrace.TraceMainDatas.TraceMainDataConfig.ConfigMeta">
+            <summary>
+            实体配置
+            </summary>
+        </member>
+        <member name="T:SIE.DataTrace.TraceMainDatas.TraceMainDataActivity">
+            <summary>
+            PDCA-单据信息节点
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.TraceMainDatas.TraceMainDataActivity.entityTypeName">
+            <summary>
+            实体类型
+            </summary>
+        </member>
+        <member name="M:SIE.DataTrace.TraceMainDatas.TraceMainDataActivity.OnActivityExecute(Elsa.Services.Models.ActivityExecutionContext)">
+            <summary>
+            执行
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.DataTrace.TraceMainDatas.TraceMainDataActivityEntityProvider.GetActivityEntity(SIE.WorkFlow.Base.Common.GetActivityEntityInput)">
+            <summary>
+            获取检验单据
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.DataTrace.TraceMainDatas.TraceMainDataAttachment">
+            <summary>
+            追溯主数据附件
+            </summary>
+        </member>
+        <member name="T:SIE.DataTrace.TraceMainDatas.TraceMainDataAttachmentRepository">
+            <summary>
+             仓库
+            </summary>
+        </member>
+        <member name="T:SIE.DataTrace.TraceMainDatas.TraceMainDataAttachmentConfig">
+            <summary>
+            附件 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.DataTrace.TraceMainDatas.TraceMainDataAttachmentConfig.ConfigMeta">
+            <summary>
+            实体配置
+            </summary>
+        </member>
+        <member name="T:SIE.DataTrace.TraceMainDatas.TraceMainDataController">
+            <summary>
+            追溯主数据控制器
+            </summary>
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.TraceMainDatas.TraceMainDataController._workflow">
+            <summary>
+            工作流
+            </summary>
+        </member>
+        <member name="F:SIE.DataTrace.TraceMainDatas.TraceMainDataController.DataTraceWorkFlowSource">
+            <summary>
+            追溯流程
+            </summary>
+        </member>
+        <member name="M:SIE.DataTrace.TraceMainDatas.TraceMainDataController.StartDataTraceWorlFlow(System.Double,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            启动追溯流程
+            </summary>
+            <param name="definitionId">流程定义</param>
+            <param name="contextDic">上下文</param>
+            <param name="workflowType">追溯流程类型</param>
+            <param name="correlationId">关联ID</param>
+            <param name="flowDesc">流程描述</param>
+            <param name="flowSource">流程来源</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.DataTrace.TraceMainDatas.TraceMainDataController.CreateNewMainTraceData(System.String)">
+            <summary>
+            生成追溯主数据
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.DataTrace.TraceMainDatas.TraceMainDataController.GetTraceMainDatas(SIE.DataTrace.TraceMainDatas.TraceMainDataCriteria)">
+            <summary>
+            查询追溯主数据
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.DataTrace.TraceMainDatas.TraceMainDataController.GetTraceMainDataNo">
+            <summary>
+            生成追溯主数据单号
+            </summary>
+            <returns>来料检验单号</returns>
+        </member>
+        <member name="M:SIE.DataTrace.TraceMainDatas.TraceMainDataController.GetTraceMainDataContext(System.Double)">
+            <summary>
+            获取追溯上下文
+            </summary>
+            <param name="mainId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.DataTrace.TraceMainDatas.TraceMainDataController.GetTraceMainDataContextString(System.Double)">
+            <summary>
+            获取追溯上下文
+            </summary>
+            <param name="mainId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.DataTrace.TraceMainDatas.TraceMainDataController.GetDataTraceFlowInstaces(SIE.PagingInfo,System.String)">
+            <summary>
+            查询追溯流程的流程进度
+            </summary>
+            <param name="pageinfo"></param>
+            <param name="keyword"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.DataTrace.TraceMainDatas.TraceMainDataController.#ctor(System.IServiceProvider,SIE.WorkFlow.Base.FlowInstances.FlowProcessRecordController)">
+            <summary>
+            
+            </summary>
+            <param name="serviceProvider"></param>
+        </member>
+        <member name="M:SIE.DataTrace.TraceMainDatas.TraceMainDataController.GetBillPrintTemplates(System.Double,System.Boolean)">
+            <summary>
+            获取电子批流程追溯节点
+            </summary>
+            <param name="docId"></param>
+            <returns></returns>
+            <exception cref="T:SIE.Domain.Validation.ValidationException"></exception>
+        </member>
+        <member name="M:SIE.DataTrace.TraceMainDatas.TraceMainDataController.GetPrintTemplates(System.Collections.Generic.List{System.String})">
+            <summary>
+            获取打印模板
+            </summary>
+            <param name="types"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.DataTrace.TraceMainDatas.TraceMainDataController.GetWorkflowPanelInfo(System.Collections.Generic.IDictionary{System.String,System.Object},SIE.WorkFlow.Base.FlowInstances.FlowProcessRecord,Elsa.Services.Models.IWorkflowBlueprint)">
+            <summary>
+            获取节点信息
+            </summary>
+            <param name="activityData"></param>
+            <param name="processRecord"></param>
+            <param name="workflowBlueprint"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.DataTrace.TraceMainDatas.TraceMainDataController.GetPrintEntityType(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="assemblyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.DataTrace.TraceMainDatas.TraceMainDataController.GetActivityEntity(System.String,System.Nullable{System.Double},System.String,System.String)">
+            <summary>
+            获取节点-表单数据
+            </summary>
+            <param name="variablesJson"></param>
+            <param name="flowTaskId"></param>
+            <param name="activityType"></param>
+            <param name="entityTypeName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.DataTrace.TraceMainDatas.TraceMainDataController.GetActivityEntityList(System.String,System.String)">
+            <summary>
+            summary>
+            获取节点列表数据
+            </summary>
+            <param name="variablesJson"></param>
+            <param name="activityType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.DataTrace.TraceMainDatas.TraceMainDataController.ArchivalFiles(System.Double)">
+            <summary>
+            /归档
+            </summary>
+            <param name="mainTraceId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.DataTrace.TraceMainDatas.TraceMainDataCriteria">
+            <summary>
+            追溯主数据查询实体
+            </summary>
+        </member>
+        <member name="F:SIE.DataTrace.TraceMainDatas.TraceMainDataCriteria.NoProperty">
+            <summary>
+            单号
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.TraceMainDatas.TraceMainDataCriteria.No">
+            <summary>
+            单号
+            </summary>
+        </member>
+        <member name="F:SIE.DataTrace.TraceMainDatas.TraceMainDataCriteria.WorkFlowTypeProperty">
+            <summary>
+            追溯流程类型
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.TraceMainDatas.TraceMainDataCriteria.WorkFlowType">
+            <summary>
+            追溯流程类型
+            </summary>
+        </member>
+        <member name="F:SIE.DataTrace.TraceMainDatas.TraceMainDataCriteria.FlowInstanceIdProperty">
+            <summary>
+            流程进度Id
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.TraceMainDatas.TraceMainDataCriteria.FlowInstanceId">
+            <summary>
+            流程进度Id
+            </summary>
+        </member>
+        <member name="F:SIE.DataTrace.TraceMainDatas.TraceMainDataCriteria.FlowInstanceProperty">
+            <summary>
+            流程进度
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.TraceMainDatas.TraceMainDataCriteria.FlowInstance">
+            <summary>
+            流程进度
+            </summary>
+        </member>
+        <member name="F:SIE.DataTrace.TraceMainDatas.TraceMainDataCriteria.ContextProperty">
+            <summary>
+            上下文
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.TraceMainDatas.TraceMainDataCriteria.Context">
+            <summary>
+            上下文
+            </summary>
+        </member>
+        <member name="T:SIE.DataTrace.TraceMainDatas.TraceNodePrintTempCfg">
+            <summary>
+            追溯主数据
+            </summary>
+        </member>
+        <member name="F:SIE.DataTrace.TraceMainDatas.TraceNodePrintTempCfg.NodeNameProperty">
+            <summary>
+            追溯节点
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.TraceMainDatas.TraceNodePrintTempCfg.NodeName">
+            <summary>
+            追溯节点
+            </summary>
+        </member>
+        <member name="F:SIE.DataTrace.TraceMainDatas.TraceNodePrintTempCfg.EntityTypeProperty">
+            <summary>
+            实体类型
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.TraceMainDatas.TraceNodePrintTempCfg.EntityType">
+            <summary>
+            实体类型
+            </summary>
+        </member>
+        <member name="F:SIE.DataTrace.TraceMainDatas.TraceNodePrintTempCfg.TemplateIdProperty">
+            <summary>
+            打印模板Id
+            </summary> 
+        </member>
+        <member name="P:SIE.DataTrace.TraceMainDatas.TraceNodePrintTempCfg.TemplateId">
+            <summary>
+            打印模板Id
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.TraceMainDatas.TraceNodePrintTempCfg.Template">
+            <summary>
+            打印模板
+            </summary>
+        </member>
+        <member name="T:SIE.DataTrace.TraceMainDatas.TraceNodeNamedePrintTempCfgConfig">
+            <summary>
+            追溯主数据 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.DataTrace.TraceMainDatas.TraceNodeNamedePrintTempCfgConfig.ConfigMeta">
+            <summary>
+            实体配置
+            </summary>
+        </member>
+        <member name="T:SIE.DataTrace.TraceMainDatas.TraceWorkflowPanelInfo">
+            <summary>
+            追溯节点-信息
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.TraceMainDatas.TraceWorkflowPanelInfo.PrintEntityType">
+            <summary>
+            打印模板类型
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.TraceMainDatas.TraceWorkflowPanelInfo.AssemblyName">
+            <summary>
+            工程名
+            </summary>
+        </member>
+    </members>
+</doc>

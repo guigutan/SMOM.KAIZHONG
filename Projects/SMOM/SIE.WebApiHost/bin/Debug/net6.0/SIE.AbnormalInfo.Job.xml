@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.AbnormalInfo.Job</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.AbnormalInfo.Job.AbnormalInfos.AbnormalInfoSendJob">
+            <summary>
+            异常信息自动推送调度
+            </summary>
+        </member>
+        <member name="M:SIE.AbnormalInfo.Job.AbnormalInfos.AbnormalInfoSendJob.ExecuteJob(System.Object)">
+            <summary>
+            执行任务
+            </summary>
+            <param name="param"></param>
+        </member>
+        <member name="M:SIE.AbnormalInfo.Job.AbnormalInfos.AbnormalInfoSendJob.SendAbnormalInfos(System.Collections.Generic.List{SIE.AbnormalInfo.AbnormalInfos.AbnormalInfoAndSetting},SIE.Domain.EntityList{SIE.AbnormalInfo.AbnormalInfos.SendLog})">
+            <summary>
+            推送异常信息
+            </summary>
+            <param name="toSendList"></param>
+            <param name="sendLogList"></param>
+        </member>
+        <member name="M:SIE.AbnormalInfo.Job.AbnormalInfos.AbnormalInfoSendJob.CreateAlertResult(SIE.AbnormalInfo.AbnormalInfos.AbnormalInfor)">
+            <summary>
+            生成异常信息推送信息
+            </summary>
+            <param name="abnormal"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.AbnormalInfo.Job.AbnormalInfos.AbnormalInfoSendJob.CalSendTime(SIE.AbnormalInfo.AbnormalInfos.AbnormalInfoAndSetting)">
+            <summary>
+            计算发送时间
+            </summary>
+            <param name="abnormalSetting"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.AbnormalInfo.Job.AbnormalDefinitionJob">
+            <summary>
+            异常定义生成异常任务调度
+            </summary>
+        </member>
+        <member name="M:SIE.AbnormalInfo.Job.AbnormalDefinitionJob.ExecuteJob(SIE.Common.Schdules.JobContext)">
+            <summary>
+            执行任务
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:SIE.AbnormalInfo.Job.AbnormalDefinitionJob.ExecuteJob(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="param"></param>
+        </member>
+        <member name="T:SIE.AbnormalInfo.Job.AbnormalSendMessageJob">
+            <summary>
+            异常预警自动推送调度
+            </summary>
+        </member>
+        <member name="M:SIE.AbnormalInfo.Job.AbnormalSendMessageJob.ExecuteJob(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="param"></param>
+        </member>
+        <member name="T:SIE.AbnormalInfo.Job.Module">
+            <summary>
+            模块配置
+            </summary>
+        </member>
+        <member name="M:SIE.AbnormalInfo.Job.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化
+            </summary>
+            <param name="app">app</param>
+        </member>
+    </members>
+</doc>

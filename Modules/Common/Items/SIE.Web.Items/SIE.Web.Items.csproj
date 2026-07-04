@@ -1,0 +1,189 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <CodeAnalysisRuleSet>SIE.Web.Items.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.Items.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.Items.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Items\UnitChangeViewConfig.cs" />
+    <Compile Remove="ProductBoms\Scripts\ProductBomDetailBehavior.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Common\Editors\ItemExtPropSelectAcdingToTypeEditor.js" />
+    <None Remove="Common\Editors\ItemExtPropSelectEditor.js" />
+    <None Remove="Common\Editors\ItemPropertyValueEditor.js" />
+    <None Remove="Common\Editors\ItemUnitEditor.js" />
+    <None Remove="Common\Editors\MultiItemCateComboPopup.js" />
+    <None Remove="Common\Editors\MultiItemComboPopup.js" />
+    <None Remove="Common\Scripts\ItemExtPropertyAction.js" />
+    <None Remove="Editors\ColumnEditor.js" />
+    <None Remove="Editors\ComReplatePropertyValueEditor.js" />
+    <None Remove="Editors\ItemPropertyValueEditor.js" />
+    <None Remove="Items\Behavior\BaseItemBehavior.js" />
+    <None Remove="Items\Behavior\ItemClearBehavior.js" />
+    <None Remove="Items\Behavior\ItemPropertyValueBehavior.js" />
+    <None Remove="Items\Commands\AddChildCommand.js" />
+    <None Remove="Items\Commands\AddItemUnitCommand.js" />
+    <None Remove="Items\Commands\AddTreeCommand.js" />
+    <None Remove="Items\Commands\DeleteUnitConvertCommand.js" />
+    <None Remove="Items\Commands\ImportUnitConvertCommand.js" />
+    <None Remove="Items\Commands\InsertCommand.js" />
+    <None Remove="Items\Commands\ItemAddCommand.js" />
+    <None Remove="Items\Commands\ItemCategoryLevelAddChildCommand.js" />
+    <None Remove="Items\Commands\ItemCategoryLevelCommand.js" />
+    <None Remove="Items\Commands\ItemCateRelationCommand.js" />
+    <None Remove="Items\Commands\ItemDeleteCommand.js" />
+    <None Remove="Items\Commands\ItemDisableCommand.js" />
+    <None Remove="Items\Commands\ItemEnableCommand.js" />
+    <None Remove="Items\Commands\ItemProDefinSaveCommand.js" />
+    <None Remove="Items\Commands\ItemPropertyValueAddCommand.js" />
+    <None Remove="Items\Commands\ItemPropertyValueDeleteCommand.js" />
+    <None Remove="Items\Commands\ItemSaveCommand.js" />
+    <None Remove="Items\Commands\ProductGradeDeleteCommand.js" />
+    <None Remove="Items\Commands\ProductGradeLookupCommand.js" />
+    <None Remove="Items\Commands\SaveUnitConvertCommand.js" />
+    <None Remove="Items\Commands\SetDefaultUnitConvertCommand.js" />
+    <None Remove="Items\Commands\UnValidFactoryItemDLTemplateCommand.js" />
+    <None Remove="Items\Commands\UnValidFactoryItemImportCommand.js" />
+    <None Remove="Items\Control\BatchRuleComboList.js" />
+    <None Remove="Items\Control\EnableExtendPropertyCheckEditor.js" />
+    <None Remove="Items\Control\ItemTypeComboList.js" />
+    <None Remove="Items\Control\RetrospectTypeComboList.js" />
+    <None Remove="Items\ItemCategoryLevelMethod.js" />
+    <None Remove="Items\ItemCategoryRelationComboList.js" />
+    <None Remove="Items\Scripts\CatalogPagingLookUpMethod.js" />
+    <None Remove="Items\Scripts\Enum.js" />
+    <None Remove="Items\Scripts\ItemAction.js" />
+    <None Remove="Items\Scripts\ItemUnitAction.js" />
+    <None Remove="Items\Scripts\ItemUnitBehavior.js" />
+    <None Remove="ProductBoms\Behaviors\ProductBomListBehavior.js" />
+    <None Remove="ProductBoms\Commands\BomPropertyValueAddCommand.js" />
+    <None Remove="ProductBoms\Commands\BomPropertyValuesSaveCommand.js" />
+    <None Remove="ProductBoms\Commands\ComReplatePropertyValueSaveCommand.js" />
+    <None Remove="ProductBoms\Commands\ProductBomAddCommand.js" />
+    <None Remove="ProductBoms\Commands\ProductBomDefaultCommand.js" />
+    <None Remove="ProductBoms\Commands\ProductBomDetailImportCommand.js" />
+    <None Remove="ProductBoms\Commands\ProductBomImportCommand.js" />
+    <None Remove="ProductBoms\Commands\ProductBomSaveCommand.js" />
+    <None Remove="ProductBoms\Commands\PropertyValueSaveCommand.js" />
+    <None Remove="ProductBoms\Control\AlternativeEditor.js" />
+    <None Remove="ProductBoms\Control\PropertyCombox.js" />
+    <None Remove="ProductBoms\ItemPropertyEditor.js" />
+    <None Remove="ProductBoms\Scripts\ProductBomDetailBehavior.js" />
+    <None Remove="ProductFamilys\Commands\ProductFamilyCommand.js" />
+    <None Remove="ProductModels\Commands\LineCapacityAddCommand.js" />
+    <None Remove="ProductModels\Commands\LookUpSelectCommand.js" />
+    <None Remove="ProductModels\Commands\ProductModelCopyCommand.js" />
+    <None Remove="ProductModels\Commands\ProductModelDeleteCommand.js" />
+    <None Remove="ProductModels\Commands\ProductModelImportCommand.js" />
+    <None Remove="ProductModels\Commands\ProductModelSaveCommand.js" />
+    <None Remove="ProductModels\Commands\ProductModelSkillImportCommand.js" />
+    <None Remove="ProductModels\Commands\SelectProductModel.js" />
+    <None Remove="Units\Commands\DeleteUnitCommand.js" />
+    <None Remove="Units\Commands\InitUnitCommand.js" />
+    <None Remove="Units\Commands\SaveUnitConvertCommand.js" />
+    <None Remove="ViewModels\PropertyValueEditor.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\..\..\.sonarlint\sie.smom\CSharp\SonarLint.xml" Link="SonarLint.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Common\Editors\ItemExtPropSelectAcdingToTypeEditor.js" />
+    <EmbeddedResource Include="Common\Editors\ItemExtPropSelectEditor.js" />
+    <EmbeddedResource Include="Common\Editors\ItemPropertyValueEditor.js" />
+    <EmbeddedResource Include="Common\Editors\ItemUnitEditor.js" />
+    <EmbeddedResource Include="Common\Editors\MultiItemCateComboPopup.js" />
+    <EmbeddedResource Include="Common\Editors\MultiItemComboPopup.js" />
+    <EmbeddedResource Include="Common\Scripts\ItemExtPropertyAction.js" />
+    <EmbeddedResource Include="Editors\ComReplatePropertyValueEditor.js" />
+    <EmbeddedResource Include="Items\Behavior\BaseItemBehavior.js" />
+    <EmbeddedResource Include="Items\Behavior\ItemClearBehavior.js">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Items\Commands\AddItemUnitCommand.js" />
+    <EmbeddedResource Include="Items\Commands\DeleteUnitConvertCommand.js" />
+    <EmbeddedResource Include="Items\Commands\ImportUnitConvertCommand.js" />
+    <EmbeddedResource Include="Items\Commands\ItemDeleteCommand.js" />
+    <EmbeddedResource Include="Items\Commands\ItemPropertyValueDeleteCommand.js" />
+    <EmbeddedResource Include="Items\Commands\SetDefaultUnitConvertCommand.js" />
+    <EmbeddedResource Include="Items\Commands\SaveUnitConvertCommand.js" />
+    <EmbeddedResource Include="Items\Commands\UnValidFactoryItemDLTemplateCommand.js" />
+    <EmbeddedResource Include="Items\Commands\UnValidFactoryItemImportCommand.js" />
+    <EmbeddedResource Include="Items\Control\EnableExtendPropertyCheckEditor.js" />
+    <EmbeddedResource Include="Items\ItemCategoryLevelMethod.js" />
+    <EmbeddedResource Include="Items\Scripts\CatalogPagingLookUpMethod.js" />
+    <EmbeddedResource Include="Items\Scripts\ColumnEditor.js" />
+    <EmbeddedResource Include="Editors\ItemPropertyValueEditor.js" />
+    <EmbeddedResource Include="Items\Commands\AddChildCommand.js" />
+    <EmbeddedResource Include="Items\Commands\AddTreeCommand.js" />
+    <EmbeddedResource Include="Items\Commands\InsertCommand.js" />
+    <EmbeddedResource Include="Items\Commands\ItemPropertyValueAddCommand.js" />
+    <EmbeddedResource Include="Items\Commands\ItemAddCommand.js" />
+    <EmbeddedResource Include="Items\Commands\ItemCategoryLevelAddChildCommand.js" />
+    <EmbeddedResource Include="Items\Commands\ItemCategoryLevelCommand.js" />
+    <EmbeddedResource Include="Items\Commands\ItemCateRelationCommand.js" />
+    <EmbeddedResource Include="Items\Commands\ItemDisableCommand.js" />
+    <EmbeddedResource Include="Items\Commands\ItemEnableCommand.js" />
+    <EmbeddedResource Include="Items\Commands\ItemProDefinSaveCommand.js" />
+    <EmbeddedResource Include="Items\Commands\ItemSaveCommand.js" />
+    <EmbeddedResource Include="Items\Commands\ProductGradeDeleteCommand.js" />
+    <EmbeddedResource Include="Items\Commands\ProductGradeLookupCommand.js" />
+    <EmbeddedResource Include="Items\Control\BatchRuleComboList.js" />
+    <EmbeddedResource Include="Items\Control\ItemTypeComboList.js" />
+    <EmbeddedResource Include="Items\Control\RetrospectTypeComboList.js" />
+    <EmbeddedResource Include="Items\Behavior\ItemPropertyValueBehavior.js" />
+    <EmbeddedResource Include="Items\ItemCategoryRelationComboList.js" />
+    <EmbeddedResource Include="Items\Scripts\Enum.js" />
+    <EmbeddedResource Include="Items\Scripts\ItemAction.js" />
+    <EmbeddedResource Include="Items\Scripts\ItemUnitBehavior.js" />
+    <EmbeddedResource Include="ProductBoms\Behaviors\ProductBomListBehavior.js" />
+    <EmbeddedResource Include="ProductBoms\Commands\BomPropertyValueAddCommand.js" />
+    <EmbeddedResource Include="ProductBoms\Commands\BomPropertyValuesSaveCommand.js" />
+    <EmbeddedResource Include="ProductBoms\Commands\ComReplatePropertyValueSaveCommand.js" />
+    <EmbeddedResource Include="ProductBoms\Commands\ProductBomAddCommand.js" />
+    <EmbeddedResource Include="ProductBoms\Commands\ProductBomDefaultCommand.js" />
+    <EmbeddedResource Include="ProductBoms\Commands\ProductBomDetailImportCommand.js" />
+    <EmbeddedResource Include="ProductBoms\Commands\PropertyValueSaveCommand.js" />
+    <EmbeddedResource Include="ProductBoms\Commands\ProductBomImportCommand.js" />
+    <EmbeddedResource Include="ProductBoms\Control\AlternativeEditor.js" />
+    <EmbeddedResource Include="ProductBoms\Control\PropertyCombox.js" />
+    <EmbeddedResource Include="ProductBoms\ItemPropertyEditor.js" />
+    <EmbeddedResource Include="ProductBoms\Scripts\ProductBomDetailBehavior.js" />
+    <EmbeddedResource Include="ProductFamilys\Commands\ProductFamilyCommand.js" />
+    <EmbeddedResource Include="ProductModels\Commands\LineCapacityAddCommand.js" />
+    <EmbeddedResource Include="ProductModels\Commands\LookUpSelectCommand.js" />
+    <EmbeddedResource Include="ProductModels\Commands\ProductModelCopyCommand.js" />
+    <EmbeddedResource Include="ProductModels\Commands\ProductModelDeleteCommand.js" />
+    <EmbeddedResource Include="ProductModels\Commands\ProductModelImportCommand.js" />
+    <EmbeddedResource Include="ProductModels\Commands\ProductModelSaveCommand.js" />
+    <EmbeddedResource Include="ProductModels\Commands\ProductModelSkillImportCommand.js" />
+    <EmbeddedResource Include="ProductModels\Commands\SelectProductModel.js" />
+    <EmbeddedResource Include="Units\Commands\InitUnitCommand.js" />
+    <EmbeddedResource Include="Units\Commands\DeleteUnitCommand.js" />
+    <EmbeddedResource Include="Units\Commands\SaveUnitConvertCommand.js" />
+    <EmbeddedResource Include="ViewModels\PropertyValueEditor.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SIE.Items\SIE.Items.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="SIE.Web.Common" Version="10.0.5" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ProductBoms\Commands\ProductBomSaveCommand.js" />
+  </ItemGroup>
+</Project>

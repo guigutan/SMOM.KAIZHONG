@@ -1,0 +1,663 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.LogData</name>
+    </assembly>
+    <members>
+        <member name="T:Nest.NestExtension">
+            <summary>
+            Nest 的静态扩展方法
+            </summary>
+        </member>
+        <member name="M:Nest.NestExtension.Check(Nest.IResponse)">
+            <summary>
+            校验Elasticsearch返回结果
+            </summary>
+            <param name="response"></param>
+            <exception cref="T:SIE.PlatformException"></exception>
+        </member>
+        <member name="T:SIE.LogData.AuditItem">
+            <summary>
+            操作日志
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.AuditItem.LogNum">
+            <summary>
+            日志编码
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.AuditItem.Title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.AuditItem.Content">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.AuditItem.FriendlyContent">
+            <summary>
+            显示给用户看的内容
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.AuditItem.PrivateContent">
+            <summary>
+            调试人员看的内容
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.AuditItem.User">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.AuditItem.InvOrg">
+            <summary>
+            库存组织
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.AuditItem.MachineName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.AuditItem.MainModuleName">
+            <summary>
+            主模块名
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.AuditItem.ModuleName">
+            <summary>
+            模块名
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.AuditItem.CommandName">
+            <summary>
+            命令名
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.AuditItem.Type">
+            <summary>
+            日志类型
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.AuditItem.LogSource">
+            <summary>
+            日志来源
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.AuditItem.LogTime">
+            <summary>
+            记录时间
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.AuditItem.Env">
+            <summary>
+            环境信息
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.AuditItem.TraceId">
+            <summary>
+            追踪码
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.AuditItem.ThreadId">
+            <summary>
+            线程ID
+            </summary>
+        </member>
+        <member name="T:SIE.LogData.AuditItemCriteria">
+            <summary>
+            操作日志
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.AuditItemCriteria.MainModuleName">
+            <summary>
+            主模块名
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.AuditItemCriteria.ModuleName">
+            <summary>
+            模块名
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.AuditItemCriteria.CommandName">
+            <summary>
+            命令名
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.AuditItemCriteria.Title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.AuditItemCriteria.Content">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.AuditItemCriteria.MachineName">
+            <summary>
+            机器名
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.AuditItemCriteria.Type">
+            <summary>
+            日志类型
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.AuditItemCriteria.LogSource">
+            <summary>
+            日志来源
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.AuditItemCriteria.TraceId">
+            <summary>
+            追踪码
+            </summary>
+        </member>
+        <member name="T:SIE.LogData.AuditLogType">
+            <summary>
+            日志类型
+            </summary>
+        </member>
+        <member name="F:SIE.LogData.AuditLogType.None">
+            <summary>
+            无
+            </summary>
+        </member>
+        <member name="F:SIE.LogData.AuditLogType.Command">
+            <summary>
+            命令
+            </summary>
+        </member>
+        <member name="F:SIE.LogData.AuditLogType.OpenModule">
+            <summary>
+            模块
+            </summary>
+        </member>
+        <member name="F:SIE.LogData.AuditLogType.Login">
+            <summary>
+            登录
+            </summary>
+        </member>
+        <member name="F:SIE.LogData.AuditLogType.Logout">
+            <summary>
+            登出
+            </summary>
+        </member>
+        <member name="F:SIE.LogData.AuditLogType.Refresh">
+            <summary>
+            刷新
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.CriteriaBase.InvOrg">
+            <summary>
+            库存组织
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.CriteriaBase.LogBy">
+            <summary>
+            记录人
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.CriteriaBase.LogBeginTime">
+            <summary>
+            记录时间
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.CriteriaBase.LogEndTime">
+            <summary>
+            记录时间
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.CriteriaBase.MinElapsed">
+            <summary>
+            最小耗时(毫秒)
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.CriteriaBase.MaxElapsed">
+            <summary>
+            最大耗时(毫秒)
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.CriteriaBase.LogNum">
+            <summary>
+            日志Id
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.CriteriaBase.OrderInfos">
+            <summary>
+            排序选项
+            </summary>
+        </member>
+        <member name="T:SIE.LogData.DataPortalLog">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.DataPortalLog.IsSuccess">
+            <summary>
+            是否成功
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.DataPortalLog.ServiceName">
+            <summary>
+            服务名
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.DataPortalLog.ApiType">
+            <summary>
+            模块
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.DataPortalLog.ApiName">
+            <summary>
+            请求类型
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.DataPortalLog.Method">
+            <summary>
+            方法
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.DataPortalLog.Request">
+            <summary>
+            请求
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.DataPortalLog.Response">
+            <summary>
+            API响应
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.DataPortalLog.Error">
+            <summary>
+            错误信息
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.DataPortalLog.UserId">
+            <summary>
+            员工ID
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.DataPortalLog.User">
+            <summary>
+            员工
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.DataPortalLog.ExecutionTime">
+            <summary>
+            执行时间
+            </summary>
+        </member>
+        <member name="T:SIE.LogData.DataPortalLogCriteria">
+            <summary>
+            请求日志查询类
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.DataPortalLogCriteria.IsSuccess">
+            <summary>
+            是否成功
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.DataPortalLogCriteria.ServiceName">
+            <summary>
+            服务名
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.DataPortalLogCriteria.ApiType">
+            <summary>
+            模块
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.DataPortalLogCriteria.ApiName">
+            <summary>
+            请求类型
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.DataPortalLogCriteria.Method">
+            <summary>
+            方法
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.DataPortalLogCriteria.Request">
+            <summary>
+            请求
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.DataPortalLogCriteria.Response">
+            <summary>
+            API响应
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.DataPortalLogCriteria.Error">
+            <summary>
+            错误信息
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.DataPortalLogCriteria.User">
+            <summary>
+            员工
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.DataPortalLogCriteria.Ip">
+            <summary>
+            Ip
+            </summary>
+        </member>
+        <member name="T:SIE.LogData.EntityLog">
+            <summary>
+            数据日志
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.EntityLog.LogTime">
+            <summary>
+            日志时间
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.EntityLog.LogId">
+            <summary>
+            日志Id
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.EntityLog.TraceId">
+            <summary>
+            追踪码
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.EntityLog.OperatorAction">
+            <summary>
+            操作类型（CURD）
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.EntityLog.ModelType">
+            <summary>
+            模型类型，类的全称
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.EntityLog.ModelId">
+            <summary>
+            模型Id
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.EntityLog.InvOrg">
+            <summary>
+            库存组织
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.EntityLog.User">
+            <summary>
+            用户
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.EntityLog.SignatureBy">
+            <summary>
+            签名人
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.EntityLog.SignatureType">
+            <summary>
+            签名类型
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.EntityLog.Data">
+            <summary>
+            json序列化内容
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.EntityLog.Sql">
+            <summary>
+            执行的sql语句
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.EntityLog.RowAffected">
+            <summary>
+            受影响行数
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.EntityLog.Env">
+            <summary>
+            环境信息
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.EntityLog.ThreadId">
+            <summary>
+            线程ID
+            </summary>
+        </member>
+        <member name="T:SIE.LogData.EntityLogCriteria">
+            <summary>
+            实体日志查询类
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.EntityLogCriteria.TraceId">
+            <summary>
+            追踪码
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.EntityLogCriteria.OperatorAction">
+            <summary>
+            操作类型（CURD）
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.EntityLogCriteria.ModelType">
+            <summary>
+            模型类型，类的全称
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.EntityLogCriteria.ModelId">
+            <summary>
+            模型Id
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.EntityLogCriteria.SignatureBy">
+            <summary>
+            签名人
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.EntityLogCriteria.SignatureType">
+            <summary>
+            签名类型
+            </summary>
+        </member>
+        <member name="T:SIE.LogData.ILogService">
+            <summary>
+            日志服务接口
+            </summary>
+        </member>
+        <member name="M:SIE.LogData.ILogService.Add(SIE.LogData.AuditItem)">
+            <summary>
+            添加操作日志
+            </summary>
+            <param name="log">操作日志</param>
+        </member>
+        <member name="M:SIE.LogData.ILogService.Add(SIE.LogData.EntityLog)">
+            <summary>
+            添加实体日志
+            </summary>
+            <param name="log">实体日志</param>
+        </member>
+        <member name="M:SIE.LogData.ILogService.GetLogSqlList(SIE.LogData.LogSqlCriteria)">
+            <summary>
+            获取性能日志
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.LogData.ILogService.GetLogStackList(SIE.LogData.LogStackCriteria)">
+            <summary>
+            获取性能跟踪日志
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.LogData.ILogService.GetAuditItemList(SIE.LogData.AuditItemCriteria)">
+            <summary>
+            获取操作日志
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.LogData.ILogService.GetEntityLogList(SIE.LogData.EntityLogCriteria)">
+            <summary>
+            获取实体日志列表
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.LogData.ILogService.GetRequestLogList(SIE.LogData.DataPortalLogCriteria)">
+            <summary>
+            获取请求日志列表
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="P:SIE.LogData.LogBase.Content">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.LogBase.Elapsed">
+            <summary>
+            耗时(毫秒)
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.LogBase.LogTime">
+            <summary>
+            记录时间
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.LogBase.InvOrg">
+            <summary>
+            库存组织
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.LogBase.LogBy">
+            <summary>
+            记录人
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.LogBase.Ip">
+            <summary>
+            Ip地址
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.LogBase.Env">
+            <summary>
+            环境信息
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.LogBase.ThreadId">
+            <summary>
+            线程ID
+            </summary>
+        </member>
+        <member name="M:SIE.LogData.LoggingData.ToString">
+            <summary>
+            输出json字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.LogData.LogSource">
+            <summary>
+            日志来源
+            </summary>
+        </member>
+        <member name="F:SIE.LogData.LogSource.BS">
+            <summary>
+            BS
+            </summary>
+        </member>
+        <member name="F:SIE.LogData.LogSource.CS">
+            <summary>
+            CS
+            </summary>
+        </member>
+        <member name="F:SIE.LogData.LogSource.Mobile">
+            <summary>
+            移动端
+            </summary>
+        </member>
+        <member name="F:SIE.LogData.LogSource.API">
+            <summary>
+            API
+            </summary>
+        </member>
+        <member name="F:SIE.LogData.LogSource.Other">
+            <summary>
+            其它
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.LogSql.Connection">
+            <summary>
+            连接字符串
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.LogSqlCriteria.Ip">
+            <summary>
+            Ip地址
+            </summary>
+        </member>
+        <member name="T:SIE.LogData.LogStack">
+            <summary>
+            性能跟踪日志
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.LogStack.ContextId">
+            <summary>
+            会话ID
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.LogStack.Caption">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.LogStack.Category">
+            <summary>
+            分类
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.LogStack.StackIndex">
+            <summary>
+            调用顺序
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.LogStack.StackKey">
+            <summary>
+            调用栈Key
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.LogStack.StackLevel">
+            <summary>
+            栈层级
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.LogStack.SqlContent">
+            <summary>
+            执行的SQL内容
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.LogStackCriteria.ContextId">
+            <summary>
+            会话ID
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.LogStackCriteria.Caption">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.LogStackCriteria.Category">
+            <summary>
+            分类
+            </summary>
+        </member>
+        <member name="P:SIE.LogData.LogStackCriteria.Ip">
+            <summary>
+            Ip地址
+            </summary>
+        </member>
+    </members>
+</doc>

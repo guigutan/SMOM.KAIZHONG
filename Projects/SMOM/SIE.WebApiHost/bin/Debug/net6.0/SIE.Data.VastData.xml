@@ -1,0 +1,199 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Data.VastData</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Data.VastData.Module">
+            <summary>
+            模块配置
+            </summary>
+        </member>
+        <member name="M:SIE.Data.VastData.VastDataColumn.Write(SIE.Domain.Entity,System.Object)">
+            <summary>
+            实体绑定（从数据库）的特殊处理
+            </summary>
+            <param name="entity"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:SIE.Data.VastData.VastDataDbTypeHelper.ConvertFromCLRType(System.Type)">
+            <summary>
+            布尔类型处理
+            </summary>
+            <param name="clrType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Data.VastData.VastDataDbTypeHelper.ConvertToVastDataTypeString(System.Data.DbType,System.String)">
+            <summary>
+            把 DbType 转换为 VastData 中的数据类型
+            </summary>
+            <param name="fieldType">Type of the field.</param>
+            <param name="length">The length.</param>
+            <returns></returns>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:SIE.Data.VastData.VastDataDbTypeHelper.ConvertFromVastDataTypeString(System.String)">
+            <summary>
+            把 vastData 中的数据类型 转换为 DbType
+            </summary>
+            <param name="sqlType">Type of the SQL.</param>
+            <returns></returns>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:SIE.Data.VastData.VastDataDialect.GetParameterName(System.Object)">
+            <summary>
+            生成SQL执行命名参数
+            </summary>
+            <param name="name">序号数字或列名称字符</param>
+            <returns></returns>
+        </member>
+        <member name="P:SIE.Data.VastData.VastDataDialect.UpdateAddTable">
+            <summary>
+            不支持在update语句前加表名
+            </summary>
+        </member>
+        <member name="M:SIE.Data.VastData.VastDataDialect.PrepareValue(System.Object)">
+            <summary>
+            存储数据库的值转换（枚举值自动转换为int）
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Data.VastData.VastDataDialect.PrepareParameter(System.Data.IDbDataParameter)">
+            <summary>
+            所有的布尔值都转换未byte
+            </summary>
+            <param name="p"></param>
+        </member>
+        <member name="M:SIE.Data.VastData.VastDataDialect.ConvertFromCLRType(System.Type)">
+            <summary>
+            转换数据库类型
+            </summary>
+            <param name="clrType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Data.VastData.VastDataGenerator.ModifyToPagingTree(SIE.Data.SqlTree.SqlSelect,SIE.PagingInfo)">
+            <summary>
+            ORM MySql为指定的原始查询生成指定分页效果的新查询。
+            </summary>
+            <param name="raw">原始查询</param>
+            <param name="pagingInfo">分页信息。</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Data.VastData.VastDataMetaReader.ReadAllIndexes">
+            <summary>
+            ORM读取所有索引实现
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Data.VastData.VastDataMigrationProvider">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Data.VastData.VastDataMigrationProvider.CreateDbBackuper">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:SIE.Data.VastData.VastDataMigrationProvider.CreateRunGenerator">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Data.VastData.VastDataMigrationProvider.CreateSchemaReader">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Data.VastData.VastDataRunGenerator">
+            <summary>
+            海量数据库  参考网站 https://docs.vastdata.com.cn/zh_CN/VastbaseG100/V2.2.15/1/0a19d7c043b74cbf8e2a21a1cfde608a
+            </summary>
+        </member>
+        <member name="M:SIE.Data.VastData.VastDataRunGenerator.Quote(System.String)">
+            <summary>
+             
+            </summary>
+            <param name="identifier"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Data.VastData.VastDataRunGenerator.ConvertToTypeString(System.Data.DbType,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="dataType"></param>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Data.VastData.VastDataRunGenerator.Generate(SIE.Data.DbMigration.Operations.CreateNormalColumn)">
+            <summary>
+            
+            </summary>
+            <param name="op"></param>
+        </member>
+        <member name="M:SIE.Data.VastData.VastDataRunGenerator.Generate(SIE.Data.DbMigration.Operations.AlterColumnType)">
+            <summary>
+            
+            </summary>
+            <param name="op"></param>
+        </member>
+        <member name="M:SIE.Data.VastData.VastDataRunGenerator.Generate(SIE.Data.DbMigration.Operations.CreateTable)">
+            <summary>
+            
+            </summary>
+            <param name="op"></param>
+        </member>
+        <member name="M:SIE.Data.VastData.VastDataRunGenerator.Generate(SIE.Data.DbMigration.Operations.CreateDatabase)">
+            <summary>
+            
+            </summary>
+            <param name="op"></param>
+        </member>
+        <member name="M:SIE.Data.VastData.VastDataRunGenerator.Generate(SIE.Data.DbMigration.Operations.UpdateComment)">
+            <summary>
+            
+            </summary>
+            <param name="op"></param>
+        </member>
+        <member name="M:SIE.Data.VastData.VastDataRunGenerator.AddNotNullConstraint(SIE.Data.DbMigration.Operations.ColumnOperation)">
+            <summary>
+            
+            </summary>
+            <param name="op"></param>
+        </member>
+        <member name="M:SIE.Data.VastData.VastDataRunGenerator.RemoveNotNullConstraint(SIE.Data.DbMigration.Operations.ColumnOperation)">
+            <summary>
+            
+            </summary>
+            <param name="op"></param>
+        </member>
+        <member name="M:SIE.Data.VastData.VastDataRunGenerator.Generate(SIE.Data.DbMigration.Operations.AddDBIndex)">
+            <summary>
+            
+            </summary>
+            <param name="op"></param>
+        </member>
+        <member name="M:SIE.Data.VastData.VastDataRunGenerator.Generate(SIE.Data.DbMigration.Operations.RemoveDBIndex)">
+            <summary>
+            Generates the specified op.
+            </summary>
+            <param name="op">The op.</param>
+        </member>
+        <member name="M:SIE.Data.VastData.VastDataRunGenerator.Generate(SIE.Data.DbMigration.Operations.AddFKConstraint)">
+            <summary>
+            
+            </summary>
+            <param name="op"></param>
+        </member>
+        <member name="M:SIE.Data.VastData.VastDataTable.GetPagingLocation(SIE.PagingInfo)">
+            <summary>
+            支持在数据库层面进行分页。
+            </summary>
+        </member>
+    </members>
+</doc>

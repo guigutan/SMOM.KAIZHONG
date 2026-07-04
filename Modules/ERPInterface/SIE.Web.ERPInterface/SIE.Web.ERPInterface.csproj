@@ -1,0 +1,118 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\platform\smom\net6.0\SIE.Web.ERPInterface.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\platform\smom\net6.0\SIE.Web.ERPInterface.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Logs\Editors\**" />
+    <Compile Remove="UploadTransactionRules\**" />
+    <EmbeddedResource Remove="Logs\Editors\**" />
+    <EmbeddedResource Remove="UploadTransactionRules\**" />
+    <None Remove="Logs\Editors\**" />
+    <None Remove="UploadTransactionRules\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="DownloadManual\Items\ItemExtViewConfig - 复制.cs" />
+    <Compile Remove="DownloadManual\ProductBoms\ProductBomExtViewConfig.cs" />
+    <Compile Remove="DownloadManual\PurchaseOrders\PurchaseOrderExtViewConfig.cs" />
+    <Compile Remove="DownloadManual\Receipts\AsnExtViewConfig.cs" />
+    <Compile Remove="DownloadManual\Shipments\ShippingOrderExtViewConfig.cs" />
+    <Compile Remove="DownloadManual\WorkOrders\WorkOrderExtViewConfig.cs" />
+    <Compile Remove="Download\Transactions\FunctionInfViewConfig.cs" />
+    <Compile Remove="Download\Transactions\TransactionInfViewConfig.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="DownloadManual\Common\Commands\DownloadCommand.js" />
+    <None Remove="DownloadManual\Customers\Commands\DlCustomerCommand.js" />
+    <None Remove="DownloadManual\Employees\Commands\DlEmployeeCommand.js" />
+    <None Remove="DownloadManual\Items\Commands\DlUnitChangeCommand.js" />
+    <None Remove="DownloadManual\ProductBoms\Commands\DlProductBomCommand.js" />
+    <None Remove="DownloadManual\Projects\Commands\DlProjectCommand.js" />
+    <None Remove="DownloadManual\PurchaseOrders\Commands\DlPurchaseOrderCommand.js" />
+    <None Remove="DownloadManual\Receipts\Commands\DlAsnCommand.js" />
+    <None Remove="DownloadManual\Shipments\Commands\DlShipmentOrderCommand.js" />
+    <None Remove="DownloadManual\Suppliers\Commands\DlSupplierCommand.js" />
+    <None Remove="DownloadManual\TaskNos\Commands\DlTaskNoCommand.js" />
+    <None Remove="DownloadManual\Warehouses\Commands\DlErpWarehouseCommand.js" />
+    <None Remove="DownloadManual\WorkOrders\Commands\DlWorkOrderCommand.js" />
+    <None Remove="ERPJobCloseRules\Commands\ErpJobCloseRuleSaveCommand.js" />
+    <None Remove="InventoryControl\Commands\InventoryControlQueryCommand.js" />
+    <None Remove="InventoryControl\Commands\InventoryControlSettingCommand.js" />
+    <None Remove="InventoryControl\Scripts\InventoryControlBehavior.js" />
+    <None Remove="InventoryControl\Scripts\InventoryControlGenerator.js" />
+    <None Remove="Logs\Commands\AbandonCommand.js" />
+    <None Remove="Logs\Commands\AdjustTxnDateCommand.js" />
+    <None Remove="Logs\Commands\CloseUploadErpUploadLogCommand.js" />
+    <None Remove="Logs\Commands\LookUpContextCommand.js" />
+    <None Remove="Logs\Commands\RequestContextCommand.js" />
+    <None Remove="Logs\Commands\ResponseContextCommand.js" />
+    <None Remove="Logs\Commands\RestoreUploadErpUploadLogCommand.js" />
+    <None Remove="Logs\Commands\ReUploadCommand.js" />
+    <None Remove="Logs\Commands\ReUploadErpUploadLogCommand.js" />
+    <None Remove="Logs\Commands\WmsStatisticsQueryCommand.js" />
+    <None Remove="Logs\DownloadExcReportLayout.js" />
+    <None Remove="Logs\Scripts\DownloadJobTimeDetailQueryBehavior.js" />
+    <None Remove="Logs\Scripts\ErpUploadLogBehavior.js" />
+    <None Remove="Logs\Scripts\StateColorStyle.js" />
+    <None Remove="UploadTranscationRules\Commands\InitTransRuleCommand.js" />
+    <None Remove="UploadTranscationRules\Commands\TransactionWarehouseLookupCommand.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DownloadManual\Common\Commands\DownloadCommand.js" />
+    <EmbeddedResource Include="DownloadManual\Customers\Commands\DlCustomerCommand.js" />
+    <EmbeddedResource Include="DownloadManual\Employees\Commands\DlEmployeeCommand.js" />
+    <EmbeddedResource Include="DownloadManual\Items\Commands\DlUnitChangeCommand.js" />
+    <EmbeddedResource Include="DownloadManual\ProductBoms\Commands\DlProductBomCommand.js" />
+    <EmbeddedResource Include="DownloadManual\PurchaseOrders\Commands\DlPurchaseOrderCommand.js" />
+    <EmbeddedResource Include="DownloadManual\Receipts\Commands\DlAsnCommand.js" />
+    <EmbeddedResource Include="DownloadManual\Shipments\Commands\DlShipmentOrderCommand.js" />
+    <EmbeddedResource Include="DownloadManual\Projects\Commands\DlProjectCommand.js" />
+    <EmbeddedResource Include="DownloadManual\TaskNos\Commands\DlTaskNoCommand.js" />
+    <EmbeddedResource Include="DownloadManual\Suppliers\Commands\DlSupplierCommand.js" />
+    <EmbeddedResource Include="DownloadManual\Warehouses\Commands\DlErpWarehouseCommand.js" />
+    <EmbeddedResource Include="DownloadManual\WorkOrders\Commands\DlWorkOrderCommand.js" />
+    <EmbeddedResource Include="ERPJobCloseRules\Commands\ErpJobCloseRuleSaveCommand.js" />
+    <EmbeddedResource Include="InventoryControl\Commands\InventoryControlQueryCommand.js" />
+    <EmbeddedResource Include="InventoryControl\Commands\InventoryControlSettingCommand.js" />
+    <EmbeddedResource Include="InventoryControl\Scripts\InventoryControlBehavior.js" />
+    <EmbeddedResource Include="InventoryControl\Scripts\InventoryControlGenerator.js" />
+    <EmbeddedResource Include="Logs\Commands\AbandonCommand.js" />
+    <EmbeddedResource Include="Logs\Commands\AdjustTxnDateCommand.js" />
+    <EmbeddedResource Include="Logs\Commands\ResponseContextCommand.js" />
+    <EmbeddedResource Include="Logs\Commands\RequestContextCommand.js" />
+    <EmbeddedResource Include="Logs\Commands\RestoreUploadErpUploadLogCommand.js" />
+    <EmbeddedResource Include="Logs\Commands\CloseUploadErpUploadLogCommand.js" />
+    <EmbeddedResource Include="Logs\Commands\LookUpContextCommand.js" />
+    <EmbeddedResource Include="Logs\Commands\ReUploadErpUploadLogCommand.js" />
+    <EmbeddedResource Include="Logs\Commands\ReUploadCommand.js" />
+    <EmbeddedResource Include="Common\Commands\ReportQueryCommand.js" />
+    <EmbeddedResource Include="Logs\DownloadExcReportLayout.js" />
+    <EmbeddedResource Include="Logs\Scripts\DownloadJobTimeDetailQueryBehavior.js" />
+    <EmbeddedResource Include="Logs\Scripts\ErpUploadLogBehavior.js" />
+    <EmbeddedResource Include="Logs\Scripts\StateColorStyle.js" />
+    <EmbeddedResource Include="UploadTranscationRules\Commands\InitTransRuleCommand.js" />
+    <EmbeddedResource Include="UploadTranscationRules\Commands\TransactionWarehouseLookupCommand.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Download\Transactions\" />
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\Core\SIE.Web.Core\SIE.Web.Core.csproj" />
+    <ProjectReference Include="..\SIE.ERPInterface.Smom\SIE.ERPInterface.Smom.csproj" />
+  </ItemGroup>
+</Project>

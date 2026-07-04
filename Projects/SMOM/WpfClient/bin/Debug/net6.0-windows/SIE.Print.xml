@@ -1,0 +1,729 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Print</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Print.Module">
+            <summary>
+            模块配置
+            </summary>
+        </member>
+        <member name="M:SIE.Print.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化
+            </summary>
+            <param name="app">app</param>
+        </member>
+        <member name="T:SIE.Print.PrintController">
+            <summary>
+            打印控制器
+            </summary>
+            <seealso cref="T:SIE.DomainController" />
+        </member>
+        <member name="M:SIE.Print.PrintController.RegisterConfig(System.String,System.String,System.Collections.Generic.IList{System.String})">
+            <summary>
+            注册打印机配置
+            </summary>
+            <param name="ip">ip 地址</param>
+            <param name="printNames">打印机名称集合</param>
+        </member>
+        <member name="M:SIE.Print.PrintController.GetPrintTask(System.Double)">
+            <summary>
+            根据 Id 获取打印任务
+            </summary>
+            <param name="id">打印任务id</param>
+            <returns>打印任务</returns>
+            <exception cref="T:SIE.Domain.Validation.ValidationException">
+            打印任务id 不存在,请确认是否被打印过了。"
+            or
+            打印任务：{0} 状态：{1} 不能打印".L10nFormat(printTask.Name, printTask.State.ToLabel())
+            </exception>
+        </member>
+        <member name="M:SIE.Print.PrintController.GetPrintTask(System.String)">
+            <summary>
+            根据Ip获取打印任务
+            </summary>
+            <param name="ip">IP 地址</param>
+            <returns>打印任务</returns>
+            <exception cref="T:SIE.Domain.Validation.ValidationException">IP 暂时没有打印任务"</exception>
+        </member>
+        <member name="M:SIE.Print.PrintController.DisableTask(System.Double)">
+            <summary>
+            禁用打印任务
+            </summary>
+            <param name="taskId">The task identifier.</param>
+        </member>
+        <member name="M:SIE.Print.PrintController.CompletePrint(System.Double)">
+            <summary>
+            完成打印
+            </summary>
+            <param name="taskId">打印任务Id</param>
+        </member>
+        <member name="M:SIE.Print.PrintController.GetContent(System.Double)">
+            <summary>
+            获取打印内容
+            </summary>
+            <param name="taskId">打印任务Id</param>
+            <returns></returns>
+            <exception cref="T:SIE.Domain.Validation.ValidationException">
+            打印任务id：{0} 不存在,请确认是否被打印过了。".L10nFormat(taskId)
+            or
+            打印任务id：{0} 不存在,请确认是否被打印过了。".L10nFormat(taskId)
+            or
+            打印任务id：{0} 不存在,请确认是否被打印过了。".L10nFormat(taskId)
+            or
+            </exception>
+        </member>
+        <member name="M:SIE.Print.PrintController.Reprint(System.Double)">
+            <summary>
+            重新打印
+            </summary>
+            <param name="printTaskHistoryId">打印记录Id</param>
+            <exception cref="T:SIE.Domain.Validation.ValidationException">未找到历史任务ID：{0}".L10nFormat(taskId)</exception>
+        </member>
+        <member name="M:SIE.Print.PrintController.CheckTaskParameter(SIE.Common.Prints.TaskParameter)">
+            <summary>
+            校验任务参数
+            </summary>
+            <param name="parameter">任务参数</param>
+        </member>
+        <member name="M:SIE.Print.PrintController.PublishTask(SIE.Print.PrintTask,SIE.Common.Prints.PrintConfig)">
+            <summary>
+            发布任务.
+            </summary>
+            <param name="task">The task.</param>
+            <param name="config">The configuration.</param>
+        </member>
+        <member name="M:SIE.Print.PrintController.PublishTaskSucceed(SIE.Common.Prints.PrintConfig)">
+            <summary>
+            推送打印任务成功
+            </summary>
+            <param name="config">打印配置</param>
+        </member>
+        <member name="M:SIE.Print.PrintController.PublishTaskFailure(SIE.Common.Prints.PrintConfig,System.Exception)">
+            <summary>
+            推送打印任务失败
+            </summary>
+            <param name="config">打印配置.</param>
+            <param name="exc">异常信息.</param>
+        </member>
+        <member name="M:SIE.Print.PrintController.SendData(SIE.DataPortal.ApiRequest,System.String)">
+            <summary>
+            推送信息.
+            </summary>
+            <param name="apiRequest">The API request.</param>
+            <param name="address">The address.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Print.PrintController.GeneratePrintTask(SIE.Common.Prints.TaskParameter)">
+            <summary>
+            生成打印任务
+            </summary>
+            <param name="parameter">任务参数</param>
+        </member>
+        <member name="T:SIE.Print.PrintEntityRepository`1">
+            <summary>
+            仓库
+            </summary>
+            <typeparam name="T"></typeparam>
+            <seealso cref="T:SIE.Domain.EntityRepository`1" />
+        </member>
+        <member name="T:SIE.Print.PrintEntityDataProvider">
+            <summary>
+            数据提供者
+            </summary>
+            <seealso cref="T:SIE.Domain.ORM.RdbDataProvider" />
+        </member>
+        <member name="P:SIE.Print.PrintEntityDataProvider.ConnectionStringSettingName">
+            <summary>
+            数据库连接字符串的名称
+            </summary>
+        </member>
+        <member name="T:SIE.Print.PrintLog">
+            <summary>
+            打印日志
+            </summary>
+        </member>
+        <member name="F:SIE.Print.PrintLog.TypeProperty">
+            <summary>
+            日志类型
+            </summary>
+        </member>
+        <member name="P:SIE.Print.PrintLog.Type">
+            <summary>
+            日志类型
+            </summary>
+        </member>
+        <member name="F:SIE.Print.PrintLog.PrintTimeProperty">
+            <summary>
+            打印时间
+            </summary>
+        </member>
+        <member name="P:SIE.Print.PrintLog.PrintTime">
+            <summary>
+            打印时间
+            </summary>
+        </member>
+        <member name="F:SIE.Print.PrintLog.ContentProperty">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="P:SIE.Print.PrintLog.Content">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="F:SIE.Print.PrintLog.RemarkProperty">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:SIE.Print.PrintLog.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="F:SIE.Print.PrintLog.PrintConfigIdProperty">
+            <summary>
+            打印配置Id
+            </summary>
+        </member>
+        <member name="P:SIE.Print.PrintLog.PrintConfigId">
+            <summary>
+            打印配置Id
+            </summary>
+        </member>
+        <member name="F:SIE.Print.PrintLog.PrintConfigProperty">
+            <summary>
+            打印配置
+            </summary>
+        </member>
+        <member name="P:SIE.Print.PrintLog.PrintConfig">
+            <summary>
+            打印配置
+            </summary>
+        </member>
+        <member name="T:SIE.Print.PrintLogConfig">
+            <summary>
+            打印日志 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Print.PrintLogConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.Print.PrintTask">
+            <summary>
+            打印任务
+            </summary>
+        </member>
+        <member name="F:SIE.Print.PrintTask.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.Print.PrintTask.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.Print.PrintTask.DataTypeNameProperty">
+            <summary>
+            数据类型名称
+            </summary>
+        </member>
+        <member name="P:SIE.Print.PrintTask.DataTypeName">
+            <summary>
+            数据类型名称
+            </summary>
+        </member>
+        <member name="F:SIE.Print.PrintTask.IdsProperty">
+            <summary>
+            Id集合（‘;’分割）
+            </summary>
+        </member>
+        <member name="P:SIE.Print.PrintTask.Ids">
+            <summary>
+            Id集合（‘;’分割）
+            </summary>
+        </member>
+        <member name="F:SIE.Print.PrintTask.StateProperty">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:SIE.Print.PrintTask.State">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="F:SIE.Print.PrintTask.IpProperty">
+            <summary>
+            Ip
+            </summary>
+        </member>
+        <member name="P:SIE.Print.PrintTask.Ip">
+            <summary>
+            Ip
+            </summary>
+        </member>
+        <member name="F:SIE.Print.PrintTask.PrintNameProperty">
+            <summary>
+            打印机名称
+            </summary>
+        </member>
+        <member name="P:SIE.Print.PrintTask.PrintName">
+            <summary>
+            打印机名称
+            </summary>
+        </member>
+        <member name="F:SIE.Print.PrintTask.PrintByIdProperty">
+            <summary>
+            打印人Id
+            </summary>
+        </member>
+        <member name="P:SIE.Print.PrintTask.PrintById">
+            <summary>
+            打印人Id
+            </summary>
+        </member>
+        <member name="F:SIE.Print.PrintTask.PrintByProperty">
+            <summary>
+            打印人
+            </summary>
+        </member>
+        <member name="P:SIE.Print.PrintTask.PrintBy">
+            <summary>
+            打印人
+            </summary>
+        </member>
+        <member name="F:SIE.Print.PrintTask.PrintDateProperty">
+            <summary>
+            打印时间
+            </summary>
+        </member>
+        <member name="P:SIE.Print.PrintTask.PrintDate">
+            <summary>
+            打印时间
+            </summary>
+        </member>
+        <member name="F:SIE.Print.PrintTask.FilePathProperty">
+            <summary>
+            文件路径
+            </summary>
+        </member>
+        <member name="P:SIE.Print.PrintTask.FilePath">
+            <summary>
+            文件路径
+            </summary>
+        </member>
+        <member name="F:SIE.Print.PrintTask.FileNameProperty">
+            <summary>
+            文件名
+            </summary>
+        </member>
+        <member name="P:SIE.Print.PrintTask.FileName">
+            <summary>
+            文件名
+            </summary>
+        </member>
+        <member name="F:SIE.Print.PrintTask.PrintableTypeNameProperty">
+            <summary>
+            打印提供者类型名
+            </summary>
+        </member>
+        <member name="P:SIE.Print.PrintTask.PrintableTypeName">
+            <summary>
+            打印提供者类型名
+            </summary>
+        </member>
+        <member name="F:SIE.Print.PrintTask.DesignTypeProperty">
+            <summary>
+            设计类型
+            </summary>
+        </member>
+        <member name="P:SIE.Print.PrintTask.DesignType">
+            <summary>
+            设计类型
+            </summary>
+        </member>
+        <member name="T:SIE.Print.PrintTaskConfig">
+            <summary>
+             实体配置
+            </summary>
+        </member>
+        <member name="T:SIE.Print.PrintTaskHistory">
+            <summary>
+            打印任务记录
+            </summary>
+        </member>
+        <member name="F:SIE.Print.PrintTaskHistory.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.Print.PrintTaskHistory.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.Print.PrintTaskHistory.DataTypeNameProperty">
+            <summary>
+            实体类型名称
+            </summary>
+        </member>
+        <member name="P:SIE.Print.PrintTaskHistory.DataTypeName">
+            <summary>
+            实体类型名称
+            </summary>
+        </member>
+        <member name="F:SIE.Print.PrintTaskHistory.IdsProperty">
+            <summary>
+            Id集合（‘;’分割）
+            </summary>
+        </member>
+        <member name="P:SIE.Print.PrintTaskHistory.Ids">
+            <summary>
+            Id集合（‘;’分割）
+            </summary>
+        </member>
+        <member name="F:SIE.Print.PrintTaskHistory.IpProperty">
+            <summary>
+            Ip
+            </summary>
+        </member>
+        <member name="P:SIE.Print.PrintTaskHistory.Ip">
+            <summary>
+            Ip
+            </summary>
+        </member>
+        <member name="F:SIE.Print.PrintTaskHistory.PrintNameProperty">
+            <summary>
+            打印机名称
+            </summary>
+        </member>
+        <member name="P:SIE.Print.PrintTaskHistory.PrintName">
+            <summary>
+            打印机名称
+            </summary>
+        </member>
+        <member name="F:SIE.Print.PrintTaskHistory.PrintByIdProperty">
+            <summary>
+            打印人Id
+            </summary>
+        </member>
+        <member name="P:SIE.Print.PrintTaskHistory.PrintById">
+            <summary>
+            打印人Id
+            </summary>
+        </member>
+        <member name="F:SIE.Print.PrintTaskHistory.PrintByProperty">
+            <summary>
+            打印人
+            </summary>
+        </member>
+        <member name="P:SIE.Print.PrintTaskHistory.PrintBy">
+            <summary>
+            打印人
+            </summary>
+        </member>
+        <member name="F:SIE.Print.PrintTaskHistory.PrintDateProperty">
+            <summary>
+            打印时间
+            </summary>
+        </member>
+        <member name="P:SIE.Print.PrintTaskHistory.PrintDate">
+            <summary>
+            打印时间
+            </summary>
+        </member>
+        <member name="F:SIE.Print.PrintTaskHistory.ActualPrintDateProperty">
+            <summary>
+            实际打印时间
+            </summary>
+        </member>
+        <member name="P:SIE.Print.PrintTaskHistory.ActualPrintDate">
+            <summary>
+            实际打印时间
+            </summary>
+        </member>
+        <member name="F:SIE.Print.PrintTaskHistory.IsReprintProperty">
+            <summary>
+            是否重打
+            </summary>
+        </member>
+        <member name="P:SIE.Print.PrintTaskHistory.IsReprint">
+            <summary>
+            是否重打
+            </summary>
+        </member>
+        <member name="F:SIE.Print.PrintTaskHistory.ReprintCountProperty">
+            <summary>
+            重打次数
+            </summary>
+        </member>
+        <member name="P:SIE.Print.PrintTaskHistory.ReprintCount">
+            <summary>
+            重打次数
+            </summary>
+        </member>
+        <member name="F:SIE.Print.PrintTaskHistory.FileNameProperty">
+            <summary>
+            文件名
+            </summary>
+        </member>
+        <member name="P:SIE.Print.PrintTaskHistory.FileName">
+            <summary>
+            文件名
+            </summary>
+        </member>
+        <member name="F:SIE.Print.PrintTaskHistory.PrintableTypeNameProperty">
+            <summary>
+            打印提供者类型名
+            </summary>
+        </member>
+        <member name="P:SIE.Print.PrintTaskHistory.PrintableTypeName">
+            <summary>
+            打印提供者类型名
+            </summary>
+        </member>
+        <member name="F:SIE.Print.PrintTaskHistory.DesignTypeProperty">
+            <summary>
+            设计类型
+            </summary>
+        </member>
+        <member name="P:SIE.Print.PrintTaskHistory.DesignType">
+            <summary>
+            设计类型
+            </summary>
+        </member>
+        <member name="F:SIE.Print.PrintTaskHistory.FilePathProperty">
+            <summary>
+            文件路径
+            </summary>
+        </member>
+        <member name="P:SIE.Print.PrintTaskHistory.FilePath">
+            <summary>
+            文件路径
+            </summary>
+        </member>
+        <member name="T:SIE.Print.PrintTaskHistoryConfig">
+            <summary>
+             实体配置
+            </summary>
+        </member>
+        <member name="T:SIE.Print.PrintTaskView">
+            <summary>
+            打印任务
+            </summary>
+        </member>
+        <member name="F:SIE.Print.PrintTaskView.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.Print.PrintTaskView.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.Print.PrintTaskView.DataTypeNameProperty">
+            <summary>
+            数据类型名称
+            </summary>
+        </member>
+        <member name="P:SIE.Print.PrintTaskView.DataTypeName">
+            <summary>
+            数据类型名称
+            </summary>
+        </member>
+        <member name="F:SIE.Print.PrintTaskView.IdsProperty">
+            <summary>
+            Id集合（‘;’分割）
+            </summary>
+        </member>
+        <member name="P:SIE.Print.PrintTaskView.Ids">
+            <summary>
+            Id集合（‘;’分割）
+            </summary>
+        </member>
+        <member name="F:SIE.Print.PrintTaskView.InvOrgIdProperty">
+            <summary>
+            库存组织
+            </summary>
+        </member>
+        <member name="P:SIE.Print.PrintTaskView.InvOrgId">
+            <summary>
+            库存组织
+            </summary>
+        </member>
+        <member name="F:SIE.Print.PrintTaskView.StateProperty">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:SIE.Print.PrintTaskView.State">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="F:SIE.Print.PrintTaskView.IpProperty">
+            <summary>
+            Ip
+            </summary>
+        </member>
+        <member name="P:SIE.Print.PrintTaskView.Ip">
+            <summary>
+            Ip
+            </summary>
+        </member>
+        <member name="F:SIE.Print.PrintTaskView.PrintNameProperty">
+            <summary>
+            打印机名称
+            </summary>
+        </member>
+        <member name="P:SIE.Print.PrintTaskView.PrintName">
+            <summary>
+            打印机名称
+            </summary>
+        </member>
+        <member name="F:SIE.Print.PrintTaskView.PrintByIdProperty">
+            <summary>
+            打印人Id
+            </summary>
+        </member>
+        <member name="P:SIE.Print.PrintTaskView.PrintById">
+            <summary>
+            打印人Id
+            </summary>
+        </member>
+        <member name="F:SIE.Print.PrintTaskView.PrintByProperty">
+            <summary>
+            打印人
+            </summary>
+        </member>
+        <member name="P:SIE.Print.PrintTaskView.PrintBy">
+            <summary>
+            打印人
+            </summary>
+        </member>
+        <member name="F:SIE.Print.PrintTaskView.PrintDateProperty">
+            <summary>
+            打印时间
+            </summary>
+        </member>
+        <member name="P:SIE.Print.PrintTaskView.PrintDate">
+            <summary>
+            打印时间
+            </summary>
+        </member>
+        <member name="F:SIE.Print.PrintTaskView.FilePathProperty">
+            <summary>
+            文件路径
+            </summary>
+        </member>
+        <member name="P:SIE.Print.PrintTaskView.FilePath">
+            <summary>
+            文件路径
+            </summary>
+        </member>
+        <member name="F:SIE.Print.PrintTaskView.FileNameProperty">
+            <summary>
+            文件名
+            </summary>
+        </member>
+        <member name="P:SIE.Print.PrintTaskView.FileName">
+            <summary>
+            文件名
+            </summary>
+        </member>
+        <member name="F:SIE.Print.PrintTaskView.PrintableTypeNameProperty">
+            <summary>
+            打印提供者类型名
+            </summary>
+        </member>
+        <member name="P:SIE.Print.PrintTaskView.PrintableTypeName">
+            <summary>
+            打印提供者类型名
+            </summary>
+        </member>
+        <member name="F:SIE.Print.PrintTaskView.DesignTypeProperty">
+            <summary>
+            设计类型
+            </summary>
+        </member>
+        <member name="P:SIE.Print.PrintTaskView.DesignType">
+            <summary>
+            设计类型
+            </summary>
+        </member>
+        <member name="T:SIE.Print.PrintTaskViewConfig">
+            <summary>
+             实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Print.ReportBase.GenerateContent(SIE.Common.Prints.ILabelPrintable,System.Collections.Generic.IEnumerable{System.Object},System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            生成数据文件
+            </summary>
+            <param name="printable">打印提供者</param>
+            <param name="datas">打印的数据集合</param>
+            <returns>生成的数据文件路径</returns>
+        </member>
+        <member name="M:SIE.Print.SieHelper.GenerateContents(SIE.Common.Prints.IBillPrintable,System.Collections.Generic.IEnumerable{System.Object},System.Collections.Generic.Dictionary{System.String,System.String},System.Type)">
+            <summary>
+            生成单据打印数据文件
+            </summary>
+            <param name="printable">打印提供者</param>
+            <param name="datas">打印的数据集合</param>
+            <returns>生成的数据文件路径</returns>
+        </member>
+        <member name="M:SIE.Print.SieDevHelper.GenerateDataContents(System.Data.DataSet,SIE.Common.Prints.IBillPrintable,System.Collections.Generic.IEnumerable{System.Object},System.Type,System.String,System.Type,System.Int32,System.String)">
+            <summary>
+            生成标签数据文件
+            </summary>
+            <param name="printable">打印提供者</param>
+            <param name="datas">打印数据集合</param>
+            <param name="dataType">打印类型</param>
+        </member>
+        <member name="M:SIE.Print.SieDevHelper.GenerateEntityData(System.Data.DataSet,SIE.Common.Prints.IBillPrintable,System.Collections.Generic.IEnumerable{System.Object},System.Type,System.Int32)">
+            <summary>
+            生成实体类型的数据
+            </summary>
+            <param name="printable">打印提供者</param>
+            <param name="datas">打印数据集合</param>
+            <param name="dataType">打印数据类型</param>
+        </member>
+        <member name="M:SIE.Print.SieDevHelper.GenerateNormalClassData(System.Data.DataSet,SIE.Common.Prints.IBillPrintable,System.Collections.Generic.IEnumerable{System.Object},System.Type,System.Int32)">
+            <summary>
+            生成普通类型的数据
+            </summary>
+            <param name="printable">打印提供者</param>
+            <param name="datas">打印数据集合</param>
+            <param name="dataType">打印数据类型</param>
+        </member>
+        <member name="M:SIE.Print.SieDevHelper.ConvertDataSetToXMLFile(System.Data.DataSet,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            将DataSet转换为xml文件
+            </summary>
+            <param name="xmlDS">数据集</param>
+            <param name="xmlFile">xml文件名</param>
+        </member>
+        <member name="T:SIE.Print.Tests.PrintConfigLabelPrintable">
+            <summary>
+            打印设置
+            </summary>
+        </member>
+        <member name="M:SIE.Print.Tests.TestController.CreateTask(System.String,SIE.Common.Prints.PrintTemplate,SIE.Common.Prints.PrintConfig)">
+            <summary>
+            测试按钮创建任务
+            </summary>
+            <param name="name"></param>
+            <param name="template"></param>
+            <param name="config"></param>
+        </member>
+    </members>
+</doc>

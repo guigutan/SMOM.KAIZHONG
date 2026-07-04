@@ -1,0 +1,1601 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Wpf.Barcodes</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Wpf.Barcodes.EntityPropertyViewMetaExtension">
+            <summary>
+            实体属性视图元数据扩展
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.EntityPropertyViewMetaExtension.UseItemBatchRuleLookUpEditor``1(SIE.MetaModel.View.WPFEntityPropertyViewMeta{``0},System.Action{SIE.Wpf.Editors.EnumEditorConfig})">
+            <summary>
+            使用批次数量编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.EntityPropertyViewMetaExtension.UseNumberRuleBarcodeLookUpEditor``1(SIE.MetaModel.View.WPFEntityPropertyViewMeta{``0},System.Action{SIE.Wpf.Editors.PagingLookUpEditorConfig})">
+            <summary>
+            使用条码的编码规则编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.EntityPropertyViewMetaExtension.UsePrintTemplateLookUpEditor``1(SIE.MetaModel.View.WPFEntityPropertyViewMeta{``0},System.Action{SIE.Wpf.Editors.PagingLookUpEditorConfig})">
+            <summary>
+            使用打印模板编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.EntityPropertyViewMetaExtension.UseBatchPrintTemplateLookUpEditor``1(SIE.MetaModel.View.WPFEntityPropertyViewMeta{``0},System.Action{SIE.Wpf.Editors.PagingLookUpEditorConfig})">
+            <summary>
+            使用批次生成模板编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.BarcodeCriteriaViewConfig">
+            <summary>
+            条码查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.BarcodeCriteriaViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.BarcodeCriteriaViewConfig.ProductRouting">
+            <summary>
+            产品工艺路线 视图配置方法
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.BarcodeCriteriaViewConfig.ConfigScrapView">
+            <summary>
+            条码报废查询 视图配置方法
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.BarcodeCriteriaViewConfig.ConfigReprintView">
+            <summary>
+            条码补打查询 视图配置方法
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.BarcodeLogViewConfig">
+            <summary>
+            条码打印日志视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.BarcodeLogViewConfig.ConfigListView">
+            <summary>
+            列表配置
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.BarcodePrintViewConfig">
+            <summary>
+            条码打印视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.BarcodePrintViewConfig.BarcodePrintView">
+            <summary>
+            条码打印ViewGroup
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.BarcodePrintViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.BarcodePrintViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.BarcodePrintViewConfig.ConfigPrintView">
+            <summary>
+            配置条码打印主表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.BarcodeRangeViewConfig">
+            <summary>
+            条码领用 视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.BarcodeRangeViewConfig.SnRangeProperty">
+            <summary>
+            条码范围
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.BarcodeRangeViewConfig.GetSnRange(SIE.Barcodes.BarcodeRange)">
+            <summary>
+            格式化条码范围
+            </summary>
+            <param name="me">条码范围</param>
+            <returns>格式化条码范围String</returns>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.BarcodeRangeViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.BarcodeViewConfig">
+            <summary>
+            条码视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.BarcodeViewConfig.ScrapView">
+            <summary>
+            条码报废
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.BarcodeViewConfig.ReprintView">
+            <summary>
+            条码补打
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.BarcodeViewConfig.WoPrintView">
+            <summary>
+            工单打印
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.BarcodeViewConfig.SnRangeProperty">
+            <summary>
+            条码范围
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.BarcodeViewConfig.GetSnRangeProperty(SIE.Barcodes.Barcode)">
+            <summary>
+            获取条码范围
+            </summary>
+            <param name="me">条码</param>
+            <returns>条码范围</returns>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.BarcodeViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.BarcodeViewConfig.ConfigScrapView">
+            <summary>
+            条码报废 视图配置方法
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.BarcodeViewConfig.ConfigDefaultView">
+            <summary>
+            条码补打 视图配置方法
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.BarcodeViewConfig.ConfigWoPrintView">
+            <summary>
+            配置 条码打印条码明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.Commonds.BarcodePrintCommand">
+            <summary>
+            条码打印按钮
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.Commonds.BarcodePrintCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            判断单体打印命令能否执行
+            </summary>
+            <param name="view">列表逻辑视图</param>
+            <returns>工单已打印数量小于工单计划数量返回true，否则返回false</returns>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.Commonds.BarcodePrintCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            单体打印命令执行方法
+            </summary>
+            <param name="view">列表逻辑视图</param>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.Commonds.BarcodePrintCommand.ReloadData(SIE.Wpf.ListLogicalView)">
+            <summary>
+            重新加载数据
+            </summary>
+            <param name="view">列表逻辑视图</param>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.Commonds.BarcodePrintCommand.CreateEntity">
+            <summary>
+            创建新实体-提供扩展
+            </summary>
+            <returns>新实体</returns>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.Commonds.PrintCommand">
+            <summary>
+            打印命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.Commonds.PrintCommand.CanExecute(SIE.Wpf.DetailLogicalView)">
+            <summary>
+            是否能执行
+            </summary>
+            <param name="view">当前明细逻辑视图</param>
+            <returns>能执行返回true，否则返回false</returns>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.Commonds.PrintCommand.Execute(SIE.Wpf.DetailLogicalView)">
+            <summary>
+            执行内容
+            </summary>
+            <param name="view">当前明细逻辑视图</param>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.Commonds.PrintCommand.PrintBarcodes(System.String,SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModel,System.String,SIE.Domain.EntityList{SIE.Barcodes.Barcode})">
+            <summary>
+            打印条码
+            </summary>
+            <param name="viewId">视图ID</param>
+            <param name="entity">条码打印视图模型</param>
+            <param name="filePath">模板路径</param>
+            <param name="barcodes">生成条码列表</param>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.Commonds.PrintCommand.GenerateBarcodes(SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModel)">
+            <summary>
+            生成条码
+            </summary>
+            <param name="entity">条码打印视图模型</param>
+            <returns>生成条码列表</returns>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.Commonds.PrintCommand.ValidatePrint(SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModel)">
+            <summary>
+            验证打印信息
+            </summary>
+            <param name="vm">条码打印视图模型</param>
+            <exception cref="T:SIE.Domain.Validation.ValidationException">验证失败异常</exception>
+            <returns>验证通过返回true，否则返回false</returns>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.Commonds.OutBoxReprintCommand">
+            <summary>
+            外标签补打
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.Commonds.ReceiveBarcodeCommand">
+            <summary>
+            条码领用
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.Commonds.ReceiveBarcodeCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            是否能执行
+            </summary>
+            <param name="view">逻辑视图</param>
+            <returns>条码状态非已领用状态返回true,否则返回false</returns>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.Commonds.ReceiveBarcodeCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            命令执行
+            </summary>
+            <param name="view">逻辑视图</param>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.Commonds.ReprintCommand">
+            <summary>
+            补打
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.Commonds.ReprintCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            是否能执行
+            </summary>
+            <param name="view">视图</param>
+            <returns>选择条码条码数量大于0且工单相同返回true，否则返回false</returns>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.Commonds.ReprintCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="view">视图</param>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.Commonds.ReprintCommand.ReprintBarcode(SIE.Wpf.Barcodes.ViewModels.ReprintViewModel)">
+            <summary>
+            打印保存
+            </summary>
+            <param name="entity">视图</param>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.Commonds.ScrapBarcodeCommand">
+            <summary>
+            条码报废命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.Commonds.ScrapBarcodeCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            是否可执行
+            </summary>
+            <param name="view">列表逻辑视图</param>
+            <returns>选择的条码都是非报废状态返回true，否则返回false</returns>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.Commonds.ScrapBarcodeCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            命令执行
+            </summary>
+            <param name="view">列表逻辑视图</param>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.Editors.NumberRuleBarcodeLookUpEditor">
+            <summary>
+            条码打印编辑器
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.Editors.NumberRuleBarcodeLookUpEditor.EditorName">
+            <summary>
+            条码打印编辑器名称
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.Editors.NumberRuleBarcodeLookUpEditor.GetDataSourceCore(SIE.Domain.Entity,SIE.PagingInfo,System.String,SIE.ManagedProperty.IManagedProperty)">
+            <summary>
+            重新加载数据源
+            </summary>
+            <param name="source">实体</param>
+            <param name="pagingInfo">分页</param>
+            <param name="keyword">搜索关键字</param>
+            <param name="titleProperty">托管属性标记</param>
+            <returns>条码打印列表</returns>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.Editors.PrintTemplateLookUpEditor">
+            <summary>
+            打印模板编辑器
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.Editors.PrintTemplateLookUpEditor.EditorName">
+            <summary>
+            打印模板编辑器名称
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.Editors.PrintTemplateLookUpEditor.GetDataSourceCore(SIE.Domain.Entity,SIE.PagingInfo,System.String,SIE.ManagedProperty.IManagedProperty)">
+            <summary>
+            重新加载数据源
+            </summary>
+            <param name="source">实体</param>
+            <param name="pagingInfo">分页</param>
+            <param name="keyword">搜索关键字</param>
+            <param name="titleProperty">托管属性标记</param>
+            <returns>打印模板列表</returns>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.PrintWorkOrderCriteriaViewConfig">
+            <summary>
+            实体页面配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.PrintWorkOrderCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.UITemplates.BarcodeReprintUITemplate">
+            <summary>
+            条码补打UI模板
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.UITemplates.BarcodeReprintUITemplate.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.UITemplates.BarcodeReprintUITemplate.DefineQueryBlocks(SIE.MetaModel.EntityMeta,SIE.MetaModel.View.AggtBlocks)">
+            <summary>
+            指定查询界面
+            </summary>
+            <param name="entityMeta">实体元数据</param>
+            <param name="aggtBlocks">聚合块定义</param>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.UITemplates.BarcodeScrapUITemplate">
+            <summary>
+            条码报废UI模板
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.UITemplates.BarcodeScrapUITemplate.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.UITemplates.BarcodeScrapUITemplate.DefineQueryBlocks(SIE.MetaModel.EntityMeta,SIE.MetaModel.View.AggtBlocks)">
+            <summary>
+            指定查询界面
+            </summary>
+            <param name="entityMeta">实体元数据</param>
+            <param name="aggtBlocks">聚合块定义</param>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModel">
+            <summary>
+            条码打印视图模型
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModel.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModel.WorkOrderIdProperty">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModel.WorkOrderId">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModel.WorkOrderProperty">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModel.WorkOrder">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModel.NumberRuleIdProperty">
+            <summary>
+            条码规则ID
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModel.OnBarcodeRuleChanged">
+            <summary>
+            条码规则改变事件
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModel.NumberRuleId">
+            <summary>
+            条码规则ID
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModel.NumberRuleProperty">
+            <summary>
+            条码规则
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModel.NumberRule">
+            <summary>
+            条码规则
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModel.PrinterProperty">
+            <summary>
+            打印机
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModel.Printer">
+            <summary>
+            打印机
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModel.OnPrinterChanged">
+            <summary>
+            打印机变更
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModel.TemplateIdProperty">
+            <summary>
+            模板Id
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModel.TemplateId">
+            <summary>
+            模板Id
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModel.TemplateProperty">
+            <summary>
+            模板
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModel.Template">
+            <summary>
+            模板
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModel.BeginSnProperty">
+            <summary>
+            开始条码
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModel.BeginSn">
+            <summary>
+            开始条码
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModel.EndSnProperty">
+            <summary>
+            结束条码
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModel.EndSn">
+            <summary>
+            结束条码
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModel.ResidualQtyProperty">
+            <summary>
+            剩余数量
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModel.ResidualQty">
+            <summary>
+            剩余数量
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModel.PrintQtyProperty">
+            <summary>
+            打印数量
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModel.OnPrintQtyChanged">
+            <summary>
+            打印数量属性变更事件
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModel.PrintQty">
+            <summary>
+            打印数量
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModel.PrintedQtyProperty">
+            <summary>
+            已打印数量
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModel.PrintedQty">
+            <summary>
+            已打印数量
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModel.PageCountProperty">
+            <summary>
+            打印份数
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModel.PageCount">
+            <summary>
+            打印份数
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModel.SingleQtyProperty">
+            <summary>
+            单张数量
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModel.OnSingleQtyChanged">
+            <summary>
+            单张数量变更时同步更新条码范围
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModel.SingleQty">
+            <summary>
+            单张数量
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModel.DumpingQtyProperty">
+            <summary>
+            报废数量
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModel.DumpingQty">
+            <summary>
+            报废数量
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModel.BarcodeRuleDtlProperty">
+            <summary>
+            条码规则明细
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModel.BarcodeRuleDtl">
+            <summary>
+            条码规则明细
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModel.PrintControlProperty">
+            <summary>
+            打印控制
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModel.OnPrintControlChanged">
+            <summary>
+            勾选（取消）反打事件
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModel.PrintControl">
+            <summary>
+            打印控制
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModel.controller">
+            <summary>
+            编码规则控制器对象
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModel.Preview">
+            <summary>
+            预览
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModel.Control">
+            <summary>
+            打印控制
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModelConfig">
+            <summary>
+            条码范围 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModelConfig.AddValidations(SIE.MetaModel.IValidationDeclarer)">
+            <summary>
+            增加实体验证规则
+            </summary>
+            <param name="rules">实体验证规则集合</param>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModelViewConfig">
+            <summary>
+            单体打印视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.ViewModels.BarcodePrintViewModelViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.ViewModels.ReceiveBarcodeViewModel">
+            <summary>
+            条码领用视图模型
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.ViewModels.ReceiveBarcodeViewModel.UserNameProperty">
+            <summary>
+            用户
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.ViewModels.ReceiveBarcodeViewModel.UserName">
+            <summary>
+            用户
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.ViewModels.ReceiveBarcodeViewModel.PasswordProperty">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.ViewModels.ReceiveBarcodeViewModel.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.ViewModels.ReceiveBarcodeViewModelViewConfig">
+            <summary>
+            条码领用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.ViewModels.ReceiveBarcodeViewModelViewConfig.ConfigDetailsView">
+            <summary>
+            详细视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.ViewModels.ReprintViewModel">
+            <summary>
+            条码报废 ViewModel
+            </summary> 
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.ViewModels.ReprintViewModel.#ctor">
+            <summary>
+            无参构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.ViewModels.ReprintViewModel.#ctor(System.Collections.Generic.IEnumerable{SIE.Barcodes.Barcode})">
+            <summary>
+            有参构造函数
+            </summary>
+            <param name="barcodeList">条码列表</param>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.ViewModels.ReprintViewModel.BarcodeList">
+            <summary>
+            条码列表
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.ViewModels.ReprintViewModel.ReasonProperty">
+            <summary>
+            原因
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.ViewModels.ReprintViewModel.Reason">
+            <summary>
+            原因
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.ViewModels.ReprintViewModel.TimesProperty">
+            <summary>
+            补打份数
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.ViewModels.ReprintViewModel.Times">
+            <summary>
+            补打份数
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.ViewModels.ReprintViewModel.TemplateIdProperty">
+            <summary>
+            打印模板Id
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.ViewModels.ReprintViewModel.TemplateId">
+            <summary>
+            打印模板Id
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.ViewModels.ReprintViewModel.TemplateProperty">
+            <summary>
+            打印模板
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.ViewModels.ReprintViewModel.Template">
+            <summary>
+            打印模板
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.ViewModels.ReprintViewModel.PrinterProperty">
+            <summary>
+            打印机
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.ViewModels.ReprintViewModel.Printer">
+            <summary>
+            打印机
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.ViewModels.ReprintViewModel.OnPrinterChanged">
+            <summary>
+            打印机
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.ViewModels.ReprintViewModelViewConfig">
+            <summary>
+            条码补打 视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.ViewModels.ReprintViewModelViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.ViewModels.ScrapBarcodeViewModel">
+            <summary>
+            条码报废 ViewModel
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.ViewModels.ScrapBarcodeViewModel.#ctor(System.Collections.Generic.IEnumerable{SIE.Barcodes.Barcode})">
+            <summary>
+            构造函数
+            </summary>
+            <param name="barcodeList">条码列表</param>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.ViewModels.ScrapBarcodeViewModel.ReasonProperty">
+            <summary>
+            报废原因
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.ViewModels.ScrapBarcodeViewModel.Reason">
+            <summary>
+            报废原因
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.ViewModels.ScrapBarcodeViewModel.BarcodeList">
+            <summary>
+            条码列表
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.ViewModels.ScrapBarcodeViewModelConfig">
+            <summary>
+            条码报废 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.ViewModels.ScrapBarcodeViewModelConfig.AddValidations(SIE.MetaModel.IValidationDeclarer)">
+            <summary>
+            添加验证规则
+            </summary>
+            <param name="rules">规则</param>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.ViewModels.ScrapBarcodeViewModelViewConfig">
+            <summary>
+            条码报废 视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.ViewModels.ScrapBarcodeViewModelViewConfig.ConfigDetailsView">
+            <summary>
+            明细视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.Configs.ValidationConfigValueViewConfig">
+            <summary>
+            归属工单验证配置值视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.Configs.ValidationConfigValueViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.Module">
+            <summary>
+            当前工程所对应的模块类
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化
+            </summary>
+            <param name="app">应用程序</param>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.Module.AddDevModules(System.Object,System.EventArgs)">
+            <summary>
+            模块
+            </summary>
+            <param name="sender">应用程序</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.Module.AddNewPropertyEditor(SIE.IApp)">
+            <summary>
+            属性编辑器
+            </summary>
+            <param name="app">应用程序</param>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.Utils.PrintHelper">
+            <summary>
+            条码打印帮助类
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.Utils.PrintHelper.PrintBarcodes(SIE.Domain.EntityList{SIE.Barcodes.Barcode},SIE.Common.Prints.PrintTemplate,System.String,System.Int16,System.Action)">
+            <summary>
+            打印条码
+            </summary>
+            <param name="barcodes">待条码列表</param>
+            <param name="template">打印模板</param>
+            <param name="printer">打印机</param>
+            <param name="times">打印次数</param>
+            <param name="action">回调</param>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.WipBatchs.BatchMergeRuleViewConfig">
+            <summary>
+            批次合并规则视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.WipBatchs.BatchMergeRuleViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.WipBatchs.BatchMergeSolutionsViewConfig">
+            <summary>
+            批次合并方案视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.WipBatchs.BatchMergeSolutionsViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.WipBatchs.BatchWorkOrderCriteriaViewConfig">
+            <summary>
+            实体页面配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.WipBatchs.BatchWorkOrderCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.WipBatchs.BatchWorkOrderViewConfig">
+            <summary>
+            批次工单视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.WipBatchs.BatchWorkOrderViewConfig.BatchWorkOrderView">
+            <summary>
+            批次工单视图ViewGroup
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.WipBatchs.BatchWorkOrderViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.WipBatchs.BatchWorkOrderViewConfig.ConfigPrintView">
+            <summary>
+            批次生成视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.WipBatchs.Commands.BatchMergeSolutionsCommand">
+            <summary>
+            合并规则命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.WipBatchs.Commands.BatchMergeSolutionsCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            执行弹窗
+            </summary>
+            <param name="view">视图</param>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.WipBatchs.Commands.SetDefaultCommand">
+            <summary>
+            设置组织层级为资源
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.WipBatchs.Commands.SetDefaultCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            控制命令是否可执行的逻辑
+            </summary>
+            <param name="view">逻辑视图</param>
+            <returns>只有组织层级不是资源时此命令才可以执行</returns>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.WipBatchs.Commands.SetDefaultCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            执行逻辑
+            </summary>
+            <param name="view">逻辑视图</param>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.WipBatchs.Commands.CancelDefaultCommand">
+            <summary>
+            设置组织层级为资源
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.WipBatchs.Commands.CancelDefaultCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            控制命令是否可执行的逻辑
+            </summary>
+            <param name="view">逻辑视图</param>
+            <returns>只有组织层级不是资源时此命令才可以执行</returns>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.WipBatchs.Commands.CancelDefaultCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            执行逻辑
+            </summary>
+            <param name="view">逻辑视图</param>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.WipBatchs.Commands.BatchWoGenerateCommand">
+            <summary>
+            批次生成命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.WipBatchs.Commands.BatchWoGenerateCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            命令执行条件
+            </summary>
+            <param name="view">逻辑视图</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.WipBatchs.Commands.BatchWoGenerateCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            命令执行方法
+            </summary>
+            <param name="view">逻辑视图</param>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.WipBatchs.Commands.BatchWoGenerateCommand.ShowGeneratingView">
+            <summary>
+            显示批次生成页面
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.WipBatchs.Commands.GenerateAndPrintCommand">
+            <summary>
+            生成并打印命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.WipBatchs.Commands.GenerateAndPrintCommand.CanExecute(SIE.Wpf.DetailLogicalView)">
+            <summary>
+            条件执行判断
+            </summary>
+            <param name="view">逻辑视图</param>
+            <returns>条件结果</returns>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.WipBatchs.Commands.GenerateAndPrintCommand.Execute(SIE.Wpf.DetailLogicalView)">
+            <summary>
+            命令执行方法
+            </summary>
+            <param name="view">逻辑视图</param>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.WipBatchs.Commands.GenerateCommand">
+            <summary>
+            生成命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.WipBatchs.Commands.GenerateCommand.CanExecute(SIE.Wpf.DetailLogicalView)">
+            <summary>
+            条件执行判断
+            </summary>
+            <param name="view">逻辑视图</param>
+            <returns>条件结果</returns>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.WipBatchs.Commands.GenerateCommand.Execute(SIE.Wpf.DetailLogicalView)">
+            <summary>
+            命令执行方法
+            </summary>
+            <param name="view">逻辑视图</param>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.WipBatchs.Commands.ReprintBatchCommand">
+            <summary>
+            批次信息补打
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.WipBatchs.Commands.ReprintBatchCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            是否能执行
+            </summary>
+            <param name="view">视图</param>
+            <returns>选择条码数量大于0返回true，否则返回false</returns>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.WipBatchs.Commands.ReprintBatchCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="view">视图</param>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.WipBatchs.Commands.ReprintBatchCommand.ReprintWipBatch(SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchReprintViewModel,System.Collections.Generic.List{System.Double})">
+            <summary>
+            打印保存
+            </summary>
+            <param name="model">model</param>
+            <param name="wipBatchIds">批次ID列表</param>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.WipBatchs.Commands.ReprintSubWipBatchCommand">
+            <summary>
+            子批次信息补打
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.WipBatchs.Commands.ReprintSubWipBatchCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            是否能执行
+            </summary>
+            <param name="view">视图</param>
+            <returns>选择条码数量大于0返回true，否则返回false</returns>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.WipBatchs.Commands.ReprintSubWipBatchCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="view">视图</param>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.WipBatchs.Commands.ReprintSubWipBatchCommand.ReprintSubWipBatch(SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchReprintViewModel,System.Collections.Generic.List{System.Double})">
+            <summary>
+            打印保存
+            </summary>
+            <param name="model">model</param>
+            <param name="subWipBatchIds">子批次ID列表</param>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.WipBatchs.Editors.BatchPrintTemplateLookUpEditor">
+            <summary>
+            批次生产模板编辑器
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.WipBatchs.Editors.BatchPrintTemplateLookUpEditor.EditorName">
+            <summary>
+            打印模板编辑器名称
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.WipBatchs.Editors.BatchPrintTemplateLookUpEditor.GetDataSourceCore(SIE.Domain.Entity,SIE.PagingInfo,System.String,SIE.ManagedProperty.IManagedProperty)">
+            <summary>
+            重新加载数据源
+            </summary>
+            <param name="source">实体</param>
+            <param name="pagingInfo">分页</param>
+            <param name="keyword">搜索关键字</param>
+            <param name="titleProperty">托管属性标记</param>
+            <returns>打印模板列表</returns>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.WipBatchs.SubWipBatchViewConfig">
+            <summary>
+            子生产批次视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.WipBatchs.SubWipBatchViewConfig.SubBatchView">
+            <summary>
+            子批次条码视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.WipBatchs.SubWipBatchViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.WipBatchs.SubWipBatchViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.WipBatchs.SubWipBatchViewConfig.ConfigSubBatchView">
+            <summary>
+            子批次条码视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingModelViewConfig">
+            <summary>
+            批次生成ViewModel视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingModelViewConfig.ChildBatchReadonlyProperty">
+            <summary>
+            子批次生成只读
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingModelViewConfig.GetChildBatchReadonly(SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel)">
+            <summary>
+            子批次生成只读
+            </summary>
+            <param name="me">批次生成视图模型</param>
+            <returns>载具分批或者批次数量等于0返回true，否则返回false</returns>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingModelViewConfig.ChildBthInfoReadlonlyProperty">
+            <summary>
+            子批次信息只读
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingModelViewConfig.GetChildBthInfoReadlonly(SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel)">
+            <summary>
+            子批次信息只读
+            </summary>
+            <param name="me">批次生成视图模型</param>
+            <returns>非生成子批次返回true，否则返回true</returns>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingModelViewConfig.ConfigDetailsView">
+            <summary>
+            表单试图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel">
+            <summary>
+            批次生成ViewModel
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.#ctor(SIE.Core.WorkOrders.WorkOrder)">
+            <summary>
+            构造函数    
+            </summary>
+            <param name="batchWorkOrder">批次工单</param>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.BatchWoIdProperty">
+            <summary>
+            批次工单Id
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.BatchWoId">
+            <summary>
+            批次工单Id
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.BatchWoProperty">
+            <summary>
+            批次工单
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.BatchWo">
+            <summary>
+            批次工单
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.BatchRuleProperty">
+            <summary>
+            批次规则
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.BatchRule">
+            <summary>
+            批次规则
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.BatchQtyProperty">
+            <summary>
+            批次数量
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.BatchQty">
+            <summary>
+            批次数量
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.NumberRuleIdProperty">
+            <summary>
+            编码规则ID
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.NumberRuleId">
+            <summary>
+            编码规则ID
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.NumberRuleProperty">
+            <summary>
+            编码规则
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.NumberRule">
+            <summary>
+            编码规则
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.BarcodeRuleDtlProperty">
+            <summary>
+            编码规则明细
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.BarcodeRuleDtl">
+            <summary>
+            编码规则明细
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.NotGenerateQtyProperty">
+            <summary>
+            剩余数量
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.NotGenerateQty">
+            <summary>
+            剩余数量
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.GeneratedQtyProperty">
+            <summary>
+            已生成数量
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.GeneratedQty">
+            <summary>
+            已生成数量
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.GenerateingQtyProperty">
+            <summary>
+            生成数量
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.GenerateingQty">
+            <summary>
+            生成数量
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.BeginSnProperty">
+            <summary>
+            起始编码
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.BeginSn">
+            <summary>
+            起始编码
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.EndSnProperty">
+            <summary>
+            结束编码
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.EndSn">
+            <summary>
+            结束编码
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.GenerateChildrenProperty">
+            <summary>
+            生成子批次
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.GenerateChildren">
+            <summary>
+            生成子批次
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.ChildNumberRuleIdProperty">
+            <summary>
+            子批编码规则Id
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.ChildNumberRuleId">
+            <summary>
+            子批编码规则Id
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.ChildNumberRuleProperty">
+            <summary>
+            子批编码规则
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.ChildNumberRule">
+            <summary>
+            子批编码规则
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.ChildBarcodeRuleDtlProperty">
+            <summary>
+            子批规则明细
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.ChildBarcodeRuleDtl">
+            <summary>
+            子批规则明细
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.ChildBatchQtyProperty">
+            <summary>
+            子批生成数量
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.ChildBatchQty">
+            <summary>
+            子批生成数量
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.ChildBeginSnProperty">
+            <summary>
+            子批起始编码
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.ChildBeginSn">
+            <summary>
+            子批起始编码
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.ChildEndSnProperty">
+            <summary>
+            子批结束编码
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.ChildEndSn">
+            <summary>
+            子批结束编码
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.PrinterProperty">
+            <summary>
+            打印机
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.Printer">
+            <summary>
+            打印机
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.OnPrinterChanged(SIE.ManagedProperty.ManagedPropertyObject,SIE.ManagedProperty.ManagedPropertyChangedEventArgs)">
+            <summary>
+            打印机变更
+            </summary>
+            <param name="o">变更对象</param>
+            <param name="e">变更事件参数</param>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.TemplateIdProperty">
+            <summary>
+            模板Id
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.TemplateId">
+            <summary>
+            模板Id
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.TemplateProperty">
+            <summary>
+            模板
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.Template">
+            <summary>
+            模板
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.PageCountProperty">
+            <summary>
+            打印份数
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.PageCount">
+            <summary>
+            打印份数
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.PrintControlProperty">
+            <summary>
+            打印控制
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.OnPrintControlChanged(SIE.ManagedProperty.ManagedPropertyChangedEventArgs)">
+            <summary>
+            勾选（取消）反打事件
+            </summary>
+            <param name="e">勾选变更事件参数</param>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.PrintControl">
+            <summary>
+            打印控制
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.controller">
+            <summary>
+            编码规则控制器对象
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.Preview">
+            <summary>
+            预览
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.ChildBatchPreview">
+            <summary>
+            子批预览
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.Control">
+            <summary>
+            打印控制
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModel.OnPropertyChanged(SIE.ManagedProperty.ManagedPropertyChangedEventArgs)">
+            <summary>
+            属性变更事件
+            </summary>
+            <param name="e">参数</param>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModelConfig">
+            <summary>
+            条码范围 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchGeneratingViewModelConfig.AddValidations(SIE.MetaModel.IValidationDeclarer)">
+            <summary>
+            增加实体验证规则
+            </summary>
+            <param name="rules">实体验证规则集合</param>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchReprintViewModel">
+            <summary>
+            生产批次补打 ViewModel
+            </summary> 
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchReprintViewModel.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchReprintViewModel.TemplateIdProperty">
+            <summary>
+            打印模板Id
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchReprintViewModel.TemplateId">
+            <summary>
+            打印模板Id
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchReprintViewModel.TemplateProperty">
+            <summary>
+            打印模板
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchReprintViewModel.Template">
+            <summary>
+            打印模板
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchReprintViewModel.IsSubBatchProperty">
+            <summary>
+            是否子批次
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchReprintViewModel.IsSubBatch">
+            <summary>
+            是否子批次
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchReprintViewModel.PrinterProperty">
+            <summary>
+            打印机
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchReprintViewModel.Printer">
+            <summary>
+            打印机
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchReprintViewModel.OnPrinterChanged">
+            <summary>
+            打印机变更
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchReprintViewModelConfig">
+            <summary>
+            生产批次补打 视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.WipBatchs.ViewModels.BatchReprintViewModelConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.WipBatchs.WipBatchViewConfig">
+            <summary>
+            生产批次视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.WipBatchs.WipBatchViewConfig.SnRangeProperty">
+            <summary>
+            条码范围
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.WipBatchs.WipBatchViewConfig.GetSnRangeProperty(SIE.Barcodes.WipBatchs.WipBatch)">
+            <summary>
+            条码范围
+            </summary>
+            <param name="me">条码</param>
+            <returns>string</returns>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.WipBatchs.WipBatchViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.WipBatchs.WipBatchViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.BatchBarcodes.Editors.ItemBatchRuleLookUpEditor">
+            <summary>
+            批次规则下拉编辑器
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Barcodes.BatchBarcodes.Editors.ItemBatchRuleLookUpEditor.EditorName">
+            <summary>
+            编辑器名称
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.BatchBarcodes.Editors.ItemBatchRuleLookUpEditor.CreateEditingElement">
+            <summary>
+            创建控件
+            </summary>
+            <returns>控件</returns>
+        </member>
+        <member name="T:SIE.Wpf.Barcodes.BatchBarcodes.Editors.BatchRuleToLabelReadonlyConverter">
+            <summary>
+            批次数量只读转换器
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.BatchBarcodes.Editors.BatchRuleToLabelReadonlyConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            正向转换
+            </summary>
+            <param name="value">值</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">本地化</param>
+            <returns>转换结果</returns>
+        </member>
+        <member name="M:SIE.Wpf.Barcodes.BatchBarcodes.Editors.BatchRuleToLabelReadonlyConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            逆向转换
+            </summary>
+            <param name="value">值</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">本地化</param>
+            <returns>转换结果</returns>
+        </member>
+        <member name="T:SIE.WPF.Barcodes.BarcodeLogCriteriaViewConfig">
+            <summary>
+            打印日志 查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.WPF.Barcodes.BarcodeLogCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.WPF.Barcodes.BarcodeRangeCriteriaViewConfig">
+            <summary>
+            条码范围查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.WPF.Barcodes.BarcodeRangeCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,2522 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Web.Items</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Web.Items._Extentions_.EntityPropertyViewMetaExtension">
+            <summary>
+            实体属性视图元数据扩展
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items._Extentions_.EntityPropertyViewMetaExtension.UseQualityCategoryLeafNodesEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig})">
+            <summary>
+            使用质量分类叶子结点类编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Web.Items._Extentions_.EntityPropertyViewMetaExtension.UseProductCombinationEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig})">
+            <summary>
+            使用物料（成品、半成品，状态过滤）编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Web.Items._Extentions_.EntityPropertyViewMetaExtension.UseNoFilterProductCombinationEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig})">
+            <summary>
+            使用物料（成品、半成品，状态不过滤）编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Web.Items._Extentions_.EntityPropertyViewMetaExtension.UseLabelPrintTemplateEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig})">
+            <summary>
+            打印模板配置-标签模板级联编辑器
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="meta"></param>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Items._Extentions_.EntityPropertyViewMetaExtension.UseLabelPackingTemplateEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig})">
+            <summary>
+            打印模板配置-包装模板级联编辑器
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="meta"></param>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Items._Extentions_.EntityPropertyViewMetaExtension.GetMeta``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig})">
+            <summary>
+            获取编码规则下的打印模板
+            </summary>
+            <typeparam name="T">T</typeparam>
+            <param name="meta">meta</param>
+            <param name="action">action</param>
+            <returns>打印模板列表</returns>
+        </member>
+        <member name="M:SIE.Web.Items._Extentions_.EntityPropertyViewMetaExtension.UseItemExtPropRecordsFieldEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.Items.Common.ItemExtPropRecordsFieldConfig})">
+            <summary>
+            使用物料扩展属性编辑器
+            </summary>
+            <typeparam name="T">实体</typeparam>
+            <param name="meta">实体属性视图元数据 <see cref="T:SIE.MetaModel.View.WebEntityPropertyViewMeta"/></param>
+            <param name="action">委托</param>
+            <returns>实体属性视图元数据</returns>
+             <example> View.Property(p => p.Text).UseTextButtonFieldEditor();</example>
+        </member>
+        <member name="M:SIE.Web.Items._Extentions_.EntityPropertyViewMetaExtension.UseItemUnitEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.Items.Common.ItemUintFieldConfig})">
+            <summary>
+            使用物料单位属性编辑器
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="meta"></param>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Items._Extentions_.EntityPropertyViewMetaExtension.UseBomMainItemEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig})">
+            <summary>
+            使用产品BOM-物料清单主料编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Web.Items._Extentions_.EntityPropertyViewMetaExtension.UseBomReplateItemEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig})">
+            <summary>
+            使用产品BOM-物料清单替代料编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Web.Items._Extentions_.EntityPropertyViewMetaExtension.UseSelectEnumBoxEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.Items.Editors.SelectEnumBoxConfig})">
+            <summary>
+            获取单据大类枚举编辑器
+            </summary>
+            <typeparam name="T">T</typeparam>
+            <param name="meta">meta</param>
+            <param name="action">action</param>
+            <returns>单据大类</returns>
+        </member>
+        <member name="T:SIE.Web.Items.Common.DataQuery.ItemExtPropRecordsQueryer">
+            <summary>
+            物料扩展属性
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Common.DataQuery.ItemExtPropRecordsQueryer.GetDefinitionId(System.String)">
+            <summary>
+            解析物料属性ID
+            </summary>
+            <param name="selectPropValues"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Items.Common.DataQuery.ItemExtPropRecordsQueryer.GetItemExtPropRecordsValue(System.Double,System.String,System.Double)">
+            <summary>
+            获取物料属性值
+            </summary>
+            <param name="itemId">物料Id</param>
+            <param name="selectPropValues">已选物料扩展属性</param>
+            <param name="productBomId">产品BOM ID（如果大于0，则筛选出该BOM明细内出现过的扩展属性）</param>
+            <returns>属性值</returns>
+        </member>
+        <member name="M:SIE.Web.Items.Common.DataQuery.ItemExtPropRecordsQueryer.GetItemTypeById(System.Double)">
+            <summary>
+            根据id获取物料的类型的枚举值
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.Common.DataQuery.ItemExtPropValueData">
+            <summary>
+            物料属性值数据
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.Common.DataQuery.ItemExtPropValueData.Name">
+            <summary>
+            属性名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.Common.DataQuery.ItemExtPropValueData.DefinitionId">
+            <summary>
+            属性Id
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.Common.DataQuery.ItemExtPropValueData.Values">
+            <summary>
+            属性值集合
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.Common.DataQuery.PropertyValues">
+            <summary>
+            属性值集合
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.Common.DataQuery.PropertyValues.Value">
+            <summary>
+            属性值
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.Common.DataQuery.PropertyValues.IsChecked">
+            <summary>
+            是否已选
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.Common.DataQuery.ItemUnitDataQueryer">
+            <summary>
+            获取单位控制器
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Common.DataQuery.ItemUnitDataQueryer.GetItemUnitPrecisions(System.Double)">
+            <summary>
+            通过物料获取物料对应的精度
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Items.Common.DataQuery.ItemUnitDataQueryer.GetUnitPrecisions(System.Double)">
+            <summary>
+            通过单位ID获取物料对应的精度
+            </summary>
+            <param name="unitId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Items.Common.ItemExtPropRecordsFieldConfig">
+            <summary>
+            物料扩展属性栏位配置
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.Common.ItemExtPropRecordsFieldConfig.ItemIdField">
+            <summary>
+            设置当前实体物料Id或产品Id的属性名，默认是ItemId
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.Common.ItemExtPropRecordsFieldConfig.SourceEntityType">
+            <summary>
+            功能类型
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.Common.ItemExtPropRecordsFieldConfig.IsAllRequired">
+            <summary>
+            是否校验每个选项都必须有值
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.Common.ItemExtPropRecordsFieldConfig.DbField">
+            <summary>
+            保存到数据库的字段
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.Common.ItemExtPropRecordsFieldConfig.DataQuery">
+            <summary>
+            确认回调查询器
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.Common.ItemExtPropRecordsFieldConfig.DataQueryMethod">
+            <summary>
+            确认回调方法
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.Common.ItemExtPropRecordsFieldConfig.ProductBomIdField">
+            <summary>
+            产品BOM ID字段名称（如果产品BOM ID大于0，则筛选出该BOM明细内出现过的扩展属性）（不输入则不进行筛选）
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Common.ItemExtPropRecordsFieldConfig.ToJson(SIE.Web.Json.LiteJsonWriter)">
+            <summary>
+            转换Json数据
+            </summary>
+            <param name="json">Json数据</param>
+        </member>
+        <member name="T:SIE.Web.Items.Common.ItemUintFieldConfig">
+            <summary>
+            物料单位属性栏位配置
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.Common.ItemUintFieldConfig.ItemIdField">
+            <summary>
+            设置当前实体物料Id或产品Id的属性名，默认是ItemId
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.Common.ItemUintFieldConfig.ItemUnitFileld">
+            <summary>
+            设置当前实体物料单位Id或产品单位Id的属性名，默认是ItemUnitId
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.Common.ItemUintFieldConfig.MinValue">
+            <summary>
+            最小值
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.Common.ItemUintFieldConfig.MaxValue">
+            <summary>
+            最大值
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Common.ItemUintFieldConfig.ToJson(SIE.Web.Json.LiteJsonWriter)">
+            <summary>
+            转换Json数据
+            </summary>
+            <param name="json">Json数据</param>
+        </member>
+        <member name="T:SIE.Web.Items.Editors.SelectEnumBoxConfig">
+            <summary>
+            枚举筛选编辑器
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.Editors.SelectEnumBoxConfig.ValuesList">
+            <summary>
+            显示枚举值集合
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Editors.SelectEnumBoxConfig.InitStore">
+            <summary>
+            初始化数据
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.Items.Commands.ItemAddCommand">
+            <summary>
+            添加
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Items.Commands.ItemAddCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.Items.Items.Commands.ItemCateRelationCommand">
+            <summary>
+            分类维护
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Items.Commands.ItemCateRelationCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>结果</returns>
+        </member>
+        <member name="T:SIE.Web.Items.Items.Commands.ItemDeleteCommand">
+            <summary>
+            删除命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.Items.Commands.ItemDisableCommand">
+            <summary>
+            物料 禁用命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Items.Commands.ItemDisableCommand.Excute(System.Double[],System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>结果</returns>
+        </member>
+        <member name="T:SIE.Web.Items.Items.Commands.ItemEnableCommand">
+            <summary>
+            物料 启用命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Items.Commands.ItemEnableCommand.Excute(System.Double[],System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>结果</returns>
+        </member>
+        <member name="T:SIE.Web.Items.Items.Commands.ItemPropertyValueAddCommand">
+            <summary>
+            添加扩展属性命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Items.Commands.ItemPropertyValueAddCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>结果</returns>
+        </member>
+        <member name="T:SIE.Web.Items.Items.Commands.DataModel">
+            <summary>
+            保存数据类
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.Items.Commands.DataModel.ItemId">
+            <summary>
+            物料ID
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.Items.Commands.DataModel.DefinitionId">
+            <summary>
+            物料属性定义ID
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.Items.Commands.DataModel.Value">
+            <summary>
+            物料属性值
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.Items.Commands.DataModel.PropertyGroup">
+            <summary>
+            属性组
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.Items.Commands.ItemPropertyValueDeleteCommand">
+            <summary>
+            删除
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Items.Commands.ItemPropertyValueDeleteCommand.Excute(System.Double[],System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>结果</returns>
+        </member>
+        <member name="T:SIE.Web.Items.Items.Commands.ItemSaveCommand">
+            <summary>
+            保存
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Items.Commands.ItemSaveCommand.OnSaving(SIE.Domain.EntityList)">
+            <summary>
+            保存前事件
+            </summary>
+            <param name="data">实体</param>
+        </member>
+        <member name="T:SIE.Web.Items.Items.Commands.ProductGradeDeleteCommand">
+            <summary>
+            删除
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Items.Commands.ProductGradeDeleteCommand.Excute(System.Double[],System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>结果</returns>
+        </member>
+        <member name="T:SIE.Web.Items.Items.Commands.ProductGradeLookupCommand">
+            <summary>
+            选择
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Items.Commands.ProductGradeLookupCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行方法
+            </summary>
+            <param name="args">视图参数</param>
+            <param name="scope">SIE.MetaModel.View.Block.EntityType</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Items.Items.Commands.DeleteUnitConvertCommand">
+            <summary>
+            删除命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.Items.Commands.AddItemUnitCommand">
+            <summary>
+            转换单位添加命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Items.Commands.AddItemUnitCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Items.Items.Commands.SaveUnitConvertCommand">
+            <summary>
+            保存
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Items.Commands.SaveUnitConvertCommand.OnSaving(SIE.Domain.EntityList)">
+            <summary>
+            保存前方法
+            </summary>
+            <param name="data">数据集合</param>
+        </member>
+        <member name="T:SIE.Web.Items.Items.Commands.ImportUnitConvertCommand">
+            <summary>
+            导入备料模式维护-推式命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Items.Commands.ImportUnitConvertCommand.Excute(SIE.Web.Common.Import.Commands.ImportViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="importViewArgs"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Items.Items.Commands.ImportUnitConvertCommand.DownloadTemplate">
+            <summary>
+            直接从服务器上下载模板
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Items.Items.Commands.ImportUnitConvertCommand.GetImportCompleted">
+            <summary>
+            导入命令
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Items.Items.Commands.ImportUnitConvertCommand.GetImportHandleType">
+            <summary>
+            获取导入处理类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Items.Items.Commands.SetDefaultUnitConvertCommand">
+            <summary>
+            设置默认命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Items.Commands.SetDefaultUnitConvertCommand.Excute(System.Double[],System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Items.Items.Commands.UnValidFactoryItemDLTemplateCommand">
+            <summary>
+            下载模板
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Items.Commands.UnValidFactoryItemDLTemplateCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Items.Items.Commands.UnValidFactoryItemImportCommand">
+            <summary>
+            导入
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.Items.Configs.ItemCodeNoConfigValueViewConfig">
+            <summary>
+            物料编码 视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Items.Configs.ItemCodeNoConfigValueViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.Items.Configs.LengthUnitNoConfigValueViewConfig">
+            <summary>
+            长度单位 视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Items.Configs.LengthUnitNoConfigValueViewConfig.ConfigDetailsView">
+            <summary>
+            默认视图 配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.Items.Configs.ProductBomVersionConfigValueViewConfig">
+            <summary>
+            产品BOM版本配置值视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Items.Configs.ProductBomVersionConfigValueViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.Items.Configs.RetrospectTypeConfigValueViewConfig">
+            <summary>
+            产品追溯方式配置值视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Items.Configs.RetrospectTypeConfigValueViewConfig.ConfigView">
+            <summary>
+            配置试图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.Items.Configs.VolumeUnitNoConfigValueViewConfig">
+            <summary>
+            体积单位 视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Items.Configs.VolumeUnitNoConfigValueViewConfig.ConfigDetailsView">
+            <summary>
+            默认视图 配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.Items.Configs.WeightUnitNoConfigValueViewConfig">
+            <summary>
+            重量单位 视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Items.Configs.WeightUnitNoConfigValueViewConfig.ConfigDetailsView">
+            <summary>
+            默认视图 配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.Items.DataQuery.ItemDataQuery">
+            <summary>
+            产品等级查询器
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Items.DataQuery.ItemDataQuery.GetProductGrades(SIE.Items.Items.ProductGradeCriteria,System.Double)">
+            <summary>
+            获取产品等级
+            </summary>
+            <param name="criteria">查询实体</param>
+            <param name="itemId">物料ID</param>
+            <returns>产品等级</returns>
+        </member>
+        <member name="M:SIE.Web.Items.Items.DataQuery.ItemDataQuery.GetCatalogCode(System.Double,System.String)">
+            <summary>
+            获取快码名称
+            </summary>
+            <param name="catalogTypeId"></param>
+            <param name="catalogCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Items.Items.DataQuery.ItemDataQuery.GetDefaultItemUnit(System.Double)">
+            <summary>
+            获取默认转换单位
+            </summary>
+            <param name="itemId">物料</param>
+            <returns>单位</returns>
+        </member>
+        <member name="M:SIE.Web.Items.Items.DataQuery.ItemDataQuery.GetSecondUnit(System.Double,System.Double,System.Double)">
+            <summary>
+            获取辅助单位数据
+            </summary>
+            <param name="itemId">物料</param>
+            <param name="unitId">单位</param>
+            <returns>辅助单位</returns>
+        </member>
+        <member name="M:SIE.Web.Items.Items.DataQuery.ItemDataQuery.CheckIsDefaultUnit(System.Double,System.Double)">
+            <summary>
+            检查是否默认单位
+            </summary>
+            <param name="itemId"></param>
+            <param name="unitId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Items.Items.DataQuery.ItemDataQuery.GetDefaultItemUnits(System.Collections.Generic.List{System.Double})">
+            <summary>
+            获取默认辅助单位
+            </summary>
+            <param name="itemIds">物料</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Items.Items.ItemBatchRuleViewConfig">
+            <summary>
+            物料批次规则视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.Items.ItemBatchRuleViewConfig.BatchRuleProperty">
+            <summary>
+            按产品分批
+            只有按产品分批可以编辑数量
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Items.ItemBatchRuleViewConfig.GetBatchRulePorduct(SIE.Core.Items.ItemBatchRule)">
+            <summary>
+            按产品分批
+            </summary>
+            <param name="me">实体ItemBatchRule</param>
+            <returns>bool</returns>
+        </member>
+        <member name="F:SIE.Web.Items.Items.ItemBatchRuleViewConfig.RetrospectSingleProperty">
+            <summary>
+            追溯方式
+            追溯方式是单体不可编辑其他两项
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Items.ItemBatchRuleViewConfig.GeRetrospectSingle(SIE.Core.Items.ItemBatchRule)">
+            <summary>
+            追溯方式
+            </summary>
+            <param name="me">实体ItemBatchRule</param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:SIE.Web.Items.Items.ItemBatchRuleViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Items.ItemBatchRuleViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Items.ItemBatchRuleViewConfig.ConfigSelectionView">
+            <summary>
+            下拉选择视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.Items.ItemCategoryLevelViewConfig">
+            <summary>
+            分类层级视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.Items.ItemCategoryLevelViewConfig.TypeReadOnlyProperty">
+            <summary>
+            类型只读
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Items.ItemCategoryLevelViewConfig.GetTypeReadOnly(SIE.Items.ItemCategoryLevel)">
+            <summary>
+            类型只读
+            </summary>
+            <param name="me">分类层级</param>
+            <returns>编辑状态或者存在父层级返回true，否则返回false</returns>
+        </member>
+        <member name="T:SIE.Web.Items.Items.ItemCategoryRelationViewConfig">
+            <summary>
+            物料与分类关系表 配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Items.ItemCategoryRelationViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Items.ItemCategoryRelationViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.Items.ItemCriteriaViewConfig">
+            <summary>
+            物料查询实体视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Items.ItemCriteriaViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.Items.ItemLogViewConfig">
+            <summary>
+            物料更新日记 配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Items.ItemLogViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.Items.ItemUnitViewConfig">
+            <summary>
+            转换单位视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.Items.ItemUnitViewConfig.TabView">
+            <summary>
+            物料TAB页视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Items.ItemUnitViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Items.ItemUnitViewConfig.ConfigTabView">
+            <summary>
+             配置TAB视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.Items.Items.ProductGradeCriteriaViewConfig">
+            <summary>
+            产品等级查询视图类
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Items.ProductGradeCriteriaViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.Items.ProductGradeViewConfig">
+            <summary>
+            产品等级视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.Items.ProductGradeViewConfig.ItemProductGradeView">
+            <summary>
+            物料维护产品等级ViewGroup
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.Items.ProductGradeViewConfig.ButtonSelectView">
+            <summary>
+            选择按钮弹出的产品等级ViewGroup
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Items.ProductGradeViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Items.ProductGradeViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Items.ProductGradeViewConfig.ConfigSelectionView">
+            <summary>
+            配置下拉视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Items.ProductGradeViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Items.ProductGradeViewConfig.ItemProductGradeTabView">
+            <summary>
+            物料维护--产品等级视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Items.ProductGradeViewConfig.ButtonSelectPopView">
+            <summary>
+            选择按钮弹出的产品等级视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.Items.ProductGradeExtViewConfig">
+            <summary>
+            物料维护--产品等级页签视图类
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Items.ProductGradeExtViewConfig.ConfigListView">
+            <summary>
+            物料扩展视图--产品等级列表视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.Items.QualityCategoryCriteriaViewConfig">
+            <summary>
+            质量分类查询实体视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Items.QualityCategoryCriteriaViewConfig.ConfigView">
+            <summary>
+            质量分类查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.Items.QualityCategoryViewConfig">
+            <summary>
+            质量分类视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.Items.QualityCategoryViewConfig.ParentsProperty">
+            <summary>
+            父级节点描述
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Items.QualityCategoryViewConfig.GetParents(SIE.Items.QualityCategory)">
+            <summary>
+            父级节点描述
+            </summary>
+            <param name="me">QualityCategory</param>
+            <returns>string</returns>
+        </member>
+        <member name="M:SIE.Web.Items.Items.QualityCategoryViewConfig.FindParent(SIE.Items.ItemCategory,System.String)">
+            <summary>
+            FindParent
+            </summary>
+            <param name="category">category</param>
+            <param name="parents">parents</param>
+            <returns>string</returns>
+        </member>
+        <member name="M:SIE.Web.Items.Items.QualityCategoryViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Items.QualityCategoryViewConfig.ConfigSelectionView">
+            <summary>
+            选择视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.Items.UnitConvertViewConfig">
+            <summary>
+            单位转换视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Items.UnitConvertViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Items.UnitConvertViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Items.UnitConvertViewConfig.ConfigQueryView">
+            <summary>
+            查询
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.Items.ViewModels.ItemCategoryRelationViewModel">
+            <summary>
+            物料与分类关系 ViewModel
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.Items.ViewModels.ItemCategoryRelationViewModel.TypeProperty">
+            <summary>
+            分类类型
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.Items.ViewModels.ItemCategoryRelationViewModel.Type">
+            <summary>
+            分类类型
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.Items.ViewModels.ItemCategoryRelationViewModel.ItemCategoryIdProperty">
+            <summary>
+            分类Id
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.Items.ViewModels.ItemCategoryRelationViewModel.ItemCategoryId">
+            <summary>
+            物料小类Id
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.Items.ViewModels.ItemCategoryRelationViewModel.ItemCategoryProperty">
+            <summary>
+            分类
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.Items.ViewModels.ItemCategoryRelationViewModel.ItemCategory">
+            <summary>
+            分类
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.Items.ViewModels.ReprintViewModelConfig">
+            <summary>
+            物料与分类关系 配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Items.ViewModels.ReprintViewModelConfig.AddValidations(SIE.MetaModel.IValidationDeclarer)">
+            <summary>
+            添加验证
+            </summary>
+            <param name="rules">规则</param>
+        </member>
+        <member name="T:SIE.Web.Items.Items.ViewModels.ItemCategoryRelationViewConfig">
+            <summary>
+            物料与分类关系表 配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Items.ViewModels.ItemCategoryRelationViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.Items.ViewModels.ItemPropertyValueViewModel">
+            <summary>
+            物料属性值 ViewModel
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.Items.ViewModels.ItemPropertyValueViewModel.DefinitionIdProperty">
+            <summary>
+            物料属性定义Id
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.Items.ViewModels.ItemPropertyValueViewModel.DefinitionId">
+            <summary>
+            物料属性定义Id
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.Items.ViewModels.ItemPropertyValueViewModel.DefinitionProperty">
+            <summary>
+            物料属性定义
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.Items.ViewModels.ItemPropertyValueViewModel.Definition">
+            <summary>
+            物料属性定义
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.Items.ViewModels.ItemPropertyValueViewModel.CatalogValueProperty">
+            <summary>
+            快码值
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.Items.ViewModels.ItemPropertyValueViewModel.CatalogValue">
+            <summary>
+            快码值
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.Items.ViewModels.ItemPropertyValueViewModel.TextValueProperty">
+            <summary>
+            文本值
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.Items.ViewModels.ItemPropertyValueViewModel.TextValue">
+            <summary>
+            文本值
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.Items.ViewModels.ItemPropertyValueViewModel.NumberValueProperty">
+            <summary>
+            数值
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.Items.ViewModels.ItemPropertyValueViewModel.NumberValue">
+            <summary>
+            数值
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.Items.ViewModels.ItemPropertyValueViewModel.PropertyTypeProperty">
+            <summary>
+            属性类型
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.Items.ViewModels.ItemPropertyValueViewModel.PropertyType">
+            <summary>
+            属性类型
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.Items.ViewModels.ItemPropertyValueViewModel.CatalogTypeProperty">
+            <summary>
+            快码类型
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.Items.ViewModels.ItemPropertyValueViewModel.CatalogType">
+            <summary>
+            快码类型
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.Items.ViewModels.ItemPropertyValueViewModel.PropertyGroupProperty">
+            <summary>
+            属性组
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.Items.ViewModels.ItemPropertyValueViewModel.PropertyGroup">
+            <summary>
+            属性组
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.Items.ViewModels.ItemPropertyValueViewModelConfig">
+            <summary>
+            物料属性值 配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.Items.ViewModels.ItemPropertyValueViewModelViewConfig">
+            <summary>
+            物料属性值 配置视图
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.Items.ViewModels.ItemPropertyValueViewModelViewConfig.IsCatalogType">
+            <summary>
+            是否快码
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.Items.ViewModels.ItemPropertyValueViewModelViewConfig.IsTextType">
+            <summary>
+            是否文本
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.Items.ViewModels.ItemPropertyValueViewModelViewConfig.IsNumberType">
+            <summary>
+            是否数字
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Items.ViewModels.ItemPropertyValueViewModelViewConfig.ConfigDetailsView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.ItemCategoryViewConfig">
+            <summary>
+            分类视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ItemCategoryViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ItemCategoryViewConfig.ConfigQueryView">
+            <summary>
+            查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ItemCategoryViewConfig.ConfigSelectionView">
+            <summary>
+            下拉视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.ItemPropertyDefinitionCriteriaViewConfig">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ItemPropertyDefinitionCriteriaViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.ItemPropertyDefinitionViewConfig">
+            <summary>
+            物料属性定义视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.ItemPropertyDefinitionViewConfig.IsCatalogProperty">
+            <summary>
+            类型是否为快码
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ItemPropertyDefinitionViewConfig.GetIsCatalog(SIE.Items.ItemPropertyDefinition)">
+            <summary>
+            类型是否为快码
+            </summary>
+            <param name="me">物料属性定义</param>
+            <returns>是否为快码</returns>
+        </member>
+        <member name="M:SIE.Web.Items.ItemPropertyDefinitionViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ItemPropertyDefinitionViewConfig.ConfigSelectionView">
+            <summary>
+            下拉选择列表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ItemPropertyDefinitionViewConfig.ConfigQueryView">
+            <summary>
+            默认查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.ItemPropertyValueViewConfig">
+            <summary>
+            物料属性值视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ItemPropertyValueViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ItemPropertyValueViewConfig.ConfigListView">
+            <summary>
+            默认表格视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ItemPropertyValueViewConfig.ConfigDetailsView">
+            <summary>
+            默认表单视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ItemPropertyValueViewConfig.ConfigQueryView">
+            <summary>
+            默认查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ItemPropertyValueViewConfig.ConfigSelectionView">
+            <summary>
+            下拉视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ItemPropertyValueViewConfig.WorkorderSelectionView">
+            <summary>
+            工单下拉视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ItemPropertyValueViewConfig.ItemPropertyValueView">
+            <summary>
+            扩展属性 弹出框 界面 
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.ItemSmallCategoryCriteriaViewConfig">
+            <summary>
+            物料分类小类查询实体视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ItemSmallCategoryCriteriaViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.ItemSmallCategoryViewConfig">
+            <summary>
+            物料小类视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.ItemSmallCategoryViewConfig.AddProcessBomView">
+            <summary>
+            添加工序BOM列表视图
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.ItemSmallCategoryViewConfig.ParentsProperty">
+            <summary>
+            父级节点描述
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ItemSmallCategoryViewConfig.GetParents(SIE.Items.ItemSmallCategory)">
+            <summary>
+            父级节点描述
+            </summary>
+            <param name="me">ItemSmallCategory</param>
+            <returns>string</returns>
+        </member>
+        <member name="M:SIE.Web.Items.ItemSmallCategoryViewConfig.FindParent(SIE.Items.ItemCategory,System.String)">
+            <summary>
+            FindParent
+            </summary>
+            <param name="category">分类</param>
+            <param name="parents">parents</param>
+            <returns>string</returns>
+        </member>
+        <member name="M:SIE.Web.Items.ItemSmallCategoryViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ItemSmallCategoryViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ItemSmallCategoryViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ItemSmallCategoryViewConfig.ConfigSelectionView">
+            <summary>
+            配置下拉视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ItemSmallCategoryViewConfig.ConfigAddProcessBomView">
+            <summary>
+            分类添加工序Bom列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.ItemViewConfig">
+            <summary>
+            物料视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.ItemViewConfig.itemController">
+            <summary>
+            The item controller.
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.ItemViewConfig.SmallCategoryView">
+            <summary>
+            分类子视图
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.ItemViewConfig.BaseDataViewGroup">
+            <summary>
+            基本资料
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.ItemViewConfig.DesignDataViewGroup">
+            <summary>
+            设置资料
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.ItemViewConfig.PurchasingDataViewGroup">
+            <summary>
+            采购资料
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.ItemViewConfig.LogisticsDataViewGroup">
+            <summary>
+            物流资料
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ItemViewConfig.ConfigView">
+            <summary>
+            默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ItemViewConfig.ConfigListView">
+            <summary>
+            默认表格视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ItemViewConfig.ConfigSelectionView">
+            <summary>
+            默认下拉选择视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ItemViewConfig.ConfigQueryView">
+            <summary>
+            默认查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ItemViewConfig.BaseDataView">
+            <summary>
+            资本资料
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ItemViewConfig.DesignDataView">
+            <summary>
+            设计资料
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ItemViewConfig.PurchasingDataView">
+            <summary>
+            采购资料
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ItemViewConfig.ConfigSmallCategoryView">
+            <summary>
+            分类子视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.AlternativeViewConfig">
+            <summary>
+            替代料视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.AlternativeViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.AlternativeCriteriaViewConfig">
+            <summary>
+            替代料查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.AlternativeCriteriaViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.LabelPrintTemplateViewConfig">
+            <summary>
+            打印模板设置视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.LabelPrintTemplateViewConfig.LabelPrintTemplateView">
+            <summary>
+            视图名称
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.LabelPrintTemplateViewConfig.ConfigView">
+            <summary>
+            默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.LabelPrintTemplateViewConfig.ItemLabelPrintTemplateView">
+            <summary>
+            物料标签打印模板视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.ItemsMenuInit">
+            <summary>
+            菜单初始化
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ItemsMenuInit.GetMenuDtos">
+            <summary>
+            获取菜单列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Items.Module">
+            <summary>
+            模块配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化
+            </summary>
+            <param name="app"></param>
+        </member>
+        <member name="M:SIE.Web.Items.Module.App_MetaCompiled(System.Object,System.EventArgs)">
+            <summary>
+            完成事件
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SIE.Web.Items.Module.App_ModuleOperations(System.Object,System.EventArgs)">
+             <summary>
+            模块定义操作
+             </summary>
+             <param name="sender">事件的源对象</param>
+             <param name="e">The <see cref="T:System.EventArgs"/> 事件的数据.</param>
+             <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:SIE.Web.Items.ProductBoms.CombinationReplatePropertyValueViewConfig">
+            <summary>
+            组合替代 物料属性视图 
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.ProductBoms.CombinationReplatePropertyValueViewConfig.BomPropertyLookupView">
+            <summary>
+            扩展视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductBoms.CombinationReplatePropertyValueViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductBoms.CombinationReplatePropertyValueViewConfig.ConfigListView">
+            <summary>
+            默认表格视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductBoms.CombinationReplatePropertyValueViewConfig.ConfigBomPropertyLookupView">
+            <summary>
+            放大镜维护物料属性
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.ProductBoms.CombinationReplateViewConfig">
+            <summary>
+            组合替代 视图对象
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.ProductBoms.CombinationReplateViewConfig.ItemPropertyValueProperty">
+            <summary>
+            物料属性值
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductBoms.CombinationReplateViewConfig.GetItemPropertyValueProperty(SIE.Items.CombinationReplate)">
+            <summary>
+            获取物料属性
+            </summary>
+            <param name="comReplate">产品BOM明细</param>
+            <returns>string</returns>
+        </member>
+        <member name="M:SIE.Web.Items.ProductBoms.CombinationReplateViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductBoms.CombinationReplateViewConfig.ConfigListView">
+            <summary>
+            默认表格视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.ProductBoms.Commands.BomPropertyValueAddCommand">
+            <summary>
+            产品BOM属性添加命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductBoms.Commands.BomPropertyValueAddCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.Items.ProductBoms.Commands.BomPropertyValueAddCommandViewArgs">
+            <summary>
+            之前代码，暂时废弃
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.ProductBoms.Commands.BomPropertyValueAddCommandViewArgs.ProductBomId">
+            <summary>
+            产品BOM Id
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.ProductBoms.Commands.BomPropertyValueAddCommandViewArgs.PropertyValueViewModel">
+            <summary>
+            物料属性ViewModel
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.ProductBoms.Commands.BomPropertyValuesSaveCommand">
+            <summary>
+            保存
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductBoms.Commands.BomPropertyValuesSaveCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            之前的属性值保存方法，暂时废弃
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Items.ProductBoms.Commands.ComReplatePropertyValueSaveCommand">
+            <summary>
+            BOM明细属性值保存命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductBoms.Commands.ComReplatePropertyValueSaveCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            BOM明细属性值保存执行方法
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>BOM明细属性值保存结果</returns>
+        </member>
+        <member name="T:SIE.Web.Items.ProductBoms.Commands.ComReplatePropertyValueData">
+            <summary>
+            组合替代 选择的物料属性
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.ProductBoms.Commands.ComReplatePropertyValueData.DetailId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.ProductBoms.Commands.ComReplatePropertyValueData.DetailList">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.ProductBoms.Commands.ItemPropertySaveCommand">
+            <summary>
+            保存
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductBoms.Commands.ItemPropertySaveCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.Items.ProductBoms.Commands.ItemPropertySaveCommandViewArgs">
+            <summary>
+            参数
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.ProductBoms.Commands.ItemPropertySaveCommandViewArgs.BomDetailId">
+            <summary>
+            产品BOM ID
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.ProductBoms.Commands.ItemPropertySaveCommandViewArgs.ProductBomDetailPropertyValueList">
+            <summary>
+            属性值列表
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.ProductBoms.Commands.ProductBomAddCommand">
+            <summary>
+            添加
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductBoms.Commands.ProductBomAddCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.Items.ProductBoms.Commands.ProductBomDetailImportCommand">
+            <summary>
+            产品BOM明细导入命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductBoms.Commands.ProductBomDetailImportCommand.GetImportCompleted">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Items.ProductBoms.Commands.ProductBomDetailImportCommand.GetImportHandleType">
+            <summary>
+            获取导入处理类型
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:SIE.Web.Items.ProductBoms.Commands.ProductBomDetailImportCommand.Excute(SIE.Web.Common.Import.Commands.ImportViewArgs,System.String)">
+            <summary>
+            导入数据
+            </summary>
+            <param name="importViewArgs">导入视图参数</param>
+            <param name="scope">使用范围</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:SIE.Web.Items.ProductBoms.Commands.ProductBomDetailImportCommand.DownloadTemplate">
+            <summary>
+            直接从服务器上下载模板
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Items.ProductBoms.Commands.ProductBomImportCommand">
+            <summary>
+            有效期标准维护导入命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductBoms.Commands.ProductBomImportCommand.GetImportCompleted">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Items.ProductBoms.Commands.ProductBomImportCommand.GetImportHandleType">
+            <summary>
+            获取导入处理类型
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:SIE.Web.Items.ProductBoms.Commands.ProductBomImportCommand.Excute(SIE.Web.Common.Import.Commands.ImportViewArgs,System.String)">
+            <summary>
+            导入数据
+            </summary>
+            <param name="importViewArgs">导入视图参数</param>
+            <param name="scope">使用范围</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:SIE.Web.Items.ProductBoms.Commands.ProductBomImportCommand.DownloadTemplate">
+            <summary>
+            直接从服务器上下载模板
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Items.ProductBoms.Commands.ProductBomSaveCommand">
+            <summary>
+            产品BOM保存命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductBoms.Commands.ProductBomSaveCommand.OnSaving(SIE.Domain.EntityList)">
+            <summary>
+            产品BOM保存命令
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:SIE.Web.Items.ProductBoms.Commands.ProductBomSaveCommand.ProcessBomData(SIE.Domain.EntityList{SIE.Items.ProductBom})">
+            <summary>
+            处理产品BOM下的所有物料属性
+            </summary>
+            <param name="proBomList">产品BOM列表</param>
+        </member>
+        <member name="M:SIE.Web.Items.ProductBoms.Commands.ProductBomSaveCommand.MergeReplateItemPropertyValue(SIE.Items.CombinationReplate,System.Collections.Generic.List{SIE.Items.CombinationReplatePropertyValue})">
+            <summary>
+            处理组合替代下的物料属性
+            </summary>
+            <param name="comReplate">组合替代</param>
+            <param name="uiDataList">新勾选的值</param>
+        </member>
+        <member name="T:SIE.Web.Items.ProductBoms.Commands.PropertyValueSaveCommand">
+            <summary>
+            BOM明细属性值保存命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductBoms.Commands.PropertyValueSaveCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            BOM明细属性值保存执行方法
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>BOM明细属性值保存结果</returns>
+        </member>
+        <member name="T:SIE.Web.Items.ProductBoms.Commands.OutData">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.ProductBoms.Commands.OutData.DetailId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.ProductBoms.Commands.OutData.DetailList">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.ProductBoms.DataQuery.ProductBomDataQuery">
+            <summary>
+            产品BOM数据操作类
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductBoms.DataQuery.ProductBomDataQuery.SaveProductBomProValue(System.Collections.Generic.List{SIE.Web.Items.ViewModels.PropertyValueViewModel},System.Double)">
+            <summary>
+            自定义保存配送管理的属性值标签
+            </summary>
+            <param name="proModel">属性实体</param>
+            <param name="productBomId">产品BOM ID</param>
+        </member>
+        <member name="M:SIE.Web.Items.ProductBoms.DataQuery.ProductBomDataQuery.DeleteProductBomProValue(System.String)">
+            <summary>
+            删除属性值
+            </summary>
+            <param name="deleteBomId">产品bomid</param>
+        </member>
+        <member name="M:SIE.Web.Items.ProductBoms.DataQuery.ProductBomDataQuery.SetDefaultProductBom(System.Double,System.Double)">
+            <summary>
+            设置产品产品bom为缺省
+            </summary>
+            <param name="prodcutId">产品ID</param>
+            <param name="bomId">产品BOM ID</param>
+        </member>
+        <member name="M:SIE.Web.Items.ProductBoms.DataQuery.ProductBomDataQuery.SetDefaultProductBomWithExtProp(System.Double,System.Double,System.String)">
+            <summary>
+            设置产品产品bom为缺省（考虑物料扩展属性）
+            </summary>
+            <param name="prodcutId">产品ID</param>
+            <param name="bomId">产品BOM ID</param>
+            <param name="extPropName">物料扩展属性</param>
+        </member>
+        <member name="M:SIE.Web.Items.ProductBoms.DataQuery.ProductBomDataQuery.GetPropertyValueList(System.Double,System.Double)">
+            <summary>
+            获取物料下所有产品BOM明细属性值
+            </summary>
+            <param name="bomDetailId">产品BOM明细Id</param>
+            <param name="itemId">物料Id</param>
+            <returns>所有产品BOM明细属性值</returns>
+        </member>
+        <member name="M:SIE.Web.Items.ProductBoms.DataQuery.ProductBomDataQuery.GetComReplatePropertyValues(System.Double,System.Double)">
+            <summary>
+            获取物料下所有产品BOM下组合替代属性值
+            </summary>
+            <param name="comReplateId">产品BOM下组合替代Id</param>
+            <param name="itemId">物料Id</param>
+            <returns>所有产品BOM组合替代的属性值</returns>
+        </member>
+        <member name="M:SIE.Web.Items.ProductBoms.DataQuery.ProductBomDataQuery.GetAllItems(System.String,SIE.PagingInfo)">
+            <summary>
+            获取全部物料
+            </summary>
+            <returns>物料</returns>
+        </member>
+        <member name="M:SIE.Web.Items.ProductBoms.DataQuery.ProductBomDataQuery.GetItemAlternative(System.Double)">
+            <summary>
+            获取替代料列表
+            </summary>
+            <param name="bomDetailId">产品BOM明细id</param>
+            <returns>替代料列表</returns>
+        </member>
+        <member name="M:SIE.Web.Items.ProductBoms.DataQuery.ProductBomDataQuery.SaveAlternative(System.Double,System.Collections.Generic.List{System.String})">
+            <summary>
+            保存替代料列表
+            </summary>
+            <param name="bomDetailId">产品BOM明细id</param>
+            <param name="codes">替代料物料编码</param>
+        </member>
+        <member name="M:SIE.Web.Items.ProductBoms.DataQuery.ProductBomDataQuery.ValidateApsRef(System.Double)">
+            <summary>
+            校验：产品BOM被生产订单或需求管理引用为指定BOM，不允许修改产品
+            </summary>
+            <param name="bomId"></param>
+        </member>
+        <member name="T:SIE.Web.Items.ProductBoms.ProductBomCriteriaViewConfig">
+            <summary>
+            产品BOM查询实体视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductBoms.ProductBomCriteriaViewConfig.ConfigView">
+            <summary>
+            默认查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.ProductBoms.ProductBomDetailPropertyValueViewConfig">
+            <summary>
+            产品BOM明细物料属性值视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.ProductBoms.ProductBomDetailPropertyValueViewConfig.BomPropertyLookupView">
+            <summary>
+            扩展视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductBoms.ProductBomDetailPropertyValueViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductBoms.ProductBomDetailPropertyValueViewConfig.ConfigListView">
+            <summary>
+            默认表格视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductBoms.ProductBomDetailPropertyValueViewConfig.ConfigDetailsView">
+            <summary>
+            默认表单视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductBoms.ProductBomDetailPropertyValueViewConfig.ConfigBomPropertyLookupView">
+            <summary>
+            放大镜维护物料属性
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.ProductBoms.ProductBomDetailViewConfig">
+            <summary>
+            产品BOM明细视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.ProductBoms.ProductBomDetailViewConfig.AlternativeProperty">
+            <summary>
+            替代料值
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductBoms.ProductBomDetailViewConfig.GetAlternative(SIE.Items.ProductBomDetail)">
+            <summary>
+            替代料值
+            </summary>
+            <param name="detail">产品BOM明细</param>
+            <returns>string</returns>
+        </member>
+        <member name="F:SIE.Web.Items.ProductBoms.ProductBomDetailViewConfig.ItemPropertyValueProperty">
+            <summary>
+            物料属性值
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductBoms.ProductBomDetailViewConfig.GetItemPropertyValueProperty(SIE.Items.ProductBomDetail)">
+            <summary>
+            获取物料属性
+            </summary>
+            <param name="detail">产品BOM明细</param>
+            <returns>string</returns>
+        </member>
+        <member name="F:SIE.Web.Items.ProductBoms.ProductBomDetailViewConfig.SourceTypeNameProperty">
+            <summary>
+             来源类型
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductBoms.ProductBomDetailViewConfig.GetSourceTypeName(SIE.Items.ProductBomDetail)">
+            <summary>
+            获取来源类型
+            </summary>
+            <param name="me">产品BOM明细</param>
+            <returns>来源类型</returns>
+        </member>
+        <member name="F:SIE.Web.Items.ProductBoms.ProductBomDetailViewConfig.TechOrderItemView">
+            <summary>
+            工艺单BOM明细视图ViewGroup
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductBoms.ProductBomDetailViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductBoms.ProductBomDetailViewConfig.ConfigListView">
+            <summary>
+            默认表格视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.ProductBoms.ProductBomPropertyValueViewConfig">
+            <summary>
+            产品BOM物料属性视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductBoms.ProductBomPropertyValueViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductBoms.ProductBomPropertyValueViewConfig.ConfigListView">
+            <summary>
+            默认表格视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductBoms.ProductBomPropertyValueViewConfig.ConfigDetailsView">
+            <summary>
+            默认表单视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.ProductBoms.ProductBomViewConfig">
+            <summary>
+            产品BOM视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductBoms.ProductBomViewConfig.ConfigListView">
+            <summary>
+            默认表格视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductBoms.ProductBomViewConfig.ConfigSelectionView">
+            <summary>
+            默认下拉选择视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductBoms.ProductBomViewConfig.ConfigQueryView">
+            <summary>
+            默认查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.ProductFamilyCategoryViewConfig">
+            <summary>
+            产品族分类 视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductFamilyCategoryViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductFamilyCategoryViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductFamilyCategoryViewConfig.ConfigQueryView">
+            <summary>
+            查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductFamilyCategoryViewConfig.ConfigSelectionView">
+            <summary>
+            选择视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.ProductFamilyViewConfig">
+            <summary>
+            产品族视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.ProductFamilyViewConfig.ProductFamilyCommand">
+            <summary>
+            产品族分类命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductFamilyViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductFamilyViewConfig.ConfigQueryView">
+            <summary>
+            查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductFamilyViewConfig.ConfigSelectionView">
+            <summary>
+            选择视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.ProductModels.Commands.ImportDataCommonCommand">
+            <summary>
+            通用数据导入命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductModels.Commands.ImportDataCommonCommand.Excute(SIE.Web.Common.Import.Commands.ImportViewArgs,System.String)">
+            <summary>
+            重载执行方法，添加自定义下载模板方法
+            </summary>
+            <param name="importViewArgs"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Items.ProductModels.Commands.ImportDataCommonCommand.ImportData(SIE.Web.Common.Import.Commands.ImportViewArgs,System.String,System.Boolean)">
+            <summary>
+            导入处理逻辑
+            </summary>
+            <param name="args">视图参数</param>
+            <param name="sheetName">excel工作薄sheet的名称</param>
+            <param name="isFirstRowColumn">第一行是否是DataTable的列名</param>
+            <returns>导入结果信息</returns>
+        </member>
+        <member name="M:SIE.Web.Items.ProductModels.Commands.ImportDataCommonCommand.DownloadTemplate(SIE.Web.Common.Import.Commands.ImportViewArgs,System.String)">
+            <summary>
+            自定义下载模板方法
+            </summary>
+            <param name="importViewArgs"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Items.ProductModels.Commands.ImportDataCommonCommand.SetTemplateFileName(SIE.Web.Common.Import.Commands.ImportViewArgs,System.String)">
+            <summary>
+            设置模板文件信息
+            </summary>
+            <param name="importViewArgs"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Items.ProductModels.Commands.ImportDataCommonCommand.GetImportCompleted">
+            <summary>
+            获取导入完成处理逻辑
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Items.ProductModels.Commands.TemplatePathInfo">
+            <summary>
+            模板文件信息
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.ProductModels.Commands.TemplatePathInfo.FullPath">
+            <summary>
+            完整路径
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.ProductModels.Commands.TemplatePathInfo.FileName">
+            <summary>
+            文件名
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.ProductModels.Commands.ImportDataHandleSMOM">
+            <summary>
+            MES导入处理
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductModels.Commands.ImportDataHandleSMOM.#ctor(System.Double)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="parentId"></param>
+        </member>
+        <member name="M:SIE.Web.Items.ProductModels.Commands.ImportDataHandleSMOM.ValidColumnNames(System.Data.DataTable,System.Collections.Generic.List{System.String})">
+            <summary>
+            重载文档列校验，添加列名比较
+            </summary>
+            <param name="dt"></param>
+            <param name="columnList"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Items.ProductModels.Commands.LineCapacityAddCommand">
+            <summary>
+            添加
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductModels.Commands.LineCapacityAddCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.Items.ProductModels.Commands.ProductModelDeleteCommand">
+            <summary>
+            删除
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductModels.Commands.ProductModelDeleteCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.Items.ProductModels.Commands.ProductModelImportCommand">
+            <summary>
+            产品机型导入
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.ProductModels.Commands.ProductModelImportCommand.FullName">
+            <summary>
+            导入命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductModels.Commands.ProductModelImportCommand.GetImportHandleType">
+            <summary>
+            获取导入处理类型
+            </summary>
+            <returns>工单导入处理类</returns>
+        </member>
+        <member name="M:SIE.Web.Items.ProductModels.Commands.ProductModelImportCommand.SetTemplateFileName(SIE.Web.Common.Import.Commands.ImportViewArgs,System.String)">
+            <summary>
+            设置模板文件信息
+            </summary>
+            <param name="importViewArgs">importViewArgs</param>
+            <param name="scope">scope</param>
+            <returns>模板信息</returns>
+        </member>
+        <member name="T:SIE.Web.Items.ProductModels.Commands.ProductModelSaveCommand">
+            <summary>
+            保存
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductModels.Commands.ProductModelSaveCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.Items.ProductModels.Commands.ProductModelSaveViewArgs">
+            <summary>
+            参数
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.ProductModels.Commands.ProductModelSaveViewArgs.ProductModelList">
+            <summary>
+            产品机型
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.ProductModels.Commands.ProductModelSaveViewArgs.ProductModelLineCapacityList">
+            <summary>
+            产线产能
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.ProductModels.Commands.ProductModelSaveViewArgs.ProductModelSkillList">
+            <summary>
+            机型技能
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.ProductModels.Commands.ProductModelSkillImportCommand">
+            <summary>
+            机型技能导入
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductModels.Commands.ProductModelSkillImportCommand.GetImportCompleted">
+            <summary>
+            获取导入完成后逻辑
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Items.ProductModels.Commands.ProductModelSkillImportCommand.GetImportHandleType">
+            <summary>
+            获取导入处理类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Items.ProductModels.Commands.SelectProductModel">
+            <summary>
+            选择产品机型
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductModels.Commands.SelectProductModel.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.Items.ProductModels.Commands.SelectProductModelViewArgs">
+            <summary>
+            参数
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.ProductModels.Commands.SelectProductModelViewArgs.ProductsFamilyId">
+            <summary>
+            产品族Id
+            </summary>
+            <value>
+            The products family identifier.
+            </value>
+        </member>
+        <member name="P:SIE.Web.Items.ProductModels.Commands.SelectProductModelViewArgs.ProductModelList">
+            <summary>
+            产品机型列表
+            </summary>
+            <value>
+            The product model list.
+            </value>
+        </member>
+        <member name="T:SIE.Web.Items.ProductModels.ModelSkillViewConfig">
+            <summary>
+            班组缺编统计机型技能
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.ProductModels.ModelSkillViewConfig.WorkGroupView">
+            <summary>
+            班组缺编查看工单视图ViewGroup
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductModels.ModelSkillViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductModels.ModelSkillViewConfig.WorkGroupConfigListView">
+            <summary>
+            默认工单视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.ProductModels.ProductModelDataQuery">
+            <summary>
+            产品机型查询器
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductModels.ProductModelDataQuery.GetProductModels">
+            <summary>
+            获取产品机型
+            </summary>
+            <returns>产品机型</returns>
+        </member>
+        <member name="M:SIE.Web.Items.ProductModels.ProductModelDataQuery.SetProductModel(System.Collections.Generic.List{SIE.Web.Items.ProductModels.SelectProductModel})">
+            <summary>
+            设置产品机型
+            </summary>
+            <param name="productModel">productModel</param>
+            <returns>true</returns>
+        </member>
+        <member name="T:SIE.Web.Items.ProductModels.SelectProductModel">
+            <summary>
+            参数
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.ProductModels.SelectProductModel.ProductFamilyId">
+            <summary>
+            产品族Id
+            </summary>
+            <value>
+            The products family identifier.
+            </value>
+        </member>
+        <member name="P:SIE.Web.Items.ProductModels.SelectProductModel.ProductModelId">
+            <summary>
+            产品机型Id
+            </summary>
+            <value>
+            The product model list.
+            </value>
+        </member>
+        <member name="T:SIE.Web.Items.ProductModelLineCapacityViewConfig">
+            <summary>
+            产线产能视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductModelLineCapacityViewConfig.ConfigView">
+            <summary>
+            默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductModelLineCapacityViewConfig.ConfigListView">
+            <summary>
+            列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.ProductModelSkillViewConfig">
+            <summary>
+            机型技能视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductModelSkillViewConfig.ConfigView">
+            <summary>
+            默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductModelSkillViewConfig.ConfigListView">
+            <summary>
+            列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductModelSkillViewConfig.ConfigImportView">
+            <summary>
+            导入模板
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.ProductModelViewConfig">
+            <summary>
+            产品机型视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.ProductModelViewConfig.ModelWithFamilyView">
+            <summary>
+            与产品族列表关联的产品机型 ViewGroup字符串定义
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductModelViewConfig.ConfigView">
+            <summary>
+            默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductModelViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductModelViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductModelViewConfig.ConfigSelectionView">
+            <summary>
+            选择视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ProductModelViewConfig.ConfigModelWithFamilyView">
+            <summary>
+            与产品族列表关联的产品机型视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.Units.Commands.SaveUnitCommand">
+            <summary>
+            保存
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Units.Commands.SaveUnitCommand.OnSaving(SIE.Domain.EntityList)">
+            <summary>
+            保存前方法
+            </summary>
+            <param name="data">数据集合</param>
+        </member>
+        <member name="T:SIE.Web.Items.Units.Commands.DeleteUnitCommand">
+            <summary>
+            删除命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.Units.Commands.InitUnitCommand">
+            <summary>
+            初始化
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.Units.Commands.InitUnitCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Items.Units.UnitViewConfig">
+            <summary>
+            单位视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.ViewModels.PropertyValueDataQueryer">
+            <summary>
+            产品属性值查询
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ViewModels.PropertyValueDataQueryer.GetBomValueProperty(System.Double,System.Double)">
+            <summary>
+            获取物料属性值
+            </summary>
+            <param name="itemId">物料ID</param>
+            <param name="definitionId">物料属性定义ID</param>
+            <returns>物料属性值</returns>
+        </member>
+        <member name="M:SIE.Web.Items.ViewModels.PropertyValueDataQueryer.GetItemPropertyProperty(System.Double)">
+            <summary>
+            获取产品BOM明细属性值（该方法中的物料扩展属性对象先不更改，如果引用该方法的js控件确认可以删除，就直接删除控件和该方法）
+            </summary>
+            <param name="bomDetailId">产品BOM明细ID</param>
+            <returns>产品BOM明细属性值</returns>
+        </member>
+        <member name="M:SIE.Web.Items.ViewModels.PropertyValueDataQueryer.IsExistProperty(System.Double)">
+            <summary>
+            判断该物料是否有配置属性
+            </summary>
+            <param name="itemid">物料ID</param>
+            <returns>是否</returns>
+        </member>
+        <member name="T:SIE.Web.Items.ViewModels.PropertyValueViewModel">
+            <summary>
+            属性值ViewModel
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ViewModels.PropertyValueViewModel.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.ViewModels.PropertyValueViewModel.DefinitionIdProperty">
+            <summary>
+            物料属性定义Id
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.ViewModels.PropertyValueViewModel.DefinitionId">
+            <summary>
+            物料属性定义Id
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.ViewModels.PropertyValueViewModel.DefinitionProperty">
+            <summary>
+            物料属性定义
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.ViewModels.PropertyValueViewModel.Definition">
+            <summary>
+            物料属性定义
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.ViewModels.PropertyValueViewModel.DefinitionValueIdProperty">
+            <summary>
+            物料属性值Id
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.ViewModels.PropertyValueViewModel.DefinitionValueId">
+            <summary>
+            物料属性值Id
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.ViewModels.PropertyValueViewModel.DefinitionValueProperty">
+            <summary>
+            物料属性值
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.ViewModels.PropertyValueViewModel.DefinitionValue">
+            <summary>
+            物料属性值
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.ViewModels.PropertyValueViewModel.DefinitionNameProperty">
+            <summary>
+            属性值
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.ViewModels.PropertyValueViewModel.DefinitionName">
+            <summary>
+            属性值
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.ViewModels.PropertyValueViewModel.ValuesProperty">
+            <summary>
+            属性值列表
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.ViewModels.PropertyValueViewModel.Values">
+            <summary>
+            属性值列表
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.ViewModels.PropertyValueViewModel.ValueProperty">
+            <summary>
+            属性值列表
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.ViewModels.PropertyValueViewModel.Value">
+            <summary>
+            属性值
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.ViewModels.PropertyValueViewModel.TypeProperty">
+            <summary>
+            父类型
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.ViewModels.PropertyValueViewModel.Type">
+            <summary>
+            父类型
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.ViewModels.PropertyValueViewModel.ParentIdProperty">
+            <summary>
+            父ID
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.ViewModels.PropertyValueViewModel.ParentId">
+            <summary>
+            父ID
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.ViewModels.PropertyValueViewModel.ItemIdProperty">
+            <summary>
+            物料ID
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Items.ViewModels.PropertyValueViewModel.ItemId">
+            <summary>
+            物料ID
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ViewModels.PropertyValueViewModel.ResetData">
+            <summary>
+            重置数据方法
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ViewModels.PropertyValueViewModel.OnPropertyChanged(SIE.ManagedProperty.ManagedPropertyChangedEventArgs)">
+            <summary>
+            属性变更事件
+            </summary>
+            <param name="e">属性变更事件参数</param>
+        </member>
+        <member name="T:SIE.Web.Items.ViewModels.BomDetailPropertyValueViewModelViewConfig">
+            <summary>
+            产品Bom明细视图子视图，产品Bom孙视图
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.ViewModels.BomDetailPropertyValueViewModelViewConfig.BomDetailPropertyValueViewModelView">
+            <summary>
+            拓展ViewGroup字符串定义
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.ViewModels.BomDetailPropertyValueViewModelViewConfig.BomDetailValueProperty">
+            <summary>
+            属性值字符串
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ViewModels.BomDetailPropertyValueViewModelViewConfig.GetValue(SIE.Web.Items.ViewModels.PropertyValueViewModel)">
+            <summary>
+            属性值字符串
+            </summary>
+            <param name="me">PropertyValueViewModel</param>
+            <returns>string</returns>
+        </member>
+        <member name="M:SIE.Web.Items.ViewModels.BomDetailPropertyValueViewModelViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.ViewModels.ItemPropertyValueViewModelViewConfig">
+            <summary>
+            物料子视图，物料属性视图
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.ViewModels.ItemPropertyValueViewModelViewConfig.ItemPropertyValueViewModelView">
+            <summary>
+            自定义ViewGroup
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.ViewModels.ItemPropertyValueViewModelViewConfig.ItemValueProperty">
+            <summary>
+            物料属性值
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ViewModels.ItemPropertyValueViewModelViewConfig.GetValue(SIE.Web.Items.ViewModels.PropertyValueViewModel)">
+            <summary>
+            物料属性值
+            </summary>
+            <param name="me">属性值模板</param>
+            <returns>string</returns>
+        </member>
+        <member name="M:SIE.Web.Items.ViewModels.ItemPropertyValueViewModelViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Items.ViewModels.BomPropertyValueViewModelViewConfig">
+            <summary>
+            产品Bom视图，物料属性值子视图
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.ViewModels.BomPropertyValueViewModelViewConfig.BomPropertyValueViewModelListView">
+            <summary>
+            产品Bom物料属性子视图，ViewGroup
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Items.ViewModels.BomPropertyValueViewModelViewConfig.BomValueProperty">
+            <summary>
+            产品Bom属性值拓展属性
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Items.ViewModels.BomPropertyValueViewModelViewConfig.GetValue(SIE.Web.Items.ViewModels.PropertyValueViewModel)">
+            <summary>
+            产品Bom属性值拓展属性
+            </summary>
+            <param name="me">PropertyValueViewModel</param>
+            <returns>string</returns>
+        </member>
+        <member name="M:SIE.Web.Items.ViewModels.BomPropertyValueViewModelViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Sales.Products.ProductModelCriteriaViewConfig">
+            <summary>
+            产品机型查询实体 视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Sales.Products.ProductModelCriteriaViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+    </members>
+</doc>

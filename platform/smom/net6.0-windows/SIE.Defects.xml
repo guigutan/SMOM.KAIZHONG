@@ -1,0 +1,1405 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Defects</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Defects.DbMigrations._20220608_000001_InitData">
+            <summary>
+            Defect 库中的初始数据
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.DbMigrations._20220608_000001_InitData.DbSetting">
+            <summary>
+            数据库连接字符串名
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.DbMigrations._20220608_000001_InitData.Description">
+            <summary>
+            添加 Defect 库中的初始数据
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.DbMigrations._20220608_000001_InitData.Type">
+            <summary>
+            手动升级的类型：数据
+            </summary>
+        </member>
+        <member name="M:SIE.Defects.DbMigrations._20220608_000001_InitData.Down">
+            <summary>
+            不支持 Down
+            </summary>
+        </member>
+        <member name="M:SIE.Defects.DbMigrations._20220608_000001_InitData.Up">
+            <summary>
+            升级数据
+            </summary>
+        </member>
+        <member name="M:SIE.Defects.DbMigrations._20220608_000001_InitData.InitInspectionMode">
+            <summary>
+            检验方式
+            </summary>
+        </member>
+        <member name="M:SIE.Defects.DbMigrations._20220608_000001_InitData.InitDefectGrade">
+            <summary>
+            缺陷等级
+            </summary>
+        </member>
+        <member name="T:SIE.Defects.DefectEntityRepository`1">
+            <summary>
+             此类的作用在于批量配置数据提供者(DataProvider)
+            </summary>
+            <typeparam name="T">T</typeparam>
+        </member>
+        <member name="T:SIE.Defects.DefectEntityDataProvider">
+            <summary>
+            数据提供者
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.DefectEntityDataProvider.ConnectionStringName">
+            <summary>
+            数据库连接字符串的名称
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.DefectEntityDataProvider.ConnectionStringSettingName">
+            <summary>
+            数据库连接字符串的名称
+            </summary>
+        </member>
+        <member name="T:SIE.Defects.Defects.DefectSeverity">
+            <summary>
+            严重度
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.Defects.DefectSeverity.deadly">
+            <summary>
+            致命
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.Defects.DefectSeverity.high">
+            <summary>
+            高
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.Defects.DefectSeverity.middle">
+            <summary>
+            中
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.Defects.DefectSeverity.light">
+            <summary>
+            轻
+            </summary>
+        </member>
+        <member name="T:SIE.Defects.Defects.DefectSeverityHelper">
+            <summary>
+            严重度默认值
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.Defects.DefectSeverityHelper.LowestDefectSeverity">
+            <summary>
+            最低级严重度
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.Defects.DefectSeverityHelper.HighestDefectSeverity">
+            <summary>
+            最高级严重度
+            </summary>
+        </member>
+        <member name="M:SIE.Defects.Defects.DefectSeverityHelper.IsHigherThan(SIE.Defects.Defects.DefectSeverity,SIE.Defects.Defects.DefectSeverity)">
+            <summary>
+            判断a是否比b严重度高
+            </summary>
+            <param name="a"></param>
+            <param name="b"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Defects.Defects.DefectSeverityHelper.IsLightThan(SIE.Defects.Defects.DefectSeverity,SIE.Defects.Defects.DefectSeverity)">
+            <summary>
+            判断a是否比b严重度低
+            </summary>
+            <param name="a"></param>
+            <param name="b"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Defects.Defects.DefectCriteria">
+            <summary>
+            缺陷代码查询条件
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.Defects.DefectCriteria.CodeProperty">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.Defects.DefectCriteria.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.Defects.DefectCriteria.DescriptionProperty">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.Defects.DefectCriteria.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.Defects.DefectCriteria.DefectCategoryIdProperty">
+            <summary>
+            缺陷分类Id
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.Defects.DefectCriteria.DefectCategoryId">
+            <summary>
+            缺陷分类Id
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.Defects.DefectCriteria.DefectCategoryProperty">
+            <summary>
+            缺陷分类
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.Defects.DefectCriteria.DefectCategory">
+            <summary>
+            缺陷分类
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.Defects.DefectCriteria.QualityTypeProperty">
+            <summary>
+            质量类型
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.Defects.DefectCriteria.QualityType">
+            <summary>
+            质量类型
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.Defects.DefectCriteria.DefectGradeIdProperty">
+            <summary>
+            缺陷等级Id
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.Defects.DefectCriteria.DefectGradeId">
+            <summary>
+            缺陷等级Id
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.Defects.DefectCriteria.DefectGradeProperty">
+            <summary>
+            缺陷等级
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.Defects.DefectCriteria.DefectGrade">
+            <summary>
+            缺陷等级
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.Defects.DefectCriteria.FilterIdProperty">
+            <summary>
+            过滤属性值ID
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.Defects.DefectCriteria.FilterId">
+            <summary>
+            过滤属性值ID
+            </summary>
+        </member>
+        <member name="M:SIE.Defects.Defects.DefectCriteria.Fetch">
+            <summary>
+            查询实体默认查询方法
+            </summary>
+            <returns>EntityList</returns>
+        </member>
+        <member name="T:SIE.Defects.Defect">
+            <summary>
+            缺陷代码
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.Defect.CodeProperty">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.Defect.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.Defect.DescriptionProperty">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.Defect.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.Defect.QualityTypeProperty">
+            <summary>
+            质量类型
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.Defect.QualityType">
+            <summary>
+            质量类型
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.Defect.DefectCategoryIdProperty">
+            <summary>
+            缺陷分类Id
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.Defect.DefectCategoryId">
+            <summary>
+            缺陷分类Id
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.Defect.DefectCategoryProperty">
+            <summary>
+            缺陷分类
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.Defect.DefectCategory">
+            <summary>
+            缺陷分类
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.Defect.DefectGradeIdProperty">
+            <summary>
+            缺陷等级Id
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.Defect.DefectGradeId">
+            <summary>
+            缺陷等级Id
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.Defect.DefectGradeProperty">
+            <summary>
+            缺陷等级
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.Defect.DefectGrade">
+            <summary>
+            缺陷等级
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.Defect.DefectLevelProperty">
+            <summary>
+            缺陷等级
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.Defect.DefectLevel">
+            <summary>
+            缺陷等级
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.Defect.DefectSeverityProperty">
+            <summary>
+            严重度
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.Defect.DefectSeverity">
+            <summary>
+            严重度
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.Defect.CategoryCodeProperty">
+            <summary>
+            分类编码
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.Defect.CategoryCode">
+            <summary>
+            分类编码
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.Defect.CategoryDescriptionProperty">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.Defect.CategoryDescription">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="T:SIE.Defects.DefectConfig">
+            <summary>
+            缺陷代码 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Defects.DefectConfig.ConfigMeta">
+            <summary>
+            元数据配置
+            </summary>
+        </member>
+        <member name="T:SIE.Defects.DefectCategory">
+            <summary>
+            缺陷分类
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.DefectCategory.CodeProperty">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.DefectCategory.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.DefectCategory.DescriptionProperty">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.DefectCategory.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="T:SIE.Defects.DefectCategoryConfig">
+            <summary>
+            缺陷分类 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Defects.DefectCategoryConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.Defects.DefectController">
+            <summary>
+            缺陷控制器
+            </summary>
+        </member>
+        <member name="M:SIE.Defects.DefectController.GetAllDefectResponsibilityCategory">
+            <summary>
+            获取所有缺陷责任分类
+            </summary>
+            <returns>缺陷责任分类列表</returns>
+        </member>
+        <member name="M:SIE.Defects.DefectController.GetAllDefectCategory">
+            <summary>
+            获取所有缺陷分类
+            </summary>
+            <returns>缺陷分类列表</returns>
+        </member>
+        <member name="M:SIE.Defects.DefectController.GetAllDefectCategory(SIE.PagingInfo,System.String)">
+            <summary>
+            根据缺陷分类编码获取缺陷分类信息
+            </summary>
+            <param name="pageinfo">分页</param>
+            <param name="code">编码</param>
+            <returns>缺陷分类列表</returns>
+        </member>
+        <member name="M:SIE.Defects.DefectController.GetAllDefect">
+            <summary>
+            获取所有缺陷代码
+            </summary>
+            <returns>缺陷代码列表</returns>
+        </member>
+        <member name="M:SIE.Defects.DefectController.GetDefectCategoryByCodes(System.Collections.Generic.List{System.String})">
+            <summary>
+            获取缺陷分类
+            </summary>
+            <returns>缺陷分类列表</returns>
+        </member>
+        <member name="M:SIE.Defects.DefectController.GetAllDefectGrade">
+            <summary>
+            获取所有缺陷等级
+            </summary>
+            <returns>缺陷代码列表</returns>
+        </member>
+        <member name="M:SIE.Defects.DefectController.GetDefectGradeByNames(System.Collections.Generic.List{System.String})">
+            <summary>
+            获取缺陷等级
+            </summary>
+            <returns>缺陷等级列表</returns>
+        </member>
+        <member name="M:SIE.Defects.DefectController.GetDefectList(System.Collections.Generic.List{System.Double})">
+            <summary>
+            根据缺陷ID列表 获取缺陷代码列表
+            </summary> 
+            <param name="defectIds">缺陷ID列表</param>       
+            <returns>缺陷代码列表</returns>
+        </member>
+        <member name="M:SIE.Defects.DefectController.GetDefectList(System.String,SIE.PagingInfo)">
+            <summary>
+            查询缺陷代码
+            </summary>
+            <param name="keyword">关键字</param>
+            <param name="paging">分页信息</param> 
+            <returns>缺陷代码列表</returns>
+        </member>
+        <member name="M:SIE.Defects.DefectController.GetDefects(System.Double,System.String,SIE.PagingInfo)">
+            <summary>
+            获取缺陷代码集合
+            </summary>
+            <param name="categoryId">缺陷代码分类ID</param>
+            <param name="keyword">查询关键字</param>
+            <param name="pagingInfo">分页条件</param>
+            <returns>缺陷代码集合</returns>
+        </member>
+        <member name="M:SIE.Defects.DefectController.GetDefects(SIE.Defects.Defects.DefectCriteria)">
+            <summary>
+            按查询条件查询缺陷代码
+            </summary>
+            <param name="criteria"></param>        
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:SIE.Defects.DefectController.GetDefect(System.String)">
+            <summary>
+            根据缺陷描述获取缺陷
+            </summary>
+            <param name="defectName">缺陷描述</param>
+            <returns>缺陷</returns>
+        </member>
+        <member name="M:SIE.Defects.DefectController.GetDefectsByCodes(System.Collections.Generic.List{System.String})">
+            <summary>
+            获取缺陷等级
+            </summary>
+            <returns>缺陷等级列表</returns>
+        </member>
+        <member name="M:SIE.Defects.DefectController.GetDefectInfos">
+            <summary>
+            获取缺陷信息
+            </summary>
+            <returns>缺陷信息列表</returns>
+        </member>
+        <member name="M:SIE.Defects.DefectController.GetDefectGradeName(System.String)">
+            <summary>
+            获取缺陷等级
+            </summary>
+            <param name="name">缺陷等级 不可空</param>
+        </member>
+        <member name="M:SIE.Defects.DefectController.GetDefectCategoryCode(System.String)">
+            <summary>
+            获取缺陷代码分类
+            </summary>
+            <param name="code">缺陷代码分类 不可空</param>
+        </member>
+        <member name="T:SIE.Defects.DefectController.DefectCategoryInfo">
+            <summary>
+            缺陷分类信息
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.DefectController.DefectCategoryInfo.Id">
+            <summary>
+            缺陷分类ID
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.DefectController.DefectCategoryInfo.Code">
+            <summary>
+            缺陷分类编码
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.DefectController.DefectCategoryInfo.Name">
+            <summary>
+            缺陷分类名称
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.DefectController.DefectCategoryInfo.Defects">
+            <summary>
+            缺陷列表
+            </summary>
+        </member>
+        <member name="T:SIE.Defects.DefectController.DefectInfo">
+            <summary>
+            缺陷信息
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.DefectController.DefectInfo.Id">
+            <summary>
+            缺陷ID
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.DefectController.DefectInfo.Code">
+            <summary>
+            缺陷编码
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.DefectController.DefectInfo.Name">
+            <summary>
+            缺陷名称
+            </summary>
+        </member>
+        <member name="M:SIE.Defects.DefectController.GetDefectCategory(System.String)">
+            <summary>
+            根据编码缺陷分类
+            </summary>
+            <param name="code">缺陷分类编码</param>
+            <returns>返回</returns>
+        </member>
+        <member name="M:SIE.Defects.DefectController.GetDefectGrade(System.String)">
+            <summary>
+            获取缺陷等级
+            </summary>
+            <param name="name">缺陷等级</param>
+            <returns>返回</returns>
+        </member>
+        <member name="M:SIE.Defects.DefectController.GetDefectByCode(System.String)">
+            <summary>
+            根据缺陷编码获取缺陷
+            </summary>
+            <param name="code">编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Defects.DefectController.GetDefectList(System.Collections.Generic.List{System.String})">
+            <summary>
+            根据缺陷编码列表 获取缺陷代码列表
+            </summary> 
+            <param name="defectCodelist">缺陷描述列表</param>       
+            <returns>缺陷代码列表</returns>
+        </member>
+        <member name="T:SIE.Defects.DefectData">
+            <summary>
+            缺陷数据
+            </summary>
+        </member>
+        <member name="M:SIE.Defects.DefectData.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.DefectData.Location">
+            <summary>
+            缺陷位置
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.DefectData.BoardNo">
+            <summary>
+            板号
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.DefectData.Sn">
+            <summary>
+            条码
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.DefectData.DefectId">
+            <summary>
+            缺陷代码
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.DefectData.DefectName">
+            <summary>
+            缺陷代码编码
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.DefectData.CategoryId">
+            <summary>
+            缺陷代码分类ID
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.DefectData.CategoryName">
+            <summary>
+            缺陷代码分类编码
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.DefectData.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.DefectData.Qty">
+            <summary>
+            不良数量
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.DefectData.InspectionItemId">
+            <summary>
+            检验项目
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.DefectData.ProcessId">
+            <summary>
+            工序
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.DefectData.IsMistake">
+            <summary>
+            是否误判
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.DefectData.IsAdd">
+            <summary>
+            是否新增    
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.DefectData.ItemId">
+            <summary>
+            物料Id
+            </summary>
+        </member>
+        <member name="T:SIE.Defects.DefectGrade">
+            <summary>
+            缺陷等级
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.DefectGrade.NameProperty">
+            <summary>
+            缺陷等级
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.DefectGrade.Name">
+            <summary>
+            缺陷等级
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.DefectGrade.AssociationProperty">
+            <summary>
+            严重度
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.DefectGrade.DefectSeverity">
+            <summary>
+            严重度
+            </summary>
+        </member>
+        <member name="T:SIE.Defects.DefectGradeConfig">
+            <summary>
+            缺陷等级 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Defects.DefectGradeConfig.ConfigMeta">
+            <summary>
+            元数据配置
+            </summary>
+        </member>
+        <member name="T:SIE.Defects.DefectResponsibility">
+            <summary>
+            缺陷责任
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.DefectResponsibility.CodeProperty">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.DefectResponsibility.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.DefectResponsibility.DescriptionProperty">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.DefectResponsibility.Description">
+            <summary>
+            描述
+            </summary>        
+        </member>
+        <member name="F:SIE.Defects.DefectResponsibility.CategoryIdProperty">
+            <summary>
+            缺陷责任分类Id
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.DefectResponsibility.CategoryId">
+            <summary>
+            缺陷责任分类Id
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.DefectResponsibility.CategoryProperty">
+            <summary>
+            缺陷责任分类
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.DefectResponsibility.Category">
+            <summary>
+            缺陷责任分类
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.DefectResponsibility.CategoryCodeProperty">
+            <summary>
+            分类编码
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.DefectResponsibility.CategoryCode">
+            <summary>
+            分类编码
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.DefectResponsibility.CategoryDescriptionProperty">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.DefectResponsibility.CategoryDescription">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="T:SIE.Defects.DefectResponsibilityConfig">
+            <summary>
+            缺陷责任 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Defects.DefectResponsibilityConfig.ConfigMeta">
+            <summary>
+            元数据配置
+            </summary>
+        </member>
+        <member name="T:SIE.Defects.DefectResponsibilityCategory">
+            <summary>
+            缺陷责任分类
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.DefectResponsibilityCategory.CodeProperty">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.DefectResponsibilityCategory.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.DefectResponsibilityCategory.DescriptionProperty">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.DefectResponsibilityCategory.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="T:SIE.Defects.DefectResponsibilityCategoryConfig">
+            <summary>
+            缺陷责任分类 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Defects.DefectResponsibilityCategoryConfig.ConfigMeta">
+            <summary>
+            元数据配置
+            </summary>
+        </member>
+        <member name="T:SIE.Defects.DefectNoReferenceRoutingRule">
+            <summary>
+            关联缺陷代码不能删除
+            </summary>
+        </member>
+        <member name="M:SIE.Defects.DefectNoReferenceRoutingRule.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="T:SIE.Defects.DefectResponsibilityNoReferenceRoutingRule">
+            <summary>
+            关联缺陷责任不能删除
+            </summary>
+        </member>
+        <member name="M:SIE.Defects.DefectResponsibilityNoReferenceRoutingRule.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="T:SIE.Defects.DefectGradeNoReferenceDefectRule">
+            <summary>
+            关联缺陷代码不能删除
+            </summary>
+        </member>
+        <member name="M:SIE.Defects.DefectGradeNoReferenceDefectRule.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="T:SIE.Defects.ImportHandle.DefectsHandle">
+            <summary>
+            导入 处理逻辑类
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.ImportHandle.DefectsHandle.InspBill">
+            <summary>
+            单据
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.ImportHandle.DefectsHandle.ColumnNameList">
+            <summary>
+            导入模板的列头名
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.ImportHandle.DefectsHandle.ColumnValidList">
+            <summary>
+            列的标准验证 (列名 列对应验证 )
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.ImportHandle.DefectsHandle._defectGrade">
+            <summary>
+            缺陷等级
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.ImportHandle.DefectsHandle.qualityType">
+            <summary>
+            质量类型
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.ImportHandle.DefectsHandle._defectCategory">
+            <summary>
+            缺陷分类
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.ImportHandle.DefectsHandle.codeDic">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="M:SIE.Defects.ImportHandle.DefectsHandle.CreaetColumnValid">
+            <summary>
+            创建导入对象
+            </summary>
+            <returns>返回当前对象</returns>
+        </member>
+        <member name="M:SIE.Defects.ImportHandle.DefectsHandle.Dispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="M:SIE.Defects.ImportHandle.DefectsHandle.Dispose(System.Boolean)">
+            <summary>
+            释放数据
+            </summary>
+        </member>
+        <member name="M:SIE.Defects.ImportHandle.DefectsHandle.ProcessBusinessDataHandle(System.Data.DataRow[])">
+            <summary>
+            处理业务数据
+            </summary>
+            <param name="drs">需要处理的数据集</param>
+        </member>
+        <member name="M:SIE.Defects.ImportHandle.DefectsHandle.ColIndex(System.String)">
+            <summary>
+            获取指定列名的索引
+            </summary>
+            <param name="columnName">指定列名</param>
+            <returns>返回对应索引</returns>
+        </member>
+        <member name="M:SIE.Defects.ImportHandle.DefectsHandle.ValidCode(System.Object,System.String@,System.Data.DataRow)">
+            <summary>
+            验证编码
+            </summary>
+            <param name="obj"></param>
+            <param name="messageTip"></param>
+            <param name="dr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Defects.ImportHandle.DefectsHandle.ValidDefectGrade(System.Object,System.String@,System.Data.DataRow)">
+            <summary>
+            验证缺陷代码分类
+            </summary>
+            <param name="obj"></param>
+            <param name="messageTip">错误信息</param>
+            <param name="dr">验证数据的当前行对象</param>
+            <returns>返回是否验证通过</returns>
+        </member>
+        <member name="M:SIE.Defects.ImportHandle.DefectsHandle.ValidQualityType(System.Object,System.String@,System.Data.DataRow)">
+            <summary>
+            验证质量类型
+            </summary>
+            <param name="obj">质量类型枚举</param>
+            <param name="messageTip"></param>
+            <param name="dr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Defects.ImportHandle.DefectsHandle.ValidDefectCategory(System.Object,System.String@,System.Data.DataRow)">
+            <summary>
+            验证缺陷代码分类
+            </summary>
+            <param name="obj"></param>
+            <param name="messageTip">错误信息</param>
+            <param name="dr">验证数据的当前行对象</param>
+            <returns>返回是否验证通过</returns>
+        </member>
+        <member name="T:SIE.Defects.QualityType">
+            <summary>
+            质量类型
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.QualityType.Item">
+            <summary>
+            原材料
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.QualityType.Product">
+            <summary>
+            产品
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.QualityType.Common">
+            <summary>
+            通用
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.QualityType.Size">
+            <summary>
+            尺寸
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.QualityType.Exterior">
+            <summary>
+            外观
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.QualityType.Type">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.QualityType.Performance">
+            <summary>
+            性能
+            </summary>
+        </member>
+        <member name="T:SIE.Defects.ImportInspection.BussinessDataValid">
+            <summary>
+            导入功能业务数据的验证
+            </summary>
+        </member>
+        <member name="M:SIE.Defects.ImportInspection.BussinessDataValid.ValidQualityType(System.Collections.Generic.Dictionary{System.String,System.Enum}@,System.String,System.String@)">
+            <summary>
+            验证状态
+            </summary>
+            <param name="deckRange">状态范围</param>
+            <param name="context">状态</param>
+            <param name="messageTip">错误信息</param>
+            <returns>返回是否验证通过</returns>
+        </member>
+        <member name="M:SIE.Defects.ImportInspection.BussinessDataValid.ValidDefectCategory(System.Collections.Generic.Dictionary{System.String,System.Double}@,System.String,System.String@)">
+            <summary>
+            验证项目分类
+            </summary>
+            <param name="defectCategory"></param>
+            <param name="context">项目分类编码</param>
+            <param name="messageTip">错误信息</param>
+            <returns>返回是否验证通过</returns>
+        </member>
+        <member name="M:SIE.Defects.ImportInspection.BussinessDataValid.ValidDefectGrade(System.Collections.Generic.Dictionary{System.String,System.Double}@,System.String,System.String@)">
+            <summary>
+            验证缺陷等级
+            </summary>
+            <param name="defectGrade"></param>
+            <param name="context">缺陷等级名称</param>
+            <param name="messageTip">错误信息</param>
+            <returns>返回是否验证通过</returns>
+        </member>
+        <member name="T:SIE.Defects.InspectionItems.CheckTag">
+            <summary>
+            检验标识
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.InspectionItems.CheckTag.Quantitative">
+            <summary>
+            定量
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.InspectionItems.CheckTag.Qualitative">
+            <summary>
+            定性
+            </summary>
+        </member>
+        <member name="T:SIE.Defects.InspectionItems.CompareType">
+            <summary>
+            比较方式
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.InspectionItems.CompareType.LessThan">
+            <summary>
+            小于
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.InspectionItems.CompareType.LessThanOrEqual">
+            <summary>
+            小于等于
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.InspectionItems.CompareType.GreaterThan">
+            <summary>
+            大于
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.InspectionItems.CompareType.GreaterThanOrEqual">
+            <summary>
+            大于等于
+            </summary>
+        </member>
+        <member name="T:SIE.Defects.InspectionItems.InspectionItemBase">
+            <summary>
+            检验项目基类
+            </summary>
+        </member>
+        <member name="M:SIE.Defects.InspectionItems.InspectionItemBase.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.InspectionItems.InspectionItemBase.NameProperty">
+            <summary>
+            检验项目
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.InspectionItems.InspectionItemBase.Name">
+            <summary>
+            检验项目
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.InspectionItems.InspectionItemBase.CategoryProperty">
+            <summary>
+            检验类别
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.InspectionItems.InspectionItemBase.Category">
+            <summary>
+            检验类别
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.InspectionItems.InspectionItemBase.TestToolProperty">
+            <summary>
+            检验工具
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.InspectionItems.InspectionItemBase.TestTool">
+            <summary>
+            检验工具
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.InspectionItems.InspectionItemBase.InspectionBasisProperty">
+            <summary>
+            检验依据
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.InspectionItems.InspectionItemBase.InspectionBasis">
+            <summary>
+            检验依据
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.InspectionItems.InspectionItemBase.LimitLowProperty">
+            <summary>
+            规格下限
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.InspectionItems.InspectionItemBase.LimitLow">
+            <summary>
+            规格下限
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.InspectionItems.InspectionItemBase.LimitMaxProperty">
+            <summary>
+            规格上限
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.InspectionItems.InspectionItemBase.LimitMax">
+            <summary>
+            规格上限
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.InspectionItems.InspectionItemBase.TechnicalRequirementsProperty">
+            <summary>
+            技术要求
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.InspectionItems.InspectionItemBase.TechnicalRequirements">
+            <summary>
+            技术要求
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.InspectionItems.InspectionItemBase.InspectionModeIdProperty">
+            <summary>
+            检验方式Id
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.InspectionItems.InspectionItemBase.InspectionModeId">
+            <summary>
+            检验方式Id
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.InspectionItems.InspectionItemBase.InspectionModeProperty">
+            <summary>
+            检验方式
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.InspectionItems.InspectionItemBase.InspectionMode">
+            <summary>
+            检验方式
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.InspectionItems.InspectionItemBase.IsSuitableProperty">
+            <summary>
+            是否必检
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.InspectionItems.InspectionItemBase.IsSuitable">
+            <summary>
+            是否必检
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.InspectionItems.InspectionItemBase.EffectiveStartTimeProperty">
+            <summary>
+            生效日期
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.InspectionItems.InspectionItemBase.EffectiveStartTime">
+            <summary>
+            生效日期
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.InspectionItems.InspectionItemBase.EffectiveEndTimeProperty">
+            <summary>
+            失效日期
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.InspectionItems.InspectionItemBase.EffectiveEndTime">
+            <summary>
+            失效日期
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.InspectionItems.InspectionItemBase.UnitIdProperty">
+            <summary>
+            单位Id
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.InspectionItems.InspectionItemBase.UnitId">
+            <summary>
+            单位Id
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.InspectionItems.InspectionItemBase.UnitProperty">
+            <summary>
+            单位
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.InspectionItems.InspectionItemBase.Unit">
+            <summary>
+            单位
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.InspectionItems.InspectionItemBase.DefectGradeIdProperty">
+            <summary>
+            缺陷等级Id
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.InspectionItems.InspectionItemBase.DefectGradeId">
+            <summary>
+            缺陷等级Id
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.InspectionItems.InspectionItemBase.DefectGradeProperty">
+            <summary>
+            缺陷等级
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.InspectionItems.InspectionItemBase.DefectGrade">
+            <summary>
+            缺陷等级
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.InspectionItems.InspectionItemBase.CheckTagProperty">
+            <summary>
+            检验标识
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.InspectionItems.InspectionItemBase.CheckTag">
+            <summary>
+            检验标识
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.InspectionItems.InspectionItemBase.LimitLowCompareProperty">
+            <summary>
+            规格下限判断符号
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.InspectionItems.InspectionItemBase.LimitLowCompare">
+            <summary>
+            规格下限判断符号
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.InspectionItems.InspectionItemBase.LimitMaxCompareProperty">
+            <summary>
+            规格上限判断符号
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.InspectionItems.InspectionItemBase.LimitMaxCompare">
+            <summary>
+            规格上限判断符号
+            </summary>
+        </member>
+        <member name="T:SIE.Defects.InspectionItems.InspectionStandardDetailBaseConfig">
+            <summary>
+            检验项目基类配置
+            </summary>
+        </member>
+        <member name="M:SIE.Defects.InspectionItems.InspectionStandardDetailBaseConfig.AddValidations(SIE.MetaModel.IValidationDeclarer)">
+            <summary>
+            添加验证规则
+            </summary>
+            <param name="rules">验证规则声明器</param>
+        </member>
+        <member name="T:SIE.Defects.InspectionItems.InspectionItemController">
+            <summary>
+            检验项目控制器
+            </summary>
+        </member>
+        <member name="M:SIE.Defects.InspectionItems.InspectionItemController.GetInspectionModes">
+            <summary>
+            获取名称为正常的检验方式，供来料接收创建来料检验单时使用
+            </summary>
+            <returns>检验方式</returns>
+        </member>
+        <member name="M:SIE.Defects.InspectionItems.InspectionItemController.GetInspectionModes(SIE.PagingInfo,System.String)">
+            <summary>
+            获取检验方式
+            </summary>
+            <param name="type">检验类型</param>
+            <param name="pagingInfo">pagingInfo</param>
+            <param name="keyword">keyword</param>
+            <returns>InspectionMode列表</returns>
+        </member>
+        <member name="M:SIE.Defects.InspectionItems.InspectionItemController.GetInspectionMode(System.String)">
+            <summary>
+            /获取检验方式
+            </summary>
+            <param name="name">名称</param>
+            <returns>检验方式</returns>
+        </member>
+        <member name="M:SIE.Defects.InspectionItems.InspectionItemController.GetInspectionModesByName(System.String)">
+            <summary>
+            获取指定名称的检验方式，供来料接收创建来料检验单时使用
+            </summary>
+            <returns>检验方式</returns>
+        </member>
+        <member name="M:SIE.Defects.InspectionItems.InspectionItemController.GetInspectionModeList">
+            <summary>
+            获取所有检验方式的数据
+            </summary>
+            <returns>返回所有检验方式的数据</returns>
+        </member>
+        <member name="T:SIE.Defects.InspectionItems.InspectionMode">
+            <summary>
+            检验方式
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.InspectionItems.InspectionMode.CodeProperty">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.InspectionItems.InspectionMode.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.InspectionItems.InspectionMode.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.InspectionItems.InspectionMode.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="T:SIE.Defects.InspectionItems.InspectionModeConfig">
+            <summary>
+            检验方式配置
+            </summary>
+        </member>
+        <member name="M:SIE.Defects.InspectionItems.InspectionModeConfig.AddValidations(SIE.MetaModel.IValidationDeclarer)">
+            <summary>
+            验证规则
+            </summary>
+            <param name="rules">规则</param>
+        </member>
+        <member name="M:SIE.Defects.InspectionItems.InspectionModeConfig.ConfigMeta">
+            <summary>
+            数据课检验方式表名
+            </summary>
+        </member>
+        <member name="T:SIE.Defects.InspectionItems.InspectionModeNameNotDuplicateRule">
+            <summary>
+            检验方式非重验证
+            </summary>
+        </member>
+        <member name="M:SIE.Defects.InspectionItems.InspectionModeNameNotDuplicateRule.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="T:SIE.Defects.InspectionItems.ItemInspectionType">
+            <summary>
+            检验类型
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.InspectionItems.ItemInspectionType.RoutineTest">
+            <summary>
+            常规检
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.InspectionItems.ItemInspectionType.TypeTest">
+            <summary>
+            型式试验
+            </summary>
+        </member>
+        <member name="T:SIE.Defects.Measures.RepairMeasure">
+            <summary>
+            维修措施
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.Measures.RepairMeasure.CodeProperty">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.Measures.RepairMeasure.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.Measures.RepairMeasure.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.Measures.RepairMeasure.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.Defects.Measures.RepairMeasure.DescriptionProperty">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:SIE.Defects.Measures.RepairMeasure.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="T:SIE.Defects.Measures.ReapirMeasureConfig">
+            <summary>
+            维修措施 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Defects.Measures.ReapirMeasureConfig.ConfigMeta">
+            <summary>
+            元数据配置
+            </summary>
+        </member>
+        <member name="T:SIE.Defects.Module">
+            <summary>
+            模块配置
+            </summary>
+        </member>
+        <member name="M:SIE.Defects.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化
+            </summary>
+            <param name="app">app</param>
+        </member>
+    </members>
+</doc>

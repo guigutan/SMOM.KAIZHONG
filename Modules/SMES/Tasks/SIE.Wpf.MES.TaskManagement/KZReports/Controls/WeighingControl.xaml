@@ -1,0 +1,93 @@
+﻿<UserControl x:Class="SIE.Wpf.MES.TaskManagement.KZReports.Controls.WeighingControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SIE.Wpf.MES.TaskManagement.KZReports.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="650" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <ResourceDictionary Source="/SIE.Wpf.MES.TaskManagement;component/Styles/ReportStyle.xaml"></ResourceDictionary>
+    </UserControl.Resources>
+    <Border Background="White" MaxWidth="2500">
+        <DockPanel x:Name ="dockPanel" Margin="30">
+            <Grid>
+                <Grid.RowDefinitions >
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" Margin="0 0 0 0">
+                    <StackPanel  Grid.Column="0" Orientation="Horizontal"  Margin="0" HorizontalAlignment="Left">
+                        <Button Name="btnBack" Content="返回" Style="{StaticResource CommonButtonStyle}" Width="120" Height="40" Margin="0 20"  Click="btnBack_Click" Background="Gray" ></Button>
+                        <Button Name="btnReset" Content="重新开始" Style="{StaticResource CommonButtonStyle}" Width="120" Height="40" Margin="20" Click="btnReStart_Click" Background="DeepSkyBlue" ></Button>
+                        <Button Name="btnSubmit" Content="提交" Style="{StaticResource CommonButtonStyle}" Width="120" Height="40" Margin="20"   Click="btnSubmit_Click" Background="DeepSkyBlue"></Button>
+                    </StackPanel>
+                </Grid>
+
+                <Border x:Name="templateBorder" Grid.Row="2" Margin="0 5" BorderThickness="1" BorderBrush="#CCC" VerticalAlignment="Top">
+                    <Grid Grid.Row="2" >
+                        <Grid.RowDefinitions >
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="40"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Row="0" BorderThickness="0 0 0 1" BorderBrush="#CCC">
+                            <StackPanel  Orientation="Horizontal" HorizontalAlignment="Stretch" >
+                                <Label Style="{StaticResource FormLabelStyle_16}" Content="产品名称" Width="150" VerticalContentAlignment="Center" ></Label>
+                                <Label Style="{StaticResource FormLabelStyle2_16}" x:Name="ProductName"></Label>
+                            </StackPanel>
+                        </Border>
+                        <Border Grid.Row="0" Grid.Column="1" BorderThickness="1 0 0 1" BorderBrush="#CCC">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" >
+                                <Label Style="{StaticResource FormLabelStyle_16}" Content="产品编码"  ></Label>
+                                <Label Style="{StaticResource FormLabelStyle2_16}" x:Name="ProductCode"></Label>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Grid.Row="1" BorderThickness="0 0 0 1" BorderBrush="#CCC">
+                            <StackPanel  Orientation="Horizontal" HorizontalAlignment="Stretch" >
+                                <Label Style="{StaticResource FormLabelStyle_16}" Content="工单号"  ></Label>
+                                <Label Style="{StaticResource FormLabelStyle2_16}" x:Name="WorkOrderNo" ></Label>
+                            </StackPanel>
+                        </Border>
+                        <Border Grid.Row="1" Grid.Column="1" BorderThickness="1 0 0 1" BorderBrush="#CCC">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" >
+                                <Label Style="{StaticResource FormLabelStyle_16}" Content="计划数量"  ></Label>
+                                <Label Style="{StaticResource FormLabelStyle2_16}" x:Name="PlanQty" ></Label>
+                            </StackPanel>
+                        </Border>
+
+                    </Grid>
+                </Border>
+
+                <TabControl Grid.Row="3" Margin="0 0" FontSize="18" >
+                    <TabItem Header="产品净重" >
+                        <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" IsReadOnly="False" IsManipulationEnabled="false" >
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="实际净重" Binding="{Binding Weight,ConverterCulture=en-US}" Width="100"/>
+                                <DataGridTextColumn Header="单位净重" Binding="{Binding _oldWeight,ConverterCulture=en-US}" IsReadOnly="True" Width="100"/>
+                                <DataGridTextColumn Header="取样净重范围值" Binding="{Binding WeightScope}" IsReadOnly="True" Width="140"/>
+                                <DataGridTextColumn Header="物料名称" Binding="{Binding ItemName}" IsReadOnly="True" Width="300"/>
+                                <DataGridTextColumn Header="物料编码" Binding="{Binding ItemCode}" IsReadOnly="True" Width="150"/>
+                                <!--<DataGridTextColumn Header="需求量" Binding="{Binding RequireQty}" IsReadOnly="True" Width="80"/>
+                                <DataGridTextColumn Header="单位耗用量" Binding="{Binding SingleQty}" IsReadOnly="True" Width="100"/>-->
+                                <DataGridTextColumn Header="净重单位" Binding="{Binding Unit}" IsReadOnly="True" Width="80"/>
+                                <!--<DataGridTextColumn Header="工序" Binding="{Binding Process}" IsReadOnly="True" Width="150"/>-->
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </TabItem>
+                </TabControl>
+
+
+            </Grid>
+
+        </DockPanel>
+    </Border>
+
+</UserControl>

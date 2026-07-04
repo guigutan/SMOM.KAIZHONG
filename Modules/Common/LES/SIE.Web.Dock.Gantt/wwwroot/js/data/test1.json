@@ -1,0 +1,189 @@
+{
+    "success"    : true,
+    "confing":{
+       "startDate"          : "2022-01-01 00:00:00",
+       "endDate"            : "2022-01-28 00:00:00"
+    },
+    "resources"  : {
+        "rows" : [
+            {
+                "id"   : 1,
+                "name" : "Arcady",
+                "groupName":"Arcady",
+                "role" : "Core developer",
+                "calendar": "weekends",
+                "stateColour":"red",
+                "state":"OFF",
+                "backgroundColor":"#eacb5e",
+                "type":"all"
+            },
+            {
+                "id"   : 2,
+                "name" : "ewewe",
+                "groupName":"Arcady",
+                "role" : "Tech Sales",
+                "calendar": "weekends1",
+                "stateColour":"red",
+                "state":"OFF",
+                "backgroundColor":"#6fbef4",
+                "type":"out"
+            },
+            {
+                "id"   : 3,
+                "name" : "Henrik",
+                "groupName":"Arcady",
+                "role" : "Sales",
+                "calendar": "weekends",
+                "stateColour":"red",
+                "state":"OFF",
+                "backgroundColor":"#61dda9",
+                "type":"in"
+            },
+           
+            {
+                "id"   : 6,
+                "name" : "Mike",
+                "groupName":"boord",
+                "role" : "CEO",
+                "calendar": "weekends" ,
+                "stateColour":"blue",
+                "state":"NO",
+                "backgroundColor":"#eacb5e",
+                "type":"all"
+            },
+           
+            {
+                "id"   : 9,
+                "name" : "Kate",
+                "groupName":"xinya",
+                "role" : "Tech Sales",
+                "calendar": "weekends1" ,
+                "stateColour":"blue",
+                "state":"NO",
+                "backgroundColor":"#6fbef4",
+                "type":"out"
+            },
+            {
+                "id"   : 10,
+                "name" : "Jong",
+                "groupName":"xinya",
+                "role" : "Sales",
+                "calendar": "weekends" ,
+                "stateColour":"red",
+                "state":"OFF",
+                "backgroundColor":"#61dda9",
+                "type":"in"
+            }
+   
+        ]
+    },
+    "events"     : {
+        "rows" : [
+            {
+                "id"           : 1,
+                "name"       : "赛意",
+                "startDate":"2022-01-01 01:00:00",
+                "durationUnit" : "hour",
+                "duration"     : 0.6,
+                "startDateRange":"2022-01-01 01:00:00",
+                "endDateRange":"2022-01-01 04:00:00",
+                "eventColor" : "blue",
+                "resourceId":1, 
+                "orderType":"A",
+                "billNo":"N200323033",
+                "orderPlace":"广州",
+                "orderNo":"Test001",
+                "carNumber":"A000001",
+                "contacts":"张三",
+                "phone":13800138000,
+                "identity":"44522419555555555",
+                "orderDate":"2021/01/01",
+                "orderTime":"01:00-04:00",
+                "occupancy":1,
+                "operateType": "UnChanged"
+            },
+            {
+                "id"           : 2,
+                "name"         : "顺丰",
+                "startDate":"2022-01-01 01:36:00",
+                "durationUnit" : "hour",
+                "duration"     : 0.9,
+                "startDateRange":"2022-01-01 01:00:00",
+                "endDateRange":"2022-01-01 04:00:00",
+                "eventColor" : "orange",
+                "resourceId":1,
+                "orderType":"A",
+                "billNo":"N200323033",
+                "orderPlace":"广州",
+                "orderNo":"Test002",
+                "carNumber":"A000001",
+                "contacts":"张三",
+                "phone":13800138000,
+                "identity":"44522419555555555",
+                "orderDate":"2021/01/01",
+                "orderTime":"01:00-04:00",
+                "occupancy":12,
+                "operateType": "UnChanged"
+               
+            }
+           
+        
+   
+        ]
+    },
+   
+    "calendars" : {
+        "rows" : [
+          {
+            "id"        : "weekends",
+            "name"      : "weekends",
+            "unspecifiedTimeIsWorking" : false,
+            "intervals" : [
+            {
+                "recurrentStartDate" : "at 01:00",
+                "recurrentEndDate"   : "at 04:00",
+                "isWorking"          :true
+            },
+            
+                {
+                    "recurrentStartDate" : "at 05:00",
+                    "recurrentEndDate"   : "at 8:00",
+                    "isWorking"          :true
+                }
+                
+            ]
+          },
+          
+          {
+            "id"        : "weekends1",
+            "name"      : "weekends1",
+            "intervals" : [
+                {
+                  "startDate"          : "2022-01-9",
+                  "endDate"            : "2022-01-10",
+                  "recurrentStartDate" : null,
+                  "recurrentEndDate": null,
+                  "isWorking"          : true 
+                }  
+              ]
+          }
+        
+        ]
+    },
+    "orderTypes":{
+        "rows" : [
+            {
+                "id"   : 1,
+                "text" : "A"
+            },
+            {
+                "id"   : 2,
+                "text" : "B"
+            },
+            {
+                "id"   : 3,
+                "text" : "C"
+            }
+        ]
+    }
+}

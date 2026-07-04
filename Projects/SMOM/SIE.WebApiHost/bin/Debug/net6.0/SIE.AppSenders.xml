@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.AppSenders</name>
+    </assembly>
+    <members>
+        <member name="M:SIE.AppSenders.AppPusher.#ctor(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            初始化，给外部显示调用，不是从配置中获取
+            </summary>
+            <param name="appid"></param>
+            <param name="appKey"></param>
+            <param name="masterSecret"></param>
+            <param name="appSecret"></param>
+            <param name="host"></param>
+        </member>
+        <member name="M:SIE.AppSenders.AppPusher.PushMessageToList(System.String,System.String)">
+            <summary>
+            发送通知消息给一批接受者
+            </summary>
+            <param name="msg">消息，json 串</param>
+            <param name="targetList">消息接受者的列表，json 数组</param>
+            <returns>推送结果</returns>
+        </member>
+        <member name="M:SIE.AppSenders.AppPusher.PushMessageToList(System.Collections.Generic.List{System.String},System.String,System.String,System.String)">
+            <summary>
+            PushMessageToList
+            </summary>
+            <param name="clientList"></param>
+            <param name="title"></param>
+            <param name="text"></param>
+            <param name="content"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.AppSenders.AppPusher.NotificationTemplate(System.String,System.String,System.String)">
+            <summary>
+            通知透传模板动作内容
+            </summary>
+            <param name="title"></param>
+            <param name="text"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.AppSenders.Module">
+            <summary>
+            模块配置
+            </summary>
+        </member>
+        <member name="M:SIE.AppSenders.Module.Initialize(SIE.IApp)">
+            <summary>
+            注册IUserDevice 实现者
+            </summary>
+            <param name="app"></param>
+        </member>
+    </members>
+</doc>

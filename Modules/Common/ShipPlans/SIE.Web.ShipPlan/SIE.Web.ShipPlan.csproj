@@ -1,0 +1,60 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <CodeAnalysisRuleSet>..\..\..\..\.sonarlint\sie.smomcsharp.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.ShipPlan.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<OutputPath>..\..\..\..\platform\smom\</OutputPath>
+		<DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.ShipPlan.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="AssignWarehouseRules\Commands\AddAssignWarehouseRuleCommand.js" />
+    <None Remove="AssignWarehouseRules\Scripts\AddBehavior.js" />
+    <None Remove="DeliveryPlans\Commands\AddDeliveryPlanCommand.js" />
+    <None Remove="DeliveryPlans\Commands\AssignWarehouseCommand.js" />
+    <None Remove="DeliveryPlans\Commands\AuditDeliveryPlanCommand.js" />
+    <None Remove="DeliveryPlans\Commands\CreateSoCommand.js" />
+    <None Remove="DeliveryPlans\Commands\DeleteDeliveryPlanCommand.js" />
+    <None Remove="DeliveryPlans\Commands\ForceCompleteCommand.js" />
+    <None Remove="DeliveryPlans\Commands\InitMergeCreateRuleCommand.js" />
+    <None Remove="DeliveryPlans\Commands\KittingCommand.js" />
+    <None Remove="DeliveryPlans\Commands\MergeCreateCommand.js" />
+    <None Remove="DeliveryPlans\Commands\SaveDeliveryPlanCommand.js" />
+    <None Remove="DeliveryPlans\Scripts\DeliveryPlanBehavior.js" />
+    <None Remove="DeliveryPlans\Scripts\Enum.js" />
+    <None Remove="DeliveryPlans\Scripts\PlanOrderTypeEditor.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\..\..\.sonarlint\sie.smom\CSharp\SonarLint.xml" Link="SonarLint.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AssignWarehouseRules\Commands\AddAssignWarehouseRuleCommand.js" />
+    <EmbeddedResource Include="AssignWarehouseRules\Scripts\AddBehavior.js" />
+    <EmbeddedResource Include="DeliveryPlans\Commands\AddDeliveryPlanCommand.js" />
+    <EmbeddedResource Include="DeliveryPlans\Commands\AssignWarehouseCommand.js" />
+    <EmbeddedResource Include="DeliveryPlans\Commands\AuditDeliveryPlanCommand.js" />
+    <EmbeddedResource Include="DeliveryPlans\Commands\CreateSoCommand.js" />
+    <EmbeddedResource Include="DeliveryPlans\Commands\DeleteDeliveryPlanCommand.js" />
+    <EmbeddedResource Include="DeliveryPlans\Commands\ForceCompleteCommand.js" />
+    <EmbeddedResource Include="DeliveryPlans\Commands\InitMergeCreateRuleCommand.js" />
+    <EmbeddedResource Include="DeliveryPlans\Commands\KittingCommand.js" />
+    <EmbeddedResource Include="DeliveryPlans\Commands\MergeCreateCommand.js" />
+    <EmbeddedResource Include="DeliveryPlans\Commands\SaveDeliveryPlanCommand.js" />
+    <EmbeddedResource Include="DeliveryPlans\Scripts\Enum.js" />
+    <EmbeddedResource Include="DeliveryPlans\Scripts\PlanOrderTypeEditor.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Inventorys\SIE.Web.Inventory\SIE.Web.Inventory.csproj" />
+    <ProjectReference Include="..\SIE.ShipPlan\SIE.ShipPlan.csproj" />
+  </ItemGroup>
+</Project>

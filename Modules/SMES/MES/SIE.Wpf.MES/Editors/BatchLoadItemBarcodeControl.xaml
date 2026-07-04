@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="SIE.Wpf.MES.Editors.BatchLoadItemBarcodeControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:converter="clr-namespace:SIE.Wpf.MES.Editors"
+             mc:Ignorable="d" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style TargetType="dxe:TextEdit">
+            <Setter Property="Background" Value="LightGray"></Setter>
+            <Setter Property="BorderThickness" Value="0"></Setter>
+            <Setter Property="Padding" Value="0"></Setter>
+            <Setter Property="FontSize" Value="25"></Setter>
+            <Setter Property="IsReadOnly" Value="True"></Setter>
+        </Style>
+        <converter:TextToVisibilityConverter x:Key="textToVisibilityConverter"/>
+        <converter:IsLoadItemToVisibilyConverter x:Key="isLoadItemToVisibilyConverter"/>
+        <converter:IsLoadItemToColumnSpanConverter x:Key="isLoadItemToColumnSpanConverter"/>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" Grid.ColumnSpan="{Binding IsLoadItem,Converter={StaticResource isLoadItemToColumnSpanConverter}}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <dxe:TextEdit Name="txtTips" Grid.Row="0" Text="{Binding Tips}" Foreground="Green" Visibility="{Binding Text,RelativeSource={RelativeSource Self},Converter={StaticResource textToVisibilityConverter}}"/>
+            <dxe:TextEdit Name="txtError" Grid.Row="1" Text="{Binding Error}" Foreground="Red" ShowBorder="False" FontSize="20" Background="{x:Null}" Visibility="{Binding Text,RelativeSource={RelativeSource Self},Converter={StaticResource textToVisibilityConverter}}"/>
+            <dxe:TextEdit Name="txtBarcode" Grid.Row="2" Text="{Binding Barcode}" IsReadOnly="False" FontSize="24" Background="LightGreen" Focusable="True" KeyDown="TxtBarcode_KeyDown"/>
+        </Grid>
+        <Grid Grid.Column="1" Margin="10,0,0,0" Visibility="{Binding IsLoadItem,Converter={StaticResource isLoadItemToVisibilyConverter}}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <dxe:TextEdit Name="txtOutTips" Grid.Row="0" Text="{Binding OutTips}" Foreground="Green" Visibility="{Binding Text,RelativeSource={RelativeSource Self},Converter={StaticResource textToVisibilityConverter}}"/>
+            <dxe:TextEdit Name="txtOutError" Grid.Row="1" Text="{Binding OutError}" Foreground="Red" ShowBorder="False" FontSize="20" Visibility="{Binding Text,RelativeSource={RelativeSource Self},Converter={StaticResource textToVisibilityConverter}}"/>
+            <dxe:TextEdit Name="txtOutBarcode" Grid.Row="2" Text="{Binding OutBarcode}" IsReadOnly="False" FontSize="24" Background="LightGreen" Focusable="True" KeyDown="TxtOutBarcode_KeyDown"/>
+        </Grid>
+        <ContentControl Name="loadItemControl" Grid.Column="2" Margin="10,0,0,0" MaxHeight="40"/>
+    </Grid> 
+</UserControl>

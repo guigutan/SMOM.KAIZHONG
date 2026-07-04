@@ -1,0 +1,2488 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.WorkFlow</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.WorkFlow.Activities.Audit.Audit">
+            <summary>
+            审核节点
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Activities.Audit.Audit.auditController">
+            <summary>
+            审核逻辑控制器
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Activities.Audit.Audit._auditController">
+            <summary>
+            审核逻辑控制器
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Activities.Audit.Audit.entityTypeName">
+            <summary>
+            实体类型
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Activities.Audit.Audit.handler">
+            <summary>
+            审核人
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Activities.Audit.Audit.passType">
+            <summary>
+            审核方式
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Activities.Audit.Audit.GenerateFlowTask(Elsa.Services.Models.ActivityExecutionContext)">
+            <summary>
+            生成工作流任务
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.Activities.Audit.Audit.OnActivityExecute(Elsa.Services.Models.ActivityExecutionContext)">
+            <summary>
+            节点具体业务
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.Activities.Audit.Audit.SaveFlowProcessRecord(Elsa.Services.Models.ActivityExecutionContext)">
+            <summary>
+            保存处理记录
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.Activities.Audit.Audit.ReturnResult(Elsa.Services.Models.ActivityExecutionContext)">
+            <summary>
+            返回节点结果
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.WorkFlow.Activities.Audit.AuditActivity">
+            <summary>
+            审核节点
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Activities.Audit.AuditActivity.OpinionProperty">
+            <summary>
+            审核意见
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Activities.Audit.AuditActivity.Opinion">
+            <summary>
+            审核意见
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Activities.Audit.AuditActivity.FlowTaskIdProperty">
+            <summary>
+            工作流任务Id
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Activities.Audit.AuditActivity.FlowTaskId">
+            <summary>
+            工作流任务Id
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Activities.Audit.AuditActivity.FlowTaskProperty">
+            <summary>
+            工作流任务
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Activities.Audit.AuditActivity.FlowTask">
+            <summary>
+            工作流任务
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Activities.Audit.AuditActivityConfig">
+            <summary>
+            审核节点 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Activities.Audit.AuditActivityConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Activities.Audit.AuditActivityController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Activities.Audit.AuditActivityController.GetOrCreateEntity(System.Nullable{System.Double})">
+            <summary>
+            获取或者创建一个实体
+            </summary>
+            <param name="flowTaskId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.WorkFlow.Activities.Audit.AuditActivityEntityProvider">
+            <summary>
+            审核实体提供者
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Activities.Audit.AuditActivityEntityProvider.GetActivityEntity(SIE.WorkFlow.Base.Common.GetActivityEntityInput)">
+            <summary>
+            
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.WorkFlow.Activities.Audit.AuditApiController">
+            <summary>
+            审核Api控制器
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Activities.Audit.AuditApiController.AuditSubmit(SIE.WorkFlow.Activities.Audit.AuditActivity)">
+            <summary>
+            审核提交
+            </summary> 
+            <param name="auditEntity"></param>
+        </member>
+        <member name="T:SIE.WorkFlow.Activities.Audit.AuditController">
+            <summary>
+            通用审核节点业务
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Activities.Audit.AuditController.#ctor(SIE.WorkFlow.WorkFlowInstances.FlowInstanceController)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="flowInstanceController"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.Activities.Audit.AuditController.TriggerAudit(System.String,System.String,System.Double,SIE.WorkFlow.Activities.Audit.AuditActivity)">
+            <summary>
+            触发审核节点
+            </summary>
+            <param name="workflowInstanceId"></param>
+            <param name="activityId"></param>
+            <param name="flowTaskId"></param>
+            <param name="auditEntity"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.Activities.Audit.AuditController.ExecuteAudit(Elsa.Services.Models.ActivityExecutionContext,SIE.WorkFlow.Activities.Audit.Audit)">
+            <summary>
+            节点业务逻辑
+            </summary>
+            <param name="context"></param>
+            <param name="activity"></param>
+        </member>
+        <member name="T:SIE.WorkFlow.Activities.Audit.AuditInput">
+            <summary>
+            审核节点触发Input
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Activities.Audit.AuditInput.Handler">
+            <summary>
+            处理人Json
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Activities.Audit.IAuditController">
+            <summary>
+            通用审核节点业务接口
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Activities.Audit.IAuditController.ExecuteAudit(Elsa.Services.Models.ActivityExecutionContext,SIE.WorkFlow.Activities.Audit.Audit)">
+            <summary>
+            节点执行逻辑
+            </summary>
+            <param name="context"></param>
+            <param name="activity"></param>
+        </member>
+        <member name="T:SIE.WorkFlow.Activities.Audit.OutcomeNames">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Activities.Audit.OutcomeNames.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Activities.Audit.OutcomeNames.Agree">
+            <summary>
+            同意
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Activities.Audit.OutcomeNames.Reject">
+            <summary>
+            驳回
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Activities.Audit.OutcomeNames.Trun">
+            <summary>
+            转办
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Activities.ControllerInvoke.ControllerInvoke">
+            <summary>
+            控制器调用
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Activities.ControllerInvoke.ControllerInvoke.controller">
+            <summary>
+            控制器
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Activities.ControllerInvoke.ControllerInvoke.method">
+            <summary>
+            方法
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Activities.ControllerInvoke.ControllerInvoke.OnActivityExecute(Elsa.Services.Models.ActivityExecutionContext)">
+            <summary>
+            节点具体业务
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.Activities.ControllerInvoke.ControllerInvoke.SaveFlowProcessRecord(Elsa.Services.Models.ActivityExecutionContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:SIE.WorkFlow.Activities.CustomForms.CustomFormActController">
+            <summary>
+            通用表单API控制器
+            </summary>
+            <summary>
+            自定义表单节点控制器
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Activities.CustomForms.CustomFormActController.GetCustomFormData(System.Double,System.String)">
+            <summary>
+            获取通用表单数据
+            </summary>
+            <param name="instanceId"></param>
+            <param name="activityId"></param>
+            <returns></returns>
+        </member>
+        <member name="F:SIE.WorkFlow.Activities.CustomForms.CustomFormActController._flowInstanceController">
+            <summary>
+            工作流实例控制器
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Activities.CustomForms.CustomFormActController._flowCustomFormController">
+            <summary>
+            通用表单控制器
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Activities.CustomForms.CustomFormActController.#ctor(SIE.WorkFlow.WorkFlowInstances.FlowInstanceController,SIE.WorkFlow.Base.CustomForms.FlowCustomFormController)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="flowInstanceController"></param>
+            <param name="flowCustomFormController"></param>
+        </member>
+        <member name="T:SIE.WorkFlow.Activities.CustomForms.CustomFormActivity">
+            <summary>
+            通用表单节点
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Activities.CustomForms.CustomFormActivity.entityTypeName">
+            <summary>
+            实体类型
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Activities.CustomForms.CustomFormActivity.rejectController">
+            <summary>
+            控制器
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Activities.CustomForms.CustomFormActivity.rejectMethod">
+            <summary>
+            方法
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Activities.CustomForms.CustomFormActivity.SaveWorkflowContext">
+            <summary>
+            保存上下文内容标识
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Activities.CustomForms.CustomFormActivity.OnActivityExecute(Elsa.Services.Models.ActivityExecutionContext)">
+            <summary>
+            执行
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Activities.CustomForms.CustomFormActivity.ReturnResult(Elsa.Services.Models.ActivityExecutionContext)">
+            <summary>
+            返回节点结果
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Activities.CustomForms.CustomFormActivity.SetFieldsToVariables(Elsa.Services.Models.ActivityExecutionContext,SIE.WorkFlow.Base.CustomForms.CustomFormVariable)">
+            <summary>
+            把通用表单的内容设置到上下文中
+            </summary>
+            <param name="context"></param>
+            <param name="form"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.Activities.CustomForms.CustomFormActivity.OnRejectArrive(Elsa.Services.Models.ActivityExecutionContext,SIE.WorkFlow.Models.RejectArriveInput)">
+            <summary>
+            被驳回到该节点时 
+            </summary>
+            <param name="context"></param>
+            <param name="input"></param>
+        </member>
+        <member name="T:SIE.WorkFlow.Activities.CustomForms.CustomFormActivityEntityProvider">
+            <summary>
+            通用表单实体提供者
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Activities.CustomForms.CustomFormActivityEntityProvider.GetActivityEntity(SIE.WorkFlow.Base.Common.GetActivityEntityInput)">
+            <summary>
+            
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.WorkFlow.Activities.CustomForms.CustomFormViewModel">
+            <summary>
+            通用表单ViewModel
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Activities.CustomForms.CustomFormViewModel.WorkflowInstanceIdProperty">
+            <summary>
+            工作流实例Id
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Activities.CustomForms.CustomFormViewModel.WorkflowInstanceId">
+            <summary>
+            工作流实例Id
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Activities.CustomForms.CustomFormViewModel.WorkflowInstanceProperty">
+            <summary>
+            工作流实例
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Activities.CustomForms.CustomFormViewModel.WorkflowInstance">
+            <summary>
+            工作流实例
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Activities.CustomForms.CustomFormViewModel.FlowTaskIdProperty">
+            <summary>
+            工作流任务Id
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Activities.CustomForms.CustomFormViewModel.FlowTaskId">
+            <summary>
+            工作流任务Id
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Activities.CustomForms.CustomFormViewModel.FlowTaskProperty">
+            <summary>
+            工作流任务
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Activities.CustomForms.CustomFormViewModel.FlowTask">
+            <summary>
+            工作流任务
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Activities.CustomForms.CustomFormViewModel.ActivityIdProperty">
+            <summary>
+            节点ID
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Activities.CustomForms.CustomFormViewModel.ActivityId">
+            <summary>
+            节点ID
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Controller.IRejectController">
+            <summary>
+            驳回节点业务接口
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Controller.IRejectController.Trigger(System.String,System.String,System.Double,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            
+            </summary>
+            <param name="activityId"></param>
+            <param name="workflowInstanceId"></param>
+            <param name="flowTaskId"></param>
+            <param name="reason"></param>
+            <param name="activitieIds">驳回节点</param>
+        </member>
+        <member name="M:SIE.WorkFlow.Controller.IRejectController.Reject(Elsa.Services.Models.ActivityExecutionContext,SIE.WorkFlow.Models.RejectInput,System.String,System.String,Elsa.Services.Activity)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <param name="input"></param>
+            <param name="activityTypeName"></param>
+            <param name="activityType"></param>
+            <param name="activity"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.Controller.IRejectController.GetRejectActivities(System.String,System.String,System.Double)">
+            <summary>
+            获取驳回的节点
+            </summary>
+            <param name="activityId"></param>
+            <param name="workflowInstanceId"></param>
+            <param name="flowTaskId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.WorkFlow.Controller.ITrunController">
+            <summary>
+            转办节点业务接口
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Controller.ITrunController.Trigger(System.String,System.String,System.String,System.Double,System.Double,System.String)">
+            <summary>
+            触发
+            </summary>
+            <param name="activityType"></param>
+            <param name="workflowInstanceId"></param>
+            <param name="activityId"></param>
+            <param name="flowTaskId"></param>
+            <param name="trunToPeopleId"></param>
+            <param name="reason"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.Controller.ITrunController.Trun(System.Double,System.Double,System.String)">
+            <summary>
+            转办
+            </summary>
+            <param name="flowTaskId"></param>
+            <param name="turnToEmployeeId"></param>
+            <param name="reason"></param>
+        </member>
+        <member name="T:SIE.WorkFlow.Controller.IWorkflowController">
+            <summary>
+            工作流程控制器，内部接口，用于.Net Standard2.0的项目来引用
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Controller.IWorkflowController.GenerateFlowTasks(Elsa.Services.Models.ActivityExecutionContext,System.String,System.String)">
+            <summary>
+            创建工作流任务
+            </summary>
+            <param name="context"></param>
+            <param name="ouJsonData">组织架构Json字符串</param>
+            <param name="activityType">节点类型</param>
+        </member>
+        <member name="M:SIE.WorkFlow.Controller.IWorkflowController.GenerateFlowTasks(Elsa.Services.Models.ActivityExecutionContext,SIE.Domain.EntityList{SIE.Common.Employees.Employee},System.String)">
+            <summary>
+            创建工作流任务-多人
+            </summary>
+            <param name="context"></param>
+            <param name="employees"></param>
+            <param name="activityType"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.Controller.IWorkflowController.GenerateFlowTask(Elsa.Services.Models.ActivityExecutionContext,SIE.Common.Employees.Employee,System.String)">
+            <summary>
+            创建工作流任务
+            </summary>
+            <param name="context"></param>
+            <param name="employee">处理人</param>
+            <param name="activityType">节点类型</param>
+        </member>
+        <member name="M:SIE.WorkFlow.Controller.IWorkflowController.FinishFlowTask(Elsa.Services.Models.ActivityExecutionContext,System.Double)">
+            <summary>
+            关闭工作流任务
+            </summary>
+            <param name="context"></param>
+            <param name="flowTaskId"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.Controller.IWorkflowController.FinishToDoOrDoingFlowTaskInActivitiId(Elsa.Services.Models.ActivityExecutionContext)">
+            <summary>
+            关闭节点所有的任务（待处理或处理中的任务）
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.Controller.IWorkflowController.GenerateAndSaveFlowProcessRecord(Elsa.Services.Models.ActivityExecutionContext,System.String,System.String,System.Nullable{System.Double},System.Boolean)">
+            <summary>
+            创建保存流程处理记录
+            </summary>
+            <param name="context"></param>
+            <param name="message">处理信息</param>
+            <param name="processors">处理人</param>
+            <param name="flowTaskId">生成处理记录的任务Id（自动处理的无任务Id，可为空）</param>
+            <param name="isBackground">是否后台节点</param>
+        </member>
+        <member name="M:SIE.WorkFlow.Controller.IWorkflowController.ExistToDoOrDoingTask(Elsa.Services.Models.ActivityExecutionContext,System.Nullable{System.Double})">
+            <summary>
+            是否存在【待处理】或【处理中】的任务
+            </summary>
+            <param name="context"></param>
+            <param name="besidesFlowTaskId">除了某个任务</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.WorkFlow.Controller.RejectController">
+            <summary>
+            驳回控制器
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Controller.RejectController._serviceProvider">
+            <summary>
+            MVC依赖注入容器
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Controller.RejectController.#ctor(System.IServiceProvider,SIE.Common.Employees.EmployeeController,SIE.WorkFlow.WorkFlowInstances.WorkFlowTaskController,SIE.WorkFlow.Base.FlowInstances.FlowProcessRecordController,SIE.WorkFlow.WorkFlowInstances.FlowInstanceController)">
+            <summary>
+            
+            </summary>
+            <param name="serviceProvider"></param>
+            <param name="employeeController"></param>
+            <param name="flowTaskController"></param>
+            <param name="flowProcessRecordController"></param>
+            <param name="flowInstanceController"></param>
+        </member>
+        <member name="F:SIE.WorkFlow.Controller.RejectController.workflowInstanceStore">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Controller.RejectController._workflowInstanceStore">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Controller.RejectController.workflowDefinitionStore">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Controller.RejectController._workflowDefinitionStore">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Controller.RejectController.Trigger(System.String,System.String,System.Double,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            
+            </summary>
+            <param name="activityId"></param>
+            <param name="workflowInstanceId"></param>
+            <param name="flowTaskId"></param>
+            <param name="reason"></param>
+            <param name="activitieIds">驳回节点</param>
+        </member>
+        <member name="M:SIE.WorkFlow.Controller.RejectController.GetRejectActivities(System.String,System.String,System.Double)">
+            <summary>
+            获取驳回节点
+            </summary>
+            <param name="activityId"></param>
+            <param name="workflowInstanceId"></param>
+            <param name="flowTaskId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Controller.RejectController.GetExecutedActivitiesFromFlowProcessRecord(System.Double)">
+            <summary>
+            在实例中的节点执行日志中获取节点信息列表
+            </summary>
+            <param name="taskId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Controller.RejectController.Reject(Elsa.Services.Models.ActivityExecutionContext,SIE.WorkFlow.Models.RejectInput,System.String,System.String,Elsa.Services.Activity)">
+            <summary>
+            驳回业务逻辑
+            </summary>
+            <param name="context"></param>
+            <param name="input"></param>
+            <param name="activityTypeName"></param>
+            <param name="activityType"></param>
+            <param name="activity"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.Controller.RejectController.UpdateTaskRejectStatus(System.String,System.Double)">
+            <summary>
+            修改当前节点工作流任务状态为已驳回
+            </summary>
+            <param name="activityId"></param>
+            <param name="flowInstanceId"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.Controller.RejectController.HideActivitiesAfterReject(SIE.WorkFlow.Models.RejectInput,System.Double)">
+            <summary>
+            隐藏驳回节点后的节点
+            </summary>
+            <param name="input"></param>
+            <param name="flowInstanceId"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.Controller.RejectController.GetParentActivities(System.Collections.Generic.List{System.String},System.String,SIE.Domain.EntityList{SIE.WorkFlow.Base.FlowInstances.FlowProcessRecord},System.Collections.Generic.ICollection{Elsa.Models.ConnectionDefinition},System.Int32)">
+            <summary>
+            获取可驳回的父节点
+            </summary>
+            <param name="parentActivities">已找到的父节点</param>
+            <param name="activityId"></param>
+            <param name="records"></param>
+            <param name="connections"></param>
+            <param name="depth"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.WorkFlow.Controller.TrunController">
+            <summary>
+            转办节点业务
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Controller.TrunController._flowInstanceController">
+            <summary>
+            工作流实例控制器
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Controller.TrunController._flowTaskController">
+            <summary>
+            工作流任务控制器
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Controller.TrunController._employeeController">
+            <summary>
+            员工控制器
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Controller.TrunController.#ctor(SIE.Common.Employees.EmployeeController,SIE.WorkFlow.WorkFlowInstances.FlowInstanceController,SIE.WorkFlow.Base.FlowInstances.FlowTaskController)">
+            <summary>
+            
+            </summary>
+            <param name="employeeController"></param>
+            <param name="rfs"></param>
+            <param name="flowInstanceController"></param>
+            <param name="flowTaskController"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.Controller.TrunController.Trigger(System.String,System.String,System.String,System.Double,System.Double,System.String)">
+            <summary>
+            触发
+            </summary>
+            <param name="activityType"></param>
+            <param name="workflowInstanceId"></param>
+            <param name="activityId"></param>
+            <param name="flowTaskId"></param>
+            <param name="trunToPeopleId"></param>
+            <param name="reason"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.Controller.TrunController.Trun(System.Double,System.Double,System.String)">
+            <summary>
+            转办
+            </summary>
+            <param name="flowTaskId"></param>
+            <param name="turnToEmployeeId"></param>
+            <param name="reason"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.Controller.TrunController.HideActivitiesAfterTrun(System.Double)">
+            <summary>
+            隐藏转办节点记录
+            </summary>
+            <param name="flowTaskId"></param>
+        </member>
+        <member name="T:SIE.WorkFlow.Controller.WorkflowController">
+            <summary>
+            SIE工作流程通用控制器
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Controller.WorkflowController.#ctor(SIE.Common.Employees.EmployeeController,SIE.WorkFlow.WorkFlowInstances.WorkFlowTaskController,SIE.WorkFlow.Base.FlowInstances.FlowProcessRecordController,SIE.WorkFlow.Controller.WorkflowOrgController)">
+            <summary>
+            
+            </summary>
+            <param name="employeeController"></param>
+            <param name="flowTaskController"></param>
+            <param name="flowProcessRecordController"></param>
+            <param name="workflowOrgController"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.Controller.WorkflowController.GenerateFlowTasks(Elsa.Services.Models.ActivityExecutionContext,System.String,System.String)">
+            <summary>
+            创建工作流任务
+            </summary>
+            <param name="context"></param>
+            <param name="ouJsonData">组织架构Json字符串</param>
+            <param name="activityType">节点类型</param>
+        </member>
+        <member name="M:SIE.WorkFlow.Controller.WorkflowController.GenerateFlowTasks(Elsa.Services.Models.ActivityExecutionContext,SIE.Domain.EntityList{SIE.Common.Employees.Employee},System.String)">
+            <summary>
+            创建工作流任务-多人
+            </summary>
+            <param name="context"></param>
+            <param name="employees">处理人集合</param>
+            <param name="activityType">节点类型</param>
+        </member>
+        <member name="M:SIE.WorkFlow.Controller.WorkflowController.GenerateFlowTask(Elsa.Services.Models.ActivityExecutionContext,SIE.Common.Employees.Employee,System.String)">
+            <summary>
+            创建工作流任务
+            </summary>
+            <param name="context"></param>
+            <param name="employee">处理人</param>
+            <param name="activityType">节点类型</param>
+        </member>
+        <member name="M:SIE.WorkFlow.Controller.WorkflowController.GenerateFlowTask(SIE.Common.WorkFlow.Models.VariableBase,System.Double,Elsa.Services.Models.IActivityBlueprint)">
+            <summary>
+            创建任务（不发送通知，通常用于节点报错，重新创建任务）
+            </summary>
+            <param name="variable"></param>
+            <param name="employeeId"></param>
+            <param name="activity"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.Controller.WorkflowController.FinishFlowTask(Elsa.Services.Models.ActivityExecutionContext,System.Double)">
+            <summary>
+            关闭工作流任务
+            </summary>
+            <param name="context"></param>
+            <param name="flowTaskId"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.Controller.WorkflowController.FinishToDoOrDoingFlowTaskInActivitiId(Elsa.Services.Models.ActivityExecutionContext)">
+            <summary>
+            关闭节点所有的任务（待处理或处理中的任务）
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.Controller.WorkflowController.GenerateAndSaveFlowProcessRecord(Elsa.Services.Models.ActivityExecutionContext,System.String,System.String,System.Nullable{System.Double},System.Boolean)">
+            <summary>
+            创建保存流程处理记录
+            </summary>
+            <param name="context"></param>
+            <param name="message">处理信息</param>
+            <param name="processors">处理人</param>
+            <param name="flowTaskId">生成处理记录的任务Id（自动处理的无任务Id，可为空）</param>
+            <param name="isBackground">是否后台节点</param>
+        </member>
+        <member name="M:SIE.WorkFlow.Controller.WorkflowController.ExistToDoOrDoingTask(Elsa.Services.Models.ActivityExecutionContext,System.Nullable{System.Double})">
+            <summary>
+            是否存在【待处理】或【处理中】的任务
+            </summary>
+            <param name="context"></param>
+            <param name="besidesFlowTaskId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.WorkFlow.Controller.WorkflowNotifyController">
+            <summary>
+            流程通知推送控制器
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Controller.WorkflowNotifyController.GenerateFlowTaskNotification(SIE.Common.Employees.Employee,SIE.WorkFlow.Base.FlowInstances.FlowTask)">
+            <summary>
+            创建工作流任务发送通知
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Controller.WorkflowNotifyController.GenerateFlowTaskNotificationTemplate(SIE.Common.Employees.Employee,SIE.WorkFlow.Base.FlowInstances.FlowInstance)">
+            <summary>
+            创建到达消息内容
+            </summary>
+            <param name="employee"></param>
+            <param name="flowInstance"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Controller.WorkflowNotifyController.RejectNodeNotification(SIE.Common.Employees.Employee,SIE.WorkFlow.Base.FlowInstances.FlowTask,System.String)">
+            <summary>
+            驳回节点发送通知
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Controller.WorkflowNotifyController.GenerateRejectNodeNotificationTemplate(SIE.Common.Employees.Employee,System.String,SIE.Common.Sender.Pusher,SIE.WorkFlow.Base.FlowInstances.FlowInstance)">
+            <summary>
+            创建驳回消息内容
+            </summary>
+            <param name="employee"></param>
+            <param name="rejectReason"></param>
+            <param name="pusher"></param>
+            <param name="flowInstance"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.Controller.WorkflowNotifyController.TrunNotification(SIE.Common.Employees.Employee,SIE.WorkFlow.Base.FlowInstances.FlowTask)">
+            <summary>
+            转办工作流任务发送通知
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Controller.WorkflowNotifyController.GenerateTrunNotificationTemplate(SIE.Common.Employees.Employee,SIE.WorkFlow.Base.FlowInstances.FlowTask,SIE.Common.Sender.Pusher,SIE.WorkFlow.Base.FlowInstances.FlowInstance)">
+            <summary>
+            生成转办消息内容
+            </summary>
+            <param name="trunTo"></param>
+            <param name="task"></param>
+            <param name="pusher"></param>
+            <param name="flowInstance"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.Controller.WorkflowNotifyController.SetReceivers(SIE.Common.Sender.Pusher,SIE.Common.Employees.Employee)">
+            <summary>
+            设置接收人
+            </summary>
+            <param name="pusher"></param>
+            <param name="employee"></param>
+        </member>
+        <member name="T:SIE.WorkFlow.Controller.WfMessageTemplate">
+            <summary>
+            推送消息
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Controller.WfMessageTemplate.Message">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Controller.WfMessageTemplate.Subject">
+            <summary>
+            主题
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Controller.WorkflowOrgController">
+            <summary>
+            SIE工作流程通用控制器
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Controller.WorkflowOrgController.#ctor(SIE.Common.Employees.EmployeeController,SIE.Common.Organizations.OrganizationController)">
+            <summary>
+            
+            </summary>
+            <param name="employeeController"></param>
+            <param name="organizationController"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.Controller.WorkflowOrgController.GetOrgTree(SIE.Common.Organizations.Models.OrgTreeEventBase)">
+            <summary>
+            获取企业组织
+            </summary>
+            <param name="orgTreeEventBase"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Controller.WorkflowOrgController.SetCurrentInvOrg(System.String)">
+            <summary>
+            根据工作流定义对应库存组织设置当前库存组织
+            </summary>
+            <param name="definitionId"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.Controller.WorkflowOrgController.GetEmployeesInOrganization(System.Collections.Generic.List{System.Double})">
+            <summary>
+            获取组织架构下所有的员工（包括子架构下的员工），结果去重
+            </summary>
+            <param name="orgIds"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.Controller.WorkflowOrgController.GetFlowDefCategoryName(System.String)">
+            <summary>
+            获取工作流-流程分类
+            </summary>
+            <param name="defineId"></param>
+        </member>
+        <member name="T:SIE.WorkFlow.Core.ActivityEntity.ActivityEntityProviderFactory">
+            <summary>
+            节点实体提供者工厂
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Core.ActivityEntity.ActivityEntityProviderFactory._providerDic">
+            <summary>
+            提供者字典
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Core.ActivityEntity.ActivityEntityProviderFactory.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Core.ActivityEntity.ActivityEntityProviderFactory.Init">
+            <summary>
+            初始化
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Core.ActivityEntity.ActivityEntityProviderFactory.GetActivityEntityProvider(System.String)">
+            <summary>
+            根据类型获取节点实体提供者
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.WorkFlow.Core.CustomActivityInputUIHintsExt">
+            <summary>
+            组件类型
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Core.CustomActivityInputUIHintsExt.OrgTree">
+            <summary>
+            组织树
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Core.ActivityListAttribute">
+            <summary>
+            列表节点特性
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Core.ActivityListAttribute.QueryerType">
+            <summary>
+            查询器类型
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Core.ActivityListAttribute.#ctor(System.Type)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="type"></param>
+        </member>
+        <member name="T:SIE.WorkFlow.Core.IActivityListQueryerBase">
+            <summary>
+            节点列表数据查询器基类
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Core.IActivityListQueryerBase.GetEntityList(SIE.WorkFlow.Core.GetEntityListInput)">
+            <summary>
+            获取列表数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.WorkFlow.Core.GetEntityListInput">
+            <summary>
+            获取列表数据 参数类
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Core.GetEntityListInput.VariablesJson">
+            <summary>
+            流程变量Json字符串
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Core.ActivityProperty.ActivityPassType">
+            <summary>
+            活动节点通过方式
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Core.ActivityProperty.ActivityPassType.All">
+            <summary>
+            全部
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Core.ActivityProperty.ActivityPassType.Any">
+            <summary>
+            任何一个
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Core.ActivityProperty.ActivityPassTypeOptionsProvider">
+            <summary>
+            节点通过方式属性下拉选择数据
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Core.ActivityProperty.ActivityPassTypeOptionsProvider.GetOptions(System.Reflection.PropertyInfo)">
+            <summary>
+            
+            </summary>
+            <param name="property"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.WorkFlow.Core.ActivityProperty.OrganizationalUnit">
+            <summary>
+            Organizational Unit 组织架构
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Core.ActivityProperty.OrganizationalUnit.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Core.ActivityProperty.OrganizationalUnit.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Core.ActivityProperty.OrganizationalUnit.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Core.ActivityProperty.OrganizationalUnit.DataType">
+            <summary>
+            数据类型
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Core.ActivityProperty.OrganizationalUnitType">
+            <summary>
+            组织架构的数据类型
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Core.ActivityProperty.OrganizationalUnitType.OU">
+            <summary>
+            组织架构
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Core.ActivityProperty.OrganizationalUnitType.Person">
+            <summary>
+            人
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Core.Attributes.SieActivityDescriptor">
+            <summary>
+            自定义节点解析器Model
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Core.Attributes.SieActivityDescriptor.IconType">
+            <summary>
+            图标类型
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Core.Attributes.SieTypedActivityTypeDescriber">
+            <summary>
+            自定义节点解析器
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Core.Attributes.SieTypedActivityTypeDescriber.#ctor(Elsa.Metadata.IActivityPropertyOptionsResolver,Elsa.Metadata.IActivityPropertyUIHintResolver,Elsa.Metadata.IActivityPropertyDefaultValueResolver,Microsoft.Extensions.DependencyInjection.IServiceScopeFactory)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="optionsResolver"></param>
+            <param name="uiHintResolver"></param>
+            <param name="defaultValueResolver"></param>
+            <param name="serviceScopeFactory"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.Core.Attributes.SieTypedActivityTypeDescriber.DescribeAsync(System.Type,System.Threading.CancellationToken)">
+            <summary>
+            解析
+            </summary>
+            <param name="activityType"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Core.Attributes.SieTypedActivityTypeDescriber.DescribeIconType(Elsa.Attributes.ActivityAttribute)">
+            <summary>
+            图标类型
+            </summary>
+            <param name="activityAttribute"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.WorkFlow.Core.Attributes.SieWorkFlowActivityAttribute">
+            <summary>
+            SIE节点特性
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Core.Attributes.SieWorkFlowActivityAttribute.IconType">
+            <summary>
+            节点图标类型
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Core.BackgroundActivity">
+            <summary>
+            后台节点,没有对应的节点视图
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Core.BackgroundActivity.OnExecute(Elsa.Services.Models.ActivityExecutionContext)">
+            <summary>
+            执行
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Core.BackgroundActivity.OnExecuteInternal(Elsa.Services.Models.ActivityExecutionContext)">
+            <summary>
+            节点业务
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Core.BackgroundActivity.SaveFlowProcessRecordWithMessage(Elsa.Services.Models.ActivityExecutionContext,System.String,System.String,System.Nullable{System.Double})">
+            <summary>
+            创建流程记录
+            </summary>
+            <param name="context">上下文</param>
+            <param name="message">记录内容</param>
+            <param name="processors">处理人</param>
+            <param name="flowTaskId">任务ID</param>
+        </member>
+        <member name="M:SIE.WorkFlow.Core.BackgroundActivity.SaveFlowProcessRecord(Elsa.Services.Models.ActivityExecutionContext)">
+            <summary>
+            任务处理记录 
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:SIE.WorkFlow.Core.Enums.ActivityIconType">
+            <summary>
+            节点图标类型
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Core.Enums.ActivityIconType.None">
+            <summary>
+            默认
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Core.Enums.ActivityIconType.Form">
+            <summary>
+            表单
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Core.Enums.ActivityIconType.FillIn">
+            <summary>
+            录入
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Core.Enums.ActivityIconType.FormFinish">
+            <summary>
+            表单完成
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Core.Enums.ActivityIconType.Audit">
+            <summary>
+            审核
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Core.PanelActivity">
+            <summary>
+            工作流可显示节点
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Core.PanelActivity.entityTypeName">
+            <summary>
+            实体类型
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Core.PanelActivity._readonlyViewGroup">
+            <summary>
+            查看视图
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Core.PanelActivity.readonlyViewGroup">
+            <summary>
+            查看视图
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Core.PanelActivity._editViewGroup">
+            <summary>
+            编辑视图
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Core.PanelActivity.editViewGroup">
+            <summary>
+            编辑视图
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Core.PanelActivity.panelHeight">
+            <summary>
+            视图面板高度
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Core.PanelActivity.notAllowReject">
+            <summary>
+            不允许驳回到此节点
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Core.PanelActivity.isListView">
+            <summary>
+            列表视图
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Core.PanelActivity.displayIndex">
+            <summary>
+            节点显示顺序
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Core.PanelActivity.trunController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Core.PanelActivity._trunController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Core.PanelActivity.rejectController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Core.PanelActivity._rejectController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Core.PanelActivity.Trun(Elsa.Services.Models.ActivityExecutionContext,SIE.WorkFlow.Models.TrunInput,System.String,System.String)">
+            <summary>
+            转办
+            </summary>
+            <param name="context"></param>
+            <param name="input"></param>
+            <param name="activityTypeName"></param>
+            <param name="activityType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Core.PanelActivity.OnTrun(Elsa.Services.Models.ActivityExecutionContext,SIE.WorkFlow.Models.TrunInput,System.String,System.String)">
+            <summary>
+            转办自定义逻辑
+            </summary>
+            <param name="context"></param>
+            <param name="input"></param>
+            <param name="activityTypeName"></param>
+            <param name="activityType"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.Core.PanelActivity.Reject(Elsa.Services.Models.ActivityExecutionContext,SIE.WorkFlow.Models.RejectInput,System.String,System.String,Elsa.Services.Activity)">
+            <summary>
+            驳回
+            </summary>
+            <param name="context"></param>
+            <param name="input"></param>
+            <param name="activityTypeName"></param>
+            <param name="activityType"></param>
+            <param name="activity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Core.PanelActivity.OnReject(Elsa.Services.Models.ActivityExecutionContext,SIE.WorkFlow.Models.RejectInput,System.String,System.String,Elsa.Services.Activity)">
+            <summary>
+            驳回自定义处理
+            </summary>
+            <param name="context"></param>
+            <param name="input"></param>
+            <param name="activityTypeName"></param>
+            <param name="activityType"></param>
+            <param name="activity"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.Core.PanelActivity.RejectArrive(Elsa.Services.Models.ActivityExecutionContext,SIE.WorkFlow.Models.RejectArriveInput)">
+            <summary>
+            驳回到达
+            </summary>
+            <param name="context"></param>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Core.PanelActivity.OnRejectArrive(Elsa.Services.Models.ActivityExecutionContext,SIE.WorkFlow.Models.RejectArriveInput)">
+            <summary>
+            驳回到达自定义处理
+            </summary>
+            <param name="context"></param>
+            <param name="input"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.Core.PanelActivity.SaveFlowProcessRecordWithMessage(Elsa.Services.Models.ActivityExecutionContext,System.String,System.String,System.Nullable{System.Double})">
+            <summary>
+            创建流程记录
+            </summary>
+            <param name="context">上下文</param>
+            <param name="message">记录内容</param>
+            <param name="processors">处理人</param>
+            <param name="flowTaskId">任务ID</param>
+        </member>
+        <member name="M:SIE.WorkFlow.Core.PanelActivity.OnExecuteInternal(Elsa.Services.Models.ActivityExecutionContext)">
+            <summary>
+            节点业务
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Core.PanelActivity.ReturnResult(Elsa.Services.Models.ActivityExecutionContext)">
+            <summary>
+            返回完成结果
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.WorkFlow.Core.PanelAutoPassActivity">
+            <summary>
+            自动处理节点基类
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Core.PanelAutoPassActivity.OnExecute(Elsa.Services.Models.ActivityExecutionContext)">
+            <summary>
+            执行
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Core.PanelAutoPassActivity.ReturnResult(Elsa.Services.Models.ActivityExecutionContext)">
+            <summary>
+            返回完成结果
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.WorkFlow.Core.PanelBlockingActivity">
+            <summary>
+            阻塞节点基类
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Core.PanelBlockingActivity.handler">
+            <summary>
+            处理人
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Core.PanelBlockingActivity.passType">
+            <summary>
+            处理方式
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Core.PanelBlockingActivity.executingDisplayInReadonlyView">
+            <summary>
+            执行中在查看视图是否展示
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Core.PanelBlockingActivity.flowTaskController">
+            <summary>
+            审核逻辑控制器
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Core.PanelBlockingActivity._flowTaskController">
+            <summary>
+            审核逻辑控制器
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Core.PanelBlockingActivity.OnExecute(Elsa.Services.Models.ActivityExecutionContext)">
+            <summary>
+            执行
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Core.PanelBlockingActivity.GenerateFlowTaskForHappenErrorCallBack(Elsa.Services.Models.ActivityExecutionContext,SIE.WorkFlow.Models.HappenErrorCallBackInput)">
+            <summary>
+            生成工作流任务(发生错误回滚到阻断节点生成任务)
+            </summary>
+            <param name="context"></param>
+            <param name="input"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.Core.PanelBlockingActivity.GenerateFlowTask(Elsa.Services.Models.ActivityExecutionContext)">
+            <summary>
+            生成工作流任务
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.Core.PanelBlockingActivity.OnResume(Elsa.Services.Models.ActivityExecutionContext)">
+            <summary>
+            恢复暂停的节点
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Core.PanelBlockingActivity.ReturnResult(Elsa.Services.Models.ActivityExecutionContext)">
+            <summary>
+            返回节点结果
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Core.PanelBlockingActivity.SaveFlowProcessRecord(Elsa.Services.Models.ActivityExecutionContext)">
+            <summary>
+            任务处理记录
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:SIE.WorkFlow.Core.SieActivityBase">
+            <summary>
+            SIE工作流节点基类
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Core.SieActivityBase.workflowController">
+            <summary>
+            工作流控制器
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Core.SieActivityBase._workflowController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Core.SieActivityBase.SaveFlowProcessRecord(Elsa.Services.Models.ActivityExecutionContext)">
+            <summary>
+            任务处理记录，需要子类重写
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.Core.SieActivityBase.OnArriveActivityExecute(Elsa.Services.Models.ActivityExecutionContext)">
+            <summary>
+            流程到达节点事件
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.Core.SieActivityBase.OnActivityExecute(Elsa.Services.Models.ActivityExecutionContext)">
+            <summary>
+            节点具体业务，需要子类重写
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.Core.SieActivityBase.OnFinishExecute(Elsa.Services.Models.ActivityExecutionContext)">
+            <summary>
+            Execute完成事件
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.Core.SieActivityBase.ResetCurrentIngOrg(Elsa.Services.Models.ActivityExecutionContext)">
+            <summary>
+            重设当前库存组织
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.Core.SieActivityBase.SetVariable(Elsa.Services.Models.ActivityExecutionContext,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <param name="entity"></param>
+        </member>
+        <member name="P:SIE.WorkFlow.Core.SieActivityBase.isRequired">
+            <summary>
+            是否必选
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Core.SieActivityBase.ExecuteAsync(Elsa.Services.Models.ActivityExecutionContext)">
+            <summary>
+            重写执行方法，添加异常捕获处理
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Core.SieActivityBase.ResumeAsync(Elsa.Services.Models.ActivityExecutionContext)">
+            <summary>
+            重写恢复方法，添加异常捕获处理
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Core.SieActivityBase.OnHandleException(System.Exception,Elsa.Services.Models.ActivityExecutionContext)">
+            <summary>
+            异常处理
+            </summary>
+            <param name="exception">异常</param>
+            <param name="context">流程上下文</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.WorkFlow.Core.VariableExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Core.VariableExtensions.GetSieVariable``1(Elsa.Services.Models.ActivityExecutionContext)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Core.VariableExtensions.IsNullableType(System.Type)">
+            <summary>
+            是否为空类型
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.WorkFlow.Interfaces.Api.SieWorkflowApiController">
+            <summary>
+            SIE工作流API控制器
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Interfaces.Api.SieWorkflowApiController._flowTaskController">
+            <summary>
+            工作流任务控制器
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Interfaces.Api.SieWorkflowApiController._sieWorkflowController">
+            <summary>
+            SIE工作流控制器
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Interfaces.Api.SieWorkflowApiController._rejectController">
+            <summary>
+            驳回控制器
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Interfaces.Api.SieWorkflowApiController._trunController">
+            <summary>
+            转办控制器
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Interfaces.Api.SieWorkflowApiController.#ctor(SIE.WorkFlow.Base.FlowInstances.FlowTaskController,SIE.WorkFlow.Interfaces.SieWorkflowController,SIE.WorkFlow.Controller.RejectController,SIE.WorkFlow.Controller.ITrunController)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="flowTaskController"></param>
+            <param name="sieWorkflowController"></param>
+            <param name="rejectController"></param>
+            <param name="trunController"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.Interfaces.Api.SieWorkflowApiController.GetWorkflowUndoTasksCount(System.Collections.Generic.List{System.String})">
+            <summary>
+            查询未完成任务数量
+            </summary>
+            <param name="categoryNameList">流程分类</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Interfaces.Api.SieWorkflowApiController.GetWorkflowTasksCount(SIE.WorkFlow.Base.FlowInstances.ApiModels.FlowTaskApiCriteriaModel)">
+            <summary>
+            自定义获取工作流任务数量
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Interfaces.Api.SieWorkflowApiController.GetWorkflowTasks(SIE.WorkFlow.Base.FlowInstances.ApiModels.FlowTaskApiCriteriaPageModel)">
+            <summary>
+            获取工作流已完成任务数量
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Interfaces.Api.SieWorkflowApiController.CancelWorkflow(System.Double,System.String)">
+            <summary>
+            撤销工作流
+            </summary>
+            <param name="flowInstanceId">流程实例ID</param>
+            <param name="reason">撤销原因</param>
+        </member>
+        <member name="M:SIE.WorkFlow.Interfaces.Api.SieWorkflowApiController.GetExecutedActivities(System.Double)">
+            <summary>
+            查询可驳回节点
+            </summary>
+            <param name="taskId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Interfaces.Api.SieWorkflowApiController.RejectWorkflow(System.Double,System.String,System.String)">
+            <summary>
+            驳回
+            </summary>
+            <param name="flowTaskId">流程任务ID</param>
+            <param name="reason">驳回原因</param>
+            <param name="rejectActivitieId">驳回目标节点（当为空，自动查找目标节点）</param>
+        </member>
+        <member name="M:SIE.WorkFlow.Interfaces.Api.SieWorkflowApiController.TrunWorkflow(System.Double,System.String,System.Nullable{System.Double})">
+            <summary>
+            转办
+            </summary>
+            <param name="flowTaskId"></param>
+            <param name="reason"></param>
+            <param name="trunToPeopleId"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.Interfaces.Api.SieWorkflowApiController.GetFlowTaskInfoWithData(System.Double)">
+            <summary>
+            查询工作流实例节点信息
+            </summary>
+            <param name="taskId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Interfaces.Api.SieWorkflowApiController.GetFlowProcessRecords(System.Double)">
+            <summary>
+            查询工作流流程处理记录信息
+            </summary>
+            <param name="taskId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Interfaces.Api.SieWorkflowApiController.UploadWorkflowAttachment(System.Collections.Generic.List{SIE.Common.Attachments.ApiModels.AttachmentModel})">
+            <summary>
+            上传附件
+            </summary>
+            <param name="attachmentList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Interfaces.Api.SieWorkflowApiController.UploadAttachment(System.Collections.Generic.List{SIE.Common.Attachments.ApiModels.AttachmentModel})">
+            <summary>
+            上传附件
+            </summary>
+            <param name="attachmentList">附件</param>
+        </member>
+        <member name="M:SIE.WorkFlow.Interfaces.Api.SieWorkflowApiController.GetAttachmentsInfo(System.Double)">
+            <summary>
+            获取附件
+            </summary>
+            <param name="flowInstanceId">流程实例ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Interfaces.Api.SieWorkflowApiController.DeleteWorkflowAttachment(System.Collections.Generic.List{System.Double})">
+            <summary>
+            删除附件
+            </summary>
+            <param name="attachIds">要删除的附件Id集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Interfaces.Api.SieWorkflowApiController.GetAttachmentFilePath(System.Double)">
+            <summary>
+            获取附件下载地址
+            </summary>
+            <param name="attachId">附件ID</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.WorkFlow.Interfaces.SieWorkflowController">
+            <summary>
+            SIE工作流控制器
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Interfaces.SieWorkflowController._serviceProvider">
+            <summary>
+            netcore依赖注入容器
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Interfaces.SieWorkflowController._workflowLaunchpad">
+            <summary>
+            工作流更新
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Interfaces.SieWorkflowController._flowProcessRecordController">
+            <summary>
+            工作流程记录控制器
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Interfaces.SieWorkflowController._flowTaskController">
+            <summary>
+            流程任务控制器
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Interfaces.SieWorkflowController.#ctor(System.IServiceProvider,SIE.WorkFlow.Base.FlowInstances.FlowProcessRecordController,SIE.WorkFlow.Base.FlowInstances.FlowTaskController)">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Interfaces.SieWorkflowController.FindStartableWorkflowAsync(System.String,System.Nullable{System.Double},System.Double,System.String,System.String,System.String,System.String,System.Boolean,System.Collections.Generic.List{SIE.WorkFlow.Base.Common.Models.AttachmentInfoModel})">
+            <summary>
+            启动创建流程实例
+            </summary>
+            <param name="workFlowDefId"></param>
+            <param name="starterId">发起人</param>
+            <param name="flowDefId"></param>
+            <param name="remark">流程描述</param>
+            <param name="source">流程来源</param>
+            <param name="sourceType">流程来源类型 （一般用来记录类的完全限定名，结合SourceId可以用来给业务判断是否重复发起）</param>
+            <param name="sourceId">流程来源Id</param>
+            <param name="canCancel">是否允许撤销流程</param>
+            <param name="attachments">附件列表</param>
+            <returns>实例id</returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Interfaces.SieWorkflowController.GenerateAndSaveFlowInstance(Elsa.Services.Models.StartableWorkflow,System.Double,System.Double,System.String,System.String,System.String,System.String,System.Boolean,System.Collections.Generic.List{SIE.WorkFlow.Base.Common.Models.AttachmentInfoModel})">
+            <summary>
+            创建保存FlowInstance
+            </summary>
+            <param name="startableWorkflow"></param>
+            <param name="starterId">发起人</param>
+            <param name="flowDefId"></param>
+            <param name="remark"></param>
+            <param name="source">流程来源</param>
+            <param name="sourceType">流程来源类型 （一般用来记录类的完全限定名，结合SourceId可以用来给业务判断是否重复发起）</param>
+            <param name="sourceId">流程来源Id</param>
+            <param name="canCancel">是否可以撤销</param>
+            <param name="attachments">附件列表</param>
+        </member>
+        <member name="M:SIE.WorkFlow.Interfaces.SieWorkflowController.GetNo``1(System.String)">
+            <summary>
+            获取单号
+            example:   
+            GetNo WorkOrder ("工单单号"); 
+            错误提示：未配置工单单号生成规则，请配置！
+            错误提示已做多语言翻译
+            </summary>
+            <typeparam name="T">实体</typeparam>
+            <param name="msg">提示信息</param>  
+            <exception cref="T:SIE.Domain.Validation.ValidationException">规则未找到或者未配置</exception>
+            <returns>单号</returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Interfaces.SieWorkflowController.TriggerWorkflowAsync(System.String,System.String,System.Object)">
+            <summary>
+            开始工作流
+            </summary>
+            <param name="instanceId">工作流引擎实例ID</param>
+            <param name="activityId">工作流引擎节点ID</param>
+            <param name="input">输入</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Interfaces.SieWorkflowController.CancelWorkflow(System.Double,System.String)">
+            <summary>
+            撤销工作流
+            </summary>
+            <param name="flowInstanceId">实例ID</param>
+            <param name="reason">撤销原因</param>
+        </member>
+        <member name="M:SIE.WorkFlow.Interfaces.SieWorkflowController.RejectWorkflowAuto(System.String,System.String,System.Double,System.String)">
+            <summary>
+            驳回（自动查找驳回目标节点）
+            </summary>
+            <param name="wfActivityId">当前节点ID</param>
+            <param name="wfInstanceId">流程ID</param>
+            <param name="flowTaskId">任务ID</param>
+            <param name="reason">驳回原因</param>
+        </member>
+        <member name="M:SIE.WorkFlow.Interfaces.SieWorkflowController.RejectWorkflowCustom(System.String,System.String,System.Double,System.String,System.String)">
+            <summary>
+            驳回（指定驳回目标节点）
+            </summary>
+            <param name="wfActivityId">当前节点ID</param>
+            <param name="wfInstanceId">流程ID</param>
+            <param name="flowTaskId">任务ID</param>
+            <param name="reason">驳回原因</param>
+            <param name="rejectToActivityId">指定驳回目标节点</param>
+        </member>
+        <member name="M:SIE.WorkFlow.Interfaces.SieWorkflowController.GetFlowProcessRecords(System.Double)">
+            <summary>
+            根据工作流实例ID查找工作流程操作记录
+            </summary>
+            <param name="instanceId">工作流实例ID</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.WorkFlow.Models.FlowInstanceInfo">
+            <summary>
+            工作流任务信息
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Models.FlowInstanceInfo.FlowInstance">
+            <summary>
+            SIE工作流实例
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Models.FlowInstanceInfo.WorkflowInstance">
+            <summary>
+            工作流实例
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Models.FlowInstanceInfo.WorkflowPanelInfos">
+            <summary>
+            展示面板信息数据
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Models.FlowTaskInfo">
+            <summary>
+            工作流任务信息
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Models.FlowTaskInfo.FlowTask">
+            <summary>
+            工作任务
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Models.FlowTaskInfo.WorkflowInstance">
+            <summary>
+            工作流实例
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Models.FlowTaskInfo.WorkflowPanelInfos">
+            <summary>
+            展示面板信息数据
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Models.FlowTaskInfoFullActivity">
+            <summary>
+            工作流任务信息（包含节点关联数据）
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Models.FlowTaskInfoFullActivity.ActivityDatas">
+            <summary>
+            节点数据
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Models.HappenErrorCallBackInput">
+            <summary>
+            发生错误回滚到节点Input
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Models.HappenErrorCallBackInput.EmployeeId">
+            <summary>
+            员工Id
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Models.HappenErrorCallBackInput.Error">
+            <summary>
+            错误信息
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Models.RejectArriveInput">
+            <summary>
+            驳回到达某节点Input
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Models.RejectArriveInput.RejectFromFlowTaskId">
+            <summary>
+            驳回的来源FlowTaskId
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Models.RejectArriveInput.Reason">
+            <summary>
+            驳回原因
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Models.RejectGenerateTaskType">
+            <summary>
+            驳回--生成任务的方式
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Models.RejectGenerateTaskType.FromFlowTaskId">
+            <summary>
+            根据FlowTaskId生成
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Models.RejectGenerateTaskType.FromActivityDefinition">
+            <summary>
+            根据节点定义生成
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Models.RejectInput">
+            <summary>
+            驳回时要求输入信息
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Models.RejectInput.Reason">
+            <summary>
+            原因
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Models.RejectInput.Activities">
+            <summary>
+            驳回节点列表
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Models.RejectType">
+            <summary>
+            驳回类型
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Models.RejectType.WorkflowDefinition">
+            <summary>
+            流程定义
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Models.RejectType.Custom">
+            <summary>
+            自定义
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Models.SIEWorkflowContext">
+            <summary>
+            SIE工作流上下文
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Models.SIEWorkflowContext.InvOrg">
+            <summary>
+            库存组织ID
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Models.TrunInput">
+            <summary>
+            转办时要求输入信息
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Models.TrunInput.TrunToPeople">
+            <summary>
+            转办人
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Models.TrunInput.TrunToPeopleId">
+            <summary>
+            转办人ID
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Models.TrunInput.Reason">
+            <summary>
+            转办原因
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Models.WorkflowPanelInfo">
+            <summary>
+            工作流面板展示信息类
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Models.WorkflowPanelInfo.ActivityId">
+            <summary>
+            节点GUID
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Models.WorkflowPanelInfo.ActivityType">
+            <summary>
+            节点类型
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Models.WorkflowPanelInfo.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Models.WorkflowPanelInfo.EntityTypeName">
+            <summary>
+            实体类型
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Models.WorkflowPanelInfo.IsListView">
+            <summary>
+            是否列表数据
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Models.WorkflowPanelInfo.FlowTaskId">
+            <summary>
+            任务Id
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Models.WorkflowPanelInfo.Title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Models.WorkflowPanelInfo.ViewGroup">
+            <summary>
+            ViewGroup
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Models.WorkflowPanelInfo.Data">
+            <summary>
+            节点关联数据（移动端）
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Models.WorkflowPanelInfo.PanelHeight">
+            <summary>
+            自定义高度
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Module">
+            <summary>
+            初始化
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化
+            </summary>
+            <param name="app">app</param>
+        </member>
+        <member name="T:SIE.WorkFlow.ViewModels.ActivityViewModel">
+            <summary>
+            活动节点ViewModel
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.ViewModels.ActivityViewModel.ActivityIdProperty">
+            <summary>
+            节点Id
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.ViewModels.ActivityViewModel.ActivityId">
+            <summary>
+            流程任务Id
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.ViewModels.ActivityViewModel.ActivityNameProperty">
+            <summary>
+            节点名称
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.ViewModels.ActivityViewModel.ActivityName">
+            <summary>
+            节点名称
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.WorkFlowEntityRepository`1">
+            <summary>
+            本程序集的数据提供者
+            </summary>
+            <typeparam name="T">t</typeparam>
+        </member>
+        <member name="T:SIE.WorkFlow.WorkFlowEntityDataProvider">
+            <summary>
+            实体数据提供者
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.WorkFlowEntityDataProvider.ConnectionStringName">
+            <summary>
+            数据库连接字符串的名称
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.WorkFlowEntityDataProvider.ConnectionStringSettingName">
+            <summary>
+            数据库连接字符串的名称
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.WorkFlowInstances.CancelFlowInstanceEvent">
+            <summary>
+             取消流程实例事件 
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.WorkFlowInstances.CancelFlowInstanceEvent.FlowInstanceId">
+            <summary>
+            流程实例
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.WorkFlowInstances.CancelFlowInstanceEvent.CancelerId">
+            <summary>
+            取消人
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.WorkFlowInstances.CancelFlowInstanceEvent.CancelReason">
+            <summary>
+            取消原因
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.WorkFlowInstances.CancelFlowInstanceEvent.SourceType">
+            <summary>
+            来源类型
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.WorkFlowInstances.CancelFlowInstanceEvent.SourceId">
+            <summary>
+            来源Id
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.WorkFlowInstances.ExpressionLambdaEx.ParameterRebinder">
+            <summary>
+            参数绑定器
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlowInstances.ExpressionLambdaEx.ParameterRebinder.ReplaceParameters(System.Collections.Generic.Dictionary{System.Linq.Expressions.ParameterExpression,System.Linq.Expressions.ParameterExpression},System.Linq.Expressions.Expression)">
+            <summary>
+            替换参数
+            </summary>
+            <param name="map"></param>
+            <param name="exp"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlowInstances.ExpressionLambdaEx.ParameterRebinder.VisitParameter(System.Linq.Expressions.ParameterExpression)">
+            <summary>
+            访问参数
+            </summary>
+            <param name="node"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlowInstances.ExpressionLambdaEx.Or``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            以 Expression.OrElse 组合两个Expression表达式
+            </summary>
+            <typeparam name="T">表达式的主实体类型</typeparam>
+            <param name="left">第一个Expression表达式</param>
+            <param name="right">要组合的Expression表达式</param>
+            <returns>组合后的表达式</returns>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlowInstances.ExpressionLambdaEx.Compose``1(System.Linq.Expressions.Expression{``0},System.Linq.Expressions.Expression{``0},System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.Expression,System.Linq.Expressions.Expression})">
+            <summary>
+            以特定的条件运行组合两个Expression表达式
+            </summary>
+            <typeparam name="T">表达式的主实体类型</typeparam>
+            <param name="left">第一个Expression表达式</param>
+            <param name="right">要组合的Expression表达式</param>
+            <param name="merge">组合条件运算方式</param>
+            <returns>组合后的表达式</returns>
+        </member>
+        <member name="T:SIE.WorkFlow.WorkFlowInstances.FlowInstanceController">
+            <summary>
+            工作流实例控制器
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.WorkFlowInstances.FlowInstanceController._serviceProvider">
+            <summary>
+            netcore依赖注入容器
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.WorkFlowInstances.FlowInstanceController._workflowLaunchpad">
+            <summary>
+            工作流更新
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlowInstances.FlowInstanceController.#ctor(System.IServiceProvider)">
+            <summary>
+            
+            </summary>
+            <param name="serviceProvider"></param>
+            <param name="rfs"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlowInstances.FlowInstanceController.GetFlowInstances(System.String,System.String,System.Collections.Generic.List{SIE.WorkFlow.Base.FlowInstances.WorkFlowStatus})">
+            <summary>
+            
+            </summary>
+            <param name="sourceType"></param>
+            <param name="sourceId"></param>
+            <param name="workflowStatusList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlowInstances.FlowInstanceController.ExitsDoingFlowInstance(System.String,System.String)">
+            <summary>
+            是否存在已经运行中的流程
+            </summary>
+            <param name="sourceType"></param>
+            <param name="sourceId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlowInstances.FlowInstanceController.GetWorkFlowInstance(System.String)">
+            <summary>
+            获取工作流实例
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlowInstances.FlowInstanceController.GetWorkFlowInstanceById(System.Double)">
+            <summary>
+            获取工作流实例,根据ID
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlowInstances.FlowInstanceController.GetFlowInstance(System.String)">
+            <summary>
+            获取工作流实例
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlowInstances.FlowInstanceController.GetFlowProcessRecordsByTaskId(System.Double)">
+            <summary>
+            获取工作流处理记录清单，根据任务ID
+            </summary>
+            <param name="flowTaskId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlowInstances.FlowInstanceController.FinishFlowInstance(System.Double)">
+            <summary>
+            完成工作流
+            </summary>
+            <param name="instanceId"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlowInstances.FlowInstanceController.FinishFlowInstanceByWorkFlowInstanceId(System.String)">
+            <summary>
+            完成工作流
+            </summary>
+            <param name="workFlowInstanceId"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlowInstances.FlowInstanceController.ExecutePendingWorkflowAsync(System.String,System.String,SIE.Common.WorkFlow.Models.TriggerModel)">
+            <summary>
+            执行挂起任务
+            </summary>
+            <param name="instanceId"></param>
+            <param name="activityId"></param>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlowInstances.FlowInstanceController.GetAttachmentList(System.Double)">
+            <summary>
+            获取工作流实例的附件清单
+            </summary>
+            <param name="flowInstanceId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlowInstances.FlowInstanceController.CancelFlowInstance(System.Double,System.String)">
+            <summary>
+            撤销工作流
+            </summary>
+            <param name="flowTaskId"></param>
+            <param name="reason"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlowInstances.FlowInstanceController.ClearFaultAsync(Elsa.Models.WorkflowInstance)">
+            <summary>
+            清除实例的Fault
+            </summary>
+            <param name="workflowInstance"></param>
+        </member>
+        <member name="T:SIE.WorkFlow.WorkFlowInstances.WorkFlowTaskController">
+            <summary>
+            工作流任务控制器
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.WorkFlowInstances.WorkFlowTaskController._serviceProvider">
+            <summary>
+            netcore依赖注入容器
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.WorkFlowInstances.WorkFlowTaskController._activityEntityProviderFactory">
+            <summary>
+            节点实体提供者工厂
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.WorkFlowInstances.WorkFlowTaskController._workflowLaunchpad">
+            <summary>
+            工作流更新
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.WorkFlowInstances.WorkFlowTaskController._flowProcessRecordController">
+            <summary>
+            工作流处理记录控制器
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlowInstances.WorkFlowTaskController.#ctor(System.IServiceProvider,SIE.WorkFlow.Core.ActivityEntity.ActivityEntityProviderFactory,SIE.WorkFlow.Base.FlowInstances.FlowProcessRecordController)">
+            <summary>
+            
+            </summary>
+            <param name="serviceProvider"></param>
+            <param name="activityEntityProviderFactory"></param>
+            <param name="flowProcessRecordController"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlowInstances.WorkFlowTaskController.ExecutePendingWorkflow(System.String,System.String,System.Object)">
+            <summary>
+            执行节点
+            </summary>
+            <param name="instanceId"></param>
+            <param name="activityId"></param>
+            <param name="model"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlowInstances.WorkFlowTaskController.GetFlowInstanceInfo(System.Double)">
+            <summary>
+            获取工作流任务信息
+            </summary>
+            <param name="instanceId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlowInstances.WorkFlowTaskController.GetWorkFlowExecutionLogs(System.String,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Threading.CancellationToken)">
+            <summary>
+            获取工作流执行日志
+            </summary>
+            <param name="instanceId"></param>
+            <param name="page"></param>
+            <param name="pageSize"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlowInstances.WorkFlowTaskController.GetFlowTaskInfo(System.Double)">
+            <summary>
+            获取工作流任务信息
+            </summary>
+            <param name="taskId">任务ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlowInstances.WorkFlowTaskController.GetFlowTaskInfoWithData(System.Double)">
+            <summary>
+            获取工作流任务信息
+            </summary>
+            <param name="taskId">任务ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlowInstances.WorkFlowTaskController.LoadAllActivityData(System.Collections.Generic.List{SIE.WorkFlow.Models.WorkflowPanelInfo},Elsa.Models.WorkflowInstance)">
+            <summary>
+            加载全部节点数据
+            </summary>
+            <param name="workflowPanelInfoList"></param>
+            <param name="workflowInstance"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlowInstances.WorkFlowTaskController.AddPanelsInfo(SIE.WorkFlow.Models.FlowTaskInfo,SIE.WorkFlow.Base.FlowInstances.FlowTask,SIE.WorkFlow.Base.FlowInstances.FlowInstance,SIE.WorkFlow.Base.FlowDefinitions.FlowDefinition,Elsa.Models.WorkflowInstance,System.Boolean)">
+            <summary>
+            添加节点信息
+            </summary>
+            <param name="result"></param>
+            <param name="currentFlowTask"></param>
+            <param name="flowInstance"></param>
+            <param name="flowDefinition"></param>
+            <param name="workflowInstance"></param>
+            <param name="ignoreExcutedAudit">是否过滤掉已执行的审核节点</param>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlowInstances.WorkFlowTaskController.AddExecutingPanelInfoForReadonlyView(Elsa.Services.Models.IWorkflowBlueprint,Elsa.Models.WorkflowInstance,System.Collections.Generic.List{SIE.WorkFlow.Models.WorkflowPanelInfo})">
+            <summary>
+            添加正在执行的节点信息（查看视图）
+            </summary>
+            <param name="workflowBlueprint"></param>
+            <param name="workflowInstance"></param>
+            <param name="workflowPanelInfoList"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlowInstances.WorkFlowTaskController.AddExecutingPanelInfo(SIE.WorkFlow.Models.FlowTaskInfo,SIE.WorkFlow.Base.FlowInstances.FlowTask,Elsa.Models.WorkflowInstance,Elsa.Services.Models.IWorkflowBlueprint,System.Collections.Generic.List{SIE.WorkFlow.Models.WorkflowPanelInfo})">
+            <summary>
+            添加正在执行的节点信息
+            </summary>
+            <param name="result"></param>
+            <param name="currentFlowTask"></param>
+            <param name="workflowInstance"></param>
+            <param name="workflowBlueprint"></param>
+            <param name="workflowPanelInfoList"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlowInstances.WorkFlowTaskController.AddExecutedPanelInfo(SIE.WorkFlow.Base.FlowInstances.FlowInstance,Elsa.Models.WorkflowInstance,Elsa.Services.Models.IWorkflowBlueprint,System.Collections.Generic.List{SIE.WorkFlow.Models.WorkflowPanelInfo},System.Collections.Generic.List{SIE.WorkFlow.Base.FlowInstances.FlowProcessRecord},System.Boolean)">
+            <summary>
+            添加已执行的节点信息
+            </summary>
+            <param name="flowInstance"></param>
+            <param name="workflowInstance"></param>
+            <param name="workflowBlueprint"></param>
+            <param name="workflowPanelInfoList"></param>
+            <param name="processRecords"></param>
+            <param name="ignoreExcutedAudit">是否过滤掉已执行的审核节点</param>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlowInstances.WorkFlowTaskController.SetWorkflowPanelDisplayOrder(System.Collections.Generic.List{SIE.WorkFlow.Models.WorkflowPanelInfo},SIE.WorkFlow.Base.FlowInstances.FlowInstance,Elsa.Models.WorkflowInstance)">
+            <summary>
+            自定义设置顺序
+            </summary>
+            <param name="workflowPanelInfoList"></param>
+            <param name="flowInstance"></param>
+            <param name="workflowInstance"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlowInstances.WorkFlowTaskController.GetActivityEntity(System.String,System.Nullable{System.Double},System.String,System.String)">
+            <summary>
+            获取节点相关实体
+            </summary>
+            <param name="variablesJson"></param>
+            <param name="flowTaskId"></param>
+            <param name="activityType"></param>
+            <param name="entityTypeName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlowInstances.WorkFlowTaskController.GetActivityEntityList(System.String,System.String)">
+            <summary>
+            获取节点相关实体
+            </summary>
+            <param name="variablesJson"></param>
+            <param name="activityType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlowInstances.WorkFlowTaskController.FinishFlowTask(System.Double)">
+            <summary>
+            关闭任务
+            </summary>
+            <param name="flowTaskId"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlowInstances.WorkFlowTaskController.FinishToDoOrDoingFlowTaskInActivitiId(System.Double,System.String)">
+            <summary>
+            关闭节点所有的任务（待处理或处理中的任务）
+            </summary>
+            <param name="flowInstanceId"></param>
+            <param name="activityId"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlowInstances.WorkFlowTaskController.Update(System.Double,SIE.WorkFlow.Base.FlowInstances.WorkFlowHandleStatus)">
+            <summary>
+            修改状态
+            </summary>
+            <param name="flowTaskId"></param>
+            <param name="status"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlowInstances.WorkFlowTaskController.Update(System.Double,System.String,SIE.WorkFlow.Base.FlowInstances.WorkFlowHandleStatus)">
+            <summary>
+            修改状态
+            </summary>
+            <param name="flowInstanceId"></param>
+            <param name="activityId"></param>
+            <param name="status"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlowInstances.WorkFlowTaskController.SetFlowTaskDoing(System.Double)">
+            <summary>
+            设置工作流任务处理状态为进行中
+            </summary>
+            <param name="taskId"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlowInstances.WorkFlowTaskController.Save(SIE.WorkFlow.Base.FlowInstances.FlowTask)">
+            <summary>
+            保存
+            </summary>
+            <param name="flowTask"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlowInstances.WorkFlowTaskController.ExistToDoOrDoingTask(System.Double,System.String,System.Nullable{System.Double})">
+            <summary>
+            是否存在【待处理】或【处理中】的任务
+            </summary>
+            <param name="flowInstanceId"></param>
+            <param name="activityId"></param>
+            <param name="besidesFlowTaskId">除了某个任务</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlowInstances.WorkFlowTaskController.FlowTaskCount(System.Double,System.String,System.Nullable{System.Double},SIE.WorkFlow.Base.FlowInstances.WorkFlowHandleStatus[])">
+            <summary>
+            流程任务数量
+            </summary>
+            <param name="flowInstanceId"></param>
+            <param name="activityId"></param>
+            <param name="besidesFlowTaskId"></param>
+            <param name="workFlowHandleStatuses"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.WorkFlow.WorkFlowInstances.ActivityOrderInfo">
+            <summary>
+            节点顺序信息
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.WorkFlowInstances.ActivityOrderInfo.ActivityId">
+            <summary>
+            节点ID
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.WorkFlowInstances.ActivityOrderInfo.Order">
+            <summary>
+            顺序
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.WorkFlows.IWorkFlowCategoryRule">
+            <summary>
+            工作流分类验证规则基类
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlows.IWorkFlowCategoryRule.Verify(Elsa.Models.WorkflowDefinition)">
+            <summary>
+            验证
+            </summary>
+            <param name="workflowDefinition"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.WorkFlow.WorkFlows.IWorkFlowCategoryValidRule`1">
+            <summary>
+            工作流分类验证规则
+            </summary>
+            <typeparam name="T">工作流分类类型</typeparam>
+        </member>
+        <member name="T:SIE.WorkFlow.WorkFlows.PublishedWorkflowDefinitionIdSpecification">
+            <summary>
+            查询已发布工作流定义
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.WorkFlows.PublishedWorkflowDefinitionIdSpecification.IsPublished">
+            <summary>
+            是否发布
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlows.PublishedWorkflowDefinitionIdSpecification.#ctor(System.String,System.Boolean)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="id"></param>
+            <param name="isPublished"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlows.PublishedWorkflowDefinitionIdSpecification.ToExpression">
+            <summary>
+            表达式
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.WorkFlow.WorkFlows.WorkFlowCategoryRuleProvider">
+            <summary>
+            工作流规则提供者
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.WorkFlows.WorkFlowCategoryRuleProvider._dicRule">
+            <summary>
+            工作流分类规则字典
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlows.WorkFlowCategoryRuleProvider.GetRule(System.String)">
+            <summary>
+            获取规则
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+            <exception cref="T:SIE.Domain.Validation.ValidationException"></exception>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlows.WorkFlowCategoryRuleProvider.InitRuleDic">
+            <summary>
+            初始化分类规则字典
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.WorkFlows.WorkFlowDefinitionController">
+            <summary>
+            工作流定义控制器
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.WorkFlows.WorkFlowDefinitionController._serviceProvider">
+            <summary>
+            MVC依赖注入容器
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.WorkFlows.WorkFlowDefinitionController._flowDefinitionController">
+            <summary>
+            工作流定义基础数据控制器
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.WorkFlows.WorkFlowDefinitionController._workFlowCategoryRuleProvider">
+            <summary>
+            工作流分类规则提供者
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlows.WorkFlowDefinitionController.#ctor(System.IServiceProvider,SIE.WorkFlow.Base.FlowDefinitions.FlowDefinitionController,SIE.WorkFlow.WorkFlows.WorkFlowCategoryRuleProvider)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="serviceProvider"></param>
+            <param name="flowDefinitionController"></param>
+            <param name="workFlowCategoryRuleProvider"></param>
+        </member>
+        <member name="F:SIE.WorkFlow.WorkFlows.WorkFlowDefinitionController.workflowDefinitionStore">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.WorkFlows.WorkFlowDefinitionController._workflowDefinitionStore">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlows.WorkFlowDefinitionController.GetWorkflowDefinition(System.String)">
+            <summary>
+            查找工作流定义
+            </summary>
+            <param name="workflowDefinitionId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlows.WorkFlowDefinitionController.GetFlowDefinitionVersion(System.Double)">
+            <summary>
+            获取历史版本
+            </summary>
+            <param name="flowDefinitionId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlows.WorkFlowDefinitionController.EnableWorkFlowDefs(System.Double[])">
+            <summary>
+            启用工作流定义
+            </summary>
+            <param name="defIds"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlows.WorkFlowDefinitionController.GetWorkflowVersionCount(System.String)">
+            <summary>
+            获取工作流定义已发布数量
+            </summary>
+            <param name="defId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlows.WorkFlowDefinitionController.CreateNewWorkFlowDefinition(System.String)">
+            <summary>
+            创建引擎内部工作流定义
+            </summary>
+            <param name="definitionId"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.WorkFlows.WorkFlowDefinitionController.DeleteFlowDefinitionValidation(SIE.WorkFlow.Base.FlowDefinitions.FlowDefinition)">
+            <summary>
+            删除工作流定义验证
+            </summary>
+            <param name="def"></param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,1215 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Web.Tech</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Web.Tech.EntityPropertyViewMetaExtension">
+            <summary>
+            视图视图元数据扩展类
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.EntityPropertyViewMetaExtension.UseEnterpriseEquipmentResourceEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig})">
+            <summary>
+            生产资源编辑器：企业模型、设备台账
+            排除自定义类型的生产资源
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">wpf实体属性视图元数据（参数）</param>
+            <param name="action">委托</param>
+            <returns>wpf实体属性视图元数据（返回）</returns>
+        </member>
+        <member name="T:SIE.Web.Tech.Common.Commands.ImportDataCommonCommand">
+            <summary>
+            通用数据导入命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Common.Commands.ImportDataCommonCommand.Excute(SIE.Web.Common.Import.Commands.ImportViewArgs,System.String)">
+            <summary>
+            重载执行方法，添加自定义下载模板方法
+            </summary>
+            <param name="importViewArgs"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Tech.Common.Commands.ImportDataCommonCommand.ImportData(SIE.Web.Common.Import.Commands.ImportViewArgs,System.String,System.Boolean)">
+            <summary>
+            导入处理逻辑
+            </summary>
+            <param name="args">视图参数</param>
+            <param name="sheetName">excel工作薄sheet的名称</param>
+            <param name="isFirstRowColumn">第一行是否是DataTable的列名</param>
+            <returns>导入结果信息</returns>
+        </member>
+        <member name="M:SIE.Web.Tech.Common.Commands.ImportDataCommonCommand.DownloadTemplate(SIE.Web.Common.Import.Commands.ImportViewArgs,System.String)">
+            <summary>
+            自定义下载模板方法
+            </summary>
+            <param name="importViewArgs"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Tech.Common.Commands.ImportDataCommonCommand.SetTemplateFileName(SIE.Web.Common.Import.Commands.ImportViewArgs,System.String)">
+            <summary>
+            设置模板文件信息
+            </summary>
+            <param name="importViewArgs"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Tech.Common.Commands.TemplatePathInfo">
+            <summary>
+            模板文件信息
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Tech.Common.Commands.TemplatePathInfo.FullPath">
+            <summary>
+            路径
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Tech.Common.Commands.TemplatePathInfo.FileName">
+            <summary>
+            文件名
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Tech.Common.Commands.ImportDataHandleMES">
+            <summary>
+            MES导入处理
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Common.Commands.ImportDataHandleMES.ValidColumnNames(System.Data.DataTable,System.Collections.Generic.List{System.String})">
+            <summary>
+            重载文档列校验，添加列名比较
+            </summary>
+            <param name="dt"></param>
+            <param name="columnList"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Tech.TechMenuInit">
+            <summary>
+            菜单初始化
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.TechMenuInit.GetMenuDtos">
+            <summary>
+            获取菜单列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Tech.Module">
+            <summary>
+            模块配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化
+            </summary>
+            <param name="app">程序</param>
+        </member>
+        <member name="M:SIE.Web.Tech.Module.App_ModuleOperations(System.Object,System.EventArgs)">
+            <summary>
+            配置菜单
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="T:SIE.Web.Tech.Processs.Commands.ProcessCollectStepMoveDownCommand">
+            <summary>
+            下移
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.Commands.ProcessCollectStepMoveDownCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行方法
+            </summary>
+            <param name="args">视图参数</param>
+            <param name="scope">entityType</param>
+            <returns>true</returns>
+        </member>
+        <member name="T:SIE.Web.Tech.Processs.Commands.ProcessCollectStepMoveUpCommand">
+            <summary>
+            上移
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.Commands.ProcessCollectStepMoveUpCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行方法
+            </summary>
+            <param name="args">视图参数</param>
+            <param name="scope">entityType</param>
+            <returns>true</returns>
+        </member>
+        <member name="T:SIE.Web.Tech.Processs.Commands.ProcessCollectStepMoveTopCommand">
+            <summary>
+            置顶
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.Commands.ProcessCollectStepMoveTopCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行方法
+            </summary>
+            <param name="args">视图参数</param>
+            <param name="scope">entityType</param>
+            <returns>true</returns>
+        </member>
+        <member name="T:SIE.Web.Tech.Processs.Commands.ProcessCollectStepMoveBottomCommand">
+            <summary>
+            置底
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.Commands.ProcessCollectStepMoveBottomCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行方法
+            </summary>
+            <param name="args">视图参数</param>
+            <param name="scope">entityType</param>
+            <returns>true</returns>
+        </member>
+        <member name="T:SIE.Web.Tech.Processs.Commands.ProcessDefectCommand">
+            <summary>
+            工序缺陷添加命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.Commands.ProcessDefectCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            工序缺陷添加命令执行方法
+            </summary>
+            <param name="args">视图参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.Tech.Processs.Commands.ProcessEmployeeDLTemplateCommand">
+            <summary>
+            下载模板
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.Commands.ProcessEmployeeDLTemplateCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.Commands.ProcessEmployeeImportCommand.OnSave(System.Collections.Generic.IList{SIE.Common.Import.RowData})">
+            <summary>
+            保存
+            </summary>
+            <param name="batch"></param>
+        </member>
+        <member name="T:SIE.Web.Tech.Processs.Commands.ProcessImportCommand">
+            <summary>
+            导入工序
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.Commands.ProcessImportCommand.OnRowDataRead(SIE.Common.Import.RowData,SIE.Common.Import.CacheData)">
+            <summary>
+            行数据读取, 默认按视图配置把数据读取后，还可以进行自定义处理
+            </summary>
+            <param name="data">行数据</param>
+            <param name="cache">缓存数据</param>
+        </member>
+        <member name="T:SIE.Web.Tech.Processs.Commands.ProcessPackingUnitCommand">
+            <summary>
+            工序包装单位命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.Commands.ProcessPackingUnitCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            工序包装单位命令执行方法
+            </summary>
+            <param name="args">视图参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.Tech.Processs.Commands.ProcessSkillCommand">
+            <summary>
+            工序技能命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.Commands.ProcessSkillCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            工序技能命令执行方法
+            </summary>
+            <param name="args">视图参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.Commands.SaveProcessCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            工序保存命令
+            </summary>
+            <param name="args">数据</param>
+            <param name="scope">scope</param>
+            <returns></returns>
+            <remarks>在添加修改工序命令中调用</remarks>
+        </member>
+        <member name="T:SIE.Web.Tech.Processs.Commands.SelectProcessCommand">
+            <summary>
+            选择工序命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.Commands.SelectProcessCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            选择工序命令执行方法
+            </summary>
+            <param name="args">视图参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.Commands.SelectProcessUserGroupCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            选择工序命令执行方法
+            </summary>
+            <param name="args">视图参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.Tech.Processs.ProcessCollectStepViewConfig">
+            <summary>
+            工序采集步骤视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Tech.Processs.ProcessCollectStepViewConfig.ProcessCollectStepView">
+            <summary>
+            工艺路线维护工序的采集步骤视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.ProcessCollectStepViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.ProcessCollectStepViewConfig.ConfigProcessCollectStepView">
+            <summary>
+            配置工艺路线维护工序的采集步骤视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.ProcessCollectStepViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.ProcessCollectStepViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Tech.Processs.ProcessDefectViewConfig">
+            <summary>
+            工序缺陷视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Tech.Processs.ProcessDefectViewConfig.SelProcessDefectViewGroup">
+            <summary>
+            工艺路线新增工序ViewGroup
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.ProcessDefectViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.ProcessDefectViewConfig.SelProcessDefectView">
+            <summary>
+            工艺路线新增工序视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.ProcessDefectViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.ProcessDefectViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.ProcessDefectViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.ProcessDefectViewConfig.ConfigSelectionView">
+            <summary>
+            配置下拉视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Tech.Processs.ProcessDurationCriteriaViewConfig">
+            <summary>
+            工序加工时长查询条件视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.ProcessDurationCriteriaViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Tech.Processs.ProcessDurationViewConfig">
+            <summary>
+            工序加工时长视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.ProcessDurationViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.ProcessDurationViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Tech.Processs.ProcessEmployeeViewConfig">
+            <summary>
+            工序与用户视图
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Tech.Processs.ProcessEmployeeViewConfig.EmplProcessView">
+            <summary>
+            员工维护ViewGroup
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.ProcessEmployeeViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.ProcessEmployeeViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.ProcessEmployeeViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.ProcessEmployeeViewConfig.EmplProcessTabView">
+            <summary>
+            员工维护 - 工序页签视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Tech.Processs.EmployeeExtViewConfig">
+            <summary>
+            员工维护 - 工序页签
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.EmployeeExtViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Tech.Processs.ProcessPackingUnitViewConfig">
+            <summary>
+            工序包装单位视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.ProcessPackingUnitViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.ProcessPackingUnitViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.ProcessPackingUnitViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.ProcessPackingUnitViewConfig.ConfigSelectionView">
+            <summary>
+            配置下拉视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Tech.Processs.ProcessParameterViewConfig">
+            <summary>
+            工序参数视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Tech.Processs.ProcessParameterViewConfig.ProcessParameterView">
+            <summary>
+            工艺路线维护工序的工序参数视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.ProcessParameterViewConfig.ConfigView">
+            <summary>
+            配置默认视图 
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.ProcessParameterViewConfig.ConfigProcessParameterView">
+            <summary>
+            配置工序参数视图（工艺连续维护工序使用）
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.ProcessParameterViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.ProcessParameterViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Tech.Processs.ProcessSkillViewConfig">
+            <summary>
+            工序技能
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.ProcessSkillViewConfig.ConfigView">
+            <summary>
+            视图函数
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.ProcessSkillViewConfig.ConfigListView">
+            <summary>
+            列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.ProcessSkillViewConfig.ReadOnlyView">
+            <summary>
+            只读列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.ProcessSkillViewConfig.ConfigQueryView">
+            <summary>
+            查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Tech.Processs.ProcessViewConfig">
+            <summary>
+            工序视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Tech.Processs.ProcessViewConfig.ProcessRoutingDataViewGroup">
+            <summary>
+            工艺路线属性视图
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Tech.Processs.ProcessViewConfig._codeHelpInfo">
+            <summary>
+            编码帮助信息
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Tech.Processs.ProcessViewConfig._productFamilyLabel">
+            <summary>
+            产品族编码的Label
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.ProcessViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.ProcessViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.ProcessViewConfig.ProcessRoutingDataView">
+            <summary>
+            工序工艺路线属性页面
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.ProcessViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.ProcessViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.ProcessViewConfig.ConfigSelectionView">
+            <summary>
+            下拉视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.ProcessViewConfig.PackingUnitProcess">
+            <summary>
+            工单包装单位选择工序视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.ProcessViewConfig.ConfigImportView">
+            <summary>
+            配置导入视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Tech.Processs.WorkStepViewConfig">
+            <summary>
+            工步视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Tech.Processs.WorkStepViewConfig.WorkStepView">
+            <summary>
+            工艺路线维护工序的工步视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.WorkStepViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.WorkStepViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Processs.WorkStepViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.Tech.Routings.Commands.AddRouting">
+            <summary>
+            添加工艺路线命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Routings.Commands.AddRouting.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            添加工艺路线命令执行方法
+            </summary>
+            <param name="args">视图参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.Tech.Routings.Commands.AddRoutingVersion">
+            <summary>
+            添加工艺路线版本命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Routings.Commands.AddRoutingVersion.Excute(System.Int32,System.String)">
+            <summary>
+            添加工艺路线版本命令执行方法
+            </summary>
+            <param name="args">视图参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.Tech.Routings.Commands.DeleteProcess">
+            <summary>
+            删除工艺路线命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Routings.Commands.DeleteProcess.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            删除工艺路线命令执行方法
+            </summary>
+            <param name="args">视图参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.Tech.Routings.Commands.DeleteRouting">
+            <summary>
+            删除工艺路线命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Routings.Commands.DeleteRouting.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            删除工艺路线命令执行方法
+            </summary>
+            <param name="args">视图参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.Tech.Routings.Commands.DeleteRoutingVersion">
+            <summary>
+            工艺路线版本删除命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Routings.Commands.DeleteRoutingVersion.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            工艺路线版本删除命令执行方法
+            </summary>
+            <param name="args">视图参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.Tech.Routings.Commands.EditRouting">
+            <summary>
+            编辑工艺路线命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Routings.Commands.EditRouting.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            编辑工艺路线命令执行方法
+            </summary>
+            <param name="args">视图参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.Tech.Routings.Commands.PublishCommand">
+            <summary>
+            工艺路线发布命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Routings.Commands.PublishCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            工艺路线发布命令执行方法
+            </summary>
+            <param name="args">视图参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:SIE.Web.Tech.Routings.Commands.SaveProcess.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            工艺路线工序弹框保存命令
+            </summary>
+            <param name="args">数据</param>
+            <param name="scope">scope</param>
+            <returns></returns>
+            <remarks>在添加修改工序命令中调用</remarks>
+        </member>
+        <member name="T:SIE.Web.Tech.Routings.Commands.SaveRoutingCommand">
+            <summary>
+            保存工艺路线
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Routings.Commands.SaveRoutingCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            保存工艺路线执行方法
+            </summary>
+            <param name="args">视图参数</param>
+            <param name="scope">作用域</param>
+            <returns>保存结果</returns>
+        </member>
+        <member name="T:SIE.Web.Tech.Routings.Editors.RoutingEditorConfig">
+            <summary>
+            工艺路线显示编辑器配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Routings.Editors.RoutingEditorConfig.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Tech.Routings.Editors.RoutingEditorConfig.Canvas">
+            <summary>
+            画布div id，所有编辑器该属性必须指定且不能重复
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Tech.Routings.Editors.RoutingEditorConfig.Property">
+            <summary>
+            编辑器绑定属性名称，即当前实体对象的工艺路线布局Id，必须制定
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Routings.Editors.RoutingEditorConfig.ToJson(SIE.Web.Json.LiteJsonWriter)">
+            <summary>
+            序列化
+            </summary>
+            <param name="json">json对象</param>
+        </member>
+        <member name="T:SIE.Web.Tech.Routings.ProcessBomViewConfig">
+            <summary>
+            工艺路线 视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Tech.Routings.ProcessBomViewConfig.ProcessBomViewGroup">
+            <summary>
+            工序bom视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Routings.ProcessBomViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Routings.ProcessBomViewConfig.ProcessBomConfigView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Tech.Routings.RoutingProcessViewConfig">
+            <summary>
+            工艺路线工序视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Routings.RoutingProcessViewConfig.ConfigSelectionView">
+            <summary>
+            下拉列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Tech.Routings.RoutingVersionCopyViewModel">
+            <summary>
+            工艺路线版本复制视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Routings.RoutingVersionCopyViewModel.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Tech.Routings.RoutingVersionCopyViewModel.IsCopyBomProperty">
+            <summary>
+            是否复制工序BOM
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Tech.Routings.RoutingVersionCopyViewModel.IsCopyBom">
+            <summary>
+            是否复制工序Bom
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Tech.Routings.RoutingVersionCopyViewModel.IsCopyActivityPropertyProperty">
+            <summary>
+            是否复制流程属性
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Tech.Routings.RoutingVersionCopyViewModel.IsCopyActivityProperty">
+            <summary>
+            是否复制流程属性
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Tech.Routings.RoutingVersionCopyViewModel.IsCopyFixtureProperty">
+            <summary>
+            是否复制工治具需求
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Tech.Routings.RoutingVersionCopyViewModel.IsCopyFixture">
+            <summary>
+            是否复制工治具需求
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Tech.Routings.RoutingVersionCopyViewModelViewConfig">
+            <summary>
+            工艺路线版本复制视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Routings.RoutingVersionCopyViewModelViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Routings.RoutingVersionCopyViewModelViewConfig.ConfigDetailsView">
+            <summary>
+            明细视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Tech.Routings.RoutingVersionViewConfig">
+            <summary>
+            工艺路线版本视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Routings.RoutingVersionViewConfig.ConfigListView">
+            <summary>
+            列表配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Routings.RoutingVersionViewConfig.ConfigDetailsView">
+            <summary>
+            表单配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Routings.RoutingVersionViewConfig.ConfigSelectionView">
+            <summary>
+            下拉配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Tech.Routings.RoutingViewConfig">
+            <summary>
+            工艺路线 视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Routings.RoutingViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Routings.RoutingViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Routings.RoutingViewConfig.ConfigDetailsView">
+            <summary>
+            明细视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Routings.RoutingViewConfig.ConfigQueryView">
+            <summary>
+            查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Routings.RoutingViewConfig.ConfigSelectionView">
+            <summary>
+            选择视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Tech.Routings.TechDataQueryer">
+            <summary>
+            工艺路线相关 DataQueryer
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Routings.TechDataQueryer.GetProcessInfo(System.Collections.Generic.List{System.Double})">
+            <summary>
+            获取工序参数列表
+            DesignCanvas.js调用
+            </summary>
+            <param name="processIds">工序ID集合</param>
+            <returns>工序参数列表</returns>
+        </member>
+        <member name="M:SIE.Web.Tech.Routings.TechDataQueryer.GetBoms(System.Collections.Generic.List{System.Double})">
+            <summary>
+            获取物料集合
+            ProcessBomControl.js调用
+            </summary>
+            <param name="itemIds">物料ID集合</param>
+            <returns>物料集合</returns>
+        </member>
+        <member name="M:SIE.Web.Tech.Routings.TechDataQueryer.GetItemsBySmallCategoryId(System.Collections.Generic.List{System.Double})">
+            <summary>
+            根据分类id获取物料集合
+            SelectCategoryCommand.js调用
+            </summary>
+            <param name="smallCategoryIds">分类ID集合</param>
+            <returns>物料集合</returns>
+        </member>
+        <member name="M:SIE.Web.Tech.Routings.TechDataQueryer.GetProcessTreeInfos">
+            <summary>
+            获取工序信息
+            ProcessTreeControl.js调用
+            </summary>
+            <returns>产品族分类信息</returns>
+        </member>
+        <member name="M:SIE.Web.Tech.Routings.TechDataQueryer.GetRoutingTreeInfos">
+            <summary>
+            获取工艺路线信息
+            RoutingTreeControl.js调用
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Tech.Routings.TechDataQueryer.GetRoutingTreeInfosByKeyword(System.String)">
+            <summary>
+            获取树型工艺路线信息
+            </summary>
+            <param name="keyword">关键字</param>
+            <returns>树型工艺路线信息</returns>
+        </member>
+        <member name="M:SIE.Web.Tech.Routings.TechDataQueryer.GetRoutingLayout(System.Double)">
+            <summary>
+            获取工艺路线版本布局
+            RoutingDesignControl.js调用
+            </summary>
+            <param name="layoutId">工艺路线布局id</param>
+            <returns>布局xml</returns>
+        </member>
+        <member name="M:SIE.Web.Tech.Routings.TechDataQueryer.SetDefault(System.Double,System.Double)">
+            <summary>
+            设置默认工艺路线版本
+            RoutingTreeControl.js调用
+            </summary>
+            <param name="routingId">工艺路线ID</param>
+            <param name="versionId">默认工艺路线版本id</param>
+        </member>
+        <member name="M:SIE.Web.Tech.Routings.TechDataQueryer.PraseRoutingVersion(SIE.Tech.Routings.ViewModels.CopyVersionInfo,System.Int32,System.String)">
+            <summary>
+            粘贴后新增的工艺路线版本
+            </summary>
+            <param name="copyInfo">被复制数据</param>
+            <param name="maxVersionNum">最大版本数</param>
+            <param name="xml">被复制的xml</param>
+        </member>
+        <member name="M:SIE.Web.Tech.Routings.TechDataQueryer.CheckProcessChanged(System.String)">
+            <summary>
+            校验工序是否发生变更
+            </summary>
+            <param name="xml">工艺路线版本</param>
+        </member>
+        <member name="M:SIE.Web.Tech.Routings.TechDataQueryer.LoadFromXmlString(System.String,System.Boolean)">
+            <summary>
+            加载xml到容器
+            </summary>
+            <param name="xml">xml</param>
+            <param name="isCopying">复制命令触发时为true</param>
+        </member>
+        <member name="M:SIE.Web.Tech.Routings.TechDataQueryer.CreateModel(SIE.Tech.Routings.Technologys.ContainerModel)">
+            <summary>
+            创建新的版本
+            </summary>
+            <param name="model">设计容器</param>
+        </member>
+        <member name="M:SIE.Web.Tech.Routings.TechDataQueryer.ProcessCopyRoutingVersion(SIE.Tech.Routings.Technologys.ContainerModel,SIE.Tech.Routings.ViewModels.CopyVersionInfo)">
+            <summary>
+            根据复制选项处理复制的工艺路线版本
+            </summary>      
+        </member>
+        <member name="M:SIE.Web.Tech.Routings.TechDataQueryer.GetProcessById(System.Double)">
+            <summary>
+            获取工序
+            </summary>
+            <param name="processId">工序Id</param>
+            <returns>工序</returns>
+        </member>
+        <member name="M:SIE.Web.Tech.Routings.TechDataQueryer.GetAddRoutingVersionInfo(System.Int32)">
+            <summary>
+            获取新增工艺路线信息
+            </summary>
+            <param name="maxVersionNum">当前最大版本数</param>
+            <returns>新增工艺路线信息</returns>
+        </member>
+        <member name="M:SIE.Web.Tech.Routings.TechDataQueryer.GetVictoryStandards">
+            <summary>
+            获取胜制方案
+            </summary>
+            <returns>胜制方案列表</returns>
+        </member>
+        <member name="M:SIE.Web.Tech.Routings.TechDataQueryer.GetTransferTypes">
+            <summary>
+            获取工序交接类型
+            </summary>
+            <returns>工序交接类型</returns>
+        </member>
+        <member name="T:SIE.Web.Tech.RoutingTemplate">
+            <summary>
+            工艺路线模板
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.RoutingTemplate.DefineBlocks">
+            <summary>
+            定义块
+            </summary>
+            <returns>聚合块</returns>
+        </member>
+        <member name="T:SIE.Web.Tech.Stations.Commands.StationEquipmentSetMasterCommand">
+            <summary>
+            设置主设备
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Stations.Commands.StationEquipmentSetMasterCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.Tech.Stations.Commands.StationImportCommand">
+            <summary>
+            工位导入
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Stations.Commands.StationImportCommand.GetImportCompleted">
+            <summary>
+            导入完成回调方法
+            </summary>
+            <returns>导入结果</returns>
+        </member>
+        <member name="M:SIE.Web.Tech.Stations.Commands.StationImportCommand.GetImportHandleType">
+            <summary>
+            获取导入处理类型
+            </summary>
+            <returns>工位物料导入处理类</returns>
+        </member>
+        <member name="T:SIE.Web.Tech.Stations.Commands.StationItemImportCommand">
+            <summary>
+            工位物料导入
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Stations.Commands.StationItemImportCommand.GetImportCompleted">
+            <summary>
+            导入完成回调方法
+            </summary>
+            <returns>导入结果</returns>
+        </member>
+        <member name="M:SIE.Web.Tech.Stations.Commands.StationItemImportCommand.GetImportHandleType">
+            <summary>
+            获取导入处理类型
+            </summary>
+            <returns>工位物料导入处理类</returns>
+        </member>
+        <member name="T:SIE.Web.Tech.Stations.Commands.StationProcessImportCommand">
+            <summary>
+            工位工序导入命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Stations.Commands.StationProcessImportCommand.GetImportCompleted">
+            <summary>
+            导入完成回调方法
+            </summary>
+            <returns>导入结果</returns>
+        </member>
+        <member name="M:SIE.Web.Tech.Stations.Commands.StationProcessImportCommand.GetImportHandleType">
+            <summary>
+            获取导入处理类型
+            </summary>
+            <returns>工位工序导入处理类</returns>
+        </member>
+        <member name="T:SIE.Web.Tech.Stations.Configs.DirectWeightConfigValueViewConfig">
+            <summary>
+            是否称重配置值视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Stations.Configs.DirectWeightConfigValueViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Tech.Stations.Configs.DirectWipPackingConfigValueViewConfig">
+            <summary>
+            包装采集配置值视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Stations.Configs.DirectWipPackingConfigValueViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Tech.Stations.Configs.NewPackingPrintModeConfigValueViewConfig">
+            <summary>
+            新包装条码打印方式配置值视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Stations.Configs.NewPackingPrintModeConfigValueViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Tech.Stations.Configs.DirectPackingPrintModeConfigValueViewConfig">
+            <summary>
+            包装条码打印方式配置值视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Stations.Configs.DirectPackingPrintModeConfigValueViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Tech.Stations.Configs.DirectWipPackingBillConfigValueViewConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Stations.Configs.DirectWipPackingBillConfigValueViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Tech.Stations.StationEquipmentViewConfig">
+            <summary>
+            工位设备视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Stations.StationEquipmentViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Tech.Stations.StationItemViewConfig">
+            <summary>
+            工位物料视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Stations.StationItemViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Stations.StationItemViewConfig.ConfigImportView">
+            <summary>
+            导入模板
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Tech.Stations.StationProcessViewConfig">
+            <summary>
+            工位工序视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Stations.StationProcessViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Stations.StationProcessViewConfig.ConfigImportView">
+            <summary>
+            配置导入视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Tech.Stations.StationViewConfig">
+            <summary>
+            工位视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Stations.StationViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Stations.StationViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Stations.StationViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.Stations.StationViewConfig.ConfigImportView">
+            <summary>
+            配置导入视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Tech.VictoryStandards.VictoryStandardDetailViewConfig">
+            <summary>
+            胜局标准-界面
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.VictoryStandards.VictoryStandardDetailViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Tech.VictoryStandards.VictoryStandardViewConfig">
+            <summary>
+            胜制方案-界面
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.VictoryStandards.VictoryStandardViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.VictoryStandards.VictoryStandardViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Tech.VictoryStandards.VictoryStandardViewConfig.ConfigSelectionView">
+             <summary>
+            配置下拉列表
+             </summary>
+        </member>
+        <member name="T:SIE.Web.MES.WorkOrders.Commands.ImportRouting">
+            <summary>
+            工艺路线导入
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.WorkOrders.Commands.ImportRouting.Excute(SIE.Web.Common.Import.Commands.ImportViewArgs,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="importViewArgs"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.MES.WorkOrders.Commands.ImportRouting.GetImportHandleType">
+            <summary>
+            处理器
+            </summary>
+            <returns>类型</returns>
+        </member>
+        <member name="M:SIE.Web.MES.WorkOrders.Commands.ImportRouting.SetTemplateFileName(SIE.Web.Common.Import.Commands.ImportViewArgs,System.String)">
+            <summary>
+            设置模板文件信息
+            </summary>
+            <param name="importViewArgs">importViewArgs</param>
+            <param name="scope">scope</param>
+            <returns>模板信息</returns>
+        </member>
+    </members>
+</doc>

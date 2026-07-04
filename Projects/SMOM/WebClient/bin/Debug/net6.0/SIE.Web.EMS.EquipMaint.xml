@@ -1,0 +1,1996 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Web.EMS.EquipMaint</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Web.EMS.EquipMaint.Common.Commands.ImportDataCommonCommand">
+            <summary>
+            导入公共方法
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Common.Commands.ImportDataCommonCommand.Excute(SIE.Web.Common.Import.Commands.ImportViewArgs,System.String)">
+            <summary>
+            重载执行方法，添加自定义下载模板方法
+            </summary>
+            <param name="importViewArgs"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Common.Commands.ImportDataCommonCommand.ImportData(SIE.Web.Common.Import.Commands.ImportViewArgs,System.String,System.Boolean)">
+            <summary>
+            导入处理逻辑
+            </summary>
+            <param name="args">视图参数</param>
+            <param name="sheetName">excel工作薄sheet的名称</param>
+            <param name="isFirstRowColumn">第一行是否是DataTable的列名</param>
+            <returns>导入结果信息</returns>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Common.Commands.ImportDataCommonCommand.DownloadTemplate(SIE.Web.Common.Import.Commands.ImportViewArgs,System.String)">
+            <summary>
+            自定义下载模板方法
+            </summary>
+            <param name="importViewArgs"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Common.Commands.ImportDataCommonCommand.SetTemplateFileName(SIE.Web.Common.Import.Commands.ImportViewArgs,System.String)">
+            <summary>
+            设置模板文件信息
+            </summary>
+            <param name="importViewArgs"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Common.Commands.ImportDataCommonCommand.GetImportCompleted">
+            <summary>
+            导入完成后处理
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Common.Commands.TemplatePathInfo">
+            <summary>
+            模板文件信息
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Common.Commands.TemplatePathInfo.FullPath">
+            <summary>
+            路径 
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Common.Commands.TemplatePathInfo.FileName">
+            <summary>
+            文件名
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Common.Commands.ImportDataHandleQms">
+            <summary>
+            销售订单导入处理
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Common.Commands.ImportDataHandleQms.#ctor(System.Double)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="parentId"></param>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Common.Commands.ImportDataHandleQms.ValidColumnNames(System.Data.DataTable,System.Collections.Generic.List{System.String})">
+            <summary>
+            重载文档列校验，添加列名比较
+            </summary>
+            <param name="dt"></param>
+            <param name="columnList"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Equipments.Accounts.EquipAccountSelectExtensionViewConfig">
+            <summary>
+            设备台账扩展视图
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Equipments.Accounts.EquipAccountSelectExtensionViewConfig.MaintainPlanBatchAddList">
+            <summary>
+            保养计划批量添加-选择设备台账视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Equipments.Accounts.EquipAccountSelectExtensionViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Equipments.Accounts.EquipAccountSelectExtensionViewConfig.MaintainPlanBatchAddView">
+            <summary>
+            保养计划批量添加-选择设备台账视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Configs.MaintainAlertTimeConfigValueViewConfig">
+            <summary>
+            配置值视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Configs.MaintainAlertTimeConfigValueViewConfig.ConfigDetailsView">
+            <summary>
+            配置表单视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Configs.MaintainChildProjectConfigValueViewConfig">
+            <summary>
+            配置值视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Configs.MaintainChildProjectConfigValueViewConfig.ConfigDetailsView">
+            <summary>
+            配置表单视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Configs.MaintainDepartmentConfigValueViewConfig">
+            <summary>
+            配置值视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Configs.MaintainDepartmentConfigValueViewConfig.ConfigDetailsView">
+            <summary>
+            配置表单视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Configs.MaintainIntervalTimeConfigValueViewConfig">
+            <summary>
+            配置值视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Configs.MaintainIntervalTimeConfigValueViewConfig.ConfigDetailsView">
+            <summary>
+            配置表单视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Configs.MaintainPlanConfirmConfigValueViewConfig">
+            <summary>
+            配置值视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Configs.MaintainPlanConfirmConfigValueViewConfig.ConfigDetailsView">
+            <summary>
+            配置表单视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Configs.MaintainPlanNoConfigValueViewConfig">
+            <summary>
+            保养单号配置值界面
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Configs.MaintainPlanNoConfigValueViewConfig.ConfigDetailsView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Configs.MaintainPlanScoreConfigValueViewConfig">
+            <summary>
+            配置值视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Configs.MaintainPlanScoreConfigValueViewConfig.ConfigDetailsView">
+            <summary>
+            配置表单视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Configs.MaintainPrecisePlanConfigValueViewConfig">
+            <summary>
+            配置值视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Configs.MaintainPrecisePlanConfigValueViewConfig.ConfigDetailsView">
+            <summary>
+            配置表单视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Configs.MaintainWorkTimeConfigValueViewConfig">
+            <summary>
+            配置值视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Configs.MaintainWorkTimeConfigValueViewConfig.ConfigDetailsView">
+            <summary>
+            配置表单视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Confirmations.Commands.EmsDownloadCommand">
+            <summary>
+            附件下载
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Confirmations.Commands.SubmitMaintainConfirmationCommand">
+            <summary>
+            保存：保养确认
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Confirmations.DataQuery.MaintainConfirmationQueryer">
+            <summary>
+            “保养确认”查询器
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Confirmations.DataQuery.MaintainConfirmationQueryer.InitConfirmMaintainPlan(System.Double,System.String,System.Double,System.Double)">
+            <summary>
+            初始化当前用户对该保养单的数据
+            </summary>
+            <param name="maintainPlanId">保养单Id</param>
+            <param name="maintainPlanNo">保养单号</param>
+            <param name="equipAccountId">设备台账Id</param>
+            <param name="departmentId">确认部门Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Confirmations.DataQuery.MaintainConfirmationQueryer.SavePicture(System.String,System.String)">
+            <summary>
+            保存图片
+            </summary>
+            <param name="fileContent"></param>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Confirmations.DataQuery.MaintainConfirmationQueryer.SubmitMaintainConfirmation(System.String,SIE.EMS.Maintains.ApiModels.MaintainPlanInfo)">
+            <summary>
+            提交保养评分项
+            </summary>
+            <param name="jsonString">MaintainConfirmationSubmitInfo[]的json</param>
+            <param name="planInfo">保养信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Confirmations.DataQuery.MaintainConfirmationQueryer.CanSubmitMaintainConfirmation(System.Double,System.Double)">
+            <summary>
+            是否具有保养确认权限
+            </summary>
+            <param name="maintainPlanId">保养计划ID</param>
+            <param name="confirmDeptId">确认部门ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Confirmations.DataQuery.MaintainConfirmationQueryer.IsNeedMarkScore">
+            <summary>
+            获取是否评分配置项
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Confirmations.ImportFileViewModelViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Confirmations.ImportFileViewModelViewConfig.ConfigDetailsView">
+            <summary>
+            配置表单视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Confirmations.MaintainConfirmationViewConfig">
+            <summary>
+            “保养确认”视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Confirmations.MaintainConfirmationViewConfig.MaintainRecordListView">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Confirmations.MaintainConfirmationViewConfig.MaintainConfirmView">
+            <summary>
+            保养确认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Confirmations.MaintainConfirmationViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Confirmations.MaintainConfirmationViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Confirmations.MaintainConfirmationViewConfig.MaintainCfmView">
+            <summary>
+            保养确认视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Confirmations.ViewModels.ImportFileViewModel">
+            <summary>
+            文件信息
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Confirmations.ViewModels.ImportFileViewModel.FileNameProperty">
+            <summary>
+            图片名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Confirmations.ViewModels.ImportFileViewModel.FileName">
+            <summary>
+            图片名称
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Plans.Commands.AddEquipRepairCommand">
+            <summary>
+            保养执行报修
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Plans.Commands.AddEquipRepairCommand.CommandName">
+            <summary>
+            添加保养计划命令名字
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.Commands.AddEquipRepairCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            命令执行
+            </summary>
+            <param name="args">视图参数</param>
+            <param name="scope">命令参数</param>
+            <returns>返回参数</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Plans.Commands.AddMaintainPlanCommand">
+            <summary>
+            添加保养计划
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Plans.Commands.AddMaintainPlanCommand.CommandName">
+            <summary>
+            添加保养计划命令名字
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.Commands.AddMaintainPlanCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            添加保养计划命令执行
+            </summary>
+            <param name="args">视图参数</param>
+            <param name="scope">命令参数</param>
+            <returns>返回参数</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Plans.Commands.BatchAddMaintainPlanCommand">
+            <summary>
+            批量添加保养计划
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Plans.Commands.BatchAddMaintainPlanCommand.CommandName">
+            <summary>
+            批量添加保养计划命令名字
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.Commands.BatchAddMaintainPlanCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            批量添加保养计划命令执行
+            </summary>
+            <param name="args">视图参数</param>
+            <param name="scope">命令参数</param>
+            <returns>返回参数</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Plans.Commands.BatchAddMaintainPlanCommand.MaintainPlanProject">
+            <summary>
+            序列化的model
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Plans.Commands.BatchAddMaintainPlanCommand.MaintainPlanProject.AddMaintainPlan">
+            <summary>
+            保养计划
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Plans.Commands.BatchAddMaintainPlanCommand.MaintainPlanProject.EquipAccountIds">
+            <summary>
+            设备台账ID列表
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Plans.Commands.BeginMaintainCommand">
+            <summary>
+            保养开始命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.Commands.BeginMaintainCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Plans.Commands.DeleteMaintainPlanExecuteAttachmentCommand">
+            <summary>
+            删除图片
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Plans.Commands.DeleteMaintainSparePartAplCommand">
+            <summary>
+            删除申请 命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Plans.Commands.DeleteMaintainSparePartCommand">
+            <summary>
+            删除申请
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Plans.Commands.EditEquipMaintainPlanCommand">
+            <summary>
+            修改保养计划
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Plans.Commands.EditEquipMaintainPlanCommand.CommandName">
+            <summary>
+            修改保养计划命令名字
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.Commands.EditEquipMaintainPlanCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            修改保养计划命令执行
+            </summary>
+            <param name="args">视图参数</param>
+            <param name="scope">命令参数</param>
+            <returns>返回参数</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Plans.Commands.ExeChangeSparePartCommand">
+            <summary>
+            更换备件 命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.Commands.ExeChangeSparePartCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行更换备件命令
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Plans.Commands.GenerateMaintainPlanCommand">
+            <summary>
+            生成保养计划 命令
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Plans.Commands.GenerateMaintainPlanCommand.CommandName">
+             <summary>
+            生成保养计划命令名字
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.Commands.GenerateMaintainPlanCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            生成保养计划命令执行
+            </summary>
+            <param name="args">视图参数</param>
+            <param name="scope">命令参数</param>
+            <returns>返回参数</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Plans.Commands.GenerateSparePartAppCommand">
+            <summary>
+            生成备件申请单 命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.Commands.GenerateSparePartAppCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行生成备件申请单命令
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Plans.Commands.ImportMaintainPlanCommand">
+            <summary>
+            保养计划导入命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.Commands.ImportMaintainPlanCommand.GetImportHandleType">
+            <summary>
+            获取导入处理类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.Commands.ImportMaintainPlanCommand.SetTemplateFileName(SIE.Web.Common.Import.Commands.ImportViewArgs,System.String)">
+            <summary>
+            设置模板文件信息
+            </summary>
+            <param name="importViewArgs"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Plans.Commands.SaveExeMaintainPlanCommand">
+            <summary>
+            保存执行点检计划
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.Commands.SaveExeMaintainPlanCommand.DoSave(SIE.Domain.Entity)">
+            <summary>
+            保存
+            </summary>
+            <param name="entity">实体</param>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Plans.Commands.SelEquipBomAplCommand">
+            <summary>
+            申请选择备件BOM
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.Commands.SelEquipBomAplCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行选择
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Plans.Commands.SelEquipBomCommand">
+            <summary>
+            选择备件BOM
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.Commands.SelEquipBomCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行选择
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Plans.Commands.SelSparePartAplCommand">
+            <summary>
+            申请选择备件
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.Commands.SelSparePartAplCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行选择
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Plans.Commands.SelSparePartCommand">
+            <summary>
+            选择备件
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.Commands.SelSparePartCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行选择
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Plans.Commands.SubmitExeMaintainPlanCommand">
+            <summary>
+            提交执行保养执行
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.Commands.SubmitExeMaintainPlanCommand.DoSave(SIE.Domain.Entity)">
+            <summary>
+            保存
+            </summary>
+            <param name="entity">实体</param>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Plans.Commands.UploadMaintainPlanExecuteAttachmentCommand">
+            <summary>
+            上传图片
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Plans.DataQueryers.MaintainPlanQueryer">
+            <summary>
+            保养计划查询类
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.DataQueryers.MaintainPlanQueryer.GetEquipAccountByResourceId(System.Double)">
+            <summary>
+            根据产线Id获取设备
+            </summary>
+            <param name="resourceId">产线Id</param>
+            <returns>设备台账列表</returns>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.DataQueryers.MaintainPlanQueryer.GetProjectByAccount(System.Double,System.Int32,System.Int32)">
+            <summary>
+            根据台账获取保养项目
+            </summary>
+            <param name="equipAccountId">设备台账Id</param>
+            <param name="cycleType">周期类型</param>
+            <param name="level">层级</param>
+            <returns>保养项目</returns>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.DataQueryers.MaintainPlanQueryer.GetMtPlanByAccount(System.Double)">
+            <summary>
+            根据台账获取保养计划
+            </summary>
+            <param name="equipAccountId">设备台账Id</param>
+            <returns>保养计划</returns>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.DataQueryers.MaintainPlanQueryer.GetMaintainPlanColumns">
+            <summary>
+            获取保养计划主表列信息
+            </summary>
+            <returns>保养计划主表列信息</returns>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.DataQueryers.MaintainPlanQueryer.GetMaintainPlanRecords(System.DateTime,System.DateTime,SIE.EMS.Maintains.Plans.MaintainCycleType)">
+            <summary>
+            获取保养计划信息（添加）
+            </summary>
+            <returns>保养计划信息</returns>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.DataQueryers.MaintainPlanQueryer.GetEditMaintainPlanRecords(System.String)">
+            <summary>
+            获取保养计划信息（修改）
+            </summary>
+            <returns>保养计划信息</returns>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.DataQueryers.MaintainPlanQueryer.GetMaintainPlansById(System.Double)">
+            <summary>
+            获取当前保养单执行数据
+            </summary>
+            <param name="maintainPlanId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.DataQueryers.MaintainPlanQueryer.GetMaintainPlans(System.Double,System.DateTime,System.DateTime)">
+            <summary>
+            获取该用户在该设备上指定时间的所有保养单
+            </summary>
+            <param name="equipId">设备Id</param>
+            <param name="beginDate">计划开始时间</param>
+            <param name="endDate">计划结束时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.DataQueryers.MaintainPlanQueryer.InitExeMaintainPlan(System.Double,System.Double,System.Nullable{System.Double})">
+            <summary>
+            初始化保养执行界面
+            </summary>
+            <param name="maintainPlanId">保养计划ID</param>        
+            <param name="accountId">设备台账ID</param>
+            <param name="departmentId">部门ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.DataQueryers.MaintainPlanQueryer.GetMaintainPlanById(System.Double)">
+             <summary>
+            根据Id获取保养单
+             </summary>
+             <param name="id"></param>
+             <returns></returns>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.DataQueryers.MaintainPlanQueryer.GetEquipAccountById(System.Double)">
+            <summary>
+            根据设备Id获取设备
+            </summary>
+            <param name="id">设备Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.DataQueryers.MaintainPlanQueryer.AddWorkHoursRegister(System.DateTime,System.DateTime,System.Double,System.Double)">
+            <summary>
+            工时登记默认添加一条
+            </summary>
+            <param name="begTime">保养计划开始时间</param>
+            <param name="endTime">保养计划结束时间</param>
+            <param name="employeeId">当前账户Id</param>
+            <param name="id">保养计划Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.DataQueryers.MaintainPlanQueryer.CalculateDate(System.DateTime,System.DateTime)">
+            <summary>
+            时间计算
+            </summary>
+            <param name="begTime"></param>
+            <param name="endTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.DataQueryers.MaintainPlanQueryer.GetSparePartStoreQty(System.Double,System.Double)">
+            <summary>
+            获取备件库存
+            </summary>
+            <param name="sparePareId">备件ID</param>
+            <param name="warehouseId">仓库ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.DataQueryers.MaintainPlanQueryer.GetPdcaConfigValue">
+            <summary>
+            获取设备点检和保养异常PDCA管控的配置值
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Plans.MaintainPlanAdvanceAlertPlugConfigViewConfig">
+            <summary>
+            保养计划提前预警视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.MaintainPlanAdvanceAlertPlugConfigViewConfig.ConfigDetailsView">
+            <summary>
+            表单视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Plans.MaintainPlanAttachmentViewConfig">
+            <summary>
+            保养计划附件
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Plans.MaintainPlanAttachmentViewConfig.MaintainConfirmationListView">
+            <summary>
+            保养确认所用的备件更换视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.MaintainPlanAttachmentViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.MaintainPlanAttachmentViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Plans.MaintainPlanCriteriaViewConfig">
+            <summary>
+            保养计划查询实体视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.MaintainPlanCriteriaViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.MaintainPlanCriteriaViewConfig.ConfigQueryView">
+            <summary>
+             配置查询视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Plans.MaintainPlanScoreViewConfig">
+            <summary>
+            保养计划维护视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.MaintainPlanScoreViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Plans.MaintainPlanSparePartAplViewConfig">
+            <summary>
+            保养计划备件申请 视图
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Plans.MaintainPlanSparePartAplViewConfig.MaintainConfirmationListView">
+            <summary>
+            保养确认所用的备件更换视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.MaintainPlanSparePartAplViewConfig.ConfigView">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.MaintainPlanSparePartAplViewConfig.ConfigListView">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Plans.MaintainPlanSparePartViewConfig">
+            <summary>
+            保养计划备件更换 视图
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Plans.MaintainPlanSparePartViewConfig.MaintainConfirmationListView">
+            <summary>
+            保养确认所用的备件更换视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.MaintainPlanSparePartViewConfig.ConfigView">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.MaintainPlanSparePartViewConfig.ConfigListView">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Plans.MaintainPlanTimeOutAlertPlugConfigViewConfig">
+            <summary>
+            保养计划超时预警视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.MaintainPlanTimeOutAlertPlugConfigViewConfig.ConfigDetailsView">
+            <summary>
+            表单视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Plans.MaintainPlanViewConfig">
+            <summary>
+            保养计划维护视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Plans.MaintainPlanViewConfig.PlanAddList">
+            <summary>
+            添加窗口保养明细列表
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Plans.MaintainPlanViewConfig.PlanEditList">
+            <summary>
+            修改窗口保养明细列表
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Plans.MaintainPlanViewConfig.BatchAddMaintainPlan">
+            <summary>
+            批量添加窗口保养明细列表
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Plans.MaintainPlanViewConfig.AddMaintainPlan">
+            <summary>
+            添加保养计划窗口
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Plans.MaintainPlanViewConfig.EditMaintainPlan">
+            <summary>
+            修改保养计划
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Plans.MaintainPlanViewConfig.PlanExecuteViewGroup">
+            <summary>
+            执行保养计划
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Plans.MaintainPlanViewConfig.PlanConfirmViewGroup">
+            <summary>
+            保养确认
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Plans.MaintainPlanViewConfig.PlanStartDateLabel">
+            <summary>
+            计划开始日期
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Plans.MaintainPlanViewConfig.PlanEndDateLabel">
+            <summary>
+            计划结束日期
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Plans.MaintainPlanViewConfig.ymdFormat">
+            <summary>
+            Y/m/d
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.MaintainPlanViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.MaintainPlanViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.MaintainPlanViewConfig.PlanAddListView">
+            <summary>
+            添加保养计划窗口-明细子列表
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.MaintainPlanViewConfig.PlanEditListView">
+            <summary>
+            修改窗口保养明细列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.MaintainPlanViewConfig.BatchAddMaintainPlanView">
+            <summary>
+            批量添加保养计划窗口
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.MaintainPlanViewConfig.AddMaintainPlanView">
+            <summary>
+            添加保养计划窗口
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.MaintainPlanViewConfig.EditMaintainPlanView">
+            <summary>
+            修改保养计划窗口
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.MaintainPlanViewConfig.PlanExecuteView">
+            <summary>
+            配置执行保养计划视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.MaintainPlanViewConfig.ConfigDetailsView">
+            <summary>
+             配置明细视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.MaintainPlanViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.MaintainPlanViewConfig.ConfigQueryView">
+            <summary>
+             配置查询视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.MaintainPlanViewConfig.ConfigPlanConfirmView">
+            <summary>
+            配置保养视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Plans.MaintainTypeInfoViewConfig">
+            <summary>
+            保养类型视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.MaintainTypeInfoViewConfig.ConfigSelectionView">
+            <summary>
+            列表逻辑视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Plans.ViewModels.MaintainPlanViewModelViewConfig">
+            <summary>
+            保养计划视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.ViewModels.MaintainPlanViewModelViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.ViewModels.MaintainPlanViewModelViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Plans.ViewModels.SelDepartmentViewModel">
+            <summary>
+            选择部门VM
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Plans.ViewModels.SelDepartmentViewModel.MaintainPlanIdProperty">
+            <summary>
+            保养执行ID
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Plans.ViewModels.SelDepartmentViewModel.MaintainPlanId">
+            <summary>
+            保养执行ID
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Plans.ViewModels.SelDepartmentViewModel.MaintainPlanNoProperty">
+            <summary>
+            保养单号
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Plans.ViewModels.SelDepartmentViewModel.MaintainPlanNo">
+            <summary>
+            保养单号
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Plans.ViewModels.SelDepartmentViewModel.DepartmentIdProperty">
+            <summary>
+            部门Id
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Plans.ViewModels.SelDepartmentViewModel.DepartmentId">
+            <summary>
+            部门Id
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Plans.ViewModels.SelDepartmentViewModel.DepartmentNameProperty">
+            <summary>
+            部门
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Plans.ViewModels.SelDepartmentViewModel.DepartmentName">
+            <summary>
+            部门
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Plans.ViewModels.SelDepartmentViewModel.EquipAccountIdProperty">
+            <summary>
+            设备台账ID
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Plans.ViewModels.SelDepartmentViewModel.EquipAccountId">
+            <summary>
+            设备台账ID
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Plans.ViewModels.SelDepartmentViewModel.StateProperty">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Plans.ViewModels.SelDepartmentViewModel.State">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Plans.ViewModels.SelDepartmentViewModel.IfOpenConfirmationTabProperty">
+            <summary>
+            是否打开确认界面
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Plans.ViewModels.SelDepartmentViewModel.IfOpenConfirmationTab">
+            <summary>
+            是否打开确认界面
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Plans.ViewModels.SelDepartmentViewModel.IsConfirmProperty">
+            <summary>
+            是否保养确认人
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Plans.ViewModels.SelDepartmentViewModel.IsConfirm">
+            <summary>
+            是否保养确认人
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Plans.ViewModels.SelDepartmentViewModelViewConfig">
+            <summary>
+            选择部门VM 视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.ViewModels.SelDepartmentViewModelViewConfig.ConfigView">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Plans.WorkHoursRegisterViewConfig">
+            <summary>
+            工时登记视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Plans.WorkHoursRegisterViewConfig.MaintainConfirmationListView">
+            <summary>
+            保养确认所用的工时登记视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.WorkHoursRegisterViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Plans.WorkHoursRegisterViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Projects.MaintainProjectViewConfig">
+            <summary>
+            保养项目视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Projects.MaintainProjectViewConfig.MaintainConfirmationListView">
+            <summary>
+            保养确认所用的保养项目视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Projects.MaintainProjectViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Projects.MaintainProjectViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Projects.MaintainProjectViewConfig.ConfigDetailsView">
+            <summary>
+             配置明细视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Projects.MaintainProjectViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Projects.MaintainProjectViewConfig.ConfigQueryView">
+            <summary>
+             配置查询视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Records.Commands.MaintainPlanDeleteCommand">
+            <summary>
+            保养记录删除命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Records.Commands.MaintainPlanDeleteCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            删除
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Records.DataQuery.MaintainRecordDataQueryer">
+            <summary>
+            设备保养记录查询器
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Records.DataQuery.MaintainRecordDataQueryer.GetMaintainProjectPhoto(System.Double)">
+            <summary>
+            获取保养项目图片
+            </summary>
+            <param name="projectId">保养项目id</param>
+            <returns>返回参数</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Records.MaintainRecordCriteriaViewConfig">
+            <summary>
+            保养记录查询实体视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Records.MaintainRecordCriteriaViewConfig.ConfigQueryView">
+            <summary>
+             配置查询视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Records.MaintainRecordViewConfig">
+            <summary>
+            设备保养记录视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Records.MaintainRecordViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordViewModel">
+            <summary>
+            设备保养记录查看明细 ViewModel 
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordViewModel.CheckPlanNoProperty">
+            <summary>
+            保养单号
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordViewModel.CheckPlanNo">
+            <summary>
+            保养单号
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordViewModel.EquipAccountCodeProperty">
+            <summary>
+            设备编码
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordViewModel.EquipAccountCode">
+            <summary>
+            设备编码
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordViewModel.MachineNoProperty">
+            <summary>
+            机台号
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordViewModel.MachineNo">
+            <summary>
+            机台号
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordViewModel.WorkShopCodeProperty">
+            <summary>
+            车间
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordViewModel.WorkShopCode">
+            <summary>
+            车间
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordViewModel.ProcessNameProperty">
+            <summary>
+            工序
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordViewModel.ProcessName">
+            <summary>
+            工序
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordViewModel.ExeStateProperty">
+            <summary>
+            保养状态
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordViewModel.ExeState">
+            <summary>
+            保养状态
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordViewModel.BeginDateProperty">
+            <summary>
+            点检开始时间
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordViewModel.BeginDate">
+            <summary>
+            保养开始时间
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordViewModel.EndDateProperty">
+            <summary>
+            保养结束时间
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordViewModel.EndDate">
+            <summary>
+            保养结束时间
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordViewModel.ActCheckBeginDateProperty">
+            <summary>
+            任务开始时间
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordViewModel.ActCheckBeginDate">
+            <summary>
+            任务开始时间
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordViewModel.ActCheckEndDateProperty">
+            <summary>
+            任务结束时间
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordViewModel.ActCheckEndDate">
+            <summary>
+            点检结束时间
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordViewModel.CheckUserProperty">
+            <summary>
+            保养执行人
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordViewModel.CheckUser">
+            <summary>
+            保养执行人
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordViewModel.ScoreUserProperty">
+            <summary>
+            评分人
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordViewModel.ScoreUser">
+            <summary>
+            评分人
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordViewModel.ScoreDateProperty">
+            <summary>
+            评分时间
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordViewModel.ScoreDate">
+            <summary>
+            评分时间
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordViewModel.ScoreProperty">
+            <summary>
+            评分
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordViewModel.Score">
+            <summary>
+            评分
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordViewModel.CheckProjectListProperty">
+            <summary>
+            保养项目
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordViewModel.CheckProjectList">
+            <summary>
+            保养项目
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordViewModel.ScoreListProperty">
+            <summary>
+            评分明细
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordViewModel.ScoreList">
+            <summary>
+            评分明细
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordViewModel.MateriaRquisitionDetailListProperty">
+            <summary>
+            领料单明细
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordViewModel.MateriaRquisitionDetailList">
+            <summary>
+            领料单明细
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordViewModel.FittingChangeDetailListProperty">
+            <summary>
+            领料单明细
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordViewModel.FittingChangeDetailList">
+            <summary>
+            领料单明细
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordProjectViewModel">
+            <summary>
+            项目明细 ViewModel 
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordProjectViewModel.CheckPlanIdProperty">
+            <summary>
+            保养计划Id
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordProjectViewModel.CheckPlanId">
+            <summary>
+            保养计划Id
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordProjectViewModel.CheckPlanProperty">
+            <summary>
+            保养计划
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordProjectViewModel.CheckPlan">
+            <summary>
+            保养计划
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordProjectViewModel.AccountCodeProperty">
+            <summary>
+            设备编码
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordProjectViewModel.AccountCode">
+            <summary>
+            设备编码
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordProjectViewModel.AccountNameProperty">
+            <summary>
+            设备名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordProjectViewModel.AccountName">
+            <summary>
+            设备名称
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordProjectViewModel.ProjectTypeProperty">
+            <summary>
+            项目类型
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordProjectViewModel.ProjectType">
+            <summary>
+            项目类型
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordProjectViewModel.CheckProjectNameProperty">
+            <summary>
+            项目名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordProjectViewModel.CheckProjectName">
+            <summary>
+            项目名称
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordProjectViewModel.MinValueProperty">
+            <summary>
+            最小值
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordProjectViewModel.MinValue">
+            <summary>
+            最小值
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordProjectViewModel.MaxValueProperty">
+            <summary>
+            最大值
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordProjectViewModel.MaxValue">
+            <summary>
+            最大值
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordProjectViewModel.ProjectConsumableProperty">
+            <summary>
+            项目耗材
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordProjectViewModel.ProjectConsumable">
+            <summary>
+            项目耗材
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordProjectViewModel.CycleTypeProperty">
+            <summary>
+            周期类型
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordProjectViewModel.CycleType">
+            <summary>
+            周期类型
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordProjectViewModel.ProjectCycleProperty">
+            <summary>
+            项目周期
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordProjectViewModel.ProjectCycle">
+            <summary>
+            项目周期
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordProjectViewModel.UnitProperty">
+            <summary>
+            单位
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordProjectViewModel.Unit">
+            <summary>
+            单位
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordProjectViewModel.UseTimeProperty">
+            <summary>
+            用时(分钟)
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordProjectViewModel.UseTime">
+            <summary>
+            用时(分钟)
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordProjectViewModel.ActualValueProperty">
+            <summary>
+            实际值
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordProjectViewModel.ActualValue">
+            <summary>
+            实际值
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordProjectViewModel.NoteProperty">
+            <summary>
+            保养问题点
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordProjectViewModel.Note">
+            <summary>
+            保养问题点
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordProjectViewModel.MaintainResultProperty">
+            <summary>
+            保养结果
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordProjectViewModel.MaintainResult">
+            <summary>
+            保养结果
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordProjectViewModel.PhotoProperty">
+            <summary>
+            图片
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordProjectViewModel.Photo">
+            <summary>
+            图片
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordProjectViewModel.ExistPhotoProperty">
+            <summary>
+            是否存在图片
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordProjectViewModel.ExistPhoto">
+            <summary>
+            是否存在图片
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordScoreViewModel">
+            <summary>
+            设备保养记录查看评分明细 ViewModel 
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordScoreViewModel.CheckPlanIdProperty">
+            <summary>
+            保养计划Id
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordScoreViewModel.CheckPlanId">
+            <summary>
+            保养计划Id
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordScoreViewModel.CheckPlanProperty">
+            <summary>
+            保养计划
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordScoreViewModel.CheckPlan">
+            <summary>
+            保养计划
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordScoreViewModel.ProjectNameProperty">
+            <summary>
+            项目名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordScoreViewModel.ProjectName">
+            <summary>
+            项目名称
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordScoreViewModel.CheckStandardProperty">
+            <summary>
+            检查标准
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordScoreViewModel.CheckStandard">
+            <summary>
+            检查标准
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordScoreViewModel.RateProperty">
+            <summary>
+            分值比（%）
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordScoreViewModel.Rate">
+            <summary>
+            分值比（%）
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordScoreViewModel.RemarkProperty">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordScoreViewModel.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordScoreViewModel.ScoreProperty">
+            <summary>
+            得分
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordScoreViewModel.Score">
+            <summary>
+            得分
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordScoreViewModel.ExistProblemProperty">
+            <summary>
+            存在问题ExistProblem
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordScoreViewModel.ExistProblem">
+            <summary>
+            存在问题ExistProblem
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MateriaRquisitionDetailViewModel">
+            <summary>
+            设备保养记录查看领料单明细 ViewModel 
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MateriaRquisitionDetailViewModel.CheckPlanIdProperty">
+            <summary>
+            保养计划Id
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MateriaRquisitionDetailViewModel.CheckPlanId">
+            <summary>
+            保养计划Id
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MateriaRquisitionDetailViewModel.CheckPlanProperty">
+            <summary>
+            保养计划
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MateriaRquisitionDetailViewModel.CheckPlan">
+            <summary>
+            保养计划
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MateriaRquisitionDetailViewModel.ErpNoProperty">
+            <summary>
+            ERP单据号
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MateriaRquisitionDetailViewModel.ErpNo">
+            <summary>
+            ERP单据号
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MateriaRquisitionDetailViewModel.TransactionTypeNameProperty">
+            <summary>
+            领料类型
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MateriaRquisitionDetailViewModel.TransactionTypeName">
+            <summary>
+            领料类型
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MateriaRquisitionDetailViewModel.SourceWarehouseNameProperty">
+            <summary>
+            来源子库存
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MateriaRquisitionDetailViewModel.SourceWarehouseName">
+            <summary>
+            来源子库存
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MateriaRquisitionDetailViewModel.TargetWarehouseNameProperty">
+            <summary>
+            目标子库存
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MateriaRquisitionDetailViewModel.TargetWarehouseName">
+            <summary>
+            目标子库存
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MateriaRquisitionDetailViewModel.GenericDispositionsDescriptionProperty">
+            <summary>
+            账户别名
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MateriaRquisitionDetailViewModel.GenericDispositionsDescription">
+            <summary>
+            账户别名
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MateriaRquisitionDetailViewModel.LineNumProperty">
+            <summary>
+            行号
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MateriaRquisitionDetailViewModel.LineNum">
+            <summary>
+            行号
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MateriaRquisitionDetailViewModel.ItemCodeProperty">
+            <summary>
+            物料
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MateriaRquisitionDetailViewModel.ItemCode">
+            <summary>
+            物料
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MateriaRquisitionDetailViewModel.ItemNameProperty">
+            <summary>
+            物料名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MateriaRquisitionDetailViewModel.ItemName">
+            <summary>
+            物料名称
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MateriaRquisitionDetailViewModel.UnitNameProperty">
+            <summary>
+            单位
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MateriaRquisitionDetailViewModel.UnitName">
+            <summary>
+            单位
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MateriaRquisitionDetailViewModel.ApplyNumProperty">
+            <summary>
+            申请数量
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MateriaRquisitionDetailViewModel.ApplyNum">
+            <summary>
+            申请数量
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MateriaRquisitionDetailViewModel.RealSendNumProperty">
+            <summary>
+            实发数量
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MateriaRquisitionDetailViewModel.RealSendNum">
+            <summary>
+            实发数量
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MateriaRquisitionDetailViewModel.RemarkProperty">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MateriaRquisitionDetailViewModel.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.FittingChangeDetailViewModel">
+            <summary>
+            设备保养记录查看配件更换明细 ViewModel 
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.FittingChangeDetailViewModel.CheckPlanIdProperty">
+            <summary>
+            保养计划Id
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.FittingChangeDetailViewModel.CheckPlanId">
+            <summary>
+            保养计划Id
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.FittingChangeDetailViewModel.CheckPlanProperty">
+            <summary>
+            保养计划
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.FittingChangeDetailViewModel.CheckPlan">
+            <summary>
+            保养计划
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.FittingChangeDetailViewModel.ItemCodeProperty">
+            <summary>
+            新物料编码
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.FittingChangeDetailViewModel.ItemCode">
+            <summary>
+            新物料编码
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.FittingChangeDetailViewModel.ItemNameProperty">
+            <summary>
+            新物料名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.FittingChangeDetailViewModel.ItemName">
+            <summary>
+            新物料名称
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.FittingChangeDetailViewModel.KnifeNoProperty">
+            <summary>
+            新序列号
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.FittingChangeDetailViewModel.KnifeNo">
+            <summary>
+            新序列号
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.FittingChangeDetailViewModel.QtyProperty">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.FittingChangeDetailViewModel.Qty">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.FittingChangeDetailViewModel.UnitNameProperty">
+            <summary>
+            单位
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.FittingChangeDetailViewModel.UnitName">
+            <summary>
+            单位
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.FittingChangeDetailViewModel.EquipAccountIdProperty">
+            <summary>
+            设备台帐Id
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.FittingChangeDetailViewModel.EquipAccountId">
+            <summary>
+            设备台帐Id
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.FittingChangeDetailViewModel.EquipAccountProperty">
+            <summary>
+            设备台帐
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.FittingChangeDetailViewModel.EquipAccount">
+            <summary>
+            设备台帐
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.FittingChangeDetailViewModel.OldItemCodeProperty">
+            <summary>
+            原物料编码
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.FittingChangeDetailViewModel.OldItemCode">
+            <summary>
+            原物料编码
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.FittingChangeDetailViewModel.OldItemNameProperty">
+            <summary>
+            原物料名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.FittingChangeDetailViewModel.OldItemName">
+            <summary>
+            原物料名称
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.FittingChangeDetailViewModel.OldKnifeNoProperty">
+            <summary>
+            原序列号
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.FittingChangeDetailViewModel.OldKnifeNo">
+            <summary>
+            原序列号
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.FittingChangeDetailViewModel.TimeLengProperty">
+            <summary>
+            使用时长
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.FittingChangeDetailViewModel.TimeLeng">
+            <summary>
+            使用时长
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.FittingChangeDetailViewModel.ReasonProperty">
+            <summary>
+            更换原因
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.FittingChangeDetailViewModel.Reason">
+            <summary>
+            更换原因
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.FittingChangeDetailViewModel.AccountNameProperty">
+            <summary>
+            设备名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.FittingChangeDetailViewModel.AccountName">
+            <summary>
+            设备名称
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordViewModelViewConfig">
+            <summary>
+            设备点检记录查看明细 视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordViewModelViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordViewModelViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordProjectViewModelViewConfig">
+            <summary>
+            项目明细 视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordProjectViewModelViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordProjectViewModelViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordProjectViewModelViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordScoreViewModelViewConfig">
+            <summary>
+            评分明细 视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordScoreViewModelViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MaintainRecordScoreViewModelViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MateriaRquisitionDetailViewModelViewConfig">
+            <summary>
+            领料单明细 视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MateriaRquisitionDetailViewModelViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.MateriaRquisitionDetailViewModelViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.FittingChangeDetailViewModelViewConfig">
+            <summary>
+            配件更换明细 视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.FittingChangeDetailViewModelViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Maintains.Records.ViewModels.FittingChangeDetailViewModelViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.EquipMaintMenuInit">
+            <summary>
+            菜单初始化
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.EquipMaintMenuInit.GetMenuDtos">
+            <summary>
+            获取菜单列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.EMS.EquipMaint.Module">
+            <summary>
+            模块配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化模块
+            </summary>
+            <param name="app">应用程序</param>
+        </member>
+        <member name="M:SIE.Web.EMS.EquipMaint.Module.App_ModuleOperations(System.Object,System.EventArgs)">
+            <summary>
+            模块定义
+            </summary>
+            <param name="sender">应用程序</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="T:SIE.Web.EMS.Maintains.Plans.MaintainConfirmDepartConfigValueViewConfig">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Maintains.Plans.MaintainConfirmDepartConfigValueViewConfig.ConfigDetailsView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+    </members>
+</doc>

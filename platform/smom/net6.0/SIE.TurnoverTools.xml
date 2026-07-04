@@ -1,0 +1,1424 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.TurnoverTools</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.TurnoverTools.MesElecEntityRepository`1">
+            <summary>
+            指定仓库的数据提供者
+            </summary>
+            <typeparam name="T">实体仓库</typeparam> 
+        </member>
+        <member name="T:SIE.TurnoverTools.MesEntityDataProvider">
+            <summary>
+            MES数据提供者
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.MesEntityDataProvider.ConnectionStringName">
+            <summary>
+            数据库连接字符串的名称
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.MesEntityDataProvider.ConnectionStringSettingName">
+            <summary>
+            数据库连接字符串的名称
+            </summary>
+        </member>
+        <member name="T:SIE.TurnoverTools.Module">
+            <summary>
+            模块配置
+            </summary>
+        </member>
+        <member name="M:SIE.TurnoverTools.Module.Initialize(SIE.IApp)">
+            <summary>
+            模块初始化
+            </summary>
+            <param name="app">应用程序</param>
+        </member>
+        <member name="T:SIE.TurnoverTools.TurnoverTools.Configs.TurnoverToolConfigs">
+            <summary>
+            启用混工单模式
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.Configs.TurnoverToolConfigs.defaultValue">
+            <summary>
+            默认值
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.Configs.TurnoverToolConfigs.DefaultValue">
+            <summary>
+            默认值
+            </summary>
+        </member>
+        <member name="T:SIE.TurnoverTools.TurnoverTools.Configs.TurnoverToolConfigsValue">
+            <summary>
+            启用混工单模式
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.Configs.TurnoverToolConfigsValue.MixedWorkOrderModeProperty">
+            <summary>
+            启用混工单模式
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.Configs.TurnoverToolConfigsValue.MixedWorkOrderMode">
+            <summary>
+            启用混工单模式
+            </summary>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.Configs.TurnoverToolConfigsValue.Display">
+            <summary>
+            显示
+            </summary>
+            <returns>编码规则名称</returns>
+        </member>
+        <member name="T:SIE.TurnoverTools.TurnoverTools.ImportHandle.ImportTurnoverToolHandle">
+            <summary>
+            设备型号-导入逻辑处理
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.ImportHandle.ImportTurnoverToolHandle.ColumnNameList">
+            <summary>
+            导入模板的列头名
+            </summary>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.ImportHandle.ImportTurnoverToolHandle.ColIndex(System.String)">
+            <summary>
+            获取指定列名的索引
+            </summary>
+            <param name="columnName">指定列名</param>
+            <returns>返回对应索引</returns>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.ImportHandle.ImportTurnoverToolHandle.ColumnValidList">
+            <summary>
+            列的标准验证 (列名 列对应验证 )
+            </summary>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.ImportHandle.ImportTurnoverToolHandle.CreaetColumnValid">
+            <summary>
+            创建导入对象
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.ImportHandle.ImportTurnoverToolHandle.Dispose">
+            <summary>
+            数据回收
+            </summary>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.ImportHandle.ImportTurnoverToolHandle.ProcessBusinessDataHandle(System.Data.DataRow[])">
+            <summary>
+            导入数据处理
+            </summary>
+            <param name="drs"></param>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.ImportHandle.ImportTurnoverToolHandle.dicType">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.ImportHandle.ImportTurnoverToolHandle.dicTurnoverToolModel">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.ImportHandle.ImportTurnoverToolHandle.ValidTurnoverToolModel(System.Object,System.String@,System.Data.DataRow)">
+            <summary>
+            验证周转工具型号
+            </summary>
+            <param name="obj">周转工具型号</param>
+            <param name="messageTip">提示信息</param>
+            <param name="dr">数据行</param>
+            <returns>验证通过返回true，否则返回false</returns>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.ImportHandle.ImportTurnoverToolHandle.ValidType(System.Object,System.String@,System.Data.DataRow)">
+            <summary>
+            验证周转箱类型
+            </summary>
+            <param name="obj">周转箱类型</param>
+            <param name="messageTip">提示信息</param>
+            <param name="dr">数据行</param>
+            <returns>验证通过返回true，否则返回false</returns>
+        </member>
+        <member name="T:SIE.TurnoverTools.TurnoverTools.ImportHandle.ImportTurnoverToolModelHandle">
+            <summary>
+            设备型号-导入逻辑处理
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.ImportHandle.ImportTurnoverToolModelHandle.ColumnNameList">
+            <summary>
+            导入模板的列头名
+            </summary>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.ImportHandle.ImportTurnoverToolModelHandle.ColIndex(System.String)">
+            <summary>
+            获取指定列名的索引
+            </summary>
+            <param name="columnName">指定列名</param>
+            <returns>返回对应索引</returns>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.ImportHandle.ImportTurnoverToolModelHandle.ColumnValidList">
+            <summary>
+            列的标准验证 (列名 列对应验证 )
+            </summary>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.ImportHandle.ImportTurnoverToolModelHandle.CreaetColumnValid">
+            <summary>
+            创建导入对象
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.ImportHandle.ImportTurnoverToolModelHandle.Dispose">
+            <summary>
+            数据回收
+            </summary>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.ImportHandle.ImportTurnoverToolModelHandle.ProcessBusinessDataHandle(System.Data.DataRow[])">
+            <summary>
+            导入数据处理
+            </summary>
+            <param name="drs"></param>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.ImportHandle.ImportTurnoverToolModelHandle.dicType">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.ImportHandle.ImportTurnoverToolModelHandle.dicCustomer">
+            <summary>
+            客户
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.ImportHandle.ImportTurnoverToolModelHandle.dicSupplier">
+            <summary>
+            供应商
+            </summary>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.ImportHandle.ImportTurnoverToolModelHandle.ValidCustomer(System.Object,System.String@,System.Data.DataRow)">
+            <summary>
+            验证客户
+            </summary>
+            <param name="obj">客户</param>
+            <param name="messageTip">提示信息</param>
+            <param name="dr">数据行</param>
+            <returns>验证通过返回true，否则返回false</returns>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.ImportHandle.ImportTurnoverToolModelHandle.ValidSupplier(System.Object,System.String@,System.Data.DataRow)">
+            <summary>
+            验证供应商
+            </summary>
+            <param name="obj">值</param>
+            <param name="messageTip">提示信息</param>
+            <param name="dr">数据行</param>
+            <returns>验证通过返回true，否则返回false</returns>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.ImportHandle.ImportTurnoverToolModelHandle.ValidType(System.Object,System.String@,System.Data.DataRow)">
+            <summary>
+            验证周转箱类型
+            </summary>
+            <param name="obj">值</param>
+            <param name="messageTip">提示信息</param>
+            <param name="dr">数据行</param>
+            <returns>验证通过返回true，否则返回false</returns>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.ImportHandle.ImportTurnoverToolModelHandle.ValidateDouble(System.Object,System.String@,System.Data.DataRow)">
+            <summary>
+            验证double类型数据
+            </summary>
+            <param name="obj">值</param>
+            <param name="messageTip">提示信息</param>
+            <param name="dr">数据行</param>
+            <returns>验证通过返回true，否则返回false</returns>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.ImportHandle.ImportTurnoverToolModelHandle.ValidateCapacity(System.Object,System.String@,System.Data.DataRow)">
+            <summary>
+            验证产品容量
+            </summary>
+            <param name="obj">值</param>
+            <param name="messageTip">提示信息</param>
+            <param name="dr">数据行</param>
+            <returns>验证通过返回true，否则返回false</returns>
+        </member>
+        <member name="T:SIE.TurnoverTools.TurnoverTools.Models.ScanTurnoverInfo">
+            <summary>
+            载具条码信息
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.Models.ScanTurnoverInfo.No">
+            <summary>
+            载具号
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.Models.ScanTurnoverInfo.WorkShopName">
+            <summary>
+            车间名称
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.Models.ScanTurnoverInfo.ResourceName">
+            <summary>
+            资源名称
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.Models.ScanTurnoverInfo.ProductCode">
+            <summary>
+            产品编码
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.Models.ScanTurnoverInfo.ProductName">
+            <summary>
+            产品名称
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.Models.ScanTurnoverInfo.Qty">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.Models.ScanTurnoverInfo.ToolBindings">
+            <summary>
+            绑定条码明细
+            </summary>
+        </member>
+        <member name="T:SIE.TurnoverTools.TurnoverTools.Models.ToolBindingInfo">
+            <summary>
+            绑定条码明细
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.Models.ToolBindingInfo.WorkOrderNo">
+            <summary>
+            工单号
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.Models.ToolBindingInfo.Qty">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.Models.ToolBindingInfo.InStorageQty">
+            <summary>
+            已入库数量
+            </summary>
+        </member>
+        <member name="T:SIE.TurnoverTools.TurnoverTools.Models.ScanSnInfo">
+            <summary>
+            产品条码信息
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.Models.ScanSnInfo.WorkShopName">
+            <summary>
+            车间名称
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.Models.ScanSnInfo.ResourceName">
+            <summary>
+            资源名称
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.Models.ScanSnInfo.ProductCode">
+            <summary>
+            产品编码
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.Models.ScanSnInfo.ProductName">
+            <summary>
+            产品名称
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.Models.ScanSnInfo.WorkOrderId">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.Models.ScanSnInfo.WorkOrderNo">
+            <summary>
+            工单号
+            </summary>
+        </member>
+        <member name="T:SIE.TurnoverTools.TurnoverTools.Models.VehicleBindingInfo">
+            <summary>
+            周转工具绑定-产品数据
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.Models.VehicleBindingInfo.VehicleNo">
+            <summary>
+            载具条码
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.Models.VehicleBindingInfo.Sn">
+            <summary>
+            产品条码
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.Models.VehicleBindingInfo.WorkOrderNo">
+            <summary>
+            工单号
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.Models.VehicleBindingInfo.ProductCode">
+            <summary>
+            产品编码
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.Models.VehicleBindingInfo.ProductName">
+            <summary>
+            产品名称
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.Models.VehicleBindingInfo.Qty">
+            <summary>
+            载具数量
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.Models.VehicleBindingInfo.ScanDate">
+            <summary>
+            扫描时间
+            </summary>
+        </member>
+        <member name="T:SIE.TurnoverTools.TurnoverTools.TurnoverTool">
+            <summary>
+            周转工具
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverTool.CodeProperty">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverTool.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverTool.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverTool.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverTool.ToolTypeProperty">
+            <summary>
+            周转工具类型
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverTool.ToolType">
+            <summary>
+            周转工具类型
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverTool.ModelIdProperty">
+            <summary>
+            周转工具型号Id
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverTool.ModelId">
+            <summary>
+            周转工具型号Id
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverTool.ModelProperty">
+            <summary>
+            周转工具型号
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverTool.Model">
+            <summary>
+            周转工具型号
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverTool.StateProperty">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverTool.State">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverTool.ModelCodeProperty">
+            <summary>
+            周转工具型号编码
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverTool.ModelCode">
+            <summary>
+            周转工具型号编码
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverTool.ModelNameProperty">
+            <summary>
+            周转工具型号名称
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverTool.ModelName">
+            <summary>
+            周转工具型号名称
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverTool.ModelIsDedicatedProperty">
+            <summary>
+            专用容器
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverTool.ModelIsDedicated">
+            <summary>
+            专用容器
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverTool.ModelCapacityProperty">
+            <summary>
+            容量
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverTool.ModelCapacity">
+            <summary>
+            容量
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverTool.ModelCustomerIdProperty">
+            <summary>
+            客户
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverTool.ModelCustomerId">
+            <summary>
+            客户
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverTool.ModelCustomerNameProperty">
+            <summary>
+            客户名称
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverTool.ModelCustomerName">
+            <summary>
+            客户名称
+            </summary>
+        </member>
+        <member name="T:SIE.TurnoverTools.TurnoverTools.TurnoverToolConfig">
+            <summary>
+            周转工具 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.TurnoverToolConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.TurnoverTools.TurnoverTools.TurnoverToolAction">
+            <summary>
+            周转工具操作
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolAction.Recycle">
+            <summary>
+            回收
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolAction.Repair">
+            <summary>
+            维修
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolAction.Scrap">
+            <summary>
+            报废
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolAction.Binding">
+            <summary>
+            绑定
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolAction.UnBinding">
+            <summary>
+            解绑
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolAction.InStorage">
+            <summary>
+            入库
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolAction.OutStorage">
+            <summary>
+            出库
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolAction.Cleaning">
+            <summary>
+            清洗
+            </summary>
+        </member>
+        <member name="T:SIE.TurnoverTools.TurnoverTools.TurnoverToolActionLog">
+            <summary>
+            操作日志
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolActionLog.TurnoverToolIdProperty">
+            <summary>
+            周转工具Id
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolActionLog.TurnoverToolId">
+            <summary>
+            周转工具Id
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolActionLog.TurnoverToolProperty">
+            <summary>
+            周转工具
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolActionLog.TurnoverTool">
+            <summary>
+            周转工具
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolActionLog.TurnoverToolActionProperty">
+            <summary>
+            周转工具操作
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolActionLog.TurnoverToolAction">
+            <summary>
+            周转工具操作
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolActionLog.SnProperty">
+            <summary>
+            产品条码
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolActionLog.Sn">
+            <summary>
+            产品条码
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolActionLog.QtyProperty">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolActionLog.Qty">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolActionLog.ItemIdProperty">
+            <summary>
+            物料Id
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolActionLog.ItemId">
+            <summary>
+            物料Id
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolActionLog.ItemProperty">
+            <summary>
+            物料
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolActionLog.Item">
+            <summary>
+            物料
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolActionLog.WorkOrderIdProperty">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolActionLog.WorkOrderId">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolActionLog.WorkOrderProperty">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolActionLog.WorkOrder">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolActionLog.ItemCodeProperty">
+            <summary>
+            物料编码
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolActionLog.ItemCode">
+            <summary>
+            物料编码
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolActionLog.ItemNameProperty">
+            <summary>
+            物料名称
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolActionLog.ItemName">
+            <summary>
+            物料名称
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolActionLog.WorkOrderNoProperty">
+            <summary>
+            工单号
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolActionLog.WorkOrderNo">
+            <summary>
+            工单号
+            </summary>
+        </member>
+        <member name="T:SIE.TurnoverTools.TurnoverTools.TurnoverToolActionLogConfig">
+            <summary>
+            操作日志 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.TurnoverToolActionLogConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.TurnoverTools.TurnoverTools.TurnoverToolBinding">
+            <summary>
+            周转工具绑定明细
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolBinding.SnProperty">
+            <summary>
+            产品条码
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolBinding.Sn">
+            <summary>
+            产品条码
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolBinding.QtyProperty">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolBinding.Qty">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolBinding.IsUnbindingProperty">
+            <summary>
+            是否已解绑
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolBinding.IsUnbinding">
+            <summary>
+            是否已解绑
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolBinding.BindingDateProperty">
+            <summary>
+            绑定时间
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolBinding.BindingDate">
+            <summary>
+            绑定时间
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolBinding.UnBindingDateProperty">
+            <summary>
+            解绑时间
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolBinding.UnBindingDate">
+            <summary>
+            解绑时间
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolBinding.BindingOperatorIdProperty">
+            <summary>
+            绑定操作员Id
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolBinding.BindingOperatorId">
+            <summary>
+            绑定操作员Id
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolBinding.BindingOperatorProperty">
+            <summary>
+            绑定操作员
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolBinding.BindingOperator">
+            <summary>
+            绑定操作员
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolBinding.UnbindingOperatorIdProperty">
+            <summary>
+            解绑操作员Id
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolBinding.UnbindingOperatorId">
+            <summary>
+            解绑操作员Id
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolBinding.UnbindingOperatorProperty">
+            <summary>
+            解绑操作员
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolBinding.UnbindingOperator">
+            <summary>
+            解绑操作员
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolBinding.TurnoverToolIdProperty">
+            <summary>
+            周转工具Id
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolBinding.TurnoverToolId">
+            <summary>
+            周转工具Id
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolBinding.TurnoverToolProperty">
+            <summary>
+            周转工具
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolBinding.TurnoverTool">
+            <summary>
+            周转工具
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolBinding.ItemIdProperty">
+            <summary>
+            物料Id
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolBinding.ItemId">
+            <summary>
+            物料Id
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolBinding.ItemProperty">
+            <summary>
+            物料
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolBinding.Item">
+            <summary>
+            物料
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolBinding.WorkOrderIdProperty">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolBinding.WorkOrderId">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolBinding.WorkOrderProperty">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolBinding.WorkOrder">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolBinding.IsBindFinishProperty">
+            <summary>
+            是否绑定完成
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolBinding.IsBindFinish">
+            <summary>
+            是否绑定完成
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolBinding.BarcodeTypeProperty">
+            <summary>
+            条码类型    
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolBinding.BarcodeType">
+            <summary>
+            条码类型
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolBinding.ItemCodeProperty">
+            <summary>
+            物料编码
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolBinding.ItemCode">
+            <summary>
+            物料编码
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolBinding.ItemNameProperty">
+            <summary>
+            物料名称
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolBinding.ItemName">
+            <summary>
+            物料名称
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolBinding.TurnoverToolCodeProperty">
+            <summary>
+            周转工具编码
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolBinding.TurnoverToolCode">
+            <summary>
+            周转工具编码
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolBinding.WorkOrderNoProperty">
+            <summary>
+            工单号
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolBinding.WorkOrderNo">
+            <summary>
+            工单号
+            </summary>
+        </member>
+        <member name="T:SIE.TurnoverTools.TurnoverTools.TurnoverToolBindingConfig">
+            <summary>
+            绑定明细 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.TurnoverToolBindingConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.TurnoverTools.TurnoverTools.KitTurnoverToolController">
+            <summary>
+            周转工具控制器
+            </summary>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.KitTurnoverToolController.ChangeState(System.Double,SIE.TurnoverTools.TurnoverTools.TurnoverToolState)">
+            <summary>
+            修改周转工具状态
+            </summary>
+            <param name="id">主键</param>
+            <param name="state"><see cref="T:SIE.TurnoverTools.TurnoverTools.TurnoverToolState"/>周转工具状态</param>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.KitTurnoverToolController.GetTurnoverTool(System.String)">
+            <summary>
+            获取周转工具
+            </summary>
+            <param name="code">编码</param>
+            <returns>周转工具</returns>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.KitTurnoverToolController.GetTurnoverTool(System.Linq.Expressions.Expression{System.Func{SIE.TurnoverTools.TurnoverTools.TurnoverTool,System.Boolean}})">
+            <summary>
+            获取周转工具
+            </summary>
+            <param name="exp"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.KitTurnoverToolController.GetTurnoverToolByCodes(System.Collections.Generic.List{System.String})">
+            <summary>
+            获取周转工具列表
+            </summary>
+            <param name="codes">编码列表</param>
+            <returns>周转工具列表</returns>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.KitTurnoverToolController.IsTurnoverTool(System.String)">
+            <summary>
+            编码是否是周转工具编码
+            </summary>
+            <param name="code">编码</param>
+            <returns>是返回true，否则返回false</returns>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.KitTurnoverToolController.GetTurnoverToolCodes(System.Collections.Generic.List{System.String})">
+            <summary>
+            编码是否是周转工具编码
+            </summary>
+            <param name="codes">编码列表</param>
+            <returns>是返回true，否则返回false</returns>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.KitTurnoverToolController.IsTurnoverToolInToolTypes(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            判断周转工具是否在周转工具类型范围内
+            </summary>
+            <param name="toolCode">周转工具编码</param>
+            <param name="toolTypes">周转工具类型范围</param>
+            <returns>是返回true，否则返回false</returns>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.KitTurnoverToolController.CheckTurnoverToolDeleteState(System.Collections.Generic.List{System.Double})">
+            <summary>
+            验证周转工具是否可删除
+            </summary>
+            <param name="ids">周转工具ID列表</param>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.KitTurnoverToolController.GetTurnoverToolDefaultCapacity(System.String)">
+            <summary>
+            获取周转工具默认容量
+            </summary>
+            <param name="code">工具编码</param>
+            <returns>返回周转工具默认容量，找不到周转工具返回null</returns>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.KitTurnoverToolController.GetTurnoverToolCapacity(System.String)">
+            <summary>
+            目检采集获取周转工具容量
+            </summary>
+            <param name="code">工具编码</param>
+            <returns>周转工具容量</returns>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.KitTurnoverToolController.TurnoverToolStateAction(System.Double,SIE.TurnoverTools.TurnoverTools.TurnoverToolState,SIE.TurnoverTools.TurnoverTools.TurnoverToolAction)">
+            <summary>
+            周转工具状态变更：回收\维修\报废
+            </summary>
+            <param name="TurnoverToolId">周转工具ID</param>
+            <param name="state">周转工治具状态</param>
+            <param name="action">周转工具操作</param>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.KitTurnoverToolController.GetTurnoverToolModelCodes">
+            <summary>
+            获取周转工具型号列表
+            </summary>
+            <returns>周转工具列表</returns>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.KitTurnoverToolController.SetTurnoverToolModelDedicated(System.Double[],System.Boolean)">
+            <summary>
+            设置周转工具型号专用容器
+            </summary>
+            <param name="ids"></param>
+            <param name="isDedicated"></param>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.KitTurnoverToolController.GetTurnoverToolModelInProduct(System.Double,System.Double)">
+            <summary>
+            获取周转工具型号下对应产品
+            </summary>
+            <param name="turnoverToolModelId">周转工具型号ID</param>
+            /// <param name="productId">产品ID</param>
+            <returns>周转工具型号产品明细记录</returns>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.KitTurnoverToolController.GetTurnoverToolModels(System.String,System.String,SIE.PagingInfo)">
+            <summary>
+            通过周转工具类型获取周转工具型号
+            </summary>
+            <param name="toolType">周转工具类型</param>
+            <param name="keyword">下拉列表过滤条件</param>
+            <param name="pagingInfo">分页</param>
+            <returns>周转工具列表</returns>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.KitTurnoverToolController.GetTurnoverTools(System.Double,System.Nullable{System.Boolean},SIE.PagingInfo,System.Collections.Generic.IList{SIE.Domain.OrderInfo})">
+            <summary>
+            获取周转工具绑定明细列表
+            </summary>
+            <param name="toolId">周转工具ID</param>
+            <param name="isUnbinding">是否已解绑</param>
+            <param name="pagingInfo">分页条件</param>
+            <param name="orderInfos">排序条件</param>
+            <returns>绑定明细列表</returns>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.KitTurnoverToolController.GetTurnoverToolBindingsBySns(System.Collections.Generic.List{System.String})">
+            <summary>
+            根据条码号列表获取绑定明细列表
+            </summary>
+            <param name="sns">条码号列表</param>
+            <returns>绑定明细列表</returns>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.KitTurnoverToolController.GetTurnoverToolBindings(System.Collections.Generic.List{System.Double})">
+            <summary>
+            获取周转工具绑定明细列表
+            </summary>
+            <param name="toolIds">周转工具ID列表</param>>
+            <returns>绑定明细列表</returns>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.KitTurnoverToolController.GetTurnoverToolBinding(System.Linq.Expressions.Expression{System.Func{SIE.TurnoverTools.TurnoverTools.TurnoverToolBinding,System.Boolean}})">
+            <summary>
+            获取一条绑定数据
+            </summary>
+            <param name="exp">查询表达式</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.KitTurnoverToolController.GetTurnoverToolBindingBySn(System.String,System.Boolean)">
+            <summary>
+            根据产品条码获取绑定数据信息
+            </summary>
+            <param name="sn">产品条码</param>
+            <param name="IsUnbinding">是否解绑</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.KitTurnoverToolController.GetToolBindingNum(System.Double)">
+            <summary>
+            根据载具id获取绑定的数量
+            </summary>
+            <param name="turnoverToolId"></param>
+            <returns>载具id</returns>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.KitTurnoverToolController.GetToolBindingNum(System.String)">
+            <summary>
+            根据载具编码获取绑定SN的数量
+            </summary>
+            <param name="code">周转工具编码</param>
+            <returns>绑定SN的数量</returns>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.KitTurnoverToolController.GetToolBindingNumBySn(System.String)">
+            <summary>
+            根据产品条码获取绑定的数量
+            </summary>
+            <param name="sn">产品条码</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.KitTurnoverToolController.IsBindingTurnoverTool(System.String,System.String)">
+            <summary>
+            判断产品是否已经绑定指定周转工具
+            </summary>
+            <param name="turnoverTool">周转工具</param>
+            <param name="sn">产品条码</param>
+            <returns>已绑定返回true，否则返回false</returns>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.KitTurnoverToolController.SetBindFinish(System.Double,System.Boolean)">
+            <summary>
+            设置周转工具绑定-是否绑定完成
+            </summary>
+            <param name="turnoverToolId">周转工具id</param>
+            <param name="isBindFinish">是否绑定完成</param>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.KitTurnoverToolController.SaveActionLog(System.Double,SIE.TurnoverTools.TurnoverTools.TurnoverToolAction,SIE.TurnoverTools.TurnoverTools.TurnoverToolBinding)">
+            <summary>
+            记录操作日志
+            </summary>
+            <param name="TurnoverToolId">工具id</param>
+            <param name="state">操作状态</param>
+            <param name="binding">绑定明细</param>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.KitTurnoverToolController.GetTurnoverToolActionLogs(System.Double,SIE.PagingInfo,System.Collections.Generic.IList{SIE.Domain.OrderInfo})">
+            <summary>
+            获取操作日志
+            </summary>
+            <param name="toolId">周转工具</param>
+            <param name="pagingInfo">分页</param>
+            <param name="orderInfos">排序</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.TurnoverTools.TurnoverTools.TurnoverToolModel">
+            <summary>
+            周转工具型号
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolModel.CodeProperty">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolModel.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolModel.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolModel.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolModel.ToolTypeProperty">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolModel.ToolType">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolModel.DefaultCapacityProperty">
+            <summary>
+            默认容量
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolModel.DefaultCapacity">
+            <summary>
+            默认容量
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolModel.IsDedicatedProperty">
+            <summary>
+            专用容器
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolModel.IsDedicated">
+            <summary>
+            专用容器
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolModel.LengthProperty">
+            <summary>
+            长度(cm)
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolModel.Length">
+            <summary>
+            长度(cm)
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolModel.WidthProperty">
+            <summary>
+            宽(cm)
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolModel.Width">
+            <summary>
+            宽(cm)
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolModel.HeightProperty">
+            <summary>
+            高(cm)
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolModel.Height">
+            <summary>
+            高(cm)
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolModel.SupplierIdProperty">
+            <summary>
+            供应商Id
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolModel.SupplierId">
+            <summary>
+            供应商Id
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolModel.SupplierProperty">
+            <summary>
+            供应商
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolModel.Supplier">
+            <summary>
+            供应商
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolModel.CustomerIdProperty">
+            <summary>
+            客户Id
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolModel.CustomerId">
+            <summary>
+            客户Id
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolModel.CustomerProperty">
+            <summary>
+            客户
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolModel.Customer">
+            <summary>
+            客户
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolModel.ProductListProperty">
+            <summary>
+            产品容量列表
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolModel.ProductList">
+            <summary>
+            产品容量列表
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolModel.CustomerNameProperty">
+            <summary>
+            客户名称
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolModel.CustomerName">
+            <summary>
+            客户名称
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolModel.SupplierNameProperty">
+            <summary>
+            供应商名称
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolModel.SupplierName">
+            <summary>
+            供应商名称
+            </summary>
+        </member>
+        <member name="T:SIE.TurnoverTools.TurnoverTools.TurnoverToolModelConfig">
+            <summary>
+            周转工具型号 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.TurnoverToolModelConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.TurnoverTools.TurnoverTools.TurnoverToolModelInProduct">
+            <summary>
+            产品容量
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolModelInProduct.CapacityProperty">
+            <summary>
+            容量
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolModelInProduct.Capacity">
+            <summary>
+            容量
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolModelInProduct.ProductIdProperty">
+            <summary>
+            产品Id
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolModelInProduct.ProductId">
+            <summary>
+            产品Id
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolModelInProduct.ProductProperty">
+            <summary>
+            产品
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolModelInProduct.Product">
+            <summary>
+            产品
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolModelInProduct.ModelIdProperty">
+            <summary>
+            周转工具型号Id
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolModelInProduct.ModelId">
+            <summary>
+            周转工具型号Id
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolModelInProduct.ModelProperty">
+            <summary>
+            周转工具型号
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolModelInProduct.Model">
+            <summary>
+            周转工具型号
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolModelInProduct.ProductCodeProperty">
+            <summary>
+            物料编码
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolModelInProduct.ProductCode">
+            <summary>
+            物料编码
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolModelInProduct.ProductNameProperty">
+            <summary>
+            物料名称
+            </summary>
+        </member>
+        <member name="P:SIE.TurnoverTools.TurnoverTools.TurnoverToolModelInProduct.ProductName">
+            <summary>
+            物料名称
+            </summary>
+        </member>
+        <member name="T:SIE.TurnoverTools.TurnoverTools.TurnoverToolModelInProductConfig">
+            <summary>
+            产品容量 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.TurnoverToolModelInProductConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.TurnoverTools.TurnoverTools.TurnoverToolModelRule">
+            <summary>
+            前加工参数验证规则
+            </summary>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.TurnoverToolModelRule.#ctor">
+            <summary>
+            初始化需要进行验证的属性
+            </summary>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.TurnoverToolModelRule.Validate(SIE.Domain.IEntity,SIE.MetaModel.RuleArgs)">
+            <summary>
+            添加动态验证规则
+            </summary>
+            <param name="entity">验证实体</param>
+            <param name="e">为业务规则验证方法提供一些必要的参数。</param>
+        </member>
+        <member name="T:SIE.TurnoverTools.TurnoverTools.TurnoverToolRefModelRule">
+            <summary>
+            周转工具型号删除验证规则，被周转工具引用的不能删除
+            </summary>
+        </member>
+        <member name="M:SIE.TurnoverTools.TurnoverTools.TurnoverToolRefModelRule.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="T:SIE.TurnoverTools.TurnoverTools.TurnoverToolState">
+            <summary>
+            周转工具状态
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolState.Unused">
+            <summary>
+            闲置
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolState.Scrap">
+            <summary>
+            报废
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolState.Repair">
+            <summary>
+            维修
+            </summary>
+        </member>
+        <member name="F:SIE.TurnoverTools.TurnoverTools.TurnoverToolState.Inuse">
+            <summary>
+            使用中
+            </summary>
+        </member>
+    </members>
+</doc>

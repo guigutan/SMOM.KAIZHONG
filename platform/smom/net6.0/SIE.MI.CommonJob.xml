@@ -1,0 +1,217 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.MI.CommonJob</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.MI.CommonJob.KettleType">
+            <summary>
+            Kettle存储数据类型
+            </summary>
+        </member>
+        <member name="F:SIE.MI.CommonJob.KettleType.File">
+            <summary>
+            文件
+            </summary>
+        </member>
+        <member name="F:SIE.MI.CommonJob.KettleType.FileRepository">
+            <summary>
+            文件资源库
+            </summary>
+        </member>
+        <member name="T:SIE.MI.CommonJob.MICommonJob">
+            <summary>
+            抽取、清洗QMS的数据，并且汇总到MI
+            </summary>
+        </member>
+        <member name="F:SIE.MI.CommonJob.MICommonJob.installUrl">
+            <summary>
+            KETTLE安装路径
+            </summary>
+        </member>
+        <member name="F:SIE.MI.CommonJob.MICommonJob.jobUrl">
+            <summary>
+            KETTLE文件（作业、转换）根目录
+            </summary>
+        </member>
+        <member name="F:SIE.MI.CommonJob.MICommonJob.logDir">
+            <summary>
+            日记文件夹路径
+            </summary>
+        </member>
+        <member name="F:SIE.MI.CommonJob.MICommonJob.logPath">
+            <summary>
+            KETTLE文件日记路径
+            </summary>
+        </member>
+        <member name="F:SIE.MI.CommonJob.MICommonJob.jobPathName">
+            <summary>
+            被调用的Job文件相对路径
+            </summary>
+        </member>
+        <member name="F:SIE.MI.CommonJob.MICommonJob.kettleType">
+            <summary>
+            调用的Kettle存储数据类型(默认文件资源库)
+            </summary>
+        </member>
+        <member name="M:SIE.MI.CommonJob.MICommonJob.#ctor">
+            <summary>
+            初始化
+            </summary>
+        </member>
+        <member name="M:SIE.MI.CommonJob.MICommonJob.ExecuteJob(System.Object)">
+            <summary>
+            执行Job
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="M:SIE.MI.CommonJob.MICommonJob.ExecuteKettle">
+            <summary>
+            任务执行入口
+            </summary>
+            <returns>返回是否执行成功</returns>
+        </member>
+        <member name="M:SIE.MI.CommonJob.MICommonJob.ValidateData">
+            <summary>
+            验证参数有效性
+            </summary>
+            <returns>返回是否验证成功</returns>
+        </member>
+        <member name="M:SIE.MI.CommonJob.MICommonJob.GenerateBatString(System.String@)">
+            <summary>
+            根据Kettle存储数据的方式生成Bat命令
+            </summary>
+            <param name="batString">生成的Bat命令</param>
+            <returns>返回是否生成成功</returns>
+        </member>
+        <member name="M:SIE.MI.CommonJob.MICommonJob.GenerateBatName(System.String)">
+            <summary>
+            生产BAT名称
+            </summary>
+            <param name="content">Bat内容</param>
+            <returns>返回BAT名称</returns>
+        </member>
+        <member name="M:SIE.MI.CommonJob.MICommonJob.CreateBat(System.String,System.String)">
+            <summary>
+            创建BAT文件
+            </summary>
+            <param name="filePath">BAT路径</param>
+            <param name="content">BAT内容</param>
+        </member>
+        <member name="M:SIE.MI.CommonJob.MICommonJob.LogToDb(System.String)">
+            <summary>
+            记录日志
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:SIE.MI.CommonJob.MICommonJob.ErrorToDb(System.String)">
+            <summary>
+            记录异常信息
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:SIE.MI.CommonJob.UserProcess.SecurityAttributes">
+            <summary>
+            SECURITY_ATTRIBUTES结构包含一个对象的安全描述符，并指定检索到指定这个结构的句柄是否是可继承的
+            </summary>
+        </member>
+        <member name="T:SIE.MI.CommonJob.UserProcess.StartupInfo">
+            <summary>
+            STARTUPINFO用于指定新进程的主窗口特性的一个结构。
+            </summary>
+        </member>
+        <member name="T:SIE.MI.CommonJob.UserProcess.ProcessInformation">
+            <summary>
+            创建进程时相关的数据结构之一，该结构返回有关新进程及其主线程的信息。
+            </summary>
+        </member>
+        <member name="T:SIE.MI.CommonJob.UserProcess.TOKEN_TYPE">
+            <summary>
+            令牌_类型枚举包含区分主令牌和模拟令牌的值。
+            </summary>
+        </member>
+        <member name="T:SIE.MI.CommonJob.UserProcess.SECURITY_IMPERSONATION_LEVEL">
+            <summary>
+            安全模拟级别枚举包含指定安全模拟级别的值。安全模拟级别控制服务器进程可以代表客户端进程的程度。
+            </summary>
+        </member>
+        <member name="M:SIE.MI.CommonJob.UserProcess.WTSGetActiveConsoleSessionId">
+            <summary>
+            检索控制台会话的会话标识符。控制台会话是当前连接到物理控制台的会话
+            </summary>
+            <returns>返回连接到物理控制台的会话的会话标识符</returns>
+        </member>
+        <member name="M:SIE.MI.CommonJob.UserProcess.CloseHandle(System.IntPtr)">
+            <summary>
+            关闭句柄
+            </summary>
+            <param name="hSnapshot">句柄指针</param>
+            <returns>返回是否执行成功</returns>
+        </member>
+        <member name="M:SIE.MI.CommonJob.UserProcess.CreateProcessAsUser(System.IntPtr,System.String,System.String,SIE.MI.CommonJob.UserProcess.SecurityAttributes@,SIE.MI.CommonJob.UserProcess.SecurityAttributes@,System.Boolean,System.Int32,System.IntPtr,System.String,SIE.MI.CommonJob.UserProcess.StartupInfo@,SIE.MI.CommonJob.UserProcess.ProcessInformation@)">
+            <summary>
+            创建新进程及其主线程。新进程在由指定令牌表示的用户的安全上下文中运行
+            </summary>
+            <param name="hToken">授权令牌</param>
+            <param name="lpApplicationName">执行文件全路径</param>
+            <param name="lpCommandLine">命令行</param>
+            <param name="lpProcessAttributes">pointer to process SECURITY_ATTRIBUTES</param>
+            <param name="lpThreadAttributes">pointer to thread SECURITY_ATTRIBUTES</param>
+            <param name="bInheritHandle">如果此参数为真，则调用进程中的每个可继承句柄都由新进程继承。如果参数为假，则不继承句柄</param>
+            <param name="dwCreationFlags">控制优先级类和进程创建的标志</param>
+            <param name="lpEnvironment">指向新进程的环境块的指针</param>
+            <param name="lpCurrentDirectory">当前目录路径</param>
+            <param name="lpStartupInfo">pointer to STARTUPINFO structure</param>
+            <param name="lpProcessInformation">返回关于新进程的信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.MI.CommonJob.UserProcess.DuplicateTokenEx(System.IntPtr,System.UInt32,SIE.MI.CommonJob.UserProcess.SecurityAttributes@,System.Int32,System.Int32,System.IntPtr@)">
+            <summary>
+            创建一个新的访问令牌，复制现有令牌
+            </summary>
+            <param name="ExistingTokenHandle">已经存在的令牌</param>
+            <param name="dwDesiredAccess">指定新令牌的请求访问权限</param>
+            <param name="lpThreadAttributes">线程属性</param>
+            <param name="TokenType">令牌类型</param>
+            <param name="ImpersonationLevel">新令牌的模拟级别</param>
+            <param name="DuplicateTokenHandle">新令牌的指针</param>
+            <returns>返回是否创建成功</returns>
+        </member>
+        <member name="M:SIE.MI.CommonJob.UserProcess.SetTokenInformation(System.IntPtr,System.Int32,System.IntPtr,System.UInt32)">
+            <summary>
+            为指定的访问令牌设置各种类型的信息
+            </summary>
+            <param name="TokenHandle">要为其设置信息的访问令牌的句柄。</param>
+            <param name="TokenInformationClass">标记信息类枚举类型中的一个值，用于标识函数集的信息类型</param>
+            <param name="TokenInformation">指向包含访问令牌中设置的信息的缓冲区的指针</param>
+            <param name="TokenInformationLength">指定标记信息指向的缓冲区的长度</param>
+            <returns>返回是否设置成功</returns>
+        </member>
+        <member name="M:SIE.MI.CommonJob.UserProcess.WTSQueryUserToken(System.UInt32,System.IntPtr@)">
+            <summary>
+            获取会话ID指定的登录用户的主访问令牌
+            </summary>
+            <param name="sessionId">远程桌面服务会话标识符</param>
+            <param name="Token">如果函数成功，则为登录用户接收指向令牌句柄的指针</param>
+            <returns>返回是否获取成功</returns>
+        </member>
+        <member name="M:SIE.MI.CommonJob.UserProcess.CreateEnvironmentBlock(System.IntPtr@,System.IntPtr,System.Boolean)">
+            <summary>
+            检索指定用户的环境变量
+            </summary>
+            <param name="lpEnvironment">接收指向新环境块的指针</param>
+            <param name="hToken">用户的令牌</param>
+            <param name="bInherit">指定是否从当前进程的环境继承。如果该值为真，则进程继承当前进程的环境。如果该值为假，则进程不会继承当前进程的环境。</param>
+            <returns>返回是否创建成功</returns>
+        </member>
+        <member name="M:SIE.MI.CommonJob.UserProcess.CreateProcess(System.String,System.String,SIE.MI.CommonJob.UserProcess.ProcessInformation@)">
+            <summary>
+            创建一个可交互的复杂的UI进程
+            </summary>
+            <param name="applicationName">进程全路径</param>
+            <param name="command">命令行信息</param>
+            <param name="pi">主线程信息</param>
+            <returns>返回是否创建成功</returns>
+        </member>
+    </members>
+</doc>

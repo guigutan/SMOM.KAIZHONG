@@ -1,0 +1,275 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Schedule</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Schedule.ClearJobLogParameter">
+            <summary>
+            清理日志参数
+            </summary>
+        </member>
+        <member name="F:SIE.Schedule.ClearJobLogParameter.PeriodProperty">
+            <summary>
+            日志保留天数
+            </summary>
+        </member>
+        <member name="P:SIE.Schedule.ClearJobLogParameter.Period">
+            <summary>
+            日志保留天数
+            </summary>
+        </member>
+        <member name="M:SIE.Schedule.CronUtil.GetTaskeFireTime(System.String,System.Int32)">
+            <summary>
+            获取任务在未来周期内哪些时间会运行
+            </summary>
+            <param name="cronExpression">Cron表达式</param>
+            <param name="numTimes">运行次数</param>
+            <returns>运行时间段</returns>
+        </member>
+        <member name="M:SIE.Schedule.CronUtil.ValidateIntervals(System.String,System.TimeSpan)">
+            <summary>
+            校验时间间隔是否满足间隔最小值
+            </summary>
+            <param name="cronExpression"></param>
+            <param name="minInterval"></param>
+            <exception cref="T:SIE.Domain.Validation.ValidationException"></exception>
+        </member>
+        <member name="T:SIE.Schedule.DateTimeZoneExtensions">
+            <summary>
+             DateTimeZone 转换为 TimeZoneInfo
+            </summary>
+        </member>
+        <member name="M:SIE.Schedule.DateTimeZoneExtensions.ToTimeZoneInfo(NodaTime.DateTimeZone)">
+            <summary>
+            
+            </summary>
+            <param name="dateTimeZone"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Schedule.Filters.RecurringJobFilter">
+            <summary>
+            过滤器-无效调度不执行
+            </summary>
+        </member>
+        <member name="M:SIE.Schedule.Filters.RecurringJobFilter.OnPerforming(Hangfire.Server.PerformingContext)">
+            <summary>
+            任务处理前
+            </summary>
+            <param name="filterContext"></param>
+        </member>
+        <member name="M:SIE.Schedule.Filters.RecurringJobFilter.OnPerformed(Hangfire.Server.PerformedContext)">
+            <summary>
+            处理完成
+            </summary>
+            <param name="filterContext"></param>
+        </member>
+        <member name="T:SIE.Schedule.JobConfigExtend">
+            <summary>
+            调度任务设置扩展属性
+            </summary>
+        </member>
+        <member name="F:SIE.Schedule.JobConfigExtend.CronExpressionTipProperty">
+            <summary>
+            Cron表达式Tip
+            </summary>
+        </member>
+        <member name="M:SIE.Schedule.JobConfigExtend.GetCronExpressionTip(SIE.Common.Schdules.JobConfig)">
+            <summary>
+            Cron表达式Tip
+            </summary>
+        </member>
+        <member name="F:SIE.Schedule.JobConfigExtend.JobTypeProperty">
+            <summary>
+            调度类型 扩展属性。
+            </summary>
+        </member>
+        <member name="M:SIE.Schedule.JobConfigExtend.GetJobType(SIE.Domain.Entity)">
+            <summary>
+            获取 调度类型 属性的值。
+            </summary>
+            <param name="me">要获取扩展属性值的对象。</param>
+        </member>
+        <member name="M:SIE.Schedule.JobConfigExtend.SetJobType(SIE.Domain.Entity,System.Nullable{SIE.Schedule.JobType})">
+            <summary>
+            设置 调度类型 属性的值。
+            </summary>
+            <param name="me">要设置扩展属性值的对象。</param>
+            <param name="value">设置的值。</param>
+        </member>
+        <member name="T:SIE.Schedule.JobConfigCronValidRule">
+            <summary>
+            HangFire的Cron表达式不能为空规则
+            </summary>
+        </member>
+        <member name="M:SIE.Schedule.JobConfigCronValidRule.#ctor">
+            <summary>
+            构造函数，只有删除生效
+            </summary>
+        </member>
+        <member name="M:SIE.Schedule.JobConfigCronValidRule.Validate(SIE.Domain.IEntity,SIE.MetaModel.RuleArgs)">
+            <summary>
+            验证规则
+            </summary>
+            <param name="entity">调度任务</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="T:SIE.Schedule.JobController">
+            <summary>
+            调度任务控制器
+            </summary>
+            <seealso cref="T:SIE.DomainController" />
+        </member>
+        <member name="M:SIE.Schedule.JobController.FindAvailableJob(System.String,System.String)">
+            <summary>
+            查找<see cref="T:SIE.Common.Schdules.JobBase"/>的子类.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Schedule.JobController.IsExistEnableJob(System.String)">
+            <summary>
+            是否存在有效调度
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Schedule.JobController.Save(SIE.Domain.EntityList{SIE.Common.Schdules.JobConfig})">
+            <summary>
+            保存调度任务配置.
+            </summary>
+            <param name="list">The list.</param>
+            <exception cref="T:SIE.Domain.Validation.ValidationException">无效的JobClass,必须是JobBase的子类"</exception>
+        </member>
+        <member name="M:SIE.Schedule.JobController.GetEmployeeViewValue(SIE.Domain.EntityList{SIE.Common.Schdules.JobConfig})">
+            <summary>
+            获取员工-用户信息
+            </summary>
+            <param name="list"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Schedule.JobController.DeleteJob(SIE.Common.Schdules.JobConfig)">
+            <summary>
+            删除调度任务
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:SIE.Schedule.JobController.UpdateJob(SIE.Common.Schdules.JobConfig)">
+            <summary>
+            更新调度任务
+            </summary>
+            <param name="data"></param>
+            <exception cref="T:SIE.Domain.Validation.ValidationException"></exception>
+        </member>
+        <member name="M:SIE.Schedule.JobController.Disable(System.Collections.Generic.IList{SIE.Common.Schdules.JobConfig})">
+            <summary>
+            禁用调度
+            </summary>
+            <param name="list"></param>
+        </member>
+        <member name="M:SIE.Schedule.JobController.Enable(System.Collections.Generic.IList{SIE.Common.Schdules.JobConfig})">
+            <summary>
+            启动调度
+            </summary>
+            <param name="list"></param>
+        </member>
+        <member name="M:SIE.Schedule.JobController.GetLogs(System.String,SIE.PagingInfo,System.Collections.Generic.IList{SIE.Domain.OrderInfo})">
+            <summary>
+            加载任务日志.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="pagingInfo">The paging information.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Schedule.JobController.Run(SIE.Common.Schdules.JobConfig)">
+            <summary>
+            马上执行任务.
+            </summary>
+            <param name="job">The job.</param>
+            <exception cref="T:SIE.Domain.Validation.ValidationException">无效的JobClass,必须是JobBase的子类"</exception>
+        </member>
+        <member name="M:SIE.Schedule.JobController.Trigger(SIE.Common.Schdules.JobConfig)">
+            <summary>
+            触发调度任务.
+            </summary>
+            <param name="job">The job.</param>
+        </member>
+        <member name="M:SIE.Schedule.JobController.DeleteLog(System.Int32)">
+            <summary>
+            删除任务日志
+            </summary>
+            <param name="days"></param>
+        </member>
+        <member name="M:SIE.Schedule.JobController.DeleteLog(System.String)">
+            <summary>
+            删除当前任务的任务日志
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="T:SIE.Schedule.JobType">
+            <summary>
+            调度类型
+            </summary>
+        </member>
+        <member name="F:SIE.Schedule.JobType.Hangfire">
+            <summary>
+            Hangfire调度
+            </summary>
+        </member>
+        <member name="F:SIE.Schedule.JobType.Interface">
+            <summary>
+            异步接口
+            </summary>
+        </member>
+        <member name="F:SIE.Schedule.JobType.InterfaceSync">
+            <summary>
+            同步接口
+            </summary>
+        </member>
+        <member name="T:SIE.Schedule.Resolvers.CrossPlatformTimeZoneResolver">
+            <summary>
+            跨平台时区转换器
+            </summary>
+        </member>
+        <member name="M:SIE.Schedule.Resolvers.CrossPlatformTimeZoneResolver.GetTimeZoneById(System.String)">
+            <summary>
+            根据时区ID，获取时区对象
+            </summary>
+            <param name="timeZoneId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Schedule.ScheduleApi">
+            <summary>
+            调度Hangfire的API
+            </summary>
+        </member>
+        <member name="F:SIE.Schedule.ScheduleApi.Instance">
+            <summary>
+            单例
+            </summary>
+        </member>
+        <member name="M:SIE.Schedule.ScheduleApi.AddOrUpdate(System.String,System.Linq.Expressions.Expression{System.Action},System.String)">
+            <summary>
+            添加或更新任务
+            </summary>
+            <param name="key"></param>
+            <param name="methodCall"></param>
+            <param name="cronExpression"></param>
+        </member>
+        <member name="M:SIE.Schedule.ScheduleApi.Remove(System.String)">
+            <summary>
+            移除任务
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="M:SIE.Schedule.ScheduleApi.Trigger(System.String)">
+            <summary>
+            触发任务
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="F:AssemblyInformation.ModuleName">
+            <summary>
+            模块名称
+            </summary>
+        </member>
+    </members>
+</doc>

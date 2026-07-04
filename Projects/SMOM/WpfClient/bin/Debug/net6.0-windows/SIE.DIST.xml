@@ -1,0 +1,1428 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.DIST</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.DIST.DbMigrations._20220608_000000_InitDistData">
+            <summary>
+            数据库升级
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.DbMigrations._20220608_000000_InitDistData.DbSetting">
+            <summary>
+            数据库
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.DbMigrations._20220608_000000_InitDistData.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.DbMigrations._20220608_000000_InitDistData.Type">
+            <summary>
+            手动升级的类型：数据
+            </summary>
+        </member>
+        <member name="M:SIE.DIST.DbMigrations._20220608_000000_InitDistData.Down">
+            <summary>
+            数据库回滚
+            </summary>
+        </member>
+        <member name="M:SIE.DIST.DbMigrations._20220608_000000_InitDistData.Up">
+            <summary>
+            数据库升级
+            </summary>
+        </member>
+        <member name="M:SIE.DIST.DbMigrations._20220608_000000_InitDistData.InitReturnBillNoConfig">
+            <summary>
+            初始化 配送单退料单号生成规则
+            </summary>
+        </member>
+        <member name="M:SIE.DIST.DbMigrations._20220608_000000_InitDistData.InitBillLabelConfig">
+            <summary>
+            初始化 配送单退料单标签生成规则
+            </summary>
+        </member>
+        <member name="M:SIE.DIST.DbMigrations._20220608_000000_InitDistData.InitBillNoConfig">
+            <summary>
+            初始化 配送单单号生成规则
+            </summary>
+        </member>
+        <member name="T:SIE.DIST.DistEntityRepository`1">
+            <summary>
+            当前模块数据仓库
+            </summary>
+            <typeparam name="T">实体泛型参数</typeparam>
+        </member>
+        <member name="T:SIE.DIST.DistEntityDataProvider">
+            <summary>
+            配送模块数据提供者
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.DistEntityDataProvider.ConnectionStringName">
+            <summary>
+            数据库连接字符串的名称
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.DistEntityDataProvider.ConnectionStringSettingName">
+            <summary>
+            数据库连接字符串的名称
+            </summary>
+        </member>
+        <member name="T:SIE.DIST.Distribution.Configs.BillLabelConfig">
+            <summary>
+            配送单退料单标签生成和打印模板规则
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.Distribution.Configs.BillLabelConfig.defaultValue">
+            <summary>
+            单据条码配置项默认值
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.Distribution.Configs.BillLabelConfig.DefaultValue">
+            <summary>
+            获取默认值
+            </summary>
+        </member>
+        <member name="T:SIE.DIST.Distribution.Configs.BillLabelConfigValue">
+            <summary>
+            单据条码配置项
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.Distribution.Configs.BillLabelConfigValue.NumberRuleIdProperty">
+            <summary>
+            条码规则ID
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.Distribution.Configs.BillLabelConfigValue.NumberRuleId">
+            <summary>
+            条码规则
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.Distribution.Configs.BillLabelConfigValue.NumberRuleProperty">
+            <summary>
+            条码规则
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.Distribution.Configs.BillLabelConfigValue.NumberRule">
+            <summary>
+            条码规则
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.Distribution.Configs.BillLabelConfigValue.PrintTemplateIdProperty">
+            <summary>
+            打印模板ID
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.Distribution.Configs.BillLabelConfigValue.PrintTemplateId">
+            <summary>
+            打印模板
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.Distribution.Configs.BillLabelConfigValue.PrintTemplateProperty">
+            <summary>
+            打印模板
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.Distribution.Configs.BillLabelConfigValue.PrintTemplate">
+            <summary>
+            打印模板
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.Distribution.Configs.BillLabelConfigValue.IsNumberRuleSelectedRealOnlyProperty">
+            <summary>
+            编辑时，编码是否允许修改，扩展只读属性
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.Distribution.Configs.BillLabelConfigValue.IsNumberRuleSelectedRealOnly">
+            <summary>
+            编辑时，编码是否允许修改
+            </summary>
+        </member>
+        <member name="M:SIE.DIST.Distribution.Configs.BillLabelConfigValue.GetIsNumberRuleSelectedRealOnly">
+            <summary>
+            获取编辑时，编码是否允许修改
+            </summary>
+            <returns>True:允许修改 False:不允许</returns>
+        </member>
+        <member name="M:SIE.DIST.Distribution.Configs.BillLabelConfigValue.Display">
+            <summary>
+            把值显示出来
+            </summary>
+            <returns>配置值</returns>
+        </member>
+        <member name="T:SIE.DIST.Distribution.Configs.RmaBillLabelConfigValueConfig">
+            <summary>
+            页面配置
+            </summary>
+        </member>
+        <member name="M:SIE.DIST.Distribution.Configs.RmaBillLabelConfigValueConfig.AddValidations(SIE.MetaModel.IValidationDeclarer)">
+            <summary>
+            对实体验证规则的配置
+            </summary>
+            <param name="rules">验证规则声明器</param>
+        </member>
+        <member name="T:SIE.DIST.Distribution.Configs.BillNoConfig">
+            <summary>
+            配送单单号生成规则
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.Distribution.Configs.BillNoConfig.defaultValue">
+            <summary>
+            配送单号配置默认值
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.Distribution.Configs.BillNoConfig.DefaultValue">
+            <summary>
+            获取默认值
+            </summary>
+        </member>
+        <member name="T:SIE.DIST.Distribution.Configs.BillNoConfigValue">
+            <summary>
+            配送单单号配置值
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.Distribution.Configs.BillNoConfigValue.NumberRuleIdProperty">
+            <summary>
+            条码规则ID
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.Distribution.Configs.BillNoConfigValue.NumberRuleId">
+            <summary>
+            条码规则ID
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.Distribution.Configs.BillNoConfigValue.NumberRuleProperty">
+            <summary>
+            条码规则
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.Distribution.Configs.BillNoConfigValue.NumberRule">
+            <summary>
+            条码规则
+            </summary>
+        </member>
+        <member name="M:SIE.DIST.Distribution.Configs.BillNoConfigValue.Display">
+            <summary>
+            把配置值显示出来
+            </summary>
+            <returns>配置值</returns>
+        </member>
+        <member name="T:SIE.DIST.Distribution.Configs.BillNoConfigValueConfig">
+            <summary>
+            实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.DIST.Distribution.Configs.BillNoConfigValueConfig.AddValidations(SIE.MetaModel.IValidationDeclarer)">
+            <summary>
+            添加验证规则
+            </summary>
+            <param name="rules">验证规则声明器</param>
+        </member>
+        <member name="T:SIE.DIST.Distribution.Configs.ReturnBillNoConfig">
+            <summary>
+            配送单退料单号生成规则
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.Distribution.Configs.ReturnBillNoConfig.defaultValue">
+            <summary>
+            配送单退料单号配置默认值
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.Distribution.Configs.ReturnBillNoConfig.DefaultValue">
+            <summary>
+            获取默认值
+            </summary>
+        </member>
+        <member name="T:SIE.DIST.Distribution.Configs.ReturnBillNoConfigValue">
+            <summary>
+            配送退料单号配置项
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.Distribution.Configs.ReturnBillNoConfigValue.NumberRuleIdProperty">
+            <summary>
+            条码规则ID
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.Distribution.Configs.ReturnBillNoConfigValue.NumberRuleId">
+            <summary>
+            条码规则
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.Distribution.Configs.ReturnBillNoConfigValue.NumberRuleProperty">
+            <summary>
+            条码规则
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.Distribution.Configs.ReturnBillNoConfigValue.NumberRule">
+            <summary>
+            条码规则
+            </summary>
+        </member>
+        <member name="M:SIE.DIST.Distribution.Configs.ReturnBillNoConfigValue.Display">
+            <summary>
+            把配置值显示出来
+            </summary>
+            <returns>配置值</returns>
+        </member>
+        <member name="T:SIE.DIST.Distribution.Configs.ReturnBillNoConfigValueConfig">
+            <summary>
+            实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.DIST.Distribution.Configs.ReturnBillNoConfigValueConfig.AddValidations(SIE.MetaModel.IValidationDeclarer)">
+            <summary>
+            验证规则配置
+            </summary>
+            <param name="rules">验证规则声明器</param>
+        </member>
+        <member name="T:SIE.DIST.Distribution.DistributionBillCriteria">
+            <summary>
+            配送单查询实体
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.Distribution.DistributionBillCriteria.ContainerNoProperty">
+            <summary>
+            载具号
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.Distribution.DistributionBillCriteria.ContainerNo">
+            <summary>
+            载具号
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.Distribution.DistributionBillCriteria.WorkOrderIdProperty">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.Distribution.DistributionBillCriteria.WorkOrderId">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.Distribution.DistributionBillCriteria.WorkOrderProperty">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.Distribution.DistributionBillCriteria.WorkOrder">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.Distribution.DistributionBillCriteria.ItemIdProperty">
+            <summary>
+            物料Id
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.Distribution.DistributionBillCriteria.ItemId">
+            <summary>
+            物料Id
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.Distribution.DistributionBillCriteria.ItemProperty">
+            <summary>
+            物料
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.Distribution.DistributionBillCriteria.Item">
+            <summary>
+            物料
+            </summary>
+        </member>
+        <member name="M:SIE.DIST.Distribution.DistributionBillCriteria.Fetch">
+            <summary>
+            获取配送单
+            </summary>
+            <returns>配送单列表</returns>
+        </member>
+        <member name="T:SIE.DIST.Distribution.WipResourceDeleteRuleDistributionBill">
+            <summary>
+            生产资源删除验证规则
+            </summary>
+        </member>
+        <member name="M:SIE.DIST.Distribution.WipResourceDeleteRuleDistributionBill.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.DIST.Distribution.WipResourceDeleteRuleDistributionBill.Validate(SIE.Domain.IEntity,SIE.MetaModel.RuleArgs)">
+            <summary>
+            根据生产资源是否被配送单引用，判断是否能被删除
+            </summary>
+            <param name="entity">生产资源</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="T:SIE.DIST.DistributionBill">
+            <summary>
+            配送单
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.DistributionBill.ContainerNoProperty">
+            <summary>
+            载具号
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.DistributionBill.ContainerNo">
+            <summary>
+            载具号
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.DistributionBill.NoProperty">
+            <summary>
+            配送单号
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.DistributionBill.No">
+            <summary>
+            配送单号
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.DistributionBill.QtyProperty">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.DistributionBill.Qty">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.DistributionBill.OkQtyProperty">
+            <summary>
+            良品数量
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.DistributionBill.OkQty">
+            <summary>
+            良品数量
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.DistributionBill.ReturnQtyProperty">
+            <summary>
+            正常退料数量
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.DistributionBill.ReturnQty">
+            <summary>
+            正常退料数量
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.DistributionBill.NgReturnQtyProperty">
+            <summary>
+            不良退料数量
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.DistributionBill.NgReturnQty">
+            <summary>
+            不良退料数量
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.DistributionBill.PrintQtyProperty">
+            <summary>
+            打印数量
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.DistributionBill.PrintQty">
+            <summary>
+            打印数量
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.DistributionBill.RemainderQtyProperty">
+            <summary>
+            剩余数量
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.DistributionBill.RemainderQty">
+            <summary>
+            剩余数量
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.DistributionBill.BindingDateProperty">
+            <summary>
+            绑定日期
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.DistributionBill.BindingDate">
+            <summary>
+            绑定日期
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.DistributionBill.DetailListProperty">
+            <summary>
+            箱号列表
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.DistributionBill.DetailList">
+            <summary>
+            箱号列表
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.DistributionBill.PropertyValueListProperty">
+            <summary>
+            属性值列表
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.DistributionBill.PropertyValueList">
+            <summary>
+            属性值列表
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.DistributionBill.ShiftIdProperty">
+            <summary>
+            班次Id
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.DistributionBill.ShiftId">
+            <summary>
+            班次Id
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.DistributionBill.ShiftProperty">
+            <summary>
+            班次
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.DistributionBill.Shift">
+            <summary>
+            班次
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.DistributionBill.WorkOrderIdProperty">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.DistributionBill.WorkOrderId">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.DistributionBill.WorkOrderProperty">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.DistributionBill.WorkOrder">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.DistributionBill.ResourceIdProperty">
+            <summary>
+            资源
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.DistributionBill.ResourceId">
+            <summary>
+            资源
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.DistributionBill.ResourceProperty">
+            <summary>
+            资源
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.DistributionBill.Resource">
+            <summary>
+            资源
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.DistributionBill.ItemIdProperty">
+            <summary>
+            物料Id
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.DistributionBill.ItemId">
+            <summary>
+            物料Id
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.DistributionBill.ItemProperty">
+            <summary>
+            物料
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.DistributionBill.Item">
+            <summary>
+            物料
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.DistributionBill.BindingByIdProperty">
+            <summary>
+            绑定人Id
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.DistributionBill.BindingById">
+            <summary>
+            绑定人Id
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.DistributionBill.BindingByProperty">
+            <summary>
+            绑定人
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.DistributionBill.BindingBy">
+            <summary>
+            绑定人
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.DistributionBill.StateProperty">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.DistributionBill.State">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.DistributionBill.SourceIdProperty">
+            <summary>
+            来源ID
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.DistributionBill.SourceId">
+            <summary>
+            来源ID
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.DistributionBill.SourceTypeProperty">
+            <summary>
+            来源类型
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.DistributionBill.SourceType">
+            <summary>
+            来源类型
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.DistributionBill.ItemNameProperty">
+            <summary>
+            物料名称
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.DistributionBill.ItemName">
+            <summary>
+            物料名称
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.DistributionBill.ItemCodeProperty">
+            <summary>
+            物料编码
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.DistributionBill.ItemCode">
+            <summary>
+            物料编码
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.DistributionBill.WorkOrderNoProperty">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.DistributionBill.WorkOrderNo">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="T:SIE.DIST.DistributionBillConfig">
+            <summary>
+             实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.DIST.DistributionBillConfig.ConfigMeta">
+            <summary>
+            Meta属性配置
+            </summary>
+        </member>
+        <member name="T:SIE.DIST.DistributionBillDetail">
+            <summary>
+            配送箱号
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.DistributionBillDetail.ItemLabelNoProperty">
+            <summary>
+            箱号条码号
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.DistributionBillDetail.ItemLabelNo">
+            <summary>
+            箱号条码号
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.DistributionBillDetail.QtyProperty">
+            <summary>
+            装箱数量
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.DistributionBillDetail.Qty">
+            <summary>
+            装箱数量
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.DistributionBillDetail.OkQtyProperty">
+            <summary>
+            良品数量
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.DistributionBillDetail.OkQty">
+            <summary>
+            良品数量
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.DistributionBillDetail.NgQtyProperty">
+            <summary>
+            不良数量
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.DistributionBillDetail.NgQty">
+            <summary>
+            不良数量
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.DistributionBillDetail.PropertyListProperty">
+            <summary>
+            配送属性
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.DistributionBillDetail.PropertyList">
+            <summary>
+            配送属性
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.DistributionBillDetail.BillIdProperty">
+            <summary>
+            明细列表Id
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.DistributionBillDetail.BillId">
+            <summary>
+            明细列表Id
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.DistributionBillDetail.BillProperty">
+            <summary>
+            明细列表
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.DistributionBillDetail.Bill">
+            <summary>
+            明细列表
+            </summary>
+        </member>
+        <member name="T:SIE.DIST.DistributionBillDetailConfig">
+            <summary>
+            箱号 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.DIST.DistributionBillDetailConfig.ConfigMeta">
+            <summary>
+            Meta属性配置
+            </summary>
+        </member>
+        <member name="T:SIE.DIST.DistributionBillDetailProperty">
+            <summary>
+            配送单明细属性值
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.DistributionBillDetailProperty.ValueProperty">
+            <summary>
+            属性值
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.DistributionBillDetailProperty.Value">
+            <summary>
+            属性值
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.DistributionBillDetailProperty.DefinitionIdProperty">
+            <summary>
+            物料属性定义Id
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.DistributionBillDetailProperty.DefinitionId">
+            <summary>
+            物料属性定义Id
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.DistributionBillDetailProperty.DefinitionProperty">
+            <summary>
+            物料属性定义
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.DistributionBillDetailProperty.Definition">
+            <summary>
+            物料属性定义
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.DistributionBillDetailProperty.BillDetailIdProperty">
+            <summary>
+            配送单明细Id
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.DistributionBillDetailProperty.BillId">
+            <summary>
+            配送单明细Id
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.DistributionBillDetailProperty.BillProperty">
+            <summary>
+            配送单明细
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.DistributionBillDetailProperty.BillDetail">
+            <summary>
+            配送单明细
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.DistributionBillDetailProperty.DefinitionNameProperty">
+            <summary>
+            属性名称
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.DistributionBillDetailProperty.DefinitionName">
+            <summary>
+            属性名称
+            </summary>
+        </member>
+        <member name="T:SIE.DIST.DistributionBillDetailPropertyConfig">
+            <summary>
+             实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.DIST.DistributionBillDetailPropertyConfig.ConfigMeta">
+            <summary>
+            Meta属性配置
+            </summary>
+        </member>
+        <member name="T:SIE.DIST.DistributionBillPropertyValue">
+            <summary>
+            配送单属性值
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.DistributionBillPropertyValue.ValueProperty">
+            <summary>
+            属性值
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.DistributionBillPropertyValue.Value">
+            <summary>
+            属性值
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.DistributionBillPropertyValue.DefinitionIdProperty">
+            <summary>
+            物料属性定义Id
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.DistributionBillPropertyValue.DefinitionId">
+            <summary>
+            物料属性定义Id
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.DistributionBillPropertyValue.DefinitionProperty">
+            <summary>
+            物料属性定义
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.DistributionBillPropertyValue.Definition">
+            <summary>
+            物料属性定义
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.DistributionBillPropertyValue.BillIdProperty">
+            <summary>
+            属性列表Id
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.DistributionBillPropertyValue.BillId">
+            <summary>
+            属性列表Id
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.DistributionBillPropertyValue.BillProperty">
+            <summary>
+            属性列表
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.DistributionBillPropertyValue.Bill">
+            <summary>
+            属性列表
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.DistributionBillPropertyValue.DefinitionNameProperty">
+            <summary>
+            属性名称
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.DistributionBillPropertyValue.DefinitionName">
+            <summary>
+            属性名称
+            </summary>
+        </member>
+        <member name="T:SIE.DIST.DistributionBillPropertyValueConfig">
+            <summary>
+             实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.DIST.DistributionBillPropertyValueConfig.ConfigMeta">
+            <summary>
+            Meta属性配置
+            </summary>
+        </member>
+        <member name="T:SIE.DIST.DistributionController">
+            <summary>
+            配送单控制器
+            </summary>
+        </member>
+        <member name="M:SIE.DIST.DistributionController.GetDistributionBills(SIE.DIST.Distribution.DistributionBillCriteria)">
+            <summary>
+            获取配送单列表
+            </summary>
+            <param name="criteria">配送单查询实体</param>
+            <returns>配送单列表</returns>
+        </member>
+        <member name="M:SIE.DIST.DistributionController.ValidateBarcode(System.String)">
+            <summary>
+            验证载具容器
+            </summary>
+            <param name="barcode">周转箱条码</param>
+            <exception cref="T:SIE.Domain.Validation.ValidationException">周转箱不可用，当前状态非闲置</exception>
+        </member>
+        <member name="M:SIE.DIST.DistributionController.ValidatePackingLabel(System.String,System.Double)">
+            <summary>
+            验证箱号标签
+            </summary>
+            <param name="label">标签号</param>
+            <param name="itemId">物料ID</param>
+             <returns>物料标签</returns>
+            <exception cref="T:SIE.Domain.Validation.ValidationException">箱号标签不存在,请重新扫描箱号标签</exception>
+            <exception cref="T:SIE.Domain.Validation.ValidationException">不允许配送，箱号物流状态为非已发料</exception>
+            <exception cref="T:SIE.Domain.Validation.ValidationException">不允许配送，箱号标签可用数量等于0</exception>
+        </member>
+        <member name="M:SIE.DIST.DistributionController.SaveGetPackingLabelLog(System.String)">
+            <summary>
+            保存获取标签信息日志
+            </summary>
+            <param name="labelNo">标签号</param>
+        </member>
+        <member name="M:SIE.DIST.DistributionController.SaveDistribution(System.Double,System.String,System.Double,System.Decimal,System.String[])">
+            <summary>
+            保存配送单
+            </summary>
+            <param name="goodsIssueId">发料单号</param>
+            <param name="boxNo">载具号</param>
+            <param name="lineId">配送产线</param>
+            <param name="qty">配送数量</param>
+            <param name="itemLabels">箱号标签</param>
+        </member>
+        <member name="M:SIE.DIST.DistributionController.SaveDistributionBillDetail(SIE.DIST.GoodsIssue,SIE.DIST.DistributionBill,System.String[])">
+            <summary>
+            保存配送明细
+            </summary>
+            <param name="goodsIssue">工单发料信息</param>
+            <param name="distribution">配送单</param>
+            <param name="itemLabels">物料条码集合</param>
+        </member>
+        <member name="M:SIE.DIST.DistributionController.SetDistributionBillDetailProperty(SIE.DIST.GoodsIssue,SIE.DIST.DistributionBillDetail)">
+            <summary>
+            设置配送单明细属性值
+            </summary>
+            <param name="goodsIssue">配送单</param>
+            <param name="detail">配送单明细</param>
+        </member>
+        <member name="M:SIE.DIST.DistributionController.SetItemLabelProperty(SIE.DIST.GoodsIssue,System.String)">
+            <summary>
+            设置物料标签属性值
+            </summary>
+            <param name="goodsIssue">配送单</param>
+            <param name="label">标签号</param>
+        </member>
+        <member name="M:SIE.DIST.DistributionController.GetGoodIssuePropertyValue(System.Double,System.String,System.Double)">
+            <summary>
+            获取工单发料属性值
+            </summary>
+            <param name="definitionId">物料属性Id</param>
+            <param name="value">属性值</param>
+            <param name="goodsIssueId">工单发料单ID</param>
+            <returns>工单发料属性值</returns>
+        </member>
+        <member name="M:SIE.DIST.DistributionController.SavePropertyFromLabel(SIE.DIST.GoodsIssue,SIE.DIST.DistributionBill,SIE.Domain.EntityList{SIE.Packages.ItemLabels.ItemLabel})">
+            <summary>
+            保存配送明细属性
+            </summary>
+            <param name="goodsIssue">工单发料信息</param>
+            <param name="distribution">配送单信息</param>
+            <param name="itemLabels">箱号列表</param>
+        </member>
+        <member name="M:SIE.DIST.DistributionController.SaveGoodsIssuePropertyValue(SIE.DIST.GoodsIssue,SIE.DIST.DistributionBill)">
+            <summary>
+            根据发料记录保存属性
+            </summary>
+            <param name="goodsIssue">工单发料信息</param>
+            <param name="distribution">配送单信息</param>
+        </member>
+        <member name="M:SIE.DIST.DistributionController.CheckDistribution(SIE.DIST.GoodsIssue,SIE.Packages.Boxs.TurnoverBox,System.Double,System.Decimal)">
+            <summary>
+            验证配送数量及载具
+            </summary>
+            <param name="goodsIssue">发料单</param>
+            <param name="container">周转箱</param>
+            <param name="lineId">产线Id</param>
+            <param name="qty">配送数量</param>
+            <exception cref="T:SIE.Domain.Validation.ValidationException">产线不能为空</exception>
+            <exception cref="T:SIE.Domain.Validation.ValidationException">配送数量必须大于0</exception>
+            <exception cref="T:SIE.Domain.Validation.ValidationException">发料单库存不足配送数，请修改配送数量</exception>
+            <exception cref="T:SIE.Domain.EntityNotFoundException">周转箱不可用，当前状态非闲置</exception>
+        </member>
+        <member name="M:SIE.DIST.DistributionController.CheckLabelProperty(SIE.Domain.EntityList{SIE.Packages.ItemLabels.ItemLabel})">
+            <summary>
+            验证箱号属性是否和第一个扫描的箱子属性保持一致
+            </summary>
+            <param name="labels">箱号列表</param>
+        </member>
+        <member name="M:SIE.DIST.DistributionController.GetDistributionBill(System.String)">
+            <summary>
+            根据载具条码得到工单发料配送中载具实体
+            </summary>
+            <param name="boxNo">配送周转箱号</param>
+            <returns>配送单信息</returns>
+        </member>
+        <member name="M:SIE.DIST.DistributionController.ExistsTurnoverBox(System.String)">
+            <summary>
+            配送周转箱是否存在
+            </summary>
+            <param name="code">周转箱编码</param>
+            <returns>True:存在 False:不存在</returns>
+        </member>
+        <member name="M:SIE.DIST.DistributionController.GetTurnoverBox(System.String)">
+            <summary>
+            获取配送周转箱
+            </summary>
+            <param name="boxNo">周转箱号</param>
+            <returns>周转箱信息</returns>
+            <exception cref="T:SIE.Domain.Validation.ValidationException">周转箱类型为配置</exception>
+            <exception cref="T:SIE.Domain.Validation.ValidationException">周转箱不存在</exception>
+        </member>
+        <member name="M:SIE.DIST.DistributionController.GetDistributionBillList(System.Double)">
+            <summary>
+            根据发料单ID获取配送单信息
+            </summary>
+            <param name="goodsIssueId">发料单Id</param>
+            <returns>配送单信息</returns>
+        </member>
+        <member name="M:SIE.DIST.DistributionController.GetBillNo(System.Type)">
+            <summary>
+            获取配送单单号
+            </summary>
+            <param name="type">配置类型</param>
+            <returns>配送单号</returns>
+        </member>
+        <member name="M:SIE.DIST.DistributionController.IsHasUsedResourse(System.Double,SIE.Resources.WipResources.SyncSourceType)">
+            <summary>
+            根据引用判断是否可以删除企业模型和设备模型
+            </summary>
+            <param name="id">来源Id</param>
+            <param name="sourceType">来源类型</param>
+            <returns>true,false</returns>
+        </member>
+        <member name="M:SIE.DIST.DistributionController.DistributionBillHasUsedWipResource(System.Double)">
+            <summary>
+            判断配送单是否引用指定的生产资源
+            </summary>
+            <param name="wipResourceId">生产资源Id</param>
+            <returns>bool: false--工单未引用生产资源；true--工单已引用生产资源</returns>
+        </member>
+        <member name="M:SIE.DIST.DistributionController.GetDistributionBillByLabel(System.String)">
+            <summary>
+            通过配送标签获取配送单
+            </summary>
+            <param name="label">配送标签</param>
+            <returns>配送单</returns>
+        </member>
+        <member name="M:SIE.DIST.DistributionController.GetGoodsIssue(System.Double)">
+            <summary>
+            获取配送单，bs需要做视图属性加载
+            </summary>
+            <param name="goodsIssueId">配送单ID</param>
+            <returns>配送单</returns>
+        </member>
+        <member name="M:SIE.DIST.DistributionController.GetGoodsIssueWithLoadData(System.Double)">
+            <summary>
+            获取配送管理（贪婪加载属性列表）
+            </summary>
+            <param name="goodsIssueId">配送管理Id</param>
+            <returns>配送管理</returns>
+        </member>
+        <member name="M:SIE.DIST.DistributionController.GetPropertyValueList(System.Double)">
+            <summary>
+            获取属性值
+            </summary>
+            <param name="billId">配送单ID</param>
+            <returns>属性值列表</returns>
+        </member>
+        <member name="T:SIE.DIST.DistributionState">
+            <summary>
+            载具配送状态
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.DistributionState.LoadItem">
+            <summary>
+            已上料
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.DistributionState.DistributionIn">
+            <summary>
+            配送中
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.DistributionState.LoadPartItem">
+            <summary>
+            部分上料
+            </summary>
+        </member>
+        <member name="T:SIE.DIST.GoodsIssue">
+            <summary>
+            配送管理
+            </summary>
+        </member>
+        <member name="M:SIE.DIST.GoodsIssue.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.GoodsIssue.QtyProperty">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.GoodsIssue.Qty">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.GoodsIssue.RemainderQtyProperty">
+            <summary>
+            剩余数量
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.GoodsIssue.RemainderQty">
+            <summary>
+            剩余数量
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.GoodsIssue.DistributionQtyProperty">
+            <summary>
+            配送数量
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.GoodsIssue.DistributionQty">
+            <summary>
+            配送数量
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.GoodsIssue.DefectReturnQtyProperty">
+            <summary>
+            缺陷退货数量
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.GoodsIssue.DefectReturnQty">
+            <summary>
+            缺陷退货数量
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.GoodsIssue.NormalReturnQtyProperty">
+            <summary>
+            正常退货数量
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.GoodsIssue.NormalReturnQty">
+            <summary>
+            正常退货数量
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.GoodsIssue.DefectQtyProperty">
+            <summary>
+            缺陷数量
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.GoodsIssue.DefectQty">
+            <summary>
+            缺陷数量
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.GoodsIssue.UnitIdProperty">
+            <summary>
+            单位
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.GoodsIssue.UnitId">
+            <summary>
+            单位
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.GoodsIssue.UnitProperty">
+            <summary>
+            单位
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.GoodsIssue.Unit">
+            <summary>
+            单位
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.GoodsIssue.SendNoProperty">
+            <summary>
+            发货单号
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.GoodsIssue.SendNo">
+            <summary>
+            发货单号
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.GoodsIssue.BatchNoProperty">
+            <summary>
+            批号
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.GoodsIssue.BatchNo">
+            <summary>
+            批号
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.GoodsIssue.WorkOrderIdProperty">
+            <summary>
+            工单Id
+            </summary> 
+        </member>
+        <member name="P:SIE.DIST.GoodsIssue.WorkOrderId">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.GoodsIssue.WorkOrderProperty">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.GoodsIssue.WorkOrder">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.GoodsIssue.ItemIdProperty">
+            <summary>
+            物料Id
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.GoodsIssue.ItemId">
+            <summary>
+            物料Id
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.GoodsIssue.ItemProperty">
+            <summary>
+            物料
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.GoodsIssue.Item">
+            <summary>
+            物料
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.GoodsIssue.PropertyValueListProperty">
+            <summary>
+            发料属性
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.GoodsIssue.PropertyValueList">
+            <summary>
+            发料属性
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.GoodsIssue.ItemNameProperty">
+            <summary>
+            物料名称
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.GoodsIssue.ItemName">
+            <summary>
+            物料名称
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.GoodsIssue.ItemCodeProperty">
+            <summary>
+            物料编码
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.GoodsIssue.ItemCode">
+            <summary>
+            物料编码
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.GoodsIssue.WorkOrderNoProperty">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.GoodsIssue.WorkOrderNo">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.GoodsIssue.UnitNameProperty">
+            <summary>
+            单位
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.GoodsIssue.UnitName">
+            <summary>
+            单位
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.GoodsIssue.ItemModelProperty">
+            <summary>
+            物料规格
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.GoodsIssue.ItemModel">
+            <summary>
+            物料规格
+            </summary>
+        </member>
+        <member name="T:SIE.DIST.GoodsIssueConfig">
+            <summary>
+            配送管理 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.DIST.GoodsIssueConfig.ConfigMeta">
+            <summary>
+            Meta属性配置
+            </summary>
+        </member>
+        <member name="T:SIE.DIST.GoodsIssuePropertyValue">
+            <summary>
+            工单发料属性值
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.GoodsIssuePropertyValue.ValueProperty">
+            <summary>
+            属性值
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.GoodsIssuePropertyValue.Value">
+            <summary>
+            属性值
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.GoodsIssuePropertyValue.ErpIdProperty">
+            <summary>
+            ErpId
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.GoodsIssuePropertyValue.ErpId">
+            <summary>
+            ErpId
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.GoodsIssuePropertyValue.DefinitionIdProperty">
+            <summary>
+            物料属性定义Id
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.GoodsIssuePropertyValue.DefinitionId">
+            <summary>
+            物料属性定义Id
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.GoodsIssuePropertyValue.DefinitionProperty">
+            <summary>
+            物料属性定义
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.GoodsIssuePropertyValue.Definition">
+            <summary>
+            物料属性定义
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.GoodsIssuePropertyValue.GoodsIssueIdProperty">
+            <summary>
+            发料单Id
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.GoodsIssuePropertyValue.GoodsIssueId">
+            <summary>
+            发料单Id
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.GoodsIssuePropertyValue.GoodsIssueProperty">
+            <summary>
+            发料属性
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.GoodsIssuePropertyValue.GoodsIssue">
+            <summary>
+            发料属性
+            </summary>
+        </member>
+        <member name="F:SIE.DIST.GoodsIssuePropertyValue.DefinitionNameProperty">
+            <summary>
+            属性名称
+            </summary>
+        </member>
+        <member name="P:SIE.DIST.GoodsIssuePropertyValue.DefinitionName">
+            <summary>
+            属性名称
+            </summary>
+        </member>
+        <member name="T:SIE.DIST.GoodsIssuePropertyValueConfig">
+            <summary>
+             实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.DIST.GoodsIssuePropertyValueConfig.ConfigMeta">
+            <summary>
+            Meta属性配置
+            </summary>
+        </member>
+        <member name="T:SIE.DIST.GoodsIssuePropertyValueNotDuplicateRule">
+            <summary>
+            工单发料属性值不能相同
+            </summary>
+        </member>
+        <member name="M:SIE.DIST.GoodsIssuePropertyValueNotDuplicateRule.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="T:SIE.DIST.GoodsIssueDistributionQtyRule">
+            <summary>
+            发料单配送数量必须大于0
+            </summary>
+        </member>
+        <member name="M:SIE.DIST.GoodsIssueDistributionQtyRule.Validate(SIE.Domain.IEntity,SIE.MetaModel.RuleArgs)">
+            <summary>
+            添加验证规则
+            </summary>
+            <param name="entity">实体</param>
+            <param name="e">规则参数</param>
+        </member>
+        <member name="T:SIE.DIST.Module">
+            <summary>
+            当前工程所对应的模块类
+            </summary>
+        </member>
+        <member name="M:SIE.DIST.Module.Initialize(SIE.IApp)">
+            <summary>
+            模块的初始化方法
+            </summary>
+            <param name="app">应用程序对象</param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{217FB8A4-CFBE-4D8D-9CE0-3CB40A900283}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>SIE.MES.CollectTest</RootNamespace>
+    <AssemblyName>SIE.MES.CollectTest</AssemblyName>
+    <TargetFrameworkVersion>net6.0-windows</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SIE, Version=8.1.0.0, Culture=neutral, PublicKeyToken=2b7d54e3b494e02d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\platform\nest\netstandard2.0\SIE.dll</HintPath>
+    </Reference>
+    <Reference Include="SIE.Alert, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\platform\nest\netstandard2.0\SIE.Alert.dll</HintPath>
+    </Reference>
+    <Reference Include="SIE.Caches">
+      <HintPath>..\..\..\..\platform\nest\netcoreapp3.1\SIE.Caches.dll</HintPath>
+    </Reference>
+    <Reference Include="SIE.Common, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\platform\nest\netstandard2.0\SIE.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SIE.Log4Net">
+      <HintPath>..\..\..\..\platform\nest\netstandard2.0\SIE.Log4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="SIE.LogData">
+      <HintPath>..\..\..\..\platform\nest\netcoreapp3.1\SIE.LogData.dll</HintPath>
+    </Reference>
+    <Reference Include="SIE.ORM.MappingColumn, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\platform\nest\netstandard2.0\SIE.ORM.MappingColumn.dll</HintPath>
+    </Reference>
+    <Reference Include="SIE.Rbac, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\platform\nest\netstandard2.0\SIE.Rbac.dll</HintPath>
+    </Reference>
+    <Reference Include="SIE.SqlLogger">
+      <HintPath>..\..\..\..\platform\nest\netstandard2.0\SIE.SqlLogger.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CollectTask.cs" />
+    <Compile Include="IntervalRunMode.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RunMode.cs" />
+    <Compile Include="TaskPool.cs" />
+    <Compile Include="TaskContext.cs" />
+    <Compile Include="TaskPoolRunMode.cs" />
+    <Compile Include="Utils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    
+    <None Include="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Castle.Windsor">
+      <Version>5.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="log4net">
+      <Version>2.0.8</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory">
+      <Version>3.1.5</Version>
+    </PackageReference>
+    <PackageReference Include="Oracle.ManagedDataAccess.Core">
+      <Version>2.19.31</Version>
+    </PackageReference>
+    <PackageReference Include="System.Configuration.ConfigurationManager">
+      <Version>4.5.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\Core\SIE.Core\SIE.Core.csproj">
+      <Project>{2988BCDF-29CE-4F08-B686-EA1FC727733B}</Project>
+      <Name>SIE.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Common\Resources\SIE.Resources\SIE.Resources.csproj">
+      <Project>{B5538886-6CEA-4B89-A824-BC92C9763E1B}</Project>
+      <Name>SIE.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Elec\Common\Core\SIE.Elec.Core\SIE.Elec.Core.csproj">
+      <Project>{0182ecb8-d2cb-4b02-9769-6788e418aa44}</Project>
+      <Name>SIE.Elec.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Elec\Common\Messages\SIE.Elec.EventMessages\SIE.Elec.EventMessages.csproj">
+      <Project>{993ec011-3698-4111-b653-f7aed7885fde}</Project>
+      <Name>SIE.Elec.EventMessages</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Elec\SMES\SIE.Elec.MES\SIE.Elec.MES.csproj">
+      <Project>{bc6af9eb-865f-4876-86f6-f717015f7046}</Project>
+      <Name>SIE.Elec.MES</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Barcodes\SIE.Barcodes\SIE.Barcodes.csproj">
+      <Project>{B15AA58E-2FE7-4586-A216-9BB54C57456A}</Project>
+      <Name>SIE.Barcodes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Common\Techs\SIE.Tech\SIE.Tech.csproj">
+      <Project>{0D23E912-4AB4-4E9F-A31B-DFFE2FC50F82}</Project>
+      <Name>SIE.Tech</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SIE.MES\SIE.MES.csproj">
+      <Project>{D67787D7-A66D-47A1-8CFB-754B4512BE93}</Project>
+      <Name>SIE.MES</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

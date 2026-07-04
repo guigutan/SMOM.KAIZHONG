@@ -1,0 +1,276 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Messages</name>
+    </assembly>
+    <members>
+        <member name="P:SIE.Messages.DbMigrations._20190201_000000_InitMessagesData.Type">
+            <summary>
+            手动升级的类型：数据
+            </summary>
+        </member>
+        <member name="M:SIE.Messages.DbMigrations._20190201_000000_InitMessagesData.Down">
+            <summary>
+            不支持 Down
+            </summary>
+        </member>
+        <member name="T:SIE.Messages.MessagesEntityRepository`1">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:SIE.Messages.MessagesEntityDataProvider">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SIE.Messages.MessagesEntityDataProvider.ConnectionStringName">
+            <summary>
+            数据库连接字符串的名称
+            </summary>
+        </member>
+        <member name="P:SIE.Messages.MessagesEntityDataProvider.ConnectionStringSettingName">
+            <summary>
+            数据库连接字符串的名称
+            </summary>
+        </member>
+        <member name="T:SIE.Messages.Message">
+            <summary>
+            系统消息
+            </summary>
+        </member>
+        <member name="F:SIE.Messages.Message.TitleProperty">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:SIE.Messages.Message.Title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="F:SIE.Messages.Message.ReceiveDateProperty">
+            <summary>
+            接收时间
+            </summary>
+        </member>
+        <member name="P:SIE.Messages.Message.ReceiveDate">
+            <summary>
+            接收时间
+            </summary>
+        </member>
+        <member name="F:SIE.Messages.Message.ContentProperty">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="P:SIE.Messages.Message.Content">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="F:SIE.Messages.Message.IsReadProperty">
+            <summary>
+            是否已读
+            </summary>
+        </member>
+        <member name="P:SIE.Messages.Message.IsRead">
+            <summary>
+            是否已读
+            </summary>
+        </member>
+        <member name="F:SIE.Messages.Message.IsTopProperty">
+            <summary>
+            是否置顶
+            </summary>
+        </member>
+        <member name="P:SIE.Messages.Message.IsTop">
+            <summary>
+            是否置顶
+            </summary>
+        </member>
+        <member name="F:SIE.Messages.Message.MessageTypeProperty">
+            <summary>
+            消息类型
+            </summary>
+        </member>
+        <member name="P:SIE.Messages.Message.MessageType">
+            <summary>
+            消息类型
+            </summary>
+        </member>
+        <member name="F:SIE.Messages.Message.HandleModeProperty">
+            <summary>
+            处理方式
+            </summary>
+        </member>
+        <member name="P:SIE.Messages.Message.HandleMode">
+            <summary>
+            处理方式
+            </summary>
+        </member>
+        <member name="F:SIE.Messages.Message.AlertLevelProperty">
+            <summary>
+            预警等级
+            </summary>
+        </member>
+        <member name="P:SIE.Messages.Message.AlertLevel">
+            <summary>
+            预警等级
+            </summary>
+        </member>
+        <member name="F:SIE.Messages.Message.ReceiveByIdProperty">
+            <summary>
+            接收人Id
+            </summary>
+        </member>
+        <member name="P:SIE.Messages.Message.ReceiveById">
+            <summary>
+            接收人Id
+            </summary>
+        </member>
+        <member name="F:SIE.Messages.Message.ReceiveByProperty">
+            <summary>
+            接收人
+            </summary>
+        </member>
+        <member name="P:SIE.Messages.Message.ReceiveBy">
+            <summary>
+            接收人
+            </summary>
+        </member>
+        <member name="T:SIE.Messages.MessagesConfig">
+            <summary>
+            系统消息 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Messages.MessagesConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.Messages.MessagesController">
+            <summary>
+            预警消息控制器
+            </summary>
+        </member>
+        <member name="M:SIE.Messages.MessagesController.GetMessages(System.Double)">
+            <summary>
+            获取消息
+            </summary>
+            <param name="employeeId">员工Id</param>
+            <returns>消息列表</returns>
+        </member>
+        <member name="F:SIE.Messages.Sender.SysMessagesSenderConfig.TitleProperty">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:SIE.Messages.Sender.SysMessagesSenderConfig.Title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="M:SIE.Messages.Sender.SysMessagesSenderConfig.ToString">
+            <summary>
+            返回JSON字符串
+            </summary>
+            <returns>JSON字符串</returns>
+        </member>
+        <member name="T:SIE.Messages.Sender.SysMessagesSendPara">
+            <summary>
+            系统消息参数
+            </summary>
+        </member>
+        <member name="P:SIE.Messages.Sender.SysMessagesSendPara.Title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:SIE.Messages.Sender.SysMessagesSendPara.Content">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="P:SIE.Messages.Sender.SysMessagesSendPara.MessageType">
+            <summary>
+            消息类型
+            </summary>
+        </member>
+        <member name="P:SIE.Messages.Sender.SysMessagesSendPara.ToEmployeeIds">
+            <summary>
+            接收人UserId集合
+            </summary>
+        </member>
+        <member name="T:SIE.Messages.Sender.SysMessagesTemplate">
+            <summary>
+            系统消息预警模板
+            </summary>
+        </member>
+        <member name="F:SIE.Messages.Sender.SysMessagesTemplate.TitleProperty">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:SIE.Messages.Sender.SysMessagesTemplate.Title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="F:SIE.Messages.Sender.SysMessagesTemplate.MessageTypeProperty">
+            <summary>
+            消息类型
+            </summary>
+        </member>
+        <member name="P:SIE.Messages.Sender.SysMessagesTemplate.MessageType">
+            <summary>
+            消息类型
+            </summary>
+        </member>
+        <member name="M:SIE.Messages.Sender.SysMessagesTemplate.Initialize(System.String)">
+            <summary>
+            初始化模板对像
+            </summary>
+            <param name="value">模板配置JSON值</param>
+        </member>
+        <member name="M:SIE.Messages.Sender.SysMessagesTemplate.ToString">
+            <summary>
+            返回JSON字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Messages.Widgets.AlertWidgetPlugConfig">
+            <summary>
+            预警消息小部件参数配置
+            </summary>
+        </member>
+        <member name="F:SIE.Messages.Widgets.AlertWidgetPlugConfig.Parameter1Property">
+            <summary>
+            参数1
+            </summary>
+        </member>
+        <member name="P:SIE.Messages.Widgets.AlertWidgetPlugConfig.Parameter1">
+            <summary>
+            参数1
+            </summary>
+        </member>
+        <member name="M:SIE.Messages.Widgets.AlertWidgetPlugConfig.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Messages.Widgets.AlertWidgetPlugConfig.Initialize(System.String)">
+            <summary>
+            初始化
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:SIE.Messages.Widgets.AlertWidgetPlugConfig.ToString">
+            <summary>
+            转成字串
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

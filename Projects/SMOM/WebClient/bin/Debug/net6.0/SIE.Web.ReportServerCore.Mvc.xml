@@ -1,0 +1,342 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Web.ReportServerCore.Mvc</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Web.ReportServerCore.Mvc.Extensions.CustomReportStorageWebExtension">
+            <summary>
+            自定义实施报告存储
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Mvc.Extensions.CustomReportStorageWebExtension.#ctor(Microsoft.AspNetCore.Hosting.IWebHostEnvironment,Microsoft.AspNetCore.Http.IHttpContextAccessor,SIE.Web.ReportServerCore.Mvc.Services.ICustomReportSource)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="env">环境</param>
+            <param name="httpContextAccessor">上下文</param>
+            <param name="reportFactory">报表源服务接口</param>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Mvc.Extensions.CustomReportStorageWebExtension.CanSetData(System.String)">
+            <summary>
+            是否保存报表
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Mvc.Extensions.CustomReportStorageWebExtension.IsValidUrl(System.String)">
+            <summary>
+            url是否有效
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Mvc.Extensions.CustomReportStorageWebExtension.GetData(System.String)">
+            <summary>
+            获取报表数据-
+            </summary>
+            <param name="url">设计器绑定的关键字符</param>
+            <returns>报表数据字节</returns>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Mvc.Extensions.CustomReportStorageWebExtension.GetUrls">
+            <summary>
+            获取报表列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Mvc.Extensions.CustomReportStorageWebExtension.SetData(DevExpress.XtraReports.UI.XtraReport,System.String)">
+            <summary>
+            保存报表数据
+            </summary>
+            <param name="report">当前报表</param>
+            <param name="url">设计器绑定的url</param>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Mvc.Extensions.CustomReportStorageWebExtension.SetNewData(DevExpress.XtraReports.UI.XtraReport,System.String)">
+            <summary>
+            保存新的报表
+            </summary>
+            <param name="report">当前报表</param>
+            <param name="url">设计器绑定的url</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Mvc.Extensions.CustomReportStorageWebExtension.SaveAndUpateSessionState(System.String,System.Byte[])">
+            <summary>
+            报表二进制数据存储到session中
+            </summary>
+            <param name="reportName">报表名</param>
+            <param name="reportLayout">报表字节数据</param>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Mvc.Extensions.DevJsonFileLocalizationExtension.AddDevReportJsonFileLocalization(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            扩展-添加DevReportJsonFile本地化集成
+            </summary>
+            <param name="services"><see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>服务容器</param>
+            <param name="env"><see cref="T:Microsoft.AspNetCore.Hosting.IWebHostEnvironment"/>Host主机</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.ReportServerCore.Mvc.Extensions.StartUpExtensions.CustomConfigureReportSource">
+            <summary>
+            自定义报表模块的服务配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Mvc.Extensions.StartUpExtensions.CustomConfigureReportSource.UseDevReportJsonFileLocalization(Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            添加DevReportJsonFile本地化集成
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Mvc.Extensions.StartUpExtensions.CustomConfigureReportSource.RegisterIOCResource">
+            <summary>
+            IOC依赖注入
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Mvc.Extensions.StartUpExtensions.ReportingConfigurationAppBuilder.UseReportCoreServer">
+            <summary>
+            核心使用配置
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Mvc.Extensions.StartUpExtensions.ReportingConfigurationAppBuilder.UseReportAccessSettings(Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            资源访问规则
+            </summary>
+            <param name="env"><see cref="T:Microsoft.AspNetCore.Hosting.IWebHostEnvironment"/>主环境</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Mvc.Extensions.StartUpExtensions.ReportingConfigurationAppBuilder.UseReportingLogger">
+            <summary>
+            使用报表日志记录
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Mvc.Extensions.StartUpExtensions.ReportingConfigurationAppBuilder.UseDefaultReportStorageWeb">
+            <summary>
+            使用自定义报表存储
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Mvc.Extensions.StartUpExtensions.ReportingConfigurationServicesBuilder.OrgConfigureReportingServices(Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            报表注册-dev官方基本服务注册部分
+            </summary>
+            <param name="env"> <see cref="T:Microsoft.AspNetCore.Hosting.IWebHostEnvironment"/>主机环境</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Mvc.Extensions.StartUpExtensions.ReportingConfigurationServicesBuilder.CoreConfigureReportingServices">
+            <summary>
+            报表注册aspnetcore部分
+            </summary>
+            <param name="services">服务集</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Mvc.Extensions.StartUpExtensions.ReportingConfigurationServicesBuilder.CustomConfigureReportingServices(System.Action{SIE.Web.ReportServerCore.Mvc.Extensions.StartUpExtensions.CustomConfigureReportSource})">
+            <summary>
+            依赖注入
+            </summary>
+            <param name="configure"><see cref="T:SIE.Web.ReportServerCore.Mvc.Extensions.StartUpExtensions.CustomConfigureReportSource"/>自定义报表服务配置</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.ReportServerCore.Mvc.Extensions.StartUpExtensions.ReportStartupExtensions">
+            <summary>
+            报表services注册
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Mvc.Extensions.StartUpExtensions.ReportStartupExtensions.CustomConfigureReportingServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{SIE.Web.ReportServerCore.Mvc.Extensions.StartUpExtensions.ReportingConfigurationServicesBuilder})">
+            <summary>
+            报表服务注册
+            </summary>
+            <param name="services"></param>
+            <param name="configure"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Mvc.Extensions.StartUpExtensions.ReportStartupExtensions.CustomUseReportConfigure(Microsoft.AspNetCore.Builder.IApplicationBuilder,System.Action{SIE.Web.ReportServerCore.Mvc.Extensions.StartUpExtensions.ReportingConfigurationAppBuilder})">
+            <summary>
+            配置使用管道
+            </summary>
+            <param name="app"></param>
+            <param name="configure"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.ReportServerCore.Mvc.Module">
+            <summary>
+            ReportServerCore.Mvc 模块
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Mvc.Module.ConfigServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            配置服务
+            </summary>
+            <param name="services"></param>
+            <param name="env"></param>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Mvc.Module.ConfigureApp(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            配置应用
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Mvc.Module.Initialize(SIE.IApp)">
+            <summary>
+            模块初始化
+            </summary>
+            <param name="app"></param>
+        </member>
+        <member name="F:SIE.Web.ReportServerCore.Mvc.AssemblyInformation.ModuleName">
+            <summary>
+            模块名称
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ReportServerCore.Mvc.Services.CustomDataSourceWizardConnectionStringsProvider">
+            <summary>
+            实现自定义连接字符串提供程序
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Mvc.Services.CustomDataSourceWizardConnectionStringsProvider.GetConnectionDescriptions">
+            <summary>
+            数据库获取定义的数据源集
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Mvc.Services.CustomDataSourceWizardConnectionStringsProvider.GetDataConnectionParameters(System.String)">
+            <summary>
+            注册自定义连接字符串提供程序
+            </summary>
+            <typeparam name="name">连接字符名</typeparam>
+            <returns></returns>
+            <example>
+            返回的数据集
+            <code>
+             1.mysql： return new MsSqlConnectionParameters("localhost", "dbName", "userName", "password", MsSqlAuthorizationType.SqlServer);
+             2.自定义oracle：return new CustomStringConnectionParameters("XpoProvider = ODPManaged; Data Source = (DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.175.70)(PORT = 1521))(CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME = MESDEV))); User ID = SMOM_DEV; Password = SMOM_DEV;");
+            </code>
+            </example>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Mvc.Services.CustomDataSourceWizardConnectionStringsProvider.GetConnection(SIE.Documents.IDataView)">
+            <summary>
+            获取连接字符
+            </summary>
+            <param name="dataView">IDataView 接口 <see cref="T:SIE.Documents.IDataView"/></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.ReportServerCore.Mvc.Services.CustomDataSourceWizardJsonDataConnectionStorage">
+            <summary>
+            JSON数据源连接策略
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Mvc.Services.CustomDataSourceWizardJsonDataConnectionStorage.GetConnections">
+            <summary>
+            获取连接字符集
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:SIE.Web.ReportServerCore.Mvc.Services.CustomDataSourceWizardJsonDataConnectionStorage.DevExpress#DataAccess#Wizard#Services#IJsonConnectionStorageService#CanSaveConnection">
+            <summary>
+            是否保存
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Mvc.Services.CustomDataSourceWizardJsonDataConnectionStorage.GetDefaults">
+             <summary>
+             此处实现默认json文件数据源连接清单（此方法可重写）
+             </summary>
+             <example>
+             <code>数据源添加方式</code>
+             <code>
+            1.此处代码示例：获取现有的json文件
+            var uri = new System.Uri(Path.Combine(Environment.WebRootPath, "report_modules/Content", "nwind.json"), System.UriKind.Relative);
+            var dataConnection = new JsonDataConnection(new UriJsonSource(uri)) { StoreConnectionNameOnly = true, Name = "Default (JSON)" };
+            connections.Add(dataConnection.Name, dataConnection.CreateConnectionString());
+            2.界面中定义json
+            {"Products": [{"ProductID": 1,"ProductName": "sie" }]}
+             </code>
+             </example>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Mvc.Services.CustomDataSourceWizardJsonDataConnectionStorage.UpdateSessionState(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            更新连接字符
+            </summary>
+            <param name="connectionStrings"></param>
+        </member>
+        <member name="T:SIE.Web.ReportServerCore.Mvc.Services.CustomDefaultReportSource">
+            <summary>
+            报表清单获取
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Mvc.Services.CustomDefaultReportSource.GetReportList">
+            <summary>
+            获取可用的报表清单
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Mvc.Services.CustomDefaultReportSource.GetReport(System.String)">
+            <summary>
+            根据报表名称，从报表列表获取当前报表
+            </summary>
+            <example>
+            <code>获取报表</code>
+            <code>
+            IReportSource PredefinedReports=new ReportSource();
+            PredefinedReports.GetReport("报表名");
+            </code>
+            </example>
+        </member>
+        <member name="T:SIE.Web.ReportServerCore.Mvc.Services.CustomJsonDataConnectionProviderFactory">
+            <summary>
+            JSON数据提供者工厂
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:SIE.Web.ReportServerCore.Mvc.Services.CustomObjectDataSourceMemberFilterService" -->
+        <member name="T:SIE.Web.ReportServerCore.Mvc.Services.CustomObjectDataSourceWizardTypeProvider">
+             <summary>
+             自定义的ObjectDataSource向导类型提供者的实现
+             这里作用于报表设计器的选择数据源页面
+             </summary>
+             <remarks>
+             需求：自定义数据与SMOM平台的集成 
+             思路：因为数据基本都是从控制器获取，所以入口点从这里着手,SMOM控制器的方法因为安全性考虑，肯定不能所有的暴露在外
+             解决方案：
+             关键规则：
+             需要将获取数据方法用类似API的方式，手工的暴露出来（这个时候因为是有人员参与才给予暴露的，所以数据的获取暴露与安全的问题就在人员的控制上
+             1、如果维护了DisplayName特性,则按这个来分类显示(见下面示例)，如果没有，则按命名空间来显示
+             <code>[DisplayName("平台Demo-提供文档的数据服务")]
+              public class InvOrgController: IDocumentSourceService
+              {
+              ...代码略 
+              }
+            </code>
+             本来是想按产品线来区分开 QMS,MES，但只通过类type 好像找不到明显的规则来划分,除非使用特性
+             </remarks>
+        </member>
+        <member name="T:SIE.Web.ReportServerCore.Mvc.Services.ICustomReportSource">
+            <summary>
+            报表源接口
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Mvc.Services.ICustomReportSource.GetReport(System.String)">
+            <summary>
+            根据名称获取报表
+            </summary>
+            <param name="reportName">报表名称</param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:SIE.Web.ReportServerCore.Mvc.Services.ICustomReportSource.GetReportList" -->
+        <member name="T:SIE.Web.ReportServerCore.Extensions.StartupConfigExtensions">
+            <summary>
+            ReportServerCore 配置与使用扩展类
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Extensions.StartupConfigExtensions.AddReportServerCore(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            添加报表服务到指定的服务集合
+            </summary>
+            <param name="services"><see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>服务集合</param>
+            <param name="env"><see cref="T:Microsoft.AspNetCore.Hosting.IWebHostEnvironment"/>主机环境</param>
+        </member>
+        <member name="M:SIE.Web.ReportServerCore.Extensions.StartupConfigExtensions.UseReportServerCore(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            添加报表服务到app请求管道
+            </summary>
+            <param name="app"><see cref="T:Microsoft.AspNetCore.Builder.IApplicationBuilder"/>app</param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,1327 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Wpf.WorkBenchCommon</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Wpf.WorkBenchCommon.EntityPropertyViewMetaExtension">
+            <summary>
+            编辑器扩展类
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.EntityPropertyViewMetaExtension.UseDimensionEditorEditor``1(SIE.MetaModel.View.WPFEntityPropertyViewMeta{``0},System.Action{SIE.Wpf.WorkBenchCommon.Editors.DimensionConfig})">
+            <summary>
+            数值维度编辑器扩展方法
+            年、月、周，数字格式化显示
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.EntityPropertyViewMetaExtension.UseQuotaCategoryEditor``1(SIE.MetaModel.View.WPFEntityPropertyViewMeta{``0},System.Action{SIE.Wpf.WorkBenchCommon.Editors.QuotaCategoryConfig})">
+            <summary>
+            指标分类编辑器扩展方法
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.EntityPropertyViewMetaExtension.UseQuotaNameEditor``1(SIE.MetaModel.View.WPFEntityPropertyViewMeta{``0},System.Action{SIE.Wpf.WorkBenchCommon.Editors.QuotaNameEditorConfig})">
+            <summary>
+            指标名称编辑器扩展方法
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Editors.DimensionEditor">
+            <summary>
+            时间周期编辑器
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.WorkBenchCommon.Editors.DimensionEditor.EditorName">
+            <summary>
+            编辑器名称
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Editors.DimensionEditor.CreateEditSettingsCore">
+            <summary>
+            编辑器基本设置核心方法
+            </summary>
+            <returns>返回编辑器基础设置</returns>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Editors.DimensionEditor.InitSettingsItems(SIE.Wpf.WorkBenchCommon.Editors.DimensionConfig,SIE.Wpf.Editors.ComboxEditorSettings)">
+            <summary>
+            初始化设置方法
+            </summary>
+            <param name="config">配置</param>
+            <param name="settings">设置参数</param>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Editors.DimensionEditor.GetItemsMaxValue(SIE.Wpf.WorkBenchCommon.Editors.DimensionConfig)">
+            <summary>
+            获得时间周期最大值方法
+            </summary>
+            <param name="config">配置</param>
+            <returns>返回时间周期最大值</returns>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Editors.DimensionEditor.GetItemsMinValue(SIE.Wpf.WorkBenchCommon.Editors.DimensionConfig)">
+            <summary>
+            获得时间周期最小值方法
+            </summary>
+            <param name="config">配置</param>
+            <returns>返回时间周期最小值</returns>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Editors.DimensionEditor.InitItems(SIE.Wpf.WorkBenchCommon.Editors.DimensionConfig,SIE.Wpf.Editors.ComboxEditorSettings,System.Int32,System.Int32)">
+            <summary>
+            获得周期类型的范围
+            </summary>
+            <param name="config">配置</param>
+            <param name="settings">编辑器设置参数</param>
+            <param name="minValue">时间最小值</param>
+            <param name="maxValue">时间最大值</param>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Editors.DimensionEditor.GetFormatArgs(SIE.Wpf.WorkBenchCommon.Editors.DimensionConfig)">
+            <summary>
+            时间周期显示格式
+            </summary>
+            <param name="config">配置</param>
+            <returns>返回处理好的时间周期显示格式</returns>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Editors.DimensionConfig">
+            <summary>
+            时间维度配置类
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchCommon.Editors.DimensionConfig.AllowNullInput">
+            <summary>
+            掩码表达式
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchCommon.Editors.DimensionConfig.DateType">
+            <summary>
+            数据类型
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchCommon.Editors.DimensionConfig.Format">
+            <summary>
+            格式化
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Editors.QuotaCategoryEditor">
+            <summary>
+            指标分类编辑器
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.WorkBenchCommon.Editors.QuotaCategoryEditor.EditorName">
+            <summary>
+            编辑器名称
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Editors.QuotaCategoryEditor.CreateEditSettingsCore">
+            <summary>
+            编辑器基本设置核心方法
+            </summary>
+            <returns>返回编辑器基础设置</returns>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Editors.QuotaCategoryEditor.InitSettingsItems(SIE.Wpf.Editors.ComboxEditorSettings)">
+            <summary>
+            初始化设置指标分类的类型
+            </summary>
+            <param name="settings">设置参数</param>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Editors.QuotaCategoryConfig">
+            <summary>
+            指标分类配置类
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchCommon.Editors.QuotaCategoryConfig.AllowNullInput">
+            <summary>
+            掩码表达式
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Editors.QuotaNameEditor">
+            <summary>
+            指标名称编辑器
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.WorkBenchCommon.Editors.QuotaNameEditor.EditorName">
+            <summary>
+            编辑器名称
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.WorkBenchCommon.Editors.QuotaNameEditor.mulComboBoxEdit">
+            <summary>
+            下拉框
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Editors.QuotaNameEditor.BindingProperty">
+            <summary>
+            绑定属性
+            </summary>
+            <returns>依赖属性</returns>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Editors.QuotaNameEditor.CreateBinding">
+            <summary>
+            重写绑定更新方式
+            </summary>
+            <returns>binding</returns>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Editors.QuotaNameEditor.CreateEditSettingsCore">
+            <summary>
+            编辑器基本设置核心方法
+            </summary>
+            <returns>返回编辑器基础设置</returns>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Editors.QuotaNameEditor.AssignToEdit(SIE.Wpf.Controls.MulComboBoxEdit)">
+            <summary>
+            生成编辑控件后，注入变更事件，此方法被调用后<see cref="T:SIE.Wpf.Controls.MulComboBoxEdit"/>属性才有值
+            </summary>
+            <param name="comboBox">MulComboBoxEdit对象</param>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Editors.QuotaNameEditor.MulComboBoxEdit_EditValueChanging(System.Object,DevExpress.Xpf.Editors.EditValueChangingEventArgs)">
+            <summary>
+            下拉框值变更触发
+            </summary>
+            <param name="sender">当前对象</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Editors.QuotaNameEditor.MulComboBoxEdit_DataContextChanged(System.Object,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            下拉框上下文变更
+            </summary>
+            <param name="sender">当前对象</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Editors.QuotaNameEditor.GetDataSourceCore(SIE.Domain.Entity)">
+            <summary>
+            下拉框获取数据源的核心方法
+            </summary>
+            <param name="source">实体源数据</param>
+            <returns>返回数据源列表</returns>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Editors.QuotaNameEditor.GetQuotaNameList(System.String)">
+            <summary>
+            根据上一级指标分类获取下一级指标名称
+            </summary>
+            <param name="upperLevelCategory">上一级指标分类</param>
+            <returns>指标名称</returns>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Editors.QuotaNameEditor.ComboBoxEditorSettings">
+            <summary>
+            下拉框配置类
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchCommon.Editors.QuotaNameEditor.ComboBoxEditorSettings.AssignToEditAction">
+            <summary>
+            创建控件后触发
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Editors.QuotaNameEditor.ComboBoxEditorSettings.#cctor">
+            <summary>
+            静态初始化
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Editors.QuotaNameEditor.ComboBoxEditorSettings.AssignToEditCore(DevExpress.Xpf.Editors.IBaseEdit)">
+            <summary>
+            创建控件后触发
+            </summary>
+            <param name="edit">当前编辑器</param>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Editors.QuotaNameEditorConfig">
+            <summary>
+            指标名称配置类
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchCommon.Editors.QuotaNameEditorConfig.ReloadDataOnPopping">
+            <summary>
+            是否每次下拉时重新加载数据
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchCommon.Editors.QuotaNameEditorConfig.UpperLevelProperty">
+            <summary>
+            上一级对应托管属性
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Module">
+            <summary>
+            模块定义
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Module.Initialize(SIE.IApp)">
+            <summary>
+            模块初始化
+            </summary>
+            <param name="app">应用程序</param>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Module.App_ModuleOperations(System.Object,System.EventArgs)">
+            <summary>
+            模块操作
+            </summary>
+            <param name="sender">发送者</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Module.AddPropertyEditor(SIE.IApp)">
+            <summary>
+            属性编辑器
+            </summary>
+            <param name="app">应用程序生成周期定义</param>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Workbench.AlertInfo">
+            <summary>
+            AlertInfo.xaml 的交互逻辑
+            </summary>
+            <summary>
+            AlertInfo
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.AlertInfo.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.AlertInfo.OnRun">
+            <summary>
+            运行后
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.AlertInfo.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Workbench.AlertLevelColorConvertMarkupExtension">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.AlertLevelColorConvertMarkupExtension.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            转换
+            </summary>
+            <param name="value">值</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">区域信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.AlertLevelColorConvertMarkupExtension.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            转换
+            </summary>
+            <param name="value">值</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">区域信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.AlertLevelColorConvertMarkupExtension.ProvideValue(System.IServiceProvider)">
+            <summary>
+            当在派生类中实现时，返回一个对象，该对象作为此标记扩展的目标属性的值。
+            </summary>
+            <param name="serviceProvider">标记扩展服务的服务提供者</param>
+            <returns>对象</returns>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Workbench.Announcement">
+            <summary>
+            Announcement.xaml 的交互逻辑
+            </summary>
+            <summary>
+            Announcement
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.Announcement.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.Announcement.OnRun">
+            <summary>
+            运行后
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.Announcement.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Workbench.Chat">
+            <summary>
+            MyTask.xaml 的交互逻辑
+            </summary>
+            <summary>
+            Chat
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchCommon.Workbench.Chat.HasNewChat">
+            <summary>
+            是否有新消息
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.WorkBenchCommon.Workbench.Chat.HasNewChatProperty">
+            <summary>
+            新消息
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.Chat.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.Chat.OnRun">
+            <summary>
+            运行后
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.Chat.NetworkChangeMonitor">
+            <summary>
+            网络监听
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.Chat.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Workbench.HasTextConverter">
+            <summary>
+            文本转换类
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.HasTextConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            转换
+            </summary>
+            <param name="value">值</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">区域信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.HasTextConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            转换
+            </summary>
+            <param name="value">值</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">区域信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.HasTextConverter.ProvideValue(System.IServiceProvider)">
+            <summary>
+            当在派生类中实现时，返回一个对象，该对象作为此标记扩展的目标属性的值。
+            </summary>
+            <param name="serviceProvider">标记扩展服务的服务提供者</param>
+            <returns>对象</returns>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Workbench.ChatHorizontalAlignmentConverter">
+            <summary>
+            图形水平垂直的转换类
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.ChatHorizontalAlignmentConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            转换
+            </summary>
+            <param name="value">值</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">区域信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.ChatHorizontalAlignmentConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            转换
+            </summary>
+            <param name="value">值</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">区域信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.ChatHorizontalAlignmentConverter.ProvideValue(System.IServiceProvider)">
+            <summary>
+            当在派生类中实现时，返回一个对象，该对象作为此标记扩展的目标属性的值。
+            </summary>
+            <param name="serviceProvider">标记扩展服务的服务提供者</param>
+            <returns>对象</returns>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Workbench.Chatting.ChatRecordViewConfig">
+            <summary>
+            聊天消息视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.Chatting.ChatRecordViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.Chatting.ChatRecordViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Workbench.Concerns.ConcernsInfoViewConfig">
+            <summary>
+            关注信息视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.Concerns.ConcernsInfoViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.Concerns.ConcernsInfoViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Workbench.InfoWidgets">
+            <summary>
+            InfoWidgets.xaml 的交互逻辑
+            </summary>
+            <summary>
+            InfoWidgets
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.InfoWidgets.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.InfoWidgets.OnRun">
+            <summary>
+            运行后
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.InfoWidgets.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Workbench.KpiAnalysis">
+            <summary>
+            KpiAnalysis.xaml 的交互逻辑
+            </summary>
+            <summary>
+            KpiAnalysis
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.WorkBenchCommon.Workbench.KpiAnalysis.property">
+            <summary>
+            绩效分析组件属性对象
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.KpiAnalysis.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.KpiAnalysis.OnRun">
+            <summary>
+            运行逻辑
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.KpiAnalysis.LoadData">
+            <summary>
+            数据加载
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.KpiAnalysis.btnSetting_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            单击设置按钮
+            </summary>    
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.KpiAnalysis.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Workbench.KpiAnalysisProperty">
+            <summary>
+            绩效分析组件属性
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchCommon.Workbench.KpiAnalysisProperty.Category">
+            <summary>
+            模块
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Workbench.KipGradeColorConverterMarkupExtension">
+            <summary>
+            预警标识 转换器
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.KipGradeColorConverterMarkupExtension.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            转换
+            </summary>
+            <param name="value">值</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">区域信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.KipGradeColorConverterMarkupExtension.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            转换
+            </summary>
+            <param name="value">值</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">区域信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.KipGradeColorConverterMarkupExtension.ProvideValue(System.IServiceProvider)">
+            <summary>
+            当在派生类中实现时，返回一个对象，该对象作为此标记扩展的目标属性的值。
+            </summary>
+            <param name="serviceProvider">标记扩展服务的服务提供者</param>
+            <returns>对象</returns>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Workbench.KPI.AddQuotaTargetDetailCommand">
+            <summary>
+            明细表添加命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.KPI.AddQuotaTargetDetailCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            执行命令代码块
+            </summary>
+            <param name="view">详细逻辑视图</param>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.KPI.AddQuotaTargetDetailCommand.OnItemCreated(SIE.Domain.Entity)">
+            <summary>
+            赋予父表相同周期类型给实体
+            </summary>
+            <param name="entity">指标定义明细</param>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Workbench.KPI.AddQuotaTargetSettingCommand">
+            <summary>
+            指标定义设定添加命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.KPI.AddQuotaTargetSettingCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            命令执行代码块
+            </summary>
+            <param name="view">详细逻辑视图</param>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Workbench.KPI.BlukAddQuotaTargetDetailCommand">
+            <summary>
+            批量复制命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.KPI.BlukAddQuotaTargetDetailCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            是否能被执行
+            </summary>
+            <param name="view">详细逻辑视图</param>
+            <returns>返回是否能被执行</returns>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.KPI.BlukAddQuotaTargetDetailCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            执行代码块
+            </summary>
+            <param name="view">详细逻辑视图</param>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Workbench.KPI.DeleteQuotaTargetDetailCommand">
+            <summary>
+            删除命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.KPI.DeleteQuotaTargetDetailCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            是否能执行
+            </summary>
+            <param name="view">指标目标定义明细</param>
+            <returns>返回是否能被执行</returns>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Workbench.KPI.EditQuotaTargetSettingCommand">
+            <summary>
+            指标定义设定修改命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.KPI.EditQuotaTargetSettingCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            命令执行代码块
+            </summary>
+            <param name="view">详细逻辑视图</param>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Workbench.KPI.EnableQuotaTargetDetailCommand">
+            <summary>
+            指标定义明细表启用命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.KPI.EnableQuotaTargetDetailCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            命令是否能把执行
+            </summary>
+            <param name="view">详细逻辑视图</param>
+            <returns>返回命令是否能把执行</returns>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Workbench.KPI.SaveQuotaTargetDetailCommand">
+            <summary>
+            指标定义明细保存命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.KPI.SaveQuotaTargetDetailCommand.DoSave(SIE.Domain.Entity)">
+            <summary>
+            保存逻辑
+            </summary>
+            <param name="entity">实体</param>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Workbench.KPI.KpiModelViewConfig">
+            <summary>
+            绩效目标视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.KPI.KpiModelViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.KPI.KpiModelViewConfig.ConfigDetailsView">
+            <summary>
+             配置明细视图
+             </summary>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Workbench.KPI.QuotaTargetDetailViewConfig">
+            <summary>
+            目标值设定视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.WorkBenchCommon.Workbench.KPI.QuotaTargetDetailViewConfig.ComYear">
+            <summary>
+            周期为年的附加视图名称
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.WorkBenchCommon.Workbench.KPI.QuotaTargetDetailViewConfig.ComMonth">
+            <summary>
+            周期为月的附加视图名称
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.WorkBenchCommon.Workbench.KPI.QuotaTargetDetailViewConfig.ComWeek">
+            <summary>
+            周期为周的附加视图名称
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.WorkBenchCommon.Workbench.KPI.QuotaTargetDetailViewConfig.UnComMonth">
+            <summary>
+            周期为月的无命令附加视图名称
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.WorkBenchCommon.Workbench.KPI.QuotaTargetDetailViewConfig.UnComWeek">
+            <summary>
+            周期为周的无命令附加视图名称
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.KPI.QuotaTargetDetailViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.KPI.QuotaTargetDetailViewConfig.ConfigComMonth">
+            <summary>
+            周期为月份的配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.KPI.QuotaTargetDetailViewConfig.ConfigComWeek">
+            <summary>
+            周期为周的配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.KPI.QuotaTargetDetailViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingCriteriaViewConfig">
+            <summary>
+            指标定义查询视图实体
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingCriteriaViewConfig.ClearEnterpriseProperty">
+            <summary>
+            层级类型变更清除企业模型
+            </summary> 
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingCriteriaViewConfig.GetClearEnterprise(SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingCriteria)">
+            <summary>
+            层级类型变更清除企业模型
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingCriteriaViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingViewConfig">
+            <summary>
+            KPI目标设定视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingViewConfig.IsReadOnlyPropertyProperty">
+            <summary>
+            企业层级及企业模型是否只读
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingViewConfig.GetIsReadOnlyProperty(SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSetting)">
+            <summary>
+            企业层级及企业模型是否只读
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingBehavior">
+            <summary>
+            指标定义明细表行为
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingBehavior.OnAttach">
+            <summary>
+            附加视图行为
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingBehavior.MainView_CurrentChanged(System.Object,System.EventArgs)">
+            <summary>
+            当前实体变更事件
+            </summary>
+            <param name="sender">发送者</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingBehavior.VM_PropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            属性变更方法
+            </summary>
+            <param name="sender">变更对象</param>
+            <param name="e">变更事件</param>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingCriteriaBehavior">
+            <summary>
+            指标目标定义查询实体行为
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingCriteriaBehavior.OnAttach">
+            <summary>
+            附加视图行为
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingCriteriaBehavior.VM2_PropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            属性变更方法
+            </summary>
+            <param name="sender">变更对象</param>
+            <param name="e">变更事件</param>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Workbench.MyTask">
+            <summary>
+            MyTask.xaml 的交互逻辑
+            </summary>
+            <summary>
+            MyTask
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.MyTask.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.MyTask.OnRun">
+            <summary>
+            运行后
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.MyTask.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Workbench.TaskOutput">
+            <summary>
+            输出参数
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchCommon.Workbench.TaskOutput.SelectedTask">
+            <summary>
+            选中的任务
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchCommon.Workbench.TaskOutput.RefreshAction">
+            <summary>
+            刷新任务
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Workbench.TargetWarn.TargetWarnDetailAddCommand">
+            <summary>
+            目标预警设定限制添加按钮
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.TargetWarn.TargetWarnDetailAddCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            如果当前有三条数据，就不可添加
+            </summary>
+            <param name="view">详细逻辑视图</param>
+            <returns>默认行为</returns>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Workbench.TargetWarn.TargetWarnDetailViewConfig">
+            <summary>
+            达成率区间视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.WorkBenchCommon.Workbench.TargetWarn.TargetWarnDetailViewConfig.IsMaxvalueReadOnlyProperty">
+            <summary>
+            只读控制,主单位不能编辑
+            </summary> 
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.TargetWarn.TargetWarnDetailViewConfig.GetIsMaxvalueReadOnly(SIE.WorkBenchCommon.Workbench.TargetWarn.TargetWarnDetail)">
+            <summary>
+            只读控制,小于或者大于状态下最大值不能编辑
+            </summary>
+            <param name="me">参数</param>
+            <returns>bool</returns>
+        </member>
+        <member name="F:SIE.Wpf.WorkBenchCommon.Workbench.TargetWarn.TargetWarnDetailViewConfig.IsMinvalueReadOnlyProperty">
+            <summary>
+            只读控制,主单位不能编辑
+            </summary> 
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.TargetWarn.TargetWarnDetailViewConfig.GetIsMinvalueReadOnly(SIE.WorkBenchCommon.Workbench.TargetWarn.TargetWarnDetail)">
+            <summary>
+            只读控制,小于或者大于状态下最大值不能编辑
+            </summary>
+            <param name="me">参数</param>
+            <returns>bool</returns>
+        </member>
+        <member name="F:SIE.Wpf.WorkBenchCommon.Workbench.TargetWarn.TargetWarnDetailViewConfig.ComTargetWarn">
+            <summary>
+            有按钮的达成率目标设定视图名字
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.TargetWarn.TargetWarnDetailViewConfig.ConfigView">
+            <summary>
+            无按钮的达成率目标设定视图名字
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.TargetWarn.TargetWarnDetailViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.TargetWarn.TargetWarnDetailViewConfig.ConfigComTargetWarn">
+            <summary>
+            配置有按钮的列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Workbench.TargetWarn.TargetWarnSettingCriteriaViewConfig">
+            <summary>
+            预警设定查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.TargetWarn.TargetWarnSettingCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Workbench.TargetWarn.TargetWarnSettingViewConfig">
+            <summary>
+            预警设定视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.TargetWarn.TargetWarnSettingViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.TargetWarn.TargetWarnSettingViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.TargetWarn.TargetWarnSettingViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Workbench.TargetWarn.TargetWarnSettingChangeQuota">
+            <summary>
+            切换指标类型时，清除指标名称
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.TargetWarn.TargetWarnSettingChangeQuota.OnAttach">
+            <summary>
+            加载时挂载
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.TargetWarn.TargetWarnSettingChangeQuota.VM_PropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            切换指标类型时，清除指标名称
+            </summary>
+            <param name="sender">数据发送</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Workbench.TargetWarn.TargetWarnSettingQueryChangeQuota">
+            <summary>
+            切换指标类型时，清除指标名称
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.TargetWarn.TargetWarnSettingQueryChangeQuota.OnAttach">
+            <summary>
+            加载时挂载
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.TargetWarn.TargetWarnSettingQueryChangeQuota.VM_PropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            切换指标类型时，清除指标名称
+            </summary>
+            <param name="sender">数据发送</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Workbench.TargetWarn.TarGetWarnDetailColorBehaviors">
+            <summary>
+            根据目标值区间定义颜色
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.TargetWarn.TarGetWarnDetailColorBehaviors.OnAttach">
+            <summary>
+            加载时根据条件定义颜色
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Workbench.TargetWarn.TargetWarnDetailTypeChange">
+            <summary>
+            条件变更时，清除数据
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.TargetWarn.TargetWarnDetailTypeChange.OnAttach">
+            <summary>
+            加载时挂载
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.TargetWarn.TargetWarnDetailTypeChange.View_CurrentChanged(System.Object,System.EventArgs)">
+            <summary>
+            属性变更时执行
+            </summary>
+            <param name="sender">数据发送</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.TargetWarn.TargetWarnDetailTypeChange.TargetWarnDetail_PropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            条件属性变更时改变颜色和数据
+            </summary>
+            <param name="sender">数据发送</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Workbench.TaskManager">
+            <summary>
+            [任务闭环管理]工作台
+            </summary>
+            <summary>
+            TaskManager
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.WorkBenchCommon.Workbench.TaskManager.taskStatistics">
+            <summary>
+            任务关闭率对象
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.TaskManager.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.TaskManager.OnRun">
+            <summary>
+            组件运行时
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.TaskManager.LoadData">
+            <summary>
+            加载数据
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.TaskManager.ShowTaskWindows(SIE.WorkBenchCommon.Workbench.Tasks.TaskInfo,System.String,System.String,System.Boolean)">
+            <summary>
+            弹出任务编辑窗口
+            </summary>
+            <param name="task">任务对象</param>
+            <param name="title">标题</param>
+            <param name="viewGroup">视图配置</param>
+            <param name="isClearCommand">是否清空命令</param>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.TaskManager.Add_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            刷新数据
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.TaskManager.TasksCreatedEdit_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            新建任务
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.TaskManager.TasksPaddingEdit_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            对待处理的任务进行编辑
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.TaskManager.TasksDelayEdit_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            对已延期的任务进行编辑
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.TaskManager.Cancel_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            删除任务
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.TaskManager.TasksCopyToView_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            查看任務
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.TaskManager.Refresh_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            刷新任务
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.TaskManager.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Workbench.TaskStatistics">
+            <summary>
+            任务关闭率对象
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchCommon.Workbench.TaskStatistics.TaskCategoryStatistics">
+            <summary>
+            任务系列集合
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.TaskStatistics.Load(SIE.Domain.EntityList{SIE.WorkBenchCommon.Workbench.Tasks.TaskInfo})">
+            <summary>
+            加载数据
+            </summary>
+            <param name="tasks"></param>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchCommon.Workbench.TaskStatistics.Total">
+            <summary>
+            总任务数量
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchCommon.Workbench.TaskStatistics.Closed">
+            <summary>
+            任务关闭数
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchCommon.Workbench.TaskStatistics.ClosedRate">
+            <summary>
+            任务关闭率
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.TaskStatistics.OnPropertyChanged(System.String)">
+            <summary>
+            属性变更事件触发
+            </summary>
+            <param name="propertyName">变更的属性名称</param>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Workbench.TaskCategoryStatistics">
+            <summary>
+            任务系列
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchCommon.Workbench.TaskCategoryStatistics.Name">
+            <summary>
+            任务系列名称
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchCommon.Workbench.TaskCategoryStatistics.Qty">
+            <summary>
+            任务数量
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.WorkBenchCommon.Workbench.TaskInfoExt.StatusDisplayProperty">
+            <summary>
+            任务状态
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.TaskInfoExt.GetStatusDisplay(SIE.WorkBenchCommon.Workbench.Tasks.TaskInfo)">
+            <summary>
+            任务状态
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Workbench.TabItemWidthConverterMarkupExtension">
+            <summary>
+            tab标题宽
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.TabItemWidthConverterMarkupExtension.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            当值从绑定源传播给绑定目标
+            </summary>
+            <param name="value">绑定源值</param>
+            <param name="targetType">绑定目标属性的类型</param>
+            <param name="parameter">使用的转换器参数</param>
+            <param name="culture">转换器中使用的文化</param>
+            <returns>返回转换后的值</returns>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.TabItemWidthConverterMarkupExtension.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            当值从绑定目标传播给绑定源
+            </summary>
+            <param name="value">绑定目标的值</param>
+            <param name="targetType">绑定目标属性的类型</param>
+            <param name="parameter">使用的转换器参数</param>
+            <param name="culture">转换器中使用的文化</param>
+            <returns>返回转换后的值</returns>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.TabItemWidthConverterMarkupExtension.ProvideValue(System.IServiceProvider)">
+            <summary>
+            为此标记扩展的目标属性值提供的对象
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Workbench.TaskColorConvertMarkupExtension">
+            <summary>
+            任务颜色 转换器
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.TaskColorConvertMarkupExtension.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            当值从绑定源传播给绑定目标
+            </summary>
+            <param name="value">绑定源值</param>
+            <param name="targetType">绑定目标属性的类型</param>
+            <param name="parameter">使用的转换器参数</param>
+            <param name="culture">转换器中使用的文化</param>
+            <returns>返回转换后的值</returns>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.TaskColorConvertMarkupExtension.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            当值从绑定目标传播给绑定源
+            </summary>
+            <param name="value">绑定目标的值</param>
+            <param name="targetType">绑定目标属性的类型</param>
+            <param name="parameter">使用的转换器参数</param>
+            <param name="culture">转换器中使用的文化</param>
+            <returns>返回转换后的值</returns>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.TaskColorConvertMarkupExtension.ProvideValue(System.IServiceProvider)">
+            <summary>
+            为此标记扩展的目标属性值提供的对象
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Workbench.Tasks.TaskInfoViewConfig">
+            <summary>
+            任务信息视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.WorkBenchCommon.Workbench.Tasks.TaskInfoViewConfig.ReadonlyViewGroup">
+            <summary>
+            设置查看单据视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.Tasks.TaskInfoViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.Tasks.TaskInfoViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.Tasks.TaskInfoViewConfig.ConfigDetailsView">
+            <summary>
+             配置明细视图
+             </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.Tasks.TaskInfoViewConfig.ReadonlyView">
+            <summary>
+            配置只读视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.Tasks.TaskInfoViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Workbench.Tasks.TaskTypeViewConfig">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.Tasks.TaskTypeViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.Tasks.TaskTypeViewConfig.ConfigDetailsView">
+            <summary>
+             配置明细视图
+             </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.Tasks.TaskTypeViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Workbench.ThemeBorder">
+            <summary>
+            ThemeBorder.xaml 的交互逻辑
+            </summary>
+            <summary>
+            ThemeBorder
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.ThemeBorder.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchCommon.Workbench.ThemeBorder.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchCommon.Workbench.ThemeBorderProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchCommon.Workbench.ThemeBorderProperty.BorderThickness">
+            <summary>
+            边框线宽
+            </summary>
+        </member>
+    </members>
+</doc>

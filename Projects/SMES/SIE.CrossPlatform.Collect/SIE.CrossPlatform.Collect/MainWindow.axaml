@@ -1,0 +1,30 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="SIE.CrossPlatform.Collect.MainWindow"
+	    xmlns:ctl="using:SIE.CrossPlatform.Collect.Common.Controls"
+        Title="主窗口" Loaded="Window_Loaded"
+		xmlns:vm="using:SIE.CrossPlatform.Collect.ViewModels"
+		x:DataType="vm:MainWindowViewModel"
+		xmlns:li="using:LoadingIndicators.Avalonia"
+		>
+	<Grid >
+		<Grid.RowDefinitions>
+			<RowDefinition Height="88"></RowDefinition>
+			<RowDefinition Height="30"></RowDefinition>
+			<RowDefinition Height="40"></RowDefinition>
+			<RowDefinition Height="40"></RowDefinition>
+			<RowDefinition Height="*"></RowDefinition>
+		</Grid.RowDefinitions>
+		<ctl:XPTitle x:Name="xpTitle" Grid.Row="0"></ctl:XPTitle>
+		<Button Click="Button_Click"  Grid.Row="1">过站采集</Button>
+		<Button Click="Button_Login_Click"  Grid.Row="2">登录</Button>
+		<TextBlock x:Name="txtStatus"  Grid.Row="3"  VerticalAlignment="Center">登录状态</TextBlock>
+		<Border Background="Transparent"  IsVisible="{Binding IsBusy,Mode=TwoWay}"
+							 Grid.RowSpan="5"  Grid.Row="0"  Grid.Column="0">
+			<li:LoadingIndicator   HorizontalAlignment="Center" VerticalAlignment="Center"  Height="200" Width="200" Mode="Arc" SpeedRatio="1.2" />
+		</Border>
+	</Grid>
+</Window>

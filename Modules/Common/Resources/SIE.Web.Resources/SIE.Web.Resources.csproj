@@ -1,0 +1,189 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <CodeAnalysisRuleSet>SIE.Web.Resources.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.Resources.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.Resources.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Employees\新文件夹1\**" />
+    <Compile Remove="Organisations\**" />
+    <EmbeddedResource Remove="Employees\新文件夹1\**" />
+    <EmbeddedResource Remove="Organisations\**" />
+    <None Remove="Employees\新文件夹1\**" />
+    <None Remove="Organisations\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="CalendarSchemes\Commands\CalendarSchemeDeleteCommand.js" />
+    <None Remove="CalendarSchemes\Commands\CalendarSchemeDisableCommand.js" />
+    <None Remove="CalendarSchemes\Commands\CalendarSchemeEnableCommand.js" />
+    <None Remove="CalendarSchemes\Commands\CalendarSchemeSetDefaultCommand.js" />
+    <None Remove="CalendarSchemes\Commands\CalendarSchemeWeekAddCommand.js" />
+    <None Remove="CalendarSchemes\Commands\CalendarSchemeWeekDeleteCommand.js" />
+    <None Remove="CalendarSchemes\Commands\CalendarSchemeWeekEditCommand.js" />
+    <None Remove="CalendarSchemes\Commands\CalendarWeekEditCommand.js" />
+    <None Remove="CalendarSchemes\Commands\ShowHolidayCommand.js" />
+    <None Remove="CalendarSchemes\Commands\ShowShiftTypeCommand.js" />
+    <None Remove="Commands\AddChildCommand.js" />
+    <None Remove="Commands\DeleteCommand.js" />
+    <None Remove="Control\EnterpriseLevelComboList.js" />
+    <None Remove="Employees\Behaviors\EditEmployeeBehavior.js" />
+    <None Remove="Employees\Commands\ChangeGroupCommand.js" />
+    <None Remove="Employees\Commands\ChargehandCommand.js" />
+    <None Remove="Employees\Commands\ClearTypeCommand.js" />
+    <None Remove="Employees\Commands\DeleteSignCommand.js" />
+    <None Remove="Employees\Commands\EmployeeEditCommand.js" />
+    <None Remove="Employees\Commands\EmployeeEnterpriseDelCommand.js" />
+    <None Remove="Employees\Commands\EmployeeGroupCommand.js" />
+    <None Remove="Employees\Commands\EmployeeLabelPrintCommand.js" />
+    <None Remove="Employees\Commands\EmployeeResourceDelCommand.js" />
+    <None Remove="Employees\Commands\EmployeeResourceDLTemplateCommand.js" />
+    <None Remove="Employees\Commands\EmployeeResourceImportCommand.js" />
+    <None Remove="Employees\Commands\EmployeeSaveCommand.js" />
+    <None Remove="Employees\Commands\EmployeeUploadAttachmentCommand.js" />
+    <None Remove="Employees\Commands\EmployeeUploadImageCommand.js" />
+    <None Remove="Employees\Commands\EnableEmployeeSignCommand.js" />
+    <None Remove="Employees\Commands\EnableSignCommand.js" />
+    <None Remove="Employees\Commands\ForemanCommand.js" />
+    <None Remove="Employees\Commands\LinkUserCommand.js" />
+    <None Remove="Employees\Commands\MonitorCommand.js" />
+    <None Remove="Employees\Commands\SelectEnterpriseCommand.js" />
+    <None Remove="Employees\Commands\SelectResourceCommand.js" />
+    <None Remove="Employees\Commands\SignShowImageCommand.js" />
+    <None Remove="Employees\Commands\UnLinkUserCommand.js" />
+    <None Remove="Employees\Commands\WorkGroupCopyCommand.js" />
+    <None Remove="Employees\Scripts\AddSysMenu.js" />
+    <None Remove="Enterprises\Behavior\EnterpriseBehavior.js" />
+    <None Remove="Enterprises\Commands\AddEprisChildCommand.js" />
+    <None Remove="Enterprises\Commands\DisableResourceCommand.js" />
+    <None Remove="Enterprises\Commands\EnableResourceCommand.js" />
+    <None Remove="Enterprises\Commands\EnterpriseLevelTableCommand.js" />
+    <None Remove="Holidays\Commands\HolidayAddCommand.js" />
+    <None Remove="ProcessTechs\Commands\ProcessTechAddCommand.js" />
+    <None Remove="ProcessTechs\Commands\ProcessTechCopyCommand.js" />
+    <None Remove="ProcessTechs\Commands\ProcessTechEditCommand.js" />
+    <None Remove="ProcessTechs\Commands\ProcessTechImportCommand.js" />
+    <None Remove="ProcessTechs\Commands\ProcessTechSaveCommand.js" />
+    <None Remove="Scripts\AddSysMenu.js" />
+    <None Remove="Scripts\CalendarWeekView.js" />
+    <None Remove="ShiftTypes\Behaviors\ShiftBehavior.js" />
+    <None Remove="ShiftTypes\Commands\SetDefaultCommand.js" />
+    <None Remove="ShiftTypes\Commands\ShiftAddCommand.js" />
+    <None Remove="ShiftTypes\Commands\ShiftEditCommand.js" />
+    <None Remove="ShiftTypes\Commands\ShiftResetAddCommand.js" />
+    <None Remove="ShiftTypes\Commands\ShowCalendarSchemesCommand.js" />
+    <None Remove="Skills\Commands\AddSkillCategoryCommand.js" />
+    <None Remove="UserGroups\Commands\SelectEnterpriseCommand.js" />
+    <None Remove="UserGroups\Commands\SelectInvOrgCommand.js" />
+    <None Remove="UserGroups\Commands\SelectResourceCommand.js" />
+    <None Remove="UserGroups\Commands\UserGroupEnterpriseDeleteCommand.js" />
+    <None Remove="UserGroups\Commands\UserGroupInvOrgDeleteCommand.js" />
+    <None Remove="UserGroups\Commands\UserGroupResourceDeleteCommand.js" />
+    <None Remove="WipResources\Behaviors\WipResourceBehavior.js" />
+    <None Remove="WipResources\Commands\SynWipResSettingCommand.js" />
+    <None Remove="WipResources\Commands\WipResourceEditCommand.js" />
+    <None Remove="WipResources\Commands\WipResourceEnableCommand.js" />
+    <None Remove="WipResources\Commands\WipResourceRefreshCommand.js" />
+    <None Remove="WipResources\Commands\WipResourceStopCommand.js" />
+    <None Remove="WipResources\Scripts\WipResourceLayout.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\..\..\.sonarlint\sie.smom\CSharp\SonarLint.xml" Link="SonarLint.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Control\EnterpriseLevelComboList.js" />
+    <EmbeddedResource Include="Employees\Behaviors\EditEmployeeBehavior.js" />
+    <EmbeddedResource Include="Employees\Commands\DeleteSignCommand.js" />
+    <EmbeddedResource Include="Employees\Commands\EmployeeEnterpriseDelCommand.js" />
+    <EmbeddedResource Include="Employees\Commands\EmployeeLabelPrintCommand.js" />
+    <EmbeddedResource Include="Employees\Commands\EmployeeResourceDelCommand.js" />
+    <EmbeddedResource Include="Employees\Commands\EmployeeResourceDLTemplateCommand.js" />
+    <EmbeddedResource Include="Employees\Commands\EmployeeResourceImportCommand.js" />
+    <EmbeddedResource Include="Employees\Commands\EmployeeUploadAttachmentCommand.js" />
+    <EmbeddedResource Include="Employees\Commands\EmployeeUploadImageCommand.js" />
+    <EmbeddedResource Include="Employees\Commands\EnableSignCommand.js" />
+    <EmbeddedResource Include="Employees\Commands\SelectEnterpriseCommand.js" />
+    <EmbeddedResource Include="Employees\Commands\SignShowImageCommand.js" />
+    <EmbeddedResource Include="Employees\Commands\WorkGroupCopyCommand.js" />
+    <EmbeddedResource Include="Employees\Scripts\AddSysMenu.js" />
+    <EmbeddedResource Include="Enterprises\Behavior\EnterpriseBehavior.js" />
+    <EmbeddedResource Include="Enterprises\Commands\AddEprisChildCommand.js" />
+    <EmbeddedResource Include="ProcessTechs\Commands\ProcessTechAddCommand.js" />
+    <EmbeddedResource Include="ProcessTechs\Commands\ProcessTechCopyCommand.js" />
+    <EmbeddedResource Include="ProcessTechs\Commands\ProcessTechEditCommand.js" />
+    <EmbeddedResource Include="ProcessTechs\Commands\ProcessTechImportCommand.js" />
+    <EmbeddedResource Include="ProcessTechs\Commands\ProcessTechSaveCommand.js" />
+    <EmbeddedResource Include="Scripts\CalendarWeekView.js" />
+    <EmbeddedResource Include="ShiftTypes\Behaviors\ShiftBehavior.js" />
+    <EmbeddedResource Include="UserGroups\Commands\SelectEnterpriseCommand.js" />
+    <EmbeddedResource Include="UserGroups\Commands\SelectInvOrgCommand.js" />
+    <EmbeddedResource Include="UserGroups\Commands\SelectResourceCommand.js" />
+    <EmbeddedResource Include="UserGroups\Commands\UserGroupEnterpriseDeleteCommand.js" />
+    <EmbeddedResource Include="UserGroups\Commands\UserGroupInvOrgDeleteCommand.js" />
+    <EmbeddedResource Include="UserGroups\Commands\UserGroupResourceDeleteCommand.js" />
+    <EmbeddedResource Include="WipResources\Behaviors\WipResourceBehavior.js" />
+    <EmbeddedResource Include="WipResources\Commands\WipResourceEditCommand.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="WipResources\Commands\SynWipResSettingCommand.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CalendarSchemes\Commands\CalendarSchemeDeleteCommand.js" />
+    <EmbeddedResource Include="CalendarSchemes\Commands\CalendarSchemeDisableCommand.js" />
+    <EmbeddedResource Include="CalendarSchemes\Commands\CalendarSchemeEnableCommand.js" />
+    <EmbeddedResource Include="CalendarSchemes\Commands\CalendarSchemeSetDefaultCommand.js" />
+    <EmbeddedResource Include="CalendarSchemes\Commands\CalendarSchemeWeekAddCommand.js" />
+    <EmbeddedResource Include="CalendarSchemes\Commands\CalendarSchemeWeekDeleteCommand.js" />
+    <EmbeddedResource Include="CalendarSchemes\Commands\CalendarSchemeWeekEditCommand.js" />
+    <EmbeddedResource Include="CalendarSchemes\Commands\CalendarWeekEditCommand.js" />
+    <EmbeddedResource Include="CalendarSchemes\Commands\ShowHolidayCommand.js" />
+    <EmbeddedResource Include="CalendarSchemes\Commands\ShowShiftTypeCommand.js" />
+    <EmbeddedResource Include="Commands\AddChildCommand.js" />
+    <EmbeddedResource Include="Commands\DeleteCommand.js" />
+    <EmbeddedResource Include="Employees\Commands\ChangeGroupCommand.js" />
+    <EmbeddedResource Include="Employees\Commands\ChargehandCommand.js" />
+    <EmbeddedResource Include="Employees\Commands\ClearTypeCommand.js" />
+    <EmbeddedResource Include="Employees\Commands\EmployeeEditCommand.js" />
+    <EmbeddedResource Include="Employees\Commands\EmployeeGroupCommand.js" />
+    <EmbeddedResource Include="Employees\Commands\EmployeeSaveCommand.js" />
+    <EmbeddedResource Include="Employees\Commands\ForemanCommand.js" />
+    <EmbeddedResource Include="Employees\Commands\LinkUserCommand.js" />
+    <EmbeddedResource Include="Employees\Commands\MonitorCommand.js" />
+    <EmbeddedResource Include="Employees\Commands\SelectResourceCommand.js" />
+    <EmbeddedResource Include="Employees\Commands\UnLinkUserCommand.js" />
+    <EmbeddedResource Include="Enterprises\Commands\DisableResourceCommand.js" />
+    <EmbeddedResource Include="Enterprises\Commands\EnableResourceCommand.js" />
+    <EmbeddedResource Include="Enterprises\Commands\EnterpriseLevelTableCommand.js" />
+    <EmbeddedResource Include="Holidays\Commands\HolidayAddCommand.js" />
+    <EmbeddedResource Include="ShiftTypes\Commands\SetDefaultCommand.js" />
+    <EmbeddedResource Include="ShiftTypes\Commands\ShiftAddCommand.js" />
+    <EmbeddedResource Include="ShiftTypes\Commands\ShiftEditCommand.js" />
+    <EmbeddedResource Include="ShiftTypes\Commands\ShiftResetAddCommand.js" />
+    <EmbeddedResource Include="ShiftTypes\Commands\ShowCalendarSchemesCommand.js" />
+    <EmbeddedResource Include="Skills\Commands\AddSkillCategoryCommand.js" />
+    <EmbeddedResource Include="WipResources\Commands\WipResourceEnableCommand.js" />
+    <EmbeddedResource Include="WipResources\Commands\WipResourceRefreshCommand.js" />
+    <EmbeddedResource Include="WipResources\Commands\WipResourceStopCommand.js" />
+    <EmbeddedResource Include="WipResources\Scripts\WipResourceLayout.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\SMES\Barcodes\SIE.Barcodes\SIE.Barcodes.csproj" />
+    <ProjectReference Include="..\SIE.Resources\SIE.Resources.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="SIE.Web.Common" Version="10.0.5" />
+  </ItemGroup>
+</Project>

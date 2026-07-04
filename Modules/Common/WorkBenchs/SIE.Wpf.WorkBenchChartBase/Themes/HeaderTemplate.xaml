@@ -1,0 +1,89 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+                    xmlns:dxl="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+                    xmlns:icon="clr-namespace:Resources.IconPacks;assembly=Resources"
+                    xmlns:uic="http://schemas.siestudio.com/winfx/xaml/core"
+                    xmlns:uit="http://schemas.siestudio.com/winfx/xaml/themes"
+                    xmlns:local="clr-namespace:SIE.Wpf.WorkBenchChartBase.Commons">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary>
+            <!--<Style TargetType="local:CommonChartHeaderControl">
+                <Setter Property="Margin" Value="10,10,10,10"></Setter>
+                <Setter Property="Width" Value="443"/>
+                <Setter Property="Height" Value="358"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="local:CommonChartHeaderControl">
+                            <StackPanel Orientation="Vertical" Background="Transparent">
+                                <dxl:DockLayoutControl Height="30" Background="Transparent">
+                                    <StackPanel dxl:DockLayoutControl.Dock="Left" Orientation="Horizontal" Background="Transparent">
+                                        --><!--<Ellipse Height="20" Width="20" Fill="Red"></Ellipse>--><!--
+                                        <Border CornerRadius="100" BorderThickness="1">
+                                            <TextBox Background="Red" BorderThickness="0" Height="30" Width="30" Text="红" FontSize="16" Foreground="White" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></TextBox>
+                                        </Border>
+                                        <Label Content="{Binding Title}" VerticalContentAlignment="Center"></Label>
+                                    </StackPanel>
+                                    <StackPanel dxl:DockLayoutControl.Dock="Right" Orientation="Horizontal" FlowDirection="RightToLeft" Background="Transparent">
+                                        <Button Command="{x:Static local:CommonChartHeaderControl.Collect}" BorderThickness="0" Background="{x:Null}">
+                                            <Button.Content>
+                                                <icon:PackIcon Kind="Star" Background="Transparent"></icon:PackIcon>
+                                            </Button.Content>
+                                        </Button>
+                                        <Button Command="{x:Static local:CommonChartHeaderControl.New}" BorderThickness="0" Background="{x:Null}">
+                                            <Button.Content>
+                                                <StackPanel ToolTip="新建"  FlowDirection="LeftToRight" Orientation="Horizontal" Background="{x:Null}">
+                                                    <icon:PackIcon Kind="Add" Foreground="#128bef" Height="15" Width="15"></icon:PackIcon>
+                                                    <Label Content="新建" VerticalAlignment="Bottom"></Label>
+                                                </StackPanel>
+                                            </Button.Content>
+                                        </Button>
+                                    </StackPanel>
+                                </dxl:DockLayoutControl>
+                                <ContentPresenter />
+                            </StackPanel>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>-->
+        </ResourceDictionary>
+
+        <ResourceDictionary>
+            <Style TargetType="local:ChartHeaderControl">
+                <Setter Property="Template">
+                    <Setter.Value> 
+                        <ControlTemplate TargetType="local:ChartHeaderControl">
+                            <dxl:DockLayoutControl Margin="5" Background="{DynamicResource {uit:BrushesThemeKey ResourceKey=Background}}">
+                                <dxl:DockLayoutControl dxl:DockLayoutControl.Dock="Top" x:Name="headerBar" Height="30"  Background="Transparent">
+                                    <StackPanel dxl:DockLayoutControl.Dock="Left" Orientation="Horizontal" Background="Transparent">
+                                        <Canvas Height="20" Width="20" Margin="5,0,0,0">
+                                            <Ellipse Height="20" Width="20" Fill="{Binding ChartAlertLevel, Converter={local:ColorConverter}, Mode=OneWay}"></Ellipse>
+                                            <Label BorderThickness="0" Height="20" Width="20" Content="{Binding ChartAlertLevel, Converter={local:ColorDescriptionConverter}, Mode=OneWay}" FontSize="12" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
+                                        </Canvas>
+                                        <!--<Border CornerRadius="15,15,15,15" Width="36" Height="30" Background="{Binding ChartAlertLevel, Converter={local:ColorConverter}, Mode=OneWay}" BorderThickness="1">
+                                            <Label BorderThickness="0" Height="20" Width="20" Content="{Binding ChartAlertLevel, Converter={local:ColorDescriptionConverter}, Mode=OneWay}" FontSize="12" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
+                                        </Border>-->
+                                        <Label Name="lbTitle" Content="{Binding Title}" VerticalContentAlignment="Center" FontSize="18" Margin="5, 0, 0, 0"></Label>
+                                    </StackPanel>
+                                    <StackPanel dxl:DockLayoutControl.Dock="Right" Orientation="Horizontal" FlowDirection="RightToLeft" Background="Transparent">
+                                        <Button Name="btnCollect" Command="{x:Static local:ChartHeaderControl.Collect}" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Foreground="Gray"  Background="Transparent">
+                                            <Button.Content>
+                                                <icon:PackIcon x:Name="collectIcon" Kind="Star" Background="Transparent"></icon:PackIcon>
+                                            </Button.Content>
+                                        </Button>
+                                        <Button Command="{x:Static local:ChartHeaderControl.New}" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Background="{x:Null}">
+                                            <Button.Content>
+                                                <icon:PackIcon Kind="Add" Foreground="#128bef" Height="15" Width="15" Background="Transparent"></icon:PackIcon>
+                                            </Button.Content>
+                                        </Button>
+                                    </StackPanel>
+                                </dxl:DockLayoutControl>
+                                <ContentPresenter dxl:DockLayoutControl.Dock="Client" Margin="0"/>
+                            </dxl:DockLayoutControl>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 500px;
+    border: 3px solid black;
+  }
+
+  th, td {
+    border: 3px solid black;
+    padding: 4px;
+    text-align: left;
+  }
+  th:first-child {
+    width: 25%;
+  }
+</style>
+</head>
+<body>
+<h5>【安灯信息推送】</h5>
+<table>
+  <tr>
+    <th>安灯事件编码</th>
+    <td>@Model.AndonManageCode</td>
+  </tr>
+  <tr>
+    <th>故障发生时间</th>
+    <td>@Model.FaultTime</td>
+  </tr>
+  <tr>
+    <th>安灯名称</th>
+    <td>@Model.AndonName</td>
+  </tr>
+  <tr>
+    <th>问题描述</th>
+    <td>@Model.ProblemDesc</td>
+  </tr>
+  <tr>
+    <th>优先级</th>
+    <td>@Model.Priority</td>
+  </tr>
+  <tr>
+    <th>缺陷代码</th>
+    <td>@Model.Defect</td>
+  </tr>
+  <tr>
+    <th>负责部门</th>
+    <td>@Model.Department</td>
+  </tr>
+  <tr>
+    <th>状态</th>
+    <td>@Model.State</td>
+  </tr>
+  <tr>
+    <th>触发人</th>
+    <td>@Model.TriggerName</td>
+  </tr>
+  <tr>
+    <th>触发时间</th>
+    <td>@Model.TriggerTime</td>
+  </tr>
+  <tr>
+    <th>处理人</th>
+    <td>@Model.HandlerName</td>
+  </tr>
+  <tr>
+    <th>工厂</th>
+    <td>@Model.FactoryName</td>
+  </tr>
+  <tr>
+    <th>车间</th>
+    <td>@Model.WorkShopName</td>
+  </tr>
+  <tr>
+    <th>产线</th>
+    <td>@Model.WipResourceName</td>
+  </tr>
+  <tr>
+    <th>工位</th>
+    <td>@Model.StationName</td>
+  </tr>
+  <tr>
+    <th>设备编码</th>
+    <td>@Model.EquipAccountCode</td>
+  </tr>
+  <tr>
+    <th>设备名称</th>
+    <td>@Model.EquipAccountName</td>
+  </tr>
+</table>
+<h5>【系统链接】</h5>
+<a href="http://192.168.175.137:1158/#entityType=SIE.Andon.Andons.AndonManage%2CSIE.Andon&module=SIE.Andon.Andons.AndonManage%2CSIE.Andon">点击跳转到系统</a>
+</body>
+</html>

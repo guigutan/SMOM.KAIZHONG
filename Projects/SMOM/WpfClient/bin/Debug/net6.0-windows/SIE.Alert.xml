@@ -1,0 +1,2480 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Alert</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Alert.AlertCommon">
+            <summary>
+            预警公共类
+            </summary>
+        </member>
+        <member name="M:SIE.Alert.AlertCommon.ConvertListToString(System.Collections.Generic.List{System.Object})">
+            <summary>
+             List 转 string
+            </summary>
+            <param name="list"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Alert.AlertCommon.GetPropertyValue(System.Object,System.String)">
+            <summary>
+            指定反射属性的值
+            </summary>
+            <param name="obj"></param>
+            <param name="propertyName"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:SIE.Alert.AlertCommon.ConvertToListDynamic(System.Object)">
+            <summary>
+            将 object 转换为 List
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="T:SIE.Alert.AlertController">
+            <summary>
+            预警控制器
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertController.g_locker">
+            <summary>
+            对象
+            </summary>
+        </member>
+        <member name="M:SIE.Alert.AlertController.FindAllAlertPlugs">
+            <summary>
+             预警插件查询
+            </summary>
+            <returns>AlertPlug列表</returns>
+        </member>
+        <member name="M:SIE.Alert.AlertController.GetAllSeveritys(SIE.Alert.Alerter)">
+            <summary>
+            获取所有子列表数据，包括已保存未修改过、删除的、修改过的数据。
+            </summary>
+            <param name="parent"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Alert.AlertController.HasSameSeveritySysPlugInAlerter(SIE.Alert.SeveritySysPlug)">
+            <summary>
+            是否已存在相同预警配置的触发任务
+            </summary>
+            <param name="plug">触发任务</param>
+        </member>
+        <member name="M:SIE.Alert.AlertController.GetAlertPlugDll(SIE.Alert.AlertPlug)">
+            <summary>
+            获取预警插件DLL对象
+            </summary>
+            <param name="entity">预警对像实体</param>
+            <returns>IAlert</returns>
+        </member>
+        <member name="M:SIE.Alert.AlertController.GetAlertLog(System.Double,System.Nullable{SIE.Common.Alert.AlertLevel})">
+            <summary>
+            获取预警日志对象
+            </summary>
+            <param name="alerterID">alerterID</param>
+            <param name="level">level</param>
+            <param name="AlertInterval">level</param>
+            <returns>AlertLog</returns>
+        </member>
+        <member name="M:SIE.Alert.AlertController.GetAllAlertLog(System.Double,SIE.PagingInfo)">
+            <summary>
+            按预警Id获取预警日志
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Alert.AlertController.QueryAlertLog(SIE.Alert.AlertLogCriteria)">
+            <summary>
+            查询预警日志
+            </summary>
+            <param name="criteria">查询实体</param>
+            <returns>实体列表</returns>
+        </member>
+        <member name="M:SIE.Alert.AlertController.ExecuteAlert(System.String)">
+            <summary>
+            执行预警
+            </summary>
+            <param name="alerterCode">预警代码</param>
+        </member>
+        <member name="M:SIE.Alert.AlertController.ExecuteAlert(SIE.Alert.Alerter)">
+            <summary>
+            执行预警
+            </summary>
+            <param name="alerter">预警</param>
+        </member>
+        <member name="M:SIE.Alert.AlertController.CheckRestoringAlert(SIE.Alert.Alerter)">
+            <summary>
+            校验预警解除生效时间是否已到
+            </summary>
+            <param name="alerter"></param>
+            <returns>True表示生效时间已到，False表示未到</returns>
+        </member>
+        <member name="M:SIE.Alert.AlertController.GetAlerter(System.String)">
+            <summary>
+            根据预警编码获取预警信息
+            </summary>
+            <param name="alerterCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Alert.AlertController.GetAllAlerter">
+            <summary>
+            获取预警信息列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Alert.AlertController.CheckOverAlertInterval(SIE.Alert.Alerter,System.Nullable{SIE.Common.Alert.AlertLevel})">
+            <summary>
+            Check指定预警等级、指定预警的间隔时间是否到
+            </summary>
+            <param name="alerter">预警</param>
+            <param name="level">预警等级</param>
+            <returns>true : 间隔时间到；false : 间隔时间未到</returns>
+        </member>
+        <member name="M:SIE.Alert.AlertController.IsAlertBaseTime(SIE.Alert.Alerter)">
+            <summary>
+            预警的基准时间是否达到
+            </summary>
+            <param name="alerter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Alert.AlertController.IsAlertRepeat(SIE.Alert.Alerter,SIE.Common.Alert.AlertResultBase)">
+            <summary>
+            是否已经达到重复预警
+            </summary>
+            <param name="alerter"></param>
+            <param name="alertResultBase"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Alert.AlertController.ExecuteAlert(SIE.Alert.Alerter,SIE.Common.Alert.IAlert,SIE.Common.Alert.AlertResultBase)">
+            <summary>
+            执行预警
+            </summary>
+            <param name="alerter">预警配置</param>
+            <param name="alertDll">预警接口</param>
+            <param name="result">预警参数基类</param>
+        </member>
+        <member name="M:SIE.Alert.AlertController.SeverityOperation(System.Nullable{System.Decimal},System.Collections.Generic.IList{SIE.Alert.Severity})">
+            <summary>
+            严重程序运算函数
+            </summary>
+            <param name="value">值</param>
+            <param name="severityList">严重度集合</param>
+            <returns>Severity</returns>
+        </member>
+        <member name="M:SIE.Alert.AlertController.GetAlerters(System.Nullable{SIE.Domain.State})">
+            <summary>
+            获取所有预警配置
+            </summary>
+            <param name="state">启用状态，默认启用</param>
+            <returns>预警配置集合</returns>
+        </member>
+        <member name="M:SIE.Alert.AlertController.GetAlerters(System.String,System.Nullable{SIE.Domain.State})">
+            <summary>
+            获取所有预警配置
+            </summary>
+            <param name="dllName">DLL名称 例如：SIE.MES</param>
+            <param name="state">启用状态，默认启用</param>
+            <returns>预警配置集合</returns>
+        </member>
+        <member name="M:SIE.Alert.AlertController.GetAlerters(System.Type,System.Nullable{SIE.Domain.State})">
+            <summary>
+            获取所有预警配置
+            </summary>
+            <param name="alertType">预警类型</param>
+            <param name="state">启用状态，默认启用</param>
+            <returns>预警配置集合</returns>
+        </member>
+        <member name="M:SIE.Alert.AlertController.GetAlerters(System.Collections.Generic.List{System.Type},System.Nullable{SIE.Domain.State})">
+            <summary>
+            获取所有预警配置
+            </summary>
+            <param name="alertTypes">预警类型集合</param>
+            <param name="state">启用状态，默认启用</param>
+            <returns>预警配置集合</returns>
+        </member>
+        <member name="M:SIE.Alert.AlertController.GetAlertSysSenderConfig(System.Double)">
+            <summary>
+            获取触发任务的配置类类型
+            </summary>
+            <param name="sysPushPlugId">推送方式</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Alert.AlertController.SeverityDetailDelete(System.Collections.Generic.List{System.Double})">
+            <summary>
+            推送方式删除
+            </summary>
+            <param name="idList">Id列表</param>
+            <returns>错误信息</returns>
+        </member>
+        <member name="M:SIE.Alert.AlertController.SeveritySysPlugDelete(System.Collections.Generic.List{System.Double})">
+            <summary>
+            触发任务删除
+            </summary>
+            <param name="idList">Id列表</param>
+            <returns>错误信息</returns>
+        </member>
+        <member name="M:SIE.Alert.AlertController.GetAlertSysSender(System.Double)">
+            <summary>
+            获取触发任务的配置类类型
+            </summary>
+            <param name="sysPushPlugId">推送方式</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Alert.AlertController.CheckAutoCloseAlert(SIE.Alert.Alerter,SIE.Common.Alert.AlertResultBase)">
+            <summary>
+            检查是否符合自动取消预警的条件。
+            </summary>
+            <param name="alerter">预警配置</param>
+            <param name="result">预警参数基类</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Alert.AlertController.PushSysPlugs(SIE.Alert.Severity,SIE.Common.Alert.AlertResultBase,SIE.Common.Alert.IAlert)">
+            <summary>
+            推送触发任务
+            </summary>
+            <param name="serverity">严重程度</param>
+            <param name="result">预期参数基类</param>
+            <param name="alertDll">预警插件</param>
+        </member>
+        <member name="M:SIE.Alert.AlertController.AddExternalReceivers(System.String)">
+            <summary>
+            新增外部人员邮箱地址
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Alert.AlertController.GetAlertReceiverViewModels(System.String,SIE.PagingInfo)">
+            <summary>
+            查询推送方式接收人
+            </summary>
+            <param name="keyword"></param>
+            <param name="paging"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Alert.AlertDataSources.AlertDataSource">
+            <summary>
+            预警数据源
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertDataSources.AlertDataSource.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertDataSources.AlertDataSource.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertDataSources.AlertDataSource.DescriptionProperty">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertDataSources.AlertDataSource.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertDataSources.AlertDataSource.ConnectionStringProperty">
+            <summary>
+            连接字符串
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertDataSources.AlertDataSource.ConnectionString">
+            <summary>
+            连接字符串
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertDataSources.AlertDataSource.DefaultValueProperty">
+            <summary>
+            默认值
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertDataSources.AlertDataSource.DefaultValue">
+            <summary>
+            默认值
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertDataSources.AlertDataSource.ProviderProperty">
+            <summary>
+            数据提供者
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertDataSources.AlertDataSource.Provider">
+            <summary>
+            数据提供者
+            </summary>
+        </member>
+        <member name="T:SIE.Alert.AlertDataSources.DataViewConfig">
+            <summary>
+             实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Alert.AlertDataSources.DataViewConfig.ConfigMeta">
+            <summary>
+            实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Alert.AlertDataSources.DataViewConfig.AddValidations(SIE.MetaModel.IValidationDeclarer)">
+            <summary>
+            验证规则
+            </summary>
+            <param name="rules">验证规则的声明器</param>
+        </member>
+        <member name="T:SIE.Alert.AlertDataSources.AlertDataSourceController">
+            <summary>
+            预警数据源定义
+            </summary>
+        </member>
+        <member name="M:SIE.Alert.AlertDataSources.AlertDataSourceController.GetAlertDataSource(System.Double)">
+            <summary>
+            通过ID获取预警数据源列表
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Alert.AlertDataSources.AlertDataSourceController.IsDefaultValue">
+            <summary>
+            判断是否存在默认值的数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Alert.AlertDataSources.AlertDataSourceController.VerifySqlConnection(SIE.Alert.AlertDataSources.AlertDataSource)">
+            <summary>
+            数据源连接是否正常
+            </summary>
+            <param name="dataSource"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Alert.AlertDataSources.AlertDataSourceController.GetProviderName(SIE.Alert.AlertDataSources.DataSourceEnum)">
+            <summary>
+            获取数据库提供者
+            </summary>
+            <param name="dataSourceEnum"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Alert.AlertDataSources.AlertDataSourceController.GetSourceEnum(System.String)">
+            <summary>
+            通过提供者获取数据库类型
+            </summary>
+            <param name="providerName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Alert.AlertDataSources.AlertDataSourceRules">
+            <summary>
+            默认系统数据源不能删除
+            </summary>
+        </member>
+        <member name="M:SIE.Alert.AlertDataSources.AlertDataSourceRules.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Alert.AlertDataSources.AlertDataSourceRules.Validate(SIE.Domain.IEntity,SIE.MetaModel.RuleArgs)">
+            <summary>
+            重写实体规则验证方法
+            </summary>
+            <param name="entity">实体</param>
+            <param name="e">规则参数</param>
+        </member>
+        <member name="T:SIE.Alert.AlertDataSources.UndeleteAlertDataSourceRule">
+            <summary>
+            预警SQL设置引用不允许删除
+            </summary>
+        </member>
+        <member name="M:SIE.Alert.AlertDataSources.UndeleteAlertDataSourceRule.#ctor">
+            <summary>
+            添加验证规则
+            </summary>
+        </member>
+        <member name="T:SIE.Alert.AlertDataSources.DataSourceEnum">
+            <summary>
+            数据提供者
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertDataSources.DataSourceEnum.Oracle">
+            <summary>
+            Oracle
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertDataSources.DataSourceEnum.MySql">
+            <summary>
+            MySql
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertDataSources.DataSourceEnum.SqlServer">
+            <summary>
+            SqlServer
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertDataSources.DataSourceEnum.PostgreSql">
+            <summary>
+            PostgreSql
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertDataSources.DataSourceEnum.DM">
+            <summary>
+            达梦
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertDataSources.DataSourceEnum.VastData">
+            <summary>
+            海量
+            </summary>
+        </member>
+        <member name="T:SIE.Alert.AlertDataSources.DbMigrations._20240620_000001_InitData">
+            <summary>
+            的初始数据
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertDataSources.DbMigrations._20240620_000001_InitData.DbSetting">
+            <summary>
+            数据库连接字符串名
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertDataSources.DbMigrations._20240620_000001_InitData.Description">
+            <summary>
+            添加 Defect 库中的初始数据
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertDataSources.DbMigrations._20240620_000001_InitData.Type">
+            <summary>
+            手动升级的类型：数据
+            </summary>
+        </member>
+        <member name="M:SIE.Alert.AlertDataSources.DbMigrations._20240620_000001_InitData.Down">
+            <summary>
+            不支持 Down
+            </summary>
+        </member>
+        <member name="M:SIE.Alert.AlertDataSources.DbMigrations._20240620_000001_InitData.Up">
+            <summary>
+            升级数据
+            </summary>
+        </member>
+        <member name="M:SIE.Alert.AlertDataSources.DbMigrations._20240620_000001_InitData.InitDataSource">
+            <summary>
+            新增默认数据源定义
+            </summary>
+        </member>
+        <member name="T:SIE.Alert.AlertEntityRepository`1">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:SIE.Alert.CommonEntityDataProvider">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.CommonEntityDataProvider.ConnectionStringName">
+            <summary>
+            数据库连接字符串的名称
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.CommonEntityDataProvider.ConnectionStringSettingName">
+            <summary>
+            数据库连接字符串的名称
+            </summary>
+        </member>
+        <member name="T:SIE.Alert.Alerter">
+            <summary>
+            预警配置
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.Alerter.CodeProperty">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.Alerter.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.Alerter.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.Alerter.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.Alerter.StateProperty">
+            <summary>
+            启用状态
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.Alerter.State">
+            <summary>
+            启用状态
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.Alerter.RemarkProperty">
+            <summary>
+            说明
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.Alerter.Remark">
+            <summary>
+            说明
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.Alerter.AlertIntervalProperty">
+            <summary>
+            预警间隔
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.Alerter.AlertInterval">
+            <summary>
+            预警间隔
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.Alerter.AlertRestoreTimeProperty">
+            <summary>
+            预警解除生效时间
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.Alerter.AlertRestoreTime">
+            <summary>
+            预警解除生效时间
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.Alerter.AlertBaseTimeProperty">
+            <summary>
+            基准时间
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.Alerter.AlertBaseTime">
+            <summary>
+            基准时间
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.Alerter.ConfigProperty">
+            <summary>
+            JSON配置信息
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.Alerter.Config">
+            <summary>
+            JSON配置信息
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.Alerter.SeveritysProperty">
+            <summary>
+            严重程度列表
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.Alerter.Severitys">
+            <summary>
+            严重程度列表
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.Alerter.AlertPlugIdProperty">
+            <summary>
+            预警模块Id
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.Alerter.AlertPlugId">
+            <summary>
+            预警插件Id
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.Alerter.AlertPlugProperty">
+            <summary>
+            预警模块
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.Alerter.AlertPlug">
+            <summary>
+            预警模块
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.Alerter.AlerterTypeIdProperty">
+            <summary>
+            预警类型Id
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.Alerter.AlerterTypeId">
+            <summary>
+            预警类型Id
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.Alerter.AlerterTypeProperty">
+            <summary>
+            预警类型
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.Alerter.AlerterType">
+            <summary>
+            预警类型
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.Alerter.AlerterRepeatProperty">
+            <summary>
+            重复预警
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.Alerter.AlerterRepeat">
+            <summary>
+            重复预警
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.Alerter.AlertRepeatTimeProperty">
+            <summary>
+            重复预警时间
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.Alerter.AlertRepeatTime">
+            <summary>
+            重复预警时间
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.Alerter.AlertRepeatContentProperty">
+            <summary>
+            重复预警内容
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.Alerter.AlertRepeatContent">
+            <summary>
+            重复预警内容
+            </summary>
+        </member>
+        <member name="T:SIE.Alert.AlerterConfig">
+            <summary>
+            预警配置 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Alert.AlerterConfig.ConfigMeta">
+            <summary>
+            元数据配置
+            </summary>
+        </member>
+        <member name="T:SIE.Alert.AlerterRepeatEnum">
+            <summary>
+            重复预警
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlerterRepeatEnum.NoRepeat">
+            <summary>
+            不限制重复预警
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlerterRepeatEnum.NoRepeatHour1">
+            <summary>
+            1小时内禁止重复预警
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlerterRepeatEnum.NoRepeatHour2">
+            <summary>
+            2小时内禁止重复预警
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlerterRepeatEnum.NoRepeatHour3">
+            <summary>
+            3小时内禁止重复预警
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlerterRepeatEnum.NoRepeatHour4">
+            <summary>
+            4小时内禁止重复预警
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlerterRepeatEnum.NoRepeatHour8">
+            <summary>
+            8小时内禁止重复预警
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlerterRepeatEnum.NoRepeatHour24">
+            <summary>
+            24小时内禁止重复预警
+            </summary>
+        </member>
+        <member name="T:SIE.Alert.AlerterType">
+            <summary>
+            预警类型
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlerterType.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlerterType.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlerterType.DescriptionProperty">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlerterType.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="T:SIE.Alert.AlerterTypeConfig">
+            <summary>
+            预警类型 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Alert.AlerterTypeConfig.ConfigMeta">
+            <summary>
+            元数据配置
+            </summary>
+        </member>
+        <member name="T:SIE.Alert.AlertLogCriteria">
+            <summary>
+            预警日志查询
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertLogCriteria.AlerterIdProperty">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertLogCriteria.AlerterId">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertLogCriteria.AlerterProperty">
+            <summary>
+            预警配置
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertLogCriteria.Alerter">
+            <summary>
+            预警配置
+            </summary>
+        </member>
+        <member name="M:SIE.Alert.AlertLogCriteria.Fetch">
+            <summary>
+            重写此方法实现查询
+            </summary>
+            <returns>实体列表</returns>
+        </member>
+        <member name="T:SIE.Alert.AlertManages.AlertManage">
+            <summary>
+            预警管理
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertManages.AlertManage.CodeProperty">
+            <summary>
+            预警编码
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertManages.AlertManage.Code">
+            <summary>
+            预警编码
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertManages.AlertManage.DescriptionProperty">
+            <summary>
+            状态说明
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertManages.AlertManage.Description">
+            <summary>
+            状态说明
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertManages.AlertManage.LastAlertTimeProperty">
+            <summary>
+            最新预警时间
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertManages.AlertManage.LastAlertTime">
+            <summary>
+            最新预警时间
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertManages.AlertManage.FirstAlertTimeProperty">
+            <summary>
+            初次预警时间
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertManages.AlertManage.FirstAlertTime">
+            <summary>
+            初次预警时间
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertManages.AlertManage.CancelAlertTimeProperty">
+            <summary>
+            预警解除时间
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertManages.AlertManage.CancelAlertTime">
+            <summary>
+            预警解除时间
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertManages.AlertManage.CancelReasonProperty">
+            <summary>
+            预警解除原因
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertManages.AlertManage.CancelReason">
+            <summary>
+            预警解除原因
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertManages.AlertManage.RemarkProperty">
+            <summary>
+            备注(扩展用)
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertManages.AlertManage.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertManages.AlertManage.AlerterIdProperty">
+            <summary>
+            预警配置Id
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertManages.AlertManage.AlerterId">
+            <summary>
+            预警配置Id
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertManages.AlertManage.AlerterProperty">
+            <summary>
+            预警配置
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertManages.AlertManage.Alerter">
+            <summary>
+            预警配置
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertManages.AlertManage.AlertStateProperty">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertManages.AlertManage.AlertState">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertManages.AlertManage.CancelOperatorIdProperty">
+            <summary>
+            预期解除人Id
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertManages.AlertManage.CancelOperatorId">
+            <summary>
+            预期解除人Id
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertManages.AlertManage.CancelOperatorProperty">
+            <summary>
+            预期解除人
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertManages.AlertManage.CancelOperator">
+            <summary>
+            预期解除人
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertManages.AlertManage.DetailsProperty">
+            <summary>
+            预警记录
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertManages.AlertManage.Details">
+            <summary>
+            预警记录
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertManages.AlertManage.AlertLevelProperty">
+            <summary>
+            预警最高等级
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertManages.AlertManage.AlertLevel">
+            <summary>
+            预警最高等级
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertManages.AlertManage.AlerterPlugIdProperty">
+            <summary>
+            预警模块Id
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertManages.AlertManage.AlerterPlugId">
+            <summary>
+            预警模块Id
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertManages.AlertManage.AlerterPlugProperty">
+            <summary>
+            预警模块
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertManages.AlertManage.AlerterPlug">
+            <summary>
+            预警模块
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertManages.AlertManage.AlertPushRecordListProperty">
+            <summary>
+            预警推送记录列表
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertManages.AlertManage.AlertPushRecordList">
+            <summary>
+            预警推送记录列表
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertManages.AlertManage.AlerterNameProperty">
+            <summary>
+            预警配置名称
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertManages.AlertManage.AlerterName">
+            <summary>
+            预警配置名称
+            </summary>
+        </member>
+        <member name="T:SIE.Alert.AlertManages.AlertManageConfig">
+            <summary>
+            预警管理 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Alert.AlertManages.AlertManageConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.Alert.AlertManages.AlertManageController">
+            <summary>
+            预警管理控制器
+            </summary>
+        </member>
+        <member name="M:SIE.Alert.AlertManages.AlertManageController.SyncAlertManage(SIE.Alert.Alerter,SIE.Alert.Severity,SIE.Common.Alert.AlertResultBase)">
+            <summary>
+            更新预警管理
+            </summary>
+            <param name="alerter">预警配置</param>
+            <param name="serverity">严重程度</param>
+            <param name="result">预警参数基类</param>
+            <returns>是否预警新建或升级</returns>
+        </member>
+        <member name="M:SIE.Alert.AlertManages.AlertManageController.ManualCancleAlert(System.Double,System.String)">
+            <summary>
+            手工解除预警
+            </summary>
+            <param name="alertManageId"></param>
+            <param name="reason"></param>
+        </member>
+        <member name="M:SIE.Alert.AlertManages.AlertManageController.CreateNewAlertRecord(SIE.Alert.Severity,SIE.Common.Alert.AlertResultBase,System.DateTime)">
+            <summary>
+            创建新预警记录
+            </summary>
+            <param name="serverity">严重程度</param>
+            <param name="result">预警结果</param>
+            <param name="curTime">当前时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Alert.AlertManages.AlertManageController.GetNewAlertManageCode">
+            <summary>
+            生成预警管理编码
+            </summary>
+            <returns>预警管理编码</returns>
+        </member>
+        <member name="M:SIE.Alert.AlertManages.AlertManageController.GetActiveAlertManage(System.Double)">
+            <summary>
+            获取生效中的预警管理
+            </summary>
+            <param name="alerterId">预警配置主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Alert.AlertManages.AlertManageController.CloseAlertManageAuto(SIE.Alert.Alerter,SIE.Alert.Severity,SIE.Common.Alert.AlertResultBase)">
+            <summary>
+            自动取消预警
+            </summary>
+            <param name="alerter">预警配置</param>
+            <param name="serverity">严重程度</param>
+            <param name="result">预警参数基类</param>
+        </member>
+        <member name="M:SIE.Alert.AlertManages.AlertManageController.GetPushRecords(System.Double)">
+            <summary>
+            获取推送记录
+            </summary>
+            <param name="alertManageId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Alert.AlertManages.AlertManageController.SaveAlertPushRecords(System.Double,System.Collections.Generic.List{SIE.Alert.AlertManages.AlertPushRecord})">
+            <summary>
+            保存预警推送记录
+            </summary>
+            <param name="alerterId"></param>
+            <param name="pushRecords"></param>
+        </member>
+        <member name="M:SIE.Alert.AlertManages.AlertManageController.ExistRecentAlertManage(System.Double,System.Int32)">
+            <summary>
+            查找最近一段时间内解除的预警管理
+            </summary>
+            <param name="alerterId">预警配置</param>
+            <param name="alertRestoreTime">解除后生效时间</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Alert.AlertManages.AlertManageState">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertManages.AlertManageState.Alerting">
+            <summary>
+            生效
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertManages.AlertManageState.Closed">
+            <summary>
+            关闭
+            </summary>
+        </member>
+        <member name="T:SIE.Alert.AlertManages.AlertPushRecord">
+            <summary>
+            预警推送记录
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertManages.AlertPushRecord.SendParamProperty">
+            <summary>
+            推送参数
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertManages.AlertPushRecord.SendParam">
+            <summary>
+            推送参数
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertManages.AlertPushRecord.AlertLevelProperty">
+            <summary>
+            预警等级
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertManages.AlertPushRecord.AlertLevel">
+            <summary>
+            预警等级
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertManages.AlertPushRecord.SeveritySysPlugIdProperty">
+            <summary>
+            触发任务Id
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertManages.AlertPushRecord.SeveritySysPlugId">
+            <summary>
+            触发任务Id
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertManages.AlertPushRecord.SeveritySysPlugProperty">
+            <summary>
+            触发任务
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertManages.AlertPushRecord.SeveritySysPlug">
+            <summary>
+            触发任务
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertManages.AlertPushRecord.AlertManageIdProperty">
+            <summary>
+            异常管理Id
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertManages.AlertPushRecord.AlertManageId">
+            <summary>
+            异常管理Id
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertManages.AlertPushRecord.AlertManageProperty">
+            <summary>
+            异常管理
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertManages.AlertPushRecord.AlertManage">
+            <summary>
+            异常管理
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertManages.AlertPushRecord.PlugNameProperty">
+            <summary>
+            触发任务名称
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertManages.AlertPushRecord.PlugName">
+            <summary>
+            触发任务名称
+            </summary>
+        </member>
+        <member name="T:SIE.Alert.AlertManages.AlertPushRecordConfig">
+            <summary>
+            预警推送记录 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Alert.AlertManages.AlertPushRecordConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.Alert.AlertManages.AlertRecord">
+            <summary>
+            预警管理记录
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertManages.AlertRecord.AlertTimeProperty">
+            <summary>
+            预警时间
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertManages.AlertRecord.AlertTime">
+            <summary>
+            预警时间
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertManages.AlertRecord.AlertValueProperty">
+            <summary>
+            预警值
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertManages.AlertRecord.AlertValue">
+            <summary>
+            预警值
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertManages.AlertRecord.AlertLevelProperty">
+            <summary>
+            预警等级
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertManages.AlertRecord.AlertLevel">
+            <summary>
+            预警等级
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertManages.AlertRecord.AlertManageIdProperty">
+            <summary>
+            预警管理Id
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertManages.AlertRecord.AlertManageId">
+            <summary>
+            预警管理Id
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertManages.AlertRecord.AlertManageProperty">
+            <summary>
+            预警管理
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertManages.AlertRecord.AlertManage">
+            <summary>
+            预警管理
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertManages.AlertRecord.RemarkProperty">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertManages.AlertRecord.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="T:SIE.Alert.AlertManages.AlertRecordConfig">
+            <summary>
+            预警管理记录 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Alert.AlertManages.AlertRecordConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.Alert.AlertManages.AlertSqlManage">
+            <summary>
+            预警SQL设置管理
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertManages.AlertSqlManage.CodeProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertManages.AlertSqlManage.Code">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertManages.AlertSqlManage.SqlStatementProperty">
+            <summary>
+            SQL语句
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertManages.AlertSqlManage.SqlStatement">
+            <summary>
+            SQL语句
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertManages.AlertSqlManage.VersionProperty">
+            <summary>
+            版本
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertManages.AlertSqlManage.Version">
+            <summary>
+            版本
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertManages.AlertSqlManage.AlertDataSourceIdProperty">
+            <summary>
+            预警数据源定义Id
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertManages.AlertSqlManage.AlertDataSourceId">
+            <summary>
+            预警数据源定义Id
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertManages.AlertSqlManage.AlertDataSourceProperty">
+            <summary>
+            预警数据源定义
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertManages.AlertSqlManage.AlertDataSource">
+            <summary>
+            预警数据源定义
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertManages.AlertSqlManage.LevelFieldProperty">
+            <summary>
+            等级字段
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertManages.AlertSqlManage.LevelField">
+            <summary>
+            等级字段
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertManages.AlertSqlManage.RemarkProperty">
+            <summary>
+            备注(扩展用)
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertManages.AlertSqlManage.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="T:SIE.Alert.AlertManages.AlertSqlManageConfig">
+            <summary>
+            预警SQL设置管理 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Alert.AlertManages.AlertSqlManageConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.Alert.AlertPlug">
+            <summary>
+            预警模块
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertPlug.NameProperty">
+            <summary>
+            预警名称
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertPlug.Name">
+            <summary>
+            预警名称
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertPlug.DllNameProperty">
+            <summary>
+            DLL名称
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertPlug.DllName">
+            <summary>
+            DLL名称
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertPlug.AlertClassProperty">
+            <summary>
+            预警类
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertPlug.AlertClass">
+            <summary>
+            预警类
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertPlug.RemarkProperty">
+            <summary>
+            插件说明
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertPlug.Remark">
+            <summary>
+            插件说明
+            </summary>
+        </member>
+        <member name="T:SIE.Alert.AlertPlugConfig">
+            <summary>
+            预警插件 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Alert.AlertPlugConfig.ConfigMeta">
+            <summary>
+            元数据配置
+            </summary>
+        </member>
+        <member name="T:SIE.Alert.AlertPlugs.TestAlertPlug">
+            <summary>
+            预警测试模块
+            </summary>
+        </member>
+        <member name="M:SIE.Alert.AlertPlugs.TestAlertPlug.Run">
+            <summary>
+            预警参数基类
+            </summary>
+            <returns>AlertResultBase</returns>
+        </member>
+        <member name="T:SIE.Alert.AlertPlugs.TestAlertPlugConfig">
+            <summary>
+            预警配置测试模块
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertPlugs.TestAlertPlugConfig.LineProperty">
+            <summary>
+            产线
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertPlugs.TestAlertPlugConfig.Line">
+            <summary>
+            产线
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertPlugs.TestAlertPlugConfig.ResultValueProperty">
+            <summary>
+            预警结果值
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertPlugs.TestAlertPlugConfig.ResultValue">
+            <summary>
+            预警结果值
+            </summary>
+        </member>
+        <member name="M:SIE.Alert.AlertPlugs.TestAlertPlugConfig.Initialize(System.String)">
+            <summary>
+            初始换
+            </summary>
+            <param name="value">值</param>
+        </member>
+        <member name="M:SIE.Alert.AlertPlugs.TestAlertPlugConfig.ToString">
+            <summary>
+            重写ToString方法
+            </summary>
+            <returns>string</returns>
+        </member>
+        <member name="T:SIE.Alert.AlertPlugs.TestAlertResult">
+            <summary>
+            预警结果测试模块
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertPlugs.TestAlertResult.Line">
+            <summary>
+            产线
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertPlugs.TestAlertResult.TestValue">
+            <summary>
+            测试值
+            </summary>
+        </member>
+        <member name="T:SIE.Alert.AlertReceiverViewModel">
+            <summary>
+            推送方式接收人
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertReceiverViewModel.ReceiverCodeProperty">
+            <summary>
+            工号
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertReceiverViewModel.ReceiverCode">
+            <summary>
+            工号
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertReceiverViewModel.ReceiverNameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertReceiverViewModel.ReceiverName">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertReceiverViewModel.ReceiverIdProperty">
+            <summary>
+            接收ID
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertReceiverViewModel.ReceiverId">
+            <summary>
+            接收ID
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertReceiverViewModel.ReceiverTypeProperty">
+            <summary>
+            接收者类型
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertReceiverViewModel.ReceiverType">
+            <summary>
+            接收者类型
+            </summary>
+        </member>
+        <member name="T:SIE.Alert.AlertReceiverViewModelConfig">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="M:SIE.Alert.AlertReceiverViewModelConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.Alert.AlertRepeat.AlerterRepeat">
+            <summary>
+            重复预警
+            </summary>
+        </member>
+        <member name="M:SIE.Alert.AlertRepeat.AlerterRepeat.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertRepeat.AlerterRepeat.ContentsProperty">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertRepeat.AlerterRepeat.Contents">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertRepeat.AlerterRepeat.AlertIdProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertRepeat.AlerterRepeat.AlertId">
+            <summary>
+            预警间隔
+            </summary>
+        </member>
+        <member name="T:SIE.Alert.AlertRepeat.AlerterRepeatConfig">
+            <summary>
+            预警配置 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Alert.AlertRepeat.AlerterRepeatConfig.ConfigMeta">
+            <summary>
+            元数据配置
+            </summary>
+        </member>
+        <member name="T:SIE.Alert.AlertRepeat.AlerterRepeatController">
+            <summary>
+            重复预警
+            </summary>
+        </member>
+        <member name="M:SIE.Alert.AlertRepeat.AlerterRepeatController.AlerterRepeatManage(System.Int32,System.String)">
+            <summary>
+            更新重复预警
+            </summary>
+            <param name="alerterId">预警ID</param>
+            <param name="contents">内容</param>
+            <returns>更新重复预警</returns>
+        </member>
+        <member name="M:SIE.Alert.AlertRepeat.AlerterRepeatController.GetActiveAlertManage(System.Double)">
+            <summary>
+            获取重复预警信息
+            </summary>
+            <param name="alerterId">重复预警主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Alert.AlertRepeat.AlerterRepeatController.IsAlerterRepeatSender(SIE.Alert.AlerterRepeatEnum,SIE.Alert.AlertRepeat.AlerterRepeat)">
+            <summary>
+            
+            </summary>
+            <param name="repeatEnum"></param>
+            <param name="alerter"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Alert.AlertSqlManages.AlertSqlManageController">
+            <summary>
+            预警SQL设置控件器
+            </summary>
+        </member>
+        <member name="M:SIE.Alert.AlertSqlManages.AlertSqlManageController.QueryData(SIE.Alert.AlertManages.AlertSqlManage)">
+            <summary>
+            查询数据
+            </summary>
+            <param name="alertSqlManage"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Alert.AlertSqlManages.AlertSqlManageController.GetSqlDataTable(SIE.Data.IDbAccesser,System.String)">
+            <summary>
+            通过SQL返回数据
+            </summary>
+            <param name="iDbAccesser">IDbAccesser</param>
+            <param name="strSQL">SQL语句</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Alert.AlertSqlManages.AlertSqlManageController.ValidationSql(System.String)">
+            <summary>
+            只能是查询的sql语句
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Alert.AlertSqlManages.AlertSqlManageRuleRules">
+            <summary>
+            默认系统数据源不能删除
+            </summary>
+        </member>
+        <member name="M:SIE.Alert.AlertSqlManages.AlertSqlManageRuleRules.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Alert.AlertSqlManages.AlertSqlManageRuleRules.Validate(SIE.Domain.IEntity,SIE.MetaModel.RuleArgs)">
+            <summary>
+            重写实体规则验证方法
+            </summary>
+            <param name="entity">实体</param>
+            <param name="e">规则参数</param>
+        </member>
+        <member name="T:SIE.Alert.AlertSqlManages.AlertSqlManageVersion">
+            <summary>
+            版本号
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertSqlManages.AlertSqlManageVersion.V1">
+            <summary>
+            V1
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertSqlManages.AlertSqlManageVersion.V2">
+            <summary>  
+            V2
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertSqlManages.AlertSqlManageVersion.V3">
+            <summary>
+            V3
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertSqlManages.AlertSqlManageVersion.V4">
+            <summary>
+            V4
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertSqlManages.AlertSqlManageVersion.V5">
+            <summary>
+            V5
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertSqlManages.AlertSqlManageVersion.V6">
+            <summary>
+            V6
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertSqlManages.AlertSqlManageVersion.V7">
+            <summary>
+            V7
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertSqlManages.AlertSqlManageVersion.V8">
+            <summary>
+            V8
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertSqlManages.AlertSqlManageVersion.V9">
+            <summary>
+            V9
+            </summary>
+        </member>
+        <member name="T:SIE.Alert.AlertSqlManages.MessageTemplate">
+            <summary>
+            消息模板
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertSqlManages.MessageTemplate.Subject">
+            <summary>
+            主题
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertSqlManages.MessageTemplate.Message">
+            <summary>
+            消息
+            </summary>
+        </member>
+        <member name="T:SIE.Alert.AlertSqlManages.SqlAlertPlug">
+            <summary>
+            预警SQL设置提醒
+            </summary>
+        </member>
+        <member name="M:SIE.Alert.AlertSqlManages.SqlAlertPlug.Run">
+            <summary>
+            预警SQL设置提醒
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Alert.AlertSqlManages.SqlAlertPlug.DataTableToList(System.Data.DataTable)">
+            <summary>
+             DataTable 转化为 List dynamic
+            </summary>
+            <param name="table"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Alert.AlertSqlManages.SqlAlertPlugConfig">
+            <summary>
+            通用SQL提醒
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertSqlManages.SqlAlertPlugConfig.AlertSqlManageIdProperty">
+            <summary>
+            预警SQL设置Id
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertSqlManages.SqlAlertPlugConfig.AlertSqlManageId">
+            <summary>
+            预警SQL设置Id
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertSqlManages.SqlAlertPlugConfig.AlertSqlManageProperty">
+            <summary>
+            预警SQL设置
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertSqlManages.SqlAlertPlugConfig.AlertSqlManage">
+            <summary>
+            预警SQL设置
+            </summary>
+        </member>
+        <member name="M:SIE.Alert.AlertSqlManages.SqlAlertPlugConfig.Initialize(System.String)">
+            <summary>
+            初始化
+            </summary>
+            <param name="value">值</param>
+        </member>
+        <member name="M:SIE.Alert.AlertSqlManages.SqlAlertPlugConfig.ToString">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Alert.AlertSqlManages.SqlAlertResult">
+            <summary>
+            通用SQL推送结果
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertSqlManages.SqlAlertResult.SqlList">
+            <summary>
+            通用SQL推送集合
+            </summary>
+        </member>
+        <member name="T:SIE.Alert.AlertSystemSenders.TestAlertSenderConfg">
+            <summary>
+            测试预警触发任务配置
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.AlertSystemSenders.TestAlertSenderConfg.TestStringProperty">
+            <summary>
+            测试配置
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.AlertSystemSenders.TestAlertSenderConfg.TestString">
+            <summary>
+            测试配置
+            </summary>
+        </member>
+        <member name="M:SIE.Alert.AlertSystemSenders.TestAlertSenderConfg.Initialize(System.String)">
+            <summary>
+            初始化
+            </summary>
+            <param name="value">值</param>
+        </member>
+        <member name="M:SIE.Alert.AlertSystemSenders.TestAlertSenderConfg.ToString">
+            <summary>
+            重写ToString方法
+            </summary>
+            <returns>string</returns>
+        </member>
+        <member name="T:SIE.Alert.AlertSystemSenders.TestAlertSystemSender">
+            <summary>
+            测试预警系统推送插件
+            </summary>
+        </member>
+        <member name="M:SIE.Alert.AlertSystemSenders.TestAlertSystemSender.CreateSendParam(SIE.Common.Alert.AlertResultBase,SIE.Common.Alert.AlertLevel,SIE.Domain.Entity)">
+            <summary>
+            重写方法
+            </summary>
+            <param name="result"></param>
+            <param name="severityLevel"></param>
+            <param name="paramEntity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Alert.AlertSystemSenders.TestAlertSystemSender.Send(SIE.Common.Sender.ISendParam)">
+            <summary>
+            重写方法
+            </summary>
+            <param name="param">param</param>
+        </member>
+        <member name="M:SIE.Alert.AlertSystemSenders.TestAlertSystemSender.onAutoCancel(System.String)">
+            <summary>
+            预警取消时方法
+            </summary>
+            <param name="paramJson">推送时参数</param>
+        </member>
+        <member name="T:SIE.Alert.CancelType">
+            <summary>
+            解除判断条件
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.CancelType.LessMin">
+            <summary>
+            小于最小值
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.CancelType.LargerMin">
+            <summary>
+            大于最小值
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.CancelType.LessMax">
+            <summary>
+            小于最大值
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.CancelType.LargerMax">
+            <summary>
+            大于最大值
+            </summary>
+        </member>
+        <member name="T:SIE.Alert.ExternalReceiverViewModel">
+            <summary>
+            外部人员
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.ExternalReceiverViewModel.ExternalReceiversProperty">
+            <summary>
+            外部人员
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.ExternalReceiverViewModel.ExternalReceivers">
+            <summary>
+            邮箱地址
+            </summary>
+        </member>
+        <member name="T:SIE.Alert.Module">
+            <summary>
+            模块配置
+            </summary>
+        </member>
+        <member name="M:SIE.Alert.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化
+            </summary>
+            <param name="app">app</param>
+        </member>
+        <member name="T:SIE.Alert.Operator">
+            <summary>
+            运算符
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.Operator.Less">
+            <summary>
+            小于等于
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.Operator.Greater">
+            <summary>
+            大于
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.Operator.Between">
+            <summary>
+            介于
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.Operator.Equal">
+            <summary>
+            等于
+            </summary>
+        </member>
+        <member name="T:SIE.Alert.Pusher">
+            <summary>
+            推送方式
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.Pusher.NameProperty">
+            <summary>
+            推送名称
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.Pusher.Name">
+            <summary>
+            推送名称
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.Pusher.MessageTemplateProperty">
+            <summary>
+            信息模板
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.Pusher.MessageTemplate">
+            <summary>
+            信息模板
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.Pusher.PushPlugIdProperty">
+            <summary>
+            推送方式Id
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.Pusher.PushPlugId">
+            <summary>
+            推送方式Id
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.Pusher.PushPlugProperty">
+            <summary>
+            推送方式
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.Pusher.PushPlug">
+            <summary>
+            推送方式
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.Pusher.ReceiverListProperty">
+            <summary>
+            接收人员列表
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.Pusher.ReceiverList">
+            <summary>
+            接收人员列表
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.Pusher.ExternalReceiversProperty">
+            <summary>
+            外部接收人员列表
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.Pusher.ExternalReceivers">
+            <summary>
+            外部接收人员列表
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.Pusher.IsAssignmentProperty">
+            <summary>
+            是否内容转附件上传
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.Pusher.IsAssignment">
+            <summary>
+            是否内容转附件上传
+            </summary>
+        </member>
+        <member name="T:SIE.Alert.PusherConfig">
+            <summary>
+            推送方式设置 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Alert.PusherConfig.ConfigMeta">
+            <summary>
+            元数据配置
+            </summary>
+        </member>
+        <member name="T:SIE.Alert.ReceiverRequireRule">
+            <summary>
+            接收人必选验证
+            </summary>
+        </member>
+        <member name="M:SIE.Alert.ReceiverRequireRule.Validate(SIE.Domain.IEntity,SIE.MetaModel.RuleArgs)">
+            <summary>
+            验证规则
+            </summary>
+            <param name="entity">实体</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="T:SIE.Alert.PushPlugNoReferencedRuleConfig">
+            <summary>
+            推送方式设置 实体配置
+            </summary>
+        </member>
+        <member name="T:SIE.Alert.PusherSeverityLevel">
+            <summary>
+            预警等级
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.PusherSeverityLevel.General">
+            <summary>
+            通用
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.PusherSeverityLevel.Gently">
+            <summary>
+            轻
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.PusherSeverityLevel.Mild">
+            <summary>
+            中
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.PusherSeverityLevel.Grave">
+            <summary>
+            高
+            </summary>
+        </member>
+        <member name="T:SIE.Alert.Receiver">
+            <summary>
+            接收人员
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.Receiver.ReceiverNameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.Receiver.ReceiverName">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.Receiver.ReceiverCodeProperty">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.Receiver.ReceiverCode">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.Receiver.ReceiverIdProperty">
+            <summary>
+            接收ID
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.Receiver.ReceiverId">
+            <summary>
+            接收ID
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.Receiver.ReceiverTypeProperty">
+            <summary>
+            接收者类型
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.Receiver.ReceiverType">
+            <summary>
+            接收者类型
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.Receiver.PusherIdProperty">
+            <summary>
+            推送方式设置Id
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.Receiver.PusherId">
+            <summary>
+            推送方式设置Id
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.Receiver.PusherProperty">
+            <summary>
+            推送方式设置
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.Receiver.Pusher">
+            <summary>
+            推送方式设置
+            </summary>
+        </member>
+        <member name="T:SIE.Alert.ReceiverConfig">
+            <summary>
+            接收人员 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Alert.ReceiverConfig.ConfigMeta">
+            <summary>
+            元数据配置
+            </summary>
+        </member>
+        <member name="T:SIE.Alert.ReceiverType">
+            <summary>
+            接收者类型
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.ReceiverType.Single">
+            <summary>
+            个人
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.ReceiverType.Group">
+            <summary>
+            组
+            </summary>
+        </member>
+        <member name="T:SIE.Alert.SenderPlugs.TestSender">
+            <summary>
+            测试推送插件
+            </summary>
+        </member>
+        <member name="M:SIE.Alert.SenderPlugs.TestSender.CreateMessageTemplate">
+            <summary>
+            重写方法
+            </summary>
+            <returns>MessageTemplateBase</returns>
+        </member>
+        <member name="M:SIE.Alert.SenderPlugs.TestSender.CreateSendParam(SIE.Common.Alert.AlertResultBase,SIE.Common.Alert.ReceiveParam)">
+            <summary>
+            重写方法
+            </summary>
+            <param name="result">result</param>
+            <param name="param">param</param>
+            <returns>ISendParam</returns>
+        </member>
+        <member name="M:SIE.Alert.SenderPlugs.TestSender.Send(SIE.Common.Sender.ISendParam)">
+            <summary>
+            重写方法
+            </summary>
+            <param name="param">param</param>
+        </member>
+        <member name="T:SIE.Alert.SenderPlugs.TestSenderConfig">
+            <summary>
+            推送配置测试模块
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.SenderPlugs.TestSenderConfig.EmailProperty">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.SenderPlugs.TestSenderConfig.Email">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.SenderPlugs.TestSenderConfig.PasswordProperty">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.SenderPlugs.TestSenderConfig.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.SenderPlugs.TestSenderConfig.UrlProperty">
+            <summary>
+            服务器地址
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.SenderPlugs.TestSenderConfig.Url">
+            <summary>
+            服务器地址
+            </summary>
+        </member>
+        <member name="M:SIE.Alert.SenderPlugs.TestSenderConfig.Initialize(System.String)">
+            <summary>
+            初始化
+            </summary>
+            <param name="value">值</param>
+        </member>
+        <member name="M:SIE.Alert.SenderPlugs.TestSenderConfig.ToString">
+            <summary>
+            重写ToString方法
+            </summary>
+            <returns>string</returns>
+        </member>
+        <member name="T:SIE.Alert.Severity">
+            <summary>
+            严重程度
+            </summary>
+        </member>
+        <member name="M:SIE.Alert.Severity.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.Severity.MinValProperty">
+            <summary>
+            最小值
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.Severity.MinVal">
+            <summary>
+            最小值
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.Severity.MaxValProperty">
+            <summary>
+            最大值
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.Severity.MaxVal">
+            <summary>
+            最大值
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.Severity.DetailsProperty">
+            <summary>
+            严重程度推送明细列表
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.Severity.Details">
+            <summary>
+            严重程度推送明细列表
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.Severity.SeverityLevelProperty">
+            <summary>
+            预警等级
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.Severity.SeverityLevel">
+            <summary>
+            预警等级
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.Severity.OperatorProperty">
+            <summary>
+            运算符
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.Severity.Operator">
+            <summary>
+            运算符
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.Severity.AlerterIdProperty">
+            <summary>
+            预警配置Id
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.Severity.AlerterId">
+            <summary>
+            预警配置Id
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.Severity.AlerterProperty">
+            <summary>
+            预警配置
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.Severity.Alerter">
+            <summary>
+            预警配置
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.Severity.EnabledMaxValueProperty">
+            <summary>
+            启用最值
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.Severity.EnabledMaxValue">
+            <summary>
+            启用最值
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.Severity.SystemPlugDetailsProperty">
+            <summary>
+            触发任务
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.Severity.SystemPlugDetails">
+            <summary>
+            触发任务
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.Severity.IsAutoCancelProperty">
+            <summary>
+            预警自动解除
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.Severity.IsAutoCancel">
+            <summary>
+            预警自动解除
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.Severity.CancelTypeProperty">
+            <summary>
+            解除判断条件
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.Severity.CancelType">
+            <summary>
+            解除判断条件
+            </summary>
+        </member>
+        <member name="T:SIE.Alert.SeverityConfig">
+            <summary>
+            严重程度 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Alert.SeverityConfig.ConfigMeta">
+            <summary>
+            元数据配置
+            </summary>
+        </member>
+        <member name="T:SIE.Alert.SeverityDetail">
+            <summary>
+            严重程度推送明细
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.SeverityDetail.PusherIdProperty">
+            <summary>
+            推送方式设置Id
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.SeverityDetail.PusherId">
+            <summary>
+            推送方式设置Id
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.SeverityDetail.PusherProperty">
+            <summary>
+            推送方式设置
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.SeverityDetail.Pusher">
+            <summary>
+            推送方式设置
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.SeverityDetail.SeverityIdProperty">
+            <summary>
+            严重程度Id
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.SeverityDetail.SeverityId">
+            <summary>
+            严重程度Id
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.SeverityDetail.SeverityProperty">
+            <summary>
+            严重程度
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.SeverityDetail.Severity">
+            <summary>
+            严重程度
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.SeverityDetail.PusherPushPlugNameProperty">
+            <summary>
+            推送模块
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.SeverityDetail.PusherPushPlugName">
+            <summary>
+            推送模块
+            </summary>
+        </member>
+        <member name="T:SIE.Alert.SeverityPushDetailConfig">
+            <summary>
+            严重程度推送明细 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Alert.SeverityPushDetailConfig.ConfigMeta">
+            <summary>
+            元数据配置
+            </summary>
+        </member>
+        <member name="T:SIE.Alert.SeverityScopeRule">
+            <summary>
+            严重程度的范围冲突验证规则
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.SeverityScopeRule.Property">
+            <summary>
+            规则属性
+            </summary>
+        </member>
+        <member name="M:SIE.Alert.SeverityScopeRule.Validate(SIE.Domain.IEntity,SIE.MetaModel.RuleArgs)">
+            <summary>
+            验证逻辑
+            </summary>
+            <param name="entity"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SIE.Alert.SeverityScopeRule.IsConflictScope(SIE.Alert.Severity,SIE.Alert.Severity)">
+            <summary>
+            范围是否冲突
+            </summary>
+            <param name="severA"></param>
+            <param name="severB"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Alert.SeverityCancelAlertSetRule">
+            <summary>
+            严重程度的预警自动解除验证规则
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.SeverityCancelAlertSetRule.Property">
+            <summary>
+            规则属性
+            </summary>
+        </member>
+        <member name="M:SIE.Alert.SeverityCancelAlertSetRule.Validate(SIE.Domain.IEntity,SIE.MetaModel.RuleArgs)">
+            <summary>
+            验证逻辑
+            </summary>
+            <param name="entity"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:SIE.Alert.SeverityCancelAlertRule">
+            <summary>
+            严重程度的预警自动解除验证规则
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.SeverityCancelAlertRule.Property">
+            <summary>
+            规则属性
+            </summary>
+        </member>
+        <member name="M:SIE.Alert.SeverityCancelAlertRule.Validate(SIE.Domain.IEntity,SIE.MetaModel.RuleArgs)">
+            <summary>
+            验证逻辑
+            </summary>
+            <param name="entity"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:SIE.Alert.SeverityMaxValueRule">
+            <summary>
+            严重程度的单边范围验证规则
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.SeverityMaxValueRule.Property">
+            <summary>
+            规则属性
+            </summary>
+        </member>
+        <member name="M:SIE.Alert.SeverityMaxValueRule.Validate(SIE.Domain.IEntity,SIE.MetaModel.RuleArgs)">
+            <summary>
+            验证逻辑
+            </summary>
+            <param name="entity"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:SIE.Alert.SeveritySysPlugRule">
+            <summary>
+            触发任务重复性验证规则
+            </summary>
+        </member>
+        <member name="M:SIE.Alert.SeveritySysPlugRule.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="T:SIE.Alert.SeveritySysPlug">
+            <summary>
+            触发任务
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.SeveritySysPlug.PushPlugIdProperty">
+            <summary>
+            系统任务推送插件Id
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.SeveritySysPlug.PushPlugId">
+            <summary>
+            系统任务推送插件Id
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.SeveritySysPlug.PushPlugProperty">
+            <summary>
+            系统任务推送插件
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.SeveritySysPlug.PushPlug">
+            <summary>
+            系统任务推送插件
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.SeveritySysPlug.SeverityIdProperty">
+            <summary>
+            严重程度Id
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.SeveritySysPlug.SeverityId">
+            <summary>
+            严重程度Id
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.SeveritySysPlug.SeverityProperty">
+            <summary>
+            严重程度
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.SeveritySysPlug.Severity">
+            <summary>
+            严重程度
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.SeveritySysPlug.ConfigProperty">
+            <summary>
+            参数配置
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.SeveritySysPlug.Config">
+            <summary>
+            参数配置
+            </summary>
+        </member>
+        <member name="F:SIE.Alert.SeveritySysPlug.PushPlugNameProperty">
+            <summary>
+            插件名称
+            </summary>
+        </member>
+        <member name="P:SIE.Alert.SeveritySysPlug.PushPlugName">
+            <summary>
+            插件名称
+            </summary>
+        </member>
+        <member name="T:SIE.Alert.SeveritySysPlugConfig">
+            <summary>
+            触发任务 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Alert.SeveritySysPlugConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+    </members>
+</doc>

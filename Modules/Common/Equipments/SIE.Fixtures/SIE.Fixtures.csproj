@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup Label="Globals">
+		<SccProjectName>SAK</SccProjectName>
+		<SccProvider>SAK</SccProvider>
+		<SccAuxPath>SAK</SccAuxPath>
+		<SccLocalPath>SAK</SccLocalPath>
+	</PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<CodeAnalysisRuleSet></CodeAnalysisRuleSet>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<OutputPath>..\..\..\..\platform\smom\</OutputPath>
+		<DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Kit.Fixtures.xml</DocumentationFile>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<OutputPath>..\..\..\..\platform\smom\</OutputPath>
+		<DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Kit.Fixtures.xml</DocumentationFile>
+	</PropertyGroup>
+	<ItemGroup>
+	  <Compile Remove="InfoModels\**" />
+	  <EmbeddedResource Remove="InfoModels\**" />
+	  <None Remove="InfoModels\**" />
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Remove="Fixtures\Desk.cs" />
+	</ItemGroup>
+	<ItemGroup>
+	  <AdditionalFiles Include="..\..\..\..\.sonarlint\sie.smom\CSharp\SonarLint.xml" Link="SonarLint.xml" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\TurnoverTools\SIE.TurnoverTools\SIE.TurnoverTools.csproj" />
+		<ProjectReference Include="..\SIE.Equipments\SIE.Equipments.csproj" />
+	</ItemGroup>
+</Project>

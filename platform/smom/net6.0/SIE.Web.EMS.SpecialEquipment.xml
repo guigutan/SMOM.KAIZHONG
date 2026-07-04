@@ -1,0 +1,577 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Web.EMS.SpecialEquipment</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Web.EMS.SpecialEquipment.Commands.SelEquipAccountInspectionCommand">
+            <summary>
+            特种设备台账选择检验规则
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.Commands.SelEquipAccountInspectionCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.SpecialEquipment.Commands.SelModelInspectionCommand">
+            <summary>
+            设备检验规程选择按钮(设备型号)
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.Commands.SelModelInspectionCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.SpecialEquipment.Commands.SynSpecialModelCommand">
+            <summary>
+            同步型号数据命令（增加同步位置列表）
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.Commands.SynSpecialModelCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.SpecialEquipment.Common.DataQuery.ApprovalDataQuery">
+            <summary>
+            审核帮助类
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.Common.DataQuery.ApprovalDataQuery.GetEnableApproval(System.Int32)">
+            <summary>
+            获取是否启用审批流程
+            </summary>
+            <param name="typeQty">界面类型（1：计量设备定检）</param>
+            <returns>是否启用审批流程</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.SpecialEquipment.SpecialEquipmentMenuInit">
+            <summary>
+            菜单初始化
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.SpecialEquipmentMenuInit.GetMenuDtos">
+            <summary>
+            获取菜单列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.EMS.SpecialEquipment.Models.EquipModelExtensionViewConfig">
+            <summary>
+            设备型号维护视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.Models.EquipModelExtensionViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.Models.EquipModelExtensionViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.SpecialEquipment.Models.EquipModelRegularInspectionViewConfig">
+            <summary>
+            设备型号检验规程
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.SpecialEquipment.Models.EquipModelRegularInspectionViewConfig.CoulmnWidth">
+            <summary>
+            字符显示宽度
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.Models.EquipModelRegularInspectionViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.SpecialEquipment.Module">
+            <summary>
+            模块配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化模块
+            </summary>
+            <param name="app">应用程序</param>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.Module.App_ModuleOperations(System.Object,System.EventArgs)">
+            <summary>
+            模块定义
+            </summary>
+            <param name="sender">应用程序</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="T:SIE.Web.EMS.SpecialEquipment.RegularInspections.Commands.AuditRejectCommand">
+            <summary>
+            审核驳回
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.SpecialEquipment.RegularInspections.Commands.AuditSubmitCommand">
+            <summary>
+            审核提交
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.SpecialEquipment.RegularInspections.Commands.InputSaveCommand">
+            <summary>
+            保存命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.SpecialEquipment.RegularInspections.Commands.InputSubmitCommand">
+            <summary>
+            特种设备定检提交
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.SpecialEquipment.RegularInspections.Commands.RegularInspectionCommands">
+            <summary>
+            特种设备定检命令集合
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.SpecialEquipment.RegularInspections.Commands.RegularInspectionCommands.WritingReportCommand">
+            <summary>
+            录入校验记录
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.SpecialEquipment.RegularInspections.Commands.RegularInspectionCommands.ViewReportCommand">
+            <summary>
+            查看校验报告
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.SpecialEquipment.RegularInspections.Commands.RegularInspectionCommands.AuditCommand">
+            <summary>
+            审核
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.SpecialEquipment.RegularInspections.Commands.RegularInspectionCommands.AddColumnCommand">
+            <summary>
+            添加数据列
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.SpecialEquipment.RegularInspections.Commands.RegularInspectionCommands.DeleteColumnCommand">
+            <summary>
+            删除数据列
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.SpecialEquipment.RegularInspections.Commands.RegularInspectionCommands.AllPassCommand">
+            <summary>
+            全部合格
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.SpecialEquipment.RegularInspections.Commands.RegularInspectionCommands.ResetResultCommand">
+            <summary>
+            重置结果
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.SpecialEquipment.RegularInspections.Commands.SaveRegularInspectionCommand">
+            <summary>
+            保存特种设备定检
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.RegularInspections.Commands.SaveRegularInspectionCommand.Saving(SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection)">
+            <summary>
+            保存特种设备定检
+            </summary>
+            <param name="stock">实体</param>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.RegularInspections.Commands.SaveRegularInspectionCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>命令执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.SpecialEquipment.RegularInspections.Configs.ValueConfigValueViewConfig">
+            <summary>
+            数据列视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.RegularInspections.Configs.ValueConfigValueViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.RegularInspections.Configs.ValueConfigValueViewConfig.ConfigDetailsView">
+            <summary>
+            表单视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.SpecialEquipment.RegularInspections.Criterias.RegularInspectionCriteriaViewConfig">
+            <summary>
+            检验规程查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.RegularInspections.Criterias.RegularInspectionCriteriaViewConfig.ConfigView">
+            <summary>
+            主体
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.RegularInspections.Criterias.SelInspectionProjectCriteriaViewConfig.ConfigQueryView">
+            <summary>
+             配置查询视图 
+             </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.SpecialEquipment.RegularInspections.DataQueryers.RegularInspectionDataQueryer">
+            <summary>
+            特种设备定检数据查询类
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.RegularInspections.DataQueryers.RegularInspectionDataQueryer.GetBillInfoById(System.Double)">
+            <summary>
+            获取单据相关信息-(单据级别的一次获取，减少请求数)
+            </summary>
+            <param name="billId">单据Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.RegularInspections.DataQueryers.RegularInspectionDataQueryer.GetDetailWithMaxValueList(SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection)">
+            <summary>
+            检验单据中拥有最多测试值的检验项目
+            </summary>
+            <param name="bill">检验单</param>
+            <returns>检验项目</returns>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.RegularInspections.DataQueryers.RegularInspectionDataQueryer.GetMaxValueListCount(SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection)">
+            <summary>
+            检验中的单据获取所有检验项目中已生成数据列数的最大值
+            </summary>
+            <param name="bill">校验记录</param>
+            <returns>最大数据数</returns>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.RegularInspections.DataQueryers.RegularInspectionDataQueryer.GetQuantitativeValueList(SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection)">
+            <summary>
+            获取定量的检测值列表
+            </summary>
+            <param name="bill">成品单据实例</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.RegularInspections.DataQueryers.RegularInspectionDataQueryer.GetInitialSamplingQty(SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection)">
+            <summary>
+            配置数据列数量
+            </summary>
+            <param name="bill">校验记录</param>
+            <returns>初始数据列数</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.SpecialEquipment.RegularInspections.DataQueryers.BillInfo">
+            <summary>
+            单据相关信息
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.SpecialEquipment.RegularInspections.DataQueryers.BillInfo.VoInitialSamplingQty">
+            <summary>
+            初始生成数据列数量
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.SpecialEquipment.RegularInspections.DataQueryers.BillInfo.VoMaxValueListCount">
+            <summary>
+            已生成数据数的最大值
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.SpecialEquipment.RegularInspections.DataQueryers.BillInfo.VoDetailWithMaxValueList">
+            <summary>
+            最多检测值的检验项目
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.SpecialEquipment.RegularInspections.DataQueryers.BillInfo.VoAllQuantitativeValues">
+            <summary>
+            定量检测值列表
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.SpecialEquipment.RegularInspections.RegularInspectionAttachmentViewConfig">
+            <summary>
+            设备定检附件视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.RegularInspections.RegularInspectionAttachmentViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.SpecialEquipment.RegularInspections.RegularInspectionDetailViewConfig">
+            <summary>
+            检验明细视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.SpecialEquipment.RegularInspections.RegularInspectionDetailViewConfig.InputRegularInspection">
+            <summary>
+            自定义添加视图
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.SpecialEquipment.RegularInspections.RegularInspectionDetailViewConfig.ReadonlyView">
+            <summary>
+            只读视图
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.SpecialEquipment.RegularInspections.RegularInspectionDetailViewConfig.charWidth">
+            <summary>
+            字符显示宽度
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.RegularInspections.RegularInspectionDetailViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.RegularInspections.RegularInspectionDetailViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.RegularInspections.RegularInspectionDetailViewConfig.InputRegularInspectionView">
+            <summary>
+            录入检验报告
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.RegularInspections.RegularInspectionDetailViewConfig.ConfigReadOnlyView">
+            <summary>
+            检验明细只读视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.SpecialEquipment.RegularInspections.RegularInspectionResumeViewConfig">
+            <summary>
+            操作记录视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.RegularInspections.RegularInspectionResumeViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.SpecialEquipment.RegularInspections.RegularInspectionValueViewConfig">
+            <summary>
+            定检检验数据视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.RegularInspections.RegularInspectionValueViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.SpecialEquipment.RegularInspections.RegularInspectionViewConfig">
+            <summary>
+            特种设备定检视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.SpecialEquipment.RegularInspections.RegularInspectionViewConfig.WritingReportView">
+            <summary>
+            录入报告视图
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.SpecialEquipment.RegularInspections.RegularInspectionViewConfig.ReadonlyView">
+            <summary>
+            查看报告视图
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.SpecialEquipment.RegularInspections.RegularInspectionViewConfig.AuditView">
+            <summary>
+            审核视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.RegularInspections.RegularInspectionViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.RegularInspections.RegularInspectionViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.RegularInspections.RegularInspectionViewConfig.ConfigDetailsView">
+            <summary>
+             配置明细视图-添加
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.RegularInspections.RegularInspectionViewConfig.ConfigWritingReportView">
+            <summary>
+            录入检验报告视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.RegularInspections.RegularInspectionViewConfig.ConfigReadonlyView">
+            <summary>
+             查看检验报告视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.RegularInspections.RegularInspectionViewConfig.ConfigAuditView">
+            <summary>
+            审核视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.SpecialEquipment.RegularInspections.ViewModels.SelInspectionProjectViewModelViewConfig">
+            <summary>
+            设备定检附件视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.RegularInspections.ViewModels.SelInspectionProjectViewModelViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.SpecialEquipment.RegularInspections.WorkFlows.WorkFlowRecordViewConfig">
+            <summary>
+            审核记录-界面
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.SpecialEquipment.RegularInspections.WorkFlows.WorkFlowRecordViewConfig.RegSeeView">
+            <summary>
+            附加查看-审核进度
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.RegularInspections.WorkFlows.WorkFlowRecordViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.RegularInspections.WorkFlows.WorkFlowRecordViewConfig.ConfigRegSeeView">
+            <summary>
+            附加查看-审核进度
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.SpecialEquipment.SpecialEquipmentAcounts.EquipAccountRegularInspectionViewConfig">
+            <summary>
+            设备定检规程视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.SpecialEquipmentAcounts.EquipAccountRegularInspectionViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.SpecialEquipment.SpecialEquipmentAcounts.ExtensionViewConfig.EquipBomDetailExtensionViewConfig">
+            <summary>
+            扩展设备BOM明细视图
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.SpecialEquipment.SpecialEquipmentAcounts.ExtensionViewConfig.EquipBomDetailExtensionViewConfig.AccountEquipBomDetailViewGroup">
+            <summary>
+            设备台账设备BOM明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.SpecialEquipmentAcounts.ExtensionViewConfig.EquipBomDetailExtensionViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.SpecialEquipmentAcounts.ExtensionViewConfig.EquipBomDetailExtensionViewConfig.ConfigAccountEquipBomDetailView">
+            <summary>
+            配置特种设备台账设备BOM明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.SpecialEquipment.SpecialEquipmentAcounts.ExtensionViewConfig.EquipModelTechParameterExtensionViewConfig">
+            <summary>
+            设备型号技术参数
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.SpecialEquipment.SpecialEquipmentAcounts.ExtensionViewConfig.EquipModelTechParameterExtensionViewConfig.charWidth">
+            <summary>
+            字符显示宽度
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.SpecialEquipment.SpecialEquipmentAcounts.ExtensionViewConfig.EquipModelTechParameterExtensionViewConfig.ReadOnlyView">
+            <summary>
+            只读配置页
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.SpecialEquipmentAcounts.ExtensionViewConfig.EquipModelTechParameterExtensionViewConfig.ConfigView">
+            <summary>
+            配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.SpecialEquipmentAcounts.ExtensionViewConfig.EquipModelTechParameterExtensionViewConfig.ConfigEquipAccountView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountCriteriaViewConfig.ConfigView">
+            <summary>
+            默认查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountViewConfig">
+            <summary>
+            特种设备台账视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountViewConfig.EditViewGroup">
+            <summary>
+            修改视图
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountViewConfig.CoulmnWidth">
+            <summary>
+            字符显示宽度
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountViewConfig.EISBaseDataViewGroup">
+            <summary>
+            电子行业基础数据
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountViewConfig.EISBaseDataAddViewGroup">
+            <summary>
+            电子行业基础数据ADD
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountViewConfig.PhotoViewGroup">
+            <summary>
+            图片
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountViewConfig.SpecialEquipmentAccountGroup">
+            <summary>
+            特种设备台账视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountViewConfig.EISBaseDataView">
+            <summary>
+            电子行业基础数据
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountViewConfig.PhotoView">
+            <summary>
+            图片
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountViewConfig.SpecialEquipmentAccountView">
+            <summary>
+            特种设备台账
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountViewConfig.ConfigListViewChildrenOne">
+            <summary>
+            特种设备台账增加子页签
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountViewConfig.ConfigListViewChildrenTwo">
+            <summary>
+            特种设备台账增加子页签
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\..\..\..\packages\Microsoft.CodeAnalysis.Analyzers.3.0.0\build\Microsoft.CodeAnalysis.Analyzers.props" Condition="Exists('..\..\..\..\packages\Microsoft.CodeAnalysis.Analyzers.3.0.0\build\Microsoft.CodeAnalysis.Analyzers.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{64A4AA87-3E90-47C8-A3D3-2B664BE0D251}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WpfClient</RootNamespace>
+    <AssemblyName>SIE.MOM</AssemblyName>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <UseWPF>true</UseWPF>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>..\..\..\..\Common\WpfClient\logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\..\..\..\Common\WpfClient\RazorTemplate.txt">
+      <Link>RazorTemplate.txt</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\..\Common\WpfClient\Resources\splash.mp4">
+      <Link>Resources\splash.mp4</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\..\Common\WpfClient\AddIns\SIE.HomePage.addin">
+      <Link>AddIns\SIE.HomePage.addin</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\..\Common\WpfClient\AddIns\Sie.IconItem.addin">
+      <Link>AddIns\Sie.IconItem.addin</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\..\Common\WpfClient\AddIns\Sie.LogSetting.addin">
+      <Link>AddIns\Sie.LogSetting.addin</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\..\Common\WpfClient\AddIns\Sie.PrintSetting.addin">
+      <Link>AddIns\Sie.PrintSetting.addin</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\..\Common\WpfClient\AddIns\Sie.Setting.addin">
+      <Link>AddIns\Sie.Setting.addin</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\..\Common\WpfClient\AddIns\SIE.Wpf.Rbac.addin">
+      <Link>AddIns\SIE.Wpf.Rbac.addin</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\..\Common\WpfClient\AddIns\Sie.Wpf.StatusBar.addin">
+      <Link>AddIns\Sie.Wpf.StatusBar.addin</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="..\..\..\..\Common\WpfClient\log4net.config">
+      <Link>log4net.config</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="..\..\..\..\Common\WpfClient\App.xaml">
+      <Link>App.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="..\..\..\..\Common\WpfClient\logo.ico">
+      <Link>logo.ico</Link>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Modules\Common\AbnormalInfo\SIE.AbnormalInfo\SIE.AbnormalInfo.csproj">
+      <Project>{0ad52f65-a372-4f75-b582-b4b25aad5ff8}</Project>
+      <Name>SIE.AbnormalInfo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Modules\Common\Core\SIE.Core\SIE.Core.csproj">
+      <Project>{2b0e5c91-1337-4c36-8c63-044fb41cdea6}</Project>
+      <Name>SIE.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Modules\Common\CSM\SIE.CSM\SIE.CSM.csproj">
+      <Project>{63b82bd3-a7dd-49d7-ac99-3fdb817a03ee}</Project>
+      <Name>SIE.CSM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Modules\Common\CSM\SIE.Wpf.CSM\SIE.Wpf.CSM.csproj">
+      <Project>{e1c7eac2-6338-4738-af48-a5a5498737a1}</Project>
+      <Name>SIE.Wpf.CSM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Modules\Common\Defects\SIE.Defects\SIE.Defects.csproj">
+      <Project>{7aeaf957-4e72-442f-98f5-1e5c20f6061b}</Project>
+      <Name>SIE.Defects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Modules\Common\Equipments\SIE.Equipments\SIE.Equipments.csproj">
+      <Project>{e161cb89-0782-401d-9337-7d9564e4e4bd}</Project>
+      <Name>SIE.Equipments</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Modules\Common\Items\SIE.Items\SIE.Items.csproj">
+      <Project>{749e0eeb-cc95-4e74-8b7a-1effaa38a381}</Project>
+      <Name>SIE.Items</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Modules\Common\Items\SIE.Wpf.Items\SIE.Wpf.Items.csproj">
+      <Project>{f094dcaa-9351-4925-acb3-e28abf6f29f7}</Project>
+      <Name>SIE.Wpf.Items</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Modules\Common\Messages\SIE.EventMessages\SIE.EventMessages.csproj">
+      <Project>{45069784-028f-4d1e-8c03-ff3641aa2bd7}</Project>
+      <Name>SIE.EventMessages</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Modules\Common\Packages\SIE.Packages\SIE.Packages.csproj">
+      <Project>{86a0b837-35ca-4ad3-98f5-84c6fc9f27a2}</Project>
+      <Name>SIE.Packages</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Modules\Common\Resources\SIE.Resources\SIE.Resources.csproj">
+      <Project>{b9b3591c-512a-4b8c-889d-45a192b86f71}</Project>
+      <Name>SIE.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Modules\Common\Resources\SIE.Wpf.Resources\SIE.Wpf.Resources.csproj">
+      <Project>{2d556dce-639c-4f85-b541-44a15ccc4e10}</Project>
+      <Name>SIE.Wpf.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Modules\Common\Warehouses\SIE.Warehouses\SIE.Warehouses.csproj">
+      <Project>{5501bbdb-7d74-46e8-89ee-9eab36937bd4}</Project>
+      <Name>SIE.Warehouses</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Modules\Common\Warehouses\SIE.Wpf.Warehouses\SIE.Wpf.Warehouses.csproj">
+      <Project>{3f52184d-f762-4772-97ee-8e77da4e2e52}</Project>
+      <Name>SIE.Wpf.Warehouses</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Modules\SEDO\EMS\SIE.EMS.EquipCheck\SIE.EMS.EquipCheck.csproj">
+      <Project>{1673cc21-e9dc-4603-9e71-43c0875142ec}</Project>
+      <Name>SIE.EMS.EquipCheck</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Modules\SEDO\EMS\SIE.EMS.EquipMaint\SIE.EMS.EquipMaint.csproj">
+      <Project>{c736476b-85ec-4718-af0e-90d3c9677863}</Project>
+      <Name>SIE.EMS.EquipMaint</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Modules\SEDO\EMS\SIE.EMS.EquipRepair\SIE.EMS.EquipRepair.csproj">
+      <Project>{32a3a8f9-d9fd-4cae-8f6b-276453f9322d}</Project>
+      <Name>SIE.EMS.EquipRepair</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Modules\SEDO\EMS\SIE.EMS.Job\SIE.EMS.Job.csproj">
+      <Project>{f6eba1de-d412-4815-b65c-365640cd1a49}</Project>
+      <Name>SIE.EMS.Job</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Modules\SEDO\EMS\SIE.EMS.Report\SIE.EMS.Report.csproj">
+      <Project>{5a760660-6ff4-49d8-89f5-0f0847daf13a}</Project>
+      <Name>SIE.EMS.Report</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Modules\SEDO\EMS\SIE.EMS\SIE.EMS.csproj">
+      <Project>{4e058fe0-05bb-4d3c-98f5-4ce301617c3a}</Project>
+      <Name>SIE.EMS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Modules\Common\Techs\SIE.Tech\SIE.Tech.csproj">
+      <Project>{3e8369f0-ad9c-4508-9d93-8ca03b84c814}</Project>
+      <Name>SIE.Tech</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Modules\Common\Techs\SIE.Wpf.Tech\SIE.Wpf.Tech.csproj">
+      <Project>{ca56545f-cf2a-473e-8242-3fc31e93431b}</Project>
+      <Name>SIE.Wpf.Tech</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\..\..\packages\Microsoft.CodeAnalysis.Analyzers.3.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
+    <Analyzer Include="..\..\..\..\packages\Microsoft.CodeAnalysis.Analyzers.3.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="..\..\..\..\Common\WpfClient\Localization\ar.xml">
+      <Link>Localization\ar.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\..\Common\WpfClient\Localization\be.xml">
+      <Link>Localization\be.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\..\Common\WpfClient\Localization\bg.xml">
+      <Link>Localization\bg.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\..\Common\WpfClient\Localization\bh.xml">
+      <Link>Localization\bh.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\..\Common\WpfClient\Localization\ca-ES.xml">
+      <Link>Localization\ca-ES.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\..\Common\WpfClient\Localization\cs.xml">
+      <Link>Localization\cs.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\..\Common\WpfClient\Localization\de.xml">
+      <Link>Localization\de.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\..\Common\WpfClient\Localization\el-GR.xml">
+      <Link>Localization\el-GR.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\..\Common\WpfClient\Localization\en-GB.xml">
+      <Link>Localization\en-GB.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\..\Common\WpfClient\Localization\en.xml">
+      <Link>Localization\en.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\..\Common\WpfClient\Localization\es.xml">
+      <Link>Localization\es.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\..\Common\WpfClient\Localization\eu-ES.xml">
+      <Link>Localization\eu-ES.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\..\Common\WpfClient\Localization\fa.xml">
+      <Link>Localization\fa.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\..\Common\WpfClient\Localization\fr.xml">
+      <Link>Localization\fr.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\..\Common\WpfClient\Localization\gl-ES.xml">
+      <Link>Localization\gl-ES.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\..\Common\WpfClient\Localization\hr.xml">
+      <Link>Localization\hr.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\..\Common\WpfClient\Localization\hu.xml">
+      <Link>Localization\hu.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\..\Common\WpfClient\Localization\id.xml">
+      <Link>Localization\id.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\..\Common\WpfClient\Localization\it.xml">
+      <Link>Localization\it.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\..\Common\WpfClient\Localization\ja.xml">
+      <Link>Localization\ja.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\..\Common\WpfClient\Localization\ka.xml">
+      <Link>Localization\ka.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\..\Common\WpfClient\Localization\ko.xml">
+      <Link>Localization\ko.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\..\Common\WpfClient\Localization\lt.xml">
+      <Link>Localization\lt.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\..\Common\WpfClient\Localization\nb-NO.xml">
+      <Link>Localization\nb-NO.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\..\Common\WpfClient\Localization\nl.xml">
+      <Link>Localization\nl.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\..\Common\WpfClient\Localization\pl.xml">
+      <Link>Localization\pl.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\..\Common\WpfClient\Localization\pt-BR.xml">
+      <Link>Localization\pt-BR.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\..\Common\WpfClient\Localization\pt.xml">
+      <Link>Localization\pt.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\..\Common\WpfClient\Localization\ro.xml">
+      <Link>Localization\ro.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\..\Common\WpfClient\Localization\ru.xml">
+      <Link>Localization\ru.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\..\Common\WpfClient\Localization\sk.xml">
+      <Link>Localization\sk.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\..\Common\WpfClient\Localization\sr.xml">
+      <Link>Localization\sr.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\..\Common\WpfClient\Localization\sv.xml">
+      <Link>Localization\sv.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\..\Common\WpfClient\Localization\tr.xml">
+      <Link>Localization\tr.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\..\Common\WpfClient\Localization\uk.xml">
+      <Link>Localization\uk.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\..\Common\WpfClient\Localization\vi.xml">
+      <Link>Localization\vi.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\..\Common\WpfClient\Localization\zh-CHS.xml">
+      <Link>Localization\zh-CHS.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\..\Common\WpfClient\Localization\zh-CHT.xml">
+      <Link>Localization\zh-CHT.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties appsettings_1json__JSONSchema="" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,60 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\platform\smom\net6.0\SIE.ERPInterface.Sap.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\platform\smom\net6.0\SIE.ERPInterface.Sap.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Upload\Http\**" />
+    <Compile Remove="Upload\Items\**" />
+    <Compile Remove="Upload\Suppliers\**" />
+    <Compile Remove="Upload\TaskOrder\**" />
+    <EmbeddedResource Remove="Upload\Http\**" />
+    <EmbeddedResource Remove="Upload\Items\**" />
+    <EmbeddedResource Remove="Upload\Suppliers\**" />
+    <EmbeddedResource Remove="Upload\TaskOrder\**" />
+    <None Remove="Upload\Http\**" />
+    <None Remove="Upload\Items\**" />
+    <None Remove="Upload\Suppliers\**" />
+    <None Remove="Upload\TaskOrder\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Download\Items\SapItemController.cs" />
+    <Compile Remove="Download\Suppliers\SapSupplierController.cs" />
+    <Compile Remove="Upload\Allocate\IUploadInWarehousePorcessHandle.cs" />
+    <Compile Remove="Upload\Allocate\IUploadOnHandAdjustHandle.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="SapNwRfc" Version="1.0.0.64" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\KaiZhong\SIE.KZ.Base\SIE.KZ.Base.csproj" />
+    <ProjectReference Include="..\SIE.ERPInterface.Common\SIE.ERPInterface.Common.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Datas\ErpInfoDatas\Suppliers\" />
+    <Folder Include="Download\Items\" />
+    <Folder Include="Download\Suppliers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="SIE">
+      <HintPath>..\..\..\platform\nest\netstandard2.0\SIE.dll</HintPath>
+    </Reference>
+    <Reference Include="SIE.Common">
+      <HintPath>..\..\..\platform\nest\netstandard2.0\SIE.Common.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

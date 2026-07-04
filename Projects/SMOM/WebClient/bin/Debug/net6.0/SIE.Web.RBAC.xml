@@ -1,0 +1,2062 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Web.RBAC</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Web.Rbac.APPMenus.AppAttachmentViewConfig">
+            <summary>
+            APP 附件视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.APPMenus.AppAttachmentViewConfig.ConfigView">
+            <summary>
+            附件视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.APPMenus.AppAttachmentViewConfig.UseReadOnlyCommand">
+            <summary>
+            readonlyCommand
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.APPMenus.AppAttachmentViewConfig.UseCommand">
+            <summary>
+            正常命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.APPMenus.AppAttachmentViewConfig.ConfigSelectionView">
+            <summary>
+            下拉视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.APPMenus.AppCategoryViewConfig.ConfigQueryView">
+            <summary>
+            查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.APPMenus.AppCategoryViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.APPMenus.AppMenuViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.APPMenus.AppMenuViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.APPMenus.AppMenuViewConfig.ConfigQueryView">
+            <summary>
+            查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.APPMenus.AppSubMenuViewConfig.ConfigView">
+            <summary>
+            基本视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.APPMenus.AppSubMenuViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.APPMenus.Commands.AppDeleteAttachmentCommand.#ctor">
+            <summary>
+             附件删除，同步删除子菜单
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.APPMenus.Commands.AppDeleteAttachmentCommand.AppDeleteAttachmentCommand_DeletedAttachement(SIE.Web.Common.Attachments.Commands.DeleteAttachmentViewArgs)">
+            <summary>
+            删除后事件，删除对应的子菜单
+            </summary>
+            <param name="arg"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Rbac.APPMenus.Commands.AppUploadAttachmentCommand">
+            <summary>
+            附件上传命令
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Rbac.APPMenus.Commands.AppUploadAttachmentCommand.menuContext">
+            <summary>
+            附件中的子菜单内容
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.APPMenus.Commands.AppUploadAttachmentCommand.#ctor">
+            <summary>
+            注册验证和保存后事件
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.APPMenus.Commands.AppUploadAttachmentCommand.AddAttachmentCommand_SavedAttachement(SIE.Web.Common.Attachments.Commands.UploadAttachmentViewArgs)">
+            <summary>
+            保存事件
+            保存menu.config中的子菜单
+            </summary>
+            <param name="arg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Rbac.APPMenus.Commands.AppUploadAttachmentCommand.AddAttachmentCommand_ValidatingFileStream(System.IO.Stream)">
+            <summary>
+            验证事件
+             验证menu.config中的节点信息
+            </summary>
+            <param name="arg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Rbac.APPMenus.Commands.AppUploadAttachmentCommand.CheckChildrenMenuJson(Newtonsoft.Json.Linq.JArray)">
+            <summary>
+            校验子菜单JSON结构
+            </summary>
+            <param name="ja"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Rbac.APPMenus.Commands.AppUploadAttachmentCommand.RecursiveSubMenu(Newtonsoft.Json.Linq.JArray,System.Double,SIE.Rbac.APPMenus.AppMenu)">
+            <summary>
+            递归获取子菜单内容，子菜单里面有下级，下级里面也有下级
+            </summary>
+            <param name="ja">JArray 子菜单数组</param>
+            <param name="treePId">父级id</param>
+            <returns>子菜单列表</returns>
+        </member>
+        <member name="M:SIE.Web.Rbac.APPMenus.Commands.AppUploadAttachmentCommand.ExtractZipFile(System.IO.Stream,System.String,System.String)">
+            <summary>
+             从压缩文件中读取某个文件的内容
+             文本文件
+            </summary>
+            <param name="fs">压缩包文件</param>
+            <param name="password">密码</param>
+            <param name="fileName">需要读取的文件名</param>
+            <returns>文件的内容</returns>
+        </member>
+        <member name="M:SIE.Web.Rbac.APPMenus.Commands.AppUploadAttachmentCommand.GetOps(Newtonsoft.Json.Linq.JArray)">
+            <summary>
+             获取数组中的串，形如
+             ["提交","保存","暂存","审批"]
+            </summary>
+            <param name="opsArray"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Rbac.APPMenus.Commands.AppUploadAttachmentCommand.SaveAttachement(SIE.Web.Common.Attachments.Commands.UploadAttachmentViewArgs,System.Type)">
+            <summary>
+            保存
+            </summary>
+            <param name="viewArgs"></param>
+            <param name="type"></param>
+        </member>
+        <member name="T:SIE.Web.Rbac.APPMenus.Commands.AttachmentDownloadCommand">
+            <summary>
+            下载
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.APPMenus.DataQueryer.AppMenusDataQueryer.GetAllAppMenus(System.Double)">
+            <summary>
+            获取当前角色APP菜单权限树型json
+            </summary>
+            <param name="roleId">角色ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Rbac.APPMenus.DataQueryer.AppMenusDataQueryer.GenerateModules(System.Collections.Generic.IList{SIE.Web.Json.TreeEntityJson},SIE.Rbac.APPMenus.AppMenu,SIE.Domain.EntityList{SIE.Rbac.Roles.AppMenuPermission})">
+            <summary>
+            构造模块，一个菜单就是一个模块
+            </summary>
+            <param name="models"></param>
+            <param name="appMenu"></param>
+        </member>
+        <member name="M:SIE.Web.Rbac.APPMenus.DataQueryer.AppMenusDataQueryer.GenerateSubMenus(SIE.Rbac.APPMenus.AppSubMenu,SIE.Web.Json.TreeEntityJson,System.Double,SIE.Rbac.APPMenus.AppMenu,SIE.Domain.EntityList{SIE.Rbac.APPMenus.AppSubMenu},SIE.Domain.EntityList{SIE.Rbac.Roles.AppMenuPermission})">
+            <summary>
+            递归创建菜单
+            </summary>
+            <param name="subMenu"></param>
+            <param name="parent"></param>
+            <param name="appMenu"></param>
+        </member>
+        <member name="M:SIE.Web.Rbac.APPMenus.DataQueryer.AppMenusDataQueryer.hasPermission(System.String,System.String,System.String,SIE.Domain.EntityList{SIE.Rbac.Roles.AppMenuPermission})">
+            <summary>
+            判断是否有权限
+            </summary>
+            <param name="moduleKey"></param>
+            <param name="scopyKey"></param>
+            <param name="operationKey"></param>
+            <param name="appMenuPermissions"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Rbac.InvOrgs.Commands.AddUserCommand">
+            <summary>
+            添加用户命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Rbac.InvOrgs.Commands.AddInvOrgsCommand">
+            <summary>
+            添加库存组织命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.InvOrgs.Commands.AddInvOrgsCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Rbac.InvOrgs.Commands.ImportInvOrgUserCommand">
+            <summary>
+            导入库存组织用户命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.InvOrgs.Commands.ImportInvOrgUserCommand.GetImportCompleted">
+            <summary>
+            导入命令
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Rbac.InvOrgs.Commands.ImportInvOrgUserCommand.GetImportHandleType">
+            <summary>
+            获取导入处理类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Rbac.InvOrgs.Commands.SwitchInvOrgCommand">
+            <summary>
+            切换组织机构命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.InvOrgs.Commands.SwitchInvOrgCommand.Excute(SIE.Rbac.InvOrgs.InvOrg,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="invOrg"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="F:SIE.Web.Rbac.InvOrgs.Criteria.GetInvOrgByUserCriteria.CodeProperty">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.InvOrgs.Criteria.GetInvOrgByUserCriteria.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Rbac.InvOrgs.Criteria.GetInvOrgByUserCriteria.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.InvOrgs.Criteria.GetInvOrgByUserCriteria.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Rbac.InvOrgs.Criteria.GetInvOrgByUserCriteria.ExternalIdProperty">
+            <summary>
+            外部ID
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.InvOrgs.Criteria.GetInvOrgByUserCriteria.ExternalId">
+            <summary>
+            外部ID
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Rbac.InvOrgs.Criteria.GetInvOrgByUserCriteria.RemarkProperty">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.InvOrgs.Criteria.GetInvOrgByUserCriteria.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Rbac.InvOrgs.DataQuery.UserInvOrgDataQuery">
+            <summary>
+            用户组织机构查询
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.InvOrgs.DataQuery.UserInvOrgDataQuery.GetInvOrgsByUser">
+            <summary>
+            获取用户组织机构
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Rbac.InvOrgs.DataQuery.UserInvOrgDataQuery.GetAllInvOrgs">
+            <summary>
+            获取所有库存组织（排除当前组织）
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Rbac.InvOrgs.DataQuery.UserInvOrgDataQuery.GetCurOrg">
+            <summary>
+            获取当前组织机构
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Rbac.InvOrgs.InvOrgCriteriaViewConfig">
+            <summary>
+            库存组织相关视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.InvOrgs.InvOrgCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Rbac.InvOrgs.InvOrgViewConfig">
+            <summary>
+            库存组织相关视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.InvOrgs.InvOrgViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.InvOrgs.InvOrgViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.InvOrgs.InvOrgViewConfig.ConfigDetailsView">
+            <summary>
+            明细视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.InvOrgs.InvOrgViewConfig.ConfigQueryView">
+            <summary>
+            查询视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Rbac.InvOrgs.ViewModels.GetInvOrgByUserViewModel.CodeProperty">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.InvOrgs.ViewModels.GetInvOrgByUserViewModel.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Rbac.InvOrgs.ViewModels.GetInvOrgByUserViewModel.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.InvOrgs.ViewModels.GetInvOrgByUserViewModel.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Rbac.InvOrgs.ViewModels.GetInvOrgByUserViewModel.RemarkProperty">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.InvOrgs.ViewModels.GetInvOrgByUserViewModel.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Rbac.Menus.Commands.FavoriteCommand">
+            <summary>
+            收藏按钮
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Menus.Commands.SelectRoleCommand.PostData.ModuleKey">
+            <summary>
+            操作模块
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Menus.Commands.SelectRoleCommand.PostData.Platform">
+            <summary>
+            平台
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Menus.Commands.SelectRoleCommand.PostData.CheckedRoles">
+            <summary>
+            勾选权限集
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Menus.Commands.SelectRoleCommand.PostData.UncheckedRoles">
+            <summary>
+            没勾选的权限集
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Rbac.Menus.DataQueryer.MenuDataQueryer">
+            <summary>
+            菜单DataQueryer
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.Menus.DataQueryer.MenuDataQueryer.GetNavMenus">
+            <summary>
+            获取导航菜单
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Rbac.Menus.DataQueryer.MenuDataQueryer.GetFavoriteMenus(System.Collections.Generic.ICollection{SIE.Rbac.Menus.Favorite},System.Collections.Generic.ICollection{SIE.Rbac.Menus.Menu})">
+            <summary>
+            获取收藏菜单
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Rbac.Menus.DataQueryer.MenuDataQueryer.GetMenuStyle">
+            <summary>
+            菜单样式功能
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Rbac.Menus.DataQueryer.MenuDataQueryer.GetAllMenus">
+            <summary>
+            获取所有菜单信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Rbac.Menus.DataQueryer.MenuDataQueryer.GetAllModuleConfig">
+            <summary>
+              获取所有模块配置
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Rbac.Menus.DataQueryer.MenuDataQueryer.GetURL(System.String)">
+            <summary>
+            获取URL
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Rbac.Menus.DataQueryer.MenuDataQueryer.GetURLHandle(System.String)">
+            <summary>
+            对URL进行处理,如sieUserId和invOrg
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Rbac.Menus.DataQueryer.MenuDataQueryer.GetModuleCommands(System.String,System.Int32)">
+            <summary>
+            获取模块下，所有的块与命令
+            </summary>
+            <param name="moduleKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Rbac.Menus.DataQueryer.MenuDataQueryer.GetWebHelpAddress(System.String)">
+            <summary>
+            获取帮助文件的web地址
+            </summary>
+            <param name="module">module</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Rbac.Menus.DataQueryer.MenuDataQueryer.GetMenuTab">
+            <summary>
+            获取导航标签
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Rbac.Menus.DataQueryer.MenuDataQueryer.GetMenuTabs">
+            <summary>
+            获取登录后需要显示的页面
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Rbac.Menus.DataQueryer.NavMenuViewModel">
+            <summary>
+            净化输出JSON
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Menus.DataQueryer.NavMenuViewModel.Icon">
+            <summary>
+            图片
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Menus.DataQueryer.NavMenuViewModel.ModuleKey">
+            <summary>
+            模快唯一键
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Menus.DataQueryer.NavMenuViewModel.Url">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Menus.DataQueryer.NavMenuViewModel.Target">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Menus.DataQueryer.NavMenuViewModel.SearchWords">
+            <summary>
+            搜索拼写
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Menus.DataQueryer.NavMenuViewModel.SearchShortWords">
+            <summary>
+            搜索简写
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Menus.DataQueryer.NavMenuViewModel.Label">
+            <summary>
+            文本，支持本地化
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Menus.DataQueryer.NavMenuViewModel.IsFavorite">
+            <summary>
+            是否收藏
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Rbac.Menus.DataQueryer.NavMenusGroup">
+            <summary>
+            导航菜单返回JSON结构
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Menus.DataQueryer.NavMenusGroup.orderNo">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Menus.DataQueryer.NavMenusGroup.groupKey">
+            <summary>
+            组键
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Menus.DataQueryer.NavMenusGroup.items">
+            <summary>
+            元素
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Menus.DataQueryer.NavMenusGroup.items1">
+            <summary>
+            元素
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Rbac.Menus.MenuBuilderService">
+            <summary>
+            菜单构建服务
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.Menus.MenuBuilderService.#ctor">
+            <summary>
+            构造函数 <see cref="T:SIE.Web.Rbac.Menus.MenuBuilderService"/>.
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.Menus.MenuBuilderService.AddFavority(System.String)">
+            <summary>
+            添加收藏
+            </summary>
+            <param name="moduleKey"></param>
+        </member>
+        <member name="M:SIE.Web.Rbac.Menus.MenuBuilderService.RemoveFavority(System.String)">
+            <summary>
+            移除收藏
+            </summary>
+            <param name="moduleKey">模块key</param>
+        </member>
+        <member name="P:SIE.Web.Rbac.Menus.MenuBuilderService.WebMenus">
+            <summary>
+            菜单集合
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Menus.MenuBuilderService.Favorites">
+            <summary>
+            用户收藏夹集合
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.Menus.MenuBuilderService.GetNavMenus">
+            <summary>
+            获取平铺菜单集合(依赖Menus集合)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:SIE.Web.Rbac.Menus.MenuBuilderService.WebModuleMeta">
+            <summary>
+            全部Web模块集合
+            </summary>
+            <value>
+            The module view modes.
+            </value>
+        </member>
+        <member name="M:SIE.Web.Rbac.Menus.MenuBuilderService.GetAllModuleConfig">
+            <summary>
+            获取所有模块配置
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Rbac.Menus.MenuBuilderService.GetMenuChildrenCount(SIE.Rbac.Menus.Menu,SIE.Domain.EntityList{SIE.Rbac.Menus.Menu})">
+            <summary>
+            获取子菜单的数目
+            </summary>
+            <param name="menu"></param>
+            <param name="menuList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Rbac.Menus.MenuBuilderService.GetImportMenuResult(System.Byte[])">
+            <summary>
+            获取导入菜单结果
+            </summary>
+            <param name="fsBytes"></param>
+        </member>
+        <member name="T:SIE.Web.Rbac.Menus.MenuViewConfig">
+            <summary>
+            菜单视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.Menus.MenuViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.Menus.MenuViewConfig.ViewConfigExtensions">
+            <summary>
+            JS扩展视图配置
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Menus.ModuleCmd.ModuleKey">
+            <summary>
+            模块KEY
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Menus.ModuleCmd.ModuleLabel">
+            <summary>
+            模块标题
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Menus.ModuleCmd.ViewKey">
+            <summary>
+            模块域KEY
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Menus.ModuleCmd.ViewLabel">
+            <summary>
+            模块域标题
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Menus.ModuleCmd.CmdKey">
+            <summary>
+            命令KEY
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Menus.ModuleCmd.CmdLabel">
+            <summary>
+            命令标题
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Rbac.Menus.NavMenu">
+            <summary>
+            导航菜单
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Menus.NavMenu.Menu">
+            <summary>
+            菜单实体
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Menus.NavMenu.Label">
+            <summary>
+            文本，支持本地化
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Rbac.Menus.NavMenu.DefaultRoot">
+            <summary>
+            默认的根菜单，在没有配置菜单的上层节点时，统一显示在默认根目录下
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Menus.NavMenu.Root">
+            <summary>
+            根菜单，在导航显示时才有值
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Menus.NavMenu.IsFavorite">
+            <summary>
+            是否收藏
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Menus.NavMenu.Index">
+            <summary>
+            菜单排序
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Menus.NavMenu.IsTwoMenu">
+            <summary>
+            是否二级菜单
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Menus.NavMenu.TreePid">
+            <summary>
+            树节点ID
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Rbac.Models.ModuleFactory">
+            <summary>
+            模块工厂  todo WPF搬迁过来 是否需要再作优化
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Rbac.Models.ModuleFactory._isInitModule">
+            <summary>
+            是否初始化模块
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Rbac.Models.ModuleFactory._isInitViewMeta">
+            <summary>
+            是否初始化视图元数据
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Rbac.Models.ModuleFactory._viewMetaDic">
+            <summary>
+            视图元数据字典
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Rbac.Models.ModuleFactory._moduleDic">
+            <summary>
+            模块字典
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Models.ModuleFactory.Current">
+            <summary>
+            模块工程静态对象
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.Models.ModuleFactory.GetModels">
+            <summary>
+            获取所有模块
+            </summary>
+            <returns>所有模块</returns>
+        </member>
+        <member name="M:SIE.Web.Rbac.Models.ModuleFactory.GetModule(System.String)">
+            <summary>
+            获取模块
+            </summary>
+            <param name="moduleKey">模块主键</param>
+            <returns>模块</returns>
+        </member>
+        <member name="M:SIE.Web.Rbac.Models.ModuleFactory.GetModule(System.Type,System.Boolean)">
+            <summary>
+            获取模块
+            </summary>
+            <param name="moduleType">模块类型</param>
+            <returns>模块</returns>
+        </member>
+        <member name="M:SIE.Web.Rbac.Models.ModuleFactory.GetBlock(System.Type)">
+            <summary>
+            获取块
+            </summary>
+            <param name="blockType">块类型</param>
+            <returns>块</returns>
+        </member>
+        <member name="M:SIE.Web.Rbac.Models.ModuleFactory.GetEntityLabel(System.Type)">
+            <summary>
+            获取实体标题
+            </summary>
+            <param name="entityType">实体类型</param>
+            <returns>标题</returns>
+        </member>
+        <member name="M:SIE.Web.Rbac.Models.ModuleFactory.GenerateOperations(System.Type)">
+            <summary>
+            获取块的所有操作
+            </summary>
+            <param name="blockType">块类型</param>
+            <returns>块的所有操作</returns>
+        </member>
+        <member name="M:SIE.Web.Rbac.Models.ModuleFactory.InitViewMetas">
+            <summary>
+            初始化视图元数据
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.Models.ModuleFactory.LoadAllModuleMeta">
+            <summary>
+            加载所有配置在模块中的模块元素据
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.Models.ModuleFactory.LoadViewMeta">
+            <summary>
+            加载视图元数据里面的根、以及授权模块
+            所有实体的根的模块、所有在实体 ViewConfig 中配的模块
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.Models.ModuleFactory.AddModule(System.Type)">
+            <summary>
+            添加模块
+            </summary>
+            <param name="entityType">实体类型</param>
+        </member>
+        <member name="M:SIE.Web.Rbac.Models.ModuleFactory.LoadChildModule">
+            <summary>
+            加载缓存字典中的子模块节点
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.Models.ModuleFactory.ReadChildModule(System.Type,System.Collections.Generic.List{System.Type})">
+            <summary>
+            递归读取所有子类型的模块信息
+            </summary>
+            <param name="type">模块类型</param>
+            <param name="result">结果</param>
+        </member>
+        <member name="M:SIE.Web.Rbac.Models.ModuleFactory.ComputeChild(System.Collections.Generic.List{System.Type},System.Collections.Generic.List{System.Type})">
+            <summary>
+            计算所有子模块
+            </summary>
+            <param name="childs">子类型列表</param>
+            <param name="result">结果</param>
+        </member>
+        <member name="T:SIE.Web.Rbac.Module">
+            <summary>
+            当前工程所对应的模块类。
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Rbac.Module.InvOrgAdminModules">
+            <summary>
+            库存组织管理员可授权的模块
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.Module.Initialize(SIE.IApp)">
+            <summary>
+            
+            </summary>
+            <param name="app"></param>
+        </member>
+        <member name="T:SIE.Web.Rbac.Query.Commands.AdvancedQueryCommand">
+            <summary>
+            高级查询命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.Query.Commands.AdvancedQueryCommand.Excute(SIE.Web.Rbac.Query.Commands.AdvancedQueryArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+            <exception cref="T:SIE.MetaModel.MetaException"></exception>
+        </member>
+        <member name="M:SIE.Web.Rbac.Query.Commands.AdvancedQueryCommand.ConvertToBinaryOperatorType(System.Nullable{SIE.Rbac.Query.OperatorType})">
+            <summary>
+            转换比较符
+            </summary>
+            <param name="operatorType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Rbac.Query.Commands.AdvancedQueryCommand.SaveQuery(SIE.Web.Rbac.Query.Commands.AdvancedQueryArgs,SIE.Data.Filtering.CriteriaOperator,System.Collections.Generic.List{SIE.Web.Rbac.Query.Models.AdvancedQueryViewModel})">
+            <summary>
+            保存查询实体以及其子表信息
+            </summary>
+            <param name="args"></param>
+            <param name="criteriaOperator"></param>
+            <param name="conditionList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Rbac.Query.Commands.AdvancedQueryCommand.EditQuery(SIE.Web.Rbac.Query.Commands.AdvancedQueryArgs,SIE.Data.Filtering.CriteriaOperator,System.Collections.Generic.List{SIE.Web.Rbac.Query.Models.AdvancedQueryViewModel})">
+            <summary>
+            编辑保存树结构数据
+            </summary>
+            <param name="args"></param>
+            <param name="criteriaOperator"></param>
+            <param name="conditionList"></param>
+            <returns></returns>
+            <exception cref="T:SIE.MetaModel.MetaException"></exception>
+        </member>
+        <member name="M:SIE.Web.Rbac.Query.Commands.AdvancedQueryCommand.SaveQueryData(SIE.Rbac.Query.EntityQuery,SIE.Data.Filtering.CriteriaOperator,SIE.Web.Rbac.Query.Commands.AdvancedQueryArgs)">
+            <summary>
+            保存主表数据
+            </summary>
+            <param name="query"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Rbac.Query.Commands.AdvancedQueryCommand.SaveQueryDtl(System.Collections.Generic.List{SIE.Web.Rbac.Query.Models.AdvancedQueryViewModel})">
+            <summary>
+            保存子表数据
+            </summary>
+            <param name="conditionList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Rbac.Query.Commands.AdvancedQueryCommand.CreateCriteriaOperator(SIE.Web.ClientMetaModel.EntityField,SIE.Web.Rbac.Query.Models.AdvancedQueryViewModel)">
+            <summary>
+            创建查询条件
+            </summary>
+            <param name="field">字段</param>
+            <param name="condition">条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Rbac.Query.Commands.AdvancedQueryCommand.DateRangeCriteria(System.String,SIE.ObjectModel.DateRange)">
+            <summary>
+            构建日期范围查询条件树
+            </summary>
+            <param name="key">查询条件属性键值</param>
+            <param name="dateRange">查询条件值</param>
+        </member>
+        <member name="M:SIE.Web.Rbac.Query.Commands.AdvancedQueryCommand.StringRangeCriteria(System.String,SIE.ObjectModel.TextRange)">
+            <summary>
+            构建字符串范围查询条件树
+            </summary>
+            <param name="key">查询条件属性键值</param>
+            <param name="textRange">查询条件值</param>
+        </member>
+        <member name="M:SIE.Web.Rbac.Query.Commands.AdvancedQueryCommand.NumberRangeCriteria(System.String,SIE.ObjectModel.NumberRange)">
+            <summary>
+            构建数值范围查询条件树
+            </summary>
+            <param name="key">查询条件属性键值</param>
+            <param name="numRange">查询条件值</param>
+        </member>
+        <member name="T:SIE.Web.Rbac.Query.Commands.UpdateQueryCommand">
+            <summary>
+            保存查询条件命令实现
+            </summary>
+            <seealso cref="T:SIE.Web.Command.IClientCommand" />
+        </member>
+        <member name="M:SIE.Web.Rbac.Query.EntityQueryDataQueryer.GetEntityQueryDetail(System.Double)">
+            <summary>
+            根据查询实体ID查找其明细
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Rbac.Query.EntityQueryDataQueryer.QueryDetail">
+            <summary>
+            查询实体详情JSON数据
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Query.EntityQueryDataQueryer.QueryDetail.Name">
+            <summary>
+            条件名
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Query.EntityQueryDataQueryer.QueryDetail.ConditionType">
+            <summary>
+            条件组
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Query.EntityQueryDataQueryer.QueryDetail.OperatorType">
+            <summary>
+            比较类型
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Query.EntityQueryDataQueryer.QueryDetail.Value">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Query.EntityQueryDataQueryer.QueryDetail.RelationType">
+            <summary>
+            关系
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Query.EntityQueryDataQueryer.QueryDetail.Id">
+            <summary>
+            主键ID
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Query.EntityQueryDataQueryer.QueryDetail.TreePId">
+            <summary>
+            树父ID
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Query.EntityQueryDataQueryer.QueryDetail.TreeId">
+            <summary>
+            树ID
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Rbac.Query.Models.AdvancedQueryViewModel.NameProperty">
+            <summary>
+            条件名
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Query.Models.AdvancedQueryViewModel.Name">
+            <summary>
+            条件
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Rbac.Query.Models.AdvancedQueryViewModel.ConditionTypeProperty">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Query.Models.AdvancedQueryViewModel.ConditionType">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Rbac.Query.Models.AdvancedQueryViewModel.OperatorTypeProperty">
+            <summary>
+            比较类型
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Query.Models.AdvancedQueryViewModel.OperatorType">
+            <summary>
+            比较类型
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Rbac.Query.Models.AdvancedQueryViewModel.ValueProperty">
+            <summary>
+            比较值
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Query.Models.AdvancedQueryViewModel.Value">
+            <summary>
+            比较值
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Rbac.Query.Models.AdvancedQueryViewModel.RelationTypeProperty">
+            <summary>
+            条件关系
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Query.Models.AdvancedQueryViewModel.RelationType">
+            <summary>
+            条件关系
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Rbac.Query.Models.AdvancedQueryViewModel.EntityIdProperty">
+            <summary>
+            数据主键ID
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Query.Models.AdvancedQueryViewModel.EntityId">
+            <summary>
+            数据主键ID
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Rbac.Roles.Commands.AddRoleCommand">
+            <summary>
+            添加角色命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Rbac.Roles.Commands.AddRoleInUserGroupsCommand">
+            <summary>
+            添加角色命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Rbac.Roles.Commands.AddUserCommand">
+            <summary>
+            添加用户命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Rbac.Roles.Commands.AddUserGroupCommand">
+            <summary>
+            添加用户组命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.Roles.Commands.EditAppPermissionsCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+             web 服务器
+             这里只是简单转发到服务端
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Rbac.Roles.Commands.EditAppPermissionsCommand.AppPermissonPostData">
+            <summary>
+            提交的数据
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Roles.Commands.EditAppPermissionsCommand.AppPermissonPostData.RoleId">
+            <summary>
+            角色ID
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Roles.Commands.EditAppPermissionsCommand.AppPermissonPostData.CheckedCmds">
+            <summary>
+            勾选权限集
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Roles.Commands.EditAppPermissionsCommand.AppPermissonPostData.NoCheckedCmds">
+            <summary>
+            未勾选权限集
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Rbac.Roles.Commands.EditCrossPlatformPermissionsCommand">
+            <summary>
+            角色跨平台权限配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.Roles.Commands.EditCrossPlatformPermissionsCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:SIE.Web.Rbac.Roles.Commands.EditPermissionsCommand">
+            <summary>
+            角色权限编辑命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Rbac.Roles.Commands.EditPermissionsCommand.PostData">
+            <summary>
+            提交的数据
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Roles.Commands.EditPermissionsCommand.PostData.RoleId">
+            <summary>
+            角色ID
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Roles.Commands.EditPermissionsCommand.PostData.CheckedCmds">
+            <summary>
+            勾选权限集
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Roles.Commands.EditPermissionsCommand.PostData.NoCheckedCmds">
+            <summary>
+            没勾选的权限集
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Rbac.Roles.Commands.PermissionAllowExportCommand">
+            <summary>
+            角色权限导出命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.Roles.Commands.PermissionAllowExportCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Rbac.Roles.Commands.PermissionAllowExportCommand.ExportData(System.IO.Stream,SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="stream"></param>
+            <param name="args"></param>
+            <param name="scope"></param>
+        </member>
+        <member name="M:SIE.Web.Rbac.Roles.Commands.PermissionAllowExportCommand.SetPermissionAllow(NPOI.SS.UserModel.ISheet,System.Int32,System.Collections.Generic.List{SIE.Rbac.Roles.RolePermissionsModel})">
+            <summary>
+            用户角色导出
+            </summary>
+            <param name="sheet"></param>
+            <param name="rowNum"></param>
+            <param name="rolePermissionsModels"></param>
+        </member>
+        <member name="T:SIE.Web.Rbac.Roles.Commands.SetAdministratorCommand">
+            <summary>
+            设为管理员命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Rbac.Roles.Commands.CancelAdministratorCommand">
+            <summary>
+            取消管理员命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Rbac.Roles.Commands.SetOrgAdminCommand">
+            <summary>
+            设为管理员命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Rbac.Roles.Commands.CancelOrgAdminCommand">
+            <summary>
+            取消管理员命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Rbac.Roles.DataQueryer.RoleDataQueryer">
+            <summary>
+            角色DataQueryer
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.Roles.DataQueryer.RoleDataQueryer.GetPermissionsAllowByRole(System.Double)">
+            <summary>
+            获取角色允许权限
+            </summary>
+            <param name="roleId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Rbac.Roles.DataQueryer.RoleDataQueryer.GetMenuPermissionAllowByRole(System.Double)">
+            <summary>
+            获取角色菜单权限
+            </summary>
+            <param name="roleId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Rbac.Roles.DataQueryer.RoleDataQueryer.GetAllRoles">
+            <summary>
+            获取所有角色数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:SIE.Web.Rbac.Roles.Models.BlockModel.ScopeKeyLabel">
+            <summary>
+            当前功能所属的范围。
+            如果是模块，则这个属性应该是 OperationAC.ModuleScope。
+            如果是某个界面块，则这个属性应该界面块的键。
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Roles.Models.BlockModel.EntityType">
+            <summary>
+            实体类型
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Roles.Models.BlockModel.Label">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Roles.Models.BlockModel.IsChecked">
+            <summary>
+            是否选中
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Roles.Models.BlockModel.Module">
+            <summary>
+            模块
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Roles.Models.ModuleModel.EntityType">
+            <summary>
+            实体类型
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Roles.Models.ModuleModel.KeyLabel">
+            <summary>
+            Key
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Roles.Models.ModuleModel.Label">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Roles.Models.ModuleModel.IsChecked">
+            <summary>
+            是否选中
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.Roles.Models.ModuleModel.OnPropertyChanged(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="propertyName"></param>
+        </member>
+        <member name="T:SIE.Web.Rbac.Roles.Models.OperationModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Roles.Models.OperationModel.ScopeKeyLabel">
+            <summary>
+            当前功能所属的范围。
+            如果是模块，则这个属性应该是 OperationAC.ModuleScope。
+            如果是某个界面块，则这个属性应该界面块的键。
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Roles.Models.OperationModel.OwnerEntityType">
+            <summary>
+            实体类型
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Roles.Models.OperationModel.OperationKey">
+            <summary>
+            功能名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Roles.Models.OperationModel.Label">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Roles.Models.OperationModel.IsChecked">
+            <summary>
+            是否选中
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Roles.Models.OperationModel.Block">
+            <summary>
+            是否选中
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Rbac.Roles.PermissionsBuilderService">
+            <summary>
+            权限构建服务
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Rbac.Roles.PermissionsBuilderService._viewMetaDic">
+            <summary>
+            视图元数据字典
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.Roles.PermissionsBuilderService.GetPermissionsAllowByRole(System.Double)">
+            <summary>
+            获取角色允许权限
+            </summary>
+            <param name="roleId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Rbac.Roles.PermissionsBuilderService.GetMenuPermissionAllowByRole(System.Double)">
+            <summary>
+            根据角色获取菜单权限
+            </summary>
+            <param name="roleId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Rbac.Roles.RoleCriteriaViewConfig">
+            <summary>
+            角色查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.Roles.RoleCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            查询视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Rbac.Roles.RoleViewConfig">
+            <summary>
+            角色视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Rbac.Security.CasRestfulConfigValueViewConfig">
+            <summary>
+            LDAP服务配置值视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Rbac.Security.Commands.LoginCommand">
+            <summary>
+            登录命令 todo 安全处理：如何防止伪请求
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Rbac.Security.PlatformPermissionProvider">
+            <summary>
+            为底层的 Platform 提供权限实现方案
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Security.PlatformPermissionProvider.Permissions">
+            <summary>
+            权限缓存
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Security.PlatformPermissionProvider.PermissionStringList">
+            <summary>
+            权限字符串缓存
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.Security.PlatformPermissionProvider.HasCommand(System.String,System.String,System.String)">
+            <summary>
+            是否存在命令
+            </summary>
+            <param name="moduleKey"></param>
+            <param name="scopeKey"></param>
+            <param name="commandKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Rbac.Security.PlatformPermissionProvider.Reset">
+            <summary>
+            重置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Rbac.Security.RBACIdentityService">
+            <summary>
+            身份服务
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.Security.RBACIdentityService.GetFavoriteMenus(System.Collections.Generic.ICollection{SIE.Rbac.Menus.Favorite},System.Collections.Generic.ICollection{SIE.Rbac.Menus.Menu})">
+            <summary>
+            获取收藏菜单
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Rbac.Security.RBACIdentityService.AddFavority(System.String)">
+            <summary>
+            添加收藏
+            </summary>
+            <param name="moduleKey">moduleKey</param>
+        </member>
+        <member name="M:SIE.Web.Rbac.Security.RBACIdentityService.RemoveFavority(System.String)">
+            <summary>
+            移除收藏
+            </summary>
+            <param name="moduleKey">moduleKey</param>
+        </member>
+        <member name="M:SIE.Web.Rbac.Security.RBACIdentityService.GetFavorityList">
+            <summary>
+            获取收藏
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Rbac.Security.RBACIdentityService.SetCurInvOrg(System.Int32,System.String)">
+            <summary>
+            切换当前库存组织
+            </summary>
+            <param name="invOrgId">库存组织id</param>
+            <param name="invOrgName">库存组织名称</param>
+        </member>
+        <member name="P:SIE.Web.Rbac.Security.RBACIdentityService.MenuItem.SearchWords">
+            <summary>
+            转为拼音
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Rbac.Security.RBACIdentityService.MenuItem.SearchShortWords">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Rbac.Security.UserSecurityViewConfig">
+            <summary>
+            用户安全信息视图
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Rbac.Security.UserSecurityViewConfig.IsLockedProperty">
+            <summary>
+            是否锁定
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.Security.UserSecurityViewConfig.IsLocked(SIE.Rbac.Users.UserSecurity)">
+            <summary>
+            是否锁定
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.Security.UserSecurityViewConfig.ConfigDetailsView">
+            <summary>
+            明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Rbac.UserGroups.Commands.AddUserCommand">
+            <summary>
+            添加用户命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Rbac.Users.Commands.AddUserGroupCommand">
+            <summary>
+            选择用户组命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Rbac.Users.Commands.ChangePwdViewModel">
+            <summary>
+            修改密码
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Rbac.Users.Commands.DisableSignCommand">
+            <summary>
+            禁用用户
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Rbac.Users.Commands.DisableUserCommand">
+            <summary>
+            禁用用户
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Rbac.Users.Commands.DownloadPrintTemplateCommand">
+            <summary>
+            下载打印模板
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Rbac.Users.Commands.DownloadUserAndEmployeeTemplateCommand">
+            <summary>
+            下载打印模板
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Rbac.Users.Commands.EnableSignCommand">
+            <summary>
+            启用用户
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Rbac.Users.Commands.EnableUserCommand">
+            <summary>
+            启用用户
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Rbac.Users.Commands.ImportUserAndEmployeeCommand">
+            <summary>
+            导入用户员工信息命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.Users.Commands.ImportUserAndEmployeeCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>true</returns>
+        </member>
+        <member name="T:SIE.Web.Rbac.Users.Commands.LinkEmployeeCommand">
+            <summary>
+            关联员工命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Rbac.Users.Commands.LockUserCommand">
+            <summary>
+            锁定用户命令，锁定时长在《用户》-> 《安全性》-> 《密码强度》里设置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.Users.Commands.LockUserCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Rbac.Users.Commands.ModifyPasswordCommand">
+            <summary>
+            修改密码
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Rbac.Users.Commands.ModifySignPasswordCommand">
+            <summary>
+            修改授权密码
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Rbac.Users.Commands.PasswordIntensityCommand">
+            <summary>
+            密码强度配置命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Rbac.Users.Commands.PortalModifyPasswordCommand">
+            <summary>
+            首页修改密码
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Rbac.Users.Commands.PortalModifySignPasswordCommand">
+            <summary>
+            首页修改密码
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Rbac.Users.Commands.PrintQrCodeCommand">
+            <summary>
+            打印二维码命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Rbac.Users.Commands.ResetPasswordCommand">
+            <summary>
+            重置密码
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Rbac.Users.Commands.ResetSignPasswordCommand">
+            <summary>
+            重置签名密码
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Rbac.Users.Commands.UnLinkEmployeeCommand">
+            <summary>
+            取消账号关联命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Rbac.Users.Commands.UnlockUserCommand">
+            <summary>
+            解锁用户命令，锁定时长在《用户》-> 《安全性》-> 《密码强度》里设置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.Users.Commands.UnlockUserCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Rbac.Users.DataQueryer.UserDataQueryer">
+            <summary>
+            用户查询
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.Users.DataQueryer.UserDataQueryer.GetUser">
+            <summary>
+            获取用户信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Rbac.Users.DataQueryer.UserDataQueryer.GeWatermarkEnabled">
+            <summary>
+            是否启用水印功能
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Rbac.Users.PasswordIntensityViewConfig">
+            <summary>
+            密码强度视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.Users.PasswordIntensityViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Rbac.Users.UserCriteriaViewConfig">
+            <summary>
+            用户查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Rbac.Users.UserCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            查询视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.RBAC.CrossPlatformMenu.CrossPlatformDataQueryer">
+            <summary>
+            跨平台菜单数据请求
+            </summary>
+        </member>
+        <member name="M:SIE.Web.RBAC.CrossPlatformMenu.CrossPlatformDataQueryer.GetCrossPlatformPermissionByRoleId(System.Double)">
+            <summary>
+            获取角色菜单权限
+            </summary>
+            <param name="roleId">角色Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.RBAC.CrossPlatformMenu.CrossPlatformDataQueryer.GetCrossPlatformTreeRoot(System.Double)">
+            <summary>
+            生成根节点
+            </summary>
+            <param name="rootId">guid</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.RBAC.CrossPlatformMenu.CrossPlatformDataQueryer.GetCrossPlatformTree(SIE.Rbac.CrossPlatformMenu.CrossPlatformMenus,System.Collections.Generic.HashSet{System.String},System.Double)">
+            <summary>
+            生成菜单Json
+            </summary>
+            <param name="menu">菜单</param>
+            <param name="rolePermission">角色权限</param>
+            <param name="rId">菜单根节点</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.RBAC.CrossPlatformMenu.CrossPlatformDataQueryer.GetTreePId(System.Nullable{System.Double},System.Double)">
+            <summary>
+            TreePId转化
+            </summary>
+            <param name="treePId">父Id</param>
+            <param name="rId">根节点</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.RBAC.HomePageWorkbenchs.Configs.HomePageSettingConfigValueViewConfig">
+            <summary>
+            系统首页设置视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.RBAC.HomePageWorkbenchs.Configs.HomePageSettingConfigValueViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.RBAC.HomePageWorkbenchs.RoleWorkbenchViewConfig">
+            <summary>
+            角色工作台视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.RBAC.HomePageWorkbenchs.RoleWorkbenchViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.RBAC.HomePageWorkbenchs.RoleWorkbenchViewConfig.ConfigDetailsView">
+            <summary>
+            表单视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.RBAC.HomePageWorkbenchs.RoleWorkbenchViewConfig.ConfigQueryView">
+            <summary>
+            查询视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.RBAC.Menus.Commands.InitMenuCommand">
+            <summary>
+            初始化菜单命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.RBAC.Menus.Commands.InitMenuCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            命令逻辑
+            </summary>
+            <param name="args"><see cref="P:SIE.Web.Command.ViewArgs.Data"/>反序列化到得到参数</param>
+            <param name="scope"><see cref="P:SIE.MetaModel.View.Block.EntityType"/></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.RBAC.Menus.Commands.MenuExportCommand">
+            <summary>
+            菜单导出命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.RBAC.Menus.Commands.MenuExportCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.RBAC.Menus.Commands.MenuExportCommand.ExportData(System.IO.Stream,SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="stream"></param>
+            <param name="args"></param>
+            <param name="scope"></param>
+        </member>
+        <member name="M:SIE.Web.RBAC.Menus.Commands.MenuExportCommand.SetMenu(NPOI.SS.UserModel.ISheet,System.Int32)">
+            <summary>
+            菜单导出
+            </summary>
+            <param name="sheet"></param>
+            <param name="rowNum"></param>
+        </member>
+        <member name="M:SIE.Web.RBAC.Menus.Commands.MenuExportCommand.MenuRecursion(NPOI.SS.UserModel.ISheet,SIE.Domain.EntityList{SIE.Rbac.Menus.Menu},System.Collections.Generic.List{SIE.Rbac.Menus.Menu},System.String,System.Int32)">
+            <summary>
+            菜单导出递归
+            </summary>
+            <param name="sheet"></param>
+            <param name="all"></param>
+            <param name="menus"></param>
+            <param name="treeLable"></param>
+            <param name="rowNum"></param>
+        </member>
+        <member name="M:SIE.Web.RBAC.Menus.Commands.MenuExportCommand.SetSubMenu(NPOI.SS.UserModel.ISheet,System.String,SIE.Rbac.Menus.Menu,System.Int32)">
+            <summary>
+            导出数据行
+            </summary>
+            <param name="sheet"></param>
+            <param name="treeName"></param>
+            <param name="entity"></param>
+            <param name="rowNum"></param>
+        </member>
+        <member name="T:SIE.Web.RBAC.Menus.Commands.MenuImportCommand">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Web.RBAC.Menus.Commands.MenuImportCommand.ImportData(SIE.Web.Common.Import.Commands.ImportViewArgs)">
+            <summary>
+            导入excel
+            </summary>
+            <param name="importViewArgs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.RBAC.Menus.MenusConfigValueViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.RBAC.Menus.MenusConfigValueViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.RBAC.Menus.MenusConfigValueViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.RBAC.Menus.MenusConfigValueViewConfig.ConfigSelectionView">
+            <summary>
+            配置下拉视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.RBAC.Query.EntityQueryDtlViewConfig">
+            <summary>
+            查询条件详情视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.RBAC.Query.EntityQueryDtlViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.RBAC.Query.EntityQueryDtlViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.RBAC.Query.EntityQueryDtlViewConfig.ConfigDetailsView">
+            <summary>
+             配置明细视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.RBAC.Query.EntityQueryDtlViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.RBAC.Roles.AuditPermissionLogCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            查询视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.RBAC.Roles.Commands.AuditPermissionLogExportCommand">
+            <summary>
+            角色权限导出命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.RBAC.Roles.Commands.AuditPermissionLogExportCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.RBAC.Roles.Commands.AuditPermissionLogExportCommand.ExportData(System.IO.Stream,SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="stream"></param>
+            <param name="args"></param>
+            <param name="scope"></param>
+        </member>
+        <member name="M:SIE.Web.RBAC.Roles.Commands.AuditPermissionLogExportCommand.SetPermissionAllow(NPOI.SS.UserModel.ISheet,System.Int32,SIE.Domain.EntityList{SIE.Rbac.Roles.AuditPermissionLog},System.Collections.Generic.IEnumerable{SIE.Rbac.Roles.AuditPermissionDetailLog})">
+            <summary>
+            用户角色导出
+            </summary>
+            <param name="sheet"></param>
+            <param name="rowNum"></param>
+            <param name="auditPermissionDetailLog"></param>
+        </member>
+        <member name="T:SIE.Web.RBAC.Roles.Commands.CopyRoleWithAuthorCommand">
+            <summary>
+            复制新增角色（包含权限）命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.RBAC.Roles.Commands.CopyRoleWithAuthorCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:SIE.Web.RBAC.Roles.Commands.CopyEntityInfo">
+            <summary>
+            复制新增信息
+            </summary>
+        </member>
+        <member name="P:SIE.Web.RBAC.Roles.Commands.CopyEntityInfo.NewEntity">
+            <summary>
+            新实体
+            </summary>
+        </member>
+        <member name="P:SIE.Web.RBAC.Roles.Commands.CopyEntityInfo.OldEntityId">
+            <summary>
+            旧实体ID
+            </summary>
+        </member>
+        <member name="T:SIE.Web.RBAC.Roles.Commands.RoleSyncCommand">
+            <summary>
+            全部组织跨组织同步命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.RBAC.Roles.Commands.RoleSyncCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.RBAC.Roles.Commands.SelRoleSyncCommand">
+            <summary>
+            选中组织跨组织同步命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.RBAC.Roles.Commands.SelRoleSyncCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.RBAC.Roles.DataQueryer.UserDataQueryer">
+            <summary>
+            用户DataQueryer
+            </summary>
+        </member>
+        <member name="M:SIE.Web.RBAC.Roles.DataQueryer.UserDataQueryer.Logins(System.String)">
+            <summary>
+            锁屏解锁
+            </summary>
+            <param name="pwd"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.RBAC.Security.Commands.DisableChangePwdNextTimeCommand">
+            <summary>
+            禁用下次登录修改密码
+            </summary>
+        </member>
+        <member name="T:SIE.Web.RBAC.Security.Commands.DisableEnforcePwdExpirationCommand">
+            <summary>
+            禁用强制密码过期
+            </summary>
+        </member>
+        <member name="T:SIE.Web.RBAC.Security.Commands.DisableEnforcePwdPolicyCommand">
+            <summary>
+            禁用强制密码格式
+            </summary>
+        </member>
+        <member name="T:SIE.Web.RBAC.Security.Commands.EnableChangePwdNextTimeCommand">
+            <summary>
+            启用下次登录修改密码
+            </summary>
+        </member>
+        <member name="T:SIE.Web.RBAC.Security.Commands.EnableEnforcePwdExpirationCommand">
+            <summary>
+            启用强制密码过期
+            </summary>
+        </member>
+        <member name="T:SIE.Web.RBAC.Security.Commands.EnableEnforcePwdPolicyCommand">
+            <summary>
+            启用强制密码格式
+            </summary>
+        </member>
+        <member name="T:SIE.Web.RBAC.Security.DataQueryers.CommandTypeManager">
+            <summary>
+            命令类型管理
+            </summary>
+        </member>
+        <member name="M:SIE.Web.RBAC.Security.DataQueryers.CommandTypeManager.#ctor">
+            <summary>
+            构造函数，初始化命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.RBAC.Security.DataQueryers.CommandTypeManager.InitCommands">
+            <summary>
+            初始化
+            </summary>
+        </member>
+        <member name="M:SIE.Web.RBAC.Security.DataQueryers.CommandTypeManager.GetCommand(System.String)">
+            <summary>
+            获取命令
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.RBAC.Security.DataQueryers.SignConfigData">
+            <summary>
+            签名配置项信息
+            </summary>
+        </member>
+        <member name="P:SIE.Web.RBAC.Security.DataQueryers.SignConfigData.IsNeedToSign">
+            <summary>
+            是否需要签名
+            </summary>
+        </member>
+        <member name="P:SIE.Web.RBAC.Security.DataQueryers.SignConfigData.IsSignByLogin">
+            <summary>
+            签名按用户密码方式
+            </summary>
+        </member>
+        <member name="T:SIE.Web.RBAC.Security.DataQueryers.UserInfo">
+            <summary>
+            用户信息
+            </summary>
+        </member>
+        <member name="P:SIE.Web.RBAC.Security.DataQueryers.UserInfo.Id">
+            <summary>
+            员工Id
+            </summary>
+        </member>
+        <member name="P:SIE.Web.RBAC.Security.DataQueryers.UserInfo.Name">
+            <summary>
+            显示名称
+            </summary>
+        </member>
+        <member name="T:SIE.Web.RBAC.Security.DataQueryers.UserSecurityDataQueryer">
+            <summary>
+            安全信息DataQueryer
+            </summary>
+        </member>
+        <member name="M:SIE.Web.RBAC.Security.DataQueryers.UserSecurityDataQueryer.UpdateEnforcePwdPolicy(System.Double,System.Boolean)">
+            <summary>
+            更新强制密码格式
+            </summary>
+            <param name="id"></param>
+            <param name="enforcePwdPolicy"></param>
+        </member>
+        <member name="M:SIE.Web.RBAC.Security.DataQueryers.UserSecurityDataQueryer.UpdateEnforcePwdExpiration(System.Double,System.Boolean)">
+            <summary>
+            更新强制密码过期
+            </summary>
+            <param name="id"></param>
+            <param name="enforcePwdPolicy"></param>
+        </member>
+        <member name="M:SIE.Web.RBAC.Security.DataQueryers.UserSecurityDataQueryer.UpdateChangePwdNextTime(System.Double,System.Boolean)">
+            <summary>
+            更新下次登录修改密码
+            </summary>
+            <param name="id"></param>
+            <param name="changePwdNextTime"></param>
+        </member>
+        <member name="M:SIE.Web.RBAC.Security.DataQueryers.UserSecurityDataQueryer.SignCheck(System.String,System.String,SIE.Common.Signature.SignatureData)">
+            <summary>
+            签名验证信息
+            </summary>
+            <param name="userCode">用户名</param>
+            <param name="password">密码</param>
+            <param name="signatureData">签名实体数据</param>
+        </member>
+        <member name="M:SIE.Web.RBAC.Security.DataQueryers.UserSecurityDataQueryer.IsCheckByLogin">
+            <summary>
+            是否按用户账号方式签名
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.RBAC.Security.DataQueryers.UserSecurityDataQueryer.GetSignUserSecurity(System.Double)">
+            <summary>
+            用户签名信息
+            </summary>
+            <param name="userId">用户Id</param>
+            <returns>签名信息</returns>
+        </member>
+        <member name="M:SIE.Web.RBAC.Security.DataQueryers.UserSecurityDataQueryer.CheckIsNeedToSign(SIE.Common.Signature.SignatureData)">
+            <summary>
+            检查是否需要签名
+            </summary>
+            <param name="signatureData">签名信息</param>     
+            <returns>SignConfigData</returns>
+        </member>
+        <member name="M:SIE.Web.RBAC.Security.DataQueryers.UserSecurityDataQueryer.GetEnableUserAgreement">
+            <summary>
+            获取启用的用户协议
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.RBAC.Security.EmailRetrievePwdViewModelViewConfig">
+            <summary>
+            邮件找回密码视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.RBAC.Users.Commands.SaveNewUserCommand">
+            <summary>
+            保存按钮
+            </summary>
+        </member>
+        <member name="M:SIE.Web.RBAC.Users.Commands.SaveNewUserCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行方法
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.RBAC.Users.ViewModels.UserPassWordViewModelViewConfig">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.RBAC.Users.ViewModels.UserPassWordViewModelViewConfig.ConfigView">
+            <summary>
+            视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Rbac.Menus.RbacWebMenuInit">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Rbac.Menus.RbacWebMenuInit.GetMenuDtos">
+            <summary>
+            获取菜单列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Rbac.Users.Configs.UserTmplConfigValueViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.RBAC.Web.ViewConfig.UserViewConfig">
+            <summary>
+            用户视图配置
+            </summary>
+        </member>
+    </members>
+</doc>

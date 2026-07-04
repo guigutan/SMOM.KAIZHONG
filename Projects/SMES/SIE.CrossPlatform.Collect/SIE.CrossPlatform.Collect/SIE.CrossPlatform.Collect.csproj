@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="11.1.3" />
+    <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.1.3" />
+    <PackageReference Include="Avalonia.Controls.TreeDataGrid" Version="11.0.10" />
+    <PackageReference Include="Avalonia.Desktop" Version="11.1.3" />
+    <PackageReference Include="Avalonia.Diagnostics" Version="11.1.3" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.1.0" />
+    <PackageReference Include="Avalonia.Fonts.Inter" Version="11.1.0" />
+    <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
+    <PackageReference Include="DevExpress.Drawing.Skia" Version="24.1.5" />
+    <PackageReference Include="LoadingIndicators.Avalonia" Version="11.0.11.1" />
+    <PackageReference Include="MessageBox.Avalonia" Version="3.1.6" />
+    <PackageReference Include="ReactiveUI" Version="20.1.1" />
+    <PackageReference Include="Stimulsoft.Reports.Avalonia" Version="2024.3.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SIE.CrossPlatform.Collect.Common\SIE.CrossPlatform.Collect.Common.csproj" />
+    <ProjectReference Include="..\SIE.CrossPlatform.Collect.Models\SIE.CrossPlatform.Collect.Models.csproj" />
+    <ProjectReference Include="..\SIE.CrossPlatform.Collect.PDFPrinter\SIE.CrossPlatform.Collect.PDFPrinter.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Assets\" />
+    <Folder Include="SieProperties\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="MoveWindow.axaml.cs">
+      <DependentUpon>MoveWindow.axaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,219 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.WorkBenchChartBase</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.WorkBenchChartBase.Commons.ChartAlertLevel">
+            <summary>
+            图形预警等级
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchChartBase.Commons.ChartAlertLevel.None">
+            <summary>
+            无预警
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchChartBase.Commons.ChartAlertLevel.Green">
+            <summary>
+            绿色预警
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchChartBase.Commons.ChartAlertLevel.Yellow">
+            <summary>
+            黄色预警
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchChartBase.Commons.ChartAlertLevel.Red">
+            <summary>
+            红色预警
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchChartBase.Commons.ChartAlertLevel.NoConfig">
+            <summary>
+            没有配置预警
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchChartBase.Commons.ChartDefinitionAttribute">
+            <summary>
+            图表对应图片标签
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchChartBase.Commons.ChartDefinitionAttribute.#ctor(System.String,System.String)">
+             <summary>
+             有参构造函数
+             </summary>
+            <param name="category">控件分类</param>
+            <param name="title">标题</param>
+        </member>
+        <member name="M:SIE.WorkBenchChartBase.Commons.ChartDefinitionAttribute.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchChartBase.Commons.ChartDefinitionAttribute.Title">
+            <summary>
+            控件标题
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchChartBase.Commons.ChartDefinitionAttribute.Url">
+            <summary>
+            目标参数类型
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchChartBase.Commons.ChartDefinitionAttribute.Category">
+            <summary>
+            目标参数类型
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchChartBase.Commons.ChartDefinitionAttribute.Module">
+            <summary>
+            所属模块
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchChartBase.Commons.ChartDefinitionAttribute.GroupName">
+            <summary>
+            分组页签名称
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchChartBase.Commons.ModuleFlag">
+            <summary>
+            模块标识
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchChartBase.Commons.ModuleFlag.ALL">
+            <summary>
+            all
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchChartBase.Commons.ModuleFlag.APS">
+            <summary>
+            aps
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchChartBase.Commons.ModuleFlag.MES">
+            <summary>
+            mes
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchChartBase.Commons.ModuleFlag.QMS">
+            <summary>
+            qms
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchChartBase.Commons.ModuleFlag.WMS">
+            <summary>
+            wms
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchChartBase.Commons.CategoryFlag">
+            <summary>
+            分类标识
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchChartBase.Commons.CategoryFlag.全部">
+            <summary>
+            全部
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchChartBase.Commons.CategoryFlag.关键指标">
+            <summary>
+            关键指标
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchChartBase.Commons.CategoryFlag.关键管理事项">
+            <summary>
+            关键管理事项
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchChartBase.Commons.ChartCommonViewModel">
+            <summary>
+            图表通用ViewModel
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchChartBase.Commons.ChartCommonViewModel.ChartDataSource">
+            <summary>
+            图表数据源
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchChartBase.Commons.ChartCommonViewModel.BaseValues">
+            <summary>
+            图表数据源
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchChartBase.Commons.IChart">
+            <summary>
+            图形接口
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchChartBase.Commons.IChart.SetTimerInterval(System.Double)">
+            <summary>
+            设置时间间隔
+            </summary>
+            <param name="timeSpan">时间间隔</param>
+        </member>
+        <member name="T:SIE.WorkBenchChartBase.WorkShopChangedEvent">
+            <summary>
+            车间变更事件
+            组件通过监听改事件做数据切换刷新
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchChartBase.WorkShopChangedEvent.#ctor(System.Double)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="workShopId">车间ID</param>
+        </member>
+        <member name="P:SIE.WorkBenchChartBase.WorkShopChangedEvent.WorkShopId">
+            <summary>
+            车间ID
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchChartBase.Module">
+            <summary>
+            当前工程所对应的模块类
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchChartBase.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化
+            </summary>
+            <param name="app">应用程序对象</param>
+        </member>
+        <member name="T:SIE.WorkBenchChartBase.ViewModels.BaseChartViewModel">
+            <summary>
+            报表ViewModel基类
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchChartBase.ViewModels.BaseChartViewModel.Title">
+            <summary>
+            图表标题
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchChartBase.ViewModels.BaseChartViewModel.ChartAlertLevel">
+            <summary>
+            图标预警级别
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchChartBase.ViewModels.BaseChartViewModel.IsCollect">
+            <summary>
+            是否被收藏
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchChartBase.ViewModels.BaseChartViewModel.ChartDataSource">
+            <summary>
+            图表数据源
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchChartBase.ViewModels.TestChartViewModel">
+            <summary>
+            报表ViewModel基类
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchChartBase.ViewModels.TestChartViewModel.ChartDataSource">
+            <summary>
+            图表数据源
+            </summary>
+        </member>
+    </members>
+</doc>

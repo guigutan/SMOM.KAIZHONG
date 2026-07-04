@@ -1,0 +1,27 @@
+﻿using SIE.MES.Outsourcing;
+using SIE.MES.WorkReportPlans;
+using SIE.Web.Command;
+using System.Linq;
+
+namespace SIE.Web.MES.WorkReportPlans.Commands
+{
+    /// <summary>
+    /// 初始化
+    /// </summary>
+    [JsCommand("SIE.Web.MES.WorkReportPlans.Commands.InitializationCommand")]
+    public class InitializationCommand : ViewCommand
+    {
+        /// <summary>
+        /// 初始化
+        /// </summary>
+        /// <param name="args">参数</param>
+        /// <param name="scope">作用域</param>
+        /// <returns>执行结果</returns>
+        protected override object Excute(ViewArgs args, string scope)
+        {
+            RT.Service.Resolve<WorkReportPlanController>().InitializationDefault();
+
+            return true;
+        }
+    }
+}

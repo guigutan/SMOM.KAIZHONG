@@ -1,0 +1,31 @@
+﻿<UserControl 
+    x:Class="SIE.Wpf.Tech.Routings.Technologys.Controls.Rule"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:cv="clr-namespace:SIE.Wpf.Tech.Routings.Technologys.Converters"
+    Panel.ZIndex="{Binding ZIndex}"
+    MouseLeftButtonDown="BezierSegment_MouseLeftButtonDown"
+    xmlns:local="clr-namespace:SIE.Wpf.Tech.Routings.Technologys.Controls">
+    <Canvas Name="m_canvas">
+        <Path Name="path" Visibility="{Binding Type,Converter={cv:CurveToVisibilityConverter}}" MouseLeftButtonDown="BezierSegment_MouseLeftButtonDown" Stroke="{Binding Path=Self, Converter={cv:IRuleToColorConverter}}" StrokeThickness="2">
+            <Path.Data>
+                <PathGeometry>
+                    <PathGeometry.Figures>
+                        <PathFigure x:Name="start" StartPoint="{Binding StartPoint,Converter={cv:PointConverter}}" IsClosed="False">
+                            <BezierSegment Point1="{Binding Point1,Converter={cv:PointConverter}}" Point2="{Binding Point2,Converter={cv:PointConverter}}" Point3="{Binding EndPoint,Converter={cv:PointConverter}}"/>
+                        </PathFigure>
+                    </PathGeometry.Figures>
+                </PathGeometry>
+            </Path.Data>
+        </Path>
+        <Line X1="{Binding BeginLeft}" Y1="{Binding BeginTop}" X2="{Binding EndLeft}" Y2="{Binding EndTop}" Stroke="{Binding Path=Self, Converter={cv:IRuleToColorConverter}}" StrokeThickness="2" Opacity="0.8" Visibility="{Binding Type,Converter={cv:LineToVisibilityConverter}}"/>
+        <local:Arrowhead Canvas.Top="{Binding EndTop}" Canvas.Left="{Binding EndLeft}" Stroke="{Binding Path=Self, Converter={cv:IRuleToColorConverter}}" StrokeThickness="2" Opacity="0.8" BeginPoint="{Binding Point2}" EndPoint="{Binding EndPoint}"/>
+        <TextBlock Text="{Binding Text}" Foreground="Black" Canvas.Top="{Binding TextTop}" Canvas.Left="{Binding TextLeft}"/>
+        <Line X1="{Binding BeginLeft}" Y1="{Binding BeginTop}" X2="{Binding Left1}" Y2="{Binding Top1}" StrokeThickness="1" Stroke="Purple" Opacity="0.5" Visibility="{Binding Self,Converter={cv:IRuleToVisibilityConverter}}"/>
+        <Line X1="{Binding EndLeft}" Y1="{Binding EndTop}" X2="{Binding Left2}" Y2="{Binding Top2}" StrokeThickness="1" Stroke="Purple" Opacity="0.5" Visibility="{Binding Self,Converter={cv:IRuleToVisibilityConverter}}"/>
+        <Ellipse Canvas.Left="{Binding Left1}" Canvas.Top="{Binding Top1}" Stroke="Black" Height="10" Width="10" Visibility="{Binding Self,Converter={cv:IRuleToVisibilityConverter}}" Fill="White" PreviewMouseLeftButtonDown="Ellipse1_PreviewMouseLeftButtonDown" Margin="-5,-5,0,0"/>
+        <Ellipse Canvas.Left="{Binding Left2}" Canvas.Top="{Binding Top2}" Stroke="Black" Height="10" Width="10" Visibility="{Binding Self,Converter={cv:IRuleToVisibilityConverter}}" Fill="White" PreviewMouseLeftButtonDown="Ellipse2_PreviewMouseLeftButtonDown" Margin="-5,-5,0,0"/>
+    </Canvas>
+</UserControl>

@@ -1,0 +1,84 @@
+﻿<UserControl xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"  xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"  x:Class="SIE.Wpf.MES.Workbench.ProductingChecks.ChangeOnDutyControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SIE.Wpf.MES.Workbench.ProductingChecks"
+             xmlns:uic="http://schemas.siestudio.com/winfx/xaml/core"
+             xmlns:ui="http://schemas.siestudio.com/winfx/xaml/controls"
+             xmlns:uit="http://schemas.siestudio.com/winfx/xaml/themes"
+             xmlns:converter="clr-namespace:SIE.Wpf.MES.Workbench.Converters"
+             mc:Ignorable="d" Width="236" Height="152">
+    <UserControl.Resources>
+        <Style x:Key="toolLabelStyle" TargetType="Label">
+            <Setter Property="Background" Value="#F1F1F1"></Setter>
+            <Setter Property="FontSize" Value="12"></Setter>
+            <Setter Property="FontFamily" Value="MicrosoftYaHei"></Setter>
+            <Setter Property="Margin" Value="1"></Setter>
+            <Setter Property="Padding" Value="3,0,0,0"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid Background="{DynamicResource {uit:BrushesThemeKey ResourceKey=Background}}" DataContext="{Binding}" Margin="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Background="#F1F5FF" Margin="-8,-3,-8,0">
+            <Grid.Resources>
+                <Style x:Key="{x:Type dx:SimpleButton}" TargetType="{x:Type dx:SimpleButton}">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type dx:SimpleButton}">
+                                <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
+                                    <Grid x:Name="grid">
+                                        <ContentPresenter  x:Name="contentPresenter" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                    </Grid>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Grid.Resources>
+            <Label Content="{Binding [人员信息],Source={uic:L10N}}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontFamily="MicrosoftYaHei" Style="{x:Null}"></Label>
+            <Grid HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,3,11,0">
+                <dx:SimpleButton Click="BtnOnDuty_Click">
+                    <Grid Background="Transparent">
+                        <ui:PackIcon Kind="Close" Foreground="#B9B9B9" Height="15"></ui:PackIcon>
+                    </Grid>
+                </dx:SimpleButton>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource toolLabelStyle}" Margin="5,2,5,2" Content="{Binding [选择员工],Source={uic:L10N}}"></Label>
+            <dxe:ComboBoxEdit Name="ctlEmployee" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Margin="2" ValueMember="Employee" DisplayMember="Display" SelectedIndexChanged="CtlEmployee_SelectedIndexChanged"/>
+            <Grid Grid.Row="1" Grid.Column="0" Grid.RowSpan="4" Margin="5">
+                <Image Source="{Binding Photo,Converter={converter:ByteToImageConverter}}" Margin="2"></Image>
+            </Grid>
+            <Grid Grid.Row="1" Grid.Column="0" Grid.RowSpan="4" Width="72" Height="84" Visibility="{Binding Photo,Converter={converter:ByteToVisibilityConverter}}">
+                <ui:PackIcon Width="62" Height="66" HorizontalAlignment="Center" VerticalAlignment="Bottom" Kind="MaleStaff" Foreground="#128BEF"></ui:PackIcon>
+            </Grid>
+            <Label Grid.Row="1" Grid.Column="1" Content="{Binding [工号],Source={uic:L10N}}" Style="{StaticResource toolLabelStyle}"></Label>
+            <Label Grid.Row="1" Grid.Column="2" Content="{Binding No}" Foreground="#128BEF" Style="{StaticResource toolLabelStyle}"></Label>
+            <Label Grid.Row="2" Grid.Column="1" Content="{Binding [员工],Source={uic:L10N}}" Style="{StaticResource toolLabelStyle}"></Label>
+            <Label Grid.Row="2" Grid.Column="2" Content="{Binding Name}" Foreground="#128BEF" Style="{StaticResource toolLabelStyle}"></Label>
+            <Label Grid.Row="3" Grid.Column="1" Content="{Binding [员工类型],Source={uic:L10N}}" Style="{StaticResource toolLabelStyle}"></Label>
+            <Label Grid.Row="3" Grid.Column="2" Content="{Binding Type}" Foreground="#128BEF" Style="{StaticResource toolLabelStyle}"></Label>
+            <Label Grid.Row="4" Grid.Column="1" Content="{Binding [资质认证],Source={uic:L10N}}" Style="{StaticResource toolLabelStyle}"></Label>
+            <Label Grid.Row="4" Grid.Column="2" Content="{Binding Aptitudes}" Foreground="#128BEF" Style="{StaticResource toolLabelStyle}"></Label>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <Configurations>Debug;Release;ApiHostPublish;BsPortalPublish;WpfPublish</Configurations>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\platform\smom\net6.0\SIE.WebApiHost.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\platform\smom\net6.0\SIE.WebApiHost.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="..\..\Modules\Nest\Log\SIE.Log4Net\log4net.config" Link="log4net.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="SIE.Common" Version="9.1.2" />
+    <PackageReference Include="SIE.Log" Version="9.1.2" />
+    <PackageReference Include="SIE.ServerCore" Version="9.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.19" />
+    <PackageReference Include="Topshelf" Version="4.2.1" />
+    <PackageReference Include="Topshelf.Log4Net" Version="4.2.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="_安装服务.bat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="_运行.cmd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JSONSchema="" /></VisualStudio></ProjectExtensions>
+</Project>

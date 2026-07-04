@@ -1,0 +1,159 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <CodeAnalysisRuleSet>SIE.Web.Warehouses.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.Warehouses.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.Warehouses.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Configs\InvOrgConfig.cs" />
+    <Compile Remove="StorageLocationExtCriteriaViewConfig.cs" />
+    <Compile Remove="WarehouseErpWhViewConfig.cs" />
+    <Compile Remove="Warehouses\RoleExtViewConfig - 复制.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Commands\AddBaseItemIOLimitCommand.js" />
+    <None Remove="Commands\EmployeeWarehouseCommand.js" />
+    <None Remove="Commands\FrozenCommand.js" />
+    <None Remove="Commands\InEmployeeWarehouseCommand.js" />
+    <None Remove="Commands\LogicAreaAddCommand.js" />
+    <None Remove="Commands\LogicAreaDeleteCommand.js" />
+    <None Remove="Commands\LogicAreaImportCommand.js" />
+    <None Remove="Commands\LogicAreaLocDeleteCommand.js" />
+    <None Remove="Commands\LogicAreaSelLocationCommand.js" />
+    <None Remove="Commands\PrintStorageLocationCommand.js" />
+    <None Remove="Commands\RoutewayAddCommand.js" />
+    <None Remove="Commands\RoutewayDeleteCommand.js" />
+    <None Remove="Commands\RoutewayImportCommand.js" />
+    <None Remove="Commands\StorageAreaAddCommand.js" />
+    <None Remove="Commands\StorageAreaDeleteCommand.js" />
+    <None Remove="Commands\StorageAreaDisableCommand.js" />
+    <None Remove="Commands\StorageAreaEnableCommand.js" />
+    <None Remove="Commands\StorageAreaFrozenCommand.js" />
+    <None Remove="Commands\StorageLocationAddCommand.js" />
+    <None Remove="Commands\StorageLocationCopyCommand.js" />
+    <None Remove="Commands\StorageLocationDeleteCommand.js" />
+    <None Remove="Commands\StorageLocationDisableCommand.js" />
+    <None Remove="Commands\StorageLocationEnableCommand.js" />
+    <None Remove="Commands\StorageLocationFrozenCommand.js" />
+    <None Remove="Commands\StorageLocationImportCommand.js" />
+    <None Remove="Commands\StorageLocationItemDeleteCommand.js" />
+    <None Remove="Commands\StorageLocationItemLookUpCommand.js" />
+    <None Remove="Commands\StorageLocationRouteImportCommand.js" />
+    <None Remove="Commands\StorageLocationSaveCommand.js" />
+    <None Remove="Commands\SynchronizeToEmployeesCommand.js" />
+    <None Remove="Commands\WarehouseAddCommand.js" />
+    <None Remove="Commands\WarehouseAddressCopyCommand.js" />
+    <None Remove="Commands\WarehouseDeleteCommand.js" />
+    <None Remove="Commands\WarehouseDisableCommand.js" />
+    <None Remove="Commands\WarehouseEmployeeLookupCommand.js" />
+    <None Remove="Commands\WarehouseEnableCommand.js" />
+    <None Remove="Commands\WarehouseListCopyCommand.js" />
+    <None Remove="Commands\WorkAreaAddCommand.js" />
+    <None Remove="Commands\WorkAreaDeleteCommand.js" />
+    <None Remove="Commands\WorkAreaEmpLoyeeDeleteCommand.js" />
+    <None Remove="Commands\WorkAreaEmployeeOffDutyCommand.js" />
+    <None Remove="Commands\WorkAreaEmployeeOnDutyCommand.js" />
+    <None Remove="Commands\WorkAreaLocDeleteCommand.js" />
+    <None Remove="Commands\WorkAreaSelEmployeeCommand.js" />
+    <None Remove="Commands\WorkAreaSelLocationCommand.js" />
+    <None Remove="Control\HumidityNumberfield.js" />
+    <None Remove="Control\HumidityTypeComboList.js" />
+    <None Remove="Control\TemperatureNumberfield.js" />
+    <None Remove="Control\TemperatureTypeComboList.js" />
+    <None Remove="Control\WarehouseInvorgEditor.js" />
+    <None Remove="Reasons\Commands\AddReasonCommand.js" />
+    <None Remove="Reasons\Commands\DeleteReasonCommand.js" />
+    <None Remove="Reasons\Commands\InitReasonCommand.js" />
+    <None Remove="Scripts\Enum.js" />
+    <None Remove="Scripts\LocationBehavior.js" />
+    <None Remove="Scripts\StationGroupWarehouseComboList.js" />
+    <None Remove="SIE.Web.Warehouses.csproj.vspscc" />
+    <None Remove="Stations\Commands\SelectStationCommand.js" />
+    <None Remove="Stations\Commands\StationImportCommand.js" />
+    <None Remove="Warehouses\Commands\SaveErpWarehouseCommand.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\..\..\.sonarlint\sie.smom\CSharp\SonarLint.xml" Link="SonarLint.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Commands\AddBaseItemIOLimitCommand.js" />
+    <EmbeddedResource Include="Commands\SynchronizeToEmployeesCommand.js" />
+    <EmbeddedResource Include="Commands\InEmployeeWarehouseCommand.js" />
+    <EmbeddedResource Include="Commands\LogicAreaAddCommand.js" />
+    <EmbeddedResource Include="Commands\RoutewayAddCommand.js" />
+    <EmbeddedResource Include="Commands\LogicAreaImportCommand.js" />
+    <EmbeddedResource Include="Commands\RoutewayImportCommand.js" />
+    <EmbeddedResource Include="Commands\StorageLocationImportCommand.js" />
+    <EmbeddedResource Include="Commands\StorageLocationItemDeleteCommand.js" />
+    <EmbeddedResource Include="Commands\EmployeeWarehouseCommand.js" />
+    <EmbeddedResource Include="Commands\LogicAreaDeleteCommand.js" />
+    <EmbeddedResource Include="Commands\StorageLocationRouteImportCommand.js" />
+    <EmbeddedResource Include="Commands\WorkAreaEmployeeOffDutyCommand.js" />
+    <EmbeddedResource Include="Commands\WorkAreaEmployeeOnDutyCommand.js" />
+    <EmbeddedResource Include="Commands\WorkAreaEmployeeDeleteCommand.js" />
+    <EmbeddedResource Include="Commands\LogicAreaLocDeleteCommand.js" />
+    <EmbeddedResource Include="Commands\WorkAreaLocDeleteCommand.js" />
+    <EmbeddedResource Include="Commands\FrozenCommand.js" />
+    <EmbeddedResource Include="Commands\PrintStorageLocationCommand.js" />
+    <EmbeddedResource Include="Commands\WorkAreaSelEmployeeCommand.js" />
+    <EmbeddedResource Include="Commands\LogicAreaSelLocationCommand.js" />
+    <EmbeddedResource Include="Commands\WorkAreaSelLocationCommand.js" />
+    <EmbeddedResource Include="Commands\StorageAreaAddCommand.js" />
+    <EmbeddedResource Include="Commands\StorageAreaDeleteCommand.js" />
+    <EmbeddedResource Include="Commands\StorageAreaDisableCommand.js" />
+    <EmbeddedResource Include="Commands\StorageAreaEnableCommand.js" />
+    <EmbeddedResource Include="Commands\StorageAreaFrozenCommand.js" />
+    <EmbeddedResource Include="Commands\StorageLocationAddCommand.js" />
+    <EmbeddedResource Include="Commands\StorageLocationCopyCommand.js" />
+    <EmbeddedResource Include="Commands\StorageLocationDeleteCommand.js" />
+    <EmbeddedResource Include="Commands\StorageLocationDisableCommand.js" />
+    <EmbeddedResource Include="Commands\StorageLocationEnableCommand.js" />
+    <EmbeddedResource Include="Commands\StorageLocationFrozenCommand.js" />
+    <EmbeddedResource Include="Commands\StorageLocationItemLookUpCommand.js" />
+    <EmbeddedResource Include="Commands\WorkAreaDeleteCommand.js" />
+    <EmbeddedResource Include="Commands\WorkAreaAddCommand.js" />
+    <EmbeddedResource Include="Commands\WarehouseAddCommand.js" />
+    <EmbeddedResource Include="Commands\WarehouseAddressCopyCommand.js" />
+    <EmbeddedResource Include="Commands\WarehouseDeleteCommand.js" />
+    <EmbeddedResource Include="Commands\WarehouseDisableCommand.js" />
+    <EmbeddedResource Include="Commands\WarehouseEmployeeLookupCommand.js" />
+    <EmbeddedResource Include="Commands\WarehouseEnableCommand.js" />
+    <EmbeddedResource Include="Commands\WarehouseListCopyCommand.js" />
+    <EmbeddedResource Include="Control\HumidityNumberfield.js" />
+    <EmbeddedResource Include="Control\HumidityTypeComboList.js" />
+    <EmbeddedResource Include="Control\TemperatureNumberfield.js" />
+    <EmbeddedResource Include="Control\TemperatureTypeComboList.js" />
+    <EmbeddedResource Include="Control\WarehouseInvorgEditor.js" />
+    <EmbeddedResource Include="Reasons\Commands\AddReasonCommand.js" />
+    <EmbeddedResource Include="Reasons\Commands\DeleteReasonCommand.js" />
+    <EmbeddedResource Include="Reasons\Commands\InitReasonCommand.js" />
+    <EmbeddedResource Include="Scripts\Enum.js" />
+    <EmbeddedResource Include="Scripts\LocationBehavior.js" />
+    <EmbeddedResource Include="Scripts\StationGroupWarehouseComboList.js" />
+    <EmbeddedResource Include="Stations\Commands\SelectStationCommand.js" />
+    <EmbeddedResource Include="Stations\Commands\StationImportCommand.js" />
+    <EmbeddedResource Include="Warehouses\Commands\SaveErpWarehouseCommand.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CSM\SIE.Web.CSM\SIE.Web.CSM.csproj" />
+    <ProjectReference Include="..\..\Items\SIE.Web.Items\SIE.Web.Items.csproj" />
+    <ProjectReference Include="..\SIE.Warehouses\SIE.Warehouses.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Reasons\Configs\" />
+  </ItemGroup>
+</Project>

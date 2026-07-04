@@ -1,0 +1,53 @@
+@*定义变量*@
+@{  
+var message="现在时间为:";  
+var time=DateTime.Now;  
+var outMessage=message+time;
+
+var val=1;  
+}
+@* 输出值*@
+@outMessage
+
+@* 在@{...}代码体中输出文字，需要用到@: *@
+@{  
+     var name="张三";  
+     @:你好：  
+     @:@name          
+ } 
+
+@* 判断，也可以写在代码块中@{}中 *@
+@if(time.Hour >12)
+{
+   Good Evening
+}
+else
+{
+   Good Morning		
+}
+
+
+@*循环*@
+@{
+ 
+ for(int k=1;k<5;k++)  
+ {  
+    @:第 @k 个;  
+  }  
+     
+}
+
+@*代码调用*@
+@{
+@*代码调用以[Model.]开头,不含中括号[]*@
+@*普通单值代码*@
+ @:Value值:@Model.Value;
+
+@*集合值代码，比如参数为TestList*@
+@*
+foreach(var key in Model.TestList)
+{
+   @:值：@key;
+}
+*@
+}

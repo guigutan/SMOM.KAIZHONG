@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup Label="Globals">
+		<SccProjectName>SAK</SccProjectName>
+		<SccProvider>SAK</SccProvider>
+		<SccAuxPath>SAK</SccAuxPath>
+		<SccLocalPath>SAK</SccLocalPath>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<OutputPath>..\..\..\..\platform\smom\</OutputPath>
+		<DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Traces.xml</DocumentationFile>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<OutputPath>..\..\..\..\platform\smom\</OutputPath>
+		<DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Traces.xml</DocumentationFile>
+	</PropertyGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\..\Core\SIE.Core\SIE.Core.csproj" />
+	  <ProjectReference Include="..\..\CSM\SIE.CSM\SIE.CSM.csproj" />
+	  <ProjectReference Include="..\..\Items\SIE.Items\SIE.Items.csproj" />
+	  <ProjectReference Include="..\..\Messages\SIE.EventMessages\SIE.EventMessages.csproj" />
+	</ItemGroup>
+
+</Project>

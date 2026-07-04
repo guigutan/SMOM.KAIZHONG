@@ -1,0 +1,600 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4277CAE0-F2AF-4EFD-9F69-B74ED9D07C44}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SIE.XPCJ.Common</RootNamespace>
+    <AssemblyName>SIE.XPCJ.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v17.2, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Print\dll\DevExpress.Data.v17.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v17.2.Core, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Print\dll\DevExpress.Printing.v17.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v17.2, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Print\dll\DevExpress.XtraPrinting.v17.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v17.2, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Print\dll\DevExpress.XtraReports.v17.2.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.17.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.17\lib\net40\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApiCall\ApiContext.cs" />
+    <Compile Include="ApiCall\ApiHelper.cs" />
+    <Compile Include="ApiCall\ApiParameter.cs" />
+    <Compile Include="ApiCall\ApiResult.cs" />
+    <Compile Include="ApiCall\InvOrg.cs" />
+    <Compile Include="ApiCall\LoginInfo.cs" />
+    <Compile Include="Controls\BaseUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\BaseUserControl.Designer.cs">
+      <DependentUpon>BaseUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LanguageHelper.cs" />
+    <Compile Include="Controls\DefectButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DefectButton.Designer.cs">
+      <DependentUpon>DefectButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\HighlightButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ResponsibilityCategoryButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ResponsibilityCategoryButton.Designer.cs">
+      <DependentUpon>ResponsibilityCategoryButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DefectCategoryButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DefectCategoryButton.Designer.cs">
+      <DependentUpon>DefectCategoryButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ResponsibilitySelectedButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ResponsibilitySelectedButton.Designer.cs">
+      <DependentUpon>ResponsibilitySelectedButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DefectSelectedButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DefectSelectedButton.Designer.cs">
+      <DependentUpon>DefectSelectedButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LoadItemPanelCtr.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\LoadItemPanelCtr.Designer.cs">
+      <DependentUpon>LoadItemPanelCtr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LoadItemPanelListCtr.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\LoadItemPanelListCtr.Designer.cs">
+      <DependentUpon>LoadItemPanelListCtr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UnloadItemsCtr.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UnloadItemsCtr.Designer.cs">
+      <DependentUpon>UnloadItemsCtr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UnloadItemsListCtr.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UnloadItemsListCtr.Designer.cs">
+      <DependentUpon>UnloadItemsListCtr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\XPCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\XPCard.Designer.cs">
+      <DependentUpon>XPCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\XPCardListPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\XPComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\XPWorkOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\XPWorkOrder.Designer.cs">
+      <DependentUpon>XPWorkOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\XPOneKeyUnLoadItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\XPOneKeyUnLoadItemForm.Designer.cs">
+      <DependentUpon>XPOneKeyUnLoadItemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\XPSelectLoadItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\XPSelectLoadItemForm.Designer.cs">
+      <DependentUpon>XPSelectLoadItemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\XPFormBaseNoBorder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\XPFormBaseNoBorder.Designer.cs">
+      <DependentUpon>XPFormBaseNoBorder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\XPTaskListCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\XPTaskListCard.Designer.cs">
+      <DependentUpon>XPTaskListCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\XPTasksList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\XPTasksList.Designer.cs">
+      <DependentUpon>XPTasksList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\XPSerialPort.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\XPSerialPort.Designer.cs">
+      <DependentUpon>XPSerialPort.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\XPFormSelectDefect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\XPFormSelectDefect.Designer.cs">
+      <DependentUpon>XPFormSelectDefect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\XPFormSwitchWorkOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\XPFormSwitchWorkOrder.Designer.cs">
+      <DependentUpon>XPFormSwitchWorkOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\XPFormWorkOrderDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\XPFormWorkOrderDetail.Designer.cs">
+      <DependentUpon>XPFormWorkOrderDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Services\CultureService.cs" />
+    <Compile Include="Settings\LanguageSettings.cs" />
+    <Compile Include="Services\WipService.cs" />
+    <Compile Include="Forms\XPFormBaseBuss.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\XPFormBaseBuss.Designer.cs">
+      <DependentUpon>XPFormBaseBuss.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TreeGrid\ControlHelper.cs" />
+    <Compile Include="Controls\TreeGrid\DataGridViewCellEntity.cs" />
+    <Compile Include="Controls\TreeGrid\DataGridViewCellEventArgs.cs" />
+    <Compile Include="Controls\TreeGrid\DataGridViewCellEventHandler.cs" />
+    <Compile Include="Controls\TreeGrid\DataGridViewColumnEntity.cs" />
+    <Compile Include="Controls\TreeGrid\DataGridViewRowCustomEventArgs.cs" />
+    <Compile Include="Controls\TreeGrid\IDataGridViewCustomCell.cs" />
+    <Compile Include="Controls\TreeGrid\IDataGridViewRow.cs" />
+    <Compile Include="Controls\TreeGrid\UCDataGridView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TreeGrid\UCDataGridView.designer.cs">
+      <DependentUpon>UCDataGridView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TreeGrid\UCDataGridViewRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TreeGrid\UCDataGridViewRow.designer.cs">
+      <DependentUpon>UCDataGridViewRow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TreeGrid\UCDataGridViewTreeRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TreeGrid\UCDataGridViewTreeRow.designer.cs">
+      <DependentUpon>UCDataGridViewTreeRow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TreeGrid\UCSplitLine_H.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TreeGrid\UCSplitLine_H.designer.cs">
+      <DependentUpon>UCSplitLine_H.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TreeGrid\UCSplitLine_V.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TreeGrid\UCSplitLine_V.designer.cs">
+      <DependentUpon>UCSplitLine_V.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\XPCollectionRecordsGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\XPCollectionRecordsGrid.Designer.cs">
+      <DependentUpon>XPCollectionRecordsGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\XPMessageList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\XPMessageList.Designer.cs">
+      <DependentUpon>XPMessageList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\XPDataGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\XPTabControlHeader.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\XPTabControlHeader.Designer.cs">
+      <DependentUpon>XPTabControlHeader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\XPWatermarkTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\XPScanBarcode.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\XPScanBarcode.Designer.cs">
+      <DependentUpon>XPScanBarcode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\XPFormNumberInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\XPFormNumberInput.Designer.cs">
+      <DependentUpon>XPFormNumberInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\XPFormChangeWorkCell.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\XPFormChangeWorkCell.Designer.cs">
+      <DependentUpon>XPFormChangeWorkCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\XPFormWokerCellDetai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\XPFormWokerCellDetai.Designer.cs">
+      <DependentUpon>XPFormWokerCellDetai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\XPSwitch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\XPSwitch.Designer.cs">
+      <DependentUpon>XPSwitch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\XPBottomBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\XPBottomBar.Designer.cs">
+      <DependentUpon>XPBottomBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\XPDialogTitle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\XPDialogTitle.Designer.cs">
+      <DependentUpon>XPDialogTitle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\XPFormChangeInvOrg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\XPFormChangeInvOrg.Designer.cs">
+      <DependentUpon>XPFormChangeInvOrg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\XPFormBaseDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\XPFormBaseDialog.Designer.cs">
+      <DependentUpon>XPFormBaseDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\XPFormBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\XPFormBase.Designer.cs">
+      <DependentUpon>XPFormBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\XPListBoxCtr.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\XPFormLoading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\XPFormLoading.Designer.cs">
+      <DependentUpon>XPFormLoading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\XPButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\XPTitle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\XPTitle.Designer.cs">
+      <DependentUpon>XPTitle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\XPWatermarkTextBox.Designer.cs">
+      <DependentUpon>XPWatermarkTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\XPWorkOrderSimple.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\XPWorkOrderSimple.Designer.cs">
+      <DependentUpon>XPWorkOrderSimple.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Exceptions\LackItemException.cs" />
+    <Compile Include="Exceptions\UnBindingSnException.cs" />
+    <Compile Include="Exceptions\ValidationException.cs" />
+    <Compile Include="Extensions\MemberInfoExtension.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Extensions\SystemExtension.cs" />
+    <Compile Include="Log\ILoging.cs" />
+    <Compile Include="Log\LogBaseMessage.cs" />
+    <Compile Include="Log\LogFactory.cs" />
+    <Compile Include="Log\Loging.cs" />
+    <Compile Include="Log\LogingHelper.cs" />
+    <Compile Include="Print\DataSetConvertHelper.cs" />
+    <Compile Include="Print\XpPrinter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Settings\AppMenu.cs" />
+    <Compile Include="Settings\AppSettings.cs" />
+    <Compile Include="Settings\Global.cs" />
+    <Compile Include="Settings\MenuPermission.cs" />
+    <Compile Include="Snowflake\SnowflakeExtension.cs" />
+    <Compile Include="Snowflake\SnowflakeHelper.cs" />
+    <Compile Include="Controls\XPTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\XPTextBox.Designer.cs">
+      <DependentUpon>XPTextBox.cs</DependentUpon>
+    </Compile>
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SIE.XPCJ.Models\SIE.XPCJ.Models.csproj">
+      <Project>{8b360e6f-5bbc-4a2e-ab1a-0cc5e36db773}</Project>
+      <Name>SIE.XPCJ.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\清空.png" />
+    <None Include="Resources\退格.png" />
+    <None Include="Controls\images\SMOM logo 1.png" />
+    <None Include="Controls\images\退出 .png" />
+    <None Include="Controls\images\loading.gif" />
+    <None Include="Controls\images\Frame 855.png" />
+    <None Include="Controls\images\Frame 856.png" />
+    <None Include="Controls\images\Frame 857.png" />
+    <None Include="Controls\images\Frame 862.png" />
+    <None Include="Controls\images\Frame 8621.png" />
+    <None Include="Controls\images\Frame 863.png" />
+    <None Include="Controls\images\Frame 865.png" />
+    <None Include="Controls\images\Frame 869.png" />
+    <None Include="Controls\images\Frame 870.png" />
+    <None Include="Controls\images\Frame 871.png" />
+    <None Include="Controls\images\Frame 875.png" />
+    <None Include="Controls\images\Frame 876.png" />
+    <None Include="Controls\images\Frame 877.png" />
+    <None Include="Controls\images\Frame 878.png" />
+    <Content Include="Controls\images\caret-down.png" />
+    <Content Include="Controls\images\caret-right.png" />
+    <Content Include="Controls\images\Frame1.png" />
+    <Content Include="Controls\images\Frame2.png" />
+    <Content Include="Controls\images\Frame3.png" />
+    <Content Include="Controls\images\FrameFalse.png" />
+    <None Include="Controls\images\产线.png" />
+    <None Include="Controls\images\工位.png" />
+    <None Include="Controls\images\工序.png" />
+    <None Include="Controls\images\切换.png" />
+    <None Include="Controls\images\扫描.png" />
+    <None Include="Controls\images\下拉.png" />
+    <None Include="Controls\images\下拉-1.png" />
+    <None Include="Controls\images\成功.png" />
+    <Content Include="Controls\images\组织.png" />
+    <None Include="Controls\images\警示.png" />
+    <Content Include="Print\dll\DevExpress.Data.v17.2.dll" />
+    <Content Include="Print\dll\DevExpress.Printing.v17.2.Core.dll" />
+    <Content Include="Print\dll\DevExpress.XtraPrinting.v17.2.dll" />
+    <Content Include="Print\dll\DevExpress.XtraReports.v17.2.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\DefectButton.resx">
+      <DependentUpon>DefectButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ResponsibilityCategoryButton.resx">
+      <DependentUpon>ResponsibilityCategoryButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DefectCategoryButton.resx">
+      <DependentUpon>DefectCategoryButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ResponsibilitySelectedButton.resx">
+      <DependentUpon>ResponsibilitySelectedButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DefectSelectedButton.resx">
+      <DependentUpon>DefectSelectedButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\LoadItemPanelCtr.resx">
+      <DependentUpon>LoadItemPanelCtr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\LoadItemPanelListCtr.resx">
+      <DependentUpon>LoadItemPanelListCtr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UnloadItemsCtr.resx">
+      <DependentUpon>UnloadItemsCtr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UnloadItemsListCtr.resx">
+      <DependentUpon>UnloadItemsListCtr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\XPWorkOrder.resx">
+      <DependentUpon>XPWorkOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\XPOneKeyUnLoadItemForm.resx">
+      <DependentUpon>XPOneKeyUnLoadItemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\XPSelectLoadItemForm.resx">
+      <DependentUpon>XPSelectLoadItemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\XPFormBaseNoBorder.resx">
+      <DependentUpon>XPFormBaseNoBorder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\XPTaskListCard.resx">
+      <DependentUpon>XPTaskListCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\XPTasksList.resx">
+      <DependentUpon>XPTasksList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\XPSerialPort.resx">
+      <DependentUpon>XPSerialPort.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\XPFormSelectDefect.resx">
+      <DependentUpon>XPFormSelectDefect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\XPFormBaseBuss.resx">
+      <DependentUpon>XPFormBaseBuss.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TreeGrid\UCDataGridView.resx">
+      <DependentUpon>UCDataGridView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TreeGrid\UCDataGridViewRow.resx">
+      <DependentUpon>UCDataGridViewRow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TreeGrid\UCDataGridViewTreeRow.resx">
+      <DependentUpon>UCDataGridViewTreeRow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TreeGrid\UCSplitLine_H.resx">
+      <DependentUpon>UCSplitLine_H.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TreeGrid\UCSplitLine_V.resx">
+      <DependentUpon>UCSplitLine_V.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\XPCollectionRecordsGrid.resx">
+      <DependentUpon>XPCollectionRecordsGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\XPMessageList.resx">
+      <DependentUpon>XPMessageList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\XPTabControlHeader.resx">
+      <DependentUpon>XPTabControlHeader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\XPScanBarcode.resx">
+      <DependentUpon>XPScanBarcode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\XPFormNumberInput.resx">
+      <DependentUpon>XPFormNumberInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\XPFormChangeWorkCell.resx">
+      <DependentUpon>XPFormChangeWorkCell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\XPFormWokerCellDetai.resx">
+      <DependentUpon>XPFormWokerCellDetai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\XPSwitch.resx">
+      <DependentUpon>XPSwitch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\XPBottomBar.resx">
+      <DependentUpon>XPBottomBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\XPDialogTitle.resx">
+      <DependentUpon>XPDialogTitle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\XPFormChangeInvOrg.resx">
+      <DependentUpon>XPFormChangeInvOrg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\XPFormBaseDialog.resx">
+      <DependentUpon>XPFormBaseDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\XPFormBase.resx">
+      <DependentUpon>XPFormBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\XPFormLoading.resx">
+      <DependentUpon>XPFormLoading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\XPTitle.resx">
+      <DependentUpon>XPTitle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\XPWatermarkTextBox.resx">
+      <DependentUpon>XPWatermarkTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\XPWorkOrderSimple.resx">
+      <DependentUpon>XPWorkOrderSimple.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\XPFormSwitchWorkOrder.resx">
+      <DependentUpon>XPFormSwitchWorkOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\XPFormWorkOrderDetail.resx">
+      <DependentUpon>XPFormWorkOrderDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\XPTextBox.resx">
+      <DependentUpon>XPTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

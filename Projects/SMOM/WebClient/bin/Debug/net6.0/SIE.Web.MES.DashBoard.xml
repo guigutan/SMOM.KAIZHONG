@@ -1,0 +1,1830 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Web.MES.DashBoard</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Web.MES.DashBoard.EntityPropertyViewMetaExtension">
+            <summary>
+            班组管理编辑器类
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.EntityPropertyViewMetaExtension.UseMultiFilterEnumEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.MES.DashBoard.Common.MultiFilterEnumBoxConfig})">
+            <summary>
+            使用多分类过滤枚举编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>Web视图元数据</returns>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.EntityPropertyViewMetaExtension.UseResourceWorkShopEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig})">
+            <summary>
+            资源车间下拉编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.EntityPropertyViewMetaExtension.UseWorkGroupEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig})">
+            <summary>
+            班组下拉编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.EntityPropertyViewMetaExtension.UseProductModelEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig})">
+            <summary>
+            产品机型下拉编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Common.MultiFilterEnumBoxConfig">
+            <summary>
+            多分类过滤枚举配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.MES.DashBoard.Common.MultiFilterEnumBoxConfig.EditorName">
+            <summary>
+            编辑器名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Common.MultiFilterEnumBoxConfig.Filters">
+            <summary>
+            分类过滤条件
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Common.MultiFilterEnumBoxConfig.InitStore">
+            <summary>
+            初始化数据源
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.DashBoards.WorkShop.WorkSafetyViewConfig">
+            <summary>
+            安全生产日期
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.DashBoards.WorkShop.WorkSafetyViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.KzBoard.RegionBoards.Commands.SelectResourceCommand">
+            <summary>
+            选择
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.KzBoard.RegionBoards.Commands.SelectResourceCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            添加用户
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.DashBoardMenuInit">
+            <summary>
+            菜单初始化
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.DashBoardMenuInit.GetMenuDtos">
+            <summary>
+            获取菜单列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Module">
+            <summary>
+            模块配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化模块
+            </summary>
+            <param name="app">应用程序</param>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Module.App_ModuleOperations(System.Object,System.EventArgs)">
+            <summary>
+            模块定义
+            </summary>
+            <param name="sender">应用程序</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Module.App_MetaCompiled(System.Object,System.EventArgs)">
+            <summary>
+            添加属性编辑器
+            </summary>
+            <param name="app">应用程序</param>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.ProductionProcesss.Commands.ProductionProcessDLTemplateCommand">
+            <summary>
+            下载模板
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.ProductionProcesss.Commands.ProductionProcessDLTemplateCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.ProductionProcesss.Commands.ProductionProcessImportCommand">
+            <summary>
+            导入
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.ProductionProcesss.Commands.ProductionProcessImportCommand.OnSave(System.Collections.Generic.IList{SIE.Common.Import.RowData})">
+            <summary>
+            保存
+            </summary>
+            <param name="batch"></param>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.FpySettings.Commands.AddSettingCommand">
+            <summary>
+            产品直通率设置命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.FpySettings.Commands.AddSettingCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            命令执行
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>返回实体</returns>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.FpySettings.LineFpySettingViewConfig">
+            <summary>
+            产线直通率设置视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.FpySettings.LineFpySettingViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.FpySettings.LineFpySettingViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.FpySettings.LineFpySettingViewConfig.ConfigDetailsView">
+            <summary>
+             配置明细视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.FpySettings.LineFpySettingViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.FpySettings.ProductFpySettingViewConfig">
+            <summary>
+            产品直通率设置视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.FpySettings.ProductFpySettingViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.FpySettings.ProductFpySettingViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.FpySettings.ProductFpySettingViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.FpySettings.ProductFpySettingViewConfig.ConfigSelectionView">
+            <summary>
+            配置下拉视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.FpySettings.ProductModelFpySettingCriteriaViewConfig">
+            <summary>
+            产品机型直通率查询实体视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.MES.DashBoard.Reports.FpySettings.ProductModelFpySettingCriteriaViewConfig.ClearProductProperty">
+            <summary>
+            清除产品
+            </summary> 
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.FpySettings.ProductModelFpySettingCriteriaViewConfig.GetClearProduct(SIE.MES.DashBoard.Reports.FpySettings.ProductModelFpySettingCriteria)">
+            <summary>
+            清除产品
+            </summary>
+            <param name="me">查询实体</param>
+            <returns>是否空</returns>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.FpySettings.ProductModelFpySettingCriteriaViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.FpySettings.ProductModelFpySettingViewConfig">
+            <summary>
+            产品机型直通率设置视图配置
+            </summary> 
+        </member>
+        <member name="F:SIE.Web.MES.DashBoard.Reports.FpySettings.ProductModelFpySettingViewConfig.ModelReadOnlyProperty">
+            <summary>
+            机型只读
+            </summary> 
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.FpySettings.ProductModelFpySettingViewConfig.GetModelReadOnly(SIE.MES.DashBoard.Reports.FpySettings.ProductModelFpySetting)">
+            <summary>
+            机型只读
+            </summary>
+            <param name="me">实体</param>
+            <returns>是否空</returns>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.FpySettings.ProductModelFpySettingViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.FpySettings.ProductModelFpySettingViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.FpySettings.ProductModelFpySettingViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.FpySettings.ProductModelFpySettingViewConfig.ConfigSelectionView">
+            <summary>
+            配置下拉视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.FpySettings.ShopFpySettingCriteriaViewConfig">
+            <summary>
+            车间直通率设置查询实体视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.MES.DashBoard.Reports.FpySettings.ShopFpySettingCriteriaViewConfig.ClearLineProperty">
+            <summary>
+            产线清空
+            </summary> 
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.FpySettings.ShopFpySettingCriteriaViewConfig.GetClearLine(SIE.MES.DashBoard.Reports.FpySettings.ShopFpySettingCriteria)">
+            <summary>
+            产线清空
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.FpySettings.ShopFpySettingCriteriaViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.FpySettings.ShopFpySettingViewConfig">
+            <summary>
+            车间直通率设置视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.MES.DashBoard.Reports.FpySettings.ShopFpySettingViewConfig.ShopReadOnlyProperty">
+            <summary>
+            车间只读
+            </summary> 
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.FpySettings.ShopFpySettingViewConfig.GetShopReadOnly(SIE.MES.DashBoard.Reports.FpySettings.ShopFpySetting)">
+            <summary>
+            车间只读
+            </summary>
+        </member>
+        <member name="F:SIE.Web.MES.DashBoard.Reports.FpySettings.ShopFpySettingViewConfig.UpdateNameProperty">
+            <summary>
+            更新人
+            </summary> 
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.FpySettings.ShopFpySettingViewConfig.GetUpdateName(SIE.MES.DashBoard.Reports.FpySettings.ShopFpySetting)">
+            <summary>
+            更新人
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.FpySettings.ShopFpySettingViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.FpySettings.ShopFpySettingViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.FpySettings.ShopFpySettingViewConfig.ConfigDetailsView">
+            <summary>
+             配置明细视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.FpySettings.ShopFpySettingViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.LineFPY.DataQuery.LineReportDataQueryer">
+            <summary>
+            产线直通率控制器
+            </summary>
+        </member>
+        <member name="F:SIE.Web.MES.DashBoard.Reports.LineFPY.DataQuery.LineReportDataQueryer._brushes">
+            <summary>
+            自定义颜色数组
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.LineFPY.DataQuery.LineReportDataQueryer.GetProductionLineRateInfos(SIE.MES.DashBoard.Reports.LineFPY.LineReportViewModelCriteria)">
+            <summary>
+            获取产线直通率及其相关数据列表
+            </summary>
+            <param name="criteria">查询对象</param>
+            <returns>产线直通率列表</returns>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.LineFPY.DataQuery.LineReportDataQueryer.GetProcessRelatedInfo(System.String,System.Boolean,SIE.Web.MES.DashBoard.Reports.LineFPY.ProductionLineRateInfo)">
+            <summary>
+            获取工序相关列表数据
+            </summary>
+            <param name="date">日期</param>
+            <param name="isHasShift">是否包含班次</param>
+            <param name="prodLineRateInfo">产线直通率信息</param>
+            <returns>工序相关信息</returns>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.LineFPY.DataQuery.LineReportDataQueryer.GetDefectCategoryInfos(SIE.Domain.EntityList{SIE.MES.Statistics.Fpy.DefectStatistics})">
+            <summary>
+            获取缺陷分类及其相关信息列表
+            </summary>
+            <param name="defectStatistics">缺陷统计列表</param>
+            <returns>缺陷分类及其相关信息列表</returns>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.LineFPY.DataQuery.LineReportDataQueryer.GetDefectInfos(SIE.Domain.EntityList{SIE.MES.Statistics.Fpy.DefectStatistics})">
+            <summary>
+            获取缺陷信息列表
+            </summary>
+            <param name="defectStatistics">缺陷统计列表</param>
+            <returns>缺陷信息列表</returns>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.LineFPY.DataQuery.LineReportDataQueryer.ProcessDateTime(System.String,SIE.Web.MES.DashBoard.Reports.LineFPY.ProductionLineRateInfo)">
+            <summary>
+            获取查询日期范围
+            </summary>
+            <param name="date">日期</param>
+            <param name="prodLineRateInfo">产线直通率信息</param>
+            <returns>查询日期范围</returns>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.LineFPY.ProductionLineRateInfo">
+            <summary>
+            产线直通率信息
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.LineFPY.ProductionLineRateInfo.LineName">
+            <summary>
+            资源名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.LineFPY.ProductionLineRateInfo.Shift">
+            <summary>
+            班次
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.LineFPY.ProductionLineRateInfo.Date">
+            <summary>
+            采集日期
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.LineFPY.ProductionLineRateInfo.DirectRate">
+            <summary>
+            直通率
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.LineFPY.ProductionLineRateInfo.LineChartInfoList">
+            <summary>
+            折线图信息列表
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.LineFPY.ProductionLineRateInfo.LineChartSettingInfo">
+            <summary>
+            折线图目标\警告设置信息列表
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.LineFPY.LineChartInfo">
+            <summary>
+            折线图信息
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.LineFPY.LineChartInfo.XDate">
+            <summary>
+            采集日期
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.LineFPY.LineChartInfo.YData">
+            <summary>
+            直通率
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.LineFPY.LineChartInfo.YDesired">
+            <summary>
+            目标值
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.LineFPY.LineChartInfo.YAlarm">
+            <summary>
+            预警值
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.LineFPY.LineChartSettingInfo">
+            <summary>
+            折线图目标\警告设置信息
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.LineFPY.LineChartSettingInfo.LineName">
+            <summary>
+            资源名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.LineFPY.LineChartSettingInfo.Desired">
+            <summary>
+            直通率期望值
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.LineFPY.LineChartSettingInfo.Alarm">
+            <summary>
+            直通率预警值
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.LineFPY.ProcessDirectRateInfo">
+            <summary>
+            工序直通率信息
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.LineFPY.ProcessDirectRateInfo.ProcessName">
+            <summary>
+            工序名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.LineFPY.ProcessDirectRateInfo.PasssRate">
+            <summary>
+            良品通过率
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.LineFPY.DefectCategoryInfo">
+            <summary>
+            缺陷分类信息
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.LineFPY.DefectCategoryInfo.CategoryNo">
+            <summary>
+            分类编号
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.LineFPY.DefectCategoryInfo.CategoryName">
+            <summary>
+            分类名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.LineFPY.DefectCategoryInfo.ColorName">
+            <summary>
+            分类颜色
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.LineFPY.DefectCategoryInfo.ColumnWidth">
+            <summary>
+            分类宽度
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.LineFPY.DefectCategoryInfo.DefectCodeList">
+            <summary>
+            缺陷编码信息列表
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.LineFPY.DefectCodeInfo">
+            <summary>
+            缺陷编码信息
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.LineFPY.DefectCodeInfo.DefectName">
+            <summary>
+            缺陷编码名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.LineFPY.DefectCodeInfo.RowHeight">
+            <summary>
+            缺陷编码占据高度
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.LineFPY.DefectCodeInfo.LineHeight">
+            <summary>
+            文本高度
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.LineFPY.DefectCodeInfo.IsLast">
+            <summary>
+            是否是缺陷分类中最后一个缺陷编码
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.LineFPY.DefectInfo">
+            <summary>
+            缺陷信息
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.LineFPY.DefectInfo.DefectName">
+            <summary>
+            缺陷编码名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.LineFPY.DefectInfo.Qty">
+            <summary>
+            缺陷数量
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.LineFPY.DefectInfo.CumQty">
+            <summary>
+            缺陷累计数
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.LineFPY.DefectInfo.CumPercent">
+            <summary>
+            缺陷累计比例
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.LineFPY.ProcessStatisticsInfo">
+            <summary>
+            工序良品\不良品统计信息
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.LineFPY.ProcessStatisticsInfo.ProcessName">
+            <summary>
+            工序名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.LineFPY.ProcessStatisticsInfo.PassQty">
+            <summary>
+            良品数量
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.LineFPY.ProcessStatisticsInfo.FailedQty">
+            <summary>
+            不良品数量
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.LineFPY.ProcessRelatedInfo">
+            <summary>
+            工序相关信息
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.LineFPY.ProcessRelatedInfo.ProcessDirectRateInfoList">
+            <summary>
+            工序直通率信息列表
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.LineFPY.ProcessRelatedInfo.DefectInfoList">
+            <summary>
+            缺陷信息列表
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.LineFPY.ProcessRelatedInfo.ProcessStatisticsInfoList">
+            <summary>
+            工序良品\不良品统计信息列表
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.LineFPY.LineReportCriteriaViewConfig">
+            <summary>
+            产线报表查询实体视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.LineFPY.LineReportCriteriaViewConfig.ConfigView">
+            <summary>
+            默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.LineFPY.LineReportTemplate.DefineBlocks">
+            <summary>
+            定义块
+            </summary>
+            <returns>聚合块</returns>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.LineFPY.LineReportViewConfig">
+            <summary>
+            产线报表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.LineFPY.LineReportViewConfig.ConfigView">
+            <summary>
+            默认视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.LineFPY.ReportPageViewModel">
+            <summary>
+            报表自定义页面
+            为了解决克制化界面js加载问题
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.LineFPY.ReportPageViewModelViewConfig">
+            <summary>
+            报表自定义页面视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.ProductFPY.DataQuery.ProductReportDataQueryer">
+            <summary>
+            产线直通率控制器
+            </summary>
+        </member>
+        <member name="F:SIE.Web.MES.DashBoard.Reports.ProductFPY.DataQuery.ProductReportDataQueryer._brushes">
+            <summary>
+            自定义颜色数组
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.ProductFPY.DataQuery.ProductReportDataQueryer.GetProductionProductRateInfos(SIE.MES.DashBoard.Reports.ProductFPY.ProductReportViewModelCriteria)">
+            <summary>
+            获取产线直通率及其相关数据列表
+            </summary>
+            <param name="criteria">查询对象</param>
+            <returns>产线直通率列表</returns>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.ProductFPY.DataQuery.ProductReportDataQueryer.GetProcessRelatedInfo(System.String,System.Boolean,SIE.Web.MES.DashBoard.Reports.ProductFPY.ProductionProductRateInfo)">
+            <summary>
+            获取工序相关列表数据
+            </summary>
+            <param name="date">日期</param>
+            <param name="isHasShift">是否包含班次</param>
+            <param name="prodProductRateInfo">产线直通率信息</param>
+            <returns>工序相关信息</returns>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.ProductFPY.DataQuery.ProductReportDataQueryer.GetDefectCategoryInfos(SIE.Domain.EntityList{SIE.MES.Statistics.Fpy.DefectStatistics})">
+            <summary>
+            获取缺陷分类及其相关信息列表
+            </summary>
+            <param name="defectStatistics">缺陷统计列表</param>
+            <returns>缺陷分类及其相关信息列表</returns>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.ProductFPY.DataQuery.ProductReportDataQueryer.GetDefectInfos(SIE.Domain.EntityList{SIE.MES.Statistics.Fpy.DefectStatistics})">
+            <summary>
+            获取缺陷信息列表
+            </summary>
+            <param name="defectStatistics">缺陷统计列表</param>
+            <returns>缺陷信息列表</returns>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.ProductFPY.DataQuery.ProductReportDataQueryer.ProcessDateTime(System.String,SIE.Web.MES.DashBoard.Reports.ProductFPY.ProductionProductRateInfo)">
+            <summary>
+            获取查询日期范围
+            </summary>
+            <param name="date">日期</param>
+            <param name="prodProductRateInfo">产线直通率信息</param>
+            <returns>查询日期范围</returns>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.ProductFPY.ProductionProductRateInfo">
+            <summary>
+            产线直通率信息
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ProductFPY.ProductionProductRateInfo.ProductModelName">
+            <summary>
+            机型
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ProductFPY.ProductionProductRateInfo.ProductName">
+            <summary>
+            产品名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ProductFPY.ProductionProductRateInfo.Date">
+            <summary>
+            采集日期
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ProductFPY.ProductionProductRateInfo.DirectRate">
+            <summary>
+            直通率
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ProductFPY.ProductionProductRateInfo.ProductChartInfoList">
+            <summary>
+            折线图信息列表
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ProductFPY.ProductionProductRateInfo.ProductChartSettingInfo">
+            <summary>
+            折线图目标\警告设置信息列表
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.ProductFPY.ProductChartInfo">
+            <summary>
+            折线图信息
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ProductFPY.ProductChartInfo.XDate">
+            <summary>
+            采集日期
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ProductFPY.ProductChartInfo.YData">
+            <summary>
+            直通率
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ProductFPY.ProductChartInfo.YDesired">
+            <summary>
+            目标值
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ProductFPY.ProductChartInfo.YAlarm">
+            <summary>
+            预警值
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.ProductFPY.ProductChartSettingInfo">
+            <summary>
+            折线图目标\警告设置信息
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ProductFPY.ProductChartSettingInfo.ProductName">
+            <summary>
+            资源名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ProductFPY.ProductChartSettingInfo.Desired">
+            <summary>
+            直通率期望值
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ProductFPY.ProductChartSettingInfo.Alarm">
+            <summary>
+            直通率预警值
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.ProductFPY.ProcessDirectRateInfo">
+            <summary>
+            工序直通率信息
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ProductFPY.ProcessDirectRateInfo.ProcessName">
+            <summary>
+            工序名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ProductFPY.ProcessDirectRateInfo.PasssRate">
+            <summary>
+            良品通过率
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.ProductFPY.DefectCategoryInfo">
+            <summary>
+            缺陷分类信息
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ProductFPY.DefectCategoryInfo.CategoryNo">
+            <summary>
+            分类编号
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ProductFPY.DefectCategoryInfo.CategoryName">
+            <summary>
+            分类名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ProductFPY.DefectCategoryInfo.ColorName">
+            <summary>
+            分类颜色
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ProductFPY.DefectCategoryInfo.ColumnWidth">
+            <summary>
+            分类宽度
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ProductFPY.DefectCategoryInfo.DefectCodeList">
+            <summary>
+            缺陷编码信息列表
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.ProductFPY.DefectCodeInfo">
+            <summary>
+            缺陷编码信息
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ProductFPY.DefectCodeInfo.DefectName">
+            <summary>
+            缺陷编码名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ProductFPY.DefectCodeInfo.RowHeight">
+            <summary>
+            缺陷编码占据高度
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ProductFPY.DefectCodeInfo.LineHeight">
+            <summary>
+            文本高度
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ProductFPY.DefectCodeInfo.IsLast">
+            <summary>
+            是否是缺陷分类中最后一个缺陷编码
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.ProductFPY.ProcessStatisticsInfo">
+            <summary>
+            工序良品\不良品统计信息
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ProductFPY.ProcessStatisticsInfo.ProcessName">
+            <summary>
+            工序名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ProductFPY.ProcessStatisticsInfo.PassQty">
+            <summary>
+            良品数量
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ProductFPY.ProcessStatisticsInfo.FailedQty">
+            <summary>
+            不良品数量
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.ProductFPY.DefectInfo">
+            <summary>
+            缺陷信息
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ProductFPY.DefectInfo.DefectName">
+            <summary>
+            缺陷编码名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ProductFPY.DefectInfo.Qty">
+            <summary>
+            缺陷数量
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ProductFPY.DefectInfo.CumQty">
+            <summary>
+            缺陷累计数
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ProductFPY.DefectInfo.CumPercent">
+            <summary>
+            缺陷累计比例
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.ProductFPY.ProcessRelatedInfo">
+            <summary>
+            工序相关信息
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ProductFPY.ProcessRelatedInfo.ProcessDirectRateInfoList">
+            <summary>
+            工序直通率信息列表
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ProductFPY.ProcessRelatedInfo.DefectInfoList">
+            <summary>
+            缺陷信息列表
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ProductFPY.ProcessRelatedInfo.ProcessStatisticsInfoList">
+            <summary>
+            工序良品\不良品统计信息列表
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.ProductFPY.ProdReportCriteriaViewConfig">
+            <summary>
+            产品报表查询实体视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.ProductFPY.ProdReportCriteriaViewConfig.ConfigView">
+            <summary>
+            默认视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.ProductFPY.ReportDataModel">
+            <summary>
+            下钻报表统一返回数据模型
+            </summary>
+        </member>
+        <member name="F:SIE.Web.MES.DashBoard.Reports.ProductFPY.ReportDataModel.ProcessNameProperty">
+            <summary>
+            工序名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ProductFPY.ReportDataModel.ProcessName">
+            <summary>
+            工序名称
+            </summary>
+        </member>
+        <member name="F:SIE.Web.MES.DashBoard.Reports.ProductFPY.ReportDataModel.PassQtyProperty">
+            <summary>
+            良品值
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ProductFPY.ReportDataModel.PassQty">
+            <summary>
+            良品值
+            </summary>
+        </member>
+        <member name="F:SIE.Web.MES.DashBoard.Reports.ProductFPY.ReportDataModel.FailedQtyProperty">
+            <summary>
+            不良品值
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ProductFPY.ReportDataModel.FailedQty">
+            <summary>
+            不良品值
+            </summary>
+        </member>
+        <member name="F:SIE.Web.MES.DashBoard.Reports.ProductFPY.ReportDataModel.MatchValueProperty">
+            <summary>
+            良品通过率
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ProductFPY.ReportDataModel.MatchValue">
+            <summary>
+            良品通过率
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.ProductFPY.ProdReportTemplate">
+            <summary>
+            产品直通率报表模板
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.ProductFPY.ProdReportTemplate.DefineBlocks">
+            <summary>
+            定义块
+            </summary>
+            <returns>聚合块</returns>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.ProductFPY.ProdReportViewConfig">
+            <summary>
+            产品报表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.ProductFPY.ProdReportViewConfig.ConfigView">
+            <summary>
+            默认视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.ProductFPY.ProductDirectRateInfo">
+            <summary>
+            直通率数据模型
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ProductFPY.ProductDirectRateInfo.ProductName">
+            <summary>
+            产品名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ProductFPY.ProductDirectRateInfo.IsProductModel">
+            <summary>
+            是否机型
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ProductFPY.ProductDirectRateInfo.ProductModelName">
+            <summary>
+            机型
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ProductFPY.ProductDirectRateInfo.Date">
+            <summary>
+            采集日期
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ProductFPY.ProductDirectRateInfo.DirectRate">
+            <summary>
+            直通率
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.ProductFPY.ProductFpySettingInfo">
+            <summary>
+            产品直通率设置视图实体
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ProductFPY.ProductFpySettingInfo.IsProductModel">
+            <summary>
+            是否机型
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.ProductFPY.ProductFypInfo">
+            <summary>
+            车间直通率数据通信模型
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ProductFPY.ProductFypInfo.DirectRateVMList">
+            <summary>
+            直通率数据列表
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ProductFPY.ProductFypInfo.ProductFpySettingList">
+            <summary>
+            产品直通率设置列表
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.ProductFPY.ProductFpyDetailInfo">
+            <summary>
+            车间直通率下钻图通信数据
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ProductFPY.ProductFpyDetailInfo.BarBasicViewModel">
+            <summary>
+            柱状图视图实体
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ProductFPY.ProductFpyDetailInfo.ColumnStackedViewModel">
+            <summary>
+            柱状图视图实体
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ProductFPY.ProductFpyDetailInfo.DefectCategory">
+            <summary>
+            缺陷代码视图实体
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.ProductReportDataQueryer">
+            <summary>
+            客制查询数据处理
+            </summary>
+        </member>
+        <member name="F:SIE.Web.MES.DashBoard.Reports.ProductReportDataQueryer._brushes">
+            <summary>
+            自定义颜色数组
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.ProductReportDataQueryer.GetProductReportData(SIE.MES.DashBoard.Reports.ProductFPY.ProductReportViewModelCriteria)">
+            <summary>
+            获取评分记录数据
+            </summary>
+            <param name="criter">查询实体</param>
+            <returns>评分记录信息</returns>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.ProductReportDataQueryer.GetProductNames(SIE.Domain.EntityList{SIE.MES.DashBoard.Reports.ProductFPY.ProductDirectRateViewModel},System.Collections.Generic.List{SIE.Web.Json.EntityJson},System.Int32,System.String[0:,0:],System.String[0:,0:],System.String[0:,0:],System.Collections.Generic.List{System.DateTime})">
+            <summary>
+            取产品名称信息
+            </summary>
+            <param name="stores"></param>
+            <param name="res"></param>
+            <param name="rowCount"></param>
+            <param name="productChartarr"></param>
+            <param name="productAChartarr"></param>
+            <param name="productDChartarr"></param>
+            <param name="dateList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.ProductReportDataQueryer.GetNameList(SIE.Domain.EntityList{SIE.MES.DashBoard.Reports.ProductFPY.ProductDirectRateViewModel},System.Collections.Generic.List{SIE.Web.Json.EntityJson},System.String@,System.String@,System.Int32,System.String[0:,0:],System.String[0:,0:],System.String[0:,0:],System.Collections.Generic.List{System.DateTime})">
+            <summary>
+            获取员工分数等信息
+            </summary>
+            <param name="stores"></param>
+            <param name="res"></param>
+            <param name="nameList"></param>
+            <param name="idList"></param>
+            <param name="rowCount"></param>
+            <param name="chartarr"></param>
+            <param name="settingAChartarr"></param>
+            <param name="settingDChartarr"></param>
+            <param name="dateList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.ProductReportDataQueryer.ExportProductReportRecords(SIE.MES.DashBoard.Reports.ProductFPY.ProductReportViewModelCriteria)">
+            <summary>
+            导出数据
+            </summary>
+            <param name="criter">查询</param>
+            <returns>table数据</returns>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.ProductReportDataQueryer.DateDataHandle(SIE.MES.DashBoard.TeamManagement.DateType,SIE.Domain.EntityList{SIE.MES.DashBoard.Reports.ProductFPY.ProductDirectRateViewModel},System.Collections.ArrayList)">
+            <summary>
+            时间范围数据处理
+            </summary>
+            <param name="dT">日期</param>
+            <param name="workOrderReachList">数据列表</param>
+            <param name="monthArrayList">返回数据</param>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.ProductReportDataQueryer.InitColumnList(SIE.Domain.EntityList{SIE.MES.DashBoard.Reports.ProductFPY.ProductDirectRateViewModel},SIE.MES.DashBoard.TeamManagement.DateType,System.Collections.Generic.List{System.DateTime},SIE.MES.DashBoard.Reports.ProductFPY.ProductReportViewModelCriteria)">
+            <summary>
+            定义chart表头的内容
+            </summary>
+            <param name="stores">数据列表</param>
+            <param name="dtpye">时间类型</param>
+            <param name="dateList">日期列表</param>
+            <param name="criter">查询条件实体</param>
+            <returns>返回时间格式</returns>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.ProductReportDataQueryer.GetProductRates(SIE.MES.DashBoard.Reports.ProductFPY.ProductReportViewModelCriteria)">
+            <summary>
+            获取产品直通率
+            </summary>
+            <param name="criteria">查询实体</param>
+            <returns>产品直通率实体</returns>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.ProductReportDataQueryer.GetProductReport(System.String,System.String,System.Collections.Generic.List{SIE.Web.MES.DashBoard.Reports.ProductFPY.ProductDirectRateInfo},System.Boolean)">
+            <summary>
+            获取产品直通率报表
+            </summary>
+            <param name="productModelName">机型</param>
+            <param name="productName">产品</param>
+            <param name="directRateVMs">直通率列表</param>
+            <param name="isProduct">是否机型</param>
+            <returns>产品直通率报表</returns>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.ProductReportDataQueryer.GetProductDetailViewModel(System.String,SIE.Web.MES.DashBoard.Reports.ProductFPY.ProductDirectRateInfo)">
+            <summary>
+            获取工序图表数据
+            </summary>
+            <param name="date">日期</param>
+            <param name="directRateVM">直通率数据列表</param>
+            <returns>工序图表数据</returns>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.ProductReportDataQueryer.CreateSettingModel(System.String,System.Boolean)">
+            <summary>
+            创建设置产品实体
+            </summary>
+            <param name="name">产品</param>
+            <param name="isProduct">是否产品</param>
+            <returns>产品实体</returns>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.ProductReportDataQueryer.CreateRateModel(System.String,System.String,System.Decimal,System.DateTime,System.Boolean)">
+            <summary>
+            创建直通率模型
+            </summary>
+            <param name="productModelName">机型</param>
+            <param name="productName">产品</param>
+            <param name="rate">直通率</param>
+            <param name="dt">日期</param>
+            <param name="isProduct">是否产品</param>
+            <returns>直通率模型</returns>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.ProductReportDataQueryer.GetDefectCategoryInfos(SIE.Domain.EntityList{SIE.MES.Statistics.Fpy.DefectStatistics})">
+            <summary>
+            获取缺陷分类及其相关信息列表
+            </summary>
+            <param name="defectStatistics">缺陷统计列表</param>
+            <returns>缺陷分类及其相关信息列表</returns>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.ProductReportDataQueryer.ProcessDateTime(System.String,System.DateTime)">
+            <summary>
+            获取查询日期范围
+            </summary>
+            <param name="date">日期</param>
+            <param name="dt">来源日期</param>
+            <returns>查询日期范围</returns>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.ShopFPY.DataQuery.ShopReportDataQueryer">
+            <summary>
+            产线直通率控制器
+            </summary>
+        </member>
+        <member name="F:SIE.Web.MES.DashBoard.Reports.ShopFPY.DataQuery.ShopReportDataQueryer._brushes">
+            <summary>
+            自定义颜色数组
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.ShopFPY.DataQuery.ShopReportDataQueryer.GetShopRateInfos(SIE.MES.DashBoard.Reports.ShopFPY.ShopReportViewModelCriteria)">
+            <summary>
+            获取产线直通率及其相关数据列表
+            </summary>
+            <param name="criteria">查询对象</param>
+            <returns>产线直通率列表</returns>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.ShopFPY.DataQuery.ShopReportDataQueryer.GetProcessRelatedInfo(System.String,System.Boolean,SIE.Web.MES.DashBoard.Reports.ShopFPY.ShopRateInfo)">
+            <summary>
+            获取工序相关列表数据
+            </summary>
+            <param name="date">日期</param>
+            <param name="isHasShift">是否包含班次</param>
+            <param name="prodProductRateInfo">产线直通率信息</param>
+            <returns>工序相关信息</returns>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.ShopFPY.DataQuery.ShopReportDataQueryer.GetDefectInfos(SIE.Domain.EntityList{SIE.MES.Statistics.Fpy.DefectStatistics})">
+            <summary>
+            获取缺陷信息列表
+            </summary>
+            <param name="defectStatistics">缺陷统计列表</param>
+            <returns>缺陷信息列表</returns>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.ShopFPY.DataQuery.ShopReportDataQueryer.GetDefectCategoryInfos(SIE.Domain.EntityList{SIE.MES.Statistics.Fpy.DefectStatistics})">
+            <summary>
+            获取缺陷分类及其相关信息列表
+            </summary>
+            <param name="defectStatistics">缺陷统计列表</param>
+            <returns>缺陷分类及其相关信息列表</returns>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.ShopFPY.DataQuery.ShopReportDataQueryer.ProcessDateTime(System.String,SIE.Web.MES.DashBoard.Reports.ShopFPY.ShopRateInfo)">
+            <summary>
+            获取查询日期范围
+            </summary>
+            <param name="date">日期</param>
+            <param name="prodProductRateInfo">产线直通率信息</param>
+            <returns>查询日期范围</returns>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.ShopFPY.ShopRateInfo">
+            <summary>
+            产线直通率信息
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.ShopRateInfo.ShopName">
+            <summary>
+            车间名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.ShopRateInfo.ResourceName">
+            <summary>
+            资源名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.ShopRateInfo.Date">
+            <summary>
+            采集日期
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.ShopRateInfo.DirectRate">
+            <summary>
+            直通率
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.ShopRateInfo.ShopChartInfoList">
+            <summary>
+            折线图信息列表
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.ShopRateInfo.ShopChartSettingInfo">
+            <summary>
+            折线图目标\警告设置信息列表
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.ShopFPY.ShopChartInfo">
+            <summary>
+            折线图信息
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.ShopChartInfo.XDate">
+            <summary>
+            采集日期
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.ShopChartInfo.YData">
+            <summary>
+            直通率
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.ShopChartInfo.YDesired">
+            <summary>
+            目标值
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.ShopChartInfo.YAlarm">
+            <summary>
+            预警值
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.ShopFPY.ShopChartSettingInfo">
+            <summary>
+            折线图目标\警告设置信息
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.ShopChartSettingInfo.ResourceName">
+            <summary>
+            资源名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.ShopChartSettingInfo.Desired">
+            <summary>
+            直通率期望值
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.ShopChartSettingInfo.Alarm">
+            <summary>
+            直通率预警值
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.ShopFPY.ProcessDirectRateInfo">
+            <summary>
+            工序直通率信息
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.ProcessDirectRateInfo.ProcessName">
+            <summary>
+            工序名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.ProcessDirectRateInfo.PasssRate">
+            <summary>
+            良品通过率
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.ShopFPY.DefectCategoryInfo">
+            <summary>
+            缺陷分类信息
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.DefectCategoryInfo.CategoryNo">
+            <summary>
+            分类编号
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.DefectCategoryInfo.CategoryName">
+            <summary>
+            分类名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.DefectCategoryInfo.ColorName">
+            <summary>
+            分类颜色
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.DefectCategoryInfo.ColumnWidth">
+            <summary>
+            分类宽度
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.DefectCategoryInfo.DefectCodeList">
+            <summary>
+            缺陷编码信息列表
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.ShopFPY.DefectCodeInfo">
+            <summary>
+            缺陷编码信息
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.DefectCodeInfo.DefectName">
+            <summary>
+            缺陷编码名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.DefectCodeInfo.RowHeight">
+            <summary>
+            缺陷编码占据高度
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.DefectCodeInfo.LineHeight">
+            <summary>
+            文本高度
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.DefectCodeInfo.IsLast">
+            <summary>
+            是否是缺陷分类中最后一个缺陷编码
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.ShopFPY.ProcessStatisticsInfo">
+            <summary>
+            工序良品\不良品统计信息
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.ProcessStatisticsInfo.ProcessName">
+            <summary>
+            工序名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.ProcessStatisticsInfo.PassQty">
+            <summary>
+            良品数量
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.ProcessStatisticsInfo.FailedQty">
+            <summary>
+            不良品数量
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.ShopFPY.ProcessRelatedInfo">
+            <summary>
+            工序相关信息
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.ProcessRelatedInfo.ProcessDirectRateInfoList">
+            <summary>
+            工序直通率信息列表
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.ProcessRelatedInfo.DefectInfoList">
+            <summary>
+            缺陷信息列表
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.ProcessRelatedInfo.ProcessStatisticsInfoList">
+            <summary>
+            工序良品\不良品统计信息列表
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.ShopFPY.DefectInfo">
+            <summary>
+            缺陷信息
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.DefectInfo.DefectName">
+            <summary>
+            缺陷编码名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.DefectInfo.Qty">
+            <summary>
+            缺陷数量
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.DefectInfo.CumQty">
+            <summary>
+            缺陷累计数
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.DefectInfo.CumPercent">
+            <summary>
+            缺陷累计比例
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.ShopFPY.ShopDirectRateInfo">
+            <summary>
+            直通率数据模型
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.ShopDirectRateInfo.ShopName">
+            <summary>
+            车间名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.ShopDirectRateInfo.IsShop">
+            <summary>
+            是否车间
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.ShopDirectRateInfo.LineName">
+            <summary>
+            资源名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.ShopDirectRateInfo.Date">
+            <summary>
+            采集日期
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.ShopDirectRateInfo.DirectRate">
+            <summary>
+            直通率
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.ShopFPY.ReportRateInfo">
+            <summary>
+             折线图信息模型
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.ReportRateInfo.XDate">
+            <summary>
+            采集日期
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.ReportRateInfo.YData">
+            <summary>
+            直通率
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.ReportRateInfo.YDesired">
+            <summary>
+            目标值
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.ReportRateInfo.YAlarm">
+            <summary>
+            预警值
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.ShopFpySettingInfo.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.ShopFpySettingInfo.Desired">
+            <summary>
+            直通率期望值
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.ShopFpySettingInfo.Alarm">
+            <summary>
+            直通率预警值
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.ShopFpySettingInfo.IsShop">
+            <summary>
+            是否车间
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.BarBasicInfo.ProcessName">
+            <summary>
+            工序名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.BarBasicInfo.PasssRate">
+            <summary>
+            良品通过率
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.ColumnStackedInfo.ProcessName">
+            <summary>
+            工序名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.ColumnStackedInfo.PassQty">
+            <summary>
+            良品值
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.Reports.ShopFPY.ColumnStackedInfo.FailedQty">
+            <summary>
+            不良品值
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.ShopFPY.ShopFypInfo">
+            <summary>
+            车间直通率数据通信模型
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.ShopFPY.ShopFypDetailInfo">
+            <summary>
+            车间直通率下钻图通信数据
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.ShopFPY.ShopReportTemplate.DefineBlocks">
+            <summary>
+            定义块
+            </summary>
+            <returns>聚合块</returns>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.Reports.ShopReportDataQueryer">
+            <summary>
+            客制查询数据处理
+            </summary>
+        </member>
+        <member name="F:SIE.Web.MES.DashBoard.Reports.ShopReportDataQueryer._brushes">
+            <summary>
+            自定义颜色数组
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.ShopReportDataQueryer.GetShopReportData(SIE.MES.DashBoard.Reports.ShopFPY.ShopReportViewModelCriteria)">
+            <summary>
+            获取评分记录数据
+            </summary>
+            <param name="criter">查询实体</param>
+            <returns>评分记录信息</returns>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.ShopReportDataQueryer.GetShopNames(SIE.Domain.EntityList{SIE.MES.DashBoard.Reports.ShopFPY.ShopDirectRateViewModel},System.Int32,System.String[0:,0:],System.String[0:,0:],System.String[0:,0:],System.Collections.Generic.List{System.DateTime},System.Collections.Generic.List{SIE.Web.Json.EntityJson})">
+            <summary>
+            取车间信息
+            </summary>
+            <param name="stores"></param>
+            <param name="rowCount"></param>
+            <param name="shopChartarr"></param>
+            <param name="shopAChartarr"></param>
+            <param name="shopDChartarr"></param>
+            <param name="dateList"></param>
+            <param name="res"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.ShopReportDataQueryer.GetResData(SIE.Domain.EntityList{SIE.MES.DashBoard.Reports.ShopFPY.ShopDirectRateViewModel},System.String@,System.String@,System.Int32,System.String[0:,0:],System.String[0:,0:],System.String[0:,0:],System.Collections.Generic.List{System.DateTime},System.Collections.ArrayList)">
+            <summary>
+            取员工分数信息
+            </summary>
+            <param name="stores"></param>
+            <param name="nameList"></param>
+            <param name="idList"></param>
+            <param name="rowCount"></param>
+            <param name="chartarr"></param>
+            <param name="settingAChartarr"></param>
+            <param name="settingDChartarr"></param>
+            <param name="dateList"></param>
+            <param name="rowNameList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.ShopReportDataQueryer.ExportShopReportRecords(SIE.MES.DashBoard.Reports.ShopFPY.ShopReportViewModelCriteria)">
+            <summary>
+            导出数据
+            </summary>
+            <param name="criter">查询</param>
+            <returns>table数据</returns>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.ShopReportDataQueryer.DateDataHandle(SIE.MES.DashBoard.TeamManagement.DateType,SIE.Domain.EntityList{SIE.MES.DashBoard.Reports.ShopFPY.ShopDirectRateViewModel},System.Collections.ArrayList)">
+            <summary>
+            时间范围数据处理
+            </summary>
+            <param name="dT">查询类型</param>
+            <param name="WorkOrderReachList"></param>
+            <param name="monthArrayList">包含每个时间轴的数组</param>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.ShopReportDataQueryer.InitColumnList(SIE.Domain.EntityList{SIE.MES.DashBoard.Reports.ShopFPY.ShopDirectRateViewModel},SIE.MES.DashBoard.TeamManagement.DateType,System.Collections.Generic.List{System.DateTime},SIE.MES.DashBoard.Reports.ShopFPY.ShopReportViewModelCriteria)">
+            <summary>
+            定义chart表头的内容
+            </summary>
+            <returns>表头内容</returns>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.ShopReportDataQueryer.GetShopRates(SIE.MES.DashBoard.Reports.ShopFPY.ShopReportViewModelCriteria)">
+            <summary>
+            获取车间报表
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.ShopReportDataQueryer.GetShopReport(System.String,System.String,System.Collections.Generic.List{SIE.Web.MES.DashBoard.Reports.ShopFPY.ShopDirectRateInfo},System.Boolean)">
+            <summary>
+            取车间报表
+            </summary>
+            <param name="lineName"></param>
+            <param name="shopName"></param>
+            <param name="directRateVMs"></param>
+            <param name="isShop"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.ShopReportDataQueryer.GetShopDetailViewModel(System.String,SIE.Web.MES.DashBoard.Reports.ShopFPY.ShopDirectRateInfo)">
+            <summary>
+            获取车间明细ViewModel
+            </summary>
+            <param name="date"></param>
+            <param name="directRateVM"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.ShopReportDataQueryer.GetDefectCategoryInfos(SIE.Domain.EntityList{SIE.MES.Statistics.Fpy.DefectStatistics})">
+            <summary>
+            获取缺陷分类及其相关信息列表
+            </summary>
+            <param name="defectStatistics">缺陷统计列表</param>
+            <returns>缺陷分类及其相关信息列表</returns>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.Reports.ShopReportDataQueryer.ProcessDateTime(System.String,System.DateTime)">
+            <summary>
+            获取查询日期范围
+            </summary>
+            <param name="date">日期</param>
+            <param name="dt">来源日期</param>
+            <returns>查询日期范围</returns>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.WorkOrderReachs.ShopReportCriteriaViewConfig">
+            <summary>
+            产品报表查询实体视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.WorkOrderReachs.ShopReportCriteriaViewConfig.ConfigView">
+            <summary>
+            默认视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.WorkOrderReachs.WoReachDataQueryer">
+            <summary>
+            客制查询数据处理
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.WorkOrderReachs.WoReachDataQueryer.GetWoReachData(SIE.MES.DashBoard.WorkOrderReachs.WorkOrderReachCriteria)">
+            <summary>
+            获取评分记录数据
+            </summary>
+            <param name="criter">查询实体</param>
+            <returns>评分记录信息</returns>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.WorkOrderReachs.WoReachDataQueryer.ExportReachRecords(SIE.MES.DashBoard.WorkOrderReachs.WorkOrderReachCriteria)">
+            <summary>
+            导出数据
+            </summary>
+            <param name="criter">查询</param>
+            <returns>table数据</returns>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.WorkOrderReachs.WoReachDataQueryer.GetWoReachDetail(System.String,SIE.MES.DashBoard.WorkOrderReachs.WorkOrderReachCriteria,SIE.PagingInfo)">
+            <summary>
+            get detaill
+            </summary>
+            <param name="colValue"></param>
+            <param name="criter"></param>
+            <param name="pageinfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.WorkOrderReachs.WoReachDataQueryer.DateDataHandle(SIE.MES.DashBoard.TeamManagement.DateType,SIE.Domain.EntityList{SIE.MES.DashBoard.WorkOrderReachs.WorkOrderReachViewModel},System.Collections.ArrayList)">
+            <summary>
+            时间范围数据处理
+            </summary>
+            <param name="dT">查询类型</param>
+            <param name="WorkOrderReachList"></param>
+            <param name="monthArrayList">包含每个时间轴的数组</param>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.WorkOrderReachs.WoReachDetailViewConfig">
+            <summary>
+            达成率明细
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.WorkOrderReachs.WoReachDetailViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="F:SIE.Web.MES.DashBoard.WorkOrderReachs.ReachDataViewModel.ReachDataProperty">
+            <summary>
+            达成率数据
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.WorkOrderReachs.ReachDataViewModel.ReachData">
+            <summary>
+            达成率数据
+            </summary>
+        </member>
+        <member name="F:SIE.Web.MES.DashBoard.WorkOrderReachs.ReachDataViewModel.IsRateProperty">
+            <summary>
+            是否为率
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.WorkOrderReachs.ReachDataViewModel.IsRate">
+            <summary>
+            是否为率
+            </summary>
+        </member>
+        <member name="F:SIE.Web.MES.DashBoard.WorkOrderReachs.ReachDataViewModel.DateProperty">
+            <summary>
+            采集日期
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.WorkOrderReachs.ReachDataViewModel.Date">
+            <summary>
+            采集日期
+            </summary>
+        </member>
+        <member name="F:SIE.Web.MES.DashBoard.WorkOrderReachs.ReachDataViewModel.WoInfoProperty">
+            <summary>
+            工单属性
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.DashBoard.WorkOrderReachs.ReachDataViewModel.WoInfo">
+            <summary>
+            工单属性
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.WorkOrderReachs.WoReachViewModel">
+            <summary>
+            通信数据
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.WorkOrderReachs.WorkOrderReachCriteriaViewConfig">
+            <summary>
+            产品报表查询实体视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.WorkOrderReachs.WorkOrderReachCriteriaViewConfig.ConfigView">
+            <summary>
+            默认视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.WorkOrderReachs.WorkOrderReachTemplate">
+            <summary>
+            模板
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.TeamManagement.ShopReportViewConfig">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.TeamManagement.ShopReportViewConfig.ConfigListView">
+            <summary>
+            list 视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.TeamManagement.ScoreRecordDataQueryer">
+            <summary>
+            客制查询数据处理
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.TeamManagement.ScoreRecordDataQueryer.GetScoreRecordsVM(SIE.MES.DashBoard.TeamManagement.ScoreRecordVMCriteria)">
+            <summary>
+            获取评分记录数据
+            </summary>
+            <param name="criter">查询实体</param>
+            <returns>评分记录信息</returns>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.TeamManagement.ScoreRecordDataQueryer.ExportScoreRecords(SIE.MES.DashBoard.TeamManagement.ScoreRecordVMCriteria)">
+            <summary>
+            导出数据
+            </summary>
+            <param name="criter">查询</param>
+            <returns>table数据</returns>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.TeamManagement.ScoreRecordDataQueryer.DateDataHandle(SIE.MES.DashBoard.TeamManagement.DateType,System.DateTime,System.DateTime,System.Collections.ArrayList)">
+            <summary>
+            时间范围数据处理
+            </summary>
+            <param name="dT">查询类型</param>
+            <param name="begin">开始日期</param>
+            <param name="end">结束日期</param>
+            <param name="monthArrayList">包含每个时间轴的数组</param>
+        </member>
+        <member name="T:SIE.Web.MES.DashBoard.TeamManagement.ScoreRecordVMCriteriaViewConfig">
+            <summary>
+            物料查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.DashBoard.TeamManagement.ScoreRecordVMCriteriaViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+    </members>
+</doc>

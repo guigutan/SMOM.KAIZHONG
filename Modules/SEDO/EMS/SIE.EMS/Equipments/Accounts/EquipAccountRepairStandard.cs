@@ -1,0 +1,65 @@
+﻿using SIE.Domain;
+using SIE.EMS.Enums;
+using SIE.EMS.RunStandards;
+using SIE.Equipments.EquipAccounts;
+using SIE.MetaModel;
+using SIE.ObjectModel;
+using System;
+
+namespace SIE.EMS.Equipments.Accounts
+{
+	/// <summary>
+	/// 设备台账维修定标
+	/// </summary>
+	[RootEntity, Serializable]	
+	[Label("设备台账维修定标")]
+	public partial class EquipAccountRepairStandard : EquipAccountRepairStandardBase
+    {
+		#region 设备台账 EquipAccount
+		/// <summary>
+		/// 设备台账Id
+		/// </summary>
+		[Label("设备台账")]
+		public static readonly IRefIdProperty EquipAccountIdProperty = P<EquipAccountRepairStandard>.RegisterRefId(e => e.EquipAccountId, ReferenceType.Parent);
+
+		/// <summary>
+		/// 设备台账Id
+		/// </summary>
+		public double EquipAccountId
+		{
+			get { return (double)GetRefId(EquipAccountIdProperty); }
+			set { SetRefId(EquipAccountIdProperty, value); }
+		}
+
+		/// <summary>
+		/// 设备台账
+		/// </summary>
+		public static readonly RefEntityProperty<EquipAccount> EquipAccountProperty = P<EquipAccountRepairStandard>.RegisterRef(e => e.EquipAccount, EquipAccountIdProperty);
+
+		/// <summary>
+		/// 设备台账
+		/// </summary>
+		public EquipAccount EquipAccount
+		{
+			get { return GetRefEntity(EquipAccountProperty); }
+			set { SetRefEntity(EquipAccountProperty, value); }
+		}
+		#endregion
+
+    }
+
+	/// <summary>
+	/// 设备台账维修定标 实体配置
+	/// </summary>
+	internal class EquipAccountRepairStandardConfig : EntityConfig<EquipAccountRepairStandard>
+	{
+		/// <summary>
+		/// 配置元数据
+		/// </summary>
+		protected override void ConfigMeta()
+		{
+			Meta.MapTable("EMS_EQP_RUN_STD").MapAllProperties();
+			Meta.EnablePhantoms();
+		}
+	}
+}

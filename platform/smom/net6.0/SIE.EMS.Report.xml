@@ -1,0 +1,2797 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.EMS.Report</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.EMS.Report.AnalyseCommonHelper">
+            <summary>
+            分析通用帮助类
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.Report.AnalyseCommonHelper.GetStatisticProperties``1(``0,System.String,System.Reflection.PropertyInfo[])">
+            <summary>
+            获取指定属性的值
+            </summary>
+            <param name="t"></param>
+            <param name="propertieName"></param>
+            <param name="properties"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.EMS.Report.AnalyseCommonHelper.GetPropertyInfos``1(``0)">
+            <summary>
+            获取类属性
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="t"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.EMS.Report.AnalyseCommonHelper.SetStatisticProperties``1(``0,System.String,System.Decimal)">
+            <summary>
+            设置属性值-dcimal类型
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="t"></param>
+            <param name="propertieName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.EMS.Report.AnalyseCommonHelper.SetStatisticProperties``1(``0,System.String,System.String)">
+            <summary>
+            设置属性值-字符串类型
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="t"></param>
+            <param name="propertieName"></param>
+            <param name="value"></param>
+        </member>
+        <member name="T:SIE.EMS.Report.EmsEntityRepository`1">
+            <summary>
+            当前模块数据仓库
+            </summary>
+            <typeparam name="T">实体泛型参数</typeparam>
+        </member>
+        <member name="T:SIE.EMS.Report.EmsEntityDataProvider">
+            <summary>
+            EMS数据提供者
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EmsEntityDataProvider.ConnectionStringName">
+            <summary>
+            数据库连接字符串的名称
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EmsEntityDataProvider.ConnectionStringSettingName">
+            <summary>
+            数据库连接字符串的名称
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.Report.EquipCostAnalyses.EquipCostAnalyse">
+            <summary>
+            设备成本分析
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.Report.EquipCostAnalyses.EquipCostAnalyseController">
+            <summary>
+            设备成本分析控制器
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.Report.EquipCostAnalyses.EquipCostAnalyseController.CriteriaEquipCostAnalyse(SIE.EMS.Report.EquipCostAnalyses.EquipCostAnalyseCriteria)">
+            <summary>
+            查询设备成本分析
+            </summary>
+            <param name="criteria">设备成本分析查询实体</param>
+            <returns>设备成本分析</returns>
+        </member>
+        <member name="M:SIE.EMS.Report.EquipCostAnalyses.EquipCostAnalyseController.GetEquipCostInfoByMonth(System.Collections.Generic.List{System.Double},System.DateTime,System.DateTime)">
+            <summary>
+            获取所选的设备开始到结束的统计信息
+            </summary>
+            <param name="equipmentIds"></param>
+            <param name="fromTime"></param>
+            <param name="toTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.EMS.Report.EquipCostAnalyses.EquipCostAnalyseController.GetEquipCostInfo(SIE.Domain.EntityList{SIE.EMS.Report.EquipCostAnalyses.EquipCostInfo})">
+            <summary>
+            获取设备成本信息
+            </summary>
+            <param name="equipCostInfos">统计设备成本信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.EMS.Report.EquipCostAnalyses.EquipCostAnalyseController.GetMonthlyCostInfos(SIE.Domain.EntityList{SIE.EMS.Report.EquipCostAnalyses.EquipCostInfo})">
+            <summary>
+            获取月度成本统计信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.EMS.Report.EquipCostAnalyses.EquipCostAnalyseController.GetEquipAccounts(System.Collections.Generic.List{System.Double})">
+            <summary>
+            获取设备
+            </summary>
+            <param name="equipmentIds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.EMS.Report.EquipCostAnalyses.EquipCostAnalyseController.GetCostAnalysisReport(SIE.Domain.EntityList{SIE.Equipments.EquipAccounts.EquipAccount},System.DateTime,System.DateTime)">
+            <summary>
+            获取费用工时计算
+            </summary>
+            <param name="equipments"></param>
+            <param name="fromTime"></param>
+            <param name="toTime"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.EMS.Report.EquipCostAnalyses.EquipCostAnalyseCriteria">
+            <summary>
+            设备成本分析查询实体
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.EquipCostAnalyseCriteria.EquipTypeIdProperty">
+            <summary>
+            设备类型Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipCostAnalyses.EquipCostAnalyseCriteria.EquipTypeId">
+            <summary>
+            设备类型Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.EquipCostAnalyseCriteria.EquipTypeProperty">
+            <summary>
+            设备类型
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipCostAnalyses.EquipCostAnalyseCriteria.EquipType">
+            <summary>
+            设备类型
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.EquipCostAnalyseCriteria.EquipModelIdProperty">
+            <summary>
+            设备型号Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipCostAnalyses.EquipCostAnalyseCriteria.EquipModelId">
+            <summary>
+            设备型号Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.EquipCostAnalyseCriteria.EquipModelProperty">
+            <summary>
+            设备型号
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipCostAnalyses.EquipCostAnalyseCriteria.EquipModel">
+            <summary>
+            设备型号
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.EquipCostAnalyseCriteria.EquipAccountIdProperty">
+            <summary>
+            设备编码Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipCostAnalyses.EquipCostAnalyseCriteria.EquipAccountId">
+            <summary>
+            设备编码Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.EquipCostAnalyseCriteria.EquipAccountProperty">
+            <summary>
+            设备编码
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipCostAnalyses.EquipCostAnalyseCriteria.EquipAccount">
+            <summary>
+            设备编码
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.EquipCostAnalyseCriteria.DepartmentIdProperty">
+            <summary>
+            使用部门Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipCostAnalyses.EquipCostAnalyseCriteria.DepartmentId">
+            <summary>
+            使用部门Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.EquipCostAnalyseCriteria.DepartmentProperty">
+            <summary>
+            使用部门
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipCostAnalyses.EquipCostAnalyseCriteria.Department">
+            <summary>
+            使用部门
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.EquipCostAnalyseCriteria.WorkShopIdProperty">
+            <summary>
+            车间Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipCostAnalyses.EquipCostAnalyseCriteria.WorkShopId">
+            <summary>
+            车间Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.EquipCostAnalyseCriteria.WorkShopProperty">
+            <summary>
+            车间
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipCostAnalyses.EquipCostAnalyseCriteria.WorkShop">
+            <summary>
+            车间
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.EquipCostAnalyseCriteria.ResourceIdProperty">
+            <summary>
+            产线Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipCostAnalyses.EquipCostAnalyseCriteria.ResourceId">
+            <summary>
+            产线Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.EquipCostAnalyseCriteria.ResourceProperty">
+            <summary>
+            产线
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipCostAnalyses.EquipCostAnalyseCriteria.Resource">
+            <summary>
+            产线
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.EquipCostAnalyseCriteria.YearProperty">
+            <summary>
+            年份
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipCostAnalyses.EquipCostAnalyseCriteria.Year">
+            <summary>
+            年份
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.EquipCostAnalyseCriteria.BeginMonthProperty">
+            <summary>
+            时间
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipCostAnalyses.EquipCostAnalyseCriteria.BeginMonth">
+            <summary>
+            开始月份
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.EquipCostAnalyseCriteria.EndMonthProperty">
+            <summary>
+            结束月份
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipCostAnalyses.EquipCostAnalyseCriteria.EndMonth">
+            <summary>
+            开始月份
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.EquipCostAnalyseCriteria.EquipNameProperty">
+            <summary>
+            设备名称
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipCostAnalyses.EquipCostAnalyseCriteria.EquipName">
+            <summary>
+            设备名称
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.Report.EquipCostAnalyses.EquipCostAnalysesInfo">
+            <summary>
+            ESD报表数据
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipCostAnalyses.EquipCostAnalysesInfo.EquipCostInfoInfo">
+            <summary>
+            ESD检测通过趋势率报表数据
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipCostAnalyses.EquipCostAnalysesInfo.Year">
+            <summary>
+            年度
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipCostAnalyses.EquipCostAnalysesInfo.EquipmentCount">
+            <summary>
+            设备数
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipCostAnalyses.EquipCostAnalysesInfo.MonthlyCostInfoList">
+            <summary>
+            表格数据
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.Report.EquipCostAnalyses.EquipCostInfo">
+            <summary>
+            设备成本分析
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.EquipCostInfo.EquipAccountIdProperty">
+            <summary>
+            设备编码Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipCostAnalyses.EquipCostInfo.EquipAccountId">
+            <summary>
+            设备编码Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.EquipCostInfo.EquipAccountProperty">
+            <summary>
+            设备编码
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipCostAnalyses.EquipCostInfo.EquipAccount">
+            <summary>
+            设备编码
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.EquipCostInfo.EquipNameProperty">
+            <summary>
+            设备名称
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipCostAnalyses.EquipCostInfo.EquipName">
+            <summary>
+            设备名称
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.EquipCostInfo.EquipCodeProperty">
+            <summary>
+            设备编码
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipCostAnalyses.EquipCostInfo.EquipCode">
+            <summary>
+            设备名称
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.EquipCostInfo.RepairCostProperty">
+            <summary>
+            维修工时
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipCostAnalyses.EquipCostInfo.RepairCost">
+            <summary>
+            维修工时
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.EquipCostInfo.MaintainCostProperty">
+            <summary>
+            保养工时
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipCostAnalyses.EquipCostInfo.MaintainCost">
+            <summary>
+            保养工时
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.EquipCostInfo.SparePartCostProperty">
+            <summary>
+            备件成本
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipCostAnalyses.EquipCostInfo.SparePartCost">
+            <summary>
+            备件成本
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.EquipCostInfo.OutsourceCostProperty">
+            <summary>
+            委外维修
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipCostAnalyses.EquipCostInfo.OutsourceCost">
+            <summary>
+            委外维修
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.EquipCostInfo.EnergyConsumptionCostProperty">
+            <summary>
+            能耗成本
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipCostAnalyses.EquipCostInfo.EnergyConsumptionCost">
+            <summary>
+            能耗成本
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.EquipCostInfo.DepreciationCostProperty">
+            <summary>
+            折旧成本
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipCostAnalyses.EquipCostInfo.DepreciationCost">
+            <summary>
+            折旧成本
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.EquipCostInfo.TotalWokerHourCostProperty">
+            <summary>
+            工时成本合计
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipCostAnalyses.EquipCostInfo.TotalWokerHourCost">
+            <summary>
+            工时成本合计
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.EquipCostInfo.TotalCostProperty">
+            <summary>
+            费用成本合计
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipCostAnalyses.EquipCostInfo.TotalCost">
+            <summary>
+            费用成本合计
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.EquipCostInfo.MonthProperty">
+            <summary>
+            月份（用于记录是哪个月份的）
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipCostAnalyses.EquipCostInfo.Month">
+            <summary>
+            月份
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.Report.EquipCostAnalyses.Month">
+            <summary>
+            月份
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.Month.January">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.Month.February">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.Month.March">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.Month.April">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.Month.May">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.Month.June">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.Month.July">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.Month.August">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.Month.September">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.Month.October">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.Month.November">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.Month.December">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.Report.EquipCostAnalyses.MonthlyCostInfo">
+            <summary>
+            月度成本分析
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.MonthlyCostInfo.CostItemProperty">
+            <summary>
+            成本项目
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipCostAnalyses.MonthlyCostInfo.CostItem">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.MonthlyCostInfo.JanuaryProperty">
+            <summary>
+            1月
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipCostAnalyses.MonthlyCostInfo.January">
+            <summary>
+            1月
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.MonthlyCostInfo.FebruaryProperty">
+            <summary>
+            2月
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipCostAnalyses.MonthlyCostInfo.February">
+            <summary>
+            2月
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.MonthlyCostInfo.MarchProperty">
+            <summary>
+            3月
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipCostAnalyses.MonthlyCostInfo.March">
+            <summary>
+            3月
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.MonthlyCostInfo.AprilProperty">
+            <summary>
+            4月
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipCostAnalyses.MonthlyCostInfo.April">
+            <summary>
+            4月
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.MonthlyCostInfo.MayProperty">
+            <summary>
+            4月
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipCostAnalyses.MonthlyCostInfo.May">
+            <summary>
+            5月
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.MonthlyCostInfo.JuneProperty">
+            <summary>
+            6月
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipCostAnalyses.MonthlyCostInfo.June">
+            <summary>
+            6月
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.MonthlyCostInfo.JulyProperty">
+            <summary>
+            4月
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipCostAnalyses.MonthlyCostInfo.July">
+            <summary>
+            7月
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.MonthlyCostInfo.AugustProperty">
+            <summary>
+            8月
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipCostAnalyses.MonthlyCostInfo.August">
+            <summary>
+            8月
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.MonthlyCostInfo.SeptemberProperty">
+            <summary>
+            9月
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipCostAnalyses.MonthlyCostInfo.September">
+            <summary>
+            9月
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.MonthlyCostInfo.OctoberProperty">
+            <summary>
+            10月
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipCostAnalyses.MonthlyCostInfo.October">
+            <summary>
+            10月
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.MonthlyCostInfo.NovemberProperty">
+            <summary>
+            11月
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipCostAnalyses.MonthlyCostInfo.November">
+            <summary>
+            11月
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipCostAnalyses.MonthlyCostInfo.DecemberProperty">
+            <summary>
+            12月
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipCostAnalyses.MonthlyCostInfo.December">
+            <summary>
+            12月
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatistic">
+            <summary>
+            设备综合统计
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatistic.EquipAccountIdProperty">
+            <summary>
+            设备Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatistic.EquipAccountId">
+            <summary>
+            设备Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatistic.EquipAccountProperty">
+            <summary>
+            设备
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatistic.EquipAccount">
+            <summary>
+            设备
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatistic.StatisticDateProperty">
+            <summary>
+            日期
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatistic.StatisticDate">
+            <summary>
+            日期
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatistic.PlanningTimeProperty">
+            <summary>
+            计划时间（h)
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatistic.PlanningTime">
+            <summary>
+            计划时间（h)
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatistic.RunningTimeProperty">
+            <summary>
+            运行时长（h）
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatistic.RunningTime">
+            <summary>
+            运行时长（h）
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatistic.StandbyTimeProperty">
+            <summary>
+            待机时长（h）
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatistic.StandbyTime">
+            <summary>
+            待机时长（h）
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatistic.DownTimeProperty">
+            <summary>
+            停机时长（h）
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatistic.DownTime">
+            <summary>
+            停机时长（h）
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatistic.FailureTimeProperty">
+            <summary>
+            故障时长（h）
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatistic.FailureTime">
+            <summary>
+            故障时长（h）
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatistic.UnkownTimeProperty">
+            <summary>
+            未知时长（h）
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatistic.UnkownTime">
+            <summary>
+            未知时长（h）
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatistic.OfflineTimeProperty">
+            <summary>
+            设备离线时长（h）
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatistic.OfflineTime">
+            <summary>
+            设备离线时长（h）
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatistic.NumberOfFailuresProperty">
+            <summary>
+            故障次数（次）
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatistic.NumberOfFailures">
+            <summary>
+            故障次数（次）
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatistic.RepairTimeProperty">
+            <summary>
+            维修时长（h）
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatistic.RepairTime">
+            <summary>
+            维修时长（h）
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatistic.UtilizationRateProperty">
+            <summary>
+            设备利用率
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatistic.UtilizationRate">
+            <summary>
+            设备利用率
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatistic.EquipMentFailureTimeProperty">
+            <summary>
+            设备故障总时间
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatistic.EquipMentFailureTime">
+            <summary>
+            设备故障总时间
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticConfig">
+            <summary>
+            设备综合统计 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticController">
+            <summary>
+            设备综合统计报表控制器
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticController.GetEquipmentIntegrateStatisticViewModels(SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticCriteria)">
+            <summary>
+            查询设备综合统计数据
+            </summary>
+            <param name="criteria">查询条件</param>
+            <returns></returns>        
+        </member>
+        <member name="M:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticController.CreateEquipmentIntegrateStatisticViewModels(System.Collections.Generic.Dictionary{System.String,SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticInfoModel})">
+            <summary>
+            生成设备综合统计数据
+            </summary>
+            <param name="viewModelsDictionary"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticController.GetStatistics(System.Collections.Generic.List{System.Double},System.DateTime,System.DateTime)">
+            <summary>
+            获取设备综合统计数据
+            </summary>
+            <param name="equipAccountIds">设备ID列表</param>
+            <param name="startDate">开始日期</param>
+            <param name="EndDate">结束日期</param>
+            <exception cref="T:SIE.Domain.Validation.ValidationException"></exception>
+        </member>
+        <member name="M:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticController.ComputePlanHours(System.Collections.Generic.Dictionary{System.DateTime,SIE.Resources.ShiftTypes.ShiftType},System.DateTime)">
+            <summary>
+            计算计划时长
+            </summary>
+            <param name="dicInfo"></param>
+            <param name="currentDate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticController.ComputeRepairTime(System.DateTime,System.DateTime,System.Collections.Generic.List{System.Nullable{System.Double}},SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatistic)">
+            <summary>
+            计算设备故障总时长
+            </summary>
+            <param name="startTimeOfCurrentDate"></param>
+            <param name="endTimeOfCurrentDate"></param>
+            <param name="accountIds"></param>
+            <param name="equipmentIntegrateStatistic"></param>
+        </member>
+        <member name="M:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticController.ComputeRunningTime(SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatistic,SIE.EMS.Equipments.RunningStates.EquipRunningStateRecord,SIE.EMS.Equipments.RunningStates.EquipRunningStateRecord)">
+            <summary>
+            计算时长
+            </summary>
+            <param name="equipmentIntegrateStatistic">统计结果</param>
+            <param name="prevStateRecord">前一状态记录</param>
+            <param name="runningStateRecord">后一状态记录</param>
+        </member>
+        <member name="T:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticCriteria">
+            <summary>
+            设备综合统计报表查询实体
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticCriteria.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticCriteria.EquipTypeIdProperty">
+            <summary>
+            设备类型Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticCriteria.EquipTypeId">
+            <summary>
+            设备类型Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticCriteria.EquipTypeProperty">
+            <summary>
+            设备类型
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticCriteria.EquipType">
+            <summary>
+            设备类型
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticCriteria.EquipModelIdProperty">
+            <summary>
+            设备型号Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticCriteria.EquipModelId">
+            <summary>
+            设备型号Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticCriteria.EquipModelProperty">
+            <summary>
+            设备型号
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticCriteria.EquipModel">
+            <summary>
+            设备型号
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticCriteria.EquipCodeIdProperty">
+            <summary>
+            设备编码Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticCriteria.EquipCodeId">
+            <summary>
+            设备编码Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticCriteria.EquipCodeProperty">
+            <summary>
+            设备编码
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticCriteria.EquipCode">
+            <summary>
+            设备编码
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticCriteria.UseDepartmentIdProperty">
+            <summary>
+            使用部门Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticCriteria.UseDepartmentId">
+            <summary>
+            使用部门Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticCriteria.UseDepartmentProperty">
+            <summary>
+            使用部门
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticCriteria.UseDepartment">
+            <summary>
+            使用部门
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticCriteria.WorkShopIdProperty">
+            <summary>
+            车间Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticCriteria.WorkShopId">
+            <summary>
+            车间Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticCriteria.WorkShopProperty">
+            <summary>
+            车间
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticCriteria.WorkShop">
+            <summary>
+            车间
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticCriteria.WipResourceIdProperty">
+            <summary>
+            产线Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticCriteria.WipResourceId">
+            <summary>
+            产线Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticCriteria.WipResourceProperty">
+            <summary>
+            产线
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticCriteria.WipResource">
+            <summary>
+            产线
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticCriteria.YearAndMonthProperty">
+            <summary>
+            年月
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticCriteria.Year">
+            <summary>
+            年月
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticCriteria.UtilizationRateProperty">
+            <summary>
+            利用率标准（%）
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticCriteria.UtilizationRate">
+            <summary>
+            利用率标准（%）
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticCriteria.EquipNameProperty">
+            <summary>
+            设备名称
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticCriteria.EquipName">
+            <summary>
+            设备名称
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticCriteria.MonthProperty">
+            <summary>
+            月份
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticCriteria.Month">
+            <summary>
+            月份
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticInfoModel">
+            <summary>
+            设备综合统计
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticInfoModel.StatisticDateProperty">
+            <summary>
+            日期
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticInfoModel.StatisticDate">
+            <summary>
+            日期
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticInfoModel.PlanningTimeProperty">
+            <summary>
+            计划时间（h)
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticInfoModel.PlanningTime">
+            <summary>
+            计划时间（h)
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticInfoModel.RunningTimeProperty">
+            <summary>
+            运行时长（h）
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticInfoModel.RunningTime">
+            <summary>
+            运行时长（h）
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticInfoModel.StandbyTimeProperty">
+            <summary>
+            待机时长（h）
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticInfoModel.StandbyTime">
+            <summary>
+            待机时长（h）
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticInfoModel.DownTimeProperty">
+            <summary>
+            停机时长（h）
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticInfoModel.DownTime">
+            <summary>
+            停机时长（h）
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticInfoModel.FailureTimeProperty">
+            <summary>
+            故障时长（h）
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticInfoModel.FailureTime">
+            <summary>
+            故障时长（h）
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticInfoModel.UnkownTimeProperty">
+            <summary>
+            未知时长（h）
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticInfoModel.UnkownTime">
+            <summary>
+            未知时长（h）
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticInfoModel.OfflineTimeProperty">
+            <summary>
+            设备离线时长（h）
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticInfoModel.OfflineTime">
+            <summary>
+            设备离线时长（h）
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticInfoModel.NumberOfFailuresProperty">
+            <summary>
+            故障次数（次）
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticInfoModel.NumberOfFailures">
+            <summary>
+            故障次数（次）
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticInfoModel.RepairTimeProperty">
+            <summary>
+            维修时长（h）
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticInfoModel.RepairTime">
+            <summary>
+            维修时长（h）
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticInfoModel.UtilizationRateProperty">
+            <summary>
+            设备利用率
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticInfoModel.UtilizationRate">
+            <summary>
+            设备利用率
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticInfoModel.TargetRateProperty">
+            <summary>
+            利用率标准
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticInfoModel.TargetRate">
+            <summary>
+            利用率标准
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticViewModel">
+            <summary>
+            设备综合统计
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticViewModel.IndexSeqProperty">
+            <summary>
+            序号
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticViewModel.IndexSeq">
+            <summary>
+            序号
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticViewModel.StatisticDateProperty">
+            <summary>
+            日期
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticViewModel.StatisticDate">
+            <summary>
+            日期
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticViewModel.ValueProperty">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticViewModel.Value">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticViewModel.ValueTitleProperty">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticViewModel.ValueTitle">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipStaticViewModel">
+            <summary>
+            设备综合统计结果
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipStaticViewModel.EquipStaticMatrix">
+            <summary>
+            统计值列表
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipStaticViewModel.EquipStaticChart">
+            <summary>
+            图表数据列表
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipStaticViewModel.EquipmentCount">
+            <summary>
+            设备台数
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipStaticViewModel.Mttr">
+            <summary>
+            MTTR(故障平均修复时间）
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipStaticViewModel.Mtbf">
+            <summary>
+            MTBF(平均无故障工作时间）
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipStaticViewModel.Year">
+            <summary>
+            年
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipStaticViewModel.Month">
+            <summary>
+            月份
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipStaticMatrix">
+            <summary>
+            统计值列表
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipStaticMatrix.EquipmentIntegrateStatisticViewModelList">
+            <summary>
+            统计值列表
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipStaticChart">
+            <summary>
+            图表数据列表
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentIntegrateStatistics.EquipStaticChart.EquipmentIntegrateStatisticInfoModelList">
+            <summary>
+            图表数据列表
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.Report.EquipmentMixReport.EmsMixReportInfo">
+            <summary>
+            ESD报表数据
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentMixReport.EmsMixReportInfo.EsdPassRateReport">
+            <summary>
+            ESD检测通过趋势率报表数据
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentMixReport.EmsMixReportInfo.Year">
+            <summary>
+            年度
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentMixReport.EmsMixReportInfo.EquipmentCount">
+            <summary>
+            设备数
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentMixReport.EmsMixReportInfo.EsdNgList">
+            <summary>
+            表格数据
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.Report.EquipmentMixReport.EsdPassRateReportInfo">
+            <summary>
+            ESD检测通过趋势率报表数据
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.Report.EquipmentMixReport.EsdPassRateReportInfo.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentMixReport.EsdPassRateReportInfo.EsdPassRateDatas">
+            <summary>
+            报表数据
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.Report.EquipmentMixReport.EsdPassRateDataInfo">
+            <summary>
+            利用率信息
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentMixReport.EsdPassRateDataInfo.Month">
+            <summary>
+            月份
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentMixReport.EsdPassRateDataInfo.UtilizationStandards">
+            <summary>
+            标准利用率
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentMixReport.EsdPassRateDataInfo.UtilizationRate">
+            <summary>
+            利用率
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportController">
+            <summary>
+            设备综合统计报表控制器
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportController.GetReportData(SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModelCriteria)">
+            <summary>
+            获取报表数据
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportController.ComputeData(SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModelCriteria,SIE.Domain.EntityList{SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatistic},SIE.EMS.Report.EquipmentMixReport.EmsMixReportInfo,System.Int32)">
+            <summary>
+            组合数据
+            </summary>
+            <param name="criteria"></param>
+            <param name="equipmentIntegrateStatisticList"></param>
+            <param name="reportInfo"></param>
+            <param name="decimals"></param>
+        </member>
+        <member name="M:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportController.ComputeMtbf(SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModel,SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModel,SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModel,System.Reflection.FieldInfo[],System.Collections.Generic.List{System.String})">
+            <summary>
+            计算MTBF
+            </summary>
+            <param name="runningTimeProperty"></param>
+            <param name="numberOfFailuresProperty"></param>
+            <param name="MTBF"></param>
+            <param name="modelFields"></param>
+            <param name="notMatchs"></param>
+        </member>
+        <member name="M:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportController.GetLabel(System.String)">
+            <summary>
+            获取标签
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="t"></param>
+            <param name="field"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModel">
+            <summary>
+            设备综合统计报表
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModel.FirstColumnProperty">
+            <summary>
+            首列
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModel.FirstColumn">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModel.JanuaryProperty">
+            <summary>
+            1月
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModel.January">
+            <summary>
+            1月
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModel.FebruaryProperty">
+            <summary>
+            2月
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModel.February">
+            <summary>
+            2月
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModel.MarchProperty">
+            <summary>
+            3月
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModel.March">
+            <summary>
+            3月
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModel.AprilProperty">
+            <summary>
+            4月
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModel.April">
+            <summary>
+            4月
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModel.MayProperty">
+            <summary>
+            4月
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModel.May">
+            <summary>
+            5月
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModel.JuneProperty">
+            <summary>
+            6月
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModel.June">
+            <summary>
+            6月
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModel.JulyProperty">
+            <summary>
+            4月
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModel.July">
+            <summary>
+            7月
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModel.AugustProperty">
+            <summary>
+            8月
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModel.August">
+            <summary>
+            8月
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModel.SeptemberProperty">
+            <summary>
+            9月
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModel.September">
+            <summary>
+            9月
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModel.OctoberProperty">
+            <summary>
+            10月
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModel.October">
+            <summary>
+            10月
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModel.NovemberProperty">
+            <summary>
+            11月
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModel.November">
+            <summary>
+            11月
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModel.DecemberProperty">
+            <summary>
+            12月
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModel.December">
+            <summary>
+            12月
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModelCriteria">
+            <summary>
+            设备综合统计报表查询实体
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModelCriteria.EquipTypeIdProperty">
+            <summary>
+            设备类型Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModelCriteria.EquipTypeId">
+            <summary>
+            设备类型Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModelCriteria.EquipTypeProperty">
+            <summary>
+            设备类型
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModelCriteria.EquipType">
+            <summary>
+            设备类型
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModelCriteria.EquipModelIdProperty">
+            <summary>
+            设备型号Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModelCriteria.EquipModelId">
+            <summary>
+            设备型号Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModelCriteria.EquipModelProperty">
+            <summary>
+            设备型号
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModelCriteria.EquipModel">
+            <summary>
+            设备型号
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModelCriteria.EquipCodeIdProperty">
+            <summary>
+            设备编码Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModelCriteria.EquipCodeId">
+            <summary>
+            设备编码Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModelCriteria.EquipCodeProperty">
+            <summary>
+            设备编码
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModelCriteria.EquipCode">
+            <summary>
+            设备编码
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModelCriteria.UseDepartmentIdProperty">
+            <summary>
+            使用部门Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModelCriteria.UseDepartmentId">
+            <summary>
+            使用部门Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModelCriteria.UseDepartmentProperty">
+            <summary>
+            使用部门
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModelCriteria.UseDepartment">
+            <summary>
+            使用部门
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModelCriteria.WorkShopIdProperty">
+            <summary>
+            车间Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModelCriteria.WorkShopId">
+            <summary>
+            车间Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModelCriteria.WorkShopProperty">
+            <summary>
+            车间
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModelCriteria.WorkShop">
+            <summary>
+            车间
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModelCriteria.WipResourceIdProperty">
+            <summary>
+            产线Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModelCriteria.WipResourceId">
+            <summary>
+            产线Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModelCriteria.WipResourceProperty">
+            <summary>
+            产线
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModelCriteria.WipResource">
+            <summary>
+            产线
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModelCriteria.YearProperty">
+            <summary>
+            年份
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModelCriteria.Year">
+            <summary>
+            年份
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModelCriteria.UtilizationCriteriaProperty">
+            <summary>
+            利用率标准
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModelCriteria.UtilizationCriteria">
+            <summary>
+            利用率标准
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModelCriteria.EquipNameProperty">
+            <summary>
+            设备名称
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModelCriteria.EquipName">
+            <summary>
+            设备名称
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.Report.FaultCountReports.FaultCountReport">
+            <summary>
+            故障统计报表
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.FaultCountReports.FaultCountReport.RepairNoProperty">
+            <summary>
+            工单编码
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.FaultCountReports.FaultCountReport.RepairNo">
+            <summary>
+            工单编码
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.FaultCountReports.FaultCountReport.DeviceAbnormalRemarkProperty">
+            <summary>
+            故障现象(备注)
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.FaultCountReports.FaultCountReport.DeviceAbnormalRemark">
+            <summary>
+            故障现象(备注)
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.FaultCountReports.FaultCountReport.RepairStateProperty">
+            <summary>
+            工单状态
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.FaultCountReports.FaultCountReport.RepairState">
+            <summary>
+            工单状态
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.FaultCountReports.FaultCountReport.EquipAccountIdProperty">
+            <summary>
+            设备Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.FaultCountReports.FaultCountReport.EquipAccountId">
+            <summary>
+            设备Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.FaultCountReports.FaultCountReport.EquipAccountProperty">
+            <summary>
+            设备
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.FaultCountReports.FaultCountReport.EquipAccount">
+            <summary>
+            设备
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.FaultCountReports.FaultCountReport.ApplyRepairEmployeeIdProperty">
+            <summary>
+            报修人Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.FaultCountReports.FaultCountReport.ApplyRepairEmployeeId">
+            <summary>
+            报修人Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.FaultCountReports.FaultCountReport.ApplyRepairEmployeeProperty">
+            <summary>
+            报修人
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.FaultCountReports.FaultCountReport.ApplyRepairEmployee">
+            <summary>
+            报修人
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.FaultCountReports.FaultCountReport.ApplyRepairDateProperty">
+            <summary>
+            报修时间
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.FaultCountReports.FaultCountReport.ApplyRepairDate">
+            <summary>
+            报修时间
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.FaultCountReports.FaultCountReport.RepairMasterIdProperty">
+            <summary>
+            维修责任人Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.FaultCountReports.FaultCountReport.RepairMasterId">
+            <summary>
+            维修责任人Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.FaultCountReports.FaultCountReport.RepairMasterProperty">
+            <summary>
+            维修责任人
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.FaultCountReports.FaultCountReport.RepairMaster">
+            <summary>
+            维修责任人
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.FaultCountReports.FaultCountReport.ReceiveOrderDateProperty">
+            <summary>
+            维修响应时间
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.FaultCountReports.FaultCountReport.ReceiveOrderDate">
+            <summary>
+            维修响应时间
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.FaultCountReports.FaultCountReport.RepairBeginDateProperty">
+            <summary>
+            维修开始时间
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.FaultCountReports.FaultCountReport.RepairBeginDate">
+            <summary>
+            维修开始时间
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.FaultCountReports.FaultCountReport.RepairFinishDateProperty">
+            <summary>
+            维修完成时间
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.FaultCountReports.FaultCountReport.RepairFinishDate">
+            <summary>
+            维修完成时间
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.FaultCountReports.FaultCountReport.EquipAccountCodeProperty">
+            <summary>
+            设备编码
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.FaultCountReports.FaultCountReport.EquipAccountCode">
+            <summary>
+            设备编码
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.FaultCountReports.FaultCountReport.EquipAccountNameProperty">
+            <summary>
+            设备名称
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.FaultCountReports.FaultCountReport.EquipAccountName">
+            <summary>
+            设备名称
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.FaultCountReports.FaultCountReport.EquipModelCodeProperty">
+            <summary>
+            设备型号编码
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.FaultCountReports.FaultCountReport.EquipModelCode">
+            <summary>
+            设备型号编码
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.FaultCountReports.FaultCountReport.EquipAccountModeProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.FaultCountReports.FaultCountReport.EquipAccountMode">
+            <summary>
+            设备型号
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.FaultCountReports.FaultCountReport.EquipModelIdProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.FaultCountReports.FaultCountReport.EquipModelId">
+            <summary>
+            设备型号
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.FaultCountReports.FaultCountReport.EquipAccountTypeProperty">
+            <summary>
+            设备类型
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.FaultCountReports.FaultCountReport.EquipAccountType">
+            <summary>
+            设备类型
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.FaultCountReports.FaultCountReport.UseDepartmentProperty">
+            <summary>
+            使用部门
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.FaultCountReports.FaultCountReport.UseDepartment">
+            <summary>
+            使用部门
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.FaultCountReports.FaultCountReport.InstallationLocationProperty">
+            <summary>
+            安装位置
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.FaultCountReports.FaultCountReport.InstallationLocation">
+            <summary>
+            安装位置
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.FaultCountReports.FaultCountReport.ApplyRepairEmployeeNameProperty">
+            <summary>
+            报修人姓名
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.FaultCountReports.FaultCountReport.ApplyRepairEmployeeName">
+            <summary>
+            报修人姓名
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.FaultCountReports.FaultCountReport.FactoryNameProperty">
+            <summary>
+            工厂
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.FaultCountReports.FaultCountReport.FactoryName">
+            <summary>
+            工厂
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.FaultCountReports.FaultCountReport.InvOrgIdProperty">
+            <summary>
+            库存组织
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.FaultCountReports.FaultCountReport.InvOrgId">
+            <summary>
+            库存组织
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.Report.FaultCountReports.FaultCountReport.RiskOnhandListConfig">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.Report.FaultCountReports.FaultCountReport.RiskOnhandListConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.Report.FaultCountReports.FaultCountReportController">
+            <summary>
+            统计报表控制器
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.Report.FaultCountReports.FaultCountReportController.GetFaultCountReports(SIE.EMS.Report.FaultCountReports.FaultCountReportCriteria)">
+            <summary>
+            获取交易明细报表
+            </summary>
+            <param name="criteria">查询实体</param>
+            <returns>交易明细</returns>
+        </member>
+        <member name="T:SIE.EMS.Report.FaultCountReports.FaultCountReportCriteria">
+            <summary>
+            故障统计报表查询
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.FaultCountReports.FaultCountReportCriteria.FactoryIdProperty">
+            <summary>
+            工厂Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.FaultCountReports.FaultCountReportCriteria.FactoryId">
+            <summary>
+            工厂Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.FaultCountReports.FaultCountReportCriteria.FactoryProperty">
+            <summary>
+            工厂
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.FaultCountReports.FaultCountReportCriteria.Factory">
+            <summary>
+            工厂
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.FaultCountReports.FaultCountReportCriteria.DepartmentIdProperty">
+            <summary>
+            部门Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.FaultCountReports.FaultCountReportCriteria.DepartmentId">
+            <summary>
+            部门Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.FaultCountReports.FaultCountReportCriteria.DepartmentProperty">
+            <summary>
+            部门
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.FaultCountReports.FaultCountReportCriteria.Department">
+            <summary>
+            部门
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.FaultCountReports.FaultCountReportCriteria.CodeProperty">
+            <summary>
+            设备编码
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.FaultCountReports.FaultCountReportCriteria.Code">
+            <summary>
+            设备编码
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.FaultCountReports.FaultCountReportCriteria.RepairMasterIdProperty">
+            <summary>
+            维修责任人Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.FaultCountReports.FaultCountReportCriteria.RepairMasterId">
+            <summary>
+            维修责任人Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.FaultCountReports.FaultCountReportCriteria.RepairMasterProperty">
+            <summary>
+            维修责任人
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.FaultCountReports.FaultCountReportCriteria.RepairMaster">
+            <summary>
+            维修责任人
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.FaultCountReports.FaultCountReportCriteria.ApplyRepairDateProperty">
+            <summary>
+            报修时间
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.FaultCountReports.FaultCountReportCriteria.ApplyRepairDate">
+            <summary>
+            报修时间
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.Report.FaultCountReports.FaultCountReportCriteria.Fetch">
+            <summary>
+            重写此方法实现查询
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="T:SIE.EMS.Report.Module">
+            <summary>
+            模块定义
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.Report.Module.Initialize(SIE.IApp)">
+            <summary>
+            模块的初始化方法
+            </summary>
+            <param name="app">应用程序对象</param>
+        </member>
+        <member name="T:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModel">
+            <summary>
+            MTTR/MTBF统计报表
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModel.StatiItemProperty">
+            <summary>
+            统计项
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModel.StatiItem">
+            <summary>
+            统计项
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModel.OneProperty">
+            <summary>
+            1月
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModel.One">
+            <summary>
+            1月
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModel.TwoProperty">
+            <summary>
+            2月
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModel.Two">
+            <summary>
+            2月
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModel.ThreeProperty">
+            <summary>
+            3月
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModel.Three">
+            <summary>
+            3月
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModel.FourProperty">
+            <summary>
+            4月
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModel.Four">
+            <summary>
+            4月
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModel.FiveProperty">
+            <summary>
+            5月
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModel.Five">
+            <summary>
+            5月
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModel.SixProperty">
+            <summary>
+            6月
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModel.Six">
+            <summary>
+            6月
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModel.SevenProperty">
+            <summary>
+            7月
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModel.Seven">
+            <summary>
+            7月
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModel.EightProperty">
+            <summary>
+            8月
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModel.Eight">
+            <summary>
+            8月
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModel.NineProperty">
+            <summary>
+            9月
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModel.Nine">
+            <summary>
+            9月
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModel.TenProperty">
+            <summary>
+            10月
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModel.Ten">
+            <summary>
+            10月
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModel.ElevenProperty">
+            <summary>
+            11月
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModel.Eleven">
+            <summary>
+            11月
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModel.TwelveProperty">
+            <summary>
+            12月
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModel.Twelve">
+            <summary>
+            12月
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModelController">
+            <summary>
+            MTTR/MTBF统计报表控制器
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModelController.GetFaultStatisticsReport(SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModelCriteria)">
+            <summary>
+            获取设备故障统计报告
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModelController.GetFaultStatisticsReport(SIE.Domain.EntityList{SIE.Equipments.EquipAccounts.EquipAccount},System.Int32)">
+            <summary>
+            获取设备故障统计报告
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModelCriteria">
+            <summary>
+            MTTR/MTBF统计报表查询实体
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModelCriteria.EquipTypeIdProperty">
+            <summary>
+            设备类型Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModelCriteria.EquipTypeId">
+            <summary>
+            设备类型Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModelCriteria.EquipTypeProperty">
+            <summary>
+            设备类型
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModelCriteria.EquipType">
+            <summary>
+            设备类型
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModelCriteria.EquipModelIdProperty">
+            <summary>
+            设备型号Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModelCriteria.EquipModelId">
+            <summary>
+            设备型号Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModelCriteria.EquipModelProperty">
+            <summary>
+            设备型号
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModelCriteria.EquipModel">
+            <summary>
+            设备型号
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModelCriteria.EquipCodeIdProperty">
+            <summary>
+            设备编码Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModelCriteria.EquipCodeId">
+            <summary>
+            设备编码Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModelCriteria.EquipCodeProperty">
+            <summary>
+            设备编码
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModelCriteria.EquipCode">
+            <summary>
+            设备编码
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModelCriteria.UseDepartmentIdProperty">
+            <summary>
+            使用部门Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModelCriteria.UseDepartmentId">
+            <summary>
+            使用部门Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModelCriteria.UseDepartmentProperty">
+            <summary>
+            使用部门
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModelCriteria.UseDepartment">
+            <summary>
+            使用部门
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModelCriteria.WorkShopIdProperty">
+            <summary>
+            车间Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModelCriteria.WorkShopId">
+            <summary>
+            车间Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModelCriteria.WorkShopProperty">
+            <summary>
+            车间
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModelCriteria.WorkShop">
+            <summary>
+            车间
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModelCriteria.WipResourceIdProperty">
+            <summary>
+            产线Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModelCriteria.WipResourceId">
+            <summary>
+            产线Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModelCriteria.WipResourceProperty">
+            <summary>
+            产线
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModelCriteria.WipResource">
+            <summary>
+            产线
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModelCriteria.YearProperty">
+            <summary>
+            年份
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModelCriteria.Year">
+            <summary>
+            年份
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.Report.SparePartMitReports.SparePartMixReportInfo">
+            <summary>
+            备件库综合报表数据对象
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.Report.SparePartMitReports.SparePartMixReportInfo.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.SparePartMitReports.SparePartMixReportInfo.ClounNameList">
+            <summary>
+            动态列名称
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.SparePartMitReports.SparePartMixReportInfo.Datas">
+            <summary>
+            结果数据
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.SparePartMitReports.SparePartMixReportInfo.IsSuccess">
+            <summary>
+            是否成功
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.SparePartMitReports.SparePartMixReportInfo.err">
+            <summary>
+            错误信息
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.SparePartMitReports.SparePartMixReportInfo.TurnoverRateList">
+            <summary>
+            周转率折线图统计数据
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.SparePartMitReports.SparePartMixReportInfo.ExWarehouseList">
+             <summary>
+            出库统计
+             </summary>
+        </member>
+        <member name="T:SIE.EMS.Report.SparePartMitReports.MonthValue">
+            <summary>
+            月份与值对象
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.Report.SparePartMitReports.MonthValue.#ctor(System.String,System.Decimal)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="month"></param>
+            <param name="value"></param>
+        </member>
+        <member name="P:SIE.EMS.Report.SparePartMitReports.MonthValue.Month">
+            <summary>
+            月份
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.SparePartMitReports.MonthValue.Value">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.Report.SparePartMitReports.SpartPartMixReportViewModelController">
+            <summary>
+            备件库综合报表控制器
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.Report.SparePartMitReports.SpartPartMixReportViewModelController.GetSpartPartMitReport(SIE.EMS.Report.SparePartMitReports.SparePartMixReportViewModelCriteria)">
+            <summary>
+            获取备件库统计列表
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.EMS.Report.SparePartMitReports.SparePartMixReportViewModelCriteria">
+            <summary>
+            备件库综合统计报表
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.SparePartMitReports.SparePartMixReportViewModelCriteria.WarehouseIdProperty">
+            <summary>
+            仓库Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.SparePartMitReports.SparePartMixReportViewModelCriteria.WarehouseId">
+            <summary>
+            仓库Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.SparePartMitReports.SparePartMixReportViewModelCriteria.WarehouseProperty">
+            <summary>
+            仓库
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.SparePartMitReports.SparePartMixReportViewModelCriteria.Warehouse">
+            <summary>
+            仓库
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.SparePartMitReports.SparePartMixReportViewModelCriteria.BeginMonthProperty">
+            <summary>
+            月份
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.SparePartMitReports.SparePartMixReportViewModelCriteria.BeginMonth">
+            <summary>
+            月份
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.SparePartMitReports.SparePartMixReportViewModelCriteria.EndMonthProperty">
+            <summary>
+            月份
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.SparePartMitReports.SparePartMixReportViewModelCriteria.EndMonth">
+            <summary>
+            月份
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.Report.SparePartMitReports.SparePartMixtReportViewModel">
+            <summary>
+            备件库综合统计表
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.SparePartMitReports.SparePartMixtReportViewModel.SummaryTimeProperty">
+            <summary>
+            统计时间
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.SparePartMitReports.SparePartMixtReportViewModel.SummaryTime">
+            <summary>
+            统计时间
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.SparePartMitReports.SparePartMixtReportViewModel.MonthProperty">
+            <summary>
+            月份
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.SparePartMitReports.SparePartMixtReportViewModel.Month">
+            <summary>
+            月份
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.SparePartMitReports.SparePartMixtReportViewModel.YearProperty">
+            <summary>
+            年份
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.SparePartMitReports.SparePartMixtReportViewModel.Year">
+            <summary>
+            年份
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.SparePartMitReports.SparePartMixtReportViewModel.TimeDispalyProperty">
+            <summary>
+            月份
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.SparePartMitReports.SparePartMixtReportViewModel.TimeDispaly">
+            <summary>
+            显示时间
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.SparePartMitReports.SparePartMixtReportViewModel.TurnoverRateProperty">
+            <summary>
+            周转率值
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.SparePartMitReports.SparePartMixtReportViewModel.TurnoverRate">
+            <summary>
+            周转率
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.SparePartMitReports.SparePartMixtReportViewModel.ReceiptQtyProperty">
+            <summary>
+            入库数量
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.SparePartMitReports.SparePartMixtReportViewModel.ReceiptQty">
+            <summary>
+            入库数量
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.SparePartMitReports.SparePartMixtReportViewModel.ReceiptAmountProperty">
+            <summary>
+            入库金额
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.SparePartMitReports.SparePartMixtReportViewModel.ReceiptAmount">
+            <summary>
+            入库金额
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.SparePartMitReports.SparePartMixtReportViewModel.ExWarehouseAmountProperty">
+            <summary>
+            出库金额
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.SparePartMitReports.SparePartMixtReportViewModel.ExWarehouseAmount">
+            <summary>
+            出库金额
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.SparePartMitReports.SparePartMixtReportViewModel.ExWarehouseQtyProperty">
+            <summary>
+            出库数量
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.SparePartMitReports.SparePartMixtReportViewModel.ExWarehouseQty">
+            <summary>
+            出库数量
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.SparePartMitReports.SparePartMixtReportViewModel.MonthSurplusQtyProperty">
+            <summary>
+            月末结余数
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.SparePartMitReports.SparePartMixtReportViewModel.MonthSurplusQty">
+            <summary>
+            月末结余数
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.SparePartMitReports.SparePartMixtReportViewModel.MonthSurplusAmountProperty">
+            <summary>
+            月末结余金额
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.SparePartMitReports.SparePartMixtReportViewModel.MonthSurplusAmount">
+            <summary>
+            月末结余金额
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.Report.WorkOrderExcuteReports.WorkOrderExcuteReportInfo">
+            <summary>
+            工单执行统计报表信息
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.Report.WorkOrderExcuteReports.WorkOrderExcuteReportInfo.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.WorkOrderExcuteReports.WorkOrderExcuteReportInfo.IsSuccess">
+            <summary>
+            是否成功
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.WorkOrderExcuteReports.WorkOrderExcuteReportInfo.err">
+            <summary>
+            错误信息
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.WorkOrderExcuteReports.WorkOrderExcuteReportInfo.CounInfo">
+            <summary>
+            汇总数据
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.WorkOrderExcuteReports.WorkOrderExcuteReportInfo.ChartInfo">
+            <summary>
+            折线图数据
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.WorkOrderExcuteReports.WorkOrderExcuteReportInfo.TableInfo">
+            <summary>
+            表格数据
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.Report.WorkOrderExcuteReports.CounInfo">
+            <summary>
+            汇总数据
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.WorkOrderExcuteReports.CounInfo.WorkCount">
+            <summary>
+            工单数
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.WorkOrderExcuteReports.CounInfo.CompleteCount">
+            <summary>
+            已完成工单数
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.WorkOrderExcuteReports.CounInfo.WaitCompleteCount">
+            <summary>
+            待完成工单数
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.WorkOrderExcuteReports.CounInfo.CompleteRate">
+            <summary>
+            完成率
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.Report.WorkOrderExcuteReports.ChartInfo">
+            <summary>
+            折线图数据
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.WorkOrderExcuteReports.ChartInfo.SummaryTime">
+            <summary>
+            统计数据
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.WorkOrderExcuteReports.ChartInfo.Month">
+            <summary>
+            X轴绑定的数据
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.WorkOrderExcuteReports.ChartInfo.WorkOrderQty">
+            <summary>
+            工单总数
+            </summary>
+            
+        </member>
+        <member name="P:SIE.EMS.Report.WorkOrderExcuteReports.ChartInfo.CompleteQty">
+            <summary>
+            工单完成数
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.WorkOrderExcuteReports.ChartInfo.CompleteRate">
+            <summary>
+            工单完成率
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.Report.WorkOrderExcuteReports.TableInfo">
+            <summary>
+            表格数据
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.WorkOrderExcuteReports.TableInfo.ClounNameList">
+            <summary>
+            动态列名称
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.WorkOrderExcuteReports.TableInfo.Datas">
+            <summary>
+            结果数据
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.Report.WorkOrderExcuteReports.WorkOrderExcuteReportViewModel">
+            <summary>
+            工单执行统计报表
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.WorkOrderExcuteReports.WorkOrderExcuteReportViewModel.SummaryTimeProperty">
+            <summary>
+            统计时间
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.WorkOrderExcuteReports.WorkOrderExcuteReportViewModel.SummaryTime">
+            <summary>
+            统计时间
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.WorkOrderExcuteReports.WorkOrderExcuteReportViewModel.YearProperty">
+            <summary>
+            年份
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.WorkOrderExcuteReports.WorkOrderExcuteReportViewModel.Year">
+            <summary>
+            年份
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.WorkOrderExcuteReports.WorkOrderExcuteReportViewModel.MonthProperty">
+            <summary>
+            月份
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.WorkOrderExcuteReports.WorkOrderExcuteReportViewModel.Month">
+            <summary>
+            月份
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.WorkOrderExcuteReports.WorkOrderExcuteReportViewModel.WorkOrderQtyProperty">
+            <summary>
+            工单总数
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.WorkOrderExcuteReports.WorkOrderExcuteReportViewModel.WorkOrderQty">
+            <summary>
+            入库数量
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.WorkOrderExcuteReports.WorkOrderExcuteReportViewModel.CompleteQtyProperty">
+            <summary>
+            工单完成数
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.WorkOrderExcuteReports.WorkOrderExcuteReportViewModel.CompleteQty">
+            <summary>
+            工单完成数
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.WorkOrderExcuteReports.WorkOrderExcuteReportViewModel.CompleteRateProperty">
+            <summary>
+            工单完成率
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.WorkOrderExcuteReports.WorkOrderExcuteReportViewModel.CompleteRate">
+            <summary>
+            工单完成率
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.Report.WorkOrderExcuteReports.WorkOrderExcuteReportViewModelController">
+            <summary>
+            工单执行统计报表查询器
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.Report.WorkOrderExcuteReports.WorkOrderExcuteReportViewModelController.GetSpartPartMitReport(SIE.EMS.Report.WorkOrderExcuteReports.WorkOrderExcuteReportViewModelCriteria)">
+            <summary>
+            获取备件库统计列表
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.EMS.Report.WorkOrderExcuteReports.WorkOrderExcuteReportViewModelCriteria">
+            <summary>
+            工单执行统计报表
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.WorkOrderExcuteReports.WorkOrderExcuteReportViewModelCriteria.FactoryIdProperty">
+            <summary>
+            工厂Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.WorkOrderExcuteReports.WorkOrderExcuteReportViewModelCriteria.FactoryId">
+            <summary>
+            工厂Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.WorkOrderExcuteReports.WorkOrderExcuteReportViewModelCriteria.FactoryProperty">
+            <summary>
+            工厂
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.WorkOrderExcuteReports.WorkOrderExcuteReportViewModelCriteria.Factory">
+            <summary>
+            工厂
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.WorkOrderExcuteReports.WorkOrderExcuteReportViewModelCriteria.DepartmentIdProperty">
+            <summary>
+            部门Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.WorkOrderExcuteReports.WorkOrderExcuteReportViewModelCriteria.DepartmentId">
+            <summary>
+            部门Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.WorkOrderExcuteReports.WorkOrderExcuteReportViewModelCriteria.DepartmentProperty">
+            <summary>
+            部门
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.WorkOrderExcuteReports.WorkOrderExcuteReportViewModelCriteria.Department">
+            <summary>
+            部门
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.WorkOrderExcuteReports.WorkOrderExcuteReportViewModelCriteria.RepairTypeProperty">
+            <summary>
+            工单类型
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.WorkOrderExcuteReports.WorkOrderExcuteReportViewModelCriteria.RepairType">
+            <summary>
+            工单类型
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.WorkOrderExcuteReports.WorkOrderExcuteReportViewModelCriteria.BeginMonthProperty">
+            <summary>
+            月份
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.WorkOrderExcuteReports.WorkOrderExcuteReportViewModelCriteria.BeginMonth">
+            <summary>
+            月份
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.Report.WorkOrderExcuteReports.WorkOrderExcuteReportViewModelCriteria.EndMonthProperty">
+            <summary>
+            月份
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.Report.WorkOrderExcuteReports.WorkOrderExcuteReportViewModelCriteria.EndMonth">
+            <summary>
+            月份
+            </summary>
+        </member>
+    </members>
+</doc>

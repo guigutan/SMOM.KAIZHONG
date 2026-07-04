@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="SIE.Wpf.MES.BatchWIP.BatchControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:lc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:uic="http://schemas.siestudio.com/winfx/xaml/core"
+             xmlns:uit="http://schemas.siestudio.com/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="{DynamicResource {uit:BrushesThemeKey ResourceKey=Background}}" Margin="-12">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <lc:GroupBox Header="{Binding [转入批次], Source={uic:L10N}}" Name="inputControl"/>
+        <lc:GroupBox Grid.Column="1" Header="{Binding [转出批次], Source={uic:L10N}}" Margin="10,0,0,0" Name="outputControl"/>
+    </Grid>
+</UserControl>

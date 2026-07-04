@@ -1,0 +1,88 @@
+﻿using SIE.LES.MaterialPreparations.ViewModels;
+using SIE.LES.StockOrders.WorkOrders;
+using SIE.Resources.Enterprises;
+using SIE.Resources.WipResources;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SIE.Web.LES.MaterialPreparations.ViewModels
+{
+    /// <summary>
+    /// 备料需求单选择工单视图
+    /// </summary>
+    public class MaterialPrepareWoViewConfig : WebViewConfig<MaterialPrepareWoViewModel>
+    {
+        /// <summary>
+        /// 列表视图
+        /// </summary>
+        protected override void ConfigListView()
+        {
+            View.Property(p => p.WoNo).Readonly().ShowInList(150);
+            View.Property(p => p.ProductCode).Readonly().ShowInList(150);
+            View.Property(p => p.ProductName).Readonly().ShowInList(150);
+            View.Property(p => p.Factory).Readonly().ShowInList(150);
+            View.Property(p => p.Workshop).Readonly().ShowInList(150);
+            View.Property(p => p.WipResource).Readonly().ShowInList(150);
+            View.Property(p => p.PlanQty).Readonly().ShowInList(150);
+            View.Property(p => p.WoState).Readonly().ShowInList(150);
+            View.Property(p => p.PlanBeginDate).Readonly().ShowInList(150);
+            View.Property(p => p.PlanEndDate).Readonly().ShowInList(150);
+        }
+    }
+
+
+    /// <summary>
+    /// 备料需求单选择工单查询视图
+    /// </summary>
+    public class MaterialPrepareWoCriteriaViewConfig : WebViewConfig<MaterialPrepareWoCriteria>
+    {
+        /// <summary>
+        /// 视图配置
+        /// </summary>
+        protected override void ConfigQueryView()
+        {
+            using (View.OrderProperties())
+            {
+                View.Property(p => p.WoNo).Show();
+                View.Property(p => p.Factory).UseDataSource((e, p, k) =>
+                {
+                    var list = RT.Service.Resolve<EnterpriseController>().GetEmployeeFactoriesList(p, k);
+                    foreach (var factory in list)
+                    {
+                        factory.TreePId = 0;
+                    }
+                    return list;
+                }).Cascade(p => p.WorkshopId, null).Cascade(p => p.WipResourceId, null).Show();
+                View.Property(p => p.Workshop).UseDataSource((e, p, k) =>
+                {
+                    var entity = e as MaterialPrepareWoCriteria;
+                    var list = RT.Service.Resolve<EnterpriseController>().GetResourceWorkShops(p, k, entity.FactoryId);
+                    foreach (var workshop in list)
+                    {
+                        workshop.TreePId = 0;
+                    }
+                    return list;
+                }).Cascade(p => p.WipResourceId, null).Show();
+                View.Property(p => p.WipResource).UseDataSource((e, p, k) =>
+                {
+                    var entity = e as MaterialPrepareWoCriteria;
+                    var stateList = new List<ResourceState>() { ResourceState.Actived, ResourceState.Stop, ResourceState.Unused };
+                    var srcTypeList = new List<SyncSourceType>() { SyncSourceType.Enterprise };
+                    if (entity.WorkshopId.HasValue)
+                    {
+                        return RT.Service.Resolve<WipResourceController>()
+                            .GetWipResourcesByWorkShopId(stateList, new List<double?> { entity.WorkshopId.Value },
+                            srcTypeList, p, k);
+                    }
+
+                    return RT.Service.Resolve<WipResourceController>().GetWipResources(stateList, entity.WorkshopId, srcTypeList, p, k);
+                }).Show();
+                View.Property(p => p.ProductCode).Show();
+                View.Property(p => p.ProductName).Show();
+            }
+        }
+    }
+}

@@ -1,0 +1,59 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+	  <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="ReasonControllerTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.0" />
+    <PackageReference Include="coverlet.collector" Version="1.3.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\SIE.xUnit.Core\SIE.xUnit.Core.csproj" />
+    <ProjectReference Include="..\SIE.Warehouses\SIE.Warehouses.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="SIE">
+      <HintPath>..\..\..\..\platform\nest\netstandard2.0\SIE.dll</HintPath>
+    </Reference>
+    <Reference Include="SIE.Caches">
+      <HintPath>..\..\..\..\platform\nest\netstandard2.0\SIE.Caches.dll</HintPath>
+    </Reference>
+    <Reference Include="SIE.Common">
+      <HintPath>..\..\..\..\platform\nest\netstandard2.0\SIE.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SIE.Log4Net">
+      <HintPath>..\..\..\..\platform\nest\netstandard2.0\SIE.Log4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="SIE.Mda">
+      <HintPath>..\..\..\..\platform\nest\netstandard2.0\SIE.Mda.dll</HintPath>
+    </Reference>
+    <Reference Include="SIE.ORM.MappingColumn">
+      <HintPath>..\..\..\..\platform\nest\netstandard2.0\SIE.ORM.MappingColumn.dll</HintPath>
+    </Reference>
+    <Reference Include="SIE.Rbac">
+      <HintPath>..\..\..\..\platform\nest\netstandard2.0\SIE.Rbac.dll</HintPath>
+    </Reference>
+    <Reference Include="SIE.SqlLogger">
+      <HintPath>..\..\..\..\platform\nest\netstandard2.0\SIE.SqlLogger.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>

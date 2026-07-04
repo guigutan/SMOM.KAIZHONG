@@ -1,0 +1,53 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="SIE.CrossPlatform.Collect.TestPage"
+		xmlns:li="using:LoadingIndicators.Avalonia"
+		 xmlns:vm="using:SIE.CrossPlatform.Collect.ViewModels"
+		x:DataType="vm:TestPageViewModel"
+        Title="TestPage">
+	
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="50"></RowDefinition>
+			<RowDefinition Height="50"></RowDefinition>
+			<RowDefinition Height="*"></RowDefinition>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="200"></ColumnDefinition>
+			<ColumnDefinition Width="200"></ColumnDefinition>
+			<ColumnDefinition Width="200"></ColumnDefinition>
+			<ColumnDefinition Width="*"></ColumnDefinition>
+		</Grid.ColumnDefinitions>
+		<Button Height="50" Width="200" Grid.Row="0" Grid.Column="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+			x:Name="btnTestPreview"	 Click="Button_Click">
+			<TextBlock>
+				登录测试
+			</TextBlock>
+		</Button>
+		<TextBlock Grid.Row="0" Grid.Column="1"  Width="200" x:Name="txtStatus"  VerticalAlignment="Center" >登录状态:</TextBlock>
+
+		<TextBox Grid.Row="1" Grid.Column="0"  Grid.ColumnSpan="3" x:Name="USBTestBox"  ></TextBox>
+		
+		<!--
+		Arc
+        Arcs
+        Arcs Ring
+        Double Bounce
+        FlipPlane
+        Pulse
+        Ring
+        Three Dots
+        Wave
+		IsActive="{Binding IsBusy,Mode=TwoWay}"
+		-->
+		<Border Background="Transparent" Opacity="0.5" IsVisible="{Binding IsBusy,Mode=TwoWay}" Grid.ColumnSpan="4"
+							 Grid.RowSpan="3"  Grid.Column="0" Grid.Row="0">
+			<li:LoadingIndicator   HorizontalAlignment="Center" VerticalAlignment="Center"  Height="200" Width="200" Mode="Arc" SpeedRatio="1.2" />
+		</Border>
+		
+	</Grid>
+	
+</Window>

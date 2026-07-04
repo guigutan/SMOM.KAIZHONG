@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F22DF5A8-E32A-4C66-A7A0-8C33E7272E6E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SIE.Wpf.MES</RootNamespace>
+    <AssemblyName>SIE.Wpf.MES</AssemblyName>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <UseWPF>true</UseWPF>
+    <CodeAnalysisRuleSet>..\..\..\..\.sonarlint\sie.smomcsharp.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0-windows\SIE.Wpf.MES.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0-windows\SIE.Wpf.MES.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    
+    
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\KaiZhong\SIE.KZ.Print\SIE.KZ.Print.csproj" />
+    <ProjectReference Include="..\..\Common\SIE.MES.Common\SIE.MES.Common.csproj">
+      <Project>{C8C77EDE-A4CC-4949-A3BC-FFAC8F2548A7}</Project>
+      <Name>SIE.MES.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Tasks\SIE.MES.TaskManagement\SIE.MES.TaskManagement.csproj" />
+    <ProjectReference Include="..\SIE.MES.Statistics\SIE.MES.Statistics.csproj">
+      <Project>{572e950b-57d9-41ae-be58-b580a4727e1e}</Project>
+      <Name>SIE.MES.Statistics</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Barcodes\SIE.Wpf.Barcodes\SIE.Wpf.Barcodes.csproj">
+      <Project>{9584895d-08cc-47fe-9a80-9586b8e4c261}</Project>
+      <Name>SIE.Wpf.Barcodes</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\..\..\.sonarlint\sie.smom\CSharp\SonarLint.xml">
+      <Link>SonarLint.xml</Link>
+    </AdditionalFiles>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Homepage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="WIP\TemporaryRepairs\Behaviors\" />
+    <Folder Include="WIP\TemporaryRepairs\Configs\" />
+  </ItemGroup>
+  <ItemGroup>
+		<Compile Remove="Abnormal/AbnormalCauseCriteriaViewConfig.cs" />
+		<Compile Remove="Abnormal/AbnormalCauseViewConfig.cs" />
+		<Compile Remove="BatchProductRoutings/BatchCriteriaViewConfig.cs" />
+		<Compile Remove="BatchProductRoutings/BatchExtViewConfig.cs" />
+		<Compile Remove="BatchProductRoutings/BatchRoutingDesign.xaml.cs" />
+		<Compile Remove="BatchProductRoutings/BatchRoutingTemplate.cs" />
+		<Compile Remove="BatchProductRoutings/BatchRoutingViewModel.cs" />
+		<Compile Remove="BatchProductRoutings/RoutingLayout.xaml.cs" />
+		<Compile Remove="InspectionStandards/ModelInspectionItemViewConfig.cs" />
+		<Compile Remove="ProductRoutings/BarcodeViewConfig.cs" />
+		<Compile Remove="ProductRoutings/BomViewModel.cs" />
+		<Compile Remove="ProductRoutings/ProductRoutingDesign.xaml.cs" />
+		<Compile Remove="ProductRoutings/ProductRoutingLayout.xaml.cs" />
+		<Compile Remove="ProductRoutings/ProductRoutingTemplate.cs" />
+		<Compile Remove="ProductRoutings/ProductRoutingViewModel.cs" />
+		<Compile Remove="RoutingSettings/DefaultRoutingDisplay.xaml.cs" />
+		<Compile Remove="RoutingSettings/DefaultRoutingDisplayEditor.cs" />
+		<Compile Remove="RoutingSettings/DefaultRoutingViewModelViewConfig.cs" />
+		<Compile Remove="RoutingSettings/LineRoutingViewConfig.cs" />
+		<Compile Remove="RoutingSettings/ProductRoutingViewConfig.cs" />
+		<Compile Remove="RoutingSettings/RoutingVersionViewModelViewConfig.cs" />
+		<Compile Remove="StationStorages/StationItemStorageViewConfig.cs" />
+		<Compile Remove="StationStorages/StationStorageCriteriaViewConfig.cs" />
+		<Compile Remove="StationStorages/StationStorageViewConfig.cs" />
+		<Compile Remove="StationStorages/WoStationStorageViewConfig.cs" />
+		<Compile Remove="Storages/ItemStorageViewConfig.cs" />
+		<Compile Remove="Storages/StationStorageAreaViewConfig.cs" />
+		<Compile Remove="Storages/StorageAreaViewConfig.cs" />
+		<Compile Remove="Storages/StorageLocationViewConfig.cs" />
+		<Compile Remove="Storages/StorageSaftyViewConfig.cs" />
+		<Compile Remove="WorkOrders/ErpSaleOrderViewConfig.cs" />
+		<Compile Remove="WorkOrders/ErpWorkOrderViewConfig.cs" />
+		<Compile Remove="WorkOrders/ProductLabelTemplateViewConfig.cs" />
+		<Compile Remove="WorkOrders/WorkOrderBomAlternativeViewConfig.cs" />
+		<Compile Remove="WorkOrders/WorkOrderBomPropertyValueViewConfig.cs" />
+		<Compile Remove="WorkOrders/WorkOrderBomViewConfig.cs" />
+		<Compile Remove="WorkOrders/WorkOrderCriteriaViewConfig.cs" />
+		<Compile Remove="WorkOrders/WorkOrderDetailTemplate.cs" />
+		<Compile Remove="WorkOrders/WorkOrderLogViewConfig.cs" />
+		<Compile Remove="WorkOrders/WorkOrderPackageRuleDetailViewConfig.cs" />
+		<Compile Remove="WorkOrders/WorkOrderPackageRuleViewConfig.cs" />
+		<Compile Remove="WorkOrders/WorkOrderProcessPackingUnitViewConfig.cs" />
+		<Compile Remove="WorkOrders/WorkOrderRoutingProcessParameterViewConfig.cs" />
+		<Compile Remove="WorkOrders/WorkOrderRoutingProcessViewConfig.cs" />
+		<Compile Remove="WorkOrders/WoWipBatchViewConfig.cs" />
+		<Compile Remove="InspectionStandards/Commands/AddModelInspectionItemCommand.cs" />
+		<Compile Remove="InspectionStandards/Commands/EditModelInspectionItemCommand.cs" />
+		<Compile Remove="InspectionStandards/Editors/LoadInspectionModeEditor.cs" />
+		<Compile Remove="ProductRoutings/Commands/ProcessBomCommand.cs" />
+		<Compile Remove="Storages/Commands/AddStationStorageAreaCommand.cs" />
+		<Compile Remove="Storages/Commands/AddStorageSafetyCommand.cs" />
+		<Compile Remove="Storages/Commands/AttachChildSaveCommand.cs" />
+		<Compile Remove="Storages/Commands/EditStorageAreaExtCommand.cs" />
+		<Compile Remove="Storages/Commands/ItemStorageCommands.cs" />
+		<Compile Remove="Storages/Commands/StorageAreaCopyCommand.cs" />
+		<Compile Remove="Storages/Commands/StorageLocationCommands.cs" />
+		<Compile Remove="WorkOrders/Commands/AddWorkOrderCommand.cs" />
+		<Compile Remove="WorkOrders/Commands/DownloadWorkOrderBarcodeCommand.cs" />
+		<Compile Remove="WorkOrders/Commands/DownloadWorkOrderCommand.cs" />
+		<Compile Remove="WorkOrders/Commands/ExportFailedDataCommand.cs" />
+		<Compile Remove="WorkOrders/Commands/ImportBarcodeCommand.cs" />
+		<Compile Remove="WorkOrders/Commands/ImportWorkOrderCommand.cs" />
+		<Compile Remove="WorkOrders/Commands/ImportWorkOrderDataCommand.cs" />
+		<Compile Remove="WorkOrders/Commands/PackageRuleDetailAddCommand.cs" />
+		<Compile Remove="WorkOrders/Commands/SaveWorkOrderCommand.cs" />
+		<Compile Remove="WorkOrders/Commands/SelectPackageRuleCommand.cs" />
+		<Compile Remove="WorkOrders/Commands/UpdateRoutingLayoutCommand.cs" />
+		<Compile Remove="WorkOrders/Commands/UpdateWorkOrderCommand.cs" />
+		<Compile Remove="WorkOrders/Commands/ViewWorkOrderCommand.cs" />
+		<Compile Remove="WorkOrders/Commands/WoProcessPackUnitLookupCommand.cs" />
+		<Compile Remove="WorkOrders/Commands/WorkOrderChangeStatusCommand.cs" />
+		<Compile Remove="WorkOrders/Commands/WorkOrderCopyCommand.cs" />
+		<Compile Remove="WorkOrders/Configs/GenerateProcessBomsConfigValueViewConfig.cs" />
+		<Compile Remove="WorkOrders/Configs/PrintTemplateConfigValueViewConfig.cs" />
+		<Compile Remove="WorkOrders/Configs/WorkOrderNoConfigValueViewConfig.cs" />
+		<Compile Remove="WorkOrders/Reworks/KeyItemUnboundConfigViewConfig.cs" />
+		<Compile Remove="WorkOrders/Reworks/TwoListControl.xaml.cs" />
+		<Compile Remove="WorkOrders/Reworks/UnionBarcodeCoreViewConfig.cs" />
+		<Compile Remove="WorkOrders/Reworks/UnionBarcodeUITemplate.cs" />
+		<Compile Remove="WorkOrders/Reworks/UnionBarcodeViewConfig.cs" />
+		<Compile Remove="WorkOrders/Reworks/UnionBarcodeViewCriteriaViewConfig.cs" />
+		<Compile Remove="WorkOrders/Reworks/WorkOrderUnionBarcode.cs" />
+		<Compile Remove="WorkOrders/Routings/WorkOrderRoutingEdit.xaml.cs" />
+		<Compile Remove="WorkOrders/Routings/WorkOrderRoutingView.xaml.cs" />
+		<Compile Remove="WorkOrders/ViewBehaviors/WorkOrderBehavior.cs" />
+		<Compile Remove="WorkOrders/ViewModels/ImportWorkOrderCheckViewModel.cs" />
+		<Compile Remove="WorkOrders/ViewModels/WorkOrderChangeStatus.cs" />
+		<Compile Remove="WorkOrders/ViewModels/WorkOrderCheckDataViewModel.cs" />
+		<Compile Remove="WorkOrders/ViewModels/WorkOrderRoutingProcessProperty.cs" />
+		<Compile Remove="WorkOrders/Reworks/Commands/KeyItemAllSelectCommand.cs" />
+		<Compile Remove="WorkOrders/Reworks/Commands/RemoveBarcodeCommand.cs" />
+		<Compile Remove="WorkOrders/Reworks/Commands/UnionBarcodeAllSelectCommand.cs" />
+		<Compile Remove="WorkOrders/Reworks/Commands/UnionBarcodeCommand.cs" />
+		<Compile Remove="WorkOrders/Reworks/Commands/UnionBarcodeSaveCommand.cs" />
+		<Compile Remove="WorkOrders/Reworks/Commands/UnionBarcodeSelCommand.cs" />
+		<Compile Remove="WorkOrders/Reworks/ViewBehaviors/KeyItemUnboundViewBehavior.cs" />
+		<Compile Remove="WorkOrders/Reworks/ViewBehaviors/UnionBarcodeViewBehavior.cs" />
+  </ItemGroup>
+  <ItemGroup>
+		<Page Remove="BatchProductRoutings/BatchRoutingDesign.xaml" />
+		<Page Remove="BatchProductRoutings/RoutingLayout.xaml" />
+		<Page Remove="ProductRoutings/ProductRoutingDesign.xaml" />
+		<Page Remove="ProductRoutings/ProductRoutingLayout.xaml" />
+		<Page Remove="RoutingSettings/DefaultRoutingDisplay.xaml" />
+		<Page Remove="WorkOrders/Reworks/TwoListControl.xaml" />
+		<Page Remove="WorkOrders/Routings/WorkOrderRoutingEdit.xaml" />
+		<Page Remove="WorkOrders/Routings/WorkOrderRoutingView.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.IO.Ports" Version="7.0.0" />
+  </ItemGroup>
+</Project>

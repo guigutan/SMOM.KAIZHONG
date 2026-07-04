@@ -1,0 +1,1171 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Web.EMS.EarlierStage</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Web.EMS.EarlierStage.EntityPropertyViewMetaExtension">
+            <summary>
+            扩展编辑器
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Budgets.BudgetChangeCriteriaViewConfig">
+            <summary>
+            预算变更查询实体-界面
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Budgets.BudgetChangeCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Budgets.BudgetChangeViewConfig">
+            <summary>
+            预算变更-界面
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EarlierStage.Budgets.BudgetChangeViewConfig.BudgetView">
+            <summary>
+            预算-变更记录
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EarlierStage.Budgets.BudgetChangeViewConfig.ChangeRecordView">
+            <summary>
+            变更记录
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EarlierStage.Budgets.BudgetChangeViewConfig.percent">
+            <summary>
+            千分位
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Budgets.BudgetChangeViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Budgets.BudgetChangeViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Budgets.BudgetChangeViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Budgets.BudgetChangeViewConfig.ConfigBudgetView">
+            <summary>
+            预算-变更记录
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Budgets.BudgetChangeViewConfig.ConfigChangeRecordView">
+            <summary>
+            变更记录
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Budgets.BudgetCriteriaViewConfig">
+            <summary>
+            预算查询界面
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Budgets.BudgetCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Budgets.BudgetManageConfigValueViewConfig">
+            <summary>
+            预算管理配置-界面
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Budgets.BudgetManageConfigValueViewConfig.ConfigDetailsView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Budgets.BudgetViewConfig">
+            <summary>
+            预算-界面
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EarlierStage.Budgets.BudgetViewConfig.percent">
+            <summary>
+            千分位
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Budgets.BudgetViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Budgets.BudgetViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Budgets.BudgetViewConfig.ConfigSelectionView">
+            <summary>
+            配置下拉视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Budgets.BudgetViewConfig.ConfigImportView">
+            <summary>
+            配置导入模版
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Budgets.Commands.AddBudgetCommand">
+            <summary>
+            添加
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Budgets.Commands.AddBudgetCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Budgets.Commands.BudgetImportCommand">
+            <summary>
+            导入预算
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EarlierStage.Budgets.Commands.BudgetImportCommand.ConstrantDeviceBudgetDepartment">
+            <summary>
+            用户与预算部门关系
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EarlierStage.Budgets.Commands.BudgetImportCommand.ConstrantEmployeeEnterprise">
+            <summary>
+            员工与工厂关系
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EarlierStage.Budgets.Commands.BudgetImportCommand.ConstrantDepartmentAndFactory">
+            <summary>
+            员工与工厂关系
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Budgets.Commands.BudgetImportCommand.OnRowDataRead(SIE.Common.Import.RowData,SIE.Common.Import.CacheData)">
+            <summary>
+            行数据读取, 默认按视图配置把数据读取后，还可以进行自定义处理
+            </summary>
+            <param name="data">行数据</param>
+            <param name="cache">缓存数据</param>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Budgets.Commands.CancelBudgetChangeCommand">
+            <summary>
+            撤回预算变更
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Budgets.Commands.CancelBudgetChangeCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Budgets.Commands.CancelBudgetCommand">
+            <summary>
+            撤回预算
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Budgets.Commands.CancelBudgetCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Budgets.Commands.DeleteBudgetChangeCommand">
+            <summary>
+            删除预算变更
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Budgets.Commands.DeleteBudgetChangeCommand.OnSaving(SIE.Domain.EntityList)">
+            <summary>
+            保存前动作
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Budgets.Commands.DeleteBudgetCommand">
+            <summary>
+            删除预算
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Budgets.Commands.DeleteBudgetCommand.OnSaving(SIE.Domain.EntityList)">
+            <summary>
+            保存前动作
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Budgets.Commands.EditSubmitBudgetCommand">
+            <summary>
+            编辑界面-提交预算
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Budgets.Commands.EditSubmitBudgetCommand.DoSave(SIE.Domain.Entity)">
+            <summary>
+            编辑界面-提交预算
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Budgets.Commands.ExamineBudgetChangeCommand">
+            <summary>
+            审核预算变更
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Budgets.Commands.ExamineBudgetChangeCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Budgets.Commands.ExamineBudgetCommand">
+            <summary>
+            审核预算
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Budgets.Commands.ExamineBudgetCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Budgets.Commands.SaveBudgetChangeCommand">
+            <summary>
+            保存预算变更
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Budgets.Commands.SaveBudgetChangeCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Budgets.Commands.SaveBudgetCommand">
+            <summary>
+            保存预算
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Budgets.Commands.SaveBudgetCommand.OnSaving(SIE.Domain.Entity)">
+            <summary>
+            保存前动作
+            </summary>
+            <param name="entity">实体</param>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Budgets.Commands.SubmitBudgetChangeCommand">
+            <summary>
+            提交预算变更
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Budgets.Commands.SubmitBudgetChangeCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Budgets.Commands.SubmitBudgetCommand">
+            <summary>
+            提交预算
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Budgets.Commands.SubmitBudgetCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Common.DataQuery.ApprovalDataQueryer">
+            <summary>
+            预算查询器
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Common.DataQuery.ApprovalDataQueryer.GetEnableApproval(System.Int32)">
+            <summary>
+            获取是否启用审批流程
+            </summary>
+            <param name="typeQty">界面类型（0：预算，1：预算变更，2：项目，3：项目变更，4：项目结项）</param>
+            <returns>是否启用审批流程</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.EarlierStageMenuInit">
+            <summary>
+            菜单初始化
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.EarlierStageMenuInit.GetMenuDtos">
+            <summary>
+            获取菜单列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Module">
+            <summary>
+            模块配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化模块
+            </summary>
+            <param name="app">应用程序</param>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Module.App_ModuleOperations(System.Object,System.EventArgs)">
+            <summary>
+            模块定义
+            </summary>
+            <param name="sender">应用程序</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Projects.Commands.CancelProjectChangeCommand">
+            <summary>
+            撤回项目变更
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.Commands.CancelProjectChangeCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Projects.Commands.CancelProjectCloseCommand">
+            <summary>
+            撤回项目结项
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.Commands.CancelProjectCloseCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Projects.Commands.CancelProjectCommand">
+            <summary>
+            撤回项目
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.Commands.CancelProjectCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Projects.Commands.CompleteKeyItemPlanCommand">
+            <summary>
+            计划完成
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.Commands.CompleteKeyItemPlanCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Projects.Commands.CompleteWorkItemCommand">
+            <summary>
+            计划完成
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.Commands.CompleteWorkItemCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Projects.Commands.DeleteProCloseAttachmentCommand">
+            <summary>
+            附件删除
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Projects.Commands.DeleteProjectAttachmentCommand">
+            <summary>
+            项目管理附件删除命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Projects.Commands.DeleteProjectChangeCommand">
+            <summary>
+            删除项目变更
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.Commands.DeleteProjectChangeCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Projects.Commands.DeleteProjectCloseCommand">
+            <summary>
+            删除项目结项
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.Commands.DeleteProjectCloseCommand.OnSaving(SIE.Domain.EntityList)">
+            <summary>
+            保存前动作
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Projects.Commands.DeleteProjectCommand">
+            <summary>
+            删除项目
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.Commands.DeleteProjectCommand.OnSaving(SIE.Domain.EntityList)">
+            <summary>
+            保存前动作
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Projects.Commands.ExamineProjectChangeCommand">
+            <summary>
+            审核项目变更
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.Commands.ExamineProjectChangeCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Projects.Commands.ExamineProjectCloseCommand">
+            <summary>
+            审核项目结项
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.Commands.ExamineProjectCloseCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Projects.Commands.ExamineProjectCommand">
+            <summary>
+            审核项目
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.Commands.ExamineProjectCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Projects.Commands.ImportWorkItemCommand">
+            <summary>
+            导入项目计划
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.Commands.ImportWorkItemCommand.OnRowDataRead(SIE.Common.Import.RowData,SIE.Common.Import.CacheData)">
+            <summary>
+            行数据读取, 默认按视图配置把数据读取后，还可以进行自定义处理
+            </summary>
+            <param name="data">行数据</param>
+            <param name="cache">缓存数据</param>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Projects.Commands.ProjectImportCommand">
+            <summary>
+            导入项目
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EarlierStage.Projects.Commands.ProjectImportCommand.ConstrantDeviceBudgetDepartment">
+            <summary>
+            用户与预算部门关系
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EarlierStage.Projects.Commands.ProjectImportCommand.ConstrantEmployeeEnterprise">
+            <summary>
+            员工与工厂关系
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EarlierStage.Projects.Commands.ProjectImportCommand.ConstrantDepartmentAndFactory">
+            <summary>
+            员工与工厂关系
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.Commands.ProjectImportCommand.OnRowDataRead(SIE.Common.Import.RowData,SIE.Common.Import.CacheData)">
+            <summary>
+            行数据读取, 默认按视图配置把数据读取后，还可以进行自定义处理
+            </summary>
+            <param name="data">行数据</param>
+            <param name="cache">缓存数据</param>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.Commands.ProjectImportCommand.GetImportInfo(SIE.EMS.EarlierStage.Projects.Project)">
+            <summary>
+            获取导入信息
+            </summary>
+            <param name="project"></param>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Projects.Commands.ProjectKeyItemImportCommand">
+            <summary>
+            导入项目关键事项
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.Commands.ProjectKeyItemImportCommand.OnRowDataRead(SIE.Common.Import.RowData,SIE.Common.Import.CacheData)">
+            <summary>
+            行数据读取, 默认按视图配置把数据读取后，还可以进行自定义处理
+            </summary>
+            <param name="data">行数据</param>
+            <param name="cache">缓存数据</param>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.Commands.ProjectKeyItemImportCommand.OnSave(System.Collections.Generic.IList{SIE.Common.Import.RowData})">
+            <summary>
+            复写保存方法
+            </summary>
+            <param name="batch">数据</param>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Projects.Commands.ProjectMemberImportCommand">
+            <summary>
+            导入项目成员
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.Commands.ProjectMemberImportCommand.OnRowDataRead(SIE.Common.Import.RowData,SIE.Common.Import.CacheData)">
+            <summary>
+            行数据读取, 默认按视图配置把数据读取后，还可以进行自定义处理
+            </summary>
+            <param name="data">行数据</param>
+            <param name="cache">缓存数据</param>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Projects.Commands.SaveProjectChangeCommand">
+            <summary>
+            保存项目变更
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.Commands.SaveProjectChangeCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Projects.Commands.SaveProjectCloseCommand">
+            <summary>
+            保存项目结项
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.Commands.SaveProjectCloseCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Projects.Commands.SaveProjectCommand">
+            <summary>
+            保存项目
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.Commands.SaveProjectCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Projects.Commands.StartKeyItemPlanCommand">
+            <summary>
+            计划开始
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.Commands.StartKeyItemPlanCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Projects.Commands.StartWorkItemCommand">
+            <summary>
+            计划开始
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.Commands.StartWorkItemCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Projects.Commands.SubmitProjectChangeCommand">
+            <summary>
+            提交项目变更
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.Commands.SubmitProjectChangeCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Projects.Commands.SubmitProjectCloseCommand">
+            <summary>
+            提交项目结项
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.Commands.SubmitProjectCloseCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Projects.Commands.SubmitProjectCommand">
+            <summary>
+            提交项目
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.Commands.SubmitProjectCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Projects.Commands.UploadProCloseAttachmentCommand">
+            <summary>
+            上传附件
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Projects.Commands.UploadProjectAttachmentCommand">
+            <summary>
+            项目管理附件上传命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Projects.ProjectAttachmentViewConfig">
+            <summary>
+            项目管理附件资料视图配置
+            </summary>    
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectAttachmentViewConfig.ConfigListView">
+            <summary>
+             配置列表视图 
+             </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Projects.ProjectChangeContentViewConfig">
+            <summary>
+            变更内容-界面
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EarlierStage.Projects.ProjectChangeContentViewConfig.ProjectView">
+            <summary>
+            项目视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectChangeContentViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectChangeContentViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectChangeContentViewConfig.ConfigProjectView">
+            <summary>
+            项目视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Projects.ProjectChangeCriteriaViewConfig">
+            <summary>
+            项目变更查询实体-界面
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectChangeCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Projects.ProjectChangeKeyItemViewConfig">
+            <summary>
+            项目变更关键事项-界面
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EarlierStage.Projects.ProjectChangeKeyItemViewConfig.ReadonlyView">
+            <summary>
+            查看视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectChangeKeyItemViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectChangeKeyItemViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectChangeKeyItemViewConfig.ConfigReadonlyView">
+            <summary>
+            查看视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Projects.ProjectChangeMemberViewConfig">
+            <summary>
+            项目变更成员界面
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EarlierStage.Projects.ProjectChangeMemberViewConfig.ReadonlyView">
+            <summary>
+            查看视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectChangeMemberViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectChangeMemberViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectChangeMemberViewConfig.ConfigReadonlyView">
+            <summary>
+            查看视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Projects.ProjectChangeViewConfig">
+            <summary>
+            项目变更-界面
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EarlierStage.Projects.ProjectChangeViewConfig.SuspendView">
+            <summary>
+            项目暂停
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EarlierStage.Projects.ProjectChangeViewConfig.RecoveryView">
+            <summary>
+            项目恢复
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EarlierStage.Projects.ProjectChangeViewConfig.SuspendReadonlyView">
+            <summary>
+            项目暂停只读
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EarlierStage.Projects.ProjectChangeViewConfig.RecoveryReadonlyView">
+            <summary>
+            项目恢复只读
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EarlierStage.Projects.ProjectChangeViewConfig.ReadonlyView">
+            <summary>
+            查看视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectChangeViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectChangeViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectChangeViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectChangeViewConfig.ConfigSuspendView">
+            <summary>
+            项目暂停
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectChangeViewConfig.ConfigRecoveryView">
+            <summary>
+            项目恢复
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectChangeViewConfig.ConfigSuspendReadonlyView">
+            <summary>
+            项目暂停只读
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectChangeViewConfig.ConfigRecoveryReadonlyView">
+            <summary>
+            项目恢复只读
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectChangeViewConfig.ConfigReadonlyView">
+            <summary>
+            查看视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Projects.ProjectChangeWorkItemViewConfig">
+            <summary>
+            项目变更计划界面
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EarlierStage.Projects.ProjectChangeWorkItemViewConfig.ReadonlyView">
+            <summary>
+            查看视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectChangeWorkItemViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectChangeWorkItemViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectChangeWorkItemViewConfig.ConfigReadonlyView">
+            <summary>
+            查看视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectChangeWorkItemViewConfig.ConfigSelectionView">
+            <summary>
+            下拉选择视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Projects.ProjectCloseAttachmentViewConfig">
+            <summary>
+            项目结项附件界面
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectCloseAttachmentViewConfig.ConfigView">
+            <summary>
+            附件视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Projects.ProjectCloseCriteriaViewConfig">
+            <summary>
+            项目结项查询实体-界面
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectCloseCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Projects.ProjectCloseViewConfig">
+            <summary>
+            项目结项-界面
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EarlierStage.Projects.ProjectCloseViewConfig.NormView">
+            <summary>
+            项目指标界面
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EarlierStage.Projects.ProjectCloseViewConfig.EditNormView">
+            <summary>
+            项目编辑指标界面
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectCloseViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectCloseViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectCloseViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectCloseViewConfig.ConfigNormView">
+            <summary>
+            项目指标界面
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectCloseViewConfig.ConfigEditNormView">
+            <summary>
+            项目编辑指标界面
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Projects.ProjectCriteriaViewConfig">
+            <summary>
+            项目查询视图-界面
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Projects.ProjectDataQueryer">
+            <summary>
+            项目查询器
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectDataQueryer.GetNewProject">
+            <summary>
+            创建一个新的项目
+            </summary>
+            <returns>新的项目</returns>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectDataQueryer.ExportProject(SIE.EMS.EarlierStage.Projects.ProjectCriteria)">
+            <summary>
+            导出项目
+            </summary>
+            <param name="criter">查询实体</param>
+            <returns>项目信息</returns>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectDataQueryer.ExportProjectKeyItem(System.Collections.Generic.List{System.Double},SIE.Core.Common.Models.ExportDataTable)">
+            <summary>
+            导出关键事项
+            </summary>
+            <param name="projectIds"></param>
+            <param name="exportDataTable"></param>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectDataQueryer.ExportProjectHeadInfo(SIE.Domain.EntityList{SIE.EMS.EarlierStage.Projects.Project},SIE.Core.Common.Models.ExportDataTable)">
+            <summary>
+            导出项目管理主表
+            </summary>
+            <param name="projects"></param>
+            <param name="exportDataTable"></param>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectDataQueryer.GetChildInfoByProjectId(System.Double)">
+            <summary>
+            根据项目id获取项目子列表信息
+            </summary>
+            <param name="projectId">项目id</param>
+            <returns>项目子列表信息</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Projects.ProjectKeyItemCriteriaViewConfig">
+            <summary>
+            项目关键事项查询实体-界面
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectKeyItemCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Projects.ProjectKeyItemMemberViewConfig">
+            <summary>
+            事项成员视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectKeyItemMemberViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Projects.ProjectKeyItemPlanViewConfig">
+            <summary>
+            事项计划视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectKeyItemPlanViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Projects.ProjectKeyItemViewConfig">
+            <summary>
+            项目关键事项视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EarlierStage.Projects.ProjectKeyItemViewConfig.EditView">
+            <summary>
+            编辑视图
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EarlierStage.Projects.ProjectKeyItemViewConfig.ProjectSeeView">
+            <summary>
+            项目查看视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectKeyItemViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectKeyItemViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectKeyItemViewConfig.ConfigImportView">
+            <summary>
+            配置导入视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectKeyItemViewConfig.ConfigEditView">
+            <summary>
+            编辑视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectKeyItemViewConfig.ConfigProjectSeeView">
+            <summary>
+            项目查看视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Projects.ProjectMemberViewConfig">
+            <summary>
+            项目成员视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EarlierStage.Projects.ProjectMemberViewConfig.EditView">
+            <summary>
+            编辑视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectMemberViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectMemberViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectMemberViewConfig.ConfigImportView">
+            <summary>
+            配置导入视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectMemberViewConfig.ConfigEditView">
+            <summary>
+            编辑视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Projects.ProjectViewConfig">
+            <summary>
+            项目视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EarlierStage.Projects.ProjectViewConfig.SeeView">
+            <summary>
+            附加查看视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectViewConfig.ConfigSelectionView">
+            <summary>
+            配置下拉视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectViewConfig.ConfigImportView">
+            <summary>
+            配置导入视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectViewConfig.ConfigSeeView">
+            <summary>
+            附加查看视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.Projects.ProjectWorkItemViewConfig">
+            <summary>
+            工作明细视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EarlierStage.Projects.ProjectWorkItemViewConfig.EditView">
+            <summary>
+            编辑视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectWorkItemViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectWorkItemViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectWorkItemViewConfig.ConfigImportView">
+            <summary>
+            配置导入视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectWorkItemViewConfig.ConfigEditView">
+            <summary>
+            编辑视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.Projects.ProjectWorkItemViewConfig.ConfigSelectionView">
+            <summary>
+            下拉选择视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.EarlierStage.WorkFlows.WorkFlowRecordViewConfig">
+            <summary>
+            审核记录-界面
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.EarlierStage.WorkFlows.WorkFlowRecordViewConfig.SeeView">
+            <summary>
+            附加查看-审核进度
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.WorkFlows.WorkFlowRecordViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.EarlierStage.WorkFlows.WorkFlowRecordViewConfig.ConfigSeeView">
+            <summary>
+            附加查看-审核进度
+            </summary>
+        </member>
+    </members>
+</doc>

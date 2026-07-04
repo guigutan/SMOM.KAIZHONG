@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="1">
+      <data Ref="2" type="Stimulsoft.Report.Dictionary.StiCsvDatabase" isKey="true">
+        <Alias>data</Alias>
+        <Key />
+        <Name>data</Name>
+        <PathData>D:\publish\dev_831\BS1158\Templates\2024-08-29\17d8176279bb4364b61056dd6cfa03b0</PathData>
+        <Separator>|</Separator>
+      </data>
+    </Databases>
+    <DataSources isList="true" count="1">
+      <data Ref="3" type="DataTableSource" isKey="true">
+        <Alias>data</Alias>
+        <Columns isList="true" count="23">
+          <value>DISCRIMINATOR,System.String</value>
+          <value>Id,System.String</value>
+          <value>INDEX_,System.String</value>
+          <value>INV_ORG_ID,System.String</value>
+          <value>IS_PHANTOM,System.String</value>
+          <value>SOURCE_ID_,System.String</value>
+          <value>SYNC_ID,System.String</value>
+          <value>TIME_STAMP,System.String</value>
+          <value>VERSION_,System.String</value>
+          <value>CreateDate,System.String</value>
+          <value>UpdateDate,System.String</value>
+          <value>BoxesQty,System.String</value>
+          <value>IsMantissa,System.String</value>
+          <value>IsPending,System.String</value>
+          <value>IsScraped,System.String</value>
+          <value>Qty,System.String</value>
+          <value>Sn,System.String</value>
+          <value>PrintById,System.String</value>
+          <value>PrintDate,System.String</value>
+          <value>PrintedState,System.String</value>
+          <value>PrintTimes,System.String</value>
+          <value>RangeId,System.String</value>
+          <value>WorkOrderId,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Key>0e45feb598194947b9d426403a2cc036</Key>
+        <Name>data</Name>
+        <NameInSource>data.data</NameInSource>
+      </data>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Resources isList="true" count="0" />
+    <Variables isList="true" count="0" />
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <Key>91ac232ae2f84f8aa77ca1ccdce2ba0d</Key>
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="4" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="2">
+        <Text1 Ref="5" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>1.8,0.4,3,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Font>Arial,8</Font>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text1</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Text>{data.Sn}</Text>
+          <TextBrush>Black</TextBrush>
+        </Text1>
+        <BarCode1 Ref="6" type="Stimulsoft.Report.BarCodes.StiBarCode" isKey="true">
+          <BackColor>Transparent</BackColor>
+          <BarCodeType Ref="7" type="Stimulsoft.Report.BarCodes.StiPdf417BarCodeType" isKey="true">
+            <AspectRatio>1</AspectRatio>
+            <DataColumns>5</DataColumns>
+            <DataRows>3</DataRows>
+            <Module>25</Module>
+          </BarCodeType>
+          <ClientRectangle>0.4,1.6,7.4,4</ClientRectangle>
+          <Code>{data.Sn}</Code>
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Font>Arial,8,Bold,Pixel</Font>
+          <ForeColor>112, 173, 71</ForeColor>
+          <Name>BarCode1</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+        </BarCode1>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Expressions isList="true" count="0" />
+      <Guid>95cae9cb3c6f4c30b79bbee27674b790</Guid>
+      <Margins>1,1,1,1</Margins>
+      <Name>Page1</Name>
+      <PageHeight>8</PageHeight>
+      <PageWidth>10</PageWidth>
+      <Report isRef="0" />
+    </Page1>
+  </Pages>
+  <PreviewSettings>268435455</PreviewSettings>
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>3/15/2017 2:07:29 PM</ReportChanged>
+  <ReportCreated>3/15/2017 2:06:15 PM</ReportCreated>
+  <ReportFile>stiReport.sied</ReportFile>
+  <ReportGuid>d45a19ed86f14c78bef902eb897a536f</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2021.3.3.0</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

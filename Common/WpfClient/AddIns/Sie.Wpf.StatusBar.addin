@@ -1,0 +1,19 @@
+<AddIn name        = "SieStudio"
+       author      = "huchuqiang"
+       copyright   = "prj:///doc/copyright.txt"
+       url         = "http://siestudio.chinasie.com"
+       description = "SieStudio Workbench StatusBar"
+       addInManagerHidden = "true">
+  <Manifest>
+    <!--定义-->
+    <Identity name="StatusBar" version="@AssemblyVersion"/>
+  </Manifest>
+  <Runtime>
+    <Import assembly = ":SIE.Wpf"/>
+  </Runtime>
+  <!-- StatusBar -->
+  <Path name = "/Main/Workbench/StatusBar">
+    <StatusBarItem id = "StatusBar" type="Builder" class="SIE.Wpf.Workbench.Bars.ProductStatusBar"/>
+    <StatusBarItem id = "LogStatus" visible="false" label="性能跟踪已启用" tooltip="程序进入性能跟踪调试状态，会记录程序的跟踪日志" type="StatusBar" insertafter="StatusBar"/>
+  </Path>
+</AddIn>

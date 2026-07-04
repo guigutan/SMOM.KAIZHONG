@@ -1,0 +1,284 @@
+﻿<UserControl x:Class="SIE.Wpf.MES.TaskManagement.KZReports.Controls.ScanReportControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SIE.Wpf.MES.TaskManagement.KZReports.Controls"
+             xmlns:conv="clr-namespace:SIE.Wpf.MES.TaskManagement.KZReports.Converters"
+             mc:Ignorable="d" 
+             d:DesignHeight="650" d:DesignWidth="1024">
+    <UserControl.Resources>
+        <ResourceDictionary >
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/SIE.Wpf.MES.TaskManagement;component/Styles/ReportStyle.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+            <conv:TaskStatusConverter x:Key="TaskStatusConverter"/>
+        </ResourceDictionary >
+    </UserControl.Resources>
+    <Border Background="White">
+        <DockPanel x:Name ="dockPanel" MaxWidth="2500" Margin="50 30">
+            <Grid  >
+                <Grid.RowDefinitions >
+                    <!--<RowDefinition Height="auto"/>-->
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+
+                </Grid.RowDefinitions>
+                <!--<ctl:XPTitle Grid.Row="0" x:Name="xpTitle" AType="Default" AShowWinTitle="False" ATitle="报工主界面"></ctl:XPTitle>-->
+                <Grid Grid.Row="0" Margin="0 0 0 0">
+                    <StackPanel  Grid.Column="0" Orientation="Horizontal"  Margin="0" HorizontalAlignment="Left">
+                        <Button Name="btnBack" Content="返回" Style="{StaticResource CommonButtonStyle}" Width="120" Height="40" Margin="0 10 10 10"  Click="btnBack_Click" Background="Gray" ></Button>
+                        <Button Name="btnReset" Content="重新开始" Style="{StaticResource CommonButtonStyle}" Width="120" Height="40" Margin="10" Click="btnReset_Click" Background="DeepSkyBlue" ></Button>
+                        <Button Name="btnSubmit" Content="提交" Style="{StaticResource CommonButtonStyle}" Width="120" Height="40" Margin="10"   Click="btnSubmit_Click" Background="DeepSkyBlue"></Button>
+                        <Button Name="btnTaskList" Content="任务列表" Style="{StaticResource CommonButtonStyle}" Width="120" Height="40" Margin="10"   Click="btnTaskList_Click" Background="DeepSkyBlue"></Button>
+                        <Button Name="btnAndon" Content="安灯管理" Style="{StaticResource CommonButtonStyle}" Width="120" Height="40" Margin="10"   Click="btnAndon_Click" Background="Red"></Button>
+                    </StackPanel>
+                    <StackPanel  Orientation="Horizontal" MinHeight="40" HorizontalAlignment="Right" VerticalAlignment="Center" >
+                        <Label Content="资源" FontSize="16" FontWeight="Bold" Foreground="Gray" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Margin="5" ></Label>
+                        <!--<Label Content="{Binding Resource.Name}" Name="lbResourceName" Foreground="Blue" Margin="0 0 0 0" MinWidth="80" Width="auto" MaxWidth="120" Height="40" FontSize="18" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ></Label>-->
+                        <TextBox Text="{Binding Resource.Name}" TextWrapping="Wrap" Background="Transparent" BorderThickness="0" Foreground="Blue" Margin="0 0 0 0" MinWidth="60" MaxWidth="150" FontSize="16" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" />
+
+                        <Label Content="操作员:" FontSize="16" FontWeight="Bold" Foreground="Gray" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Margin="5" ></Label>
+                        <Label Content="{Binding ReportEmployee.Name}" Name="lbOparetorName" Foreground="Blue" Margin="0 0 0 0" MinWidth="60" Width="auto" Height="40" FontSize="16" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ></Label>
+                    </StackPanel >
+                </Grid>
+                <Border Grid.Row="1" Margin="0 0 0 0" BorderThickness="1" BorderBrush="#ccc">
+                    <Grid >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Column="0" Style="{StaticResource FormLabelStyle_18}" Content="工序标签" HorizontalContentAlignment="Center" Height="50"></Label>
+                        <TextBox Grid.Column="1" x:Name="txtBarcode" VerticalContentAlignment="Center" HorizontalAlignment="Stretch" Text="{Binding Path=Barcode, Mode=TwoWay}" FontSize="18" Background="LightGreen" Margin="2" KeyUp="txtBarcode_KeyUp"></TextBox>
+                        <StackPanel Grid.Column="2" Margin="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <RadioButton x:Name="radioBtnTurnIn" Content="转入" FontSize="16" Width="80" Margin="10" ></RadioButton>
+                            <RadioButton x:Name="radioBtnReport" Content="报工" FontSize="16" Width="80" Margin="10" IsChecked="True"></RadioButton>
+                        </StackPanel>
+                        <StackPanel Grid.Row="1" Grid.ColumnSpan="3">
+                            <TextBox x:Name="txtTip" Text="提示信息" IsReadOnly="True" Focusable="False" BorderThickness="0.5" Foreground="Red" VerticalContentAlignment="Center" HorizontalAlignment="Stretch" Height="50" FontSize="18" Background="White" Margin="2" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+
+                <TabControl Grid.Row="2" Margin="0 0" FontSize="18">
+                    <TabItem Header="任务列表" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Left" Margin="0">
+                                <Button Name="refresh" Content="刷新" Width="90" Height="25" Margin="0,0,5,5"  Style="{StaticResource CommonButtonStyle}" Click="refresh_Click" Background="DeepSkyBlue"/>
+                            </StackPanel>
+                            <!--<Button Name="refresh" Grid.Row="0" Content="刷新"  Style="{StaticResource CommonButtonStyle}" Width="120" Height="40" Margin="10"   Click="refresh_Click" Background="DeepSkyBlue"></Button>-->
+                            <DataGrid Grid.Row="1" x:Name="dataGridRecord" BorderThickness="0" AutoGenerateColumns="False" FontSize="18" BorderBrush="#EEEEEE" Margin="0"
+				   HorizontalAlignment="Stretch"   VerticalAlignment="Stretch"  CanUserSortColumns="True" IsReadOnly="True"  MaxHeight="200"
+					 SelectionMode="Single" GridLinesVisibility="None">
+
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Id" Visibility="Hidden" Binding="{Binding Id}" />
+                                    <DataGridTemplateColumn Header="计划完成时间"  Width="120" >
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding PlanEndTime, StringFormat=yyyy-MM-dd}" TextTrimming="CharacterEllipsis" ToolTip="{Binding PlanEndTime, StringFormat=yyyy-MM-dd HH:mm}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTemplateColumn Header="派工单号"  Width="200" >
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding No}" TextTrimming="CharacterEllipsis" ToolTip="{Binding No}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTemplateColumn Header="产品编码"  Width="150" >
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding ProductCode}" TextTrimming="CharacterEllipsis" ToolTip="{Binding ProductCode}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTemplateColumn Header="产品名称" Width="300">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding ProductName}" ToolTip="{Binding ProductName}" VerticalAlignment="Center" HorizontalAlignment ="Center" TextWrapping="Wrap"  FontSize="16"  />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTemplateColumn Header="旧料号"   Width="150" >
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding ShortDescription}" ToolTip="{Binding ShortDescription}" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap"  FontSize="16" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTemplateColumn Header="父级旧料号"   Width="150" >
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding ParShortDescription}" ToolTip="{Binding ParShortDescription}" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap"  FontSize="16" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTemplateColumn Header="任务数量"  Width="100">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding DispatchQty}" TextTrimming="CharacterEllipsis" ToolTip="{Binding DispatchQty}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTemplateColumn Header="已报工数量"  Width="100">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding ReportQty}" TextTrimming="CharacterEllipsis" ToolTip="{Binding ReportQty}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTemplateColumn Header="工单号"  Width="200" >
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding WorkOrderNo}" TextTrimming="CharacterEllipsis" ToolTip="{Binding WorkOrderNo}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTemplateColumn Header="状态"  Width="100">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding TaskStatus, Converter={StaticResource TaskStatusConverter}}" TextTrimming="CharacterEllipsis" ToolTip="{Binding TaskStatus}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTemplateColumn Header="工序名称"  MinWidth="200" >
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding ProcessName}" TextTrimming="CharacterEllipsis" ToolTip="{Binding ProcessName}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
+                    </TabItem>
+                </TabControl>
+
+                <Border x:Name="templateBorder" Grid.Row="3" Margin="0 5" BorderThickness="1" BorderBrush="#CCC" VerticalAlignment="Top">
+                    <Grid Grid.Row="2" >
+                        <Grid.RowDefinitions >
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="40"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Row="0" BorderThickness="0 0 0 1" BorderBrush="#CCC">
+                            <StackPanel  Orientation="Horizontal" HorizontalAlignment="Stretch" >
+                                <Label Style="{StaticResource FormLabelStyle_14}" Content="派工单号" Width="150" VerticalContentAlignment="Center" ></Label>
+                                <Label Style="{StaticResource FormLabelStyle2_14}" Content="{Binding DispatchTask.No}" ></Label>
+                            </StackPanel>
+                        </Border>
+                        <Border Grid.Row="0" Grid.Column="1" BorderThickness="1 0 0 1" BorderBrush="#CCC">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" >
+                                <Label Style="{StaticResource FormLabelStyle_14}" Content="计划数量"  ></Label>
+                                <Label Style="{StaticResource FormLabelStyle2_14}" Content="{Binding DispatchTask.DispatchQty}" ></Label>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Grid.Row="0" Grid.Column="2" BorderThickness="1 0 0 1" BorderBrush="#CCC">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" >
+                                <Label Style="{StaticResource FormLabelStyle_14}" Content="任务单/工单剩余数"></Label>
+                                <Label Style="{StaticResource FormLabelStyle2_14}" Content="{Binding MaxRemainQty}" ></Label>
+                                <Label Style="{StaticResource FormLabelStyle2_14}" Content="/" Margin="0" ></Label>
+                                <Label Style="{StaticResource FormLabelStyle2_14}" Content="{Binding ProcessMaxRemainQty}"></Label>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Grid.Row="1" Grid.Column="0" BorderThickness="0 0 0 1" BorderBrush="#CCC">
+                            <StackPanel  Orientation="Horizontal" HorizontalAlignment="Stretch" >
+                                <Label Style="{StaticResource FormLabelStyle_14}" Content="工单号"  ></Label>
+                                <Label Style="{StaticResource FormLabelStyle2_14}" Content="{Binding DispatchTask.WorkOrderNo}" ></Label>
+                            </StackPanel>
+                        </Border>
+                        <Border Grid.Row="1" Grid.Column="1" BorderThickness="1 0 0 1" BorderBrush="#CCC">
+                            <StackPanel  Orientation="Horizontal" HorizontalAlignment="Stretch" >
+                                <Label Style="{StaticResource FormLabelStyle_14}" Content="累计合格数量"  ></Label>
+                                <Label Style="{StaticResource FormLabelStyle2_14}" Content="{Binding DispatchTask.OkQty}" ></Label>
+                            </StackPanel>
+                        </Border>
+                        <Border Grid.Row="1" Grid.Column="2" BorderThickness="1 0 0 1" BorderBrush="#CCC">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" >
+                                <Label Style="{StaticResource FormLabelStyle_14}" Content="累计不良数量"  ></Label>
+                                <Label Style="{StaticResource FormLabelStyle2_14}" Content="{Binding DispatchTask.NgQty}" ></Label>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Grid.Row="2" Grid.Column="0" BorderThickness="0 0 0 1" BorderBrush="#CCC">
+                            <StackPanel  Orientation="Horizontal" HorizontalAlignment="Stretch" >
+                                <Label Style="{StaticResource FormLabelStyle_14}" Content="产品编码"  ></Label>
+                                <Label Style="{StaticResource FormLabelStyle2_14}" Content="{Binding DispatchTask.ProductCode}" ></Label>
+                            </StackPanel>
+                        </Border>
+                        <Border Grid.Row="2" Grid.Column="1" BorderThickness="1 0 0 1" BorderBrush="#CCC">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" >
+                                <Label Style="{StaticResource FormLabelStyle_14}" Content="产品名称"  ></Label>
+                                <Label Style="{StaticResource FormLabelStyle2_14}" Content="{Binding DispatchTask.ProductName}" ></Label>
+                            </StackPanel>
+                        </Border>
+                        
+                        <Border Grid.Row="2" Grid.Column="2" BorderThickness="1 0 0 1" BorderBrush="#CCC">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" >
+                                <Label Style="{StaticResource FormLabelStyle_14}" Content="分单数量"  ></Label>
+                                <Label Style="{StaticResource FormLabelStyle2_14}" Content="{Binding Zcode}" ></Label>
+                            </StackPanel>
+                        </Border>
+
+                    </Grid>
+                </Border>
+
+                <TabControl Grid.Row="4" Margin="0 0" FontSize="18" >
+                    <TabItem Header="报工信息" >
+                        <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" IsReadOnly="True" >
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="工序标签" Binding="{Binding Sn}" Width="200"/>
+                                <DataGridTextColumn Header="数量" Binding="{Binding Qty}" Width="150"/>
+                                <DataGridTemplateColumn Header="良品数" Width="150">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel  Orientation="Horizontal" HorizontalAlignment="Stretch" >
+                                                <!--<TextBox Name="txtGoodQty" Text="{Binding GoodQty}" MinWidth="120" Background="LightGreen" HorizontalAlignment="Stretch" VerticalAlignment="Center" Focusable="False"></TextBox>-->
+                                                <Button Name="btnOkQty" Content="{Binding GoodQty}"  MinWidth="140" Height="25" Margin="1" HorizontalContentAlignment ="Left" Background="LightGreen" Click="btnOkQty_Click" />
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="可疑品数" Width="150">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel  Orientation="Horizontal" HorizontalAlignment="Stretch" >
+                                                <!--<TextBox Name="SuspectQty" Text="{Binding SuspectQty}" Background="LightGreen" HorizontalAlignment="Stretch" VerticalAlignment="Center" Focusable="False" ></TextBox>-->
+                                                <Button Name="btnSuspectQty" Content="{Binding SuspectQty}" MinWidth="140" Height="25" Margin="1" HorizontalContentAlignment ="Left" Background="LightGreen" Click="btnSuspectQty_Click" />
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <!--<DataGridTextColumn Header="良品数" Binding="{Binding GoodQty}" Width="150"/>
+                                <DataGridTextColumn Header="可疑品数" Binding="{Binding SuspectQty}" Width="200"/>-->
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </TabItem>
+                </TabControl>
+            </Grid>
+
+        </DockPanel>
+    </Border>
+</UserControl>

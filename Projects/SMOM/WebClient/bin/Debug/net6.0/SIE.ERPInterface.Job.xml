@@ -1,0 +1,1125 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.ERPInterface.Job</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.ERPInterface.Job.Alerts.DownloadFailAlertPlugJob">
+            <summary>
+            ERP接口调度下载失败预警
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Alerts.DownloadFailAlertPlugJob.ExecuteJob(System.Object)">
+            <summary>
+            ERP接口调度下载失败预警
+            </summary>
+            <param name="param">调度参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Alerts.UploadFailAlertPlugJob">
+            <summary>
+            ERP接口调度上传失败预警
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Alerts.UploadFailAlertPlugJob.ExecuteJob(System.Object)">
+            <summary>
+            ERP接口调度上传失败预警
+            </summary>
+            <param name="param">调度参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Common.DLCommonParameter">
+            <summary>
+            ERP下载接口调度通用参数
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Job.Common.DLCommonParameter.IsDownloadInfProperty">
+            <summary>
+            是否下载中间表
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Job.Common.DLCommonParameter.IsDownloadInf">
+            <summary>
+            是否下载中间表
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Job.Common.DLCommonParameter.MaxRetryQtyProperty">
+            <summary>
+            最大重试次数
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Job.Common.DLCommonParameter.MaxRetryQty">
+            <summary>
+            最大重试次数
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Job.Common.DLCommonParameter.MaxBatchQtyProperty">
+            <summary>
+            最大处理数量
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Job.Common.DLCommonParameter.MaxBatchQty">
+            <summary>
+            最大处理数量
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Common.DLCommonParameterWPFViewConfig">
+            <summary>
+            参数视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Common.ReLoadCommonParameter">
+            <summary>
+            ERP上传接口最大重传次数
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Job.Common.ReLoadCommonParameter.MaxUploadCountProperty">
+            <summary>
+            最大重传ERP次数
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Job.Common.ReLoadCommonParameter.MaxUploadCount">
+            <summary>
+            最大重传ERP次数
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Common.ReLoadCommonParameterWPFViewConfig">
+            <summary>
+            参数视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Common.ULCommonParameter">
+            <summary>
+            ERP上传接口调度通用参数
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Job.Common.ULCommonParameter.UploadTransactionRuleIdProperty">
+            <summary>
+            交易上传规则Id
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Job.Common.ULCommonParameter.UploadTransactionRuleId">
+            <summary>
+            交易上传规则Id
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Job.Common.ULCommonParameter.UploadTransactionRuleProperty">
+            <summary>
+            交易上传规则
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Job.Common.ULCommonParameter.UploadTransactionRule">
+            <summary>
+            交易上传规则
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Common.ULCommonParameterWPFViewConfig">
+            <summary>
+            参数视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Download.Customers.DownloadCustomerAddrJob">
+            <summary>
+            客户地址下载
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Download.Customers.DownloadCustomerAddrJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Download.Customers.DownloadCustomerJob">
+            <summary>
+            客户下载
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Download.Customers.DownloadCustomerJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Download.Employees.DownloadEmployeeJob">
+            <summary>
+            员工下载
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Download.Employees.DownloadEmployeeJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Download.Employees.IsCreateAccountParameter">
+            <summary>
+            是否创建用户参数
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Job.Download.Employees.IsCreateAccountParameter.IsCreateAccountProperty">
+            <summary>
+            是否创建用户
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Job.Download.Employees.IsCreateAccountParameter.IsCreateAccount">
+            <summary>
+            是否创建用户
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Download.Employees.IsCreateAccountParameterWebViewConfig">
+            <summary>
+            调度是否创建用户参数配置
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Download.Employees.IsCreateAccountParameterViewConfig">
+            <summary>
+            调度是否创建用户参数配置
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Download.Employees.IsCreateAccountParameterViewConfig.ConfigView">
+            <summary>
+            默认配置
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Download.Employees.EbsDownloadEnterpriseJob">
+            <summary>
+            EBS员工下载
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Download.Employees.EbsDownloadEnterpriseJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Download.Enterprises.DownloadEnterpriseJob">
+            <summary>
+            企业模型下载
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Download.Enterprises.DownloadEnterpriseJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Download.Projects.EbsDownloadEnterpriseJob">
+            <summary>
+            EBS企业模型下载
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Download.Projects.EbsDownloadEnterpriseJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Download.Projects.EbsDownloadProjectNoJob">
+            <summary>
+            EBS项目下载
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Download.Projects.EbsDownloadProjectNoJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Download.InvOrgs.EbsDownloadInvOrgJob">
+            <summary>
+            EBS库存组织下载
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Download.InvOrgs.EbsDownloadInvOrgJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Download.Items.EbsDownloadAccountJob">
+            <summary>
+            EBS账户别名下载
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Download.Items.EbsDownloadAccountJob.ExecuteJob(SIE.Common.Schdules.JobContext)">
+            <summary>
+            EBS账户别名下载
+            </summary>
+            <param name="context">内容</param>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Download.Items.EbsDownloadAccountJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Download.Items.EbsDownloadItemCateJob">
+            <summary>
+            EBS物料分类下载
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Download.Items.EbsDownloadItemJob">
+            <summary>
+            Ebs物料下载
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Download.Items.EbsDownloadUnitChangeJob">
+            <summary>
+            EBS单位转换下载
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Download.Items.EbsDownloadUnitChangeJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Download.Items.EbsDownloadUnitJob">
+            <summary>
+            EBS单位下载
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Download.Items.EbsDownloadUnitJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Download.Items.DownloadPoDtlJob">
+            <summary>
+            采购订单明细下载
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Download.Items.DownloadPoDtlJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Download.ProductBoms.DownloadProductBomDtlJob">
+            <summary>
+            产品Bom明细下载
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Download.ProductBoms.DownloadProductBomDtlJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Download.ProductBoms.DownloadProductBomJob">
+            <summary>
+            产品Bom下载
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Download.ProductBoms.DownloadProductBomJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Download.ProductOrderBoms.DownloadProductOrderBomJob">
+            <summary>
+            生产订单BOM下载
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Download.ProductOrderBoms.DownloadProductOrderBomJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Download.ProductOrders.DownloadProductOrderJob">
+            <summary>
+            生产订单下载
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Download.ProductOrders.DownloadProductOrderJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Download.PurchaseOrders.DownloadPoJob">
+            <summary>
+            采购订单下载
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Download.PurchaseOrders.DownloadPoJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Download.Receipts.DownloadAsnDtlJob">
+            <summary>
+            ASN明细下载
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Download.Receipts.DownloadAsnDtlJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Download.Receipts.DownloadAsnJob">
+            <summary>
+            ASN下载
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Download.Receipts.DownloadAsnJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Download.Shipments.DownloadShipmentDtlJob">
+            <summary>
+            发运单明细下载
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Download.Shipments.DownloadShipmentDtlJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Download.Shipments.DownloadShipmentJob">
+            <summary>
+            发运单下载
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Download.Shipments.DownloadShipmentJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Download.Suppliers.DownloadSupplierAddrJob">
+            <summary>
+            供应商地址下载
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Download.Suppliers.DownloadSupplierAddrJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Download.Suppliers.DownloadSupplierJob">
+            <summary>
+            供应商下载
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Download.Suppliers.DownloadSupplierJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Download.Suppliers.EbsDownloadSupplierJob">
+            <summary>
+            EBS供应商、客户下载
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Download.Suppliers.EbsDownloadSupplierJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Download.TaskNos.EbsDownloadTaskNoJob">
+            <summary>
+            EBS任务号下载
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Download.TaskNos.EbsDownloadTaskNoJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Download.Warehouses.DownloadStorageAreaJob">
+            <summary>
+            库区下载
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Download.Warehouses.DownloadStorageAreaJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Download.Warehouses.DownloadStorageLocJob">
+            <summary>
+            库位下载
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Download.Warehouses.DownloadStorageLocJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Download.Warehouses.DownloadWoJob">
+            <summary>
+            仓库下载
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Download.Warehouses.DownloadWoJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Download.Warehouses.EbsDownloadWarehouseJob">
+            <summary>
+            EBS子库下载
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Download.Warehouses.EbsDownloadWarehouseJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Download.WorkOrders.DownloadWoBomDtlJob">
+            <summary>
+            工单Bom下载
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Download.WorkOrders.DownloadWoBomDtlJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Download.WorkOrders.DownloadWoJob">
+            <summary>
+            工单下载
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Download.WorkOrders.DownloadWoJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.KaiZhong.OutsourcingInsSyncJob">
+            <summary>
+            委外收货同步工厂数据
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.KaiZhong.OutsourcingoutsSyncJob">
+            <summary>
+            委外发货同步工厂数据
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.KaiZhong.OutsourcingReportSyncJob">
+            <summary>
+            委外报工记录同步工厂数据
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.KaiZhong.SyncFactoryItemLabelToFactoryJob">
+            <summary>
+            跨组织物料标签同步
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.KaiZhong.SyncSupWipBatchJob">
+            <summary>
+            委外可疑品标签同步工厂
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Module">
+            <summary>
+            当前工程所对应的模块类
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化
+            </summary>
+            <param name="app">应用程序对象</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.SyncResources.SyncResourceJob">
+            <summary>
+            同步资源
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.SyncResources.SyncResourceJob.ExecuteJob(System.Object)">
+            <summary>
+            执行
+            </summary>
+            <param name="param"></param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Upload.AllocateIn.UploadAllocateInJob">
+            <summary>
+            库存调拨事务上传EBS
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Upload.AllocateIn.UploadAllocateInJob.ExecuteJob(SIE.Common.Schdules.JobContext)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="context">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Upload.CrossAllocate.UploadCrossAllocateInJob">
+            <summary>
+            跨组织调拨(入库)事务上传EBS
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Upload.CrossAllocate.UploadCrossAllocateInJob.ExecuteJob(SIE.Common.Schdules.JobContext)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="context">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Upload.CrossAllocate.UploadCrossAllocateOutJob">
+            <summary>
+            跨组织调拨(出库)事务上传EBS
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Upload.CrossAllocate.UploadCrossAllocateOutJob.ExecuteJob(SIE.Common.Schdules.JobContext)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="context">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Upload.Finished.EbsUploadFinishedJob">
+            <summary>
+            成品/半成品入库事务上传
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Upload.Finished.EbsUploadPartedInJob">
+            <summary>
+            半成品入库事务上传
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Upload.Finished.EbsUploadPartedInJob.ExecuteJob(SIE.Common.Schdules.JobContext)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="context">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Upload.Finished.SapUploadFinishedInStorageJob">
+            <summary>
+            成品入库上传调度
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Job.Upload.Finished.SapUploadFinishedInStorageJob._jobKey">
+            <summary>
+            调度执行主键
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Upload.Finished.SapUploadFinishedInStorageJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Upload.UploadFinishedJob">
+            <summary>
+            成品入库事务上传
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Upload.UploadFinishedJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Upload.UploadIqcJob">
+            <summary>
+            来料检验事务上传
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Upload.UploadIqcJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Upload.UploadMaterialReturnJob">
+            <summary>
+            生产退料事务上传
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Upload.UploadMaterialReturnJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Upload.OtherIn.EbsOtherInUploadJob">
+            <summary>
+            其他入库事务上传
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Upload.OtherIn.EbsOtherInUploadJob.ExecuteJob(SIE.Common.Schdules.JobContext)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="context">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Upload.OtherIn.UploadOtherInStorageJob">
+            <summary>
+            其他出入库上传调度3
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Job.Upload.OtherIn.UploadOtherInStorageJob._jobKey">
+            <summary>
+            调度执行主键
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Upload.OtherIn.UploadOtherInStorageJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Upload.UploadOtherJob">
+            <summary>
+            其他出入库事务上传
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Upload.UploadOtherJob.ExecuteJob(SIE.Common.Schdules.JobContext)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="context">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Upload.ProductReturn.UploadProductReturnJob">
+            <summary>
+            生产退料事务上传
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Upload.ProductReturn.UploadProductReturnJob.ExecuteJob(SIE.Common.Schdules.JobContext)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="context">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Upload.PurchaseIn.EbsUploadPurchaseInJob">
+            <summary>
+            采购入库上架事务上传
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Upload.PurchaseIn.EbsUploadPurchaseInJob.ExecuteJob(SIE.Common.Schdules.JobContext)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="context">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Upload.PurchaseIn.UploadPurchaseInStorageJob">
+            <summary>
+            采购入库上传调度
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Job.Upload.PurchaseIn.UploadPurchaseInStorageJob._jobKey">
+            <summary>
+            调度执行主键
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Upload.PurchaseIn.UploadPurchaseInStorageJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Upload.PurchaseIn.UploadPurchaseTemporaryReceiveJob">
+            <summary>
+            采购送货单暂收上传调度
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Job.Upload.PurchaseIn.UploadPurchaseTemporaryReceiveJob._jobKey">
+            <summary>
+            调度执行主键
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Upload.PurchaseIn.UploadPurchaseTemporaryReceiveJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Upload.UploadPurchaseInJob">
+            <summary>
+            来料入库事务上传
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Upload.UploadPurchaseInJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Upload.UploadReceiveJob">
+            <summary>
+            来料接收事务上传
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Upload.UploadReceiveJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Upload.UploadSaleOutJob">
+            <summary>
+            销售出库事务上传
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Upload.SaleReturn.EbsUploadSaleReturnJob">
+            <summary>
+            销售退货事务上传
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Upload.SaleReturn.EbsUploadSaleReturnJob.ExecuteJob(SIE.Common.Schdules.JobContext)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="context">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Upload.SaleReturn.UploadSaleReturnJob">
+            <summary>
+            销售退货上传（非冲销）调度
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Job.Upload.SaleReturn.UploadSaleReturnJob._jobKey">
+            <summary>
+            调度执行主键
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Upload.SaleReturn.UploadSaleReturnJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Upload.SaleReturn.UploadSaleReturnWriteOffJob">
+            <summary>
+            销售退货上传（冲销）调度
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Job.Upload.SaleReturn.UploadSaleReturnWriteOffJob._jobKey">
+            <summary>
+            调度执行主键
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Upload.SaleReturn.UploadSaleReturnWriteOffJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Upload.UploadSaleReturnJob">
+            <summary>
+            销售退货事务上传
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Upload.UploadSaleReturnJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Upload.UploadReceiveSupplierReturnJob">
+            <summary>
+            供应商退货事务上传
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Upload.UploadReceiveSupplierReturnJob.ExecuteJob(SIE.Common.Schdules.JobContext)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="context">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Upload.UploadSupplierReturnJob">
+            <summary>
+            供应商退货事务上传
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Upload.UploadSupplierReturnJob.ExecuteJob(SIE.Common.Schdules.JobContext)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="context">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Upload.UploadWorkFeedJob">
+            <summary>
+            工单发料事务上传
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Upload.UploadWorkFeedJob.ExecuteJob(SIE.Common.Schdules.JobContext)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="context">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Upload.TaskReport.UploadBarcodeToIotJob">
+            <summary>
+            工序标签数据推送IOT调度
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Job.Upload.TaskReport.UploadBarcodeToIotJob._jobKey">
+            <summary>
+            调度执行主键
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Upload.TaskReport.UploadBarcodeToIotJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Upload.TaskReport.BarcodeToIotJobParameter">
+            <summary>
+            工序标签数据推送IOT调度参数
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Upload.TaskReport.BarcodeToIotJobParameter.#ctor">
+            <summary>
+                    
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Job.Upload.TaskReport.BarcodeToIotJobParameter.DaysProperty">
+            <summary>
+            上传前几天数据
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Job.Upload.TaskReport.BarcodeToIotJobParameter.Days">
+            <summary>
+            上传前几天数据
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Job.Upload.TaskReport.BarcodeToIotJobParameter.AutoUploadProperty">
+            <summary>
+            自动推送标签
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Job.Upload.TaskReport.BarcodeToIotJobParameter.AutoUpload">
+            <summary>
+            标签自动推送
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Job.Upload.TaskReport.BarcodeToIotJobParameter.AutoReportProperty">
+            <summary>
+            出炉自动报工
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Job.Upload.TaskReport.BarcodeToIotJobParameter.AutoReport">
+            <summary>
+            出炉自动报工
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Upload.TaskReport.UplodTaskRecordJob">
+            <summary>
+            报工上传调度
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Job.Upload.TaskReport.UplodTaskRecordJob._jobKey">
+            <summary>
+            调度执行主键
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Upload.TaskReport.UplodTaskRecordJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Upload.UploadAllocateJob">
+            <summary>
+            库存调拨事务上传
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Job.Upload.UploadAllocateJob._jobKey">
+            <summary>
+            调度执行主键
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Upload.UploadAllocateJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Upload.SapUploadMaterialReturnJob">
+            <summary>
+            生产退料事务上传
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Job.Upload.SapUploadMaterialReturnJob._jobKey">
+            <summary>
+            调度执行主键
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Upload.SapUploadMaterialReturnJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Upload.OtherOut.UploadOtherOutStorageJob">
+            <summary>
+            其他出库上传调度
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Job.Upload.OtherOut.UploadOtherOutStorageJob._jobKey">
+            <summary>
+            调度执行主键
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Upload.OtherOut.UploadOtherOutStorageJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Upload.UploadOutPurchase">
+            <summary>
+            委外出库事务上传
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Job.Upload.UploadOutPurchase._jobKey">
+            <summary>
+            调度执行主键
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Upload.UploadOutPurchase.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Upload.UploadOutPurchaseIn">
+            <summary>
+            委外入库事务上传
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Job.Upload.UploadOutPurchaseIn._jobKey">
+            <summary>
+            调度执行主键
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Upload.UploadOutPurchaseIn.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Upload.ReLoadErpJob">
+            <summary>
+            自动重传Job
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Job.Upload.ReLoadErpJob._jobKey">
+            <summary>
+            调度执行主键
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Upload.ReLoadErpJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Upload.UploadSapSaleOutJob">
+            <summary>
+            销售出库事务上传
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Job.Upload.UploadSapSaleOutJob._jobKey">
+            <summary>
+            调度执行主键
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Upload.UploadSapSaleOutJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.Upload.SapUploadWorkFeedJob">
+            <summary>
+            工单发料事务上传
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Job.Upload.SapUploadWorkFeedJob._jobKey">
+            <summary>
+            调度执行主键
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.Upload.SapUploadWorkFeedJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.UploadSap.BlueLabel.UploadBuleLabelToSapJob">
+            <summary>
+            蓝标外箱HU装箱标记推送SAP调度
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Job.UploadSap.BlueLabel.UploadBuleLabelToSapJob._jobKey">
+            <summary>
+            调度执行主键
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.UploadSap.BlueLabel.UploadBuleLabelToSapJob.ExecuteJob(System.Object)">
+            <summary>
+            执行调度
+            </summary>
+            <param name="param">参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.UploadSap.BlueLabel.UploadBuleLabelToSapJobParameter">
+            <summary>
+            推送蓝标外箱HU装箱标记到SAP调度参数
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.UploadSap.BlueLabel.UploadBuleLabelToSapJobParameter.#ctor">
+            <summary>
+                    
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Job.UploadSap.BlueLabel.UploadBuleLabelToSapJobParameter.DaysProperty">
+            <summary>
+            上传前几天数据
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Job.UploadSap.BlueLabel.UploadBuleLabelToSapJobParameter.Days">
+            <summary>
+            上传前几天数据
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.UploadSap.Deduction.UploadDeductionJob">
+            <summary>
+            扣料上传调度
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.UploadSap.OutboundConfirm.OutboundConfirmUploadJob">
+            <summary>
+            发货确认上传调度
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.UploadSap.OutputProduct.OutputProductJob">
+            <summary>
+            "副产品记录上传调度
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.UploadSap.ReworkLayoutVersions.UploadReworkInfoRecordJob">
+            <summary>
+            返工信息上传调度
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Job.UploadSap.ReworkLayoutVersions.UploadReworkInfoRecordJob.ExecuteJob(System.Object)">
+            <summary>
+            Job执行方法
+            </summary>
+            <param name="param">调度参数</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Job.UploadSap.ScrapWeighingRecord.UploadScrapWeighingRecordJob">
+            <summary>
+            余料称重记录上传调度
+            </summary>
+        </member>
+    </members>
+</doc>

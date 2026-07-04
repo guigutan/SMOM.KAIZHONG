@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.AspNetCore.WorkFlow</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.AspNetCore.WorkFlow.EventListeners.WorkflowDefinitionPublishedListener">
+            <summary>
+            流程定义发布事件监听
+            </summary>
+        </member>
+        <member name="M:SIE.AspNetCore.WorkFlow.EventListeners.WorkflowDefinitionPublishedListener.Handle(Elsa.Events.WorkflowDefinitionPublished,System.Threading.CancellationToken)">
+            <summary>
+            处理
+            </summary>
+            <param name="notification"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.AspNetCore.WorkFlow.EventListeners.WorkflowExecutionFinishedListener">
+            <summary>
+            工作流实例完成事件监听
+            </summary>
+        </member>
+        <member name="M:SIE.AspNetCore.WorkFlow.EventListeners.WorkflowExecutionFinishedListener.Handle(Elsa.Events.WorkflowCompleted,System.Threading.CancellationToken)">
+            <summary>
+            处理
+            </summary>
+            <param name="notification"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.AspNetCore.WorkFlow.Extensions.ServiceCollectionExtensions">
+            <summary>
+            中间件
+            </summary>
+        </member>
+        <member name="M:SIE.AspNetCore.WorkFlow.Extensions.ServiceCollectionExtensions.AddDataBase(Elsa.ElsaOptionsBuilder,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            配置Elsa数据库
+            </summary>
+            <param name="options"></param>
+            <param name="configuration"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.AspNetCore.WorkFlow.Extensions.ServiceCollectionExtensions.AddActivitiesFromSieModule(Elsa.ElsaOptionsBuilder)">
+            <summary>
+            加载sie模块的流程节点
+            可以过滤某特定的节点
+            </summary>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.AspNetCore.WorkFlow.Extensions.ServiceCollectionExtensions.AddActivitiesFromElsaCore(Elsa.ElsaOptionsBuilder)">
+            <summary>
+            加载指定的Elsa的流程节点
+            </summary>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.AspNetCore.WorkFlow.JsonResolver.WfApiCamelJsonConverter">
+            <summary>
+            工作流序列化器，使用驼峰格式
+            </summary>
+        </member>
+        <member name="M:SIE.AspNetCore.WorkFlow.JsonResolver.WfApiCamelJsonConverter.CanConvert(System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="objectType"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.AspNetCore.WorkFlow.Module">
+            <summary>
+            初始化
+            </summary>
+        </member>
+        <member name="M:SIE.AspNetCore.WorkFlow.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化
+            </summary>
+            <param name="app">app</param>
+        </member>
+        <member name="M:SIE.AspNetCore.WorkFlow.Module.ConfigureServicesExtension(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.AspNetCore.Hosting.IWebHostEnvironment,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            扩展方法，会在WebApiStartup执行ConfigureServices方法时执行
+            此方法运行时调用。配置服务容器
+            </summary>
+            <param name="services"></param>
+            <param name="HostingEnvironment"></param>
+            <param name="Configuration"></param>
+        </member>
+        <member name="M:SIE.AspNetCore.WorkFlow.Module.ConfigureExtension(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            扩展方法，会在WebApiStartup执行Configure方法时执行
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+            <param name="configuration"></param>
+        </member>
+    </members>
+</doc>

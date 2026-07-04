@@ -1,0 +1,119 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="88" MinHeight="98"
+             x:Class="SIE.CrossPlatform.Collect.Common.Controls.XPTitle" Loaded="UserControl_Loaded">
+	<UserControl.Styles>
+		<Style Selector="FlyoutPresenter.mySpecialClass">
+			<Setter Property="Background" Value="White" />
+			<Setter Property="Width"  Value="{Binding #panelWorkCell.Bounds.Width}"/>
+			<Setter Property="MaxWidth"  Value="{Binding #panelWorkCell.Bounds.Width}"/>
+			<Setter Property="Padding" Value="5"/>
+			<Setter Property="Height" Value="150"/>
+		</Style>
+	</UserControl.Styles>
+	<Grid  Background="#273153">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="200"></ColumnDefinition>
+			<ColumnDefinition Width="Auto" MinWidth="110"></ColumnDefinition>
+			<ColumnDefinition Width="4*"></ColumnDefinition>
+			<ColumnDefinition Width="75"></ColumnDefinition>
+		</Grid.ColumnDefinitions>
+		<Image Source="/Controls/images/SMOMlogo.png"  Margin="3" Stretch="None" Grid.Column="0"></Image>
+		<TextBlock x:Name="labelTitle" Foreground="White" Grid.Column="1" VerticalAlignment="Center"  FontWeight="Bold" HorizontalAlignment="Center" FontSize="36">新包装过站采集</TextBlock>
+		<Grid Background="#131c3c" IsVisible="False" x:Name="panelWorkCell"  Grid.Column="2" Margin="13" PointerPressed="Grid_PointerPressed">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="1*"></ColumnDefinition>
+				<ColumnDefinition Width="1*" MinWidth="110"></ColumnDefinition>
+				<ColumnDefinition Width="1*"></ColumnDefinition>
+				<ColumnDefinition Width="60"></ColumnDefinition>
+			</Grid.ColumnDefinitions>
+			<Grid Grid.Column="0" >
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="25"></ColumnDefinition>
+					<ColumnDefinition Width="*"></ColumnDefinition>
+				</Grid.ColumnDefinitions>
+				<Image Grid.Column="0" Source="/Controls/images/产线.png" Stretch="None"></Image>
+				<TextBlock Grid.Column="1" x:Name="labelWorkerCellLine" Text="装配采集我hihi我hi和我iwhi我" TextWrapping="Wrap" Foreground="White" Background="#131c3c"   ClipToBounds="True" VerticalAlignment="Center"></TextBlock>
+			</Grid>
+			<Grid Grid.Column="1" >
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="25"></ColumnDefinition>
+					<ColumnDefinition Width="*"></ColumnDefinition>
+				</Grid.ColumnDefinitions>
+				<Image Grid.Column="0"  Source="/Controls/images/工序.png" Stretch="None"></Image>
+				<TextBlock Grid.Column="1"   x:Name="labelWorkCellProcess" Text="装配采集"  TextWrapping="Wrap" Foreground="White" Background="#131c3c" ClipToBounds="True" VerticalAlignment="Center"></TextBlock>
+			</Grid>
+			<Grid Grid.Column="2" >
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="25"></ColumnDefinition>
+					<ColumnDefinition Width="*"></ColumnDefinition>
+				</Grid.ColumnDefinitions>
+				<Image Grid.Column="0"  Source="/Controls/images/工位.png" Stretch="None"></Image>
+				<TextBlock Grid.Column="1" x:Name="labelWorkCellPosition" Text="装配采集我hihi我hi和我iwhi我"  TextWrapping="Wrap" Foreground="White" Background="#131c3c" ClipToBounds="True" VerticalAlignment="Center"></TextBlock>
+			</Grid>
+			<Button Grid.Column="3" x:Name="xpButtonChangeWorkCell" Click="xpButtonChangeWorkCell_Click">
+				<Image Source="/Controls/images/切换.png" Stretch="None"></Image>
+			</Button>
+			<FlyoutBase.AttachedFlyout>
+				<Flyout Placement="Bottom"   ShowMode="Standard"  FlyoutPresenterClasses="mySpecialClass">
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="25"></ColumnDefinition>
+							<ColumnDefinition Width="*"></ColumnDefinition>
+							<ColumnDefinition Width="6*"></ColumnDefinition>
+						</Grid.ColumnDefinitions>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="45"></RowDefinition>
+							<RowDefinition Height="45"></RowDefinition>
+							<RowDefinition Height="45"></RowDefinition>
+						</Grid.RowDefinitions>
+						<!--产线-->
+						<Image Grid.Row="0" Grid.Column="0"  Source="/Controls/images/产线.png" Stretch="None"></Image>
+						<TextBlock Grid.Row="0" Grid.Column="1" Text="产线" Width="150"  TextWrapping="Wrap" Foreground="#666666"
+								   Background="White" ClipToBounds="True" VerticalAlignment="Center"></TextBlock>
+						<TextBlock Grid.Row="0" Grid.Column="2" x:Name="lbResouce" Text="产线产线产线产线产线产线"
+								   TextWrapping="Wrap" Foreground="#666666"
+								   Background="White" ClipToBounds="True" VerticalAlignment="Center"></TextBlock>
+						<!--工序-->
+						<Image Grid.Row="1" Grid.Column="0"  Source="/Controls/images/工序.png" Stretch="None"></Image>
+						<TextBlock Grid.Row="1" Grid.Column="1" Text="工序" Width="150"  TextWrapping="Wrap" Foreground="#666666"
+								   Background="White" ClipToBounds="True" VerticalAlignment="Center"></TextBlock>
+						<TextBlock Grid.Row="1" Grid.Column="2" x:Name="lbProcess" Text="产线产线产线产线产线产线"
+								   TextWrapping="Wrap" Foreground="#666666"
+								   Background="White" ClipToBounds="True" VerticalAlignment="Center"></TextBlock>
+						<!--工位-->
+						<Image Grid.Row="2" Grid.Column="0"  Source="/Controls/images/工位.png" Stretch="None"></Image>
+						<TextBlock Grid.Row="2" Grid.Column="1" Text="工位" Width="150"  TextWrapping="Wrap" Foreground="#666666"
+								   Background="White" ClipToBounds="True" VerticalAlignment="Center"></TextBlock>
+						<TextBlock Grid.Row="2" Grid.Column="2" x:Name="lbStation" Text="产线产线产线产线产线产线"
+								   TextWrapping="Wrap" Foreground="#666666"
+								   Background="White" ClipToBounds="True" VerticalAlignment="Center"></TextBlock>
+					</Grid>
+
+				</Flyout>
+			</FlyoutBase.AttachedFlyout>
+
+
+		</Grid>
+		<Grid  IsVisible="True"  x:Name="panelDefault"   Grid.Column="2" Margin="13">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*"></ColumnDefinition>
+				<ColumnDefinition Width="130"></ColumnDefinition>
+			</Grid.ColumnDefinitions>
+			<TextBlock x:Name="labelUserInfo" Grid.Column="0" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" Text="当前用户"/>
+			<Button Grid.Column="1" x:Name="xpButtonInvOrg" Background="#273153" HorizontalAlignment="Right" Click="xpButtonInvOrg_Click" ToolTip.Tip="切换库存组织" >
+				<StackPanel Orientation="Horizontal">
+					<Image Source="/Controls/images/组织.png" Stretch="None"></Image>
+					<TextBlock x:Name="xpInvOrgTextBlock" Text="库存组织"  Width="130" HorizontalAlignment="Center" TextWrapping="Wrap" Foreground="White" VerticalAlignment="Center"></TextBlock>
+				</StackPanel>
+			</Button>
+		</Grid>
+
+		<Button Grid.Column="3" Margin="3"  Click="xpButtonExit_Click" Background="#273153" x:Name="xpButtonExit">
+			<Image Source="/Controls/images/退出.png" Stretch="None"></Image>
+		</Button>
+	</Grid>
+
+</UserControl>

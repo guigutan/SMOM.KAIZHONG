@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2D556DCE-639C-4F85-B541-44A15CCC4E10}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SIE.Wpf.Resources</RootNamespace>
+    <AssemblyName>SIE.Wpf.Resources</AssemblyName>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <UseWPF>true</UseWPF>
+    <TargetFrameworkProfile />
+    <CodeAnalysisRuleSet>..\..\..\..\.sonarlint\edo_v9.1csharp.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>6</LangVersion>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0-windows\SIE.Wpf.Resources.xml</DocumentationFile>
+    <CodeAnalysisRuleSet>..\..\..\..\.sonarlint\sie.smomcsharp.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0-windows\SIE.Wpf.Resources.xml</DocumentationFile>
+    <CodeAnalysisRuleSet>..\..\..\..\.sonarlint\sie.smomcsharp.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\.sonarlint\sie.smomcsharp.ruleset">
+      <Link>sie.smomcsharp.ruleset</Link>
+    </None>
+    
+    <None Include="Templates\制程工艺导入模板.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\生产资源导入模板.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SIE.Resources\SIE.Resources.csproj">
+      <Project>{137B6E57-E10D-49CD-A208-96E2E899F43A}</Project>
+      <Name>SIE.Resources</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\today.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\休.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\今日.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\..\..\.sonarlint\sie.smom\CSharp\SonarLint.xml">
+      <Link>SonarLint.xml</Link>
+    </AdditionalFiles>
+  </ItemGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+		<Compile Remove="Enterprises/ProductionCellExtViewConfig.cs" />
+		<Compile Remove="Enterprises/ProductionCellViewModelCriteriaViewConfig.cs" />
+		<Compile Remove="Enterprises/ProductionCellViewModelViewConfig.cs" />
+		<Compile Remove="WipResources/ResourceCapacityDetailsViewConfig.cs" />
+		<Compile Remove="Enterprises/Commands/ProductionCellCommand.cs" />
+		<Compile Remove="WipResources/Commands/WipResourceSaveCommand.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="SIE.Wpf.Common" Version="10.0.5" />
+  </ItemGroup>
+</Project>

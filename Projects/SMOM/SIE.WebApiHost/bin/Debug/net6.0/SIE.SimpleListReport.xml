@@ -1,0 +1,283 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.SimpleListReport</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.SimpleListReport.Areas.SimpleList.Controllers.ReportsController">
+            <summary>
+            打印报表控制器
+            </summary>
+            <summary>
+            多模板文件操作
+            </summary>
+        </member>
+        <member name="M:SIE.SimpleListReport.Areas.SimpleList.Controllers.ReportsController.Reports(System.String)">
+            <summary>
+            视图入口
+            </summary>
+            <param name="path">文件路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.SimpleListReport.Areas.SimpleList.Controllers.ReportsController.ExportReport(System.String)">
+            <summary>
+            导出xls
+            </summary>
+            <param name="path">文件路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.SimpleListReport.Areas.SimpleList.Controllers.ReportsController.ExportDocument(System.Byte[],System.String,System.String,System.Boolean)">
+            <summary>
+            生成PDF文件流
+            </summary>
+            <param name="document">字节流</param>
+            <param name="format"></param>
+            <param name="fileName">文件名</param> 
+            <param name="isInline"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.SimpleListReport.Areas.SimpleList.Controllers.ReportsController.MultReports(System.String)">
+            <summary>
+            预览多个PDF文档
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:SIE.SimpleListReport.Areas.SimpleList.Controllers.ReportsController.UploadAttachment(System.String,System.String,System.String)">
+            <summary>
+            模板pdf文件上传
+            </summary>
+            <param name="viewArgs"></param>
+            <param name="type"></param>
+            <param name="path"></param>
+            <returns></returns>
+            <exception cref="T:SIE.Domain.Validation.ValidationException"></exception>
+        </member>
+        <member name="E:SIE.SimpleListReport.Areas.SimpleList.Controllers.ReportsController.SavingAttachement">
+            <summary>
+            附件保存前事件，子类可以根据需要扩展
+            </summary>
+        </member>
+        <member name="E:SIE.SimpleListReport.Areas.SimpleList.Controllers.ReportsController.SavedAttachement">
+            <summary>
+            附件保存后事件，子类可以根据需要扩展，比如保存实体相关的内容
+            </summary>
+        </member>
+        <member name="M:SIE.SimpleListReport.Areas.SimpleList.Controllers.ReportsController.OnSavingAttachement(SIE.Web.Common.Attachments.Commands.UploadAttachmentViewArgs)">
+            <summary>
+            保存前事件
+            </summary>
+            <param name="viewArgs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.SimpleListReport.Areas.SimpleList.Controllers.ReportsController.SaveAttachement(SIE.Web.Common.Attachments.Commands.UploadAttachmentViewArgs,System.Type)">
+            <summary>
+            保存附件
+            </summary>
+            <param name="viewArgs"></param>
+            <param name="type"></param>
+        </member>
+        <member name="T:SIE.SimpleListReport.StiReportModel">
+            <summary>
+            报表设计器视图实体
+            </summary>
+        </member>
+        <member name="P:SIE.SimpleListReport.StiReportModel.Id">
+            <summary>
+            打印模板ID
+            </summary>
+        </member>
+        <member name="P:SIE.SimpleListReport.StiReportModel.Guid">
+             <summary>
+            guid文件夹名称
+             </summary>
+        </member>
+        <member name="P:SIE.SimpleListReport.StiReportModel.FullName">
+            <summary>
+            文件名称
+            </summary>
+        </member>
+        <member name="T:SIE.SimpleListReport.SimpleListReportDesignController">
+            <summary>
+            设计报表控制器
+            </summary>
+        </member>
+        <member name="F:SIE.SimpleListReport.SimpleListReportDesignController.printsService">
+            <summary>
+            打印服务
+            </summary>
+        </member>
+        <member name="M:SIE.SimpleListReport.SimpleListReportDesignController.DesignIndex(System.Double,System.String,System.String)">
+            <summary>
+            stimulsoft设计器
+            </summary>
+            <param name="id"></param>
+            <param name="fileName"></param>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.SimpleListReport.SimpleListReportDesignController.GetReport(System.Double,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <param name="fileName"></param>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.SimpleListReport.SimpleListReportDesignController.SaveReport(System.Double,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <param name="fileName"></param>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.SimpleListReport.SimpleListReportDesignController.DesignerEvent">
+            <summary>
+            报表设计器事件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.SimpleListReport.SimpleListReportDesignController.PreviewReport">
+            <summary>
+            预览
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.SimpleListReport.SimpleListReportDesignController.ViewerEvent">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Common.Prints.SieReport">
+            <summary>
+            Stimulsoft.Report
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Prints.SieReport.DataXmlName">
+            <summary>
+            数据文件名
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.SieReport.GenerateNewTemplate(SIE.Common.Prints.IPrintable,System.String)">
+            <summary>
+            生成新的模板
+            </summary>
+            <param name="printable">打印提供者</param>
+            <param name="fileName">打印模板文件名</param>
+            <returns>模板文件路径</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.SieReport.GenerateLabelTemplate(SIE.Common.Prints.ILabelPrintable,System.String)">
+            <summary>
+            生成新的标签打印模板
+            </summary>
+            <param name="printable">打印提供者</param>
+            <param name="fileName">打印模板文件名</param>
+            <returns>模板文件路径</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.SieReport.GenerateBillTemplate(SIE.Common.Prints.IBillPrintable,System.String)">
+            <summary>
+            生成新的单据打印模板
+            </summary>
+            <param name="billPrintSource">打印提供者</param>
+            <param name="fileName">打印模板文件名</param>
+            <returns>模板文件路径</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.SieReport.GenerateTemplate(System.String@,System.String@,SIE.Common.Prints.IBillPrintable,System.Type,System.String,System.Int32@)">
+            <summary>
+            生成新sied模板
+            </summary>
+            <param name="dataSources"></param>
+            <param name="relations"></param>
+            <param name="billPrintSource"></param>
+            <param name="entityType"></param>
+            <param name="listproperty"></param>
+            <param name="index"></param>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.SieReport.BeforeDesignerProcess(System.Byte[])">
+            <summary>
+            设计前处理
+            </summary>
+            <param name="content"></param>
+            <returns>返回BASE6字符串</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.SieReport.PrintProcess(SIE.Common.Prints.IPrintable,System.Double,System.Byte[],System.Func{System.Collections.Generic.IEnumerable{System.Object}},System.Int16)">
+            <summary>
+            打印处理
+            </summary>
+            <param name="printable"></param>
+            <param name="templateId">模板ID</param>
+            <param name="content">模板字节流</param>
+            <param name="datas">数据源委托</param>
+            <param name="copies">打印页数</param>
+            <returns>返回路径</returns>
+        </member>
+        <member name="P:SIE.Web.Common.Prints.SieReport.Extension">
+            <summary>
+            报表文件扩展名
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Prints.SieReport.FilePath">
+            <summary>
+            文件路径
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.SieReport.UpdateCsvDataPath(System.String)">
+            <summary>
+            更新 CSV 数据文件
+            </summary>
+            <param name="filePath">文件路径</param>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.SieReport.GenerateDataFile(SIE.Common.Prints.IPrintable,System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>
+            生成数据文件
+            </summary>
+            <param name="printable">打印提供者</param>
+            <param name="datas">打印的数据集合</param>
+            <returns>生成的数据文件路径</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.SieReport.GenerateDataFiles(SIE.Common.Prints.ILabelPrintable,System.Collections.Generic.IEnumerable{System.Object},System.Type)">
+            <summary>
+            生成XML数据
+            </summary>
+            <param name="printable"></param>
+            <param name="datas"></param>
+            <param name="dataType"></param>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.SieReport.GenerateDataFiles(SIE.Common.Prints.IBillPrintable,System.Collections.Generic.IEnumerable{System.Object},System.Type,System.String,System.String,System.String,System.Type,System.Int32)">
+            <summary>
+            生成单据数据文件
+            </summary>
+            <param name="printable">打印提供者</param>
+            <param name="datas">打印数据集合</param>
+            <param name="dataType">打印数据类型</param>
+            <param name="propertyName">子表属性名</param>
+            <param name="parentIdName">父ID属性名称</param>
+            <param name="parentTableName">父表名称</param>
+            <param name="parentType">父实体类型</param>
+            <param name="levelIndex">自关联实体列表层级</param>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.SieReport.GenerateEntityData(SIE.Common.Prints.IBillPrintable,System.Collections.Generic.IEnumerable{System.Object},System.Type,System.Int32,System.String)">
+            <summary>
+            生成实体类型的数据
+            </summary>
+            <param name="printable">打印提供者</param>
+            <param name="datas">打印数据集合</param>
+            <param name="dataType">打印数据类型</param>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.SieReport.GenerateNormalClassData(SIE.Common.Prints.IBillPrintable,System.Collections.Generic.IEnumerable{System.Object},System.Type,System.Int32,System.String)">
+            <summary>
+            生成普通类型的数据
+            </summary>
+            <param name="printable">打印提供者</param>
+            <param name="datas">打印数据集合</param>
+            <param name="dataType">打印数据类型</param>
+            <param name="levelIndex"></param>
+            <param name="parentTableName"></param>
+        </member>
+    </members>
+</doc>

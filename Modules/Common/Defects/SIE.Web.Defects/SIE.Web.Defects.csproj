@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.Defects.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.Defects.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Commands\AddCategoryCommand.js" />
+    <None Remove="Commands\AddCategoryCopyCommand.js" />
+    <None Remove="Commands\AddChildrenCommand.js" />
+    <None Remove="Commands\AddDefectCategoryCommand.js" />
+    <None Remove="Commands\AddDefectResponsibilityCategoryCommand.js" />
+    <None Remove="Commands\ImportDataCommonCommand.js" />
+    <None Remove="Commands\ImportDefectCommand.js" />
+    <None Remove="Commands\InsertCommand.js" />
+    <None Remove="Measures\Commands\RepairMeasureCopyCommand.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\..\..\.sonarlint\sie.smom\CSharp\SonarLint.xml" Link="SonarLint.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Commands\AddCategoryCommand.js" />
+    <EmbeddedResource Include="Commands\AddCategoryCopyCommand.js" />
+    <EmbeddedResource Include="Commands\AddChildrenCommand.js" />
+    <EmbeddedResource Include="Commands\AddDefectCategoryCommand.js" />
+    <EmbeddedResource Include="Commands\AddDefectResponsibilityCategoryCommand.js" />
+    <EmbeddedResource Include="Commands\ImportDataCommonCommand.js" />
+    <EmbeddedResource Include="Commands\ImportDefectCommand.js" />
+    <EmbeddedResource Include="Commands\InsertCommand.js" />
+    <EmbeddedResource Include="Measures\Commands\RepairMeasureCopyCommand.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SIE.Defects\SIE.Defects.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="SIE.Web.Common" Version="10.0.5" />
+  </ItemGroup>
+</Project>

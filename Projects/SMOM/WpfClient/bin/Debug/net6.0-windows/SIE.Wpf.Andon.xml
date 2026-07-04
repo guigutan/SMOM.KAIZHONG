@@ -1,0 +1,1036 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Wpf.Andon</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Wpf.Andon.EntityPropertyViewMetaExtension">
+            <summary>
+            编辑器扩展类
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.EntityPropertyViewMetaExtension.UseDefectMultiSelectEditor``1(SIE.MetaModel.View.WPFEntityPropertyViewMeta{``0},System.Action{SIE.Wpf.Andon.Editors.DefectMultiSelectEditorConfig})">
+            <summary>
+            使用缺陷代码多选下拉框编辑器(目前只支持查询)
+            </summary>
+            <typeparam name="T"><see cref="T:SIE.Domain.Entity"/>实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>        
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>        
+        </member>
+        <member name="T:SIE.Wpf.Andon.AndonManageCallMaterialViewConfig">
+            <summary>
+            安灯叫料生成备料单
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.AndonManageCallMaterialViewConfig.ConfigListView">
+            <summary>
+            列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.AndonManageCallMaterialWarehouseViewConfig.ConfigSelectionView">
+            <summary>
+            列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.AndonManageCallMaterialStorageLocationViewConfig.ConfigSelectionView">
+            <summary>
+            列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Andon.AndonManageMessageSendViewConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Andon.AndonManageMessageSendViewConfig.SingleCharWidth">
+            <summary>
+            单个字符宽度
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.AndonManageMessageSendViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Andon.AndonManageOperateLogViewConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Andon.AndonManageOperateLogViewConfig.SingleCharWidth">
+            <summary>
+            单个字符宽度
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Andon.AndonManageOperateLogViewConfig.CancelViewGroup">
+            <summary>
+            取消视图
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Andon.AndonManageOperateLogViewConfig.RejectViewGroup">
+            <summary>
+            驳回视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.AndonManageOperateLogViewConfig.ConfigView">
+            <summary>
+            默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.AndonManageOperateLogViewConfig.ConfigRejectViewGroup">
+            <summary>
+            驳回视图配置
+            </summary>        
+        </member>
+        <member name="M:SIE.Wpf.Andon.AndonManageOperateLogViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.AndonManageOperateLogViewConfig.ConfigCancelView">
+            <summary>
+            表单视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Andon.AndonManageTriggerBehavior">
+            <summary>
+            安灯管理触发行为
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.AndonManageTriggerBehavior.OnAttach">
+            <summary>
+            附加视图行为
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Andon.AndonManageUITemplate">
+            <summary>
+            检验采集模板
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.AndonManageUITemplate.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.AndonManageUITemplate.#ctor(SIE.Wpf.Andon.AndonManageViewModel)">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.AndonManageUITemplate.OnUIGenerated(SIE.Wpf.ControlResult)">
+            <summary>
+            添加当前模块中 UI 的初始化逻辑。
+            当使用自动生成的 UI 时，此方法会被调用。
+            </summary>
+            <param name="ui">控件结果</param>
+        </member>
+        <member name="M:SIE.Wpf.Andon.AndonManageUITemplate.CreateAndonEventControl(SIE.Wpf.Andon.AndonManageViewModel)">
+            <summary>
+            创建安灯事件控件
+            </summary>
+            <param name="model">检验采集对象</param>
+            <returns>返回创建的UI</returns>
+        </member>
+        <member name="M:SIE.Wpf.Andon.AndonManageUITemplate.CreateAndonButtonControl(SIE.Wpf.Andon.AndonManageViewModel)">
+            <summary>
+            创建缺陷控件
+            </summary>
+            <param name="model">检验采集对象</param>
+            <returns>返回创建的UI</returns>
+        </member>
+        <member name="F:SIE.Wpf.Andon.AndonManageViewConfig.EventReportViewGroup">
+            <summary>
+            事件报告
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Andon.AndonManageViewConfig.AcceptViewGroup">
+            <summary>
+            验收视图
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Andon.AndonManageViewConfig.AndonTriggerViewGroup">
+            <summary>
+            安灯触发视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.AndonManageViewConfig.ConfigView">
+            <summary>
+            默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.AndonManageViewConfig.ConfigAcceptViewGroup">
+            <summary>
+            验收视图配置
+            </summary>        
+        </member>
+        <member name="M:SIE.Wpf.Andon.AndonManageViewConfig.ConfigEventReportViewGroup">
+            <summary>
+            事件报告视图配置
+            </summary>        
+        </member>
+        <member name="M:SIE.Wpf.Andon.AndonManageViewConfig.ConfigDetailsView">
+            <summary>
+            表单视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.AndonManageViewConfig.ConfigAndonTriggerViewGroup">
+            <summary>
+            安灯触发表单视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Andon.AndonManageViewModel">
+            <summary>
+            安灯管理
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.AndonManageViewModel.#ctor">
+            <summary>
+            安灯管理构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.AndonManageViewModel.Onload">
+            <summary>
+            加载
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.AndonManageViewModel.OnClose">
+            <summary>
+            关闭
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.AndonManageViewModel.EmployeeChanged(SIE.Resources.Employee)">
+            <summary>
+            员工变更事件
+            </summary>
+            <param name="employee"></param>
+        </member>
+        <member name="M:SIE.Wpf.Andon.AndonManageViewModel.GetAndons">
+            <summary>
+            获取用户有权限且启用的安灯类型下启用的安灯
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Andon.AndonManageViewModel.timer">
+            <summary>
+            定时器
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.AndonManageViewModel.Timer_Tick(System.Object,System.EventArgs)">
+            <summary>
+            计时器触发一次
+            </summary>
+            <param name="sender">发送者</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Andon.AndonManageViewModel.SetRefreshTimer">
+            <summary>
+            上料刷新计时器设置
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Andon.AndonManageViewModel.AndonEventList">
+            <summary>
+            安灯事件列表
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Andon.AndonManageViewModel.AndonList">
+            <summary>
+            安灯列表
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.AndonManageViewModel.GetAndonManageList">
+            <summary>
+            查询安灯事件
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.AndonManageViewModel.ShowAndonManageDialog(System.Double)">
+            <summary>
+            显示安灯管理对话框
+            </summary>
+            <param name="andonManageId"></param>
+        </member>
+        <member name="M:SIE.Wpf.Andon.AndonManageViewModel.StationChanged(SIE.Tech.Stations.Station)">
+            <summary>
+            工位变更时，查询安灯事件列表
+            </summary>
+            <param name="station"></param>
+        </member>
+        <member name="M:SIE.Wpf.Andon.AndonManageViewModel.ShowAndonTriggerDialog(System.Object)">
+            <summary>
+            显示安灯触发对话框
+            </summary>
+            <param name="andonId"></param>
+        </member>
+        <member name="T:SIE.Wpf.Andon.AndonRegionUITemplate">
+            <summary>
+            安灯区域采集模板
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.AndonRegionUITemplate.OnUIGenerated(SIE.Wpf.ControlResult)">
+            <summary>
+            添加当前模块中 UI 的初始化逻辑。
+            当使用自动生成的 UI 时，此方法会被调用。
+            </summary>
+            <param name="ui">控件结果</param>
+        </member>
+        <member name="M:SIE.Wpf.Andon.AndonRegionUITemplate.CreateAndonEventControl(SIE.Wpf.Andon.AndonRegionViewModel)">
+            <summary>
+            创建安灯事件控件
+            </summary>
+            <param name="model">检验采集对象</param>
+            <returns>返回创建的UI</returns>
+        </member>
+        <member name="M:SIE.Wpf.Andon.AndonRegionUITemplate.CreateAndonButtonControl(SIE.Wpf.Andon.AndonRegionViewModel)">
+            <summary>
+            创建缺陷控件
+            </summary>
+            <param name="model">检验采集对象</param>
+            <returns>返回创建的UI</returns>
+        </member>
+        <member name="T:SIE.Wpf.Andon.AndonRegionViewModel">
+            <summary>
+            安灯区域管理
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.AndonRegionViewModel.#ctor">
+            <summary>
+            安灯管理构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.AndonRegionViewModel.Onload">
+            <summary>
+            加载
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.AndonRegionViewModel.OnClose">
+            <summary>
+            关闭
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.AndonRegionViewModel.EmployeeChanged(SIE.Resources.Employee)">
+            <summary>
+            员工变更事件
+            </summary>
+            <param name="employee"></param>
+        </member>
+        <member name="M:SIE.Wpf.Andon.AndonRegionViewModel.GetAndons">
+            <summary>
+            获取用户有权限且启用的安灯类型下启用的安灯
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Andon.AndonRegionViewModel.timer">
+            <summary>
+            定时器
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.AndonRegionViewModel.Timer_Tick(System.Object,System.EventArgs)">
+            <summary>
+            计时器触发一次
+            </summary>
+            <param name="sender">发送者</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Andon.AndonRegionViewModel.SetRefreshTimer">
+            <summary>
+            上料刷新计时器设置
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Andon.AndonRegionViewModel.AndonEventList">
+            <summary>
+            安灯事件列表
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Andon.AndonRegionViewModel.AndonList">
+            <summary>
+            安灯列表
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.AndonRegionViewModel.GetAndonManageList">
+            <summary>
+            查询安灯事件
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.AndonRegionViewModel.ShowAndonManageDialog(System.Double)">
+            <summary>
+            显示安灯管理对话框
+            </summary>
+            <param name="andonManageId"></param>
+        </member>
+        <member name="M:SIE.Wpf.Andon.AndonRegionViewModel.StationChanged(SIE.Tech.Stations.Station)">
+            <summary>
+            工位变更时，查询安灯事件列表
+            </summary>
+            <param name="station"></param>
+        </member>
+        <member name="M:SIE.Wpf.Andon.AndonRegionViewModel.ResourceChanged(SIE.Resources.WipResources.WipResource)">
+            <summary>
+            
+            </summary>
+            <param name="resource"></param>
+        </member>
+        <member name="M:SIE.Wpf.Andon.AndonRegionViewModel.ShowAndonTriggerDialog(System.Object)">
+            <summary>
+            显示安灯触发对话框
+            </summary>
+            <param name="andonId"></param>
+        </member>
+        <member name="T:SIE.Wpf.Andon.Commands.AndonManageAcceptCommand">
+            <summary>
+            安灯事件验收命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.Commands.AndonManageAcceptCommand.CanExecute(SIE.Wpf.DetailLogicalView)">
+            <summary>
+            是否可执行逻辑
+            </summary>
+            <param name="view">视图对象</param>
+            <returns>返回是否可执行</returns>
+        </member>
+        <member name="M:SIE.Wpf.Andon.Commands.AndonManageAcceptCommand.Execute(SIE.Wpf.DetailLogicalView)">
+            <summary>
+            执行具体的逻辑
+            </summary>
+            <param name="view">视图对象</param>
+        </member>
+        <member name="T:SIE.Wpf.Andon.Commands.AndonManageCanelCommand">
+            <summary>
+            安灯事件取消命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.Commands.AndonManageCanelCommand.CanExecute(SIE.Wpf.DetailLogicalView)">
+            <summary>
+            是否可执行逻辑
+            </summary>
+            <param name="view">视图对象</param>
+            <returns>返回是否可执行</returns>
+        </member>
+        <member name="M:SIE.Wpf.Andon.Commands.AndonManageCanelCommand.Execute(SIE.Wpf.DetailLogicalView)">
+            <summary>
+            执行具体的逻辑
+            </summary>
+            <param name="view">视图对象</param>
+        </member>
+        <member name="T:SIE.Wpf.Andon.Commands.AndonManageHandleCommand">
+            <summary>
+            安灯事件处理命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.Commands.AndonManageHandleCommand.CanExecute(SIE.Wpf.DetailLogicalView)">
+            <summary>
+            是否可执行逻辑
+            </summary>
+            <param name="view">视图对象</param>
+            <returns>返回是否可执行</returns>
+        </member>
+        <member name="M:SIE.Wpf.Andon.Commands.AndonManageHandleCommand.Execute(SIE.Wpf.DetailLogicalView)">
+            <summary>
+            执行具体的逻辑
+            </summary>
+            <param name="view">视图对象</param>
+        </member>
+        <member name="T:SIE.Wpf.Andon.Commands.AndonManageMaterialCommand">
+            <summary>
+            安灯管理叫料生成备料单添加命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.Commands.AndonManageMaterialCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            执行
+            </summary>
+            <param name="view"></param>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:SIE.Wpf.Andon.Commands.AndonManageRejectCommand">
+            <summary>
+            安灯事件驳回命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.Commands.AndonManageRejectCommand.CanExecute(SIE.Wpf.DetailLogicalView)">
+            <summary>
+            是否可执行逻辑
+            </summary>
+            <param name="view">视图对象</param>
+            <returns>返回是否可执行</returns>
+        </member>
+        <member name="M:SIE.Wpf.Andon.Commands.AndonManageRejectCommand.Execute(SIE.Wpf.DetailLogicalView)">
+            <summary>
+            执行具体的逻辑
+            </summary>
+            <param name="view">视图对象</param>
+        </member>
+        <member name="T:SIE.Wpf.Andon.Commands.AndonManageResponseCommand">
+            <summary>
+            安灯事件响应命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.Commands.AndonManageResponseCommand.CanExecute(SIE.Wpf.DetailLogicalView)">
+            <summary>
+            是否可执行逻辑
+            </summary>
+            <param name="view">视图对象</param>
+            <returns>返回是否可执行</returns>
+        </member>
+        <member name="M:SIE.Wpf.Andon.Commands.AndonManageResponseCommand.Execute(SIE.Wpf.DetailLogicalView)">
+            <summary>
+            执行具体的逻辑
+            </summary>
+            <param name="view">视图对象</param>
+        </member>
+        <member name="T:SIE.Wpf.Andon.Commands.AttachmentUploadCommand">
+            <summary>
+            附件上传命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.Commands.AttachmentUploadCommand.Execute(SIE.Wpf.DetailLogicalView)">
+            <summary>
+            上传附件
+            </summary>
+            <param name="view">列表逻辑视图</param>
+        </member>
+        <member name="T:SIE.Wpf.Andon.Commands.ViewAttachmentCommand">
+            <summary>
+            安灯事件附件查看命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.Commands.ViewAttachmentCommand.CanExecute(SIE.Wpf.DetailLogicalView)">
+            <summary>
+            是否可执行逻辑
+            </summary>
+            <param name="view">视图对象</param>
+            <returns>返回是否可执行</returns>
+        </member>
+        <member name="M:SIE.Wpf.Andon.Commands.ViewAttachmentCommand.Execute(SIE.Wpf.DetailLogicalView)">
+            <summary>
+            执行具体的逻辑
+            </summary>
+            <param name="view">视图对象</param>
+        </member>
+        <member name="T:SIE.Wpf.Andon.Controls.AndonButtonControl">
+            <summary>
+            AndonButtonControl.xaml 的交互逻辑
+            </summary>
+            <summary>
+            AndonButtonControl
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Andon.Controls.AndonButtonControl.ShowAndonTriggerDialogDelegate">
+            <summary>
+            显示安灯触发对话框的委托
+            </summary>
+            <param name="andonId"></param>
+        </member>
+        <member name="M:SIE.Wpf.Andon.Controls.AndonButtonControl.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Andon.Controls.AndonButtonControl.AndonListOfPerson">
+            <summary>
+            大类为人的安灯列表
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Andon.Controls.AndonButtonControl.AndonListOfMachine">
+            <summary>
+            大类为机的安灯列表
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Andon.Controls.AndonButtonControl.AndonListOfMaterial">
+            <summary>
+            大类为料的安灯列表
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Andon.Controls.AndonButtonControl.AndonListOfMethod">
+            <summary>
+            大类为法的安灯列表
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Andon.Controls.AndonButtonControl.AndonListOfEvnironment">
+            <summary>
+            大类为环的安灯列表
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Andon.Controls.AndonButtonControl.AndonListOfTest">
+            <summary>
+            大类为测的安灯列表
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Andon.Controls.AndonButtonControl.Andons">
+            <summary>
+            安灯项目列表
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Andon.Controls.AndonButtonControl.AndonsProperty">
+            <summary>
+            安灯项目列表依赖属性
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.Controls.AndonButtonControl.OnValueChanged(System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            值变更
+            </summary>
+            <param name="e">e</param>
+        </member>
+        <member name="M:SIE.Wpf.Andon.Controls.AndonButtonControl.Andons_CollectionChanged(System.Object,System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <summary>
+            安灯项目列表变更
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="M:SIE.Wpf.Andon.Controls.AndonButtonControl.Clear">
+            <summary>
+            清空内存数据
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.Controls.AndonButtonControl.OnAndonRemoved(SIE.Andon.Andons.Andon)">
+            <summary>
+            从安灯事件列表移除安灯事件
+            </summary>
+            <param name="andon">安灯事件</param>
+        </member>
+        <member name="M:SIE.Wpf.Andon.Controls.AndonButtonControl.OnAndonAdded(SIE.Andon.Andons.Andon)">
+            <summary>
+            增加安灯到安灯列表
+            </summary>
+            <param name="andon">安灯</param>
+        </member>
+        <member name="P:SIE.Wpf.Andon.Controls.AndonButtonControl.ShowAndonTriggerDialog">
+            <summary>
+            显示安灯管理对话框
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.Controls.AndonButtonControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Andon.Controls.ShowAndonManageDialogDelegate">
+            <summary>
+            显示安灯管理对话框
+            </summary>
+            <param name="andonManageId"></param>
+        </member>
+        <member name="T:SIE.Wpf.Andon.Controls.AndonEventControl">
+            <summary>
+            AndonEventControl.xaml 的交互逻辑
+            </summary>
+            <summary>
+            AndonEventControl
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.Controls.AndonEventControl.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Andon.Controls.AndonEventControl.AndonManageList">
+            <summary>
+            当前列表中的缺陷项目
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Andon.Controls.AndonEventControl.AndonEvents">
+            <summary>
+            安灯事件列表
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Andon.Controls.AndonEventControl.AndonEventsProperty">
+            <summary>
+            安灯事件列表
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.Controls.AndonEventControl.OnValueChanged(System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            值变更
+            </summary>
+            <param name="e">e</param>
+        </member>
+        <member name="M:SIE.Wpf.Andon.Controls.AndonEventControl.AndonManages_CollectionChanged(System.Object,System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <summary>
+            安灯事件列表变更
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="M:SIE.Wpf.Andon.Controls.AndonEventControl.Clear">
+            <summary>
+            清空内存数据
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.Controls.AndonEventControl.OnDefectRemoved(SIE.Andon.Andons.AndonManage)">
+            <summary>
+            从安灯事件列表移除安灯事件
+            </summary>
+            <param name="andonManage">安灯事件</param>
+        </member>
+        <member name="M:SIE.Wpf.Andon.Controls.AndonEventControl.OnAndonManageAdded(SIE.Andon.Andons.AndonManage)">
+            <summary>
+            增加安灯事件到安灯事件列表
+            </summary>
+            <param name="andonManage">安灯事件</param>
+        </member>
+        <member name="M:SIE.Wpf.Andon.Controls.AndonEventControl.btnAndonEvent_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            安灯事件单击处理
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="P:SIE.Wpf.Andon.Controls.AndonEventControl.ShowAndonManageDialog">
+            <summary>
+            显示安灯管理对话框
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.Controls.AndonEventControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Andon.Controls.AndonStateToBorderColorConverter">
+            <summary>
+            安灯状态转换器
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.Controls.AndonStateToBorderColorConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            正向转换
+            </summary>
+            <param name="value">是否允许输入数值</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">文化</param>
+            <returns>允许输入数值则可见，否则不可见</returns>
+        </member>
+        <member name="M:SIE.Wpf.Andon.Controls.AndonStateToBorderColorConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            逆向转换
+            </summary>
+            <param name="value">是否允许输入数值</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">文化</param>
+            <returns>允许输入数值则可见，否则不可见</returns>
+        </member>
+        <member name="T:SIE.Wpf.Andon.Controls.AndonStateToColorConverter">
+            <summary>
+            安灯状态转换器
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.Controls.AndonStateToColorConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            正向转换
+            </summary>
+            <param name="value">是否允许输入数值</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">文化</param>
+            <returns>允许输入数值则可见，否则不可见</returns>
+        </member>
+        <member name="M:SIE.Wpf.Andon.Controls.AndonStateToColorConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            逆向转换
+            </summary>
+            <param name="value">是否允许输入数值</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">文化</param>
+            <returns>允许输入数值则可见，否则不可见</returns>
+        </member>
+        <member name="T:SIE.Wpf.Andon.DefectCategoryViewConfig">
+            <summary>
+            缺陷分类视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.DefectCategoryViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Andon.DefectCriteriaViewConfig">
+            <summary>
+            缺陷代码视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.DefectCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            查询面板视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Andon.DefectGradeViewConfig">
+            <summary>
+            缺陷分类视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.DefectGradeViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Andon.DefectViewConfig">
+            <summary>
+            缺陷代码视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.DefectViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.DefectViewConfig.ConfigReadOnlyListView">
+            <summary>
+            配置只读列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Andon.Editors.DefectMultiSelectEditor">
+            <summary>
+            缺陷多选编辑器
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Andon.Editors.DefectMultiSelectEditor.EditorName">
+            <summary>
+            DefectMultiSelectEditor
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.Editors.DefectMultiSelectEditor.BindingProperty">
+            <summary>
+            绑定实体
+            </summary>
+            <returns>属性</returns>
+        </member>
+        <member name="P:SIE.Wpf.Andon.Editors.DefectMultiSelectEditor.PropertyValueList">
+            <summary>
+            属性值列表
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Andon.Editors.DefectMultiSelectEditor.SelectedValueList">
+            <summary>
+            选中属性值列表
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Andon.Editors.DefectMultiSelectEditor.queryView">
+            <summary>
+            查询面板
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.Editors.DefectMultiSelectEditor.#ctor">
+            <summary>
+            PropertyValueEditor
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.Editors.DefectMultiSelectEditor.PopupSelection">
+            <summary>
+            PopupSelection
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.Editors.DefectMultiSelectEditor.CreateControl">
+            <summary>
+            创建控件
+            </summary>
+            <returns>FrameworkElement</returns>
+        </member>
+        <member name="M:SIE.Wpf.Andon.Editors.DefectMultiSelectEditor.CreateListControl">
+            <summary>
+            属性值控件
+            </summary>
+            <returns>FrameworkElement</returns>
+        </member>
+        <member name="M:SIE.Wpf.Andon.Editors.DefectMultiSelectEditor.ListTemplate_BlocksDefined(System.Object,SIE.MetaModel.View.CodeBlocksDefinedEventArgs)">
+            <summary>
+            聚合快元数据生成后事件
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="M:SIE.Wpf.Andon.Editors.DefectMultiSelectEditor.QueryView_QueryCompleted(System.Object,SIE.Wpf.QueryEventArgs)">
+            <summary>
+            查询后事件
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="M:SIE.Wpf.Andon.Editors.DefectMultiSelectEditor.QueryView_Querying(System.Object,SIE.Wpf.QueryEventArgs)">
+            <summary>
+            查询前事件
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="M:SIE.Wpf.Andon.Editors.DefectMultiSelectEditor.CreateSelectedListControl">
+            <summary>
+            选中属性值控件
+            </summary>
+            <returns>FrameworkElement</returns>
+        </member>
+        <member name="M:SIE.Wpf.Andon.Editors.DefectMultiSelectEditor.Template_BlocksDefined(System.Object,SIE.MetaModel.View.CodeBlocksDefinedEventArgs)">
+            <summary>
+            块定义
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Andon.Editors.DefectMultiSelectEditor.BindingData">
+            <summary>
+            绑定数据
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.Editors.DefectMultiSelectEditor.CreateEditingElement">
+            <summary>
+            创建编辑器样式
+            </summary>
+            <returns>FrameworkElement</returns>
+        </member>
+        <member name="T:SIE.Wpf.Andon.Editors.DefectMultiSelectEditorConfig">
+            <summary>
+            缺陷代码多选编辑器Config
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.Editors.DefectMultiSelectEditorConfig.#ctor">
+            <summary>
+            缺陷代码多选编辑器Config
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Andon.Editors.DefectMultiSelectEditorConfig.Model">
+            <summary>
+            下拉列表中显示的实体名称。
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Andon.Editors.DefectMultiSelectEditorConfig.LinkField">
+            <summary>
+            关联字段
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Andon.Editors.DefectMultiSelectEditorConfig.BindingField">
+            <summary>
+            绑定字段
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Andon.Editors.DefectMultiSelectEditorConfig.DisplayField">
+            <summary>
+            显示字段
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Andon.Editors.DefectMultiSelectEditorConfig.Separator">
+            <summary>
+            设置联动值分隔符
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Andon.EquipAccountViewConfig">
+            <summary>
+            设备台账视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.EquipAccountViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+        <member name="T:SIE.Wpf.Andon.Menus.AndonMenuInit">
+            <summary>
+            菜单初始化
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.Menus.AndonMenuInit.GetMenuDtos">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Wpf.Andon.Module">
+            <summary>
+            模块
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化
+            </summary>
+            <param name="app">应用程序生成周期定义</param>
+        </member>
+        <member name="M:SIE.Wpf.Andon.Module.App_ModuleOperations(System.Object,System.EventArgs)">
+            <summary>
+            模块操作
+            </summary>
+            <param name="sender">发送者</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Andon.Module.AddNewPropertyEditor(SIE.IApp)">
+            <summary>
+            属性编辑器
+            </summary>
+            <param name="app">应用程序生成周期定义</param>
+        </member>
+        <member name="T:SIE.Wpf.Andon.Properties.Resources">
+            <summary>
+              强类型资源类，用于查找本地化字符串等。
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Andon.Properties.Resources.ResourceManager">
+            <summary>
+              返回此类使用的缓存 ResourceManager 实例。
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Andon.Properties.Resources.Culture">
+            <summary>
+              重写当前线程的 CurrentUICulture 属性，对
+              使用此强类型资源类的所有资源查找执行重写。
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Andon.WipLayoutHelper">
+            <summary>
+            采集布局帮助类
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Andon.WipLayoutHelper.SetPanelMargin(DevExpress.Xpf.LayoutControl.LayoutControl)">
+            <summary>
+            设置容器边距
+            </summary>
+            <param name="control">控件</param>
+        </member>
+        <member name="M:SIE.Wpf.Andon.WipLayoutHelper.ResizeChildrenStyle(System.Windows.DependencyObject)">
+            <summary>
+            重置界面子控件元素样式
+            </summary>
+            <param name="parent"></param>
+        </member>
+        <member name="T:SIE.Wpf.MES.Controls.AndonButtonControlFactory">
+            <summary>
+            AndonButtonControlFactory
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.Controls.AndonButtonControlFactory.ControlType">
+            <summary>
+            控件类型
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.Controls.AndonButtonControlFactory.CreateControl">
+            <summary>
+            创建控件类型
+            </summary>
+            <returns>AndonButtonControl</returns>
+        </member>
+        <member name="T:SIE.Wpf.MES.Controls.AndonEventControlFactory">
+            <summary>
+            AndonBarControlFactory
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.Controls.AndonEventControlFactory.ControlType">
+            <summary>
+            控件类型
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.Controls.AndonEventControlFactory.CreateControl">
+            <summary>
+            创建控件类型
+            </summary>
+            <returns>DefectControl</returns>
+        </member>
+        <member name="T:SIE.Wpf.MES.WIP.Configs.RefreshAndonManageConfigValueViewConfig">
+            <summary>
+            上料自动刷新视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.WIP.Configs.RefreshAndonManageConfigValueViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+    </members>
+</doc>

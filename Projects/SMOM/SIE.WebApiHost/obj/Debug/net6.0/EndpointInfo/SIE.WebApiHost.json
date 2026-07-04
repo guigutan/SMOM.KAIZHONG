@@ -1,0 +1,3626 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Elsa",
+    "version": "v1"
+  },
+  "paths": {
+    "/v1/workflow-instances/bulk": {
+      "delete": {
+        "tags": [
+          "WorkflowInstances"
+        ],
+        "summary": "Deletes a workflow instance.",
+        "description": "Deletes a workflow instance.",
+        "operationId": "WorkflowInstances.BulkDelete",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BulkDeleteWorkflowsRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BulkDeleteWorkflowsRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BulkDeleteWorkflowsRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BulkDeleteWorkflowsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/workflow-instances/bulk/retry": {
+      "post": {
+        "tags": [
+          "WorkflowInstances"
+        ],
+        "summary": "Retries a faulted workflow instance.",
+        "description": "Retries a workflow instance.",
+        "operationId": "WorkflowInstances.Retry",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BulkRetryWorkflowsRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BulkRetryWorkflowsRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BulkRetryWorkflowsRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BulkRetryWorkflowsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/dataportal/invoke": {
+      "post": {
+        "tags": [
+          "DataPortal"
+        ],
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ApiRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ApiRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ApiRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ApiRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/dataportal/execute": {
+      "post": {
+        "tags": [
+          "DataPortal"
+        ],
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "type": "string"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "string"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/workflow-instances/{id}": {
+      "delete": {
+        "tags": [
+          "WorkflowInstances"
+        ],
+        "summary": "Deletes a workflow instance.",
+        "description": "Deletes a workflow instance.",
+        "operationId": "WorkflowInstances.Delete",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "WorkflowInstances"
+        ],
+        "summary": "Returns a single workflow instance.",
+        "description": "Returns a single workflow instance.",
+        "operationId": "WorkflowInstances.Get",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkflowInstance"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/workflow-definitions/{id}": {
+      "delete": {
+        "tags": [
+          "WorkflowDefinitions"
+        ],
+        "summary": "Deletes a workflow definition and all of its versions and workflow instances.",
+        "description": "Deletes a workflow definition and all of its versions and workflow instances.",
+        "operationId": "WorkflowDefinitions.Delete",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v1/workflows/{workflowDefinitionId}/dispatch": {
+      "post": {
+        "tags": [
+          "Workflows"
+        ],
+        "summary": "Executes the specified workflow definition.",
+        "description": "Executes the specified workflow definition.",
+        "operationId": "Workflows.Dispatch",
+        "parameters": [
+          {
+            "name": "workflowDefinitionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DispatchWorkflowDefinitionRequestModel"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DispatchWorkflowDefinitionRequestModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DispatchWorkflowDefinitionRequestModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DispatchWorkflowDefinitionRequestModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DispatchWorkflowDefinitionResponseModel"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/workflow-instances/{workflowInstanceId}/dispatch": {
+      "post": {
+        "tags": [
+          "WorkflowInstances"
+        ],
+        "summary": "Dispatches the specified workflow instance.",
+        "description": "Dispatches the specified workflow instance.",
+        "operationId": "WorkflowInstances.Dispatch",
+        "parameters": [
+          {
+            "name": "workflowInstanceId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DispatchWorkflowInstanceRequestModel"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DispatchWorkflowInstanceRequestModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DispatchWorkflowInstanceRequestModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DispatchWorkflowInstanceRequestModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DispatchWorkflowInstanceResponseModel"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/signals/{signalName}/dispatch": {
+      "post": {
+        "tags": [
+          "Signals"
+        ],
+        "summary": "Signals all workflows waiting on the specified signal name synchronously.",
+        "description": "Signals all workflows waiting on the specified signal name synchronously.",
+        "operationId": "Signals.Execute",
+        "parameters": [
+          {
+            "name": "signalName",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DispatchSignalRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DispatchSignalRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DispatchSignalRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DispatchSignalRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DispatchSignalResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/signals/dispatch/{token}": {
+      "get": {
+        "tags": [
+          "DispatchEndpoint"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "DispatchEndpoint"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v1/workflows/{workflowDefinitionId}/execute": {
+      "post": {
+        "tags": [
+          "WorkflowDefinitions"
+        ],
+        "summary": "Executes the specified workflow definition.",
+        "description": "Executes the specified workflow definition.",
+        "operationId": "WorkflowDefinitions.Execute",
+        "parameters": [
+          {
+            "name": "workflowDefinitionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExecuteWorkflowDefinitionRequestModel"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExecuteWorkflowDefinitionRequestModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExecuteWorkflowDefinitionRequestModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExecuteWorkflowDefinitionRequestModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExecuteWorkflowDefinitionResponseModel"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/workflow-instances/{workflowInstanceId}/execute": {
+      "post": {
+        "tags": [
+          "WorkflowInstances"
+        ],
+        "summary": "Executes the specified workflow instance.",
+        "description": "Executes the specified workflow instance.",
+        "operationId": "WorkflowInstances.Execute",
+        "parameters": [
+          {
+            "name": "workflowInstanceId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExecuteWorkflowInstanceRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExecuteWorkflowInstanceRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExecuteWorkflowInstanceRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExecuteWorkflowInstanceRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExecuteWorkflowInstanceResponseModel"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/signals/{signalName}/execute": {
+      "post": {
+        "tags": [
+          "Signals"
+        ],
+        "summary": "Signals all workflows waiting on the specified signal name synchronously.",
+        "description": "Signals all workflows waiting on the specified signal name synchronously.",
+        "operationId": "Signals.Execute",
+        "parameters": [
+          {
+            "name": "signalName",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExecuteSignalRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExecuteSignalRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExecuteSignalRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExecuteSignalRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExecuteSignalResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/workflow-definitions/{workflowDefinitionId}/{versionOptions}/export": {
+      "post": {
+        "tags": [
+          "WorkflowDefinitions"
+        ],
+        "summary": "Exports the specified workflow definition as a JSON download.",
+        "description": "Exports the specified workflow definition as a JSON download.",
+        "operationId": "WorkflowDefinitions.Export",
+        "parameters": [
+          {
+            "name": "workflowDefinitionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "versionOptions",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/VersionOptions"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/workflow-registry/{id}/{versionOptions}": {
+      "get": {
+        "tags": [
+          "WorkflowBlueprints"
+        ],
+        "summary": "Returns a single workflow blueprint.",
+        "description": "Returns a single workflow blueprint. When no version options are specified, the latest version is returned.",
+        "operationId": "WorkflowBlueprints.Get",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "versionOptions",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/VersionOptions"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkflowBlueprintModelPagedList"
+                },
+                "example": {"Version":1,"TenantId":null,"IsSingleton":false,"IsEnabled":false,"IsPublished":true,"IsLatest":false,"Variables":{"Data":{}},"ContextOptions":{"ContextType":"System.String, mscorlib","ContextFidelity":"Burst"},"PersistenceBehavior":"Suspended","DeleteCompletedInstances":false,"CustomAttributes":{"Data":{}},"Activities":[{"Id":"activity-1","Name":"Activity1","DisplayName":null,"Description":null,"Type":"WriteLine","ParentId":null,"PersistWorkflow":false,"LoadWorkflowContext":false,"SaveWorkflowContext":false,"InputProperties":{"Data":{}},"OutputProperties":{"Data":{}}},{"Id":"activity-2","Name":"Activity2","DisplayName":null,"Description":null,"Type":"WriteLine","ParentId":null,"PersistWorkflow":false,"LoadWorkflowContext":false,"SaveWorkflowContext":false,"InputProperties":{"Data":{}},"OutputProperties":{"Data":{}}}],"Connections":[{"SourceActivityId":"activity-1","TargetActivityId":"activity-2","Outcome":"Done"}],"Id":"my-workflow","Name":"ProcessOrderWorkflow","DisplayName":"Process Order Workflow","Description":"Process new orders","Type":null,"ParentId":null,"PersistWorkflow":false,"LoadWorkflowContext":false,"SaveWorkflowContext":false,"InputProperties":{"Data":{}},"OutputProperties":{"Data":{}}}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/workflow-instances/{id}/execution-log": {
+      "get": {
+        "tags": [
+          "WorkflowExecutionLog"
+        ],
+        "summary": "Returns the workflow's execution log.",
+        "description": "Returns the workflow's execution log.",
+        "operationId": "WorkflowExecutionLog.Get",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkflowExecutionLogRecordPagedList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/scripting/javascript/type-definitions/{workflowDefinitionId}": {
+      "get": {
+        "tags": [
+          "JavaScriptLanguageServices"
+        ],
+        "summary": "Returns a TypeScript type definition file generated based on the specified workflow definition.",
+        "description": "Returns a TypeScript type definition file generated based on the specified workflow definition.",
+        "operationId": "JavaScriptLanguageServices.GetTypeDefinitions",
+        "parameters": [
+          {
+            "name": "workflowDefinitionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "context",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/VersionOptions"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/designer/runtime-select-list-items": {
+      "post": {
+        "tags": [
+          "Designer.RuntimeSelectListItems"
+        ],
+        "summary": "Returns a list of items to be used by the list control requesting the items.",
+        "description": "Returns a list of items to be used by the list control requesting the items.",
+        "operationId": "Designer.RuntimeSelectListItems.Get",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RuntimeSelectListItemsContextHolder"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RuntimeSelectListItemsContextHolder"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RuntimeSelectListItemsContextHolder"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RuntimeSelectListItemsContextHolder"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OkObjectResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/workflow-instances/{workflowInstanceId}/activity-stats/{activityId}": {
+      "get": {
+        "tags": [
+          "ActivityStats"
+        ],
+        "summary": "Returns an aggregated view of activity events and execution statistics.",
+        "description": "Returns an aggregated view of activity events and execution statistics.",
+        "operationId": "ActivityStats.Get",
+        "parameters": [
+          {
+            "name": "workflowInstanceId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "activityId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActivityStats"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/workflow-definitions/{workflowDefinitionId}/{versionOptions}": {
+      "get": {
+        "tags": [
+          "WorkflowDefinitions"
+        ],
+        "summary": "Returns a single workflow definition.",
+        "description": "Returns a single workflow definition using the specified workflow definition ID and version options.",
+        "operationId": "WorkflowDefinitions.GetByDefinitionAndVersion",
+        "parameters": [
+          {
+            "name": "workflowDefinitionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "versionOptions",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/VersionOptions"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkflowDefinition"
+                },
+                "example": {"definitionId":"78f998eaeb4a4fb6939315a4de293e40","versionId":"401722aa2b3d435ea0e8c26c9403561d","tenantId":null,"name":"ProcessOrderWorkflow","displayName":"Process Order Workflow","description":"Process new orders","channel":null,"version":1,"variables":{"data":{}},"customAttributes":{"data":{}},"contextOptions":{"contextType":"System.String, mscorlib","contextFidelity":"Burst"},"isSingleton":false,"persistenceBehavior":"Suspended","deleteCompletedInstances":false,"isPublished":true,"isLatest":false,"tag":null,"activities":[{"activityId":"activity-1","type":"WriteLine","name":"Activity1","displayName":"Write \"Hello\"","description":"Write \"Hello\"","persistWorkflow":false,"loadWorkflowContext":false,"saveWorkflowContext":false,"properties":[{"name":"Text","syntax":null,"expressions":{"literal":"Hello"}}],"propertyStorageProviders":{}},{"activityId":"activity-2","type":"WriteLine","name":"Activity2","displayName":"Write \"World!\"","description":"Write \"World!\"","persistWorkflow":false,"loadWorkflowContext":false,"saveWorkflowContext":false,"properties":[{"name":"Text","syntax":null,"expressions":{"literal":"World!"}}],"propertyStorageProviders":{}}],"connections":[{"sourceActivityId":"activity-1","targetActivityId":"activity-2","outcome":"Done"}],"id":"401722aa2b3d435ea0e8c26c9403561d"}
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/workflow-definitions/{versionId}": {
+      "get": {
+        "tags": [
+          "WorkflowDefinitions"
+        ],
+        "summary": "Returns a single workflow definition.",
+        "description": "Returns a single workflow definition using the specified workflow definition version ID.",
+        "operationId": "WorkflowDefinitions.GetByVersionId",
+        "parameters": [
+          {
+            "name": "versionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkflowDefinition"
+                },
+                "example": {"definitionId":"ae006425292043f89da88e8ca44049c0","versionId":"03755c5cea6046e488a3329817e07e89","tenantId":null,"name":"ProcessOrderWorkflow","displayName":"Process Order Workflow","description":"Process new orders","channel":null,"version":1,"variables":{"data":{}},"customAttributes":{"data":{}},"contextOptions":{"contextType":"System.String, mscorlib","contextFidelity":"Burst"},"isSingleton":false,"persistenceBehavior":"Suspended","deleteCompletedInstances":false,"isPublished":true,"isLatest":false,"tag":null,"activities":[{"activityId":"activity-1","type":"WriteLine","name":"Activity1","displayName":"Write \"Hello\"","description":"Write \"Hello\"","persistWorkflow":false,"loadWorkflowContext":false,"saveWorkflowContext":false,"properties":[{"name":"Text","syntax":null,"expressions":{"literal":"Hello"}}],"propertyStorageProviders":{}},{"activityId":"activity-2","type":"WriteLine","name":"Activity2","displayName":"Write \"World!\"","description":"Write \"World!\"","persistWorkflow":false,"loadWorkflowContext":false,"saveWorkflowContext":false,"properties":[{"name":"Text","syntax":null,"expressions":{"literal":"World!"}}],"propertyStorageProviders":{}}],"connections":[{"sourceActivityId":"activity-1","targetActivityId":"activity-2","outcome":"Done"}],"id":"03755c5cea6046e488a3329817e07e89"}
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/workflow-definitions": {
+      "get": {
+        "tags": [
+          "WorkflowDefinitions"
+        ],
+        "summary": "Returns a list of workflow definitions for the specified ids.",
+        "description": "Returns a list of workflow definition summaries. When no version options are specified, the latest versions are returned.",
+        "operationId": "WorkflowDefinitions.GetMany",
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/VersionOptions"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkflowDefinitionSummaryModelListModel"
+                },
+                "example": {"items":[{"definitionId":"f0e1fef50851420a894f5e8eba82015a","versionId":"5b47578315744d729a1481611a2a04e5","tenantId":null,"name":"ProcessOrderWorkflow","displayName":"Process Order Workflow","description":"Process new orders","channel":null,"version":1,"variables":{"data":{}},"customAttributes":{"data":{}},"contextOptions":{"contextType":"System.String, mscorlib","contextFidelity":"Burst"},"isSingleton":false,"persistenceBehavior":"Suspended","deleteCompletedInstances":false,"isPublished":true,"isLatest":false,"tag":null,"activities":[{"activityId":"activity-1","type":"WriteLine","name":"Activity1","displayName":"Write \"Hello\"","description":"Write \"Hello\"","persistWorkflow":false,"loadWorkflowContext":false,"saveWorkflowContext":false,"properties":[{"name":"Text","syntax":null,"expressions":{"literal":"Hello"}}],"propertyStorageProviders":{}},{"activityId":"activity-2","type":"WriteLine","name":"Activity2","displayName":"Write \"World!\"","description":"Write \"World!\"","persistWorkflow":false,"loadWorkflowContext":false,"saveWorkflowContext":false,"properties":[{"name":"Text","syntax":null,"expressions":{"literal":"World!"}}],"propertyStorageProviders":{}}],"connections":[{"sourceActivityId":"activity-1","targetActivityId":"activity-2","outcome":"Done"}],"id":"5b47578315744d729a1481611a2a04e5"},{"definitionId":"9f683ca84f934f9186548431eb653188","versionId":"864862587c294a7fa37fdb31322bcee2","tenantId":null,"name":"ProcessOrderWorkflow","displayName":"Process Order Workflow","description":"Process new orders","channel":null,"version":1,"variables":{"data":{}},"customAttributes":{"data":{}},"contextOptions":{"contextType":"System.String, mscorlib","contextFidelity":"Burst"},"isSingleton":false,"persistenceBehavior":"Suspended","deleteCompletedInstances":false,"isPublished":true,"isLatest":false,"tag":null,"activities":[{"activityId":"activity-1","type":"WriteLine","name":"Activity1","displayName":"Write \"Hello\"","description":"Write \"Hello\"","persistWorkflow":false,"loadWorkflowContext":false,"saveWorkflowContext":false,"properties":[{"name":"Text","syntax":null,"expressions":{"literal":"Hello"}}],"propertyStorageProviders":{}},{"activityId":"activity-2","type":"WriteLine","name":"Activity2","displayName":"Write \"World!\"","description":"Write \"World!\"","persistWorkflow":false,"loadWorkflowContext":false,"saveWorkflowContext":false,"properties":[{"name":"Text","syntax":null,"expressions":{"literal":"World!"}}],"propertyStorageProviders":{}}],"connections":[{"sourceActivityId":"activity-1","targetActivityId":"activity-2","outcome":"Done"}],"id":"864862587c294a7fa37fdb31322bcee2"},{"definitionId":"4fd98f94cc8f4e0da3333e35df11d520","versionId":"2c1146583af949e195a169dfbba6a38f","tenantId":null,"name":"ProcessOrderWorkflow","displayName":"Process Order Workflow","description":"Process new orders","channel":null,"version":1,"variables":{"data":{}},"customAttributes":{"data":{}},"contextOptions":{"contextType":"System.String, mscorlib","contextFidelity":"Burst"},"isSingleton":false,"persistenceBehavior":"Suspended","deleteCompletedInstances":false,"isPublished":true,"isLatest":false,"tag":null,"activities":[{"activityId":"activity-1","type":"WriteLine","name":"Activity1","displayName":"Write \"Hello\"","description":"Write \"Hello\"","persistWorkflow":false,"loadWorkflowContext":false,"saveWorkflowContext":false,"properties":[{"name":"Text","syntax":null,"expressions":{"literal":"Hello"}}],"propertyStorageProviders":{}},{"activityId":"activity-2","type":"WriteLine","name":"Activity2","displayName":"Write \"World!\"","description":"Write \"World!\"","persistWorkflow":false,"loadWorkflowContext":false,"saveWorkflowContext":false,"properties":[{"name":"Text","syntax":null,"expressions":{"literal":"World!"}}],"propertyStorageProviders":{}}],"connections":[{"sourceActivityId":"activity-1","targetActivityId":"activity-2","outcome":"Done"}],"id":"2c1146583af949e195a169dfbba6a38f"}],"page":0,"pageSize":10,"totalCount":3}
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "WorkflowDefinitions"
+        ],
+        "summary": "Creates a new workflow definition or updates an existing one.",
+        "description": "Creates a new workflow definition or updates an existing one. If the workflow already exists, a new draft is created and updated with the specified values. Use the Publish field to automatically publish the workflow.",
+        "operationId": "WorkflowDefinitions.Post",
+        "parameters": [
+          {
+            "name": "GroupVersion",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "MajorVersion",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "MinorVersion",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Status",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SaveWorkflowDefinitionRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SaveWorkflowDefinitionRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SaveWorkflowDefinitionRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SaveWorkflowDefinitionRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkflowDefinition"
+                },
+                "example": {"definitionId":"96e356a226e84d24bc30018be106c43a","versionId":"c065dda958da44848ba5d13fd3450ca8","tenantId":null,"name":"ProcessOrderWorkflow","displayName":"Process Order Workflow","description":"Process new orders","channel":null,"version":1,"variables":{"data":{}},"customAttributes":{"data":{}},"contextOptions":{"contextType":"System.String, mscorlib","contextFidelity":"Burst"},"isSingleton":false,"persistenceBehavior":"Suspended","deleteCompletedInstances":false,"isPublished":true,"isLatest":false,"tag":null,"activities":[{"activityId":"activity-1","type":"WriteLine","name":"Activity1","displayName":"Write \"Hello\"","description":"Write \"Hello\"","persistWorkflow":false,"loadWorkflowContext":false,"saveWorkflowContext":false,"properties":[{"name":"Text","syntax":null,"expressions":{"literal":"Hello"}}],"propertyStorageProviders":{}},{"activityId":"activity-2","type":"WriteLine","name":"Activity2","displayName":"Write \"World!\"","description":"Write \"World!\"","persistWorkflow":false,"loadWorkflowContext":false,"saveWorkflowContext":false,"properties":[{"name":"Text","syntax":null,"expressions":{"literal":"World!"}}],"propertyStorageProviders":{}}],"connections":[{"sourceActivityId":"activity-1","targetActivityId":"activity-2","outcome":"Done"}],"id":"c065dda958da44848ba5d13fd3450ca8"}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/workflow-definitions/{workflowDefinitionId}/import": {
+      "post": {
+        "tags": [
+          "WorkflowDefinitions"
+        ],
+        "summary": "Imports a JSON file into the specified workflow definition.",
+        "description": "Imports a JSON file into the specified workflow definition.",
+        "operationId": "WorkflowDefinitions.Import",
+        "parameters": [
+          {
+            "name": "workflowDefinitionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "ContentType": {
+                    "type": "string"
+                  },
+                  "ContentDisposition": {
+                    "type": "string"
+                  },
+                  "Headers": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "Length": {
+                    "type": "integer",
+                    "format": "int64"
+                  },
+                  "Name": {
+                    "type": "string"
+                  },
+                  "FileName": {
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "ContentType": {
+                  "style": "form"
+                },
+                "ContentDisposition": {
+                  "style": "form"
+                },
+                "Headers": {
+                  "style": "form"
+                },
+                "Length": {
+                  "style": "form"
+                },
+                "Name": {
+                  "style": "form"
+                },
+                "FileName": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v1/workflow-storage-providers": {
+      "get": {
+        "tags": [
+          "WorkflowStorageProviders"
+        ],
+        "summary": "Returns all available workflow storage providers.",
+        "description": "Returns all available workflow storage providers.",
+        "operationId": "WorkflowStorageProviders.List",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WorkflowStorageDescriptor"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/workflow-organizational": {
+      "get": {
+        "tags": [
+          "WorkflowOrganizational"
+        ],
+        "summary": "Returns a list of available workflow organizational.",
+        "description": "Returns a list of available workflow organizational.",
+        "operationId": "WorkflowOrganizational.List",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "checkedNode",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "definitionId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "WorkflowOrganizational"
+        ],
+        "summary": "Creates a new workflow organizational or updates an existing one.",
+        "description": "Creates a new workflow organizational or updates an existing one. If the workflow already exists, a new draft is created and updated with the specified values. Use the Publish field to automatically publish the workflow.",
+        "operationId": "WorkflowOrganizational.Post",
+        "parameters": [
+          {
+            "name": "GroupVersion",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "MajorVersion",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "MinorVersion",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Status",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/workflow-registry": {
+      "get": {
+        "tags": [
+          "WorkflowBlueprints"
+        ],
+        "summary": "Returns a list of workflow blueprints.",
+        "description": "Returns paginated a list of workflow blueprints. When no version options are specified, the latest version is returned.",
+        "operationId": "WorkflowBlueprints.List",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/VersionOptions"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkflowBlueprintSummaryModelPagedList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/workflow-instances": {
+      "get": {
+        "tags": [
+          "WorkflowInstances"
+        ],
+        "summary": "Returns a list of workflow instances.",
+        "description": "Returns paginated a list of workflow instances.",
+        "operationId": "WorkflowInstances.List",
+        "parameters": [
+          {
+            "name": "workflow",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/WorkflowStatus"
+            }
+          },
+          {
+            "name": "correlationId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "orderBy",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/OrderBy"
+            }
+          },
+          {
+            "name": "searchTerm",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 0
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 25
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkflowInstanceSummaryModelPagedList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/workflow-channels": {
+      "get": {
+        "tags": [
+          "WorkflowChannels"
+        ],
+        "summary": "Returns a list of available workflow channels.",
+        "description": "Returns a list of available workflow channels.",
+        "operationId": "WorkflowChannels.List",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v1/activities": {
+      "get": {
+        "tags": [
+          "Activities"
+        ],
+        "summary": "Returns all available activities.",
+        "description": "Returns all available activities from which workflow definitions can be built.",
+        "operationId": "Activities.List",
+        "parameters": [
+          {
+            "name": "category",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ActivityDescriptor"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/workflow-definitions/{workflowDefinitionId}/retract": {
+      "post": {
+        "tags": [
+          "WorkflowDefinitions"
+        ],
+        "summary": "Retracts a published workflow definition.",
+        "description": "Retracts a published workflow definition.",
+        "operationId": "WorkflowDefinitions.Unpublish",
+        "parameters": [
+          {
+            "name": "workflowDefinitionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkflowDefinition"
+                },
+                "example": {"definitionId":"57b7871b437843cda8eececd15ae3a55","versionId":"994544dc8788483fa131d3da2ae5504a","tenantId":null,"name":"ProcessOrderWorkflow","displayName":"Process Order Workflow","description":"Process new orders","channel":null,"version":1,"variables":{"data":{}},"customAttributes":{"data":{}},"contextOptions":{"contextType":"System.String, mscorlib","contextFidelity":"Burst"},"isSingleton":false,"persistenceBehavior":"Suspended","deleteCompletedInstances":false,"isPublished":true,"isLatest":false,"tag":null,"activities":[{"activityId":"activity-1","type":"WriteLine","name":"Activity1","displayName":"Write \"Hello\"","description":"Write \"Hello\"","persistWorkflow":false,"loadWorkflowContext":false,"saveWorkflowContext":false,"properties":[{"name":"Text","syntax":null,"expressions":{"literal":"Hello"}}],"propertyStorageProviders":{}},{"activityId":"activity-2","type":"WriteLine","name":"Activity2","displayName":"Write \"World!\"","description":"Write \"World!\"","persistWorkflow":false,"loadWorkflowContext":false,"saveWorkflowContext":false,"properties":[{"name":"Text","syntax":null,"expressions":{"literal":"World!"}}],"propertyStorageProviders":{}}],"connections":[{"sourceActivityId":"activity-1","targetActivityId":"activity-2","outcome":"Done"}],"id":"994544dc8788483fa131d3da2ae5504a"}
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/workflow-instances/{id}/retry": {
+      "post": {
+        "tags": [
+          "WorkflowInstances"
+        ],
+        "summary": "Retries a faulted workflow instance.",
+        "description": "Retries a workflow instance.",
+        "operationId": "WorkflowInstances.Retry",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RetryWorkflowRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RetryWorkflowRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RetryWorkflowRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RetryWorkflowRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "202": {
+            "description": "Success"
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/workflows/trigger": {
+      "post": {
+        "tags": [
+          "Workflows"
+        ],
+        "summary": "Triggers all workflows matching the specified criteria synchronously.",
+        "description": "Triggers all workflows matching the specified criteria synchronously.",
+        "operationId": "Workflows.Execute",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TriggerWorkflowsRequestModel"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TriggerWorkflowsRequestModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TriggerWorkflowsRequestModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TriggerWorkflowsRequestModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TriggerWorkflowsRequestModel"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/signals/trigger/{token}": {
+      "get": {
+        "tags": [
+          "TriggerEndpoint"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "TriggerEndpoint"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ActivityBlueprintModel": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "displayName": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "parentId": {
+            "type": "string",
+            "nullable": true
+          },
+          "persistWorkflow": {
+            "type": "boolean"
+          },
+          "loadWorkflowContext": {
+            "type": "boolean"
+          },
+          "saveWorkflowContext": {
+            "type": "boolean"
+          },
+          "inputProperties": {
+            "$ref": "#/components/schemas/Variables"
+          },
+          "outputProperties": {
+            "$ref": "#/components/schemas/Variables"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ActivityDefinition": {
+        "type": "object",
+        "properties": {
+          "activityId": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "displayName": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "persistWorkflow": {
+            "type": "boolean"
+          },
+          "loadWorkflowContext": {
+            "type": "boolean"
+          },
+          "saveWorkflowContext": {
+            "type": "boolean"
+          },
+          "properties": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityDefinitionProperty"
+            },
+            "nullable": true
+          },
+          "propertyStorageProviders": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ActivityDefinitionProperty": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "syntax": {
+            "type": "string",
+            "nullable": true
+          },
+          "expressions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ActivityDescriptor": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "displayName": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "category": {
+            "type": "string",
+            "nullable": true
+          },
+          "traits": {
+            "$ref": "#/components/schemas/ActivityTraits"
+          },
+          "outcomes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "properties": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityInputDescriptor"
+            },
+            "nullable": true,
+            "deprecated": true
+          },
+          "inputProperties": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityInputDescriptor"
+            },
+            "nullable": true
+          },
+          "outputProperties": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityOutputDescriptor"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ActivityEventCount": {
+        "type": "object",
+        "properties": {
+          "eventName": {
+            "type": "string",
+            "nullable": true
+          },
+          "count": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ActivityFault": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ActivityInputDescriptor": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "nullable": true,
+            "example": "System.String, mscorlib"
+          },
+          "uiHint": {
+            "type": "string",
+            "nullable": true
+          },
+          "label": {
+            "type": "string",
+            "nullable": true
+          },
+          "hint": {
+            "type": "string",
+            "nullable": true
+          },
+          "options": {
+            "nullable": true
+          },
+          "category": {
+            "type": "string",
+            "nullable": true
+          },
+          "order": {
+            "type": "number",
+            "format": "float"
+          },
+          "defaultValue": {
+            "nullable": true
+          },
+          "defaultSyntax": {
+            "type": "string",
+            "nullable": true
+          },
+          "supportedSyntaxes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "isReadOnly": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "isBrowsable": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "isDesignerCritical": {
+            "type": "boolean"
+          },
+          "defaultWorkflowStorageProvider": {
+            "type": "string",
+            "nullable": true
+          },
+          "disableWorkflowProviderSelection": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ActivityOutputDescriptor": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "nullable": true,
+            "example": "System.String, mscorlib"
+          },
+          "hint": {
+            "type": "string",
+            "nullable": true
+          },
+          "defaultWorkflowStorageProvider": {
+            "type": "string",
+            "nullable": true
+          },
+          "disableWorkflowProviderSelection": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ActivityScope": {
+        "type": "object",
+        "properties": {
+          "activityId": {
+            "type": "string",
+            "nullable": true
+          },
+          "variables": {
+            "$ref": "#/components/schemas/Variables"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ActivityStats": {
+        "type": "object",
+        "properties": {
+          "eventCounts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityEventCount"
+            },
+            "nullable": true
+          },
+          "fault": {
+            "$ref": "#/components/schemas/ActivityFault"
+          },
+          "averageExecutionTime": {
+            "$ref": "#/components/schemas/Duration"
+          },
+          "fastestExecutionTime": {
+            "$ref": "#/components/schemas/Duration"
+          },
+          "slowestExecutionTime": {
+            "$ref": "#/components/schemas/Duration"
+          },
+          "lastExecutedAt": {
+            "$ref": "#/components/schemas/Instant"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ActivityTraits": {
+        "enum": [
+          1,
+          2,
+          4
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "ApiMethodParameter": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ApiRequest": {
+        "type": "object",
+        "properties": {
+          "apiType": {
+            "type": "string",
+            "nullable": true
+          },
+          "parameters": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApiMethodParameter"
+            },
+            "nullable": true
+          },
+          "method": {
+            "type": "string",
+            "nullable": true
+          },
+          "context": {
+            "type": "object",
+            "additionalProperties": { },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ApiResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "result": {
+            "nullable": true
+          },
+          "context": {
+            "type": "object",
+            "additionalProperties": { },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BlockingActivity": {
+        "type": "object",
+        "properties": {
+          "activityId": {
+            "type": "string",
+            "nullable": true
+          },
+          "activityType": {
+            "type": "string",
+            "nullable": true
+          },
+          "tag": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BulkDeleteWorkflowsRequest": {
+        "type": "object",
+        "properties": {
+          "workflowInstanceIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BulkRetryWorkflowsRequest": {
+        "type": "object",
+        "properties": {
+          "workflowInstanceIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CollectedWorkflow": {
+        "type": "object",
+        "properties": {
+          "workflowInstanceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "activityId": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ConnectionDefinition": {
+        "type": "object",
+        "properties": {
+          "sourceActivityId": {
+            "type": "string",
+            "nullable": true
+          },
+          "targetActivityId": {
+            "type": "string",
+            "nullable": true
+          },
+          "outcome": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ConnectionModel": {
+        "type": "object",
+        "properties": {
+          "sourceActivityId": {
+            "type": "string",
+            "nullable": true
+          },
+          "targetActivityId": {
+            "type": "string",
+            "nullable": true
+          },
+          "outcome": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DispatchSignalRequest": {
+        "type": "object",
+        "properties": {
+          "workflowInstanceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "correlationId": {
+            "type": "string",
+            "nullable": true
+          },
+          "input": {
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DispatchSignalResponse": {
+        "type": "object",
+        "properties": {
+          "startedWorkflows": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CollectedWorkflow"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DispatchWorkflowDefinitionRequestModel": {
+        "type": "object",
+        "properties": {
+          "activityId": {
+            "type": "string",
+            "nullable": true
+          },
+          "correlationId": {
+            "type": "string",
+            "nullable": true
+          },
+          "contextId": {
+            "type": "string",
+            "nullable": true
+          },
+          "input": {
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DispatchWorkflowDefinitionResponseModel": {
+        "type": "object",
+        "properties": {
+          "workflowInstanceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "activityId": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DispatchWorkflowInstanceRequestModel": {
+        "type": "object",
+        "properties": {
+          "activityId": {
+            "type": "string",
+            "nullable": true
+          },
+          "input": {
+            "$ref": "#/components/schemas/WorkflowInput"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DispatchWorkflowInstanceResponseModel": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "Duration": {
+        "type": "object",
+        "properties": {
+          "days": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "nanosecondOfDay": {
+            "type": "integer",
+            "format": "int64",
+            "readOnly": true
+          },
+          "hours": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "minutes": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "seconds": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "milliseconds": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "subsecondTicks": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "subsecondNanoseconds": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "bclCompatibleTicks": {
+            "type": "integer",
+            "format": "int64",
+            "readOnly": true
+          },
+          "totalDays": {
+            "type": "number",
+            "format": "double",
+            "readOnly": true
+          },
+          "totalHours": {
+            "type": "number",
+            "format": "double",
+            "readOnly": true
+          },
+          "totalMinutes": {
+            "type": "number",
+            "format": "double",
+            "readOnly": true
+          },
+          "totalSeconds": {
+            "type": "number",
+            "format": "double",
+            "readOnly": true
+          },
+          "totalMilliseconds": {
+            "type": "number",
+            "format": "double",
+            "readOnly": true
+          },
+          "totalTicks": {
+            "type": "number",
+            "format": "double",
+            "readOnly": true
+          },
+          "totalNanoseconds": {
+            "type": "number",
+            "format": "double",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ExecuteSignalRequest": {
+        "type": "object",
+        "properties": {
+          "workflowInstanceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "correlationId": {
+            "type": "string",
+            "nullable": true
+          },
+          "input": {
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ExecuteSignalResponse": {
+        "type": "object",
+        "properties": {
+          "startedWorkflows": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CollectedWorkflow"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ExecuteWorkflowDefinitionRequestModel": {
+        "type": "object",
+        "properties": {
+          "activityId": {
+            "type": "string",
+            "nullable": true
+          },
+          "correlationId": {
+            "type": "string",
+            "nullable": true
+          },
+          "contextId": {
+            "type": "string",
+            "nullable": true
+          },
+          "input": {
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ExecuteWorkflowDefinitionResponseModel": {
+        "type": "object",
+        "properties": {
+          "executed": {
+            "type": "boolean"
+          },
+          "activityId": {
+            "type": "string",
+            "nullable": true
+          },
+          "workflowInstance": {
+            "$ref": "#/components/schemas/WorkflowInstance"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ExecuteWorkflowInstanceRequest": {
+        "type": "object",
+        "properties": {
+          "workflowInstanceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "activityId": {
+            "type": "string",
+            "nullable": true
+          },
+          "input": {
+            "$ref": "#/components/schemas/WorkflowInput"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ExecuteWorkflowInstanceResponseModel": {
+        "type": "object",
+        "properties": {
+          "executed": {
+            "type": "boolean"
+          },
+          "activityId": {
+            "type": "string",
+            "nullable": true
+          },
+          "workflowInstance": {
+            "$ref": "#/components/schemas/WorkflowInstance"
+          }
+        },
+        "additionalProperties": false
+      },
+      "IBookmark": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "Instant": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "IOutputFormatter": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "JToken": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/JToken"
+        }
+      },
+      "OkObjectResult": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "nullable": true
+          },
+          "formatters": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IOutputFormatter"
+            },
+            "nullable": true
+          },
+          "contentTypes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "declaredType": {
+            "type": "string",
+            "nullable": true,
+            "example": "System.String, mscorlib"
+          },
+          "statusCode": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "OrderBy": {
+        "enum": [
+          0,
+          1,
+          2
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "ProblemDetails": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string",
+            "nullable": true
+          },
+          "instance": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": { }
+      },
+      "RetryWorkflowRequest": {
+        "type": "object",
+        "properties": {
+          "runImmediately": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RuntimeSelectListItemsContextHolder": {
+        "type": "object",
+        "properties": {
+          "providerTypeName": {
+            "type": "string",
+            "nullable": true
+          },
+          "context": {
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SaveWorkflowDefinitionRequest": {
+        "type": "object",
+        "properties": {
+          "workflowDefinitionId": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "displayName": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "tag": {
+            "type": "string",
+            "nullable": true
+          },
+          "channel": {
+            "type": "string",
+            "nullable": true
+          },
+          "variables": {
+            "$ref": "#/components/schemas/Variables"
+          },
+          "contextOptions": {
+            "$ref": "#/components/schemas/WorkflowContextOptions"
+          },
+          "isSingleton": {
+            "type": "boolean"
+          },
+          "persistenceBehavior": {
+            "$ref": "#/components/schemas/WorkflowPersistenceBehavior"
+          },
+          "deleteCompletedInstances": {
+            "type": "boolean"
+          },
+          "publish": {
+            "type": "boolean"
+          },
+          "activities": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityDefinition"
+            },
+            "nullable": true
+          },
+          "connections": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ConnectionDefinition"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ScheduledActivity": {
+        "type": "object",
+        "properties": {
+          "activityId": {
+            "type": "string",
+            "nullable": true
+          },
+          "input": {
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SimpleException": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true,
+            "example": "System.String, mscorlib"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "stackTrace": {
+            "type": "string",
+            "nullable": true
+          },
+          "innerException": {
+            "$ref": "#/components/schemas/SimpleException"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TriggerWorkflowsRequestModel": {
+        "type": "object",
+        "properties": {
+          "activityType": {
+            "type": "string",
+            "nullable": true
+          },
+          "bookmark": {
+            "$ref": "#/components/schemas/IBookmark"
+          },
+          "correlationId": {
+            "type": "string",
+            "nullable": true
+          },
+          "workflowInstanceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "contextId": {
+            "type": "string",
+            "nullable": true
+          },
+          "input": {
+            "nullable": true
+          },
+          "dispatch": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Variables": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "additionalProperties": { },
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "VersionOptions": {
+        "type": "object",
+        "properties": {
+          "isLatest": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isLatestOrPublished": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isPublished": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isDraft": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "allVersions": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "version": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "WorkflowBlueprintModel": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "displayName": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "parentId": {
+            "type": "string",
+            "nullable": true
+          },
+          "persistWorkflow": {
+            "type": "boolean"
+          },
+          "loadWorkflowContext": {
+            "type": "boolean"
+          },
+          "saveWorkflowContext": {
+            "type": "boolean"
+          },
+          "inputProperties": {
+            "$ref": "#/components/schemas/Variables"
+          },
+          "outputProperties": {
+            "$ref": "#/components/schemas/Variables"
+          },
+          "activities": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityBlueprintModel"
+            },
+            "nullable": true
+          },
+          "connections": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ConnectionModel"
+            },
+            "nullable": true
+          },
+          "version": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tenantId": {
+            "type": "string",
+            "nullable": true
+          },
+          "isSingleton": {
+            "type": "boolean"
+          },
+          "isEnabled": {
+            "type": "boolean"
+          },
+          "isPublished": {
+            "type": "boolean"
+          },
+          "isLatest": {
+            "type": "boolean"
+          },
+          "variables": {
+            "$ref": "#/components/schemas/Variables"
+          },
+          "contextOptions": {
+            "$ref": "#/components/schemas/WorkflowContextOptions"
+          },
+          "persistenceBehavior": {
+            "$ref": "#/components/schemas/WorkflowPersistenceBehavior"
+          },
+          "deleteCompletedInstances": {
+            "type": "boolean"
+          },
+          "customAttributes": {
+            "$ref": "#/components/schemas/Variables"
+          }
+        },
+        "additionalProperties": false
+      },
+      "WorkflowBlueprintModelPagedList": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WorkflowBlueprintModel"
+            },
+            "nullable": true
+          },
+          "page": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true,
+            "readOnly": true
+          },
+          "pageSize": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true,
+            "readOnly": true
+          },
+          "totalCount": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "WorkflowBlueprintSummaryModel": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "displayName": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "version": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tenantId": {
+            "type": "string",
+            "nullable": true
+          },
+          "isSingleton": {
+            "type": "boolean"
+          },
+          "isPublished": {
+            "type": "boolean"
+          },
+          "isLatest": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "WorkflowBlueprintSummaryModelPagedList": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WorkflowBlueprintSummaryModel"
+            },
+            "nullable": true
+          },
+          "page": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true,
+            "readOnly": true
+          },
+          "pageSize": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true,
+            "readOnly": true
+          },
+          "totalCount": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "WorkflowContextFidelity": {
+        "enum": [
+          0,
+          1
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "WorkflowContextOptions": {
+        "type": "object",
+        "properties": {
+          "contextType": {
+            "type": "string",
+            "nullable": true,
+            "example": "System.String, mscorlib"
+          },
+          "contextFidelity": {
+            "$ref": "#/components/schemas/WorkflowContextFidelity"
+          }
+        },
+        "additionalProperties": false
+      },
+      "WorkflowDefinition": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "definitionId": {
+            "type": "string",
+            "nullable": true
+          },
+          "versionId": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "tenantId": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "displayName": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "channel": {
+            "type": "string",
+            "nullable": true
+          },
+          "version": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "variables": {
+            "$ref": "#/components/schemas/Variables"
+          },
+          "customAttributes": {
+            "$ref": "#/components/schemas/Variables"
+          },
+          "contextOptions": {
+            "$ref": "#/components/schemas/WorkflowContextOptions"
+          },
+          "isSingleton": {
+            "type": "boolean"
+          },
+          "persistenceBehavior": {
+            "$ref": "#/components/schemas/WorkflowPersistenceBehavior"
+          },
+          "deleteCompletedInstances": {
+            "type": "boolean"
+          },
+          "isPublished": {
+            "type": "boolean"
+          },
+          "isLatest": {
+            "type": "boolean"
+          },
+          "tag": {
+            "type": "string",
+            "nullable": true
+          },
+          "activities": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityDefinition"
+            },
+            "nullable": true
+          },
+          "connections": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ConnectionDefinition"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "WorkflowDefinitionSummaryModel": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "definitionId": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "displayName": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "version": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "isSingleton": {
+            "type": "boolean"
+          },
+          "persistenceBehavior": {
+            "$ref": "#/components/schemas/WorkflowPersistenceBehavior"
+          },
+          "isPublished": {
+            "type": "boolean"
+          },
+          "isLatest": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "WorkflowDefinitionSummaryModelListModel": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WorkflowDefinitionSummaryModel"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "WorkflowExecutionLogRecord": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "tenantId": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "workflowInstanceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "activityId": {
+            "type": "string",
+            "nullable": true
+          },
+          "activityType": {
+            "type": "string",
+            "nullable": true
+          },
+          "timestamp": {
+            "$ref": "#/components/schemas/Instant"
+          },
+          "eventName": {
+            "type": "string",
+            "nullable": true
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "source": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/JToken"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "WorkflowExecutionLogRecordPagedList": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WorkflowExecutionLogRecord"
+            },
+            "nullable": true
+          },
+          "page": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true,
+            "readOnly": true
+          },
+          "pageSize": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true,
+            "readOnly": true
+          },
+          "totalCount": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "WorkflowFault": {
+        "type": "object",
+        "properties": {
+          "exception": {
+            "$ref": "#/components/schemas/SimpleException"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "faultedActivityId": {
+            "type": "string",
+            "nullable": true
+          },
+          "activityInput": {
+            "nullable": true
+          },
+          "resuming": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "WorkflowInput": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "nullable": true
+          },
+          "storageProviderName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "WorkflowInputReference": {
+        "type": "object",
+        "properties": {
+          "providerName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "WorkflowInstance": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "definitionId": {
+            "type": "string",
+            "nullable": true
+          },
+          "tenantId": {
+            "type": "string",
+            "nullable": true
+          },
+          "version": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "workflowStatus": {
+            "$ref": "#/components/schemas/WorkflowStatus"
+          },
+          "correlationId": {
+            "type": "string",
+            "nullable": true
+          },
+          "contextType": {
+            "type": "string",
+            "nullable": true
+          },
+          "contextId": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdAt": {
+            "$ref": "#/components/schemas/Instant"
+          },
+          "lastExecutedAt": {
+            "$ref": "#/components/schemas/Instant"
+          },
+          "finishedAt": {
+            "$ref": "#/components/schemas/Instant"
+          },
+          "cancelledAt": {
+            "$ref": "#/components/schemas/Instant"
+          },
+          "faultedAt": {
+            "$ref": "#/components/schemas/Instant"
+          },
+          "variables": {
+            "$ref": "#/components/schemas/Variables"
+          },
+          "input": {
+            "$ref": "#/components/schemas/WorkflowInputReference"
+          },
+          "output": {
+            "$ref": "#/components/schemas/WorkflowOutputReference"
+          },
+          "activityData": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "additionalProperties": { }
+            },
+            "nullable": true
+          },
+          "blockingActivities": {
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BlockingActivity"
+            },
+            "nullable": true
+          },
+          "fault": {
+            "$ref": "#/components/schemas/WorkflowFault"
+          },
+          "scheduledActivities": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ScheduledActivity"
+            },
+            "nullable": true
+          },
+          "scopes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityScope"
+            },
+            "nullable": true
+          },
+          "currentActivity": {
+            "$ref": "#/components/schemas/ScheduledActivity"
+          },
+          "lastExecutedActivityId": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "WorkflowInstanceSummaryModel": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "definitionId": {
+            "type": "string",
+            "nullable": true
+          },
+          "tenantId": {
+            "type": "string",
+            "nullable": true
+          },
+          "version": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "workflowStatus": {
+            "$ref": "#/components/schemas/WorkflowStatus"
+          },
+          "correlationId": {
+            "type": "string",
+            "nullable": true
+          },
+          "contextType": {
+            "type": "string",
+            "nullable": true
+          },
+          "contextId": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdAt": {
+            "$ref": "#/components/schemas/Instant"
+          },
+          "lastExecutedAt": {
+            "$ref": "#/components/schemas/Instant"
+          },
+          "finishedAt": {
+            "$ref": "#/components/schemas/Instant"
+          },
+          "cancelledAt": {
+            "$ref": "#/components/schemas/Instant"
+          },
+          "faultedAt": {
+            "$ref": "#/components/schemas/Instant"
+          }
+        },
+        "additionalProperties": false
+      },
+      "WorkflowInstanceSummaryModelPagedList": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WorkflowInstanceSummaryModel"
+            },
+            "nullable": true
+          },
+          "page": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true,
+            "readOnly": true
+          },
+          "pageSize": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true,
+            "readOnly": true
+          },
+          "totalCount": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "WorkflowOutputReference": {
+        "type": "object",
+        "properties": {
+          "providerName": {
+            "type": "string",
+            "nullable": true
+          },
+          "activityId": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "WorkflowPersistenceBehavior": {
+        "enum": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "WorkflowStatus": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "WorkflowStorageDescriptor": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "displayName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

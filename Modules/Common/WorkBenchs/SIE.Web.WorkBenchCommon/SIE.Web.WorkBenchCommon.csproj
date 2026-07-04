@@ -1,0 +1,80 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.WorkBenchCommon.xml</DocumentationFile>
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.WorkBenchCommon.xml</DocumentationFile>
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Workbench\KPI\**" />
+    <EmbeddedResource Remove="Workbench\KPI\**" />
+    <None Remove="Workbench\KPI\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Workbench\Base\Commands\AddWorkbenchCommand.js" />
+    <None Remove="Workbench\Base\Commands\ComponentPreviewCommand.js" />
+    <None Remove="Workbench\Base\Commands\DesignWorkbenchCommand.js" />
+    <None Remove="Workbench\Base\Commands\ImportLayoutInfoCommand.js" />
+    <None Remove="Workbench\Base\Commands\LayoutPreviewCommand.js" />
+    <None Remove="Workbench\Base\Commands\PublishWorkbenchCommand.js" />
+    <None Remove="Workbench\Base\Commands\UnPublishWorkbenchCommand.js" />
+    <None Remove="Workbench\Base\Commands\WorkbenchPreviewCommand.js" />
+    <None Remove="Workbench\Base\Commands\WorkbenchSaveCommand.js" />
+    <None Remove="Workbench\Base\Scripts\AceRunCommand.js" />
+    <None Remove="Workbench\TargetWarn\Behaviors\QuotaWarnSettingCriteriaBehavior.js" />
+    <None Remove="Workbench\TargetWarn\Commands\SaveTargetWarnSettingCommand.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Workbench\KPI\Commands\SaveDetailCommand.cs" />
+    <Compile Include="Workbench\KPI\DataQueryer\QuotaTargetSettingDataQueryer.cs" />
+    <Compile Include="Workbench\KPI\KpiModelViewConfig.cs" />
+    <Compile Include="Workbench\KPI\QuotaTargetDetailViewConfig.cs" />
+    <Compile Include="Workbench\KPI\QuotaTargetSettingCriteriaViewConfig.cs" />
+    <Compile Include="Workbench\KPI\QuotaTargetSettingViewConfig.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Workbench\Base\Commands\DesignWorkbenchCommand.js" />
+    <EmbeddedResource Include="Workbench\Base\Commands\AddWorkbenchCommand.js" />
+    <EmbeddedResource Include="Workbench\Base\Commands\ComponentPreviewCommand.js" />
+    <EmbeddedResource Include="Workbench\Base\Commands\ImportLayoutInfoCommand.js" />
+    <EmbeddedResource Include="Workbench\Base\Commands\LayoutPreviewCommand.js" />
+    <EmbeddedResource Include="Workbench\Base\Commands\UnPublishWorkbenchCommand.js" />
+    <EmbeddedResource Include="Workbench\Base\Commands\PublishWorkbenchCommand.js" />
+    <EmbeddedResource Include="Workbench\Base\Commands\WorkbenchPreviewCommand.js" />
+    <EmbeddedResource Include="Workbench\Base\Commands\WorkbenchSaveCommand.js" />
+    <EmbeddedResource Include="Workbench\Base\Scripts\AceRunCommand.js" />
+    <EmbeddedResource Include="Workbench\KPI\Behaviors\QuotaTargetSettingCriteriaBehavior.js" />
+    <EmbeddedResource Include="Workbench\KPI\Behaviors\QuotaTargetSettingEditBehavior.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Workbench\KPI\Behaviors\QuotaTargetSettingBehavior.js" />
+    <EmbeddedResource Include="Workbench\KPI\Commands\AddDetailCommand.js" />
+    <EmbeddedResource Include="Workbench\KPI\Commands\SaveDetailCommand.js" />
+    <EmbeddedResource Include="Workbench\TargetWarn\Behaviors\QuotaWarnSettingCriteriaBehavior.js" />
+    <EmbeddedResource Include="Workbench\TargetWarn\Commands\SaveTargetWarnSettingCommand.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SIE.WorkBenchCommon\SIE.WorkBenchCommon.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="SIE.Web.Common" Version="10.0.5" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Workbench\KPI\Common\Enum.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Workbench\KPI\Control\KpiXComboBox.js" />
+  </ItemGroup>
+</Project>

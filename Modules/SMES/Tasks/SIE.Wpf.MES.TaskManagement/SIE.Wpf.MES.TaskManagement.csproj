@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4B081324-6460-4A86-A860-448E64A445F8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SIE.Wpf.MES.TaskManagement</RootNamespace>
+    <AssemblyName>SIE.Wpf.MES.TaskManagement</AssemblyName>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0-windows\SIE.Wpf.MES.TaskManagement.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0-windows\SIE.Wpf.MES.TaskManagement.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\KaiZhong\SIE.KZ.Print\SIE.KZ.Print.csproj" />
+    <ProjectReference Include="..\..\Common\SIE.Wpf.Andon\SIE.Wpf.Andon.csproj" />
+    <ProjectReference Include="..\..\MES\SIE.Wpf.MES\SIE.Wpf.MES.csproj" />
+    <ProjectReference Include="..\SIE.MES.TaskManagement\SIE.MES.TaskManagement.csproj">
+      <Project>{eeeb4cab-ac70-4e21-923d-45ba4ee6f6d5}</Project>
+      <Name>SIE.MES.TaskManagement</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="SIE.Wpf.Common" Version="10.0.5" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="KZReports\Controls\ReportContentCommonModeControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="KZReports\Controls\ReportMulitStationControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="KZReports\Controls\ResourceMulitSelectListControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="KZReports\Controls\ReportProcessControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="KZReports\Controls\ScanReportControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="KZReports\Controls\PreparationModel.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="KZReports\Controls\ReportContentControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="KZReports\Controls\PreparationEquip.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="KZReports\Controls\ReportManualControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="KZReports\Controls\ViewTaskListControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="KZReports\Controls\TaskQueueListControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="KZReports\Controls\TaskListControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="KZReports\Controls\PreparationNav.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="KZReports\Controls\UserLoginControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+</Project>

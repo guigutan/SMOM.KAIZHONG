@@ -1,0 +1,1755 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.ShipPlan</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.ShipPlan.AssignWarehouseRule">
+            <summary>
+            分配仓库规则
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.AssignWarehouseRule.PriorityProperty">
+            <summary>
+            优先级
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.AssignWarehouseRule.Priority">
+            <summary>
+            优先级
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.AssignWarehouseRule.OrderTypeProperty">
+            <summary>
+            单据类型
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.AssignWarehouseRule.OrderType">
+            <summary>
+            单据类型
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.AssignWarehouseRule.ItemTypeProperty">
+            <summary>
+            基本分类
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.AssignWarehouseRule.ItemType">
+            <summary>
+            基本分类
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.AssignWarehouseRule.ItemCategoryIdProperty">
+            <summary>
+            库存类别Id
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.AssignWarehouseRule.ItemCategoryId">
+            <summary>
+            库存类别Id
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.AssignWarehouseRule.ItemCategoryProperty">
+            <summary>
+            库存类别
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.AssignWarehouseRule.ItemCategory">
+            <summary>
+            库存分类
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.AssignWarehouseRule.WarehouseIdProperty">
+            <summary>
+            匹配仓库Id
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.AssignWarehouseRule.WarehouseId">
+            <summary>
+            匹配仓库Id
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.AssignWarehouseRule.WarehouseProperty">
+            <summary>
+            匹配仓库
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.AssignWarehouseRule.Warehouse">
+            <summary>
+            匹配仓库
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.AssignWarehouseRule.CustomerIdProperty">
+            <summary>
+            客户Id
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.AssignWarehouseRule.CustomerId">
+            <summary>
+            客户Id
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.AssignWarehouseRule.CustomerProperty">
+            <summary>
+            客户
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.AssignWarehouseRule.Customer">
+            <summary>
+            客户
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.AssignWarehouseRule.SupplierIdProperty">
+            <summary>
+            供应商Id
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.AssignWarehouseRule.SupplierId">
+            <summary>
+            供应商Id
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.AssignWarehouseRule.SupplierProperty">
+            <summary>
+            供应商
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.AssignWarehouseRule.Supplier">
+            <summary>
+            供应商
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.AssignWarehouseRule.EnterpriseIdProperty">
+            <summary>
+            部门Id
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.AssignWarehouseRule.EnterpriseId">
+            <summary>
+            部门Id
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.AssignWarehouseRule.EnterpriseProperty">
+            <summary>
+            部门
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.AssignWarehouseRule.Enterprise">
+            <summary>
+            部门
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.AssignWarehouseRule.ResourceIdProperty">
+            <summary>
+            资源ID
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.AssignWarehouseRule.ResourceId">
+            <summary>
+            资源Id
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.AssignWarehouseRule.ResourceProperty">
+            <summary>
+            资源
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.AssignWarehouseRule.Resource">
+            <summary>
+            资源
+            </summary>
+        </member>
+        <member name="T:SIE.ShipPlan.AssignWarehouseRuleConfig">
+            <summary>
+            分配仓库规则 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.ShipPlan.AssignWarehouseRuleConfig.AddValidations(SIE.MetaModel.IValidationDeclarer)">
+            <summary>
+            增加验证逻辑
+            </summary>
+            <param name="rules">验证集合</param>
+        </member>
+        <member name="M:SIE.ShipPlan.AssignWarehouseRuleConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.ShipPlan.AssignWarehouseRuleController">
+            <summary>
+            分配仓库规则控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ShipPlan.AssignWarehouseRuleController.GetAssignWarehouseRules(SIE.ShipPlan.AssignWarehouseRuleCriteria)">
+            <summary>
+            获取分配仓库规则数据
+            </summary>
+            <param name="criteria">分配仓库规则查询实体</param>
+            <returns>分配仓库规则数据</returns>
+        </member>
+        <member name="M:SIE.ShipPlan.AssignWarehouseRuleController.GetAssignWarehouseRuleList(System.Collections.Generic.List{SIE.Core.Enums.OrderType},System.Collections.Generic.List{SIE.Items.ItemType})">
+            <summary>
+            获取分配仓库规则数据
+            </summary>
+            <param name="orderTypes">单据类型集合</param>
+            <param name="itemTypes">基本类型集合</param>
+            <returns>分配仓库规则数据</returns>
+        </member>
+        <member name="M:SIE.ShipPlan.AssignWarehouseRuleController.GetAssignWarehouseRuleData(SIE.Core.Enums.OrderType,SIE.Items.Item,System.Nullable{System.Double},System.Nullable{System.Double},System.Nullable{System.Double},System.Nullable{System.Double})">
+            <summary>
+            获取分配仓库规则
+            </summary>
+            <param name="orderType">订单类型</param>
+            <param name="item">物料</param>
+            <param name="customerId">客户ID</param>
+            <param name="supplierId">供应商ID</param>
+            <param name="enterpriseId">部门ID</param>
+            <param name="ResourceId">资源ID</param>
+            <returns>分配仓库规则</returns>
+        </member>
+        <member name="M:SIE.ShipPlan.AssignWarehouseRuleController.GetItemCateGoryFuns(System.Nullable{System.Double},SIE.Domain.EntityList{SIE.Items.ItemCategory})">
+            <summary>
+            获取物料分类递归方法
+            </summary>
+            <param name="parentId">父ID</param>
+            <param name="itemCategories">物料分类数据</param>
+        </member>
+        <member name="M:SIE.ShipPlan.AssignWarehouseRuleController.GetEnterpriseFuns(System.Nullable{System.Double},SIE.Domain.EntityList{SIE.Resources.Enterprises.Enterprise})">
+            <summary>
+            获取企业模型递归方法
+            </summary>
+            <param name="parentId">父ID</param>
+            <param name="enterprises">企业模型</param>
+        </member>
+        <member name="M:SIE.ShipPlan.AssignWarehouseRuleController.GetSameRule(SIE.Core.Enums.OrderType,System.Double,System.Nullable{System.Double},SIE.Items.ItemType,System.Nullable{System.Double},System.Nullable{System.Double},System.Nullable{System.Double},System.Nullable{System.Double})">
+            <summary>
+            判断重复数据逻辑
+            </summary>        
+        </member>
+        <member name="T:SIE.ShipPlan.AssignWarehouseRuleCriteria">
+            <summary>
+            查询实体
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.AssignWarehouseRuleCriteria.OrderTypeProperty">
+            <summary>
+            单据类型
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.AssignWarehouseRuleCriteria.OrderType">
+            <summary>
+            单据类型
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.AssignWarehouseRuleCriteria.ItemTypeProperty">
+            <summary>
+            基本分类
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.AssignWarehouseRuleCriteria.ItemType">
+            <summary>
+            基本分类
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.AssignWarehouseRuleCriteria.ItemCategoryIdProperty">
+            <summary>
+            库存类别Id
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.AssignWarehouseRuleCriteria.ItemCategoryId">
+            <summary>
+            库存类别Id
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.AssignWarehouseRuleCriteria.ItemCategoryProperty">
+            <summary>
+            库存类别
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.AssignWarehouseRuleCriteria.ItemCategory">
+            <summary>
+            库存分类
+            </summary>
+        </member>
+        <member name="M:SIE.ShipPlan.AssignWarehouseRuleCriteria.Fetch">
+            <summary>
+            重写此方法实现查询
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="T:SIE.ShipPlan.AssignWarehouseRuleSubmitting">
+            <summary>
+            新增时
+            </summary>
+        </member>
+        <member name="M:SIE.ShipPlan.AssignWarehouseRuleSubmitting.Invoke(SIE.ShipPlan.AssignWarehouseRule,SIE.Domain.EntitySubmittingEventArgs)">
+            <summary>
+            分配仓库规则保存前事件
+            </summary>
+            <param name="entity">分配仓库规则</param>
+            <param name="e">实体提交参数</param>
+        </member>
+        <member name="T:SIE.ShipPlan.Datas.StockkittingViewData">
+            <summary>
+            备料计划/发货计划返回数据
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.Datas.StockkittingViewData.stockPlans">
+            <summary>
+            备料计划/发货计划主表数据
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.Datas.StockkittingViewData.stockPlanAssigns">
+            <summary>
+            备料计划/发货计划需求数据
+            </summary>
+        </member>
+        <member name="T:SIE.ShipPlan.Datas.KittingData">
+            <summary>
+            齐套数据
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.Datas.KittingData.stockIds">
+            <summary>
+            发运订单
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.Datas.KittingData.BuyOnLoad">
+            <summary>
+            考虑采购
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.Datas.KittingData.MakeOnLoad">
+            <summary>
+            考虑在制
+            </summary>
+        </member>
+        <member name="T:SIE.ShipPlan.DeliveryPlan">
+            <summary>
+            发货计划
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.CreateQtyProperty">
+            <summary>
+            需创单数量
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.CreateQty">
+            <summary>
+            需创单数量
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.RequireQtyProperty">
+            <summary>
+            需求数
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.RequireQty">
+            <summary>
+            需求数
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.NoCreateQtyProperty">
+            <summary>
+            未建单数
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.NoCreateQty">
+            <summary>
+            未建单数
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.DeliveryQtyProperty">
+            <summary>
+            发货数
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.DeliveryQty">
+            <summary>
+            发货数
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.CancelQtyProperty">
+            <summary>
+            取消数
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.CancelQty">
+            <summary>
+            取消数
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.DeliveryDateProperty">
+            <summary>
+            发货时间
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.DeliveryDate">
+            <summary>
+            发货时间
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.OrderNoProperty">
+            <summary>
+            相关单号
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.OrderNo">
+            <summary>
+            相关单号
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.StorerCodeProperty">
+            <summary>
+            货主编码
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.StorerCode">
+            <summary>
+            货主编码
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.ProjectNoProperty">
+            <summary>
+            指定项目号
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.ProjectNo">
+            <summary>
+            指定项目号
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.TaskNoProperty">
+            <summary>
+            指定任务号
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.TaskNo">
+            <summary>
+            指定任务号
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.LotCodeProperty">
+            <summary>
+            指定批次号
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.LotCode">
+            <summary>
+            指定批次号
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.ProductBatchProperty">
+            <summary>
+            指定生产批次
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.ProductBatch">
+            <summary>
+            指定生产批次
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.IsMergeIssuedProperty">
+            <summary>
+            是否合并
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.IsMergeIssued">
+            <summary>
+            是否合并
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.NoProperty">
+            <summary>
+            计划单号
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.No">
+            <summary>
+            计划单号
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.LineNoProperty">
+            <summary>
+            计划明细行号
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.LineNo">
+            <summary>
+            计划明细行号
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.ItemExtPropProperty">
+            <summary>
+            物料扩展属性
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.ItemExtProp">
+            <summary>
+            物料扩展属性
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.ItemExtPropNameProperty">
+            <summary>
+            物料扩展属性名称
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.ItemExtPropName">
+            <summary>
+            物料扩展属性名称
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.StateProperty">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.State">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.OrderTypeProperty">
+            <summary>
+            单据类型
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.OrderType">
+            <summary>
+            单据类型
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.ItemIdProperty">
+            <summary>
+            物料编码Id
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.ItemId">
+            <summary>
+            物料编码Id
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.ItemProperty">
+            <summary>
+            物料编码
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.Item">
+            <summary>
+            物料编码
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.EnterpriseIdProperty">
+            <summary>
+            生产部门Id
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.EnterpriseId">
+            <summary>
+            生产部门Id
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.EnterpriseProperty">
+            <summary>
+            生产部门
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.Enterprise">
+            <summary>
+            生产部门
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.CustomerIdProperty">
+            <summary>
+            客户Id
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.CustomerId">
+            <summary>
+            客户Id
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.CustomerProperty">
+            <summary>
+            客户
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.Customer">
+            <summary>
+            客户
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.SupplierIdProperty">
+            <summary>
+            供应商Id
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.SupplierId">
+            <summary>
+            供应商Id
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.SupplierProperty">
+            <summary>
+            供应商
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.Supplier">
+            <summary>
+            供应商
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.WarehouseIdProperty">
+            <summary>
+            发货仓库Id
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.WarehouseId">
+            <summary>
+            发货仓库Id
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.WarehouseProperty">
+            <summary>
+            发货仓库
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.Warehouse">
+            <summary>
+            发货仓库
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.TargetWarehouseIdProperty">
+            <summary>
+            目标仓库Id
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.TargetWarehouseId">
+            <summary>
+            目标仓库Id
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.TargetWarehouseProperty">
+            <summary>
+            目标仓库
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.TargetWarehouse">
+            <summary>
+            目标仓库
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.SourceTypeProperty">
+            <summary>
+            来源
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.SourceType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.PackagedUnitQtyProperty">
+            <summary>
+            已打包Unit数量
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.PackagedUnitQty">
+            <summary>
+            已打包Unit数量
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.OrderLineNoProperty">
+            <summary>
+            相关订单行号
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.OrderLineNo">
+            <summary>
+            相关订单行号
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.ResourceIdProperty">
+            <summary>
+            生产资源Id
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.ResourceId">
+            <summary>
+            生产资源Id
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.ResourceProperty">
+            <summary>
+            生产资源
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.Resource">
+            <summary>
+            生产资源
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.KittingTypeProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.KittingType">
+            <summary>
+            齐套情况
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.ItemCodeProperty">
+            <summary>
+            物料编码
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.ItemCode">
+            <summary>
+            物料编码
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.ResourceNameProperty">
+            <summary>
+            生产资源名称
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.ResourceName">
+            <summary>
+            生产资源名称
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.ItemNameProperty">
+            <summary>
+            物料名称
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.ItemName">
+            <summary>
+            物料名称
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.ItemSpecificationModelProperty">
+            <summary>
+            规格型号
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.ItemSpecificationModel">
+            <summary>
+            规格型号
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.ItemUnitNameProperty">
+            <summary>
+            单位
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.ItemUnitName">
+            <summary>
+            单位
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.ItemEnableExtendPropProperty">
+            <summary>
+            是否启用扩展属性
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.ItemEnableExtendProp">
+            <summary>
+            是否启用扩展属性
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.WarehouseNameProperty">
+            <summary>
+            仓库名称
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.WarehouseName">
+            <summary>
+            单位
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.WarehouseCodeProperty">
+            <summary>
+            仓库名称
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.WarehouseCode">
+            <summary>
+            单位
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.NotPackageUnitQtyProperty">
+            <summary>
+            未打包Unit数
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.NotPackageUnitQty">
+            <summary>
+            未打包Unit数
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.DeliveryPlanLineProperty">
+            <summary>
+            出货计划行号
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.DeliveryPlanLine">
+            <summary>
+            出货计划行号
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.ErpOrderIdProperty">
+            <summary>
+            ERP单据Id
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.ErpOrderId">
+            <summary>
+            ERP单据Id
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.ErpOrganizationNameProperty">
+            <summary>
+            Erp库存组织名称
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.ErpOrganizationName">
+            <summary>
+            Erp库存组织名称
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.ErpOrgNameProperty">
+            <summary>
+            Erp业务实体名词
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.ErpOrgName">
+            <summary>
+            Erp业务实体名词
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.ErpDetailIdProperty">
+            <summary>
+            Erp明细行Id或主键值
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.ErpDetailId">
+            <summary>
+            Erp明细行Id或主键值
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.ErpWoNoProperty">
+            <summary>
+            Erp工单号
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.ErpWoNo">
+            <summary>
+            Erp工单号
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.ScheduleShipDateProperty">
+            <summary>
+            预计最早发货时间
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.ScheduleShipDate">
+            <summary>
+            预计最早发货时间
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.RemarkProperty">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlan.AllotModelProperty">
+            <summary>
+            调拨模式
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlan.AllotModel">
+            <summary>
+            调拨模式
+            </summary>
+        </member>
+        <member name="T:SIE.ShipPlan.DeliveryPlanConfig">
+            <summary>
+            发货计划 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.ShipPlan.DeliveryPlanConfig.AddValidations(SIE.MetaModel.IValidationDeclarer)">
+            <summary>
+            增加验证逻辑
+            </summary>
+            <param name="rules">验证集合</param>
+        </member>
+        <member name="M:SIE.ShipPlan.DeliveryPlanConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.ShipPlan.DeliveryPlanController">
+            <summary>
+            发货计划控制器
+            </summary>
+            <summary>
+            发货计划控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ShipPlan.DeliveryPlanController.CreateDeliveryPlanData(System.Collections.Generic.List{SIE.ShipPlan.ShipPlanParam})">
+            <summary>
+            创建发货计划
+            </summary>
+            <param name="planParams">发货计划参数</param>
+        </member>
+        <member name="M:SIE.ShipPlan.DeliveryPlanController.GetDeliveryPlans(SIE.ShipPlan.DeliveryPlanCriteria)">
+            <summary>
+            获取发货计划数据
+            </summary>
+            <param name="criteria">发货计划实体</param>
+            <returns>发货计划数据</returns>
+        </member>
+        <member name="M:SIE.ShipPlan.DeliveryPlanController.GetDeliveryPlans(System.Double,System.String,System.Nullable{System.Double},System.String,SIE.PagingInfo,System.String)">
+            <summary>
+            查询出货计划
+            </summary>
+            <param name="productId">物料ID</param>
+            <param name="itemRevision">物料扩展属性</param>
+            <param name="customerId">客户ID</param>
+            <param name="lotNo">批次号</param>
+            <param name="pagingInfo">分页</param>
+            <param name="keyword">过滤关键字</param>
+            <returns>出货计划</returns>
+        </member>
+        <member name="M:SIE.ShipPlan.DeliveryPlanController.GetDeliveryPlans(SIE.PagingInfo,System.String)">
+            <summary>
+            查询出货计划
+            </summary>
+            <param name="pagingInfo">分页信息</param>
+            <param name="keyword">查询关键字</param>
+            <returns>出货计划</returns>
+        </member>
+        <member name="M:SIE.ShipPlan.DeliveryPlanController.GetDeliveryPlans(System.Collections.Generic.List{System.Double})">
+            <summary>
+            获取发货计划数据
+            </summary>
+            <param name="planIds">发货计划ID集合</param>
+            <returns>发货计划数据</returns>
+        </member>
+        <member name="M:SIE.ShipPlan.DeliveryPlanController.GetDeliveryPlans(System.Collections.Generic.List{System.String})">
+            <summary>
+            获取发货计划数据
+            </summary>
+            <param name="planIds">发货计划ID集合</param>
+            <returns>发货计划数据</returns>
+        </member>
+        <member name="M:SIE.ShipPlan.DeliveryPlanController.AuditDeliveryPlans(System.Collections.Generic.List{System.Double})">
+            <summary>
+            发货计划审核操作
+            </summary>
+            <param name="planIds">发货计划ID集合</param>
+        </member>
+        <member name="M:SIE.ShipPlan.DeliveryPlanController.AssignWarehousePlans(System.Collections.Generic.List{System.Double})">
+            <summary>
+            发货计划分配仓库操作
+            </summary>
+            <param name="planIds">发货计划ID集合</param>
+        </member>
+        <member name="M:SIE.ShipPlan.DeliveryPlanController.ForceCompleteDeliveryPlans(System.Collections.Generic.List{System.Double})">
+            <summary>
+            发货计划强制完成操作
+            </summary>
+            <param name="planIds">发货计划ID集合</param>
+        </member>
+        <member name="M:SIE.ShipPlan.DeliveryPlanController.GetSoParams(System.Collections.Generic.List{SIE.ShipPlan.DeliveryPlan},SIE.ShipPlan.MergeCreateRule,System.Collections.Generic.List{SIE.EventMessages.Shipment.SoParam})">
+            <summary>
+            获取发运订单参数
+            </summary>
+            <param name="selPlanDatas">发货计划</param>
+            <param name="rule">合并创单规则</param>
+            <param name="soParams">发运订单参数</param>
+        </member>
+        <member name="M:SIE.ShipPlan.DeliveryPlanController.GetInvAllotParams(System.Collections.Generic.List{SIE.ShipPlan.DeliveryPlan},SIE.ShipPlan.MergeCreateRule,System.Collections.Generic.List{SIE.EventMessages.InvAllotParam})">
+            <summary>
+            获取库存调拨参数
+            </summary>
+            <param name="selPlanDatas">发货计划</param>
+            <param name="rule">合并创单规则</param>
+            <param name="invAllotParams">库存调拨参数</param>
+            <exception cref="T:SIE.Domain.Validation.ValidationException">异常信息</exception>
+        </member>
+        <member name="M:SIE.ShipPlan.DeliveryPlanController.CreateSoByDeliveryPlans(System.Collections.Generic.List{System.Double},System.Boolean)">
+            <summary>
+            创建发运订单
+            </summary>
+            <param name="planIds">备料计划ID</param>
+            <param name="isStockPlan">是否是备料计划创建的发运订单</param>
+            <exception cref="T:SIE.Domain.Validation.ValidationException"></exception>
+        </member>
+        <member name="M:SIE.ShipPlan.DeliveryPlanController.UpdateDeliveryPlanState(SIE.Domain.EntityList{SIE.ShipPlan.DeliveryPlan})">
+            <summary>
+            更新发货计划状态
+            </summary>
+            <param name="deliveryPlans">发货计划</param>
+        </member>
+        <member name="M:SIE.ShipPlan.DeliveryPlanController.GetMergeCreateRules(System.Collections.Generic.List{SIE.Core.Enums.OrderType})">
+            <summary>
+            获取合并创单规则数据
+            </summary>
+            <param name="orderTypes">orderTypes</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ShipPlan.DeliveryPlanController.InitMergeCreateRule">
+            <summary>
+            初始化合并创单规则
+            </summary>
+        </member>
+        <member name="M:SIE.ShipPlan.DeliveryPlanController.GetDeliveryPlan(System.String)">
+            <summary>
+            根据出货计划行号获取实体
+            </summary>
+            <param name="deliveryPlanLine">出货计划行</param>
+        </member>
+        <member name="M:SIE.ShipPlan.DeliveryPlanController.GetDeliveryPlanList(System.String)">
+            <summary>
+            获取出货计划行列表
+            </summary>
+            <param name="deliveryPlanNo">出货计划单号</param>
+            <returns>出货计划行列表</returns>
+        </member>
+        <member name="M:SIE.ShipPlan.DeliveryPlanController.StockPlanAnalys(System.Collections.Generic.List{System.Double},System.Boolean,System.Boolean)">
+            <summary>
+            备料计划齐套分析
+            </summary>
+            <param name="ids">备料计划id集合</param>
+            <param name="isBuyOnWay">是否考虑在途</param>
+            <param name="isMakeOnWay">是否考虑再制</param>
+        </member>
+        <member name="M:SIE.ShipPlan.DeliveryPlanController.SelectOnhandDatasByItemExtPorp(System.String,System.Collections.Generic.List{SIE.EventMessages.AnalysOnhandData})">
+            <summary>
+            根据物料扩展属性筛选数据
+            </summary>
+            <param name="itemPropName">计划的扩展属性</param>
+            <param name="analysOnhands">库存数据</param>
+        </member>
+        <member name="M:SIE.ShipPlan.DeliveryPlanController.GetOnHandData(System.Collections.Generic.List{SIE.EventMessages.AnalysOnhandData},System.String,System.String,System.String,System.Nullable{System.DateTime})">
+            <summary>
+            库存数据
+            </summary>
+            <param name="onhandDatas">库存数据</param>
+            <param name="StoreCode">货主</param>
+            <param name="ProjectNo">项目号</param>
+            <param name="TaskNo">任务号</param>
+            <param name="lastTime">最后时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ShipPlan.DeliveryPlanController.CheckOnHandByAsnOrHand(SIE.EventMessages.AnalysOnhandData,System.String,System.String,System.String,System.Nullable{System.DateTime})">
+            <summary>
+            判断库存或ASN在途库存是否符合 在途库存要判断时间 在库库存不需要判断时间
+            </summary>
+            <param name="hand">库存数据</param>
+            <param name="StoreCode">货主</param>
+            <param name="ProjectNo">项目</param>
+            <param name="TaskNo">任务</param>
+            <param name="lastTime">最后时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ShipPlan.DeliveryPlanController.CheckPlans(SIE.Domain.EntityList{SIE.ShipPlan.DeliveryPlan},System.Collections.Generic.List{System.Double})">
+            <summary>
+            校验
+            </summary>
+            <param name="stockPlans">备料计划</param>
+            <param name="whIds">仓库IDlist</param>
+            <exception cref="T:SIE.Domain.Validation.ValidationException"></exception>
+        </member>
+        <member name="T:SIE.ShipPlan.DeliveryPlanCriteria">
+            <summary>
+            发货计划
+            </summary>
+        </member>
+        <member name="M:SIE.ShipPlan.DeliveryPlanCriteria.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlanCriteria.NoProperty">
+            <summary>
+            单号
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlanCriteria.No">
+            <summary>
+            单号
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlanCriteria.StateProperty">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlanCriteria.State">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlanCriteria.OrderTypeProperty">
+            <summary>
+            单据类型
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlanCriteria.OrderType">
+            <summary>
+            单据类型
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlanCriteria.WarehouseIdProperty">
+            <summary>
+            发货仓库Id
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlanCriteria.WarehouseId">
+            <summary>
+            发货仓库Id
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlanCriteria.WarehouseProperty">
+            <summary>
+            发货仓库
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlanCriteria.Warehouse">
+            <summary>
+            发货仓库
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlanCriteria.EnterpriseIdProperty">
+            <summary>
+            生产部门Id
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlanCriteria.EnterpriseId">
+            <summary>
+            生产部门Id
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlanCriteria.EnterpriseProperty">
+            <summary>
+            生产部门
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlanCriteria.Enterprise">
+            <summary>
+            生产部门
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlanCriteria.CustomerIdProperty">
+            <summary>
+            客户Id
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlanCriteria.CustomerId">
+            <summary>
+            客户Id
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlanCriteria.CustomerProperty">
+            <summary>
+            客户
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlanCriteria.Customer">
+            <summary>
+            客户
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlanCriteria.SupplierIdProperty">
+            <summary>
+            供应商Id
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlanCriteria.SupplierId">
+            <summary>
+            供应商Id
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlanCriteria.SupplierProperty">
+            <summary>
+            供应商
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlanCriteria.Supplier">
+            <summary>
+            供应商
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlanCriteria.TargetWarehouseIdProperty">
+            <summary>
+            目标仓库Id
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlanCriteria.TargetWarehouseId">
+            <summary>
+            目标仓库Id
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlanCriteria.TargetWarehouseProperty">
+            <summary>
+            目标仓库
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlanCriteria.TargetWarehouse">
+            <summary>
+            目标仓库
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlanCriteria.ItemCodeProperty">
+            <summary>
+            物料编码
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlanCriteria.ItemCode">
+            <summary>
+            物料编码
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlanCriteria.ItemNameProperty">
+            <summary>
+            物料名称
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlanCriteria.ItemName">
+            <summary>
+            物料名称
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlanCriteria.DeliveryDateProperty">
+            <summary>
+            发货时间
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlanCriteria.DeliveryDate">
+            <summary>
+            发货时间
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlanCriteria.OrderNoProperty">
+            <summary>
+            相关单号
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlanCriteria.OrderNo">
+            <summary>
+            相关单号
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlanCriteria.IsFilterProperty">
+            <summary>
+            过滤完成、取消状态数据
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlanCriteria.IsFilter">
+            <summary>
+            过滤完成、取消状态数据
+            </summary>
+        </member>
+        <member name="M:SIE.ShipPlan.DeliveryPlanCriteria.Fetch">
+            <summary>
+            查询逻辑
+            </summary>
+            <returns>返回查询后的数据</returns>
+        </member>
+        <member name="T:SIE.ShipPlan.DeliveryPlanNotNullRule">
+            <summary>
+            发货计划验证规则
+            </summary>
+        </member>
+        <member name="M:SIE.ShipPlan.DeliveryPlanNotNullRule.#ctor">
+            <summary>
+            初始化需要进行验证的属性
+            </summary>
+        </member>
+        <member name="M:SIE.ShipPlan.DeliveryPlanNotNullRule.Validate(SIE.Domain.IEntity,SIE.MetaModel.RuleArgs)">
+            <summary>
+            添加动态验证规则
+            </summary>
+            <param name="entity">验证实体</param>
+            <param name="e">为业务规则验证方法提供一些必要的参数。</param>
+        </member>
+        <member name="T:SIE.ShipPlan.DeliveryPlans.DeliveryPlanSubmmitting">
+            <summary>
+            发货计划保存
+            </summary>
+        </member>
+        <member name="M:SIE.ShipPlan.DeliveryPlans.DeliveryPlanSubmmitting.Invoke(SIE.ShipPlan.DeliveryPlan,SIE.Domain.EntitySubmittingEventArgs)">
+            <summary>
+            保存ASN明细后执行
+            </summary>
+            <param name="entity">ASN明细实体</param>
+            <param name="e">实体提交参数</param>
+        </member>
+        <member name="T:SIE.ShipPlan.DeliveryPlanToErpDtl">
+            <summary>
+            每次发货到ERP明细记录
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlanToErpDtl.DeliveryPlanIdProperty">
+            <summary>
+            发货计划Id
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlanToErpDtl.DeliveryPlanId">
+            <summary>
+            发货计划Id
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlanToErpDtl.DeliveryPlanProperty">
+            <summary>
+            发货计划
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlanToErpDtl.DeliveryPlan">
+            <summary>
+            发货计划
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlanToErpDtl.ErpOrderIdProperty">
+            <summary>
+            ERP单据Id
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlanToErpDtl.ErpOrderId">
+            <summary>
+            ERP单据Id
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlanToErpDtl.ErpDetailIdProperty">
+            <summary>
+            ERP明细Id或主键值
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlanToErpDtl.ErpDetailId">
+            <summary>
+            ERP明细Id或主键值
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlanToErpDtl.ShippingQtyProperty">
+            <summary>
+            发货数量
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlanToErpDtl.ShippingQty">
+            <summary>
+            发货数量
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlanToErpDtl.ShippingDateProperty">
+            <summary>
+            发货时间
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlanToErpDtl.ShippingDate">
+            <summary>
+            发货时间
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryPlanToErpDtl.IsUploadProperty">
+            <summary>
+            是否已传ERP
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.DeliveryPlanToErpDtl.IsUpload">
+            <summary>
+            是否已传ERP
+            </summary>
+        </member>
+        <member name="T:SIE.ShipPlan.DeliveryPlanToErpDtlConfig">
+            <summary>
+            发货计划 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.ShipPlan.DeliveryPlanToErpDtlConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.ShipPlan.DeliverySourceType">
+            <summary>
+            发货来源类型
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliverySourceType.SelfBuild">
+            <summary>
+            自建
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliverySourceType.External">
+            <summary>
+            外部
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliverySourceType.Erp">
+            <summary>
+            外部
+            </summary>
+        </member>
+        <member name="T:SIE.ShipPlan.DeliveryState">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryState.Created">
+            <summary>
+            创建
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryState.Aduited">
+            <summary>
+            审核
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryState.Executing">
+            <summary>
+            执行中
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryState.Finished">
+            <summary>
+            已完成
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.DeliveryState.Cancel">
+            <summary>
+            取消
+            </summary>
+        </member>
+        <member name="T:SIE.ShipPlan.MergeCreateRule">
+            <summary>
+            合并创单规则
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.MergeCreateRule.OrderTypeProperty">
+            <summary>
+            单据类型
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.MergeCreateRule.OrderType">
+            <summary>
+            单据类型
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.MergeCreateRule.IsSameDeliveryDateProperty">
+            <summary>
+            同发货日期
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.MergeCreateRule.IsSameDeliveryDate">
+            <summary>
+            同发货日期
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.MergeCreateRule.IsSameNoProperty">
+            <summary>
+            同单号
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.MergeCreateRule.IsSameNo">
+            <summary>
+            同单号
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.MergeCreateRule.IsSameOrderNoProperty">
+            <summary>
+            同相关单号
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.MergeCreateRule.IsSameOrderNo">
+            <summary>
+            同相关单号
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.MergeCreateRule.DefaultDescProperty">
+            <summary>
+            默认满足条件
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.MergeCreateRule.DefaultDesc">
+            <summary>
+            默认满足条件
+            </summary>
+        </member>
+        <member name="T:SIE.ShipPlan.MergeCreateRuleConfig">
+            <summary>
+            分配仓库规则 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.ShipPlan.MergeCreateRuleConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.ShipPlan.ShipPlanParam">
+            <summary>
+            发货计划参数
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.ShipPlanParam.OrderType">
+            <summary>
+            订单类型(70-销售出库；80-工单发料；81-委外工单发料；90-其他出库；100-供应商退货；120-直接调拨；121-两步调拨)
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.ShipPlanParam.ItemCode">
+            <summary>
+            物料编码
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.ShipPlanParam.ItemExtendProps">
+            <summary>
+            物料扩展属性
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.ShipPlanParam.Qty">
+            <summary>
+            需求数
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.ShipPlanParam.PlanOrderNo">
+            <summary>
+            计划单号
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.ShipPlanParam.PlanDtlLineNo">
+            <summary>
+            计划明细行号
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.ShipPlanParam.DeliveryDate">
+            <summary>
+            发货时间
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.ShipPlanParam.EnterpriseCode">
+            <summary>
+            生产部门
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.ShipPlanParam.CustomerCode">
+            <summary>
+            客户
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.ShipPlanParam.SupplierCode">
+            <summary>
+            供应商
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.ShipPlanParam.TargetWarehouseCode">
+            <summary>
+            目标仓库(直接调拨和两步调拨时必填)
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.ShipPlanParam.WarehouseCode">
+            <summary>
+            发货仓库
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.ShipPlanParam.OrderNo">
+            <summary>
+            相关单号
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.ShipPlanParam.OrderLineNo">
+            <summary>
+            相关订单行号
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.ShipPlanParam.StorerCode">
+            <summary>
+            货主编码
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.ShipPlanParam.ProjectNo">
+            <summary>
+            指定项目号
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.ShipPlanParam.TaskNo">
+            <summary>
+            指定任务号
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.ShipPlanParam.LotCode">
+            <summary>
+            指定批次号
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.ShipPlanParam.ProductBatch">
+            <summary>
+            指定生产批次
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.ShipPlanParam.ResourceId">
+            <summary>
+            生产资源ID
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.ShipPlanParam.ItemExtProp">
+            <summary>
+            物料扩展属性
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.ShipPlanParam.ItemExtPropName">
+            <summary>
+            物料扩展属性名称
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.ShipPlanParam.IsMergeIssued">
+            <summary>
+            是否合并下发
+            </summary>
+        </member>
+        <member name="T:SIE.ShipPlan.ItemExtPropData">
+            <summary>
+            物料扩展属性
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.ItemExtPropData.ItemCode">
+            <summary>
+            物料编码
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.ItemExtPropData.ItemExtPropName">
+            <summary>
+            物料扩展属性名称
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.ItemExtPropData.ItemExtPropValue">
+            <summary>
+            物料扩展属性值
+            </summary>
+        </member>
+        <member name="T:SIE.ShipPlan.Module">
+            <summary>
+            Domian
+            </summary>
+        </member>
+        <member name="M:SIE.ShipPlan.Module.Initialize(SIE.IApp)">
+            <summary>
+            Domain
+            </summary>
+            <param name="app">app</param>
+        </member>
+        <member name="T:SIE.ShipPlan.ShipPlanEntityRepository`1">
+            <summary>
+            本程序集的数提供者
+            </summary>
+            <typeparam name="T">仓库</typeparam>
+        </member>
+        <member name="T:SIE.ShipPlan.ShipPlanEntityDataProvider">
+            <summary>
+            //指定此程序集实体的默认仓库
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.ShipPlanEntityDataProvider.ConnectionStringName">
+            <summary>
+            数据库链接字符串
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.ShipPlanEntityDataProvider.ConnectionStringSettingName">
+            <summary>
+            仓库链接
+            </summary>
+        </member>
+        <member name="T:SIE.ShipPlan.ViewModels.StockPlanAssignViewModel">
+            <summary>
+            备料计划/发货计划齐套分析-预分配明细
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.ViewModels.StockPlanAssignViewModel.QtyProperty">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.ViewModels.StockPlanAssignViewModel.Qty">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.ViewModels.StockPlanAssignViewModel.WarehouseIdProperty">
+            <summary>
+            仓库Id
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.ViewModels.StockPlanAssignViewModel.WarehouseId">
+            <summary>
+            仓库Id
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.ViewModels.StockPlanAssignViewModel.WarehouseProperty">
+            <summary>
+            仓库
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.ViewModels.StockPlanAssignViewModel.Warehouse">
+            <summary>
+            仓库
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.ViewModels.StockPlanAssignViewModel.LotCodeProperty">
+            <summary>
+            批次号
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.ViewModels.StockPlanAssignViewModel.LotCode">
+            <summary>
+            批次号
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.ViewModels.StockPlanAssignViewModel.StockPlanIdProperty">
+            <summary>
+            备料计划Id
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.ViewModels.StockPlanAssignViewModel.StockPlanId">
+            <summary>
+            备料计划Id
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.ViewModels.StockPlanAssignViewModel.StockOrderProperty">
+            <summary>
+            备料计划
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.ViewModels.StockPlanAssignViewModel.StockPlan">
+            <summary>
+            备料计划
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.ViewModels.StockPlanAssignViewModel.WarehouseCodeProperty">
+            <summary>
+            仓库编码
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.ViewModels.StockPlanAssignViewModel.WarehouseCode">
+            <summary>
+            批次号
+            </summary>
+        </member>
+        <member name="F:SIE.ShipPlan.ViewModels.StockPlanAssignViewModel.WarehouseNameProperty">
+            <summary>
+            仓库名称
+            </summary>
+        </member>
+        <member name="P:SIE.ShipPlan.ViewModels.StockPlanAssignViewModel.WarehouseName">
+            <summary>
+            批次号
+            </summary>
+        </member>
+    </members>
+</doc>

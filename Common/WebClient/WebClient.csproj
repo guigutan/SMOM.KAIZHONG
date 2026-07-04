@@ -1,0 +1,60 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\platform\smom\net6.0\WebClient.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\platform\smom\net6.0\WebClient.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="wwwroot\Templates\OQC产品分类检验标准导入模板.xlsx" />
+    <None Include="wwwroot\Templates\OQC产品检验标准导入模板.xlsx" />
+    <None Include="wwwroot\Templates\PQC产品检验标准导入模板.xlsx" />
+    <None Include="wwwroot\Templates\PQC分类检验标准模板.xlsx" />
+    <None Include="wwwroot\Templates\产品机型导入模板.xlsx" />
+    <None Include="wwwroot\Templates\分类检验标准导入模板.xlsx" />
+    <None Include="wwwroot\Templates\单体条码导入模板.xls" />
+    <None Include="wwwroot\Templates\工单条码导入模板.xls" />
+    <None Include="wwwroot\Templates\工艺路线导入模板.xlsx" />
+    <None Include="wwwroot\Templates\手工录入数据导入模板%28计数型%29.xlsx" />
+    <None Include="wwwroot\Templates\手工录入数据导入模板%28计量型%29.xlsx" />
+    <None Include="wwwroot\Templates\抽样方案导入模板.xlsx" />
+    <None Include="wwwroot\Templates\料号检验标准导入模板.xlsx" />
+    <None Include="wwwroot\Templates\机型技能导入模板.xlsx" />
+    <None Include="wwwroot\Templates\经验库导入模板.xlsx" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="SIE.Web" Version="9.1.0.9" />
+    <PackageReference Include="Topshelf" Version="4.2.1" />
+    <PackageReference Include="Topshelf.Log4Net" Version="4.2.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="appsettings.Development.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="_运行.cmd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JSONSchema="" appsettings_1Development_1json__JSONSchema="" /></VisualStudio></ProjectExtensions>
+</Project>

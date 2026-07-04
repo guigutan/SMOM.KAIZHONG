@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A1C2AFB7-5EEA-4BAE-BD09-A263FEB5B769}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SIE.Wpf.ESOP</RootNamespace>
+    <AssemblyName>SIE.Wpf.ESOP</AssemblyName>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0-windows\SIE.Wpf.ESOP.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0-windows\SIE.Wpf.ESOP.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\esop.ico" />
+    <Resource Include="Images\PauseNormalRed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\Resources\SIE.Wpf.Resources\SIE.Wpf.Resources.csproj">
+      <Project>{2d556dce-639c-4f85-b541-44a15ccc4e10}</Project>
+      <Name>SIE.Wpf.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MES\SIE.Wpf.MES\SIE.Wpf.MES.csproj">
+      <Project>{f22df5a8-e32a-4c66-a7a0-8c33e7272e6e}</Project>
+      <Name>SIE.Wpf.MES</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\SIE.ESop\SIE.ESop.csproj">
+      <Project>{2fa6bf48-3cca-4ad4-aa28-43b6081d9263}</Project>
+      <Name>SIE.ESop</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\..\..\.sonarlint\sie.smom\CSharp\SonarLint.xml">
+      <Link>SonarLint.xml</Link>
+    </AdditionalFiles>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Office.Interop.Excel" Version="15.0.4795.1001" />
+    <PackageReference Include="SIE.Wpf.Dashboard" Version="10.0.5" />
+    <PackageReference Include="Topshelf" Version="4.2.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\arrow_left.png" />
+    <Resource Include="Images\arrow_right.png" />
+    <Resource Include="Images\fullscreen.png" />
+    <Resource Include="Images\fullscreen_exit.png" />
+    <Resource Include="Images\pause.png" />
+    <Resource Include="Images\play.png" />
+  </ItemGroup>
+</Project>

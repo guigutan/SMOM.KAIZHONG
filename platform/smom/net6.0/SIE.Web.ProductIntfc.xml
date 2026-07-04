@@ -1,0 +1,655 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Web.ProductIntfc</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Web.ProductIntfc._Extentions_.EntityPropertyViewMetaExtension">
+            <summary>
+            扩展属性
+            </summary>
+        </member>
+        <member name="F:SIE.Web.ProductIntfc._Extentions_.EntityPropertyViewMetaExtension.FactoryIdPropertyName">
+            <summary>
+            工厂字段名
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc._Extentions_.EntityPropertyViewMetaExtension.UseShopLookUpEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig})">
+            <summary>
+            资源车间下拉编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc._Extentions_.EntityPropertyViewMetaExtension.UseStorageParamLookUpEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig})">
+            <summary>
+            物料编辑器名称
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc._Extentions_.EntityPropertyViewMetaExtension.UseFactoryWorkshopEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig},System.String)">
+            <summary>
+            获取工厂下的车间下拉编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <param name="factoryIdPropertyName"></param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="T:SIE.Web.ProductIntfc.Configs.FirstInspNoConfigValueViewConfig">
+            <summary>
+            报检单号配置值视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.Configs.FirstInspNoConfigValueViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ProductIntfc.Configs.OutputProductsConfigValueViewConfig">
+            <summary>
+            配置值视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.Configs.OutputProductsConfigValueViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ProductIntfc.Configs.ProductStorageConfigValueViewConfig">
+            <summary>
+            报检单号配置值视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.Configs.ProductStorageConfigValueViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ProductIntfc.FirstInsps.Commands.FirstInspCommand">
+            <summary>
+            首件报检命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.FirstInsps.Commands.FirstInspCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            成品报检命令执行方法
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>报检结果</returns>
+        </member>
+        <member name="T:SIE.Web.ProductIntfc.FirstInsps.Commands.ListSaveCommand">
+            <summary>
+            保存首件规则
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.FirstInsps.Commands.ListSaveCommand.DoSave(SIE.Domain.EntityList)">
+            <summary>
+            保存首件规则
+            </summary>
+            <param name="data">被修改的首件规则列表</param>
+        </member>
+        <member name="T:SIE.Web.ProductIntfc.FirstInsps.DataQuery.FirstInspsDataQuery">
+            <summary>
+            首件数据查询器
+            </summary>  
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.FirstInsps.DataQuery.FirstInspsDataQuery.GetFirstInspRules">
+            <summary>
+            获取首件规则，没有则默认生成数据
+            </summary>
+            <returns>首件规则列表</returns>
+        </member>
+        <member name="T:SIE.Web.ProductIntfc.FirstInsps.FirstInspCriteriaViewConfig">
+            <summary>
+            报检记录查询实体视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.FirstInsps.FirstInspCriteriaViewConfig.ConfigView">
+            <summary>
+            首件报检查询视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ProductIntfc.FirstInsps.FirstInspDetailViewConfig">
+            <summary>
+            报检条码日志明细视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.ProductIntfc.FirstInsps.FirstInspDetailViewConfig.FirstInspDetailView">
+            <summary>
+            报检单明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.FirstInsps.FirstInspDetailViewConfig.ConfigFirstInspDetailView">
+            <summary>
+            配置首检报检明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ProductIntfc.FirstInsps.FirstInspRuleViewConfig">
+            <summary>
+            首件规则视图类
+            </summary>
+        </member>
+        <member name="F:SIE.Web.ProductIntfc.FirstInsps.FirstInspRuleViewConfig.FirstInspRuleProperty">
+            <summary>
+            首检规则
+            首检参数是工单的默认选中并不能编辑
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.FirstInsps.FirstInspRuleViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ProductIntfc.FirstInsps.FirstInspViewConfig">
+            <summary>
+            首检查询实体视图配置
+            </summary>
+        </member>
+        <member name="P:SIE.Web.ProductIntfc.FirstInsps.FirstInspViewConfig.FirstInspView">
+            <summary>
+            成品入库视图组
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.FirstInsps.FirstInspViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.FirstInsps.FirstInspViewConfig.CusConfigListView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ProductIntfc.InspLogs.Commands.InspLogExamineSubmitCommand">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.InspLogs.Commands.InspLogExamineSubmitCommand.DoSave(SIE.Domain.Entity)">
+            <summary>
+            保存
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="T:SIE.Web.ProductIntfc.InspLogs.InspBarcodeLogViewConfig">
+            <summary>
+            报检条码日志明细视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.ProductIntfc.InspLogs.InspBarcodeLogViewConfig.LogDetailView">
+            <summary>
+            报检单明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.InspLogs.InspBarcodeLogViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.InspLogs.InspBarcodeLogViewConfig.ConfigLogDetailView">
+            <summary>
+            配置报检单明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.InspLogs.InspBarcodeLogViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.InspLogs.InspBarcodeLogViewConfig.ConfigSelectionView">
+            <summary>
+            配置下拉视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ProductIntfc.InspLogs.InspLogCallConfigValueViewConfig">
+            <summary>
+            成品报检传QMS配置项视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.InspLogs.InspLogCallConfigValueViewConfig.ConfigView">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ProductIntfc.InspLogs.InspLogCriteriaViewConfig">
+            <summary>
+            报检单查询实体视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.InspLogs.InspLogCriteriaViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ProductIntfc.InspLogs.InspLogViewConfig">
+            <summary>
+            报检日志视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.ProductIntfc.InspLogs.InspLogViewConfig.ShippingInspLogListView">
+            <summary>
+            报检日志自定义ViewGroup
+            </summary>
+        </member>
+        <member name="F:SIE.Web.ProductIntfc.InspLogs.InspLogViewConfig.ExamineViewStr">
+            <summary>
+            审核视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.InspLogs.InspLogViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.InspLogs.InspLogViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.InspLogs.InspLogViewConfig.ConfigShippingInspLogListView">
+            <summary>
+            自定义配置视图列表
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.InspLogs.InspLogViewConfig.ExamineView">
+            <summary>
+            审核视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ProductIntfc.InspRecords.Commands.ShippingInspCommand">
+            <summary>
+            成品报检命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.InspRecords.Commands.ShippingInspCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            成品报检命令执行方法
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>报检结果</returns>
+        </member>
+        <member name="T:SIE.Web.ProductIntfc.InspRecords.InspBarcodeViewConfig">
+            <summary>
+            报检条码视图配置
+            </summary>
+        </member>
+        <member name="P:SIE.Web.ProductIntfc.InspRecords.InspBarcodeViewConfig.ProductInspViewGroup">
+            <summary>
+            成品报检视图组
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.InspRecords.InspBarcodeViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.InspRecords.InspBarcodeViewConfig.ConfigProductInspView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.InspRecords.InspBarcodeViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.InspRecords.InspBarcodeViewConfig.ConfigSelectionView">
+            <summary>
+            配置下拉视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ProductIntfc.InspRecords.InspRecordViewConfig">
+            <summary>
+            报检记录视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.InspRecords.InspRecordViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.InspRecords.InspRecordViewConfig.ConfigSelectionView">
+            <summary>
+            配置下拉视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ProductIntfc.InspSettings.InspParameterViewConfig">
+            <summary>
+            报检参数视图类
+            </summary>
+        </member>
+        <member name="P:SIE.Web.ProductIntfc.InspSettings.InspParameterViewConfig.ProcIsReadOnlyProperty">
+            <summary>
+            产品族，工序是否只读
+            </summary>
+        </member>
+        <member name="P:SIE.Web.ProductIntfc.InspSettings.InspParameterViewConfig.isFirstProductProperty">
+            <summary>
+            报检类型为首件时，报检维度只能是数量,默认选择首工序，为成品时默认选择最后工序
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.InspSettings.InspParameterViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.InspSettings.InspParameterViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.InspSettings.InspParameterViewConfig.ConfigSelectionView">
+            <summary>
+            弹出窗体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.InspSettings.InspParameterViewConfig.ConfigQueryView">
+            <summary>
+            查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.InspSettings.InspParameterViewConfig.ConfigImportView">
+            <summary>
+            配置导入视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ProductIntfc.ProductIntfcMenuInit">
+            <summary>
+            菜单初始化
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.ProductIntfcMenuInit.GetMenuDtos">
+            <summary>
+            获取菜单列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.ProductIntfc.Module">
+            <summary>
+            模块配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化模块
+            </summary>
+            <param name="app">应用程序</param>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.Module.App_ModuleOperations(System.Object,System.EventArgs)">
+            <summary>
+            模块定义
+            </summary>
+            <param name="sender">应用程序</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="T:SIE.Web.ProductIntfc.OutputProducts.Commands.OutputProductReceiveCommand">
+            <summary>
+            副产品收货
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.OutputProducts.Commands.OutputProductReceiveCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.ProductIntfc.OutputProducts.Commands.ToStorageCommand">
+            <summary>
+            入库命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.OutputProducts.Commands.ToStorageCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行入库
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>入库结果</returns>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.OutputProducts.DataQuery.OutputProductsDataQueryer.GetBillWh(SIE.MES.WorkOrders.OutputListType)">
+            <summary>
+            获取单据默认仓库
+            </summary>
+            <param name="outPutType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.OutputProducts.DataQuery.OutputProductsDataQueryer.GetOutputProductRecordViewModels(System.Collections.Generic.List{System.Double})">
+            <summary>
+            
+            </summary>
+            <param name="woIds"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.ProductIntfc.OutputProducts.OutputProductCriteriaViewConfig">
+            <summary>
+            报检记录查询实体视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.OutputProducts.OutputProductCriteriaViewConfig.ConfigView">
+            <summary>
+            成品报检查询视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ProductIntfc.OutputProducts.OutputProductDetailViewConfig">
+            <summary>
+            入库单
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.OutputProducts.OutputProductDetailViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ProductIntfc.OutputProducts.OutputProductRecordViewConfig">
+            <summary>
+            入库单
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.OutputProducts.OutputProductRecordViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ProductIntfc.OutputProducts.OutputProductRecordViewModelViewConfig">
+            <summary>
+            入库单
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.OutputProducts.OutputProductRecordViewModelViewConfig.ConfigView">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.OutputProducts.OutputProductRecordViewModelViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ProductIntfc.OutputProducts.OutputProductViewConfig">
+            <summary>
+            成品入库视图配置
+            </summary>
+        </member>
+        <member name="P:SIE.Web.ProductIntfc.OutputProducts.OutputProductViewConfig.OutputProductView">
+            <summary>
+            成品入库视图组
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.OutputProducts.OutputProductViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.OutputProducts.OutputProductViewConfig.ConfigOutputProductView">
+            <summary>
+            配置成品入库视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ProductIntfc.ProductInsps.ProductInspCriteriaViewConfig">
+            <summary>
+            报检记录查询实体视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.ProductInsps.ProductInspCriteriaViewConfig.ConfigView">
+            <summary>
+            成品报检查询视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ProductIntfc.ProductInsps.ProductInspViewConfig">
+            <summary>
+            成品报检记录视图配置
+            </summary>
+        </member>
+        <member name="P:SIE.Web.ProductIntfc.ProductInsps.ProductInspViewConfig.ProductInspViewGroup">
+            <summary>
+            成品报检视图组
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.ProductInsps.ProductInspViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.ProductInsps.ProductInspViewConfig.ConfigProductInspView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.ProductInsps.ProductInspViewConfig.ConfigSelectionView">
+            <summary>
+            配置下拉视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ProductIntfc.ProductStorages.Commands.ToStorageCommand">
+            <summary>
+            入库命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.ProductStorages.Commands.ToStorageCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行入库
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>入库结果</returns>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.ProductStorages.DataQuery.StorageWorkOrderDataQueryer.GetBarcodeDetails(System.Double)">
+            <summary>
+            获取待入库条码明细列表
+            </summary>
+            <param name="barcodeId">待入库条码Id</param>
+            <returns>最大样本数</returns>
+        </member>
+        <member name="T:SIE.Web.ProductIntfc.ProductStorages.InStorageBarcodeDetailViewConfig">
+            <summary>
+            入库明细
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.ProductStorages.InStorageBarcodeDetailViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ProductIntfc.ProductStorages.InStorageBillViewConfig">
+            <summary>
+            入库单
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.ProductStorages.InStorageBillViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ProductIntfc.ProductStorages.ProductStorageCriteriaViewConfig">
+            <summary>
+            报检记录查询实体视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.ProductStorages.ProductStorageCriteriaViewConfig.ConfigView">
+            <summary>
+            成品报检查询视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ProductIntfc.ProductStorages.ProductStorageParamViewConfig">
+            <summary>
+            成品入库参数视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.ProductStorages.ProductStorageParamViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.ProductStorages.ProductStorageParamViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.ProductStorages.ProductStorageParamViewConfig.ConfigSelectionView">
+            <summary>
+            弹出窗体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.ProductStorages.ProductStorageParamViewConfig.ConfigQueryView">
+            <summary>
+            查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.ProductStorages.ProductStorageParamViewConfig.ConfigImportView">
+            <summary>
+            配置导入视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ProductIntfc.ProductStorages.StorageWorkOrderViewConfig">
+            <summary>
+            成品入库视图配置
+            </summary>
+        </member>
+        <member name="P:SIE.Web.ProductIntfc.ProductStorages.StorageWorkOrderViewConfig.StorageWorkOrderView">
+            <summary>
+            成品入库视图组
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.ProductStorages.StorageWorkOrderViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.ProductStorages.StorageWorkOrderViewConfig.ConfigStorageWorkOrderView">
+            <summary>
+            配置成品入库视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ProductIntfc.ProductStorages.ToStorageBarcodeDetailViewConfig">
+            <summary>
+            待入库条码明细视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.ProductStorages.ToStorageBarcodeDetailViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ProductIntfc.ProductStorages.ToStorageBarcodeViewConfig">
+            <summary>
+            待入库条码视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ProductIntfc.ProductStorages.ToStorageBarcodeViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+    </members>
+</doc>

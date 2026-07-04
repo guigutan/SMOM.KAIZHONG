@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup Label="Globals">
+		<SccProjectName>SAK</SccProjectName>
+		<SccProvider>SAK</SccProvider>
+		<SccAuxPath>SAK</SccAuxPath>
+		<SccLocalPath>SAK</SccLocalPath>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<OutputPath>..\..\..\..\platform\smom\</OutputPath>
+		<DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.MES.Traces.xml</DocumentationFile>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<OutputPath>..\..\..\..\platform\smom\</OutputPath>
+		<DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.MES.Traces.xml</DocumentationFile>
+	</PropertyGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\..\ProductIntfc\SIE.ProductIntfc\SIE.ProductIntfc.csproj" />
+	  <ProjectReference Include="..\..\Reports\SIE.MES.Report\SIE.MES.Report.csproj" />
+	  <ProjectReference Include="..\..\Teams\SIE.MES.TeamManagement.Job\SIE.MES.TeamManagement.Job.csproj" />
+	</ItemGroup>
+
+</Project>

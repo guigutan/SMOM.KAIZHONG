@@ -1,0 +1,394 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Web.Defects</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Web.Defects.EntityPropertyViewMetaExtension">
+            <summary>
+            缺陷视图属性扩展类
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Defects.EntityPropertyViewMetaExtension.UseInspectionTypeEnumEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.Defects.Editors.SelectEnumConfig})">
+            <summary>
+            检验类型枚举筛选编辑器（暂时隐藏型式检验和联机检验）
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="T:SIE.Web.Defects.Commands.ImportDataCommonCommand">
+            <summary>
+            通用数据导入命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Defects.Commands.ImportDataCommonCommand.Excute(SIE.Web.Common.Import.Commands.ImportViewArgs,System.String)">
+            <summary>
+            重载执行方法，添加自定义下载模板方法
+            </summary>
+            <param name="importViewArgs"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Defects.Commands.ImportDataCommonCommand.ImportData(SIE.Web.Common.Import.Commands.ImportViewArgs,System.String,System.Boolean)">
+            <summary>
+            导入处理逻辑
+            </summary>
+            <param name="args">视图参数</param>
+            <param name="sheetName">excel工作薄sheet的名称</param>
+            <param name="isFirstRowColumn">第一行是否是DataTable的列名</param>
+            <returns>导入结果信息</returns>
+        </member>
+        <member name="M:SIE.Web.Defects.Commands.ImportDataCommonCommand.DownloadTemplate(SIE.Web.Common.Import.Commands.ImportViewArgs,System.String)">
+            <summary>
+            自定义下载模板方法
+            </summary>
+            <param name="importViewArgs"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Defects.Commands.ImportDataCommonCommand.SetTemplateFileName(SIE.Web.Common.Import.Commands.ImportViewArgs,System.String)">
+            <summary>
+            设置模板文件信息
+            </summary>
+            <param name="importViewArgs"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Defects.Commands.ImportDataCommonCommand.GetImportCompleted">
+            <summary>
+            导入完成后处理
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Defects.Commands.TemplatePathInfo">
+            <summary>
+            模板文件信息
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Defects.Commands.TemplatePathInfo.FullPath">
+            <summary>
+            路径 
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Defects.Commands.TemplatePathInfo.FileName">
+            <summary>
+            文件名
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Defects.Commands.ImportDataHandleQms">
+            <summary>
+            导入处理
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Defects.Commands.ImportDataHandleQms.#ctor(System.Double)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="parentId"></param>
+        </member>
+        <member name="M:SIE.Web.Defects.Commands.ImportDataHandleQms.ValidColumnNames(System.Data.DataTable,System.Collections.Generic.List{System.String})">
+            <summary>
+            重载文档列校验，添加列名比较
+            </summary>
+            <param name="dt"></param>
+            <param name="columnList"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Defects.Commands.ImportDefectCommand">
+            <summary>
+            数据导入 缺陷代码
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Defects.Commands.ImportDefectCommand.GetImportHandleType">
+            <summary>
+            获取导入处理类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Defects.Commands.ImportDefectCommand.SetTemplateFileName(SIE.Web.Common.Import.Commands.ImportViewArgs,System.String)">
+            <summary>
+            设置模板文件信息
+            </summary>
+            <param name="importViewArgs"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Defects.DefectCategoryViewConfig">
+            <summary>
+            缺陷分类视图配置类
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Defects.DefectCategoryViewConfig.ConfigView">
+            <summary>
+            默认配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Defects.DefectCategoryViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Defects.DefectCategoryViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Defects.DefectCategoryViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Defects.DefectCriteriaViewConfig">
+            <summary>
+            缺陷代码查询条件视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Defects.DefectCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            查询面板视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Defects.DefectGradeViewConfig">
+            <summary>
+            缺陷等级视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Defects.DefectGradeViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Defects.DefectGradeViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Defects.DefectGradeViewConfig.ConfigQueryView">
+            <summary>
+            查询面板视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Defects.DefectGradeViewConfig.ConfigSelectionView">
+            <summary>
+            选择视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Defects.DefectResponsibilityCategoryViewConfig">
+            <summary>
+            缺陷责任分类视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Defects.DefectResponsibilityCategoryViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Defects.DefectResponsibilityCategoryViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Defects.DefectResponsibilityCategoryViewConfig.ConfigQueryView">
+            <summary>
+            查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Defects.DefectResponsibilityCategoryViewConfig.ConfigSelectionView">
+            <summary>
+            选择视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Defects.DefectResponsibilityViewConfig">
+            <summary>
+            缺陷责任视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Defects.DefectResponsibilityViewConfig.ConfigView">
+            <summary>
+            视图通用配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Defects.DefectResponsibilityViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Defects.DefectResponsibilityViewConfig.ConfigQueryView">
+            <summary>
+            查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Defects.DefectResponsibilityViewConfig.ConfigSelectionView">
+            <summary>
+            选择视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Defects.DefectViewConfig">
+            <summary>
+            缺陷代码视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Defects.DefectViewConfig.SelectionModelView">
+            <summary>
+            缺陷代码选择
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Defects.DefectViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Defects.DefectViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Defects.DefectViewConfig.ConfigQueryView">
+            <summary>
+            查询面板视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Defects.DefectViewConfig.ConfigSelectionView">
+            <summary>
+            选择视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Defects.DefectViewConfig.DefectSelectionView">
+            <summary>
+            报工选择视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Defects.Editors.SelectEnumConfig">
+            <summary>
+            枚举筛选编辑器
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Defects.Editors.SelectEnumConfig.ValuesList">
+            <summary>
+            显示枚举值集合
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Defects.Editors.SelectEnumConfig.FilterEnum(System.Collections.Generic.List{SIE.Utils.EnumViewModel})">
+            <summary>
+            过滤分类枚举
+            </summary>
+            <param name="models"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Defects.InspectionItems.InspectionModeViewConfig">
+            <summary>
+            检验方式视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Defects.InspectionItems.InspectionModeViewConfig.CodeReadOnlyProperty">
+            <summary>
+            编码只读
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Defects.InspectionItems.InspectionModeViewConfig.GetCodeReadOnly(SIE.Defects.InspectionItems.InspectionMode)">
+            <summary>
+            编码只读
+            </summary>
+            <param name="me">当前实体</param>
+            <returns>更改状态</returns>
+        </member>
+        <member name="T:SIE.Web.Defects.Measures.RepairMeasureViewConfig">
+            <summary>
+            维修措施视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Defects.DefectsMenuInit">
+            <summary>
+            菜单初始化
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Defects.DefectsMenuInit.GetMenuDtos">
+            <summary>
+            获取菜单列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Defects.ViewModels.ImportDefectViewModel">
+            <summary>
+            导入料号检验标准 实体
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Defects.ViewModels.ImportDefectViewModel.CodeProperty">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Defects.ViewModels.ImportDefectViewModel.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Defects.ViewModels.ImportDefectViewModel.DescriptionProperty">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Defects.ViewModels.ImportDefectViewModel.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Defects.ViewModels.ImportDefectViewModel.QualityTypeProperty">
+            <summary>
+            质量类型
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Defects.ViewModels.ImportDefectViewModel.QualityType">
+            <summary>
+            质量类型
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Defects.ViewModels.ImportDefectViewModel.DefectCategoryProperty">
+            <summary>
+            缺陷分类
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Defects.ViewModels.ImportDefectViewModel.DefectCategory">
+            <summary>
+            缺陷分类
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Defects.ViewModels.ImportDefectViewModel.DefectGradeProperty">
+            <summary>
+            缺陷等级
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Defects.ViewModels.ImportDefectViewModel.DefectGrade">
+            <summary>
+            缺陷等级
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Defects.ViewModels.ImportDefectViewModel.ErrorMessageProperty">
+            <summary>
+            导入失败原因
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Defects.ViewModels.ImportDefectViewModel.ErrorMessage">
+            <summary>
+            导入失败原因
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Defects.ViewModels.ImportExperienceCheckDataViewModelConfig">
+            <summary>
+            导入料号检验标准 视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Defects.ViewModels.ImportExperienceCheckDataViewModelConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Defects.ViewModels.ImportExperienceCheckDataViewModelConfig.ConfigListView">
+            <summary>
+            配置列表试图
+            </summary>
+        </member>
+    </members>
+</doc>

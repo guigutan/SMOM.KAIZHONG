@@ -1,0 +1,71 @@
+﻿using SIE.Common.ImportHelper;
+using SIE.EMS.EquipLends.ImportHandles;
+using SIE.Web.Common.Import.Commands;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Text;
+
+namespace SIE.Web.EMS.EquipLends.Commands
+{
+    /// <summary>
+    /// 设备借还导入命令
+    /// </summary>
+    public class EquipLendImportCommand : ImportCommandBase
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        protected override ImportCompleted GetImportCompleted()
+        {
+            return (DataRow[] drSuccess, DataRow[] drFailed) =>
+            {
+            };
+        }
+
+        /// <summary>
+        /// 导入帮助类
+        /// </summary>
+        /// <returns></returns>
+        protected override Type GetImportHandleType()
+        {
+            return typeof(EquipLendImHandle);
+        }
+
+        /// <summary>
+        /// 导入数据
+        /// </summary>
+        /// <param name="importViewArgs">导入视图参数</param>
+        /// <param name="scope">使用范围</param>
+        /// <returns>执行结果</returns>
+        protected override object Excute(ImportViewArgs importViewArgs, string scope)
+        {
+            if (importViewArgs.BehaviorName == "Download")
+            {
+                return DownloadTemplate();
+            }
+            else
+            {
+                return ImportData(importViewArgs);
+            }
+        }
+
+        /// <summary>
+        /// 直接从服务器上下载模板
+        /// </summary>
+        /// <returns></returns>
+        public virtual object DownloadTemplate()
+        {
+            const string templateFileName = "设备借还管理导入模板.xlsx";
+            const string fileRelativePath = "Templates/" + templateFileName;
+
+            return new
+            {
+                FilePath = fileRelativePath,
+                FileName = templateFileName
+            };
+        }
+    }
+}

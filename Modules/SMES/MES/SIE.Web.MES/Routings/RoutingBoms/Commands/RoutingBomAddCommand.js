@@ -1,0 +1,8 @@
+﻿SIE.defineCommand('SIE.Web.MES.Routings.RoutingBoms.Commands.RoutingBomAddCommand', {
+    extend: 'SIE.cmd.Add',
+    meta: { text: "添加", group: "edit", iconCls: "icon-AddEntity icon-green" },
+    onItemCreated: function (entity) {
+        this.callParent();
+        entity.mon(entity, 'propertyChanged', SIE.Web.MES.Routings.Scripts.RoutingBomCommonFun.onRoutingBomAddPropertyChanged, this)
+    },
+});

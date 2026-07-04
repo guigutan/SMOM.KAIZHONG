@@ -1,0 +1,57 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup Label="Globals">
+		<SccProjectName>SAK</SccProjectName>
+		<SccProvider>SAK</SccProvider>
+		<SccAuxPath>SAK</SccAuxPath>
+		<SccLocalPath>SAK</SccLocalPath>
+		<LangVersion>8.0</LangVersion>
+	</PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<SonarQubeExclude>True</SonarQubeExclude>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<OutputPath>..\..\..\..\platform\smom\</OutputPath>
+		<DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.LES.xml</DocumentationFile>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<OutputPath>..\..\..\..\platform\smom\</OutputPath>
+		<DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.LES.xml</DocumentationFile>
+	</PropertyGroup>
+	<ItemGroup>
+	  <Compile Remove="Distributions\**" />
+	  <Compile Remove="MaterialReceptions\**" />
+	  <Compile Remove="RetreatItemManage\**" />
+	  <Compile Remove="WorkOrderMaterialtransfes\**" />
+	  <EmbeddedResource Remove="Distributions\**" />
+	  <EmbeddedResource Remove="MaterialReceptions\**" />
+	  <EmbeddedResource Remove="RetreatItemManage\**" />
+	  <EmbeddedResource Remove="WorkOrderMaterialtransfes\**" />
+	  <None Remove="Distributions\**" />
+	  <None Remove="MaterialReceptions\**" />
+	  <None Remove="RetreatItemManage\**" />
+	  <None Remove="WorkOrderMaterialtransfes\**" />
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Remove="Commons\LesLot.cs" />
+		<Compile Remove="LesStockCounts\CountFinishType.cs" />
+		<Compile Remove="LesStockCounts\LesLotController.cs" />
+		<Compile Remove="LesStockCounts\LesOnhandState.cs" />
+		<Compile Remove="LesStockCounts\SourceType.cs" />
+		<Compile Remove="LesStockCounts\StockCountRangeDetail.cs" />
+		<Compile Remove="LesStockCounts\TaskLevel.cs" />
+		<Compile Remove="StockOrders\Service\StockOrderService.Common.cs" />
+		<Compile Remove="StockOrders\StockOrderMergeTimesRule.cs" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\Inventorys\SIE.Inventory\SIE.Inventory.csproj" />
+		<ProjectReference Include="..\..\Items\SIE.Items\SIE.Items.csproj" />
+		<ProjectReference Include="..\..\ShipPlans\SIE.ShipPlan\SIE.ShipPlan.csproj" />
+		<ProjectReference Include="..\..\Techs\SIE.Tech\SIE.Tech.csproj" />
+		<ProjectReference Include="..\..\Warehouses\SIE.Warehouses\SIE.Warehouses.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="MaterialReceives\ViewModel\" />
+	</ItemGroup>
+</Project>

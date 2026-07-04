@@ -1,0 +1,18 @@
+<AddIn name        = "SieStudio"
+       author      = "huchuqiang"
+       copyright   = "prj:///doc/copyright.txt"
+       url         = "http://siestudio.chinasie.com"
+       description = "System Menu Icon library Command"
+       addInManagerHidden = "true">
+
+	<Manifest>
+		<Identity name = "Icon" version = "@AssemblyVersion"/>
+	</Manifest>
+  <Runtime> 
+    <Import assembly=":SIE.Wpf"/>
+  </Runtime>
+  <Path name = "/Main/Workbench/HeaderBar/SysMenu">
+    <MenuItem id="icon" label="图标库" tooltip="图标库" insertafter="setting" type="ButtonItem" class="SIE.Wpf.Workbench.Commands.IconCommand">
+	</MenuItem> 
+  </Path> 
+</AddIn>

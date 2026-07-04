@@ -1,0 +1,22 @@
+﻿<UserControl xmlns:dxprg="http://schemas.devexpress.com/winfx/2008/xaml/propertygrid"  
+    x:Class="SIE.Wpf.Tech.Routings.DesignPropertys.ActivityProperty"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:local="clr-namespace:SIE.Wpf.Tech.Routings.DesignPropertys"
+    xmlns:uic="http://schemas.siestudio.com/winfx/xaml/core"
+    mc:Ignorable="d"
+    xmlns:cv="clr-namespace:SIE.Wpf.Tech.Routings.Technologys.Converters"
+    d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <dxprg:PropertyGridControl Name="propertyGrid" ShowCategories="true" ShowDescriptionIn="Panel" ExpandCategoriesWhenSelectedObjectChanged="True" ShowProperties="WithPropertyDefinitions" SelectedObject="{Binding}">
+            <dxprg:CategoryDefinition Header="{Binding [属性],Source={uic:L10N}}">
+                <dxprg:PropertyDefinition x:Name="createSku" Path="CreateSku" Header="{Binding [创建SKU],Source= {uic:L10N}}"/>
+                <dxprg:PropertyDefinition x:Name="text" Path="Text" IsReadOnly="True" Header="{Binding [名称],Source={uic:L10N}}"/>
+                <dxprg:PropertyDefinition x:Name="isOptional" Path="IsOptional" Header="{Binding [是否可选],Source={uic:L10N}}"/>
+                <dxprg:PropertyDefinition x:Name="isRepeat" Path="IsRepeat" Header="{Binding [重复过站],Source={uic:L10N}}" Visibility="{Binding ProcessType,Converter={cv:ProcessTypeToVisibilityConverter}}"/>
+            </dxprg:CategoryDefinition>
+        </dxprg:PropertyGridControl>
+    </Grid>
+</UserControl>

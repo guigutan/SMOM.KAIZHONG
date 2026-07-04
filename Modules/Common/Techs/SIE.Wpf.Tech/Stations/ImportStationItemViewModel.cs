@@ -1,0 +1,165 @@
+﻿using SIE.Domain;
+using SIE.ObjectModel;
+using SIE.Tech.Stations;
+using SIE.Wpf.Common;
+using SIE.Wpf.Tech.Stations.Commands;
+
+namespace SIE.Wpf.Tech.Stations
+{
+    /// <summary>
+    /// 工位物料导入ViewModel
+    /// </summary>
+    [RootEntity]
+    public class ImportStationItemViewModel : ViewModel
+    {
+        #region ImportFilePath 导入模板文件路径
+        /// <summary>
+        /// 导入模板文件路径
+        /// </summary>
+        [Label("导入文件")]
+        public static readonly Property<string> ImportFilePathProperty = P<ImportStationItemViewModel>.Register(e => e.ImportFilePath);
+
+        /// <summary>
+        /// 导入模板文件路径
+        /// </summary>
+        public string ImportFilePath
+        {
+            get { return this.GetProperty(ImportFilePathProperty); }
+            set { this.SetProperty(ImportFilePathProperty, value); }
+        }
+        #endregion
+
+        #region ImportSuccessAmount 导入成功数量
+        /// <summary>
+        /// 导入成功数量
+        /// </summary>
+        [Label("导入成功数量")]
+        public static readonly Property<int> ImportSuccessAmountProperty = P<ImportStationItemViewModel>.Register(e => e.ImportSuccessAmount);
+
+        /// <summary>
+        /// 导入成功数量
+        /// </summary>
+        public int ImportSuccessAmount
+        {
+            get { return this.GetProperty(ImportSuccessAmountProperty); }
+            set { this.SetProperty(ImportSuccessAmountProperty, value); }
+        }
+        #endregion
+
+        #region ImportFailAmount 导入失败数量
+        /// <summary>
+        /// 导入失败数量
+        /// </summary>
+        [Label("导入失败数量")]
+        public static readonly Property<int> ImportFailAmountProperty = P<ImportStationItemViewModel>.Register(e => e.ImportFailAmount);
+
+        /// <summary>
+        /// 导入失败数量
+        /// </summary>
+        public int ImportFailAmount
+        {
+            get { return this.GetProperty(ImportFailAmountProperty); }
+            set { this.SetProperty(ImportFailAmountProperty, value); }
+        }
+        #endregion
+
+        #region ImportProcessMsg 导入处理消息
+        /// <summary>
+        /// 导入处理消息
+        /// </summary>
+        [Label("导入处理消息")]
+        public static readonly Property<string> ImportProcessMsgProperty = P<ImportStationItemViewModel>.Register(e => e.ImportProcessMsg);
+
+        /// <summary>
+        /// 导入处理消息
+        /// </summary>
+        public string ImportProcessMsg
+        {
+            get { return this.GetProperty(ImportProcessMsgProperty); }
+            set { this.SetProperty(ImportProcessMsgProperty, value); }
+        }
+        #endregion
+
+        #region ImportDataViewModelList 导入工单据集
+        /// <summary>
+        /// 导入工单数据集
+        /// </summary>
+        public static readonly ListProperty<EntityList<StationItemCheckDataViewModel>> ImportDataViewModelListProperty =
+            P<ImportStationItemViewModel>.RegisterList(e => e.ImportDataViewModelList, new ListPropertyMeta
+            {
+                HasManyType = HasManyType.Aggregation,
+            });
+
+        /// <summary>
+        /// 导入工单数据集
+        /// </summary>
+        public EntityList<StationItemCheckDataViewModel> ImportDataViewModelList
+        {
+            get { return this.GetLazyList(ImportDataViewModelListProperty); }
+        }
+        #endregion
+
+        #region 工位 Station
+        /// <summary>
+        /// 工位Id
+        /// </summary>
+        [Label("工位")]
+        public static readonly IRefIdProperty StationIdProperty =
+            P<ImportStationItemViewModel>.RegisterRefId(e => e.StationId, ReferenceType.Normal);
+
+        /// <summary>
+        /// 工位Id
+        /// </summary>
+        public double StationId
+        {
+            get { return (double)this.GetRefId(StationIdProperty); }
+            set { this.SetRefId(StationIdProperty, value); }
+        }
+
+        /// <summary>
+        /// 工位
+        /// </summary>
+        public static readonly RefEntityProperty<Station> StationProperty =
+            P<ImportStationItemViewModel>.RegisterRef(e => e.Station, StationIdProperty);
+
+        /// <summary>
+        /// 工位
+        /// </summary>
+        public Station Station
+        {
+            get { return this.GetRefEntity(StationProperty); }
+            set { this.SetRefEntity(StationProperty, value); }
+        }
+        #endregion
+    }
+
+    /// <summary>
+    /// 工位物料导入ViewModel视图配置
+    /// </summary>
+    class ImportStationItemViewModelConfig : WPFViewConfig<ImportStationItemViewModel>
+    {
+        /// <summary>
+        /// 默认视图
+        /// </summary>
+        protected override void ConfigView()
+        {
+            View.DomainName("数据导入");
+            View.AssignAuthorize(typeof(StationItem));
+        }
+
+        /// <summary>
+        /// 明细视图
+        /// </summary>
+        protected override void ConfigDetailsView()
+        {
+            View.HasDetailColumnsCount(6);
+            View.ClearCommands();
+            View.UseCommands(typeof(DownLoadStationItemCommand), typeof(ImportStationItemDataCommand));
+            View.Property(p => p.ImportFilePath).ShowInDetail(columnSpan: 4).UseFileSelectEditor(p => p.Filter = "xlsx|*.xlsx|xls|*.xls");
+            View.Property(p => p.ImportSuccessAmount).ShowInDetail(columnSpan: 1).Readonly();
+            View.Property(p => p.ImportFailAmount).ShowInDetail(columnSpan: 1).Readonly();
+            View.Property(p => p.ImportProcessMsg).ShowInDetail(columnSpan: 6).Readonly();
+            View.ChildrenProperty(p => p.ImportDataViewModelList);
+        }
+    }
+}

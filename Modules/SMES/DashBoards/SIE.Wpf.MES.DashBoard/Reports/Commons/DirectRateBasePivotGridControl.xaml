@@ -1,0 +1,136 @@
+﻿<UserControl x:Class="SIE.Wpf.MES.DashBoard.Reports.DirectRateBasePivotGridControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:dxpg="http://schemas.devexpress.com/winfx/2008/xaml/pivotgrid"
+             xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+             xmlns:local="clr-namespace:SIE.Wpf.MES.DashBoard.Reports"
+             xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/charts"
+             xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+             xmlns:uic="http://schemas.siestudio.com/winfx/xaml/core" 
+             xmlns:icon="http://schemas.siestudio.com/winfx/xaml/controls"
+             mc:Ignorable="d"
+             d:DesignHeight="480" d:DesignWidth="840">
+    <Grid Margin="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" HorizontalAlignment="Left" Orientation="Horizontal">
+            <Button  Margin="0,0,5,0"  HorizontalAlignment="Left" VerticalAlignment="Center" Click="ExportButton_Click"  ToolTip="{Binding [导出数据],Source={uic:L10N}}">
+                <StackPanel Orientation="Horizontal">
+                    <icon:PackIcon HorizontalAlignment="Left" Margin="2"   Kind="ExportData" Foreground="#326ab3"/>
+                    <TextBlock Text="{Binding [导出],Source={uic:L10N}}" Margin="0,2,2,2" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+            <Button Margin="0,0,5,0" HorizontalAlignment="Left" VerticalAlignment="Center" Click="BtnClick_SaveLayOut" ToolTip="{Binding [保存设置],Source={uic:L10N}}">
+                <StackPanel Orientation="Horizontal">
+                    <icon:PackIcon   HorizontalAlignment="Left" Margin="2"   Kind="SaveEntity" Foreground="#326ab3"/>
+                    <TextBlock Text="{Binding [保存设置],Source={uic:L10N}}" Margin="0,2,2,2" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+            <Button Margin="0,0,5,0"  HorizontalAlignment="Left" VerticalAlignment="Center" Click="ResetButton_Click"  ToolTip="{Binding [恢复默认设置],Source={uic:L10N}}">
+                <StackPanel Orientation="Horizontal">
+                    <icon:PackIcon   HorizontalAlignment="Left" Margin="2"   Kind="Undo" Foreground="#326ab3"/>
+                    <TextBlock Text="{Binding [恢复默认],Source={uic:L10N}}" Margin="0,2,2,2" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+            <Button   HorizontalAlignment="Left" VerticalAlignment="Center" Click="BtnClick_ArgsSetting" ToolTip="{Binding [目标参数设置],Source={uic:L10N}}">
+                <StackPanel Orientation="Horizontal">
+                    <icon:PackIcon   HorizontalAlignment="Left" Margin="2"   Kind="Gear" Foreground="#326ab3"/>
+                    <TextBlock Text="{Binding [目标参数设置],Source={uic:L10N}}" Margin="0,2,2,2" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+
+        <dxlc:LayoutControl x:Name="mainLayout" Grid.Row="1" AllowItemSizing="True" Padding="2" Orientation="Vertical" >
+            <dxlc:LayoutGroup dxlc:LayoutControl.AllowVerticalSizing="True" Margin="0,0,0,2">
+                <dxpg:PivotGridControl x:Name="pivotGrid" DataContext="{Binding}" DataSource="{Binding DirectRateList}" RowTreeWidth="120"
+                           ShowDataHeaders="False" AllowCustomizationForm="False" local:FieldAreaHelper.FixAreas="True"
+                           ShowGrandTotalsForSingleValues="False" ShowCustomTotalsForSingleValues="False"
+                           ShowRowTotals="False" ShowRowGrandTotals="False" ShowRowGrandTotalHeader="True" 
+                           ShowColumnTotals="False" ShowColumnGrandTotals="False" ShowColumnGrandTotalHeader="True"
+                           ChartProvideColumnGrandTotals="False" ChartProvideColumnCustomTotals="False"  ChartProvideRowGrandTotals="False"  ChartProvideRowCustomTotals="False" 
+                           ChartFieldValuesProvideMode="DisplayText" ChartAutoTranspose="True"
+                           ChartProvideDataByColumns="False" ChartSelectionOnly="True"
+                           CustomCellValue="pivotGrid_CustomCellValue"
+                           FieldValueDisplayText="pivotGrid_FieldValueDisplayText"
+                           CellSelectionChanged="pivotGrid_CellSelectionChanged"
+                           CellDoubleClick="pivotGrid_CellDoubleClick"
+                           CustomChartDataSourceRows="pivotGrid_CustomChartDataSourceRows">
+                </dxpg:PivotGridControl>
+            </dxlc:LayoutGroup>
+
+            <dxlc:LayoutGroup dxlc:LayoutControl.AllowVerticalSizing="True" Margin="0,2,0,0">
+                <dxc:ChartControl Name="chart" DataSource="{Binding ElementName=pivotGrid, Path=ChartDataSource}" Margin="0">
+                    <dxc:ChartControl.Titles>
+                        <dxc:Title Content="{Binding [直通率趋势图], Source={uic:L10N}}" HorizontalAlignment="Center" />
+                    </dxc:ChartControl.Titles>
+                    <dxc:ChartControl.CrosshairOptions>
+                        <dxc:CrosshairOptions ShowArgumentLine="True" CrosshairLabelMode="ShowForNearestSeries" />
+                    </dxc:ChartControl.CrosshairOptions>
+
+                    <dxc:ChartControl.Diagram>
+                        <dxc:XYDiagram2D Name="chartGram" SeriesDataMember="Series" EnableAxisXNavigation="True">
+                            <dxc:XYDiagram2D.AxisX>
+                                <dxc:AxisX2D x:Name="_AxisX" TickmarksMinorVisible="False" TickmarksLength="3"  
+                                                 GridLinesMinorVisible="False" GridLinesVisible="False">
+                                    <dxc:AxisX2D.CrosshairAxisLabelOptions>
+                                        <dxc:CrosshairAxisLabelOptions/>
+                                    </dxc:AxisX2D.CrosshairAxisLabelOptions>
+                                    <dxc:AxisX2D.Label>
+                                        <dxc:AxisLabel Background="Transparent" BorderBrush="#FF343246" Padding="0,1" FontSize="12"/>
+                                    </dxc:AxisX2D.Label>
+                                </dxc:AxisX2D>
+                            </dxc:XYDiagram2D.AxisX>
+
+                            <dxc:XYDiagram2D.AxisY>
+                                <dxc:AxisY2D x:Name="_AxisY"  GridLinesMinorVisible="False" GridLinesVisible="False"
+                                     TickmarksMinorVisible="True" TickmarksLength="3" Interlaced="False" >
+                                    <dxc:AxisY2D.WholeRange>
+                                        <dxc:Range MaxValue="1" MinValue="0"/>
+                                    </dxc:AxisY2D.WholeRange>
+                                    <dxc:AxisY2D.Label>
+                                        <dxc:AxisLabel Background="Transparent" BorderBrush="#FF343246" Padding="0,1"  FontSize="12" TextPattern="{}{V:P0}"/>
+                                    </dxc:AxisY2D.Label>
+                                </dxc:AxisY2D>
+                            </dxc:XYDiagram2D.AxisY>
+
+                            <dxc:XYDiagram2D.Series>
+                                <dxc:LineSeries2D Name="_LineSerie" DataSource="{Binding ElementName=pivotGrid, Path=ChartDataSource}"   Brush="SkyBlue"  Foreground="SkyBlue" MarkerVisible="True" LabelsVisibility="True" 
+                                                      CrosshairLabelVisibility="True" Visibility="Visible" AnimationAutoStartMode="SetStartState"   
+                                                      ArgumentScaleType="Qualitative" ArgumentDataMember="Arguments" ValueDataMember="Values" CrosshairLabelPattern="{}{A}:{V:P2}"  LegendTextPattern = "{}{V:P2}" ShowInLegend="True">
+                                    <dxc:LineSeries2D.MarkerModel>
+                                        <dxc:CircleMarker2DModel/>
+                                    </dxc:LineSeries2D.MarkerModel>
+                                    <dxc:LineSeries2D.Label>
+                                        <dxc:SeriesLabel ConnectorVisible="False"
+                                                ResolveOverlappingMode="Default" TextPattern="{}{V:P2}" dxc:MarkerSeries2D.Angle="90">
+                                            <dxc:SeriesLabel.ElementTemplate>
+                                                <DataTemplate>
+                                                    <Label Content="{Binding Text}" FontSize="12" Foreground="SkyBlue" Background="{Binding Background}" BorderThickness="0"/>
+                                                </DataTemplate>
+                                            </dxc:SeriesLabel.ElementTemplate>
+                                        </dxc:SeriesLabel>
+                                    </dxc:LineSeries2D.Label>
+                                </dxc:LineSeries2D>
+                            </dxc:XYDiagram2D.Series>
+
+                        </dxc:XYDiagram2D>
+                    </dxc:ChartControl.Diagram>
+                    <dxc:ChartControl.Legend>
+                        <dxc:Legend HorizontalPosition="Right" VerticalPosition="Top" Orientation="Vertical" ReverseItems="True" Background="{x:Null}"
+                                                    FontSize="12" Margin="0, -45, 0, 0" Padding="0" BorderThickness="0">
+                            <!--<dxc:Legend.CustomItems>
+                                    <dxc:CustomLegendItem Name="alertValueLegend" Text="{Binding [预警值],Source={uic:L10N}}" MarkerBrush="Red"/>
+                                    <dxc:CustomLegendItem Name="goalValueLegend"  Text="{Binding [目标值],Source={uic:L10N}}" MarkerBrush ="Green"/>
+                            </dxc:Legend.CustomItems>-->
+                        </dxc:Legend>
+                    </dxc:ChartControl.Legend>
+                </dxc:ChartControl>
+            </dxlc:LayoutGroup>
+        </dxlc:LayoutControl>
+    </Grid>
+</UserControl>

@@ -1,0 +1,74 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo></GenerateAssemblyInfo>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+    <GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.WorkBenchCore.Mvc.xml</DocumentationFile>
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.WorkBenchCore.Mvc.xml</DocumentationFile>
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SIE.WorkBenchCommon\SIE.WorkBenchCommon.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="SIE.Web.Common" Version="10.0.5" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="wwwroot\**\*" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="wwwroot\css\WorkBenchStyle.css" />
+    <EmbeddedResource Remove="wwwroot\Images\DocBackground.png" />
+    <EmbeddedResource Remove="wwwroot\Images\供应商排名.png" />
+    <EmbeddedResource Remove="wwwroot\Images\待处理任务.png" />
+    <EmbeddedResource Remove="wwwroot\Images\紧急任务.png" />
+    <EmbeddedResource Remove="wwwroot\Images\累计处理任务.png" />
+    <EmbeddedResource Remove="wwwroot\Images\综合评分.png" />
+    <EmbeddedResource Remove="wwwroot\Images\超时处理任务.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="Views\_ViewImports.cshtml">
+      <Pack>false</Pack>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="wwwroot\Images\DocBackground.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\css\WorkBenchStyle.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Images\供应商排名.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Images\待处理任务.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Images\紧急任务.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Images\累计处理任务.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Images\综合评分.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Images\超时处理任务.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+</Project>

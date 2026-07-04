@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\..\..\..\packages\Microsoft.CodeAnalysis.Analyzers.3.0.0\build\Microsoft.CodeAnalysis.Analyzers.props" Condition="Exists('..\..\..\..\packages\Microsoft.CodeAnalysis.Analyzers.3.0.0\build\Microsoft.CodeAnalysis.Analyzers.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{64A4AA87-3E90-47C8-A3D3-2B664BE0D251}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WpfClient</RootNamespace>
+    <AssemblyName>SIE.MOM</AssemblyName>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <UseWPF>true</UseWPF>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>..\..\..\..\Common\WpfClient\logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\Common\WpfClient\AddIns\SIE.HomePage.addin">
+      <Link>AddIns\SIE.HomePage.addin</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\..\Common\WpfClient\AddIns\Sie.IconItem.addin">
+      <Link>AddIns\Sie.IconItem.addin</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\..\Common\WpfClient\AddIns\Sie.LogSetting.addin">
+      <Link>AddIns\Sie.LogSetting.addin</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\..\Common\WpfClient\AddIns\Sie.PrintSetting.addin">
+      <Link>AddIns\Sie.PrintSetting.addin</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\..\Common\WpfClient\AddIns\Sie.Setting.addin">
+      <Link>AddIns\Sie.Setting.addin</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\..\Common\WpfClient\AddIns\SIE.Wpf.Rbac.addin">
+      <Link>AddIns\SIE.Wpf.Rbac.addin</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\..\Common\WpfClient\AddIns\Sie.Wpf.StatusBar.addin">
+      <Link>AddIns\Sie.Wpf.StatusBar.addin</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\..\Common\WpfClient\log4net.config">
+      <Link>log4net.config</Link>
+    </None>
+    <None Include="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Wpf\Workbench\AddIns\Sie.Wpf.StatusBar.addin" />
+    <None Include="Wpf\Workbench\AddIns\SIE.Wpf.SystemMenu.addin" />
+    <None Include="Wpf\Workbench\AddIns\Sie.Wpf.ToolBar.addin" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="..\..\..\..\Common\WpfClient\App.xaml">
+      <Link>App.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="..\..\..\..\Common\WpfClient\logo.ico">
+      <Link>logo.ico</Link>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Modules\Common\Core\SIE.Core\SIE.Core.csproj">
+      <Project>{29383f8e-6486-435e-83aa-bd3746f990a8}</Project>
+      <Name>SIE.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Modules\Common\CSM\SIE.CSM\SIE.CSM.csproj">
+      <Project>{c5dbcf27-83d1-4274-b9c6-761b2cd20c45}</Project>
+      <Name>SIE.CSM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Modules\Common\CSM\SIE.Wpf.CSM\SIE.Wpf.CSM.csproj">
+      <Project>{e1c7eac2-6338-4738-af48-a5a5498737a1}</Project>
+      <Name>SIE.Wpf.CSM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Modules\Common\Defects\SIE.Defects\SIE.Defects.csproj">
+      <Project>{83d1c620-7ff2-47ba-ba14-e08b61029e42}</Project>
+      <Name>SIE.Defects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Modules\Common\Defects\SIE.Wpf.Defects\SIE.Wpf.Defects.csproj">
+      <Project>{1ffbfeaa-a312-447e-9c80-ca4b66dc9a14}</Project>
+      <Name>SIE.Wpf.Defects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Modules\Common\Items\SIE.Items\SIE.Items.csproj">
+      <Project>{a013fb94-85d4-452b-b84f-bfcfff352fc5}</Project>
+      <Name>SIE.Items</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Modules\Common\Items\SIE.Wpf.Items\SIE.Wpf.Items.csproj">
+      <Project>{f094dcaa-9351-4925-acb3-e28abf6f29f7}</Project>
+      <Name>SIE.Wpf.Items</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Modules\Common\Packages\SIE.Packages\SIE.Packages.csproj">
+      <Project>{6cb46b9e-af62-4b29-9000-ddfa0f79c780}</Project>
+      <Name>SIE.Packages</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Modules\Common\Packages\SIE.Wpf.Packages\SIE.Wpf.Packages.csproj">
+      <Project>{76824c77-4493-4544-bef2-ea354ff0585b}</Project>
+      <Name>SIE.Wpf.Packages</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Modules\Common\Resources\SIE.Resources\SIE.Resources.csproj">
+      <Project>{6b2729f1-f353-4c04-a4a9-e90d7acf8fa4}</Project>
+      <Name>SIE.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Modules\Common\Resources\SIE.Wpf.Resources\SIE.Wpf.Resources.csproj">
+      <Project>{2d556dce-639c-4f85-b541-44a15ccc4e10}</Project>
+      <Name>SIE.Wpf.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Modules\Common\Warehouses\SIE.Warehouses\SIE.Warehouses.csproj">
+      <Project>{42b33ae8-c2f4-4ad4-a803-008223b57a06}</Project>
+      <Name>SIE.Warehouses</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Modules\Common\Warehouses\SIE.Wpf.Warehouses\SIE.Wpf.Warehouses.csproj">
+      <Project>{3f52184d-f762-4772-97ee-8e77da4e2e52}</Project>
+      <Name>SIE.Wpf.Warehouses</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Modules\Elec\Common\AbnormalInfo\SIE.Elec.AbnormalInfo\SIE.Elec.AbnormalInfo.csproj">
+      <Project>{8c1b9b0a-9029-4f2a-bd0f-caa19e033be2}</Project>
+      <Name>SIE.Elec.AbnormalInfo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Modules\Elec\Common\Core\SIE.Elec.Core\SIE.Elec.Core.csproj">
+      <Project>{0182ecb8-d2cb-4b02-9769-6788e418aa44}</Project>
+      <Name>SIE.Elec.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Modules\Elec\Common\Fixtures\SIE.Elec.Fixture\SIE.Elec.Fixture.csproj">
+      <Project>{6306e11f-9e32-492f-ba4b-705774192a45}</Project>
+      <Name>SIE.Elec.Fixture</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Modules\Elec\Common\Messages\SIE.Elec.EventMessages\SIE.Elec.EventMessages.csproj">
+      <Project>{993ec011-3698-4111-b653-f7aed7885fde}</Project>
+      <Name>SIE.Elec.EventMessages</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Modules\Elec\SEDO\SIE.Elec.EMS.Job\SIE.Elec.EMS.Job.csproj">
+      <Project>{41676b0e-2d13-4ce5-82de-a486e884017d}</Project>
+      <Name>SIE.Elec.EMS.Job</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Modules\Elec\SEDO\SIE.Elec.EMS\SIE.Elec.EMS.csproj">
+      <Project>{c2f65c8f-18a7-4d55-add5-83f3aaf68b00}</Project>
+      <Name>SIE.Elec.EMS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Modules\Kit\Core\SIE.Kit.EventMessages\SIE.Kit.EventMessages.csproj">
+      <Project>{92edefaf-023d-45a0-9978-02b490b9c630}</Project>
+      <Name>SIE.Kit.EventMessages</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Modules\Kit\SIE.Kit.TurnoverTools\SIE.Kit.TurnoverTools.csproj">
+      <Project>{fb814c63-72cd-44ae-85f8-2f11a0cc30e1}</Project>
+      <Name>SIE.Kit.TurnoverTools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Modules\SEDO\EMS\SIE.EMS.Job\SIE.EMS.Job.csproj">
+      <Project>{86f27389-5430-444b-938c-ae90938bff7a}</Project>
+      <Name>SIE.EMS.Job</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Modules\SEDO\EMS\SIE.EMS\SIE.EMS.csproj">
+      <Project>{0c7e3de7-fb76-4f0c-bf1e-29c6814eb415}</Project>
+      <Name>SIE.EMS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Modules\Common\Techs\SIE.Tech\SIE.Tech.csproj">
+      <Project>{3e01d6ee-3c17-4135-9051-fb5f6ed806a4}</Project>
+      <Name>SIE.Tech</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Modules\Common\Techs\SIE.Wpf.Tech\SIE.Wpf.Tech.csproj">
+      <Project>{ca56545f-cf2a-473e-8242-3fc31e93431b}</Project>
+      <Name>SIE.Wpf.Tech</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\..\..\packages\Microsoft.CodeAnalysis.Analyzers.3.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
+    <Analyzer Include="..\..\..\..\packages\Microsoft.CodeAnalysis.Analyzers.3.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\arrow_left.png" />
+    <Resource Include="Images\arrow_right.png" />
+    <Resource Include="Images\fullscreen.png" />
+    <Resource Include="Images\fullscreen_exit.png" />
+    <Resource Include="Images\pause.png" />
+    <Resource Include="Images\play.png" />
+    <Resource Include="RazorTemplate.txt" />
+    <Resource Include="Localization\ar.xml" />
+    <Resource Include="Localization\be.xml" />
+    <Resource Include="Localization\bg.xml" />
+    <Resource Include="Localization\bh.xml" />
+    <Resource Include="Localization\ca-ES.xml" />
+    <Resource Include="Localization\cs.xml" />
+    <Resource Include="Localization\de.xml" />
+    <Resource Include="Localization\el-GR.xml" />
+    <Resource Include="Localization\en-GB.xml" />
+    <Resource Include="Localization\en.xml" />
+    <Resource Include="Localization\es.xml" />
+    <Resource Include="Localization\eu-ES.xml" />
+    <Resource Include="Localization\fa.xml" />
+    <Resource Include="Localization\fr.xml" />
+    <Resource Include="Localization\gl-ES.xml" />
+    <Resource Include="Localization\hr.xml" />
+    <Resource Include="Localization\hu.xml" />
+    <Resource Include="Localization\id.xml" />
+    <Resource Include="Localization\it.xml" />
+    <Resource Include="Localization\ja.xml" />
+    <Resource Include="Localization\ka.xml" />
+    <Resource Include="Localization\ko.xml" />
+    <Resource Include="Localization\lt.xml" />
+    <Resource Include="Localization\nb-NO.xml" />
+    <Resource Include="Localization\nl.xml" />
+    <Resource Include="Localization\pl.xml" />
+    <Resource Include="Localization\pt-BR.xml" />
+    <Resource Include="Localization\pt.xml" />
+    <Resource Include="Localization\ro.xml" />
+    <Resource Include="Localization\ru.xml" />
+    <Resource Include="Localization\sk.xml" />
+    <Resource Include="Localization\sr.xml" />
+    <Resource Include="Localization\sv.xml" />
+    <Resource Include="Localization\tr.xml" />
+    <Resource Include="Localization\uk.xml" />
+    <Resource Include="Localization\vi.xml" />
+    <Resource Include="Localization\zh-CHS.xml" />
+    <Resource Include="Localization\zh-CHT.xml" />
+    <Resource Include="Portals\Images\CompanyPicture.jpg" />
+    <Resource Include="Portals\Images\OrderInteraction01.png" />
+    <Resource Include="Portals\Images\OrderInteraction02.png" />
+    <Resource Include="Portals\Images\PlanCompletion01.png" />
+    <Resource Include="Portals\Images\PlanCompletion02.png" />
+    <Resource Include="Portals\Images\PlanCompletion03.png" />
+    <Resource Include="Portals\Images\StopLine01.png" />
+    <Resource Include="Portals\Images\StopLine02.png" />
+    <Content Include="Resources\splash.mp4" />
+    <Resource Include="Sender\RazorTemplate.txt" />
+    <Resource Include="Wpf\Controls\AvalonEdit\Search\next.png" />
+    <Resource Include="Wpf\Controls\AvalonEdit\Search\prev.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties appsettings_1json__JSONSchema="" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

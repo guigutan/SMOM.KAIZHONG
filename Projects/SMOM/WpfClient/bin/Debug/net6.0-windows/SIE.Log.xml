@@ -1,0 +1,304 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Log</name>
+    </assembly>
+    <members>
+        <member name="M:SIE.Log.Log4NetLogger.GenerateLogThreadInfo(System.Object)">
+            <summary>
+            生成字符串-线程ID实体
+            </summary>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Log.Log4NetLoggerFactoryAdapter">
+            <summary>
+            log4net适配器，把平台的日志记录到log4net
+            </summary>
+        </member>
+        <member name="M:SIE.Log.Log4NetLoggerFactoryAdapter.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Log.Log4NetLoggerFactoryAdapter.GetLogger(System.String)">
+            <summary>
+            按名称获取<see cref="T:SIE.Logging.ILog"/>
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Log.Log4NetLoggerFactoryAdapter.GetLogger(System.Type)">
+            <summary>
+            按类型获取<see cref="T:SIE.Logging.ILog"/>
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Log.DefaultObjectRenderer">
+            <summary>
+            日志实体信息转换器 - 用于TXT文本换砖
+            </summary>
+        </member>
+        <member name="T:SIE.Log.LogInfo">
+            <summary>
+            日志信息
+            </summary>
+        </member>
+        <member name="P:SIE.Log.LogInfo.LogId">
+            <summary>
+            日志编码
+            </summary>
+        </member>
+        <member name="P:SIE.Log.LogInfo.LogNum">
+            <summary>
+            日志编号
+            </summary>
+        </member>
+        <member name="P:SIE.Log.LogInfo.LogTime">
+            <summary>
+            日志时间
+            </summary>
+        </member>
+        <member name="P:SIE.Log.LogInfo.Topic">
+            <summary>
+            主题(默认为日志Name)
+            </summary>
+        </member>
+        <member name="P:SIE.Log.LogInfo.Source">
+            <summary>
+            来源(默认为服务器IP)
+            </summary>
+        </member>
+        <member name="P:SIE.Log.LogInfo.ThreadName">
+            <summary>
+            线程Name
+            </summary>
+        </member>
+        <member name="P:SIE.Log.LogInfo.Env">
+            <summary>
+            环境信息(默认为空)
+            </summary>
+        </member>
+        <member name="P:SIE.Log.LogInfo.Contents">
+            <summary>
+            信息字典
+            </summary>
+        </member>
+        <member name="P:SIE.Log.LogService.LoggerSql">
+            <summary>
+            SQL日志
+            </summary>
+        </member>
+        <member name="P:SIE.Log.LogService.LoggerStack">
+            <summary>
+            堆栈日志
+            </summary>
+        </member>
+        <member name="P:SIE.Log.LogService.LoggerData">
+            <summary>
+            日志信息
+            </summary>
+        </member>
+        <member name="P:SIE.Log.LogService.LoggerAudit">
+            <summary>
+            操作日志
+            </summary>
+        </member>
+        <member name="P:SIE.Log.LogService.LoggerError">
+            <summary>
+            错误日志
+            </summary>
+        </member>
+        <member name="P:SIE.Log.LogService.LoggerDataportal">
+            <summary>
+            数据中心日志
+            </summary>
+        </member>
+        <member name="P:SIE.Log.LogService.LoggerRequest">
+            <summary>
+            请求日志
+            </summary>
+        </member>
+        <member name="P:SIE.Log.LogService.LoggerEntity">
+            <summary>
+            实体日志
+            </summary>
+        </member>
+        <member name="M:SIE.Log.LogService.Add(SIE.LogData.EntityLog)">
+            <summary>
+            添加实体日志
+            </summary>
+            <param name="log">实体日志</param>
+        </member>
+        <member name="M:SIE.Log.LogService.GetAuditItemList(SIE.LogData.AuditItemCriteria)">
+            <summary>
+            操作日志
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Log.LogService.GetEntityLogList(SIE.LogData.EntityLogCriteria)">
+            <summary>
+            获取实体日志列表
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Log.LogService.GetRequestLogList(SIE.LogData.DataPortalLogCriteria)">
+            <summary>
+            获取请求日志列表
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Log.LogService.GetLoggingDataList(SIE.LogData.LoggingDataCriteria)">
+            <summary>
+            系统日志
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Log.LogService.GetLogSqlList(SIE.LogData.LogSqlCriteria)">
+            <summary>
+            SQL日志
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Log.LogService.GetLogStackList(SIE.LogData.LogStackCriteria)">
+            <summary>
+            性能跟踪日志
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Log.LogThreadInfo">
+            <summary>
+            日志线程信息 - 用于增加线程ID
+            </summary>
+        </member>
+        <member name="P:SIE.Log.LogThreadInfo.Message">
+            <summary>
+            信息
+            </summary>
+        </member>
+        <member name="P:SIE.Log.LogThreadInfo.ThreadId">
+            <summary>
+            线程ID
+            </summary>
+        </member>
+        <member name="T:SIE.Log.Module">
+            <summary>
+            模块
+            </summary>
+        </member>
+        <member name="M:SIE.Log.Module.Initialize(SIE.IApp)">
+            <summary>
+            模块初始化
+            </summary>
+            <param name="app">应用程序</param>
+        </member>
+        <member name="F:SIE.Log.RequestLogListerner.Default">
+            <summary>
+            单例
+            </summary>
+        </member>
+        <member name="F:SIE.Log.RequestLogListerner._options">
+            <summary>
+            请求日志配置
+            </summary>
+        </member>
+        <member name="F:SIE.Log.RequestLogListerner.requestTraceElapsed">
+            <summary>
+            监听时间大于此时间，写入日志
+            </summary>
+        </member>
+        <member name="P:SIE.Log.RequestLogListerner.Options">
+            <summary>
+            请求日志配置
+            </summary>
+        </member>
+        <member name="F:SIE.Log.RequestLogListerner.queues">
+            <summary>
+            静态线程安全的队列
+            </summary>
+        </member>
+        <member name="M:SIE.Log.RequestLogListerner.Start">
+            <summary>
+            开启一个长线程进行调度消费实体日志
+            </summary>
+        </member>
+        <member name="M:SIE.Log.RequestLogListerner.PutLog">
+            <summary>
+            循环执行日志消费
+            </summary>
+        </member>
+        <member name="M:SIE.Log.RequestLogListerner.ConsumeQueue">
+            <summary>
+            消费队列里面的日志
+            </summary>
+        </member>
+        <member name="M:SIE.Log.RequestLogListerner.LogApi(SIE.Logging.RequestLog)">
+            <summary>
+            记录API日志
+            配置文件Log.RequestTraceElapsed定义时长时写入日志
+            </summary>
+            <param name="queue"></param>
+        </member>
+        <member name="M:SIE.Log.RequestLogListerner.LogOther(SIE.Logging.RequestLog)">
+            <summary>
+            记录其它日志
+            配置文件Log.RequestTraceElapsed定义时长时写入日志
+            </summary>
+            <param name="queue"></param>
+        </member>
+        <member name="T:SIE.Log.RequestLogOptions">
+            <summary>
+            请求日志配置
+            </summary>
+        </member>
+        <member name="P:SIE.Log.RequestLogOptions.Api">
+            <summary>
+            Api
+            </summary>
+        </member>
+        <member name="P:SIE.Log.RequestLogOptions.Other">
+            <summary>
+            其它
+            </summary>
+        </member>
+        <member name="T:SIE.Log.RequestLogStopwatch">
+            <summary>
+            请求日志
+            </summary>
+        </member>
+        <member name="F:SIE.Log.RequestLogStopwatch.stopwatch">
+            <summary>
+            计时器
+            </summary>
+        </member>
+        <member name="F:SIE.Log.RequestLogStopwatch._request">
+            <summary>
+            请求
+            </summary>
+        </member>
+        <member name="M:SIE.Log.RequestLogStopwatch.#ctor(SIE.Logging.RequestLog)">
+            <summary>
+            实例化
+            </summary>
+            <param name="request"></param>
+        </member>
+        <member name="M:SIE.Log.RequestLogStopwatch.EnableLog">
+            <summary>
+            是否启用日志
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Log.RequestLogStopwatch.Dispose">
+            <summary>
+            释放
+            </summary>
+        </member>
+    </members>
+</doc>

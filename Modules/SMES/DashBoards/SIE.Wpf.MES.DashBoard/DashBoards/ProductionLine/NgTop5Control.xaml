@@ -1,0 +1,64 @@
+﻿<sd:ComponentItem x:Class="SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.NgTop5Control"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine"
+             xmlns:sd="clr-namespace:SIE.Wpf.Common.Diagram;assembly=SIE.Wpf.Common"
+             xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/charts"
+             xmlns:uic="http://schemas.siestudio.com/winfx/xaml/core"
+             sd:DiagramDesigner.ToolBarTitle="{Binding [班次TOP5不良类型], Source={uic:L10N}}"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="400">
+    <!--<sd:ComponentItem.ToolbarItem>
+        <TextBlock TextWrapping="WrapWithOverflow" Text="{Binding [班次TOP5不良类型], Source={uic:L10N}}"></TextBlock>
+    </sd:ComponentItem.ToolbarItem>-->
+    <Grid Background="#333434">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Background="#666666" Name="title" >
+            <TextBlock Text="{Binding [班次TOP5不良类型], Source={uic:L10N}}" FontSize="20"  Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0"/>
+        </Border>
+
+        <dxc:ChartControl Grid.Row="1" Background="#333434" Name="ngPieChart" AnimationMode="OnLoad" BorderThickness="0" BorderBrush="#262A4D"
+                              ToolTipEnabled="False" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <dxc:ChartControl.Legend>
+                <dxc:Legend Background="{Binding ElementName=ngPieChart,Path=Background,Mode=OneWay}" 
+                            Foreground="WhiteSmoke" FontFamily="微软雅黑" FontSize="12"
+                            VerticalPosition="TopOutside" BorderThickness="0"/>
+            </dxc:ChartControl.Legend>
+            <dxc:ChartControl.Diagram>
+                <dxc:SimpleDiagram2D VerticalAlignment="Center" HorizontalAlignment="Center" Width="200">
+
+                    <dxc:SimpleDiagram2D.Series>
+                        <dxc:PieSeries2D  HoleRadiusPercent="0" LegendTextPattern="{}{A}"  LabelsVisibility="True">
+                            <dxc:PieSeries2D.PointAnimation>
+                                <dxc:Pie2DBurstAnimation PointOrder="Straight" />
+                            </dxc:PieSeries2D.PointAnimation>
+                            <dxc:PieSeries2D.Label>
+                                <dxc:SeriesLabel Visible="True" dxc:PieSeries.LabelPosition="Inside" FontSize="14" 
+
+                                                 TextPattern="{}{VP:p0}" >
+                                    <dxc:SeriesLabel.ElementTemplate>
+                                        <DataTemplate>
+                                            <Border Background="Transparent" Opacity="0.75" CornerRadius="2">
+                                                <StackPanel>
+                                                    <TextBlock Text="{Binding Path=Text}" Foreground="WhiteSmoke"/>
+                                                </StackPanel>
+                                            </Border>
+                                        </DataTemplate>
+                                    </dxc:SeriesLabel.ElementTemplate>
+                                </dxc:SeriesLabel>
+                            </dxc:PieSeries2D.Label>
+                        </dxc:PieSeries2D>
+                    </dxc:SimpleDiagram2D.Series>
+
+                </dxc:SimpleDiagram2D>
+            </dxc:ChartControl.Diagram>
+
+        </dxc:ChartControl>
+    </Grid>
+</sd:ComponentItem>

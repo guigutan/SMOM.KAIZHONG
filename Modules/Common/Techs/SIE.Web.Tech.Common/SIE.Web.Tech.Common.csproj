@@ -1,0 +1,86 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <CodeAnalysisRuleSet>SIE.Web.Tech.Common.ruleset</CodeAnalysisRuleSet>
+    <ApplicationIcon />
+    <Win32Resource />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.Tech.Common.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.Tech.Common.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="DrawTools\designerData.js" />
+    <None Remove="DrawTools\designerDecorater.js" />
+    <None Remove="DrawTools\designerNode.js" />
+    <None Remove="DrawTools\drawBase.js" />
+    <None Remove="DrawTools\drawTools.css" />
+    <None Remove="DrawTools\drawTools.js" />
+    <None Remove="DrawTools\drawViewControl.js" />
+    <None Remove="DrawTools\images\Assembly.svg" />
+    <None Remove="DrawTools\images\Default.svg" />
+    <None Remove="DrawTools\images\dot_bg.jpg" />
+    <None Remove="DrawTools\images\Fix.svg" />
+    <None Remove="DrawTools\images\Fqc.svg" />
+    <None Remove="DrawTools\images\Packing.svg" />
+    <None Remove="DrawTools\images\Pqc.svg" />
+    <None Remove="DrawTools\images\Rework.svg" />
+    <None Remove="DrawTools\jsplumb.js" />
+    <None Remove="DrawTools\xml2json.js" />
+    <None Remove="Routings\DesignCanvas.js" />
+    <None Remove="Routings\RoutingProcessChildExtension.js" />
+    <None Remove="Routings\RoutingProcessPropertyInfo.js" />
+    <None Remove="wwwroot\images\drawtools\Check.svg" />
+    <None Remove="wwwroot\images\drawtools\Repeat.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\..\..\.sonarlint\sie.smom\CSharp\SonarLint.xml" Link="SonarLint.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="wwwroot\images\drawtools\Repeat.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DrawTools\designerData.js" />
+    <EmbeddedResource Include="DrawTools\designerDecorater.js" />
+    <EmbeddedResource Include="DrawTools\designerNode.js" />
+    <EmbeddedResource Include="DrawTools\drawBase.js" />
+    <EmbeddedResource Include="DrawTools\drawTools.css" />
+    <EmbeddedResource Include="DrawTools\drawTools.js" />
+    <EmbeddedResource Include="DrawTools\drawViewControl.js" />
+    <EmbeddedResource Include="DrawTools\images\Assembly.svg" />
+    <EmbeddedResource Include="DrawTools\images\Default.svg" />
+    <EmbeddedResource Include="DrawTools\images\dot_bg.jpg" />
+    <EmbeddedResource Include="DrawTools\images\Fix.svg" />
+    <EmbeddedResource Include="DrawTools\images\Fqc.svg" />
+    <EmbeddedResource Include="DrawTools\images\Packing.svg" />
+    <EmbeddedResource Include="DrawTools\images\Pqc.svg" />
+    <EmbeddedResource Include="DrawTools\images\Rework.svg" />
+    <EmbeddedResource Include="DrawTools\jsplumb.js" />
+    <EmbeddedResource Include="DrawTools\xml2json.js" />
+    <EmbeddedResource Include="Routings\DesignCanvas.js" />
+    <EmbeddedResource Include="Routings\RoutingProcessChildExtension.js" />
+    <EmbeddedResource Include="Routings\RoutingProcessPropertyInfo.js" />
+    <Content Include="wwwroot\images\drawtools\Check.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="SIE.Web.Common" Version="10.0.5" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\SIE.Core\SIE.Core.csproj" />
+  </ItemGroup>
+</Project>

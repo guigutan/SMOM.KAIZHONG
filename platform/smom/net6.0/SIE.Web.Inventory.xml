@@ -1,0 +1,2180 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Web.Inventory</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Web.Inventory.EntityPropertyViewMetaExtension">
+            <summary>
+            实体属性视图元数据扩展
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.EntityPropertyViewMetaExtension.UseItemExtPropertyFieldEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.Inventory.Common.ItemExtPropertyFieldConfig})">
+            <summary>
+            使用物料扩展属性编辑器（必须指定FunctionType功能类型）
+            </summary>
+            <typeparam name="T">实体</typeparam>
+            <param name="meta">实体属性视图元数据 <see cref="T:SIE.MetaModel.View.WebEntityPropertyViewMeta"/></param>
+            <param name="action">委托</param>
+            <returns>实体属性视图元数据</returns>
+             <example> View.Property(p => p.Text).UseTextButtonFieldEditor();</example>
+        </member>
+        <member name="M:SIE.Web.Inventory.EntityPropertyViewMetaExtension.UseDCInputEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.Inventory.Common.DCInputFieldConfig})">
+            <summary>
+            D/C输入编辑器
+            </summary>
+            <typeparam name="T">实体</typeparam>
+            <param name="meta">视图元数据</param>
+            <param name="action">委托</param>
+            <returns>实体属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Web.Inventory.EntityPropertyViewMetaExtension.UseMultiFilterEnumEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.Inventory.Common.MultiFilterEnumBoxConfig})">
+            <summary>
+            使用多分类过滤枚举编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>Web视图元数据</returns>
+        </member>
+        <member name="M:SIE.Web.Inventory.EntityPropertyViewMetaExtension.UseSelectEnumEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.Inventory.Common.SelectEnumConfig})">
+            <summary>
+            获取单据大类枚举编辑器
+            </summary>
+            <typeparam name="T">T</typeparam>
+            <param name="meta">meta</param>
+            <param name="action">action</param>
+            <returns>单据大类</returns>
+        </member>
+        <member name="M:SIE.Web.Inventory.EntityPropertyViewMetaExtension.UseSelectStorerCodeEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig})">
+            <summary>
+            选择货主编辑器
+            </summary>
+            <typeparam name="T">T</typeparam>
+            <param name="meta">meta</param>
+            <param name="action">action</param>
+            <returns>货主编辑器</returns>
+        </member>
+        <member name="M:SIE.Web.Inventory.EntityPropertyViewMetaExtension.UseBillPrintEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig})">
+            <summary>
+            使用打印单据规则编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Common.DataQuery.PileConfig">
+            <summary>
+            垛表配置信息
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Inventory.Common.DataQuery.PileConfig.PrintTemplate">
+            <summary>
+            垛表打印模板
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Inventory.Common.DataQuery.PileConfig.ConfigValue">
+            <summary>
+            垛表编码配置信息
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Common.DataQuery.PileDataQuery">
+            <summary>
+            垛表数据查询器
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Common.DataQuery.PileDataQuery.GetPileConfig">
+            <summary>
+            获取垛表编码配置
+            </summary>
+            <returns>object</returns>
+        </member>
+        <member name="M:SIE.Web.Inventory.Common.DataQuery.PileDataQuery.GetPilePrintTemplate">
+            <summary>
+            获取垛表打印模板
+            </summary>
+            <returns>垛表打印模板</returns>
+        </member>
+        <member name="M:SIE.Web.Inventory.Common.DataQuery.PileDataQuery.BatchGeneratePileData(SIE.Inventory.Piles.BatchGeneratePileViewModel)">
+            <summary>
+            批量生成垛表数据
+            </summary>
+            <param name="pileViewModel">批量生成ViewModel</param>
+            <returns>垛表数据</returns>
+        </member>
+        <member name="M:SIE.Web.Inventory.Common.DataQuery.PileDataQuery.GenerateAndPrintPileData(SIE.Inventory.Piles.BatchGeneratePileViewModel)">
+            <summary>
+            批量生成垛表数据
+            </summary>
+            <param name="pileViewModel">批量生成ViewModel</param>
+            <returns>打印数据</returns>
+        </member>
+        <member name="M:SIE.Web.Inventory.Common.DataQuery.PileDataQuery.PrintPileData(System.Collections.Generic.List{System.Double},System.Double)">
+            <summary>
+            批量生成垛表数据
+            </summary>
+            <param name="ids">垛表ID集合</param>
+            <param name="templateId">打印模板ID</param>
+            <returns>打印数据</returns>
+        </member>
+        <member name="M:SIE.Web.Inventory.Common.DataQuery.PileDataQuery.PrintPiles(System.Double,SIE.Domain.EntityList{SIE.Inventory.Piles.Pile},SIE.Warehouses.PrintDataCommon)">
+            <summary>
+            打印垛表数据
+            </summary>
+            <param name="templateId">模板ID</param>
+            <param name="piles">垛表数据</param>
+            <param name="result">打印数据</param>
+            <exception cref="T:SIE.Domain.Validation.ValidationException">异常信息</exception>
+        </member>
+        <member name="T:SIE.Web.Inventory.Common.DataQuery.TurnOverRuleChangeData">
+            <summary>
+            周转规则变更数据
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Inventory.Common.DataQuery.TurnOverRuleChangeData.SortField">
+            <summary>
+            排序字段
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Inventory.Common.DataQuery.TurnOverRuleChangeData.FieldType">
+            <summary>
+            数据类型
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Inventory.Common.DataQuery.TurnOverRuleChangeData.LowerLimit">
+            <summary>
+            下限
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Inventory.Common.DataQuery.TurnOverRuleChangeData.UpperLimit">
+            <summary>
+            上限
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Inventory.Common.DataQuery.TurnOverRuleChangeData.EqualValue">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Inventory.Common.DataQuery.TurnOverRuleChangeData.LowerLimitDay">
+            <summary>
+            下限天数
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Inventory.Common.DataQuery.TurnOverRuleChangeData.UpperLimitDay">
+            <summary>
+            上限天数
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Inventory.Common.DataQuery.TurnOverRuleChangeData.SortType">
+            <summary>
+            排序方式
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Common.DataQuery.TurnOverDataQuery">
+            <summary>
+            周转规则查询
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Common.DataQuery.TurnOverDataQuery.GetTurnOverRuleDetailData(System.String)">
+            <summary>
+            获取周转规则数据
+            </summary>
+            <param name="field">排序（数值）</param>
+            <returns>周转规则数据</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Common.DCInputFieldConfig">
+            <summary>
+            D/C输入编辑器属性配置
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Inventory.Common.DCInputFieldConfig.IsYearWeek">
+            <summary>
+            年周
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Inventory.Common.DCInputFieldConfig.IsWeekYear">
+            <summary>
+            周年
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Inventory.Common.DCInputFieldConfig.IsYearMonthDay">
+            <summary>
+            年月日
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Common.DCInputFieldConfig.ToJson(SIE.Web.Json.LiteJsonWriter)">
+            <summary>
+            数据转换成Json
+            </summary>
+            <param name="json">Json数据</param>
+        </member>
+        <member name="T:SIE.Web.Inventory.Common.DCInputViewModel">
+            <summary>
+            DC输入ViewModel
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Inventory.Common.DCInputViewModel.FormatProperty">
+            <summary>
+            格式
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Inventory.Common.DCInputViewModel.Format">
+            <summary>
+            格式
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Inventory.Common.DCInputViewModel.YearWeekProperty">
+            <summary>
+            年周
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Inventory.Common.DCInputViewModel.YearWeek">
+            <summary>
+            年周
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Inventory.Common.DCInputViewModel.WeekYearProperty">
+            <summary>
+            周年
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Inventory.Common.DCInputViewModel.WeekYear">
+            <summary>
+            周年
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Inventory.Common.DCInputViewModel.YearMonthDayProperty">
+            <summary>
+            年月日
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Inventory.Common.DCInputViewModel.YearMonthDay">
+            <summary>
+            年月日
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Inventory.Common.DCInputViewModel.InputProperty">
+            <summary>
+            输入
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Inventory.Common.DCInputViewModel.Input">
+            <summary>
+            输入
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Inventory.Common.DCInputViewModel.TransformProperty">
+            <summary>
+            转换
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Inventory.Common.DCInputViewModel.Transform">
+            <summary>
+            转换
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Common.DCInputViewModelViewConfig">
+            <summary>
+            配置ViewModel
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Common.DCInputViewModelViewConfig.ConfigDetailsView">
+            <summary>
+            明细视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Common.SelectEnumConfig">
+            <summary>
+            枚举筛选编辑器
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Inventory.Common.SelectEnumConfig.ValuesList">
+            <summary>
+            显示枚举值集合
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Common.SelectEnumConfig.InitStore">
+            <summary>
+            初始化数据
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Common.ItemExtPropertyFieldConfig">
+            <summary>
+            物料扩展属性栏位配置
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Inventory.Common.ItemExtPropertyFieldConfig.ItemIdField">
+            <summary>
+            设置当前实体物料Id或产品Id的属性名，默认是ItemId
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Inventory.Common.ItemExtPropertyFieldConfig.FunctionType">
+            <summary>
+            功能类型
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Inventory.Common.ItemExtPropertyFieldConfig.IsAllRequired">
+            <summary>
+            是否校验每个选项都必须有值
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Inventory.Common.ItemExtPropertyFieldConfig.DbField">
+            <summary>
+            保存到数据库的字段
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Inventory.Common.ItemExtPropertyFieldConfig.DataQuery">
+            <summary>
+            确认回调查询器
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Inventory.Common.ItemExtPropertyFieldConfig.DataQueryMethod">
+            <summary>
+            确认回调方法
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Common.ItemExtPropertyFieldConfig.ToJson(SIE.Web.Json.LiteJsonWriter)">
+            <summary>
+            转换Json数据
+            </summary>
+            <param name="json">Json数据</param>
+        </member>
+        <member name="T:SIE.Web.Inventory.Common.LotCriteriaViewConfig">
+            <summary>
+            批次信息查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Common.LotCriteriaViewConfig.ConfigView">
+            <summary>
+            配置扩展明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Common.LotViewConfig">
+            <summary>
+            批次 视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Common.LotViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Common.LotViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Common.LotViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Common.MultiFilterEnumBoxConfig">
+            <summary>
+            多分类过滤枚举配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Inventory.Common.MultiFilterEnumBoxConfig.EditorName">
+            <summary>
+            编辑器名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Inventory.Common.MultiFilterEnumBoxConfig.Filters">
+            <summary>
+            分类过滤条件
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Common.MultiFilterEnumBoxConfig.InitStore">
+            <summary>
+            初始化数据源
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Menus.InventoryMenuInit">
+            <summary>
+            菜单初始化
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Menus.InventoryMenuInit.GetMenuDtos">
+            <summary>
+            获取菜单列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Module">
+            <summary>
+            UIModule
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化
+            </summary>
+            <param name="app">程序</param>
+        </member>
+        <member name="M:SIE.Web.Inventory.Module.App_ModuleOperations(System.Object,System.EventArgs)">
+            <summary>
+            配置菜单
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="T:SIE.Web.Inventory.Onhands.LocationOnhandCriteriaViewConfig">
+            <summary>
+            库位库存查询 视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Onhands.LocationOnhandCriteriaViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Onhands.LocationOnhandViewConfig">
+            <summary>
+            库位库存视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Onhands.LocationOnhandViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Onhands.LocationOnhandViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Onhands.LocationOnhandViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Onhands.LotLpnOnhandCriteriaViewConfig">
+            <summary>
+            库位库存查询 视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Onhands.LotLpnOnhandCriteriaViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Onhands.LotLpnOnhandViewConfig">
+            <summary>
+            批次和LPN库存视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Onhands.LotLpnOnhandViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Onhands.LotLpnOnhandViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Onhands.LotLpnOnhandViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Onhands.LotOnhandCriteriaViewConfig">
+            <summary>
+            库位库存查询 视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Onhands.LotOnhandCriteriaViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Onhands.LotOnhandViewConfig">
+            <summary>
+            批次库存视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Onhands.LotOnhandViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Onhands.LotOnhandViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Onhands.LotOnhandViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Onhands.SelectOnhandCritreiaViewConfig">
+            <summary>
+            选择库存查询实体视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Onhands.SelectOnhandCritreiaViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Piles.BatchGeneratePileViewModelViewConfig">
+            <summary>
+            批量生成ViewModel视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Piles.BatchGeneratePileViewModelViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Piles.BatchGeneratePileViewModelViewConfig.ConfigDetailsView">
+            <summary>
+            表单视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Piles.Commands.BatchGeneratePileCommand">
+            <summary>
+            批量生成命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Piles.Commands.BatchGeneratePileCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Piles.Commands.PilePrintCommand">
+            <summary>
+            垛表打印
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Piles.Commands.PilePrintCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Piles.PileDetailViewModelViewConfig">
+            <summary>
+            垛物料明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Piles.PileDetailViewModelViewConfig.ConfigListView">
+            <summary>
+            列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Piles.PrintPileViewModelViewConfig">
+            <summary>
+            垛表打印ViewModel视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Piles.PrintPileViewModelViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Piles.PrintPileViewModelViewConfig.ConfigDetailsView">
+            <summary>
+            表单视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Pile.PileCriteriaViewConfig">
+            <summary>
+            垛表查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Pile.PileCriteriaViewConfig.ConfigView">
+            <summary>
+            默认视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Strategy.AssignRuleCriteriaViewConfig">
+            <summary>
+            分配规则查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.AssignRuleCriteriaViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Strategy.AssignRuleDetailViewConfig">
+            <summary>
+            分配规则明细视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.AssignRuleDetailViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Strategy.AssignRuleViewConfig">
+            <summary>
+            分配规则 视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.AssignRuleViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.AssignRuleViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.AssignRuleViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Strategy.Commands.AddAssignRuleCommand">
+            <summary>
+            添加命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.Commands.AddAssignRuleCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Strategy.Commands.EditAssignRuleCommand">
+            <summary>
+            修改命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.Commands.EditAssignRuleCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Strategy.Commands.DeleteAssignRuleCommand">
+            <summary>
+            删除命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Strategy.Commands.DisableAssignRuleCommand">
+            <summary>
+            禁用命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Strategy.Commands.InitAssignRuleCommand">
+            <summary>
+            初始化
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.Commands.InitAssignRuleCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Strategy.Commands.SetIsDefaultAssignRuleCommand">
+            <summary>
+            设置默认命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.Commands.SetIsDefaultAssignRuleCommand.Excute(System.Double[],System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Strategy.Commands.SaveAssignRuleCommand">
+            <summary>
+            保存命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.Commands.SaveAssignRuleCommand.OnSaving(SIE.Domain.EntityList)">
+            <summary>
+            保存前事件
+            </summary>
+            <param name="data">实体列表</param>
+        </member>
+        <member name="T:SIE.Web.Inventory.Strategy.Commands.AddAssignRuleDetailCommand">
+            <summary>
+            添加命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.Commands.AddAssignRuleDetailCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Strategy.Commands.EditAssignRuleDetailCommand">
+            <summary>
+            修改命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.Commands.EditAssignRuleDetailCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Strategy.Commands.DeleteAssignRuleDetailCommand">
+            <summary>
+            删除命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Strategy.Commands.AddOnShelvesRuleCommand">
+            <summary>
+            添加命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.Commands.AddOnShelvesRuleCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Strategy.Commands.DeleteOnShelvesRuleCommand">
+            <summary>
+            删除命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.Commands.DeleteOnShelvesRuleCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Strategy.Commands.SetIsDefaultOnShelvesRuleCommand">
+            <summary>
+            设置默认命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.Commands.SetIsDefaultOnShelvesRuleCommand.Excute(System.Double[],System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Strategy.Commands.AddOnShelvesRuleDetailCommand">
+            <summary>
+            添加命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.Commands.AddOnShelvesRuleDetailCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Strategy.Commands.EditOnShelvesRuleDetailCommand">
+            <summary>
+            编辑命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.Commands.EditOnShelvesRuleDetailCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Strategy.Commands.ViewOnShelvesRuleDetailCommand">
+            <summary>
+            查看命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.Commands.ViewOnShelvesRuleDetailCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Strategy.Commands.ValidOnShelvesRuleDtlCommand">
+            <summary>
+            验证上架规则明细
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.Commands.ValidOnShelvesRuleDtlCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Strategy.Commands.AddTaskAllotRuleCommand">
+            <summary>
+            添加命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.Commands.AddTaskAllotRuleCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Strategy.Commands.DeleteTaskAllotRuleCommand">
+            <summary>
+            删除命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Strategy.Commands.SelectTaskAllotRuleEmployeeCommand">
+            <summary>
+            选择员工命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.Commands.SelectTaskAllotRuleEmployeeCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Strategy.Commands.DeleteTaskAllotRuleEmployeeCommand">
+            <summary>
+            删除命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.Commands.DeleteTaskAllotRuleEmployeeCommand.Excute(System.Double[],System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Strategy.Commands.AddTurnOverRuleCommand">
+            <summary>
+            添加命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.Commands.AddTurnOverRuleCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Strategy.Commands.EditTurnOverRuleCommand">
+            <summary>
+            修改命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.Commands.EditTurnOverRuleCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Strategy.Commands.DeleteTurnOverRuleCommand">
+            <summary>
+            删除命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Strategy.Commands.DisableTurnOverRuleCommand">
+            <summary>
+            修改命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Strategy.Commands.InitTurnOverRuleCommand">
+            <summary>
+            初始化
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.Commands.InitTurnOverRuleCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Strategy.Commands.SetIsDefaultTurnOverRuleCommand">
+            <summary>
+            设置默认命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.Commands.SetIsDefaultTurnOverRuleCommand.Excute(System.Double[],System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Strategy.Commands.AddTurnOverRuleDetailCommand">
+            <summary>
+            添加命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.Commands.AddTurnOverRuleDetailCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Strategy.Commands.ValidTurnOverRuleDetailCommand">
+            <summary>
+            验证周转规则
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.Commands.ValidTurnOverRuleDetailCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Strategy.Commands.EditTurnOverRuleDetailCommand">
+            <summary>
+            修改命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.Commands.EditTurnOverRuleDetailCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Strategy.Commands.DeleteTurnOverRuleDetailCommand">
+            <summary>
+            删除命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Strategy.OnShelvesRuleCriteriaViewConfig">
+            <summary>
+            上架规则
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.OnShelvesRuleCriteriaViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Strategy.OnShelvesRuleDetailViewConfig">
+            <summary>
+            上架规则明细视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Inventory.Strategy.OnShelvesRuleDetailViewConfig.OnShelvesRuleReadOnlyView">
+            <summary>
+             扩展查看视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.OnShelvesRuleDetailViewConfig.OnShelvesRuleReadOnly">
+            <summary>
+            扩展查看视图
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Inventory.Strategy.OnShelvesRuleDetailViewConfig.SourceLimitationReadOnlyView">
+            <summary>
+            来源限制
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.OnShelvesRuleDetailViewConfig.SourceLimitationReadOnly">
+            <summary>
+            查看视图
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Inventory.Strategy.OnShelvesRuleDetailViewConfig.StayBatchLimitationReadOnlyView">
+            <summary>
+            待上架批次属性限制
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Inventory.Strategy.OnShelvesRuleDetailViewConfig.InventoryLimitationReadOnlyView">
+            <summary>
+            目标库位库存限制
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Inventory.Strategy.OnShelvesRuleDetailViewConfig.InventoryBathLimitationReadOnlyView">
+            <summary>
+            目标库位库存批次属性限制
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Inventory.Strategy.OnShelvesRuleDetailViewConfig.InventorySpaceLimitationReadOnlyView">
+            <summary>
+            目标库位空间限制
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Inventory.Strategy.OnShelvesRuleDetailViewConfig.InventoryOperationLimitationReadOnlyView">
+            <summary>
+            目标库位操作限制
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Inventory.Strategy.OnShelvesRuleDetailViewConfig.InventoryStorageLimitationReadOnlyView">
+            <summary>
+            目标库位存储限制
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Inventory.Strategy.OnShelvesRuleDetailViewConfig.SourceLimitationDetailView">
+            <summary>
+            来源限制
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Inventory.Strategy.OnShelvesRuleDetailViewConfig.StayBatchLimitationDetailView">
+            <summary>
+            待上架批次属性限制
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Inventory.Strategy.OnShelvesRuleDetailViewConfig.InventoryLimitationDetailView">
+            <summary>
+            目标库位库存限制
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Inventory.Strategy.OnShelvesRuleDetailViewConfig.InventoryBathLimitationDetailView">
+            <summary>
+            目标库位库存批次属性限制
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Inventory.Strategy.OnShelvesRuleDetailViewConfig.InventorySpaceLimitationDetailView">
+            <summary>
+            目标库位空间限制
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Inventory.Strategy.OnShelvesRuleDetailViewConfig.InventoryOperationLimitationDetailView">
+            <summary>
+            目标库位操作限制
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Inventory.Strategy.OnShelvesRuleDetailViewConfig.InventoryStorageLimitationDetailView">
+            <summary>
+            目标库位存储限制
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.OnShelvesRuleDetailViewConfig.BeforeCreate">
+            <summary>
+            子表生成前操作
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.OnShelvesRuleDetailViewConfig.getData(SIE.ChildDataArgs)">
+            <summary>
+            子表获取数据
+            </summary>
+            <param name="c"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.OnShelvesRuleDetailViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.OnShelvesRuleDetailViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.OnShelvesRuleDetailViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Strategy.OnShelvesRuleViewConfig">
+            <summary>
+            上架规则视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.OnShelvesRuleViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.OnShelvesRuleViewConfig.ConfigSelectionView">
+            <summary>
+            配置下拉视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Strategy.TaskAllotRuleCriteriaViewConfig">
+            <summary>
+            任务分配规则查询实体视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.TaskAllotRuleCriteriaViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Strategy.TaskAllotRuleEmployeeViewConfig">
+            <summary>
+            任务分配规则员工视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.TaskAllotRuleEmployeeViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Strategy.TaskAllotRuleViewConfig">
+            <summary>
+            任务分配规则视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.TaskAllotRuleViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Strategy.TurnOverDefinitionViewConfig">
+            <summary>
+            周转定义视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.TurnOverDefinitionViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.TurnOverDefinitionViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.TurnOverDefinitionViewConfig.CheckConfigView">
+            <summary>
+            扩展查看视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Strategy.TurnOverRuleDetailViewConfig">
+            <summary>
+            周转规则明细视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Inventory.Strategy.TurnOverRuleDetailViewConfig.TurnOverRuleDetailGroup">
+            <summary>
+             扩展查看视图
+            </summary>       
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.TurnOverRuleDetailViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.TurnOverRuleDetailViewConfig.TurnOverRuleDetailEditView">
+            <summary>
+            编辑视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.TurnOverRuleDetailViewConfig.TurnOverRuleReadOnlyView">
+            <summary>
+            只读视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.TurnOverRuleDetailViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="F:SIE.Web.Inventory.Strategy.TurnOverRuleDetailViewModelWebViewConfig.NUMBERCANEDIT">
+            <summary>
+            字段类型不等于数值不可编辑
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Inventory.Strategy.TurnOverRuleDetailViewModelWebViewConfig.DATECANEDIT">
+            <summary>
+            字段类型不等于日期不可编辑
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Inventory.Strategy.TurnOverRuleDetailViewModelWebViewConfig.TEXTCANEDIT">
+            <summary>
+            字段类型不等于文本不可编辑
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Inventory.Strategy.TurnOverRuleDetailViewModelWebViewConfig.LOTORPRUCTLOTCANEDIT">
+            <summary>
+            排序字段为批次号和生产批次才可编辑
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Strategy.TurnOverRuleViewConfig">
+            <summary>
+            周转规则 视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.TurnOverRuleViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.TurnOverRuleViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Strategy.TurnOverRuleViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Task.ActualOperatorViewConfig">
+            <summary>
+            实际操作人视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Task.ActualOperatorViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Task.ActualOperatorViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Task.ActualOperatorViewConfig.ConfigSelectionView">
+            <summary>
+            配置下拉视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Task.ActualOperatorViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Task.Commands.AddOperatorCommand">
+            <summary>
+            添加命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Task.Commands.AddOperatorCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Task.Commands.EditOperatorCommand">
+            <summary>
+            修改命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Task.Commands.EditOperatorCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Task.Commands.DeleteOperatorCommand">
+            <summary>
+            修改命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Task.Commands.DeleteOperatorCommand.Excute(System.Double[],System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Task.Commands.EditTaskManagementCommand">
+            <summary>
+            修改命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Task.Commands.EditTaskManagementCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Task.Commands.SaveTaskManagementCommand">
+            <summary>
+            保存命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Task.Commands.SaveTaskManagementCommand.OnSaving(SIE.Domain.EntityList)">
+            <summary>
+            保存前事件
+            </summary>
+            <param name="data">实体列表</param>
+        </member>
+        <member name="T:SIE.Web.Inventory.Task.Commands.ReleaseTaskManagementCommand">
+            <summary>
+            释放命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Task.Commands.ReleaseTaskManagementCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Task.Commands.FrozenTaskManagementCommand">
+            <summary>
+            冻结命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Task.Commands.FrozenTaskManagementCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Task.Commands.UrgentLevelCommand">
+            <summary>
+            加急命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Task.Commands.UrgentLevelCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Task.Commands.HighLevelCommand">
+            <summary>
+            设置高等级命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Task.Commands.HighLevelCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Task.Commands.MiddleLevelCommand">
+            <summary>
+            设置中等级命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Task.Commands.MiddleLevelCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Task.Commands.LowLevelCommand">
+            <summary>
+            设置低等级命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Task.Commands.LowLevelCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Task.Commands.ViewTaskManagementCommand">
+            <summary>
+            查看任务管理单
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Task.Commands.ViewTaskManagementCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Task.Commands.PrintTaskManagementCommand">
+            <summary>
+            打印单据
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Task.Commands.PrintTaskManagementCommand.Excute(SIE.Warehouses.PrintDatas,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">打印数据</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Task.Configs.TaskParameterConfigValueViewConfig">
+            <summary>
+            任务管理参数 视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Task.Configs.TaskParameterConfigValueViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Task.DataQueryer.TaskManagementDataQueryer">
+            <summary>
+            任务管理数据查询器
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Task.DataQueryer.TaskManagementDataQueryer.GetTaskManagementNumberRule(SIE.Core.Enums.OrderType)">
+            <summary>
+            获取配置的模板的值
+            </summary>
+            <returns>模板数据</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Task.DataQueryer.TaskManagementTempleteData">
+            <summary>
+            任务管理单配置模板
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Inventory.Task.DataQueryer.TaskManagementTempleteData.PrintBillRuleId">
+            <summary>
+            单据模板
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Inventory.Task.DataQueryer.TaskManagementTempleteData.PrintBillRuleName">
+            <summary>
+            单据模板
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Task.EmployeeDataQuery">
+            <summary>
+            员工数据查询
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Task.EmployeeDataQuery.GetEmployees">
+            <summary>
+            获取员工数据
+            </summary>
+            <returns>员工数据列表</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Task.OperatorViewConfig">
+            <summary>
+            任务操作人视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Task.OperatorViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Task.OperatorViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Task.OperatorViewConfig.ConfigSelectionView">
+            <summary>
+            配置下拉视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Task.TaskGroupViewConfig">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Task.TaskGroupViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Task.TaskGroupViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Task.TaskManagementCriteriaViewConfig">
+            <summary>
+            任务管理查询 视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Task.TaskManagementCriteriaViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Task.TaskManagementViewConfig">
+            <summary>
+            任务管理视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Inventory.Task.TaskManagementViewConfig.TaskManagementAttachView">
+            <summary>
+             扩展附加视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Task.TaskManagementViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Task.TaskManagementViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Task.TaskManagementViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Task.TaskManagementViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Task.TaskManagementViewConfig.AttachTaskManagementView">
+            <summary>
+            配置扩展附加视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Task.ViewModels.TaskManagementPrintViewModelViewConfig">
+            <summary>
+            发货记录打印 视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Task.ViewModels.TaskManagementPrintViewModelViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.TransactionProcessing.InvTransactionCriteriaViewConfig">
+            <summary>
+            库位库存查询 视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.TransactionProcessing.InvTransactionCriteriaViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.TransactionProcessing.InvTransactionViewConfig">
+            <summary>
+            库存交易视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.TransactionProcessing.InvTransactionViewConfig.ConfigView">
+            <summary>
+            子类重写此方法，并完成对 Meta 属性的配置。
+            注意：
+            * 为了给当前类的子类也运行同样的配置，这个方法可能会被调用多次。
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.TransactionProcessing.InvTransactionViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Transactions.Commands.LookupTransactionCommand">
+            <summary>
+            功能界面选择事务
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Transactions.Commands.LookupTransactionCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Transactions.Commands.DeleteFunTransactionCommand">
+            <summary>
+            修改命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Transactions.Commands.DeleteFunTransactionCommand.Excute(System.Double[],System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Transactions.Commands.InitFunctionCommand">
+            <summary>
+            功能初始化
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Transactions.Commands.InitFunctionCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Transactions.Commands.DisableFunctionIsQcCommand">
+            <summary>
+            禁用IQC报检
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Transactions.Commands.DisableFunctionIsQcCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Transactions.Commands.EnableFunctionIsQcCommand">
+            <summary>
+            启用IQC报检
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Transactions.Commands.EnableFunctionIsQcCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Transactions.Commands.DisableFunctionOqcCommand">
+            <summary>
+            禁用OQC报检
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Transactions.Commands.DisableFunctionOqcCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Transactions.Commands.EnableFunctionOqcCommand">
+            <summary>
+            启用OQC报检
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Transactions.Commands.EnableFunctionOqcCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Transactions.Commands.DisableFunctionAllowOutCommand">
+            <summary>
+            禁用允许超发
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Transactions.Commands.DisableFunctionAllowOutCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Transactions.Commands.EnableFunctionAllowOutCommand">
+            <summary>
+            启用允许超发
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Transactions.Commands.EnableFunctionAllowOutCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Transactions.Commands.DisableIsAutoDeliveryCommand">
+            <summary>
+            禁用拣货后即发货
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Transactions.Commands.DisableIsAutoDeliveryCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Transactions.Commands.EnableIsAutoDeliveryCommand">
+            <summary>
+            启用拣货后即发货
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Transactions.Commands.EnableIsAutoDeliveryCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Transactions.Commands.DisableIsCrossPickCommand">
+            <summary>
+            禁用越库后自动拣货
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Transactions.Commands.DisableIsCrossPickCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Transactions.Commands.EnableIsCrossPickCommand">
+            <summary>
+            启用越库后自动拣货
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Transactions.Commands.EnableIsCrossPickCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Transactions.Commands.EnableIsPackageCommand">
+            <summary>
+            启用按包装分配
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Transactions.Commands.EnableIsPackageCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Transactions.Commands.DisableIsPackageCommand">
+            <summary>
+            禁用按包装分配
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Transactions.Commands.DisableIsPackageCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Transactions.Commands.EnableIsReceiveNgCommand">
+            <summary>
+            启用收货到不合格
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Transactions.Commands.EnableIsReceiveNgCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Transactions.Commands.DisableIsReceiveNgCommand">
+            <summary>
+            禁用收货到不合格
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Transactions.Commands.DisableIsReceiveNgCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Transactions.Commands.DisableCollectByDeliveryCommand">
+            <summary>
+            禁用按送货明细收货
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Transactions.Commands.DisableCollectByDeliveryCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Transactions.Commands.EnableCollectByDeliveryCommand">
+            <summary>
+            启用按送货明细收货
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Transactions.Commands.EnableCollectByDeliveryCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Transactions.Commands.EnableIsPartDeliveryCommand">
+            <summary>
+            启用部分发货
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Transactions.Commands.EnableIsPartDeliveryCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Transactions.Commands.DisableIsPartDeliveryCommand">
+            <summary>
+            禁用部分发货
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Transactions.Commands.DisableIsPartDeliveryCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Transactions.Commands.FunctionEmployeeLookupCommand">
+            <summary>
+            大类与员工关系
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Transactions.Commands.FunctionEmployeeLookupCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Transactions.Commands.DeleteTransactionCommand">
+            <summary>
+            修改命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Transactions.Commands.DeleteTransactionCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Transactions.Commands.SetTransactionInternalUseCommand">
+            <summary>
+            启用/禁止内部使用
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Transactions.Commands.SetTransactionInternalUseCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Transactions.Commands.SetTransactionIsUploadCommand">
+            <summary>
+            启用/禁止整单上传
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Transactions.Commands.SetTransactionIsUploadCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Transactions.Commands.EditTransactionDetailCommand">
+            <summary>
+            修改事务
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Transactions.Commands.EditTransactionDetailCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Transactions.DataQueryer.FunctionDataQuery">
+            <summary>
+            查询
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Transactions.DataQueryer.FunctionDataQuery.SaveFunctionRuleId(System.Double,System.Double)">
+            <summary>
+            保存编码规则
+            </summary>
+            <param name="functionId">大类Id</param>
+            <param name="ruleId">编码规则Id</param>
+        </member>
+        <member name="M:SIE.Web.Inventory.Transactions.DataQueryer.FunctionDataQuery.SaveBillTemplateId(System.Double,System.Double)">
+            <summary>
+            保存模板
+            </summary>
+            <param name="functionId">大类Id</param>
+            <param name="tempId">模板Id</param>
+        </member>
+        <member name="M:SIE.Web.Inventory.Transactions.DataQueryer.FunctionDataQuery.GetInitFunctions(System.String,System.String)">
+            <summary>
+            获取初始化单据大类集合
+            </summary>
+            <param name="code">编码</param>
+            <param name="name">名称</param>
+            <returns>单据大类集合</returns>
+        </member>
+        <member name="M:SIE.Web.Inventory.Transactions.DataQueryer.FunctionDataQuery.GetTransaction(SIE.Core.Enums.OrderType)">
+            <summary>
+            获取默认单据小类
+            </summary>
+            <param name="orderType"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Inventory.Transactions.ErpFunctionFunctionViewConfig">
+            <summary>
+            MES功能对应ERP功能 视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Transactions.ErpFunctionFunctionViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Transactions.ErpFunctionFunctionViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Transactions.FcuntionCriteriaViewConfig">
+            <summary>
+            查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Transactions.FcuntionCriteriaViewConfig.ConfigView">
+            <summary>
+            默认视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Transactions.FunctionEmployeeViewConfig">
+            <summary>
+            仓库与员工关系视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Transactions.FunctionEmployeeViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Transactions.FunctionEmployeeViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Transactions.FunctionEmployeeViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Transactions.FunctionModelViewConfig">
+            <summary>
+            选择订单类型模型
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Transactions.FunctionModelViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Transactions.FunctionModelViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Transactions.FunctionModelViewConfig.ConfigQueryView">
+            <summary>
+            查询实体配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Transactions.FunctionTransactionViewConfig">
+            <summary>
+            功能对应事务
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Transactions.FunctionTransactionViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Transactions.FunctionTransactionViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Transactions.FunctionViewConfig">
+            <summary>
+            功能视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Transactions.FunctionViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Transactions.FunctionViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Transactions.FunctionViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Transactions.FunctionViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Transactions.FunctionViewConfig.ConfigInitView">
+            <summary>
+            初始化视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Transactions.TransactionViewConfig">
+            <summary>
+            单据小类
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Transactions.TransactionViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Transactions.TransactionViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Transactions.TransactionViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Inventory.Transactions.TransactionViewConfig.ConfigQueryView">
+            <summary>
+            培训查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Inventory.Transactions.ViewModels.FunctionModel">
+            <summary>
+            单据大类初始化
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Inventory.Transactions.ViewModels.FunctionModel.CodeProperty">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Inventory.Transactions.ViewModels.FunctionModel.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Inventory.Transactions.ViewModels.FunctionModel.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Inventory.Transactions.ViewModels.FunctionModel.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="T:SIE.WPF.Inventory.Piles.PileDetailViewConfig">
+            <summary>
+            垛明细视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.WPF.Inventory.Piles.PileDetailViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.WPF.Inventory.Piles.PileLogViewConfig">
+            <summary>
+            垛日志视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.WPF.Inventory.Piles.PileLogViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.WPF.Inventory.Piles.PileLogViewConfig.ConfigQueryView">
+            <summary>
+            查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.WPF.Inventory.Piles.PileViewConfig">
+            <summary>
+            垛表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.WPF.Inventory.Piles.PileViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.WPF.Inventory.Piles.PileViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+        <member name="M:SIE.WPF.Inventory.Piles.PileViewConfig.ConfigQueryView">
+            <summary>
+            查询视图
+            </summary>
+        </member>
+    </members>
+</doc>

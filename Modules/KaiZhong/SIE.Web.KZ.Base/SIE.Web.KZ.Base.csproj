@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Interfaces\Commands\InfNcDataLogGroupReUploadCommand.js" />
+    <None Remove="Interfaces\Commands\LogGroupSyncOtherFactoryCommand.js" />
+    <None Remove="Interfaces\Commands\ResyncDataCommand.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Interfaces\Commands\InfNcDataLogSOGroupReUploadCommand.js" />
+    <EmbeddedResource Include="Interfaces\Commands\InfNcDataLogGroupReUploadCommand.js" />
+    <EmbeddedResource Include="Interfaces\Commands\LogGroupSyncOtherFactoryCommand.js" />
+    <EmbeddedResource Include="Interfaces\Commands\ResyncDataCommand.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SIE.Web.Common" Version="10.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SIE.KZ.Base\SIE.KZ.Base.csproj" />
+    <ProjectReference Include="..\SIE.KZ.Group\SIE.KZ.Group.csproj" />
+  </ItemGroup>
+
+</Project>

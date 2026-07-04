@@ -1,0 +1,2344 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.WorkBenchCommon</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.WorkBenchCommon.DataHelper">
+            <summary>
+            日期类
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.DataHelper.GetFirstEndDayOfWeek(System.Int32,System.Int32)">
+            <summary>
+            根据一年中的第几周获取该周的开始日期与结束日期
+            </summary>
+            <param name="year">年份</param>
+            <param name="weekNumber">周数</param>
+            <returns>返回开始日期与结束日期</returns>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.ExceptionHelper">
+            <summary>
+            异常辅助类
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.ExceptionHelper.CatchRemoteException(System.Action)">
+            <summary>
+            捕获断网异常，不处理
+            </summary>
+            <param name="action">执行逻辑</param>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Module">
+            <summary>
+            当前工程所对应的模块类
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化
+            </summary>
+            <param name="app">应用程序对象</param>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.ModuleCategory">
+            <summary>
+            产品模块分类
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.ModuleCategory.QMS">
+            <summary>
+            品质类
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.ModuleCategory.MES">
+            <summary>
+            生产执行类
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.ModuleCategory.APS">
+            <summary>
+            计划类
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.ModuleCategory.WMS">
+            <summary>
+            仓库类
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.SwitchWorkShop.TargetWorkShop">
+            <summary>
+            生产经理工作台目标车间信息
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.SwitchWorkShop.TargetWorkShop.EmployeeIdProperty">
+            <summary>
+            员工Id
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.SwitchWorkShop.TargetWorkShop.EmployeeId">
+            <summary>
+            员工Id
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.SwitchWorkShop.TargetWorkShop.EmployeeProperty">
+            <summary>
+            员工
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.SwitchWorkShop.TargetWorkShop.Employee">
+            <summary>
+            员工
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.SwitchWorkShop.TargetWorkShop.WorkShopIdProperty">
+            <summary>
+            车间Id
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.SwitchWorkShop.TargetWorkShop.WorkShopId">
+            <summary>
+            车间Id
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.SwitchWorkShop.TargetWorkShop.WorkShopProperty">
+            <summary>
+            车间
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.SwitchWorkShop.TargetWorkShop.WorkShop">
+            <summary>
+            车间
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.SwitchWorkShop.TargetWorkShopEntityConfig">
+            <summary>
+            生产经理工作台目标车间信息实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.SwitchWorkShop.TargetWorkShopEntityConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.SwitchWorkShop.TargetWorkShopController">
+            <summary>
+            目标车间控制器
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.SwitchWorkShop.TargetWorkShopController.SaveTargetWorkShop(System.Double,System.Double)">
+            <summary>
+            保存目标车间
+            </summary>
+            <param name="employeeId">员工ID</param>
+            <param name="workShopId">车间ID</param>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.SwitchWorkShop.TargetWorkShopController.GetTargetWorkShop(System.Double)">
+            <summary>
+            获取目标车间
+            </summary>
+            <param name="employeeId">员工ID</param>
+            <returns>车间ID，不存在返回null</returns>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.WorkBenchCommonEntityRepository`1">
+            <summary>
+            指定仓库的数据提供者
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.WorkBenchCommonEntityDataProvider">
+            <summary>
+            COMMON数据提供者
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.WorkBenchCommonEntityDataProvider.ConnectionStringName">
+            <summary>
+            数据库连接字符串的名称
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.WorkBenchCommonEntityDataProvider.ConnectionStringSettingName">
+            <summary>
+            数据库连接字符串的名称
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.Base.ComponentBindViewModel">
+            <summary>
+            组件信息VIEWMODEL
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Base.ComponentBindViewModel.Panel">
+            <summary>
+            绑定面板
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Base.ComponentBindViewModel.ComponentCode">
+            <summary>
+            绑定组件
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Base.ComponentBindViewModel.RefreshInterval">
+            <summary>
+            刷新时间
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Base.ComponentBindViewModel.BindOutputparam">
+            <summary>
+            组件绑定参数集合 
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.Base.ComponentInfo">
+            <summary>
+            组件信息
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Base.ComponentInfo.CodeProperty">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Base.ComponentInfo.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Base.ComponentInfo.DescriptionProperty">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Base.ComponentInfo.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Base.ComponentInfo.ContentProperty">
+            <summary>
+            组件内容
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Base.ComponentInfo.Content">
+            <summary>
+            组件内容
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.Base.ComponentInfoConfig">
+            <summary>
+            组件信息 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.Base.ComponentInfoConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.Base.DisplayMode">
+            <summary>
+            工作台显视模式
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Base.DisplayMode.PopupWindow">
+            <summary>
+            弹出窗口
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Base.DisplayMode.TabScreen">
+            <summary>
+            卡片式显视
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Base.DisplayMode.Dialog">
+            <summary>
+            模态窗口
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.Base.ImportLayoutInfoHandle">
+            <summary>
+            布局管理导入
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Base.ImportLayoutInfoHandle.ColumnNameList">
+            <summary>
+            列名
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Base.ImportLayoutInfoHandle.dicLayoutInfo">
+            <summary>
+            编码-布局信息
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Base.ImportLayoutInfoHandle.ColumnValidList">
+            <summary>
+            列的标准验证 (列名 列对应验证 )
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.Base.ImportLayoutInfoHandle.CreaetColumnValid">
+            <summary>
+            创建列的验证
+            </summary>
+            <returns>返回当前对象</returns>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.Base.ImportLayoutInfoHandle.Dispose">
+            <summary>
+            释放数据
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.Base.ImportLayoutInfoHandle.VaildLayoutCode(System.Object,System.String@,System.Data.DataRow)">
+            <summary>
+            验证行号
+            </summary>
+            <param name="obj">行号</param>
+            <param name="messageTip">信息提示</param>
+            <param name="dr">当前行数据</param>
+            <returns>是否验证通过</returns>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.Base.ImportLayoutInfoHandle.ProcessBusinessDataHandle(System.Data.DataRow[])">
+            <summary>
+            业务数据处理
+            </summary>
+            <param name="drs">数据集合</param>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.Base.ImportLayoutInfoHandle.ColIndex(System.String)">
+            <summary>
+            获取指定列名的索引
+            </summary>
+            <param name="columnName">指定列名</param>
+            <returns>返回对应索引</returns>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.Base.ImportLayoutInfoHandle.AppendErrorMsg(System.Data.DataRow,System.String,System.String)">
+            <summary>
+            给保存错误的数据行记录错误数据信息
+            </summary>
+            <param name="row">行</param>
+            <param name="columnName">列名</param>
+            <param name="errorMsg">错误信息</param>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.Base.LayoutInfo">
+            <summary>
+            布局
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Base.LayoutInfo.CodeProperty">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Base.LayoutInfo.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Base.LayoutInfo.DescriptionProperty">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Base.LayoutInfo.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Base.LayoutInfo.ContentProperty">
+            <summary>
+            布局内容
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Base.LayoutInfo.Content">
+            <summary>
+            布局内容
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.Base.LayoutInfoConfig">
+            <summary>
+            布局 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.Base.LayoutInfoConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.Base.ParameterBindViewModel">
+            <summary>
+            组件参数绑定VIEWMODEL
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Base.ParameterBindViewModel.OutputParam">
+            <summary>
+            输出参数
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Base.ParameterBindViewModel.InputParam">
+            <summary>
+            输入参数
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.Base.PublishViewModel">
+            <summary>
+            发布弹出窗ViewModel
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Base.PublishViewModel.DisplayModeProperty">
+            <summary>
+            显视模式
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Base.PublishViewModel.DisplayMode">
+            <summary>
+            显视模式
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.Base.WorkbenchController">
+            <summary>
+            工作台控制器
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Base.WorkbenchController.ModuleKeyLabel">
+            <summary>
+            工作台定义
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.Base.WorkbenchController.GetWorkbenchByCode(System.String)">
+            <summary>
+            根据编码获取工作台
+            </summary>
+            <param name="code">工作台编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.Base.WorkbenchController.GetLayoutByCode(System.String)">
+            <summary>
+            根据布局编码获取布局实体
+            </summary>
+            <param name="code">布局编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.Base.WorkbenchController.GetLayoutList(System.String,SIE.PagingInfo)">
+            <summary>
+            获取
+            </summary>
+            <param name="queryKey">查询关键字</param>
+            <param name="pagingInfo">翻页对像</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.Base.WorkbenchController.InsertWorkbenchDefinition(SIE.WorkBenchCommon.Workbench.Base.WorkbenchViewModel)">
+            <summary>
+            添加工作台定义
+            </summary>
+            <param name="vmodel"></param>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.Base.WorkbenchController.AddUpdateWorkbenchDefinition(SIE.WorkBenchCommon.Workbench.Base.WorkbenchViewModel)">
+            <summary>
+            添加界面更新工作台定义
+            </summary>
+            <param name="vmodel"></param>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.Base.WorkbenchController.UpdateWorkbenchDefinition(SIE.WorkBenchCommon.Workbench.Base.WorkbenchViewModel)">
+            <summary>
+            更新工作台定义
+            </summary>
+            <param name="vmodel"></param>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.Base.WorkbenchController.GetComponentInfoList(System.Collections.Generic.List{System.String})">
+            <summary>
+            根据组件编码集合获取组件信息
+            </summary>
+            <param name="codes">组件编码集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.Base.WorkbenchController.GetComponentInfo(System.String)">
+            <summary>
+            获取组件
+            </summary>
+            <param name="code">编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.Base.WorkbenchController.PublishWorkbench(System.String)">
+            <summary>
+            工作台同步到模块定义
+            </summary>
+            <param name="workbenchCode">工作台编码</param>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.Base.WorkbenchController.UnPublishWorkbench(System.String)">
+            <summary>
+            取消发布
+            </summary>
+            <param name="workbenchCode">工作台编码</param>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.Base.WorkbenchController.ExitLayout(System.String)">
+            <summary>
+            布局是否存在
+            </summary>
+            <param name="code"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.Base.WorkbenchDefinition">
+            <summary>
+            工作台定义
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Base.WorkbenchDefinition.CodeProperty">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Base.WorkbenchDefinition.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Base.WorkbenchDefinition.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Base.WorkbenchDefinition.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Base.WorkbenchDefinition.DescriptionProperty">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Base.WorkbenchDefinition.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Base.WorkbenchDefinition.LayoutCodeProperty">
+            <summary>
+            布局编码
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Base.WorkbenchDefinition.LayoutCode">
+            <summary>
+            布局编码
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Base.WorkbenchDefinition.ComponentContentProperty">
+            <summary>
+            组件配置内容
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Base.WorkbenchDefinition.ComponentContent">
+            <summary>
+            组件配置内容
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.Base.WorkbenchDefinitionConfig">
+            <summary>
+            工作台定义 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.Base.WorkbenchDefinitionConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.Base.WorkbenchDefinitiontOnSubmitted">
+            <summary>
+            文档提交后事件
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.Base.WorkbenchDefinitiontOnSubmitted.Invoke(SIE.WorkBenchCommon.Workbench.Base.WorkbenchDefinition,SIE.Domain.EntitySubmittedEventArgs)">
+            <summary>
+            文档提交后事件
+            </summary>
+            <param name="entity"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.Base.WorkbenchViewModel">
+            <summary>
+            添加工作台ViewModel
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Base.WorkbenchViewModel.CodeProperty">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Base.WorkbenchViewModel.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Base.WorkbenchViewModel.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Base.WorkbenchViewModel.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Base.WorkbenchViewModel.DescriptionProperty">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Base.WorkbenchViewModel.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Base.WorkbenchViewModel.LayoutCodeProperty">
+            <summary>
+            布局
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Base.WorkbenchViewModel.LayoutCode">
+            <summary>
+            布局
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Base.WorkbenchViewModel.TokenProperty">
+            <summary>
+            Token
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Base.WorkbenchViewModel.Token">
+            <summary>
+            Token
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Base.WorkbenchViewModel.ComponentContentProperty">
+            <summary>
+            组件内容
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Base.WorkbenchViewModel.ComponentContent">
+            <summary>
+            组件内容
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Base.WorkbenchViewModel.IsNewDataProperty">
+            <summary>
+            是否新数据
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Base.WorkbenchViewModel.IsNewData">
+            <summary>
+            是否新数据
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Base.WorkbenchViewModel.ComponentScriptProperty">
+            <summary>
+            组件脚本
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Base.WorkbenchViewModel.ComponentScript">
+            <summary>
+            组件脚本
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.Chatting.ChatController">
+            <summary>
+            消息控制器
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.Chatting.ChatController.ReciveChat">
+            <summary>
+            获取消息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.Chatting.ChatController.HasNewChat">
+            <summary>
+            是否有新消息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.Chatting.ChatController.SendChat(System.String)">
+            <summary>
+            发送消息
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.Chatting.ChatRecord">
+            <summary>
+            聊天消息
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Chatting.ChatRecord.SendDateProperty">
+            <summary>
+            发送时间
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Chatting.ChatRecord.SendDate">
+            <summary>
+            发送时间
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Chatting.ChatRecord.ContentProperty">
+            <summary>
+            消息内容
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Chatting.ChatRecord.Content">
+            <summary>
+            消息内容
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Chatting.ChatRecord.ReciveDateProperty">
+            <summary>
+            接收时间
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Chatting.ChatRecord.ReciveDate">
+            <summary>
+            接收时间
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Chatting.ChatRecord.FromIdProperty">
+            <summary>
+            发送人Id
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Chatting.ChatRecord.FromId">
+            <summary>
+            发送人Id
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Chatting.ChatRecord.FromProperty">
+            <summary>
+            发送人
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Chatting.ChatRecord.From">
+            <summary>
+            发送人
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Chatting.ChatRecord.FromNameProperty">
+            <summary>
+            发送人
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Chatting.ChatRecord.FromName">
+            <summary>
+            发送人
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Chatting.ChatRecord.ToIdProperty">
+            <summary>
+            接收人
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Chatting.ChatRecord.ToId">
+            <summary>
+            接收人
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Chatting.ChatRecord.ToProperty">
+            <summary>
+            接收人
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Chatting.ChatRecord.To">
+            <summary>
+            接收人
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Chatting.ChatRecord.ToNameProperty">
+            <summary>
+            接收人
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Chatting.ChatRecord.ToName">
+            <summary>
+            接收人
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.Chatting.ChatRecordConfig">
+            <summary>
+            聊天消息 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.Chatting.ChatRecordConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.Concerns.ConcernsController">
+            <summary>
+            关注控制器
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.Concerns.ConcernsController.GetMyConcerns">
+            <summary>
+            我的关注
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.Concerns.ConcernsController.IsConcerns(System.String)">
+            <summary>
+            是否关注
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.Concerns.ConcernsController.CancelConcerns(System.String)">
+            <summary>
+            取消关注
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.Concerns.ConcernsController.Concerns(System.String)">
+            <summary>
+            关注
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.Concerns.ConcernsInfo">
+            <summary>
+            关注信息
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Concerns.ConcernsInfo.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Concerns.ConcernsInfo.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Concerns.ConcernsInfo.TypeProperty">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Concerns.ConcernsInfo.Type">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Concerns.ConcernsInfo.ArgumentsProperty">
+            <summary>
+            参数
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Concerns.ConcernsInfo.Arguments">
+            <summary>
+            参数
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.Concerns.ConcernsInfoConfig">
+            <summary>
+            关注信息 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.Concerns.ConcernsInfoConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.KPI.DateType">
+            <summary>
+            周期类型
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.DateType.YEAR">
+            <summary>
+            年
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.DateType.SEASON">
+            <summary>
+            季
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.DateType.MONTH">
+            <summary>
+            月
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.DateType.WEEK">
+            <summary>
+            周
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.KPI.KpiAnalysisData">
+            <summary>
+            绩效分析对象
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.KPI.KpiAnalysisData.Name">
+            <summary>
+            KPI
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.KPI.KpiAnalysisData.GoalFormat">
+            <summary>
+            目标
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.KPI.KpiAnalysisData.ActualFormat">
+            <summary>
+            实际达成
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.KPI.KpiAnalysisData.KpiGrade">
+            <summary>
+            预警标识
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.KPI.KpiController">
+            <summary>
+            绩效目标控制器
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.KPI.KpiController.GetKpiList(SIE.WorkBenchCommon.ModuleCategory)">
+            <summary>
+            
+            </summary>
+            <param name="category"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.KPI.KpiController.GetByName(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.KPI.KPIDimension">
+            <summary>
+            KPI指标维度
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.KPIDimension.InvOrg">
+            <summary>
+            库存组织
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.KPIDimension.Enterprise">
+            <summary>
+            企业层级
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.KPI.KpiGrade">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.KpiGrade.Great">
+            <summary>
+            优秀
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.KpiGrade.Good">
+            <summary>
+            好
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.KpiGrade.Poor">
+            <summary>
+            差
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.KPI.KpiModel">
+            <summary>
+            绩效目标
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.KpiModel.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.KPI.KpiModel.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.KpiModel.GoalProperty">
+            <summary>
+            目标
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.KPI.KpiModel.Goal">
+            <summary>
+            目标
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.KpiModel.ActualProperty">
+            <summary>
+            实际达成
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.KPI.KpiModel.Actual">
+            <summary>
+            实际达成
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.KpiModel.FormatProperty">
+            <summary>
+            格式化
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.KPI.KpiModel.Format">
+            <summary>
+            格式化
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.KpiModel.KpiOperatorsProperty">
+            <summary>
+            绩效运算符
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.KPI.KpiModel.KpiOperators">
+            <summary>
+            绩效运算符
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.KpiModel.KpiGradeProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.KPI.KpiModel.KpiGrade">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.KpiModel.ModuleCategoryProperty">
+            <summary>
+            任务类型分类
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.KPI.KpiModel.ModuleCategory">
+            <summary>
+            任务类型分类
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.KPI.KpiModelConfig">
+            <summary>
+            绩效目标 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.KPI.KpiModelConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.KPI.KpiOperators">
+            <summary>
+            绩效运算符
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.KpiOperators.Equal">
+            <summary>
+            =
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.KpiOperators.Greater">
+            <summary>
+            >
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.KpiOperators.Less">
+            <summary>
+            小于
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.KpiOperators.GreaterOrEqual">
+            <summary>
+            ≥
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.KpiOperators.LessOrEqual">
+            <summary>
+            ≤
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.KPI.KPIValueType">
+            <summary>
+            KPI目标值格式
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.KPIValueType.Percent">
+            <summary>
+            百分比
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.KPIValueType.Number">
+            <summary>
+            数值
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.KPI.QuotaAttribute">
+            <summary>
+            指标特性
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.KPI.QuotaAttribute.Code">
+            <summary>
+            指标编码
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.KPI.QuotaAttribute.Name">
+            <summary>
+            指标名称
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.KPI.QuotaAttribute.#ctor">
+            <summary>
+            默认构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.KPI.QuotaAttribute.#ctor(System.String,System.String)">
+             <summary>
+             有参构造函数
+             </summary>
+            <param name="code">指标编码</param>
+            <param name="name">指标名称</param>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.KPI.QuotaConst">
+            <summary>
+            指标常量
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.KPI.QuotaConst.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.QuotaConst.ShipInspPassRate">
+            <summary>
+            成品检验批次合格率
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.QuotaConst.IqcInspPassRate">
+            <summary>
+            来料检验批次合格率
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.QuotaConst.FirstInspPassRate">
+            <summary>
+            首检合格率
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.QuotaConst.MonthsCloseRate">
+            <summary>
+            改善关闭率
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetCategoryHelper">
+            <summary>
+            kpi指标分类、指标名称
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetCategoryHelper.GetCodeDic">
+            <summary>
+            获取指标分类字典
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetCategoryHelper.GetNameDic(System.String)">
+            <summary>
+            获取指标名称字典
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetCategory">
+            <summary>
+            指标类
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetCategory.Code">
+            <summary>
+            指标分类
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetCategory.Name">
+            <summary>
+            指标名称
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetDetail">
+            <summary>
+            目标值设定
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetDetail.YearProperty">
+            <summary>
+            年
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetDetail.Year">
+            <summary>
+            年
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetDetail.MonthProperty">
+            <summary>
+            月
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetDetail.Month">
+            <summary>
+            月
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetDetail.WeekProperty">
+            <summary>
+            周
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetDetail.Week">
+            <summary>
+            周
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetDetail.TargetProperty">
+            <summary>
+            目标值
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetDetail.Target">
+            <summary>
+            目标值
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetDetail.ActualProperty">
+            <summary>
+            实际值
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetDetail.Actual">
+            <summary>
+            实际值
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetDetail.KpiOperatorsProperty">
+            <summary>
+            绩效运算符
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetDetail.KpiOperators">
+            <summary>
+            绩效运算符
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetDetail.DataTypeProperty">
+            <summary>
+            周期类型
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetDetail.DataType">
+            <summary>
+            周期类型
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetDetail.QuotaTargetSettingIdProperty">
+            <summary>
+            KPI目标设定Id
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetDetail.QuotaTargetSettingId">
+            <summary>
+            KPI目标设定Id
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetDetail.QuotaTargetSettingProperty">
+            <summary>
+            KPI目标设定
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetDetail.QuotaTargetSetting">
+            <summary>
+            KPI目标设定
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetDetail.StateProperty">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetDetail.State">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetDetail.QuotaTargetSettingValueTypeProperty">
+            <summary>
+            目标值格式
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetDetail.QuotaTargetSettingValueType">
+            <summary>
+            目标值格式
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetDetailConfig">
+            <summary>
+            目标值设定实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetDetailConfig.ConfigMeta">
+            <summary>
+            数据库映射
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSetting">
+            <summary>
+            KPI目标设定
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSetting.CodeProperty">
+            <summary>
+            指标分类
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSetting.Code">
+            <summary>
+            指标分类
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSetting.NameProperty">
+            <summary>
+            指标名称
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSetting.Name">
+            <summary>
+            指标名称
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSetting.DataTypeProperty">
+            <summary>
+            周期类型
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSetting.DataType">
+            <summary>
+            周期类型
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSetting.DimensionProperty">
+            <summary>
+            指标维度
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSetting.Dimension">
+            <summary>
+            指标维度
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSetting.EntTypeProperty">
+            <summary>
+            层级类型
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSetting.EntType">
+            <summary>
+            层级类型
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSetting.EnterpriseIdProperty">
+            <summary>
+            企业模型Id
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSetting.EnterpriseId">
+            <summary>
+            企业模型Id
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSetting.EnterpriseProperty">
+            <summary>
+            企业模型
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSetting.Enterprise">
+            <summary>
+            企业模型
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSetting.ValueTypeProperty">
+            <summary>
+            目标值格式
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSetting.ValueType">
+            <summary>
+            目标值格式
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSetting.QuotaTargetDetailListProperty">
+            <summary>
+            目标值设定列表
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSetting.QuotaTargetDetailList">
+            <summary>
+            目标值设定列表
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSetting.OnPropertyChanged(SIE.ManagedProperty.ManagedPropertyChangedEventArgs)">
+            <summary>
+            属性变更
+            </summary>
+            <param name="e">参数</param>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingConfig">
+            <summary>
+            KPI目标设定 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingConfig.ConfigMeta">
+            <summary>
+            数据库映射
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingController">
+            <summary>
+            指标目标定义控制器
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingController.GetCurrMonthKpiData(System.Collections.Generic.List{System.String})">
+            <summary>
+            获取当月的绩效分析
+            </summary>
+            <param name="codeList">指标分类编号，以逗号分割</param>
+            <returns>返回当月的绩效分析</returns>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingController.GetQuota(SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingCriteria)">
+            <summary>
+            查询方法
+            </summary>
+            <param name="criteria">查询视图</param>
+            <returns>返回查询数据</returns>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingController.GetQuotaMonthTargetSetting(System.String,System.String,System.Int32,System.Double)">
+            <summary>
+            根据指标分类、指标名称、月份获取目标值设定
+            </summary>
+            <param name="code">指标分类</param>
+            <param name="name">指标名称</param>
+            <param name="month">月份</param>
+            <param name="enterpriseId">企业模型Id</param>
+            <returns>返回目标值设定</returns>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingController.GetQuotaTargetDetailYear(System.Double,System.Nullable{System.Int32},System.Double)">
+            <summary>
+            获取时间周期为年的重复数据量
+            </summary>
+            <param name="id">指标目标定义明细ID</param>
+            <param name="year">指标目标定义明细年份</param>
+            <param name="quotatargetsettingid">指标目标定义ID</param>
+            <returns>返回符合条件的数据量</returns>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingController.GetQuotaTargetDetailMonth(System.Double,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Double)">
+            <summary>
+            获取时间周期为月的重复数据量
+            </summary>
+            <param name="id">指标目标定义明细ID</param>
+            <param name="year">指标目标定义明细年份</param>
+            <param name="month">指标目标定义明细月份</param>
+            <param name="quotatargetsettingid">指标目标定义ID</param>
+            <returns>返回符合条件的数据量</returns>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingController.GetQuotaTargetDetailWeek(System.Double,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Double)">
+            <summary>
+            获取时间周期为周的重复数据量
+            </summary>
+            <param name="id">指标目标定义明细ID</param>
+            <param name="year">指标目标定义明细年份</param>
+            <param name="week">指标目标定义明细周</param>
+            <param name="quotatargetsettingid">指标目标定义ID</param>
+            <returns>返回符合条件的数据量</returns>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingController.GetQuotaTargetSettingCodeDic">
+            <summary>
+            获取指标分类字典
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingController.GetQuotaTargetSettingNameDic(System.String)">
+            <summary>
+            获取指标名称字典
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingController.GetYearDic">
+            <summary>
+            获取年字典
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingController.GetMonthDic">
+            <summary>
+            获取月字典
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingController.GetWeekDic">
+            <summary>
+            获取周字典
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingController.Exist(SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSetting)">
+            <summary>
+            
+            </summary>
+            <param name="qt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingController.Save(SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSetting)">
+            <summary>
+            
+            </summary>
+            <param name="qt"></param>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingCriteria">
+            <summary>
+            指标目标定义查询实体
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingCriteria.CodeProperty">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingCriteria.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingCriteria.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingCriteria.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingCriteria.DataTypeProperty">
+            <summary>
+            周期类型
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingCriteria.DataType">
+            <summary>
+            周期类型
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingCriteria.DimensionProperty">
+            <summary>
+            指标维度
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingCriteria.Dimension">
+            <summary>
+            指标维度
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingCriteria.EntTypeProperty">
+            <summary>
+            层级类型
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingCriteria.EntType">
+            <summary>
+            层级类型
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingCriteria.EnterpriseIdProperty">
+            <summary>
+            企业模型Id
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingCriteria.EnterpriseId">
+            <summary>
+            企业模型Id
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingCriteria.EnterpriseProperty">
+            <summary>
+            企业模型
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingCriteria.Enterprise">
+            <summary>
+            企业模型
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingCriteria.Fetch">
+            <summary>
+            查询方法
+            </summary>
+            <returns>返回查询数据</returns>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingNotDuplicateRule">
+            <summary>
+            指标定义不能重复规则
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingNotDuplicateRule.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetSettingNotDuplicateRule.Validate(SIE.Domain.IEntity,SIE.MetaModel.RuleArgs)">
+            <summary>
+            指标周期不能重复验证规则
+            </summary>
+            <param name="entity">指标定义明细</param>
+            <param name="e">规则参数</param>     
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetDetailNotDuplicateRule">
+            <summary>
+            指标定义明细不能重复规则
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetDetailNotDuplicateRule.#ctor">
+            <summary>
+            构造方法
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetDetailNotDuplicateRule.Validate(SIE.Domain.IEntity,SIE.MetaModel.RuleArgs)">
+            <summary>
+            指标周期不能重复验证规则
+            </summary>
+            <param name="entity">指标定义明细</param>
+            <param name="e">规则参数</param>     
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetDetailNotNullRule">
+            <summary>
+            指标周期不能为空规则
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetDetailNotNullRule.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetDetailNotNullRule.Validate(SIE.Domain.IEntity,SIE.MetaModel.RuleArgs)">
+            <summary>
+            验证规则
+            </summary>
+            <param name="entity">指标目标设定明细</param>
+            <param name="e">规则参数</param>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetDetailBiggerThan0Rule">
+            <summary>
+            指标定义明细目标值必须大于0规则
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetDetailBiggerThan0Rule.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.KPI.QuotaTargetDetailBiggerThan0Rule.Validate(SIE.Domain.IEntity,SIE.MetaModel.RuleArgs)">
+            <summary>
+            验证规则
+            </summary>
+            <param name="entity">指标定义标明细</param>
+            <param name="e">规则参数</param>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetColor">
+            <summary>
+            目标颜色
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetColor.Red">
+            <summary>
+            红
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetColor.Yellow">
+            <summary>
+            黄
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetColor.Green">
+            <summary>
+            绿
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetOpetators">
+            <summary>
+            目标条件
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetOpetators.LessOrEqual">
+            <summary>
+            小于或等于
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetOpetators.Between">
+            <summary>
+            介于
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetOpetators.GreaterOrEqual">
+            <summary>
+            大于或等于
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetWarnDetail">
+            <summary>
+            达成率区间
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetWarnDetail.MinValueProperty">
+            <summary>
+            最小值
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetWarnDetail.MinValue">
+            <summary>
+            最小值
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetWarnDetail.MaxValueProperty">
+            <summary>
+            最大值
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetWarnDetail.MaxValue">
+            <summary>
+            最大值
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetWarnDetail.TargetOpetatorsProperty">
+            <summary>
+            目标条件
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetWarnDetail.TargetOpetators">
+            <summary>
+            目标条件
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetWarnDetail.TargetColorProperty">
+            <summary>
+            目标颜色
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetWarnDetail.TargetColor">
+            <summary>
+            目标颜色
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetWarnDetail.TargetWarnSettingIdProperty">
+            <summary>
+            预警设定Id
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetWarnDetail.TargetWarnSettingId">
+            <summary>
+            预警设定Id
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetWarnDetail.TargetWarnSettingProperty">
+            <summary>
+            预警设定
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetWarnDetail.TargetWarnSetting">
+            <summary>
+            预警设定
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetWarnDetailConfig">
+            <summary>
+            达成率区间 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetWarnDetailConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetSettingNotDuplicateRule">
+            <summary>
+            指标定义明细不能重复规则
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetSettingNotDuplicateRule.#ctor">
+            <summary>
+            不重复规则
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetWarnTargetOpetatorsNotRepeat">
+            <summary>
+            目标条件验证规则
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetWarnTargetOpetatorsNotRepeat.#ctor">
+            <summary>
+            目标条件验证规则 
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetWarnDetailValueLimitRulers">
+            <summary>
+            达成率目标值大于等于0，小于等于100
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetWarnDetailValueLimitRulers.#ctor">
+            <summary>
+            保存或添加时验证规则
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetWarnDetailValueLimitRulers.Validate(SIE.Domain.IEntity,SIE.MetaModel.RuleArgs)">
+            <summary>
+            达成率目标值大于等于0，小于等于100
+            </summary>
+            <param name="entity">达成率目标区间实体</param>
+            <param name="e">规则参数</param>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetWarnDetailMaxandMinValueRulers">
+            <summary>
+            达成率目标值区间不能重合
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetWarnDetailMaxandMinValueRulers.#ctor">
+            <summary>
+            保存或添加时验证规则
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetWarnDetailMaxandMinValueRulers.Validate(SIE.Domain.IEntity,SIE.MetaModel.RuleArgs)">
+            <summary>
+            达成率目标值区间不能重合
+            </summary>
+            <param name="entity">达成率目标区间实体</param>
+            <param name="e">规则参数</param>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.TargetWarn.QuotaTargetDetailNotNullRule">
+            <summary>
+            指标预警设定最小值、最大值不能为空规则
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.TargetWarn.QuotaTargetDetailNotNullRule.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.TargetWarn.QuotaTargetDetailNotNullRule.Validate(SIE.Domain.IEntity,SIE.MetaModel.RuleArgs)">
+            <summary>
+            验证规则
+            </summary>
+            <param name="entity">预警目标设定明细</param>
+            <param name="e">规则参数</param>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetWarnSetting">
+            <summary>
+            预警设定
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetWarnSetting.CodeProperty">
+            <summary>
+            指标分类
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetWarnSetting.Code">
+            <summary>
+            指标分类
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetWarnSetting.NameProperty">
+            <summary>
+            指标名称
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetWarnSetting.Name">
+            <summary>
+            指标名称
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetWarnSetting.TargetWarnDetailListProperty">
+            <summary>
+            达成率区间列表
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetWarnSetting.TargetWarnDetailList">
+            <summary>
+            达成率区间列表
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetWarnSettingConfig">
+            <summary>
+            预警设定 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetWarnSettingConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetWarnSettingController">
+            <summary>
+            预警设定控制器
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetWarnSettingController.GetTargetWarnSetting(SIE.WorkBenchCommon.Workbench.TargetWarn.TargetWarnSettingCriteria)">
+            <summary>
+            查询预警设定实体列表
+            </summary>
+            <param name="criteria">预警设定查询实体</param>
+            <returns>预警设定实体列表</returns>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetWarnSettingController.GetTargetWarnSetting(System.Collections.Generic.List{System.String})">
+            <summary>
+            根据名称获取目标达成率预警设定
+            </summary>
+            <param name="nameList">名称集合</param>
+            <returns>返回目标达成率预警设定</returns>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetWarnSettingController.GetTargetWarnDetail(System.String,System.String)">
+            <summary>
+            根据指标分类、指标名称获取预警的达成率区间
+            </summary>
+            <param name="code">指标分类</param>
+            <param name="name">指标名称</param>
+            <returns>返回达成率区间</returns>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetWarnSettingController.ExistColor(SIE.WorkBenchCommon.Workbench.TargetWarn.TargetWarnDetail)">
+            <summary>
+            
+            </summary>
+            <param name="qt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetWarnSettingController.Save(SIE.WorkBenchCommon.Workbench.TargetWarn.TargetWarnSetting)">
+            <summary>
+            保存
+            </summary>
+            <param name="setting"></param>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetWarnSettingCriteria">
+            <summary>
+            预警设定查询实体
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetWarnSettingCriteria.CodeProperty">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetWarnSettingCriteria.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetWarnSettingCriteria.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetWarnSettingCriteria.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.TargetWarn.TargetWarnSettingCriteria.Fetch">
+            <summary>
+            获取预警设定列表
+            </summary>
+            <returns>预警设定列表</returns>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.Tasks.TaskController">
+            <summary>
+            任务控制器
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.Tasks.TaskController.GetTaskType(System.String)">
+            <summary>
+            获取任务类型
+            </summary>
+            <param name="name">名称</param>
+            <returns>任务类型</returns>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.Tasks.TaskController.GetTaskTypes(System.String)">
+            <summary>
+            获取任务类型列表
+            </summary>
+            <param name="name">名称</param>
+            <returns>任务类型列表</returns>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.Tasks.TaskController.GetTaskTypes(SIE.WorkBenchCommon.ModuleCategory)">
+            <summary>
+            获取任务类型列表
+            </summary>
+            <param name="moduleCategory">模块分类</param>
+            <returns>任务类型列表</returns>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.Tasks.TaskController.GetMyLatestCreated">
+            <summary>
+            最近15天创建的任务
+            </summary>
+            <returns>最近15天我创建的任务</returns>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.Tasks.TaskController.GetMyPadding">
+            <summary>
+            待办任务
+            </summary>
+            <returns>最近15天我待办的任务</returns>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.Tasks.TaskController.GetMyDelayed">
+            <summary>
+            未完成任务
+            </summary>
+            <returns>最近15天我未完成的任务</returns>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.Tasks.TaskController.GetMyLatest">
+            <summary>
+            最近15日任务
+            </summary>
+            <returns>最近15日的任务</returns>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.Tasks.TaskController.GetCopyto">
+            <summary>
+            最近15天抄送给我的任务
+            </summary>
+            <returns>最近15天抄送给我的任务</returns>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.Tasks.TaskImportance">
+            <summary>
+            重要程序
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Tasks.TaskImportance.Normal">
+            <summary>
+            一般
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Tasks.TaskImportance.Medium">
+            <summary>
+            重要
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Tasks.TaskImportance.Senior">
+            <summary>
+            非常重要
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.Tasks.TaskInfo">
+            <summary>
+            任务信息
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Tasks.TaskInfo.TitleProperty">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Tasks.TaskInfo.Title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Tasks.TaskInfo.ContentProperty">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Tasks.TaskInfo.Content">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Tasks.TaskInfo.PlanBeginProperty">
+            <summary>
+            计划开始
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Tasks.TaskInfo.PlanBegin">
+            <summary>
+            计划开始
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Tasks.TaskInfo.PlanEndProperty">
+            <summary>
+            计划结束
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Tasks.TaskInfo.PlanEnd">
+            <summary>
+            计划结束
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Tasks.TaskInfo.ActualStartProperty">
+            <summary>
+            实际开始
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Tasks.TaskInfo.ActualStart">
+            <summary>
+            实际开始
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Tasks.TaskInfo.ActualEndProperty">
+            <summary>
+            实际结束
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Tasks.TaskInfo.ActualEnd">
+            <summary>
+            实际结束
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Tasks.TaskInfo.ParameterProperty">
+            <summary>
+            参数
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Tasks.TaskInfo.Parameter">
+            <summary>
+            参数
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Tasks.TaskInfo.ImportanceProperty">
+            <summary>
+            重要程度
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Tasks.TaskInfo.Importance">
+            <summary>
+            重要程度
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Tasks.TaskInfo.StatusProperty">
+            <summary>
+            任务状态
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Tasks.TaskInfo.Status">
+            <summary>
+            任务状态
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Tasks.TaskInfo.NotificationsProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Tasks.TaskInfo.Notifications">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Tasks.TaskInfo.TaskTypeIdProperty">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Tasks.TaskInfo.TaskTypeId">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Tasks.TaskInfo.TaskTypeProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Tasks.TaskInfo.TaskType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Tasks.TaskInfo.AssignToIdProperty">
+            <summary>
+            负责人
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Tasks.TaskInfo.AssignToId">
+            <summary>
+            负责人
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Tasks.TaskInfo.AssignToProperty">
+            <summary>
+            负责人
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Tasks.TaskInfo.AssignTo">
+            <summary>
+            负责人
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Tasks.TaskInfo.AssignToNameProperty">
+            <summary>
+            负责人
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Tasks.TaskInfo.AssignToName">
+            <summary>
+            负责人
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Tasks.TaskInfo.CopyToIdProperty">
+            <summary>
+            抄送人Id
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Tasks.TaskInfo.CopyToId">
+            <summary>
+            抄送人Id
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Tasks.TaskInfo.CopyToProperty">
+            <summary>
+            抄送人
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Tasks.TaskInfo.CopyTo">
+            <summary>
+            抄送人
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Tasks.TaskInfo.TypeIconProperty">
+            <summary>
+            类型图标
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Tasks.TaskInfo.TypeIcon">
+            <summary>
+            类型图标
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Tasks.TaskInfo.TypeNameProperty">
+            <summary>
+            类型名称
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Tasks.TaskInfo.TypeName">
+            <summary>
+            类型名称
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Tasks.TaskInfo.PicProperty">
+            <summary>
+            图片
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Tasks.TaskInfo.Pic">
+            <summary>
+            图片
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.Tasks.TaskInfoConfig">
+            <summary>
+            任务信息 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.Tasks.TaskInfoConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.Tasks.TaskNotifications">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Tasks.TaskNotifications.System">
+            <summary>
+            系统
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Tasks.TaskNotifications.EMail">
+            <summary>
+            邮件
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Tasks.TaskNotifications.WeChat">
+            <summary>
+            微信
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Tasks.TaskNotifications.SMS">
+            <summary>
+            短信
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.Tasks.TaskStatus">
+            <summary>
+            任务状态
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Tasks.TaskStatus.Padding">
+            <summary>
+            未完成
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Tasks.TaskStatus.Finish">
+            <summary>
+            完成
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Tasks.TaskStatus.Closed">
+            <summary>
+            关闭
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Tasks.TaskStatus.Cancel">
+            <summary>
+            取消
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.Tasks.TaskType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Tasks.TaskType.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Tasks.TaskType.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Tasks.TaskType.ProviderProperty">
+            <summary>
+            提供者
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Tasks.TaskType.Provider">
+            <summary>
+            提供者
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Tasks.TaskType.ModuleCategoryProperty">
+            <summary>
+            任务类型分类
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Tasks.TaskType.ModuleCategory">
+            <summary>
+            任务类型分类
+            </summary>
+        </member>
+        <member name="F:SIE.WorkBenchCommon.Workbench.Tasks.TaskType.IconProperty">
+            <summary>
+            图标
+            </summary>
+        </member>
+        <member name="P:SIE.WorkBenchCommon.Workbench.Tasks.TaskType.Icon">
+            <summary>
+            图标
+            </summary>
+        </member>
+        <member name="T:SIE.WorkBenchCommon.Workbench.Tasks.TaskTypeConfig">
+            <summary>
+             实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.WorkBenchCommon.Workbench.Tasks.TaskTypeConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+    </members>
+</doc>

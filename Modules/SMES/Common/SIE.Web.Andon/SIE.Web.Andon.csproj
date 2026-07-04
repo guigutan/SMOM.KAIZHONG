@@ -1,0 +1,195 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup Label="Globals">
+		<SccProjectName>SAK</SccProjectName>
+		<SccProvider>SAK</SccProvider>
+		<SccAuxPath>SAK</SccAuxPath>
+		<SccLocalPath>SAK</SccLocalPath>
+	</PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<OutputPath>..\..\..\..\platform\smom\</OutputPath>
+		<DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.Andon.xml</DocumentationFile>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<OutputPath>..\..\..\..\platform\smom\</OutputPath>
+		<DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.Andon.xml</DocumentationFile>
+	</PropertyGroup>
+	<ItemGroup>
+		<None Remove="AndonMonthReports\Commands\AndonMonthReportQuery.js" />
+		<None Remove="AndonMonthReports\Scripts\AndonMonthChart.js" />
+		<None Remove="AndonMonthReports\Scripts\AndonMonthChartController.js" />
+		<None Remove="AndonMonthReports\Scripts\AndonMonthReportLayout.js" />
+		<None Remove="AndonMonthReports\Scripts\AndonReportQuery.js" />
+		<None Remove="AndonStatisticsReports\Commands\AndonNumCommand.js" />
+		<None Remove="AndonStatisticsReports\Commands\AndonReportQuery.js" />
+		<None Remove="AndonStatisticsReports\Commands\AndonStopLineCommand.js" />
+		<None Remove="AndonStatisticsReports\Commands\AndonStopNumCommand.js" />
+		<None Remove="AndonStatisticsReports\Commands\AndonTimeCommand.js" />
+		<None Remove="AndonStatisticsReports\Commands\ExportCommand.js" />
+		<None Remove="AndonStatisticsReports\Commands\ExportCommandBase.js" />
+		<None Remove="AndonStatisticsReports\Commands\TriggerAccuracyCommand.js" />
+		<None Remove="AndonStatisticsReports\Scripts\AndonStatisticsBarChart.js" />
+		<None Remove="AndonStatisticsReports\Scripts\AndonStatisticsBarChartController.js" />
+		<None Remove="AndonStatisticsReports\Scripts\AndonStatisticsChart.js" />
+		<None Remove="AndonStatisticsReports\Scripts\AndonStatisticsPieChart.js" />
+		<None Remove="AndonStatisticsReports\Scripts\AndonStatisticsReportLayout.js" />
+		<None Remove="AndonStatisticsReports\Scripts\AndonStatisticstChartController.js" />
+		<None Remove="AndonStatisticsReports\Scripts\AndonStatisticstPieChartController.js" />
+		<None Remove="Andons\Behaviors\AndonBehavior.js" />
+		<None Remove="Andons\Behaviors\AndonManageBehavior.js" />
+		<None Remove="Andons\Behaviors\AndonManageListBehavior.js" />
+		<None Remove="Andons\Behaviors\AndonPushObjectBehavior.js" />
+		<None Remove="Andons\Behaviors\AndonTypePushObjectBehavior.js" />
+		<None Remove="Andons\Commands\AndonAddCommand.js" />
+		<None Remove="Andons\Commands\AndonEditCommand.js" />
+		<None Remove="Andons\Commands\AndonExpRemoveCommand.js" />
+		<None Remove="Andons\Commands\AndonGroupDetailSelectUserCommand.js" />
+		<None Remove="Andons\Commands\AndonGroupDLTemplateCommand.js" />
+		<None Remove="Andons\Commands\AndonGroupDtlDLTemplateCommand.js" />
+		<None Remove="Andons\Commands\AndonGroupDtlImportCommand.js" />
+		<None Remove="Andons\Commands\AndonGroupImportCommand.js" />
+		<None Remove="Andons\Commands\AndonManageAddCommand.js" />
+		<None Remove="Andons\Commands\AndonManageAddExpCommand.js" />
+		<None Remove="Andons\Commands\AndonManageAttachmentClearCommand.js" />
+		<None Remove="Andons\Commands\AndonManageAttachmentCommand.js" />
+		<None Remove="Andons\Commands\AndonManageCallMaterialAddCommand.js" />
+		<None Remove="Andons\Commands\AndonManageCancelCommand.js" />
+		<None Remove="Andons\Commands\AndonManageCheckCommand.js" />
+		<None Remove="Andons\Commands\AndonManageEventFormSaveCommand.js" />
+		<None Remove="Andons\Commands\AndonManageExportXlsAllCommand.js" />
+		<None Remove="Andons\Commands\AndonManageExportXlsCommand.js" />
+		<None Remove="Andons\Commands\AndonManageFormSaveCommand.js" />
+		<None Remove="Andons\Commands\AndonManageGoExpCommand.js" />
+		<None Remove="Andons\Commands\AndonManageHandleCommand.js" />
+		<None Remove="Andons\Commands\AndonManageHistoryCommand.js" />
+		<None Remove="Andons\Commands\AndonManageImageCommand.js" />
+		<None Remove="Andons\Commands\AndonManageLookUpCommand.js" />
+		<None Remove="Andons\Commands\AndonManageReassignmentCommand.js" />
+		<None Remove="Andons\Commands\AndonManageRejectCommand.js" />
+		<None Remove="Andons\Commands\AndonManageResponseCommand.js" />
+		<None Remove="Andons\Commands\AndonMessageAddCommand.js" />
+		<None Remove="Andons\Commands\AndonPushObjectAddCommand.js" />
+		<None Remove="Andons\Commands\AndonResponseDetailDLTemplateCommand.js" />
+		<None Remove="Andons\Commands\AndonResponseDtlImportCommand.js" />
+		<None Remove="Andons\Commands\AndonSaveCommand.js" />
+		<None Remove="Andons\Commands\AndonSeepDLTemplateCommand.js" />
+		<None Remove="Andons\Commands\AndonSeepImportCommand.js" />
+		<None Remove="Andons\Commands\AndonTypeDisableCommand.js" />
+		<None Remove="Andons\Commands\AndonTypeEnableCommand.js" />
+		<None Remove="Andons\Commands\AndonTypeMessageAddCommand.js" />
+		<None Remove="Andons\Commands\AndonTypePushObjectAddCommand.js" />
+		<None Remove="Andons\Commands\AndonTypeSaveCommand.js" />
+		<None Remove="Andons\Commands\AndonTypeTriggerPowerAddOrganizationCommand.js" />
+		<None Remove="Andons\Commands\AndonTypeTriggerPowerAddRoleCommand.js" />
+		<None Remove="Andons\Commands\AndonTypeTriggerPowerAddStaffCommand.js" />
+		<None Remove="Andons\Commands\AndonTypeTriggerPowerAddUserGroupCommand.js" />
+		<None Remove="Andons\Commands\AndonTypeTriggerPowerAddWorkGroupCommand.js" />
+		<None Remove="Andons\Commands\CopyAndonTypeMessageSendCommand.js" />
+		<None Remove="Andons\Commands\GeneralProbDtlDLTemplateCommand.js" />
+		<None Remove="Andons\Commands\GeneralProbDtlImportCommand.js" />
+		<None Remove="Andons\Commands\UserReplaceCommand.js" />
+		<None Remove="Andons\Scripts\AndonManageIdLinkComboPopup.js" />
+		<None Remove="Andons\Scripts\AndonManageIpSpMultiWhComboPopup.js" />
+		<None Remove="Andons\Scripts\AndonManageUploadAttachmentButtonEditor.js" />
+		<None Remove="Andons\Scripts\AndonManageUploadAttachmentEditor.js" />
+		<None Remove="Andons\Scripts\AndonManageUploadImageButtonEditor.js" />
+		<None Remove="Andons\Scripts\AndonManageUploadImageEditor.js" />
+		<None Remove="Andons\Scripts\AndonTypeMessageTemplateEditor.js" />
+		<None Remove="Andons\Scripts\AndonTypePushObjectEditor.js" />
+	</ItemGroup>
+	<ItemGroup>
+	  <EmbeddedResource Include="Andons\Behaviors\AndonManageListBehavior.js" />
+	</ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Include="AndonMonthReports\Commands\AndonMonthReportQuery.js" />
+		<EmbeddedResource Include="AndonMonthReports\Scripts\AndonMonthChart.js" />
+		<EmbeddedResource Include="AndonMonthReports\Scripts\AndonMonthReportLayout.js" />
+		<EmbeddedResource Include="AndonMonthReports\Scripts\AndonMonthChartController.js" />
+		<EmbeddedResource Include="AndonStatisticsReports\Commands\TriggerAccuracyCommand.js" />
+		<EmbeddedResource Include="AndonStatisticsReports\Commands\AndonStopNumCommand.js" />
+		<EmbeddedResource Include="AndonStatisticsReports\Commands\AndonStopLineCommand.js" />
+		<EmbeddedResource Include="AndonStatisticsReports\Commands\AndonTimeCommand.js" />
+		<EmbeddedResource Include="AndonStatisticsReports\Commands\AndonReportQuery.js" />
+		<EmbeddedResource Include="AndonStatisticsReports\Commands\ExportCommand.js" />
+		<EmbeddedResource Include="AndonStatisticsReports\Commands\ExportCommandBase.js" />
+		<EmbeddedResource Include="AndonStatisticsReports\Commands\AndonNumCommand.js" />
+		<EmbeddedResource Include="AndonStatisticsReports\Scripts\AndonStatisticsPieChart.js" />
+		<EmbeddedResource Include="AndonStatisticsReports\Scripts\AndonStatisticsBarChart.js" />
+		<EmbeddedResource Include="AndonStatisticsReports\Scripts\AndonStatisticsChart.js" />
+		<EmbeddedResource Include="AndonStatisticsReports\Scripts\AndonStatisticsReportLayout.js" />
+		<EmbeddedResource Include="AndonStatisticsReports\Scripts\AndonStatisticsBarChartController.js" />
+		<EmbeddedResource Include="AndonStatisticsReports\Scripts\AndonStatisticstPieChartController.js" />
+		<EmbeddedResource Include="AndonStatisticsReports\Scripts\AndonStatisticstChartController.js" />
+		<EmbeddedResource Include="Andons\Behaviors\AndonBehavior.js" />
+		<EmbeddedResource Include="Andons\Behaviors\AndonManageBehavior.js" />
+		<EmbeddedResource Include="Andons\Behaviors\AndonPushObjectBehavior.js" />
+		<EmbeddedResource Include="Andons\Behaviors\AndonTypePushObjectBehavior.js" />
+		<EmbeddedResource Include="Andons\Commands\AndonAddCommand.js" />
+		<EmbeddedResource Include="Andons\Commands\AndonEditCommand.js" />
+		<EmbeddedResource Include="Andons\Commands\AndonExpRemoveCommand.js" />
+		<EmbeddedResource Include="Andons\Commands\AndonGroupDetailSelectUserCommand.js" />
+		<EmbeddedResource Include="Andons\Commands\AndonGroupDLTemplateCommand.js" />
+		<EmbeddedResource Include="Andons\Commands\AndonGroupDtlDLTemplateCommand.js" />
+		<EmbeddedResource Include="Andons\Commands\AndonGroupDtlImportCommand.js" />
+		<EmbeddedResource Include="Andons\Commands\AndonGroupImportCommand.js" />
+		<EmbeddedResource Include="Andons\Commands\AndonManageAddCommand.js" />
+		<EmbeddedResource Include="Andons\Commands\AndonManageAddExpCommand.js" />
+		<EmbeddedResource Include="Andons\Commands\AndonManageAttachmentClearCommand.js" />
+		<EmbeddedResource Include="Andons\Commands\AndonManageAttachmentCommand.js" />
+		<EmbeddedResource Include="Andons\Commands\AndonManageCallMaterialAddCommand.js" />
+		<EmbeddedResource Include="Andons\Commands\AndonManageCancelCommand.js" />
+		<EmbeddedResource Include="Andons\Commands\AndonManageCheckCommand.js" />
+		<EmbeddedResource Include="Andons\Commands\AndonManageEventFormSaveCommand.js" />
+		<EmbeddedResource Include="Andons\Commands\AndonManageExportXlsAllCommand.js" />
+		<EmbeddedResource Include="Andons\Commands\AndonManageExportXlsCommand.js" />
+		<EmbeddedResource Include="Andons\Commands\AndonManageFormSaveCommand.js" />
+		<EmbeddedResource Include="Andons\Commands\AndonManageGoExpCommand.js" />
+		<EmbeddedResource Include="Andons\Commands\AndonManageHandleCommand.js" />
+		<EmbeddedResource Include="Andons\Commands\AndonManageHistoryCommand.js" />
+		<EmbeddedResource Include="Andons\Commands\AndonManageImageCommand.js" />
+		<EmbeddedResource Include="Andons\Commands\AndonManageLookUpCommand.js" />
+		<EmbeddedResource Include="Andons\Commands\AndonManageReassignmentCommand.js" />
+		<EmbeddedResource Include="Andons\Commands\AndonManageRejectCommand.js" />
+		<EmbeddedResource Include="Andons\Commands\AndonManageResponseCommand.js" />
+		<EmbeddedResource Include="Andons\Commands\AndonMessageAddCommand.js" />
+		<EmbeddedResource Include="Andons\Commands\AndonPushObjectAddCommand.js" />
+		<EmbeddedResource Include="Andons\Commands\AndonResponseDetailDLTemplateCommand.js" />
+		<EmbeddedResource Include="Andons\Commands\AndonResponseDtlImportCommand.js" />
+		<EmbeddedResource Include="Andons\Commands\AndonSaveCommand.js" />
+		<EmbeddedResource Include="Andons\Commands\AndonSeepDLTemplateCommand.js" />
+		<EmbeddedResource Include="Andons\Commands\AndonSeepImportCommand.js" />
+		<EmbeddedResource Include="Andons\Commands\AndonTypeDisableCommand.js" />
+		<EmbeddedResource Include="Andons\Commands\AndonTypeEnableCommand.js" />
+		<EmbeddedResource Include="Andons\Commands\AndonTypeMessageAddCommand.js" />
+		<EmbeddedResource Include="Andons\Commands\AndonTypePushObjectAddCommand.js" />
+		<EmbeddedResource Include="Andons\Commands\AndonTypeSaveCommand.js" />
+		<EmbeddedResource Include="Andons\Commands\AndonTypeTriggerPowerAddOrganizationCommand.js" />
+		<EmbeddedResource Include="Andons\Commands\AndonTypeTriggerPowerAddRoleCommand.js" />
+		<EmbeddedResource Include="Andons\Commands\AndonTypeTriggerPowerAddStaffCommand.js" />
+		<EmbeddedResource Include="Andons\Commands\AndonTypeTriggerPowerAddUserGroupCommand.js" />
+		<EmbeddedResource Include="Andons\Commands\AndonTypeTriggerPowerAddWorkGroupCommand.js" />
+		<EmbeddedResource Include="Andons\Commands\CopyAndonTypeMessageSendCommand.js" />
+		<EmbeddedResource Include="Andons\Commands\GeneralProbDtlDLTemplateCommand.js" />
+		<EmbeddedResource Include="Andons\Commands\GeneralProbDtlImportCommand.js" />
+		<EmbeddedResource Include="Andons\Commands\UserReplaceCommand.js" />
+		<EmbeddedResource Include="Andons\Scripts\AndonManageIdLinkComboPopup.js" />
+		<EmbeddedResource Include="Andons\Scripts\AndonManageIpSpMultiWhComboPopup.js" />
+		<EmbeddedResource Include="Andons\Scripts\AndonManageUploadAttachmentButtonEditor.js" />
+		<EmbeddedResource Include="Andons\Scripts\AndonManageUploadAttachmentEditor.js" />
+		<EmbeddedResource Include="Andons\Scripts\AndonManageUploadImageButtonEditor.js" />
+		<EmbeddedResource Include="Andons\Scripts\AndonManageUploadImageEditor.js" />
+		<EmbeddedResource Include="Andons\Scripts\AndonTypeMessageTemplateEditor.js" />
+		<EmbeddedResource Include="Andons\Scripts\AndonTypePushObjectEditor.js" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="SIE.Web.Common" Version="10.0.5" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\Common\Equipments\SIE.Web.Equipments\SIE.Web.Equipments.csproj" />
+		<ProjectReference Include="..\..\..\Common\Resources\SIE.Resources\SIE.Resources.csproj" />
+		<ProjectReference Include="..\..\..\Common\Resources\SIE.Web.Resources\SIE.Web.Resources.csproj" />
+		<ProjectReference Include="..\SIE.Andon\SIE.Andon.csproj" />
+	</ItemGroup>
+</Project>

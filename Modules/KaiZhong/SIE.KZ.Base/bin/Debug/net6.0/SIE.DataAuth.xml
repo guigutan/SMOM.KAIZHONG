@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.DataAuth</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.DataAuth.DataAuthInterceptor">
+            <summary>
+            数据权限拦截器
+            </summary>
+        </member>
+        <member name="M:SIE.DataAuth.DataAuthInterceptor.Intercept">
+            <summary>
+            拦截事件
+            </summary>
+        </member>
+        <member name="M:SIE.DataAuth.DataAuthInterceptor.QueryWithDataAuth(SIE.Domain.Query.IQuery,System.Boolean,System.Type,System.String)">
+            <summary>
+            关联查询使用数据权限查询数据
+            </summary>
+            <param name="query">查询</param>
+            <param name="Nullable">控制业务权限的属性字段是否可以为空</param>        
+            <param name="dataType">实体</param>
+            <param name="alias">别名</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.DataAuth.EmployeeAuthAttribute">
+            <summary>
+            按员工授权的实体标记
+            </summary>
+        </member>
+        <member name="P:SIE.DataAuth.EmployeeAuthAttribute.EmployeeIdProperty">
+            <summary>
+            员工id属性名称
+            </summary>
+        </member>
+        <member name="P:SIE.DataAuth.EmployeeAuthAttribute.AuthIdProperty">
+            <summary>
+            控制业务权限的属性名称
+            </summary>
+        </member>
+        <member name="M:SIE.DataAuth.EmployeeAuthAttribute.#ctor(System.String,System.String)">
+            <summary>
+            创建<see cref="T:SIE.DataAuth.EmployeeAuthAttribute"/>
+            </summary>
+            <param name="employeeIdProperty"></param>
+            <param name="authIdProperty"></param>
+        </member>
+        <member name="T:SIE.DataAuth.EntityDataAuthAttribute">
+            <summary>
+            实体数据权限特性，标记需要控制数据权限的实体
+            </summary>
+        </member>
+        <member name="P:SIE.DataAuth.EntityDataAuthAttribute.AuthType">
+            <summary>
+            权限关联的实体类型，需要使用<see cref="T:SIE.DataAuth.EmployeeAuthAttribute"/>标记
+            </summary>
+        </member>
+        <member name="P:SIE.DataAuth.EntityDataAuthAttribute.AuthIdProperty">
+            <summary>
+            控制业务权限的属性名称
+            </summary>
+        </member>
+        <member name="P:SIE.DataAuth.EntityDataAuthAttribute.Nullable">
+            <summary>
+            控制业务权限的属性字段是否可以为空
+            </summary>
+        </member>
+        <member name="M:SIE.DataAuth.EntityDataAuthAttribute.#ctor(System.Type,System.String,System.Boolean)">
+            <summary>
+            创建<see cref="T:SIE.DataAuth.EntityDataAuthAttribute"/>
+            </summary>
+            <param name="authType"></param>
+            <param name="authIdProperty"></param>
+            <param name="nullable">authIdProperty值是否可空</param>
+        </member>
+        <member name="T:SIE.DataAuth.Module">
+            <summary>
+            当前工程所对应的模块类
+            </summary>
+        </member>
+        <member name="M:SIE.DataAuth.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化
+            </summary>
+            <param name="app">app</param>
+        </member>
+        <member name="T:SIE.DataAuth.SVersion">
+            <summary>
+            版本查询接口实现
+            </summary>
+        </member>
+        <member name="M:SIE.DataAuth.SVersion.GetVesion">
+            <summary>
+            获取版本信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.SMOM.AssemblyInformation">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SIE.SMOM.AssemblyInformation.AssemblyConfiguration">
+            <summary>
+            生成模式
+            </summary>
+        </member>
+        <member name="F:SIE.SMOM.AssemblyInformation.AssemblyCopyright">
+            <summary>
+            程序集版权信息
+            </summary>
+        </member>
+        <member name="F:SIE.SMOM.AssemblyInformation.AssemblyTrademark">
+            <summary>
+            自定义标识
+            </summary>
+        </member>
+        <member name="F:SIE.SMOM.AssemblyInformation.AssemblyCompany">
+            <summary>
+            公司名称
+            </summary>
+        </member>
+        <member name="F:SIE.SMOM.AssemblyInformation.Version">
+            <summary>
+            程序集版本
+            </summary>
+        </member>
+        <member name="F:SIE.SMOM.AssemblyInformation.FileVersion">
+            <summary>
+            文件版本
+            </summary>
+        </member>
+        <member name="F:SIE.SMOM.AssemblyInformation.Description">
+            <summary>
+            程序文本说明
+            </summary>
+        </member>
+        <member name="F:SIE.SMOM.AssemblyInformation.ProductIntroduction">
+            <summary>
+            产品介绍
+            </summary>
+        </member>
+    </members>
+</doc>

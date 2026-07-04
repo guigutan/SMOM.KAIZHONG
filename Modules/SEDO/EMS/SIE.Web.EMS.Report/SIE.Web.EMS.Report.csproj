@@ -1,0 +1,104 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup Label="Globals">
+		<SccProjectName>SAK</SccProjectName>
+		<SccProvider>SAK</SccProvider>
+		<SccAuxPath>SAK</SccAuxPath>
+		<SccLocalPath>SAK</SccLocalPath>
+	</PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<OutputPath>..\..\..\..\platform\smom\</OutputPath>
+		<DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.EMS.Report.xml</DocumentationFile>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<OutputPath>..\..\..\..\platform\smom\</OutputPath>
+		<DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.EMS.Report.xml</DocumentationFile>
+	</PropertyGroup>
+	<ItemGroup>
+		<None Remove="EquipCostAnalyses\Scripts\EquipCostAnalysesLayout.js" />
+		<None Remove="EquipmentIntegrateStatistics\Commands\ExportCommand.js" />
+		<None Remove="EquipmentIntegrateStatistics\Commands\ExportCommandBase.js" />
+		<None Remove="MttrAndMtbfReports\Scripts\MttrAndMtbfReportBarChart.js" />
+		<None Remove="MttrAndMtbfReports\Scripts\MttrAndMtbfReportBarChartController.js" />
+		<None Remove="MttrAndMtbfReports\Scripts\MttrAndMtbfReportLayout.js" />
+	  <None Remove="EquipmentIntegrateStatistics\Commands\EquipIntStatisticsQuery.js" />
+	  <None Remove="EquipmentIntegrateStatistics\Scripts\EquipIntStatisticsLayout.js" />
+	  <None Remove="EquipmentMixReport\Commands\EmsMixReportQuery.js" />
+	  <None Remove="EquipmentMixReport\Commands\ExportCommand.js" />
+	  <None Remove="EquipmentMixReport\Commands\ExportCommandBase.js" />
+	  <None Remove="EquipmentMixReport\Scripts\EmsEquipmentChart.js" />
+	  <None Remove="EquipmentMixReport\Scripts\EmsEquipmentChartController.js" />
+	  <None Remove="EquipmentMixReport\Scripts\EmsMixReportLayout.js" />
+	  <None Remove="MttrAndMtbfReports\Commands\ExportCommandBase.js" />
+	  <None Remove="MttrAndMtbfReports\Commands\MttrAndMtbfReportExportCommand.js" />
+	  <None Remove="MttrAndMtbfReports\Commands\MttrAndMtbfReportQuery.js" />
+	  <None Remove="MttrAndMtbfReports\Scripts\MttrAndMtbfReportBarChart.js" />
+	  <None Remove="MttrAndMtbfReports\Scripts\MttrAndMtbfReportBarChartController.js" />
+	  <None Remove="MttrAndMtbfReports\Scripts\MttrAndMtbfReportLayout.js" />
+	  <None Remove="MttrAndMtbfReports\Scripts\MttrAndMtbfReportLineChart.js" />
+	  <None Remove="MttrAndMtbfReports\Scripts\MttrAndMtbfReportLineChartController.js" />
+	  <None Remove="SparePartMitReports\Scripts\SparePartMixReportExWarehouseChart.js" />
+	  <None Remove="SparePartMitReports\Scripts\SparePartMixReportExWarehouseChartController.js" />
+	  <None Remove="SparePartMitReports\Scripts\SparePartMixReportLineChart.js" />
+	  <None Remove="SparePartMitReports\Scripts\SparePartMixReportLineChartController.js" />
+	  <None Remove="WorkOrderExcuteReports\Commands\WorkOrderExcuteReportQuery.js" />
+	  <None Remove="WorkOrderExcuteReports\Scripts\LineChartInfo.js" />
+	  <None Remove="WorkOrderExcuteReports\Scripts\WorkOrderExcuteReportLayout.js" />
+	  <None Remove="WorkOrderExcuteReports\Scripts\WorkOrderExcuteReportLineChart.js" />
+	  <None Remove="WorkOrderExcuteReports\Scripts\WorkOrderExcuteReportLineChartController.js" />
+	</ItemGroup>
+	<ItemGroup>
+	  <AdditionalFiles Include="..\..\..\..\.sonarlint\sie.smom\CSharp\SonarLint.xml" Link="SonarLint.xml" />
+	</ItemGroup>
+	<ItemGroup>
+	  <EmbeddedResource Include="EquipCostAnalyses\Scripts\EquipCostAnalysesLayout.js" />
+	  <EmbeddedResource Include="EquipmentIntegrateStatistics\Commands\ExportCommand.js" />
+	  <EmbeddedResource Include="EquipmentIntegrateStatistics\Commands\ExportCommandBase.js" />
+	  <EmbeddedResource Include="EquipmentMixReport\Commands\EmsMixReportQuery.js" />
+	  <EmbeddedResource Include="EquipmentMixReport\Commands\ExportCommand.js" />
+	  <EmbeddedResource Include="EquipmentMixReport\Commands\ExportCommandBase.js" />
+	  <EmbeddedResource Include="EquipmentMixReport\Scripts\EmsEquipmentChart.js" />
+	  <EmbeddedResource Include="EquipmentMixReport\Scripts\EmsEquipmentChartController.js" />
+	  <EmbeddedResource Include="EquipmentMixReport\Scripts\EmsMixReportLayout.js" />
+	</ItemGroup>
+	<ItemGroup>
+	  <EmbeddedResource Include="EquipmentIntegrateStatistics\Commands\EquipIntStatisticsQuery.js" />
+	  <EmbeddedResource Include="EquipmentIntegrateStatistics\Scripts\EquipIntStatisticsLayout.js" />
+	  <EmbeddedResource Include="MttrAndMtbfReports\Commands\ExportCommandBase.js" />
+	  <EmbeddedResource Include="MttrAndMtbfReports\Commands\MttrAndMtbfReportExportCommand.js" />
+	  <EmbeddedResource Include="MttrAndMtbfReports\Commands\MttrAndMtbfReportQuery.js" />
+	  <EmbeddedResource Include="MttrAndMtbfReports\Scripts\MttrAndMtbfReportBarChart.js" />
+	  <EmbeddedResource Include="MttrAndMtbfReports\Scripts\MttrAndMtbfReportBarChartController.js" />
+	  <EmbeddedResource Include="MttrAndMtbfReports\Scripts\MttrAndMtbfReportLayout.js" />
+	  <EmbeddedResource Include="MttrAndMtbfReports\Scripts\MttrAndMtbfReportLineChart.js" />
+	  <EmbeddedResource Include="MttrAndMtbfReports\Scripts\MttrAndMtbfReportLineChartController.js" />
+	  <EmbeddedResource Include="SparePartMitReports\Commands\SparePartMixReportQuery.js" />
+	  <EmbeddedResource Include="SparePartMitReports\Scripts\SparePartMixReportExWarehouseChart.js" />
+	  <EmbeddedResource Include="SparePartMitReports\Scripts\SparePartMixReportExWarehouseChartController.js" />
+	  <EmbeddedResource Include="SparePartMitReports\Scripts\SparePartMixReportLayout.js" />
+	  <EmbeddedResource Include="SparePartMitReports\Scripts\SparePartMixReportLineChart.js" />
+	  <EmbeddedResource Include="SparePartMitReports\Scripts\SparePartMixReportLineChartController.js" />
+	  <EmbeddedResource Include="WorkOrderExcuteReports\Commands\WorkOrderExcuteReportQuery.js" />
+	  <EmbeddedResource Include="WorkOrderExcuteReports\Scripts\LineChartInfo.js" />
+	  <EmbeddedResource Include="WorkOrderExcuteReports\Scripts\WorkOrderExcuteReportLayout.js" />
+	  <EmbeddedResource Include="WorkOrderExcuteReports\Scripts\WorkOrderExcuteReportLineChart.js" />
+	  <EmbeddedResource Include="WorkOrderExcuteReports\Scripts\WorkOrderExcuteReportLineChartController.js" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\Common\Equipments\SIE.Web.Equipments\SIE.Web.Equipments.csproj" />
+		<ProjectReference Include="..\..\..\Common\Resources\SIE.Web.Resources\SIE.Web.Resources.csproj" />
+		<ProjectReference Include="..\..\..\Common\Core\SIE.Web.Core\SIE.Web.Core.csproj" />
+		<ProjectReference Include="..\SIE.EMS.Report\SIE.EMS.Report.csproj" />
+	</ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="SIE.Web.Common" Version="10.0.5" />
+  </ItemGroup>
+	<ItemGroup>
+		<Folder Include="MttrAndMtbfReports\Commands\" />
+		<Folder Include="MttrAndMtbfReports\DataQueryers\" />
+		<Folder Include="%28Extentions%29\" />
+	</ItemGroup>
+</Project>

@@ -1,0 +1,161 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup Label="Globals">
+		<SccProjectName>SAK</SccProjectName>
+		<SccProvider>SAK</SccProvider>
+		<SccAuxPath>SAK</SccAuxPath>
+		<SccLocalPath>SAK</SccLocalPath>
+	</PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<OutputPath>..\..\..\..\platform\smom\</OutputPath>
+		<DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.EMS.EarlierStage.xml</DocumentationFile>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<OutputPath>..\..\..\..\platform\smom\</OutputPath>
+		<DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.EMS.EarlierStage.xml</DocumentationFile>
+	</PropertyGroup>
+	<ItemGroup>
+	  <None Remove="Budgets\Commands\AddBudgetCommand.js" />
+	  <None Remove="Budgets\Commands\BudgetImportCommand.js" />
+	  <None Remove="Budgets\Commands\CancelBudgetChangeCommand.js" />
+	  <None Remove="Budgets\Commands\CancelBudgetCommand.js" />
+	  <None Remove="Budgets\Commands\DeleteBudgetChangeCommand.js" />
+	  <None Remove="Budgets\Commands\DeleteBudgetCommand.js" />
+	  <None Remove="Budgets\Commands\EditBudgetChangeCommand.js" />
+	  <None Remove="Budgets\Commands\EditBudgetCommand.js" />
+	  <None Remove="Budgets\Commands\EditSubmitBudgetCommand.js" />
+	  <None Remove="Budgets\Commands\ExamineBudgetChangeCommand.js" />
+	  <None Remove="Budgets\Commands\ExamineBudgetCommand.js" />
+	  <None Remove="Budgets\Commands\SaveBudgetChangeCommand.js" />
+	  <None Remove="Budgets\Commands\SaveBudgetCommand.js" />
+	  <None Remove="Budgets\Commands\SubmitBudgetChangeCommand.js" />
+	  <None Remove="Budgets\Commands\SubmitBudgetCommand.js" />
+	  <None Remove="Budgets\Scripts\BudgetBehavior.js" />
+	  <None Remove="Common\Scripts\ApprovalBehavior.js" />
+	  <None Remove="Projects\Commands\AddProChangeKeyCommand.js" />
+	  <None Remove="Projects\Commands\AddProjectCommand.js" />
+	  <None Remove="Projects\Commands\AddProjectKeyItemCommand.js" />
+	  <None Remove="Projects\Commands\CancelProjectChangeCommand.js" />
+	  <None Remove="Projects\Commands\CancelProjectCloseCommand.js" />
+	  <None Remove="Projects\Commands\CancelProjectCommand.js" />
+	  <None Remove="Projects\Commands\CompleteKeyItemPlanCommand.js" />
+	  <None Remove="Projects\Commands\CompleteWorkItemCommand.js" />
+	  <None Remove="Projects\Commands\DeleteKeyItemPlanCommand.js" />
+	  <None Remove="Projects\Commands\DeleteProChangeKeyCommand.js" />
+	  <None Remove="Projects\Commands\DeleteProCloseAttachmentCommand.js" />
+	  <None Remove="Projects\Commands\DeleteProjectAttachmentCommand.js" />
+	  <None Remove="Projects\Commands\DeleteProjectChangeCommand.js" />
+	  <None Remove="Projects\Commands\DeleteProjectCloseCommand.js" />
+	  <None Remove="Projects\Commands\DeleteProjectCommand.js" />
+	  <None Remove="Projects\Commands\EditProjectCommand.js" />
+	  <None Remove="Projects\Commands\ExamineProjectChangeCommand.js" />
+	  <None Remove="Projects\Commands\ExamineProjectCloseCommand.js" />
+	  <None Remove="Projects\Commands\ExamineProjectCommand.js" />
+	  <None Remove="Projects\Commands\ExportProjectCommand.js" />
+	  <None Remove="Projects\Commands\GoToKeyItemCommand.js" />
+	  <None Remove="Projects\Commands\ImportWorkItemCommand.js" />
+	  <None Remove="Projects\Commands\ProjectChangeCommand.js" />
+	  <None Remove="Projects\Commands\ProjectCloseCommand.js" />
+	  <None Remove="Projects\Commands\ProjectImportCommand.js" />
+	  <None Remove="Projects\Commands\ProjectKeyItemImportCommand.js" />
+	  <None Remove="Projects\Commands\ProjectMemberImportCommand.js" />
+	  <None Remove="Projects\Commands\SaveProjectChangeCommand.js" />
+	  <None Remove="Projects\Commands\SaveProjectCloseCommand.js" />
+	  <None Remove="Projects\Commands\SaveProjectCommand.js" />
+	  <None Remove="Projects\Commands\SeeProjectChangeCommand.js" />
+	  <None Remove="Projects\Commands\SelectProjectMemberCommand.js" />
+	  <None Remove="Projects\Commands\StartKeyItemPlanCommand.js" />
+	  <None Remove="Projects\Commands\StartWorkItemCommand.js" />
+	  <None Remove="Projects\Commands\SubmitProjectChangeCommand.js" />
+	  <None Remove="Projects\Commands\SubmitProjectCloseCommand.js" />
+	  <None Remove="Projects\Commands\SubmitProjectCommand.js" />
+	  <None Remove="Projects\Commands\UploadProCloseAttachmentCommand.js" />
+	  <None Remove="Projects\Commands\UploadProjectAttachmentCommand.js" />
+	  <None Remove="Projects\Scripts\ProjectChangeBehavior.js" />
+	  <None Remove="Projects\Scripts\ProjectChangeKeyItemBehavior.js" />
+	  <None Remove="Projects\Scripts\ProjectCloseBehavior.js" />
+	  <None Remove="Projects\Scripts\ProjectFormBehavior.js" />
+	  <None Remove="Projects\Scripts\ProjectKeyItemBehavior.js" />
+	  <None Remove="Projects\Scripts\ProjectKeyItemCriteriaBehavior.js" />
+	  <None Remove="Projects\Scripts\ProjectKeyItemListBehavior.js" />
+	  <None Remove="Projects\Scripts\ProjectListBehavior.js" />
+	  <None Remove="Projects\Scripts\ProjectWorkItemBehavior.js" />
+	</ItemGroup>
+	<ItemGroup>
+	  <AdditionalFiles Include="..\..\..\..\.sonarlint\sie.smom\CSharp\SonarLint.xml" Link="SonarLint.xml" />
+	</ItemGroup>
+	<ItemGroup>
+	  <EmbeddedResource Include="Budgets\Commands\AddBudgetCommand.js" />
+	  <EmbeddedResource Include="Budgets\Commands\BudgetImportCommand.js" />
+	  <EmbeddedResource Include="Budgets\Commands\CancelBudgetChangeCommand.js" />
+	  <EmbeddedResource Include="Budgets\Commands\CancelBudgetCommand.js" />
+	  <EmbeddedResource Include="Budgets\Commands\DeleteBudgetChangeCommand.js" />
+	  <EmbeddedResource Include="Budgets\Commands\DeleteBudgetCommand.js" />
+	  <EmbeddedResource Include="Budgets\Commands\EditBudgetChangeCommand.js" />
+	  <EmbeddedResource Include="Budgets\Commands\EditBudgetCommand.js" />
+	  <EmbeddedResource Include="Budgets\Commands\ExamineBudgetChangeCommand.js" />
+	  <EmbeddedResource Include="Budgets\Commands\ExamineBudgetCommand.js" />
+	  <EmbeddedResource Include="Budgets\Commands\SaveBudgetChangeCommand.js" />
+	  <EmbeddedResource Include="Budgets\Commands\SaveBudgetCommand.js" />
+	  <EmbeddedResource Include="Budgets\Commands\SubmitBudgetChangeCommand.js" />
+	  <EmbeddedResource Include="Budgets\Commands\EditSubmitBudgetCommand.js" />
+	  <EmbeddedResource Include="Budgets\Commands\SubmitBudgetCommand.js" />
+	  <EmbeddedResource Include="Budgets\Scripts\BudgetBehavior.js" />
+	  <EmbeddedResource Include="Common\Scripts\ApprovalBehavior.js" />
+	  <EmbeddedResource Include="Projects\Commands\AddProChangeKeyCommand.js" />
+	  <EmbeddedResource Include="Projects\Commands\AddProjectCommand.js" />
+	  <EmbeddedResource Include="Projects\Commands\AddProjectKeyItemCommand.js" />
+	  <EmbeddedResource Include="Projects\Commands\CancelProjectChangeCommand.js" />
+	  <EmbeddedResource Include="Projects\Commands\CancelProjectCloseCommand.js" />
+	  <EmbeddedResource Include="Projects\Commands\CancelProjectCommand.js" />
+	  <EmbeddedResource Include="Projects\Commands\CompleteKeyItemPlanCommand.js" />
+	  <EmbeddedResource Include="Projects\Commands\CompleteWorkItemCommand.js" />
+	  <EmbeddedResource Include="Projects\Commands\DeleteKeyItemPlanCommand.js" />
+	  <EmbeddedResource Include="Projects\Commands\DeleteProChangeKeyCommand.js" />
+	  <EmbeddedResource Include="Projects\Commands\DeleteProCloseAttachmentCommand.js" />
+	  <EmbeddedResource Include="Projects\Commands\DeleteProjectChangeCommand.js" />
+	  <EmbeddedResource Include="Projects\Commands\DeleteProjectCloseCommand.js" />
+	  <EmbeddedResource Include="Projects\Commands\DeleteProjectCommand.js" />
+	  <EmbeddedResource Include="Projects\Commands\EditProjectCommand.js" />
+	  <EmbeddedResource Include="Projects\Commands\ExamineProjectChangeCommand.js" />
+	  <EmbeddedResource Include="Projects\Commands\ExamineProjectCloseCommand.js" />
+	  <EmbeddedResource Include="Projects\Commands\ExamineProjectCommand.js" />
+	  <EmbeddedResource Include="Projects\Commands\ExportProjectCommand.js" />
+	  <EmbeddedResource Include="Projects\Commands\GoToKeyItemCommand.js" />
+	  <EmbeddedResource Include="Projects\Commands\ImportWorkItemCommand.js" />
+	  <EmbeddedResource Include="Projects\Commands\DeleteProjectAttachmentCommand.js" />
+	  <EmbeddedResource Include="Projects\Commands\ProjectChangeCommand.js" />
+	  <EmbeddedResource Include="Projects\Commands\ProjectCloseCommand.js" />
+	  <EmbeddedResource Include="Projects\Commands\ProjectImportCommand.js" />
+	  <EmbeddedResource Include="Projects\Commands\ProjectKeyItemImportCommand.js" />
+	  <EmbeddedResource Include="Projects\Commands\ProjectMemberImportCommand.js" />
+	  <EmbeddedResource Include="Projects\Commands\SaveProjectChangeCommand.js" />
+	  <EmbeddedResource Include="Projects\Commands\SaveProjectCloseCommand.js" />
+	  <EmbeddedResource Include="Projects\Commands\SaveProjectCommand.js" />
+	  <EmbeddedResource Include="Projects\Commands\SeeProjectChangeCommand.js" />
+	  <EmbeddedResource Include="Projects\Commands\SelectProjectMemberCommand.js" />
+	  <EmbeddedResource Include="Projects\Commands\StartKeyItemPlanCommand.js" />
+	  <EmbeddedResource Include="Projects\Commands\StartWorkItemCommand.js" />
+	  <EmbeddedResource Include="Projects\Commands\SubmitProjectChangeCommand.js" />
+	  <EmbeddedResource Include="Projects\Commands\SubmitProjectCloseCommand.js" />
+	  <EmbeddedResource Include="Projects\Commands\SubmitProjectCommand.js" />
+	  <EmbeddedResource Include="Projects\Commands\UploadProjectAttachmentCommand.js" />
+	  <EmbeddedResource Include="Projects\Commands\UploadProCloseAttachmentCommand.js" />
+	  <EmbeddedResource Include="Projects\Scripts\ProjectChangeBehavior.js" />
+	  <EmbeddedResource Include="Projects\Scripts\ProjectChangeKeyItemBehavior.js" />
+	  <EmbeddedResource Include="Projects\Scripts\ProjectCloseBehavior.js" />
+	  <EmbeddedResource Include="Projects\Scripts\ProjectFormBehavior.js" />
+	  <EmbeddedResource Include="Projects\Scripts\ProjectKeyItemBehavior.js" />
+	  <EmbeddedResource Include="Projects\Scripts\ProjectKeyItemCriteriaBehavior.js" />
+	  <EmbeddedResource Include="Projects\Scripts\ProjectKeyItemListBehavior.js" />
+	  <EmbeddedResource Include="Projects\Scripts\ProjectListBehavior.js" />
+	  <EmbeddedResource Include="Projects\Scripts\ProjectWorkItemBehavior.js" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\SIE.EMS.EarlierStage\SIE.EMS.EarlierStage.csproj" />
+		<ProjectReference Include="..\SIE.Web.EMS\SIE.Web.EMS.csproj" />
+	</ItemGroup>
+</Project>

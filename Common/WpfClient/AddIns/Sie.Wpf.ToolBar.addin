@@ -1,0 +1,34 @@
+<AddIn name        = "SieStudio"
+       author      = "huchuqiang"
+       copyright   = "prj:///doc/copyright.txt"
+       url         = "http://siestudio.chinasie.com"
+       description = "SieStudio Workbench Toolbar"
+       addInManagerHidden = "true">
+  <Manifest>
+    <!--定义-->
+    <Identity name="ToolBar" version="@AssemblyVersion"/>
+  </Manifest>
+  <Runtime>
+    <Import assembly=":SIE.Wpf"/>
+  </Runtime>
+  <!--type[Separator、ButtonItem、CheckItem、EditItem...]-->
+  <Path name = "/Main/Workbench/ToolBar/Standard">
+    <!--loadclasslazy-->
+    <ToolbarItem id="new" label="New" tooltip="新建"  type="ButtonItem" icon="/Resources;component/UI/测试环境.png" shortcut="Ctrl|N" class="SIE.Wpf.Windows.Controls.TestCommand"/>
+    <ToolbarItem id="open" label="Open" tooltip="打开"  type="ButtonItem" icon="/Resources;component/UI/测试环境.png" shortcut="Ctrl|O" class="SIE.Wpf.Windows.Controls.TestCommand"/>
+    <ToolbarItem id="save" label="Save" tooltip="保存" type="ButtonItem" icon="/Resources;component/UI/测试环境.png" class="SIE.Wpf.Windows.Controls.TestCommand"/>
+    <ToolbarItem id="Assave" label="Save" tooltip="保存" type="SubItem" icon="/Resources;component/UI/测试环境.png" class="SIE.Wpf.Windows.Controls.TestCommand">
+      <ToolbarItem id="subBold" label="Bold" tooltip="加粗" type="CheckItem" icon="/Resources;component/UI/测试环境.png" shortcut="Ctrl|B" class="SIE.Wpf.Windows.Controls.TestCommand"/>
+      <ToolbarItem id="subItalic" label="Italic" tooltip="斜体" type="CheckItem" icon="/Resources;component/UI/测试环境.png" shortcut="Ctrl|I" class="SIE.Wpf.Windows.Controls.TestCommand"/>
+      <ToolbarItem id="subUnderline" label="Underline" tooltip="下划线" type="CheckItem" icon="/Resources;component/UI/测试环境.png" class="SIE.Wpf.Windows.Controls.TestCommand"/>
+      <ToolbarItem id="df" type="Separator"/>
+      <ToolbarItem id="subOpen" label="Open" tooltip="打开"  type="ButtonItem" icon="/Resources;component/UI/测试环境.png" shortcut="Ctrl|O" class="SIE.Wpf.Windows.Controls.TestCommand"/>
+      <ToolbarItem id="subSave" label="Save" tooltip="保存" type="ButtonItem" icon="/Resources;component/UI/测试环境.png" class="SIE.Wpf.Windows.Controls.TestCommand"/>
+    </ToolbarItem>
+  </Path>
+  <Path name = "/Main/Workbench/ToolBar/Format">
+    <ToolbarItem id="bold" label="Bold" tooltip="加粗" type="CheckItem" icon="/Resources;component/UI/测试环境.png" shortcut="Ctrl|B" class="SIE.Wpf.Windows.Controls.TestCommand"/>
+    <ToolbarItem id="italic" label="Italic" tooltip="斜体" type="CheckItem" icon="/Resources;component/UI/测试环境.png" shortcut="Ctrl|I" class="SIE.Wpf.Windows.Controls.TestCommand"/>
+    <ToolbarItem id="underline" label="Underline" tooltip="下划线" type="CheckItem" icon="/Resources;component/UI/测试环境.png" class="SIE.Wpf.Windows.Controls.TestCommand"/>
+  </Path>
+</AddIn>

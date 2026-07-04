@@ -1,0 +1,153 @@
+﻿@using SIE.WorkBenchCommon.Workbench.Base;
+@{
+
+    ViewBag.Title = "工作台展示".L10N();
+
+    Layout = "~/Views/Shared/_WorkBenchLayout.cshtml";
+
+}
+@model WorkbenchViewModel;
+@section headjs{
+    <script type="text/javascript">
+
+         @Html.Raw(Model.ComponentScript)
+        
+        Ext.define('Sie.Workbench', {
+            extend: 'Ext.dashboard.Dashboard',
+            xtype: 'Workbench',
+            stateful: false,
+            draggable: false,
+            border: false,
+            scrollable:'y',
+            defaultType: 'dashboard-panel',
+            layout: 'responsivecolumn',
+            deserializeItems: function(serialized) {
+                var me = this,
+                    length = serialized.length,
+                    columns = [],
+                    columnWidths = me.columnWidths,
+                    maxColumns = me.getMaxColumns(),
+                    column, columnIndex, columnWidth, i, item, partConfig;
+                for (i = 0; i < length; ++i) {
+                    partConfig = serialized[i];
+
+                    item = me.createView(partConfig);
+                    columns.push(item);
+                }
+
+                return columns;
+            },
+            createView: function (config) {
+              var view= this.callParent(arguments);
+                view.listeners["afterrender"] = function (t, opts) {
+
+                    /*
+                    var me = t;
+                    if (me.items.items[0].superclass.$className == "Portal.ComponentBase") {
+                        //鼠标接近显视tbar
+                        me.el.on("mouseover", function () {
+
+                            if (me.getDockedItems("toolbar").length > 0) {
+
+                                me.getDockedItems("toolbar")[0].show();
+                            }
+                           
+                        });
+                        //鼠标离弄隐藏tbar
+                        me.el.on("mouseout", function () {
+                            if (me.getDockedItems("toolbar").length > 0)
+                                me.getDockedItems("toolbar")[0].hide();
+                        });
+
+                    }*/
+           
+                };
+                return view;
+            },
+            parts: {
+                moduleTmpl: {
+                    viewTemplate: {
+                        header:false,
+                        frame : false,
+                        closable: false,
+                        draggable: false,
+                        border: false,
+                        bodyBorder :false,
+                        title: '{title}',
+                        responsiveCls: '{responsiveCls}',
+                        dockedItems: [{
+                                    xtype: 'toolbar',
+                                    hidden: true,
+                                    border:false,
+                                    dock: 'top',
+                                    items: [
+                                        '->', {//刷新命令
+                                            xtype: 'button',
+                                            iconCls: 'iconfont icon-Refresh icon-blue',
+                                            handler: function (btn, event) {
+                                                // refresh logic
+                                                if (btn.ownerCt.ownerCt.items.length>0 && btn.ownerCt.ownerCt.items.items[0].refreshData)
+                                                    btn.ownerCt.ownerCt.items.items[0].refreshData();
+                                            }
+                                        }, {//刷新放大
+                                            xtype: 'button',
+                                            iconCls: 'iconfont icon-ArrowExpandAll icon-blue',
+                                            handler: function (btn, event) {
+
+                                                if (btn.ownerCt.ownerCt.items.length == 0)
+                                                    return;
+                                                btn.ownerCt.ownerCt.items.items[0].zoomComponent();
+                                                //var itemConfig = Ext.clone(btn.ownerCt.ownerCt.items.items[0].config);
+           
+                                                //// max logic
+                                                //var win = Ext.create('Ext.window.Window', {
+                                                //    id: 'portal_window',
+                                                //    border: false,
+                                                //    modal: true,
+                                                //    draggable: false, // 禁止移动
+                                                //    resizable: false,
+                                                //    maximizable: false, // 禁止最大化
+                                                //    title: itemConfig.moduleName,
+                                                //    height: 200,
+                                                //    width: 400,
+                                                //    layout: 'fit',
+                                                //    items: itemConfig
+                                                //});
+
+                                                //win.show();
+
+                                                //win.setPosition(0, 0);
+                                                //win.fitContainer(); // 填充满浏览器
+                                            }
+                                        }
+                                    ]
+                        }],
+                        items: [{
+                            xtype: '{xtype}',
+                            bindOutPutParam: '{bindOutPutParam}',
+                            refreshInterval:'{refreshInterval}'
+                        }]
+                    },
+                  
+
+                }
+            },
+           //布局存放参数
+            @Html.Raw(ViewBag.Content)
+        });
+
+
+        Ext.onReady(function () {
+
+            Ext.create('Ext.container.Viewport', {
+                layout: 'fit',
+                border: false,
+                items: { xtype: "Workbench" },
+                renderTo: Ext.getBody()
+            })
+        });
+
+
+
+    </script>
+}

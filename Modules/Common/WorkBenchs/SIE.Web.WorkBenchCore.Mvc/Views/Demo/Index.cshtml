@@ -1,0 +1,262 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Ext JS Portal";
+    Layout = "~/Views/Shared/_WorkBenchLayout.cshtml";
+}
+
+@section headjs{
+    <script src="~/scripts/demo/model/Company.js"></script>
+    <script src="~/scripts/demo/store/Markets.js"></script>
+    <script src="~/scripts/demo/view/markets/Markets.js"></script>
+    <script src="~/scripts/demo/store/Stocks.js"></script>
+    <script src="~/scripts/demo/view/stocks/Stocks.js"></script>
+    <script src="~/scripts/demo/view/stocks/StocksController.js"></script>
+    <script src="~/scripts/demo/ModuleBase.js"></script>
+    <script src="~/scripts/demo/ModuleTestPanel.js"></script>
+    <script src="~/scripts/demo/StockModule.js"></script>
+    <script type="text/javascript">
+        Ext.EventManager.onWindowResize(function (a, b) {
+            var win = Ext.getCmp("portal_window");
+            if (win == undefined) {
+                return;
+            }
+            win.setPosition(0, 0);
+            win.fitContainer();
+        });
+        Ext.define('Lesson1.FirstPanel', {
+            extend: 'Ext.Panel',
+            alias: 'widget.FirstPanel',
+            frame: false,
+            //初始化函数
+            initComponent: function () {
+                //继承父类的initComponent函数
+                Lesson1.FirstPanel.superclass.initComponent.call(this, arguments);
+                //为该组件添加了一个FormPanel
+                this.formPanel = new Ext.FormPanel({
+                    defaults: { anchor: "95%", allowBlank: false },
+                    labelWidth: 55,
+                    defaultType: "textfield",
+                    items: [{
+                        fieldLabel: "用户名",
+                        name: "username"
+                    }, {
+                        fieldLabel: "密码",
+                        inputType: "password",
+                        name: "password"
+                    }]
+                });
+                //将表单列入到panel的items里去
+                this.add(this.formPanel);
+            }
+        });
+
+
+        Ext.define('Sie.Workbench', {
+            extend: 'Ext.dashboard.Dashboard',
+            xtype: 'Workbench',
+            stateful: false,
+            draggable: false,
+            border: false,
+            parts: {
+                moduleTmpl: {
+                    viewTemplate: {
+                        closable: false,
+                        draggable: false,
+                        title: '{title}',
+                        tools: [
+                            {
+                                type: 'gear',
+                                tooltip: '参数绑定',
+                                // hidden:true,
+                                handler: function (event, toolEl, panelHeader) {
+                                    var currModule = panelHeader.ownerCt.items.items[0];
+
+                                    if (!currModule.getInputParams) {
+                                        return;
+                                    }
+
+
+                                    var inputParamArr = currModule.getInputParams();
+                                    var g_outputparamArr = currModule.globalOutputParams;
+                                    var bindData = [];
+                                    Ext.Array.each(inputParamArr, function (param) {
+                                        var outputparam = "";
+                                        for (let [key, value] of currModule.getBindOutPutParam()) {
+                                            if (value == param) {
+                                                outputparam = key;
+                                                break;
+                                            }
+                                        }
+
+                                        bindData.push({ inputparam: param, outputparam: outputparam });
+                                    });
+
+                                    var bindstore = Ext.create('Ext.data.Store', {
+                                        fields: ['inputparam', 'outputparam'],
+                                        data: bindData
+                                    });
+
+
+                                    var panel = Ext.create('Ext.grid.Panel', {
+                                        plugins: {
+                                            cellediting: {
+                                                clicksToEdit: 1
+                                            }
+                                        },
+                                        store: bindstore,
+                                        columns: [
+                                            {
+                                                text: '输入参数',
+                                                dataIndex: 'inputparam',
+                                                flex: 1
+                                            },
+                                            {
+                                                text: '输出参数',
+                                                dataIndex: 'outputparam',
+                                                flex: 1,
+                                                editor: {
+                                                    xtype: 'combo',
+                                                    typeAhead: true,
+                                                    triggerAction: 'all',
+                                                    store: g_outputparamArr
+                                                }
+                                            },
+                                        ],
+                                        height: 200,
+                                        width: 400,
+                                    });
+
+                                    var win = Ext.create('Ext.window.Window', {
+                                        border: false,
+                                        modal: true,
+                                        draggable: true, // 禁止移动
+                                        resizable: true,
+                                        maximizable: false, // 禁止最大化
+                                        title: panelHeader.title.text + "参数绑定",
+                                        height: 200,
+                                        width: 400,
+                                        layout: 'fit',
+                                        buttons: [
+                                            {
+                                                type: 'button',
+                                                text: '确认',
+                                                handler: function () {
+
+                                                }
+                                            },
+                                            {
+                                                type: 'button',
+                                                text: '取消',
+                                                handler: function () {
+                                                    win.close();
+                                                }
+                                            }],
+                                        items: panel
+                                    });
+
+                                    win.show();
+
+                                }
+                            },
+                            {
+                                type: 'refresh',
+                                tooltip: '刷新',
+                                // hidden:true,
+                                handler: function (event, toolEl, panelHeader) {
+                                    // refresh logic
+                                    if (panelHeader.ownerCt.items.items[0].refreshData)
+                                        panelHeader.ownerCt.items.items[0].refreshData();
+                                }
+                            },
+                            {
+                                type: 'maximize',
+                                tooltip: '放大',
+                                handler: function (event, toolEl, panelHeader) {
+                                    var win = Ext.create('Ext.window.Window', {
+                                        id: 'portal_window',
+                                        border: false,
+                                        modal: true,
+                                        draggable: false, // 禁止移动
+                                        resizable: false,
+                                        maximizable: false, // 禁止最大化
+                                        title: panelHeader.title.text,
+                                        height: 200,
+                                        width: 400,
+                                        layout: 'fit',
+                                        items: { xtype: panelHeader.ownerCt.items.items[0].xtype }
+                                    });
+
+                                    win.show();
+
+                                    win.setPosition(0, 0);
+                                    win.fitContainer(); // 填充满浏览器
+
+
+
+
+                                }
+                                //callback: function(panel, tool, event) {
+                                //   Ext.create('Ext.window.Window', {
+                                //        title: 'Hello',
+                                //        height: 200,
+                                //        width: 400,
+                                //        layout: 'fit',
+                                //        items:   panel.ownerCt.items.items[0]
+                                //    }).show();
+                                //}
+                            }],
+                        items: [{
+                            xtype: '{xtype}',
+                            bindOutPutParam: '{bindOutPutParam}'
+                        }]
+                    }
+                }
+            },
+            columnWidths: [
+                0.30,
+                0.70,
+            ],
+            defaultContent: [{
+                type: 'moduleTmpl',
+                title: 'panel1',
+                columnIndex: 0,
+                xtype: 'markets',
+                height: 620
+            }, {
+                type: 'moduleTmpl',
+                title: 'panel2',
+                columnIndex: 1,
+                xtype: 'StockModule',
+                height: 200
+            }, {
+                type: 'moduleTmpl',
+                title: 'panel3',
+                columnIndex: 1,
+                xtype: 'ModuleTestPanel',
+                bindOutPutParam: new Map([["stocks_outputSelectValue", "ModuleTestPanel_inputvalue"]]),
+                height: 200
+            }, {
+                type: 'moduleTmpl',
+                title: 'panel4',
+                columnIndex: 1,
+                xtype: 'markets',
+                height: 200
+            }]
+        });
+
+
+        Ext.onReady(function () {
+
+            Ext.create('Ext.container.Viewport', {
+                layout: 'fit',
+                border: true,
+                items: { xtype: "Workbench" },
+                renderTo: Ext.getBody()
+            })
+        });
+    </script>
+
+}
+

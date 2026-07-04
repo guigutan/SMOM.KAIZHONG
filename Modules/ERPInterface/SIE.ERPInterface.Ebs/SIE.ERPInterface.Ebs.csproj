@@ -1,0 +1,59 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\platform\smom\net6.0\SIE.ERPInterface.Ebs.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\platform\smom\net6.0\SIE.ERPInterface.Ebs.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="InfDataEntitys\Upload\**" />
+    <Compile Remove="UploadEbs\新文件夹\**" />
+    <Compile Remove="Upload\UploadTrans\**" />
+    <EmbeddedResource Remove="InfDataEntitys\Upload\**" />
+    <EmbeddedResource Remove="UploadEbs\新文件夹\**" />
+    <EmbeddedResource Remove="Upload\UploadTrans\**" />
+    <None Remove="InfDataEntitys\Upload\**" />
+    <None Remove="UploadEbs\新文件夹\**" />
+    <None Remove="Upload\UploadTrans\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Download\Customers\EbsSupplierControll.cs" />
+    <Compile Remove="InfDataEntitys\Download\GenericDispositions\AsnEx.cs" />
+    <Compile Remove="InfDataEntitys\Download\GenericDispositions\EBSDownloadGenericDisController.cs" />
+    <Compile Remove="InfDataEntitys\Download\GenericDispositions\GenericDisposition.cs" />
+    <Compile Remove="InfDataEntitys\Download\GenericDispositions\GenericDispositionController.cs" />
+    <Compile Remove="InfDataEntitys\Download\GenericDispositions\GenericDispositionInf.cs" />
+    <Compile Remove="InfDataEntitys\Download\GenericDispositions\GenericDispositionRule.cs" />
+    <Compile Remove="InfDataEntitys\Download\GenericDispositions\GenericDispositionSubmitting.cs" />
+    <Compile Remove="InfDataEntitys\Download\GenericDispositions\ShippingOrderEx.cs" />
+    <Compile Remove="InfDataEntitys\Download\PurchaseOrders\EBSDownloadPoController.cs" />
+    <Compile Remove="Upload\EbsDbUploadInfController.cs" />
+    <Compile Remove="Upload\EbsSaleOutController - 复制.cs" />
+    <Compile Remove="Upload\UploadInvTransController.cs" />
+    <Compile Remove="Upload\UploadPoTransController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="XmlFiles\SoapXmlFile.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="XmlFiles\SoapXmlFile.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="InfDataEntitys\Download\GenericDispositions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SIE.ERPInterface.Common\SIE.ERPInterface.Common.csproj" />
+  </ItemGroup>
+</Project>

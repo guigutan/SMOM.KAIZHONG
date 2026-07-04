@@ -1,0 +1,23 @@
+﻿using SIE.DIST;
+
+namespace SIE.Web.DIST
+{
+    /// <summary>
+    /// 视图配置
+    /// </summary>
+    internal class DistributionBillPropertyValueViewConfig : WebViewConfig<DistributionBillPropertyValue>
+    {
+        /// <summary>
+        /// 配置视图
+        /// </summary>
+		protected override void ConfigView()
+        {
+            View.ClearCommands();
+            using (View.OrderProperties())
+            {
+                View.Property(p => p.DefinitionName).HasLabel("属性名称").Show(ShowInWhere.All);
+                View.Property(p => p.Value).Show(ShowInWhere.All);
+            }
+        }
+    }
+}

@@ -1,0 +1,68 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <CodeAnalysisRuleSet>SIE.Web.CSM.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.CSM.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.CSM.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Customers\Commands\CustomerDeleteCommand.js" />
+    <None Remove="Customers\Commands\CustomerSaveCommand.js" />
+    <None Remove="ItemInspCharacteristicses\Commands\BatchSettingCommand.js" />
+    <None Remove="ItemInspCharacteristicses\Commands\ListSaveCommand.js" />
+    <None Remove="ItemInspCharacteristicses\Editors\GridCheckBoxColumn.js" />
+    <None Remove="Scripts\AddressAction.js" />
+    <None Remove="Suppliers\Commands\AddAddressCommand.js" />
+    <None Remove="Suppliers\Commands\AddSupplierCommand.js" />
+    <None Remove="Suppliers\Commands\DisableCommand.js" />
+    <None Remove="Suppliers\Commands\DisablePortalCommand.js" />
+    <None Remove="Suppliers\Commands\EditAddressCommand.js" />
+    <None Remove="Suppliers\Commands\EnableCommand.js" />
+    <None Remove="Suppliers\Commands\EnablePortalCommand.js" />
+    <None Remove="Suppliers\Commands\SelectItemCommand.js" />
+    <None Remove="Suppliers\Commands\SelectUserCommand.js" />
+    <None Remove="Suppliers\Commands\SupplierDeleteCommand.js" />
+    <None Remove="Suppliers\Commands\SupplierItemDeleteCommand.js" />
+    <None Remove="Suppliers\Editors\RegionalInfoEditor.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\..\..\.sonarlint\sie.smom\CSharp\SonarLint.xml" Link="SonarLint.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Customers\Commands\CustomerDeleteCommand.js" />
+    <EmbeddedResource Include="Customers\Commands\CustomerSaveCommand.js" />
+    <EmbeddedResource Include="ItemInspCharacteristicses\Commands\BatchSettingCommand.js" />
+    <EmbeddedResource Include="ItemInspCharacteristicses\Commands\ListSaveCommand.js" />
+    <EmbeddedResource Include="ItemInspCharacteristicses\Editors\GridCheckBoxColumn.js" />
+    <EmbeddedResource Include="Scripts\AddressAction.js" />
+    <EmbeddedResource Include="Suppliers\Commands\AddSupplierCommand.js" />
+    <EmbeddedResource Include="Suppliers\Commands\AddAddressCommand.js" />
+    <EmbeddedResource Include="Suppliers\Commands\DisableCommand.js" />
+    <EmbeddedResource Include="Suppliers\Commands\DisablePortalCommand.js" />
+    <EmbeddedResource Include="Suppliers\Commands\EditAddressCommand.js" />
+    <EmbeddedResource Include="Suppliers\Commands\EnableCommand.js" />
+    <EmbeddedResource Include="Suppliers\Commands\EnablePortalCommand.js" />
+    <EmbeddedResource Include="Suppliers\Commands\SelectItemCommand.js" />
+    <EmbeddedResource Include="Suppliers\Commands\SelectUserCommand.js" />
+    <EmbeddedResource Include="Suppliers\Commands\SupplierDeleteCommand.js" />
+    <EmbeddedResource Include="Suppliers\Commands\SupplierItemDeleteCommand.js" />
+    <EmbeddedResource Include="Suppliers\Editors\RegionalInfoEditor.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\SIE.Web.Core\SIE.Web.Core.csproj" />
+    <ProjectReference Include="..\SIE.CSM\SIE.CSM.csproj" />
+  </ItemGroup>
+</Project>

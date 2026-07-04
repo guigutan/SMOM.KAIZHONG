@@ -1,0 +1,525 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Web.ESop</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Web.ESop.EntityPropertyViewMetaExtension">
+            <summary>
+            扩展编辑器
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ESop.EntityPropertyViewMetaExtension.UseEnterpriseResourceEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig})">
+            <summary>
+            资源车间下拉编辑器扩展方法
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="T:SIE.Web.ESop.Displays.Commands.InitESopCommand">
+            <summary>
+            初始化ESOP
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ESop.Displays.Commands.InitESopCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.ESop.Displays.Commands.SelectDisplayPointProcessCommand">
+            <summary>
+            选择工序命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ESop.Displays.Commands.SelectDisplayPointProcessCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            选择工序命令执行方法
+            </summary>
+            <param name="args">视图参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.ESop.Displays.Configs.DisplayPointDataConfigValueViewConfig">
+            <summary>
+            ESOP文档来源配置项视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ESop.Displays.Configs.DisplayPointDataConfigValueViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ESop.Displays.DisplayPointCriteriaViewConfig">
+            <summary>
+            显示点视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ESop.Displays.DisplayPointCriteriaViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ESop.Displays.DisplayPointCriteriaViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ESop.Displays.DisplayPointProcessViewConfig">
+            <summary>
+            工位显示点关系视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ESop.Displays.DisplayPointProcessViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ESop.Displays.DisplayPointViewConfig">
+            <summary>
+            显示点视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ESop.Displays.DisplayPointViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ESop.Displays.DisplayPointViewConfig.ConfigImportView">
+            <summary>
+            导入视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ESop.Displays.DisplayPointViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ESop.Documents.Commands.DocumentSaveCommand">
+            <summary>
+            保存
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ESop.Documents.Commands.DocumentSaveCommand.DoSave(SIE.Domain.Entity)">
+            <summary>
+            保存操作
+            </summary>
+            <param name="entity">发放单实体</param>
+        </member>
+        <member name="T:SIE.Web.ESop.Documents.Commands.DownloadCommand">
+            <summary>
+            附件下载
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ESop.Documents.Commands.DownloadCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            附件配置地址，从web.config中的节点client.attachmentDownloadUrl 获取
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.ESop.Documents.Commands.SelDocumentsItem">
+            <summary>
+            添加点检项目
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ESop.Documents.Commands.SelDocumentsItem.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行添加
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.ESop.Documents.Commands.ProjectInfo">
+            <summary>
+            信息
+            </summary>
+        </member>
+        <member name="P:SIE.Web.ESop.Documents.Commands.ProjectInfo.SourceId">
+            <summary>
+            源Id
+            </summary>
+        </member>
+        <member name="P:SIE.Web.ESop.Documents.Commands.ProjectInfo.ProjectDetailId">
+            <summary>
+            点检保养项目Id
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ESop.Documents.Commands.SelWoCommand">
+            <summary>
+            选择工单命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ESop.Documents.Commands.SelWoCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行添加
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.ESop.Documents.DocumentCollectionCriteriaViewConfig">
+            <summary>
+            文档集查询实体视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ESop.Documents.DocumentCollectionCriteriaViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ESop.Documents.DocumentCollectionItemViewConfig">
+            <summary>
+            适用产品视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ESop.Documents.DocumentCollectionItemViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ESop.Documents.DocumentCollectionItemViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ESop.Documents.DocumentCollectionViewConfig">
+            <summary>
+            文档集视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ESop.Documents.DocumentCollectionViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ESop.Documents.DocumentCollectionViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ESop.Documents.DocumentCollectionViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ESop.Documents.DataQuerys.DocumentsDataQuery">
+            <summary>
+            dataquery
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ESop.Documents.DataQuerys.DocumentsDataQuery.UploadFile(System.String,System.String,SIE.ESop.Documents.DocumentCollection)">
+            <summary>
+            上传文件
+            </summary>
+            <param name="fileContent"></param>
+            <param name="fileNamme"></param>
+            <param name="documentCollection"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.ESop.Documents.DataQuerys.DocumentsDataQuery.SaveListAttachment(System.String,System.String)">
+            <summary>
+            上传文件
+            </summary>
+            <param name="fileContent"></param>
+            <param name="fileNamme"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.ESop.Documents.DataQuerys.DocumentsDataQuery.DownLoadPictureAttachment(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="filePath"></param>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.ESop.Documents.DataQuerys.DocumentsDataQuery.FileByteToBase64(System.Byte[],System.String)">
+            <summary>
+            文件转Base64
+            </summary>
+            <param name="buffer"></param>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.ESop.Documents.DataQuerys.DocumentsDataQuery.GetMD5WithString(System.Byte[])">
+             <summary>
+            获取字节流的MD5
+             </summary>
+             <param name="fileContentGB"></param>
+             <returns></returns>
+        </member>
+        <member name="T:SIE.Web.ESop.Documents.DataQuerys.UploadResult">
+            <summary>
+            上传结果类
+            </summary>
+        </member>
+        <member name="P:SIE.Web.ESop.Documents.DataQuerys.UploadResult.FilePath">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.Web.ESop.Documents.DataQuerys.UploadResult.Md5">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.Web.ESop.Documents.DataQuerys.UploadResult.Size">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.Web.ESop.Documents.DataQuerys.UploadResult.FileName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.Web.ESop.Documents.DataQuerys.UploadResult.FileExtension">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.Web.ESop.Documents.DataQuerys.UploadResult.DocumentType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.Web.ESop.Documents.DataQuerys.UploadResult.IsProcessed">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ESop.Documents.DocumentViewConfig">
+            <summary>
+            文档视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ESop.Documents.DocumentViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ESop.Documents.DocumentViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ESop.Configs.AttachmentConfigViewConfig">
+            <summary>
+            文档服务器配置视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ESop.Configs.AttachmentConfigViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ESop.EngDocuments.Commands.EngDocSaveCommand">
+            <summary>
+            工程文件保存命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ESop.EngDocuments.Commands.EngDocSaveCommand.OnSaving(SIE.Domain.EntityList)">
+            <summary>
+            保存前校验
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="T:SIE.Web.ESop.EngDocuments.Commands.EngDocUseTypeCommand">
+            <summary>
+            使用类型维护
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ESop.EngDocuments.Commands.EngDocUseTypeCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            使用类型维护
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.ESop.EngDocuments.Commands.FileUseDetailSaveCommand">
+            <summary>
+            使用类型关联保存命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ESop.EngDocuments.Commands.FileUseDetailSaveCommand.OnSaving(SIE.Domain.EntityList)">
+            <summary>
+            保存前校验
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="T:SIE.Web.ESop.EngDocuments.Commands.SelForWoCommand">
+            <summary>
+            适用工单
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ESop.EngDocuments.Commands.SelForWoCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:SIE.Web.ESop.EngDocuments.DataQueryers.EngDocDataQueryer">
+            <summary>
+            前端数据请求
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ESop.EngDocuments.DataQueryers.EngDocDataQueryer.GetConfigUseTypeFolderId(System.String)">
+            <summary>
+            根据使用类型获取配置项文件夹
+            </summary>
+            <param name="useType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.ESop.EngDocuments.DataQueryers.EngDocDataQueryer.GetDocumentType(System.String,System.String)">
+            <summary>
+            解析文件扩展名判断文件类型并生成加密信息
+            </summary>
+            <param name="exten"></param>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.ESop.EngDocuments.DataQueryers.EngSaveExtData">
+            <summary>
+            文件管理额外扩展
+            </summary>
+        </member>
+        <member name="P:SIE.Web.ESop.EngDocuments.DataQueryers.EngSaveExtData.DocumentType">
+            <summary>
+            文件类型
+            </summary>
+        </member>
+        <member name="P:SIE.Web.ESop.EngDocuments.DataQueryers.EngSaveExtData.MD5">
+            <summary>
+            MD5加密
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ESop.EngDocuments.EngDocCriteriaViewConfig">
+            <summary>
+            工程文件管理查询
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ESop.EngDocuments.EngDocCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ESop.EngDocuments.EngDocDetailViewConfig">
+            <summary>
+            工程文件子表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ESop.EngDocuments.EngDocDetailViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ESop.EngDocuments.EngDocDetailViewConfig.ConfigListView">
+            <summary>
+            列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ESop.EngDocuments.EngDocumentViewConfig">
+            <summary>
+            工程文件视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ESop.EngDocuments.EngDocumentViewConfig.ConfigView">
+            <summary>
+            配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ESop.EngDocuments.EngDocumentViewConfig.ConfigListView">
+            <summary>
+            列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ESop.EngDocuments.FileUseDetailViewConfig">
+            <summary>
+            工程文件子表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ESop.EngDocuments.FileUseDetailViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ESop.EngDocuments.FileUseDetailViewConfig.ConfigListView">
+            <summary>
+            列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ESop.EngDocuments.FileUseDetailViewConfig.ConfigQueryView">
+            <summary>
+            查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ESop.Menus.EsopMenuInit">
+            <summary>
+            菜单初始化
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ESop.Module">
+            <summary>
+            模块配置
+            </summary> 
+        </member>
+        <member name="M:SIE.Web.ESop.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化模块
+            </summary>
+            <param name="app">应用程序</param>
+        </member>
+        <member name="M:SIE.Web.ESop.Module.App_ModuleOperations(System.Object,System.EventArgs)">
+            <summary>
+            配置菜单
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="T:SIE.Web.ESOP.Documents.DocumentCollectionWorkOrderViewConfig">
+            <summary>
+            文档集与工单关系-界面
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ESOP.Documents.DocumentCollectionWorkOrderViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ESOP.Documents.DocumentCollectionWorkOrderViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ESop.Configs.DisplayPointConfigValueViewConfig">
+            <summary>
+            文档服务器配置视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Configs.DisplayPointConfigValueViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Documents.ImportFileViewModelViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Documents.ImportFileViewModelViewConfig.ConfigDetailsView">
+            <summary>
+            配置表单视图
+            </summary>
+        </member>
+    </members>
+</doc>

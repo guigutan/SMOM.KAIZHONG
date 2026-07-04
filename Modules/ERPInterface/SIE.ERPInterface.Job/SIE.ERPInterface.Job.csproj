@@ -1,0 +1,72 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\platform\smom\net6.0\SIE.ERPInterface.Job.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\platform\smom\net6.0\SIE.ERPInterface.Job.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="UploadSap\Adjust\**" />
+    <Compile Remove="UploadSap\APISMOM\**" />
+    <Compile Remove="UploadSap\InWarehouseProcess\**" />
+    <Compile Remove="UploadSap\Iqc\**" />
+    <Compile Remove="UploadSap\OnHandAdjust\**" />
+    <Compile Remove="UploadSap\ProductionOrders\**" />
+    <Compile Remove="UploadSap\Receive\**" />
+    <Compile Remove="UploadSap\SmomSap45\**" />
+    <Compile Remove="UploadSap\SupplierReturn\**" />
+    <EmbeddedResource Remove="UploadSap\Adjust\**" />
+    <EmbeddedResource Remove="UploadSap\APISMOM\**" />
+    <EmbeddedResource Remove="UploadSap\InWarehouseProcess\**" />
+    <EmbeddedResource Remove="UploadSap\Iqc\**" />
+    <EmbeddedResource Remove="UploadSap\OnHandAdjust\**" />
+    <EmbeddedResource Remove="UploadSap\ProductionOrders\**" />
+    <EmbeddedResource Remove="UploadSap\Receive\**" />
+    <EmbeddedResource Remove="UploadSap\SmomSap45\**" />
+    <EmbeddedResource Remove="UploadSap\SupplierReturn\**" />
+    <None Remove="UploadSap\Adjust\**" />
+    <None Remove="UploadSap\APISMOM\**" />
+    <None Remove="UploadSap\InWarehouseProcess\**" />
+    <None Remove="UploadSap\Iqc\**" />
+    <None Remove="UploadSap\OnHandAdjust\**" />
+    <None Remove="UploadSap\ProductionOrders\**" />
+    <None Remove="UploadSap\Receive\**" />
+    <None Remove="UploadSap\SmomSap45\**" />
+    <None Remove="UploadSap\SupplierReturn\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Download\Items\DownloadItemCateJob.cs" />
+    <Compile Remove="Download\Items\DownloadItemJob.cs" />
+    <Compile Remove="Download\Suppliers\EbsDownloadCustomerJob.cs" />
+    <Compile Remove="UploadEbs\PurchaseIn\EbsUploadReceiveJob.cs" />
+    <Compile Remove="UploadSap\Finished\UploadFinishedJob.cs" />
+    <Compile Remove="UploadSap\OtherIn\UploadOtherInJob.cs" />
+    <Compile Remove="UploadSap\OtherIn\UploadOtherInStorageJob2.cs" />
+    <Compile Remove="UploadSap\OtherIn\UploadOtherInStorageJob3.cs" />
+    <Compile Remove="UploadSap\OtherIn\UploadOtherJob.cs" />
+    <Compile Remove="UploadSap\OtherIn\UploadOtherOutJob.cs" />
+    <Compile Remove="UploadSap\PurchaseIn\UploadPoReceiveJob.cs" />
+    <Compile Remove="UploadSap\PurchaseIn\UploadPurchaseInJob.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+    <Folder Include="UploadEbs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\KaiZhong\SIE.KZ.Group\SIE.KZ.Group.csproj" />
+    <ProjectReference Include="..\SIE.ERPInterface.Sap\SIE.ERPInterface.Sap.csproj" />
+    <ProjectReference Include="..\SIE.ERPInterface.Smom\SIE.ERPInterface.Smom.csproj" />
+  </ItemGroup>
+</Project>

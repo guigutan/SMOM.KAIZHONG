@@ -1,0 +1,287 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Web.TurnoverTools</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Web.TurnoverTools.TurnoverToolsMenuInit">
+            <summary>
+            菜单初始化
+            </summary>
+        </member>
+        <member name="M:SIE.Web.TurnoverTools.TurnoverToolsMenuInit.GetMenuDtos">
+            <summary>
+            获取菜单列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Kit.TurnoverTools.Module">
+            <summary>
+            模块配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Kit.TurnoverTools.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化模块
+            </summary>
+            <param name="app">应用程序</param>
+        </member>
+        <member name="M:SIE.Web.Kit.TurnoverTools.Module.App_ModuleOperations(System.Object,System.EventArgs)">
+            <summary>
+            模块定义
+            </summary>
+            <param name="sender">应用程序</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="T:SIE.Web.Kit.TurnoverTools.TurnoverTools.TurnoverToolViewConfig">
+            <summary>
+            周转工具视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Kit.TurnoverTools.TurnoverTools.TurnoverToolViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Kit.TurnoverTools.TurnoverTools.TurnoverToolViewConfig.ConfigQueryView">
+            <summary>
+            查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Kit.TurnoverTools.TurnoverTools.TurnoverToolViewConfig.ConfigDetailsView">
+            <summary>
+             配置明细视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Kit.TurnoverTools.TurnoverTools.TurnoverToolViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TurnoverTools.Commands.TurnoverToolRecoveryCommand">
+            <summary>
+            回收周转工具
+            </summary>   
+        </member>
+        <member name="M:SIE.Web.MES.TurnoverTools.Commands.TurnoverToolRecoveryCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            恢复工单执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.MES.TurnoverTools.Commands.TurnoverToolRepairCommand">
+            <summary>
+            维修周转工具
+            </summary>    
+        </member>
+        <member name="M:SIE.Web.MES.TurnoverTools.Commands.TurnoverToolRepairCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            维修周转工具
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.MES.TurnoverTools.Commands.TurnoverToolScrapCommand">
+            <summary>
+            报废周转工具
+            </summary>  
+        </member>
+        <member name="M:SIE.Web.MES.TurnoverTools.Commands.TurnoverToolScrapCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            报废周转工具执行
+            </summary>
+            <param name="args">视图参数</param>
+            <param name="scope">scope</param>
+        </member>
+        <member name="T:SIE.Web.Elec.MES.TurnoverTools.Commands.TurnoverToolDeleteCommand">
+            <summary>
+            周转工具删除命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Elec.MES.TurnoverTools.Commands.TurnoverToolDeleteCommand.Excute(System.Double[],System.String)">
+            <summary>
+            选择物料
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>返回信息</returns>
+        </member>
+        <member name="T:SIE.Web.Elec.MES.TurnoverTools.Commands.TurnoverToolImportCommand">
+            <summary>
+            周转工具导入
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Elec.MES.TurnoverTools.Commands.TurnoverToolImportCommand.Excute(SIE.Web.Common.Import.Commands.ImportViewArgs,System.String)">
+            <summary>
+            导入数据
+            </summary>
+            <param name="importViewArgs">导入视图参数</param>
+            <param name="scope">使用范围</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:SIE.Web.Elec.MES.TurnoverTools.Commands.TurnoverToolImportCommand.DownloadTemplate">
+            <summary>
+            直接从服务器上下载模板
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Elec.MES.TurnoverTools.Commands.TurnoverToolImportCommand.GetImportCompleted">
+            <summary>
+            导入完成
+            </summary>
+            <returns>ImportCompleted</returns>
+        </member>
+        <member name="M:SIE.Web.Elec.MES.TurnoverTools.Commands.TurnoverToolImportCommand.GetImportHandleType">
+            <summary>
+            获取导入处理类型
+            </summary>
+            <returns>Type</returns>
+        </member>
+        <member name="T:SIE.Web.Elec.MES.TurnoverTools.Commands.SetModelDedicatedCommand">
+            <summary>
+            设为专用
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Elec.MES.TurnoverTools.Commands.SetModelDedicatedCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            设为专用
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>返回信息</returns>
+        </member>
+        <member name="T:SIE.Web.Elec.MES.TurnoverTools.Commands.CancelModelDedicatedCommand">
+            <summary>
+            取消专用
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Elec.MES.TurnoverTools.Commands.CancelModelDedicatedCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            取消专用
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>返回信息</returns>
+        </member>
+        <member name="T:SIE.Web.Elec.MES.TurnoverTools.Commands.TurnoverToolModelImportCommand">
+            <summary>
+            周转工具型号维护导入
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Elec.MES.TurnoverTools.Commands.TurnoverToolModelImportCommand.DownloadTemplate">
+            <summary>
+            直接从服务器上下载模板
+            </summary>
+            <returns>模板信息</returns>
+        </member>
+        <member name="M:SIE.Web.Elec.MES.TurnoverTools.Commands.TurnoverToolModelImportCommand.GetImportHandleType">
+            <summary>
+            获取导入处理类型
+            </summary>
+            <returns>Type</returns>
+        </member>
+        <member name="T:SIE.Web.Elec.MES.TurnoverTools.Configs.TurnoverToolConfigsValueViewConfig">
+            <summary>
+            周转工具配置值视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Elec.MES.TurnoverTools.Configs.TurnoverToolConfigsValueViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Elec.MES.TurnoverTools.Configs.TurnoverToolConfigsValueViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Elec.MES.TurnoverTools.TurnoverToolActionLogViewConfig">
+            <summary>
+            操作日志视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Elec.MES.TurnoverTools.TurnoverToolActionLogViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Elec.MES.TurnoverTools.TurnoverToolActionLogViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Elec.MES.TurnoverTools.TurnoverToolActionLogViewConfig.ConfigDetailsView">
+            <summary>
+             配置明细视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Elec.MES.TurnoverTools.TurnoverToolActionLogViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.Elec.MES.TurnoverTools.TurnoverToolBindingViewConfig">
+            <summary>
+            绑定明细视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Elec.MES.TurnoverTools.TurnoverToolBindingViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Elec.MES.TurnoverTools.TurnoverToolBindingViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Elec.MES.TurnoverTools.TurnoverToolBindingViewConfig.ConfigDetailsView">
+            <summary>
+             配置明细视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Elec.MES.TurnoverTools.TurnoverToolBindingViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.Elec.MES.TurnoverTools.TurnoverToolModelInProductViewConfig">
+            <summary>
+            产品容量视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Elec.MES.TurnoverTools.TurnoverToolModelInProductViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.Elec.MES.TurnoverTools.TurnoverToolModelViewConfig">
+            <summary>
+            周转工具型号视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Elec.MES.TurnoverTools.TurnoverToolModelViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Elec.MES.TurnoverTools.TurnoverToolModelViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Elec.MES.TurnoverTools.TurnoverToolModelViewConfig.ConfigDetailsView">
+            <summary>
+             配置明细视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Elec.MES.TurnoverTools.TurnoverToolModelViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+    </members>
+</doc>

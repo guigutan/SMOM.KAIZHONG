@@ -1,0 +1,143 @@
+﻿<sd:ComponentItem  x:Class="SIE.Wpf.MES.Workbench.WoStatus.WoStatusControl" 
+                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                   xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+                   xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+                   xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                   xmlns:local="clr-namespace:SIE.Wpf.MES.Workbench.WoStatus"
+                   xmlns:sd="clr-namespace:SIE.Wpf.Common.Diagram;assembly=SIE.Wpf.Common"
+                   xmlns:uic="http://schemas.siestudio.com/winfx/xaml/core" 
+                    xmlns:uit="http://schemas.siestudio.com/winfx/xaml/themes"
+                   xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"           
+                   xmlns:converter="clr-namespace:SIE.Wpf.MES.Workbench.Converters"
+                   mc:Ignorable="d"    
+                   sd:DiagramDesigner.ToolBarTitle="{Binding [生产-工单状态监控],Source={uic:L10N}}" 
+                   sd:DiagramDesigner.DefaultSize="1106,304"     
+                   d:DesignHeight="304" d:DesignWidth="953">
+    <sd:ComponentItem.Resources>
+        <Style x:Key="HeadStyle" TargetType="{x:Type dxg:GridColumnHeader}">
+            <Setter Property="Foreground" Value="#128BEF"/>
+            <Setter Property="Background" Value="#F1F5FF"></Setter>
+            <Setter Property="Height" Value="30"></Setter>
+            <Setter Property="BorderThickness" Value="0"></Setter>
+            <Setter Property="BorderBrush" Value="#F1F5FF"></Setter>
+        </Style>
+        <Style x:Key="CelStyle" TargetType="{x:Type dxg:LightweightCellEditor}">
+            <Setter Property="Height" Value="30"></Setter>
+        </Style>
+        <Style  TargetType="{x:Type dxg:GridColumn}">
+            <Setter Property="HorizontalHeaderContentAlignment" Value="Center" />
+            <Setter Property="HeaderStyle" Value="{StaticResource HeadStyle}"></Setter>
+            <Setter Property="CellStyle" Value="{StaticResource CelStyle}"></Setter>
+            <Setter Property="EditSettings">
+                <Setter.Value>
+                    <dxe:TextEditSettings HorizontalContentAlignment="Center"   />
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="LabelStyle" TargetType="Label">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="14"></Setter>
+        </Style>
+       
+    </sd:ComponentItem.Resources>
+    <dxlc:GroupBox Padding="-2">
+        <dxlc:GroupBox.Header>
+            <Label Height="36" FontSize="18" VerticalContentAlignment="Center">
+                <TextBlock Name="lblTitle" Text="{Binding [工单状态监控],Source={uic:L10N}}"/>
+            </Label>
+        </dxlc:GroupBox.Header>
+        <Grid Background="{DynamicResource {uit:BrushesThemeKey ResourceKey=Background}}">
+            <dxg:GridControl x:Name="statusGridControl" AllowInitiallyFocusedRow="False" MaxHeight="280" Visibility="Visible" SelectedItemChanged="statusGridControl_SelectedItemChanged" Margin="5" ShowBorder="True" BorderBrush="{DynamicResource {uit:BrushesThemeKey ResourceKey=BorderBrush}}" ItemsSource="{Binding Source}">
+                <dxg:GridControl.View>
+                    <dxg:TableView AutoWidth="True" AllowEditing="False" VerticalScrollbarVisibility="Auto" HorizontalScrollbarVisibility="Auto" ShowGroupPanel="False" ShowIndicator="False"  />
+                </dxg:GridControl.View>
+                <dxg:GridControl.Columns>
+                    <dxg:GridColumn Header="{Binding [计划], Source={uic:L10N}}"  FieldName="PlanIndex" Width="auto" AllowMoving="false"/>
+                    <dxg:GridColumn Header="{Binding [实际], Source={uic:L10N}}"  FieldName="RealIndex" Width="auto" AllowMoving="false"/>
+                    <dxg:GridColumn Header="{Binding [工单], Source={uic:L10N}}"  FieldName="No" Width="auto" AllowMoving="false" />
+                    <dxg:GridColumn  Header="{Binding [进度], Source={uic:L10N}}"  Width="400" AllowMoving="false" >
+                        <dxg:GridColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" >
+                                    <Border Background="#F1F1F1"  Width="280" Height="16" CornerRadius="8"  Margin="5,0,0,0">
+                                        <Border Width="{Binding RowData.Row.ProcessValue}" Background="{Binding RowData.Row.ProcessColor}"  HorizontalAlignment="Left" Height="16" CornerRadius="8">
+                                            <Label FontWeight="Regular" FontSize="10" HorizontalAlignment="Right"  VerticalContentAlignment="Top" VerticalAlignment="Top" Foreground="White" Content="{Binding RowData.Row.CompleteRate}"   Margin="0,-1,5,0" >
+                                            </Label>
+                                        </Border>
+                                    </Border>
+                                    <Label Width="90" Content="{Binding RowData.Row.ComAndPlan}" HorizontalContentAlignment="Center" Margin="0,0,0,0">
+                                    </Label>
+                                </StackPanel>
+                            </DataTemplate>
+                        </dxg:GridColumn.CellTemplate>
+                    </dxg:GridColumn>
+                    <dxg:GridColumn Header="{Binding [合格率], Source={uic:L10N}}"  FieldName="PassRate" Width="auto" AllowMoving="false" />
+                </dxg:GridControl.Columns>
+            </dxg:GridControl>
+
+            <Grid Name="ctlDetal" MouseDown="ctlDetal_MouseDown"  Visibility="Collapsed" Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <dxlc:GroupBox  Margin="10,10,10,10" Grid.Column="0" FontSize="16"  Header="{Binding No,Converter={converter:PanelTitleConverter}}"  Foreground="#201F35" Background="#E7F3FD" BorderBrush="#CCCCCC" BorderThickness="1" TitleBackground="#E7F3FD" >
+                    <StackPanel  Orientation="Horizontal">
+                        <Border  Height="50">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1*" />
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <StackPanel Grid.Row="0" Orientation="Horizontal">
+                                    <Label Style="{StaticResource LabelStyle}" Content="{Binding [计划开始时间：],Source={uic:L10N}}"></Label>
+                                    <Label Style="{StaticResource LabelStyle}" Content="{Binding PlanBeginDate,Converter={converter:DateConverter}}" HorizontalAlignment="Center"></Label>
+                                </StackPanel>
+                                <StackPanel Grid.Row="1"  Orientation="Horizontal">
+                                    <Label Style="{StaticResource LabelStyle}" Content="{Binding [计划结束时间：],Source={uic:L10N}}"></Label>
+                                    <Label Style="{StaticResource LabelStyle}" Content="{Binding PlanEndDate,Converter={converter:DateConverter}}" HorizontalAlignment="Center"></Label>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </StackPanel>
+                </dxlc:GroupBox>
+                <dxlc:GroupBox Margin="10,10,10,10" Grid.Column="1" FontSize="16" Header="{Binding ProductStatus,Converter={converter:ProductTitleConverter}}" Foreground="#201F35" Background="#E7F3FD" BorderBrush="#CCCCCC" BorderThickness="1" TitleBackground="#E7F3FD">
+                    <StackPanel  Orientation="Horizontal">
+                        <Border  Height="150">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1*" />
+                                    <RowDefinition Height="1*"/>
+                                    <RowDefinition Height="1*"/>
+                                    <RowDefinition Height="1*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <StackPanel Grid.Row="0" Orientation="Horizontal">
+                                    <Label Style="{StaticResource LabelStyle}" Content="{Binding [实际开始时间：],Source={uic:L10N}}"></Label>
+                                    <Label Style="{StaticResource LabelStyle}" Content="{Binding ActulStartDate,Converter={converter:DateConverter}}"></Label>
+                                </StackPanel>
+                                <StackPanel Grid.Row="1"  Orientation="Horizontal">
+                                    <Label Style="{StaticResource LabelStyle}" Content="{Binding [实际结束时间：],Source={uic:L10N}}"></Label>
+                                    <Label Style="{StaticResource LabelStyle}" Content="{Binding ActulEndDate,Converter={converter:DateConverter}}" ></Label>
+                                </StackPanel>
+                                <StackPanel Grid.Row="2"  Orientation="Horizontal">
+                                    <Label Style="{StaticResource LabelStyle}" Content="{Binding [已完成计划数量：],Source={uic:L10N}}"></Label>
+                                    <Label Style="{StaticResource LabelStyle}" Content="{Binding FinishQty}" ></Label>
+                                </StackPanel>
+                                <StackPanel Grid.Row="3"  Orientation="Horizontal">
+                                    <Label Style="{StaticResource LabelStyle}" Content="{Binding [期望目标产能：],Source={uic:L10N}}"></Label>
+                                    <Label Style="{StaticResource LabelStyle}" Content="{Binding TargetQty}" ></Label>
+                                </StackPanel>
+                                <StackPanel Grid.Row="4"  Orientation="Horizontal">
+                                    <Label Style="{StaticResource LabelStyle}" Content="{Binding [进度状态：],Source={uic:L10N}}"></Label>
+                                    <Label Style="{StaticResource LabelStyle}" Foreground="{Binding ProcessColor}" Content="{Binding ProcessStatus}" ></Label>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </StackPanel> 
+                </dxlc:GroupBox>
+            </Grid>
+        </Grid>
+    </dxlc:GroupBox>  
+</sd:ComponentItem>

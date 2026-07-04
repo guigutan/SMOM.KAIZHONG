@@ -1,0 +1,17 @@
+﻿SIE.defineCommand('SIE.Web.Kit.MES.Storages.Commands.StorageSaftyPropertySaveCommand', {
+    meta: { text: "物料库存属性值保存", group: "edit" },
+    execute: function (view, source, win) {
+        var me = view;
+        me.execute({
+            command: Ext.getClassName(this),
+            data: {
+                DetailList: source.Selecteds,
+                DetailId: source.DetailId,
+            },
+            success: function (res) {
+                if (res.Result == "保存成功")
+                    win.close();
+            }
+        });
+    }
+});

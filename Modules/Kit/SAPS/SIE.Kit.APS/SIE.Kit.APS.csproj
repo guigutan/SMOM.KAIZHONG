@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup Label="Globals">
+		<SccProjectName>SAK</SccProjectName>
+		<SccProvider>SAK</SccProvider>
+		<SccAuxPath>SAK</SccAuxPath>
+		<SccLocalPath>SAK</SccLocalPath>
+	</PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<OutputPath>..\..\..\..\platform\smom\</OutputPath>
+		<DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Kit.APS.xml</DocumentationFile>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<OutputPath>..\..\..\..\platform\smom\</OutputPath>
+		<DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Kit.APS.xml</DocumentationFile>
+	</PropertyGroup>
+	<ItemGroup>
+	  <Compile Remove="EngineerPlans\SearchSoLines\**" />
+	  <EmbeddedResource Remove="EngineerPlans\SearchSoLines\**" />
+	  <None Remove="EngineerPlans\SearchSoLines\**" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Compile Remove="EngineerPlans\Configs\EngineerPlan_MaxWorkCapactiy_Config.cs" />
+	  <Compile Remove="EngineerPlans\Handle\DoScheduleHandle - 副本 %282%29.cs" />
+	  <Compile Remove="EngineerPlans\Handle\DoScheduleHandle - 副本.cs" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\Common\SaleOrders\SIE.SO\SIE.SO.csproj" />
+		<ProjectReference Include="..\..\..\SAPS\SIE.APS\SIE.APS.csproj" />
+		<ProjectReference Include="..\..\Core\SIE.Kit.EventMessages\SIE.Kit.EventMessages.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+    <Folder Include="FactoryConfirms\" />
+	</ItemGroup>
+</Project>

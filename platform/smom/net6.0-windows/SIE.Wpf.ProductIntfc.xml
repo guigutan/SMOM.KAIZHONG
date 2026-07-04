@@ -1,0 +1,625 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Wpf.ProductIntfc</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Wpf.ProductIntfc.Configs.FirstInspNoConfigValueViewConfig">
+            <summary>
+            报检单号配置值视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.Configs.FirstInspNoConfigValueViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ProductIntfc.Configs.ProductStorageConfigValueViewConfig">
+            <summary>
+            报检单号配置值视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.Configs.ProductStorageConfigValueViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ProductIntfc.FirstInsps.Commands.FirstInspCommand">
+            <summary>
+            首件报检命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.FirstInsps.Commands.FirstInspCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            首件报检命令执行方法
+            </summary>
+            <param name="view">列表逻辑视图</param>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.FirstInsps.Commands.FirstInspCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            判断报检命令能否执行
+            </summary>
+            <param name="view">列表逻辑视图</param>
+            <returns>能执行返回true，否则返回false</returns>
+        </member>
+        <member name="T:SIE.Wpf.ProductIntfc.FirstInsps.Commands.FirstInspRuleCommand">
+            <summary>
+            报检规则命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.FirstInsps.Commands.FirstInspRuleCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            报检规则命令执行方法
+            </summary>
+            <param name="view">列表逻辑视图</param>
+        </member>
+        <member name="T:SIE.Wpf.ProductIntfc.FirstInsps.Commands.FirstInspListCommand">
+            <summary>
+            报检规则命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.FirstInsps.Commands.FirstInspListCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            不能修改参数=工单的
+            </summary>
+            <param name="view">视图</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Wpf.ProductIntfc.FirstInsps.FirstInspCriteriaViewConfig">
+            <summary>
+            报检记录查询实体视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ProductIntfc.FirstInsps.FirstInspCriteriaViewConfig.ClearResourceProperty">
+            <summary>
+            清除资源
+            </summary> 
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.FirstInsps.FirstInspCriteriaViewConfig.GetClearResource(SIE.ProductIntfc.FirstInsps.FirstInspCriteria)">
+            <summary>
+            清除资源
+            </summary>
+            <param name="me">首件报检查询实体</param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.FirstInsps.FirstInspCriteriaViewConfig.ConfigView">
+            <summary>
+            首件报检查询视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ProductIntfc.FirstInsps.FirstInspDetailViewConfig">
+            <summary>
+            报检条码日志明细视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ProductIntfc.FirstInsps.FirstInspDetailViewConfig.FirstInspDetailView">
+            <summary>
+            报检单明细视图
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ProductIntfc.FirstInsps.FirstInspDetailViewConfig.InspectionProperty">
+            <summary>
+            已报检
+            已报检不能选择
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.FirstInsps.FirstInspDetailViewConfig.GetInspection(SIE.ProductIntfc.InspLogs.InspBarcodeLog)">
+            <summary>
+            按产品分批
+            </summary>
+            <param name="me">实体ItemBatchRule</param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.FirstInsps.FirstInspDetailViewConfig.ConfigFirstInspDetailView">
+            <summary>
+            配置首检报检明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ProductIntfc.FirstInsps.FirstInspRuleViewConfig">
+            <summary>
+            首件规则视图类
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ProductIntfc.FirstInsps.FirstInspRuleViewConfig.FirstInspRuleProperty">
+            <summary>
+            首检规则
+            首检参数是工单的默认选中并不能编辑
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.FirstInsps.FirstInspRuleViewConfig.GetFirstInspRule(SIE.ProductIntfc.FirstInsps.FirstInspRule)">
+            <summary>
+            按产品分批
+            </summary>
+            <param name="me">实体ItemBatchRule</param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.FirstInsps.FirstInspRuleViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ProductIntfc.FirstInsps.FirstInspViewBehavior">
+            <summary>
+            报检条码视图行为
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.FirstInsps.FirstInspViewBehavior.OnAttach">
+            <summary>
+            附加视图行为
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ProductIntfc.FirstInsps.FirstInspViewConfig">
+            <summary>
+            首检查询实体视图配置
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ProductIntfc.FirstInsps.FirstInspViewConfig.FirstInspView">
+            <summary>
+            成品入库视图组
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.FirstInsps.FirstInspViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.FirstInsps.FirstInspViewConfig.CusConfigListView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ProductIntfc.InspLogs.InspBarcodeLogViewConfig">
+            <summary>
+            报检条码日志明细视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ProductIntfc.InspLogs.InspBarcodeLogViewConfig.LogDetailView">
+            <summary>
+            报检单明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.InspLogs.InspBarcodeLogViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.InspLogs.InspBarcodeLogViewConfig.ConfigLogDetailView">
+            <summary>
+            配置报检单明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.InspLogs.InspBarcodeLogViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.InspLogs.InspBarcodeLogViewConfig.ConfigSelectionView">
+            <summary>
+            配置下拉视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ProductIntfc.InspLogs.InspLogCriteriaViewConfig">
+            <summary>
+            报检单查询实体视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.InspLogs.InspLogCriteriaViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ProductIntfc.InspLogs.InspLogViewConfig">
+            <summary>
+            报检日志视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ProductIntfc.InspLogs.InspLogViewConfig.ShippingInspLogListView">
+            <summary>
+            报检日志自定义ViewGroup
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.InspLogs.InspLogViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.InspLogs.InspLogViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.InspLogs.InspLogViewConfig.ConfigShippingInspLogListView">
+            <summary>
+            自定义配置视图列表
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ProductIntfc.InspRecords.Commands.ShippingInspCommand">
+            <summary>
+            成品报检命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.InspRecords.Commands.ShippingInspCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            判断成品报检命令能否执行
+            </summary>
+            <param name="view">列表逻辑视图</param>
+            <returns>能执行返回true，否则返回false</returns>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.InspRecords.Commands.ShippingInspCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            成品报检命令执行方法
+            </summary>
+            <param name="view">列表逻辑视图</param>
+        </member>
+        <member name="T:SIE.Wpf.ProductIntfc.InspRecords.InspBarcodeViewBehavior">
+            <summary>
+            报检条码视图行为
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.InspRecords.InspBarcodeViewBehavior.OnAttach">
+            <summary>
+            附加视图行为
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ProductIntfc.InspRecords.InspBarcodeViewConfig">
+            <summary>
+            报检条码视图配置
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ProductIntfc.InspRecords.InspBarcodeViewConfig.ProductInspViewGroup">
+            <summary>
+            成品报检子视图视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.InspRecords.InspBarcodeViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.InspRecords.InspBarcodeViewConfig.ConfigProductInspView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.InspRecords.InspBarcodeViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.InspRecords.InspBarcodeViewConfig.ConfigSelectionView">
+            <summary>
+            配置下拉视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ProductIntfc.InspRecords.InspRecordViewConfig">
+            <summary>
+            报检记录视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.InspRecords.InspRecordViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.InspRecords.InspRecordViewConfig.ConfigSelectionView">
+            <summary>
+            配置下拉视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ProductIntfc.InspSettings.Editors.InspParamLookUpEditor">
+            <summary>
+            报检参数物料下拉编辑器
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ProductIntfc.InspSettings.Editors.InspParamLookUpEditor.EditorName">
+            <summary>
+            物料编辑器名称
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.InspSettings.Editors.InspParamLookUpEditor.GetDataSourceCore(SIE.Domain.Entity,SIE.PagingInfo,System.String,SIE.ManagedProperty.IManagedProperty)">
+            <summary>
+            重新加载数据源
+            </summary>
+            <param name="source">对象</param>
+            <param name="pagingInfo">分页</param>
+            <param name="keyword">关键字</param>
+            <param name="titleProperty">托管属性标记</param>
+            <returns>只含成品和半成品物料的列表</returns>
+        </member>
+        <member name="T:SIE.Wpf.ProductIntfc.Module">
+            <summary>
+            模块
+            </summary>
+            <seealso cref="T:SIE.Modules.UIModule" />
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.Module.Initialize(SIE.IApp)">
+            <summary>
+            模块的初始化方法。
+            框架会在启动时根据启动级别顺序调用本方法。
+            方法有两个职责：
+            1.依赖注入。
+            2.注册 app 生命周期中事件，进行特定的初始化工作。
+            </summary>
+            <param name="app">应用程序对象。</param>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.Module.App_ModuleOperations(System.Object,System.EventArgs)">
+            <summary>
+            模块操作
+            </summary>
+            <param name="sender">发送者</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.Module.AddPropertyEditor(SIE.IApp)">
+            <summary>
+            属性编辑器
+            </summary>
+            <param name="app">应用程序生成周期定义</param>
+        </member>
+        <member name="T:SIE.Wpf.ProductIntfc.ProductInsps.ProductInspCriteriaViewConfig">
+            <summary>
+            报检记录查询实体视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ProductIntfc.ProductInsps.ProductInspCriteriaViewConfig.ClearResourceProperty">
+            <summary>
+            清除资源
+            </summary> 
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.ProductInsps.ProductInspCriteriaViewConfig.GetClearResource(SIE.ProductIntfc.ProductInsps.ProductInspCriteria)">
+            <summary>
+            清除资源
+            </summary>
+            <param name="me">成品报检查询实体</param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.ProductInsps.ProductInspCriteriaViewConfig.ConfigView">
+            <summary>
+            成品报检查询视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ProductIntfc.ProductInsps.ProductInspViewConfig">
+            <summary>
+            成品报检记录视图配置
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ProductIntfc.ProductInsps.ProductInspViewConfig.ProductInspViewGroup">
+            <summary>
+            成品报检
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.ProductInsps.ProductInspViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.ProductInsps.ProductInspViewConfig.ConfigProductInspView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.ProductInsps.ProductInspViewConfig.ConfigSelectionView">
+            <summary>
+            配置下拉视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ProductIntfc.ProductStorages.Commands.ToStorageCommand">
+            <summary>
+            入库命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.ProductStorages.Commands.ToStorageCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            执行入库
+            </summary>
+            <param name="view">数据视图</param>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.ProductStorages.Commands.ToStorageCommand.UpdateBarcodeList(SIE.Wpf.ListLogicalView)">
+            <summary>
+            更新条件列表
+            </summary>
+            <param name="view">列表逻辑视图</param>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.ProductStorages.Commands.ToStorageCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            判断入库命令能否执行
+            </summary>
+            <param name="view">列表逻辑视图</param>
+            <returns>能执行返回true，否则返回false</returns>
+        </member>
+        <member name="T:SIE.Wpf.ProductIntfc.ProductStorages.Editors.StorageParamLookUpEditor">
+            <summary>
+            入库参数物料下拉编辑器
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ProductIntfc.ProductStorages.Editors.StorageParamLookUpEditor.EditorName">
+            <summary>
+            物料编辑器名称
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.ProductStorages.Editors.StorageParamLookUpEditor.GetDataSourceCore(SIE.Domain.Entity,SIE.PagingInfo,System.String,SIE.ManagedProperty.IManagedProperty)">
+            <summary>
+            重新加载数据源
+            </summary>
+            <param name="source">对象</param>
+            <param name="pagingInfo">分页</param>
+            <param name="keyword">关键字</param>
+            <param name="titleProperty">托管属性标记</param>
+            <returns>只含成品和半成品物料的列表</returns>
+        </member>
+        <member name="T:SIE.Wpf.ProductIntfc.ProductStorages.InStorageBarcodeDetailViewConfig">
+            <summary>
+            入库明细
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.ProductStorages.InStorageBarcodeDetailViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ProductIntfc.ProductStorages.InStorageBillViewConfig">
+            <summary>
+            入库单
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.ProductStorages.InStorageBillViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ProductIntfc.ProductStorages.ProductStorageCriteriaViewConfig">
+            <summary>
+            报检记录查询实体视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ProductIntfc.ProductStorages.ProductStorageCriteriaViewConfig.ClearResourceProperty">
+            <summary>
+            清除资源
+            </summary> 
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.ProductStorages.ProductStorageCriteriaViewConfig.GetClearResource(SIE.ProductIntfc.ProductStorages.ProductStorageCriteria)">
+            <summary>
+            清除资源
+            </summary>
+            <param name="me">首件报检查询实体</param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.ProductStorages.ProductStorageCriteriaViewConfig.ConfigView">
+            <summary>
+            成品报检查询视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ProductIntfc.ProductStorages.ProductStorageParamViewConfig">
+            <summary>
+            成品入库参数视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.ProductStorages.ProductStorageParamViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.ProductStorages.ProductStorageParamViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.ProductStorages.ProductStorageParamViewConfig.ConfigSelectionView">
+            <summary>
+            弹出窗体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.ProductStorages.ProductStorageParamViewConfig.ConfigQueryView">
+            <summary>
+            查询视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ProductIntfc.ProductStorages.StorageWorkOrderViewConfig">
+            <summary>
+            成品入库视图配置
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ProductIntfc.ProductStorages.StorageWorkOrderViewConfig.StorageWorkOrderView">
+            <summary>
+            成品入库视图组
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.ProductStorages.StorageWorkOrderViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.ProductStorages.StorageWorkOrderViewConfig.ConfigStorageWorkOrderView">
+            <summary>
+            配置成品入库视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ProductIntfc.ProductStorages.ToStorageBarcodeDetailViewConfig">
+            <summary>
+            成品入库条码明细视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.ProductStorages.ToStorageBarcodeDetailViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ProductIntfc.ProductStorages.ToStorageBarcodeViewConfig">
+            <summary>
+            成品入库条码视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ProductIntfc.ProductStorages.ToStorageBarcodeViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.InspSettings.ProductIntfcs.Commands.InspParameterAddCommand">
+            <summary>
+            报检参数新增命令类
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.InspSettings.ProductIntfcs.Commands.InspParameterAddCommand.CreateNewItem">
+            <summary>
+            新增命令
+            </summary>
+            <returns>ScheduingRouting实体</returns>
+        </member>
+        <member name="T:SIE.Wpf.InspSettings.ProductIntfcs.InspParameterViewConfig">
+            <summary>
+            报检参数视图类
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.InspSettings.ProductIntfcs.InspParameterViewConfig.ProcIsReadOnlyProperty">
+            <summary>
+            产品族，工序是否只读
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.InspSettings.ProductIntfcs.InspParameterViewConfig.GetProcIsReadOnly(SIE.ProductIntfc.InspSettings.InspParameter)">
+            <summary>
+            产品族，工序是否只读
+            </summary>
+            <param name="me">实体InspParameter</param>
+            <returns>bool</returns>
+        </member>
+        <member name="F:SIE.Wpf.InspSettings.ProductIntfcs.InspParameterViewConfig.isProductProperty">
+            <summary>
+            报检类型为成品时，工序类型默认首个工序
+            </summary> 
+        </member>
+        <member name="M:SIE.Wpf.InspSettings.ProductIntfcs.InspParameterViewConfig.GetisProduct(SIE.ProductIntfc.InspSettings.InspParameter)">
+            <summary>
+            报检类型为成品时，工序类型默认首个工序
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.InspSettings.ProductIntfcs.InspParameterViewConfig.isFirstProductProperty">
+            <summary>
+            报检类型为首件时，报检维度只能是数量,默认选择首工序，为成品时默认选择最后工序
+            </summary> 
+        </member>
+        <member name="M:SIE.Wpf.InspSettings.ProductIntfcs.InspParameterViewConfig.GetisFirstProduct(SIE.ProductIntfc.InspSettings.InspParameter)">
+            <summary>
+            报检类型为首件时，报检维度只能是数量
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.InspSettings.ProductIntfcs.InspParameterViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.InspSettings.ProductIntfcs.InspParameterViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.InspSettings.ProductIntfcs.InspParameterViewConfig.ConfigSelectionView">
+            <summary>
+            弹出窗体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.InspSettings.ProductIntfcs.InspParameterViewConfig.ConfigQueryView">
+            <summary>
+            查询视图配置
+            </summary>
+        </member>
+    </members>
+</doc>

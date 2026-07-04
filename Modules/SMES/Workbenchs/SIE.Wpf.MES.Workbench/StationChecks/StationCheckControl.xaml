@@ -1,0 +1,56 @@
+﻿<sd:ComponentItem xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"  x:Class="SIE.Wpf.MES.Workbench.StationChecks.StationCheckControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:sd="clr-namespace:SIE.Wpf.Common.Diagram;assembly=SIE.Wpf.Common"
+             xmlns:uic="http://schemas.siestudio.com/winfx/xaml/core"
+             xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+             xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"     
+             xmlns:local="clr-namespace:SIE.Wpf.MES.Workbench.StationChecks"
+                  xmlns:uit="http://schemas.siestudio.com/winfx/xaml/themes"
+             sd:DiagramDesigner.ToolBarTitle="{Binding [生产-工位点检], Source={uic:L10N}}"
+             sd:DiagramDesigner.DefaultSize="362,304"     
+             mc:Ignorable="d" DataContext="{Binding RelativeSource={RelativeSource Self}}"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <sd:ComponentItem.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="colGroupNameGroupValueTemplate">
+                <TextBlock Text="{Binding Path=RowData.Row.WorkType}" Padding="5,0,0,0" Foreground="#028BEF"/>
+            </DataTemplate>
+        </ResourceDictionary>
+    </sd:ComponentItem.Resources>
+    <dxlc:GroupBox Padding="-2">
+        <dxlc:GroupBox.Header>
+            <Label Height="36" FontSize="18" VerticalContentAlignment="Center">
+                <TextBlock Name="lblTitle" Text="{Binding [工位点检],Source={uic:L10N}}"/>
+            </Label>
+        </dxlc:GroupBox.Header>
+        <dxg:GridControl Name="grid" ShowAllTableValuesInFilterPopup="False" ShowAllTableValuesInCheckedFilterPopup="False" AutoExpandAllGroups="True" ItemsSource="{Binding SpotInspectionInfos, Mode=TwoWay}" 
+                         SelectedItem="{Binding SelectedSpotInspection}" Margin="2" AllowInitiallyFocusedRow="False">
+            <dxg:GridControl.Columns>
+                <dxg:GridColumn x:Name="colWorkType" FieldName="WorkType" SortOrder="Descending" GroupValueTemplate="{StaticResource colGroupNameGroupValueTemplate}" Width="80" FixedWidth="True" GroupIndex="0"/>
+                <dxg:GridColumn x:Name="colCode" FieldName="Code" Header="{Binding [编号], Source={uic:L10N}}" ReadOnly="True" MinWidth="30" Width="*">
+                </dxg:GridColumn>
+                <dxg:GridColumn x:Name="colName" FieldName="Name" Header="{Binding [名称], Source={uic:L10N}}" ReadOnly="True" MinWidth="30" Width="*">
+                </dxg:GridColumn>
+                <dxg:GridColumn x:Name="colPlanQty" FieldName="DemandQty" Header="{Binding [需求数量], Source={uic:L10N}}" ReadOnly="True" MinWidth="30" Width="*">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:TextEditSettings MaskType="Numeric"/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+                <dxg:GridColumn x:Name="colState" FieldName="State" Header="{Binding [点检状态], Source={uic:L10N}}" HorizontalHeaderContentAlignment="Center" MinWidth="30" Width="*">
+                    <dxg:GridColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox Name="chkSelect" Click="ChkSelect_Click" IsChecked="{Binding RowData.Row.State,Mode=TwoWay}" Visibility="Visible" HorizontalAlignment="Center" />
+                        </DataTemplate>
+                    </dxg:GridColumn.CellTemplate>
+                </dxg:GridColumn>
+            </dxg:GridControl.Columns>
+            <dxg:GridControl.View>
+                <dxg:TableView x:Name="view" ShowFixedTotalSummary="False" AllowConditionalFormattingMenu="False" ShowGroupPanel="False" ShowIndicator="False">
+                </dxg:TableView>
+            </dxg:GridControl.View>
+        </dxg:GridControl>
+    </dxlc:GroupBox>  
+</sd:ComponentItem>

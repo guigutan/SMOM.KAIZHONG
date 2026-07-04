@@ -1,0 +1,54 @@
+﻿<UserControl xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"  xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"  x:Class="SIE.Wpf.MES.Workbench.EmployeeManages.AddEmployeeControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SIE.Wpf.MES.Workbench.EmployeeManages"
+             xmlns:uic="http://schemas.siestudio.com/winfx/xaml/core"
+             xmlns:ui="http://schemas.siestudio.com/winfx/xaml/controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Style x:Key="{x:Type dx:SimpleButton}" TargetType="{x:Type dx:SimpleButton}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type dx:SimpleButton}">
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
+                            <ContentPresenter x:Name="contentPresenter" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <dxe:ButtonEdit Margin="5" x:Name="searchEdit" IsTextEditable="True" AllowDefaultButton="False" NullText="{Binding [查找], Source={uic:L10N}}" Width="240" HorizontalAlignment="Left" KeyDown="ButtonEdit_KeyDown" VerticalAlignment="Center">
+            <dxe:ButtonInfo x:Name="regular" GlyphKind="Search" ToolTipService.ToolTip="{Binding [查找], Source={uic:L10N}}" Click="SearchEdit_ButtonClick"/>
+        </dxe:ButtonEdit>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <ContentControl Name="ctlEmp"></ContentControl>
+            <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="5,0,5,0">
+                <dx:SimpleButton Width="28" Height="28" Click="Cancel_Select" Background="#128BEF" HorizontalContentAlignment="Center">
+                    <dx:SimpleButton.Content>
+                        <ui:PackIcon Kind="ChevronLeft" Width="10" Height="17" Foreground="White"></ui:PackIcon>
+                    </dx:SimpleButton.Content>
+                </dx:SimpleButton>
+                <dx:SimpleButton Width="28" Height="28" Margin="0,5,0,0" Click="Add_Select" Background="#128BEF" HorizontalContentAlignment="Center">
+                    <dx:SimpleButton.Content>
+                        <ui:PackIcon Kind="ChevronRight" Width="10" Height="17" Foreground="White"></ui:PackIcon>
+                    </dx:SimpleButton.Content>
+                </dx:SimpleButton>
+            </StackPanel>
+            <ContentControl Grid.Column="2" Name="ctlSelectedEmp"></ContentControl>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,380 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.DataSync</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.DataSync.Core.DataSyncCatchHandlerBase">
+            <summary>
+            数据同步基类-拉取方式
+            </summary>
+        </member>
+        <member name="M:SIE.DataSync.Core.DataSyncCatchHandlerBase.Execute(SIE.DataSync.DataSyncTasks.DataSyncTask)">
+            <summary>
+            执行
+            </summary>
+            <param name="task"></param>
+        </member>
+        <member name="M:SIE.DataSync.Core.DataSyncCatchHandlerBase.SyncData(System.String)">
+            <summary>
+            同步数据逻辑
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:SIE.DataSync.Core.DataSyncCatchHandlerBase.OnError(SIE.DataSync.DataSyncTasks.DataSyncTask,System.Exception)">
+            <summary>
+            异常处理
+            </summary>
+            <param name="task"></param>
+            <param name="ex"></param>
+        </member>
+        <member name="T:SIE.DataSync.DataSyncMsgBase">
+            <summary>
+            数据同步消息内容 
+            </summary>
+        </member>
+        <member name="T:SIE.DataSync.DataSyncPush.DataSyncPushController">
+            <summary>
+            数据同步控制器-推送方式
+            </summary>
+        </member>
+        <member name="M:SIE.DataSync.DataSyncPush.DataSyncPushController.SendDataSyncPushMsg``1(``0)">
+            <summary>
+            发送数据同步消息
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:SIE.DataSync.DataSyncPush.DataSyncPushEvent">
+            <summary>
+            数据同步-推送事件
+            </summary>
+        </member>
+        <member name="P:SIE.DataSync.DataSyncPush.DataSyncPushEvent.MsgType">
+            <summary>
+            消息类型，类的FullName
+            </summary>
+        </member>
+        <member name="P:SIE.DataSync.DataSyncPush.DataSyncPushEvent.Message">
+            <summary>
+            消息内容（Json格式字符串）
+            </summary>
+        </member>
+        <member name="P:SIE.DataSync.DataSyncPush.DataSyncPushEvent.InvOrg">
+            <summary>
+            库存组织
+            </summary>
+        </member>
+        <member name="T:SIE.DataSync.DataSyncPush.DataSyncPushEventListener">
+            <summary>
+            推送数据同步消息监听器
+            </summary>
+        </member>
+        <member name="P:SIE.DataSync.DataSyncPush.DataSyncPushEventListener.Instance">
+            <summary>
+            实例
+            </summary>
+        </member>
+        <member name="M:SIE.DataSync.DataSyncPush.DataSyncPushEventListener.Start">
+            <summary>
+            订阅推送数据同步消息
+            </summary>
+        </member>
+        <member name="M:SIE.DataSync.DataSyncPush.DataSyncPushEventListener.IsOnScheduleServer">
+            <summary>
+            判断是否在调度服务端
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.DataSync.DataSyncPush.DataSyncPushEventListener.SyncPushData(SIE.MQueue.SubscribeEventArgs{SIE.DataSync.DataSyncPush.DataSyncPushEvent})">
+            <summary>
+            触发推送数据同步
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:SIE.DataSync.DataSyncPush.DataSyncPushEventListener.Dispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="M:SIE.DataSync.DataSyncPush.DataSyncPushEventListener.Dispose(System.Boolean)">
+            <summary>
+            释放数据
+            </summary>
+        </member>
+        <member name="T:SIE.DataSync.DataSyncPush.DataSyncPushHandleController">
+            <summary>
+            数据同步处理控制器
+            </summary>
+        </member>
+        <member name="P:SIE.DataSync.DataSyncPush.DataSyncPushHandleController._dicHandler">
+            <summary>
+            处理器字典
+            </summary>
+        </member>
+        <member name="P:SIE.DataSync.DataSyncPush.DataSyncPushHandleController._dicMsgType">
+            <summary>
+            消息类型字典
+            </summary>
+        </member>
+        <member name="F:SIE.DataSync.DataSyncPush.DataSyncPushHandleController._locker">
+            <summary>
+            锁
+            </summary>
+        </member>
+        <member name="M:SIE.DataSync.DataSyncPush.DataSyncPushHandleController.Execute(SIE.DataSync.DataSyncPush.DataSyncPushEvent)">
+            <summary>
+            执行处理
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:SIE.DataSync.DataSyncPush.DataSyncPushHandleController.InitDicHandler">
+            <summary>
+            初始化处理器
+            </summary>
+        </member>
+        <member name="T:SIE.DataSync.DataSyncPush.DataSyncPushHandlerBase">
+            <summary>
+            数据同步处理器基类-推送方式
+            </summary>
+        </member>
+        <member name="M:SIE.DataSync.DataSyncPush.DataSyncPushHandlerBase.Execute(SIE.DataSync.DataSyncMsgBase)">
+            <summary>
+            执行同步逻辑
+            </summary>
+        </member>
+        <member name="T:SIE.DataSync.DataSyncPush.DataSyncPushHandler`1">
+            <summary>
+            数据同步处理器-推送方式
+            </summary>
+        </member>
+        <member name="M:SIE.DataSync.DataSyncPush.DataSyncPushHandler`1.Execute(SIE.DataSync.DataSyncMsgBase)">
+            <summary>
+            执行
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="M:SIE.DataSync.DataSyncPush.DataSyncPushHandler`1.ExecuteSync(`0)">
+            <summary>
+            执行同步逻辑
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="T:SIE.DataSync.DataSyncTasks.DataSyncTask">
+            <summary>
+            数据同步任务
+            </summary>
+        </member>
+        <member name="F:SIE.DataSync.DataSyncTasks.DataSyncTask.ContextProperty">
+            <summary>
+            上下文
+            </summary>
+        </member>
+        <member name="P:SIE.DataSync.DataSyncTasks.DataSyncTask.Contexts">
+            <summary>
+            上下文
+            </summary>
+        </member>
+        <member name="F:SIE.DataSync.DataSyncTasks.DataSyncTask.SyncHandlerNameProperty">
+            <summary>
+            同步处理器类名
+            </summary>
+        </member>
+        <member name="P:SIE.DataSync.DataSyncTasks.DataSyncTask.SyncHandlerName">
+            <summary>
+            同步处理器类名
+            </summary>
+        </member>
+        <member name="F:SIE.DataSync.DataSyncTasks.DataSyncTask.FailTimesProperty">
+            <summary>
+            失败次数
+            </summary>
+        </member>
+        <member name="P:SIE.DataSync.DataSyncTasks.DataSyncTask.FailTimes">
+            <summary>
+            失败次数
+            </summary>
+        </member>
+        <member name="F:SIE.DataSync.DataSyncTasks.DataSyncTask.FailReasonProperty">
+            <summary>
+            失败原因
+            </summary>
+        </member>
+        <member name="P:SIE.DataSync.DataSyncTasks.DataSyncTask.FailReason">
+            <summary>
+            失败原因
+            </summary>
+        </member>
+        <member name="F:SIE.DataSync.DataSyncTasks.DataSyncTask.NextExecTimeProperty">
+            <summary>
+            下次可运行时间。
+            失败次数过多时，自动设置下次可运行时间为一段时间后，以免失败任务执行过多。
+            </summary>
+        </member>
+        <member name="P:SIE.DataSync.DataSyncTasks.DataSyncTask.NextExecTime">
+            <summary>
+            下次可运行时间
+            </summary>
+        </member>
+        <member name="F:SIE.DataSync.DataSyncTasks.DataSyncTask.TaskStatusProperty">
+            <summary>
+            任务状态
+            </summary>
+        </member>
+        <member name="P:SIE.DataSync.DataSyncTasks.DataSyncTask.TaskStatus">
+            <summary>
+            任务状态
+            </summary>
+        </member>
+        <member name="T:SIE.DataSync.DataSyncTasks.DataSyncTaskConfig">
+            <summary>
+            数据同步任务 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.DataSync.DataSyncTasks.DataSyncTaskConfig.ConfigMeta">
+            <summary>
+            实体配置
+            </summary>
+        </member>
+        <member name="T:SIE.DataSync.DataSyncTasks.DataSyncTaskController">
+            <summary>
+            数据同步任务控制器
+            </summary>
+        </member>
+        <member name="M:SIE.DataSync.DataSyncTasks.DataSyncTaskController.CreateDataSyncTask(System.String,System.Type)">
+            <summary>
+            创建数据同步任务
+            </summary>
+            <param name="context"></param>
+            <param name="dataSyncHandlerType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.DataSync.DataSyncTasks.DataSyncTaskController.GetToDoDataSyncTasks(SIE.PagingInfo)">
+            <summary>
+            获取待执行的数据同步任务
+            </summary>
+            <param name="pagingInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.DataSync.DataSyncTasks.DataSyncTaskController.FinishTask(System.Double)">
+            <summary>
+            完成同步任务
+            </summary>
+            <param name="taskId"></param>
+        </member>
+        <member name="M:SIE.DataSync.DataSyncTasks.DataSyncTaskController.UpdateTaskError(System.Double,System.String)">
+            <summary>
+            更新任务错误执行次数
+            </summary>
+            <param name="taskId"></param>
+            <param name="errMsg"></param>
+        </member>
+        <member name="T:SIE.DataSync.DataSyncTasks.TaskState">
+            <summary>
+            任务状态
+            </summary>
+        </member>
+        <member name="F:SIE.DataSync.DataSyncTasks.TaskState.Todo">
+            <summary>
+            待运行
+            </summary>
+        </member>
+        <member name="F:SIE.DataSync.DataSyncTasks.TaskState.Finished">
+            <summary>
+            完成
+            </summary>
+        </member>
+        <member name="F:SIE.DataSync.DataSyncTasks.TaskState.Canceled">
+            <summary>
+            取消
+            </summary>
+        </member>
+        <member name="T:SIE.DataSync.Jobs.DataSyncCatchJob">
+            <summary>
+            同步数据调度-抓
+            </summary>
+        </member>
+        <member name="F:SIE.DataSync.Jobs.DataSyncCatchJob._locker">
+            <summary>
+            锁
+            </summary>
+        </member>
+        <member name="M:SIE.DataSync.Jobs.DataSyncCatchJob.ExecuteHandler(SIE.DataSync.DataSyncTasks.DataSyncTaskController,SIE.DataSync.DataSyncTasks.DataSyncTask)">
+            <summary>
+            执行
+            </summary>
+            <param name="ctrl"></param>
+            <param name="task"></param>
+        </member>
+        <member name="M:SIE.DataSync.Jobs.DataSyncCatchJob.GetSyncHandler(System.String)">
+            <summary>
+            获取数据同步处理器
+            </summary>
+            <param name="syncHandlerName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.DataSync.Jobs.DataSyncCatchJobParameter">
+            <summary>
+            同步数据调度参数
+            </summary>
+        </member>
+        <member name="F:SIE.DataSync.Jobs.DataSyncCatchJobParameter.ParrelExecuteQtyProperty">
+            <summary>
+            最大并行执行数
+            </summary>
+        </member>
+        <member name="P:SIE.DataSync.Jobs.DataSyncCatchJobParameter.ParrelExecuteQty">
+            <summary>
+            最大并行执行数
+            </summary>
+        </member>
+        <member name="F:SIE.DataSync.Jobs.DataSyncCatchJobParameter.MaxTaskQtyProperty">
+            <summary>
+            单次执行任务最大数量
+            </summary>
+        </member>
+        <member name="P:SIE.DataSync.Jobs.DataSyncCatchJobParameter.MaxTaskQty">
+            <summary>
+            单次执行任务最大数量
+            </summary>
+        </member>
+        <member name="T:SIE.DataSync.Module">
+            <summary>
+            模块设置
+            </summary>
+        </member>
+        <member name="M:SIE.DataSync.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化
+            </summary>
+            <param name="app">app</param>
+        </member>
+        <member name="M:SIE.DataSync.Module.All_ModulesIntialized(System.Object,System.EventArgs)">
+            <summary>
+            模块加载后事件
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="T:SIE.DataTrace.Base.DataSyncEntityRepository`1">
+            <summary>
+            本程序集的数据提供者
+            </summary>
+            <typeparam name="T">t</typeparam>
+        </member>
+        <member name="T:SIE.DataTrace.Base.DataSyncEntityDataProvider">
+            <summary>
+            数据追溯实体数据提供者
+            </summary>
+        </member>
+        <member name="F:SIE.DataTrace.Base.DataSyncEntityDataProvider.ConnectionStringName">
+            <summary>
+            数据库连接字符串的名称
+            </summary>
+        </member>
+        <member name="P:SIE.DataTrace.Base.DataSyncEntityDataProvider.ConnectionStringSettingName">
+            <summary>
+            数据库连接字符串的名称
+            </summary>
+        </member>
+    </members>
+</doc>

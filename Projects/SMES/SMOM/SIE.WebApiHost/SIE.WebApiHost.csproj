@@ -1,0 +1,116 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
+    <CodeAnalysisRuleSet></CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\..\Common\SIE.WebApiHost\Configuration.cs" Link="Configuration.cs" />
+    <Compile Include="..\..\..\..\Common\SIE.WebApiHost\Controllers\DataPortalController.cs" Link="Controllers\DataPortalController.cs" />
+    <Compile Include="..\..\..\..\Common\SIE.WebApiHost\HostService.cs" Link="HostService.cs" />
+    <Compile Include="..\..\..\..\Common\SIE.WebApiHost\Program.cs" Link="Program.cs" />
+    <Compile Include="..\..\..\..\Common\SIE.WebApiHost\WebApiStartup.cs" Link="WebApiStartup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\..\..\.sonarlint\sie.smom\CSharp\SonarLint.xml" Link="SonarLint.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\Common\SIE.WebApiHost\Dockerfile" Link="Dockerfile" />
+    <None Include="..\..\..\..\Common\SIE.WebApiHost\log4net.config" Link="log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\..\Common\SIE.WebApiHost\_安装服务.bat" Link="_安装服务.bat" />
+    <None Include="..\..\..\..\Common\SIE.WebApiHost\_运行.cmd" Link="_运行.cmd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.19" />
+    <PackageReference Include="RazorEngine.NetCore" Version="10.0.5" />
+    <PackageReference Include="Senparc.CO2NET" Version="3.1.3" />
+    <PackageReference Include="Senparc.Weixin" Version="6.22.0" />
+    <PackageReference Include="SIE.Alert" Version="10.0.5" />
+    <PackageReference Include="SIE.Alert.Job" Version="10.0.5" />
+    <PackageReference Include="SIE.Caches" Version="10.0.5" />
+    <PackageReference Include="SIE.DashBoard" Version="10.0.5" />
+    <PackageReference Include="SIE.Data.VastData" Version="10.0.5" />    
+    <PackageReference Include="SIE.IScript" Version="10.0.5" />
+    <PackageReference Include="SIE.Localization" Version="10.0.5" />
+    <PackageReference Include="SIE.Log" Version="10.0.5" />
+    <PackageReference Include="SIE.LogData" Version="10.0.5" />    
+    <PackageReference Include="SIE.Mda" Version="10.0.5" />
+    <PackageReference Include="SIE.Messages" Version="10.0.5" />
+    <PackageReference Include="SIE.ORM.MappingColumn" Version="10.0.5" />
+    <PackageReference Include="SIE.OSS" Version="10.0.5" />
+    <PackageReference Include="SIE.Print" Version="10.0.5" />
+    <PackageReference Include="SIE.Queue" Version="10.0.5" />
+    <PackageReference Include="SIE.Rbac" Version="10.0.5" />
+    <PackageReference Include="SIE.ReportServerCore" Version="10.0.5" />
+    <PackageReference Include="SIE.Schedule" Version="10.0.5" />
+    <PackageReference Include="SIE.Script" Version="10.0.5" />
+    <PackageReference Include="SIE.Senders" Version="10.0.5" />
+    <PackageReference Include="SIE.ServerCore" Version="10.0.5" />
+    <PackageReference Include="SIE.MQ" Version="10.0.5" />
+	<PackageReference Include="SIE.Data.MySql" Version="10.0.5" />
+	<PackageReference Include="Topshelf" Version="4.3.1-develop.253" />
+    <PackageReference Include="Topshelf.Log4Net" Version="4.3.1-develop.253" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Modules\Common\Core\SIE.Core\SIE.Core.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\CSM\SIE.CSM\SIE.CSM.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Defects\SIE.Defects\SIE.Defects.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\FMS\SIE.FMS\SIE.FMS.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Inventorys\SIE.Inventory\SIE.Inventory.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Items\SIE.Items\SIE.Items.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Messages\SIE.EventMessages\SIE.EventMessages.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Packages\SIE.Packages\SIE.Packages.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Resources\SIE.Resources\SIE.Resources.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Warehouses\SIE.Warehouses\SIE.Warehouses.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\WorkBenchs\SIE.WorkBenchChartBase\SIE.WorkBenchChartBase.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\WorkBenchs\SIE.WorkBenchCommon\SIE.WorkBenchCommon.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\Barcodes\SIE.Barcodes\SIE.Barcodes.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\Common\SIE.Andon\SIE.Andon.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\Common\SIE.MES.Common\SIE.MES.Common.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\DashBoards\SIE.MES.DashBoard\SIE.MES.DashBoard.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\DIST\SIE.DIST\SIE.DIST.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\Esop\SIE.ESop\SIE.ESop.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\MES\SIE.MES.Job\SIE.MES.Job.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\MES\SIE.Mes.Mq\SIE.Mes.Mq.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\MES\SIE.MES.Statistics\SIE.MES.Statistics.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\MES\SIE.MES\SIE.MES.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\ProductIntfc\SIE.ProductIntfc\SIE.ProductIntfc.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\Reports\SIE.MES.Report\SIE.MES.Report.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\Tasks\SIE.MES.TaskManagement\SIE.MES.TaskManagement.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\Teams\SIE.MES.TeamManagement\SIE.MES.TeamManagement.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Techs\SIE.Tech\SIE.Tech.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\Workbenchs\SIE.MES.Workbench\SIE.MES.Workbench.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Dockerfile">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="_安装服务.bat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="_运行.cmd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties appsettings_1json__JSONSchema="" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

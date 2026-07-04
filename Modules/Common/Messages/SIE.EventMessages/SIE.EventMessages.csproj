@@ -1,0 +1,56 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <CodeAnalysisRuleSet>SIE.EventMessages.ruleset</CodeAnalysisRuleSet>
+    <SonarQubeExclude>True</SonarQubeExclude>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.EventMessages.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.EventMessages.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="EMS\Equipments\**" />
+    <Compile Remove="LES\WMS\**" />
+    <EmbeddedResource Remove="EMS\Equipments\**" />
+    <EmbeddedResource Remove="LES\WMS\**" />
+    <None Remove="EMS\Equipments\**" />
+    <None Remove="LES\WMS\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Common\ErpErrorData.cs" />
+    <Compile Remove="Common\ErpInfoData.cs" />
+    <Compile Remove="Common\Warehouses\IUserLinkInsertWhEmp.cs" />
+    <Compile Remove="LES\IDistribution.cs" />
+    <Compile Remove="QMS\Models\PcbInspectionEvent.cs" />
+    <Compile Remove="WMS\Receipt\ICreateAsn.cs" />
+    <Compile Remove="WMS\Shipment\SoLabelData.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EMS\Equipments\IResourceEquipment.cs" />
+    <Compile Include="EMS\Equipments\IEquipmentQuery.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\..\..\.sonarlint\sie.smom\CSharp\SonarLint.xml" Link="SonarLint.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="SIE.DataSync" Version="10.0.5" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\SIE.Core\SIE.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Common\ＷorkOrders\" />
+    <Folder Include="WMS\ErpUploadInterfaces\" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<soapenv:Envelope
+    xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:cux="http://xmlns.oracle.com/apps/cux/soaprovider/plsql/cux_soa_pub_service_pkg/"
+    xmlns:gat="http://xmlns.oracle.com/apps/cux/soaprovider/plsql/cux_soa_pub_service_pkg/gateway/">
+  <soapenv:Header>
+    <wsse:Security mustUnderstand="1"
+        xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+      <wsse:UsernameToken>
+        <!--Optional:ERP提供 帐号-->
+        <wsse:Username>asadmin</wsse:Username>
+        <!--Optional:ERP提供 密码-->
+        <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">hand321</wsse:Password>
+      </wsse:UsernameToken>
+    </wsse:Security>
+    <cux:SOAHeader>
+      <!--Optional:ERP提供 职责信息-->
+      <cux:Responsibility>FWK_TOOLBOX_TUTORIAL_LABS</cux:Responsibility>
+      <!--Optional:ERP提供 职责应用短码-->
+      <cux:RespApplication>AK</cux:RespApplication>
+      <!--Optional:ERP提供 安全组-->
+      <cux:SecurityGroup>STANDARD</cux:SecurityGroup>
+      <!--Optional:ERP提供 语种-->
+      <cux:NLSLanguage>SIMPLIFIED CHINESE</cux:NLSLanguage>
+      <!--Optional:ERP提供 业务实体ID-->
+      <cux:Org_Id></cux:Org_Id>
+    </cux:SOAHeader>
+  </soapenv:Header>
+  <soapenv:Body>
+    <gat:InputParameters>
+      <!--Optional:-->
+      <gat:P_SERVICE_NAME>GET_INVENTORY_ITEM</gat:P_SERVICE_NAME>
+      <!--Optional:-->
+      <gat:P_ORIG_SYSTEM>E10</gat:P_ORIG_SYSTEM>
+      <!--Optional:-->
+      <gat:P_BATCH_ID>6</gat:P_BATCH_ID>
+      <!--Optional:-->
+      <gat:P_REQUEST_XML>
+        <![CDATA[ <?xml version="1.0" encoding="utf-8"?>
+                <BODY>
+                <HEADER>
+                <ORGANIZATION_CODE>030</ORGANIZATION_CODE>
+                <LAST_UPDATE_DATE>2020-07-03</LAST_UPDATE_DATE>
+                </HEADER>
+                </BODY>]]>
+      </gat:P_REQUEST_XML>
+    </gat:InputParameters>
+  </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,21 @@
+<AddIn name        = "SieStudio"
+       author      = "huchuqiang"
+       copyright   = "prj:///doc/copyright.txt"
+       url         = "http://siestudio.chinasie.com"
+       description = "System Menu Setting Command"
+       addInManagerHidden = "true">
+
+	<Manifest>
+		<Identity name = "Setting" version = "@AssemblyVersion"/>
+	</Manifest>
+  <Runtime> 
+    <Import assembly=":SIE.Wpf"/>
+  </Runtime>
+  <Path name = "/Main/Workbench/HeaderBar/SysMenu">
+    <MenuItem id="setting" label="设置" tooltip="设置" insertafter="changePwd" type="ButtonItem" class="SIE.Wpf.Workbench.Commands.OpenSettingCommand">
+	</MenuItem> 
+  </Path>
+     <Path name = "/Main/Workbench/HeaderBar/SysMenu/Setting"> 
+	      <Tab id="cultureSetting" type="Item" header="文化设置" content="SIE.Wpf.Workbench.Settings.LanguageSetting,SIE.Wpf"></Tab>
+     </Path> 
+</AddIn>

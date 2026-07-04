@@ -1,0 +1,125 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup Label="Globals">
+		<SccProjectName>SAK</SccProjectName>
+		<SccProvider>SAK</SccProvider>
+		<SccAuxPath>SAK</SccAuxPath>
+		<SccLocalPath>SAK</SccLocalPath>
+	</PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<OutputPath>..\..\..\..\platform\smom\</OutputPath>
+		<DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.EMS.EquipMaint.xml</DocumentationFile>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<OutputPath>..\..\..\..\platform\smom\</OutputPath>
+		<DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.EMS.EquipMaint.xml</DocumentationFile>
+	</PropertyGroup>
+	<ItemGroup>
+		<None Remove="Equipments\Accounts\Commands\DeleteSelCommand.js" />
+		<None Remove="Equipments\Accounts\Commands\MaintainAddEquipCommand.js" />
+		<None Remove="Maintains\Confirmations\Commands\EmsDownloadCommand.js" />
+		<None Remove="Maintains\Confirmations\Commands\RevokeUploadPicCommand.js" />
+		<None Remove="Maintains\Confirmations\Commands\SubmitMaintainConfirmationCommand.js" />
+		<None Remove="Maintains\Confirmations\Editors\FileUploadContextEditor.js" />
+		<None Remove="Maintains\Confirmations\Editors\UploadFileEditor.js" />
+		<None Remove="Maintains\Confirmations\Scripts\ConfirmMaintainPlanBehavior.js" />
+		<None Remove="Maintains\Plans\Commands\AddEquipRepairCommand.js" />
+		<None Remove="Maintains\Plans\Commands\AddMaintainPlanCommand.js" />
+		<None Remove="Maintains\Plans\Commands\AddWorkHoursRegisterCommand.js" />
+		<None Remove="Maintains\Plans\Commands\BatchAddMaintainPlanCommand.js" />
+		<None Remove="Maintains\Plans\Commands\BeginMaintainCommand.js" />
+		<None Remove="Maintains\Plans\Commands\DeleteMaintainPlanExecuteAttachmentCommand.js" />
+		<None Remove="Maintains\Plans\Commands\DeleteMaintainSparePartAplCommand.js" />
+		<None Remove="Maintains\Plans\Commands\DeleteMaintainSparePartCommand.js" />
+		<None Remove="Maintains\Plans\Commands\EditEquipMaintainPlanCommand.js" />
+		<None Remove="Maintains\Plans\Commands\ExeChangeSparePartCommand.js" />
+		<None Remove="Maintains\Plans\Commands\GenerateMaintainPlanCommand.js" />
+		<None Remove="Maintains\Plans\Commands\GenerateSparePartAppCommand.js" />
+		<None Remove="Maintains\Plans\Commands\ImportMaintainPlanCommand.js" />
+		<None Remove="Maintains\Plans\Commands\OpenMaintainsCommand.js" />
+		<None Remove="Maintains\Plans\Commands\QuickMaintainPlanCommand.js" />
+		<None Remove="Maintains\Plans\Commands\SaveExeMaintainPlanCommand.js" />
+		<None Remove="Maintains\Plans\Commands\SelEquipBomAplCommand.js" />
+		<None Remove="Maintains\Plans\Commands\SelEquipBomCommand.js" />
+		<None Remove="Maintains\Plans\Commands\SelSparePartAplCommand.js" />
+		<None Remove="Maintains\Plans\Commands\SelSparePartCommand.js" />
+		<None Remove="Maintains\Plans\Commands\SubmitExeMaintainPlanCommand.js" />
+		<None Remove="Maintains\Plans\Commands\UploadMaintainPlanExecuteAttachmentCommand.js" />
+		<None Remove="Maintains\Plans\Scripts\AddMaintainPlanBehavior.js" />
+		<None Remove="Maintains\Plans\Scripts\ExeMaintainPlanBehavior.js" />
+		<None Remove="Maintains\Plans\Scripts\MaintainPlanBehavior.js" />
+		<None Remove="Maintains\Plans\Scripts\MaintainPlanSparePartAplBehavior.js" />
+		<None Remove="Maintains\Plans\Scripts\WorkHoursBehavior.js" />
+		<None Remove="Maintains\Projects\Commands\ExportXls.js" />
+		<None Remove="Maintains\Projects\Scripts\SetMaintainResultStyleComboBox.js" />
+		<None Remove="Maintains\Records\Commands\MaintainExecuteCommand.js" />
+		<None Remove="Maintains\Records\Commands\MaintainPlanDeleteCommand.js" />
+		<None Remove="Maintains\Records\Commands\ShowMaintainPicture.js" />
+		<None Remove="Maintains\Records\Scripts\MaintainRecordBehavior.js" />
+	</ItemGroup>
+	<ItemGroup>
+		<AdditionalFiles Include="..\..\..\..\.sonarlint\sie.smom\CSharp\SonarLint.xml" Link="SonarLint.xml" />
+	</ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Include="Maintains\Confirmations\Commands\EmsDownloadCommand.js" />
+		<EmbeddedResource Include="Maintains\Confirmations\Commands\RevokeUploadPicCommand.js" />
+		<EmbeddedResource Include="Maintains\Confirmations\Commands\SubmitMaintainConfirmationCommand.js" />
+		<EmbeddedResource Include="Maintains\Confirmations\Editors\FileUploadContextEditor.js" />
+		<EmbeddedResource Include="Maintains\Confirmations\Editors\UploadFileEditor.js" />
+		<EmbeddedResource Include="Maintains\Confirmations\Scripts\ConfirmMaintainPlanBehavior.js" />
+		<EmbeddedResource Include="Maintains\Plans\Commands\AddEquipRepairCommand.js" />
+		<EmbeddedResource Include="Maintains\Plans\Commands\AddMaintainPlanCommand.js" />
+		<EmbeddedResource Include="Maintains\Plans\Commands\AddWorkHoursRegisterCommand.js" />
+		<EmbeddedResource Include="Maintains\Plans\Commands\BeginMaintainCommand.js" />
+		<EmbeddedResource Include="Maintains\Plans\Commands\DeleteMaintainPlanExecuteAttachmentCommand.js" />
+		<EmbeddedResource Include="Maintains\Plans\Commands\DeleteMaintainSparePartAplCommand.js" />
+		<EmbeddedResource Include="Maintains\Plans\Commands\DeleteMaintainSparePartCommand.js" />
+		<EmbeddedResource Include="Maintains\Plans\Commands\EditEquipMaintainPlanCommand.js" />
+		<EmbeddedResource Include="Maintains\Plans\Commands\ExeChangeSparePartCommand.js" />
+		<EmbeddedResource Include="Maintains\Plans\Commands\GenerateMaintainPlanCommand.js" />
+		<EmbeddedResource Include="Maintains\Plans\Commands\GenerateSparePartAppCommand.js" />
+		<EmbeddedResource Include="Maintains\Plans\Commands\ImportMaintainPlanCommand.js" />
+		<EmbeddedResource Include="Maintains\Plans\Commands\QuickMaintainPlanCommand.js" />
+		<EmbeddedResource Include="Maintains\Plans\Commands\SaveExeMaintainPlanCommand.js" />
+		<EmbeddedResource Include="Maintains\Plans\Commands\SelEquipBomAplCommand.js" />
+		<EmbeddedResource Include="Maintains\Plans\Commands\SelEquipBomCommand.js" />
+		<EmbeddedResource Include="Maintains\Plans\Commands\SelSparePartAplCommand.js" />
+		<EmbeddedResource Include="Maintains\Plans\Commands\SelSparePartCommand.js" />
+		<EmbeddedResource Include="Maintains\Plans\Commands\SubmitExeMaintainPlanCommand.js" />
+		<EmbeddedResource Include="Maintains\Plans\Commands\UploadMaintainPlanExecuteAttachmentCommand.js" />
+		<EmbeddedResource Include="Maintains\Plans\Scripts\AddMaintainPlanBehavior.js" />
+	</ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Include="Maintains\Plans\Scripts\ExeMaintainPlanBehavior.js" />
+		<EmbeddedResource Include="Maintains\Plans\Scripts\MaintainPlanBehavior.js" />
+		<EmbeddedResource Include="Maintains\Plans\Scripts\MaintainPlanSparePartAplBehavior.js" />
+		<EmbeddedResource Include="Maintains\Plans\Scripts\WorkHoursBehavior.js" />
+		<EmbeddedResource Include="Maintains\Projects\Commands\ExportXls.js" />
+		<EmbeddedResource Include="Maintains\Projects\Scripts\SetMaintainResultStyleComboBox.js" />
+	</ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Include="Equipments\Accounts\Commands\DeleteSelCommand.js" />
+		<EmbeddedResource Include="Equipments\Accounts\Commands\MaintainAddEquipCommand.js" />
+		<EmbeddedResource Include="Maintains\Plans\Commands\OpenMaintainsCommand.js" />
+		<EmbeddedResource Include="Maintains\Plans\Commands\BatchAddMaintainPlanCommand.js" />
+		<EmbeddedResource Include="Maintains\Records\Commands\MaintainExecuteCommand.js" />
+		<EmbeddedResource Include="Maintains\Records\Commands\MaintainPlanDeleteCommand.js" />
+		<EmbeddedResource Include="Maintains\Records\Commands\ShowMaintainPicture.js" />
+		<EmbeddedResource Include="Maintains\Records\Scripts\MaintainRecordBehavior.js" />
+	</ItemGroup>
+	<ItemGroup>
+		<Folder Include="Maintains\Configs\" />
+		<Folder Include="Maintains\Records\Details\" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\SIE.EMS.EquipMaint\SIE.EMS.EquipMaint.csproj" />
+		<ProjectReference Include="..\SIE.EMS.EquipRepair\SIE.EMS.EquipRepair.csproj" />
+		<ProjectReference Include="..\SIE.Web.EMS\SIE.Web.EMS.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="SIE.Web.Common" Version="10.0.5" />
+	</ItemGroup>
+</Project>

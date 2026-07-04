@@ -1,0 +1,2942 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Wpf.ESOP</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Wpf.ESop.EntityPropertyViewMetaExtension">
+            <summary>
+            实体属性视图元数据扩展
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.EntityPropertyViewMetaExtension.UseDocumentSelectEditor``1(SIE.MetaModel.View.WPFEntityPropertyViewMeta{``0},System.Action{SIE.Wpf.Common.Editors.FileSelectEditorConfig})">
+            <summary>
+            文档编辑器扩展方法
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Wpf.ESop.EntityPropertyViewMetaExtension.UseESopEnterpriseLookUpEditor``1(SIE.MetaModel.View.WPFEntityPropertyViewMeta{``0},System.Action{SIE.Wpf.Editors.PagingLookUpEditorConfig})">
+            <summary>
+            产线编辑器扩展方法
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Wpf.ESop.EntityPropertyViewMetaExtension.UseDisplayPointLookUpEditor``1(SIE.MetaModel.View.WPFEntityPropertyViewMeta{``0},System.Action{SIE.Wpf.Editors.PagingLookUpEditorConfig})">
+            <summary>
+            显示点编辑器扩展方法
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="T:SIE.Wpf.ESop.Common.UriExtensions">
+            <summary>
+            路径扩展类
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Common.UriExtensions.GetImageFromNet(System.String,System.Action{System.Net.WebRequest},System.Func{System.Net.WebResponse,System.Drawing.Image})">
+            <summary>  
+            通过NET获取网络图片  
+            </summary>  
+            <param name="url">要访问的图片所在网址</param>  
+            <param name="requestAction">对于WebRequest需要进行的一些处理，比如代理、密码之类</param>  
+            <param name="responseFunc">如何从WebResponse中获取到图片</param>  
+            <returns>返回图片</returns>  
+        </member>
+        <member name="M:SIE.Wpf.ESop.Common.UriExtensions.GetImageFromNet(System.Uri,System.Action{System.Net.WebRequest},System.Func{System.Net.WebResponse,System.Drawing.Image})">
+            <summary>  
+            通过NET获取网络图片  
+            </summary>  
+            <param name="url">要访问的图片所在网址</param>  
+            <param name="requestAction">对于WebRequest需要进行的一些处理，比如代理、密码之类</param>  
+            <param name="responseFunc">如何从WebResponse中获取到图片</param>  
+            <returns>返回图片</returns>  
+        </member>
+        <member name="M:SIE.Wpf.ESop.Common.UriExtensions.UirFileToMemoryStream(System.String)">
+            <summary>
+            从url读取内容到内存MemoryStream流中
+            </summary>
+            <param name="url">路径</param>
+            <returns>返回MemoryStream</returns>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Common.UriExtensions.UirFileToMemoryStream(System.Uri)">
+            <summary>
+            从url读取内容到内存MemoryStream流中
+            </summary>
+            <param name="url">路径</param>
+            <returns>返回MemoryStream</returns>
+        </member>
+        <member name="T:SIE.Wpf.ESop.Displays.Command.InitESopCommand">
+            <summary>
+            初始化ESOP
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Displays.Command.InitESopCommand.DoSave(SIE.Domain.EntityList)">
+            <summary>
+            
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Displays.Command.InitESopCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            
+            </summary>
+            <param name="view"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Wpf.ESop.Displays.Command.PlayESopCommand">
+            <summary>
+            作业指导书
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Displays.Command.PlayESopCommand.Execute(SIE.Wpf.DetailLogicalView)">
+            <summary>
+            执行具体的逻辑
+            </summary>
+            <param name="view">视图对象</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Displays.Command.PlayESopCommand.ValidationEsop(SIE.Wpf.MES.WIP.Workstation)">
+            <summary>
+            验证ESOP
+            </summary>
+            <param name="workcell">工作站信息</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Displays.Command.PlayESopCommand.Workstation_PropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            工作站信息变更时触发
+            </summary>
+            <param name="sender">变更工作站对象</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Displays.Command.PlayESopCommand.PublishWorkcellChanged(SIE.Wpf.MES.WIP.Workstation)">
+            <summary>
+            发布工作站变更到EventBus
+            </summary>
+            <param name="workstation">工作站</param>
+        </member>
+        <member name="T:SIE.Wpf.ESop.Displays.DisplayPointCriteriaViewConfig">
+            <summary>
+            显示点视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Displays.DisplayPointCriteriaViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Displays.DisplayPointCriteriaViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ESop.Displays.DisplayPointProcessViewConfig">
+            <summary>
+            工位显示点关系视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Displays.DisplayPointProcessViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ESop.Displays.DisplayPointViewConfig">
+            <summary>
+            显示点视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Displays.DisplayPointViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Displays.DisplayPointViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ESop.Displays.ESopViewModel">
+            <summary>
+            ESop视图模型
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.Displays.ESopViewModel.ProcessIdProperty">
+            <summary>
+            工序Id
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.Displays.ESopViewModel.ProcessId">
+            <summary>
+            工序Id
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.Displays.ESopViewModel.ProcessProperty">
+            <summary>
+            工序
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.Displays.ESopViewModel.Process">
+            <summary>
+            工序
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.Displays.ESopViewModel.ItemIdProperty">
+            <summary>
+            物料Id
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.Displays.ESopViewModel.ItemId">
+            <summary>
+            物料Id
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.Displays.ESopViewModel.ItemProperty">
+            <summary>
+            物料
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.Displays.ESopViewModel.Item">
+            <summary>
+            物料
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.Displays.ESopViewModel.WorkOrderIdProperty">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.Displays.ESopViewModel.WorkOrderId">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.Displays.ESopViewModel.WorkOrderProperty">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.Displays.ESopViewModel.WorkOrder">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.Displays.ESopViewModel.DocumentListProperty">
+            <summary>
+            文档集合
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.Displays.ESopViewModel.DocumentList">
+            <summary>
+            文档集合
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Displays.ESopViewModel.LoadDocumentList">
+            <summary>
+            创建新的文档集合
+            </summary>
+            <returns>返回新的文档集合</returns>
+        </member>
+        <member name="F:SIE.Wpf.ESop.Displays.ESopViewModel.CurrentPlayDocumentProperty">
+            <summary>
+            当前播放文档
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.Displays.ESopViewModel.CurrentPlayDocument">
+            <summary>
+            当前播放文档
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Displays.ESopViewModel.GetCurrentPlayDocument">
+            <summary>
+            当前播放文档
+            </summary>
+            <returns>返回当前播放的文档</returns>
+        </member>
+        <member name="P:SIE.Wpf.ESop.Displays.ESopViewModel.DocumentPlaySort">
+            <summary>
+            文档播放排序类
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.Displays.ESopViewModel.Config">
+            <summary>
+            显示点的配置信息
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.Displays.ESopViewModel.DataFromConfig">
+            <summary>
+            显示点数据源配置项
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.Displays.ESopViewModel.Interval">
+            <summary>
+            播放间隔
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.Displays.ESopViewModel.Workstation">
+            <summary>
+            工作站
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.Displays.ESopViewModel._workcell">
+            <summary>
+            工作单元信息
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.Displays.ESopViewModel._workstation">
+            <summary>
+            工作站信息
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.Displays.ESopViewModel.isWorkstationPropertyChanging">
+            <summary>
+            工作站属性是否正在变更
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.Displays.ESopViewModel.MetaKey">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Displays.ESopViewModel.#ctor">
+            <summary>
+            构造函数，读取配置信息和创建文档播放排序类
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Displays.ESopViewModel.LoadItemData">
+            <summary>
+            初始化工位信息
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Displays.ESopViewModel.OnClose">
+            <summary>
+            关闭
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Displays.ESopViewModel.Onload">
+            <summary>
+            初始化工位信息
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Displays.ESopViewModel.InitWorkstation">
+            <summary>
+            初始化工作站信息并返回显示点Id
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Displays.ESopViewModel.OnWorkstationPropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            工作单元属性变更
+            </summary>
+            <param name="sender">当前工作站</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Displays.ESopViewModel.WorkstationChanged">
+            <summary>
+            工作单元信息改变
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Displays.ESopViewModel.SaveWorkstation">
+            <summary>
+            保存工作单元信息
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Displays.ESopViewModel.LoadWorkstation">
+            <summary>
+            加载工作单元信息
+            </summary>
+            <returns>返回是否正常加载数据</returns>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Displays.ESopViewModel.CheckUserWorkStation(System.Double,System.Double,System.Double)">
+            <summary>
+            是否存在用户、资源对应的显示点
+            </summary>
+            <param name="userId">用户</param>
+            <param name="resourceId">产线</param>
+            <param name="displayPointId">显示点</param>
+            <returns>返回是否存在用户、资源对应的显示点</returns>       
+        </member>
+        <member name="M:SIE.Wpf.ESop.Displays.ESopViewModel.GetWorkcell">
+            <summary>
+            获取采集单元信息
+            </summary>
+            <returns>返回创建的采集单元信息</returns>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Displays.ESopViewModel.Initialize(SIE.Dashboard.Definitions.DashboardSettings)">
+            <summary>
+            运行看板，要实现加载数据，定时刷新数据
+            </summary>
+            <param name="setting">看板配置</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Displays.ESopViewModel.SetWorkstation(SIE.Wpf.MES.WIP.Workstation,SIE.ESop.Displays.DisplayPoint)">
+            <summary>
+            设置工作站信息
+            </summary>
+            <param name="workcell">工作站</param>
+            <param name="displayerPoint">显示点</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Displays.ESopViewModel.OnPropertyChanged(SIE.ManagedProperty.ManagedPropertyChangedEventArgs)">
+            <summary>
+            属性变更
+            </summary>
+            <param name="e">变更事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Displays.ESopViewModel.ItemChanged">
+            <summary>
+            物料变更
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Displays.ESopViewModel.GetExcelSheet(SIE.ESop.Documents.Document)">
+            <summary>
+            根据不同数据源决定excel播放特定页
+            </summary>
+            <param name="doc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Displays.ESopViewModel.GetStationDocument(SIE.Wpf.ESop.Displays.ESopViewModel)">
+            <summary>
+            获取工作站对应的文档集
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Displays.ESopViewModel.LoadDocumentData(SIE.ESop.Documents.Document)">
+            <summary>
+            加载文档数据
+            </summary>
+            <param name="doc">文档</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Displays.ESopViewModel.PlayNextDocument">
+            <summary>
+            播放下一个文档
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Displays.ESopViewModel.PlayPreviousDocument">
+            <summary>
+            播放前一个文档
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ESop.Displays.DocumentPlaySort">
+            <summary>
+            文档播放排序类
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.Displays.DocumentPlaySort.CurrentIndex">
+            <summary>
+            当前播放索引
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.Displays.DocumentPlaySort._viewModel">
+            <summary>
+            Esop视图对象
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Displays.DocumentPlaySort.#ctor(SIE.Wpf.ESop.Displays.ESopViewModel)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="model">ESop视图对象</param>
+        </member>
+        <member name="P:SIE.Wpf.ESop.Displays.DocumentPlaySort.DocumentPlaySorts">
+            <summary>
+            文档播放排序集合
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.Displays.DocumentPlaySort.CurrentDocument">
+            <summary>
+            返回当前播放文档集
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Displays.DocumentPlaySort.NextDocument">
+            <summary>
+            设置当前播放索引向后一个
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Displays.DocumentPlaySort.PreviousDocument">
+            <summary>
+            设置当前播放索引向前一个
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Displays.DocumentPlaySort.Reset">
+            <summary>
+            重置当前播放索引
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Displays.DocumentPlaySort.ResetOne">
+            <summary>
+            更换Esop时下标重置-1
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ESop.Displays.IEsopPlay">
+            <summary>
+            Esop播放接口
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.Displays.IEsopPlay.CurrentPlayDocument">
+            <summary>
+            当前播放文档集
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.Displays.IEsopPlay.Interval">
+            <summary>
+            间隔
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Displays.IEsopPlay.PlayNextDocument">
+            <summary>
+            播放下一文档集
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Displays.IEsopPlay.PlayPreviousDocument">
+            <summary>
+            播放前一文档集
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ESop.Configs.DisplayPointConfigValueViewConfig">
+            <summary>
+            文档服务器配置视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Configs.DisplayPointConfigValueViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ESop.Configs.AttachmentConfigViewConfig">
+            <summary>
+            文档服务器配置视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Configs.AttachmentConfigViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ESop.ESopTemplate">
+            <summary>
+            ESOP模板
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.ESopTemplate.Window">
+            <summary>
+            当前窗口
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.ESopTemplate.displayerPoint">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.ESopTemplate.MetaKey">
+            <summary>
+            元数据关键字
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.ESopTemplate.cmdSelect">
+            <summary>
+            选择命令
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.ESopTemplate.notifyIcon">
+            <summary>
+            最小化通知图标
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.ESopTemplate.OnUIGenerated(SIE.Wpf.ControlResult)">
+            <summary>
+            创建UI后触发
+            </summary>
+            <param name="ui">UI控件对象</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.ESopTemplate.CommandBinding(SIE.Wpf.ControlResult)">
+            <summary>
+            设置命令
+            </summary>
+            <param name="ui">控件结果</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.ESopTemplate.Page_Closing(System.Object,System.ComponentModel.CancelEventArgs)">
+            <summary>
+            当前页签关闭时触发
+            </summary>
+            <param name="sender">当前页签</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.ESopTemplate.ReleaseNotifyIcon">
+            <summary>
+            释放最小化图标
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.ESopTemplate.DisableProcess">
+            <summary>
+            设置ESOP快捷键可用
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.ESopTemplate.MainView_DataChanged(System.Object,System.EventArgs)">
+            <summary>
+            主视图数据变更时触发
+            </summary>
+            <param name="sender">主视图</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.ESopTemplate.Control_Loaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            控件加载
+            </summary>
+            <param name="sender">当前控件</param>
+            <param name="e">路由事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.ESopTemplate.Window_Loaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            窗口加载
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.ESopTemplate.BtnPlay_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            开始播放
+            </summary>
+            <param name="sender">播放按钮</param>
+            <param name="e">路由事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.ESopTemplate.BtnPause_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            停止播放
+            </summary>
+            <param name="sender">停止按钮</param>
+            <param name="e">路由事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.ESopTemplate.BtnNext_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            播放下一个
+            </summary>
+            <param name="sender">下一个按钮</param>
+            <param name="e">路由事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.ESopTemplate.BtnPrevious_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            播放上一个
+            </summary>
+            <param name="sender">上一个按钮</param>
+            <param name="e">路由事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.ESopTemplate.MagnifyAdd_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            放大 25%.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.ESopTemplate.MagnifyMinus_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            缩小 25%.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.ESopTemplate.CreateNotifyIcon">
+            <summary>
+            创建最小化图标
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.ESopTemplate.OnNotifyIconDoubleClick(System.Object,System.EventArgs)">
+            <summary>
+            双击通知图标的时候触发
+            </summary>
+            <param name="sender">通知图标</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.ESopTemplate.Window_StateChanged(System.Object,System.EventArgs)">
+            <summary>
+            窗口状态变更时触发
+            </summary>
+            <param name="sender">当前窗口</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="T:SIE.Wpf.ESop.DeBugCommand">
+            <summary>
+            测试命令
+            </summary>
+        </member>
+        <member name="E:SIE.Wpf.ESop.DeBugCommand.CanExecuteChanged">
+            <summary>
+            Occurs when changes occur that affect whether or not the command should execute.
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.DeBugCommand.CanExecute(System.Object)">
+            <summary>
+            Defines the method that determines whether the command can execute in its current
+                state.
+            </summary>
+            <param name="parameter">Data used by the command. If the command does not require data to be passed,this object can be set to null.</param>
+            <returns>true if this command can be executed; otherwise, false.</returns>
+        </member>
+        <member name="M:SIE.Wpf.ESop.DeBugCommand.Execute(System.Object)">
+            <summary>
+            Defines the method to be called when the command is invoked.
+            </summary>
+            <param name="parameter">Data used by the command. If the command does not require data to be passed,this object can be set to null.</param>
+        </member>
+        <member name="T:SIE.Wpf.ESop.SelectOperationCommand">
+            <summary>
+            选择工作单元命令
+            </summary>
+        </member>
+        <member name="E:SIE.Wpf.ESop.SelectOperationCommand.CanExecuteChanged">
+            <summary>
+            Occurs when changes occur that affect whether or not the command should execute.
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.SelectOperationCommand.CanExecute(System.Object)">
+            <summary>
+            Defines the method that determines whether the command can execute in its current
+                state.
+            </summary>
+            <param name="parameter">Data used by the command. If the command does not require data to be passed,this object can be set to null.</param>
+            <returns>true if this command can be executed; otherwise, false.</returns>
+        </member>
+        <member name="P:SIE.Wpf.ESop.SelectOperationCommand.player">
+            <summary>
+            面板控件
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.SelectOperationCommand.SourceWindow">
+            <summary>
+            来自窗口
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.SelectOperationCommand.Execute(System.Object)">
+            <summary>
+            Defines the method to be called when the command is invoked.
+            </summary>
+            <param name="parameter">Data used by the command. If the command does not require data to be passed,this object can be set to null.</param>
+        </member>
+        <member name="T:SIE.Wpf.ESop.ESopWorkcell">
+            <summary>
+            工作单元信息
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.ESopWorkcell.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.ESopWorkcell.ResourceId">
+            <summary>
+            资源Id
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.ESopWorkcell.DisplayPointId">
+            <summary>
+            显示点Id
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.ESopWorkcell.StationId">
+            <summary>
+            工位ID
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ESop.EsopWorkstation">
+            <summary>
+            工作站信息
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.EsopWorkstation.UserIdProperty">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.EsopWorkstation.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.EsopWorkstation.UserProperty">
+            <summary>
+            用户
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.EsopWorkstation.User">
+            <summary>
+            用户
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.EsopWorkstation.ResourceIdProperty">
+            <summary>
+            资源Id
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.EsopWorkstation.ResourceId">
+            <summary>
+            资源Id
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.EsopWorkstation.ResourceProperty">
+            <summary>
+            资源
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.EsopWorkstation.Resource">
+            <summary>
+            资源
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.EsopWorkstation.DisplayPointIdProperty">
+            <summary>
+            显示点Id
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.EsopWorkstation.DisplayPointId">
+            <summary>
+            显示点Id
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.EsopWorkstation.DisplayPointProperty">
+            <summary>
+            显示点
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.EsopWorkstation.DisplayPoint">
+            <summary>
+            显示点
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.EsopWorkstation.StationIdProperty">
+            <summary>
+            工位Id
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.EsopWorkstation.StationId">
+            <summary>
+            工位Id
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ESop.ESopWorkstationSelector">
+            <summary>
+            工作单元信息选择
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.ESopWorkstationSelector.ResourceIdProperty">
+            <summary>
+            产线Id
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.ESopWorkstationSelector.ResourceId">
+            <summary>
+            资源Id
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.ESopWorkstationSelector.ResourceProperty">
+            <summary>
+            资源
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.ESopWorkstationSelector.Resource">
+            <summary>
+            资源
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.ESopWorkstationSelector.DisplayPointIdProperty">
+            <summary>
+            显示点Id
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.ESopWorkstationSelector.DisplayPointId">
+            <summary>
+            显示点Id
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.ESopWorkstationSelector.DisplayPointProperty">
+            <summary>
+            显示点
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.ESopWorkstationSelector.DisplayPoint">
+            <summary>
+            显示点
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.ESopWorkstationSelector.Workstation">
+            <summary>
+            工作站信息
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.ESopWorkstationSelector.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.ESopWorkstationSelector.#ctor(SIE.Wpf.ESop.EsopWorkstation)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="workstation">工作站信息</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.ESopWorkstationSelector.OnPropertyChanged(SIE.ManagedProperty.ManagedPropertyChangedEventArgs)">
+            <summary>
+            属性变更时触发
+            </summary>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.ESopWorkstationSelector.SelectOperation(SIE.Wpf.ESop.EsopWorkstation,System.Windows.Window,SIE.Wpf.Dashboard.DashboardPlayerControl)">
+            <summary>
+            选择工作单元
+            </summary>
+            <param name="workstation">工作站信息</param>
+            <param name="window">窗口</param>
+            <param name="player">操作器</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.ESopWorkstationSelector.SetWindowIndex(System.Int32,System.Windows.Window)">
+            <summary>
+            设置窗口位置
+            </summary>
+            <param name="numScreen"></param>
+            <param name="window"></param>
+            <exception cref="T:SIE.Domain.Validation.ValidationException"></exception>
+        </member>
+        <member name="T:SIE.Wpf.ESop.WorkstationSelectorViewConfig">
+            <summary>
+            工作单元信息视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.WorkstationSelectorViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.WorkstationSelectorViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ESop.WorkstationViewConfig">
+            <summary>
+            工作站信息 视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.WorkstationViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.WorkstationViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ESop.Documents.Commands.AddDocumentCollectionCommand">
+            <summary>
+            文档集添加命令
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.Documents.Commands.AddDocumentCollectionCommand.docSet">
+            <summary>
+            当前添加实体对象
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Documents.Commands.AddDocumentCollectionCommand.ShowView(SIE.Domain.Entity)">
+            <summary>
+            此处与父类方法一致，唯一不同点在于修改了tab页签的标题，进行了多语言化
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Documents.Commands.AddDocumentCollectionCommand.GetEditViewTitle(SIE.Domain.Entity)">
+            <summary>
+            此处与父类方法一致，唯一不同点在于对View的label进行了多语言化
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Documents.Commands.AddDocumentCollectionCommand.OnItemCreated(SIE.Domain.Entity)">
+            <summary>
+            新实体创建后-提供扩展
+            </summary>
+            <param name="entity">新实体</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Documents.Commands.AddDocumentCollectionCommand.OnEditViewClosed(System.Object,System.EventArgs,SIE.Wpf.ControlResult)">
+            <summary>
+            视图关闭
+            </summary>
+            <param name="sender">事件对象</param>
+            <param name="e">事件参数</param>
+            <param name="ui">界面结果</param>
+        </member>
+        <member name="T:SIE.Wpf.ESop.Documents.Commands.EditDocumentCollectionCommand">
+            <summary>
+            文档集编辑命令
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.Documents.Commands.EditDocumentCollectionCommand.docSet">
+            <summary>
+            当前修改实体对象
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Documents.Commands.EditDocumentCollectionCommand.ShowView(SIE.Domain.Entity)">
+            <summary>
+            此处与父类方法一致，唯一不同点在于修改了tab页签的标题，进行了多语言化
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Documents.Commands.EditDocumentCollectionCommand.GetEditViewTitle(SIE.Domain.Entity)">
+            <summary>
+            此处与父类方法一致，唯一不同点在于对View的label进行了多语言化
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Documents.Commands.EditDocumentCollectionCommand.OnEditting(SIE.Domain.Entity)">
+            <summary>
+            执行前
+            </summary>
+            <param name="editEntity">实体</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Documents.Commands.EditDocumentCollectionCommand.OnEditViewClosed(System.Object,System.EventArgs,SIE.Wpf.ControlResult)">
+            <summary>
+            视图关闭
+            </summary>
+            <param name="sender">事件对象</param>
+            <param name="e">事件参数</param>
+            <param name="ui">界面结果</param>
+        </member>
+        <member name="T:SIE.Wpf.ESop.Documents.Commands.SaveDocumentCollectionCommand">
+            <summary>
+            文档集保存命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Documents.Commands.SaveDocumentCollectionCommand.OnSaving(SIE.Wpf.DetailLogicalView)">
+            <summary>
+            保存前
+            </summary>
+            <param name="view">当前明细逻辑视图</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Documents.Commands.SaveDocumentCollectionCommand.OnRefresh(SIE.Wpf.DetailLogicalView)">
+            <summary>
+            刷新
+            </summary>
+            <param name="view">明细视图</param>
+        </member>
+        <member name="T:SIE.Wpf.ESop.Documents.Commands.AddDocumentCommand">
+            <summary>
+            文档添加命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Documents.Commands.AddDocumentCommand.OnItemCreated(SIE.Domain.Entity)">
+            <summary>
+            新实体创建后-提供扩展
+            </summary>
+            <param name="entity">新实体</param>
+        </member>
+        <member name="T:SIE.Wpf.ESop.Documents.Commands.EditDocumentCommand">
+            <summary>
+            文档编辑命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Documents.Commands.EditDocumentCommand.OnEditting(SIE.Domain.Entity)">
+            <summary>
+            执行前
+            </summary>
+            <param name="editEntity">实体</param>
+        </member>
+        <member name="T:SIE.Wpf.ESop.Documents.Commands.DownloadCommand">
+            <summary>
+            文档集--查看文件命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Documents.Commands.DownloadCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            是否可执行的逻辑
+            </summary>
+            <param name="view">此命令对应的视图对象</param>
+            <returns>返回是否可执行</returns>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Documents.Commands.DownloadCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            执行具体的逻辑
+            </summary>
+            <param name="view">命令对应的视图对象</param>
+        </member>
+        <member name="T:SIE.Wpf.ESop.Documents.Commands.LookupItemCommand">
+            <summary>
+            适用物料的选择命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Documents.Commands.LookupItemCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            命令是否能够执行
+            </summary>
+            <param name="view">逻辑视图</param>
+            <returns>
+            返回是否可执行
+            </returns>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Documents.Commands.LookupItemCommand.ShowDialog(SIE.Wpf.ControlResult)">
+            <summary>
+            此处增加了多语言
+            </summary>
+            <param name="ui"></param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Documents.Commands.LookupItemCommand.OnAccept">
+            <summary>
+            确定
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Documents.Commands.LookupItemCommand.FilterItem">
+            <summary>
+            过滤物料
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ESop.Documents.Commands.DetailLookupItemCommand">
+            <summary>
+            适用物料的选择命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Documents.Commands.DetailLookupItemCommand.OnAccept">
+            <summary>
+            确定
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ESop.Documents.DocumentCollectionCriteriaViewConfig">
+            <summary>
+            文档集查询实体视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Documents.DocumentCollectionCriteriaViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ESop.Documents.DocumentCollectionItemViewConfig">
+            <summary>
+            适用产品视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Documents.DocumentCollectionItemViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Documents.DocumentCollectionItemViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ESop.Documents.DocumentCollectionViewConfig">
+            <summary>
+            文档集视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Documents.DocumentCollectionViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Documents.DocumentCollectionViewConfig.ConfigDetailsView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Documents.DocumentCollectionViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ESop.Documents.DocumentViewConfig">
+            <summary>
+            文档视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Documents.DocumentViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Documents.DocumentViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Documents.DocumentViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ESop.DocumentTransform.DocumentCollectConverter">
+            <summary>
+            文档集转换类
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.DocumentTransform.DocumentCollectConverter.Logwriter">
+            <summary>
+            日记对象
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.DocumentTransform.DocumentCollectConverter.BaseDir">
+            <summary>
+            基本目录路径（系统配置）
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.DocumentTransform.DocumentCollectConverter.cancel">
+            <summary>
+            是否结束标记
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.DocumentTransform.DocumentCollectConverter.DocumentConverter">
+            <summary>
+            Excel转换图片对象
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.DocumentTransform.DocumentCollectConverter.Instance">
+            <summary>
+            文档集转换实例
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.DocumentTransform.DocumentCollectConverter.#cctor">
+            <summary>
+            静态初始化基本目录路径
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.DocumentTransform.DocumentCollectConverter.Convert">
+            <summary>
+            处理未处理
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.DocumentTransform.DocumentCollectConverter.ConvertDocumentCollectionFile(SIE.ESop.Documents.DocumentCollection)">
+            <summary>
+            处理文档集下的文档
+            </summary>
+            <param name="docSet">文档集对象</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.DocumentTransform.DocumentCollectConverter.Stop">
+            <summary>
+            停止
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.DocumentTransform.DocumentCollectConverter.Dispose">
+            <summary>
+            是否资源
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ESop.DocumentTransform.Converters.ExcelSheetConvertToImg">
+            <summary>
+            excel页签转换为Image
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.DocumentTransform.Converters.ExcelSheetConvertToImg.GetWindowThreadProcessId(System.IntPtr,System.Int32@)">
+            <summary>
+            引用非托管dll的方法
+            </summary>
+            <param name="hwnd">句柄指针</param>
+            <param name="lpdwProcessId">返回进程ID</param>
+            <returns>返回线程号</returns>
+        </member>
+        <member name="F:SIE.Wpf.ESop.DocumentTransform.Converters.ExcelSheetConvertToImg.Logwriter">
+            <summary>
+            日记对象
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.DocumentTransform.Converters.ExcelSheetConvertToImg.app">
+            <summary>
+            Excel应用程序对象
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.DocumentTransform.Converters.ExcelSheetConvertToImg.Workbooks">
+            <summary>
+            Excel工作簿集合对象
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.DocumentTransform.Converters.ExcelSheetConvertToImg.Book">
+            <summary>
+            Excel工作簿
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.DocumentTransform.Converters.ExcelSheetConvertToImg.Sheets">
+            <summary>
+            Excel页签集合
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.DocumentTransform.Converters.ExcelSheetConvertToImg.IsOpen">
+            <summary>
+            是否打开了文件
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.DocumentTransform.Converters.ExcelSheetConvertToImg.#ctor">
+            <summary>
+            初始化Excel应用程序对象
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.DocumentTransform.Converters.ExcelSheetConvertToImg.GetDataRange(Microsoft.Office.Interop.Excel.Worksheet,Microsoft.Office.Interop.Excel.Range@,Microsoft.Office.Interop.Excel.Range@)">
+            <summary>
+            获取页签中边框的左上角、右下角的单元格对象
+            </summary>
+            <param name="sheet">页签对象</param>
+            <param name="startCell">左上角对象</param>
+            <param name="endCell">右下角对象</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.DocumentTransform.Converters.ExcelSheetConvertToImg.ConvertSheetsToMs(System.String,System.Collections.Generic.Dictionary{System.String,System.Byte[]}@)">
+            <summary>
+            转换指定excel文件所有页签为图片（根据边框来确定范围）
+            </summary>
+            <param name="strFilePath">excel文件路径</param>
+            <param name="dicImageByte">输出excel页签名称-图片</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.DocumentTransform.Converters.ExcelSheetConvertToImg.ProcessSheet(System.Collections.Generic.Dictionary{System.String,System.Byte[]},Microsoft.Office.Interop.Excel.Worksheet)">
+            <summary>
+            转换指定页签为图片
+            </summary>
+            <param name="dicImageByte">excel页签名称-图片</param>
+            <param name="sheet">页签对象</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.DocumentTransform.Converters.ExcelSheetConvertToImg.ImageToByte(System.Drawing.Image)">
+            <summary>
+            根据图片对象转为byte[]
+            </summary>
+            <param name="image">图片对象</param>
+            <returns>返回图片byte[]数组</returns>
+        </member>
+        <member name="M:SIE.Wpf.ESop.DocumentTransform.Converters.ExcelSheetConvertToImg.Converter(System.String,System.String)">
+            <summary>
+            转换excel所有页签为图片（根据单元格有效范围）
+            </summary>
+            <param name="fileName">excel文件路径</param>
+            <param name="saveBmpBasePath">保存图片路径</param>
+            <returns>返回图片保存的路径</returns>
+        </member>
+        <member name="M:SIE.Wpf.ESop.DocumentTransform.Converters.ExcelSheetConvertToImg.Cleanup(Microsoft.Office.Interop.Excel.Application,Microsoft.Office.Interop.Excel.Workbooks,Microsoft.Office.Interop.Excel.Workbook,Microsoft.Office.Interop.Excel.Sheets)">
+            <summary>
+            清空Excel对象
+            </summary>
+            <param name="app">Excel应用程序对象</param>
+            <param name="workbooks">工作薄集合</param>
+            <param name="book">工作薄对象</param>
+            <param name="sheets">页签集合</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.DocumentTransform.Converters.ExcelSheetConvertToImg.KillSpecialExcel(Microsoft.Office.Interop.Excel.Application)">
+            <summary>
+            杀掉指定excel对象的进程
+            </summary>
+            <param name="excel">excel应用对象</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.DocumentTransform.Converters.ExcelSheetConvertToImg.Dispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ESop.DocumentTransform.IDocumentConvert">
+            <summary>
+            文档转换接口
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.DocumentTransform.IDocumentConvert.Convert">
+            <summary>
+            转换方法
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.DocumentTransform.IDocumentConvert.Stop">
+            <summary>
+            停止方法
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ESop.DocumentTransform.ProcessDocuments.IProcessDocument">
+            <summary>
+            文档处理接口
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.DocumentTransform.ProcessDocuments.IProcessDocument.Process">
+            <summary>
+            处理文档方法
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.DocumentTransform.ProcessDocuments.IProcessDocument.Stop">
+            <summary>
+            停止
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ESop.DocumentTransform.ProcessDocuments.ProcessExcelDocumenter">
+            <summary>
+            处理Excel文档
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.DocumentTransform.ProcessDocuments.ProcessExcelDocumenter.Logwriter">
+            <summary>
+            日记对象
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.DocumentTransform.ProcessDocuments.ProcessExcelDocumenter.ExcelExtension">
+            <summary>
+            扩展名
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.DocumentTransform.ProcessDocuments.ProcessExcelDocumenter.deletePaths">
+            <summary>
+            需要删除的路径
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.DocumentTransform.ProcessDocuments.ProcessExcelDocumenter.cancel">
+            <summary>
+            是否结束
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.DocumentTransform.ProcessDocuments.ProcessExcelDocumenter.ProcessDocumentCollection(System.IO.DirectoryInfo)">
+            <summary>
+            处理目录下符合扩展名的文件
+            </summary>
+            <param name="dir">目录对象</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.DocumentTransform.ProcessDocuments.ProcessExcelDocumenter.ClearFiles">
+            <summary>
+            删除文件
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.DocumentTransform.ProcessDocuments.ProcessExcelDocumenter.Process">
+            <summary>
+            处理用户直接上次上传的文件
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.DocumentTransform.ProcessDocuments.ProcessExcelDocumenter.Stop">
+            <summary>
+            停止处理
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ESop.DocumentTransform.ServiceEventListener">
+            <summary>
+            服务订阅
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.DocumentTransform.ServiceEventListener.Logwriter">
+            <summary>
+            日记对象
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.DocumentTransform.ServiceEventListener.Instance">
+            <summary>
+            服务实例
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.DocumentTransform.ServiceEventListener.Task">
+            <summary>
+            文档处理任务对象
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.DocumentTransform.ServiceEventListener.Start">
+            <summary>
+            注册开始服务
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.DocumentTransform.ServiceEventListener.Stop">
+            <summary>
+            注册停止服务
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.DocumentTransform.ServiceEventListener.Pause">
+            <summary>
+            注册暂停服务
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.DocumentTransform.ServiceEventListener.Resume">
+            <summary>
+            注册恢复服务
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ESop.DocumentTransform.DocumentProcessTask">
+            <summary>
+            文档处理任务
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.DocumentTransform.DocumentProcessTask.Logwriter">
+            <summary>
+            日记对象
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.DocumentTransform.DocumentProcessTask._monitoringTask">
+            <summary>
+            监控文件任务
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.DocumentTransform.DocumentProcessTask._converterTask">
+            <summary>
+            转换文件任务
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.DocumentTransform.DocumentProcessTask.isRunning">
+            <summary>
+            是否运行
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.DocumentTransform.DocumentProcessTask._userName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.DocumentTransform.DocumentProcessTask._passWord">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.DocumentTransform.DocumentProcessTask._converterTaskCancelTokenSource">
+            <summary>
+            转换文件任务取消资源对象
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.DocumentTransform.DocumentProcessTask._monitoringWaitCancelTokenSource">
+            <summary>
+            监控文件任务取消资源对象
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.DocumentTransform.DocumentProcessTask.DocumentConverter">
+            <summary>
+            文档转换对象
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.DocumentTransform.DocumentProcessTask.ProcessDocumenter">
+            <summary>
+            文档处理对象
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.DocumentTransform.DocumentProcessTask.#ctor(SIE.Wpf.ESop.DocumentTransform.ProcessDocuments.IProcessDocument,SIE.Wpf.ESop.DocumentTransform.IDocumentConvert)">
+            <summary>
+            初始化任务调度对象
+            </summary>
+            <param name="processDocumenter">文档处理对象</param>
+            <param name="converter">文档转换对象</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.DocumentTransform.DocumentProcessTask.Star">
+            <summary>
+            开始
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.DocumentTransform.DocumentProcessTask.Stop">
+            <summary>
+            停止
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.DocumentTransform.DocumentProcessTask.Pause">
+            <summary>
+            暂停
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.DocumentTransform.DocumentProcessTask.Continue">
+            <summary>
+            继续
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.DocumentTransform.DocumentProcessTask.Dispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.DocumentTransform.DocumentProcessTask.Dispose(System.Boolean)">
+            <summary>
+            释放资源
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.DocumentTransform.DocumentProcessTask.DocumentConvert">
+            <summary>
+            文档转换任务
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.DocumentTransform.DocumentProcessTask.Process">
+            <summary>
+            文档处理任务
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ESop.DocumentTransform.IProcessTask">
+            <summary>
+            文档处理任务接口
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.DocumentTransform.IProcessTask.Continue">
+            <summary>
+            继续
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.DocumentTransform.IProcessTask.Pause">
+            <summary>
+            暂停
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.DocumentTransform.IProcessTask.Star">
+            <summary>
+            开始
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.DocumentTransform.IProcessTask.Stop">
+            <summary>
+            停止
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ESop.DocumentTransform.StaScheduler">
+            <summary>
+            任务调度
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.DocumentTransform.StaScheduler._threads">
+            <summary>
+            线程
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.DocumentTransform.StaScheduler.tasks">
+            <summary>
+            线程安全集合
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.DocumentTransform.StaScheduler.#ctor(System.Int32)">
+            <summary>
+            初始化任务调度数据
+            </summary>
+            <param name="numberOfThreads">线程数量</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.DocumentTransform.StaScheduler.QueueTask(System.Threading.Tasks.Task)">
+            <summary>
+            将任务对象排队到调度器
+            </summary>
+            <param name="task">任务对象</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.DocumentTransform.StaScheduler.GetScheduledTasks">
+            <summary>
+            获取当前调度在该调度器上的任务的枚举。
+            </summary>
+            <returns>返回任务调度集合</returns>
+        </member>
+        <member name="M:SIE.Wpf.ESop.DocumentTransform.StaScheduler.TryExecuteTaskInline(System.Threading.Tasks.Task,System.Boolean)">
+            <summary>
+            在当前线程上执行指定任务的尝试。
+            </summary>
+            <param name="task">执行任务</param>
+            <param name="taskWasPreviouslyQueued">一个布尔值，表示以前已排入任务。 如果此参数为 True，则该任务可能已以前排队 （计划）;如果为 False，则已知该任务无法已排队，以便执行内联任务，而队列不进行此调用它。</param>
+            <returns>一个布尔值，该值指示该任务以内联方式执行。</returns>
+        </member>
+        <member name="P:SIE.Wpf.ESop.DocumentTransform.StaScheduler.MaximumConcurrencyLevel">
+            <summary>
+            获取此调度器支持的最大并发级别。
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.DocumentTransform.StaScheduler.Dispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ESop.Editors.DisplayPointLookUpEditor">
+            <summary>
+            显示点编辑器
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.Editors.DisplayPointLookUpEditor.EditorName">
+            <summary>
+            编辑器名称
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.DisplayPointLookUpEditor.GetDataSourceCore(SIE.Domain.Entity,SIE.PagingInfo,System.String,SIE.ManagedProperty.IManagedProperty)">
+            <summary>
+            获取物料分类小类
+            </summary>
+            <param name="source">上下文</param>
+            <param name="pagingInfo">分页信息</param>
+            <param name="keyword">关键字</param>
+            <param name="titleProperty">显示属性</param>
+            <returns>物料分类小类列表</returns>
+        </member>
+        <member name="T:SIE.Wpf.ESop.Editors.DocumentSelectEditor">
+            <summary>
+            文档选择编辑器
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.Editors.DocumentSelectEditor.EditorNameEX">
+            <summary>
+            编辑器名称
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.Editors.DocumentSelectEditor.MaxSize">
+            <summary>
+            文件大小
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.Editors.DocumentSelectEditor.FileContent">
+            <summary>
+            文件内容
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.DocumentSelectEditor.CreateEditingElement">
+            <summary>
+            创建编辑器样式
+            </summary>
+            <returns>FrameworkElement</returns>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.DocumentSelectEditor.FileSelecting(System.String)">
+            <summary>
+            选择文件时触发
+            </summary>
+            <param name="fileName">选择的文件路径</param>
+            <returns>返回是否可继续执行</returns>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.DocumentSelectEditor.FileSelected(System.String)">
+            <summary>
+            选择文件后触发
+            </summary>
+            <param name="fileName">选择的文件路径</param>
+        </member>
+        <member name="T:SIE.Wpf.ESop.Editors.ESopEnterpriseLookUpEditor">
+            <summary>
+            产线编辑器
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.Editors.ESopEnterpriseLookUpEditor.EditorName">
+            <summary>
+            编辑器名称
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ESopEnterpriseLookUpEditor.GetDataSourceCore(SIE.Domain.Entity,SIE.PagingInfo,System.String,SIE.ManagedProperty.IManagedProperty)">
+            <summary>
+            获取物料分类小类
+            </summary>
+            <param name="source">上下文</param>
+            <param name="pagingInfo">分页信息</param>
+            <param name="keyword">关键字</param>
+            <param name="titleProperty">显示属性</param>
+            <returns>物料分类小类列表</returns>
+        </member>
+        <member name="T:SIE.Wpf.ESop.Editors.ExcelPlayer">
+            <summary>
+            ExcelPlayer.xaml 的交互逻辑
+            </summary>
+            <summary>
+            ExcelPlayer
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.Editors.ExcelPlayer.CurrentUri">
+            <summary>
+            记录当前文件路径
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.Editors.ExcelPlayer.MD5">
+            <summary>
+            记录当前文件MD5加密内容
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.Editors.ExcelPlayer.IsShow">
+            <summary>
+            是否显示
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.Editors.ExcelPlayer.useRangeWidth">
+            <summary>
+            当前激活页签的用户范围的宽度
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.Editors.ExcelPlayer.useRangeHeight">
+            <summary>
+            当前激活页签的用户范围的高度
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.Editors.ExcelPlayer.useRange">
+            <summary>
+            当前激活页签的用户范围
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ExcelPlayer.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ExcelPlayer.#ctor(SIE.Wpf.ESOP.ESOPFactory.FactoryShowControl)">
+            <summary>
+            带参构造
+            </summary>
+            <param name="showControl"></param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ExcelPlayer.SpreadsheetControl_Loaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            控件初始化加载数据
+            </summary>
+            <param name="sender">当前初始化控件</param>
+            <param name="e">路由事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ExcelPlayer.LoadData(System.Uri)">
+            <summary>
+            根据路径加载文件
+            </summary>
+            <param name="uri">路径</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ExcelPlayer.Show(System.String)">
+            <summary>
+            显示指定页签
+            </summary>
+            <param name="sheetName">页签名称</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ExcelPlayer.ActiveWorksheet(System.String)">
+            <summary>
+            激动指定的页签
+            </summary>
+            <param name="sheetName">页签名称</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ExcelPlayer.MatchUseRangeSize">
+            <summary>
+            计算用户范围大小
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ExcelPlayer.ZoomUseRange">
+            <summary>
+            焦点根据用户范围和控件大小进行调整
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ExcelPlayer.MeasureOverride(System.Windows.Size)">
+            <summary>
+            计算子元素空间
+            </summary>
+            <param name="constraint">父容器可用空间</param>
+            <returns>父容器空间</returns>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ExcelPlayer.BtnZoomIn_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            放大
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ExcelPlayer.BtnZoomOut_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            缩小
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ExcelPlayer.MagnifyAdd">
+            <summary>
+            放大
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ExcelPlayer.MagnifyMinus">
+            <summary>
+            缩小
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ExcelPlayer.SetActualSize">
+            <summary>
+            还原
+            </summary>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ExcelPlayer.UpdatePlayer(SIE.ESop.Documents.Document)">
+            <summary>
+            
+            </summary>
+            <param name="document"></param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ExcelPlayer.ActualSize">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ExcelPlayer.ShowUI">
+            <summary>
+             添加显示界面的方法
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ExcelPlayer.HideUI">
+            <summary>
+            添加隐藏界面的方法
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ExcelPlayer.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ESop.Editors.ImagePlayer">
+            <summary>
+            PdfPlayer.xaml 的交互逻辑
+            </summary>
+            <summary>
+            ImagePlayer
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.Editors.ImagePlayer.CurrentUri">
+            <summary>
+            记录当前文件路径
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.Editors.ImagePlayer.IsShow">
+            <summary>
+            是否显示
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.Editors.ImagePlayer.defaultTransformGroup">
+            <summary>
+            默认缩放比
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ImagePlayer.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ImagePlayer.#ctor(SIE.Wpf.ESOP.ESOPFactory.FactoryShowControl)">
+            <summary>
+            带参构造函数
+            </summary>
+            <param name="showControl"></param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ImagePlayer.ImageControl_Loaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            控件初始化加载数据
+            </summary>
+            <param name="sender">当前初始化控件</param>
+            <param name="e">路由事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ImagePlayer.ImageControl_IsVisibleChanged(System.Object,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            控件可视化变化时触发
+            </summary>
+            <param name="sender">当前控件</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ImagePlayer.ImageControl_SizeChanged(System.Object,System.Windows.SizeChangedEventArgs)">
+            <summary>
+            控件尺寸改变时触发
+            </summary>
+            <param name="sender">改变的控件对象</param>
+            <param name="e">尺寸大小改变参数</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ImagePlayer.LoadData(System.String)">
+            <summary>
+            根据路径加载文件
+            </summary>
+            <param name="filePath">路径</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ImagePlayer.Show(System.String)">
+            <summary>
+            显示指定页签
+            </summary>
+            <param name="sheetName">页签名称</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ImagePlayer.MatchUseRangeSize">
+            <summary>
+            计算用户范围大小
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ImagePlayer.ZoomUseRange">
+            <summary>
+            焦点根据用户范围和控件大小进行调整
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ImagePlayer.BtnZoomIn_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            放大
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ImagePlayer.SetActualSize">
+            <summary>
+            还原尺寸
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ImagePlayer.BtnZoomOut_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            缩小
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ImagePlayer.MagnifyAdd">
+            <summary>
+            放大
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ImagePlayer.MagnifyMinus">
+            <summary>
+            缩小
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ImagePlayer.BtnClockwiseRotate_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            旋转
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ImagePlayer.MouseLeftButtonDownCommand(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            按下鼠标左键，准备开始拖动图片
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ImagePlayer.MouseMoveCommand(System.Object,System.Windows.Input.MouseEventArgs)">
+            <summary>
+            按住鼠标左键，拖动图片平移
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ImagePlayer.MouseLeftButtonUpCommand(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            鼠标左键弹起，结束图片的拖动
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ImagePlayer.UpdatePlayer(SIE.ESop.Documents.Document)">
+            <summary>
+            
+            </summary>
+            <param name="document"></param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ImagePlayer.ActualSize">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ImagePlayer.ShowUI">
+            <summary>
+             添加显示界面的方法
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ImagePlayer.HideUI">
+            <summary>
+            添加隐藏界面的方法
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ImagePlayer.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ESop.Editors.MediaPlayer">
+            <summary>
+            PdfPlayer.xaml 的交互逻辑
+            </summary>
+            <summary>
+            MediaPlayer
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.Editors.MediaPlayer.CurrentUri">
+            <summary>
+            记录当前文件路径
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.Editors.MediaPlayer.defaultSize">
+            <summary>
+            默认尺寸
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.Editors.MediaPlayer.MD5">
+            <summary>
+            记录当前文件MD5加密内容
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.Editors.MediaPlayer.IsShow">
+            <summary>
+            是否显示
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.MediaPlayer.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.MediaPlayer.#ctor(SIE.Wpf.ESOP.ESOPFactory.FactoryShowControl)">
+            <summary>
+            带参构造
+            </summary>
+            <param name="showControl"></param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.MediaPlayer.MediaViewerControl_Loaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            控件初始化加载数据
+            </summary>
+            <param name="sender">当前初始化控件</param>
+            <param name="e">路由事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.MediaPlayer.MediaViewerControl_IsVisibleChanged(System.Object,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            控件可视化变化时触发
+            </summary>
+            <param name="sender">当前控件</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.MediaPlayer.MediaViewerControl_SizeChanged(System.Object,System.Windows.SizeChangedEventArgs)">
+            <summary>
+            控件尺寸改变时触发
+            </summary>
+            <param name="sender">改变的控件对象</param>
+            <param name="e">尺寸大小改变参数</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.MediaPlayer.Show(System.String)">
+            <summary>
+            显示指定页签
+            </summary>
+            <param name="sheetName">页签名称</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.MediaPlayer.MatchUseRangeSize">
+            <summary>
+            计算用户范围大小
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.MediaPlayer.ZoomUseRange">
+            <summary>
+            焦点根据用户范围和控件大小进行调整
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.MediaPlayer.BtnZoomIn_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            按钮事件
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.MediaPlayer.BtnZoomOut_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            按钮事件
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.MediaPlayer.MagnifyAdd">
+            <summary>
+            放大
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.MediaPlayer.MagnifyMinus">
+            <summary>
+            缩小
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.MediaPlayer.SetActualSize">
+            <summary>
+            还原
+            </summary>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.MediaPlayer.Play">
+            <summary>
+            播放
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.MediaPlayer.Pause">
+            <summary>
+            暂停
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.MediaPlayer.Stop">
+            <summary>
+            停止
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.MediaPlayer.SetSource(System.Uri)">
+            <summary>
+            设置数据源
+            </summary>
+            <param name="uri"></param>
+        </member>
+        <member name="F:SIE.Wpf.ESop.Editors.MediaPlayer.MediaElement_MediaEnded">
+            <summary>
+            播放结束事件
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.MediaPlayer.ActualSize">
+            <summary>
+            还原
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.MediaPlayer.UpdatePlayer(SIE.ESop.Documents.Document)">
+            <summary>
+            
+            </summary>
+            <param name="document"></param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.MediaPlayer.ShowUI">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.MediaPlayer.HideUI">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.MediaPlayer.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ESop.Editors.PdfPlayer">
+            <summary>
+            PdfPlayer.xaml 的交互逻辑
+            </summary>
+            <summary>
+            PdfPlayer
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.Editors.PdfPlayer.CurrentUri">
+            <summary>
+            记录当前文件路径
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.Editors.PdfPlayer.MD5">
+            <summary>
+            记录当前文件MD5加密内容
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.Editors.PdfPlayer.IsShow">
+             <summary>
+            是否显示
+             </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.PdfPlayer.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.PdfPlayer.#ctor(SIE.Wpf.ESOP.ESOPFactory.FactoryShowControl)">
+            <summary>
+            带构造参数
+            </summary>
+            <param name="showControl"></param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.PdfPlayer.PdfViewerControl_Loaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            控件初始化加载数据
+            </summary>
+            <param name="sender">当前初始化控件</param>
+            <param name="e">路由事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.PdfPlayer.PdfViewerControl_IsVisibleChanged(System.Object,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            控件可视化变化时触发
+            </summary>
+            <param name="sender">当前控件</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.PdfPlayer.PdfViewerControl_SizeChanged(System.Object,System.Windows.SizeChangedEventArgs)">
+            <summary>
+            控件尺寸改变时触发
+            </summary>
+            <param name="sender">改变的控件对象</param>
+            <param name="e">尺寸大小改变参数</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.PdfPlayer.LoadData(System.Uri)">
+            <summary>
+            根据路径加载文件
+            </summary>
+            <param name="uri">路径</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.PdfPlayer.Show(System.String)">
+            <summary>
+            显示指定页签
+            </summary>
+            <param name="sheetName">页签名称</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.PdfPlayer.MatchUseRangeSize">
+            <summary>
+            计算用户范围大小
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.PdfPlayer.ZoomUseRange">
+            <summary>
+            焦点根据用户范围和控件大小进行调整
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.PdfPlayer.BtnZoomIn_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            放大事件
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.PdfPlayer.BtnZoomOut_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            缩小事件
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.PdfPlayer.MagnifyAdd">
+            <summary>
+            放大
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.PdfPlayer.MagnifyMinus">
+            <summary>
+            缩小
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.PdfPlayer.BtnClockwiseRotate_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            按钮事件
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.PdfPlayer.SetActualSize">
+            <summary>
+            还原
+            </summary>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.PdfPlayer.UpdatePlayer(SIE.ESop.Documents.Document)">
+            <summary>
+            
+            </summary>
+            <param name="document"></param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.PdfPlayer.ActualSize">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.PdfPlayer.ShowUI">
+            <summary>
+             添加显示界面的方法
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.PdfPlayer.HideUI">
+            <summary>
+            添加隐藏界面的方法
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.PdfPlayer.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ESop.Editors.ShowControl">
+            <summary>
+            ShowControl布局控件
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.Editors.ShowControl.PlayEditor">
+            <summary>
+            播放编辑器
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.Editors.ShowControl._playTimer">
+            <summary>
+            计时器
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.Editors.ShowControl.imagePlayer">
+            <summary>
+            图片查看器
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.Editors.ShowControl.mediaElement">
+            <summary>
+            多媒体对象
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.Editors.ShowControl.excelPlayer">
+            <summary>
+            EXCEL播放器
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.Editors.ShowControl.pdfPlayer">
+            <summary>
+            PDF对象
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.Editors.ShowControl.wordPlayer">
+            <summary>
+            word显示器
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.Editors.ShowControl.disposedValue">
+            <summary>
+            是否已经释放数据
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.Editors.ShowControl.Tick">
+            <summary>
+            记录离上一次间隔多少秒
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESop.Editors.ShowControl.CurrentPlayDocumentProperty">
+            <summary>
+            当前播放文档集
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.Editors.ShowControl.CurrentPlayDocument">
+            <summary>
+            当前播放文档集
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ShowControl.#ctor">
+            <summary>
+            构造函数（初始化simpleImage、mediaElement、excelPlayer）
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ShowControl.Play">
+            <summary>
+            计时器开始，播放
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ShowControl.Stop">
+            <summary>
+            计时器停止，停止播放
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ShowControl.Previous">
+            <summary>
+            上一个
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ShowControl.Next">
+            <summary>
+            下一个
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ShowControl.MagnifyAdd">
+            <summary>
+            放大
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ShowControl.MagnifyMinus">
+            <summary>
+            缩小
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ShowControl.CurrentPlayDocumentChanged">
+            <summary>
+            当前播放文档集变更时触发
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ShowControl.PlayVideo">
+            <summary>
+            播放视频
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ShowControl.MediaElement_MediaEnded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            视频结束时触发
+            </summary>
+            <param name="sender">当前多媒体控件</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ShowControl.Dispose(System.Boolean)">
+            <summary>
+            释放资源
+            </summary>
+            <param name="disposing">是否释放计时器</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ShowControl.Dispose">
+            <summary>
+            TODO: 仅当以上 Dispose(bool disposing) 拥有用于释放未托管资源的代码时才替代终结器。
+            ~ShowControl() {
+              // 请勿更改此代码。将清理代码放入以上 Dispose(bool disposing) 中。
+              Dispose(false);
+            }
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.ShowControl.ActualSize">
+            <summary>
+            还原初始大小
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ESop.Editors.WordPlayer">
+            <summary>
+            PdfPlayer.xaml 的交互逻辑
+            </summary>
+            <summary>
+            WordPlayer
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.Editors.WordPlayer.CurrentUri">
+            <summary>
+            记录当前文件路径
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.Editors.WordPlayer.MD5">
+            <summary>
+            记录当前文件MD5加密内容
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESop.Editors.WordPlayer.IsShow">
+            <summary>
+            是否显示
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.WordPlayer.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.WordPlayer.#ctor(SIE.Wpf.ESOP.ESOPFactory.FactoryShowControl)">
+            <summary>
+            带参构造
+            </summary>
+            <param name="showControl"></param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.WordPlayer.wordEditControl_Loaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            控件初始化加载数据
+            </summary>
+            <param name="sender">当前初始化控件</param>
+            <param name="e">路由事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.WordPlayer.wordEditControl_IsVisibleChanged(System.Object,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            控件可视化变化时触发
+            </summary>
+            <param name="sender">当前控件</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.WordPlayer.wordEditControl_SizeChanged(System.Object,System.Windows.SizeChangedEventArgs)">
+            <summary>
+            控件尺寸改变时触发
+            </summary>
+            <param name="sender">改变的控件对象</param>
+            <param name="e">尺寸大小改变参数</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.WordPlayer.LoadData(System.Uri)">
+            <summary>
+            根据路径加载文件
+            </summary>
+            <param name="uri">路径</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.WordPlayer.Show(System.String)">
+            <summary>
+            显示指定页签
+            </summary>
+            <param name="sheetName">页签名称</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.WordPlayer.MatchUseRangeSize">
+            <summary>
+            计算用户范围大小
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.WordPlayer.ZoomUseRange">
+            <summary>
+            焦点根据用户范围和控件大小进行调整
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.WordPlayer.MagnifyAdd">
+            <summary>
+            放大
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.WordPlayer.MagnifyMinus">
+            <summary>
+            缩小
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.WordPlayer.BtnZoomIn_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            按钮事件
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.WordPlayer.BtnZoomOut_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            按钮事件
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.WordPlayer.SetActualSize">
+            <summary>
+            还原
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.WordPlayer.UpdatePlayer(SIE.ESop.Documents.Document)">
+            <summary>
+            更新播放内容
+            </summary>
+            <param name="document"></param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.WordPlayer.ActualSize">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.WordPlayer.ShowUI">
+            <summary>
+             添加显示界面的方法
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.WordPlayer.HideUI">
+            <summary>
+            添加隐藏界面的方法
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Editors.WordPlayer.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ESop.ESopMenuInit">
+            <summary>
+            菜单初始化
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.ESopMenuInit.GetMenuDtos">
+            <summary>
+            获取菜单列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Wpf.ESop.Module">
+            <summary>
+            当前工程所对应的模块类
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化
+            </summary>
+            <param name="app">应用程序对象</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Module.AddNewPropertyEditors(SIE.IApp)">
+            <summary>
+            属性编辑器
+            </summary>
+            <param name="app">应用程序对象</param>
+        </member>
+        <member name="M:SIE.Wpf.ESop.Module.App_ModuleOperations(System.Object,System.EventArgs)">
+            <summary>
+            模块
+            </summary>
+            <param name="sender">发送者</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="T:SIE.Wpf.ESOP.Common.DownloadHelper">
+            <summary>
+            下载帮助类
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESOP.Common.DownloadHelper.FileDownload(System.String,System.String)">
+            <summary>
+            下载文件到临时路径
+            </summary>
+            <param name="filePath">文件路径</param>
+            <param name="savePath">保存路径</param>
+        </member>
+        <member name="T:SIE.Wpf.ESOP.Displays.Configs.DisplayPointDataConfigValueViewConfig">
+            <summary>
+            ESOP文档来源配置项视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESOP.Displays.Configs.DisplayPointDataConfigValueViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ESOP.Documents.Commands.LookupWorkOrderCommand">
+            <summary>
+            适用工单的选择命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESOP.Documents.Commands.LookupWorkOrderCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            命令是否能够执行
+            </summary>
+            <param name="view">逻辑视图</param>
+            <returns>返回是否可执行</returns>
+        </member>
+        <member name="M:SIE.Wpf.ESOP.Documents.Commands.LookupWorkOrderCommand.OnAccept">
+            <summary>
+            确定
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESOP.Documents.Commands.LookupWorkOrderCommand.FilterWorkOrder">
+            <summary>
+            过滤工单
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ESOP.Documents.Commands.DetailLookupWorkOrderCommand">
+            <summary>
+            适用工单的选择命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESOP.Documents.Commands.DetailLookupWorkOrderCommand.OnAccept">
+            <summary>
+            确定
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ESOP.Documents.DocumentCollectionWorkOrderViewConfig">
+            <summary>
+            文档集与工单关系-界面
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESOP.Documents.DocumentCollectionWorkOrderViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESOP.Documents.DocumentCollectionWorkOrderViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ESOP.Editors.ViewboxPanel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESOP.Editors.ViewboxPanel.MeasureOverride(System.Windows.Size)">
+            <summary>
+            
+            </summary>
+            <param name="availableSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Wpf.ESOP.Editors.ViewboxPanel.ArrangeOverride(System.Windows.Size)">
+            <summary>
+            
+            </summary>
+            <param name="finalSize"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Wpf.ESOP.ESOPFactory.DocumentExtension">
+            <summary>
+            文档后缀名
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESOP.ESOPFactory.DocumentExtension.None">
+            <summary>
+            空
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESOP.ESOPFactory.DocumentExtension.xlsx">
+            <summary>
+            表格文档
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESOP.ESOPFactory.DocumentExtension.pdf">
+            <summary>
+            PDF文档
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESOP.ESOPFactory.DocumentExtension.docx">
+            <summary>
+            Doc文档
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ESOP.ESOPFactory.FactoryShowControl">
+            <summary>
+            ShowControl布局控件
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESOP.ESOPFactory.FactoryShowControl.imagePlayer">
+             <summary>
+            图片播放器
+             </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESOP.ESOPFactory.FactoryShowControl.mediaPlayer">
+            <summary>
+            媒体播放器
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESOP.ESOPFactory.FactoryShowControl.excelPlayer">
+            <summary>
+            表格文档展示
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESOP.ESOPFactory.FactoryShowControl.pdfPlayer">
+            <summary>
+            PDF文档展示
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESOP.ESOPFactory.FactoryShowControl.wordPlayer">
+            <summary>
+            word文档展示
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESOP.ESOPFactory.FactoryShowControl.PlayEditor">
+            <summary>
+            播放编辑器
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESOP.ESOPFactory.FactoryShowControl.Tick">
+            <summary>
+            记录离上一次间隔多少秒
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESOP.ESOPFactory.FactoryShowControl._playTimer">
+            <summary>
+            定时器
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESOP.ESOPFactory.FactoryShowControl.playerList">
+            <summary>
+            文档播放器集合
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESOP.ESOPFactory.FactoryShowControl.CurrentPlayDocumentProperty">
+            <summary>
+            当前播放文档集
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESOP.ESOPFactory.FactoryShowControl.CurrentPlayDocument">
+            <summary>
+            当前播放文档集
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.ESOP.ESOPFactory.FactoryShowControl.disposedValue">
+            <summary>
+            是否已经释放数据
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESOP.ESOPFactory.FactoryShowControl.#ctor">
+            <summary>
+            构造函数（初始化simpleImage、mediaElement、excelPlayer）
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESOP.ESOPFactory.FactoryShowControl.Play">
+            <summary>
+            计时器开始，播放
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESOP.ESOPFactory.FactoryShowControl.Stop">
+            <summary>
+            计时器停止，停止播放
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESOP.ESOPFactory.FactoryShowControl.Previous">
+            <summary>
+            上一个
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESOP.ESOPFactory.FactoryShowControl.Next">
+            <summary>
+            下一个
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESOP.ESOPFactory.FactoryShowControl.MagnifyAdd">
+            <summary>
+            放大
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESOP.ESOPFactory.FactoryShowControl.MagnifyMinus">
+            <summary>
+            缩小
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESOP.ESOPFactory.FactoryShowControl.ActualSize">
+            <summary>
+            还原初始大小
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESOP.ESOPFactory.FactoryShowControl.CurrentPlayDocumentChanged">
+            <summary>
+            当前播放文档集变更时触发
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESOP.ESOPFactory.FactoryShowControl.UpdateShowPlayerDocument(SIE.Wpf.ESOP.ESOPFactory.IPlayer)">
+            <summary>
+            更新显示的文档
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESOP.ESOPFactory.FactoryShowControl.ShowCurrentPlayer(SIE.Wpf.ESOP.ESOPFactory.IPlayer)">
+            <summary>
+            显示当前播放器
+            </summary>
+            <param name="player"></param>
+        </member>
+        <member name="M:SIE.Wpf.ESOP.ESOPFactory.FactoryShowControl.MediaElement_MediaEnded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SIE.Wpf.ESOP.ESOPFactory.FactoryShowControl.Dispose(System.Boolean)">
+            <summary>
+            释放资源
+            </summary>
+            <param name="disposing">是否释放计时器</param>
+        </member>
+        <member name="M:SIE.Wpf.ESOP.ESOPFactory.FactoryShowControl.Dispose">
+            <summary>
+            TODO: 仅当以上 Dispose(bool disposing) 拥有用于释放未托管资源的代码时才替代终结器。
+            ~ShowControl() {
+              // 请勿更改此代码。将清理代码放入以上 Dispose(bool disposing) 中。
+              Dispose(false);
+            }
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ESOP.ESOPFactory.IPlayer">
+            <summary>
+            文档播放器接口
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESOP.ESOPFactory.IPlayer.IsShow">
+            <summary>
+            是否显示
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESOP.ESOPFactory.IPlayer.UpdatePlayer(SIE.ESop.Documents.Document)">
+            <summary>
+            更新播放内容
+            </summary>
+            <param name="document"></param>
+        </member>
+        <member name="M:SIE.Wpf.ESOP.ESOPFactory.IPlayer.Play">
+            <summary>
+            播放
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESOP.ESOPFactory.IPlayer.Stop">
+            <summary>
+            停止
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESOP.ESOPFactory.IPlayer.MagnifyAdd">
+            <summary>
+            放大
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESOP.ESOPFactory.IPlayer.MagnifyMinus">
+            <summary>
+            缩小
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESOP.ESOPFactory.IPlayer.ActualSize">
+            <summary>
+            还原
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESOP.ESOPFactory.IPlayer.ShowUI">
+            <summary>
+             添加显示界面的方法
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESOP.ESOPFactory.IPlayer.HideUI">
+            <summary>
+            添加隐藏界面的方法
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.ESOP.ESOPFactory.PlayerFactory">
+            <summary>
+            文档播放器工厂类
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.ESOP.ESOPFactory.PlayerFactory.CreatePlayer(SIE.Wpf.ESOP.ESOPFactory.FactoryShowControl,SIE.ESop.Documents.DocumentType,SIE.Wpf.ESOP.ESOPFactory.DocumentExtension)">
+            <summary>
+            创建文档播放器
+            </summary>
+            <param name="showControl"></param>
+            <param name="documentType"></param>
+            <param name="documentExtension"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Wpf.ESOP.Properties.Resources">
+            <summary>
+              强类型资源类，用于查找本地化字符串等。
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESOP.Properties.Resources.ResourceManager">
+            <summary>
+              返回此类使用的缓存 ResourceManager 实例。
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.ESOP.Properties.Resources.Culture">
+            <summary>
+              覆盖当前线程的 CurrentUICulture 属性
+              使用此强类型的资源类的资源查找。
+            </summary>
+        </member>
+    </members>
+</doc>

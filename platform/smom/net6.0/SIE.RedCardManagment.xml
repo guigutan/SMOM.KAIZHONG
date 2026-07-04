@@ -1,0 +1,2410 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.RedCardManagment</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.RedCardManagment.DbMigrations._20231011_000000_RedCard">
+            <summary>
+            红牌管理数据库初始化
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.DbMigrations._20231011_000000_RedCard.DbSetting">
+            <summary>
+            数据库设置
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.DbMigrations._20231011_000000_RedCard.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.DbMigrations._20231011_000000_RedCard.Type">
+            <summary>
+            手动升级的类型：数据
+            </summary>
+        </member>
+        <member name="M:SIE.RedCardManagment.DbMigrations._20231011_000000_RedCard.Down">
+            <summary>
+            不支持 Down
+            </summary>
+        </member>
+        <member name="M:SIE.RedCardManagment.DbMigrations._20231011_000000_RedCard.Up">
+            <summary>
+            注入
+            </summary>
+        </member>
+        <member name="M:SIE.RedCardManagment.DbMigrations._20231011_000000_RedCard.InitRedCardBillNoConfig">
+            <summary>
+            初始化红牌编码规则和配置项
+            </summary>
+        </member>
+        <member name="M:SIE.RedCardManagment.DbMigrations._20231011_000000_RedCard.InitRedCardApplyBillNoConfig">
+            <summary>
+            初始化红牌申请单编码规则和配置项
+            </summary>
+        </member>
+        <member name="M:SIE.RedCardManagment.Module.App_StartupCompleted(System.Object,System.EventArgs)">
+            <summary>
+            app启动后事件
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="T:SIE.RedCardManagment.RedCardApplyBills.ApplyType">
+            <summary>
+            申请类型
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCardApplyBills.ApplyType.Manual">
+            <summary>
+            手工创建
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCardApplyBills.ApplyType.Auto">
+            <summary>
+            自动创建
+            </summary>
+        </member>
+        <member name="T:SIE.RedCardManagment.RedCardApplyBills.BillStatus">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCardApplyBills.BillStatus.ToDo">
+            <summary>
+            待发起
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCardApplyBills.BillStatus.Doing">
+            <summary>
+            已发起
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCardApplyBills.BillStatus.Done">
+            <summary>
+            完成
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCardApplyBills.BillStatus.Cancel">
+            <summary>
+            取消
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCardApplyBills.BillStatus.Reject">
+            <summary>
+            驳回
+            </summary>
+        </member>
+        <member name="T:SIE.RedCardManagment.RedCardApplyBills.Dao.RedCardApplyBillDao">
+            <summary>
+            红牌申请单Dao
+            </summary>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCardApplyBills.Dao.RedCardApplyBillDao.GetApplyBills(SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBillCriteria)">
+            <summary>
+            获取红牌申请单列表
+            </summary>
+            <param name="criteria">红牌申请单查询实体</param>
+            <returns>红牌申请单列表</returns>
+        </member>
+        <member name="T:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill">
+            <summary>
+            红牌申请单
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.NoProperty">
+            <summary>
+            申请单号
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.No">
+            <summary>
+            申请单号
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.ProblemDescriptionProperty">
+            <summary>
+            问题描述
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.ProblemDescription">
+            <summary>
+            问题描述
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.ProductDateStartProperty">
+            <summary>
+            生产开始日期
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.ProductDateStart">
+            <summary>
+            生产开始日期
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.ProductDateEndProperty">
+            <summary>
+            生产结束日期
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.ProductDateEnd">
+            <summary>
+            生产结束日期
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.JoinBarcodesProperty">
+            <summary>
+            物料SN
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.JoinBarcodes">
+            <summary>
+            物料SN
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.JoinProductBatchsProperty">
+            <summary>
+            物料批次
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.JoinProductBatchs">
+            <summary>
+            物料批次
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.AuditOpinionProperty">
+            <summary>
+            审核意见
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.AuditOpinion">
+            <summary>
+            审核意见
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.ItemIdProperty">
+            <summary>
+            物料Id
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.ItemId">
+            <summary>
+            物料Id
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.ItemProperty">
+            <summary>
+            物料
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.Item">
+            <summary>
+            物料
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.SupplierIdProperty">
+            <summary>
+            供应商Id
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.SupplierId">
+            <summary>
+            供应商Id
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.SupplierProperty">
+            <summary>
+            供应商
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.Supplier">
+            <summary>
+            供应商
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.ApplyTypeProperty">
+            <summary>
+            添加方式
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.ApplyType">
+            <summary>
+            添加方式
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.ApplySourceNoProperty">
+            <summary>
+            来源单号
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.ApplySourceNo">
+            <summary>
+            来源单号
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.ApplySourceProperty">
+            <summary>
+            申请来源
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.ApplySource">
+            <summary>
+            申请来源
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.BillStatusProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.BillStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.CancelReasonProperty">
+            <summary>
+            取消原因
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.CancelReason">
+            <summary>
+            取消原因
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.WithDrawReasonProperty">
+            <summary>
+            撤回原因
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.WithDrawReason">
+            <summary>
+            撤回原因
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.RejectReasonProperty">
+            <summary>
+            驳回原因
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.RejectReason">
+            <summary>
+            驳回原因（流程驳回到首节点原因）
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.FlowInstanceIdProperty">
+            <summary>
+            流程实例Id
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.FlowInstanceId">
+            <summary>
+            流程实例Id
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.FlowInstanceProperty">
+            <summary>
+            流程实例
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.FlowInstance">
+            <summary>
+            流程实例
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.WorkflowStarterIdProperty">
+            <summary>
+            流程发起人Id
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.WorkflowStarterId">
+            <summary>
+            流程发起人Id
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.WorkflowStarterProperty">
+            <summary>
+            流程发起人
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.WorkflowStarter">
+            <summary>
+            流程发起人
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.WorkFlowFirstActivityIdProperty">
+            <summary>
+            工作流【申请信息】节点GUID（用于恢复工作流时，指定节点，暂指【申请信息】节点）
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.WorkFlowFirstActivityId">
+            <summary>
+            工作流【申请信息】节点GUID（用于恢复工作流时，指定节点，暂指【申请信息】节点）
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.ItemCodeProperty">
+            <summary>
+            物料编码
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.ItemCode">
+            <summary>
+            物料编码
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.ItemNameProperty">
+            <summary>
+            物料名称
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.ItemName">
+            <summary>
+            物料名称
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.SupplierCodeProperty">
+            <summary>
+            供应商编码
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.SupplierCode">
+            <summary>
+            供应商编码
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.SupplierNameProperty">
+            <summary>
+            供应商名称
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.SupplierName">
+            <summary>
+            供应商名称
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.FlowDefinitionNameProperty">
+            <summary>
+            流程名称
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.FlowDefinitionName">
+            <summary>
+            流程名称
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.FlowInstanceCodeProperty">
+            <summary>
+            流程编码
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill.FlowInstanceCode">
+            <summary>
+            流程编码
+            </summary>
+        </member>
+        <member name="T:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBillConfig">
+            <summary>
+            红牌申请单 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBillConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBillCriteria">
+             <summary>
+            红牌申请单查询实体
+             </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBillCriteria.NoProperty">
+            <summary>
+            申请单号
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBillCriteria.No">
+            <summary>
+            申请单号
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBillCriteria.ItemIdProperty">
+            <summary>
+            物料Id
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBillCriteria.ItemId">
+            <summary>
+            物料Id
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBillCriteria.ItemProperty">
+            <summary>
+            物料
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBillCriteria.Item">
+            <summary>
+            物料
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBillCriteria.SupplierIdProperty">
+            <summary>
+            供应商Id
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBillCriteria.SupplierId">
+            <summary>
+            供应商Id
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBillCriteria.SupplierProperty">
+            <summary>
+            供应商
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBillCriteria.Supplier">
+            <summary>
+            供应商
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBillCriteria.ApplyTypeProperty">
+            <summary>
+            申请类型
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBillCriteria.ApplyType">
+            <summary>
+            申请类型
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBillCriteria.BillStatusProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBillCriteria.BillStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBillCriteria.CreateDateProperty">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBillCriteria.CreateDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBillCriteria.Fetch">
+            <summary>
+            重写查询方法
+            </summary>
+            <returns>红牌申请单列表</returns>
+        </member>
+        <member name="T:SIE.RedCardManagment.RedCardApplyBills.Service.RedCardApplyBillService">
+            <summary>
+            红牌申请单 Service
+            </summary>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCardApplyBills.Service.RedCardApplyBillService.#ctor(SIE.RedCardManagment.RedCardApplyBills.Dao.RedCardApplyBillDao)">
+            <summary>
+            
+            </summary>
+            <param name="redCardApplyBillDao"></param>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCardApplyBills.Service.RedCardApplyBillService.GetApplyBills(SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBillCriteria)">
+            <summary>
+            获取红牌申请单列表
+            </summary>
+            <param name="criteria">红牌申请单查询实体</param>
+            <returns>红牌申请单列表</returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCardApplyBills.Service.RedCardApplyBillService.Cancel(System.Double,System.String)">
+            <summary>
+            取消申请
+            </summary>
+            <param name="redCardApplyBillId"></param>
+            <param name="reason"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCardApplyBills.Service.RedCardApplyBillService.GenerateNo">
+            <summary>
+            生成红牌申请单单号
+            </summary>
+            <returns>红牌申请单单号</returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCardApplyBills.Service.RedCardApplyBillService.CheckRedCardApplyCodeConfig">
+            <summary>
+            检查红牌申请编码生成规则
+            </summary>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCardApplyBills.Service.RedCardApplyBillService.SaveBill(SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill)">
+            <summary>
+            创建保存单据
+            </summary>
+            <param name="bill"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCardApplyBills.Service.RedCardApplyBillService.GenerateApplyBillForFailedAudit(System.Double,System.Double,System.Nullable{System.Double},System.String,System.String)">
+            <summary>
+            不合格审核生成红牌申请单
+            </summary>
+            <param name="starterId"></param>
+            <param name="itemId"></param>
+            <param name="SupplierId"></param>
+            <param name="problemDescription"></param>
+            <param name="failedAuditWorkflowNo">不合格审核流程单号</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.RedCardManagment.RedCardManagmentRepository`1">
+            <summary>
+            指定仓库的数据提供者
+            </summary>
+            <typeparam name="T">实体仓库</typeparam> 
+        </member>
+        <member name="T:SIE.RedCardManagment.RedCardManagmentDataProvider">
+            <summary>
+            数据提供者
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCardManagmentDataProvider.ConnectionStringName">
+            <summary>
+            数据库连接字符串的名称
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCardManagmentDataProvider.ConnectionStringSettingName">
+            <summary>
+            数据库连接字符串的名称
+            </summary>
+        </member>
+        <member name="T:SIE.RedCardManagment.RedcardEvent.RedcardEventListener">
+            <summary>
+            来料检验单EventBus监听类
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedcardEvent.RedcardEventListener.Instance">
+            <summary>
+            实例
+            </summary>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedcardEvent.RedcardEventListener.Start">
+            <summary>
+            订阅WMS来料接收信息
+            </summary>
+        </member>
+        <member name="T:SIE.RedCardManagment.RedcardEvent.RedcardEventsController">
+            <summary>
+            来料检验单EventBus监听控制器
+            </summary>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedcardEvent.RedcardEventsController.OnRedCardStatusChange(SIE.RedCardManagment.RedCards.RedCard,SIE.Domain.EntityList{SIE.RedCardManagment.RedCards.ProductRetroactive},System.Nullable{System.DateTime},System.String)">
+            <summary>
+            发布事件通知-红牌状态该表改变
+            </summary>
+            <param name="entity">红牌管理</param>
+            <param name="list"></param>
+            <param name="ApplyTime"></param>
+            <param name="ApplicantName"></param>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedcardEvent.RedcardEventsController.SysRedcardData(SIE.EventMessages.AbnormalInfo.TaskCallEvent)">
+            <summary>
+            
+            </summary>
+            <param name="call"></param>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedcardEvent.RedcardEventsController.RedcardTaskHandel(SIE.EventMessages.AbnormalInfo.TaskhandleEvent)">
+            <summary>
+            任务管理-禁用红牌管理
+            </summary>
+            <param name="call"></param>
+        </member>
+        <member name="T:SIE.RedCardManagment.RedCards.BatchRetroactive">
+            <summary>
+            物料批次追溯清单
+            </summary>
+        </member>
+        <member name="T:SIE.RedCardManagment.RedCards.BatchRetroactiveConfig">
+            <summary>
+            物料批次追溯清单 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.BatchRetroactiveConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.RedCardManagment.RedCards.Config.AutoLockProductSNConfig">
+            <summary>
+            自动生成异常任务
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.Config.AutoLockProductSNConfig.defaultValue">
+            <summary>
+            检验值样本数量
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.Config.AutoLockProductSNConfig.DefaultValue">
+            <summary>
+            默认值
+            </summary>
+        </member>
+        <member name="T:SIE.RedCardManagment.RedCards.Config.AutoLockProductSNConfigValue">
+            <summary>
+            自动锁定产品SN配置值
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.Config.AutoLockProductSNConfigValue.IsAutoProperty">
+            <summary>
+            自动锁定产品SN
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.Config.AutoLockProductSNConfigValue.IsAuto">
+            <summary>
+            自动锁定产品SN
+            </summary>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.Config.AutoLockProductSNConfigValue.Display">
+            <summary>
+            把值显示出来
+            </summary>
+            <returns>string</returns>
+        </member>
+        <member name="T:SIE.RedCardManagment.RedCards.Config.GeneralAbnormalTaskConfig">
+            <summary>
+            自动生成异常任务
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.Config.GeneralAbnormalTaskConfig.defaultValue">
+            <summary>
+            检验值样本数量
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.Config.GeneralAbnormalTaskConfig.DefaultValue">
+            <summary>
+            默认值
+            </summary>
+        </member>
+        <member name="T:SIE.RedCardManagment.RedCards.Config.GeneralAbnormalTaskConfigValue">
+            <summary>
+            自动生成异常任务配置值
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.Config.GeneralAbnormalTaskConfigValue.IsAutoProperty">
+            <summary>
+            自动生成异常任务
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.Config.GeneralAbnormalTaskConfigValue.IsAuto">
+            <summary>
+            自动生成异常任务
+            </summary>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.Config.GeneralAbnormalTaskConfigValue.Display">
+            <summary>
+            把值显示出来
+            </summary>
+            <returns>string</returns>
+        </member>
+        <member name="T:SIE.RedCardManagment.RedCards.Config.RecardTaskExtConfigValue">
+            <summary>
+            红牌任务，处理方式
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.Config.RecardTaskExtConfigValue.IsDisabledProperty">
+            <summary>
+            禁用红牌管理
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.Config.RecardTaskExtConfigValue.IsDisabled">
+            <summary>
+            禁用红牌管理
+            </summary>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.Config.RecardTaskExtConfigValue.Display">
+            <summary>
+            禁用红牌管理
+            </summary>
+            <returns>string</returns>
+        </member>
+        <member name="T:SIE.RedCardManagment.RedCards.Config.SyncDaysConfig">
+            <summary>
+            信息追溯天数配置项
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.Config.SyncDaysConfig.defaultValue">
+            <summary>
+            检验值样本数量
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.Config.SyncDaysConfig.DefaultValue">
+            <summary>
+            默认值
+            </summary>
+        </member>
+        <member name="T:SIE.RedCardManagment.RedCards.Config.SyncDaysConfigValue">
+            <summary>
+            信息追溯天数配置值
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.Config.SyncDaysConfigValue.QtyProperty">
+            <summary>
+            追溯天数
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.Config.SyncDaysConfigValue.Days">
+            <summary>
+            追溯天数
+            </summary>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.Config.SyncDaysConfigValue.Display">
+            <summary>
+            把值显示出来
+            </summary>
+            <returns>string</returns>
+        </member>
+        <member name="T:SIE.RedCardManagment.RedCards.Dao.BatchRetroactiveDao">
+            <summary>
+            异常判定规则 AbnormalDecisionRuleDao DAO
+            </summary>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.Dao.BatchRetroactiveDao.GetList(System.Double)">
+            <summary>
+            获取监控实体的，实体仓储
+            </summary>
+            <param name="redCardId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.Dao.BatchRetroactiveDao.GetList(System.Double,SIE.PagingInfo)">
+            <summary>
+            获取监控实体的，实体仓储
+            </summary>
+            <param name="redCardId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.Dao.BatchRetroactiveDao.GetBatchRetroactiveInventory(System.Double)">
+            <summary>
+            根据红牌ID获取物料批次表数据
+            </summary>
+            <param name="redCardId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.Dao.BatchRetroactiveDao.SetBatchRedCardStatus(System.Double,SIE.RedCardManagment.RedCards.RedCardState)">
+            <summary>
+            修改红牌状态
+            </summary>
+            <param name="redCardId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.Dao.BatchRetroactiveDao.SetAllBatchRedCardStatus(System.Double,SIE.RedCardManagment.RedCards.RedCardState)">
+            <summary>
+            根据红牌ID修改所有红牌状态
+            </summary>
+            <param name="redCardId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.RedCardManagment.RedCards.Dao.ItemSnRetroactiveDao">
+            <summary>
+            异常判定规则 AbnormalDecisionRuleDao DAO
+            </summary>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.Dao.ItemSnRetroactiveDao.GetList(System.Double,SIE.PagingInfo)">
+            <summary>
+            获取监控实体的，实体仓储
+            </summary>
+            <param name="redCardId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.Dao.ItemSnRetroactiveDao.GetItemSnInventory(System.Double)">
+            <summary>
+            根据红牌ID获取物料SN表数据
+            </summary>
+            <param name="redCardId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.Dao.ItemSnRetroactiveDao.SetItemSnRedCardStatus(System.Double,SIE.RedCardManagment.RedCards.RedCardState)">
+            <summary>
+            修改红牌状态
+            </summary>
+            <param name="redCardId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.Dao.ItemSnRetroactiveDao.SetAllItemSnRedCardStatus(System.Double,SIE.RedCardManagment.RedCards.RedCardState)">
+            <summary>
+            根据红牌ID修改所有红牌状态
+            </summary>
+            <param name="redCardId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.RedCardManagment.RedCards.Dao.ProductRetroactiveDao">
+            <summary>
+            红牌管理关联产品 ProductRetroactiveDao DAO
+            </summary>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.Dao.ProductRetroactiveDao.GetList(System.Double,SIE.Domain.EagerLoadOptions)">
+            <summary>
+            获取监控实体的，实体仓储
+            </summary>
+            <param name="redCardId"></param>
+            <param name="eagerLoadOptions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.Dao.ProductRetroactiveDao.GetProductListFroIds(System.Double[],SIE.Domain.EagerLoadOptions)">
+            <summary>
+            获取选择的ids产品追溯清单
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.Dao.ProductRetroactiveDao.GetList(SIE.RedCardManagment.RedCards.ProductRetroactiveCriteria)">
+            <summary>
+            
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.Dao.ProductRetroactiveDao.GetProductRetroactiveInventory(System.Double)">
+            <summary>
+            根据红牌ID获取关联表数据
+            </summary>
+            <param name="redCardId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.Dao.ProductRetroactiveDao.SetProductRedCardStatus(System.Double,SIE.RedCardManagment.RedCards.RedCardState)">
+            <summary>
+            修改红牌状态
+            </summary>
+            <param name="redCardId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.Dao.ProductRetroactiveDao.SetAllProductRedCardStatus(System.Double,SIE.RedCardManagment.RedCards.RedCardState)">
+            <summary>
+            修改红牌状态
+            </summary>
+            <param name="redCardId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.Dao.ProductRetroactiveDao.SetProductRedCardStatusForItemSN(System.Collections.Generic.List{System.String},SIE.RedCardManagment.RedCards.RedCardState,System.Double)">
+            <summary>
+            修改红牌状态
+            </summary>
+            <param name="redCardId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.Dao.ProductRetroactiveDao.SetProductRedCardStatusAll(SIE.RedCardManagment.RedCards.RedCardState,System.Double)">
+            <summary>
+            修改产品红牌状态（根据关联锁定SN）
+            </summary>
+            <param name="redCardId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.Dao.ProductRetroactiveDao.SetProductRedCardStatusForItemBatch(System.Collections.Generic.List{System.String},SIE.RedCardManagment.RedCards.RedCardState,System.Double)">
+            <summary>
+            根据物料批次修改红牌状态
+            </summary>
+            <param name="redCardId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.Dao.ProductRetroactiveDao.UpDataProductRedCardStatus(SIE.Domain.EntityList{SIE.RedCardManagment.RedCards.ProductRetroactive},SIE.RedCardManagment.RedCards.RedCardState)">
+            <summary>
+            更新产品红牌状态
+            </summary>
+            <param name="result"></param>
+            <param name="state"></param>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.Dao.RedCardDao.AlterRedCardStatus(System.Double,SIE.RedCardManagment.RedCards.RedCardState)">
+            <summary>
+            修改红牌状态
+            </summary>
+            <param name="redCardId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.RedCardManagment.RedCards.ImportRedCardItemSnHandle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.ImportRedCardItemSnHandle.ColumnNameList">
+            <summary>
+            导入模板的列头名
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.ImportRedCardItemSnHandle.ColumnValidList">
+            <summary>
+            列的标准验证
+            </summary>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.ImportRedCardItemSnHandle.CreaetColumnValid">
+            <summary>
+            创建列验证
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.ImportRedCardItemSnHandle.Dispose">
+            <summary>
+            关闭资源
+            </summary>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.ImportRedCardItemSnHandle.ProcessBusinessDataHandle(System.Data.DataRow[])">
+            <summary>
+            处理业务逻辑数据
+            </summary>
+            <param name="drs"></param>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:SIE.RedCardManagment.RedCards.ItemSnRetroactive">
+            <summary>
+            物料SN追溯清单
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.ItemSnRetroactive.SNProperty">
+            <summary>
+            序列号
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.ItemSnRetroactive.SN">
+            <summary>
+            序列号
+            </summary>
+        </member>
+        <member name="T:SIE.RedCardManagment.RedCards.ItemSnRetroactiveConfig">
+            <summary>
+            物料SN追溯清单 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.ItemSnRetroactiveConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.RedCardManagment.RedCards.ProductRetroactive">
+            <summary>
+            产品追溯清单
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.ProductRetroactive.WorkNoProperty">
+            <summary>
+            所属工单号
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.ProductRetroactive.WorkNo">
+            <summary>
+            所属工单号
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.ProductRetroactive.ApplyTimeProperty">
+            <summary>
+            执行时间
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.ProductRetroactive.ApplyTime">
+            <summary>
+            执行时间
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.ProductRetroactive.ProductIdProperty">
+            <summary>
+            产品Id
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.ProductRetroactive.ProductId">
+            <summary>
+            产品Id
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.ProductRetroactive.ProductProperty">
+            <summary>
+            产品
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.ProductRetroactive.Product">
+            <summary>
+            产品
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.ProductRetroactive.StatusProperty">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.ProductRetroactive.Status">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.ProductRetroactive.ApplicantIdProperty">
+            <summary>
+            执行人Id
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.ProductRetroactive.ApplicantId">
+            <summary>
+            执行人Id
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.ProductRetroactive.ApplicantProperty">
+            <summary>
+            执行人
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.ProductRetroactive.Applicant">
+            <summary>
+            执行人
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.ProductRetroactive.ItemBatchProperty">
+            <summary>
+            物料批次
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.ProductRetroactive.ItemBatch">
+            <summary>
+            物料批次
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.ProductRetroactive.SNProperty">
+            <summary>
+            序列号
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.ProductRetroactive.SN">
+            <summary>
+            序列号
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.ProductRetroactive.ProductSnProperty">
+            <summary>
+            产品SN
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.ProductRetroactive.ProductSn">
+            <summary>
+            产品SN
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.ProductRetroactive.RedCardIdProperty">
+            <summary>
+            红牌Id
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.ProductRetroactive.RedCardId">
+            <summary>
+            红牌Id
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.ProductRetroactive.RedCardProperty">
+            <summary>
+            红牌
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.ProductRetroactive.RedCard">
+            <summary>
+            红牌
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.ProductRetroactive.ProductCodeProperty">
+            <summary>
+            产品编码
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.ProductRetroactive.ProductCode">
+            <summary>
+            产品编码
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.ProductRetroactive.ApplicantNameProperty">
+            <summary>
+            申请人
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.ProductRetroactive.ApplicantName">
+            <summary>
+            申请人
+            </summary>
+        </member>
+        <member name="T:SIE.RedCardManagment.RedCards.ProductRetroactiveConfig">
+            <summary>
+            产品追溯清单 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.ProductRetroactiveConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.RedCardManagment.RedCards.ProductRetroactiveCriteria">
+            <summary>
+            产品追溯清单-查询
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.ProductRetroactiveCriteria.WorkNoProperty">
+            <summary>
+            所属工单号
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.ProductRetroactiveCriteria.WorkNo">
+            <summary>
+            所属工单号
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.ProductRetroactiveCriteria.ApplyTimeProperty">
+            <summary>
+            执行时间
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.ProductRetroactiveCriteria.ApplyTime">
+            <summary>
+            执行时间
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.ProductRetroactiveCriteria.ProductIdProperty">
+            <summary>
+            产品Id
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.ProductRetroactiveCriteria.ProductId">
+            <summary>
+            产品Id
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.ProductRetroactiveCriteria.ProductProperty">
+            <summary>
+            产品
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.ProductRetroactiveCriteria.Product">
+            <summary>
+            产品
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.ProductRetroactiveCriteria.StatusProperty">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.ProductRetroactiveCriteria.Status">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.ProductRetroactiveCriteria.ApplicantIdProperty">
+            <summary>
+            执行人Id
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.ProductRetroactiveCriteria.ApplicantId">
+            <summary>
+            执行人Id
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.ProductRetroactiveCriteria.ApplicantProperty">
+            <summary>
+            执行人
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.ProductRetroactiveCriteria.Applicant">
+            <summary>
+            执行人
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.ProductRetroactiveCriteria.ItemBatchProperty">
+            <summary>
+            物料批次
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.ProductRetroactiveCriteria.ItemBatch">
+            <summary>
+            物料批次
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.ProductRetroactiveCriteria.BatchListProperty">
+            <summary>
+            物料批次
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.ProductRetroactiveCriteria.BatchList">
+            <summary>
+            物料批次
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.ProductRetroactiveCriteria.SNProperty">
+            <summary>
+            序列号
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.ProductRetroactiveCriteria.SN">
+            <summary>
+            序列号
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.ProductRetroactiveCriteria.SnListProperty">
+            <summary>
+            序列号
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.ProductRetroactiveCriteria.SnList">
+            <summary>
+            序列号
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.ProductRetroactiveCriteria.ProductSnProperty">
+            <summary>
+            产品SN
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.ProductRetroactiveCriteria.ProductSn">
+            <summary>
+            产品SN
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.ProductRetroactiveCriteria.RedCardIdProperty">
+            <summary>
+            红牌Id
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.ProductRetroactiveCriteria.RedCardId">
+            <summary>
+            红牌Id
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.ProductRetroactiveCriteria.RedCardProperty">
+            <summary>
+            红牌
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.ProductRetroactiveCriteria.RedCard">
+            <summary>
+            红牌
+            </summary>
+        </member>
+        <member name="T:SIE.RedCardManagment.RedCards.RecordAddWay">
+            <summary>
+            添加方式
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RecordAddWay.Auto">
+            <summary>
+            自动
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RecordAddWay.Manual">
+            <summary>
+            手动
+            </summary>
+        </member>
+        <member name="T:SIE.RedCardManagment.RedCards.RedCard">
+            <summary>
+            红牌管理
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCard.NoProperty">
+            <summary>
+            红牌单号
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCard.No">
+            <summary>
+            红牌单号
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCard.BatchProperty">
+            <summary>
+            生产批次
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCard.Batch">
+            <summary>
+            生产批次
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCard.ItemSNProperty">
+            <summary>
+            物料SN
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCard.ItemSN">
+            <summary>
+            物料SN
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCard.ProductDateStartProperty">
+            <summary>
+            生产周期开始时间
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCard.ProductDateStart">
+            <summary>
+            生产周期开始时间
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCard.ProductDateEndProperty">
+            <summary>
+            生产周期结束时间
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCard.ProductDateEnd">
+            <summary>
+            生产周期结束时间
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCard.ApplyTimeProperty">
+            <summary>
+            执行时间
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCard.ApplyTime">
+            <summary>
+            执行时间
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCard.ApplyBillNoProperty">
+            <summary>
+            申请单号
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCard.ApplyBillNo">
+            <summary>
+            申请单号
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCard.ItemBatchProperty">
+            <summary>
+            物料批次
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCard.ItemBatch">
+            <summary>
+            物料批次
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCard.SupplierIdProperty">
+            <summary>
+            供应商Id
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCard.SupplierId">
+            <summary>
+            供应商Id
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCard.SupplierProperty">
+            <summary>
+            供应商
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCard.Supplier">
+            <summary>
+            供应商
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCard.StatusProperty">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCard.Status">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCard.AddWayProperty">
+            <summary>
+            添加方式
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCard.AddWay">
+            <summary>
+            添加方式
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCard.ApplicantIdProperty">
+            <summary>
+            执行人Id
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCard.ApplicantId">
+            <summary>
+            执行人Id
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCard.ApplicantProperty">
+            <summary>
+            执行人
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCard.Applicant">
+            <summary>
+            执行人
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCard.ItemIdProperty">
+            <summary>
+            物料Id
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCard.ItemId">
+            <summary>
+            物料Id
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCard.ItemProperty">
+            <summary>
+            物料
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCard.Item">
+            <summary>
+            物料
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCard.ItemCodeProperty">
+            <summary>
+            物料编号
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCard.ItemCode">
+            <summary>
+            物料编号
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCard.ItemNameProperty">
+            <summary>
+            物料名称
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCard.ItemName">
+            <summary>
+            物料名称
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCard.SupplierCodeProperty">
+            <summary>
+            供应商编号
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCard.SupplierCode">
+            <summary>
+            供应商编号
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCard.SupplierNameProperty">
+            <summary>
+            供应商名称
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCard.SupplierName">
+            <summary>
+            供应商名称
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCard.AbnormalTaskNoProperty">
+            <summary>
+            异常任务单号
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCard.AbnormalTaskNo">
+            <summary>
+            异常任务单号
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCard.ApplicantNameProperty">
+            <summary>
+            执行人名称
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCard.ApplicantName">
+            <summary>
+            执行人名称
+            </summary>
+        </member>
+        <member name="T:SIE.RedCardManagment.RedCards.RedCardConfig">
+            <summary>
+            红牌管理 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.RedCardConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.RedCardManagment.RedCards.RedCardCriteria">
+            <summary>
+            红牌管理-查询
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCardCriteria.NoProperty">
+            <summary>
+            红牌单号
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCardCriteria.No">
+            <summary>
+            红牌单号
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCardCriteria.ItemNameProperty">
+            <summary>
+            物料
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCardCriteria.ItemName">
+            <summary>
+            物料
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCardCriteria.SupplierProperty">
+            <summary>
+            供应商
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCardCriteria.Supplier">
+            <summary>
+            供应商
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCardCriteria.ItemSNProperty">
+            <summary>
+            物料SN
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCardCriteria.ItemSN">
+            <summary>
+            物料SN
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCardCriteria.ApplyTimeProperty">
+            <summary>
+            执行时间
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCardCriteria.ApplyTime">
+            <summary>
+            执行时间
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCardCriteria.ApplyBillNoProperty">
+            <summary>
+            申请单号
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCardCriteria.ApplyBillNo">
+            <summary>
+            申请单号
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCardCriteria.ItemBatchProperty">
+            <summary>
+            物料批次
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCardCriteria.ItemBatch">
+            <summary>
+            物料批次
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCardCriteria.StatusProperty">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCardCriteria.Status">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCardCriteria.AddWayProperty">
+            <summary>
+            添加方式
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCardCriteria.AddWay">
+            <summary>
+            添加方式
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCardCriteria.CreateDateProperty">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCardCriteria.CreateDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="T:SIE.RedCardManagment.RedCards.RedCardLog">
+            <summary>
+            红牌操作日志
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCardLog.SNProperty">
+            <summary>
+            物料SN
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCardLog.SN">
+            <summary>
+            物料SN
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCardLog.ProductDateStartProperty">
+            <summary>
+            生产周期开始时间
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCardLog.ProductDateStart">
+            <summary>
+            生产周期开始时间
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCardLog.ProductDateEndProperty">
+            <summary>
+            生产周期结束时间
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCardLog.ProductDateEnd">
+            <summary>
+            生产周期结束时间
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCardLog.SupplierIdProperty">
+            <summary>
+            供应商Id
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCardLog.SupplierId">
+            <summary>
+            供应商Id
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCardLog.SupplierProperty">
+            <summary>
+            供应商
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCardLog.Supplier">
+            <summary>
+            供应商
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCardLog.ItemIdProperty">
+            <summary>
+            物料Id
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCardLog.ItemId">
+            <summary>
+            物料Id
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCardLog.ItemProperty">
+            <summary>
+            物料
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCardLog.Item">
+            <summary>
+            物料
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCardLog.ApplicantIdProperty">
+            <summary>
+            执行人Id
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCardLog.ApplicantId">
+            <summary>
+            执行人Id
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCardLog.ApplicantProperty">
+            <summary>
+            执行人
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCardLog.Applicant">
+            <summary>
+            执行人
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCardLog.RedCardNoProperty">
+            <summary>
+            红牌单号
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCardLog.RedCardNo">
+            <summary>
+            红牌单号
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCardLog.BatchProperty">
+            <summary>
+            生产批次
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCardLog.Batch">
+            <summary>
+            生产批次
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCardLog.ItemBatchProperty">
+            <summary>
+            物料批次
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCardLog.ItemBatch">
+            <summary>
+            物料批次
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCardLog.ProductSnProperty">
+            <summary>
+            产品SN
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCardLog.ProductSn">
+            <summary>
+            产品SN
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCardLog.StatusProperty">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCardLog.Status">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCardLog.ApplyTimeProperty">
+            <summary>
+            执行时间
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCardLog.ApplyTime">
+            <summary>
+            执行时间
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCardLog.ItemCodeProperty">
+            <summary>
+            物料编码
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCardLog.ItemCode">
+            <summary>
+            物料编码
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCardLog.ItemNameProperty">
+            <summary>
+            物料名称
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCardLog.ItemName">
+            <summary>
+            物料名称
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCardLog.SupplierCodeProperty">
+            <summary>
+            供应商编号
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCardLog.SupplierCode">
+            <summary>
+            供应商编号
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCardLog.SupplierNameProperty">
+            <summary>
+            供应商名称
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCardLog.SupplierName">
+            <summary>
+            供应商名称
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCardLog.ApplicantNameProperty">
+            <summary>
+            执行人名称
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCardLog.ApplicantName">
+            <summary>
+            执行人名称
+            </summary>
+        </member>
+        <member name="T:SIE.RedCardManagment.RedCards.RedCardLogConfig">
+            <summary>
+            红牌操作日志 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.RedCardLogConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.RedCardManagment.RedCards.RedCardRetroactive">
+            <summary>
+            物料追溯清单
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCardRetroactive.QuannityProperty">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCardRetroactive.Quannity">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCardRetroactive.ApplyTimeProperty">
+            <summary>
+            执行时间
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCardRetroactive.ApplyTime">
+            <summary>
+            执行时间
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCardRetroactive.ProductDateProperty">
+            <summary>
+            生产日期
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCardRetroactive.ProductDate">
+            <summary>
+            生产日期
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCardRetroactive.StatusProperty">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCardRetroactive.Status">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCardRetroactive.ItemIdProperty">
+            <summary>
+            物料Id
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCardRetroactive.ItemId">
+            <summary>
+            物料Id
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCardRetroactive.ItemProperty">
+            <summary>
+            物料
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCardRetroactive.Item">
+            <summary>
+            物料
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCardRetroactive.ItemBatchProperty">
+            <summary>
+            物料批次
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCardRetroactive.ItemBatch">
+            <summary>
+            物料批次
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCardRetroactive.BatchProperty">
+            <summary>
+            生产批次
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCardRetroactive.Batch">
+            <summary>
+            生产批次
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCardRetroactive.SupplierIdProperty">
+            <summary>
+            供应商Id
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCardRetroactive.SupplierId">
+            <summary>
+            供应商Id
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCardRetroactive.SupplierProperty">
+            <summary>
+            供应商
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCardRetroactive.Supplier">
+            <summary>
+            供应商
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCardRetroactive.ApplicantIdProperty">
+            <summary>
+            执行人Id
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCardRetroactive.ApplicantId">
+            <summary>
+            执行人Id
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCardRetroactive.ApplicantProperty">
+            <summary>
+            执行人
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCardRetroactive.Applicant">
+            <summary>
+            执行人
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCardRetroactive.RedCardIdProperty">
+            <summary>
+            红牌Id
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCardRetroactive.RedCardId">
+            <summary>
+            红牌Id
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCardRetroactive.RedCardProperty">
+            <summary>
+            红牌
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCardRetroactive.RedCard">
+            <summary>
+            红牌
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCardRetroactive.ApplicantNameProperty">
+            <summary>
+            执行人名称
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RedCardRetroactive.ApplicantName">
+            <summary>
+            执行人名称
+            </summary>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.ProductDateRule.Validate(SIE.Domain.IEntity,SIE.MetaModel.RuleArgs)">
+            <summary>
+            规格的验证规则
+            </summary>
+            <param name="entity"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:SIE.RedCardManagment.RedCards.RedCardState">
+            <summary>
+            红牌状态
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCardState.Disable">
+            <summary>
+            禁用
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCardState.Enable">
+            <summary>
+            启用
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RedCardState.PartialEnable">
+            <summary>
+            部分启用
+            </summary>
+        </member>
+        <member name="T:SIE.RedCardManagment.RedCards.RetroactiveBase">
+            <summary>
+            追溯清单基类
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RetroactiveBase.WmsKeyProperty">
+            <summary>
+            WmsKey（避免重复算）
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RetroactiveBase.WmsKey">
+            <summary>
+            WmsKey
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RetroactiveBase.QuannityProperty">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RetroactiveBase.Quannity">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RetroactiveBase.ApplyTimeProperty">
+            <summary>
+            执行时间
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RetroactiveBase.ApplyTime">
+            <summary>
+            执行时间
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RetroactiveBase.ProductDateProperty">
+            <summary>
+            生产日期
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RetroactiveBase.ProductDate">
+            <summary>
+            生产日期
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RetroactiveBase.StatusProperty">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RetroactiveBase.Status">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RetroactiveBase.ItemIdProperty">
+            <summary>
+            物料Id
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RetroactiveBase.ItemId">
+            <summary>
+            物料Id
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RetroactiveBase.ItemProperty">
+            <summary>
+            物料
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RetroactiveBase.Item">
+            <summary>
+            物料
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RetroactiveBase.ItemBatchProperty">
+            <summary>
+            物料批次
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RetroactiveBase.ItemBatch">
+            <summary>
+            物料批次
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RetroactiveBase.BatchProperty">
+            <summary>
+            生产批次
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RetroactiveBase.Batch">
+            <summary>
+            生产批次
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RetroactiveBase.SupplierIdProperty">
+            <summary>
+            供应商Id
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RetroactiveBase.SupplierId">
+            <summary>
+            供应商Id
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RetroactiveBase.SupplierProperty">
+            <summary>
+            供应商
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RetroactiveBase.Supplier">
+            <summary>
+            供应商
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RetroactiveBase.ApplicantIdProperty">
+            <summary>
+            执行人Id
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RetroactiveBase.ApplicantId">
+            <summary>
+            执行人Id
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RetroactiveBase.ApplicantProperty">
+            <summary>
+            执行人
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RetroactiveBase.Applicant">
+            <summary>
+            执行人
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RetroactiveBase.RedCardIdProperty">
+            <summary>
+            红牌Id
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RetroactiveBase.RedCardId">
+            <summary>
+            红牌Id
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RetroactiveBase.RedCardProperty">
+            <summary>
+            红牌
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RetroactiveBase.RedCard">
+            <summary>
+            红牌
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.RedCards.RetroactiveBase.ApplicantNameProperty">
+            <summary>
+            执行人名称
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.RedCards.RetroactiveBase.ApplicantName">
+            <summary>
+            执行人名称
+            </summary>
+        </member>
+        <member name="T:SIE.RedCardManagment.RedCards.RedCardService">
+            <summary>
+            红牌管理服务
+            </summary>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.RedCardService.#ctor(SIE.RedCardManagment.RedCards.Dao.ItemSnRetroactiveDao,SIE.RedCardManagment.RedCards.Dao.BatchRetroactiveDao,SIE.RedCardManagment.RedCards.Dao.ProductRetroactiveDao,SIE.RedCardManagment.RedCards.Dao.RedCardDao)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="itemSnRetroactiveDao"></param>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.RedCardService.GetRedCardCode">
+            <summary>
+            获取红牌管理编码配置项的值
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.RedCardService.CheckRedCardCodeConfig">
+            <summary>
+            检查红牌管理编码生成规则
+            </summary>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.RedCardService.GetNewRedCardNo">
+            <summary>
+            生成新的红牌单号
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.RedCardService.GetRedCards(SIE.RedCardManagment.RedCards.RedCardCriteria)">
+            <summary>
+            
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.RedCardService.SyncRedCardTraceable(System.Double)">
+            <summary>
+            同步ReelID
+            </summary>
+            <param name="redCardId"></param>
+            <returns>同步成功数量</returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.RedCardService.SyncRedCardTraceableItem(SIE.RedCardManagment.RedCards.RedCard,SIE.Domain.EntityList{SIE.RedCardManagment.RedCards.ItemSnRetroactive},SIE.Domain.EntityList{SIE.RedCardManagment.RedCards.BatchRetroactive})">
+            <summary>
+            追溯物料
+            </summary>
+            <param name="redCard"></param>
+            <param name="snList"></param>
+            <param name="batchList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.RedCardService.GetCriteriaInfo(SIE.RedCardManagment.RedCards.RedCard,System.Nullable{System.DateTime})">
+            <summary>
+            生成查询类
+            </summary>
+            <param name="card">红牌</param>
+            <param name="createTimeStart">开始时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.RedCardService.GetTraceableItems(SIE.EventMessages.WMS.TraceableItem.TraceableItemCriteriaInfo)">
+            <summary>
+            查询ReelIDs
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.RedCardService.GetRedCardReelIDsFromWMS(SIE.EventMessages.WMS.TraceableItem.TraceableItemCriteriaInfo)">
+            <summary>
+            从WMS获取ReelID数据
+            </summary>
+            <param name="criteriaInfos"></param>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.RedCardService.TransferRedCardInfo(System.Collections.Generic.List{SIE.EventMessages.WMS.TraceableItem.TraceableInfo})">
+            <summary>
+            转换WMS的ReelID成QMS的ReelID实体
+            </summary>
+            <param name="infos"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.RedCardService.GetItemSnRetroactives(System.Double,SIE.PagingInfo)">
+            <summary>
+            获取物料SN清单
+            </summary>
+            <param name="redCardId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.RedCardService.GetBatchRetroactives(System.Double,SIE.PagingInfo)">
+            <summary>
+            获取物料批次清单
+            </summary>
+            <param name="redCardId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.RedCardService.GetTraceableProductList(SIE.EventMessages.MES.PPSNs.PPSNQueryInfo,System.Double)">
+            <summary>
+            实体转换
+            </summary>
+            <param name="queryInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.RedCardService.GetPPSNs(SIE.EventMessages.MES.PPSNs.PPSNQueryInfo)">
+            <summary>
+            获取PPID
+            </summary>
+            <param name="queryInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.RedCardService.AlterRedCardStatus(System.Double,SIE.RedCardManagment.RedCards.RedCardState)">
+            <summary>
+            修改红牌状态
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.RedCardService.UpdateRedCardState(System.Double,SIE.RedCardManagment.RedCards.RedCardState)">
+            <summary>
+            更新红牌状态
+            </summary>
+            <param name="redCardId"></param>
+            <param name="state"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.RedCardService.DisabledRedCardState(System.Double)">
+            <summary>
+            金庸红牌
+            </summary>
+            <param name="redCardId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.RedCardService.SetItemSnRedCardStatus(System.Double[],SIE.RedCardManagment.RedCards.RedCardState)">
+            <summary>
+            修改红牌状态
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.RedCardService.SetBatchRedCardStatus(System.Double[],SIE.RedCardManagment.RedCards.RedCardState)">
+            <summary>
+            修改红牌状态
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.RedCardService.SetProductRedCardStatus(System.Double[],SIE.RedCardManagment.RedCards.RedCardState)">
+            <summary>
+            修改红牌状态
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.RedCardService.GetItemSnInventory(System.Double)">
+            <summary>
+            修改红牌状态
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.RedCardService.GetBatchRetroactiveInventory(System.Double)">
+            <summary>
+            根据红牌ID查询物料SN清单
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.RedCardService.GetProductRetroactiveInventory(System.Double)">
+            <summary>
+            根据红牌ID查询关联产品清单
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.RedCardService.GenerateRedCard(SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill)">
+            <summary>
+            
+            </summary>
+            <param name="applyBill"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.RedCardService.PubRedCardTask(SIE.RedCardManagment.RedCards.RedCard,System.Nullable{System.DateTime},System.String)">
+            <summary>
+            
+            </summary>
+            <param name="redCard"></param>
+            <param name="ApplyTime"></param>
+            <param name="ApplicantName"></param>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.RedCardService.SetMasterRedCardStatus(System.Double)">
+            <summary>
+            修改红牌状态
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.RedCardService.AddRedCardLog(SIE.RedCardManagment.RedCards.RedCard,SIE.RedCardManagment.RedCards.RedCardState)">
+            <summary>
+            添加红牌操作日志（主表）
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.RedCardService.AddItemSnRedCardLog(SIE.Domain.EntityList{SIE.RedCardManagment.RedCards.ItemSnRetroactive},SIE.RedCardManagment.RedCards.RedCardState)">
+            <summary>
+            添加红牌操作日志（物料SN追溯表）
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.RedCardService.AddBatchRedCardLog(SIE.Domain.EntityList{SIE.RedCardManagment.RedCards.BatchRetroactive},SIE.RedCardManagment.RedCards.RedCardState)">
+            <summary>
+            添加红牌操作日志（物料批次追溯表）
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.RedCards.RedCardService.AddProductRedCardLog(SIE.Domain.EntityList{SIE.RedCardManagment.RedCards.ProductRetroactive},SIE.RedCardManagment.RedCards.RedCardState)">
+            <summary>
+            添加红牌操作日志（产品追溯表）
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

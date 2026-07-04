@@ -1,0 +1,19 @@
+﻿@{
+
+    ViewBag.Title = "组件预览".L10N();
+
+    Layout = "~/Views/Shared/_WorkBenchLayout.cshtml";
+
+}
+
+@section headjs{
+    <script type="text/javascript">
+                Ext.onReady(function () {
+
+             @Html.Raw(ViewBag.Content)
+        });
+    
+
+    
+     </script>
+}

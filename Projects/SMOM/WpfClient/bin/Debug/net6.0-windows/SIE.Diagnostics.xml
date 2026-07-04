@@ -1,0 +1,662 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Diagnostics</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Diagnostics.EntityLogListerner">
+            <summary>
+            实体日志事件监听器
+            </summary>
+        </member>
+        <member name="T:SIE.Diagnostics.EntityLogListerner.EntityLogQueue">
+            <summary>
+            用于缓存实体日志类
+            </summary>
+        </member>
+        <member name="P:SIE.Diagnostics.EntityLogListerner.EntityLogQueue.EntityLog">
+            <summary>
+            实体日志
+            </summary>
+        </member>
+        <member name="P:SIE.Diagnostics.EntityLogListerner.EntityLogQueue.Entity">
+            <summary>
+            实体对象
+            </summary>
+        </member>
+        <member name="P:SIE.Diagnostics.EntityLogListerner.EntityLogQueue.EntityList">
+            <summary>
+            实体对象列表
+            </summary>
+        </member>
+        <member name="P:SIE.Diagnostics.EntityLogListerner.EntityLogQueue.Sql">
+            <summary>
+            sql对象
+            </summary>
+        </member>
+        <member name="F:SIE.Diagnostics.EntityLogListerner.queues">
+            <summary>
+            静态线程安全的队列
+            </summary>
+        </member>
+        <member name="M:SIE.Diagnostics.EntityLogListerner.Start">
+            <summary>
+            开启一个长线程进行调度消费实体日志
+            </summary>
+        </member>
+        <member name="M:SIE.Diagnostics.EntityLogListerner.PutLog">
+            <summary>
+            循环执行日志消费
+            </summary>
+        </member>
+        <member name="M:SIE.Diagnostics.EntityLogListerner.ConsumeQueue">
+            <summary>
+            消费队列里面的日志
+            </summary>
+        </member>
+        <member name="M:SIE.Diagnostics.EntityLogListerner.getSqlWrapValue(System.Object)">
+            <summary>
+            获取sql参数类型解析
+            </summary>
+            <param name="paramValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Diagnostics.EntityLogListerner.RepositoryDataProvider_BatchInserted(System.Object,SIE.Domain.BatchInsertedEventArgs)">
+            <summary>
+            拦截批量插入事件
+            记录批量插入的数据日志
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SIE.Diagnostics.EntityLogListerner.RepositoryDataProvider_Executed(System.Object,SIE.Domain.ExecutedEventArgs)">
+            <summary>
+            拦截批量更新 DB.Update、批量删除 DB.Delete 的执行成功事件
+            用于记录执行结果的sql日志，及执行结果
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SIE.Diagnostics.EntityLogListerner.RepositoryDataProvider_Submitted(System.Object,SIE.Domain.EntitySubmittedEventArgs)">
+            <summary>
+            拦截框架 RF.Save 的提交完成事件，进行记录实体变化的日志
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:SIE.Diagnostics.LogServices.AuditItemDto">
+            <summary>
+            操作日志接口对象
+            </summary>
+        </member>
+        <member name="P:SIE.Diagnostics.LogServices.AuditItemDto.Title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:SIE.Diagnostics.LogServices.AuditItemDto.Content">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="P:SIE.Diagnostics.LogServices.AuditItemDto.PrivateContent">
+            <summary>
+            调试人员看的内容
+            </summary>
+        </member>
+        <member name="P:SIE.Diagnostics.LogServices.AuditItemDto.MainModuleName">
+            <summary>
+            主模块名
+            </summary>
+        </member>
+        <member name="P:SIE.Diagnostics.LogServices.AuditItemDto.ModuleName">
+            <summary>
+            模块名
+            </summary>
+        </member>
+        <member name="P:SIE.Diagnostics.LogServices.AuditItemDto.CommandName">
+            <summary>
+            命令名
+            </summary>
+        </member>
+        <member name="P:SIE.Diagnostics.LogServices.AuditItemDto.Type">
+            <summary>
+            日志类型
+            </summary>
+        </member>
+        <member name="P:SIE.Diagnostics.LogServices.AuditItemDto.LogTime">
+            <summary>
+            记录时间
+            </summary>
+        </member>
+        <member name="P:SIE.Diagnostics.LogServices.AuditItemDto.TraceId">
+            <summary>
+            追踪码
+            </summary>
+        </member>
+        <member name="P:SIE.Diagnostics.LogServices.AuditItemDto.ThreadId">
+            <summary>
+            线程ID
+            </summary>
+        </member>
+        <member name="T:SIE.Diagnostics.LogServices.LogServiceController">
+            <summary>
+            日志服务控制器
+            </summary>
+        </member>
+        <member name="M:SIE.Diagnostics.LogServices.LogServiceController.AddMobileAuditItems(System.Collections.Generic.List{SIE.Diagnostics.LogServices.AuditItemDto})">
+            <summary>
+            批量添加移动端操作日志
+            </summary>
+            <param name="dtos"></param>
+        </member>
+        <member name="M:SIE.Diagnostics.LogServices.LogServiceController.AddMobileAuditItemWithParams(System.String,System.String,System.String,System.String,System.String,System.String,SIE.LogData.AuditLogType,System.String)">
+            <summary>
+            添加移动端操作日志
+            </summary>
+            <param name="Title">标题</param>
+            <param name="Content">内容</param>
+            <param name="PrivateContent">调试人员看的内容</param>
+            <param name="MainModuleName">主模块名</param>
+            <param name="ModuleName">模块名</param>
+            <param name="CommandName">命令名</param>
+            <param name="Type">日志类型 0:无，1:命令，2:打开模块，3:登录，4：登出，5:刷新</param>
+            <param name="TraceId">追踪码（可以是guid、雪花算法生成的ID）</param>
+        </member>
+        <member name="M:SIE.Diagnostics.LogServices.LogServiceController.AddMobileAuditItem(SIE.Diagnostics.LogServices.AuditItemDto)">
+            <summary>
+            添加移动端操作日志
+            </summary>
+            <param name="dto"></param>
+        </member>
+        <member name="T:SIE.Diagnostics.Module">
+            <summary>
+            模块
+            </summary>
+        </member>
+        <member name="M:SIE.Diagnostics.Module.Initialize(SIE.IApp)">
+            <summary>
+            模块初始化
+            </summary>
+            <param name="app">应用程序</param>
+        </member>
+        <member name="M:SIE.Diagnostics.Module.RegistListener">
+            <summary>
+            注册监听
+            </summary>
+        </member>
+        <member name="T:SIE.Diagnostics.RequestLogs.RequestLogViewModel">
+            <summary>
+            请求日志视图模型
+            </summary>
+        </member>
+        <member name="F:SIE.Diagnostics.RequestLogs.RequestLogViewModel.DataPortalLogProperty">
+            <summary>
+            请求日志
+            </summary>
+        </member>
+        <member name="P:SIE.Diagnostics.RequestLogs.RequestLogViewModel.DataPortalLog">
+            <summary>
+            请求日志
+            </summary>
+        </member>
+        <member name="F:SIE.Diagnostics.RequestLogs.RequestLogViewModel.LogTimeProperty">
+            <summary>
+            记录时间
+            </summary>
+        </member>
+        <member name="P:SIE.Diagnostics.RequestLogs.RequestLogViewModel.LogTime">
+            <summary>
+            记录时间
+            </summary>
+        </member>
+        <member name="F:SIE.Diagnostics.RequestLogs.RequestLogViewModel.InvOrgProperty">
+            <summary>
+            库存组织
+            </summary>
+        </member>
+        <member name="P:SIE.Diagnostics.RequestLogs.RequestLogViewModel.InvOrg">
+            <summary>
+            库存组织
+            </summary>
+        </member>
+        <member name="F:SIE.Diagnostics.RequestLogs.RequestLogViewModel.UserProperty">
+            <summary>
+            用户
+            </summary>
+        </member>
+        <member name="P:SIE.Diagnostics.RequestLogs.RequestLogViewModel.User">
+            <summary>
+            用户
+            </summary>
+        </member>
+        <member name="F:SIE.Diagnostics.RequestLogs.RequestLogViewModel.IpProperty">
+            <summary>
+            Ip
+            </summary>
+        </member>
+        <member name="P:SIE.Diagnostics.RequestLogs.RequestLogViewModel.Ip">
+            <summary>
+            Ip
+            </summary>
+        </member>
+        <member name="F:SIE.Diagnostics.RequestLogs.RequestLogViewModel.IsSuccessProperty">
+            <summary>
+            是否成功
+            </summary>
+        </member>
+        <member name="P:SIE.Diagnostics.RequestLogs.RequestLogViewModel.IsSuccess">
+            <summary>
+            是否成功
+            </summary>
+        </member>
+        <member name="F:SIE.Diagnostics.RequestLogs.RequestLogViewModel.ServiceNameProperty">
+            <summary>
+            服务名
+            </summary>
+        </member>
+        <member name="P:SIE.Diagnostics.RequestLogs.RequestLogViewModel.ServiceName">
+            <summary>
+            服务名
+            </summary>
+        </member>
+        <member name="F:SIE.Diagnostics.RequestLogs.RequestLogViewModel.ApiTypeProperty">
+            <summary>
+            模块
+            </summary>
+        </member>
+        <member name="P:SIE.Diagnostics.RequestLogs.RequestLogViewModel.ApiType">
+            <summary>
+            模块
+            </summary>
+        </member>
+        <member name="F:SIE.Diagnostics.RequestLogs.RequestLogViewModel.ApiNameProperty">
+            <summary>
+            请求类型
+            </summary>
+        </member>
+        <member name="P:SIE.Diagnostics.RequestLogs.RequestLogViewModel.ApiName">
+            <summary>
+            请求类型
+            </summary>
+        </member>
+        <member name="F:SIE.Diagnostics.RequestLogs.RequestLogViewModel.MethodProperty">
+            <summary>
+            方法名
+            </summary>
+        </member>
+        <member name="P:SIE.Diagnostics.RequestLogs.RequestLogViewModel.Method">
+            <summary>
+            方法名
+            </summary>
+        </member>
+        <member name="F:SIE.Diagnostics.RequestLogs.RequestLogViewModel.RequestProperty">
+            <summary>
+            请求数据
+            </summary>
+        </member>
+        <member name="P:SIE.Diagnostics.RequestLogs.RequestLogViewModel.Request">
+            <summary>
+            请求数据
+            </summary>
+        </member>
+        <member name="F:SIE.Diagnostics.RequestLogs.RequestLogViewModel.ResponseProperty">
+            <summary>
+            响应数据
+            </summary>
+        </member>
+        <member name="P:SIE.Diagnostics.RequestLogs.RequestLogViewModel.Response">
+            <summary>
+            响应数据
+            </summary>
+        </member>
+        <member name="F:SIE.Diagnostics.RequestLogs.RequestLogViewModel.ErrorProperty">
+            <summary>
+            错误信息
+            </summary>
+        </member>
+        <member name="P:SIE.Diagnostics.RequestLogs.RequestLogViewModel.Error">
+            <summary>
+            错误信息
+            </summary>
+        </member>
+        <member name="F:SIE.Diagnostics.RequestLogs.RequestLogViewModel.ExecutionTimeProperty">
+            <summary>
+            执行时间
+            </summary>
+        </member>
+        <member name="P:SIE.Diagnostics.RequestLogs.RequestLogViewModel.ExecutionTime">
+            <summary>
+            执行时间
+            </summary>
+        </member>
+        <member name="F:SIE.Diagnostics.RequestLogs.RequestLogViewModel.ThreadIdProperty">
+            <summary>
+            线程ID
+            </summary>
+        </member>
+        <member name="P:SIE.Diagnostics.RequestLogs.RequestLogViewModel.ThreadId">
+            <summary>
+            线程ID
+            </summary>
+        </member>
+        <member name="T:SIE.Diagnostics.RequestLogs.RequestLogViewModelCriteria">
+            <summary>
+            请求日志视图模型查询
+            </summary>
+        </member>
+        <member name="M:SIE.Diagnostics.RequestLogs.RequestLogViewModelCriteria.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SIE.Diagnostics.RequestLogs.RequestLogViewModelCriteria.LogTimeProperty">
+            <summary>
+            日期
+            </summary>
+        </member>
+        <member name="P:SIE.Diagnostics.RequestLogs.RequestLogViewModelCriteria.LogTime">
+            <summary>
+            日期
+            </summary>
+        </member>
+        <member name="F:SIE.Diagnostics.RequestLogs.RequestLogViewModelCriteria.InvOrgProperty">
+            <summary>
+            库存组织
+            </summary>
+        </member>
+        <member name="P:SIE.Diagnostics.RequestLogs.RequestLogViewModelCriteria.InvOrg">
+            <summary>
+            库存组织
+            </summary>
+        </member>
+        <member name="F:SIE.Diagnostics.RequestLogs.RequestLogViewModelCriteria.UserProperty">
+            <summary>
+            用户
+            </summary>
+        </member>
+        <member name="P:SIE.Diagnostics.RequestLogs.RequestLogViewModelCriteria.User">
+            <summary>
+            用户
+            </summary>
+        </member>
+        <member name="F:SIE.Diagnostics.RequestLogs.RequestLogViewModelCriteria.IpProperty">
+            <summary>
+            Ip
+            </summary>
+        </member>
+        <member name="P:SIE.Diagnostics.RequestLogs.RequestLogViewModelCriteria.Ip">
+            <summary>
+            Ip
+            </summary>
+        </member>
+        <member name="F:SIE.Diagnostics.RequestLogs.RequestLogViewModelCriteria.IsSuccessProperty">
+            <summary>
+            是否成功
+            </summary>
+        </member>
+        <member name="P:SIE.Diagnostics.RequestLogs.RequestLogViewModelCriteria.IsSuccess">
+            <summary>
+            是否成功
+            </summary>
+        </member>
+        <member name="F:SIE.Diagnostics.RequestLogs.RequestLogViewModelCriteria.ServiceNameProperty">
+            <summary>
+            服务名
+            </summary>
+        </member>
+        <member name="P:SIE.Diagnostics.RequestLogs.RequestLogViewModelCriteria.ServiceName">
+            <summary>
+            服务名
+            </summary>
+        </member>
+        <member name="F:SIE.Diagnostics.RequestLogs.RequestLogViewModelCriteria.ApiTypeProperty">
+            <summary>
+            模块
+            </summary>
+        </member>
+        <member name="P:SIE.Diagnostics.RequestLogs.RequestLogViewModelCriteria.ApiType">
+            <summary>
+            模块
+            </summary>
+        </member>
+        <member name="F:SIE.Diagnostics.RequestLogs.RequestLogViewModelCriteria.ApiNameProperty">
+            <summary>
+            接口名
+            </summary>
+        </member>
+        <member name="P:SIE.Diagnostics.RequestLogs.RequestLogViewModelCriteria.ApiName">
+            <summary>
+            接口名
+            </summary>
+        </member>
+        <member name="F:SIE.Diagnostics.RequestLogs.RequestLogViewModelCriteria.MethodProperty">
+            <summary>
+            方法名
+            </summary>
+        </member>
+        <member name="P:SIE.Diagnostics.RequestLogs.RequestLogViewModelCriteria.Method">
+            <summary>
+            方法名
+            </summary>
+        </member>
+        <member name="F:SIE.Diagnostics.RequestLogs.RequestLogViewModelCriteria.RequestProperty">
+            <summary>
+            请求数据
+            </summary>
+        </member>
+        <member name="P:SIE.Diagnostics.RequestLogs.RequestLogViewModelCriteria.Request">
+            <summary>
+            请求数据
+            </summary>
+        </member>
+        <member name="F:SIE.Diagnostics.RequestLogs.RequestLogViewModelCriteria.ResponseProperty">
+            <summary>
+            响应数据
+            </summary>
+        </member>
+        <member name="P:SIE.Diagnostics.RequestLogs.RequestLogViewModelCriteria.Response">
+            <summary>
+            响应数据
+            </summary>
+        </member>
+        <member name="F:SIE.Diagnostics.RequestLogs.RequestLogViewModelCriteria.ErrorProperty">
+            <summary>
+            错误信息
+            </summary>
+        </member>
+        <member name="P:SIE.Diagnostics.RequestLogs.RequestLogViewModelCriteria.Error">
+            <summary>
+            错误信息
+            </summary>
+        </member>
+        <member name="F:SIE.Diagnostics.RequestLogs.RequestLogViewModelCriteria.ExecutionTimeProperty">
+            <summary>
+            执行时间
+            </summary>
+        </member>
+        <member name="P:SIE.Diagnostics.RequestLogs.RequestLogViewModelCriteria.ExecutionTime">
+            <summary>
+            执行时间
+            </summary>
+        </member>
+        <member name="M:SIE.Diagnostics.RequestLogs.RequestLogViewModelCriteria.Fetch">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Diagnostics.StackTrace.ApiRequestListener">
+            <summary>
+            API请求监听
+            </summary>
+        </member>
+        <member name="M:SIE.Diagnostics.StackTrace.ApiRequestListener.Write(System.String,System.Object,System.Int64,System.Int32)">
+            <summary>
+            写入日志，当context为ApiRequest时写入日志
+            </summary>
+            <param name="target">监听目标</param>
+            <param name="context">上下文</param>
+            <param name="elapsed">运行时长</param>
+            <param name="threadId">线程ID</param>
+        </member>
+        <member name="T:SIE.Diagnostics.StackTrace.CacheListener">
+            <summary>
+            缓存监听
+            </summary>
+        </member>
+        <member name="M:SIE.Diagnostics.StackTrace.CacheListener.Write(System.String,System.Object,System.Int64,System.Int32)">
+            <summary>
+            写入日志，当context为CacheEvent时写入日志
+            </summary>
+            <param name="target">监听目标</param>
+            <param name="context">上下文</param>
+            <param name="elapsed">运行时长</param>
+            <param name="threadId">线程ID</param>
+        </member>
+        <member name="T:SIE.Diagnostics.StackTrace.DbCommandListerner">
+            <summary>
+            数据库命令监听
+            </summary>
+        </member>
+        <member name="F:SIE.Diagnostics.StackTrace.DbCommandListerner.sqlTraceElapsed">
+            <summary>
+            监听时间大于此时间，写入日志
+            </summary>
+        </member>
+        <member name="M:SIE.Diagnostics.StackTrace.DbCommandListerner.Write(System.String,System.Object,System.Int64,System.Int32)">
+            <summary>
+            写入日志，当Context为IDbCommand并且运行时长大于
+            配置文件SqlTraceElapsed定义时长时写入日志
+            </summary>
+            <param name="target">监听目标</param>
+            <param name="context">上下文</param>
+            <param name="elapsed">运行时长</param>
+            <param name="threadId">线程ID</param>
+        </member>
+        <member name="T:SIE.Diagnostics.StackTrace.FetchRequestListener">
+            <summary>
+            查找请求监听
+            </summary>
+        </member>
+        <member name="M:SIE.Diagnostics.StackTrace.FetchRequestListener.Write(System.String,System.Object,System.Int64,System.Int32)">
+            <summary>
+            写入日志，当context为FetchRequest时写入日志
+            </summary>
+            <param name="target">监听目标</param>
+            <param name="context">上下文</param>
+            <param name="elapsed">运行时长</param>
+            <param name="threadId">线程ID</param>
+        </member>
+        <member name="T:SIE.Diagnostics.StackTrace.StackTraceListerner">
+            <summary>
+            堆栈监听
+            </summary>
+        </member>
+        <member name="F:SIE.Diagnostics.StackTrace.StackTraceListerner._jsonSerializerSettings">
+            <summary>
+            序列化配置
+            </summary>
+        </member>
+        <member name="M:SIE.Diagnostics.StackTrace.StackTraceListerner.#cctor">
+            <summary>
+            静态构造函数、子类监听注入
+            </summary>
+        </member>
+        <member name="M:SIE.Diagnostics.StackTrace.StackTraceListerner.SerializeObject(System.Object)">
+            <summary>
+            序列化对象
+            </summary>
+            <param name="obj">对象</param>
+            <returns>json字符串</returns>
+        </member>
+        <member name="M:SIE.Diagnostics.StackTrace.StackTraceListerner.RunAsync(System.Action)">
+            <summary>
+            异步执行
+            </summary>
+            <param name="action">行为</param>
+        </member>
+        <member name="M:SIE.Diagnostics.StackTrace.StackTraceListerner.CreateLog">
+            <summary>
+            要在线程开始前创建
+            </summary>
+            <returns>性能日志</returns>
+        </member>
+        <member name="M:SIE.Diagnostics.StackTrace.StackTraceListerner.Save(SIE.LogData.LogStack)">
+            <summary>
+            保存
+            </summary>
+            <param name="log">日志</param>
+        </member>
+        <member name="T:SIE.Diagnostics.StackTrace.SubmitArgsListener">
+            <summary>
+            提交参数监听
+            </summary>
+        </member>
+        <member name="M:SIE.Diagnostics.StackTrace.SubmitArgsListener.Write(System.String,System.Object,System.Int64,System.Int32)">
+            <summary>
+            写入日志，当context为SubmitArgs时写入日志
+            </summary>
+            <param name="target">监听目标</param>
+            <param name="context">上下文</param>
+            <param name="elapsed">运行时长</param>
+            <param name="threadId">线程ID</param>
+        </member>
+        <member name="T:SIE.Diagnostics.StackTrace.SubmittedListener">
+            <summary>
+            提交后监听
+            </summary>
+        </member>
+        <member name="M:SIE.Diagnostics.StackTrace.SubmittedListener.Write(System.String,System.Object,System.Int64,System.Int32)">
+            <summary>
+            写入日志，当context为ISubmitted时写入日志
+            </summary>
+            <param name="target">监听目标</param>
+            <param name="context">上下文</param>
+            <param name="elapsed">运行时长</param>
+            <param name="threadId">线程ID</param>
+        </member>
+        <member name="T:SIE.Diagnostics.StackTrace.SubmittingListener">
+            <summary>
+            提交前监听
+            </summary>
+        </member>
+        <member name="M:SIE.Diagnostics.StackTrace.SubmittingListener.Write(System.String,System.Object,System.Int64,System.Int32)">
+            <summary>
+            写入日志，当context为ISubmitting时写入日志
+            </summary>
+            <param name="target">监听目标</param>
+            <param name="context">上下文</param>
+            <param name="elapsed">运行时长</param>
+            <param name="threadId">线程ID</param>
+        </member>
+        <member name="T:SIE.Diagnostics.StackTrace.UpdateRequestListener">
+            <summary>
+            更新监听
+            </summary>
+        </member>
+        <member name="M:SIE.Diagnostics.StackTrace.UpdateRequestListener.Write(System.String,System.Object,System.Int64,System.Int32)">
+            <summary>
+            写入日志，当context为UpdateRequest时写入日志
+            </summary>
+            <param name="target">监听目标</param>
+            <param name="context">上下文</param>
+            <param name="elapsed">运行时长</param>
+            <param name="threadId">线程ID</param>
+        </member>
+        <member name="T:SIE.Diagnostics.StackTrace.ValidateListener">
+            <summary>
+            验证监听
+            </summary>
+        </member>
+        <member name="M:SIE.Diagnostics.StackTrace.ValidateListener.Write(System.String,System.Object,System.Int64,System.Int32)">
+            <summary>
+            写入日志，当context为LogData并且target==“Validate”写入日志
+            </summary>
+            <param name="target">监听目标</param>
+            <param name="context">上下文</param>
+            <param name="elapsed">运行时长</param>
+            <param name="threadId">线程ID</param>
+        </member>
+    </members>
+</doc>

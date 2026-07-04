@@ -1,0 +1,90 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <CodeAnalysisRuleSet>..\..\..\..\.sonarlint\sie.smomcsharp.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.Barcodes.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.Barcodes.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Barcodes\Commands\BarcodeBelongCommand.js" />
+    <None Remove="Barcodes\Commands\BarcodePrintCommand.js" />
+    <None Remove="Barcodes\Commands\BarcodeResumeCommand.js" />
+    <None Remove="Barcodes\Commands\BarcodeScrapExportXlsCommand.js" />
+    <None Remove="Barcodes\Commands\OutBoxReprintCommand.js" />
+    <None Remove="Barcodes\Commands\PendingCommand.js" />
+    <None Remove="Barcodes\Commands\PrintCommand.js" />
+    <None Remove="Barcodes\Commands\ReceiveBarcodeCommand.js" />
+    <None Remove="Barcodes\Commands\ReprintCommand.js" />
+    <None Remove="Barcodes\Commands\ScarpCommand.js" />
+    <None Remove="Panels\Commands\PanelBelongCommand.js" />
+    <None Remove="Panels\Commands\PanelPrintCommand.js" />
+    <None Remove="Panels\Commands\PendingCommand.js" />
+    <None Remove="Panels\Commands\PrintCommand.js" />
+    <None Remove="Panels\Commands\ReceivePanelCommand.js" />
+    <None Remove="Panels\Commands\ReprintCommand.js" />
+    <None Remove="Panels\Commands\ScarpCommand.js" />
+    <None Remove="Panels\Commands\UnPendingCommand.js" />
+    <None Remove="WipBatchs\Commands\BatchWoGenerateCommand.js" />
+    <None Remove="WipBatchs\Commands\DeleteWipBatchCommand.js" />
+    <None Remove="WipBatchs\Commands\GenerateAndPrintCommand.js" />
+    <None Remove="WipBatchs\Commands\GenerateCommand.js" />
+    <None Remove="WipBatchs\Commands\ReprintBatchCommand.js" />
+    <None Remove="WipBatchs\Commands\ReprintSubWipBatchCommand.js" />
+    <None Remove="WipBatchs\Editors\BatchRuleAndQtyEditor.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\..\..\.sonarlint\sie.smom\CSharp\SonarLint.xml" Link="SonarLint.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Barcodes\Commands\BarcodeBelongCommand.js" />
+    <EmbeddedResource Include="Barcodes\Commands\BarcodePrintCommand.js" />
+    <EmbeddedResource Include="Barcodes\Commands\BarcodeResumeCommand.js" />
+    <EmbeddedResource Include="Barcodes\Commands\BarcodeScrapExportXlsCommand.js" />
+    <EmbeddedResource Include="Barcodes\Commands\OutBoxReprintCommand.js" />
+    <EmbeddedResource Include="Barcodes\Commands\PrintCommand.js" />
+    <EmbeddedResource Include="Barcodes\Commands\ReceiveBarcodeCommand.js" />
+    <EmbeddedResource Include="Barcodes\Commands\ReprintCommand.js" />
+    <EmbeddedResource Include="Barcodes\Commands\PendingCommand.js" />
+    <EmbeddedResource Include="Barcodes\Commands\ScarpCommand.js" />
+    <EmbeddedResource Include="Panels\Commands\PanelBelongCommand.js" />
+    <EmbeddedResource Include="Panels\Commands\PanelPrintCommand.js" />
+    <EmbeddedResource Include="Panels\Commands\ReceivePanelCommand.js" />
+    <EmbeddedResource Include="Panels\Commands\UnPendingCommand.js" />
+    <EmbeddedResource Include="Panels\Commands\PrintCommand.js" />
+    <EmbeddedResource Include="Panels\Commands\ReprintCommand.js" />
+    <EmbeddedResource Include="Panels\Commands\PendingCommand.js" />
+    <EmbeddedResource Include="Panels\Commands\ScarpCommand.js" />
+    <EmbeddedResource Include="WipBatchs\Commands\BatchWoGenerateCommand.js" />
+    <EmbeddedResource Include="WipBatchs\Commands\DeleteWipBatchCommand.js" />
+    <EmbeddedResource Include="WipBatchs\Commands\GenerateAndPrintCommand.js" />
+    <EmbeddedResource Include="WipBatchs\Commands\GenerateCommand.js" />
+    <EmbeddedResource Include="WipBatchs\Commands\ReprintBatchCommand.js" />
+    <EmbeddedResource Include="WipBatchs\Commands\ReprintSubWipBatchCommand.js" />
+    <EmbeddedResource Include="WipBatchs\Editors\BatchRuleAndQtyEditor.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\Items\SIE.Web.Items\SIE.Web.Items.csproj" />
+    <ProjectReference Include="..\SIE.Barcodes\SIE.Barcodes.csproj">
+      <Private>false</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Common\Packages\SIE.Packages\SIE.Packages.csproj">
+      <Private>false</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+	  <PackageReference Include="SIE.Web.Common" Version="10.0.5" />
+  </ItemGroup>
+</Project>

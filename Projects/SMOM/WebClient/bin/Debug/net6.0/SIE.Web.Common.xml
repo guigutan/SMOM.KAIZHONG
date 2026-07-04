@@ -1,0 +1,3474 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Web.Common</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Web.Common.EntityPropertyViewMetaExtension">
+            <summary>
+            实体属性视图元数据扩展
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.EntityPropertyViewMetaExtension.UseCatalogOldEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.Common.Editors.CatalogConfig})">
+            <summary>
+            使用快码编辑器
+            </summary>
+            <typeparam name="T"><see cref="T:SIE.Domain.Entity"/>实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+            <example>
+            使用示例：View.Property(p => p.字段).UseCatalogEditor();
+             <code>
+             View.Property(p => p.Name).UseCatalogEditor();
+             </code>
+            </example>
+        </member>
+        <member name="M:SIE.Web.Common.EntityPropertyViewMetaExtension.UseCatalogEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.Common.Editors.PagingLookUpCatalogConfig})">
+            <summary>
+            使用快码编辑器
+            </summary>
+            <typeparam name="T"><see cref="T:SIE.Domain.Entity"/>实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+            <example>
+            使用示例：View.Property(p => p.字段).UseCatalogEditor(e=>e.CatalogType="");
+             <code>
+             View.Property(p => p.DefectLevelId).UseCatalogEditor(e=>e.CatalogType= Defect.LevelCatalog);
+             </code>
+            </example>
+        </member>
+        <member name="M:SIE.Web.Common.EntityPropertyViewMetaExtension.UseCatalogEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.Common.Editors.PagingLookUpCatalogConfig,``0})">
+            <summary>
+            使用快码编辑器（联动）
+            </summary>
+            <typeparam name="T"><see cref="T:SIE.Domain.Entity"/>实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+            <example>
+            使用示例：View.Property(p => p.字段).UsePagingLookUpCatalogEditor((e)=>);
+             <code>
+             <!--View.Property(p => p.DefectLevel).UsePagingLookUpCatalogEditor((e,r) =>{
+                e.CatalogType = Defect.LevelCatalog;
+                Dictionary<string, string> dic = new Dictionary<string, string>();
+                dic.Add(r.Code,"Name");
+                e.DicLinkField = dic;
+             });-->
+             </code>
+            </example>
+        </member>
+        <member name="M:SIE.Web.Common.EntityPropertyViewMetaExtension.UsePrinterEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.Common.Editors.PrinterConfig})">
+            <summary>
+            使用打印机编辑器
+            </summary>
+            <typeparam name="T"><see cref="T:SIE.Domain.Entity"/>实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+            <example>meta.UsePrinterEditor(p=>{p.DisplayField = "text";})</example>
+        </member>
+        <member name="M:SIE.Web.Common.EntityPropertyViewMetaExtension.UseCatalogMultiSelectEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.Common.Editors.CatalogMutilSelectConfig})">
+            <summary>
+            快码多选编辑器
+            </summary>
+            <typeparam name="T"><see cref="T:SIE.Domain.Entity"/>实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+            <example>
+                <code>
+                View.Property(v => v.StateString).UseCatalogMultiSelectEditor(p =>
+                {
+                    p.CatalogType = "MESSAGE_TYPE";
+                    p.CatalogCodesPropertyName = UserCriteria.CatalogCodesProperty.Name;
+                    p.CatalogIdsPropertyName = UserCriteria.CatalogIdsProperty.Name;                
+                });
+                </code>
+            </example>
+        </member>
+        <member name="M:SIE.Web.Common.Algorithm.CodeAlgorithmConfigViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Algorithm.CodeAlgorithmConfigViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Algorithm.CodeAlgorithmConfigViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Algorithm.CodeAlgorithmConfigViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Algorithm.DateConfigViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Algorithm.DateConfigViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Algorithm.DateConfigViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Algorithm.DateConfigViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Algorithm.FixedSegmentConfigViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Algorithm.FixedSegmentConfigViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Algorithm.FixedSegmentConfigViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Algorithm.FixedSegmentConfigViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.Algorithm.NormalSequenceConfigViewConfig">
+            <summary>
+            普通序列配置视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Algorithm.NormalSequenceConfigViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Algorithm.SequenceConfigViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Algorithm.SequenceConfigViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Algorithm.SequenceConfigViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Algorithm.SequenceConfigViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Announcements.AnnounceConfigValueViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Announcements.AnnounceConfigValueViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Announcements.AnnounceConfigValueViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Announcements.AnnounceConfigValueViewConfig.ConfigSelectionView">
+            <summary>
+            配置下拉视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.Announcements.AnnouncementViewConfig">
+            <summary>
+            公告视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Announcements.AnnouncementViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Announcements.AnnouncementViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Announcements.AnnouncementViewConfig.ConfigDetailsView">
+            <summary>
+             配置明细视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Announcements.AnnouncementViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Announcements.AnnouncementViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.Announcements.Commands.AddEmployeeCommand">
+            <summary>
+            选择员工
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Announcements.Commands.AddEmployeeCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            选择员工
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Common.Announcements.Commands.AddEmployeeGroupCommand">
+            <summary>
+            选择员工组
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Announcements.Commands.AddEmployeeGroupCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            选择员工组
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Common.Announcements.Commands.DisableAnnounceCommand">
+            <summary>
+            禁用公告
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Announcements.Commands.DisableAnnounceCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            禁用公告
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Common.Announcements.Commands.EnableAnnounceCommand">
+            <summary>
+            启用公告
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Announcements.Commands.EnableAnnounceCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            启用公告
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Common.Announcements.EmployeeGroupInAnnouncementViewConfig">
+            <summary>
+            员工分组视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Announcements.EmployeeGroupInAnnouncementViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Announcements.EmployeeGroupInAnnouncementViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Announcements.EmployeeGroupInAnnouncementViewConfig.ConfigDetailsView">
+            <summary>
+             配置明细视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Announcements.EmployeeGroupInAnnouncementViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.Common.Announcements.EmployeeInAnnouncementViewConfig">
+            <summary>
+            员工视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Announcements.EmployeeInAnnouncementViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Announcements.EmployeeInAnnouncementViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Announcements.EmployeeInAnnouncementViewConfig.ConfigDetailsView">
+            <summary>
+             配置明细视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Announcements.EmployeeInAnnouncementViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.Common.Attachments.AttachmentViewConfig">
+            <summary>
+            附件web视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Attachments.AttachmentViewConfig.ConfigView">
+            <summary>
+            附件视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Attachments.AttachmentViewConfig.UseReadOnlyCommand">
+            <summary>
+            readonlyCommand
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Attachments.AttachmentViewConfig.UseCommand">
+            <summary>
+            正常命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Attachments.AttachmentViewConfig.ConfigSelectionView">
+            <summary>
+            下拉视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.Attachments.Commands.DeleteAttachmentCommand">
+            <summary>
+            附件删除
+            </summary>
+        </member>
+        <member name="E:SIE.Web.Common.Attachments.Commands.DeleteAttachmentCommand.DeletingAttachement">
+            <summary>
+            附件删除前事件，子类可以根据需要扩展
+            </summary>
+        </member>
+        <member name="E:SIE.Web.Common.Attachments.Commands.DeleteAttachmentCommand.DeletedAttachement">
+            <summary>
+            附件删除后事件，子类可以根据需要扩展，
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Attachments.Commands.DeleteAttachmentCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Attachments.Commands.DeleteAttachmentCommand.OnDeletedAttachement(SIE.Web.Common.Attachments.Commands.DeleteAttachmentViewArgs)">
+            <summary>
+            附件删除后事件
+            提供删除附件后，额外的动作，比如级联删除其他实体
+            </summary>
+            <param name="viewArgs">AttachmentViewArgs 对象，提供了文件流和实体对象</param>
+            <returns>返回值暂时没有作用</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Attachments.Commands.DeleteAttachmentCommand.OnDeletingAttachement(SIE.Web.Common.Attachments.Commands.DeleteAttachmentViewArgs)">
+            <summary>
+            删除前事件，比如提供一些特殊验证，是否被引用等。
+            </summary>
+            <param name="viewArgs"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Common.Attachments.Commands.DeleteAttachmentViewArgs">
+            <summary>
+            删除附件参数
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Attachments.Commands.DeleteAttachmentViewArgs.AttachmentId">
+            <summary>
+            附件id
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Attachments.Commands.DeleteAttachmentViewArgs.Attachment">
+            <summary>
+            附件对象对应的json串
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Attachments.Commands.DeleteAttachmentViewArgs.ParentEntity">
+            <summary>
+            父实体对象对应的json串
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.Attachments.Commands.DownloadCommand">
+            <summary>
+            附件下载
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Attachments.Commands.DownloadCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            附件配置地址，从web.config中的节点client.attachmentDownloadUrl 获取
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Common.Attachments.Commands.FtpDownloadCommand">
+            <summary>
+            附件下载
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Attachments.Commands.FtpDownloadCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            附件配置地址，从web.config中的节点client.PathAttachment 获取
+            </summary>
+            <param name="args">视图参数</param>
+            <param name="scope">scope</param>
+            <returns>文件流</returns>
+        </member>
+        <member name="T:SIE.Web.Common.Attachments.Commands.AttachmentArgs">
+            <summary>
+            附件下载参数
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Attachments.Commands.AttachmentArgs.FileName">
+            <summary>
+            文件名
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Attachments.Commands.AttachmentArgs.FilePath">
+            <summary>
+            文件路径
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.Attachments.Commands.FtpViewCommand">
+            <summary>
+            查看文档
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Attachments.Commands.FtpViewCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">post数据</param>
+            <param name="scope">范围</param>
+            <returns>一个对象</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Attachments.Commands.FtpViewCommand.fileByteToBase64(System.Byte[],System.String)">
+            <summary>
+            
+            </summary>
+            <param name="buffer"></param>
+            <param name="fileName"></param>
+            <returns></returns>
+            <exception cref="T:SIE.Domain.Validation.ValidationException"></exception>
+        </member>
+        <member name="T:SIE.Web.Common.Attachments.Commands.UploadAttachmentCommand">
+            <summary>
+            上传附件
+            </summary>
+        </member>
+        <member name="E:SIE.Web.Common.Attachments.Commands.UploadAttachmentCommand.ValidatingFileStream">
+            <summary>
+            附件保存前验证事件，子类可以根据需要扩展，比如验证附件中的内容
+            </summary>
+        </member>
+        <member name="E:SIE.Web.Common.Attachments.Commands.UploadAttachmentCommand.SavingAttachement">
+            <summary>
+            附件保存前事件，子类可以根据需要扩展
+            </summary>
+        </member>
+        <member name="E:SIE.Web.Common.Attachments.Commands.UploadAttachmentCommand.SavedAttachement">
+            <summary>
+            附件保存后事件，子类可以根据需要扩展，比如保存实体相关的内容
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Attachments.Commands.UploadAttachmentCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            命令对应的服务端事件
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Attachments.Commands.UploadAttachmentCommand.DeserializeData(System.String)">
+            <summary>
+             从前端json数据反序列化
+            </summary>
+            <param name="data">前端传递的数据 json格式 ，包含附件和实体对象</param>
+            <returns>AttachmentViewArgs 对象</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Attachments.Commands.UploadAttachmentCommand.OnSavedAttachement(SIE.Web.Common.Attachments.Commands.UploadAttachmentViewArgs)">
+            <summary>
+            保存附件后事件
+            提供保存附件后，额外的动作，比如处理附件中的内容等。
+            </summary>
+            <param name="viewArgs">AttachmentViewArgs 对象，提供了文件流和实体对象</param>
+            <returns>返回值暂时没有作用</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Attachments.Commands.UploadAttachmentCommand.OnSavingAttachement(SIE.Web.Common.Attachments.Commands.UploadAttachmentViewArgs)">
+            <summary>
+            保存前事件
+            </summary>
+            <param name="viewArgs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Attachments.Commands.UploadAttachmentCommand.OnValidateFileStream(System.IO.Stream)">
+            <summary>
+            验证附件事件
+            提供保存附件前验证附件的内容
+            </summary>
+            <param name="stream">文件流</param>
+            <returns>空 验证通过 ，不为空 验证失败消息 </returns>
+        </member>
+        <member name="M:SIE.Web.Common.Attachments.Commands.UploadAttachmentCommand.GetAttachement(SIE.Web.Common.Attachments.Commands.UploadAttachmentViewArgs)">
+            <summary>
+            获取流对象
+            </summary>
+            <param name="viewArgs"></param>
+            <returns>Stream对象</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Attachments.Commands.UploadAttachmentCommand.SaveAttachement(SIE.Web.Common.Attachments.Commands.UploadAttachmentViewArgs,System.Type)">
+            <summary>
+            保存附件
+            </summary>
+            <param name="viewArgs"></param>
+            <param name="type"></param>
+        </member>
+        <member name="T:SIE.Web.Common.Attachments.Commands.UploadAttachmentViewArgs">
+            <summary>
+            从前台传递过来的附件参数
+            包含附件和实体对象
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Attachments.Commands.UploadAttachmentViewArgs.Attachment">
+            <summary>
+             上传附件对象
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Attachments.Commands.UploadAttachmentViewArgs.ParentEntity">
+            <summary>
+            父实体对象
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.Attachments.Commands.UpLoadAttachment">
+            <summary>
+            从前端js 页面传递过来的对象，发序列化后的对象：Attachment
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Attachments.Commands.UpLoadAttachment.#ctor">
+            <summary>
+            从前端传递过来的附件对象
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Attachments.Commands.UpLoadAttachment.FileName">
+            <summary>
+            文件名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Attachments.Commands.UpLoadAttachment.FileExtesion">
+            <summary>
+            文件扩展名
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Attachments.Commands.UpLoadAttachment.FileSize">
+            <summary>
+            文件大小
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Attachments.Commands.UpLoadAttachment.Content">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Attachments.Commands.UpLoadAttachment.OwnerId">
+            <summary>
+            所有者ID
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Attachments.Commands.UpLoadAttachment.OwnerType">
+            <summary>
+            附件所有者的类型
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.Attachments.Commands.ViewImageCommand">
+            <summary>
+            查看图档命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Attachments.Commands.ViewImageCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">post数据</param>
+            <param name="scope">范围</param>
+            <returns>一个对象</returns>
+        </member>
+        <member name="T:SIE.Web.Common.Attachments.Commands.ViewPdfCommand">
+            <summary>
+            查看PDF命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Attachments.Commands.ViewPdfCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">post数据</param>
+            <param name="scope">范围</param>
+            <returns>一个对象</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Catalogs.CatalogTypeViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Catalogs.CatalogViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Catalogs.Commands.CatalogSyncCommand.SyncCatalogType(System.Int32,System.Collections.Generic.Dictionary{SIE.Common.Catalogs.CatalogType,SIE.Domain.EntityList{SIE.Common.Catalogs.Catalog}})">
+            <summary>
+            同步快码组
+            </summary>
+            <param name="invOrg"></param>
+            <param name="catalogDict"></param>
+        </member>
+        <member name="T:SIE.Web.Common.Catalogs.Commands.ImportCatalogCommand">
+            <summary>
+            导入命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Catalogs.Commands.ImportCatalogCommand.GetImportCompleted">
+            <summary>
+            导入命令
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Catalogs.Commands.ImportCatalogCommand.GetImportHandleType">
+            <summary>
+            获取导入处理类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Common.CheckAlgorithms.CheckAlgorithmConfigViewConfig">
+            <summary>
+            校验码算法视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.CheckAlgorithms.CheckAlgorithmConfigViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.Cluster.Commands.StartCommand">
+            <summary>
+            恢复命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Cluster.Commands.StartCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.Cluster.Commands.StopCommand">
+            <summary>
+             暂停命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Cluster.Commands.StopCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.Cluster.HostCluster">
+            <summary>
+            Host集群
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Cluster.HostCluster.AddressProperty">
+            <summary>
+            服务地址
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Cluster.HostCluster.Address">
+            <summary>
+            服务地址
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Cluster.HostCluster.IsActivedProperty">
+            <summary>
+            是否活动
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Cluster.HostCluster.IsActived">
+            <summary>
+            是否活动
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Cluster.HostCluster.IsStopProperty">
+            <summary>
+            是否暂停
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Cluster.HostCluster.IsStop">
+            <summary>
+            是否暂停
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Cluster.HostCluster.FailProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Cluster.HostCluster.Fail">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Cluster.HostCluster.TotalFailProperty">
+            <summary>
+            总失败次数
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Cluster.HostCluster.TotalFail">
+            <summary>
+            总失败次数
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Cluster.HostCluster.SuccessProperty">
+            <summary>
+            成功次数
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Cluster.HostCluster.Success">
+            <summary>
+            成功次数
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Cluster.HostCluster.PerformanceProperty">
+            <summary>
+            性能参数
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Cluster.HostCluster.Performance">
+            <summary>
+            性能参数
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Cluster.HostCluster.MasterProperty">
+            <summary>
+            主机
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Cluster.HostCluster.Master">
+            <summary>
+            主机
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.Cluster.HostClusterCriteria">
+            <summary>
+            集群查询
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Cluster.HostClusterCriteria.AddressProperty">
+            <summary>
+            服务地址
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Cluster.HostClusterCriteria.Address">
+            <summary>
+            服务地址
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Cluster.HostClusterCriteria.IsActivedProperty">
+            <summary>
+            是否活动
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Cluster.HostClusterCriteria.IsActived">
+            <summary>
+            是否活动
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Cluster.HostClusterViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Cluster.HostClusterViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Cluster.HostClusterViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Cluster.HostClusterViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.Commands.CommandDefine">
+            <summary>
+            Common模块的js命令定义(本程序集作用域)
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Commands.CommandDefine.OrgAddChildCommand">
+            <summary>
+            组织添加子项命令
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Commands.CommandDefine.AddOrgLevelChildCommand">
+            <summary>
+            组织层级添加子项命令
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Commands.CommandDefine.OrgDeleteCommand">
+            <summary>
+            组织删除命令
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Commands.CommandDefine.OrgLevelCommand">
+            <summary>
+            组织层级定义命令
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Commands.CommandDefine.SelectOrgEmployeeCommand">
+            <summary>
+            部门关联用户的选择命令
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Commands.CommandDefine.SelectOrgPositionCommand">
+            <summary>
+            部门关联岗位的选择命令
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Commands.CommandDefine.PositionTypeViewCommand">
+            <summary>
+            岗位类型定义命令
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Commands.CommandDefine.SetMainDepartmentCommand">
+            <summary>
+            设置为用户的主部门
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Commands.CommandDefine.SelectEmpInDepartmentCommand">
+            <summary>
+            选择用户所属部门
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Commands.CommandDefine.SaveOrg2Emp2PositionCommand">
+            <summary>
+            保存部门人员岗位
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.Commands.DisableCommand">
+            <summary>
+            禁用命令，把实体状态修改为不可用
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Commands.DisableCommand.CommandName">
+            <summary>
+            命令名
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Commands.DisableCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            子类重写此方法来执行具体的逻辑
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Common.Commands.EnableCommand">
+            <summary>
+            启用命令，把实体状态修改为可用
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Commands.EnableCommand.CommandName">
+            <summary>
+            命令名
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Commands.EnableCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            子类重写此方法来执行具体的逻辑
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Common.CommonDataQueryer">
+            <summary>
+            CommonDataQueryer
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.CommonDataQueryer.GetAlgorithmConfig(System.Double)">
+            <summary>
+             获取算法类
+            </summary>
+            <param name="segmentId">算法段ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.CommonDataQueryer.GetCheckConfig(System.Double)">
+            <summary>
+             获取校验码算法类
+            </summary>
+            <param name="checkId">校验位ID</param>
+            <returns></returns>
+        </member>
+        <member name="F:SIE.Web.Common.Configs.Commands.ConfigCommands.GlobalConfigEditCommand">
+            <summary>
+            全局配置项编辑命令
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Configs.Commands.ConfigCommands.GlobalConfigEditSaveCommand">
+            <summary>
+            全局配置项保存命令
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Configs.Commands.ConfigCommands.GlobalCategoryConfigEditSaveCommand">
+            <summary>
+            全局配置项分类保存命令
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Configs.Commands.ConfigCommands.ModuleConfigCommand">
+            <summary>
+            功能模块配置项命令
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Configs.Commands.ConfigCommands.ModuleConfigEditCommand">
+            <summary>
+            模块配置项编辑命令
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Configs.Commands.ConfigCommands.ModuleConfigEditSaveCommand">
+            <summary>
+            模块配置项保存命令
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Configs.Commands.ConfigCommands.ModuleCategoryConfigEditSaveCommand">
+            <summary>
+            模块配置项分类保存命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Configs.Commands.GlobalConfigEditCommand.CategoryConfig(SIE.Common.Configs.Global.GlobalConfig)">
+            <summary>
+            有分类别，有明细配置值
+            </summary>
+            <param name="source">The source.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Configs.Commands.GlobalConfigEditCommand.EntityTypeConfig(SIE.Common.Configs.Global.GlobalConfig)">
+            <summary>
+            没有分类别,只有一个配置值
+            </summary>
+            <param name="source">The source.</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Common.Configs.Commands.GlobalExportCommand">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Configs.Commands.GlobalExportCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Configs.Commands.GlobalExportCommand.ExportData(System.IO.Stream,SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="stream"></param>
+            <param name="args"></param>
+            <param name="scope"></param>
+        </member>
+        <member name="T:SIE.Web.Common.Configs.Commands.GlobalImportCommand">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Configs.Commands.GlobalImportCommand.ImportData(SIE.Web.Common.Import.Commands.ImportViewArgs)">
+            <summary>
+            导入excel
+            </summary>
+            <param name="importViewArgs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Configs.Commands.GlobalImportCommand.FromSheetGenerateConfig(NPOI.SS.UserModel.ISheet,SIE.Domain.EntityList{SIE.Common.Configs.Global.GlobalConfig})">
+            <summary>
+            从工作表获取数据行生成配置项集合
+            注:不会把excel的所有数据无条件更新，只会导入当前系统缓存的配置项;
+            </summary>
+            <param name="sheet">工作表</param>
+            <param name="globalConfigs">缓存配置项(只包含当前使用项目)</param>
+            <returns>配置项集合</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Configs.Commands.GlobalImportCommand.GenerateConfig(NPOI.SS.UserModel.IRow)">
+            <summary>
+            生成配置项实例
+            </summary>
+            <param name="row">Excel 数据行</param>
+            <returns>配置项</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Configs.Commands.GlobalImportCommand.GenerateConfigNoCategory(NPOI.SS.UserModel.IRow)">
+            <summary>
+            生成配置项（无分类明细）
+            </summary>
+            <param name="row">Excel 数据行</param>
+            <returns>配置项</returns>
+        </member>
+        <member name="T:SIE.Web.Common.Configs.Commands.ModuleConfigEditCommand">
+            <summary>
+            模块配置项编辑命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Configs.Commands.ModuleConfigEditCommand.CategoryConfig(SIE.Common.Configs.Module.ModuleConfig)">
+            <summary>
+            有分类别，有明细配置值
+            </summary>
+            <param name="source">The source.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Configs.Commands.ModuleConfigEditCommand.EntityTypeConfig(SIE.Common.Configs.Module.ModuleConfig)">
+            <summary>
+            没有分类别,只有一个配置值
+            </summary>
+            <param name="source">The source.</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Common.Configs.Commands.ModuleConfigEditSaveCommand">
+            <summary>
+            模块配置项保存命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.Configs.Commands.ModuleCategoryConfigEditSaveCommand">
+            <summary>
+            模块分类配置项保存命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.Configs.Commands.ModuleExportCommand">
+            <summary>
+            模块配置项导出命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Configs.Commands.ModuleExportCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Configs.Commands.ModuleExportCommand.ExportData(System.IO.Stream,SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="stream"></param>
+            <param name="args"></param>
+            <param name="scope"></param>
+        </member>
+        <member name="T:SIE.Web.Common.Configs.Commands.ModuleImportCommand">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Configs.Commands.ModuleImportCommand.ImportData(SIE.Web.Common.Import.Commands.ImportViewArgs)">
+            <summary>
+            导入excel
+            </summary>
+            <param name="importViewArgs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Configs.Commands.ModuleImportCommand.FromSheetGenerateConfig(NPOI.SS.UserModel.ISheet,SIE.Domain.EntityList{SIE.Common.Configs.Module.ModuleConfig})">
+            <summary>
+            从工作表获取数据行生成配置项集合
+            注:不会把excel的所有数据无条件更新，只会导入当前系统缓存的配置项;
+            </summary>
+            <param name="sheet">工作表</param>
+            <param name="moduleConfigs">缓存配置项(只包含当前使用项目)</param>
+            <returns>配置项集合</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Configs.Commands.ModuleImportCommand.GenerateConfig(NPOI.SS.UserModel.IRow)">
+            <summary>
+            生成配置项实例
+            </summary>
+            <param name="row">Excel 数据行</param>
+            <returns>配置项</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Configs.Commands.ModuleImportCommand.GenerateConfigNoCategory(NPOI.SS.UserModel.IRow)">
+            <summary>
+            生成配置项（无分类明细）
+            </summary>
+            <param name="row">Excel 数据行</param>
+            <returns>配置项</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Configs.Commands.ModuleImportCommand.GenerateConfigCategory(NPOI.SS.UserModel.IRow)">
+            <summary>
+            生成配置项（有分类明细）
+            </summary>
+            <param name="row">Excel 数据行</param>
+            <returns>配置项</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Configs.Commands.ModuleImportCommand.GenerateConfigDetail(System.String,System.String)">
+            <summary>
+            生成配置项明细
+            </summary>
+            <param name="category">配置项明细分类</param>
+            <param name="value">配置项明细值</param>
+            <returns>配置项明细</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Configs.Commands.ModuleImportCommand.UpdateConfigDetail(SIE.Common.Configs.Config,System.String,System.String)">
+            <summary>
+            修改模块配置项
+            </summary>
+            <param name="config">模块配置项</param>
+            <param name="category">分类类型</param>
+            <param name="value">值</param>
+        </member>
+        <member name="T:SIE.Web.Common.Configs.Commands.DataQueryers.ConfigValueDataQueryer">
+            <summary>
+            日志设置DataQueryer
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Configs.Commands.DataQueryers.ConfigValueDataQueryer.CategoryConfig(SIE.Common.Configs.Module.ModuleConfig)">
+            <summary>
+            有分类别，有明细配置值
+            </summary>
+            <param name="source">The source.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Configs.Commands.DataQueryers.ConfigValueDataQueryer.EntityTypeConfig(SIE.Common.Configs.Module.ModuleConfig)">
+            <summary>
+            没有分类别,只有一个配置值
+            </summary>
+            <param name="source">The source.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Configs.Commands.DataQueryers.ConfigValueDataQueryer.CategoryConfig(SIE.Common.Configs.Global.GlobalConfig)">
+            <summary>
+            有分类别，有明细配置值
+            </summary>
+            <param name="source">The source.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Configs.Commands.DataQueryers.ConfigValueDataQueryer.EntityTypeConfig(SIE.Common.Configs.Global.GlobalConfig)">
+            <summary>
+            没有分类别,只有一个配置值
+            </summary>
+            <param name="source">The source.</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Common.Configs.CommonConfigs.NoConfigValueViewConfig">
+            <summary>
+            单号生成配置值视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Configs.CommonConfigs.NoConfigValueViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细界面
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Configs.Controller.ConfigValueController.DisPlay(SIE.Web.Command.ViewArgs)">
+            <summary>
+            
+            </summary>
+            <param name="args"></param> 
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Configs.Controller.ConfigValueController.PagingLookUpDisPlay(SIE.Web.Common.Configs.Controller.ModelValue)">
+            <summary>
+            下拉框编辑器显示值
+            </summary>
+            <param name="configValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Configs.Controller.ConfigValueController.ConfigValueDisPlay(SIE.Web.Common.Configs.Controller.ModelValue)">
+            <summary>
+            ConfigValueEditor编辑器显示值
+            </summary>
+            <param name="configValue"></param>
+            <returns></returns>
+        </member>
+        <member name="P:SIE.Web.Common.Configs.Controller.ModelValue.Value">
+            <summary>
+            configValue值/下拉控件ID
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Configs.Controller.ModelValue.Name">
+            <summary>
+            类名
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Configs.Controller.ModelValue.BingIdValue">
+            <summary>
+            绑定字段值（id）
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Configs.Controller.ModelValue.BingDisPalyName">
+            <summary>
+            绑定显示字段名称
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Configs.ElectronicSignatureViewConfig.ConfigDetailsView">
+            <summary>
+             配置明细视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Configs.Global.GlobalConfigCriteriaViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Configs.Global.GlobalConfigDetailViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Configs.Global.GlobalConfigViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Configs.Global.GlobalConfigViewConfig.ConfigEntityTypeConfigDetailsView">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Configs.Module.ModuleConfigCriteriaViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Configs.Module.ModuleConfigDetailViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Configs.Module.ModuleConfigViewConfig.ConfigEntityTypeConfigView">
+            <summary>
+            实体配置项视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Configs.Templates.GlobalConfigTemplate.DefineBlocks">
+            <summary>
+            定义块
+            </summary>
+            <returns>聚合块</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Configs.Templates.ModuleConfigTemplate.DefineBlocks">
+            <summary>
+            定义块
+            </summary>
+            <returns>聚合块</returns>
+        </member>
+        <member name="T:SIE.Web.Common.Editors.CatalogConfig">
+            <summary>
+            快码编辑器的配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Editors.CatalogConfig.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Editors.CatalogConfig.InitConfig(SIE.MetaModel.View.WebEntityPropertyViewMeta,System.String)">
+            <summary>
+            初始化配置
+            </summary>
+            <param name="meta"></param>
+            <param name="moduleKey"></param>
+        </member>
+        <member name="M:SIE.Web.Common.Editors.CatalogConfig.GetCatalog(System.Type,System.String[],System.Int32@)">
+            <summary>
+            获取快码，并根据ViewConifg配置的下拉显示字段，构建json数据
+            </summary>
+            <returns>快码</returns>
+        </member>
+        <member name="P:SIE.Web.Common.Editors.CatalogConfig.CatalogType">
+            <summary>
+            快码类型
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Editors.CatalogConfig.CatalogReloadData">
+            <summary>
+            每次下拉都重新加载数据
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Editors.CatalogConfig.ToJson(SIE.Web.Json.LiteJsonWriter)">
+            <summary>
+            序列化
+            </summary>
+            <param name="json"></param>
+        </member>
+        <member name="T:SIE.Web.Common.Editors.CatalogDataQueryer">
+            <summary>
+            快码查询器
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Editors.CatalogDataQueryer.GetCalalogs(System.String)">
+            <summary>
+            获取设备类型快码
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:SIE.Web.Common.Editors.CatalogMutilSelectConfig.CatalogType">
+            <summary>
+            快码类型
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Editors.CatalogMutilSelectConfig.CatalogCodesPropertyName">
+            <summary>
+            快码编码字段名
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Editors.CatalogMutilSelectConfig.CatalogIdsPropertyName">
+            <summary>
+            快码Id字段名
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Editors.CatalogMutilSelectConfig.ToJson(SIE.Web.Json.LiteJsonWriter)">
+            <summary>
+            序列化
+            </summary>
+            <param name="json"></param>
+        </member>
+        <member name="M:SIE.Web.Common.Editors.PagingLookUpCatalogConfig.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Editors.PagingLookUpCatalogConfig.InitConfig(SIE.MetaModel.View.WebEntityPropertyViewMeta,System.String)">
+            <summary>
+            初始化配置
+            </summary>
+            <param name="meta"></param>
+            <param name="moduleKey"></param>
+        </member>
+        <member name="M:SIE.Web.Common.Editors.PagingLookUpCatalogConfig.GetCatalog(System.Type,System.String[],System.Int32@)">
+            <summary>
+            获取快码，并根据ViewConifg配置的下拉显示字段，构建json数据
+            </summary>
+            <returns>快码</returns>
+        </member>
+        <member name="P:SIE.Web.Common.Editors.PagingLookUpCatalogConfig.CatalogType">
+            <summary>
+            快码类型
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Editors.PagingLookUpCatalogConfig.CatalogReloadData">
+            <summary>
+            每次下拉都重新加载数据
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Editors.PagingLookUpCatalogConfig.ToJson(SIE.Web.Json.LiteJsonWriter)">
+            <summary>
+            序列化
+            </summary>
+            <param name="json"></param>
+        </member>
+        <member name="T:SIE.Web.Common.Editors.PrinterConfig">
+            <summary>
+            打印机
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Editors.PrinterConfig.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Editors.PrinterConfig.InitStore">
+            <summary>
+            初始化数据
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Editors.PrinterConfig.ToJson(SIE.Web.Json.LiteJsonWriter)">
+            <summary>
+            序列化
+            </summary>
+            <param name="json">json</param>
+        </member>
+        <member name="T:SIE.Web.Common.Editors.PrinterModel">
+            <summary>
+            序列化
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Editors.PrinterModel.Text">
+            <summary>
+            显示文本
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Editors.PrinterModel.ToJson(SIE.Web.Json.LiteJsonWriter)">
+            <summary>
+            序列化
+            </summary>
+            <param name="json"></param>
+        </member>
+        <member name="T:SIE.Web.Common.Export.Commands.ExportCommandBase">
+            <summary>
+            导出Excel基类
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Export.Commands.ExportCommandBase.CommandName">
+            <summary>
+            命令名字
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Export.Commands.ExportCommandBase.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            导出数据
+            </summary>
+            <param name="args">视图参数</param>
+            <param name="scope">使用范围</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Export.Commands.ExportCommandBase.GetFileInfo(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            获取文件信息
+            </summary>
+            <param name="args">视图参数</param>
+            <param name="scope">使用范围</param>
+            <returns>返回文件信息，包含文件名称及base64数据</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Export.Commands.ExportCommandBase.GetFileType">
+            <summary>
+            获取文件类型，默认是xlsx类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Export.Commands.ExportCommandBase.GetWorksheetName(SIE.MetaModel.EntityMeta)">
+            <summary>
+            获取表单名，默认是实体元数据Label名称
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Export.Commands.ExportCommandBase.GetFileName(SIE.MetaModel.EntityMeta)">
+            <summary>
+            获取导出的文件名，默认是按日期时间生成的xlsx
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Export.Commands.ExportCommandBase.GetExportData(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            重写此方法实现导出Excel的数据
+            </summary>
+            <param name="args">视图参数</param>
+            <param name="scope">使用范围</param>
+            <returns>返回导出的表格数据</returns>
+        </member>
+        <member name="T:SIE.Web.Common.Export.FileType">
+            <summary>
+            文件类型
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Export.FileType.xls">
+            <summary>
+            Excel2003
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Export.FileType.xlsx">
+            <summary>
+            Excel2007
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.Export.FileStreamHelper">
+            <summary>
+            文件流帮助类
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Export.FileStreamHelper.ExcelToBase64(System.Byte[],SIE.Web.Common.Export.FileType)">
+            <summary>
+            Excel转base64字符
+            </summary>
+            <param name="buffer">字节</param>
+            <param name="fileType">文件类型</param>
+            <returns>返回base64字符</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Export.FileStreamHelper.Base64ToExcel(System.String)">
+            <summary>
+            base64转Excel字节
+            </summary>
+            <param name="base64Str">base64字符</param>
+            <returns>返回Excel类型及字节</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Export.FileStreamHelper.GetBase64ExcelType(SIE.Web.Common.Export.FileType)">
+            <summary>
+            获取base64Excel类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Export.FileStreamHelper.GetExcelType(System.String)">
+            <summary>
+            获取base64Excel类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Common.GridCopyCombo.GridCopyComboPopupCriteriaViewConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.GridCopyCombo.GridCopyComboPopupCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            使用  View.Property(p => p.DllName).UsePagingLookUpGridPopupEditor(p => { p.XType = "gridCopyComboPopup"; p.LinkField = PushPlug.NameProperty.Name;}).Show();
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:SIE.Web.Common.GridCopyCombo.GridCopyComboPopupViewConfig" -->
+        <member name="M:SIE.Web.Common.GridCopyCombo.GridCopyComboPopupViewConfig.ConfigView">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.GridCopyCombo.GridCopyComboPopupViewConfig.ConfigCriteriaWorkOrderNoView">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.Import.Commands.ImportCommand">
+            <summary>
+            导入命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Import.Commands.ImportCommand.Excute(SIE.Web.Common.Import.Commands.ImportViewArgs,System.String)">
+            <summary>
+            导入数据
+            </summary>
+            <param name="importViewArgs">导入视图参数</param>
+            <param name="scope">使用范围</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Import.Commands.ImportCommand.OnComplete(SIE.Web.Common.Import.Commands.ImportViewArgs,SIE.Web.Common.Import.ImportResult)">
+            <summary>
+            完成
+            </summary>
+            <param name="importViewArgs">导入视图参数</param>
+            <param name="importResult">导入结果</param>
+        </member>
+        <member name="M:SIE.Web.Common.Import.Commands.ImportCommand.OnRowDataRead(SIE.Common.Import.RowData,SIE.Common.Import.CacheData)">
+            <summary>
+            行数据读取, 默认按视图配置把数据读取后，还可以进行自定义处理
+            </summary>
+            <param name="data">行数据</param>
+            <param name="cache">缓存数据</param>
+        </member>
+        <member name="M:SIE.Web.Common.Import.Commands.ImportCommand.OnSave(System.Collections.Generic.IList{SIE.Common.Import.RowData})">
+            <summary>
+            批量数据保存，默认调用<see cref="!:ImportController.Save(IList&lt;RowData&gt;)"/>
+            </summary>
+            <param name="batch">批量行数据</param>
+        </member>
+        <member name="M:SIE.Web.Common.Import.Commands.ImportCommand.GetImportTempleData">
+            <summary>
+            获取示例数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Common.Import.Commands.ImportCommandBase">
+            <summary>
+            导入命令，把excel读到DataTable再解析保存
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Import.Commands.ImportCommandBase.Excute(SIE.Web.Common.Import.Commands.ImportViewArgs,System.String)">
+            <summary>
+            导入数据
+            </summary>
+            <param name="importViewArgs">导入视图参数</param>
+            <param name="scope">使用范围</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Import.Commands.ImportCommandBase.ImportData(SIE.Web.Common.Import.Commands.ImportViewArgs,System.String,System.Boolean)">
+            <summary>
+            导入处理逻辑
+            </summary>
+            <param name="args">视图参数</param>
+            <param name="sheetName">excel工作薄sheet的名称</param>
+            <param name="isFirstRowColumn">第一行是否是DataTable的列名</param>
+            <returns>导入结果信息</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Import.Commands.ImportCommandBase.GetDataTable(System.String,System.String)">
+            <summary>
+            excelBase64字符转化为Datatable,可重写此方法，获取自己所需要的datatable数据
+            </summary>
+            <param name="data"></param>
+            <param name="sheetName">要读取工作簿名称</param>
+            <returns>Datatable格式的数据</returns>
+            <example></example>
+        </member>
+        <member name="M:SIE.Web.Common.Import.Commands.ImportCommandBase.GetFailedJsonStore(System.Double,System.Data.DataRow[])">
+            <summary>
+            获取失败信息Json
+            </summary>
+            <param name="selectedParentId">选择父Id</param>
+            <param name="dataRows">失败数据行</param>
+            <returns>Jsonstrore</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Import.Commands.ImportCommandBase.GetImportHandleType">
+            <summary>
+            获取导入类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Import.Commands.ImportCommandBase.GetImportCompleted">
+            <summary>
+            获取导入完成处理逻辑
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Import.Commands.ImportCommandBase.GetImportTempleData">
+            <summary>
+            获取示例数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Common.Import.Commands.ImportExcelCommand">
+            <summary>
+            通用导入excel命令, 通过配置ImportView，实现按模板导入
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Import.Commands.ImportExcelCommand.ImportView">
+            <summary>
+            导入视图配置, 默认<see cref="F:SIE.ViewConfig.ImportView"/>
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Import.Commands.ImportExcelCommand.importResult">
+            <summary>
+            导入结果
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Import.Commands.ImportExcelCommand.ImportType">
+            <summary>
+            导入的实体类型，默认<see cref="P:SIE.MetaModel.EntityMeta.EntityType"/>
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Import.Commands.ImportExcelCommand.FileName">
+            <summary>
+            模板文件名, 默认<see cref="P:SIE.MetaModel.EntityMeta.Label"/>+".导入模板"
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Import.Commands.ImportExcelCommand.Excute(SIE.Web.Common.Import.Commands.ImportViewArgs,System.String)">
+            <summary>
+            执行导入
+            </summary>
+            <param name="importViewArgs"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Import.Commands.ImportExcelCommand.DownloadTemplate(SIE.Web.Common.Import.Commands.ImportViewArgs)">
+            <summary>
+            下载模板
+            </summary>
+            <param name="importViewArgs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Import.Commands.ImportExcelCommand.ImportData(SIE.Web.Common.Import.Commands.ImportViewArgs)">
+            <summary>
+            导入数据
+            </summary>
+            <param name="importViewArgs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Import.Commands.ImportExcelCommand.OnComplete(System.String)">
+            <summary>
+            完成
+            </summary>
+            <param name="errors">导入失败的信息</param>
+        </member>
+        <member name="M:SIE.Web.Common.Import.Commands.ImportExcelCommand.OnRowDataRead(SIE.Common.Import.RowData,SIE.Common.Import.CacheData)">
+            <summary>
+            行数据读取, 默认按视图配置把数据读取后，还可以进行自定义处理
+            </summary>
+            <param name="data"></param>
+            <param name="cache"></param>
+        </member>
+        <member name="M:SIE.Web.Common.Import.Commands.ImportExcelCommand.OnSave(System.Collections.Generic.IList{SIE.Common.Import.RowData})">
+            <summary>
+            批量数据保存，默认调用<see cref="M:SIE.Common.Import.ImportController.Save(System.Collections.Generic.IList{SIE.Common.Import.RowData})"/>
+            </summary>
+            <param name="batch"></param>
+        </member>
+        <member name="T:SIE.Web.Common.Import.Commands.ImportViewArgs">
+            <summary>
+            导入视图参数
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Import.Commands.ImportViewArgs.BehaviorName">
+            <summary>
+            行为名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Import.Commands.ImportViewArgs.SelectedParent">
+            <summary>
+            选中父实体
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Import.Commands.ImportViewArgs.SelectedParentId">
+            <summary>
+            选中父实体Id
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Import.Commands.ImportViewArgs.ExtendData">
+            <summary>
+            扩展数据
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.Import.ImportDataHandleExt">
+            <summary>
+            导入数据处理扩展类
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Import.ImportDataHandleExt.ParentEntityId">
+            <summary>
+            父实体Id
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Import.ImportDataHandleExt.#ctor(System.Double)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="parentId">父Id</param>
+        </member>
+        <member name="M:SIE.Web.Common.Import.ImportDataHandleExt.ProcessImportDataPre(System.Data.DataTable,System.Type)">
+            <summary>
+            导入数据预处理
+            </summary>
+            <param name="importTable"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Common.Import.ImportHandle">
+            <summary>
+            导入处理
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Import.ImportHandle.ImportResult">
+            <summary>
+            导入结果
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Import.ImportHandle._refPropertys">
+            <summary>
+            引用属性
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Import.ImportHandle.DownloadTemplate(SIE.MetaModel.EntityMeta,System.Collections.Generic.List{System.String})">
+            <summary>
+            按实体类型的视图配置组的定义，保存模板到指定的文件。
+            引用类型可以通过唯一索引字段进行关联，
+            例如: View.Property(p => p.DefectCategory.Code).HasLabel("分类编码");   
+            暂时不支持主从导入
+            </summary>
+            <param name="entityMeta">实体元数据</param>
+             <param name="templeDataList">写入示例数据</param>
+            <returns>返回模板字节</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Import.ImportHandle.DownloadCustomTemplate(SIE.MetaModel.EntityMeta,System.Type,System.Collections.Generic.List{System.String})">
+            <summary>
+            下载的模板为自定义表头类型
+            </summary>
+            <param name="entityMeta"></param>
+            <param name="type">表头数据集类型</param>
+            <param name="templeDataList">示例数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Import.ImportHandle.DownloadCustomDynamic(SIE.MetaModel.EntityMeta,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})">
+            <summary>
+            动态列头模板下载
+            </summary>
+            <param name="entityMeta">实体元数据</param>
+            <param name="columnNameList">动态列头</param>
+            <param name="templeDataList">示例数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Import.ImportHandle.PropertyIsRequired(SIE.MetaModel.View.EntityViewMeta,SIE.MetaModel.View.WebEntityPropertyViewMeta)">
+            <summary>
+            检验默认下载模板 - 字段是否必填
+            </summary>
+            <param name="entityViewMeta"></param>
+            <param name="property"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Import.ImportHandle.GetCommentContent(System.Type)">
+            <summary>
+            获取批注内容
+            </summary>
+            <param name="propertyType">类型</param>
+        </member>
+        <member name="M:SIE.Web.Common.Import.ImportHandle.CreateHeaderStyle(NPOI.SS.UserModel.IWorkbook)">
+            <summary>
+            创建表头样式
+            </summary>
+            <param name="workbook">工作薄</param>
+            <returns>返回表头样式</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Import.ImportHandle.CreateRequireHeaderStyle(NPOI.SS.UserModel.IWorkbook,NPOI.SS.UserModel.ICellStyle)">
+             <summary>
+            创建必填表头(红色)
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Import.ImportHandle.ImportData(System.Type,System.String,System.Action{SIE.Common.Import.RowData,SIE.Common.Import.CacheData},System.Action{System.Collections.Generic.IList{SIE.Common.Import.RowData}},System.Action{SIE.Web.Common.Import.ImportResult})">
+            <summary>
+            按实体类型的视图配置组的定义，导入指定的文件的数据。
+            默认50个线程并发保存
+            </summary>
+            <param name="entityType">实体类型</param>
+            <param name="base64Str">base64数据</param>
+            <param name="rowAction">行数据处理操作</param>
+            <param name="saveAction">数据保存操作</param>
+            <param name="completeCallback">完成回调操作</param>
+            <returns>返回执行结果</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Import.ImportHandle.ProcessData(System.Type,System.String,NPOI.SS.UserModel.ISheet,System.Action{SIE.Common.Import.RowData,SIE.Common.Import.CacheData},System.Action{System.Collections.Generic.IList{SIE.Common.Import.RowData}},System.Action{SIE.Web.Common.Import.ImportResult})">
+            <summary>
+            处理数据
+            </summary>
+            <param name="entityType">实体类型</param>
+            <param name="viewGroup">视图分组</param>
+            <param name="worksheet">工作表</param>
+            <param name="rowAction">行数据处理操作</param>
+            <param name="saveAction">数据保存操作</param>
+            <param name="completeCallback">完成回调操作</param>
+        </member>
+        <member name="M:SIE.Web.Common.Import.ImportHandle.GetRowValue(NPOI.SS.UserModel.IRow,System.Int32)">
+            <summary>
+            获取行的值
+            </summary>
+            <param name="row">行对象</param>
+            <param name="columnCount">列数</param>
+            <returns>返回行中所有单元格的值</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Import.ImportHandle.GetRefPropertys(System.Collections.Generic.List{SIE.MetaModel.View.EntityPropertyViewMeta})">
+            <summary>
+            获取引用视图属性
+            </summary>
+            <param name="properties">全部属性</param>
+        </member>
+        <member name="M:SIE.Web.Common.Import.ImportHandle.CheckEmptyRow(NPOI.SS.UserModel.IRow,System.Int32,System.Int32)">
+            <summary>
+            检测空行
+            </summary>
+            <param name="row">工作表</param>
+            <param name="rowIndex">行索引</param>
+            <param name="columnCount">列数量</param>
+            <returns>返回是否空行</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Import.ImportHandle.ProcessRowData(System.Int32,System.Collections.Generic.List{System.Object},System.Type,System.Collections.Generic.IEnumerable{SIE.MetaModel.View.EntityPropertyViewMeta},SIE.Common.Import.CacheData)">
+            <summary>
+            处理行数据
+            </summary>
+            <param name="rowIndex">行索引</param>
+            <param name="rowValues">行所有单元格值</param>
+            <param name="entityType">实体类型</param>
+            <param name="properties">属性集</param>
+            <param name="cacheData">缓存数据</param>
+            <returns>返回处理成功的行数据</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Import.ImportHandle.ThrowImportFailExcetion(System.Exception)">
+            <summary>
+            抛出导入失败异常
+            </summary>
+            <param name="ex"></param>
+        </member>
+        <member name="M:SIE.Web.Common.Import.ImportHandle.AddImportRowResult(System.Collections.Generic.List{System.Collections.Generic.List{System.Object}},System.Int32,System.String,System.Collections.Generic.List{System.Object})">
+            <summary>
+            添加导入行结果
+            </summary>
+            <param name="rowResult">行处理结果</param>
+            <param name="rowIndex">行索引</param>
+            <param name="resultMsg">处理结果</param>
+            <param name="rowValues">单元格值</param>
+        </member>
+        <member name="M:SIE.Web.Common.Import.ImportHandle.GetRefData(SIE.Common.Import.CacheData,SIE.MetaModel.View.WebEntityPropertyViewMeta,System.Type,System.String)">
+            <summary>
+            获取引用数据
+            </summary>
+            <param name="cacheData">缓存数据</param>
+            <param name="property">属性</param>
+            <param name="refType">引用类型</param>
+            <param name="refPropertyName">引用属性名称</param>
+            <returns>引用数据集</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Import.ImportHandle.GetRefId(System.Collections.Generic.Dictionary{System.String,System.Object},SIE.MetaModel.View.WebEntityPropertyViewMeta,System.String,System.Type,System.String)">
+            <summary>
+            获取引用Id
+            </summary>
+            <param name="refData">引用数据</param>
+            <param name="property">引用属性</param>
+            <param name="value">引用属性值</param>
+            <param name="refType">引用属性类型</param>
+            <param name="refPropertyName">引用属性名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Import.ImportHandle.SaveData(SIE.Web.Common.Import.ImportResult,System.Collections.Generic.IList{SIE.Common.Import.RowData},System.Action{System.Collections.Generic.IList{SIE.Common.Import.RowData}},System.Action{SIE.Web.Common.Import.ImportResult})">
+            <summary>
+            保存
+            </summary>
+            <param name="importResult">导入结果</param>
+            <param name="data">读取成功的数据</param>
+            <param name="saveAction">保存操作</param>
+            <param name="completeCallback">执行完成回调操作数</param>
+        </member>
+        <member name="M:SIE.Web.Common.Import.ImportHandle.GetEnumValue(SIE.Common.Import.CacheData,SIE.MetaModel.View.WebEntityPropertyViewMeta,System.Object)">
+            <summary>
+            获取枚举值
+            </summary>
+            <param name="cacheData">缓存数据</param>
+            <param name="property">属性</param>
+            <param name="value">数据值</param>
+            <returns>返回枚举值</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Import.ImportHandle.GetEntityId(System.Type,System.Collections.Generic.Dictionary{SIE.ManagedProperty.IManagedProperty,System.Object})">
+            <summary>
+            获取实体Id
+            </summary>
+            <param name="propertyType">类型</param>
+            <param name="conditions">查询条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Import.ImportHandle.GenerateResultForm(SIE.Web.Common.Import.ImportResult)">
+            <summary>
+            生成导入结果表单
+            </summary>
+            <param name="importResult">导入结果</param>
+            <returns>返回导入结果表单数据格式</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Import.ImportHandle.GetFailedJsonStore(SIE.Web.Common.Import.ImportResult)">
+            <summary>
+            获取失败信息Json
+            </summary>
+            <param name="importResult">导入结果</param>
+            <returns>返回JsonStore</returns>
+        </member>
+        <member name="T:SIE.Web.Common.Import.ImportResult">
+            <summary>
+            导入结果
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Import.ImportResult.Result">
+            <summary>
+            结果
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Import.ImportResult.ResultMsg">
+            <summary>
+            结果消息
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Import.ImportResult.HeaderNames">
+            <summary>
+            导入表头
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Import.ImportResult.SuccessValues">
+            <summary>s
+            成功值
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Import.ImportResult.FailedValues">
+            <summary>
+            失败值
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.Import.SpreadsheetHelper">
+            <summary>
+            NPOI.Import帮助类
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Import.SpreadsheetHelper.LoadDocument(System.String)">
+            <summary>
+            加载文档
+            </summary>
+            <param name="base64Str">base64字符，格式如：data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,UEsDBBQABgAIAAAAIQC</param>
+            <returns>返回文档加载结果</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Import.SpreadsheetHelper.Base64ToDataTable(System.String,System.String,System.Boolean)">
+            <summary>
+            将base64Excel数据转换成DataTable
+            </summary>
+            <param name="base64Str">base64字符，格式如：data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,UEsDBBQABgAIAAAAIQC</param>
+            <param name="sheetName">excel工作薄sheet的名称</param>
+            <param name="isFirstRowColumn">第一行是否是DataTable的列名</param>
+            <returns>返回的DataTable</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Import.SpreadsheetHelper.Base64ToDataTable(System.String,System.String,System.Int32,System.Boolean,System.Int32)">
+            <summary>
+            将base64Excel数据转换成DataTable
+            </summary>
+            <param name="base64Str">base64字符，格式如：data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,UEsDBBQABgAIAAAAIQC</param>
+            <param name="sheetName">excel工作薄sheet的名称</param>
+            <param name="startIndex">开始行</param>
+            <param name="isFirstRowColumn">第一行是否是DataTable的列名</param>
+            <param name="startRow">开始可空行</param>
+            <returns>返回的DataTable</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Import.SpreadsheetHelper.LoadCSVDocument(System.String)">
+            <summary>
+            加载文档
+            </summary>
+            <param name="base64Str">base64字符，格式如：data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,UEsDBBQABgAIAAAAIQC</param>
+            <returns>返回文档加载结果</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Import.SpreadsheetHelper.CsvToDataTable(System.String,System.Int32)">
+            <summary>
+            CSV转换DataTable
+            </summary>
+            <param name="base64Str">base64字符，格式如：data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,UEsDBBQABgAIAAAAIQC</param>
+            <param name="startIndex">开始行</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Import.SpreadsheetHelper.CreateWorkbook(System.Boolean,System.Object)">
+            <summary>
+            创建工作薄(依据文件流)
+            </summary>
+            <param name="isCompatible"></param>
+            <param name="stream"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Common.Menus.CommonWebMenuInit">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Menus.CommonWebMenuInit.GetMenuDtos">
+            <summary>
+            获取菜单列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Common.NumberRules.Commands.NumberCheckInitCommand">
+            <summary>
+            校验码初始化命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.NumberRules.Commands.NumberCheckInitCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Common.NumberRules.Commands.NumberSegmentDisableCommand">
+            <summary>
+            禁用命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.NumberRules.Commands.NumberSegmentEnableCommand">
+            <summary>
+            启用命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.NumberRules.Commands.NumberSegmentInitCommand">
+            <summary>
+            初始化命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.NumberRules.NumberCheckViewConfig">
+            <summary>
+            校验码视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.NumberRules.NumberCheckViewConfig.ConfigView">
+            <summary>
+            子类重写此方法，并完成对 Meta 属性的配置。
+            
+            注意：
+            * 为了给当前类的子类也运行同样的配置，这个方法可能会被调用多次。
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.NumberRules.NumberCheckViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.NumberRules.NumberCheckViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.NumberRules.NumberCheckViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.NumberRules.NumberRuleDetailViewConfig">
+            <summary>
+            编码规则明细视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.NumberRules.NumberRuleDetailViewConfig.SegmentReadonlyProperty">
+            <summary>
+            编码段算法只读
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.NumberRules.NumberRuleDetailViewConfig.GetSegmentReadonly(SIE.Common.NumberRules.NumberRuleDetail)">
+            <summary>
+            编码段算法只读
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.NumberRules.NumberRuleDetailViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.NumberRules.NumberRuleInTemplateViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.NumberRules.NumberRuleViewConfig">
+            <summary>
+            编码规则视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.NumberRules.NumberRuleViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.NumberRules.NumberRuleViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.NumberRules.NumberRuleViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.NumberRules.NumberRuleViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.NumberRules.NumberSegmentDataQueryer">
+            <summary>
+            编码段数据查询
+            </summary>
+            <seealso cref="T:SIE.Web.Data.DataQueryer" />
+        </member>
+        <member name="M:SIE.Web.Common.NumberRules.NumberSegmentDataQueryer.GetNumberSegmentName(System.Double[])">
+            <summary>
+            根据编码段Id获取编码段名字
+            </summary>
+            <param name="numberSegmentIds">The number segment identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Common.NumberRules.NumberSegmentViewConfig">
+            <summary>
+            条码段视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.NumberRules.NumberSegmentViewConfig.ConfigView">
+            <summary>
+            子类重写此方法，并完成对 Meta 属性的配置。
+            
+            注意：
+            * 为了给当前类的子类也运行同样的配置，这个方法可能会被调用多次。
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.NumberRules.NumberSegmentViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.NumberRules.NumberSegmentViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.NumberRules.NumberSegmentViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.NumberRules.NumberSegmentViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.Organizations.Commands.SelectEmpInDepartmentCommand">
+            <summary>
+            选择用户所属部门
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.Organizations.Commands.SelectOrgEmployeeCommand">
+            <summary>
+            选择组织用户
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.Organizations.Commands.SelectOrgPositionCommand">
+            <summary>
+            选择组织用户
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.Organizations.Commands.SetMainDepartmentCommand">
+            <summary>
+            命令-设置主要部门
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.Organizations.Org2EmployeeViewConfig">
+            <summary>
+            组织与员工视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Organizations.Org2EmployeeViewConfig.EmployeeInOrgView">
+            <summary>
+            用户所属部门
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Organizations.Org2EmployeeViewConfig.Org2EmployeeView">
+            <summary>
+            部门关联用户
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Organizations.Org2EmployeeViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Organizations.Org2EmployeeViewConfig.ConfigOrg2EmployeeView">
+            <summary>
+            组织关联用户视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Organizations.Org2EmployeeViewConfig.ConfigEmployeeInOrgView">
+            <summary>
+            员工所属部门视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.Organizations.Org2PositionViewConfig">
+            <summary>
+            组织关联岗位视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Organizations.Org2PositionViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Organizations.OrganizationLevelDataQueryer.GetOrganizationLevel(System.Double,System.Int32,System.Int32,System.String)">
+            <summary>
+            组织层级下拉框查询
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.Organizations.OrganizationLevelViewConfig">
+            <summary>
+            组织层级视图配置
+            </summary>   
+        </member>
+        <member name="F:SIE.Web.Common.Organizations.OrganizationLevelViewConfig.IsCodeReadonlyProperty">
+            <summary>
+            编码是否只读
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Organizations.OrganizationLevelViewConfig.GetIsCodeReadonly(SIE.Common.Organizations.OrganizationLevel)">
+            <summary>
+            编码是否只读
+            </summary>
+            <param name="me">组织层级</param>
+            <returns>组织类型不为空时编码只读</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Organizations.OrganizationLevelViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Organizations.OrganizationLevelViewConfig.ConfigQueryView">
+            <summary>
+            查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Organizations.OrganizationLevelViewConfig.ConfigSelectionView">
+            <summary>
+            选择视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.Organizations.OrganizationViewConfig">
+            <summary>
+            组织架构视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Organizations.OrganizationViewConfig.HasChildProperty">
+            <summary>
+            是否有子级
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Organizations.OrganizationViewConfig.GetHasChild(SIE.Common.Organizations.Organization)">
+            <summary>
+            是否有子级
+            </summary>
+            <param name="me">企业模型</param>
+            <returns>true/false</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Organizations.OrganizationViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Organizations.OrganizationViewConfig.ConfigQueryView">
+            <summary>
+            查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Organizations.OrganizationViewConfig.ConfigSelectionView">
+            <summary>
+            下拉视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.Organizations.OrgExtendViewConfig">
+            <summary>
+            组织架构-扩展视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Organizations.OrgExtendViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.Portals.Commands.InitRunningDetailCommand">
+            <summary>
+            首页小部件初始化命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Portals.Commands.InitRunningDetailCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Portals.Commands.InitRunningDetailCommand.InitWidgetPlugs">
+            <summary>
+             初始化所有实现了小部件接口的首页小部件
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.Portals.WidgetViewConfig">
+            <summary>
+            小部件视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Portals.WidgetViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Portals.WidgetViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Portals.WidgetViewConfig.ConfigDetailsView">
+            <summary>
+             配置明细视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Portals.WidgetViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.Common.Positions.PositionTypeViewConfig">
+            <summary>
+            岗位类型视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Positions.PositionTypeViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.Common.Positions.PositionViewConfig">
+            <summary>
+            岗位表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Positions.PositionViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Positions.PositionViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.Common.Prints.Commands.AddBillPrintSourceCommand">
+            <summary>
+            添加单据模板命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.Commands.AddBillPrintSourceCommand.CheckSave(SIE.Domain.Entity,System.String@)">
+            <summary>
+            打开设计器，确认模板保存
+            </summary>
+            <param name="entity">传入ViewModel</param>
+        </member>
+        <member name="T:SIE.Web.Common.Prints.Commands.AddPrintableCommand">
+            <summary>
+            添加标签模板命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.Commands.AddPrintableCommand.CheckSave(SIE.Domain.Entity,System.String@)">
+            <summary>
+            打开设计器，确认模板保存
+            </summary>
+            <param name="entity">传入ViewModel</param>
+            <param name="dataFilePatch"></param>
+        </member>
+        <member name="T:SIE.Web.Common.Prints.Commands.DesignerCommand">
+            <summary>
+            模板设计命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.Commands.DesignerCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.Commands.DesignerCommand.GenerateDataFile(SIE.Web.Common.Prints.IReport,SIE.Common.Prints.PrintTemplate)">
+            <summary>
+            生成数据文件
+            </summary>
+            <param name="report"></param>
+            <param name="template"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Common.Prints.Commands.DisableCommand">
+            <summary>
+            禁用命令，把实体状态修改为不可用
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Prints.Commands.DisableCommand.CommandName">
+            <summary>
+            命令名
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.Commands.DisableCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            子类重写此方法来执行具体的逻辑
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.Commands.DownDomainTemplateCommand.GenerateConfigFile(SIE.Common.Prints.PrintTemplate)">
+            <summary>
+            生成配置文件
+            </summary>
+            <param name="template">模板</param>
+            <returns>配置文件路径</returns>
+            <exception cref="T:SIE.Domain.Validation.ValidationException">异常信息</exception>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.Commands.DownDomainTemplateCommand.GenerateDataFile(SIE.Web.Common.Prints.IReport,SIE.Common.Prints.PrintTemplate)">
+            <summary>
+            生成数据文件
+            </summary>
+            <param name="report">模板报表</param>
+            <param name="template">打印模板</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Common.Prints.Commands.DownloadArgs">
+            <summary>
+            下载模板参数
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.Prints.Commands.EnableCommand">
+            <summary>
+            启用命令，把实体状态修改为可用
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Prints.Commands.EnableCommand.CommandName">
+            <summary>
+            命令名
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.Commands.EnableCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            子类重写此方法来执行具体的逻辑
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Common.Prints.Commands.ExportTemplateCommandBase`1">
+            <summary>
+            模板导出命令基类
+            </summary>
+            <typeparam name="T">继承IPrintable的打印处理对像 </typeparam>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.Commands.ExportTemplateCommandBase`1.Excute(SIE.Common.Prints.ExportTemplateParam,System.String)">
+            <summary>
+            导出数据
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.Commands.ExportTemplateCommandBase`1.GetFileName(SIE.Common.Prints.ExportType)">
+            <summary>
+            获取导出文件名
+            </summary>
+            <param name="exportType">导出类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.Commands.ExportTemplateCommandBase`1.GetExportTemplate(SIE.Common.Prints.ExportTemplateParam)">
+            <summary>
+            获取导出模板
+            </summary>
+            <param name="args">客户端传的参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.Commands.ExportTemplateCommandBase`1.RunExport(SIE.Common.Prints.ExportTemplateParam,System.IO.MemoryStream)">
+            <summary>
+            执行导出
+            </summary>
+            <param name="args">客户端传的参数</param>
+            <param name="exportStream">导出流</param>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.Commands.ExportTemplateCommandBase`1.ExportData(SIE.Common.Prints.ExportTemplateParam)">
+            <summary>
+            导出的数据
+            </summary>
+            <param name="args">客户端传的参数</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Common.Prints.Commands.GetTemplateCommand">
+            <summary>
+            获取打印实体模板
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.Commands.GetTemplateCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Common.Prints.Commands.PrintPreviewCommand">
+            <summary>
+            单据打印预览
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.Commands.PrintPreviewCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.Commands.PrintPreviewCommand.GetDatas(SIE.Web.Command.ViewArgs)">
+            <summary>
+            获取数据
+            </summary>
+            <param name="args">args</param>
+            <returns>打印数据</returns>
+        </member>
+        <member name="F:SIE.Web.Common.Prints.Commands.PublishTemplateCommand.failMesList">
+            <summary>
+            发布失败信息列表
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.Commands.PublishTemplateCommand.PublishDocbs(System.Collections.Generic.IList{SIE.Common.Prints.PrintTemplate},System.Int32)">
+            <summary>
+            发布布局模板
+            </summary>
+            <param name="sourceDocList">文档</param>
+            <param name="invorg">库存组织</param>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.Commands.PublishTemplateCommand.PublishDocLastLayout(System.Nullable{System.Int32},SIE.Common.Prints.PrintTemplate)">
+            <summary>
+            发布最新文档模板
+            </summary>
+            <param name="invorgId">组织id</param>
+            <param name="sourceEntity">来源文档实体</param>
+            <param name="targetEntity">目标文档实体</param>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.Commands.PublishTemplateCommand.SaveDocumentBase(System.Nullable{System.Int32},SIE.Common.Prints.PrintTemplate)">
+            <summary>
+            保存文档信息
+            </summary>
+            <param name="invorgId">组织id</param>
+            <param name="sourceEntity">源实体</param>
+        </member>
+        <member name="T:SIE.Web.Common.Prints.Commands.FailMessage">
+            <summary>
+            发布失败信息
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Prints.Commands.FailMessage.PrintTempName">
+            <summary>
+            文档名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Prints.Commands.FailMessage.InvorgId">
+            <summary>
+            库存组织ID
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Prints.Commands.PrintTemplateViewArgs.Codes">
+            <summary>
+            库存组织编码
+            </summary>
+            <value>
+            The nums.
+            </value>
+        </member>
+        <member name="P:SIE.Web.Common.Prints.Commands.PrintTemplateViewArgs.PrintTemplateList">
+            <summary>
+            文档定义列表
+            </summary>
+            <value>
+            The PrintTemplate base list.
+            </value>
+        </member>
+        <member name="T:SIE.Web.Common.Prints.Commands.TemplateCopyCommand">
+            <summary>
+            复制模板
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.Commands.TemplateCopyCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.Commands.UploadBtwTemplateCommand.Excute(SIE.Web.Common.Prints.Commands.TemplateFile,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+            <exception cref="T:SIE.Domain.Validation.ValidationException"></exception>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.Commands.UploadTemplateCommand.Excute(System.Collections.Generic.List{SIE.Web.Common.Prints.Commands.TemplateFile},System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+            <exception cref="T:SIE.Domain.Validation.ValidationException"></exception>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.Commands.UploadTemplateCommand.ExtractZipFile(System.IO.Stream,System.String,System.String)">
+            <summary>
+             从压缩文件中读取某个文件的内容
+             文本文件
+            </summary>
+            <param name="fs">数据流</param>
+            <param name="password">密码</param>
+            <param name="fileName">需要读取的文件名</param>
+            <returns>文件的内容</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.Commands.UploadTemplateCommand.ConvertConfigFileData(System.String)">
+            <summary>
+            转换配置文件数据
+            </summary>
+            <param name="configFile">配置文件</param>
+            <returns>文件字典</returns>
+        </member>
+        <member name="T:SIE.Web.Common.Prints.Commands.ExtractZipInfo">
+            <summary>
+            解压缩包数据
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Prints.Commands.ExtractZipInfo.ConfigFileValue">
+            <summary>
+            配置文件值
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Prints.Commands.ExtractZipInfo.Contents">
+            <summary>
+            模板内容
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.Prints.PrintTemplateController">
+            <summary>
+            模板设置-报表控制器
+            </summary>
+            <seealso cref="T:Microsoft.AspNetCore.Mvc.Controller" />
+        </member>
+        <member name="M:SIE.Web.Common.Prints.PrintTemplateController.TemplateDesigner(System.Double,System.String)">
+            <summary>
+            单据设计器
+            </summary>
+            <param name="id">单据</param>
+            <param name="content">单据BASE64字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.PrintTemplateController.ReportDesignerSaveLayout(System.Double,System.String,System.Boolean)">
+            <summary>
+            保存设计模板
+            </summary>
+            <param name="reportId">模板ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.PrintTemplateController.DevPrintViewer(System.String)">
+            <summary>
+            打印预览
+            </summary>
+            <param name="content">模板BASE64 字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.PrintTemplateController.DevPrint(System.String)">
+            <summary>
+            打印
+            </summary>
+            <param name="content">模板BASE64 字符串</param>
+            <returns></returns>
+        </member>
+        <member name="F:SIE.Web.Common.Prints.PrintableViewModelViewConfig.BillPrint">
+            <summary>
+            单据打印ViewGroup
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Prints.PrintableViewModelViewConfig.LabelPrint">
+            <summary>
+            标签打印ViewGroup
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Prints.PrintableViewModelViewConfig.TemplateCopy">
+            <summary>
+            模板复制
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.Prints.PrintConfigViewConfig">
+            <summary>
+            打印配置视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.PrintConfigViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.PrintConfigViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.PrintConfigViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.Common.Prints.BarTenderReport">
+            <summary>
+            BarTender 报表
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Prints.BarTenderReport.Extension">
+            <summary>
+            报表文件扩展名
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.BarTenderReport.GenerateNewTemplate(SIE.Common.Prints.IPrintable,System.String)">
+            <summary>
+            生成新的模板
+            </summary>
+            <param name="printable">打印提供者</param>
+            <param name="fileName">打印模板文件名</param>
+            <returns>模板文件路径</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.BarTenderReport.GenerateTemplate(System.String,System.Byte[])">
+            <summary>
+            创建模板文件
+            </summary>
+            <param name="fileName">文件名称</param>
+            <param name="content">文件内容</param>
+            <returns>文件路径</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.BarTenderReport.PrintProcess(SIE.Common.Prints.IPrintable,System.Double,System.Byte[],System.Func{System.Collections.Generic.IEnumerable{System.Object}},System.Int16)">
+            <summary>  
+            打印处理
+            </summary>
+            <param name="printable">打印提供者</param>
+            <param name="templateId">模板Id</param>
+            <param name="content">模板BYTE</param>
+            <param name="datas">打印的数据集合</param>
+            <param name="copies">打印份数</param>
+            <returns>返回Bartender打印信息</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.BarTenderReport.SaveBartenderInfo(SIE.Common.Prints.IPrintable,System.Double,System.Func{System.Collections.Generic.IEnumerable{System.Object}},System.Int16)">
+            <summary>
+            保存Bartender打印信息
+            </summary>
+            <param name="printable">条码打印</param>
+            <param name="templateId">模板Id</param>
+            <param name="datas">数据列表</param>
+            <param name="copies">份数</param>
+            <returns>打印条码信息</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.BarTenderReport.GenerateDataFile(SIE.Common.Prints.IPrintable,System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>
+            生成数据文件
+            </summary>
+            <param name="printable">打印提供者</param>
+            <param name="datas">打印的数据集合</param>
+            <returns>生成的数据文件</returns>
+        </member>
+        <member name="T:SIE.Web.Common.Prints.IReport">
+            <summary>
+            报表接口
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Prints.IReport.Extension">
+            <summary>
+            报表文件扩展名
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Prints.IReport.Name">
+            <summary>
+            报表名
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.IReport.GetFileFullName(System.String)">
+            <summary>
+            获取文件全名
+            </summary>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.IReport.GenerateNewTemplate(SIE.Common.Prints.IPrintable,System.String)">
+            <summary>
+            生成新的模板
+            </summary>
+            <param name="printable">打印提供者</param>
+            <param name="fileName">文件名</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.IReport.GenerateDataFile(SIE.Common.Prints.IPrintable,System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>
+            生成数据文件
+            </summary>
+            <param name="printable">打印提供者</param>
+            <param name="datas">打印的数据集合</param>
+            <returns>生成的数据文件路径</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.IReport.UpdateCsvDataPath(System.String)">
+            <summary>
+            更新 CSV 数据文件   
+            </summary>
+            <param name="filePath">文件路径</param>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.IReport.UpdateCsvDataPath(DevExpress.XtraReports.UI.XtraReport)">
+            <summary>
+            更新 XML 数据文件（Dev控件时）
+            </summary>
+            <param name="filePath">Dev报表模板</param>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.IReport.ValidateFilePath(System.String)">
+            <summary>
+            验证文件
+            </summary>
+            <param name="filePath"></param>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.IReport.BeforeDesignerProcess(System.Byte[])">
+            <summary>
+            设计前处理
+            </summary>
+            <param name="content"></param>
+            <returns>返回BASE6字符串</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.IReport.PrintProcess(SIE.Common.Prints.IPrintable,System.Double,System.Byte[],System.Func{System.Collections.Generic.IEnumerable{System.Object}},System.Int16)">
+            <summary>
+            打印处理
+            </summary>
+            <param name="printable">打印提供者</param>
+            <param name="templateId">模板Id</param>
+            <param name="content">模板BYTE</param>
+            <param name="datas">打印的数据集合</param>
+            <param name="copies">打印份数</param>
+            <returns>返回模板BASE6字符串</returns>
+        </member>
+        <member name="F:SIE.Web.Common.Prints.Report.s_DeleteFileLock">
+            <summary>
+            静态锁，用于文件删除
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Prints.Report.Extension">
+            <summary>
+            报表文件扩展名
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.Report.GenerateNewTemplate(SIE.Common.Prints.IPrintable,System.String)">
+            <summary>
+            生成新的模板
+            </summary>
+            <param name="printable">打印提供者</param>
+            <param name="fileName">文件名</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.Report.ClearCsvFile">
+            <summary>
+            清空报表文件路径下的 csv 文件
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.Report.GenerateDataFile(SIE.Common.Prints.IPrintable,System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>
+            生成数据文件
+            </summary>
+            <param name="printable">打印提供者</param>
+            <param name="datas">打印的数据集合</param>
+            <returns>生成的数据文件路径</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.Report.GetPath">
+            <summary>
+            自动生成报表存储目录 %appdir%/Templates/yyyy-MM-dd/%rptdir%
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.Report.BeforeDesignerProcess(System.Byte[])">
+            <summary>
+            设计前处理
+            </summary>
+            <param name="content"></param>
+            <returns>返回BASE6字符串</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.Report.PrintProcess(SIE.Common.Prints.IPrintable,System.Double,System.Byte[],System.Func{System.Collections.Generic.IEnumerable{System.Object}},System.Int16)">
+            <summary>
+            打印处理
+            </summary>
+            <param name="printable">打印提供者</param>
+            <param name="templateId">模板Id</param>
+            <param name="content">模板BYTE</param>
+            <param name="datas">打印的数据集合</param>
+            <param name="copies">打印份数</param>
+            <returns>返回模板BASE6字符串</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.Report.ClearLastPrintDataFile(System.Int32)">
+            <summary>
+            删除旧的打印的数据文件
+            </summary>
+            <param name="keepDays">数据保留天数，默认3天</param>
+        </member>
+        <member name="T:SIE.Web.Common.Prints.ReportFactory">
+            <summary>
+            报表工厂
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Prints.ReportFactory.SieDevReport">
+            <summary>
+            采用DevExpress报表组件（扩展名：.siedev)
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Prints.ReportFactory.BarTenderReport">
+            <summary>
+            采用BarTender报表组件（扩展名：.btw)
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Prints.ReportFactory.SieReport">
+            <summary>
+            采用sitmulsoft报表组件（扩展名：.sied)
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Prints.ReportFactory.container">
+            <summary>
+            打印提供者的容器
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Prints.ReportFactory.ReportTypes">
+            <summary>
+            当前所有支持的报表类型
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.ReportFactory.Register(System.String,System.Type)">
+            <summary>
+            注册报表提供者
+            </summary>
+            <param name="reportName">报表名称</param>
+            <param name="reportType">报表类型</param>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.ReportFactory.GetReport(System.String)">
+            <summary>
+            获取报表提供者
+            </summary>
+            <param name="name">报表名</param>
+            <returns>报表提供者</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.ReportFactory.GetReportByExtension(System.String)">
+            <summary>
+            获取报表提供者
+            </summary>
+            <param name="extension">报表扩展名</param>
+            <returns>报表提供者</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.ReportFactory.GetReport(SIE.Web.Common.Prints.IReport)">
+            <summary>
+            获取报表提供者
+            </summary>
+            <param name="report">报表提供者</param>
+            <returns>报表提供者</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.ReportFactory.GetAllReport">
+            <summary>
+            获取所有报表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.ReportFactory.GetAllBillReport">
+            <summary>
+            获取所有单据打印报表类
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.ReportFactory.GetAllLabelReport">
+            <summary>
+            获取所有标签打印报表类
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Common.Prints.SieDevReport">
+            <summary>
+            使用Dev控件报表
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Prints.SieDevReport.Extension">
+            <summary>
+            报表文件扩展名
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Prints.SieDevReport.FilePath">
+            <summary>
+            文件路径
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Prints.SieDevReport.XmlHeader">
+            <summary>
+            XML文件头
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Prints.SieDevReport.ChildTableExtension">
+            <summary>
+            与主表同类型子列表后缀
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Prints.SieDevReport.DataXmlName">
+            <summary>
+            数据文件名
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Prints.SieDevReport.task">
+            <summary>
+            异步任务
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Common.Prints.SieDevReport.dataSet">
+            <summary>
+            报表数据源
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.SieDevReport.GetDataSourceTypeName(System.Type,System.String)">
+            <summary>
+            获取数据源类型名称
+            </summary>
+            <param name="typeName">Name of the type.</param>
+            <param name="propertyName">Name of the property.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.SieDevReport.GenerateNewTemplate(SIE.Common.Prints.IPrintable,System.String)">
+            <summary>
+            初始化Report模板
+            </summary>
+            <param name="printable">打印提供者</param>
+            <param name="fileName">文件名</param>
+            <returns>XML文件路径</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.SieDevReport.GenerateQuerysAndRelatonsAndViews(SIE.Common.Prints.IPrintable,System.Type,System.Collections.Generic.List{SIE.Web.Common.Prints.Query}@,System.Collections.Generic.List{SIE.Web.Common.Prints.Relation}@,System.Collections.Generic.List{SIE.Web.Common.Prints.ResultView}@,System.Int32,System.String)">
+            <summary>
+            生成XML中Query、Relation、View标签
+            </summary>
+            <param name="printable">打印提供者</param>
+            <param name="dataType">打印实体类型</param>
+            <param name="querys">Query标签列表</param>
+            <param name="relations">Relation标签列表</param>
+            <param name="views">View标签列表</param>
+            <param name="levelIndex">自关联实体列表层级</param>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.SieDevReport.CreateXtraReportsLayoutSerializer(SIE.Common.Prints.IPrintable,System.Type)">
+            <summary>
+            创建序列化对象
+            </summary>
+            <param name="printable">打印提供者</param>
+            <param name="dataType">数据类型</param>
+            <returns>序列化对象</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.SieDevReport.TaskValidation">
+            <summary>
+            验证数据生成异步线程是否完成
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.SieDevReport.ClearCsvFile">
+            <summary>
+            删除数据文件
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.SieDevReport.BeforeDesignerProcess(System.Byte[])">
+            <summary>
+            设计前处理
+            </summary>
+            <param name="content"></param>
+            <returns>返回BASE6字符串</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.SieDevReport.PrintProcess(SIE.Common.Prints.IPrintable,System.Double,System.Byte[],System.Func{System.Collections.Generic.IEnumerable{System.Object}},System.Int16)">
+            <summary>  
+            打印处理
+            </summary>
+            <param name="printable">打印提供者</param>
+            <param name="templateId">模板Id</param>
+            <param name="content">模板BYTE</param>
+            <param name="datas">打印的数据集合</param>
+            <param name="copies">打印份数</param>
+            <returns>返回模板BASE6字符串</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.SieDevReport.UpdateCsvDataPath(DevExpress.XtraReports.UI.XtraReport)">
+            <summary>
+            更新数据文件
+            </summary>
+            <param name="report">报表模板</param>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.SieDevReport.GenerateDataFile(SIE.Common.Prints.IPrintable,System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>
+            生成打印数据文件（标签、单据）
+            </summary>
+            <param name="printable">打印提供者</param>
+            <param name="datas">打印的数据集合</param>
+            <returns>生成的数据文件路径</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.SieDevReport.GenerateDataFiles(SIE.Common.Prints.IPrintable,System.Collections.Generic.IEnumerable{System.Object},System.Type)">
+            <summary>
+            生成标签数据文件
+            </summary>
+            <param name="printable">打印提供者</param>
+            <param name="datas">打印数据集合</param>
+            <param name="dataType">打印类型</param>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.SieDevReport.GenerateDataFiles(SIE.Common.Prints.IBillPrintable,System.Collections.Generic.IEnumerable{System.Object},System.Type,System.String,System.String,System.String,System.Type,System.Int32)">
+            <summary>
+            生成单据数据文件
+            </summary>
+            <param name="printable">打印提供者</param>
+            <param name="datas">打印数据集合</param>
+            <param name="dataType">打印数据类型</param>
+            <param name="propertyName">子表属性名</param>
+            <param name="parentIdName">父ID属性名称</param>
+            <param name="parentTableName">父表名称</param>
+            <param name="parentType">父实体类型</param>
+            <param name="levelIndex">自关联实体列表层级</param>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.SieDevReport.GenerateEntityData(SIE.Common.Prints.IBillPrintable,System.Collections.Generic.IEnumerable{System.Object},System.Type,System.Int32,System.String)">
+            <summary>
+            生成实体类型的数据
+            </summary>
+            <param name="printable">打印提供者</param>
+            <param name="datas">打印数据集合</param>
+            <param name="dataType">打印数据类型</param>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.SieDevReport.GenerateNormalClassData(SIE.Common.Prints.IBillPrintable,System.Collections.Generic.IEnumerable{System.Object},System.Type,System.Int32,System.String)">
+            <summary>
+            生成普通类型的数据
+            </summary>
+            <param name="printable">打印提供者</param>
+            <param name="datas">打印数据集合</param>
+            <param name="dataType">打印数据类型</param>
+        </member>
+        <member name="T:SIE.Web.Common.Prints.IWebPrinterReport">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.WebPrinterReport.GetAllBillReport">
+            <summary>
+            获取所有单据打印报表类
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.WebPrinterReport.GetAllLabelReport">
+            <summary>
+            获取所有标签打印报表类
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Common.Prints.XmlSerialize.DataSetConvertHelper">
+            <summary>
+            数据集转换帮助类
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.XmlSerialize.DataSetConvertHelper.ConvertXMLFileToDataSet(System.String)">
+            <summary>
+            将xml文件转换为DataSet
+            </summary>
+            <param name="xmlFile">xml文件路径</param>
+            <returns>数据集</returns>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.XmlSerialize.DataSetConvertHelper.ConvertDataSetToXMLFile(System.Data.DataSet,System.String)">
+            <summary>
+            将DataSet转换为xml文件
+            </summary>
+            <param name="xmlDS">数据集</param>
+            <param name="xmlFile">xml文件名</param>
+        </member>
+        <member name="T:SIE.Web.Common.Prints.XtraReportsLayoutSerializer">
+            <summary>
+            序列化实例
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.XmlSerializeHelper.Serialize``1(``0,System.Text.Encoding)">
+            <summary>
+            实体对象序列化成xml字符串
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.XmlSerializeHelper.DeSerialize``1(System.String)">
+            <summary>
+            反序列化xml字符为对象，默认为Utf-8编码
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="xml"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.XmlSerializeHelper.DeSerialize``1(System.String,System.Text.Encoding)">
+            <summary>
+            反序列化xml字符为对象
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="xml"></param>
+            <param name="encoding"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Common.Prints.ZipFileGenerator">
+            <summary>
+            文件压缩器
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.ZipFileGenerator.GenerateZipFile(System.Collections.Generic.List{SIE.Web.Common.Prints.StreamInfo})">
+            <summary>
+            把多个文件流压缩成Zip文件
+            </summary>
+            <param name="fileList">文件流集合</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Common.Prints.MemoryStreamDataSource">
+            <summary>
+            压缩数据流
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Prints.MemoryStreamDataSource._stream">
+            <summary>
+            数据流
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Prints.MemoryStreamDataSource.#ctor(System.IO.Stream)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="stream"></param>
+        </member>
+        <member name="T:SIE.Web.Common.Prints.StreamInfo">
+            <summary>
+            文件流信息
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Prints.StreamInfo.stream">
+            <summary>
+            数据流
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Prints.StreamInfo.FileName">
+            <summary>
+            文件名
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.Sender.Commands.InitPushPlugCommand">
+            <summary>
+            初始化推送插件命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.Sender.Commands.PushPlugImportCommand">
+            <summary>
+            推送模块导入命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Sender.Commands.PushPlugImportCommand.ImportData(SIE.Web.Common.Import.Commands.ImportViewArgs)">
+            <summary>
+            导入excel
+            </summary>
+            <param name="importViewArgs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Sender.Commands.PushPlugImportCommand.GetInitPushPlug(NPOI.SS.UserModel.ISheet)">
+            <summary>
+            初始化推送模块并导入数据
+            </summary>
+            <param name="sheet"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Common.Sender.Commands.PushPlugImportCommand.SetPushPlugs(NPOI.SS.UserModel.ISheet,SIE.Domain.EntityList{SIE.Common.Sender.PushPlug})">
+            <summary>
+            存在推送模块时导入数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Common.Sender.PushPlugConfigDataQueryer">
+            <summary>
+            推送模块管理配置项信息查询
+            </summary>
+            <seealso cref="T:SIE.Web.Data.DataQueryer" />
+        </member>
+        <member name="M:SIE.Web.Common.Sender.PushPlugConfigDataQueryer.GetPushPlugConfig(SIE.Common.Sender.PushPlug)">
+            <summary>
+            Gets the push plug configuration.
+            </summary>
+            <param name="pushPlug">The push plug.</param>
+            <returns></returns>
+        </member>
+        <member name="P:SIE.Web.Common.Sender.SenderConfgArgs.ConfgName">
+            <summary>
+            配置实体名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Common.Sender.SenderConfgArgs.ConfigJson">
+            <summary>
+            配置json
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.Sender.PushPlugCriteriaViewConfig">
+            <summary>
+            推送插件查询实体视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.Sender.PushPlugViewConfig">
+            <summary>
+            推送插件视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.Signature.SignatureRecordViewConfig">
+            <summary>
+            签名记录视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Signature.SignatureRecordViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Signature.SignatureRecordViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Common.Signature.SignatureRecordViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.Sort.Commands.MoveBottomCommand">
+            <summary>
+            置底
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.Sort.Commands.MoveCommand">
+            <summary>
+            移动
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.Sort.Commands.MoveDownCommand">
+            <summary>
+            下移
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.Sort.Commands.MoveTopCommand">
+            <summary>
+            置顶
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.Sort.Commands.MoveUpCommand">
+            <summary>
+            上移
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Common.User.UserViewConfig">
+            <summary>
+            通用用户的界面
+            </summary>   
+        </member>
+        <member name="M:SIE.Web.Common.User.UserViewConfig.ConfigSelectionView">
+            <summary>
+            下拉选择视图
+            </summary>
+        </member>
+        <member name="T:SIE.ViewMetaExtension">
+            <summary>
+            视图元数据扩展
+            </summary>
+        </member>
+        <member name="M:SIE.ViewMetaExtension.UseImportCommands(SIE.MetaModel.View.WebEntityViewMeta)">
+            <summary>
+            使用导入命令<see cref="!:ImportCommand"/>、<see cref="!:ImportTemplateCommand"/>
+            </summary>
+            <param name="meta"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ViewMetaExtension.UseImportCommands``1(SIE.MetaModel.View.WebEntityViewMeta{``0})">
+            <summary>
+            使用导入命令<see cref="!:ImportCommand"/>、<see cref="!:ImportTemplateCommand"/>
+            </summary>
+            <param name="meta"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Common.Prints.NumberRuleInTemplateDataQuery">
+            <summary>
+            数据查询
+            </summary>
+            <seealso cref="T:SIE.Web.Data.DataQueryer" />
+        </member>
+        <member name="M:SIE.Common.Prints.NumberRuleInTemplateDataQuery.GetPrintTemplate">
+            <summary>
+            获取所有模板
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Common.Prints.BillPrintTemplateDataQuery">
+            <summary>
+            数据查询
+            </summary>
+            <seealso cref="T:SIE.Web.Data.DataQueryer" />
+        </member>
+        <member name="M:SIE.Common.Prints.BillPrintTemplateDataQuery.GetPrintTemplate(System.String,System.Boolean)">
+            <summary>
+            获取打印模板
+            </summary>
+            <param name="entityType">打印实体类型</param>
+            <param name="isEnable">是否启用</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,18 @@
+﻿// This file is used by Code Analysis to maintain SuppressMessage
+// attributes that are applied to this project.
+// Project-level suppressions either have no target or are given
+// a specific target and scoped to a namespace, type, member, etc.
+
+using System.Diagnostics.CodeAnalysis;
+
+[assembly: SuppressMessage("Critical Code Smell", "S3776:Cognitive Complexity of methods should not be too high", Justification = "<挂起>", Scope = "member", Target = "~M:SIE.Inventory.Strategy.RuleController.ValidOnShelvesRule(SIE.Inventory.Strategy.OnShelvesRuleDetail)")]
+[assembly: SuppressMessage("Critical Code Smell", "S3776:Cognitive Complexity of methods should not be too high", Justification = "<挂起>", Scope = "member", Target = "~M:SIE.Inventory.Strategy.RuleController.ValidValidTurnOverRuleDetail(SIE.Inventory.Strategy.TurnOverRuleDetail)")]
+[assembly: SuppressMessage("Minor Code Smell", "S4136:Method overloads should be grouped together", Justification = "<挂起>", Scope = "member", Target = "~M:SIE.Inventory.Onhands.InvOnhandController.GetLotLpnOnhands(SIE.Inventory.Onhands.LotLpnOnhandCriteria)~SIE.Domain.EntityList{SIE.Inventory.Onhands.LotLpnOnhand}")]
+[assembly: SuppressMessage("Minor Code Smell", "S1694:An abstract class should have both abstract and concrete methods", Justification = "<挂起>", Scope = "type", Target = "~T:SIE.Inventory.Strategy.AssignStrategy")]
+[assembly: SuppressMessage("Minor Code Smell", "S1192:String literals should not be duplicated", Justification = "<挂起>", Scope = "member", Target = "~M:SIE.Inventory.MonthlyBalances.MonthlyBalanceController.GetMonthlySummaries(System.String)~SIE.Domain.EntityList{SIE.WMS.Statistics.MonthlyBalances.MonthlySummary}")]
+[assembly: SuppressMessage("Critical Code Smell", "S3776:Cognitive Complexity of methods should not be too high", Justification = "<挂起>", Scope = "member", Target = "~M:SIE.Inventory.Onhands.InvOnhandController.SetLpnOnhandCriteriaData(SIE.Domain.IEntityQueryer{SIE.Inventory.Onhands.LotLpnOnhand},SIE.Inventory.Onhands.LpnOnhandCriteria,SIE.MetaModel.EntityMeta)")]
+[assembly: SuppressMessage("Major Code Smell", "S138:Functions should not have too many lines of code", Justification = "<挂起>", Scope = "member", Target = "~M:SIE.Inventory.Onhands.InvOnhandController.SetLpnOnhandCriteriaData(SIE.Domain.IEntityQueryer{SIE.Inventory.Onhands.LotLpnOnhand},SIE.Inventory.Onhands.LpnOnhandCriteria,SIE.MetaModel.EntityMeta)")]
+[assembly: SuppressMessage("Minor Code Smell", "S1192:String literals should not be duplicated", Justification = "<挂起>", Scope = "member", Target = "~M:SIE.Inventory.Onhands.InvOnhandController.SetLpnOnhandCriteriaData(SIE.Domain.IEntityQueryer{SIE.Inventory.Onhands.LotLpnOnhand},SIE.Inventory.Onhands.LpnOnhandCriteria,SIE.MetaModel.EntityMeta)")]
+[assembly: SuppressMessage("Major Code Smell", "S138:Functions should not have too many lines of code", Justification = "<挂起>", Scope = "member", Target = "~M:SIE.Inventory.Transactions.InvTransactionController.InvTransactionOptimize(System.Collections.Generic.List{SIE.Inventory.TransactionProcessing.InvCollectData})")]
+[assembly: SuppressMessage("Minor Code Smell", "S1192:String literals should not be duplicated", Justification = "<挂起>", Scope = "member", Target = "~M:SIE.Inventory.Onhands.InvOnhandController.AdjustLotLpnOnhand(SIE.Warehouses.StorageLocation,SIE.Items.Item,SIE.Inventory.Commom.Lot,System.Decimal,SIE.Inventory.TransactionProcessing.InvOptionalParam,System.Action{SIE.Inventory.Onhands.BaseOnhand,System.Decimal})")]
+[assembly: SuppressMessage("Minor Code Smell", "S1192:String literals should not be duplicated", Justification = "<挂起>", Scope = "member", Target = "~M:SIE.Inventory.Onhands.InvOnhandController.UpdateAvailableQty``1(``0,System.Decimal)")]

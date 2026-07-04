@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Castle.Windsor" Version="5.0.0" />
+    <PackageReference Include="EasyNetQ" Version="3.7.1" />
+    <PackageReference Include="log4net" Version="2.0.8" />
+    <PackageReference Include="Microsoft.Extensions.ObjectPool" Version="2.2.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.0.1" />
+    <PackageReference Include="Oracle.ManagedDataAccess.Core" Version="2.18.6" />
+    <PackageReference Include="SuperSocket.ProtoBase" Version="1.7.0.17" />
+    <PackageReference Include="xunit" Version="2.4.0" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Esop\SIE.ESop\SIE.ESop.csproj" />
+    <ProjectReference Include="..\..\Tasks\SIE.MES.TaskManagement\SIE.MES.TaskManagement.csproj" />
+    <ProjectReference Include="..\..\..\Common\Techs\SIE.Tech\SIE.Tech.csproj" />
+    <ProjectReference Include="..\SIE.MES.Statistics\SIE.MES.Statistics.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="SIE">
+      <HintPath>..\..\..\..\platform\nest\netstandard2.0\SIE.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>

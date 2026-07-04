@@ -1,0 +1,1479 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Web.Equipments</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Web.Equipments.Extensions.EntityPropertyViewMetaExtension">
+            <summary>
+            视图扩展类
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Equipments.Extensions.EntityPropertyViewMetaExtension.FactoryIdPropertyName">
+            <summary>
+            工厂字段名
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.Extensions.EntityPropertyViewMetaExtension.UseDepartmentEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig})">
+             <summary>
+            部门编辑器
+             </summary>
+             <typeparam name="T">实体类型</typeparam>
+             <param name="meta">属性视图元数据</param>
+             <param name="action">委托</param>
+             <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Web.Equipments.Extensions.EntityPropertyViewMetaExtension.UseResourceWorkShopEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig})">
+            <summary>
+            车间编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Web.Equipments.Extensions.EntityPropertyViewMetaExtension.UseFactoryDepartmentsEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig})">
+            <summary>
+            获取工厂下的部门下拉编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Web.Equipments.Extensions.EntityPropertyViewMetaExtension.UseFactoryWorkshopEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig},System.String)">
+            <summary>
+            获取工厂下的车间下拉编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <param name="factoryIdPropertyName"></param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Web.Equipments.Extensions.EntityPropertyViewMetaExtension.UseWorkShopResourceEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig},System.String)">
+            <summary>
+            获取车间下的产线下拉编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <param name="workShopIdPropertyName"></param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="T:SIE.Web.Equipments.Abnormal.AbnormalAlertSysSenderConfigViewConfig">
+            <summary>
+            异常停线触发任务配置项视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.Abnormal.AbnormalAlertSysSenderConfigViewConfig.ConfigDetailsView">
+            <summary>
+            表单视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Equipments.Abnormal.AbnormalCauseCriteriaViewConfig">
+            <summary>
+            异常停线查询视图类
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.Abnormal.AbnormalCauseCriteriaViewConfig.ConfigView">
+            <summary>
+            查询视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Equipments.Abnormal.AbnormalCauseViewConfig">
+            <summary>
+            异常停线视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Equipments.Abnormal.AbnormalCauseViewConfig.IsReadonlyExp">
+            <summary>
+            根据来源类型设置是否只读
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.Abnormal.AbnormalCauseViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.Abnormal.AbnormalCauseViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Equipments.Abnormal.Commands.AbnormalCauseAddCommand">
+            <summary>
+            异常停线添加命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.Abnormal.Commands.AbnormalCauseAddCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            初始化日期时间
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>实体</returns>
+        </member>
+        <member name="T:SIE.Web.Equipments.Abnormal.Commands.AbnormalCauseImportCommand">
+            <summary>
+            导入异常停线
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.Abnormal.Commands.AbnormalCauseImportCommand.OnRowDataRead(SIE.Common.Import.RowData,SIE.Common.Import.CacheData)">
+            <summary>
+            行数据读取, 默认按视图配置把数据读取后，还可以进行自定义处理
+            </summary>
+            <param name="data">行数据</param>
+            <param name="cache">缓存数据</param>
+        </member>
+        <member name="T:SIE.Web.Equipments.Abnormal.Commands.AbnormalCauseRestoreCommand">
+            <summary>
+            恢复停线
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.Abnormal.Commands.AbnormalCauseRestoreCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            恢复停线
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Equipments.Abnormal.ViewModels.RestoreReasonViewModel">
+            <summary>
+            停线解除ViewModel
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Equipments.Abnormal.ViewModels.RestoreReasonViewModel.AbnormalCauseIdProperty">
+            <summary>
+            停线管理Id
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Equipments.Abnormal.ViewModels.RestoreReasonViewModel.AbnormalCauseId">
+            <summary>
+            停线管理Id
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Equipments.Abnormal.ViewModels.RestoreReasonViewModel.AbnormalCauseProperty">
+            <summary>
+            停线管理
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Equipments.Abnormal.ViewModels.RestoreReasonViewModel.AbnormalCause">
+            <summary>
+            停线管理
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Equipments.Abnormal.ViewModels.RestoreReasonViewModel.ReasonProperty">
+            <summary>
+            原因
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Equipments.Abnormal.ViewModels.RestoreReasonViewModel.Reason">
+            <summary>
+            原因
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Equipments.Abnormal.ViewModels.RestoreReasonViewModelViewConfig">
+            <summary>
+            解除原因ViewModel视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.Abnormal.ViewModels.RestoreReasonViewModelViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Equipments.Common.DataQuerys.EquipmentDataQuery">
+            <summary>
+            数据查询帮助类
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.Common.DataQuerys.EquipmentDataQuery.GetEnableApproval(System.Int32)">
+            <summary>
+            获取是否启用审批流程
+            </summary>
+            <param name="typeQty">界面类型（1:设备立卡）</param>
+            <returns>是否启用审批流程</returns>
+        </member>
+        <member name="T:SIE.Web.Equipments.Configs.AccountNoConfigValueViewConfig">
+            <summary>
+            报检单号配置值视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.Configs.AccountNoConfigValueViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Equipments.Configs.ApprovalConfigValueViewConfig">
+            <summary>
+            审批流程配置值-界面
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.Configs.ApprovalConfigValueViewConfig.ConfigDetailsView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Equipments.Configs.EquipAccountAssetConfigValueViewConfig">
+            <summary>
+            是否固定资产
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.Configs.EquipAccountAssetConfigValueViewConfig.ConfigDetailsView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Equipments.DeviceControls.Configs.SmdcApiConfigViewConfig">
+            <summary>
+            SMDC 配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.DeviceControls.Configs.SmdcApiConfigViewConfig.ConfigDetailsView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Equipments.DeviceControls.Configs.SmdcUrlConfigValueViewConfig">
+            <summary>
+            设备WebApi地址配置值视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.DeviceControls.Configs.SmdcUrlConfigValueViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Equipments.DeviceControls.DeviceControlCriteriaViewConfig">
+            <summary>
+            设备控制记录视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.DeviceControls.DeviceControlCriteriaViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Equipments.DeviceControls.DeviceControlViewConfig">
+            <summary>
+            设备控制记录视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.DeviceControls.DeviceControlViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Equipments.DeviceControls.SourceControlViewConfig">
+            <summary>
+            设备控制来源清单视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.DeviceControls.SourceControlViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.DeviceControls.SourceControlViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.DeviceControls.SourceControlViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Equipments.DeviceIOTParas.Commands.SelectMDCCommand">
+            <summary>
+            保存MDC接口数据
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.DeviceIOTParas.Commands.SelectMDCCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行选择
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.Equipments.DeviceIOTParas.Commands.SelectStandBookCommand">
+            <summary>
+            选择
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.DeviceIOTParas.Commands.SelectStandBookCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行选择
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.Equipments.DeviceIOTParas.ConfigValues.EquipMDCConfigValueViewConfig">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.DeviceIOTParas.ConfigValues.EquipMDCConfigValueViewConfig.ConfigView">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Equipments.DeviceIOTParas.ConfigValues.EquipTagMDCConfigValueViewConfig">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.DeviceIOTParas.ConfigValues.EquipTagMDCConfigValueViewConfig.ConfigView">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Equipments.DeviceIOTParas.Criterias.DeviceIOTParaCirteriaViewConfig">
+            <summary>
+            物联参数视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.DeviceIOTParas.Criterias.DeviceIOTParaCirteriaViewConfig.ConfigQueryView">
+            <summary>
+            查询视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Equipments.DeviceIOTParas.Criterias.PhysicalUnionSelCriteriaViewConfig">
+            <summary>
+            物联参数查询实体 视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.DeviceIOTParas.Criterias.PhysicalUnionSelCriteriaViewConfig.ConfigView">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Equipments.DeviceIOTParas.DataQuerys.DeviceIOTParaDataQuery">
+            <summary>
+            设备物联参数请求
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.DeviceIOTParas.DataQuerys.DeviceIOTParaDataQuery.GetMDCDetailByEquipModel(SIE.Equipments.DeviceIOTParas.ViewModles.MDCDetailViewModleCriteria)">
+            <summary>
+            根据设备型号获取MDC接口明细数据
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Equipments.DeviceIOTParas.DataQuerys.DeviceIOTParaDataQuery.GetEquipmentTags(System.String)">
+            <summary>
+            根据资产编码获取MDC的targs 
+            </summary>
+            <param name="assetsCode"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Equipments.DeviceIOTParas.Details.FacilityDetailViewConfig">
+            <summary>
+            设备清单视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.DeviceIOTParas.Details.FacilityDetailViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.Equipments.DeviceIOTParas.Details.PhysicalUnionViewConfig">
+            <summary>
+            物联参数视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Equipments.DeviceIOTParas.Details.PhysicalUnionViewConfig.AccountPhysicalUnionViewGroup">
+            <summary>
+            设备台账物联参数视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.DeviceIOTParas.Details.PhysicalUnionViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.DeviceIOTParas.Details.PhysicalUnionViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.DeviceIOTParas.Details.PhysicalUnionViewConfig.ConfigAccountPhysicalUnionView">
+            <summary>
+            设备台账物联参数视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.DeviceIOTParas.Details.PhysicalUnionViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.Equipments.DeviceIOTParas.DeviceIOTParaViewConfig">
+            <summary>
+            设备物联参数视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.DeviceIOTParas.DeviceIOTParaViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.DeviceIOTParas.DeviceIOTParaViewConfig.ConfigQueryView">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Equipments.DeviceIOTParas.ViewModles.MDCDetailViewModleCriteriaViewConfig">
+            <summary>
+            MDC接口视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.DeviceIOTParas.ViewModles.MDCDetailViewModleCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Equipments.DeviceIOTParas.ViewModles.MDCDetailViewModleViewConfig">
+            <summary>
+            明细视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.DeviceIOTParas.ViewModles.MDCDetailViewModleViewConfig.ConfigListView">
+            <summary>
+            视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Equipments.EmsWebViewMetaExtension">
+            <summary>
+            实体属性视图元数据-EMS扩展
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EmsWebViewMetaExtension.BeforeImportRequireFunc``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.String)">
+            <summary>
+            单元格值导入前必填写验证执行函数
+            </summary>
+            <param name="meta"></param>
+            <param name="fieldName">字段名</param>
+            <returns></returns>
+            <exception cref="T:SIE.Domain.Validation.ValidationException"></exception>
+        </member>
+        <member name="T:SIE.Web.Equipments.EquipAccountCarrieds.EquipAccountCarriedViewConfig">
+            <summary>
+            设备台账-载位视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccountCarrieds.EquipAccountCarriedViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccountCarrieds.EquipAccountCarriedViewConfig.ConfigListView">
+            <summary>
+            列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccountCarrieds.EquipAccountCarriedViewConfig.ConfigSelectionView">
+            <summary>
+            选择视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccountCarrieds.EquipAccountCarriedViewConfig.ConfigQueryView">
+            <summary>
+            查询条件
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Equipments.EquipAccounts.Commands.DeleteEquipAccountAttachmentCommand">
+            <summary>
+            删除附件
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccounts.Commands.DeleteEquipAccountAttachmentCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.Equipments.EquipAccounts.Commands.DowngradeAccountCommand">
+            <summary>
+            设备台降级命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccounts.Commands.DowngradeAccountCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行降级
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.Equipments.EquipAccounts.Commands.EditSaveAccountCommand">
+            <summary>
+            设备台账修改保存命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccounts.Commands.EditSaveAccountCommand.DoSave(SIE.Domain.Entity)">
+            <summary>
+            保存设备台账
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccounts.Commands.EditSaveAccountCommand.OnSaved(SIE.Domain.Entity)">
+            <summary>
+            保存后添加到设备与人员权限中
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccounts.Commands.EditSaveAccountCommand.ValidateEquipmentAccount(SIE.Equipments.EquipAccounts.EquipAccount)">
+            <summary>
+            验证设备信息
+            </summary>
+            <param name="equipAccount">设备台账</param>
+            <exception cref="T:SIE.Domain.Validation.ValidationException"></exception>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccounts.Commands.EditSaveAccountCommand.GenerateEquipAccountResume(System.String,SIE.Core.Enums.AccountState,System.String,System.String)">
+            <summary>
+            创建履历实体
+            </summary>
+            <param name="changed">变更类型</param>
+            <param name="state">设备状态</param>
+            <param name="oldValue">旧值</param>
+            <param name="newValue">新值</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccounts.Commands.EditSaveAccountCommand.GenerateEquipAccountResumes(SIE.Equipments.EquipAccounts.EquipAccount)">
+             <summary>
+            创建履历列表
+             </summary>
+             <param name="newEntity"></param>
+             <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Equipments.EquipAccounts.Commands.EquipAccountImportCommand">
+            <summary>
+            设备台账导入功能
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccounts.Commands.EquipAccountImportCommand.Excute(SIE.Web.Common.Import.Commands.ImportViewArgs,System.String)">
+            <summary>
+            导入数据
+            </summary>
+            <param name="importViewArgs">导入视图参数</param>
+            <param name="scope">使用范围</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccounts.Commands.EquipAccountImportCommand.DownloadTemplate">
+            <summary>
+            直接从服务器上下载模板
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccounts.Commands.EquipAccountImportCommand.GetImportCompleted">
+            <summary>
+            导入完成
+            </summary>
+            <returns>ImportCompleted</returns>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccounts.Commands.EquipAccountImportCommand.GetImportHandleType">
+            <summary>
+            获取导入处理类型
+            </summary>
+            <returns>Type</returns>
+        </member>
+        <member name="T:SIE.Web.Equipments.EquipAccounts.Commands.EquipAccountSlotSaveCommand">
+            <summary>
+            设备缸槽保存
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccounts.Commands.EquipAccountSlotSaveCommand.DoSave(SIE.Domain.EntityList)">
+            <summary>
+            
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="T:SIE.Web.Equipments.EquipAccounts.Commands.GetRealTimeDataCommand">
+            <summary>
+            获取设备实时数据命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccounts.Commands.GetRealTimeDataCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行升级
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.Equipments.EquipAccounts.Commands.SelAccountPhysicalUnionCommand">
+            <summary>
+            选择物联参数
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccounts.Commands.SelAccountPhysicalUnionCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行选择
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.Equipments.EquipAccounts.Commands.SelAccountProcessCommand">
+            <summary>
+            选择工序
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccounts.Commands.SelAccountProcessCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行选择
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.Equipments.EquipAccounts.Commands.SelAccountProductCommand">
+            <summary>
+            选择产品
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccounts.Commands.SelAccountProductCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行选择
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.Equipments.EquipAccounts.Commands.SetEquipLogoCommand">
+            <summary>
+            设置LOGO
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccounts.Commands.SetEquipLogoCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.Equipments.EquipAccounts.Commands.UpgradeAccountCommand">
+            <summary>
+            设备台升级命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccounts.Commands.UpgradeAccountCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行升级
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.Equipments.EquipAccounts.Commands.UploadEqpAttachmentCommand">
+            <summary>
+            上传附件
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Equipments.EquipAccounts.Configs.EquipAccountBomCodeConfigViewConfig">
+            <summary>
+            设备型号BOM编码配置值视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccounts.Configs.EquipAccountBomCodeConfigViewConfig.ConfigDetailsView">
+            <summary>
+            配置表单视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Equipments.EquipAccounts.Configs.EquipAccountLocationConfigViewConfig">
+            <summary>
+            位置列表维护条件配置值视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccounts.Configs.EquipAccountLocationConfigViewConfig.ConfigDetailsView">
+            <summary>
+            配置表单视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Equipments.EquipAccounts.Configs.EquipCodeConfigValueViewConfig">
+            <summary>
+            设备编码配置值视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccounts.Configs.EquipCodeConfigValueViewConfig.ConfigDetailsView">
+            <summary>
+            配置表单视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Equipments.EquipAccounts.Configs.EquipModelBomCodeConfigValueViewConfig">
+            <summary>
+            设备型号BOM编码视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccounts.Configs.EquipModelBomCodeConfigValueViewConfig.ConfigDetailsView">
+            <summary>
+            配置表单视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Equipments.EquipAccounts.Configs.EquipModelLocationConfigViewConfig">
+            <summary>
+            位置列表维护条件配置值视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccounts.Configs.EquipModelLocationConfigViewConfig.ConfigDetailsView">
+            <summary>
+            配置表单视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Equipments.EquipAccounts.DataQuery.EquipAccountDataQueryer">
+            <summary>
+            设备台账查询器
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccounts.DataQuery.EquipAccountDataQueryer.GetEquipModelRelateInfos(SIE.Equipments.EquipAccounts.EquipAccount)">
+            <summary>
+            通过设备台账获取设备台账子表信息
+            </summary>
+            <param name="account">设备台帐</param>
+            <returns>设备台账子表信息</returns>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccounts.DataQuery.EquipAccountDataQueryer.GetEquipAccountNo">
+            <summary>
+            获取设备台账编码
+            </summary>
+            <returns>设备台账编码</returns>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccounts.DataQuery.EquipAccountDataQueryer.GetEquipAccountInfos(System.Double)">
+            <summary>
+            通过设备台账Id获取设备台账
+            </summary>
+            <param name="id">设备台帐ID</param>
+            <returns>点检项目列表</returns>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccounts.DataQuery.EquipAccountDataQueryer.GetUseCard">
+            <summary>
+            获取是否使用立卡
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Equipments.EquipAccounts.EquipAccountAttachmentViewConfig">
+            <summary>
+            设备台账附件资料视图配置
+            </summary>    
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccounts.EquipAccountAttachmentViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.Equipments.EquipAccounts.EquipAccountCriteriaViewConfig">
+            <summary>
+            设备台账查询实体视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccounts.EquipAccountCriteriaViewConfig.ConfigView">
+            <summary>
+            默认查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Equipments.EquipAccounts.EquipAccountPhysicalUnionViewConfig">
+            <summary>
+            设备台账物联参数视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccounts.EquipAccountPhysicalUnionViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.Equipments.EquipAccounts.EquipAccountProcessViewConfig">
+            <summary>
+            设备台账工序视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccounts.EquipAccountProcessViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.Equipments.EquipAccounts.EquipAccountProductViewConfig">
+            <summary>
+            设备台账产品视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccounts.EquipAccountProductViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.Equipments.EquipAccounts.EquipAccountResumeViewConfig">
+            <summary>
+            设备履历视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Equipments.EquipAccounts.EquipAccountResumeViewConfig.charDisplayWidth">
+            <summary>
+            字体显示宽度
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccounts.EquipAccountResumeViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.Equipments.EquipAccounts.EquipAccountSelectCriteriaViewConfig">
+            <summary>
+            设备台账查询实体视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccounts.EquipAccountSelectCriteriaViewConfig.ConfigView">
+            <summary>
+            默认查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Equipments.EquipAccounts.EquipAccountSloViewConfig">
+            <summary>
+            缸槽视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Equipments.EquipAccounts.EquipAccountSloViewConfig.EquipAccountSloListViewGroup">
+            <summary>
+            设备台账缸槽列表视图
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Equipments.EquipAccounts.EquipAccountSloViewConfig.MeteringEquipmentSloListViewGroup">
+            <summary>
+            计量设备缸槽列表视图
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Equipments.EquipAccounts.EquipAccountSloViewConfig.SpecialEquipmentAccountViewGroup">
+            <summary>
+            特种设备缸槽列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccounts.EquipAccountSloViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccounts.EquipAccountSloViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccounts.EquipAccountSloViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccounts.EquipAccountSloViewConfig.ConfigQueryView">
+            <summary>
+            查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccounts.EquipAccountSloViewConfig.EquipAccountSloListView">
+            <summary>
+            设备台账缸槽列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Equipments.EquipAccounts.EquipAccountViewConfig">
+            <summary>
+            设备台账视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Equipments.EquipAccounts.EquipAccountViewConfig.EditViewGroup">
+            <summary>
+            修改视图
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Equipments.EquipAccounts.EquipAccountViewConfig.charDisplayWidth">
+            <summary>
+            字体显示宽度
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Equipments.EquipAccounts.EquipAccountViewConfig.EISBaseDataViewGroup">
+            <summary>
+            电子行业基础数据
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Equipments.EquipAccounts.EquipAccountViewConfig.EISBaseDataAddViewGroup">
+            <summary>
+            电子行业基础数据ADD
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Equipments.EquipAccounts.EquipAccountViewConfig.PhotoViewGroup">
+            <summary>
+            图片
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccounts.EquipAccountViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccounts.EquipAccountViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccounts.EquipAccountViewConfig.ConfigListViewChildren">
+            <summary>
+            配置子属性
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccounts.EquipAccountViewConfig.ConfigDetailsView">
+            <summary>
+             配置明细视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccounts.EquipAccountViewConfig.ConfigDetailsProperty">
+            <summary>
+            配置字段属性
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccounts.EquipAccountViewConfig.ConfigDetailsViewChildren">
+            <summary>
+            配置子视图属性
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccounts.EquipAccountViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccounts.EquipAccountViewConfig.EISBaseDataView">
+            <summary>
+            电子行业基础数据
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipAccounts.EquipAccountViewConfig.PhotoView">
+            <summary>
+            图片
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Equipments.EquipFaults.Commands.EquipFaultAndDefectImportCommand">
+            <summary>
+            设备故障与系统缺陷对应关系导入命令
+            </summary> 
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipFaults.Commands.EquipFaultAndDefectImportCommand.GetImportCompleted">
+            <summary>
+            导入完成后
+            </summary>
+            <returns>ImportCompleted</returns>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipFaults.Commands.EquipFaultAndDefectImportCommand.GetImportHandleType">
+            <summary>
+            处理器
+            </summary>
+            <returns>类型</returns>
+        </member>
+        <member name="T:SIE.Web.Equipments.EquipFaults.EquipFaultAndDefectCriteriaViewConfig">
+            <summary>
+            设备故障与系统缺陷对应关系查询实体视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipFaults.EquipFaultAndDefectCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Equipments.EquipFaults.EquipFaultAndDefectViewConfig">
+            <summary>
+            设备故障与系统缺陷对应关系视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipFaults.EquipFaultAndDefectViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Equipments.EquipmentCards.Commands.AuditEquipCardCommand">
+            <summary>
+            审核
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipmentCards.Commands.AuditEquipCardCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Equipments.EquipmentCards.Commands.CancelEquipCardCommand">
+            <summary>
+            设备立卡撤回
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipmentCards.Commands.CancelEquipCardCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.Equipments.EquipmentCards.Commands.DeleteEquipCardCommand">
+            <summary>
+            删除
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipmentCards.Commands.DeleteEquipCardCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Equipments.EquipmentCards.Commands.EditSaveEquipCardCommand">
+            <summary>
+            修改页面的保存按钮
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipmentCards.Commands.EditSaveEquipCardCommand.DoSave(SIE.Domain.Entity)">
+            <summary>
+            保存设备立卡
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="T:SIE.Web.Equipments.EquipmentCards.Commands.EquipmentCardCommands">
+            <summary>
+            设备立卡命令集合
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Equipments.EquipmentCards.Commands.EquipmentCardCommands.Edit">
+            <summary>
+            修改
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Equipments.EquipmentCards.Commands.EquipmentCardCommands.SeeView">
+            <summary>
+            查看
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Equipments.EquipmentCards.Commands.EquipmentCardCommands.Delete">
+            <summary>
+            删除命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Equipments.EquipmentCards.Commands.EquipmentCardImportCommand">
+            <summary>
+            导入设备立卡
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipmentCards.Commands.EquipmentCardImportCommand.OnSave(System.Collections.Generic.IList{SIE.Common.Import.RowData})">
+            <summary>
+            保存
+            </summary>
+            <param name="batch"></param>
+        </member>
+        <member name="T:SIE.Web.Equipments.EquipmentCards.Commands.SaveEquipCardCommand">
+            <summary>
+            新增保存
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipmentCards.Commands.SaveEquipCardCommand.DoSave(SIE.Domain.Entity)">
+            <summary>
+            保存设备立卡
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="T:SIE.Web.Equipments.EquipmentCards.Commands.SubmitEquipCardCommand">
+            <summary>
+            设备立卡批量提交
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipmentCards.Commands.SubmitEquipCardCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.Equipments.EquipmentCards.DataQuery.EquipmentCardDataQuery">
+            <summary>
+            设备立卡查询器
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipmentCards.DataQuery.EquipmentCardDataQuery.GetEquipAccountNo">
+            <summary>
+            获取设备台账编码
+            </summary>
+            <returns>设备台账编码</returns>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipmentCards.DataQuery.EquipmentCardDataQuery.GetIsEnableAsset">
+            <summary>
+            是否启用固定资产
+            </summary>
+            <returns>是否启用固定资产</returns>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipmentCards.DataQuery.EquipmentCardDataQuery.GetEquipmentCardById(System.Double)">
+            <summary>
+            根据Id设备立卡
+            </summary>
+            <returns>设备立卡</returns>
+        </member>
+        <member name="T:SIE.Web.Equipments.EquipmentCards.EntityLogViewConfig">
+            <summary>
+            实体日记配置项
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Equipments.EquipmentCards.EntityLogViewConfig.RegSeeView">
+            <summary>
+            附加
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipmentCards.EntityLogViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipmentCards.EntityLogViewConfig.ConfigRegSeeView">
+            <summary>
+            附加
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Equipments.EquipmentCards.EquipmentCardCriteriaViewConfig">
+            <summary>
+            设备立卡查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipmentCards.EquipmentCardCriteriaViewConfig.ConfigView">
+            <summary>
+            主体
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Equipments.EuipmentCards.EquipmentCardViewConfig">
+            <summary>
+            设备卡片视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Equipments.EuipmentCards.EquipmentCardViewConfig.SeeView">
+            <summary>
+            查看
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Equipments.EuipmentCards.EquipmentCardViewConfig.EditView">
+            <summary>
+            修改
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EuipmentCards.EquipmentCardViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EuipmentCards.EquipmentCardViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EuipmentCards.EquipmentCardViewConfig.ConfigDetailsView">
+            <summary>
+            明细页面
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EuipmentCards.EquipmentCardViewConfig.ConfigDetailsViewT">
+            <summary>
+            扩展ConfigDetailsView 位置信息,资产信息,来源信息
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EuipmentCards.EquipmentCardViewConfig.ConfigSeeView">
+            <summary>
+            查看视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EuipmentCards.EquipmentCardViewConfig.ConfigImportView">
+            <summary>
+            导入配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Equipments.EquipModels.Commands.EquipModelImportCommand">
+            <summary>
+            设备型号导入功能
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipModels.Commands.EquipModelImportCommand.Excute(SIE.Web.Common.Import.Commands.ImportViewArgs,System.String)">
+            <summary>
+            导入数据
+            </summary>
+            <param name="importViewArgs">导入视图参数</param>
+            <param name="scope">使用范围</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipModels.Commands.EquipModelImportCommand.DownloadTemplate">
+            <summary>
+            直接从服务器上下载模板
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipModels.Commands.EquipModelImportCommand.GetImportCompleted">
+            <summary>
+            导入完成
+            </summary>
+            <returns>ImportCompleted</returns>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipModels.Commands.EquipModelImportCommand.GetImportHandleType">
+            <summary>
+            获取导入处理类型
+            </summary>
+            <returns>Type</returns>
+        </member>
+        <member name="T:SIE.Web.Equipments.EquipModels.Commands.EquipModelSaveCommand">
+            <summary>
+            设备型号表单保存
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipModels.Commands.EquipModelSaveCommand.OnValidation(SIE.Domain.Entity)">
+            <summary>
+            保存前验证
+            </summary>
+            <param name="entity">实体</param>
+        </member>
+        <member name="T:SIE.Web.Equipments.EquipModels.DataQuery.EquipModelDataQueryer">
+            <summary>
+            设备型号查询器
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipModels.DataQuery.EquipModelDataQueryer.isExistThisEquipModel(System.Double)">
+            <summary>
+            通过设备型号获取设备台账子表信息
+            </summary>
+            <param name="equipModelId">设备型号ID</param>
+            <returns>设备台账子表信息</returns>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipModels.DataQuery.EquipModelDataQueryer.GetCalalogForEquipModel">
+            <summary>
+            获取设备类型快码
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipModels.DataQuery.EquipModelDataQueryer.GetEquipmentTypeInfo(System.String)">
+            <summary>
+            获取设备型号是否特殊设备、是否计量设备
+            </summary>
+            <param name="code"></param>
+            <returns>isMeasureEquipment/isSpecial</returns>
+        </member>
+        <member name="T:SIE.Web.Equipments.EquipModels.EquipModelCriteriaViewConfig">
+            <summary>
+            设备型号维护视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipModels.EquipModelCriteriaViewConfig.ConfigView">
+            <summary>
+            默认查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Equipments.EquipModels.EquipModelEquipmentCategoryConfigViewConfig">
+            <summary>
+            设备类别维护配置值视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipModels.EquipModelEquipmentCategoryConfigViewConfig.ConfigDetailsView">
+            <summary>
+            配置表单视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Equipments.EquipModels.EquipModelLocationViewConfig">
+            <summary>
+            设备型号位置视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipModels.EquipModelLocationViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipModels.EquipModelLocationViewConfig.ConfigImportView">
+            <summary>
+            配置导入视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Equipments.EquipModels.EquipModelViewConfig">
+            <summary>
+            设备型号视图
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Equipments.EquipModels.EquipModelViewConfig.EISBaseDataViewGroup">
+            <summary>
+            电子行业基础数据
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipModels.EquipModelViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipModels.EquipModelViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipModels.EquipModelViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipModels.EquipModelViewConfig.ConfigSelectionView">
+            <summary>
+            配置下拉视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipModels.EquipModelViewConfig.EISBaseDataView">
+            <summary>
+            电子行业基础数据
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipModels.EquipModelViewConfig.ConfigImportView">
+            <summary>
+            配置数据导入的视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Equipments.EquipTypes.Commands.EquipTypeImportCommand">
+            <summary>
+            设备型号导入命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipTypes.Commands.EquipTypeImportCommand.Excute(SIE.Web.Common.Import.Commands.ImportViewArgs,System.String)">
+            <summary>
+            导入数据
+            </summary>
+            <param name="importViewArgs">导入视图参数</param>
+            <param name="scope">使用范围</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipTypes.Commands.EquipTypeImportCommand.DownloadTemplate">
+            <summary>
+            直接从服务器上下载模板
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipTypes.Commands.EquipTypeImportCommand.GetImportCompleted">
+            <summary>
+            导入完成
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Equipments.EquipTypes.Commands.EquipTypeImportCommand.GetImportHandleType">
+            <summary>
+            获取导入处理类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Equipments.FinancialCategorys.FinancialCategoryCriteriaViewConfig">
+            <summary>
+            查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.FinancialCategorys.FinancialCategoryCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Equipments.FinancialCategorys.FinancialCategoryViewConfig">
+            <summary>
+            财务分类页面配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.FinancialCategorys.FinancialCategoryViewConfig.ConfigListView">
+             <summary>
+            配置列表
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.FinancialCategorys.FinancialCategoryViewConfig.ConfigSelectionView">
+            <summary>
+            配置下拉
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Equipments.Menus.EquipmentsMenuInit">
+            <summary>
+            菜单初始化
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.Menus.EquipmentsMenuInit.GetMenuDtos">
+            <summary>
+            获取菜单列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Equipments.Module">
+            <summary>
+            视图插件
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.Module.Initialize(SIE.IApp)">
+            <summary>
+            重写插件初始化方法
+            </summary>
+            <param name="app">IApp</param>
+        </member>
+        <member name="M:SIE.Web.Equipments.Module.App_ModuleOperations(System.Object,System.EventArgs)">
+            <summary>
+            程序模块初始化
+            </summary>
+            <param name="sender">应用程序</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="F:SIE.Web.Equipments.WorkFlows.WorkFlowRecordViewConfig.RegSeeView">
+            <summary>
+            附加查看-审核进度
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.WorkFlows.WorkFlowRecordViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Equipments.WorkFlows.WorkFlowRecordViewConfig.ConfigRegSeeView">
+            <summary>
+            附加查看-审核进度
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Common.IsCreateHandoverBillConfigValueViewConig">
+            <summary>
+            配置值视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Common.IsCreateHandoverBillConfigValueViewConig.ConfigDetailsView">
+            <summary>
+            配置表单视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Equipments.Accounts.EquipAccountLocationViewConfig">
+            <summary>
+            设备台账位置视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Equipments.Accounts.EquipAccountLocationViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Equipments.EquipTypes.EquipTypeViewConfig">
+            <summary>
+            设备类型视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Equipments.EquipTypes.EquipTypeViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Equipments.EquipTypes.EquipTypeViewConfig.ConfigSelectionView">
+            <summary>
+            配置下拉视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Equipments.EquipTypes.EquipTypeViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+    </members>
+</doc>

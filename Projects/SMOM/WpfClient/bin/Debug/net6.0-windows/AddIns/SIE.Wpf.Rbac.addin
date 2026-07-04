@@ -1,0 +1,31 @@
+﻿<AddIn name        = "SIE-RBAC"
+       author      = "Eric Leung"
+       copyright   = "prj:///doc/copyright.txt"
+       url         = "http://siestudio.chinasie.com"
+       description = "Rbac module"
+       addInManagerHidden = "true">
+
+  <Manifest>
+    <Identity name = "RBAC" version = "@AssemblyVersion"/>
+  </Manifest>
+  <Runtime>
+    <Import assembly=":SIE.Wpf.Rbac"/>
+  </Runtime>
+  <Path name = "/Main/Workbench/MainBar">
+    <ContentItem id="memu" content="SIE.Wpf.Rbac.Menus.Controls.MenuBarItem,SIE.Wpf.Rbac"></ContentItem>
+    <ContentItem id="favorite" content="SIE.Wpf.Rbac.Menus.Controls.FavoriteBarItem,SIE.Wpf.Rbac"></ContentItem>
+    <ContentItem id="web" content="SIE.Wpf.Rbac.Menus.Controls.WebSSOBarItem,SIE.Wpf.Rbac"></ContentItem>
+  </Path>
+  <Path name = "/Main/Workbench/HeaderBar">
+    <ContentItem id="loginUser" content="SIE.Wpf.Rbac.Users.Controls.LoginUserItem,SIE.Wpf.Rbac"></ContentItem>
+    <ContentItem id="separator1"  type="Separator"></ContentItem>
+    <ContentItem id="InvOrg" content="SIE.Wpf.Rbac.InvOrgs.Controls.InvOrgBarItem,SIE.Wpf.Rbac"></ContentItem>
+    <ContentItem id="separator2"  type="Separator"></ContentItem>
+  </Path>
+  <!--系统菜单修改密码-->
+  <Path name = "/Main/Workbench/HeaderBar/SysMenu">
+    <MenuItem type="Separator"/>
+    <MenuItem id="changePwd" label="修改密码" tooltip="修改密码"  type="ButtonItem" class="SIE.Wpf.Rbac.Users.Commands.ChangePwdCommand"></MenuItem> 
+    <MenuItem type="Separator"/>
+  </Path>
+</AddIn>

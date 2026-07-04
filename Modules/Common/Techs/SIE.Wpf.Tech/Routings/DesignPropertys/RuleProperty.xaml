@@ -1,0 +1,19 @@
+﻿<UserControl xmlns:dxprg="http://schemas.devexpress.com/winfx/2008/xaml/propertygrid"  
+    x:Class="SIE.Wpf.Tech.Routings.DesignPropertys.RuleProperty"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:local="clr-namespace:SIE.Wpf.Tech.Routings.DesignPropertys"
+    xmlns:uic="http://schemas.siestudio.com/winfx/xaml/core"
+    xmlns:sie="http://mes.sie.com/winfx/xaml/controls">
+    <Grid>
+        <dxprg:PropertyGridControl Name="propertyGrid" ShowCategories="true" ShowDescriptionIn="Panel" ExpandCategoriesWhenSelectedObjectChanged="True" ShowProperties="WithPropertyDefinitions" SelectedObject="{Binding}">
+            <dxprg:CategoryDefinition Header="{Binding [通用],Source={uic:L10N}}">
+                <dxprg:PropertyDefinition Path="Text" Header="{Binding [名称],Source={uic:L10N}}"/>
+                <dxprg:PropertyDefinition Path="Type" Header="{Binding [类型],Source={uic:L10N}}"/>
+                <!--<dxprg:PropertyDefinition Path="Color" Header="{Binding [颜色],Source={uic:L10N}}"/>-->
+            </dxprg:CategoryDefinition>
+        </dxprg:PropertyGridControl> 
+    </Grid>
+</UserControl> 

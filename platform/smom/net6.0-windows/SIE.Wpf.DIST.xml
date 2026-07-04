@@ -1,0 +1,701 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Wpf.DIST</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Wpf.DIST.Distribution.BillLabelPrintViewModel">
+            <summary>
+            配送单退料标签打印
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.DIST.Distribution.BillLabelPrintViewModel.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.DIST.Distribution.BillLabelPrintViewModel.BillIdProperty">
+            <summary>
+            配送单Id
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.DIST.Distribution.BillLabelPrintViewModel.BillId">
+            <summary>
+            配送单Id
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.DIST.Distribution.BillLabelPrintViewModel.BillProperty">
+            <summary>
+            配送单
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.DIST.Distribution.BillLabelPrintViewModel.Bill">
+            <summary>
+            配送单
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.DIST.Distribution.BillLabelPrintViewModel.PrinterProperty">
+            <summary>
+            打印机
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.DIST.Distribution.BillLabelPrintViewModel.Printer">
+            <summary>
+            打印机
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.DIST.Distribution.BillLabelPrintViewModel.OnPrinterChanged">
+            <summary>
+            打印机变更事件
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.DIST.Distribution.BillLabelPrintViewModel.LabelNumberProperty">
+            <summary>
+            标签号
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.DIST.Distribution.BillLabelPrintViewModel.LabelNumber">
+            <summary>
+            标签号
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.DIST.Distribution.BillLabelPrintViewModel.NGLabelNumberProperty">
+            <summary>
+            不良标签号
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.DIST.Distribution.BillLabelPrintViewModel.NGLabelNumber">
+            <summary>
+            不良标签号
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.DIST.Distribution.BillLabelPrintViewModelViewConfig">
+            <summary>
+            配送单退料标签打印视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.DIST.Distribution.BillLabelPrintViewModelViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.DIST.Distribution.BillLabelPrintCommand">
+            <summary>
+            标签打印命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.DIST.Distribution.BillLabelPrintCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            判断标签打印命令能否执行
+            </summary>
+            <param name="view">列表逻辑视图</param>
+            <returns>能执行返回true，不能执行返回false</returns>
+        </member>
+        <member name="M:SIE.Wpf.DIST.Distribution.BillLabelPrintCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            标签打印命令执行方法
+            </summary>
+            <param name="view">列表逻辑视图</param>
+        </member>
+        <member name="M:SIE.Wpf.DIST.Distribution.BillLabelPrintCommand.CreateNewItem">
+            <summary>
+            创建编辑对象
+            </summary>
+            <returns>配送单退料标签打印视图模型</returns>
+        </member>
+        <member name="M:SIE.Wpf.DIST.Distribution.BillLabelPrintCommand.Save(SIE.Wpf.DIST.Distribution.BillLabelPrintViewModel)">
+            <summary>
+            保存
+            </summary>
+            <param name="model">待保存实体</param>
+        </member>
+        <member name="M:SIE.Wpf.DIST.Distribution.BillLabelPrintCommand.Print(System.String,SIE.Packages.ItemLabels.ItemLabelPrintable,SIE.Wpf.Common.Prints.IReport,SIE.Domain.EntityList{SIE.Packages.ItemLabels.ItemLabel})">
+            <summary>
+            打印
+            </summary>
+            <param name="filePath">模板路径</param>
+            <param name="printable">标签打印</param>
+            <param name="report">报表接口</param>
+            <param name="prints">物料标签集合</param>
+        </member>
+        <member name="T:SIE.Wpf.DIST.Distribution.Configs.BillLabelConfigValueViewConfig">
+            <summary>
+            单据条码视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.DIST.Distribution.Configs.BillLabelConfigValueViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.DIST.Distribution.Configs.BillNoConfigValueViewConfig">
+            <summary>
+            配送单单号配置值视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.DIST.Distribution.Configs.BillNoConfigValueViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.DIST.Distribution.Configs.RmaBillNoConfigValueViewConfig">
+            <summary>
+            退料单号值配置视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.DIST.Distribution.Configs.RmaBillNoConfigValueViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.DIST.Distribution.DistributionBillCriteriaViewConfig">
+            <summary>
+            配送单查询实体视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.DIST.Distribution.DistributionBillCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.DIST.DistributionBillDetailPropertyViewConfig">
+            <summary>
+            配送单明细视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.DIST.DistributionBillDetailPropertyViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.DIST.DistributionBillDetailViewConfig">
+            <summary>
+            箱号视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.DIST.DistributionBillDetailViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.DIST.DistributionBillPropertyValueViewConfig">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.DIST.DistributionBillPropertyValueViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.DIST.DistributionBillViewConfig">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.DIST.DistributionBillViewConfig.Distribution">
+            <summary>
+            载具关联视图组
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.DIST.DistributionBillViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.DIST.DistributionBillViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.DIST.DistributionBillViewConfig.CollectViewConfig">
+            <summary>
+            载具关联视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.DIST.DistributionCommand">
+            <summary>
+            载具关联命令
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.DIST.DistributionCommand.isDisplay">
+            <summary>
+            用于判断载具关联界面是否已经弹出
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.DIST.DistributionCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            判断载具关联命令能否执行
+            </summary>
+            <param name="view">列表逻辑视图</param>
+            <returns>能执行返回true，不能执行返回false</returns>
+        </member>
+        <member name="M:SIE.Wpf.DIST.DistributionCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            载具关联命令执行方法
+            </summary>
+            <param name="view">列表逻辑视图</param>
+        </member>
+        <member name="T:SIE.Wpf.DIST.GoodsIssueDeleteCommand">
+            <summary>
+            删除发料单命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.DIST.GoodsIssueDeleteCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            判断删除发料命令能否执行
+            </summary>
+            <param name="view">列表逻辑视图</param>
+            <returns>能执行返回true，不能执行返回false</returns>
+        </member>
+        <member name="T:SIE.Wpf.DIST.GoodsIssueEditCommand">
+            <summary>
+            修改命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.DIST.GoodsIssueEditCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            能否执行修改
+            </summary>
+            <param name="view">当前列表逻辑视图</param>
+            <returns>True:可以执行 False:不可以执行</returns>
+        </member>
+        <member name="T:SIE.Wpf.DIST.GoodsIssuePropertyValueCommand">
+            <summary>
+            添加命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.DIST.GoodsIssuePropertyValueCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            能否执行修改
+            </summary>
+            <param name="view">当前列表逻辑视图</param>
+            <returns>True:可以执行 False:不可以执行</returns>
+        </member>
+        <member name="M:SIE.Wpf.DIST.GoodsIssuePropertyValueCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="view">当前列表逻辑视图</param>
+        </member>
+        <member name="T:SIE.Wpf.DIST.GoodsIssueSaveCommand">
+            <summary>
+            保存命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.DIST.GoodsIssueSaveCommand.OnSaving(SIE.Wpf.DetailLogicalView)">
+            <summary>
+            保存前
+            </summary>
+            <param name="view">当前明细逻辑视图</param>
+        </member>
+        <member name="M:SIE.Wpf.DIST.GoodsIssueSaveCommand.SetPropertyValues(SIE.DIST.GoodsIssue)">
+            <summary>
+            设置属性值
+            </summary>
+            <param name="goodsIssue">工单发料信息</param>
+        </member>
+        <member name="T:SIE.Wpf.DIST.RestartCommand">
+            <summary>
+            重新开始命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.DIST.RestartCommand.Execute(SIE.Wpf.DetailLogicalView)">
+            <summary>
+            重新开始命令执行方法
+            </summary>
+            <param name="view">明细逻辑视图</param>
+        </member>
+        <member name="T:SIE.Wpf.DIST.SubmitCommand">
+            <summary>
+            提交命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.DIST.SubmitCommand.CanExecute(SIE.Wpf.DetailLogicalView)">
+            <summary>
+            判断命令能否执行
+            </summary>
+            <param name="view">明细逻辑视图</param>
+            <returns>能执行返回true，不能执行返回false</returns>
+        </member>
+        <member name="M:SIE.Wpf.DIST.SubmitCommand.Execute(SIE.Wpf.DetailLogicalView)">
+            <summary>
+            提交命令执行方法
+            </summary>
+            <param name="view">明细逻辑视图</param>
+        </member>
+        <member name="T:SIE.Wpf.DIST.GoodsIssuePropertyValueExtViewConfig">
+            <summary>
+            发料单属性值视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.DIST.GoodsIssuePropertyValueExtViewConfig.GoodsIssuePropertyValueExtView">
+            <summary>
+            自定义ViewGroup  GoodsIssuePropertyValueExtView
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.DIST.GoodsIssuePropertyValueExtViewConfig.VehicleAssociatedViewGroup">
+            <summary>
+            载具关联物料属性视图
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.DIST.GoodsIssuePropertyValueExtViewConfig.GoodIssueValueProperty">
+            <summary>
+            属性值
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.DIST.GoodsIssuePropertyValueExtViewConfig.GetValue(SIE.Items.ViewModels.PropertyValueViewModel)">
+            <summary>
+            获取属性值
+            </summary>
+            <param name="me">属性值视图模型</param>
+            <returns>属性值</returns>
+        </member>
+        <member name="M:SIE.Wpf.DIST.GoodsIssuePropertyValueExtViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.DIST.GoodsIssuePropertyValueExtViewConfig.PropertyValueView">
+            <summary>
+            属性值视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.DIST.GoodsIssueTemplate">
+            <summary>
+            载具关联模板
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.DIST.GoodsIssueTemplate._goodsIssue">
+            <summary>
+            工单发料信息
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.DIST.GoodsIssueTemplate.#ctor(SIE.DIST.GoodsIssue)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="goodsIssue">工单发料信息</param>
+        </member>
+        <member name="M:SIE.Wpf.DIST.GoodsIssueTemplate.DefineBlocks">
+            <summary>
+            块定义，重新布局控件
+            </summary>
+            <returns>聚合块</returns>
+        </member>
+        <member name="M:SIE.Wpf.DIST.GoodsIssueTemplate.OnUIGenerated(SIE.Wpf.ControlResult)">
+            <summary>
+            UI创建
+            </summary>
+            <param name="ui">控件结果</param>
+        </member>
+        <member name="M:SIE.Wpf.DIST.GoodsIssueTemplate.CreateDetailListControl(SIE.Wpf.LogicalView,SIE.Domain.EntityList)">
+            <summary>
+            创建配送明细控件
+            </summary>
+            <param name="mainView">主逻辑视图</param>
+            <param name="data">配送明细</param>
+            <returns>控件</returns>
+        </member>
+        <member name="M:SIE.Wpf.DIST.GoodsIssueTemplate.UiTemplate_BlocksDefined(System.Object,SIE.MetaModel.View.CodeBlocksDefinedEventArgs)">
+            <summary>
+            配送明细块定义，移除查询面板
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.DIST.GoodsIssueTemplate.CreatePropertyListControl(SIE.Wpf.LogicalView,SIE.Domain.EntityList)">
+            <summary>
+            创建属性控件
+            </summary>
+            <param name="mainView">主逻辑视图</param>
+            <param name="data">属性列表</param>
+            <returns>控件</returns>
+        </member>
+        <member name="T:SIE.Wpf.DIST.GoodsIssueViewModelLayout">
+            <summary>
+            载具关联布局控件
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.DIST.GoodsIssueViewModelLayout.Arrange(SIE.Wpf.UIComponents)">
+            <summary>
+            布局
+            </summary>
+            <param name="components">组件</param>
+        </member>
+        <member name="T:SIE.Wpf.DIST.GoodsIssueViewConfig">
+            <summary>
+            配送管理视图配置 
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.DIST.GoodsIssueViewConfig.IsHasDistributionQtyProperty">
+            <summary>
+            配送数量是否大于0
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.DIST.GoodsIssueViewConfig.GetIsHasDistributionQty(SIE.DIST.GoodsIssue)">
+            <summary>
+            获取配送数量是否大于0
+            </summary>
+            <param name="me">工单发料信息</param>
+            <returns>配送数据大于0返回true，否则返回false</returns>
+        </member>
+        <member name="M:SIE.Wpf.DIST.GoodsIssueViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.DIST.GoodsIssueViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.DIST.GoodsIssueViewConfig.ConfigDetailsView">
+            <summary>
+            表单视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.DIST.GoodsIssueViewConfig.ConfigQueryView">
+            <summary>
+            查询视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.DIST.GoodsIssueViewModel">
+            <summary>
+            载具关联物料ViewModel
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.DIST.GoodsIssueViewModel._controller">
+            <summary>
+            配送控制器
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.DIST.GoodsIssueViewModel.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="E:SIE.Wpf.DIST.GoodsIssueViewModel.Focused">
+            <summary>
+            控件聚焦事件
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.DIST.GoodsIssueViewModel.FocuseBarcode">
+            <summary>
+            触发条码输入框获取焦点
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.DIST.GoodsIssueViewModel.GoodsIssueIdProperty">
+            <summary>
+            发货记录Id
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.DIST.GoodsIssueViewModel.GoodsIssueId">
+            <summary>
+            发货记录Id
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.DIST.GoodsIssueViewModel.GoodsIssueProperty">
+            <summary>
+            发货记录
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.DIST.GoodsIssueViewModel.GoodsIssue">
+            <summary>
+            发货记录
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.DIST.GoodsIssueViewModel.BillListProperty">
+            <summary> 
+            配送明细
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.DIST.GoodsIssueViewModel.BillList">
+            <summary>
+            配送明细
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.DIST.GoodsIssueViewModel.ResourceIdProperty">
+            <summary>
+            资源
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.DIST.GoodsIssueViewModel.ResourceId">
+            <summary>
+            资源
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.DIST.GoodsIssueViewModel.ResourceProperty">
+            <summary>
+            资源
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.DIST.GoodsIssueViewModel.Resource">
+            <summary>
+            资源
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.DIST.GoodsIssueViewModel.QtyProperty">
+            <summary>
+            配送数量
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.DIST.GoodsIssueViewModel.Qty">
+            <summary>
+            配送数量
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.DIST.GoodsIssueViewModel.TurnoverBoxProperty">
+            <summary>
+            周转箱
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.DIST.GoodsIssueViewModel.TurnoverBox">
+            <summary>
+            周转箱
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.DIST.GoodsIssueViewModel.TipsProperty">
+            <summary>
+            提示信息
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.DIST.GoodsIssueViewModel.Tips">
+            <summary>
+            提示信息
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.DIST.GoodsIssueViewModel.ErrorProperty">
+            <summary>
+            错误信息
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.DIST.GoodsIssueViewModel.Error">
+            <summary>
+            错误信息
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.DIST.GoodsIssueViewModel.BarcodeProperty">
+            <summary>
+            条码
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.DIST.GoodsIssueViewModel.Barcode">
+            <summary>
+            条码
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.DIST.GoodsIssueViewModel.QtyReadOnlyProperty">
+            <summary>
+            配送数量只读
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.DIST.GoodsIssueViewModel.QtyReadOnly">
+            <summary>
+            配送数量只读
+            </summary> 
+        </member>
+        <member name="F:SIE.Wpf.DIST.GoodsIssueViewModel.itemLabelList">
+            <summary>
+            箱号标签
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.DIST.GoodsIssueViewModel.Restart">
+            <summary>
+            重新开始(所有数据清空)
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.DIST.GoodsIssueViewModel.InitDistributionData">
+            <summary>
+            数据初始化（保留配送产线数据，用于继续配送）
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.DIST.GoodsIssueViewModel.LoadBills">
+            <summary>
+            加载配送明细
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.DIST.GoodsIssueViewModel.ShowTips(System.String)">
+            <summary>
+            显示提示信息
+            </summary>
+            <param name="tips">提示信息</param>
+        </member>
+        <member name="M:SIE.Wpf.DIST.GoodsIssueViewModel.ShowError(System.String)">
+            <summary>
+            显示错误信息
+            </summary>
+            <param name="error">错误信息</param>
+        </member>
+        <member name="M:SIE.Wpf.DIST.GoodsIssueViewModel.ShowError(System.Exception)">
+            <summary>
+            显示错误信息
+            </summary>
+            <param name="exc">异常</param>
+        </member>
+        <member name="M:SIE.Wpf.DIST.GoodsIssueViewModel.OnBarcodeChanged(SIE.ManagedProperty.ManagedPropertyObject,SIE.ManagedProperty.ManagedPropertyChangedEventArgs)">
+            <summary>
+            条码扫完后处理逻辑
+            </summary>
+            <param name="s">托管对象</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.DIST.GoodsIssueViewModel.ConllectItemLabel(SIE.Packages.ItemLabels.PackingLabel)">
+            <summary>
+            采集箱号标签
+            </summary>
+            <param name="packingLabel">物料标签</param>
+        </member>
+        <member name="M:SIE.Wpf.DIST.GoodsIssueViewModel.ClearInfos">
+            <summary>
+            清空其实信息
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.DIST.GoodsIssueViewModel.Submit">
+            <summary>
+            提交
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.DIST.GoodsIssueViewModelViewConfig">
+            <summary>
+            载具关联视图模型视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.DIST.GoodsIssueViewModelViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.DIST.Module">
+            <summary>
+            当前工程所对应的模块类
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.DIST.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化
+            </summary>
+            <param name="app">应用程序对象</param>
+        </member>
+        <member name="M:SIE.Wpf.DIST.Module.AddNewPropertyEditors(SIE.IApp)">
+            <summary>
+            属性编辑器
+            </summary>
+            <param name="app">应用程序对象</param>
+        </member>
+        <member name="M:SIE.Wpf.DIST.Module.App_ModuleOperations(System.Object,System.EventArgs)">
+            <summary>
+            模块
+            </summary>
+            <param name="sender">发送者</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.DIST.Module.OnMainProcessStarting(System.Object,System.EventArgs)">
+            <summary>
+            主过程开始前事件
+            </summary>
+            <param name="sender">发送者</param>
+            <param name="e">事件参数</param>
+        </member>
+    </members>
+</doc>

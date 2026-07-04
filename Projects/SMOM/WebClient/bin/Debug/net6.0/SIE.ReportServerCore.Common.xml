@@ -1,0 +1,183 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.ReportServerCore.Common</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.ReportServerCore.Common.DataAccess.DataViewProcess">
+            <summary>
+            文档数据源处理
+            </summary>
+        </member>
+        <member name="M:SIE.ReportServerCore.Common.DataAccess.DataViewProcess.ConvertToConectionStringInfo(System.String,System.String,System.String)">
+            <summary>
+            转换数据源
+            </summary>
+            <param name="name">数据源名称</param>
+            <param name="connectionString">数据库连接字符串</param>
+            <param name="provider">数据访问驱动</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ReportServerCore.Common.DataAccess.DataViewProcess.ProcessConectionStringInfo(System.Collections.Generic.List{DevExpress.Data.Entity.ConnectionStringInfo})">
+            <summary>
+            处理数据源连接信息
+            </summary>
+            <param name="connectionStringInfoList">连接信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ReportServerCore.Common.DataAccess.DataViewProcess.ProcessConectionList(System.Collections.Generic.List{SIE.Documents.IDataView})">
+            <summary>
+            处理数据源连接集合
+            </summary>
+            <param name="connectionStringInfoList">数据源</param>
+            <returns></returns>
+        </member>
+        <member name="F:SIE.ReportServerCore.Common.AssemblyInformation.ModuleName">
+            <summary>
+            模块名称
+            </summary>
+        </member>
+        <member name="T:SIE.ReportServerCore.DataAccess.Wizard.CustomConnectionStorageService">
+            <summary>
+            自定义的连接存储服务
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.DataAccess.Wizard.CustomConnectionStorageService.getSqlConnections">
+            <summary>
+            字典 用于存储数据库连接
+            </summary>
+        </member>
+        <member name="M:SIE.ReportServerCore.DataAccess.Wizard.CustomConnectionStorageService.#ctor(System.Func{System.Collections.Generic.Dictionary{System.String,DevExpress.DataAccess.Sql.SqlDataConnection}})">
+            <summary>
+            自定义连接存储服务
+            </summary>
+            <param name="getSqlConnections">数据库连接</param>
+        </member>
+        <member name="P:SIE.ReportServerCore.DataAccess.Wizard.CustomConnectionStorageService.SqlConnetions">
+            <summary>
+            数据库连接
+            </summary>
+        </member>
+        <member name="M:SIE.ReportServerCore.DataAccess.Wizard.CustomConnectionStorageService.GetConnections">
+            <summary>
+            获取连接
+            </summary>
+            <returns>数据库连接</returns>
+        </member>
+        <member name="M:SIE.ReportServerCore.DataAccess.Wizard.CustomConnectionStorageService.Contains(System.String)">
+            <summary>
+            是否包含指定的连接名称
+            </summary>
+            <param name="connectionName">连接名称</param>
+            <returns>true/false</returns>
+        </member>
+        <member name="P:SIE.ReportServerCore.DataAccess.Wizard.CustomConnectionStorageService.CanSaveConnection">
+            <summary>
+            是否保存连接
+            </summary>
+        </member>
+        <member name="M:SIE.ReportServerCore.DataAccess.Wizard.CustomConnectionStorageService.SaveConnection(System.String,DevExpress.DataAccess.Wizard.Model.IDataConnection,System.Boolean)">
+            <summary>
+            保存连接
+            </summary>
+            <param name="connectionName">连接名称</param>
+            <param name="connection">数据连接接口</param>
+            <param name="saveCredentials">保存凭证</param>
+        </member>
+        <member name="T:SIE.ReportServerCore.Infrastructure.Data.XpoConnectionStringHelper">
+            <summary>
+            devXpo连接字符串帮助类
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Infrastructure.Data.XpoConnectionStringHelper.XpoProviderTypeParameterName">
+            <summary>
+            XpoProvider类型参数名称
+            </summary>
+        </member>
+        <member name="M:SIE.ReportServerCore.Infrastructure.Data.XpoConnectionStringHelper.CreateXpoConnectionString(System.String,System.String)">
+            <summary>
+            创建Xpo连接字符串
+            </summary>
+            <param name="provider">xpoProvider</param>
+            <param name="connectionString">连接字符串</param>
+            <returns>xpo连接字符串</returns>
+        </member>
+        <member name="M:SIE.ReportServerCore.Infrastructure.Data.XpoConnectionStringHelper.GetXpoProvider(System.String)">
+            <summary>
+            获取XpoProvider
+            </summary>
+            <param name="connectionString">xpo连接字符串</param>
+            <returns>devXpo连接字符串</returns>
+        </member>
+        <member name="M:SIE.ReportServerCore.Infrastructure.Data.XpoConnectionStringHelper.RemoveXpoProvider(System.String)">
+            <summary>
+            移除XpoProvider
+            </summary>
+            <param name="connectionString">xpo连接字符串</param>
+            <returns>数据库连接字符串构造器</returns>
+        </member>
+        <member name="M:SIE.ReportServerCore.Infrastructure.Data.XpoConnectionStringHelper.GetConnections(DevExpress.Data.Entity.IConnectionStringInfo[])">
+            <summary>
+            获取连接字符串
+            </summary>
+            <param name="collection">连接字符串集合</param>
+            <returns>字典 用于存储连接字符串</returns>
+        </member>
+        <member name="M:SIE.ReportServerCore.Infrastructure.Data.XpoConnectionStringHelper.AddXpoProviderToConnectionString(System.String,System.String)">
+            <summary>
+            设置devXpo连接字符串
+            </summary>
+            <param name="connectionString">连接字符串</param>
+            <param name="providerName">提供者名称</param>
+            <returns>devXpo连接字符串</returns>
+        </member>
+        <member name="M:SIE.ReportServerCore.Infrastructure.Data.XpoConnectionStringHelper.VerifyConnection(System.String,System.String,System.String@)">
+            <summary>
+            验证连接
+            </summary>
+            <param name="provider">提供者</param>
+            <param name="connectionString">连接字符串</param>
+            <param name="error">错误信息</param>
+            <returns>true/false</returns>
+        </member>
+        <member name="M:SIE.ReportServerCore.Infrastructure.Data.XpoConnectionStringHelper.GetXpoConnectionString(System.String,System.String)">
+            <summary>
+            设置devXpo连接字符串
+            </summary>
+            /// <param name="provider">提供者名称</param>
+            <param name="connectionString">连接字符串</param>        
+            <returns>devXpo连接字符串</returns>
+        </member>
+        <member name="T:SIE.ReportServerCore.Infrastructure.DefaultConnectionProvidersContainer">
+            <summary>
+            sql连接提供者默认实现
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Infrastructure.DefaultConnectionProvidersContainer.Instance">
+            <summary>
+            连接数据提供者容器
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Infrastructure.DefaultConnectionProvidersContainer.providers">
+            <summary>
+            字典 用于存储数据提供者
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Infrastructure.DefaultConnectionProvidersContainer.Providers">
+            <summary>
+            获取可用的数据提供者清单
+            </summary>
+        </member>
+        <member name="M:SIE.ReportServerCore.Infrastructure.DefaultConnectionProvidersContainer.#cctor">
+            <summary>
+            静态构造函数
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:SIE.ReportServerCore.Infrastructure.IConnectionProvidersContainer" -->
+        <member name="P:SIE.ReportServerCore.Infrastructure.IConnectionProvidersContainer.Providers">
+            <summary>
+            连接提供者容器
+            </summary>
+        </member>
+    </members>
+</doc>

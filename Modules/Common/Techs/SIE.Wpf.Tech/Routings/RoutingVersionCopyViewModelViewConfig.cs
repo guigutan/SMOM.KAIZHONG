@@ -1,0 +1,27 @@
+﻿namespace SIE.Wpf.Tech.Routings
+{
+    /// <summary>
+    /// 工艺路线版本复制视图配置
+    /// </summary>
+    internal class RoutingVersionCopyViewModelViewConfig : WPFViewConfig<RoutingVersionCopyViewModel>
+    {
+        /// <summary>
+        /// 默认视图配置
+        /// </summary>
+        protected override void ConfigView()
+        {
+            View.UseDefaultCommands();
+        }
+
+        /// <summary>
+        /// 明细视图配置
+        /// </summary>
+        protected override void ConfigDetailsView()
+        {
+            View.ClearCommands();
+            View.HasDetailColumnsCount(1);
+            View.Property(p => p.IsCopyActivityProperty);
+            View.Property(p => p.IsCopyBom);
+        }
+    }
+}

@@ -1,0 +1,120 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <CodeAnalysisRuleSet>..\..\..\..\.sonarlint\sie.smomcsharp.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.MES.DashBoard.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.MES.DashBoard.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Common\ChartTheme.js" />
+    <None Remove="Common\DashBoardController.js" />
+    <None Remove="Common\DashBoardLayout.js" />
+    <None Remove="Common\DefectChart.js" />
+    <None Remove="Common\LineChart.js" />
+    <None Remove="Common\ProcessDirectRateChart.js" />
+    <None Remove="Common\ProcessStatisticsChart.js" />
+    <None Remove="Common\ProductLineRateChart.js" />
+    <None Remove="Common\ProductRateChart.js" />
+    <None Remove="Common\ReportBaseController.js" />
+    <None Remove="Common\ShopRateChart.js" />
+    <None Remove="KzBoard\RegionBoards\Commands\SelectResourceCommand.js" />
+    <None Remove="ProductionProcesss\Commands\ProductionProcessDLTemplateCommand.js" />
+    <None Remove="ProductionProcesss\Commands\ProductionProcessImportCommand.js" />
+    <None Remove="Reports\Common\BarBaseController.js" />
+    <None Remove="Reports\Common\LineBaseController.js" />
+    <None Remove="Reports\Common\PivotController.js" />
+    <None Remove="Reports\Common\Scripts\FpyReportPage.js" />
+    <None Remove="Reports\FpySettings\Commands\AddSettingCommand.js" />
+    <None Remove="Reports\LineFPY\Commands\LineReportCriteriaCommand.js" />
+    <None Remove="Reports\LineFPY\Commands\TargetParaCommand.js" />
+    <None Remove="Reports\LineFPY\Scripts\LineReportLayout.js" />
+    <None Remove="Reports\ProductFPY\Commands\ProductReportCriteriaCommand.js" />
+    <None Remove="Reports\ProductFPY\Commands\ProductReportExport.js" />
+    <None Remove="Reports\ProductFPY\Commands\ProductReportQuery.js" />
+    <None Remove="Reports\ProductFPY\Commands\TargetParaCommand.js" />
+    <None Remove="Reports\ProductFPY\Scripts\ProductReportLayout.js" />
+    <None Remove="Reports\ShopFPY\Commands\ShopReportCriteriaCommand.js" />
+    <None Remove="Reports\ShopFPY\Commands\ShopReportExport.js" />
+    <None Remove="Reports\ShopFPY\Commands\ShopReportQuery.js" />
+    <None Remove="Reports\ShopFPY\Commands\TargetParaCommand.js" />
+    <None Remove="Reports\ShopFPY\Scripts\ShopReportController.js" />
+    <None Remove="Reports\ShopFPY\Scripts\ShopReportLayout.js" />
+    <None Remove="TeamManagement\Commands\ScoreRecordExport.js" />
+    <None Remove="TeamManagement\Commands\ScoreRecordQuery.js" />
+    <None Remove="TeamManagement\Scripts\ScoreRecordLayout.js" />
+    <None Remove="WorkOrderReachs\Commands\WoReachExport.js" />
+    <None Remove="WorkOrderReachs\Commands\WoReachQuery.js" />
+    <None Remove="WorkOrderReachs\Scripts\WoReachController.js" />
+    <None Remove="WorkOrderReachs\Scripts\WoReachDetailBehavior.js" />
+    <None Remove="WorkOrderReachs\Scripts\WoReachLayout.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\..\..\.sonarlint\sie.smom\CSharp\SonarLint.xml" Link="SonarLint.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Common\ChartTheme.js" />
+    <EmbeddedResource Include="Common\DashBoardController.js" />
+    <EmbeddedResource Include="Common\DefectChart.js" />
+    <EmbeddedResource Include="Common\LineChart.js" />
+    <EmbeddedResource Include="Common\ProcessDirectRateChart.js" />
+    <EmbeddedResource Include="Common\ProcessStatisticsChart.js" />
+    <EmbeddedResource Include="Common\ProductLineRateChart.js" />
+    <EmbeddedResource Include="Common\ProductRateChart.js" />
+    <EmbeddedResource Include="Common\ReportBaseController.js" />
+    <EmbeddedResource Include="Common\ShopRateChart.js" />
+    <EmbeddedResource Include="KzBoard\RegionBoards\Commands\SelectResourceCommand.js" />
+    <EmbeddedResource Include="ProductionProcesss\Commands\ProductionProcessDLTemplateCommand.js" />
+    <EmbeddedResource Include="ProductionProcesss\Commands\ProductionProcessImportCommand.js" />
+    <EmbeddedResource Include="Reports\Common\BarBaseController.js" />
+    <EmbeddedResource Include="Reports\Common\LineBaseController.js" />
+    <EmbeddedResource Include="Reports\Common\PivotController.js" />
+    <EmbeddedResource Include="Reports\Common\Scripts\FpyReportPage.js" />
+    <EmbeddedResource Include="Reports\FpySettings\Commands\AddSettingCommand.js" />
+    <EmbeddedResource Include="Reports\LineFPY\Commands\LineReportCriteriaCommand.js" />
+    <EmbeddedResource Include="Reports\LineFPY\Commands\TargetParaCommand.js" />
+    <EmbeddedResource Include="Reports\LineFPY\Scripts\LineReportLayout.js" />
+    <EmbeddedResource Include="Reports\ProductFPY\Commands\ProductReportCriteriaCommand.js" />
+    <EmbeddedResource Include="Reports\ProductFPY\Commands\ProductReportExport.js" />
+    <EmbeddedResource Include="Reports\ProductFPY\Commands\ProductReportQuery.js" />
+    <EmbeddedResource Include="Reports\ProductFPY\Commands\TargetParaCommand.js" />
+    <EmbeddedResource Include="Reports\ProductFPY\Scripts\ProductReportLayout.js" />
+    <EmbeddedResource Include="Reports\ShopFPY\Commands\ShopReportCriteriaCommand.js" />
+    <EmbeddedResource Include="Reports\ShopFPY\Commands\ShopReportExport.js" />
+    <EmbeddedResource Include="Reports\ShopFPY\Commands\ShopReportQuery.js" />
+    <EmbeddedResource Include="Reports\ShopFPY\Commands\TargetParaCommand.js" />
+    <EmbeddedResource Include="Reports\ShopFPY\Scripts\ShopReportController.js" />
+    <EmbeddedResource Include="Reports\ShopFPY\Scripts\ShopReportLayout.js" />
+    <EmbeddedResource Include="TeamManagement\Commands\ScoreRecordExport.js" />
+    <EmbeddedResource Include="TeamManagement\Commands\ScoreRecordQuery.js" />
+    <EmbeddedResource Include="TeamManagement\Scripts\ScoreRecordLayout.js" />
+    <EmbeddedResource Include="WorkOrderReachs\Commands\WoReachExport.js" />
+    <EmbeddedResource Include="WorkOrderReachs\Commands\WoReachQuery.js" />
+    <EmbeddedResource Include="WorkOrderReachs\Scripts\WoReachController.js" />
+    <EmbeddedResource Include="WorkOrderReachs\Scripts\WoReachDetailBehavior.js" />
+    <EmbeddedResource Include="WorkOrderReachs\Scripts\WoReachLayout.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SIE.MES.DashBoard\SIE.MES.DashBoard.csproj">
+      <Private>false</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="SIE.Web.Common" Version="10.0.5" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ProductionLineProcesss\Commands\" />
+  </ItemGroup>
+</Project>

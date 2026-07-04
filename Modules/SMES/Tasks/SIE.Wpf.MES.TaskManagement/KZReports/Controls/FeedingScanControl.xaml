@@ -1,0 +1,168 @@
+﻿<UserControl x:Class="SIE.Wpf.MES.TaskManagement.KZReports.Controls.FeedingScanControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SIE.Wpf.MES.TaskManagement.KZReports.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="650" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary Source="/SIE.Wpf.MES.TaskManagement;component/Styles/ReportStyle.xaml"></ResourceDictionary>
+    </UserControl.Resources>
+    <Border Background="White" MaxWidth="2500">
+        <DockPanel x:Name ="dockPanel" Margin="30">
+            <Grid>
+                <Grid.RowDefinitions >
+                    <!--<RowDefinition Height="auto"/>-->
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" Margin="0 0 0 0">
+                    <StackPanel  Grid.Column="0" Orientation="Horizontal"  Margin="0" HorizontalAlignment="Left">
+                        <Button Name="btnBack" Content="返回" Style="{StaticResource CommonButtonStyle}" Width="120" Height="40" Margin="0 20"  Click="btnBack_Click" Background="Gray" ></Button>
+                        <Button Name="btnReset" Content="重新开始" Style="{StaticResource CommonButtonStyle}" Width="120" Height="40" Margin="20" Click="btnReStart_Click" Background="DeepSkyBlue" ></Button>
+                        <Button Name="btnSubmit" Content="提交" Style="{StaticResource CommonButtonStyle}" Width="120" Height="40" Margin="20"   Click="btnSubmit_Click" Background="DeepSkyBlue"></Button>
+                    </StackPanel>
+                </Grid>
+
+                <Border Grid.Row="1" Margin="0 0 0 0" BorderThickness="1" BorderBrush="#ccc">
+                    <Grid >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Column="0" Style="{StaticResource FormLabelStyle_18}" Content="扫描标签" HorizontalContentAlignment="Center" Height="50"></Label>
+                        <TextBox Grid.Column="1" x:Name="txtBarcode" VerticalContentAlignment="Center" HorizontalAlignment="Stretch" Text="{Binding Path=Barcode, Mode=TwoWay}" FontSize="18" Background="LightGreen" Margin="2" KeyUp="txtBarcode_KeyUp"></TextBox>
+                        <StackPanel Grid.Row="1" Grid.ColumnSpan="3">
+                            <TextBox x:Name="txtTip" Text="提示信息" IsReadOnly="True" Focusable="False" BorderThickness="0.5" Foreground="Red" VerticalContentAlignment="Center" HorizontalAlignment="Stretch" Height="50" FontSize="18" Background="White" Margin="2" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+                <Border x:Name="templateBorder" Grid.Row="2" Margin="0 5" BorderThickness="1" BorderBrush="#CCC" VerticalAlignment="Top">
+                    <Grid Grid.Row="2" >
+                        <Grid.RowDefinitions >
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="40"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Row="0" BorderThickness="0 0 0 1" BorderBrush="#CCC">
+                            <StackPanel  Orientation="Horizontal" HorizontalAlignment="Stretch" >
+                                <Label Style="{StaticResource FormLabelStyle_16}" Content="派工单号" Width="150" VerticalContentAlignment="Center" ></Label>
+                                <Label Style="{StaticResource FormLabelStyle2_16}" Content="{Binding FeedingDispatchTask.No}" ></Label>
+                            </StackPanel>
+                        </Border>
+                        <Border Grid.Row="0" Grid.Column="1" BorderThickness="1 0 0 1" BorderBrush="#CCC">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" >
+                                <Label Style="{StaticResource FormLabelStyle_16}" Content="工单号"  ></Label>
+                                <Label Style="{StaticResource FormLabelStyle2_16}" Content="{Binding FeedingDispatchTask.WorkOrderNo}" ></Label>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Grid.Row="1" BorderThickness="0 0 0 1" BorderBrush="#CCC">
+                            <StackPanel  Orientation="Horizontal" HorizontalAlignment="Stretch" >
+                                <Label Style="{StaticResource FormLabelStyle_16}" Content="产品名称"  ></Label>
+                                <Label Style="{StaticResource FormLabelStyle2_16}" Content="{Binding FeedingDispatchTask.ProductName}" ></Label>
+                            </StackPanel>
+                        </Border>
+                        <Border Grid.Row="1" Grid.Column="1" BorderThickness="1 0 0 1" BorderBrush="#CCC">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" >
+                                <Label Style="{StaticResource FormLabelStyle_16}" Content="产品编码"  ></Label>
+                                <Label Style="{StaticResource FormLabelStyle2_16}" Content="{Binding FeedingDispatchTask.ProductCode}" ></Label>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Grid.Row="2" BorderThickness="0 0 0 1" BorderBrush="#CCC">
+                            <StackPanel  Orientation="Horizontal" HorizontalAlignment="Stretch" >
+                                <Label Style="{StaticResource FormLabelStyle_16}" Content="计划数量"  ></Label>
+                                <Label Style="{StaticResource FormLabelStyle2_16}" Content="{Binding FeedingDispatchTask.DispatchQty}" ></Label>
+                            </StackPanel>
+                        </Border>
+                        <Border Grid.Row="2" Grid.Column="1" BorderThickness="1 0 0 1" BorderBrush="#CCC">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" >
+                                <Label Style="{StaticResource FormLabelStyle_16}" Content="工序"  ></Label>
+                                <Label Style="{StaticResource FormLabelStyle2_16}" Content="{Binding FeedingDispatchTask.ProcessCode}" ></Label>
+                            </StackPanel>
+                        </Border>
+
+                    </Grid>
+                </Border>
+
+                <TabControl Grid.Row="3" Margin="0 0" FontSize="18" >
+                    <TabItem Header="物料需求信息" >
+                        <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" IsReadOnly="True" >
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="产品名称" Binding="{Binding ItemName}" Width="200"/>
+                                <DataGridTextColumn Header="产品编码" Binding="{Binding ItemCode}" Width="150"/>
+                                <DataGridTextColumn Header="需求量" Binding="{Binding RequireQty}" Width="150"/>
+                                <DataGridTextColumn Header="剩余数量" Binding="{Binding RemainQty}" Width="150"/>
+                                <!--<DataGridTemplateColumn Header="需求量" Width="150">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBox Name="txtGoodQty" Text="{Binding GoodQty}" Background="LightGreen" HorizontalAlignment="Stretch" VerticalAlignment="Center"></TextBox>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="剩余数量" Width="150">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBox Name="SuspectQty" Text="{Binding SuspectQty}" Background="LightGreen" HorizontalAlignment="Stretch" VerticalAlignment="Center" ></TextBox>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>-->
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </TabItem>
+                    <TabItem Header="扫描信息" >
+                        <DataGrid x:Name="dataGrid1" AutoGenerateColumns="False" IsReadOnly="True" >
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="物料标签号" Binding="{Binding Sn}" Width="150"/>
+                                <DataGridTextColumn Header="物料批次号" Binding="{Binding Batch}" Width="150"/>
+                                <DataGridTextColumn Header="物料编码" Binding="{Binding ItemCode}" Width="150"/>
+                                <DataGridTextColumn Header="物料名称" Binding="{Binding ItemName}" Width="200"/>
+                                <DataGridTextColumn Header="上料数量" Binding="{Binding FeedingQty}" Width="120"/>
+                                <DataGridTextColumn Header="上料时间" Binding="{Binding FeedingTime}" Width="200"/>
+                                <!--<DataGridTemplateColumn Header="物料编码" Width="120">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBox Name="txtGoodQty" Text="{Binding GoodQty}" Background="LightGreen" HorizontalAlignment="Stretch" VerticalAlignment="Center" ></TextBox>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="物料名称" Width="120">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBox Name="SuspectQty" Text="{Binding SuspectQty}" Background="LightGreen" HorizontalAlignment="Stretch" VerticalAlignment="Center"  ></TextBox>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="上料数量" Width="120">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBox Name="SuspectQty" Text="{Binding SuspectQty}" Background="LightGreen" HorizontalAlignment="Stretch" VerticalAlignment="Center"  ></TextBox>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>-->
+
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </TabItem>
+                </TabControl>
+                
+
+            </Grid>
+
+        </DockPanel>
+    </Border>
+
+</UserControl>

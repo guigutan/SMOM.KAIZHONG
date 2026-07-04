@@ -1,0 +1,248 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key="CommonButtonStyle" TargetType="Button">
+        <Setter Property="Width" Value="120"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Background" Value="#2D8CF0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="border" CornerRadius="5" Padding="{TemplateBinding Padding}" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True">
+                        <TextBlock Text="{TemplateBinding Content}" Foreground="{TemplateBinding Foreground}" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="Gray"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#2a89a4"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="CommonSuitButtonStyle" TargetType="Button">
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Background" Value="#2D8CF0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="border" CornerRadius="5" Padding="{TemplateBinding Padding}" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True">
+                        <TextBlock Text="{TemplateBinding Content}" Foreground="{TemplateBinding Foreground}" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="Gray"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#2a89a4"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="FormLabelStyle" TargetType="Label">
+        <Setter Property="Width" Value="150"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Background" Value="#eee"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+    </Style>
+    <Style x:Key="FormLabelStyle_12" TargetType="Label" BasedOn="{StaticResource FormLabelStyle}">
+        <Setter Property="FontSize" Value="12"/>
+    </Style>
+    <Style x:Key="FormLabelStyle_14" TargetType="Label" BasedOn="{StaticResource FormLabelStyle}">
+        <Setter Property="FontSize" Value="14"/>
+    </Style>
+    <Style x:Key="FormLabelStyle_16" TargetType="Label" BasedOn="{StaticResource FormLabelStyle}">
+        <Setter Property="FontSize" Value="16"/>
+    </Style>
+    <Style x:Key="FormLabelStyle_18" TargetType="Label" BasedOn="{StaticResource FormLabelStyle}">
+        <Setter Property="FontSize" Value="18"/>
+    </Style>
+    <Style x:Key="FormLabelStyle2" TargetType="Label">
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+    </Style>
+    <Style x:Key="FormLabelStyle2_12" TargetType="Label" BasedOn="{StaticResource FormLabelStyle2}">
+        <Setter Property="FontSize" Value="12"/>
+    </Style>
+    <Style x:Key="FormLabelStyle2_14" TargetType="Label" BasedOn="{StaticResource FormLabelStyle2}">
+        <Setter Property="FontSize" Value="14"/>
+    </Style>
+    <Style x:Key="FormLabelStyle2_16" TargetType="Label" BasedOn="{StaticResource FormLabelStyle2}">
+        <Setter Property="FontSize" Value="16"/>
+    </Style>
+    <Style x:Key="FormLabelStyle2_18" TargetType="Label" BasedOn="{StaticResource FormLabelStyle2}">
+        <Setter Property="FontSize" Value="18"/>
+    </Style>
+
+    <!-- 滚动条滑块样式 -->
+    <Style x:Key="ScrollBarThumbStyle" TargetType="{x:Type Thumb}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Thumb}">
+                    <Grid>
+                        <!-- 滑块背景 -->
+                        <Rectangle x:Name="ThumbRectangle"
+                                   Fill="#FF4A90E2"
+                                   RadiusX="4" RadiusY="4"
+                                   Margin="1"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <!-- 鼠标悬停效果 -->
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="ThumbRectangle" Property="Fill" Value="#FF2874C9"/>
+                        </Trigger>
+                        <!-- 按下效果 -->
+                        <!--<Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="ThumbRectangle" Property="Fill" Value="#FF1A5BB8"/>
+                        </Trigger>-->
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- 垂直滚动条样式 -->
+    <Style x:Key="VerticalScrollBarStyle" TargetType="{x:Type ScrollBar}">
+        <Setter Property="Width" Value="12"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ScrollBar}">
+                    <Grid Width="{TemplateBinding Width}" Background="Transparent">
+                        <!-- 滚动轨道 -->
+                        <Track x:Name="PART_Track"
+                               Orientation="Vertical"
+                               IsDirectionReversed="True">
+                            <Track.DecreaseRepeatButton>
+                                <RepeatButton Command="ScrollBar.PageUpCommand" BorderThickness="0"
+                                             Style="{x:Null}"
+                                             Background="Transparent"
+                                             Focusable="False"/>
+                            </Track.DecreaseRepeatButton>
+                            <Track.Thumb>
+                                <Thumb Style="{StaticResource ScrollBarThumbStyle}"/>
+                            </Track.Thumb>
+                            <Track.IncreaseRepeatButton>
+                                <RepeatButton Command="ScrollBar.PageDownCommand" BorderThickness="0"
+                                             Style="{x:Null}"
+                                             Background="Transparent"
+                                             Focusable="False"/>
+                            </Track.IncreaseRepeatButton>
+                        </Track>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- 水平滚动条样式 -->
+    <Style x:Key="HorizontalScrollBarStyle" TargetType="{x:Type ScrollBar}">
+        <Setter Property="Height" Value="12"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ScrollBar}">
+                    <Grid Height="{TemplateBinding Height}" Background="Transparent" >
+                        <!-- 滚动轨道 -->
+                        <Track x:Name="PART_Track"
+                               Orientation="Horizontal">
+                            <Track.DecreaseRepeatButton>
+                                <RepeatButton Command="ScrollBar.PageLeftCommand" BorderThickness="0"
+                                             Style="{x:Null}"
+                                             Background="Transparent"
+                                             Focusable="False"/>
+                            </Track.DecreaseRepeatButton>
+                            <Track.Thumb>
+                                <Thumb Style="{StaticResource ScrollBarThumbStyle}"/>
+                            </Track.Thumb>
+                            <Track.IncreaseRepeatButton>
+                                <RepeatButton Command="ScrollBar.PageRightCommand" BorderThickness="0"
+                                             Style="{x:Null}"
+                                             Background="Transparent"
+                                             Focusable="False"/>
+                            </Track.IncreaseRepeatButton>
+                        </Track>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- DataGrid的ScrollViewer样式（应用自定义滚动条） -->
+    <Style x:Key="DataGridScrollViewerStyle" TargetType="{x:Type ScrollViewer}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ScrollViewer}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <!-- 内容区域 -->
+                        <ScrollContentPresenter Grid.Column="0" Grid.Row="0"/>
+
+                        <!-- 垂直滚动条 -->
+                        <ScrollBar x:Name="PART_VerticalScrollBar"
+                                   Grid.Column="1" Grid.Row="0"
+                                   Style="{StaticResource VerticalScrollBarStyle}"
+                                   Value="{TemplateBinding VerticalOffset}"
+                                   Maximum="{TemplateBinding ScrollableHeight}"
+                                   ViewportSize="{TemplateBinding ViewportHeight}"
+                                   Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"/>
+
+                        <!-- 水平滚动条 -->
+                        <ScrollBar x:Name="PART_HorizontalScrollBar"
+                                   Grid.Column="0" Grid.Row="1"
+                                   Style="{StaticResource HorizontalScrollBarStyle}"
+                                   Orientation="Horizontal"
+                                   Value="{TemplateBinding HorizontalOffset}"
+                                   Maximum="{TemplateBinding ScrollableWidth}"
+                                   ViewportSize="{TemplateBinding ViewportWidth}"
+                                   Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- DataGrid样式（应用自定义滚动条） -->
+    <Style x:Key="CustomDataGridStyle" TargetType="{x:Type DataGrid}">
+        <Setter Property="ScrollViewer.CanContentScroll" Value="True"/>
+        <Setter Property="ScrollViewer.PanningMode" Value="Both"/>
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type DataGrid}">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            SnapsToDevicePixels="True">
+                        <ScrollViewer Style="{StaticResource DataGridScrollViewerStyle}"
+                                      Focusable="False">
+                            <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                        </ScrollViewer>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+</ResourceDictionary>

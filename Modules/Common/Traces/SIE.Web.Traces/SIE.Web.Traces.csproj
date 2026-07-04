@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup Label="Globals">
+		<SccProjectName>SAK</SccProjectName>
+		<SccProvider>SAK</SccProvider>
+		<SccAuxPath>SAK</SccAuxPath>
+		<SccLocalPath>SAK</SccLocalPath>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<OutputPath>..\..\..\..\platform\smom\</OutputPath>
+		<DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.Traces.xml</DocumentationFile>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<OutputPath>..\..\..\..\platform\smom\</OutputPath>
+		<DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.Traces.xml</DocumentationFile>
+	</PropertyGroup>
+	<ItemGroup>
+	  <None Remove="Behaviors\MesFwdTraceViewModelBehavior.js" />
+	</ItemGroup>
+	<ItemGroup>
+	  <EmbeddedResource Include="Behaviors\MesFwdTraceViewModelBehavior.js" />
+	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\..\Core\SIE.Web.Core\SIE.Web.Core.csproj" />
+	  <ProjectReference Include="..\SIE.Traces\SIE.Traces.csproj" />
+	</ItemGroup>
+</Project>

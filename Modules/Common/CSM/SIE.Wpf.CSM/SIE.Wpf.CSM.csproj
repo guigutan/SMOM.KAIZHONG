@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E1C7EAC2-6338-4738-AF48-A5A5498737A1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SIE.Wpf.CSM</RootNamespace>
+    <AssemblyName>SIE.Wpf.CSM</AssemblyName>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <UseWPF>true</UseWPF>
+    <TargetFrameworkProfile />
+    <CodeAnalysisRuleSet>..\..\..\..\.sonarlint\edo_v9.1csharp.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0-windows\SIE.Wpf.CSM.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0-windows\SIE.Wpf.CSM.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Items\SIE.Wpf.Items\SIE.Wpf.Items.csproj">
+      <Project>{f094dcaa-9351-4925-acb3-e28abf6f29f7}</Project>
+      <Name>SIE.Wpf.Items</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\SIE.CSM\SIE.CSM.csproj">
+      <Project>{a21207fe-626f-4449-a03b-ace4b250bdba}</Project>
+      <Name>SIE.CSM</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\.sonarlint\sie.smomcsharp.ruleset">
+      <Link>sie.smomcsharp.ruleset</Link>
+    </None>
+    
+    
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\..\..\.sonarlint\sie.smom\CSharp\SonarLint.xml">
+      <Link>SonarLint.xml</Link>
+    </AdditionalFiles>
+  </ItemGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+		<Compile Remove="Customers/CustomerCriteriaViewConfig.cs" />
+		<Compile Remove="Suppliers/SupplierAddressCriteriaViewConfig.cs" />
+		<Compile Remove="Suppliers/SupplierCriteriaViewConfig.cs" />
+		<Compile Remove="Customers/Commands/CustomerDisableCommand.cs" />
+		<Compile Remove="Customers/Commands/CustomerEnableCommand.cs" />
+		<Compile Remove="Suppliers/Commonds/AddSupplierCommand.cs" />
+		<Compile Remove="Suppliers/Commonds/EditSupplierCommand.cs" />
+		<Compile Remove="Suppliers/Commonds/SupplierDisableCommand.cs" />
+		<Compile Remove="Suppliers/Commonds/SupplierEnableCommand.cs" />
+		<Compile Remove="Suppliers/UITemplate/SearchTemplate.cs" />
+		<Compile Remove="Suppliers/UITemplate/SupplierUserCriteria.cs" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,69 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup Label="Globals">
+		<SccProjectName>SAK</SccProjectName>
+		<SccProvider>SAK</SccProvider>
+		<SccAuxPath>SAK</SccAuxPath>
+		<SccLocalPath>SAK</SccLocalPath>
+	</PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.Kit.APS.xml</DocumentationFile>
+		<OutputPath>..\..\..\..\platform\smom\</OutputPath>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.Kit.APS.xml</DocumentationFile>
+		<OutputPath>..\..\..\..\platform\smom\</OutputPath>
+	</PropertyGroup>
+	<ItemGroup>
+	  <Compile Remove="EngineerPlans\**" />
+	  <EmbeddedResource Remove="EngineerPlans\**" />
+	  <None Remove="EngineerPlans\**" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Remove="EngineerPlans\Commands\DoScheduleCommand.js" />
+		<None Remove="FactoryConfirms\Commands\BranchFactoryProgrammeCommand.js" />
+		<None Remove="FactoryConfirms\Commands\FactoryConfirmsSaveCommand.js" />
+		<None Remove="FactoryConfirms\Commands\GenerateEngineeringPlanCommand.js" />
+		<None Remove="FactoryConfirms\Commands\GenerateOrderReviewCommand.js" />
+		<None Remove="FactoryConfirms\Scripts\BranchFactiryProgrammeDetailAction.js" />
+		<None Remove="FactoryConfirms\Scripts\FactoryConfirmUIGenerator.js" />
+		<None Remove="ProductLocations\Behaviors\ProductLocationPropertyBehavior.js" />
+		<None Remove="ProductLocations\Commands\ImportProductLocationCommand.js" />
+		<None Remove="ProductLocations\Scripts\ProductLocationTypeComboList.js" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Compile Include="EngineerPlans\Commands\DoScheduleCommand.cs" />
+	  <Compile Include="EngineerPlans\Commands\GenerateEngineerPlanCommand.cs" />
+	  <Compile Include="EngineerPlans\Configs\ConfigViewConfig.cs" />
+	  <Compile Include="EngineerPlans\EngineerPlanCriteriaViewConfig.cs" />
+	  <Compile Include="EngineerPlans\EngineerPlanViewConfig.cs" />
+	  <Compile Include="EngineerPlans\Settings\CustLevelSettingCriteriaViewConfig.cs" />
+	  <Compile Include="EngineerPlans\Settings\CustLevelSettingViewConfig.cs" />
+	  <Compile Include="EngineerPlans\Settings\CustLevelViewConfig.cs" />
+	  <Compile Include="EngineerPlans\Settings\HolidaySettingCriteriaViewConfig.cs" />
+	  <Compile Include="EngineerPlans\Settings\HolidaySettingViewConfig.cs" />
+	</ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Include="EngineerPlans\Commands\DoScheduleCommand.js" />
+		<EmbeddedResource Include="FactoryConfirms\Commands\BranchFactoryProgrammeCommand.js" />
+		<EmbeddedResource Include="FactoryConfirms\Commands\FactoryConfirmsSaveCommand.js" />
+		<EmbeddedResource Include="FactoryConfirms\Commands\GenerateEngineeringPlanCommand.js" />
+		<EmbeddedResource Include="FactoryConfirms\Commands\GenerateOrderReviewCommand.js" />
+		<EmbeddedResource Include="FactoryConfirms\Scripts\BranchFactiryProgrammeDetailAction.js" />
+		<EmbeddedResource Include="FactoryConfirms\Scripts\FactoryConfirmUIGenerator.js" />
+		<EmbeddedResource Include="ProductLocations\Behaviors\ProductLocationPropertyBehavior.js" />
+		<EmbeddedResource Include="ProductLocations\Commands\ImportProductLocationCommand.js" />
+		<EmbeddedResource Include="ProductLocations\Scripts\ProductLocationTypeComboList.js" />
+	</ItemGroup>
+	<ItemGroup>
+	  <EmbeddedResource Include="EngineerPlans\Commands\GenerateEngineerPlanCommand.js" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\Common\Items\SIE.Web.Items\SIE.Web.Items.csproj" />
+		<ProjectReference Include="..\..\..\Common\Resources\SIE.Web.Resources\SIE.Web.Resources.csproj" />
+		<ProjectReference Include="..\SIE.Kit.APS\SIE.Kit.APS.csproj" />
+	</ItemGroup>
+</Project>

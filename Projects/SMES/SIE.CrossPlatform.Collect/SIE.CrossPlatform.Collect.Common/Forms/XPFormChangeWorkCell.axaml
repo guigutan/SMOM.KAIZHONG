@@ -1,0 +1,49 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="SIE.CrossPlatform.Collect.Common.Forms.XPFormChangeWorkCell"
+         xmlns:ctl="using:SIE.CrossPlatform.Collect.Common.Controls"
+         Title="切换工作单元" Width="600" Height="450">
+	<Border BorderThickness="1" BorderBrush="{DynamicResource SIEWindowDialogBorderColor}" 
+			BoxShadow="0 0 10 4 #ccc" CornerRadius="3">
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="60"></RowDefinition>
+				<RowDefinition Height="*"></RowDefinition>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*"></ColumnDefinition>
+				<ColumnDefinition Width="*"></ColumnDefinition>
+				<ColumnDefinition Width="*"></ColumnDefinition>
+			</Grid.ColumnDefinitions>
+			<ctl:XPDialogTitle Grid.Row="0" Grid.ColumnSpan="5"  VerticalContentAlignment="Stretch" x:Name="XPDialogTitle"/>
+			<Grid   Grid.Row="1"   Grid.Column="0" Margin="5" >
+				<Grid.RowDefinitions>
+					<RowDefinition Height="35"></RowDefinition>
+					<RowDefinition Height="*"></RowDefinition>
+				</Grid.RowDefinitions>
+				<Label  VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="20" Height="35" Background="#d8d8d8">产线</Label>
+				<ListBox  Grid.Row="1"   Grid.Column="0"  x:Name="xpListBoxCtr1"></ListBox>
+			</Grid>
+
+			<Grid   Grid.Row="1"   Grid.Column="1" Margin="5" >
+				<Grid.RowDefinitions>
+					<RowDefinition Height="35"></RowDefinition>
+					<RowDefinition Height="*"></RowDefinition>
+				</Grid.RowDefinitions>
+				<Label  VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="20" Height="35" Background="#d8d8d8">工序</Label>
+				<ListBox  Grid.Row="1"   Grid.Column="0"  x:Name="xpListBoxCtr2"></ListBox>
+			</Grid>
+			<Grid   Grid.Row="1"   Grid.Column="2" Margin="5" >
+				<Grid.RowDefinitions>
+					<RowDefinition Height="35"></RowDefinition>
+					<RowDefinition Height="*"></RowDefinition>
+				</Grid.RowDefinitions>
+				<Label  VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="20" Height="35" Background="#d8d8d8">工位</Label>
+				<ListBox  Grid.Row="1"   Grid.Column="0"  x:Name="xpListBoxCtr3"></ListBox>
+			</Grid>
+		</Grid>
+	</Border>
+</Window>

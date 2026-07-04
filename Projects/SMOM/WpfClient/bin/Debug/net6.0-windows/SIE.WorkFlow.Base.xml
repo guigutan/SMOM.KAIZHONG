@@ -1,0 +1,2260 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.WorkFlow.Base</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.WorkFlow.Base.Common.Activities.Audit.AuditDoneEvent">
+            <summary>
+            审核完成事件
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.Common.Activities.Audit.AuditModel">
+            <summary>
+            审核model
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.Common.Activities.Audit.AuditModel.Opinion">
+            <summary>
+            意见
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.Common.Enums.VersionStatus">
+            <summary>
+            流程版本状态
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.Common.Enums.VersionStatus.UnPublish">
+            <summary>
+            未发布
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.Common.Enums.VersionStatus.Published">
+            <summary>
+            已发布
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.Common.GetActivityEntityInput">
+            <summary>
+            获取节点关联实体 参数类
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.Common.GetActivityEntityInput.VariablesJson">
+            <summary>
+            流程变量Json字符串
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.Common.GetActivityEntityInput.FlowTaskId">
+            <summary>
+            任务Id
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.Common.IActivityEntityProvider">
+            <summary>
+            节点实体提供者
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.Common.IActivityEntityProvider.GetActivityEntity(SIE.WorkFlow.Base.Common.GetActivityEntityInput)">
+            <summary>
+            获取节点关联实体
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.Common.IActivityEntityProvider`1">
+            <summary>
+            节点实体提供者
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.Common.Interfaces.ISieWorkflow">
+            <summary>
+            工作流接口，用于业务工作流使用。
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.Common.Interfaces.ISieWorkflow.FindStartableWorkflowAsync(System.String,System.Nullable{System.Double},System.Double,System.String,System.String,System.String,System.String,System.Boolean,System.Collections.Generic.List{SIE.WorkFlow.Base.Common.Models.AttachmentInfoModel})">
+            <summary>
+            启动创建流程实例
+            </summary>
+            <param name="workFlowDefId"></param>
+            <param name="starterId">发起人</param>
+            <param name="flowDefId"></param>
+            <param name="remark">流程描述</param>
+            <param name="source">流程来源</param>
+            <param name="sourceType">流程来源类型 （一般用来记录类的完全限定名，结合SourceId可以用来给业务判断是否重复发起）</param>
+            <param name="sourceId">流程来源Id</param>
+            <param name="canCancel">是否可以撤销</param>
+            <param name="attachments">附件列表</param>
+            <returns>实例id</returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.Common.Interfaces.ISieWorkflow.TriggerWorkflowAsync(System.String,System.String,System.Object)">
+            <summary>
+            开始工作流
+            </summary>
+            <param name="instanceId">工作流引擎实例ID</param>
+            <param name="activityId">工作流引擎节点ID</param>
+            <param name="input">输入</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.Common.Interfaces.ISieWorkflow.CancelWorkflow(System.Double,System.String)">
+            <summary>
+            撤销工作流
+            </summary>
+            <param name="flowInstanceId">实例ID</param>
+            <param name="reason">撤销原因</param>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.Common.Models.AttachmentInfoModel">
+            <summary>
+            附件信息
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.Common.Models.AttachmentInfoModel.FileName">
+            <summary>
+            文件名称
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.Common.Models.AttachmentInfoModel.FilePath">
+            <summary>
+            文件路径
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.Common.Models.AttachmentInfoModel.FileExtesion">
+            <summary>
+            文件扩展名
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.Common.Models.AttachmentInfoModel.FileSize">
+            <summary>
+            文件大小
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.Common.Models.ProductType">
+            <summary>
+            SMOM产品类型
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.Common.Models.ProductType.MES">
+            <summary>
+            MES
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.Common.Models.ProductType.QMS">
+            <summary>
+            QMS
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.Common.Models.ProductType.WMS">
+            <summary>
+            WMS
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.Common.Models.ProductType.EDO">
+            <summary>
+            EDO
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.Common.Models.ProductType.APS">
+            <summary>
+            APS
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.Common.Models.StartFlowInstance">
+            <summary>
+            开始实例
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.Common.Models.StartFlowInstance.FlowInstanceId">
+            <summary>
+            实例ID
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.Common.Models.StartFlowInstance.InstanceGuid">
+            <summary>
+            实例GUID
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.Common.Models.StartFlowInstance.ActivityId">
+            <summary>
+            开始节点ID
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.Common.Models.WorkFlowViews">
+            <summary>
+            工作流视图
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.Common.Models.WorkFlowViews.WorkFlowDetailsView">
+            <summary>
+            编辑视图
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.Common.Models.WorkFlowViews.WorkFlowReadonlyView">
+            <summary>
+            只读查看视图
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.CustomForms.CustomForm">
+            <summary>
+            工作流通用表单
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.CustomForms.CustomForm.FieldList">
+            <summary>
+            表格键值对集合
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.CustomForms.CustomForm.StarterId">
+            <summary>
+            发起人,默认为当前操作人
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.CustomForms.CustomForm.FlowDefinitionId">
+            <summary>
+            工作流定义ID
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.CustomForms.CustomForm.CustomLists">
+            <summary>
+            自定义列表
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.CustomForms.CustomForm.Attachments">
+            <summary>
+            附件列表
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.CustomForms.CustomFormVariable">
+            <summary>
+            工作流通用表单变量
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.CustomForms.CustomFormVariable.FieldList">
+            <summary>
+            表格键值对集合
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.CustomForms.CustomFormVariable.BillFormTaskId">
+            <summary>
+            表单任务ID
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.CustomForms.CustomFormWithList">
+            <summary>
+            工作流通用表单
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.CustomForms.CustomFormWithList.CustomLists">
+            <summary>
+            自定义列表
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.CustomForms.CutomListField">
+            <summary>
+            工作流通用表单自定义列表字段
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.CustomForms.CutomListField.FieldName">
+            <summary>
+            字段名
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.CustomForms.CutomListField.FieldLabel">
+            <summary>
+            字段值
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.CustomForms.CutomListField.FieldWidth">
+            <summary>
+            栏位宽度
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.CustomForms.CutomListValue">
+            <summary>
+            工作流通用表单自定义列表值
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.CustomForms.CutomListValue.FieldName">
+            <summary>
+            字段名
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.CustomForms.CutomListValue.FieldValue">
+            <summary>
+            字段值
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.CustomForms.CustomList">
+            <summary>
+            工作流通用表单的子表
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.CustomForms.CustomList.ListName">
+            <summary>
+            列表名称
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.CustomForms.CustomList.CutomListFields">
+            <summary>
+            自定义列表字段名列表
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.CustomForms.CustomList.CutomListValueList">
+            <summary>
+            自定义列表值列表
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.CustomForms.DataEntities.CustomDetailHeader">
+            <summary>
+            自定义表单明细-表头
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.CustomForms.DataEntities.CustomDetailHeader.NameProperty">
+            <summary>
+            从表名称
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.CustomForms.DataEntities.CustomDetailHeader.Name">
+            <summary>
+            从表名称
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.CustomForms.DataEntities.CustomDetailHeader.HeaderDataProperty">
+            <summary>
+            表头字段信息
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.CustomForms.DataEntities.CustomDetailHeader.HeaderData">
+            <summary>
+            表头字段信息
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.CustomForms.DataEntities.CustomDetailHeader.ValueListProperty">
+            <summary>
+            数据信息
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.CustomForms.DataEntities.CustomDetailHeader.ValueList">
+            <summary>
+            数据信息
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.CustomForms.DataEntities.CustomDetailHeader.FlowInstanceIdProperty">
+            <summary>
+            流程进度Id
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.CustomForms.DataEntities.CustomDetailHeader.FlowInstanceId">
+            <summary>
+            流程进度Id
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.CustomForms.DataEntities.CustomDetailHeader.FlowInstanceProperty">
+            <summary>
+            流程进度
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.CustomForms.DataEntities.CustomDetailHeader.FlowInstance">
+            <summary>
+            流程进度
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.CustomForms.DataEntities.CustomDetailHeader.ActivityIdProperty">
+            <summary>
+            节点ID
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.CustomForms.DataEntities.CustomDetailHeader.ActivityId">
+            <summary>
+            节点ID
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.CustomForms.DataEntities.CustomDetailHeaderConfig">
+            <summary>
+            自定义表单明细-表头 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.CustomForms.DataEntities.CustomDetailHeaderConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.CustomForms.DataEntities.CustomDetailValue">
+            <summary>
+            通用表单从表数据值
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.CustomForms.DataEntities.CustomDetailValue.CustomDetailHeaderIdProperty">
+            <summary>
+            通用表单从表表头Id
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.CustomForms.DataEntities.CustomDetailValue.CustomDetailHeaderId">
+            <summary>
+            通用表单从表表头Id
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.CustomForms.DataEntities.CustomDetailValue.CustomDetailHeaderProperty">
+            <summary>
+            通用表单从表表头
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.CustomForms.DataEntities.CustomDetailValue.CustomDetailHeader">
+            <summary>
+            通用表单从表表头
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.CustomForms.DataEntities.CustomDetailValue.DataProperty">
+            <summary>
+            数据
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.CustomForms.DataEntities.CustomDetailValue.Data">
+            <summary>
+            数据
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.CustomForms.DataEntities.CustomDetailValueConfig">
+            <summary>
+            自定义表单明细-表头 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.CustomForms.DataEntities.CustomDetailValueConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.CustomForms.FormField">
+            <summary>
+            表单属性
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.CustomForms.FormField.Name">
+            <summary>
+            属性名称
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.CustomForms.FormField.Value">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.CustomForms.FormField.Hidden">
+            <summary>
+            是否隐藏
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.CustomForms.FlowCustomFormController">
+            <summary>
+            通用表单控制器
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.CustomForms.FlowCustomFormController._workflow">
+            <summary>
+            工作流
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.CustomForms.FlowCustomFormController._flowTaskController">
+            <summary>
+            工作流任务控制器
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.CustomForms.FlowCustomFormController.#ctor(SIE.WorkFlow.Base.Common.Interfaces.ISieWorkflow,SIE.WorkFlow.Base.FlowInstances.FlowTaskController)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="workflowInterface"></param>
+            <param name="rfs"></param>
+            <param name="flowTaskController"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.CustomForms.FlowCustomFormController.CreateCustomFormWorkFlow(SIE.WorkFlow.Base.CustomForms.CustomForm,System.String,System.String)">
+            <summary>
+            创建通用表单工作流
+            </summary>
+            <param name="form">自定义表单内容</param>
+            <param name="flowDesc">流程描述</param>
+            <param name="flowSource">流程来源</param>
+            <returns>流程实例ID</returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.CustomForms.FlowCustomFormController.SaveCustomList(SIE.WorkFlow.Base.CustomForms.CustomForm,System.Double,System.String)">
+            <summary>
+            保存从表内容
+            </summary>
+            <param name="form"></param>
+            <param name="flowInstanceId"></param>
+            <param name="activityId"></param>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.CustomForms.FlowCustomFormController.DeleteCustomList(System.Double,System.String)">
+            <summary>
+            删除通用表单从表内容
+            </summary>
+            <param name="flowInstanceId"></param>
+            <param name="activityId"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.CustomForms.FlowCustomFormController.ResumeCustomFormWorkFlow(SIE.WorkFlow.Base.CustomForms.CustomForm,System.Double)">
+            <summary>
+            恢复通用表单工作流（重新发起）
+            </summary>
+            <param name="form"></param>
+            <param name="flowInstanceId"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.CustomForms.FlowCustomFormController.GetCustomList(System.Double,System.String)">
+            <summary>
+            获取通用表单从表信息
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.FlowDefinitions.Categorys.WorkFlowCategoryBase">
+            <summary>
+            工作流分类基类
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowDefinitions.Categorys.WorkFlowCategoryBase.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowDefinitions.Categorys.WorkFlowCategoryBase.Config">
+            <summary>
+            配置
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.FlowDefinitions.Categorys.WorkFlowCategoryConfigBase">
+            <summary>
+            工作流分类配置基类
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.FlowDefinitions.Categorys.WorkFlowCategoryConfigBase.ToConfigJson">
+            <summary>
+            转换成Json配置字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.FlowDefinitions.Categorys.WorkFlowCategoryConfigBase.GetDisplayConfigStr">
+            <summary>
+            获取展示内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.FlowDefinitions.Categorys.WorkFlowCategoryManage">
+            <summary>
+            工作流分类
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowDefinitions.Categorys.WorkFlowCategoryManage.CategoryList">
+            <summary>
+            工作流分类清单
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.FlowDefinitions.Categorys.WorkFlowCategoryManage.InitCategorys">
+            <summary>
+            初始化分类
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.FlowDefinitions.Categorys.WorkFlowCategoryManage.FindCategoryList(SIE.PagingInfo,System.String)">
+            <summary>
+            查找分类列表
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.FlowDefinitions.Categorys.WorkFlowCategoryManage.GetCategoryList">
+            <summary>
+            加载工作流分类清单
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.FlowDefinitions.Categorys.WorkFlowCategoryManage.GetWorkFlowConfig(System.String)">
+            <summary>
+            获取工作流分类配置
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.FlowDefinitions.Categorys.WorkFlowCategoryManage.GetConfigDisplayString(System.String,System.String)">
+            <summary>
+            获取工作流分类配置显示内容
+            </summary>
+            <param name="categoryName"></param>
+            <param name="dataJson"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.FlowDefinitions.Categorys.WorkFlowCategoryViewModel">
+            <summary>
+            工作流分类ViewModel
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowDefinitions.Categorys.WorkFlowCategoryViewModel.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowDefinitions.Categorys.WorkFlowCategoryViewModel.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.FlowDefinitions.Config.WorkflowNodePanelUnFlodConifgValue">
+            <summary>
+            流程节点默认展开配置值
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowDefinitions.Config.WorkflowNodePanelUnFlodConifgValue.UnFlodProperty">
+            <summary>
+            节点默认展开
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowDefinitions.Config.WorkflowNodePanelUnFlodConifgValue.UnFlod">
+            <summary>
+            节点默认展开
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.FlowDefinitions.Config.WorkflowNodePanelUnFlodConifgValue.Display">
+            <summary>
+            显示
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.FlowDefinitions.Config.WorkflowTaskNotificationConifg">
+            <summary>
+            流程节点任务通知方式
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowDefinitions.Config.WorkflowTaskNotificationConifg.DefaultValue">
+            <summary>
+            默认值
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.FlowDefinitions.Config.WorkflowTaskNotificationConifgValue">
+            <summary>
+            流程节点任务通知方式
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowDefinitions.Config.WorkflowTaskNotificationConifgValue.PusherIdProperty">
+            <summary>
+            推送方式Id
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowDefinitions.Config.WorkflowTaskNotificationConifgValue.PusherId">
+            <summary>
+            推送方式Id
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowDefinitions.Config.WorkflowTaskNotificationConifgValue.PusherProperty">
+            <summary>
+            推送方式
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowDefinitions.Config.WorkflowTaskNotificationConifgValue.Pusher">
+            <summary>
+            推送方式
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowDefinitions.Config.WorkflowTaskNotificationConifgValue.HostProperty">
+            <summary>
+            系统访问地址
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowDefinitions.Config.WorkflowTaskNotificationConifgValue.Host">
+            <summary>
+            系统访问地址
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.FlowDefinitions.Config.WorkflowTaskNotificationConifgValue.Display">
+            <summary>
+            显示
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinition">
+            <summary>
+            流程定义
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinition.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinition.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinition.DefinitionIdProperty">
+            <summary>
+            流程定义ID
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinition.DefinitionId">
+            <summary>
+            流程定义ID
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinition.StateProperty">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinition.State">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinition.IsCancelProperty">
+            <summary>
+            删除标识
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinition.IsCancel">
+            <summary>
+            删除标识
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinition.CategoryNameProperty">
+            <summary>
+            流程分类
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinition.CategoryName">
+            <summary>
+            流程分类
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinition.CategoryConfigProperty">
+            <summary>
+            分类配置
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinition.CategoryConfig">
+            <summary>
+            分类配置
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinition.CategoryConfigDisplayProperty">
+            <summary>
+            分类配置显示
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinition.CategoryConfigDisplay">
+            <summary>
+            分类配置显示
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinition.VersionProperty">
+            <summary>
+            当前发布版本
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinition.Version">
+            <summary>
+            当前发布版本
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.FlowDefinitions.DesignWorkFlowConfig">
+            <summary>
+            流程定义 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.FlowDefinitions.DesignWorkFlowConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinitionController">
+            <summary>
+            工作流定义控制器
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinitionController.#ctor">
+            <summary>
+            构造函数
+            </summary>
+            <param name="rfs"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinitionController.SetHost(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="host"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinitionController.QueryFlowDefinitions(SIE.WorkFlow.Base.FlowDefinitions.FlowDefinitionCriteria)">
+            <summary>
+            查询
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinitionController.GetWorkflowDefinitionById(System.Double)">
+            <summary>
+            查找工作流定义
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinitionController.GetWorkflowDefinitionByDefinitonId(System.String)">
+            <summary>
+            查找工作流定义
+            </summary>
+            <param name="definitionId"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinitionController.GetWorkFlowDefinitions(System.Collections.Generic.List{System.Double})">
+            <summary>
+            查询工作流定义集合
+            </summary>
+            <param name="defIds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinitionController.GetWorkflowDefinitionsByCategory(System.String,System.Nullable{SIE.Domain.State})">
+            <summary>
+            
+            </summary>
+            <param name="category"></param>
+            <param name="state"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinitionController.Exist(System.Double,System.String)">
+            <summary>
+            流程定义名称是否重复
+            </summary>
+            <param name="sourceId"></param>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinitionController.GetWorkflowDefinitionByWorkflowId(System.String)">
+            <summary>
+            查找工作流定义
+            </summary>
+            <param name="wfId"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinitionController.Duplicate(SIE.WorkFlow.Base.FlowDefinitions.FlowDefinition)">
+            <summary>
+            工作流分类和配置是否重复
+            </summary>
+            <param name="source"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinitionController.UpdateWorkFlowDefVersion(System.String,System.Int32)">
+            <summary>
+            更新流程定义发布版本
+            </summary>
+            <param name="defId"></param>
+            <param name="version"></param>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinitionController.IsNodePanelUnFlod">
+            <summary>
+            节点面板是否默认展开
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinitionCriteria">
+            <summary>
+            工作流定义查询实体
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinitionCriteria.NameProperty">
+            <summary>
+            流程名称
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinitionCriteria.Name">
+            <summary>
+            节点类型名称
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinitionCriteria.CategoryNameProperty">
+            <summary>
+            工作流分类
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinitionCriteria.CategoryName">
+            <summary>
+            工作流分类
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinitionCriteria.Fetch">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinitionRule">
+            <summary>
+            工作流分类和配置不能重复
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinitionRule.Property">
+            <summary>
+            属性
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinitionRule.Validate(SIE.Domain.IEntity,SIE.MetaModel.RuleArgs)">
+            <summary>
+            工作流分类和配置不能重复。
+            </summary>
+            <param name="entity">实体</param>
+            <param name="e">规则参数</param>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinitionNameNotDuplicateRule">
+            <summary>
+            流程定义不能重复
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinitionNameNotDuplicateRule.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinitionNameNotDuplicateRule.Validate(SIE.Domain.IEntity,SIE.MetaModel.RuleArgs)">
+            <summary>
+            验证规则
+            </summary>
+            <param name="entity">实体</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinitionVersionViewModel">
+            <summary>
+            流程定义版本ViewModel
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinitionVersionViewModel.DefinitionIdProperty">
+            <summary>
+            工作流定义ID
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinitionVersionViewModel.DefinitionId">
+            <summary>
+            工作流定义ID
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinitionVersionViewModel.VersionIdProperty">
+            <summary>
+            版本Id
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinitionVersionViewModel.VersionId">
+            <summary>
+            版本Id
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinitionVersionViewModel.VersionProperty">
+            <summary>
+            版本
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinitionVersionViewModel.Version">
+            <summary>
+            版本
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinitionVersionViewModel.StatusProperty">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowDefinitions.FlowDefinitionVersionViewModel.Status">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.FlowInstances.ApiModels.FlowTaskApiCriteriaModel">
+            <summary>
+            工作流任务查询类
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.ApiModels.FlowTaskApiCriteriaModel.Keyword">
+            <summary>
+            关键字
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.ApiModels.FlowTaskApiCriteriaModel.FromTime">
+            <summary>
+            查询范围-开始时间
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.ApiModels.FlowTaskApiCriteriaModel.ToTime">
+            <summary>
+            查询范围-结束时间
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.ApiModels.FlowTaskApiCriteriaModel.WorkFlowHandleStatusList">
+            <summary>
+            工作流任务处理状态
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.ApiModels.FlowTaskApiCriteriaModel.StarterName">
+            <summary>
+            发起人
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.ApiModels.FlowTaskApiCriteriaModel.HandlerId">
+            <summary>
+            处理人ID
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.ApiModels.FlowTaskApiCriteriaModel.CategoryNameList">
+            <summary>
+            流程分类
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.FlowInstances.ApiModels.FlowTaskApiCriteriaPageModel">
+            <summary>
+            工作流任务查询类,支持分页查询
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.ApiModels.FlowTaskApiCriteriaPageModel.PageNumber">
+            <summary>
+            页号
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.ApiModels.FlowTaskApiCriteriaPageModel.PageSize">
+            <summary>
+            每页记录数
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.FlowInstances.FlowInstance">
+            <summary>
+            工作流实例
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowInstance.CodeProperty">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowInstance.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowInstance.WorkflowInstanceIdProperty">
+            <summary>
+            实例ID
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowInstance.WorkflowInstanceId">
+            <summary>
+            实例ID
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowInstance.WorkflowBlueprintIdProperty">
+            <summary>
+            蓝图ID
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowInstance.WorkflowBlueprintId">
+            <summary>
+            蓝图ID
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowInstance.VersionProperty">
+            <summary>
+            版本
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowInstance.Version">
+            <summary>
+            版本
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowInstance.CancelReasonProperty">
+            <summary>
+            终止原因
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowInstance.CancelReason">
+            <summary>
+            终止原因
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowInstance.StarterIdProperty">
+            <summary>
+            发起人Id
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowInstance.StarterId">
+            <summary>
+            发起人Id
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowInstance.StarterProperty">
+            <summary>
+            发起人
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowInstance.Starter">
+            <summary>
+            发起人
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowInstance.WorkFlowStatusProperty">
+            <summary>
+            流程状态
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowInstance.WorkFlowStatus">
+            <summary>
+            流程状态
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowInstance.FlowDefinitionIdProperty">
+            <summary>
+            流程定义Id
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowInstance.FlowDefinitionId">
+            <summary>
+            流程定义Id
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowInstance.FlowDefinitionProperty">
+            <summary>
+            流程定义
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowInstance.FlowDefinition">
+            <summary>
+            流程定义
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowInstance.CancelerIdProperty">
+            <summary>
+            终止人Id
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowInstance.CancelerId">
+            <summary>
+            终止人Id
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowInstance.CancelerProperty">
+            <summary>
+            终止人
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowInstance.Canceler">
+            <summary>
+            终止人
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowInstance.ProcessRecListProperty">
+            <summary>
+            处理记录清单
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowInstance.ProcessRecList">
+            <summary>
+            处理记录清单
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowInstance.RemarkProperty">
+            <summary>
+            流程描述
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowInstance.Remark">
+            <summary>
+            流程描述
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowInstance.SourceProperty">
+            <summary>
+            流程来源
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowInstance.Source">
+            <summary>
+            流程来源
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowInstance.SourceTypeProperty">
+            <summary>
+            流程来源类型（一般用来记录类的完全限定名，结合SourceId可以用来给业务判断是否重复发起）
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowInstance.SourceType">
+            <summary>
+            流程来源类型
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowInstance.SourceIdProperty">
+            <summary>
+            流程来源Id
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowInstance.SourceId">
+            <summary>
+            流程来源
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowInstance.CanCancelProperty">
+            <summary>
+            是否允许撤销
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowInstance.CanCancel">
+            <summary>
+            是否允许撤销
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowInstance.FlowDefinitionNameProperty">
+            <summary>
+            工作流名称
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowInstance.FlowDefinitionName">
+            <summary>
+            工作流名称
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowInstance.WorkFlowDefinitionIdProperty">
+            <summary>
+            工作流定义ID
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowInstance.WorkFlowDefinitionId">
+            <summary>
+            工作流定义ID
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowInstance.CurrentHandleNamesProperty">
+            <summary>
+            当前处理人
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowInstance.CurrentHandleNames">
+            <summary>
+            当前处理人
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowInstance.FlowCategoryNameProperty">
+            <summary>
+            流程分类
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowInstance.FlowCategoryName">
+            <summary>
+            流程分类
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.FlowInstances.FlowInstanceConfig">
+            <summary>
+            工作流实例 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.FlowInstances.FlowInstanceConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.FlowInstances.FlowInstanceBaseController">
+            <summary>
+            工作流实例控制器
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.FlowInstances.FlowInstanceBaseController.GetFlowInstances(SIE.WorkFlow.Base.FlowInstances.FlowInstanceCriteria)">
+            <summary>
+            查询工作流实例集合
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.FlowInstances.FlowInstanceCriteria">
+            <summary>
+            工作流实例查询实体
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowInstanceCriteria.CodeProperty">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowInstanceCriteria.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowInstanceCriteria.FlowDefinitionNameProperty">
+            <summary>
+            工作流名称
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowInstanceCriteria.FlowDefinitionName">
+            <summary>
+            工作流名称
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowInstanceCriteria.StarterIdProperty">
+            <summary>
+            发起人Id
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowInstanceCriteria.StarterId">
+            <summary>
+            发起人Id
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowInstanceCriteria.StarterProperty">
+            <summary>
+            发起人
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowInstanceCriteria.Starter">
+            <summary>
+            发起人
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowInstanceCriteria.RemarkProperty">
+            <summary>
+            流程描述
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowInstanceCriteria.Remark">
+            <summary>
+            流程描述
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowInstanceCriteria.WorkFlowStatusProperty">
+            <summary>
+            流程状态
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowInstanceCriteria.WorkFlowStatus">
+            <summary>
+            流程状态
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.FlowInstances.FlowInstanceCriteria.Fetch">
+            <summary>
+            查询
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.FlowInstances.FlowProcessActivityViewModel">
+            <summary>
+            工作流程节点ViewModel
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowProcessActivityViewModel.ActivityNameProperty">
+            <summary>
+            节点名称
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowProcessActivityViewModel.ActivityName">
+            <summary>
+            节点名称
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowProcessActivityViewModel.ActivityIdProperty">
+            <summary>
+            节点ID
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowProcessActivityViewModel.ActivityId">
+            <summary>
+            节点ID
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowProcessActivityViewModel.MessageProperty">
+            <summary>
+            处理信息
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowProcessActivityViewModel.Message">
+            <summary>
+            处理信息
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowProcessActivityViewModel.ProcessorsProperty">
+            <summary>
+            处理人
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowProcessActivityViewModel.Processors">
+            <summary>
+            处理人
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowProcessActivityViewModel.CreateDateProperty">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowProcessActivityViewModel.CreateDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowProcessActivityViewModel.IsDoneProperty">
+            <summary>
+            是否已处理
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowProcessActivityViewModel.IsDone">
+            <summary>
+            是否已处理
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowProcessActivityViewModel.FlowProcessRecordIdProperty">
+            <summary>
+            节点名称
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowProcessActivityViewModel.FlowProcessRecordId">
+            <summary>
+            节点名称
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.FlowInstances.FlowProcessRecord">
+            <summary>
+            流程处理记录
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowProcessRecord.ActivityNameProperty">
+            <summary>
+            节点名称
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowProcessRecord.ActivityName">
+            <summary>
+            节点名称
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowProcessRecord.ActivityIdProperty">
+            <summary>
+            节点ID
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowProcessRecord.ActivityId">
+            <summary>
+            节点ID
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowProcessRecord.MessageProperty">
+            <summary>
+            处理信息
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowProcessRecord.Message">
+            <summary>
+            处理信息
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowProcessRecord.ProcessorsProperty">
+            <summary>
+            处理人
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowProcessRecord.Processors">
+            <summary>
+            处理人
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowProcessRecord.FlowInstanceIdProperty">
+            <summary>
+            处理记录清单Id
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowProcessRecord.FlowInstanceId">
+            <summary>
+            处理记录清单Id
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowProcessRecord.FlowInstanceProperty">
+            <summary>
+            处理记录清单
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowProcessRecord.FlowInstance">
+            <summary>
+            处理记录清单
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowProcessRecord.FlowTaskIdProperty">
+            <summary>
+            任务Id
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowProcessRecord.FlowTaskId">
+            <summary>
+            任务Id
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowProcessRecord.FlowTaskProperty">
+            <summary>
+            任务
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowProcessRecord.FlowTask">
+            <summary>
+            任务
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowProcessRecord.IsHideProperty">
+            <summary>
+            是否隐藏
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowProcessRecord.IsHide">
+            <summary>
+            是否隐藏
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowProcessRecord.NotAllowRejectProperty">
+            <summary>
+            不允许驳回
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowProcessRecord.NotAllowReject">
+            <summary>
+            不允许驳回
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowProcessRecord.WorkFlowDefinitionIdProperty">
+            <summary>
+            工作流定义ID
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowProcessRecord.WorkFlowDefinitionId">
+            <summary>
+            工作流定义ID
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.FlowInstances.FlowProcessRecordConfig">
+            <summary>
+            流程处理记录 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.FlowInstances.FlowProcessRecordConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.FlowInstances.FlowProcessRecordController">
+            <summary>
+            流程处理记录控制器
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.FlowInstances.FlowProcessRecordController.GetFlowProcessRecordsByTaskId(System.Double)">
+            <summary>
+            查询工作流实例的处理记录信息（根据taskId）
+            </summary>
+            <param name="taskId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.FlowInstances.FlowProcessRecordController.GetFlowProcessRecordsByInstanceId(System.Double)">
+            <summary>
+            查询工作流实例的处理记录信息(根据instanceId)
+            </summary>
+            <param name="instanceId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.FlowInstances.FlowProcessRecordController.GetFlowProcessActivitiesByInstance(System.Double)">
+            <summary>
+            查询工作流流程处理记录信息,包括当前处理节点
+            </summary>
+            <param name="instanceId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.FlowInstances.FlowProcessRecordController.GetFlowProcessActivities(System.Double)">
+            <summary>
+            查询工作流流程处理记录信息,包括当前处理节点
+            </summary>
+            <param name="taskId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.FlowInstances.FlowProcessRecordController.Save(SIE.WorkFlow.Base.FlowInstances.FlowProcessRecord)">
+            <summary>
+            保存
+            </summary>
+            <param name="flowProcessRecord"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.FlowInstances.FlowTask">
+            <summary>
+            工作流任务
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowTask.WorkFlowHandleStatusProperty">
+            <summary>
+            任务状态
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowTask.WorkFlowHandleStatus">
+            <summary>
+            任务状态
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowTask.HandlerIdProperty">
+            <summary>
+            处理人Id
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowTask.HandlerId">
+            <summary>
+            处理人Id
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowTask.HandlerProperty">
+            <summary>
+            处理人
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowTask.Handler">
+            <summary>
+            处理人
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowTask.ActivityIdProperty">
+            <summary>
+            节点ID
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowTask.ActivityId">
+            <summary>
+            节点ID
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowTask.ActivityTypeNameProperty">
+            <summary>
+            节点类型名称
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowTask.ActivityTypeName">
+            <summary>
+            流程节点
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowTask.ActivityTypeProperty">
+            <summary>
+            节点类型
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowTask.ActivityType">
+            <summary>
+            节点类型
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowTask.FlowInstanceIdProperty">
+            <summary>
+            工作流实例Id
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowTask.FlowInstanceId">
+            <summary>
+            工作流实例Id
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowTask.FlowInstanceProperty">
+            <summary>
+            工作流实例
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowTask.FlowInstance">
+            <summary>
+            工作流实例
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowTask.AttachmentListProperty">
+            <summary>
+            附件清单
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowTask.AttachmentList">
+            <summary>
+            附件清单
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowTask.FlowDefintionNameProperty">
+            <summary>
+            流程名称
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowTask.FlowDefintionName">
+            <summary>
+            流程名称
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowTask.FlowDefintionIDProperty">
+            <summary>
+            流程名称ID
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowTask.FlowDefintionID">
+            <summary>
+            流程名称
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowTask.FlowCategoryNameProperty">
+            <summary>
+            流程分类名称
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowTask.FlowCategoryName">
+            <summary>
+            流程名称
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowTask.WorkFlowStatusProperty">
+            <summary>
+            流程状态
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowTask.WorkFlowStatus">
+            <summary>
+            流程状态
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowTask.InstanceCancelReasonProperty">
+            <summary>
+            撤销原因
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowTask.InstanceCancelReason">
+            <summary>
+            撤销原因
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowTask.FlowDefinitionVersionProperty">
+            <summary>
+            流程版本
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowTask.Version">
+            <summary>
+            流程版本
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowTask.StarterNameProperty">
+            <summary>
+            发起人
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowTask.StarterName">
+            <summary>
+            发起人
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowTask.InstanceCancelerProperty">
+            <summary>
+            撤销人
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowTask.InstanceCanceler">
+            <summary>
+            撤销人
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowTask.WorkFlowInstanceIdProperty">
+            <summary>
+            工作流实例ID
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowTask.WorkFlowInstanceId">
+            <summary>
+            工作流实例ID
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowTask.WorkFlowDefinitionIdProperty">
+            <summary>
+            工作流定义ID
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowTask.WorkFlowDefinitionId">
+            <summary>
+            工作流定义ID
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowTask.RemarkProperty">
+            <summary>
+            流程描述
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowTask.Remark">
+            <summary>
+            流程描述
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowTask.SourceProperty">
+            <summary>
+            流程来源
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowTask.Source">
+            <summary>
+            流程来源
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowTask.InstanceCanCancelProperty">
+            <summary>
+            是否允许撤销 
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowTask.InstanceCanCancel">
+            <summary>
+            是否允许撤销 
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowTask.FlowInstanceCodeProperty">
+            <summary>
+            流程编码
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowTask.FlowInstanceCode">
+            <summary>
+            流程编码
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowTask.CurrentHandleNamesProperty">
+            <summary>
+            当前处理人
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowTask.CurrentHandleNames">
+            <summary>
+            当前处理人
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.FlowInstances.FlowTaskConfig">
+            <summary>
+            工作流任务 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.FlowInstances.FlowTaskConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.FlowInstances.FlowTaskAttachment">
+            <summary>
+            任务附件
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowTaskAttachment.ActivityIdProperty">
+            <summary>
+            节点ID
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowTaskAttachment.ActivityId">
+            <summary>
+            节点ID
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.FlowInstances.FlowTaskAttachmentRepository">
+            <summary>
+             仓库
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.FlowInstances.FlowTaskAttachmentConfig">
+            <summary>
+            附件 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.FlowInstances.FlowTaskAttachmentConfig.ConfigMeta">
+            <summary>
+            实体配置
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.FlowInstances.FlowTaskController">
+            <summary>
+            工作流任务控制器-API
+            </summary>
+            <summary>
+            工作流任务控制器
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.FlowInstances.FlowTaskController.GetWorkflowTasksCount(SIE.WorkFlow.Base.FlowInstances.ApiModels.FlowTaskApiCriteriaModel)">
+            <summary>
+            查询工作流任务数量
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.FlowInstances.FlowTaskController.GetWorkflowTasks(SIE.WorkFlow.Base.FlowInstances.ApiModels.FlowTaskApiCriteriaPageModel)">
+            <summary>
+            查询工作流任务
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.FlowInstances.FlowTaskController.CreateQuery(SIE.WorkFlow.Base.FlowInstances.ApiModels.FlowTaskApiCriteriaModel)">
+            <summary>
+            生成查询条件
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.FlowInstances.FlowTaskController.QueryFlowTasks(SIE.WorkFlow.Base.FlowInstances.FlowTaskCriteria)">
+            <summary>
+            工作流任务查询
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.FlowInstances.FlowTaskController.GetFlowTaskByInstanceId(System.Double,System.String)">
+            <summary>
+            根据实例ID查找节点任务，默认为启动任务
+            </summary>
+            <param name="instanceId">实例ID</param>
+            <param name="activityId">节点ID，可选。不指定时，取启动任务</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.FlowInstances.FlowTaskController.GetFlowTasksByInstanceId(System.Double,System.String)">
+            <summary>
+            根据实例ID查找节点任务 
+            </summary>
+            <param name="instanceId">实例ID</param>
+            <param name="activityId">节点ID，可选。不指定时，取启动任务</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.FlowInstances.FlowTaskController.GetTaskById(System.Double,SIE.Domain.EagerLoadOptions)">
+            <summary>
+            根据ID查找工作流任务
+            </summary>
+            <param name="taskId"></param>
+            <param name="eagerLoadOptions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.FlowInstances.FlowTaskController.ExistSameTask(System.Double,System.String,System.Double,System.Collections.Generic.List{SIE.WorkFlow.Base.FlowInstances.WorkFlowHandleStatus})">
+            <summary>
+            是否已经存在相同任务
+            </summary>
+            <param name="instanceId"></param>
+            <param name="activityId"></param>
+            <param name="handlerId"></param>
+            <param name="statusList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.FlowInstances.FlowTaskController.CancelTasksByFlowInstanceId(System.Double)">
+            <summary>
+            任务撤销,把待处理、处理中的任务处理状态改成已撤销 
+            </summary>
+            <param name="instanceId"></param>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.FlowInstances.FlowTaskCriteria">
+            <summary>
+            工作流任务查询实体
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowTaskCriteria.CodeProperty">
+            <summary>
+            流程编码
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowTaskCriteria.Code">
+            <summary>
+            流程编码
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowTaskCriteria.NameProperty">
+            <summary>
+            流程名称
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowTaskCriteria.Name">
+            <summary>
+            流程名称
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowTaskCriteria.CategoryNameProperty">
+            <summary>
+            工作流分类
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowTaskCriteria.CategoryName">
+            <summary>
+            工作流分类
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowTaskCriteria.ActivityTypeNameProperty">
+            <summary>
+            节点类型名称
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowTaskCriteria.ActivityTypeName">
+            <summary>
+            节点类型名称
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowTaskCriteria.RemarkProperty">
+            <summary>
+            流程描述
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowTaskCriteria.Remark">
+            <summary>
+            节点类型名称
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowTaskCriteria.WorkFlowHandleStatusProperty">
+            <summary>
+            任务状态
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowTaskCriteria.WorkFlowHandleStatus">
+            <summary>
+            任务状态
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowTaskCriteria.StarterIdProperty">
+            <summary>
+            发起人Id
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowTaskCriteria.StarterId">
+            <summary>
+            发起人Id
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowTaskCriteria.StarterProperty">
+            <summary>
+            发起人
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowTaskCriteria.Starter">
+            <summary>
+            发起人
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowTaskCriteria.HandlerIdProperty">
+            <summary>
+            处理人Id
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowTaskCriteria.HandlerId">
+            <summary>
+            处理人Id
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowTaskCriteria.HandlerProperty">
+            <summary>
+            处理人
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowTaskCriteria.Handler">
+            <summary>
+            处理人
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.FlowTaskCriteria.CreateDateProperty">
+            <summary>
+            时间
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.FlowTaskCriteria.CreateDate">
+            <summary>
+            时间
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.FlowInstances.FlowTaskCriteria.Fetch">
+            <summary>
+            查询来料检验单
+            </summary>
+            <returns>来料检验单列表</returns>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.FlowInstances.FlowTaskPortal">
+            <summary>
+            工作流任务(门户)
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.FlowInstances.WorkFlowHandleStatus">
+            <summary>
+            处理状态
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.WorkFlowHandleStatus.Todo">
+            <summary>
+            待处理
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.WorkFlowHandleStatus.Doing">
+            <summary>
+            处理中
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.WorkFlowHandleStatus.Canceled">
+            <summary>
+            已终止
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.WorkFlowHandleStatus.Done">
+            <summary>
+            已处理
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.WorkFlowHandleStatus.Trun">
+            <summary>
+            已转办
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.WorkFlowHandleStatus.Reject">
+            <summary>
+            已驳回
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.FlowInstances.WorkFlowHandleStatusCriteria">
+            <summary>
+            处理状态（查询用）
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.WorkFlowHandleStatusCriteria.Todo">
+            <summary>
+            待处理
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.WorkFlowHandleStatusCriteria.Doing">
+            <summary>
+            处理中
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.WorkFlowHandleStatusCriteria.Cancled">
+            <summary>
+            已终止
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.WorkFlowHandleStatusCriteria.Done">
+            <summary>
+            已处理
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.WorkFlowHandleStatusCriteria.Trun">
+            <summary>
+            已转办
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.WorkFlowHandleStatusCriteria.Reject">
+            <summary>
+            已驳回
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.WorkFlowHandleStatusCriteria.TodoOrDoing">
+            <summary>
+            待处理或处理中
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.FlowInstances.WorkFlowStatus">
+            <summary>
+            流程状态
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.WorkFlowStatus.Start">
+            <summary>
+            已发起
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.WorkFlowStatus.Flowing">
+            <summary>
+            执行中
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.WorkFlowStatus.Finished">
+            <summary>
+            已结束
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.WorkFlowStatus.Cancel">
+            <summary>
+            已终止
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.FlowInstances.WorkFlowTaskAttachment">
+            <summary>
+            任务附件（定义本实体是为了实现业务表已经上传的附件，在审核时链接显示，无法通过此实体进行附件上传）
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.WorkFlowTaskAttachment.FileNameProperty">
+            <summary>
+            文件名称
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.WorkFlowTaskAttachment.FileName">
+            <summary>
+            文件名称
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.WorkFlowTaskAttachment.FilePathProperty">
+            <summary>
+            文件路径
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.WorkFlowTaskAttachment.FilePath">
+            <summary>
+            文件路径
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.WorkFlowTaskAttachment.FileExtesionProperty">
+            <summary>
+            文件扩展名
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.WorkFlowTaskAttachment.FileExtesion">
+            <summary>
+            文件扩展名
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.WorkFlowTaskAttachment.FileSizeProperty">
+            <summary>
+            文件大小
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.WorkFlowTaskAttachment.FileSize">
+            <summary>
+            文件大小
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.FlowInstances.WorkFlowTaskAttachment.OwnerIdProperty">
+            <summary>
+            所有者Id
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.FlowInstances.WorkFlowTaskAttachment.OwnerId">
+            <summary>
+            所有者Id
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.FlowInstances.WorkFlowTaskAttachmentConfig">
+            <summary>
+            附件 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.FlowInstances.WorkFlowTaskAttachmentConfig.ConfigMeta">
+            <summary>
+            实体配置
+            </summary>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.Module">
+            <summary>
+            初始化
+            </summary>
+        </member>
+        <member name="M:SIE.WorkFlow.Base.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化
+            </summary>
+            <param name="app">app</param>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.WorkFlowCommonEntityRepository`1">
+            <summary>
+            本程序集的数据提供者
+            </summary>
+            <typeparam name="T">t</typeparam>
+        </member>
+        <member name="T:SIE.WorkFlow.Base.WorkFlowCommonEntityDataProvider">
+            <summary>
+            实体数据提供者
+            </summary>
+        </member>
+        <member name="F:SIE.WorkFlow.Base.WorkFlowCommonEntityDataProvider.ConnectionStringName">
+            <summary>
+            数据库连接字符串的名称
+            </summary>
+        </member>
+        <member name="P:SIE.WorkFlow.Base.WorkFlowCommonEntityDataProvider.ConnectionStringSettingName">
+            <summary>
+            数据库连接字符串的名称
+            </summary>
+        </member>
+        <member name="T:WorkflowNodePanelUnFlodConifg">
+            <summary>
+            流程节点默认展开配置
+            </summary>
+        </member>
+        <member name="P:WorkflowNodePanelUnFlodConifg.DefaultValue">
+            <summary>
+            默认值
+            </summary>
+        </member>
+    </members>
+</doc>

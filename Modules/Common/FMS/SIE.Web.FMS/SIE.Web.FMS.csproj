@@ -1,0 +1,82 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.FMS.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.FMS.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="FileManage\Commands\AppUploadAttachmentCommand.cs" />
+    <Compile Remove="FileManage\SendEmailServerConfigValueViewConfig.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="FileManage\Commands\AddEmployeeCommand.js" />
+    <None Remove="FileManage\Commands\AddFolderCommand.js" />
+    <None Remove="FileManage\Commands\AppUploadAttachmentCommand.js" />
+    <None Remove="FileManage\Commands\AuditCommand.js" />
+    <None Remove="FileManage\Commands\DeleteCommand.js" />
+    <None Remove="FileManage\Commands\DeleteFolderCommand.js" />
+    <None Remove="FileManage\Commands\DownLoadCommand.js" />
+    <None Remove="FileManage\Commands\DownLoadFileCommand.js" />
+    <None Remove="FileManage\Commands\EditCommand.js" />
+    <None Remove="FileManage\Commands\EditMenuCommand.js" />
+    <None Remove="FileManage\Commands\FileManageQuery.js" />
+    <None Remove="FileManage\Commands\FlowCommand.js" />
+    <None Remove="FileManage\Commands\PreViewCommand.js" />
+    <None Remove="FileManage\Commands\PreViewMenuCommand.js" />
+    <None Remove="FileManage\Commands\PublishCommand.js" />
+    <None Remove="FileManage\Commands\PublishMenuCommand.js" />
+    <None Remove="FileManage\Commands\ReturnCommand.js" />
+    <None Remove="FileManage\Commands\ScarpCommand.js" />
+    <None Remove="FileManage\Commands\ScarpMenuCommand.js" />
+    <None Remove="FileManage\Commands\SetAdminCommand.js" />
+    <None Remove="FileManage\Commands\UploadCommand - 复制(10).js" />
+    <None Remove="FileManage\Commands\UploadCommand - 复制(11).js" />
+    <None Remove="FileManage\Commands\UploadCommand - 复制(12).js" />
+    <None Remove="FileManage\Commands\UploadCommand.js" />
+    <None Remove="FileManage\Commands\UploadFileCommand.js" />
+    <None Remove="FileManage\Commands\UploadManyFileCommand.js" />
+    <None Remove="FileManage\Scripts\CommonFunctions.js" />
+    <None Remove="FileManage\Scripts\Enum.js" />
+    <None Remove="FileManage\Scripts\FileManageLayout.js" />
+    <None Remove="FileManage\Scripts\FileManageTreeControl.js" />
+    <None Remove="FileManage\Scripts\MultiFileButton.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FileManage\Commands\AddEmployeeCommand.js" />
+    <EmbeddedResource Include="FileManage\Commands\DownLoadCommand.js" />
+    <EmbeddedResource Include="FileManage\Commands\PreViewCommand.js" />
+    <EmbeddedResource Include="FileManage\Commands\EditCommand.js" />
+    <EmbeddedResource Include="FileManage\Commands\PublishCommand.js" />
+    <EmbeddedResource Include="FileManage\Commands\FlowCommand.js" />
+    <EmbeddedResource Include="FileManage\Commands\ScarpCommand.js" />
+    <EmbeddedResource Include="FileManage\Commands\ReturnCommand.js" />
+    <EmbeddedResource Include="FileManage\Commands\AuditCommand.js" />
+    <EmbeddedResource Include="FileManage\Commands\DeleteCommand.js" />
+    <EmbeddedResource Include="FileManage\Commands\FileManageQuery.js" />
+    <EmbeddedResource Include="FileManage\Commands\SetAdminCommand.js" />
+    <EmbeddedResource Include="FileManage\Commands\UploadCommand.js" />
+    <EmbeddedResource Include="FileManage\Scripts\CommonFunctions.js" />
+    <EmbeddedResource Include="FileManage\Scripts\Enum.js" />
+    <EmbeddedResource Include="FileManage\Scripts\FileManageLayout.js" />
+    <EmbeddedResource Include="FileManage\Scripts\MultiFileButton.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SIE.FMS\SIE.FMS.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="SIE.Web.Common" Version="10.0.5" />
+  </ItemGroup>
+</Project>

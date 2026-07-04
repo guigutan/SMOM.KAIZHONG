@@ -1,0 +1,31 @@
+﻿using SIE.EMS.EquipLends;
+using SIE.EMS.EquipLends.ApiModels;
+using SIE.Web.Command;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace SIE.Web.EMS.EquipLends.Commands
+{
+    /// <summary>
+    /// 设备借还审核命令
+    /// </summary>
+    public class EquipLendExamineCommand : ViewCommand
+    {
+        /// <summary>
+        /// 执行
+        /// </summary>
+        /// <param name="args"></param>
+        /// <param name="scope"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        protected override object Excute(ViewArgs args, string scope)
+        {
+            var examineData = args.Data.ToJsonObject<EquipLendExamineInfo>();
+            var equipLendIds = args.SelectedIds.ToList();
+            RT.Service.Resolve<EquipLendController>().EquipLendExamine(examineData, equipLendIds);
+            return true;
+        }
+    }
+}

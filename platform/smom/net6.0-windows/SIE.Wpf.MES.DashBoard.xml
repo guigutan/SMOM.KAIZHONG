@@ -1,0 +1,2856 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Wpf.MES.DashBoard</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Wpf.MES.DashBoard.DashBoards.Converters.StateColorToConvert">
+            <summary>
+            定义字体颜色转换器，根据状态判断，1.状态为正常，绿色；2.为停线，红色；3.为休息，蓝色
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.Converters.StateColorToConvert.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            状态转换为颜色
+            </summary>
+            <param name="value">值</param>
+            <param name="targetType">类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">语言化</param>
+            <returns>返回转换的颜色</returns>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.Converters.StateColorToConvert.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            回调函数
+            </summary>
+            <param name="value">值</param>
+            <param name="targetType">类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">语言化</param>
+            <returns>返回结果</returns>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.DashBoards.Converters.StingToColorConverter">
+            <summary>
+            字符串颜色转换器
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.Converters.StingToColorConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            string类型转换为Brush类型
+            </summary>
+            <param name="value">值</param>
+            <param name="targetType">类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">语言化</param>
+            <returns>转换后的结果</returns>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.Converters.StingToColorConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            UI值变化回调方法
+            </summary>
+            <param name="value">值</param>
+            <param name="targetType">类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">语言化</param>
+            <returns>无</returns>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.DashBoards.Editors.DashBoardLineLookupEdit">
+            <summary>
+            产线下拉框
+            </summary>
+            <summary>
+            DashBoardLineLookupEdit
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.Editors.DashBoardLineLookupEdit.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.Editors.DashBoardLineLookupEdit.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.DashBoards.Editors.DashBoardShopToLineLookupEdit">
+            <summary>
+            车间产线下拉选择（产线多选）
+            DashBoardShopToLineLookupEdit.xaml 的交互逻辑
+            </summary>
+            <summary>
+            DashBoardShopToLineLookupEdit
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.Editors.DashBoardShopToLineLookupEdit.ShopAndLine">
+            <summary>
+            车间与产线联动对象
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.Editors.DashBoardShopToLineLookupEdit.ShopAndLineProperty">
+            <summary>
+            依赖属性
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.Editors.DashBoardShopToLineLookupEdit.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.Editors.DashBoardShopToLineLookupEdit.ShopAndLine_PropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            属性变更事件
+            </summary>
+            <param name="sender">实体对象</param>
+            <param name="e">变更属性参数</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.Editors.DashBoardShopToLineLookupEdit.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.DashBoards.Editors.ShopAndLine">
+            <summary>
+            车间与产线联动对象
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.Editors.ShopAndLine.Shop">
+            <summary>
+            车间
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.Editors.ShopAndLine.Lines">
+            <summary>
+            产线
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.DashBoards.Editors.DashBoardWorkShopLookupEdit">
+            <summary>
+            车间下拉框
+            </summary>
+            <summary>
+            DashBoardWorkShopLookupEdit
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.Editors.DashBoardWorkShopLookupEdit.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.Editors.DashBoardWorkShopLookupEdit.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.DashBoards.Editors.ListToStringConverter">
+            <summary>
+            多选选择选择值是一个List对象
+            将其转换成string
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.Editors.ListToStringConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            字符串转换为doulbe类型集合
+            </summary>
+            <param name="value">值</param>
+            <param name="targetType">类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">语言化</param>
+            <returns>doulbe类型集合</returns>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.Editors.ListToStringConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            回调函数
+            </summary>
+            <param name="value">值</param>
+            <param name="targetType">类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">语言化</param>
+            <returns>以逗号隔开的字符串</returns>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.DashBoards.Editors.DataRangeEdit">
+            <summary>
+            DataRangeEdit.xaml 的交互逻辑
+            </summary>
+            <summary>
+            DataRangeEdit
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.Editors.DataRangeEdit.DataRange">
+            <summary>
+            数据区间
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.Editors.DataRangeEdit.DataRangeProperty">
+            <summary>
+            依赖属性
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.Editors.DataRangeEdit.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.Editors.DataRangeEdit.DataRange_PropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            属性变更事件
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">事件包含的值</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.Editors.DataRangeEdit.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.DashBoards.Editors.DataRange">
+            <summary>
+            数据区间
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.Editors.DataRange.LowerLimitValue">
+            <summary>
+            下限值
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.Editors.DataRange.UpperLimitValue">
+            <summary>
+            上限值
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.DashBoards.Editors.TitleImageEdit">
+            <summary>
+            TitleImageEdit.xaml 的交互逻辑
+            </summary>
+            <summary>
+            TitleImageEdit
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.Editors.TitleImageEdit.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.DashBoards.Editors.ImageToStringConverter">
+            <summary>
+            图片与字符串转换器
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.Editors.ImageToStringConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            字符串转换为图片
+            </summary>
+            <param name="value">值</param>
+            <param name="targetType">类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">语言化</param>
+            <returns>转换后的结果</returns>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.Editors.ImageToStringConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            回调函数
+            </summary>
+            <param name="value">值</param>
+            <param name="targetType">类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">语言化</param>
+            <returns>转换后的结果</returns>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.DailyWorkOrderControl">
+            <summary>
+            DailyWorkOrderControl.xaml 的交互逻辑
+            </summary>
+            <summary>
+            DailyWorkOrderControl
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.DailyWorkOrderControl._workOrderInfos">
+            <summary>
+            当日计划工单集合
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.DailyWorkOrderControl.WorkOrderInfos">
+            <summary>
+            当日计划工单集合
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.DailyWorkOrderControl._timer">
+            <summary>
+            数据刷新器
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.DailyWorkOrderControl._currentTime">
+            <summary>
+            当前时间
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.DailyWorkOrderControl._property">
+            <summary>
+            数据区属性
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.DailyWorkOrderControl.#ctor">
+            <summary>
+            当日计划工单构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.DailyWorkOrderControl.OnRun">
+            <summary>
+            运行时事件
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.DailyWorkOrderControl.GetLineId">
+            <summary>
+            获取产线id
+            </summary>
+            <returns>产线id</returns>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.DailyWorkOrderControl.RefreshWorkOrderInfos">
+            <summary>
+            刷新当日计划工单
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.DailyWorkOrderControl.Dispatch">
+            <summary>
+            运行时异步加载
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.DailyWorkOrderControl.Timer_Tick(System.Object,System.EventArgs)">
+            <summary>
+            设置时间间隔器动作
+            </summary>
+            <param name="sender">源对象</param>
+            <param name="e">源参数</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.DailyWorkOrderControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.DailyWorkOrderGridProperty">
+            <summary>
+            数据表格属性值设置
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.DailyWorkOrderGridProperty._backColor">
+            <summary>
+            背景色
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.DailyWorkOrderGridProperty._forceColor">
+            <summary>
+            前景色
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.DailyWorkOrderGridProperty.BackColor">
+            <summary>
+            表格背景颜色
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.DailyWorkOrderGridProperty.ForceColor">
+            <summary>
+            表格前景色
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.DailyWorkOrderGridProperty.FontFamily">
+            <summary>
+            字体类型
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.DailyWorkOrderGridProperty.FontSize">
+            <summary>
+            字体大小
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.DailyWorkOrderGridProperty.FontWeight">
+            <summary>
+            是否加粗
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.DailyWorkOrderGridProperty._interval">
+            <summary>
+            刷新频率(秒)
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.DailyWorkOrderGridProperty.Interval">
+            <summary>
+            刷新频率
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.DailyWorkOrderGridProperty._shopAndLine">
+            <summary>
+            车间产线联动对象
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.DailyWorkOrderGridProperty.ShopAndLine">
+            <summary>
+            车间过滤
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.BoolToColorConverter">
+            <summary>
+            当日计划工单，正在生产的工单行用绿色标识
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.BoolToColorConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            字符串转换为颜色
+            </summary>
+            <param name="value">值</param>
+            <param name="targetType">类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">语言化</param>
+            <returns>转换后的颜色</returns>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.BoolToColorConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            回调函数
+            </summary>
+            <param name="value">值</param>
+            <param name="targetType">类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">语言化</param>
+            <returns>转换后的结果</returns>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.NgTop5Control">
+            <summary>
+            NgTop5Control.xaml 的交互逻辑
+            </summary>
+            <summary>
+            NgTop5Control
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.NgTop5Control._lineId">
+            <summary>
+            产线id
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.NgTop5Control._shift">
+            <summary>
+            当班班次
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.NgTop5Control._currentTime">
+            <summary>
+            当前时间
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.NgTop5Control._timer">
+            <summary>
+            数据刷新器
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.NgTop5Control._property">
+            <summary>
+            数据区属性
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.NgTop5Control.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.NgTop5Control.OnRun">
+            <summary>
+            运行时事件
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.NgTop5Control.Dispatch">
+            <summary>
+            运行时异步加载
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.NgTop5Control.Timer_Tick(System.Object,System.EventArgs)">
+            <summary>
+            设置时间间隔器动作
+            </summary>
+            <param name="sender">源对象</param>
+            <param name="e">源参数</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.NgTop5Control.GetLineId">
+            <summary>
+            获取产线id
+            </summary>
+            <returns>产线id</returns>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.NgTop5Control.Validation">
+            <summary>
+            数据校验
+            </summary>
+            <returns>验证结果</returns>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.NgTop5Control.BindingPieChart">
+            <summary>
+            绑定饼图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.NgTop5Control.GetLineColor(System.Int32)">
+            <summary>
+            根据不理top值获取颜色
+            </summary>
+            <param name="num">数值</param>
+            <returns>颜色</returns>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.NgTop5Control.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.NgTop5ControlProperty">
+            <summary>
+            图表属性值设置
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.NgTop5ControlProperty._interval">
+            <summary>
+            刷新频率(秒)
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.NgTop5ControlProperty.Interval">
+            <summary>
+            刷新频率
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.NgTop5ControlProperty._shopAndLine">
+            <summary>
+            车间产线联动对象
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.NgTop5ControlProperty.ShopAndLine">
+            <summary>
+            车间过滤
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ProductionLineTitleControl">
+            <summary>
+            ProductionLineTitleControl.xaml 的交互逻辑
+            </summary>
+            <summary>
+            ProductionLineTitleControl
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ProductionLineTitleControl._workShopName">
+            <summary>
+            车间名称
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ProductionLineTitleControl.WorkShopName">
+            <summary>
+            车间名称
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ProductionLineTitleControl._lineName">
+            <summary>
+            产线名字
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ProductionLineTitleControl.LineName">
+            <summary>
+            产线名字
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ProductionLineTitleControl._titleName">
+            <summary>
+            标题名字
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ProductionLineTitleControl.Title">
+            <summary>
+            标题名字
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ProductionLineTitleControl._timer">
+            <summary>
+            时间刷新器
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ProductionLineTitleControl._property">
+            <summary>
+            标题属性设置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ProductionLineTitleControl.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ProductionLineTitleControl.OnRun">
+            <summary>
+            运行时事件
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ProductionLineTitleControl.BindingTitle">
+            <summary>
+            绑定标题
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ProductionLineTitleControl.Timer_Tick(System.Object,System.EventArgs)">
+            <summary>
+            异步刷新时间
+            </summary>
+            <param name="sender">时间对象</param>
+            <param name="e">时间参数</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ProductionLineTitleControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.TitleItemProperty">
+            <summary>
+            标题区属性设置
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.TitleItemProperty.Content">
+            <summary>
+            标题内容
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.TitleItemProperty.FontFamily">
+            <summary>
+            字体类型
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.TitleItemProperty.FontSize">
+            <summary>
+            字体大小
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.TitleItemProperty.FontWeight">
+            <summary>
+            是否加粗
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.TitleItemProperty.Foreground">
+            <summary>
+            字体颜色
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.TitleItemProperty.TimeFontFamily">
+            <summary>
+            时间字体类型
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.TitleItemProperty.TimeFontSize">
+            <summary>
+            时间字体大小
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.TitleItemProperty.TimeFontWeight">
+            <summary>
+            时间字体加粗
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.TitleItemProperty.TimeForeground">
+            <summary>
+            时间字体颜色
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.TitleItemProperty._shopAndLine">
+            <summary>
+            车间产线联动对象
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.TitleItemProperty.ShopAndLine">
+            <summary>
+            车间过滤
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.TitleItemProperty._source">
+            <summary>
+            图片
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.TitleItemProperty.Source">
+            <summary>
+            图片
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.TitleItemProperty.LoadImage">
+            <summary>
+            加载图片
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.SevenDaysProductionControl">
+            <summary>
+            SevenDaysProductionControl.xaml 的交互逻辑
+            </summary>
+            <summary>
+            SevenDaysProductionControl
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.SevenDaysProductionControl._inputAndOutputs">
+            <summary>
+            当日投入产出集合
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.SevenDaysProductionControl.InputAndOutputs">
+            <summary>
+            当日投入产出集合
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.SevenDaysProductionControl._lsBarPoint">
+            <summary>
+            投入柱形图
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.SevenDaysProductionControl._lsBar2Point">
+            <summary>
+            产出柱形图
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.SevenDaysProductionControl._lineId">
+            <summary>
+            产线id
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.SevenDaysProductionControl._timer">
+            <summary>
+            数据刷新器
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.SevenDaysProductionControl._currentTime">
+            <summary>
+            当前时间
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.SevenDaysProductionControl._property">
+            <summary>
+            数据区属性
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.SevenDaysProductionControl.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.SevenDaysProductionControl.OnRun">
+            <summary>
+            运行时事件
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.SevenDaysProductionControl.InitSeries">
+            <summary>
+            初始化图形
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.SevenDaysProductionControl.GetLineId">
+            <summary>
+            获取产线id
+            </summary>
+            <returns>产线id</returns>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.SevenDaysProductionControl.Dispatch">
+            <summary>
+            运行时异步加载
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.SevenDaysProductionControl.Timer_Tick(System.Object,System.EventArgs)">
+            <summary>
+            设置时间间隔器动作
+            </summary>
+            <param name="sender">源对象</param>
+            <param name="e">源参数</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.SevenDaysProductionControl.BindingChart">
+            <summary>
+            绑定图表
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.SevenDaysProductionControl.GetData">
+            <summary>
+            获取数据
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.SevenDaysProductionControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.SevenDaysProductionControlProperty">
+            <summary>
+            看板属性配置类
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.SevenDaysProductionControlProperty._interval">
+            <summary>
+            刷新频率(秒)
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.SevenDaysProductionControlProperty.Interval">
+            <summary>
+            刷新频率
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.SevenDaysProductionControlProperty._shopAndLine">
+            <summary>
+            车间产线联动对象
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.SevenDaysProductionControlProperty.ShopAndLine">
+            <summary>
+            车间过滤
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControl">
+            <summary>
+            ShiftInputAndOutputControl.xaml 的交互逻辑
+            </summary>
+            <summary>
+            ShiftInputAndOutputControl
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControl._shiftInputAndOutputs">
+            <summary>
+            班次日统计
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControl.ShiftInputAndOutputs">
+            <summary>
+            班次日统计
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControl._resourceStatisticsList">
+            <summary>
+            产线时间段内产能采集统计
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControl.ResourceStatisticsList">
+            <summary>
+            产线时间段内产能采集统计
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControl._cRateExceptionDataRange">
+            <summary>
+            达成率异常范围
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControl._cRateAlertDataRange">
+            <summary>
+            达成率预警范围
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControl._cRateExceptionColorStr">
+            <summary>
+            达成率异常背景色
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControl._cRateAlertColorStr">
+            <summary>
+            达成率预警背景色
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControl._rRateExceptionDataRange">
+            <summary>
+            直通率异常范围
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControl._rRateAlertDataRange">
+            <summary>
+            直通率预警范围
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControl._rRateExceptionColorStr">
+            <summary>
+            直通率异常背景色
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControl._rRateAlertColorStr">
+            <summary>
+            直通率率预警背景色
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControl._lineId">
+            <summary>
+            产线
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControl._shift">
+            <summary>
+            当班班次
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControl._currentTime">
+            <summary>
+            当前时间
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControl._timeBetweenTimeSpan">
+            <summary>
+            产能监控间隔(分钟)
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControl._targetCapacity">
+            <summary>
+            目标产能
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControl._timer">
+            <summary>
+            数据刷新器
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControl._property">
+            <summary>
+            数据区属性
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControl.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControl.OnRun">
+            <summary>
+            运行时事件
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControl.InitData">
+            <summary>
+            初始化看板属性配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControl.GetColorStringByDataRange(System.Double,System.String)">
+            <summary>
+            获取达成率\直通率背景颜色
+            </summary>
+            <param name="rate">（达成率/直通率）率值</param>
+            <param name="name">（达成率/直通率）名字</param>
+            <returns>颜色字符串</returns>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControl.GetLineId">
+            <summary>
+            获取产线id
+            </summary>
+            <returns>产线id</returns>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControl.Validation">
+            <summary>
+            数据校验
+            </summary>
+            <returns>校验结果</returns>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControl.RefreshResourceStatisticsList">
+            <summary>
+             刷新班次日统计数据
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControl.SetNoWipDatas">
+            <summary>
+            (设置)没生成采集记录时
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControl.Dispatch">
+            <summary>
+            运行时异步加载
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControl.Timer_Tick(System.Object,System.EventArgs)">
+            <summary>
+            设置时间间隔器动作
+            </summary>
+            <param name="sender">源对象</param>
+            <param name="e">源参数</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControlProperty">
+            <summary>
+            数据表格属性值设置
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControlProperty._cExceptionBackColor">
+            <summary>
+            达成率异常背景色
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControlProperty.CExceptionBackColor">
+            <summary>
+            达成率异常背景色
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControlProperty._cExceptionDataRange">
+            <summary>
+            达成率异常范围对象
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControlProperty.CExceptionDataRange">
+            <summary>
+            达成率异常范围对象
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControlProperty._cAlertBackColor">
+            <summary>
+            达成率预警背景色
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControlProperty.CAlertBackColor">
+            <summary>
+            达成率异常背景色
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControlProperty._cAlertDataRange">
+            <summary>
+            达成率预警范围对象
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControlProperty.CAlerttionDataRange">
+            <summary>
+            达成率异常范围对象
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControlProperty._rExceptionBackColor">
+            <summary>
+            直通率异常背景色
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControlProperty.RExceptionBackColor">
+            <summary>
+            直通率异常背景色
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControlProperty._rExceptionDataRange">
+            <summary>
+            直通率异常范围对象
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControlProperty.RExceptionDataRange">
+            <summary>
+            直通率异常范围对象
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControlProperty._rAlertBackColor">
+            <summary>
+            直通率预警背景色
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControlProperty.RAlertBackColor">
+            <summary>
+            直通率预警背景色
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControlProperty._rAlertDataRange">
+            <summary>
+            直通率预警范围对象
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControlProperty.RAlertDataRange">
+            <summary>
+            直通率预警范围对象
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControlProperty._backColor">
+            <summary>
+            背景色
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControlProperty._forceColor">
+            <summary>
+            前景色
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControlProperty.BackColor">
+            <summary>
+            表格背景颜色
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControlProperty.ForceColor">
+            <summary>
+            表格前景色
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControlProperty.FontFamily">
+            <summary>
+            字体类型
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControlProperty.FontSize">
+            <summary>
+            字体大小
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControlProperty.FontWeight">
+            <summary>
+            是否加粗
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControlProperty._interval">
+            <summary>
+            刷新频率(秒)
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControlProperty.Interval">
+            <summary>
+            刷新频率
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControlProperty._timeBetweenTimeSpan">
+            <summary>
+            产能监控间隔(分钟)
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControlProperty.TimeBetweenTimeSpan">
+            <summary>
+            刷新频率
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControlProperty._targetCapacity">
+            <summary>
+            目标产能
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControlProperty.TargetCapacity">
+            <summary>
+            目标产能
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControlProperty._shopAndLine">
+            <summary>
+            车间产线联动对象
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.ShiftInputAndOutputControlProperty.ShopAndLine">
+            <summary>
+            车间过滤
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.UnCloseWorkOrderControl">
+            <summary>
+            UnCloseWorkOrderControl.xaml 的交互逻辑
+            </summary>
+            <summary>
+            UnCloseWorkOrderControl
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.UnCloseWorkOrderControl._workOrderInfos">
+            <summary>
+            当日计划工单集合
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.UnCloseWorkOrderControl.WorkOrderInfos">
+            <summary>
+            当日计划工单集合
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.UnCloseWorkOrderControl._timer">
+            <summary>
+            数据刷新器
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.UnCloseWorkOrderControl._scrollTimer">
+            <summary>
+            数据滚动器
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.UnCloseWorkOrderControl._currentTime">
+            <summary>
+            当前时间
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.UnCloseWorkOrderControl._property">
+            <summary>
+            数据区属性
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.UnCloseWorkOrderControl._position">
+            <summary>
+            显示页
+            </summary>                   
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.UnCloseWorkOrderControl._scrollInterval">
+            <summary>
+            滚动频率
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.UnCloseWorkOrderControl.#ctor">
+            <summary>
+            未关闭工单构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.UnCloseWorkOrderControl.OnRun">
+            <summary>
+            运行时事件
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.UnCloseWorkOrderControl.GetLineId">
+            <summary>
+            获取产线id
+            </summary>
+            <returns>产线id</returns>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.UnCloseWorkOrderControl.RefreshWorkOrderInfos">
+            <summary>
+            刷新未关闭工单
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.UnCloseWorkOrderControl.PagingDisplay">
+            <summary>
+            分页显示
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.UnCloseWorkOrderControl.Load">
+            <summary>
+            运行时异步加载
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.UnCloseWorkOrderControl.Timer_Tick(System.Object,System.EventArgs)">
+            <summary>
+            设置时间间隔器动作
+            </summary>
+            <param name="sender">源对象</param>
+            <param name="e">源参数</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.UnCloseWorkOrderControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.UnCloseWorkOrderControlProperty">
+            <summary>
+            数据表格属性值设置
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.UnCloseWorkOrderControlProperty._backColor">
+            <summary>
+            背景色
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.UnCloseWorkOrderControlProperty._forceColor">
+            <summary>
+            前景色
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.UnCloseWorkOrderControlProperty.BackColor">
+            <summary>
+            表格背景颜色
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.UnCloseWorkOrderControlProperty.ForceColor">
+            <summary>
+            表格前景色
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.UnCloseWorkOrderControlProperty.FontFamily">
+            <summary>
+            字体类型
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.UnCloseWorkOrderControlProperty.FontSize">
+            <summary>
+            字体大小
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.UnCloseWorkOrderControlProperty.FontWeight">
+            <summary>
+            是否加粗
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.UnCloseWorkOrderControlProperty._interval">
+            <summary>
+            刷新频率(秒)
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.UnCloseWorkOrderControlProperty.Interval">
+            <summary>
+            刷新频率
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.UnCloseWorkOrderControlProperty._scrollInterval">
+            <summary>
+            滚动频率(秒)
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.UnCloseWorkOrderControlProperty.ScrollInterval">
+            <summary>
+            刷新频率
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.UnCloseWorkOrderControlProperty.ShopAndLine">
+            <summary>
+            车间过滤
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.WorkShopControl">
+            <summary>
+            WorkShopControl.xaml 的交互逻辑
+            </summary>
+            <summary>
+            WorkShopControl
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.WorkShopControl._workShopInfo">
+            <summary>
+            车间当日产线集合
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.WorkShopControl.WorkShopInfo">
+            <summary>
+            车间当日产线集合
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.WorkShopControl.timer">
+            <summary>
+            时间刷新器
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.WorkShopControl.dataTimer">
+            <summary>
+            数据时间刷新器
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.WorkShopControl._property">
+            <summary>
+            车间属性配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.WorkShopControl.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.WorkShopControl.OnRun">
+            <summary>
+            运行后
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.WorkShopControl.Dispatch">
+            <summary>
+            运行时异步加载
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.WorkShopControl.Refresh">
+            <summary>
+            刷新当日计划工单
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.WorkShopControl.DataTimer_Tick(System.Object,System.EventArgs)">
+            <summary>
+            超过计时器间隔时发生事件
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.WorkShopControl.Timer_Tick(System.Object,System.EventArgs)">
+            <summary>
+            异步刷新时间
+            </summary>
+            <param name="sender">时间对象</param>
+            <param name="e">时间参数</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.WorkShopControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.WorkShopControlProperty">
+            <summary>
+            组件属性
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.WorkShopControlProperty._source">
+            <summary>
+            选择Logo
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.WorkShopControlProperty.Source">
+            <summary>
+            选择Logo
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.WorkShopControlProperty.LoadImage">
+            <summary>
+            加载图片
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.WorkShopControlProperty._interval">
+            <summary>
+            刷新时间(s)
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.WorkShopControlProperty.Interval">
+            <summary>
+            刷新时间(s)
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.WorkShopControlProperty.WorkShop">
+            <summary>
+            车间
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.WorkShopControlProperty.WorkShopTitle">
+            <summary>
+            标题内容
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.WorkShopControlProperty.FontFamily">
+            <summary>
+            字体类型
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.WorkShopControlProperty.FontSize">
+            <summary>
+            字体大小
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.WorkShopControlProperty.FontWeight">
+            <summary>
+            是否加粗
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.GetWorkShop">
+            <summary>
+            获取车间信息
+            </summary>
+            <seealso cref="T:System.ComponentModel.StringConverter" />
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.GetWorkShop.GetStandardValuesSupported(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            使用指定的上下文返回此对象是否支持可以从列表中选取的标准值集。
+            </summary>
+            <param name="context">一个提供格式上下文的 <see cref="T:System.ComponentModel.ITypeDescriptorContext" />。</param>
+            <returns>
+            如果应调用 <see cref="M:System.ComponentModel.TypeConverter.GetStandardValues" /> 来查找对象支持的一组公共值，则为 true；否则，为 false。
+            </returns>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.GetWorkShop.GetStandardValues(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            当与格式上下文一起提供时，返回此类型转换器设计用于的数据类型的标准值集合。
+            </summary>
+            <param name="context">提供格式上下文的 <see cref="T:System.ComponentModel.ITypeDescriptorContext" />，可用来提取有关从中调用此转换器的环境的附加信息。此参数或其属性可以为 null。</param>
+            <returns>
+            包含标准有效值集的 <see cref="T:System.ComponentModel.TypeConverter.StandardValuesCollection" />；如果数据类型不支持标准值集，则为 null。
+            </returns>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.DashBoards.ProductionLine.GetWorkShop.GetStandardValuesExclusive(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            使用指定的上下文返回从 <see cref="M:System.ComponentModel.TypeConverter.GetStandardValues" /> 返回的标准值的集合是否为可能值的独占列表。
+            </summary>
+            <param name="context">一个提供格式上下文的 <see cref="T:System.ComponentModel.ITypeDescriptorContext" />。</param>
+            <returns>
+            如果从 <see cref="M:System.ComponentModel.TypeConverter.GetStandardValues" /> 返回的 <see cref="T:System.ComponentModel.TypeConverter.StandardValuesCollection" /> 是可能值的穷举列表，则为 true；如果还可能有其他值，则为 false。
+            </returns>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.Editors.DashBoardShopToLineLookupEdit">
+            <summary>
+            车间产线下拉选择（产线多选）
+            DashBoardShopToLineLookupEdit.xaml 的交互逻辑
+            </summary>
+            <summary>
+            DashBoardShopToLineLookupEdit
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.Editors.DashBoardShopToLineLookupEdit.ShopAndLine">
+            <summary>
+            车间与产线联动对象
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.Editors.DashBoardShopToLineLookupEdit.ShopAndLineProperty">
+            <summary>
+            依赖属性
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Editors.DashBoardShopToLineLookupEdit.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Editors.DashBoardShopToLineLookupEdit.ShopAndLine_PropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            属性变更事件
+            </summary>
+            <param name="sender">实体对象</param>
+            <param name="e">变更属性参数</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Editors.DashBoardShopToLineLookupEdit.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.Editors.ShopAndLine">
+            <summary>
+            车间与产线联动对象
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.Editors.ShopAndLine.Shop">
+            <summary>
+            车间
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.Editors.ShopAndLine.Line">
+            <summary>
+            产线
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.Editors.DashBoardTimeIntervalEdit">
+            <summary>
+            TimeIntervalEditor.xaml 的交互逻辑
+            </summary>
+            <summary>
+            DashBoardTimeIntervalEdit
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.Editors.DashBoardTimeIntervalEdit.TimeInterval">
+            <summary>
+            时间间隔
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.Editors.DashBoardTimeIntervalEdit.TimeIntervalProperty">
+            <summary>
+            时间间隔依赖属性
+            </summary>      
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Editors.DashBoardTimeIntervalEdit.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Editors.DashBoardTimeIntervalEdit.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.Editors.TimePart">
+            <summary>
+            时间单位
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.Editors.TimePart.Hours">
+            <summary>
+            小时
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.Editors.TimePart.Minutes">
+            <summary>
+            分
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.Editors.TimePart.Seconds">
+            <summary>
+            秒
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.Editors.TimePart.Days">
+            <summary>
+            天
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.Editors.TimeInterval">
+            <summary>
+            时间间隔类
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.Editors.TimeInterval.TimePart">
+            <summary>
+            时间类型
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.Editors.TimeInterval.TimeValue">
+            <summary>
+            时间值
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.Module">
+            <summary>
+            模块定义
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Module.Initialize(SIE.IApp)">
+            <summary>
+            模块初始化
+            </summary>
+            <param name="app">应用程序</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Module.App_ModuleOperations(System.Object,System.EventArgs)">
+            <summary>
+            模块操作
+            </summary>
+            <param name="sender">发送者</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.Reports.DirectRateBasePivotGridControl">
+            <summary>
+            直通率报表基础控件
+            Interaction logic for DirectRateBasePivotGridControl.xaml
+            </summary>
+            <summary>
+            DirectRateBasePivotGridControl
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.Reports.DirectRateBasePivotGridControl._alertTitle">
+            <summary>
+            预警值标题
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.Reports.DirectRateBasePivotGridControl._goalTitle">
+            <summary>
+            目标值标题
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.Reports.DirectRateBasePivotGridControl._formatConditionCount">
+            <summary>
+            样式规则条数
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.Reports.DirectRateBasePivotGridControl._dics">
+            <summary>
+            用于存储对应行数据是否添加样式规则
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.Reports.DirectRateBasePivotGridControl._reportViewModel">
+            <summary>
+            报表控件的ViewModel
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.Reports.DirectRateBasePivotGridControl.ReportViewModel">
+            <summary>
+            报表控件的ViewModel
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.Reports.DirectRateBasePivotGridControl.FormatConditions">
+            <summary>
+            样式规则
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.Reports.DirectRateBasePivotGridControl.ConstantLines">
+            <summary>
+            值预警行
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.Reports.DirectRateBasePivotGridControl.dics">
+            <summary>
+            自定义求和字典（Key:行属性+":"+时间，Value:百分值）
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.DirectRateBasePivotGridControl.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.DirectRateBasePivotGridControl.InitAlertAndGoalLines(System.Double,System.Double)">
+            <summary>
+            初始化预警和目标界限（待调整）
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.DirectRateBasePivotGridControl.pivotGrid_FieldValueDisplayText(System.Object,DevExpress.Xpf.PivotGrid.PivotFieldDisplayTextEventArgs)">
+            <summary>
+            初始化属性名称
+            </summary>
+            <param name="sender">控件对象</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.DirectRateBasePivotGridControl.CreateFormatConditions(DevExpress.Xpf.PivotGrid.PivotFieldDisplayTextEventArgs)">
+            <summary>
+            初始化样式规则
+            </summary>
+            <param name="e">属性DisplayText参数</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.DirectRateBasePivotGridControl.pivotGrid_CellSelectionChanged(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            属性单元格选择变更事件
+            </summary>
+            <param name="sender">事件对象</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.DirectRateBasePivotGridControl.ExportButton_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            导出命令
+            </summary>
+            <param name="sender">命令对象</param>
+            <param name="e">对象参数</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.DirectRateBasePivotGridControl.BtnClick_SaveLayOut(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            保存当前布局命令
+            </summary>
+            <param name="sender">命令对象</param>
+            <param name="e">命令参数</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.DirectRateBasePivotGridControl.ResetButton_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            默认设置命令
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.DirectRateBasePivotGridControl.BtnClick_ArgsSetting(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            目标参数设置命令
+            </summary>
+            <param name="sender">命令对象</param>
+            <param name="e">命令参数</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.DirectRateBasePivotGridControl.pivotGrid_CustomChartDataSourceRows(System.Object,DevExpress.Xpf.PivotGrid.PivotCustomChartDataSourceRowsEventArgs)">
+            <summary>
+            自定义折线图数据源
+            </summary>
+            <param name="sender">PivotGrid对象</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.DirectRateBasePivotGridControl.CustomAxisYRange(DevExpress.Xpf.PivotGrid.PivotCustomChartDataSourceRowsEventArgs)">
+            <summary>
+            自定义Y轴范围
+            </summary>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.DirectRateBasePivotGridControl.CustomChartDispalyText(DevExpress.Xpf.PivotGrid.PivotFieldValueEventArgs)">
+            <summary>
+            自定义折线图X轴DisplayText
+            </summary>
+            <param name="columnValueInfo">列值信息</param>
+            <returns>显示字符串</returns>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.DirectRateBasePivotGridControl.ClearFormatConditions">
+            <summary>
+            清除样式规则
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.DirectRateBasePivotGridControl.pivotGrid_CellDoubleClick(System.Object,DevExpress.Xpf.PivotGrid.PivotCellEventArgs)">
+            <summary>
+            单元格双击事件
+            </summary>
+            <param name="sender">控件对象</param>
+            <param name="e">控件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.DirectRateBasePivotGridControl.pivotGrid_CustomCellValue(System.Object,DevExpress.Xpf.PivotGrid.PivotCellValueEventArgs)">
+            <summary>
+            自定义单元格值
+            </summary>
+            <param name="sender">PivotGrid控件</param>
+            <param name="e">单元格事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.DirectRateBasePivotGridControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.Reports.Commons.FPYReportLayout">
+            <summary>
+            SchedulingLayout.xaml 的交互逻辑
+            </summary>
+            <summary>
+            FPYReportLayout
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.Reports.Commons.FPYReportLayout._reportControl">
+            <summary>
+            直通率报表通用控件
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.Commons.FPYReportLayout.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.Commons.FPYReportLayout.Arrange(SIE.Wpf.UIComponents)">
+            <summary>
+            布局
+            </summary>
+            <param name="components">控件容器</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.Commons.FPYReportLayout.DataChanged(System.Object,System.EventArgs)">
+            <summary>
+            查询事件触发数据源变更
+            </summary>
+            <param name="sender">对应主视图</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.Commons.FPYReportLayout.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.Reports.Commons.ProceessDirectRateStatistics">
+            <summary>
+            ProceessDirectRateStatistics.xaml 的交互逻辑
+            </summary>
+            <summary>
+            ProceessDirectRateStatistics
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.Reports.Commons.ProceessDirectRateStatistics._topFiveSouece">
+            <summary>
+            缺陷统计数据源
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.Reports.Commons.ProceessDirectRateStatistics._fpySouece">
+            <summary>
+            直通率统计数据源
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.Reports.Commons.ProceessDirectRateStatistics._brushes">
+            <summary>
+            缺陷代码块颜色
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.Commons.ProceessDirectRateStatistics.#ctor(SIE.Domain.EntityList{SIE.MES.Statistics.Fpy.DefectStatistics},SIE.Domain.EntityList{SIE.MES.Statistics.Fpy.ProcessFpyStatistics},System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="topFiveSouece">缺陷统计数据源</param>
+            <param name="fpySouece">直通率统计数据源</param>
+            <param name="ftyTitle">直通率标题</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.Commons.ProceessDirectRateStatistics.InitfpyStatisticsChartSeries">
+            <summary>
+            初始化工序直通率柱形图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.Commons.ProceessDirectRateStatistics.InitDefectCodeChart">
+            <summary>
+            初始化缺陷代码TOP5统计图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.Commons.ProceessDirectRateStatistics.CreateDefectBox(System.Double,System.Double,System.Double,System.Double,System.String,System.Windows.Media.Brush)">
+            <summary>
+            绘制缺陷块
+            </summary>
+            <param name="defX">坐标X</param>
+            <param name="defY">坐标Y</param>
+            <param name="tempHeight">高度</param>
+            <param name="tempWidth">宽度</param>
+            <param name="title">标题</param>
+            <param name="background">背景颜色</param>
+            <returns>文本框</returns>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.Commons.ProceessDirectRateStatistics.CreateDefectCtgTitle(System.String,System.Double,System.Double)">
+            <summary>
+            绘制缺陷分类标题
+            </summary>
+            <param name="title">分类标题（即分类名称）</param>
+            <param name="defX">坐标X</param>
+            <param name="defY">坐标Y</param>
+            <returns>标题Label</returns>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.Commons.ProceessDirectRateStatistics.InitPassQtyStatisticsChartSeries">
+            <summary>
+            初始化一次良品/不良品数柱形图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.Commons.ProceessDirectRateStatistics.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.Reports.Commons.ReportCommonTemplate">
+            <summary>
+            报表通用模板
+            </summary>
+            <typeparam name="T">报表直通率ViewModel类型</typeparam>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.Commons.ReportCommonTemplate.DefineBlocks">
+            <summary>
+            块定义
+            </summary>
+            <returns>聚合块</returns>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.Reports.FieldAreaHelper">
+            <summary>
+            报表属性区域固定帮助类
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.Reports.FieldAreaHelper.FixAreasProperty">
+            <summary>
+            固定值扩展属性
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.FieldAreaHelper.#cctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.FieldAreaHelper.GetFixAreas(System.Windows.DependencyObject)">
+            <summary>
+            获取固定值
+            </summary>
+            <param name="element">控件对象</param>
+            <returns>固定值</returns>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.FieldAreaHelper.SetFixAreas(System.Windows.DependencyObject,System.Boolean)">
+            <summary>
+            设置固定值
+            </summary>
+            <param name="element">控件对象</param>
+            <param name="value">设置值</param>
+            <returns>固定值</returns>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.FieldAreaHelper.OnFixAreasPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            固定值属性变更
+            </summary>
+            <param name="d">控件对象</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.FieldAreaHelper.OnPivotFieldAreaChanging(System.Object,DevExpress.Xpf.PivotGrid.PivotFieldAreaChangingEventArgs)">
+            <summary>
+            控件属性固定区域变更
+            </summary>
+            <param name="sender">控件对象</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.Reports.FpySettings.AddSettingCommand">
+            <summary>
+            直通率设置添加命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.FpySettings.AddSettingCommand.OnItemCreated(SIE.Domain.Entity)">
+            <summary>
+            实体创建后方法
+            </summary>
+            <param name="entity">实体</param>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.Reports.FpySettings.FpySettingBehavior">
+            <summary>
+            直通率设置视图行为
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.FpySettings.FpySettingBehavior.OnAttach">
+            <summary>
+            附加方法
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.Reports.FpySettings.FpySettingViewConfig">
+            <summary>
+            直通率设置视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.FpySettings.FpySettingViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.Reports.FpySettings.LineFpySettingViewConfig">
+            <summary>
+            产线直通率设置视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.FpySettings.LineFpySettingViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.FpySettings.LineFpySettingViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.FpySettings.LineFpySettingViewConfig.ConfigDetailsView">
+            <summary>
+             配置明细视图
+             </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.FpySettings.LineFpySettingViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.Reports.FpySettings.ProductFpySettingViewConfig">
+            <summary>
+            产品直通率设置视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.FpySettings.ProductFpySettingViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.FpySettings.ProductFpySettingViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.FpySettings.ProductFpySettingViewConfig.ConfigDetailsView">
+            <summary>
+             配置明细视图
+             </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.FpySettings.ProductFpySettingViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.Reports.FpySettings.ProductModelFpySettingCriteriaViewConfig">
+            <summary>
+            产品机型直通率查询实体视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.Reports.FpySettings.ProductModelFpySettingCriteriaViewConfig.ClearProductProperty">
+            <summary>
+            清除产品
+            </summary> 
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.FpySettings.ProductModelFpySettingCriteriaViewConfig.GetClearProduct(SIE.MES.DashBoard.Reports.FpySettings.ProductModelFpySettingCriteria)">
+            <summary>
+            清除产品
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.FpySettings.ProductModelFpySettingCriteriaViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.Reports.FpySettings.ProductModelFpySettingViewConfig">
+            <summary>
+            产品机型直通率设置视图配置
+            </summary> 
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.Reports.FpySettings.ProductModelFpySettingViewConfig.ModelReadOnlyProperty">
+            <summary>
+            机型只读
+            </summary> 
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.FpySettings.ProductModelFpySettingViewConfig.GetModelReadOnly(SIE.MES.DashBoard.Reports.FpySettings.ProductModelFpySetting)">
+            <summary>
+            机型只读
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.FpySettings.ProductModelFpySettingViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.FpySettings.ProductModelFpySettingViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.FpySettings.ProductModelFpySettingViewConfig.ConfigDetailsView">
+            <summary>
+             配置明细视图
+             </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.FpySettings.ProductModelFpySettingViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.Reports.FpySettings.ShopFpySettingCriteriaViewConfig">
+            <summary>
+            车间直通率设置查询实体视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.Reports.FpySettings.ShopFpySettingCriteriaViewConfig.ClearLineProperty">
+            <summary>
+            产线清空
+            </summary> 
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.FpySettings.ShopFpySettingCriteriaViewConfig.GetClearLine(SIE.MES.DashBoard.Reports.FpySettings.ShopFpySettingCriteria)">
+            <summary>
+            产线清空
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.FpySettings.ShopFpySettingCriteriaViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.Reports.FpySettings.ShopFpySettingViewConfig">
+            <summary>
+            车间直通率设置视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.Reports.FpySettings.ShopFpySettingViewConfig.ShopReadOnlyProperty">
+            <summary>
+            车间只读
+            </summary> 
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.FpySettings.ShopFpySettingViewConfig.GetShopReadOnly(SIE.MES.DashBoard.Reports.FpySettings.ShopFpySetting)">
+            <summary>
+            车间只读
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.Reports.FpySettings.ShopFpySettingViewConfig.UpdateNameProperty">
+            <summary>
+            更新人
+            </summary> 
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.FpySettings.ShopFpySettingViewConfig.GetUpdateName(SIE.MES.DashBoard.Reports.FpySettings.ShopFpySetting)">
+            <summary>
+            更新人
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.FpySettings.ShopFpySettingViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.FpySettings.ShopFpySettingViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.FpySettings.ShopFpySettingViewConfig.ConfigDetailsView">
+            <summary>
+             配置明细视图
+             </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.FpySettings.ShopFpySettingViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.Reports.LineFPY.LineReportCriteriaViewConfig">
+            <summary>
+            产线报表查询实体视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.LineFPY.LineReportCriteriaViewConfig.ConfigView">
+            <summary>
+            默认视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.Reports.LineFPY.LineReportViewConfig">
+            <summary>
+            产线报表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.LineFPY.LineReportViewConfig.ConfigView">
+            <summary>
+            默认视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.Reports.ProductFPY.ProdReportCriteriaViewConfig">
+            <summary>
+            产品报表查询实体视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.ProductFPY.ProdReportCriteriaViewConfig.ConfigView">
+            <summary>
+            默认视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.Reports.ProductFPY.ProdReportViewConfig">
+            <summary>
+            产品报表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.ProductFPY.ProdReportViewConfig.ConfigView">
+            <summary>
+            默认视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.Reports.ReportHelper">
+            <summary>
+            报表导出帮助类
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.Reports.ReportHelper._fieldNameExtension">
+            <summary>
+            报表Field名字后缀
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.ReportHelper.SaveLayoutToXml(DevExpress.Xpf.PivotGrid.PivotGridControl,System.String)">
+            <summary>
+            保存布局设置
+            </summary>
+            <param name="pivotGridControl">报表控件</param>
+            <param name="fileName">文件名</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.ReportHelper.ResetLayoutToDefault(DevExpress.Xpf.PivotGrid.PivotGridControl,System.String)">
+            <summary>
+            恢复布局设置
+            </summary>
+            <param name="pivotGridControl">报表控件</param>
+            <param name="fileName">文件名</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.ReportHelper.GetPath(System.String)">
+            <summary>
+            获取报表布局配置路径
+            </summary>
+            <param name="fileName">文件名</param>
+            <returns>报表表格配置路径</returns>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.ReportHelper.RestoreLayoutFromXml(DevExpress.Xpf.PivotGrid.PivotGridControl,System.String)">
+            <summary>
+            恢复报表表格配置
+            </summary>
+            <param name="pivotGridControl">报表控件</param>
+            <param name="fileName">布局文件名</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.ReportHelper.ExportToExcel(System.Collections.Generic.List{DevExpress.Xpf.Printing.IPrintableControl})">
+            <summary>
+            导出报表到Excel
+            </summary>
+            <param name="printableControls">导出控件集合</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.ReportHelper.CreatePrintableLink(System.Collections.Generic.List{DevExpress.Xpf.Printing.IPrintableControl})">
+            <summary>
+            创建打印Componet
+            </summary>
+            <param name="printableControls">需打印控件列表</param>
+            <returns>返回打印Componet</returns>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.ReportHelper.InitPivotGridFields(System.Type)">
+            <summary>
+            根据类型生成Field
+            </summary>
+            <param name="type">数据类型</param>
+            <returns>PivotGridField列表</returns>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.ReportHelper.CreateField(System.String,SIE.MES.DashBoard.Reports.Commons.FieldSettingAttribute)">
+            <summary>
+            创建Field
+            </summary>
+            <param name="fieldName">属性名称</param>
+            <param name="attrInfo">配置信息</param>
+            <returns>Pivot Grid属性</returns>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.ReportHelper.ShowSettingView(System.Type,System.String,System.String)">
+            <summary>
+            打开直通率配置视图
+            </summary>
+            <param name="type">实体类型</param>
+            <param name="viewGroup">视图组</param>
+            <param name="moduleKey">模块键</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.ReportHelper.ShowProcessFpyView(System.Type,SIE.Domain.EntityList{SIE.MES.Statistics.Fpy.DefectStatistics},SIE.Domain.EntityList{SIE.MES.Statistics.Fpy.ProcessFpyStatistics},System.String)">
+            <summary>
+            显示工序直通率报表视图
+            </summary>
+            <param name="type">报表类型</param>
+            <param name="fpySouece">直通率报表数据源</param>
+            <param name="topFiveSouece">缺陷TOP5数据源</param>
+            <param name="title">标题</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.ReportHelper.ShowProcessFpyView(SIE.MES.DashBoard.Reports.Commons.ReportBaseViewModel,SIE.MES.DashBoard.Reports.Commons.DefectStatisticsCriteria,System.String,System.String)">
+            <summary>
+            显示工序直通率报表视图
+            </summary>
+            <param name="model">报表基类</param>
+            <param name="criteria">查询实体</param>
+            <param name="title">Tab页标题</param>
+            <param name="fpyTitle">直通率标题</param>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.Reports.ShopFPY.ShopReportCriteriaViewConfig">
+            <summary>
+            车间报表查询实体视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.ShopFPY.ShopReportCriteriaViewConfig.ConfigView">
+            <summary>
+            默认视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.Reports.ShopFPY.ShopReportViewConfig">
+            <summary>
+            车间报表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.ShopFPY.ShopReportViewConfig.ConfigView">
+            <summary>
+            默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.Reports.ShopFPY.ShopReportViewConfig.ConfigListView">
+            <summary>
+            list视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.TeamManagement.AddScoreRecordEntity">
+            <summary>
+            看板加分项明细数据
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.TeamManagement.AddScoreRecordEntity.RowNum">
+            <summary>
+            行号
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.TeamManagement.AddScoreRecordEntity.DetailStr">
+            <summary>
+            明细
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordControl">
+            <summary>
+            DisplayBillDataControl.xaml 的交互逻辑
+            </summary>
+            <summary>
+            ScoreRecordControl
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordControl.allDataRefreshTimer">
+            <summary>
+            全部数据刷新时间控制器
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordControl.detailTimer">
+            <summary>
+            明细数据换页时间控制器
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordControl.listTimer">
+            <summary>
+            列表数据换页时间控制器
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordControl._nowIndex_Detail">
+            <summary>
+            明细的索引
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordControl._nowIndex_List">
+            <summary>
+            列表索引
+            </summary>      
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordControl._listCount">
+            <summary>
+            列表一页显示数量
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordControl._dbtime">
+            <summary>
+            数据库时间
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordControl._property">
+            <summary>
+            用户显示区设置的属性
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordControl._listDatas">
+            <summary>
+            数据列表8
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordControl._detailDatas">
+            <summary>
+            明细数据4
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordControl._empList">
+            <summary>
+            有效人员集合
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordControl.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordControl.isFirst">
+            <summary>
+            第一次加载控制
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordControl.OnRun">
+            <summary>
+            运行时事件
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordControl.Dispatch">
+            <summary>
+            运行时异步加载
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordControl.ListTimer_Tick(System.Object,System.EventArgs)">
+            <summary>
+            列表数据时间触发翻页
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordControl.DetailTimer_Tick(System.Object,System.EventArgs)">
+            <summary>
+            明细数据时间触发翻页
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordControl.AllDataRefreshTimer_Tick(System.Object,System.EventArgs)">
+            <summary>
+            全部数据刷新触发
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordControl.RefreshAllData">
+            <summary>
+            刷新所有数据
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordControl.InitAllData">
+            <summary>
+            初始化所有数据
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordControl.SetListData">
+            <summary>
+            设置列表数据和前三名数据
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordControl.SetBillData(SIE.Domain.EntityList{SIE.MES.TeamManagement.ScoreRecords.ScoreRecord},System.DateTime)">
+            <summary>
+            设置主列表的数据
+            </summary>
+            <param name="records">评分记录</param>
+            <param name="now">时间</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordControl.SetTop3Data">
+            <summary>
+            设置前三名数据
+            </summary>       
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordControl.ShowListData">
+            <summary>
+            展示列表数据
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordControl.SetDetailData">
+            <summary>
+            设置明细的数据
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordControl.ShowDetailData">
+            <summary>
+            时间触发显示员工加分项数据
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordControl.SetInterval(System.Windows.Threading.DispatcherTimer,SIE.Wpf.MES.DashBoard.TimeInterval)">
+            <summary>
+            设置间隔时间
+            </summary>
+            <param name="timer">事件触发器</param>
+            <param name="timeInv">时间间隔类</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordControl.Refresh">
+            <summary>
+            运行时刷新事件
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordControl.OnClose">
+            <summary>
+            关闭事件
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordControl.dicWeekRange">
+            <summary>
+            当月每周的日期范围
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordControl.SetMonthWeekRange(System.DateTime)">
+            <summary>
+            设置当月每周的日期范围
+            </summary>
+            <param name="dt">时间</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordControl.GetImageSource(System.Byte[])">
+            <summary>
+            二进制转换成image的source
+            </summary>
+            <param name="bte">二进制</param>
+            <returns>BitmapImage</returns>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordControl.GetShopAndLineData">
+            <summary>
+            获取车间产线数据
+            </summary>
+            <returns>bool 获取成功</returns>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordControl.ResetAllItemWidthHeight">
+            <summary>
+            根据设定的宽高重设定看板各控件的宽高
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordControl.displayGrid_LayoutUpdated(System.Object,System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordControlProperty">
+            <summary>
+            数据表格属性值设置
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordControlProperty.RefreshItv">
+            <summary>
+            滚动间隔时间
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordControlProperty.ListDataChangeItv">
+            <summary>
+            滚动间隔时间
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordControlProperty.DetailDataChangeItv">
+            <summary>
+            滚动间隔时间
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordControlProperty.DataCount">
+            <summary>
+            列表人数数量
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordControlProperty.ShopAndLine">
+            <summary>
+            车间过滤
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordEntity">
+            <summary>
+            产线物料需求看板数据实体
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordEntity.WorkGroupName">
+            <summary>
+            班组
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordEntity.EmployeeId">
+            <summary>
+            员工Id
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordEntity.EmployeeName">
+            <summary>
+            员工
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordEntity.FirstWeek">
+            <summary>
+            第一周
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordEntity.SecondWeek">
+            <summary>
+            第二周
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordEntity.ThirdWeek">
+            <summary>
+            第三周
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordEntity.FourthWeek">
+            <summary>
+            第四周
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordEntity.FifthWeek">
+            <summary>
+            第五周
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordEntity.MonthScore">
+            <summary>
+            月绩效评分
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordEntity.ScorePic">
+            <summary>
+            评分等级图
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.TeamManagement.ScoreRecordEntity.RowNum">
+            <summary>
+            行号
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.TimeInterval">
+            <summary>
+            时间间隔类
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.TimeInterval.TimePart">
+            <summary>
+            时间类型
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.TimeInterval.TimeValue">
+            <summary>
+            时间值
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.TimePart">
+            <summary>
+            时间单位
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.TimePart.Hours">
+            <summary>
+            小时
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.TimePart.Minutes">
+            <summary>
+            分
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.TimePart.Seconds">
+            <summary>
+            秒
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.TimePart.Days">
+            <summary>
+            天
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.WorkOrderReachs.WoReachDetailViewConfig">
+            <summary>
+            达成率明细
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.WorkOrderReachs.WoReachDetailViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.WorkOrderReachs.WorkOrderReachCriteriaViewConfig">
+            <summary>
+            产品报表查询实体视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.WorkOrderReachs.WorkOrderReachCriteriaViewConfig.ConfigView">
+            <summary>
+            默认视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.WorkOrderReachs.WorkOrderReachPivotGridControl">
+            <summary>
+            直通率报表基础控件
+            Interaction logic for DirectRateBasePivotGridControl.xaml
+            </summary>
+            <summary>
+            WorkOrderReachPivotGridControl
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.WorkOrderReachs.WorkOrderReachPivotGridControl._secondaryAxisYMinValue">
+            <summary>
+            柏拉图第二纵坐标最小值
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.WorkOrderReachs.WorkOrderReachPivotGridControl._secondaryAxisYMaxValue">
+            <summary>
+            柏拉图第二纵坐标最大值
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.WorkOrderReachs.WorkOrderReachPivotGridControl._reportViewModel">
+            <summary>
+            报表控件的ViewModel
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.MES.DashBoard.WorkOrderReachs.WorkOrderReachPivotGridControl.ReportViewModel">
+            <summary>
+            报表控件的ViewModel
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.WorkOrderReachs.WorkOrderReachPivotGridControl.lsBarPoint">
+            <summary>
+            工单总数柱状图
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.WorkOrderReachs.WorkOrderReachPivotGridControl.lsBar2Point">
+            <summary>
+            准时完工数柱状图
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.WorkOrderReachs.WorkOrderReachPivotGridControl.lsBar3Point">
+            <summary>
+            工单完工数柱状图
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.WorkOrderReachs.WorkOrderReachPivotGridControl.lsLinePoint">
+            <summary>
+            达成率折线图
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.WorkOrderReachs.WorkOrderReachPivotGridControl.lsLine2Point">
+            <summary>
+            完工率折线图
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.WorkOrderReachs.WorkOrderReachPivotGridControl.dics">
+            <summary>
+            自定义求和字典（Key:行属性+":"+时间，Value:百分值）
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.WorkOrderReachs.WorkOrderReachPivotGridControl.rowfield">
+            <summary>
+            行头
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.WorkOrderReachs.WorkOrderReachPivotGridControl.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.WorkOrderReachs.WorkOrderReachPivotGridControl.PivotGrid_Loaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            报表加载事件
+            </summary>
+            <param name="sender">s</param>
+            <param name="e">e</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.WorkOrderReachs.WorkOrderReachPivotGridControl.SetDic">
+            <summary>
+            字典存储数据
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.WorkOrderReachs.WorkOrderReachPivotGridControl.ComputeDic(System.Collections.Generic.IEnumerable{System.Linq.IGrouping{System.String,SIE.MES.DashBoard.WorkOrderReachs.WorkOrderReachViewModel}})">
+            <summary>
+            计算字典存储数据
+            </summary>
+            <param name="datas"></param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.WorkOrderReachs.WorkOrderReachPivotGridControl.pivotGrid_CustomCellDisplayText(System.Object,DevExpress.Xpf.PivotGrid.PivotCellDisplayTextEventArgs)">
+            <summary>
+            单元格数据展示
+            </summary>
+            <param name="sender">s</param>
+            <param name="e">e</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.WorkOrderReachs.WorkOrderReachPivotGridControl.pivotGrid_FieldValueDisplayText(System.Object,DevExpress.Xpf.PivotGrid.PivotFieldDisplayTextEventArgs)">
+            <summary>
+            初始化属性名称
+            </summary>
+            <param name="sender">控件对象</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.WorkOrderReachs.WorkOrderReachPivotGridControl.pivotGrid_CellSelectionChanged(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            属性单元格选择变更事件
+            </summary>
+            <param name="sender">事件对象</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.WorkOrderReachs.WorkOrderReachPivotGridControl.ExportButton_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            导出命令
+            </summary>
+            <param name="sender">命令对象</param>
+            <param name="e">对象参数</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.WorkOrderReachs.WorkOrderReachPivotGridControl.BtnClick_SaveLayOut(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            保存当前布局命令
+            </summary>
+            <param name="sender">命令对象</param>
+            <param name="e">命令参数</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.WorkOrderReachs.WorkOrderReachPivotGridControl.pivotGrid_CellDoubleClick(System.Object,DevExpress.Xpf.PivotGrid.PivotCellEventArgs)">
+            <summary>
+            单元格双击事件
+            </summary>
+            <param name="sender">控件对象</param>
+            <param name="e">控件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.WorkOrderReachs.WorkOrderReachPivotGridControl.PivotGrid_FieldAreaChanged(System.Object,DevExpress.Xpf.PivotGrid.PivotFieldEventArgs)">
+            <summary>
+            FieldArea改变时触发事件
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">事件包含参数</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.WorkOrderReachs.WorkOrderReachPivotGridControl.BindingChartByChartDisplayMode">
+            <summary>
+            根据ColumnArea绑定图表
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.WorkOrderReachs.WorkOrderReachPivotGridControl.BindingChart(SIE.MES.DashBoard.WorkOrderReachs.ChartDisplayMode)">
+            <summary>
+            柏拉图按维度显示
+            </summary>
+            <param name="chartDisplayMode">维度</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.WorkOrderReachs.WorkOrderReachPivotGridControl.GetData(SIE.MES.DashBoard.WorkOrderReachs.ChartDisplayMode)">
+            <summary>
+            获取数据并加工转化
+            </summary>
+            <param name="chartDisplayMode">柏拉图按维度显示</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.WorkOrderReachs.WorkOrderReachPivotGridControl.pivotGrid_CustomCellValue(System.Object,DevExpress.Xpf.PivotGrid.PivotCellValueEventArgs)">
+            <summary>
+            自定义单元格值
+            </summary>
+            <param name="sender">PivotGrid控件</param>
+            <param name="e">单元格事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.WorkOrderReachs.WorkOrderReachPivotGridControl.HandelData(SIE.MES.DashBoard.WorkOrderReachs.ChartDisplayMode,System.Collections.Generic.Dictionary{System.String,System.Double}@,System.Collections.Generic.Dictionary{System.String,System.Double}@,System.Collections.Generic.Dictionary{System.String,System.Double}@,System.Collections.Generic.Dictionary{System.String,System.Double}@,System.Collections.Generic.Dictionary{System.String,System.Double}@)">
+            <summary>
+            数据处理
+            </summary>
+            <param name="chartDisplayMode">chartDisplayMode</param>
+            <param name="closeQtyDicValue">closeQtyDicValue</param>
+            <param name="reachQtyDicValue">reachQtyDicValue</param>
+            <param name="totalQtyDicValue">totalQtyDicValue</param>
+            <param name="comRateDicValue">comRateDicValue</param>
+            <param name="closeRateDicValue">closeRateDicValue</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.WorkOrderReachs.WorkOrderReachPivotGridControl.pivotGrid_CustomFieldSort(System.Object,DevExpress.Xpf.PivotGrid.PivotCustomFieldSortEventArgs)">
+            <summary>
+            客制按RowName列排序
+            </summary>
+            <param name="sender">s</param>
+            <param name="e">e</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.WorkOrderReachs.WorkOrderReachPivotGridControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.WorkOrderReachs.WorkOrderReachReportLayout">
+            <summary>
+            SchedulingLayout.xaml 的交互逻辑
+            </summary>
+            <summary>
+            WorkOrderReachReportLayout
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.MES.DashBoard.WorkOrderReachs.WorkOrderReachReportLayout._reportControl">
+            <summary>
+            直通率报表通用控件
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.WorkOrderReachs.WorkOrderReachReportLayout.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.WorkOrderReachs.WorkOrderReachReportLayout.Arrange(SIE.Wpf.UIComponents)">
+            <summary>
+            布局
+            </summary>
+            <param name="components">控件容器</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.WorkOrderReachs.WorkOrderReachReportLayout.DataChanged(System.Object,System.EventArgs)">
+            <summary>
+            查询事件触发数据源变更
+            </summary>
+            <param name="sender">对应主视图</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.WorkOrderReachs.WorkOrderReachReportLayout.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.MES.DashBoard.WorkOrderReachs.WorkOrderReachTemplate">
+            <summary>
+            模板
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.WorkOrderReachs.WorkOrderReachTemplate.DefineBlocks">
+            <summary>
+            定义块
+            </summary>
+            <returns>聚合块</returns>
+        </member>
+        <member name="M:SIE.Wpf.MES.DashBoard.WorkOrderReachs.WorkOrderReachTemplate.OnUIGenerated(SIE.Wpf.ControlResult)">
+            <summary>
+            UI生成
+            </summary>
+            <param name="ui">ui</param>
+        </member>
+    </members>
+</doc>

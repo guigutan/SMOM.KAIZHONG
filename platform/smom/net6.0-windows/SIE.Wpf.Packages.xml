@@ -1,0 +1,1123 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Wpf.Packages</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Wpf.Packages.EntityPropertyViewMetaExtension">
+            <summary>
+            编辑器扩展类
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.EntityPropertyViewMetaExtension.UseProductFamilyEditor``1(SIE.MetaModel.View.WPFEntityPropertyViewMeta{``0},System.Action{SIE.Wpf.Editors.PagingLookUpEditorConfig})">
+            <summary>
+            产品族编辑器扩展方法
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Wpf.Packages.EntityPropertyViewMetaExtension.UseProductModelEditor``1(SIE.MetaModel.View.WPFEntityPropertyViewMeta{``0},System.Action{SIE.Wpf.Editors.PagingLookUpEditorConfig})">
+            <summary>
+            产品机型编辑器扩展方法
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Wpf.Packages.EntityPropertyViewMetaExtension.UsePackageRuleDetailEditor``1(SIE.MetaModel.View.WPFEntityPropertyViewMeta{``0},System.Action{SIE.Wpf.Editors.PagingLookUpEditorConfig})">
+            <summary>
+            包装规则单位代码编辑器扩展方法
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="T:SIE.Wpf.Packages.Boxs.Behaviors.BoxViewBehavior">
+            <summary>
+            周转箱视图行为
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Packages.Boxs.Behaviors.BoxViewBehavior._capacityColumn">
+            <summary>
+            默认容量列表
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Packages.Boxs.Behaviors.BoxViewBehavior._boxType">
+            <summary>
+            生产周转箱类型
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Boxs.Behaviors.BoxViewBehavior.OnAttach">
+            <summary>
+            附加视图行为
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Boxs.Behaviors.BoxViewBehavior.MainView_CurrentChanged(System.Object,System.EventArgs)">
+            <summary>
+            当前实体变更事件
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Boxs.Behaviors.BoxViewBehavior.SetColumnVisible(SIE.Packages.Boxs.TurnoverBox)">
+            <summary>
+            设置列是否可见
+            </summary>
+            <param name="box">周转箱</param>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Boxs.Behaviors.BoxViewBehavior.SetChildPanelVisible(System.Boolean)">
+            <summary>
+            设置子列表是否可见
+            </summary>
+            <param name="visible">是否可见</param>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Boxs.Behaviors.BoxViewBehavior.IsVisible(SIE.Packages.Boxs.TurnoverBox)">
+            <summary>
+            判断默认容量类，产品容量视图是否可见
+            生产周转箱时都可见，其他情况不可见
+            </summary>
+            <param name="box">周转箱</param>
+            <returns>可见返回true，否则返回false</returns>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Boxs.Behaviors.BoxViewBehavior.GetCapacityColumn">
+            <summary>
+            获取默认容量列
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Packages.Boxs.Commands.AddCpaacityCommand">
+            <summary>
+            产品容量添加命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Boxs.Commands.AddCpaacityCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            执行条件
+            </summary>
+            <param name="view">逻辑视图</param>
+            <returns>条件结果</returns>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Boxs.Commands.AddCpaacityCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            命令执行方法
+            </summary>
+            <param name="view">逻辑视图</param>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Boxs.Commands.AddCpaacityCommand.QueryView_Querying(System.Object,SIE.Wpf.QueryEventArgs)">
+            <summary>
+            查询时事件
+            </summary>
+            <param name="sender">查询视图</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Boxs.Commands.AddCpaacityCommand.Template_BlocksDefined(System.Object,SIE.MetaModel.View.CodeBlocksDefinedEventArgs)">
+            <summary>
+            模板块定义事件
+            </summary>
+            <param name="sender">模板对象</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="T:SIE.Wpf.Packages.Boxs.Commands.TurnoverBoxCopyCommand">
+            <summary>
+            复制并添加数据
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Boxs.Commands.TurnoverBoxCopyCommand.OnItemCreated(SIE.Domain.Entity)">
+            <summary>
+            复制周转箱对象
+            </summary>
+            <param name="entity">周转箱</param>
+        </member>
+        <member name="T:SIE.Wpf.Packages.Boxs.TurnoverBoxDeleteCommand">
+            <summary>
+            周转箱删除命令
+            周转箱类型为报废或者闲置可以删除
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Boxs.TurnoverBoxDeleteCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            判断删除命令能否执行
+            </summary>
+            <param name="view">列表逻辑视图</param>
+            <returns>能执行返回true，不能返回false</returns>
+        </member>
+        <member name="T:SIE.Wpf.Packages.Boxs.TurnoverBoxScrapCommand">
+            <summary>
+            报废周转箱命令 
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Boxs.TurnoverBoxScrapCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            判断报废命令能否执行
+            </summary>
+            <param name="view">列表逻辑视图</param>
+            <returns>能执行返回true，不能执行返回false</returns>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Boxs.TurnoverBoxScrapCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            报废命令执行方法
+            </summary>
+            <param name="view">列表逻辑视图</param>
+        </member>
+        <member name="T:SIE.Wpf.Packages.Boxs.Configs.ProductTrunoverBoxTypeConfigValueViewConfig">
+            <summary>
+            RFID类型配置值视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Boxs.Configs.ProductTrunoverBoxTypeConfigValueViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Packages.Boxs.ProdCpyItemCriteriaViewConfig">
+            <summary>
+            产品容量添加命令物料查询实体视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Packages.Boxs.ProdCpyItemCriteriaViewConfig.ClearModelProperty">
+            <summary>
+            产品机型清空
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Boxs.ProdCpyItemCriteriaViewConfig.GetClearModel(SIE.Packages.Boxs.ProdCpyItemCriteria)">
+            <summary>
+            产品机型清空
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Boxs.ProdCpyItemCriteriaViewConfig.ConfigView">
+            <summary>
+            默认配置
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Packages.Boxs.ProductCapacityViewConfig">
+            <summary>
+            产品容量视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Boxs.ProductCapacityViewConfig.ConfigView">
+            <summary>
+            默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Boxs.ProductCapacityViewConfig.ConfigListView">
+            <summary>
+            列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Boxs.ProductCapacityViewConfig.ConfigDetailsView">
+            <summary>
+            表单视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Boxs.ProductCapacityViewConfig.ConfigSelectionView">
+            <summary>
+            选择视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Packages.Boxs.TurnoverBoxViewConfig">
+            <summary>
+            周转箱视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Boxs.TurnoverBoxViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Boxs.TurnoverBoxViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Boxs.TurnoverBoxViewConfig.ConfigQueryView">
+            <summary>
+            查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Boxs.TurnoverBoxViewConfig.ConfigSelectionView">
+            <summary>
+            选择视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Packages.Packages.Editors.ProductFamilyLookUpEditor">
+            <summary>s
+            产品族
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Packages.Packages.Editors.ProductFamilyLookUpEditor.EditorName">
+            <summary>
+            产品族编辑器名称
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Packages.Editors.ProductFamilyLookUpEditor.GetDataSourceCore(SIE.Domain.Entity,SIE.PagingInfo,System.String,SIE.ManagedProperty.IManagedProperty)">
+            <summary>
+            重新加载数据源
+            </summary>
+            <param name="source">对象</param>
+            <param name="pagingInfo">分页</param>
+            <param name="keyword">关键字</param>
+            <param name="titleProperty">托管属性标记</param>
+            <returns>列表</returns>
+        </member>
+        <member name="T:SIE.Wpf.Packages.Packages.Editors.ProductModelLookUpEditor">
+            <summary>
+            产品机型编辑器
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Packages.Packages.Editors.ProductModelLookUpEditor.EditorName">
+            <summary>
+            编辑器名称
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Packages.Editors.ProductModelLookUpEditor.GetDataSourceCore(SIE.Domain.Entity,SIE.PagingInfo,System.String,SIE.ManagedProperty.IManagedProperty)">
+            <summary>
+            重新加载数据源
+            </summary>
+            <param name="source">对象</param>
+            <param name="pagingInfo">分页</param>
+            <param name="keyword">关键字</param>
+            <param name="titleProperty">托管属性标记</param>
+            <returns>列表</returns>
+        </member>
+        <member name="T:SIE.Wpf.Packages.Packages.Editors.PackageRuleDetailLookUpEditor">
+            <summary>s
+            单位编辑器，过滤主单位
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Packages.Packages.Editors.PackageRuleDetailLookUpEditor.EditorName">
+            <summary>
+            物料编辑器名称
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Packages.Editors.PackageRuleDetailLookUpEditor.GetDataSourceCore(SIE.Domain.Entity,SIE.PagingInfo,System.String,SIE.ManagedProperty.IManagedProperty)">
+            <summary>
+            重新加载数据源
+            </summary>
+            <param name="source">对象</param>
+            <param name="pagingInfo">分页</param>
+            <param name="keyword">关键字</param>
+            <param name="titleProperty">托管属性标记</param>
+            <returns>不含主单位的列表</returns>
+        </member>
+        <member name="T:SIE.Wpf.Packages.Packages.Commands.PackageRuleAddCommand">
+            <summary>
+            添加包装规则命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Packages.Commands.PackageRuleAddCommand.OnItemCreated(SIE.Domain.Entity)">
+            <summary>
+            创建包装规则
+            </summary>
+            <param name="entity">包装规则</param>
+        </member>
+        <member name="T:SIE.Wpf.Packages.Packages.Commands.PackageRuleDetailAddCommand">
+            <summary>
+            包装规则明细添加命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Packages.Commands.PackageRuleDetailAddCommand.OnItemCreated(SIE.Domain.Entity)">
+            <summary>
+            添加包装规则明细
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="T:SIE.Wpf.Packages.Packages.Commands.PackageRuleDetailDeleteCommand">
+            <summary>
+            明细删除命令，不能删除主单位
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Packages.Commands.PackageRuleDetailDeleteCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            是否可用
+            </summary>
+            <param name="view">listView</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Wpf.Packages.Packages.Commands.PackageRuleDetailMoveUpCommand">
+            <summary>
+            上移命令
+            主单位禁用上移按钮，主单位下的第一个单位禁用上移按钮
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Packages.Commands.PackageRuleDetailMoveUpCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            上移按钮是否可以执行
+            </summary>
+            <param name="view">逻辑视图</param>
+            <returns>是否可以执行</returns>
+        </member>
+        <member name="T:SIE.Wpf.Packages.Packages.Commands.PackageRuleDetailMoveDownCommand">
+            <summary>
+            下移命令
+            主单位禁用上移按钮，主单位下的最后一个单位禁用上移按钮
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Packages.Commands.PackageRuleDetailMoveDownCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            下移按钮是否可以执行
+            </summary>
+            <param name="view">逻辑视图</param>
+            <returns>是否可以执行</returns>
+        </member>
+        <member name="T:SIE.Wpf.Packages.Packages.Commands.PackageRuleDetailMoveTopCommand">
+            <summary>
+            置顶命令
+            主单位且主单位不是第一个则允许使用置顶命令
+            其它单位禁用该按钮
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Packages.Commands.PackageRuleDetailMoveTopCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            置顶命令是否可以执行
+            </summary>
+            <param name="view">逻辑视图</param>
+            <returns>是否可以执行</returns>
+        </member>
+        <member name="T:SIE.Wpf.Packages.Packages.Commands.PackageRuleDetailMoveBottomCommand">
+            <summary>
+            置底命令
+            主单位禁用该命令按钮，非主单位允许使用
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Packages.Commands.PackageRuleDetailMoveBottomCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            置底命令是否可以执行
+            </summary>
+            <param name="view">逻辑视图</param>
+            <returns>是否可以执行</returns>
+        </member>
+        <member name="T:SIE.Wpf.Packages.Packages.ViewBehaviors.PackageRuleDetailChangeBehavior">
+            <summary>
+            包装规则明细视图行为类
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Packages.Packages.ViewBehaviors.PackageRuleDetailChangeBehavior.isRun">
+            <summary>
+            是否正在切换ASN类型
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Packages.Packages.ViewBehaviors.PackageRuleDetailChangeBehavior.currPackageDetail">
+            <summary>
+            当前的包装规则明细
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Packages.ViewBehaviors.PackageRuleDetailChangeBehavior.OnAttach">
+            <summary>
+            附加
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Packages.ViewBehaviors.PackageRuleDetailChangeBehavior.Asn_CurrentChanged(System.Object,System.EventArgs)">
+            <summary>
+            当前的包装规则明细对象变更
+            </summary>
+            <param name="sender">当前变更的视图对象</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Packages.ViewBehaviors.PackageRuleDetailChangeBehavior.PackageDetail_PropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            值变更
+            </summary>
+            <param name="sender">变更的对象</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="T:SIE.Wpf.Packages.Commands.AddMasterUnitCommand">
+            <summary>
+            包装规则界面默认
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Commands.AddMasterUnitCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            按钮执行事件
+            </summary>
+            <param name="view">列表逻辑视图</param>
+        </member>
+        <member name="T:SIE.Wpf.Packages.Commands.PackageRuleDefaultCommand">
+            <summary>
+            包装规则界面默认
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Commands.PackageRuleDefaultCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            是否可执行
+            </summary>
+            <param name="view">列表逻辑视图</param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Commands.PackageRuleDefaultCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            命令执行
+            </summary>
+            <param name="view">列表逻辑视图</param>
+        </member>
+        <member name="T:SIE.Wpf.Packages.Commands.SelectPackageRuleCommand">
+            <summary>
+            物料包装规则选择包装规则按钮
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Commands.SelectPackageRuleCommand.OnAccept">
+            <summary>
+            选择确定后
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Packages.ItemLabels.ItemLabelViewConfig">
+            <summary>
+            物料标签视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.ItemLabels.ItemLabelViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.ItemLabels.ItemLabelViewConfig.ConfigQueryView">
+            <summary>
+            查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.ItemLabels.ItemLabelViewConfig.ConfigSelectionView">
+            <summary>
+            选择视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Packages.ItemLabels.LabelPropertyValueViewConfig">
+            <summary>
+            物料标签视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.ItemLabels.LabelPropertyValueViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Packages.ItemLabels.PackingLabelCriteriaViewConfig">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.ItemLabels.PackingLabelCriteriaViewConfig.ConfigView">
+            <summary>
+             配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Packages.ItemLabels.PackingLabelViewConfig">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Packages.ItemLabels.PackingLabelViewConfig.LevelDetailView">
+            <summary>
+            分类子视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.ItemLabels.PackingLabelViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.ItemLabels.PackingLabelViewConfig.ConfigLabelLevelDetail">
+            <summary>
+            配置层级明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Packages.ItemLabels.ViewBehaviors.PackingLabelBehavior">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.ItemLabels.ViewBehaviors.PackingLabelBehavior.OnAttach">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Packages.Module">
+            <summary>
+            当前工程所对应的模块类
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化
+            </summary>
+            <param name="app">Application</param>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Module.App_ModuleOperations(System.Object,System.EventArgs)">
+            <summary>
+            模块配置项
+            </summary>
+            <param name="sender">支持 .NET Framework 类层次结构中的所有类，并为派生类提供低级别服务。 这是 .NET Framework 中所有类的最终基类；它是类型层次结构的根。若要浏览此类型的.NET Framework 源代码，请参阅Reference Source。</param>
+            <param name="e">表示包含事件数据的类的基类，并提供用于不包含事件数据的事件的值</param>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Module.AddNewPropertyEditors(SIE.IApp)">
+            <summary>
+            属性编辑器
+            </summary>
+            <param name="app">应用程序生成周期定义</param>
+        </member>
+        <member name="T:SIE.Wpf.Packages.ItemExtViewConfig">
+            <summary>
+            Item扩展视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Packages.ItemExtViewConfig.ExperienceItemView">
+            <summary>
+            历史经验库物料视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.ItemExtViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Packages.ItemPackageRuleDetailViewConfig">
+            <summary>
+            物料包装规则明细主视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Packages.ItemPackageRuleDetailViewConfig.IsReadOnlyProperty">
+            <summary>
+            只读控制,主单位不能编辑
+            </summary> 
+        </member>
+        <member name="M:SIE.Wpf.Packages.ItemPackageRuleDetailViewConfig.GetIsReadOnly(SIE.Packages.ItemPackageRuleDetail)">
+            <summary>
+            只读控制,主单位不能编辑
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Packages.ItemPackageRuleDetailViewConfig.IsQtyReadOnlyProperty">
+            <summary>
+            只读控制,主单位不能编辑
+            </summary> 
+        </member>
+        <member name="M:SIE.Wpf.Packages.ItemPackageRuleDetailViewConfig.GetIsQtyReadOnly(SIE.Packages.ItemPackageRuleDetail)">
+            <summary>
+            只读控制,主单位不能编辑
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Packages.ItemPackageRuleDetailViewConfig.ItemPackRuleDtlMasterView">
+            <summary>
+            包装规则明细主信息视图ViewGroup
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Packages.ItemPackageRuleDetailViewConfig.ItemPackRuleDtlAttachView">
+            <summary>
+            包装规则明细附加信息视图ViewGroup
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.ItemPackageRuleDetailViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.ItemPackageRuleDetailViewConfig.ItemPackRuleDtlAttachConfigView">
+            <summary>
+            物料包装规则明细附加视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.ItemPackageRuleDetailViewConfig.ItemPackRuleDtlMasterConfigView">
+            <summary>
+            物料包装规则明细主视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.ItemPackageRuleDetailViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Packages.ItemPackageRuleViewConfig">
+            <summary>
+            物料包装规则视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Packages.ItemPackageRuleViewConfig.ItemPackageRuleDetailView">
+            <summary>
+            物料包装规则视图ViewGroup
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.ItemPackageRuleViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.ItemPackageRuleViewConfig.ItemPackageRuleDetail">
+            <summary>
+            列表显示的视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.ItemPackageRuleViewConfig.ConfigListView">
+            <summary>
+            配置默认视图（为了LookUpCommand写的视图）
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.ItemPackageRuleViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Packages.PackageRuleDetailViewConfig">
+            <summary>
+            包装规则明细视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Packages.PackageRuleDetailViewConfig.DetailMainViewGroup">
+            <summary>
+            包装规则明细 - 主信息 ViewGroup名
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Packages.PackageRuleDetailViewConfig.DetailSubViewGroup">
+            <summary>
+            包装规则明细 - 附加 ViewGroup名
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Packages.PackageRuleDetailViewConfig.IsReadOnlyProperty">
+            <summary>
+            只读控制
+            </summary> 
+        </member>
+        <member name="M:SIE.Wpf.Packages.PackageRuleDetailViewConfig.GetIsReadOnly(SIE.Packages.PackageRuleDetail)">
+            <summary>
+            只读控制
+            </summary>
+            <param name="me">包装规则明细</param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:SIE.Wpf.Packages.PackageRuleDetailViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.PackageRuleDetailViewConfig.DetailSubConfigView">
+            <summary>
+            包装规则明细主信息视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.PackageRuleDetailViewConfig.DetailMainConfigView">
+            <summary>
+            包装规则明细附加信息视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.PackageRuleDetailViewConfig.ConfigSelectionView">
+            <summary>
+            选择视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Packages.PackageRuleViewConfig">
+            <summary>
+            包装规则视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.PackageRuleViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.PackageRuleViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.PackageRuleViewConfig.ConfigQueryView">
+            <summary>
+            查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.PackageRuleViewConfig.ConfigSelectionView">
+            <summary>
+            默认选择视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Packages.PackingRelationViewConfig">
+            <summary>
+            包装关系视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.PackingRelationViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Packages.PackingUnitViewConfig">
+            <summary>
+            包装单位
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.PackingUnitViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.PackingUnitViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.PackingUnitViewConfig.ConfigQueryView">
+            <summary>
+            查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.PackingUnitViewConfig.ConfigSelectionView">
+            <summary>
+            选择视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Packages.ViewBehaviors.ItemPackageDetailChangeBehavior">
+            <summary>
+            物料包装规则明细视图行为类
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Packages.ViewBehaviors.ItemPackageDetailChangeBehavior.isRun">
+            <summary>
+            是否正在切换ASN类型
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Packages.ViewBehaviors.ItemPackageDetailChangeBehavior.currPackageDetail">
+            <summary>
+            当前的包装规则明细
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.ViewBehaviors.ItemPackageDetailChangeBehavior.OnAttach">
+            <summary>
+            附加
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.ViewBehaviors.ItemPackageDetailChangeBehavior.Asn_CurrentChanged(System.Object,System.EventArgs)">
+            <summary>
+            当前的包装规则明细对象变更
+            </summary>
+            <param name="sender">当前变更的视图对象</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Packages.ViewBehaviors.ItemPackageDetailChangeBehavior.PackageDetail_PropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            值变更
+            </summary>
+            <param name="sender">变更的对象</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="T:SIE.Wpf.Packages.Packings.Editors.BoolToggleButtonEditor">
+            <summary>
+            布尔开关编辑器
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Packages.Packings.Editors.BoolToggleButtonEditor.EditorName">
+            <summary>
+            编辑器名称
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Packages.Packings.Editors.BoolToggleButtonEditor.FontSizePropertyName">
+            <summary>
+            字体尺寸属性名称
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Packages.Packings.Editors.BoolToggleButtonEditor.MinHeightPropertyName">
+            <summary>
+            最小高度属性名称
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Packings.Editors.BoolToggleButtonEditor.BindingProperty">
+            <summary>
+            绑定属性
+            </summary>
+            <returns>依赖属性</returns>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Packings.Editors.BoolToggleButtonEditor.CreateEditingElement">
+            <summary>
+            创建编辑元素
+            </summary>
+            <returns>元素</returns>
+        </member>
+        <member name="T:SIE.Wpf.Packages.Packings.Layouts.PackingLayout">
+            <summary>
+            PackingLayout.xaml 的交互逻辑
+            </summary>
+            <summary>
+            PackingLayout
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Packings.Layouts.PackingLayout.#ctor">
+            <summary>
+            构造方法
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Packings.Layouts.PackingLayout.Arrange(SIE.Wpf.UIComponents)">
+            <summary>
+            布局
+            </summary>
+            <param name="components">UI组件</param>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Packings.Layouts.PackingLayout.InitChildrenView(DevExpress.Xpf.Core.DXTabControl)">
+            <summary>
+            初始化子视图
+            </summary>
+            <param name="tab">Dev原生Tab控件</param>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Packings.Layouts.PackingLayout.InitWorkstation(System.Windows.FrameworkElement)">
+            <summary>
+            初始化工作站信息
+            </summary>
+            <param name="workstation">工作站</param>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Packings.Layouts.PackingLayout.SetPanelMargin(DevExpress.Xpf.LayoutControl.LayoutControl)">
+            <summary>
+            设置容器边距
+            </summary>
+            <param name="control">控件</param>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Packings.Layouts.PackingLayout.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Packages.Packings.Layouts.PackingRelationLayout">
+            <summary>
+            PackingRelationLayout.xaml 的交互逻辑
+            </summary>
+            <summary>
+            PackingRelationLayout
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Packings.Layouts.PackingRelationLayout.#ctor">
+            <summary>
+            包装关系布局
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Packings.Layouts.PackingRelationLayout.Arrange(SIE.Wpf.UIComponents)">
+            <summary>
+            布局
+            </summary>
+            <param name="components">UI组件</param>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Packings.Layouts.PackingRelationLayout.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Packages.Packings.Workstation">
+            <summary>
+            工作站信息
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Packings.Workstation.#ctor">
+            <summary>
+            构造方法
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Packages.Packings.Workstation.UserIdProperty">
+            <summary>
+            用户
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Packages.Packings.Workstation.UserId">
+            <summary>
+            用户id
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Packages.Packings.Workstation.UserProperty">
+            <summary>
+            用户
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Packages.Packings.Workstation.User">
+            <summary>
+            用户
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Packages.Packings.Workstation.WarehouseIdProperty">
+            <summary>
+            仓库
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Packages.Packings.Workstation.WarehouseId">
+            <summary>
+            仓库
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Packages.Packings.Workstation.WarehouseProperty">
+            <summary>
+            仓库
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Packages.Packings.Workstation.Warehouse">
+            <summary>
+            仓库
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Packages.Packings.Workstation.StorageAreaIdProperty">
+            <summary>
+            货区ID
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Packages.Packings.Workstation.StorageAreaId">
+            <summary>
+            货区ID
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Packages.Packings.Workstation.StorageAreaProperty">
+            <summary>
+            货区
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Packages.Packings.Workstation.StorageArea">
+            <summary>
+            货区
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Packages.Packings.Workstation.StorageLocationIdProperty">
+            <summary>
+            货位ID
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Packages.Packings.Workstation.StorageLocationId">
+            <summary>
+            货位id
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Packages.Packings.Workstation.StorageLocationProperty">
+            <summary>
+            货位
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Packages.Packings.Workstation.StorageLocation">
+            <summary>
+            货位
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Packages.Packings.WorkstationConfig">
+            <summary>
+            工作站配置 
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Packings.WorkstationConfig.AddValidations(SIE.MetaModel.IValidationDeclarer)">
+            <summary>
+            添加验证
+            </summary>
+            <param name="rules">验证规则规</param>
+        </member>
+        <member name="T:SIE.Wpf.Packages.Packings.WorkstationSelector">
+            <summary>
+            工作站选择器
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Packages.Packings.WorkstationSelector.Workstation">
+            <summary>
+            工作站
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Packings.WorkstationSelector.#ctor">
+            <summary>
+            构造方法
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Packings.WorkstationSelector.#ctor(SIE.Wpf.Packages.Packings.Workstation)">
+            <summary>
+            带参构造方法
+            </summary>
+            <param name="workstation">工作站</param>
+        </member>
+        <member name="F:SIE.Wpf.Packages.Packings.WorkstationSelector.WarehouseIdProperty">
+            <summary>
+            仓库ID
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Packages.Packings.WorkstationSelector.WarehouseId">
+            <summary>
+            仓库ID
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Packages.Packings.WorkstationSelector.WarehouseProperty">
+            <summary>
+            仓库
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Packages.Packings.WorkstationSelector.Warehouse">
+            <summary>
+            仓库
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Packages.Packings.WorkstationSelector.StorageAreaIdProperty">
+            <summary>
+            货区ID
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Packages.Packings.WorkstationSelector.StorageAreaId">
+            <summary>
+            货区ID
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Packages.Packings.WorkstationSelector.StorageAreaProperty">
+            <summary>
+            货区
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Packages.Packings.WorkstationSelector.StorageArea">
+            <summary>
+            货区
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Packages.Packings.WorkstationSelector.StorageLocationIdProperty">
+            <summary>
+            货位ID
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Packages.Packings.WorkstationSelector.StorageLocationId">
+            <summary>
+            货位ID
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Packages.Packings.WorkstationSelector.StorageLocationProperty">
+            <summary>
+            货位
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Packages.Packings.WorkstationSelector.StorageLocation">
+            <summary>
+            货位
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Packings.WorkstationSelector.SelectOperation(SIE.Wpf.Packages.Packings.Workstation)">
+            <summary>
+            选择工作单元
+            </summary>
+            <param name="workstation">工作站信息</param>
+        </member>
+        <member name="T:SIE.Wpf.Packages.Packings.WorkstationSelectorConfig">
+            <summary>
+            工作站选择器
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Packings.WorkstationSelectorConfig.AddValidations(SIE.MetaModel.IValidationDeclarer)">
+            <summary>
+            添加验证
+            </summary>
+            <param name="rules">验证规则</param>
+        </member>
+        <member name="T:SIE.Wpf.Packages.Packings.WorkstationSelectorViewConfig">
+            <summary>
+            工作单元信息视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Packings.WorkstationSelectorViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Packages.Packings.WorkstationViewConfig">
+            <summary>
+            工作站视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Packings.WorkstationViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Packages.Packings.WorkstationViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="SIE.Wpf.MES.PanelBindings.Controls.SplitterControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:uic="http://schemas.siestudio.com/winfx/xaml/core"
+             xmlns:uit="http://schemas.siestudio.com/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid x:Name="grid" Background="{DynamicResource {uit:BrushesThemeKey ResourceKey=PageBackground}}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <ContentControl x:Name="leftContent"/>
+        <GridSplitter Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Center" Width="5" ShowsPreview="True" Background="{DynamicResource {uit:BrushesThemeKey ResourceKey=PageBackground}}"/>
+        <ContentControl x:Name="rightContent" Grid.Column="2"/>
+    </Grid>  
+</UserControl>

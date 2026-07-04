@@ -1,0 +1,1350 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.ReportServerCore</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.ReportServerCore.CriteriaProvider">
+            <summary>
+            报表服务-客制化查询提供者
+            </summary>
+        </member>
+        <member name="M:SIE.ReportServerCore.CriteriaProvider.GetList(SIE.ObjectModel.CriteriaQuery)">
+            <summary>
+            获取数据列表
+            </summary>
+            <param name="query">标准查询实体</param>
+            <returns>实体列表</returns>
+        </member>
+        <member name="F:SIE.ReportServerCore.Config.ReportServerCoreConfigKeys.ReportServerSource">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SIE.ReportServerCore.DataModels.DataView">
+            <summary>
+            数据源
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.DataModels.DataView.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.DataModels.DataView.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.DataModels.DataView.DescriptionProperty">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.DataModels.DataView.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.DataModels.DataView.ConnectionStringProperty">
+            <summary>
+            连接字符串
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.DataModels.DataView.ConnectionString">
+            <summary>
+            连接字符串
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.DataModels.DataView.DbSchemaProperty">
+            <summary>
+            Db架构
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.DataModels.DataView.DbSchema">
+            <summary>
+            Db架构
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.DataModels.DataView.ProviderProperty">
+            <summary>
+            数据提供者
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.DataModels.DataView.Provider">
+            <summary>
+            数据提供者
+            </summary>
+        </member>
+        <member name="T:SIE.ReportServerCore.DataModels.DataViewConfig">
+            <summary>
+             实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.ReportServerCore.DataModels.DataViewConfig.ConfigMeta">
+            <summary>
+            实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.ReportServerCore.DataModels.DataViewConfig.AddValidations(SIE.MetaModel.IValidationDeclarer)">
+            <summary>
+            验证规则
+            </summary>
+            <param name="rules">验证规则的声明器</param>
+        </member>
+        <member name="T:SIE.ReportServerCore.DataModels.DataViewController">
+            <summary>
+            数据源控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ReportServerCore.DataModels.DataViewController.GetAllDataView">
+            <summary>
+            获取所有数据源
+            此方法已过时，请调用<see cref="M:SIE.ReportServerCore.DataModels.DataViewController.GetDataView"/>方法
+            </summary>
+            <returns>数据源列表</returns>
+        </member>
+        <member name="M:SIE.ReportServerCore.DataModels.DataViewController.GetDataView">
+            <summary>
+            获取所有数据源
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.ReportServerCore.Documents.Dashboard">
+            <summary>
+            看板
+            </summary>
+        </member>
+        <member name="M:SIE.ReportServerCore.Documents.Dashboard.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="T:SIE.ReportServerCore.Documents.DashboardConfig">
+            <summary>
+             实体配置
+            </summary>
+        </member>
+        <member name="T:SIE.ReportServerCore.Documents.DocumentBase">
+            <summary>
+            文档
+            </summary>
+        </member>
+        <member name="M:SIE.ReportServerCore.Documents.DocumentBase.#ctor">
+            <summary>
+            构建函数
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Documents.DocumentBase.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.DocumentBase.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Documents.DocumentBase.DescriptionProperty">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.DocumentBase.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Documents.DocumentBase.DocumentTypeProperty">
+            <summary>
+            文档类型
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.DocumentBase.DocumentType">
+            <summary>
+            文档类型
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Documents.DocumentBase.EntityTypeProperty">
+            <summary>
+            实体类型
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.DocumentBase.EntityType">
+            <summary>
+            实体类型
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Documents.DocumentBase.LayoutRevisionsProperty">
+            <summary>
+            布局历史列表
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.DocumentBase.LayoutRevisions">
+            <summary>
+            布局历史列表
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Documents.DocumentBase.CategoryIdProperty">
+            <summary>
+            文档分类别
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.DocumentBase.CategoryId">
+            <summary>
+            文档分类别
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Documents.DocumentBase.CategoryProperty">
+            <summary>
+            文档分类别
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.DocumentBase.Category">
+            <summary>
+            文档分类别
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Documents.DocumentBase.SourceInvOrgIdProperty">
+            <summary>
+            来源组织Id
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.DocumentBase.SourceInvOrgId">
+            <summary>
+            来源组织Id
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Documents.DocumentBase.SourceDocIdProperty">
+            <summary>
+            来源文档Id
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.DocumentBase.SourceDocId">
+            <summary>
+            来源文档Id
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.DocumentBase.IsNew">
+            <summary>
+            文档是否新建
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Documents.DocumentBase.ServerSourceProperty">
+            <summary>
+            服务源地址
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.DocumentBase.ServerSource">
+            <summary>
+            服务源地址
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Documents.DocumentBase.SourceVersionProperty">
+            <summary>
+            源版本号
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.DocumentBase.SourceVersion">
+            <summary>
+            源版本号
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Documents.DocumentBase.SourceUuidProperty">
+            <summary>
+            源唯一ID
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.DocumentBase.SourceUuid">
+            <summary>
+            源唯一ID
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Documents.DocumentBase.UuidProperty">
+            <summary>
+            唯一id
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.DocumentBase.Uuid">
+            <summary>
+            唯一id
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Documents.DocumentBase.SyncOperatorIdProperty">
+            <summary>
+            同步操作者
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.DocumentBase.SyncOperatorId">
+            <summary>
+            同步操作者
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Documents.DocumentBase.SyncOperationNameProperty">
+            <summary>
+            同步操作者名称
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.DocumentBase.SyncOperationName">
+            <summary>
+            同步操作者名称
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Documents.DocumentBase.SyncOperatorTimeProperty">
+            <summary>
+            同步操作时间
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.DocumentBase.SyncOperatorTime">
+            <summary>
+            同步操作时间
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Documents.DocumentBase.IsTemplateProperty">
+            <summary>
+            是否模板
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.DocumentBase.IsTemplate">
+            <summary>
+            是否模板
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Documents.DocumentBase.TemplateNameProperty">
+            <summary>
+            模板名称
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.DocumentBase.TemplateName">
+            <summary>
+            模板名称
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Documents.DocumentBase.TemplateDescProperty">
+            <summary>
+            模板说明
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.DocumentBase.TemplateDesc">
+            <summary>
+            模板说明
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Documents.DocumentBase.TemplateOperationDateProperty">
+            <summary>
+            模板操作时间
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.DocumentBase.TemplateOperationDate">
+            <summary>
+            模板操作时间
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Documents.DocumentBase.TemplateOperationUserProperty">
+            <summary>
+            模板操作人员
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.DocumentBase.TemplateOperationUser">
+            <summary>
+            模板操作人员
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Documents.DocumentBase.TemplateOperationUserNameProperty">
+            <summary>
+            模板操作人员
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.DocumentBase.TemplateOperationUserName">
+            <summary>
+            模板操作人员
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Documents.DocumentBase.TemplateRatingProperty">
+            <summary>
+            模板推荐星数
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.DocumentBase.TemplateRating">
+            <summary>
+            模板推荐星数
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Documents.DocumentBase.InvOrgIdProperty">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.DocumentBase.InvOrgId">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Documents.DocumentBase.CategoryNameProperty">
+            <summary>
+            所属分类别
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.DocumentBase.CategoryName">
+            <summary>
+            所属分类别
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.DocumentBase.LastLayout">
+            <summary>
+            当前文档最新的一个布局版本
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Documents.DocumentBase.LayoutStoreModeProperty">
+            <summary>
+            布局存储模式
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.DocumentBase.LayoutStoreMode">
+            <summary>
+            布局存储模式
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Documents.DocumentBase.LayoutContentProperty">
+            <summary>
+            布局内容
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.DocumentBase.LayoutContent">
+            <summary>
+            布局内容
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Documents.DocumentBase.PreviewBytesProperty">
+            <summary>
+            预览图
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.DocumentBase.PreviewBytes">
+            <summary>
+            预览图
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Documents.DocumentBase.LayoutVersionProperty">
+            <summary>
+            修订版本号
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.DocumentBase.LayoutVersion">
+            <summary>
+            修订版本号
+            </summary>
+        </member>
+        <member name="T:SIE.ReportServerCore.Documents.DocumentBaseConfig">
+            <summary>
+            实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.ReportServerCore.Documents.DocumentBaseConfig.ConfigMeta">
+            <summary>
+            实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.ReportServerCore.Documents.DocumentBaseConfig.AddValidations(SIE.MetaModel.IValidationDeclarer)">
+            <summary>
+            验证规则
+            </summary>
+            <param name="rules">验证规则的声明器</param>
+        </member>
+        <member name="T:SIE.ReportServerCore.Documents.DocumentCategory">
+            <summary>
+            文档分类定义
+            </summary>
+        </member>
+        <member name="M:SIE.ReportServerCore.Documents.DocumentCategory.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Documents.DocumentCategory.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.DocumentCategory.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Documents.DocumentCategory.DocumentsProperty">
+            <summary>
+            列表
+            </summary>
+        </member>
+        <member name="M:SIE.ReportServerCore.Documents.DocumentCategory.LoadDocuments">
+            <summary>
+            加载文档
+            </summary>
+            <returns>文档列表</returns>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.DocumentCategory.Documents">
+            <summary>
+            文档列表
+            </summary>
+        </member>
+        <member name="T:SIE.ReportServerCore.Documents.DocumentCategoryConfig">
+            <summary>
+            文档分类 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.ReportServerCore.Documents.DocumentCategoryConfig.ConfigMeta">
+            <summary>
+            实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.ReportServerCore.Documents.DocumentCategoryConfig.AddValidations(SIE.MetaModel.IValidationDeclarer)">
+            <summary>
+            验证规则
+            </summary>
+            <param name="rules">验证规则的声明器</param>
+        </member>
+        <member name="T:SIE.ReportServerCore.Documents.DocumentCategoryController">
+            <summary>
+            文档分类控制器
+            </summary>
+        </member>
+        <member name="T:SIE.ReportServerCore.Documents.DocumentController">
+            <summary>
+            文档控制器
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Documents.DocumentController.ModuleKeyLabel">
+            <summary>
+            module区别前辍标识
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Documents.DocumentController.ModuleVersionLabel">
+            <summary>
+            module版本标识
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Documents.DocumentController.userNames">
+            <summary>
+            字典 用于存储用户名称
+            </summary>
+        </member>
+        <member name="M:SIE.ReportServerCore.Documents.DocumentController.GetDocument(System.Double)">
+            <summary>
+            获取文档，根据ID
+            </summary>
+            <param name="docId">文档Id</param>
+            <returns>文档</returns>
+        </member>
+        <member name="M:SIE.ReportServerCore.Documents.DocumentController.GetDocumentById(System.Double)">
+            <summary>
+            获取文档
+            </summary>
+            <param name="docId">文档ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ReportServerCore.Documents.DocumentController.CategoryHasDocument(System.Double)">
+            <summary>
+            分类下是否有文档
+            </summary>
+            <param name="categoryId">分类Id</param>
+            <returns>true/false</returns>
+        </member>
+        <member name="M:SIE.ReportServerCore.Documents.DocumentController.GetList(SIE.ObjectModel.CriteriaQuery)">
+            <summary>
+            查询界面 
+            </summary>
+            <param name="query"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ReportServerCore.Documents.DocumentController.GetAllModules">
+            <summary>
+            加载所有记录
+            </summary>
+            <returns>文档列表</returns>
+        </member>
+        <member name="M:SIE.ReportServerCore.Documents.DocumentController.GetDocuments">
+            <summary>
+            获取所有的报表文档
+            </summary>
+            <param name="expr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ReportServerCore.Documents.DocumentController.GetUserMenu(System.Double)">
+            <summary>
+            获取用户菜单
+            </summary>
+            <param name="userId">用户Id</param>
+            <example> 
+            参考 <see cref="!:SIE.RBAC.PDAMenus.PdaMenuController.GetUserPdaMenu"/> method.
+            </example>
+            <returns>用户菜单</returns>
+        </member>
+        <member name="M:SIE.ReportServerCore.Documents.DocumentController.GetUserMenu(System.Double,System.String,System.String)">
+            <summary>
+            获取用户报表菜单
+            </summary>
+            <param name="userId">用户id</param>
+            <param name="documentCategoryName">报表分类别</param>
+            <param name="documentName">报表名称</param>
+            <returns>用户报表菜单</returns>
+        </member>
+        <member name="M:SIE.ReportServerCore.Documents.DocumentController.GetLastLayoutRevision(System.Double)">
+            <summary>
+            获取最新文档版本
+            </summary>
+            <param name="documentId">文档Id</param>
+            <returns>布局修订记录</returns>
+        </member>
+        <member name="M:SIE.ReportServerCore.Documents.DocumentController.GetLayoutRevision(System.Double)">
+            <summary>
+            获取文档版本布局
+            </summary>
+            <param name="layoutRevisionID">文档版本ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ReportServerCore.Documents.DocumentController.GetLayoutRevisions(System.Double)">
+            <summary>
+            获取文档版本列表
+            </summary>
+            <param name="docId">文档ID</param>
+            <returns>文档版本列表</returns>
+        </member>
+        <member name="M:SIE.ReportServerCore.Documents.DocumentController.DownloadFile(System.Double)">
+            <summary>
+            下载文件到本地临时目录
+            </summary>
+            <param name="layoutId">布局Id</param>
+            <returns>打印模板</returns>
+        </member>
+        <member name="M:SIE.ReportServerCore.Documents.DocumentController.SaveDocumentContent(System.Double,System.Double,System.Byte[],System.Byte[],System.String)">
+            <summary>
+            保存文档
+            </summary>
+            <param name="reportId"></param>
+            <param name="revisonId"></param>
+            <param name="content"></param>
+            <param name="comment"></param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:SIE.ReportServerCore.Documents.DocumentController.QueryWhere(System.Linq.Expressions.Expression{System.Func{SIE.ReportServerCore.Documents.DocumentBase,System.Boolean}})" -->
+        <member name="M:SIE.ReportServerCore.Documents.DocumentController.GetDocumentsCore(System.Linq.Expressions.Expression{System.Func{SIE.ReportServerCore.Documents.DocumentBase,System.Boolean}},System.Collections.Generic.IList{SIE.Domain.OrderInfo},SIE.PagingInfo)">
+            <summary>
+            获取文档的核心方法
+            </summary>
+            <param name="expr">上层调用拼接条件</param>
+            <param name="sortInfo">排序信息</param>
+            <param name="pagingInfo">分页信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ReportServerCore.Documents.DocumentController.GetUserName(System.Double)">
+            <summary>
+            获取用户名称
+            </summary>
+            <param name="id">用户id</param>
+            <returns>用户名称</returns>
+        </member>
+        <member name="M:SIE.ReportServerCore.Documents.DocumentController.GetDocBaseByInvIdAndDocId(System.Int32,System.Double)">
+            <summary>
+            根据库存组织Id与文档来源Id查询文档模板
+            </summary>
+            <param name="invId">组织Id</param>
+            <param name="docId">文档Id</param>
+            <returns>文档模板</returns>
+        </member>
+        <member name="M:SIE.ReportServerCore.Documents.DocumentController.GetDocuments(SIE.ReportServerCore.Services.ServerSourceCriteria)">
+            <summary>
+            根据条件获取文档
+            </summary>
+            <param name="Criteria"><see cref="T:SIE.ReportServerCore.Services.ServerSourceCriteria"/></param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:SIE.ReportServerCore.Documents.DocumentController.SyncDocumentsSubmit(System.Collections.Generic.IList{SIE.ReportServerCore.Documents.DocumentBase})" -->
+        <member name="M:SIE.ReportServerCore.Documents.DocumentController.GetDataView">
+            <summary>
+            获取数据源
+            </summary>
+            <returns></returns> 
+        </member>
+        <member name="M:SIE.ReportServerCore.Documents.DocumentController.CreateLayoutRevision(System.Double,System.Byte[],System.Byte[],System.String,System.String)">
+            <summary>
+            创建文档版本
+            </summary>
+            <param name="reportId"></param>
+            <param name="content"></param>
+            <param name="previewImageBytes"></param>
+            <param name="fileName"></param>
+            <param name="comment"></param>
+            <returns></returns>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.DocumentSourceServiceApi.DocumentVo.Name">
+            <summary>
+            文档名称
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.DocumentSourceServiceApi.DocumentVo.InvOrgName">
+            <summary>
+            所属组织
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.DocumentSourceServiceApi.DocumentVo.CategoryName">
+            <summary>
+            文档所属分类
+            </summary>
+        </member>
+        <member name="T:SIE.ReportServerCore.Documents.DTOs.DocumentCategoryDto">
+            <summary>
+            文档分类DTO
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.DTOs.DocumentCategoryDto.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="M:SIE.ReportServerCore.Documents.Events.DocumentOnSubmitEvent.Invoke(SIE.ReportServerCore.Documents.DocumentBase,SIE.Domain.EntitySubmittingEventArgs)">
+            <summary>
+            表示将处理事件的方法
+            </summary>
+            <param name="entity">泛型实体</param>
+            <param name="e">由该事件生成的事件数据的类型</param>
+        </member>
+        <member name="M:SIE.ReportServerCore.Documents.Events.DocumentOnSubmitEvent.InsertAction(SIE.ReportServerCore.Documents.DocumentBase)">
+            <summary>
+            插入动作
+            </summary>
+            <param name="entity">文档实例</param>
+        </member>
+        <member name="M:SIE.ReportServerCore.Documents.Events.DocumentOnSubmitEvent.UpdateAction(SIE.ReportServerCore.Documents.DocumentBase)">
+            <summary>
+            更新动作
+            </summary>
+            <param name="entity">文档实例</param>
+        </member>
+        <member name="M:SIE.ReportServerCore.Documents.Events.DocumentOnSubmitEvent.SetEntityPropertyValue(SIE.ReportServerCore.Documents.DocumentBase)">
+            <summary>
+            设置实体属性值
+            </summary>
+            <param name="entity">文档</param>
+        </member>
+        <member name="T:SIE.ReportServerCore.Documents.Events.DocumentOnSubmitted">
+            <summary>
+            文档提交后事件
+            </summary>
+        </member>
+        <member name="M:SIE.ReportServerCore.Documents.Events.LayoutRevisionOnSubmitEvent.Invoke(SIE.ReportServerCore.Documents.LayoutRevision,SIE.Domain.EntitySubmittingEventArgs)">
+            <summary>
+            表示将处理事件的方法
+            </summary>
+            <param name="entity">泛型实体</param>
+            <param name="e">由该事件生成的事件数据的类型</param>
+        </member>
+        <member name="M:SIE.ReportServerCore.Documents.Events.LayoutRevisionOnSubmitEvent.InsertAction(SIE.ReportServerCore.Documents.LayoutRevision)">
+            <summary>
+            插入行为
+            </summary>
+            <param name="entity">布局修订记录</param>
+        </member>
+        <member name="M:SIE.ReportServerCore.Documents.Events.LayoutRevisionOnSubmitEvent.SetEntityPropertyValue(SIE.ReportServerCore.Documents.LayoutRevision)">
+            <summary>
+            设置实体属性值
+            </summary>
+            <param name="entity">布局修订记录</param>
+        </member>
+        <member name="M:SIE.ReportServerCore.Documents.Events.LayoutRevisionOnSubmitEvent.FormatFileSize(System.Int64)">
+            <summary>
+            格式化文件大小
+            </summary>
+            <param name="fileSize">文件大小</param>
+            <returns>格式化之后的文件大小</returns>
+        </member>
+        <member name="T:SIE.ReportServerCore.Documents.LayoutRevision">
+            <summary>
+            布局修订记录
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Documents.LayoutRevision.CommentProperty">
+            <summary>
+            修订说明
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.LayoutRevision.Comment">
+            <summary>
+            修订说明
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Documents.LayoutRevision.VersionProperty">
+            <summary>
+            修订版本号
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.LayoutRevision.Version">
+            <summary>
+            修订版本号
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Documents.LayoutRevision.FileNameProperty">
+            <summary>
+            文件名称
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.LayoutRevision.FileName">
+            <summary>
+            文件名称
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Documents.LayoutRevision.FilePathProperty">
+            <summary>
+            文件路径
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.LayoutRevision.FilePath">
+            <summary>
+            文件路径
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Documents.LayoutRevision.FileExtesionProperty">
+            <summary>
+            文件扩展名
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.LayoutRevision.FileExtesion">
+            <summary>
+            文件扩展名
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Documents.LayoutRevision.FileSizeProperty">
+            <summary>
+            文件大小
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.LayoutRevision.FileSize">
+            <summary>
+            文件大小
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Documents.LayoutRevision.ContentProperty">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.LayoutRevision.Content">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Documents.LayoutRevision.LayoutStoreModeProperty">
+            <summary>
+            布局存储模式
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.LayoutRevision.LayoutStoreMode">
+            <summary>
+            布局存储模式
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Documents.LayoutRevision.PreviewBytesProperty">
+            <summary>
+            预览图
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.LayoutRevision.PreviewBytes">
+            <summary>
+            预览图
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Documents.LayoutRevision.DocumentIdProperty">
+            <summary>
+            文档Id
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.LayoutRevision.DocumentId">
+            <summary>
+            文档Id
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Documents.LayoutRevision.DocumentProperty">
+            <summary>
+            文档
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.LayoutRevision.Document">
+            <summary>
+            文档
+            </summary>
+        </member>
+        <member name="T:SIE.ReportServerCore.Documents.LayoutRevisionConfig">
+            <summary>
+            布局 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.ReportServerCore.Documents.LayoutRevisionConfig.ConfigMeta">
+            <summary>
+            实体配置
+            </summary>
+        </member>
+        <member name="T:SIE.ReportServerCore.Documents.Report">
+            <summary>
+            报表
+            </summary>
+        </member>
+        <member name="M:SIE.ReportServerCore.Documents.Report.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="T:SIE.ReportServerCore.Documents.ReportConfig">
+            <summary>
+             实体配置
+            </summary>
+        </member>
+        <member name="T:SIE.ReportServerCore.Documents.ResourceLibrary">
+            <summary>
+            资源库
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Documents.ResourceLibrary.UserIdProperty">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.ResourceLibrary.UserId">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Documents.ResourceLibrary.ResourceContentProperty">
+            <summary>
+            内容序列化
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.ResourceLibrary.ResourceContent">
+            <summary>
+            内容序列化
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Documents.ResourceLibrary.DocumentTypeProperty">
+            <summary>
+            文档类型
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Documents.ResourceLibrary.DocumentType">
+            <summary>
+            文档类型
+            </summary>
+        </member>
+        <member name="T:SIE.ReportServerCore.Documents.ResourceLibraryConfig">
+            <summary>
+            资源库 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.ReportServerCore.Documents.ResourceLibraryController.GetUserResourceLib(System.Double,SIE.Documents.DocumentType)">
+            <summary>
+            获取用户的资源库
+            </summary>
+            <param name="userId">用户ID</param>
+            <param name="documentType">文档类型<see cref="T:SIE.Documents.DocumentType"/></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.ReportServerCore.Documents.Rules.ReportNametDuplicateRule">
+            <summary>
+            验证规则-名称不能重复
+            </summary>
+        </member>
+        <member name="M:SIE.ReportServerCore.Documents.Rules.ReportNametDuplicateRule.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="T:SIE.ReportServerCore.Documents.Rules.CategoryReferenceRule">
+            <summary>
+            验证规则--关联引用删除
+            </summary>    
+        </member>
+        <member name="T:SIE.ReportServerCore.DocumentTemplates.DocumentTemplate">
+            <summary>
+            文档模板
+            </summary>
+        </member>
+        <member name="T:SIE.ReportServerCore.DocumentTemplates.DocumentBaseConfig">
+            <summary>
+            实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.ReportServerCore.DocumentTemplates.DocumentBaseConfig.AddValidations(SIE.MetaModel.IValidationDeclarer)">
+            <summary>
+            验证规则
+            </summary>
+            <param name="rules">验证规则的声明器</param>
+        </member>
+        <member name="M:SIE.ReportServerCore.Extensions.Extension.ToJsonString(System.Object)">
+            <summary>
+            实体序列化为json字符串
+            </summary>
+            <param name="json"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ReportServerCore.Extensions.Extension.ToJsonObject``1(System.String)">
+            <summary>
+            字符串反序列化为实体对象
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="json"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.ReportServerCore.Mi.MiController">
+            <summary>
+            MI控制器
+            </summary>
+        </member>
+        <member name="T:SIE.ReportServerCore.Module">
+            <summary>
+            SIE.ReportServerCore 模块
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Module.SetupLevel">
+            <summary>
+            启动级别
+            </summary>
+        </member>
+        <member name="M:SIE.ReportServerCore.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化
+            </summary>
+            <param name="app">应用程序生命周期定义</param>
+        </member>
+        <member name="M:SIE.ReportServerCore.Module.IocRegisterService">
+            <summary>
+            Ioc注册服务实现
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.AssemblyInformation.ModuleName">
+            <summary>
+            模块名称
+            </summary>
+        </member>
+        <member name="T:SIE.ReportServerCore.Services.ServerSourceLevels">
+            <summary>
+            服务源级别
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Services.ServerSourceLevels.System">
+            <summary>
+            系统
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Services.ServerSourceLevels.User">
+            <summary>
+            用户
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Services.ServerSourceLevels.Local">
+            <summary>
+            本地AppDomain
+            </summary>
+        </member>
+        <member name="T:SIE.ReportServerCore.Services.ServerSource">
+            <summary>
+            服务源定义
+            </summary>
+        </member>
+        <member name="M:SIE.ReportServerCore.Services.ServerSource.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:SIE.ReportServerCore.Services.ServerSource"/> class.
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Services.ServerSource.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Services.ServerSource.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Services.ServerSource.SourceProperty">
+            <summary>
+            源地址
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Services.ServerSource.Source">
+            <summary>
+            源地址
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Services.ServerSource.SourceDescriptionProperty">
+            <summary>
+            源描述
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Services.ServerSource.SourceDescription">
+            <summary>
+            源描述
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Services.ServerSource.SourceLevelsProperty">
+            <summary>
+            源级别
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Services.ServerSource.SourceLevel">
+            <summary>
+            源级别
+            </summary>
+        </member>
+        <member name="T:SIE.ReportServerCore.Services.ServerSourceConfig">
+            <summary>
+            服务源定义 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.ReportServerCore.Services.ServerSourceConfig.AddValidations(SIE.MetaModel.IValidationDeclarer)">
+            <summary>
+            验证规则
+            </summary>
+            <param name="rules">验证规则的声明器</param>
+        </member>
+        <member name="T:SIE.ReportServerCore.Services.ServerSourceController">
+            <summary>
+            服务源控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ReportServerCore.Services.ServerSourceController.AddUniqueSource(SIE.ReportServerCore.Services.ServerSource)">
+            <summary>
+            添加唯一的服务源
+            </summary>
+            <param name="serverSource"></param>
+        </member>
+        <member name="M:SIE.ReportServerCore.Services.ServerSourceController.AddSources(System.Collections.Generic.IList{SIE.ReportServerCore.Services.ServerSource})">
+            <summary>
+            添加一组服务源
+            </summary>
+            <param name="serverSources"></param>
+        </member>
+        <member name="M:SIE.ReportServerCore.Services.ServerSourceController.GetSourceDocuments(SIE.ReportServerCore.Services.ServerSourceCriteria)">
+            <summary>
+            获取文档资源
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ReportServerCore.Services.ServerSourceController.GetAssemblyFileVersionTest">
+            <summary>
+            获取当前程序集文件版本号-API test
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.ReportServerCore.Services.ServerSourceCriteria">
+            <summary>
+            服务资源条件
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Services.ServerSourceCriteria.SourceNameIdProperty">
+            <summary>
+            服务源Id
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Services.ServerSourceCriteria.SourceNameId">
+            <summary>
+            服务源Id
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Services.ServerSourceCriteria.SourceNameProperty">
+            <summary>
+            服务源
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Services.ServerSourceCriteria.SourceName">
+            <summary>
+            服务源
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Services.ServerSourceCriteria.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Services.ServerSourceCriteria.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Services.ServerSourceCriteria.DocumentTypeProperty">
+            <summary>
+            文档类型
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Services.ServerSourceCriteria.DocumentType">
+            <summary>
+            文档类型
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Services.ServerSourceCriteria.IsTemplateProperty">
+            <summary>
+            是否模板
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Services.ServerSourceCriteria.IsTemplate">
+            <summary>
+            是否模板
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Services.ServerSourceCriteria.DocumentIdProperty">
+            <summary>
+            文档ID
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Services.ServerSourceCriteria.DocumentId">
+            <summary>
+            文档ID
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Services.ServerSourceCriteria.DocumentIdsProperty">
+            <summary>
+            文档ID
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Services.ServerSourceCriteria.DocumentIds">
+            <summary>
+            文档ID
+            </summary>
+        </member>
+        <member name="T:SIE.ReportServerCore.Utils.Api.ApiHelper">
+            <summary>
+            SieApiHelper帮助类
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Utils.Api.ApiHelper.ApiUrl">
+            <summary>
+            api地址
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Utils.Api.ApiHelper.ApiIsDebug">
+            <summary>
+            api是否启用调试日志
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Utils.Api.ApiHelper.ApiExpired">
+            <summary>
+            api会话有效期
+            </summary>
+        </member>
+        <member name="P:SIE.ReportServerCore.Utils.Api.ApiHelper.ContentType">
+            <summary>
+            请求内容类型-默认application/json
+            </summary>
+        </member>
+        <member name="M:SIE.ReportServerCore.Utils.Api.ApiHelper.Post``1(SIE.ReportServerCore.Utils.Api.WebApiRequest)">
+            <summary>
+            返回泛型的 post
+            </summary>
+            <typeparam name="T">返回T泛型</typeparam>
+            <param name="apiRequest"><see cref="!:WebApiRequest>"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ReportServerCore.Utils.Api.ApiHelper.ProcessPatameters(System.String,System.String,SIE.DataPortal.ApiMethodParameter[],System.Collections.Specialized.HybridDictionary)">
+            <summary>
+            处理请求参数
+            </summary>
+            <param name="ApiType"></param>
+            <param name="Method"></param>
+            <param name="parameters"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ReportServerCore.Utils.Api.ApiHelper.GetParams(System.Object[])">
+            <summary>
+            获取参数
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ReportServerCore.Utils.Api.ApiHelper.Post(System.String,System.Object,System.String,System.Net.WebHeaderCollection)">
+            <summary>
+            Sync Post
+            </summary>
+            <param name="url"></param>
+            <param name="parameters"></param>
+            <param name="contentType"></param>
+            <param name="webHeaderCollection"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ReportServerCore.Utils.ImageHelper.ImageToBytes(System.Drawing.Image)">
+            <summary>
+            转换图片到字节
+            </summary>
+            <param name="image"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ReportServerCore.Utils.ImageHelper.BytesToImage(System.Byte[])">
+            <summary>
+            转换字节到图片
+            </summary>
+            <param name="buffer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ReportServerCore.Utils.ImageHelper.CreateImageFromBytes(System.String,System.Byte[])">
+            <summary>
+            转换字节并存储到文件
+            </summary>
+            <param name="fileName"></param>
+            <param name="buffer"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.ReportServerCore.Utils.ModuleCustomOperations">
+            <summary>
+            模块自定义操作
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Utils.ModuleCustomOperations.ModuleStr">
+            <summary>
+            模块功能
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Utils.ModuleCustomOperations.ModuleLabel">
+            <summary>
+            文档定义
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Utils.ModuleCustomOperations.EnableCustomSqlScope">
+            <summary>
+            Db数据源
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Utils.ModuleCustomOperations.EnableCustomSqlLabel">
+            <summary>
+            Db数据源-允许自定义SQL
+            </summary>
+        </member>
+        <member name="F:SIE.ReportServerCore.Utils.ModuleCustomOperations.EnableCustomSqlName">
+            <summary>
+            启用自定义Sql的Db数据源
+            </summary>
+        </member>
+        <member name="T:SIE.ReportServerCore.Utils.PermissionMgrHelper">
+            <summary>
+            权限管理帮助类
+            </summary>
+        </member>
+        <member name="M:SIE.ReportServerCore.Utils.PermissionMgrHelper.HasOperationPermission(System.String,System.String,System.String)">
+            <summary>
+            验证是否模块操作权限
+            </summary>
+            <param name="moduleKeyLabel">模块名称key</param>
+            <param name="operationLabel">操作描述</param>
+            <param name="operationName">操作名称key</param>
+            <returns>true/false</returns>
+        </member>
+        <member name="T:SIE.ReportServerCore.Utils.CustomPermissionProvider">
+            <summary>
+            自定义的权限提供者
+            </summary>
+        </member>
+        <member name="M:SIE.ReportServerCore.Utils.CustomPermissionProvider.HasOperation(System.String,System.String)">
+            <summary>
+            是否可操作(覆写)
+            </summary>
+            <param name="pageKey">页面Key</param>
+            <param name="operationKey">操作名称Key</param>
+            <returns>true/false</returns>
+        </member>
+    </members>
+</doc>

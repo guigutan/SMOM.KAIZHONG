@@ -1,0 +1,227 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <CodeAnalysisRuleSet>..\..\..\..\.sonarlint\sie.smomcsharp.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.Inventory.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.Inventory.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Common\Control\OrderTypeFieldComboList.js" />
+    <None Remove="Common\Control\QueryComboLink.js" />
+    <None Remove="Common\Control\QueryComboList.js" />
+    <None Remove="Common\Control\SortFieldComboList.js" />
+    <None Remove="Common\Editors\DCInputEditor.js" />
+    <None Remove="Common\Editors\GridCheckBoxColumn.js" />
+    <None Remove="Common\Editors\ItemExtPropertyEditor.js" />
+    <None Remove="Common\Editors\PropertyValueFieldEditor.js" />
+    <None Remove="Common\Scripts\DCInputAction.js" />
+    <None Remove="Common\Scripts\Enum.js" />
+    <None Remove="Common\Scripts\InputFormatOptions.js" />
+    <None Remove="Common\Scripts\ItemExtPropertyBehavior.js" />
+    <None Remove="Common\Scripts\TurnOverRuleDetailAction.js" />
+    <None Remove="Onhands\Scripts\InvMultiWhComboPopup.js" />
+    <None Remove="Onhands\Scripts\LocationOnhandBehavior.js" />
+    <None Remove="Onhands\Scripts\LotLpnOnhandBehavior.js" />
+    <None Remove="Piles\Commands\BatchGeneratePileCommand.js" />
+    <None Remove="Piles\Commands\PilePrintCommand.js" />
+    <None Remove="Strategy\Commands\AddAssignRuleCommand.js" />
+    <None Remove="Strategy\Commands\AddAssignRuleDetailCommand.js" />
+    <None Remove="Strategy\Commands\AddOnShelvesRuleCommand.js" />
+    <None Remove="Strategy\Commands\AddOnShelvesRuleDetailCommand.js" />
+    <None Remove="Strategy\Commands\AddTaskAllotRuleCommand.js" />
+    <None Remove="Strategy\Commands\AddTurnOverRuleCommand.js" />
+    <None Remove="Strategy\Commands\AddTurnOverRuleDetailCommand.js" />
+    <None Remove="Strategy\Commands\DeleteAssignRuleCommand.js" />
+    <None Remove="Strategy\Commands\DeleteAssignRuleDetailCommand.js" />
+    <None Remove="Strategy\Commands\DeleteOnShelvesRuleCommand.js" />
+    <None Remove="Strategy\Commands\DeleteTaskAllotRuleCommand.js" />
+    <None Remove="Strategy\Commands\DeleteTaskAllotRuleEmployeeCommand.js" />
+    <None Remove="Strategy\Commands\DeleteTurnOverRuleCommand.js" />
+    <None Remove="Strategy\Commands\DeleteTurnOverRuleDetailCommand.js" />
+    <None Remove="Strategy\Commands\DisableAssignRuleCommand.js" />
+    <None Remove="Strategy\Commands\DisableTurnOverRuleCommand.js" />
+    <None Remove="Strategy\Commands\EditAssignRuleCommand.js" />
+    <None Remove="Strategy\Commands\EditAssignRuleDetailCommand.js" />
+    <None Remove="Strategy\Commands\EditOnShelvesRuleDetailCommand.js" />
+    <None Remove="Strategy\Commands\EditTurnOverRuleCommand.js" />
+    <None Remove="Strategy\Commands\EditTurnOverRuleDetailCommand.js" />
+    <None Remove="Strategy\Commands\InitAssignRuleCommand.js" />
+    <None Remove="Strategy\Commands\InitTurnOverRuleCommand.js" />
+    <None Remove="Strategy\Commands\SaveAssignRuleCommand.js" />
+    <None Remove="Strategy\Commands\SelectTaskAllotRuleEmployeeCommand.js" />
+    <None Remove="Strategy\Commands\SetIsDefaultAssignRuleCommand.js" />
+    <None Remove="Strategy\Commands\SetIsDefaultOnShelvesRuleCommand.js" />
+    <None Remove="Strategy\Commands\SetIsDefaultTurnOverRuleCommand.js" />
+    <None Remove="Strategy\Commands\TurnOverRuleDetailAddCommand.js" />
+    <None Remove="Strategy\Commands\TurnOverRuleDetailEditCommand.js" />
+    <None Remove="Strategy\Commands\TurnOverRuleDetailSortRuleViewModelEditCommand.js" />
+    <None Remove="Strategy\Commands\ViewOnShelvesRuleDetailCommand.js" />
+    <None Remove="Strategy\Scripts\Enum.js" />
+    <None Remove="Strategy\Scripts\OnShelvesRuleDetailAction.js" />
+    <None Remove="Strategy\Scripts\OnShelvesRuleDetailBehavior.js" />
+    <None Remove="Task\Commands\AddOperatorCommand.js" />
+    <None Remove="Task\Commands\DeleteOperatorCommand.js" />
+    <None Remove="Task\Commands\EditOperatorCommand.js" />
+    <None Remove="Task\Commands\EditTaskManagementCommand.js" />
+    <None Remove="Task\Commands\FrozenTaskManagementCommand.js" />
+    <None Remove="Task\Commands\HighLevelCommand.js" />
+    <None Remove="Task\Commands\LowLevelCommand.js" />
+    <None Remove="Task\Commands\MiddleLevelCommand.js" />
+    <None Remove="Task\Commands\PrintTaskManagementCommand.js" />
+    <None Remove="Task\Commands\ReleaseTaskManagementCommand.js" />
+    <None Remove="Task\Commands\SaveTaskManagementCommand.js" />
+    <None Remove="Task\Commands\UrgentLevelCommand.js" />
+    <None Remove="Task\Commands\ViewTaskManagementCommand.js" />
+    <None Remove="Task\Scripts\Enum.js" />
+    <None Remove="Transactions\Commands\DeleteFunTransactionCommand.js" />
+    <None Remove="Transactions\Commands\DeleteTransactionCommand.js" />
+    <None Remove="Transactions\Commands\DisableCollectByDeliveryCommand.js" />
+    <None Remove="Transactions\Commands\DisableFunctionAllowOutCommand.js" />
+    <None Remove="Transactions\Commands\DisableFunctionIsPackageCommand.js" />
+    <None Remove="Transactions\Commands\DisableFunctionIsQcCommand.js" />
+    <None Remove="Transactions\Commands\DisableFunctionOqcCommand.js" />
+    <None Remove="Transactions\Commands\DisableIsAutoDeliveryCommand.js" />
+    <None Remove="Transactions\Commands\DisableIsCrossPickCommand.js" />
+    <None Remove="Transactions\Commands\DisableIsPartDeliveryCommand.js" />
+    <None Remove="Transactions\Commands\DisableIsReceiveNgCommand.js" />
+    <None Remove="Transactions\Commands\EditTransactionDetailCommand.js" />
+    <None Remove="Transactions\Commands\EnableCollectByDeliveryCommand.js" />
+    <None Remove="Transactions\Commands\EnableFunctionAllowOutCommand.js" />
+    <None Remove="Transactions\Commands\EnableFunctionIsPackageCommand.js" />
+    <None Remove="Transactions\Commands\EnableFunctionIsQcCommand.js" />
+    <None Remove="Transactions\Commands\EnableFunctionOQcCommand.js" />
+    <None Remove="Transactions\Commands\EnableIsAutoDeliveryCommand.js" />
+    <None Remove="Transactions\Commands\EnableIsCrossPickCommand.js" />
+    <None Remove="Transactions\Commands\EnableIsPartDeliveryCommand.js" />
+    <None Remove="Transactions\Commands\EnableIsReceiveNgCommand.js" />
+    <None Remove="Transactions\Commands\FunctionEmployeeLookupCommand.js" />
+    <None Remove="Transactions\Commands\InitExcuteQueryCommand.js" />
+    <None Remove="Transactions\Commands\InitFunctionCommand.js" />
+    <None Remove="Transactions\Commands\LookupTransactionCommand.js" />
+    <None Remove="Transactions\Commands\SetTransactionInternalUseCommand.js" />
+    <None Remove="Transactions\Commands\SetTransactionIsUploadCommand.js" />
+    <None Remove="Transactions\Editors\BillTemplateEditor.js" />
+    <None Remove="Transactions\Editors\NumberRuleEditor.js" />
+    <None Remove="Transactions\Scripts\Enum.js" />
+    <None Remove="Transactions\Scripts\FunctionAction.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Common\Control\QueryComboLink.js" />
+    <EmbeddedResource Include="Common\Control\QueryComboList.js" />
+    <EmbeddedResource Include="Common\Control\OrderTypeFieldComboList.js" />
+    <EmbeddedResource Include="Common\Control\SortFieldComboList.js" />
+    <EmbeddedResource Include="Common\Editors\DCInputEditor.js" />
+    <EmbeddedResource Include="Common\Editors\ItemExtPropertyEditor.js" />
+    <EmbeddedResource Include="Common\Scripts\DCInputAction.js" />
+    <EmbeddedResource Include="Common\Scripts\Enum.js" />
+    <EmbeddedResource Include="Common\Scripts\InputFormatOptions.js" />
+    <EmbeddedResource Include="Common\Scripts\TurnOverRuleDetailAction.js" />
+    <EmbeddedResource Include="Onhands\Scripts\InvMultiWhComboPopup.js" />
+    <EmbeddedResource Include="Onhands\Scripts\LocationOnhandBehavior.js" />
+    <EmbeddedResource Include="Onhands\Scripts\LotLpnOnhandBehavior.js" />
+    <EmbeddedResource Include="Piles\Commands\BatchGeneratePileCommand.js" />
+    <EmbeddedResource Include="Piles\Commands\PilePrintCommand.js" />
+    <EmbeddedResource Include="Strategy\Commands\AddAssignRuleCommand.js" />
+    <EmbeddedResource Include="Strategy\Commands\AddAssignRuleDetailCommand.js" />
+    <EmbeddedResource Include="Strategy\Commands\AddOnShelvesRuleCommand.js" />
+    <EmbeddedResource Include="Strategy\Commands\AddOnShelvesRuleDetailCommand.js" />
+    <EmbeddedResource Include="Strategy\Commands\AddTaskAllotRuleCommand.js" />
+    <EmbeddedResource Include="Strategy\Commands\AddTurnOverRuleCommand.js" />
+    <EmbeddedResource Include="Strategy\Commands\AddTurnOverRuleDetailCommand.js" />
+    <EmbeddedResource Include="Strategy\Commands\DeleteAssignRuleCommand.js" />
+    <EmbeddedResource Include="Strategy\Commands\DeleteAssignRuleDetailCommand.js" />
+    <EmbeddedResource Include="Strategy\Commands\DeleteTaskAllotRuleEmployeeCommand.js" />
+    <EmbeddedResource Include="Strategy\Commands\DeleteOnShelvesRuleCommand.js" />
+    <EmbeddedResource Include="Strategy\Commands\DeleteTaskAllotRuleCommand.js" />
+    <EmbeddedResource Include="Strategy\Commands\DeleteTurnOverRuleCommand.js" />
+    <EmbeddedResource Include="Strategy\Commands\DeleteTurnOverRuleDetailCommand.js" />
+    <EmbeddedResource Include="Strategy\Commands\DisableAssignRuleCommand.js" />
+    <EmbeddedResource Include="Strategy\Commands\DisableTurnOverRuleCommand.js" />
+    <EmbeddedResource Include="Strategy\Commands\EditAssignRuleCommand.js" />
+    <EmbeddedResource Include="Strategy\Commands\EditAssignRuleDetailCommand.js" />
+    <EmbeddedResource Include="Strategy\Commands\EditOnShelvesRuleDetailCommand.js" />
+    <EmbeddedResource Include="Strategy\Commands\EditTurnOverRuleCommand.js" />
+    <EmbeddedResource Include="Strategy\Commands\EditTurnOverRuleDetailCommand.js" />
+    <EmbeddedResource Include="Strategy\Commands\SetIsDefaultTurnOverRuleCommand.js" />
+    <EmbeddedResource Include="Strategy\Commands\SetIsDefaultOnShelvesRuleCommand.js" />
+    <EmbeddedResource Include="Strategy\Commands\SetIsDefaultAssignRuleCommand.js" />
+    <EmbeddedResource Include="Strategy\Commands\InitAssignRuleCommand.js" />
+    <EmbeddedResource Include="Strategy\Commands\InitTurnOverRuleCommand.js" />
+    <EmbeddedResource Include="Strategy\Commands\SaveAssignRuleCommand.js" />
+    <EmbeddedResource Include="Strategy\Commands\TurnOverRuleDetailAddCommand.js" />
+    <EmbeddedResource Include="Strategy\Commands\TurnOverRuleDetailEditCommand.js" />
+    <EmbeddedResource Include="Strategy\Commands\TurnOverRuleDetailSortRuleViewModelEditCommand.js" />
+    <EmbeddedResource Include="Strategy\Commands\ViewOnShelvesRuleDetailCommand.js" />
+    <EmbeddedResource Include="Strategy\Commands\SelectTaskAllotRuleEmployeeCommand.js" />
+    <EmbeddedResource Include="Strategy\Scripts\Enum.js" />
+    <EmbeddedResource Include="Strategy\Scripts\OnShelvesRuleDetailAction.js" />
+    <EmbeddedResource Include="Strategy\Scripts\OnShelvesRuleDetailBehavior.js" />
+    <EmbeddedResource Include="Task\Commands\AddOperatorCommand.js" />
+    <EmbeddedResource Include="Task\Commands\DeleteOperatorCommand.js" />
+    <EmbeddedResource Include="Task\Commands\EditOperatorCommand.js" />
+    <EmbeddedResource Include="Task\Commands\EditTaskManagementCommand.js" />
+    <EmbeddedResource Include="Task\Commands\FrozenTaskManagementCommand.js" />
+    <EmbeddedResource Include="Task\Commands\LowLevelCommand.js" />
+    <EmbeddedResource Include="Task\Commands\MiddleLevelCommand.js" />
+    <EmbeddedResource Include="Task\Commands\HighLevelCommand.js" />
+    <EmbeddedResource Include="Task\Commands\PrintTaskManagementCommand.js" />
+    <EmbeddedResource Include="Task\Commands\UrgentLevelCommand.js" />
+    <EmbeddedResource Include="Task\Commands\ReleaseTaskManagementCommand.js" />
+    <EmbeddedResource Include="Task\Commands\SaveTaskManagementCommand.js" />
+    <EmbeddedResource Include="Task\Commands\ViewTaskManagementCommand.js" />
+    <EmbeddedResource Include="Task\Scripts\Enum.js" />
+    <EmbeddedResource Include="Transactions\Commands\DeleteFunTransactionCommand.js" />
+    <EmbeddedResource Include="Transactions\Commands\DeleteTransactionCommand.js" />
+    <EmbeddedResource Include="Transactions\Commands\DisableFunctionAllowOutCommand.js" />
+    <EmbeddedResource Include="Transactions\Commands\DisableFunctionIsPackageCommand.js" />
+    <EmbeddedResource Include="Transactions\Commands\DisableCollectByDeliveryCommand.js" />
+    <EmbeddedResource Include="Transactions\Commands\DisableIsCrossPickCommand.js" />
+    <EmbeddedResource Include="Transactions\Commands\DisableIsAutoDeliveryCommand.js" />
+    <EmbeddedResource Include="Transactions\Commands\DisableFunctionOqcCommand.js" />
+    <EmbeddedResource Include="Transactions\Commands\DisableIsPartDeliveryCommand.js" />
+    <EmbeddedResource Include="Transactions\Commands\DisableIsReceiveNgCommand.js" />
+    <EmbeddedResource Include="Transactions\Commands\EnableFunctionAllowOutCommand.js" />
+    <EmbeddedResource Include="Transactions\Commands\EnableFunctionIsPackageCommand.js" />
+    <EmbeddedResource Include="Transactions\Commands\EnableCollectByDeliveryCommand.js" />
+    <EmbeddedResource Include="Transactions\Commands\EnableIsCrossPickCommand.js" />
+    <EmbeddedResource Include="Transactions\Commands\EnableIsAutoDeliveryCommand.js" />
+    <EmbeddedResource Include="Transactions\Commands\EnableFunctionOqcCommand.js" />
+    <EmbeddedResource Include="Transactions\Commands\EnableFunctionIsQcCommand.js" />
+    <EmbeddedResource Include="Transactions\Commands\DisableFunctionIsQcCommand.js" />
+    <EmbeddedResource Include="Transactions\Commands\EditTransactionDetailCommand.js" />
+    <EmbeddedResource Include="Transactions\Commands\EnableIsPartDeliveryCommand.js" />
+    <EmbeddedResource Include="Transactions\Commands\EnableIsReceiveNgCommand.js" />
+    <EmbeddedResource Include="Transactions\Commands\InitExcuteQueryCommand.js" />
+    <EmbeddedResource Include="Transactions\Commands\InitFunctionCommand.js" />
+    <EmbeddedResource Include="Transactions\Commands\LookupTransactionCommand.js" />
+    <EmbeddedResource Include="Transactions\Commands\SetTransactionInternalUseCommand.js" />
+    <EmbeddedResource Include="Transactions\Commands\SetTransactionIsUploadCommand.js" />
+    <EmbeddedResource Include="Transactions\Commands\FunctionEmployeeLookupCommand.js" />
+    <EmbeddedResource Include="Transactions\Editors\BillTemplateEditor.js" />
+    <EmbeddedResource Include="Transactions\Editors\NumberRuleEditor.js" />
+    <EmbeddedResource Include="Transactions\Scripts\Enum.js" />
+    <EmbeddedResource Include="Transactions\Scripts\FunctionAction.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Items\SIE.Web.Items\SIE.Web.Items.csproj" />
+    <ProjectReference Include="..\..\Warehouses\SIE.Web.Warehouses\SIE.Web.Warehouses.csproj" />
+    <ProjectReference Include="..\SIE.Inventory\SIE.Inventory.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Onhands\ViewModels\" />
+    <Folder Include="TransactionProcessing\Scripts\" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,474 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Web.RedCardManagment</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Web.RedCardManagment._Extentions_.EntityPropertyViewMetaExtension">
+            <summary>
+            扩展静态类，用于重写编辑器
+            </summary>
+        </member>
+        <member name="M:SIE.Web.RedCardManagment._Extentions_.EntityPropertyViewMetaExtension.UseSupplierLookupEidtor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig})">
+            <summary>
+            供应商下拉选择编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Web.RedCardManagment._Extentions_.EntityPropertyViewMetaExtension.UseItemLookUpEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig})">
+            <summary>
+            红牌申请单 物料下拉选择编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="T:SIE.Web.RedCardManagment.Menus.RedCardManagmentMenuInit">
+            <summary>
+            红牌菜单初始化
+            </summary>
+        </member>
+        <member name="M:SIE.Web.RedCardManagment.Menus.RedCardManagmentMenuInit.GetMenuDtos">
+            <summary>
+            获取菜单列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.RedCardManagment.Module.Initialize(SIE.IApp)">
+            <summary>
+            模块初始化
+            </summary>
+            <param name="app"></param>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:SIE.Web.RedCardManagment.Module.App_ModuleOperations(System.Object,System.EventArgs)">
+            <summary>
+            配置菜单
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="T:SIE.Web.RedCardManagment.RedCardApplyBills.Commands.AddRedCardApplyBillCommand">
+            <summary>
+            申请单添加命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.RedCardManagment.RedCardApplyBills.Commands.AddRedCardApplyBillCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行方法
+            </summary>
+            <param name="args">视图参数</param>
+            <param name="scope">SIE.MetaModel.View.Block.EntityType</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.RedCardManagment.RedCardApplyBills.Commands.CancelReasonCommand">
+            <summary>
+            取消命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.RedCardManagment.RedCardApplyBills.Commands.CancelReasonCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行方法
+            </summary>
+            <param name="args">视图参数</param>
+            <param name="scope">SIE.MetaModel.View.Block.EntityType</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.RedCardManagment.RedCardApplyBills.Commands.WithDrawReasonCommand">
+            <summary>
+            撤回命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.RedCardManagment.RedCardApplyBills.Commands.WithDrawReasonCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行方法
+            </summary>
+            <param name="args">视图参数</param>
+            <param name="scope">SIE.MetaModel.View.Block.EntityType</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.RedCardManagment.RedCardApplyBills.RedCardApplyBillCriteriaViewConfig">
+            <summary>
+            红牌申请单查询实体视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.RedCardManagment.RedCardApplyBills.RedCardApplyBillCriteriaViewConfig.ConfigView">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SIE.Web.RedCardManagment.RedCardApplyBills.RedCardApplyBillViewConfig">
+            <summary>
+            红牌申请单视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.RedCardManagment.RedCardApplyBills.RedCardApplyBillViewConfig.ReadonlyView">
+            <summary>
+            只读视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.RedCardManagment.RedCardApplyBills.RedCardApplyBillViewConfig.ConfigView">
+            <summary>
+            默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.RedCardManagment.RedCardApplyBills.RedCardApplyBillViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.RedCardManagment.RedCardApplyBills.RedCardApplyBillViewConfig.ConfigDetailsView">
+            <summary>
+             配置明细视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.RedCardManagment.RedCardApplyBills.RedCardApplyBillViewConfig.ConfigReadonlyView">
+            <summary>
+             只读视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.RedCardManagment.RedCardApplyBills.RedCardApplyBillViewConfig.ConfigWorkFlowReadonlyView">
+            <summary>
+            流程申请信息视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.RedCardManagment.RedCardApplyBills.ViewModels.CancelReasonViewModel">
+            <summary>
+            取消ViewModel
+            </summary>
+        </member>
+        <member name="F:SIE.Web.RedCardManagment.RedCardApplyBills.ViewModels.CancelReasonViewModel.RedCardApplyBillIdProperty">
+            <summary>
+            红牌申请单Id
+            </summary>
+        </member>
+        <member name="P:SIE.Web.RedCardManagment.RedCardApplyBills.ViewModels.CancelReasonViewModel.RedCardApplyBillId">
+            <summary>
+            红牌申请单Id
+            </summary>
+        </member>
+        <member name="F:SIE.Web.RedCardManagment.RedCardApplyBills.ViewModels.CancelReasonViewModel.ReasonProperty">
+            <summary>
+            原因
+            </summary>
+        </member>
+        <member name="P:SIE.Web.RedCardManagment.RedCardApplyBills.ViewModels.CancelReasonViewModel.Reason">
+            <summary>
+            原因
+            </summary>
+        </member>
+        <member name="T:SIE.Web.RedCardManagment.RedCardApplyBills.ViewModels.CancelReasonViewModelViewConfig">
+            <summary>
+            取消ViewModel视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.RedCardManagment.RedCardApplyBills.ViewModels.CancelReasonViewModelViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.RedCardManagment.RedCardApplyBills.ViewModels.WithDrawReasonViewModel">
+            <summary>
+            撤回ViewModel
+            </summary>
+        </member>
+        <member name="F:SIE.Web.RedCardManagment.RedCardApplyBills.ViewModels.WithDrawReasonViewModel.RedCardApplyBillIdProperty">
+            <summary>
+            红牌申请单Id
+            </summary>
+        </member>
+        <member name="P:SIE.Web.RedCardManagment.RedCardApplyBills.ViewModels.WithDrawReasonViewModel.RedCardApplyBillId">
+            <summary>
+            红牌申请单Id
+            </summary>
+        </member>
+        <member name="F:SIE.Web.RedCardManagment.RedCardApplyBills.ViewModels.WithDrawReasonViewModel.ReasonProperty">
+            <summary>
+            原因
+            </summary>
+        </member>
+        <member name="P:SIE.Web.RedCardManagment.RedCardApplyBills.ViewModels.WithDrawReasonViewModel.Reason">
+            <summary>
+            原因
+            </summary>
+        </member>
+        <member name="T:SIE.Web.RedCardManagment.RedCardApplyBills.ViewModels.WithDrawReasonViewModelViewConfig">
+            <summary>
+            撤回ViewModel视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.RedCardManagment.RedCardApplyBills.ViewModels.WithDrawReasonViewModelViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.RedCardManagment.RedCardApplyBills.WorkFlows.RedCardApplyCategoryConfigViewConfig">
+            <summary>
+            红牌申请-工作流分类视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.RedCardManagment.RedCardApplyBills.WorkFlows.RedCardApplyCategoryConfigViewConfig.ConfigDetailsView">
+            <summary>
+            表单视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.RedCardManagment.RedCards.AutoLockProductSNConfigValueViewConfig">
+            <summary>
+            数据列配置项视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.RedCardManagment.RedCards.AutoLockProductSNConfigValueViewConfig.ConfigDetailsView">
+            <summary>
+            表单视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.RedCardManagment.RedCards.BatchRetroactiveViewConfig">
+            <summary>
+            物料批次追溯清单视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.RedCardManagment.RedCards.BatchRetroactiveViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.RedCardManagment.RedCards.BatchRetroactiveViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.RedCardManagment.RedCards.Commands.BatchDisableRedCardCommand">
+            <summary>
+            物料追溯禁用命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.RedCardManagment.RedCards.Commands.BatchEnableRedCardCommand">
+            <summary>
+            物料追溯启用命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.RedCardManagment.RedCards.Commands.DisableRedCardCommand">
+            <summary>
+            红牌管理禁用命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.RedCardManagment.RedCards.Commands.EnableRedCardCommand">
+            <summary>
+            红牌管理启用命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.RedCardManagment.RedCards.Commands.ImportRedCardItemSnCommand">
+            <summary>
+            数据导入-红牌物料SN
+            </summary>
+        </member>
+        <member name="M:SIE.Web.RedCardManagment.RedCards.Commands.ImportRedCardItemSnCommand.GetImportHandleType">
+            <summary>
+            获取导入处理类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.RedCardManagment.RedCards.Commands.ItemSnDisableRedCardCommand">
+            <summary>
+            物料SN表禁用命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.RedCardManagment.RedCards.Commands.ItemSnEnableRedCardCommand">
+            <summary>
+            物料SN启用命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.RedCardManagment.RedCards.Commands.ProductDisableRedCardCommand">
+            <summary>
+            关联产品禁用命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.RedCardManagment.RedCards.Commands.ProductEnableRedCardCommand">
+            <summary>
+            关联产品启用命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.RedCardManagment.RedCards.Commands.SaveRedCardCommand">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:SIE.Web.RedCardManagment.RedCards.Commands.SyncRedCardReelsCommand">
+            <summary>
+            信息追溯命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.RedCardManagment.RedCards.Commands.SyncRedCardReelsCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.RedCardManagment.RedCards.GeneralAbnormalTaskConfigValueViewConfig">
+            <summary>
+            数据列配置项视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.RedCardManagment.RedCards.GeneralAbnormalTaskConfigValueViewConfig.ConfigDetailsView">
+            <summary>
+            表单视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.RedCardManagment.RedCards.ItemSnRetroactiveViewConfig">
+            <summary>
+            物料SN追溯清单视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.RedCardManagment.RedCards.ItemSnRetroactiveViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.RedCardManagment.RedCards.ItemSnRetroactiveViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.RedCardManagment.RedCards.ProductRetroactiveCriteriaViewConfig">
+            <summary>
+            红牌管理视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.RedCardManagment.RedCards.ProductRetroactiveCriteriaViewConfig.ConfigView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.RedCardManagment.RedCards.ProductRetroactiveViewConfig">
+            <summary>
+            红牌管理视图配置(关联产品)
+            </summary>
+        </member>
+        <member name="M:SIE.Web.RedCardManagment.RedCards.ProductRetroactiveViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.RedCardManagment.RedCards.ProductRetroactiveViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.RedCardManagment.RedCards.RecardTaskExtConfigValueViewConfig">
+            <summary>
+            数据列配置项视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.RedCardManagment.RedCards.RecardTaskExtConfigValueViewConfig.ConfigDetailsView">
+            <summary>
+            表单视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.RedCardManagment.RedCards.RedCardCriteriaViewConfig">
+            <summary>
+            红牌管理视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.RedCardManagment.RedCards.RedCardCriteriaViewConfig.ConfigView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.RedCardManagment.RedCards.RedCardLogViewConfig">
+            <summary>
+            红牌操作日志视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.RedCardManagment.RedCards.RedCardLogViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.RedCardManagment.RedCards.RedCardViewConfig">
+            <summary>
+            红牌管理视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.RedCardManagment.RedCards.RedCardViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.RedCardManagment.RedCards.SyncDaysConfigValueViewConfig">
+            <summary>
+            数据列配置项视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.RedCardManagment.RedCards.SyncDaysConfigValueViewConfig.ConfigDetailsView">
+            <summary>
+            表单视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.RedCardManagment.RedCards.ViewModels.ImportRedCardItemSnViewModel">
+            <summary>
+            导入红牌物料SN追溯清单 实体
+            </summary>
+        </member>
+        <member name="F:SIE.Web.RedCardManagment.RedCards.ViewModels.ImportRedCardItemSnViewModel.SNProperty">
+            <summary>
+            红牌ReelId
+            </summary>
+        </member>
+        <member name="P:SIE.Web.RedCardManagment.RedCards.ViewModels.ImportRedCardItemSnViewModel.SN">
+            <summary>
+            序列号
+            </summary>
+        </member>
+        <member name="F:SIE.Web.RedCardManagment.RedCards.ViewModels.ImportRedCardItemSnViewModel.QuannityProperty">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:SIE.Web.RedCardManagment.RedCards.ViewModels.ImportRedCardItemSnViewModel.Quannity">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="F:SIE.Web.RedCardManagment.RedCards.ViewModels.ImportRedCardItemSnViewModel.ProductDateProperty">
+            <summary>
+            生产日期
+            </summary>
+        </member>
+        <member name="P:SIE.Web.RedCardManagment.RedCards.ViewModels.ImportRedCardItemSnViewModel.ProductDate">
+            <summary>
+            生产日期
+            </summary>
+        </member>
+        <member name="F:SIE.Web.RedCardManagment.RedCards.ViewModels.ImportRedCardItemSnViewModel.ErrorMessageProperty">
+            <summary>
+            导入失败原因
+            </summary>
+        </member>
+        <member name="P:SIE.Web.RedCardManagment.RedCards.ViewModels.ImportRedCardItemSnViewModel.ErrorMessage">
+            <summary>
+            导入失败原因
+            </summary>
+        </member>
+        <member name="T:SIE.Web.RedCardManagment.RedCards.ViewModels.ImportRedCardItemSnViewModelConfig">
+            <summary>
+            导入失败数据 视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.RedCardManagment.RedCards.ViewModels.ImportRedCardItemSnViewModelConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.RedCardManagment.RedCards.ViewModels.ImportRedCardItemSnViewModelConfig.ConfigListView">
+            <summary>
+            配置列表试图
+            </summary>
+        </member>
+    </members>
+</doc>

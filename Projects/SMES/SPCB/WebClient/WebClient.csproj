@@ -1,0 +1,252 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
+    <MvcRazorCompileOnPublish>false</MvcRazorCompileOnPublish>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="logs\**" />
+    <Content Remove="logs\**" />
+    <EmbeddedResource Remove="logs\**" />
+    <None Remove="logs\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\Templates\AOI复判检验明细导入模板.xlsx" />
+    <Content Remove="wwwroot\Templates\ET检验明细导入模板.xlsx" />
+    <Content Remove="wwwroot\Templates\Pcb检验Strip通用导入模板.xlsx" />
+    <Content Remove="wwwroot\Templates\产能维护导入模板.xlsx" />
+    <Content Remove="wwwroot\Templates\配方数据导入模版.xlsx" />
+    <Content Remove="wwwroot\Templates\销售订单导入模板.xlsx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\..\Common\WebClient\Configuration.cs" Link="Configuration.cs" />
+    <Compile Include="..\..\..\..\Common\WebClient\HostService.cs" Link="HostService.cs" />
+    <Compile Include="..\..\..\..\Common\WebClient\Program.cs" Link="Program.cs" />
+    <Compile Include="..\..\..\..\Common\WebClient\Startup.cs" Link="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\Common\WebClient\log4net.config" Link="log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Content Include="..\..\..\..\Common\WebClient\wwwroot\Bartender\SIEBartenderPrint.exe" Link="wwwroot\Bartender\SIEBartenderPrint.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="..\..\..\..\Common\WebClient\wwwroot\Templates\OQC产品分类检验标准导入模板.xlsx" Link="wwwroot\Templates\OQC产品分类检验标准导入模板.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\..\Common\WebClient\wwwroot\Templates\OQC产品检验标准导入模板.xlsx" Link="wwwroot\Templates\OQC产品检验标准导入模板.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\..\Common\WebClient\wwwroot\Templates\PQC产品检验标准导入模板.xlsx" Link="wwwroot\Templates\PQC产品检验标准导入模板.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\..\Common\WebClient\wwwroot\Templates\PQC分类检验标准模板.xlsx" Link="wwwroot\Templates\PQC分类检验标准模板.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\..\Common\WebClient\wwwroot\Templates\产品机型导入模板.xlsx" Link="wwwroot\Templates\产品机型导入模板.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\..\Common\WebClient\wwwroot\Templates\分类检验标准导入模板.xlsx" Link="wwwroot\Templates\分类检验标准导入模板.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\..\Common\WebClient\wwwroot\Templates\单体条码导入模板.xls" Link="wwwroot\Templates\单体条码导入模板.xls">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\..\Common\WebClient\wwwroot\Templates\工单条码导入模板.xls" Link="wwwroot\Templates\工单条码导入模板.xls">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\..\Common\WebClient\wwwroot\Templates\工步_导入模板.xlsx" Link="wwwroot\Templates\工步_导入模板.xlsx" />
+    <None Include="..\..\..\..\Common\WebClient\wwwroot\Templates\工艺路线导入模板.xlsx" Link="wwwroot\Templates\工艺路线导入模板.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\..\Common\WebClient\wwwroot\Templates\手工录入数据导入模板(计数型).xlsx" />
+    <None Include="..\..\..\..\Common\WebClient\wwwroot\Templates\手工录入数据导入模板(计量型).xlsx" />
+    <None Include="..\..\..\..\Common\WebClient\wwwroot\Templates\抽样方案导入模板.xlsx" Link="wwwroot\Templates\抽样方案导入模板.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\..\Common\WebClient\wwwroot\Templates\料号检验标准导入模板.xlsx" Link="wwwroot\Templates\料号检验标准导入模板.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\..\Common\WebClient\wwwroot\Templates\机型技能导入模板.xlsx" Link="wwwroot\Templates\机型技能导入模板.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\..\Common\WebClient\wwwroot\Templates\红牌ReelID导入模板.xlsx" Link="wwwroot\Templates\红牌ReelID导入模板.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\..\Common\WebClient\wwwroot\Templates\经验库导入模板.xlsx" Link="wwwroot\Templates\经验库导入模板.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\..\Common\WebClient\wwwroot\Templates\过程检验标准_其它标准导入模板.xlsx" Link="wwwroot\Templates\过程检验标准_其它标准导入模板.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\..\Common\WebClient\wwwroot\Templates\排程规则数据导入模板.xlsx" Link="wwwroot\Templates\排程规则数据导入模板.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\..\Common\WebClient\wwwroot\Templates\配方数据导入模版.xlsx" Link="wwwroot\Templates\配方数据导入模版.xlsx" />
+    <None Include="wwwroot\Templates\AOI复判检验明细导入模板.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\Templates\ET检验明细导入模板.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\Templates\产能维护导入模板.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\Templates\销售订单导入模板.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+	  <PackageReference Include="Microsoft.AspNetCore.SignalR.Protocols.NewtonsoftJson" Version="3.1.5" />
+	  <PackageReference Include="SIE.Alert.Job" Version="10.0.5" />
+	  <PackageReference Include="SIE.Messages" Version="10.0.5" />
+	  <PackageReference Include="SIE.ORM.MappingColumn" Version="10.0.5" />
+	  <PackageReference Include="SIE.Queue" Version="10.0.5" />
+	  <PackageReference Include="SIE.Script" Version="10.0.5" />
+	  <PackageReference Include="SIE.Session.Redis" Version="10.0.5" />
+	  <PackageReference Include="SIE.SimpleListReport" Version="10.0.5" />
+	  <PackageReference Include="SIE.Web.Alert" Version="10.0.5" />
+	  <PackageReference Include="SIE.Web.DashBoard" Version="10.0.5" />
+	  <PackageReference Include="SIE.Web.Diagnostics" Version="10.0.5" />
+	  <PackageReference Include="SIE.Web.Localization" Version="10.0.5" />
+	  <PackageReference Include="SIE.Web.Mda" Version="10.0.5" />
+	  <PackageReference Include="SIE.Web.Print" Version="10.0.5" />
+	  <PackageReference Include="SIE.Web.RBAC" Version="10.0.5" />
+	  <PackageReference Include="SIE.Web.ReportServerCore" Version="10.0.5" />
+	  <PackageReference Include="SIE.Web.ReportServerCore.Mvc" Version="10.0.5" />
+	  <PackageReference Include="SIE.Web.Schedule" Version="10.0.5" />
+	  <PackageReference Include="SIE.Web.Senders" Version="10.0.5" />
+	  <PackageReference Include="SuperSocket.ClientEngine" Version="0.10.0" />
+	  <PackageReference Include="SuperSocket.ProtoBase" Version="1.7.0.17" />
+	  <PackageReference Include="System.Reflection.Emit" Version="4.7.0" />
+	  <PackageReference Include="Topshelf" Version="4.2.1" />
+	  <PackageReference Include="Topshelf.Log4Net" Version="4.2.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="appsettings.Development.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Templates\瓶颈产能维护模板.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Templates\过程检验标准_其它标准导入模板.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="..\..\..\..\Common\WebClient\wwwroot\Templates\手工录入数据导入模板%28计数型%29.xlsx" Link="wwwroot\Templates\手工录入数据导入模板%28计数型%29.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="..\..\..\..\Common\WebClient\wwwroot\Templates\手工录入数据导入模板%28计量型%29.xlsx" Link="wwwroot\Templates\手工录入数据导入模板%28计量型%29.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Dockerfile">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="_运行.cmd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\Bartender\" />
+    <Folder Include="wwwroot\Bartender\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Modules\Common\AbnormalInfo\SIE.Web.AbnormalInfo\SIE.Web.AbnormalInfo.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Core\SIE.Core\SIE.Core.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Core\SIE.Web.Core\SIE.Web.Core.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\CSM\SIE.CSM\SIE.CSM.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\CSM\SIE.Web.CSM\SIE.Web.CSM.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Defects\SIE.Defects\SIE.Defects.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Defects\SIE.Web.Defects\SIE.Web.Defects.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Equipments\SIE.Equipments\SIE.Equipments.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Equipments\SIE.Fixtures\SIE.Fixtures.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Equipments\SIE.Web.Equipments\SIE.Web.Equipments.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Equipments\SIE.Web.Fixtures\SIE.Web.Fixtures.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Items\SIE.Items\SIE.Items.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Items\SIE.Web.Items\SIE.Web.Items.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Messages\SIE.EventMessages\SIE.EventMessages.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Packages\SIE.Packages\SIE.Packages.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Packages\SIE.Web.Packages\SIE.Web.Packages.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Resources\SIE.Resources\SIE.Resources.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Resources\SIE.Web.Resources\SIE.Web.Resources.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\SaleOrders\SIE.Web.SO\SIE.Web.SO.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Techs\SIE.Web.Tech.Common\SIE.Web.Tech.Common.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\TurnoverTools\SIE.Web.TurnoverTools\SIE.Web.TurnoverTools.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Warehouses\SIE.Warehouses\SIE.Warehouses.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Warehouses\SIE.Web.Warehouses\SIE.Web.Warehouses.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\WorkBenchs\SIE.Web.WorkBenchCommon\SIE.Web.WorkBenchCommon.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\WorkBenchs\SIE.Web.WorkBenchCore.Mvc\SIE.Web.WorkBenchCore.Mvc.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\WorkBenchs\SIE.WorkBenchChartBase\SIE.WorkBenchChartBase.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\WorkBenchs\SIE.WorkBenchCommon\SIE.WorkBenchCommon.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Kit\Core\SIE.Kit.EventMessages\SIE.Kit.EventMessages.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Pcb\Common\Barcodes\SIE.Pcb.Barcode\SIE.Pcb.Barcode.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Pcb\Common\Barcodes\SIE.Web.Pcb.Barcode\SIE.Web.Pcb.Barcode.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Pcb\Common\Core\SIE.Pcb.Core\SIE.Pcb.Core.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Pcb\Common\Core\SIE.Pcb.EventMessages\SIE.Pcb.EventMessages.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Pcb\Common\Core\SIE.Web.Pcb.Core\SIE.Web.Pcb.Core.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Pcb\Common\CSM\SIE.Pcb.CSM\SIE.Pcb.CSM.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Pcb\Common\CSM\SIE.Web.Pcb.CSM\SIE.Web.Pcb.CSM.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Pcb\Common\Defects\SIE.Pcb.Defects\SIE.Pcb.Defects.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Pcb\Common\Defects\SIE.Web.Pcb.Defects\SIE.Web.Pcb.Defects.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Pcb\Common\EMS\SIE.Pcb.EMS\SIE.Pcb.EMS.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Pcb\Common\EMS\SIE.Web.Pcb.EMS\SIE.Web.Pcb.EMS.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Pcb\Common\Items\SIE.Pcb.Items\SIE.Pcb.Items.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Pcb\Common\Items\SIE.Web.Pcb.Items\SIE.Web.Pcb.Items.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Pcb\Common\Packages\SIE.Pcb.Packages\SIE.Pcb.Packages.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Pcb\Common\Packages\SIE.Web.Pcb.Packages\SIE.Web.Pcb.Packages.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Pcb\Common\Techs\SIE.Pcb.Tech\SIE.Pcb.Tech.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Pcb\Common\Techs\SIE.Web.Pcb.Tech\SIE.Web.Pcb.Tech.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Pcb\SMES\SIE.Pcb.MES.Engineering\SIE.Pcb.MES.Engineering.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Pcb\SMES\SIE.Pcb.MES.Portal\SIE.Pcb.MES.Portal.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Pcb\SMES\SIE.Pcb.MesTool\SIE.Pcb.MesTool.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Pcb\SMES\SIE.Pcb.MES\SIE.Pcb.MES.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Pcb\SMES\SIE.Web.Pcb.MES.Engineering\SIE.Web.Pcb.MES.Engineering.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Pcb\SMES\SIE.Web.Pcb.MES.Portal\SIE.Web.Pcb.MES.Portal.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Pcb\SMES\SIE.Web.Pcb.MesTool\SIE.Web.Pcb.MesTool.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Pcb\SMES\SIE.Web.Pcb.MES\SIE.Web.Pcb.MES.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\Barcodes\SIE.Barcodes\SIE.Barcodes.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\Barcodes\SIE.Web.Barcodes\SIE.Web.Barcodes.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\Common\SIE.MES.Common\SIE.MES.Common.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\Common\SIE.Web.MES.Common\SIE.Web.MES.Common.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\DashBoards\SIE.MES.DashBoard\SIE.MES.DashBoard.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\DashBoards\SIE.Web.MES.DashBoard\SIE.Web.MES.DashBoard.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\DIST\SIE.DIST\SIE.DIST.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\DIST\SIE.Web.DIST\SIE.Web.DIST.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\Esop\SIE.ESop\SIE.ESop.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\MES\SIE.MES.Statistics\SIE.MES.Statistics.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\MES\SIE.MES\SIE.MES.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\MES\SIE.Web.MES\SIE.Web.MES.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\ProductIntfc\SIE.ProductIntfc\SIE.ProductIntfc.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\ProductIntfc\SIE.Web.ProductIntfc\SIE.Web.ProductIntfc.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\Reports\SIE.MES.Report\SIE.MES.Report.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\Reports\SIE.Web.MES.Report\SIE.Web.MES.Report.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\Tasks\SIE.MES.TaskManagement\SIE.MES.TaskManagement.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\Tasks\SIE.Web.MES.TaskManagement\SIE.Web.MES.TaskManagement.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\Teams\SIE.MES.TeamManagement\SIE.MES.TeamManagement.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\Teams\SIE.Web.MES.TeamManagement\SIE.Web.MES.TeamManagement.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Techs\SIE.Tech\SIE.Tech.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Techs\SIE.Web.Tech\SIE.Web.Tech.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\Workbenchs\SIE.MES.Workbench\SIE.MES.Workbench.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties appsettings_1json__JSONSchema="" appsettings_1Development_1json__JSONSchema="" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

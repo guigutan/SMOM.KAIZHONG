@@ -1,0 +1,159 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.AbnormalInfo.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.AbnormalInfo.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="AbnormalInfos\Behaviors\AbnormalInfoDetailBehavior.js" />
+    <None Remove="AbnormalInfos\Commands\AbnormalInfoDefHandlerSelectCommand.js" />
+    <None Remove="AbnormalInfos\Commands\AddAbnormalInfoCategoryCommand.js" />
+    <None Remove="AbnormalInfos\Commands\AddAbnormalInfoDefinitionCommand.js" />
+    <None Remove="AbnormalInfos\Commands\ConfirmAbnormalInfoCommand.js" />
+    <None Remove="AbnormalInfos\Commands\EditAbnormalInfoDefinitionCommand.js" />
+    <None Remove="AbnormalInfos\Commands\SaveAbnormalInfoCommand.js" />
+    <None Remove="AbnormalInfos\Commands\SubmitAbnormalInfoCommand.js" />
+    <None Remove="AbnormalInfos\Commands\ViewAbnormalInfoCommand.js" />
+    <None Remove="AbnormalInfos\Control\EmployeeComboPopup.js" />
+    <None Remove="AbnormalInfos\Editors\AbnormalCodeEditor.js" />
+    <None Remove="AbnormalMonitors\AbnomalRule\Behaviors\AbnomalRuleDetailBehavior.js" />
+    <None Remove="AbnormalMonitors\AbnomalRule\Commands\AbnomalRuleDeleteCommand.js" />
+    <None Remove="AbnormalMonitors\AbnomalRule\Commands\AbnomalRuleTestCommand.js" />
+    <None Remove="AbnormalMonitors\AbnomalRule\Commands\SaveAbnormalInfoCommand.js" />
+    <None Remove="AbnormalMonitors\AbnomalRule\Commands\SubmitAbnormalInfoCommand.js" />
+    <None Remove="AbnormalMonitors\AbnomalRule\Script\IndicatorConditionLayout.js" />
+    <None Remove="AbnormalMonitors\AbnomalRule\Script\RiskParetoChartViewPage.js" />
+    <None Remove="AbnormalMonitors\AbnomalRule\Script\RiskParetoChartViewUIGenerator.js" />
+    <None Remove="AbnormalMonitors\AbnomalRule\Script\WhereConditionLayout.js" />
+    <None Remove="AbnormalMonitors\AbnomalRule\Script\WritingRuleController.js" />
+    <None Remove="AbnormalMonitors\AbnomalRule\Script\WritingRuleLayout.js" />
+    <None Remove="AbnormalMonitors\AbnomalRule\Script\WritingRuleViewPage.js" />
+    <None Remove="AbnormalMonitors\AbnomalRule\Script\WritingRuleViewUIGenerator.js" />
+    <None Remove="AbnormalMonitors\AbnormalDefinitions\Commands\AddAbnormalDefineCommand.js" />
+    <None Remove="AbnormalMonitors\AbnormalDefinitions\Commands\JobDisableCommand.js" />
+    <None Remove="AbnormalMonitors\AbnormalDefinitions\Commands\JobEnableCommand.js" />
+    <None Remove="AbnormalMonitors\AbnormalDefinitions\Commands\JobRunCommand.js" />
+    <None Remove="AbnormalMonitors\AbnormalMonitorTasks\Behaviors\AbnormalMonitorTaskBehavior.js" />
+    <None Remove="AbnormalMonitors\AbnormalMonitorTasks\Behaviors\AddOrEditAbnormalMonitorTaskBehavior.js" />
+    <None Remove="AbnormalMonitors\AbnormalMonitorTasks\Behaviors\ProcessTaskBehavior.js" />
+    <None Remove="AbnormalMonitors\AbnormalMonitorTasks\Commands\AddTaskCommand.js" />
+    <None Remove="AbnormalMonitors\AbnormalMonitorTasks\Commands\CancelReasonCommand.js" />
+    <None Remove="AbnormalMonitors\AbnormalMonitorTasks\Commands\DeleteTaskCommand.js" />
+    <None Remove="AbnormalMonitors\AbnormalMonitorTasks\Commands\EditTaskCommand.js" />
+    <None Remove="AbnormalMonitors\AbnormalMonitorTasks\Commands\ExportCommand.js" />
+    <None Remove="AbnormalMonitors\AbnormalMonitorTasks\Commands\GeneralTask.js" />
+    <None Remove="AbnormalMonitors\AbnormalMonitorTasks\Commands\ProcessCommand.js" />
+    <None Remove="AbnormalMonitors\AbnormalMonitorTasks\Commands\SaveProcessCommand.js" />
+    <None Remove="AbnormalMonitors\AbnormalMonitorTasks\Commands\SaveTaskCommand.js" />
+    <None Remove="AbnormalMonitors\AbnormalMonitorTasks\Commands\SubmitProcessCommand.js" />
+    <None Remove="AbnormalMonitors\AbnormalMonitorTasks\Commands\ViewTaskCommand.js" />
+    <None Remove="AbnormalMonitors\AbnormalMonitorTasks\Scripts\AbnormalYellowRedLightDisplay.js" />
+    <None Remove="AbnormalMonitors\AbnormalMonitorTasks\Scripts\WritingAbnormalProcessLayout.js" />
+    <None Remove="AbnormalMonitors\AbnormalMonitorTasks\Scripts\WritingAbnormalProcessUIGenerator.js" />
+    <None Remove="AbnormalMonitors\AbnormalMonitorTasks\Scripts\WritingAbnormalProcessViewPage.js" />
+    <None Remove="AbnormalMonitors\AbnormalWarnDefines\Behaviors\PushTargetBehavior.js" />
+    <None Remove="AbnormalMonitors\AbnormalWarnDefines\Commands\PushTargetAddCommand.js" />
+    <None Remove="AbnormalMonitors\AbnormalWarnDefines\Editors\EmployeeComboPopup.js" />
+    <None Remove="AbnormalMonitors\AbnormalWarnDefines\Editors\PushTargetEditor.js" />
+    <None Remove="AbnormalMonitors\Commands\AddAnomalyMonitorsCommand.js" />
+    <None Remove="AbnormalMonitors\Commands\InitializationCommand.js" />
+    <None Remove="AbnormalMonitors\Commands\WritingRuleCommand.js" />
+    <None Remove="AbnormalMonitors\Editors\DynamicTypeEditor.js" />
+    <None Remove="AbnormalMonitors\TimelinessAbnormityReports\Scripts\TimelinessAbnormityReportChartController.js" />
+    <None Remove="AbnormalMonitors\TimelinessAbnormityReports\Scripts\TimelinessAbnormityReportController.js" />
+    <None Remove="AbnormalMonitors\TimelinessAbnormityReports\Scripts\TimelinessAbnormityReportLayout.js" />
+    <None Remove="AbnormalMonitors\TimelinessAbnormityReports\Scripts\TimelinessAbnormityReportUIGenerator.js" />
+    <None Remove="Common\Enums.js" />
+    <None Remove="Reports\Commands\AbnormalInfoReportQueryCommand.js" />
+    <None Remove="Reports\Scripts\AbnormalInfoReportController.js" />
+    <None Remove="Reports\Scripts\AbnormalInfoReportLayout.js" />
+    <None Remove="Reports\Scripts\AbnormalLineChart.js" />
+    <None Remove="Reports\Scripts\CloseRateGrid.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\..\..\.sonarlint\sie.smom\CSharp\SonarLint.xml" Link="SonarLint.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AbnormalInfos\Behaviors\AbnormalInfoDetailBehavior.js" />
+    <EmbeddedResource Include="AbnormalInfos\Commands\AbnormalInfoDefHandlerSelectCommand.js" />
+    <EmbeddedResource Include="AbnormalInfos\Commands\AddAbnormalInfoCategoryCommand.js" />
+    <EmbeddedResource Include="AbnormalInfos\Commands\AddAbnormalInfoDefinitionCommand.js" />
+    <EmbeddedResource Include="AbnormalInfos\Commands\ConfirmAbnormalInfoCommand.js" />
+    <EmbeddedResource Include="AbnormalInfos\Commands\EditAbnormalInfoDefinitionCommand.js" />
+    <EmbeddedResource Include="AbnormalInfos\Commands\SaveAbnormalInfoCommand.js" />
+    <EmbeddedResource Include="AbnormalInfos\Commands\SubmitAbnormalInfoCommand.js" />
+    <EmbeddedResource Include="AbnormalInfos\Commands\ViewAbnormalInfoCommand.js" />
+    <EmbeddedResource Include="AbnormalInfos\Control\EmployeeComboPopup.js" />
+    <EmbeddedResource Include="AbnormalInfos\Editors\AbnormalCodeEditor.js" />
+    <EmbeddedResource Include="AbnormalMonitors\AbnomalRule\Behaviors\AbnomalRuleDetailBehavior.js" />
+    <EmbeddedResource Include="AbnormalMonitors\AbnomalRule\Commands\AbnomalRuleTestCommand.js" />
+    <EmbeddedResource Include="AbnormalMonitors\AbnomalRule\Commands\AbnomalRuleDeleteCommand.js" />
+    <EmbeddedResource Include="AbnormalMonitors\AbnomalRule\Commands\SaveAbnormalInfoCommand.js" />
+    <EmbeddedResource Include="AbnormalMonitors\AbnomalRule\Commands\SubmitAbnormalInfoCommand.js" />
+    <EmbeddedResource Include="AbnormalMonitors\AbnomalRule\Script\WhereConditionLayout.js" />
+    <EmbeddedResource Include="AbnormalMonitors\AbnomalRule\Script\WritingRuleController.js" />
+    <EmbeddedResource Include="AbnormalMonitors\AbnomalRule\Script\IndicatorConditionLayout.js" />
+    <EmbeddedResource Include="AbnormalMonitors\AbnomalRule\Script\WritingRuleLayout.js" />
+    <EmbeddedResource Include="AbnormalMonitors\AbnomalRule\Script\WritingRuleViewPage.js" />
+    <EmbeddedResource Include="AbnormalMonitors\AbnomalRule\Script\WritingRuleViewUIGenerator.js" />
+    <EmbeddedResource Include="AbnormalMonitors\AbnormalDefinitions\Commands\AddAbnormalDefineCommand.js" />
+    <EmbeddedResource Include="AbnormalMonitors\AbnormalDefinitions\Commands\JobDisableCommand.js" />
+    <EmbeddedResource Include="AbnormalMonitors\AbnormalDefinitions\Commands\JobEnableCommand.js" />
+    <EmbeddedResource Include="AbnormalMonitors\AbnormalDefinitions\Commands\JobRunCommand.js" />
+    <EmbeddedResource Include="AbnormalMonitors\AbnormalMonitorTasks\Behaviors\AbnormalMonitorTaskBehavior.js" />
+    <EmbeddedResource Include="AbnormalMonitors\AbnormalMonitorTasks\Behaviors\AddOrEditAbnormalMonitorTaskBehavior.js" />
+    <EmbeddedResource Include="AbnormalMonitors\AbnormalMonitorTasks\Behaviors\ProcessTaskBehavior.js" />
+    <EmbeddedResource Include="AbnormalMonitors\AbnormalMonitorTasks\Commands\GeneralTask.js" />
+    <EmbeddedResource Include="AbnormalMonitors\AbnormalMonitorTasks\Commands\ViewTaskCommand.js" />
+    <EmbeddedResource Include="AbnormalMonitors\AbnormalMonitorTasks\Commands\CancelReasonCommand.js" />
+    <EmbeddedResource Include="AbnormalMonitors\AbnormalMonitorTasks\Commands\DeleteTaskCommand.js" />
+    <EmbeddedResource Include="AbnormalMonitors\AbnormalMonitorTasks\Commands\ExportCommand.js" />
+    <EmbeddedResource Include="AbnormalMonitors\AbnormalMonitorTasks\Commands\SaveTaskCommand.js" />
+    <EmbeddedResource Include="AbnormalMonitors\AbnormalMonitorTasks\Commands\SaveProcessCommand.js" />
+    <EmbeddedResource Include="AbnormalMonitors\AbnormalMonitorTasks\Commands\SubmitProcessCommand.js" />
+    <EmbeddedResource Include="AbnormalMonitors\AbnormalMonitorTasks\Commands\ProcessCommand.js" />
+    <EmbeddedResource Include="AbnormalMonitors\AbnormalMonitorTasks\Commands\EditTaskCommand.js" />
+    <EmbeddedResource Include="AbnormalMonitors\AbnormalMonitorTasks\Commands\AddTaskCommand.js" />
+    <EmbeddedResource Include="AbnormalMonitors\AbnormalMonitorTasks\Scripts\AbnormalYellowRedLightDisplay.js" />
+    <EmbeddedResource Include="AbnormalMonitors\AbnormalMonitorTasks\Scripts\WritingAbnormalProcessLayout.js" />
+    <EmbeddedResource Include="AbnormalMonitors\AbnormalMonitorTasks\Scripts\WritingAbnormalProcessViewPage.js" />
+    <EmbeddedResource Include="AbnormalMonitors\AbnormalMonitorTasks\Scripts\WritingAbnormalProcessUIGenerator.js" />
+    <EmbeddedResource Include="AbnormalMonitors\AbnormalWarnDefines\Behaviors\PushTargetBehavior.js" />
+    <EmbeddedResource Include="AbnormalMonitors\AbnormalWarnDefines\Commands\PushTargetAddCommand.js" />
+    <EmbeddedResource Include="AbnormalMonitors\AbnormalWarnDefines\Editors\PushTargetEditor.js" />
+    <EmbeddedResource Include="AbnormalMonitors\AbnormalWarnDefines\Editors\EmployeeComboPopup.js" />
+    <EmbeddedResource Include="AbnormalMonitors\Commands\AddAnomalyMonitorsCommand.js" />
+    <EmbeddedResource Include="AbnormalMonitors\Commands\InitializationCommand.js" />
+    <EmbeddedResource Include="AbnormalMonitors\Commands\WritingRuleCommand.js" />
+    <EmbeddedResource Include="AbnormalMonitors\Editors\DynamicTypeEditor.js" />
+    <EmbeddedResource Include="AbnormalMonitors\TimelinessAbnormityReports\Scripts\TimelinessAbnormityReportChartController.js" />
+    <EmbeddedResource Include="AbnormalMonitors\TimelinessAbnormityReports\Scripts\TimelinessAbnormityReportController.js" />
+    <EmbeddedResource Include="AbnormalMonitors\TimelinessAbnormityReports\Scripts\TimelinessAbnormityReportLayout.js" />
+    <EmbeddedResource Include="AbnormalMonitors\TimelinessAbnormityReports\Scripts\TimelinessAbnormityReportUIGenerator.js" />
+    <EmbeddedResource Include="Common\Enums.js" />
+    <EmbeddedResource Include="Reports\Commands\AbnormalInfoReportQueryCommand.js" />
+    <EmbeddedResource Include="Reports\Scripts\AbnormalInfoReportController.js" />
+    <EmbeddedResource Include="Reports\Scripts\AbnormalInfoReportLayout.js" />
+    <EmbeddedResource Include="Reports\Scripts\AbnormalLineChart.js" />
+    <EmbeddedResource Include="Reports\Scripts\CloseRateGrid.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SIE.AbnormalInfo\SIE.AbnormalInfo.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="SIE.Web.Common" Version="10.0.5" />
+  </ItemGroup>
+</Project>

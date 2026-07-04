@@ -1,0 +1,216 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <CodeAnalysisRuleSet>..\..\..\..\.sonarlint\sie.smomcsharp.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.MES.TaskManagement.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.MES.TaskManagement.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Dispatchs\Behaviors\**" />
+    <EmbeddedResource Remove="Dispatchs\Behaviors\**" />
+    <None Remove="Dispatchs\Behaviors\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="DailyOutputReports\Commands\DailyOutputReportExportAllCommand.js" />
+    <None Remove="DailyOutputReports\Commands\DailyOutputReportExportCommand.js" />
+    <None Remove="Dispatchs\Commands\CancelDispatchTaskCommand.js" />
+    <None Remove="Dispatchs\Commands\CancelMergeTaskCommand.js" />
+    <None Remove="Dispatchs\Commands\CloseTaskCommand.js" />
+    <None Remove="Dispatchs\Commands\DispatchTaskCommand.js" />
+    <None Remove="Dispatchs\Commands\GenerateTaskBIllCommand.js" />
+    <None Remove="Dispatchs\Commands\MergeTaskCommand.js" />
+    <None Remove="Dispatchs\Commands\OpenFeedingCloseCommand.js" />
+    <None Remove="Dispatchs\Commands\PauseTaskCommand.js" />
+    <None Remove="Dispatchs\Commands\PrintDispatchTaskCommand.js" />
+    <None Remove="Dispatchs\Commands\QueryDispatchTaskInfo.js" />
+    <None Remove="Dispatchs\Commands\ResumeTaskCommand.js" />
+    <None Remove="Dispatchs\Commands\SchedulingInfReturnCommand.js" />
+    <None Remove="Dispatchs\Commands\SetNormalCommand.js" />
+    <None Remove="Dispatchs\Commands\SetUrgentCommand.js" />
+    <None Remove="Dispatchs\Commands\ShowTaskDetailCommand.js" />
+    <None Remove="Dispatchs\Commands\SplitTaskCommand.js" />
+    <None Remove="Dispatchs\Commands\TaskFinishOrOpenCommand.js" />
+    <None Remove="Dispatchs\Commands\TaskPerformerCommand.js" />
+    <None Remove="Dispatchs\Scripts\DispatchTaskBehavior.js" />
+    <None Remove="Dispatchs\Scripts\SetUrgentStyle.js" />
+    <None Remove="Dispatchs\Scripts\WorkOrderBehavior.js" />
+    <None Remove="FeedingRecords\Commands\DeductionRecordEditCommand.js" />
+    <None Remove="FeedingRecords\Commands\FeedingAreaItemImportCommand.js" />
+    <None Remove="FeedingRecords\Commands\FeedingAreaLabelPrintCommand.js" />
+    <None Remove="FeedingRecords\Commands\FeedingAreaReourceImportCommand.js" />
+    <None Remove="FeedingRecords\Commands\ScrapWeighingRecordEditCommand.js" />
+    <None Remove="ProcessPrepareRecords\Commands\ComfrimCommand.js" />
+    <None Remove="ProcessPrepareRecords\Commands\ProcessPrepareRecordExecuteCommand.js" />
+    <None Remove="ProcessPrepareRecords\Commands\ProcessPrepareRecordExportCommand.js" />
+    <None Remove="ProcessPrepareRecords\Commands\RecordDetailAllPassCommand.js" />
+    <None Remove="ProcessPrepareRecords\Scripts\ProcessPrepareRecordBehavior.js" />
+    <None Remove="Reports\Behaviors\DispatchTaskCriteriaBehaviors.js" />
+    <None Remove="Reports\Behaviors\ReportRecordExamineBehavior.js" />
+    <None Remove="Reports\Commands\DefectSelectCommand.js" />
+    <None Remove="Reports\Commands\ReportCommand.js" />
+    <None Remove="Reports\Commands\ReportCriteriaCommand.js" />
+    <None Remove="Reports\Commands\ReportExamineConfirmCommand.js" />
+    <None Remove="Reports\Commands\ReportExamineRevokeCommand.js" />
+    <None Remove="Reports\Commands\ReportExportByMonthCommand.js" />
+    <None Remove="Reports\Commands\ReportFirstInspCommand.js" />
+    <None Remove="Reports\Commands\ReportPrintCommand.js" />
+    <None Remove="Reports\Commands\ReportRefreshCommand.js" />
+    <None Remove="Reports\Commands\ReportSaveCommand.js" />
+    <None Remove="Reports\Commands\ReportTaskRefreshCommand.js" />
+    <None Remove="Reports\Commands\ReportTaskResumeCommand.js" />
+    <None Remove="Reports\Commands\ReportTaskStartWorkCommand.js" />
+    <None Remove="Reports\Commands\ReportTaskStopCommand.js" />
+    <None Remove="Reports\Common\ReportCommon.js" />
+    <None Remove="Reports\Common\ReportGridCommon.js" />
+    <None Remove="Reports\Editors\ColumnEditor.js" />
+    <None Remove="Reports\Scripts\ProductFamilyBehavior.js" />
+    <None Remove="Reports\Scripts\ReportBehavior.js" />
+    <None Remove="Reports\Scripts\ReportDispatchTaskLayout.js" />
+    <None Remove="Reports\Scripts\ReportGenerator.js" />
+    <None Remove="Reports\Scripts\ReportRecordBehavior.js" />
+    <None Remove="Reports\Scripts\ReportWipBatchBatchColumnColor.js" />
+    <None Remove="SchedulingInfs\Commands\SchedulingInfCancelCommand.js" />
+    <None Remove="SchedulingInfs\Commands\SchedulingInfGenerateTaskCommand.js" />
+    <None Remove="SchedulingInfs\Commands\SchedulingInfImportCommand.js" />
+    <None Remove="SchedulingInfs\Commands\SchedulingInfReportExportAllCommand.js" />
+    <None Remove="SchedulingInfs\Commands\SchedulingInfReportExportCommand.js" />
+    <None Remove="SchedulingInfs\Commands\SchedulingInfValidCommand.js" />
+    <None Remove="SchedulingInfs\Scripts\ReportIsImportColorChange.js" />
+    <None Remove="SchedulingInfs\Scripts\SchedulingInfBehavior.js" />
+    <None Remove="SchedulingInfs\Scripts\SchedulingInfReportBehavior.js" />
+    <None Remove="Specifications\Commands\DeletedProdSpecificationCommand.js" />
+    <None Remove="Specifications\Commands\ProductSpecificationDetailCommand.js" />
+    <None Remove="Specifications\Commands\SelectItemCommand.js" />
+    <None Remove="Specifications\Commands\SelectSpecificationCommand.js" />
+    <None Remove="Specifications\Commands\SpecificationCategoryCommand.js" />
+    <None Remove="Specifications\Commands\SpecificationCategoryCopyCommand.js" />
+    <None Remove="Specifications\Commands\SpecificationCopyCommand.js" />
+    <None Remove="Specifications\Commands\SpecificationSaveCommand.js" />
+    <None Remove="StandardWorkHours\Commands\StandardHourSetImportCommand.js" />
+    <None Remove="StandardWorkHours\Commands\StandardHourSetSaveCommand.js" />
+    <None Remove="SuspectProductLabels\Commands\SuspectLabelProcessingCommand.js" />
+    <None Remove="TaskConfigs\Editors\ByQtyEditor.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\..\..\.sonarlint\sie.smom\CSharp\SonarLint.xml" Link="SonarLint.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DailyOutputReports\Commands\DailyOutputReportExportAllCommand.js" />
+    <EmbeddedResource Include="DailyOutputReports\Commands\DailyOutputReportExportCommand.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DailyOutputReports\Scripts\DiffQtyColorChange.js" />
+    <EmbeddedResource Include="Completion\Scripts\CapacityLoadColorChange.js" />
+    <EmbeddedResource Include="Dispatchs\Commands\OpenFeedingCloseCommand.js" />
+    <EmbeddedResource Include="Dispatchs\Commands\SchedulingInfReturnCommand.js" />
+    <EmbeddedResource Include="Dispatchs\Commands\TaskDeleteCommand.js" />
+    <EmbeddedResource Include="Dispatchs\Commands\ReportRefreshCommand.js" />
+    <EmbeddedResource Include="Dispatchs\Commands\TaskFinishOrOpenCommand.js" />
+    <EmbeddedResource Include="FeedingRecords\Commands\DeductionRecordEditCommand.js" />
+    <EmbeddedResource Include="FeedingRecords\Commands\FeedingAreaItemDelCommand.js" />
+    <EmbeddedResource Include="FeedingRecords\Commands\FeedingAreaItemImportCommand.js" />
+    <EmbeddedResource Include="FeedingRecords\Commands\FeedingAreaLabelPrintCommand.js" />
+    <EmbeddedResource Include="FeedingRecords\Commands\FeedingAreaReourceImportCommand.js" />
+    <EmbeddedResource Include="FeedingRecords\Commands\FeedingAreaResourceDelCommand.js" />
+    <EmbeddedResource Include="FeedingRecords\Commands\FeedingAreaItemSelectCommand.js" />
+    <EmbeddedResource Include="FeedingRecords\Commands\FeedingAreaResourceSelectCommand.js" />
+    <EmbeddedResource Include="FeedingRecords\Commands\ScrapWeighingRecordEditCommand.js" />
+    <EmbeddedResource Include="HeatTreatments\Commands\HeatTreatmentReportCommand.js" />
+    <EmbeddedResource Include="ProcessPrepareRecords\Commands\RecordDetailAllPassCommand.js" />
+    <EmbeddedResource Include="ProcessTaskLists\Commands\CancelDispatchTaskCommand.js" />
+    <EmbeddedResource Include="ProcessTaskLists\Commands\SplitTaskCommand.js" />
+    <EmbeddedResource Include="ProcessTaskLists\Commands\TaskDeleteCommand.js" />
+    <EmbeddedResource Include="Reports\Behaviors\ReportRecordExamineBehavior.js" />
+    <EmbeddedResource Include="Reports\Commands\ReportExportByMonthCommand.js" />
+    <EmbeddedResource Include="Reports\Commands\ReportFinishConfirmCommand.js" />
+    <EmbeddedResource Include="ProcessPrepareRecords\Commands\ComfrimCommand.js" />
+    <EmbeddedResource Include="ProcessPrepareRecords\Commands\ProcessPrepareRecordExecuteCommand.js" />
+    <EmbeddedResource Include="ProcessPrepareRecords\Commands\ProcessPrepareRecordExportCommand.js" />
+    <EmbeddedResource Include="ProcessPrepareRecords\Scripts\ProcessPrepareRecordBehavior.js" />
+    <EmbeddedResource Include="Reports\Commands\ReportExamineConfirmCommand.js" />
+    <EmbeddedResource Include="Reports\Commands\ReportExamineRevokeCommand.js" />
+    <EmbeddedResource Include="Reports\Commands\ReportTaskResumeCommand.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Dispatchs\Commands\CancelDispatchTaskCommand.js" />
+    <EmbeddedResource Include="Dispatchs\Commands\CancelMergeTaskCommand.js" />
+    <EmbeddedResource Include="Dispatchs\Commands\CloseTaskCommand.js" />
+    <EmbeddedResource Include="Dispatchs\Commands\DispatchTaskCommand.js" />
+    <EmbeddedResource Include="Dispatchs\Commands\GenerateTaskBIllCommand.js" />
+    <EmbeddedResource Include="Dispatchs\Commands\MergeTaskCommand.js" />
+    <EmbeddedResource Include="Dispatchs\Commands\PauseTaskCommand.js" />
+    <EmbeddedResource Include="Dispatchs\Commands\PrintDispatchTaskCommand.js" />
+    <EmbeddedResource Include="Dispatchs\Commands\QueryDispatchTaskInfo.js" />
+    <EmbeddedResource Include="Dispatchs\Commands\ResumeTaskCommand.js" />
+    <EmbeddedResource Include="Dispatchs\Commands\SetNormalCommand.js" />
+    <EmbeddedResource Include="Dispatchs\Commands\SetUrgentCommand.js" />
+    <EmbeddedResource Include="Dispatchs\Commands\ShowTaskDetailCommand.js" />
+    <EmbeddedResource Include="Dispatchs\Commands\SplitTaskCommand.js" />
+    <EmbeddedResource Include="Dispatchs\Commands\TaskPerformerCommand.js" />
+    <EmbeddedResource Include="Dispatchs\Scripts\DispatchTaskBehavior.js" />
+    <EmbeddedResource Include="Dispatchs\Scripts\SetUrgentStyle.js" />
+    <EmbeddedResource Include="Dispatchs\Scripts\WorkOrderBehavior.js" />
+    <EmbeddedResource Include="Reports\Behaviors\DispatchTaskCriteriaBehaviors.js" />
+    <EmbeddedResource Include="Reports\Commands\DefectSelectCommand.js" />
+    <EmbeddedResource Include="Reports\Commands\ReportCommand.js" />
+    <EmbeddedResource Include="Reports\Commands\ReportCriteriaCommand.js" />
+    <EmbeddedResource Include="Reports\Commands\ReportFirstInspCommand.js" />
+    <EmbeddedResource Include="Reports\Commands\ReportPrintCommand.js" />
+    <EmbeddedResource Include="Reports\Commands\ReportRefreshCommand.js" />
+    <EmbeddedResource Include="Reports\Commands\ReportSaveCommand.js" />
+    <EmbeddedResource Include="Reports\Commands\ReportTaskRefreshCommand.js" />
+    <EmbeddedResource Include="Reports\Commands\ReportTaskStartWorkCommand.js" />
+    <EmbeddedResource Include="Reports\Commands\ReportTaskStopCommand.js" />
+    <EmbeddedResource Include="Reports\Common\ReportCommon.js" />
+    <EmbeddedResource Include="Reports\Common\ReportGridCommon.js" />
+    <EmbeddedResource Include="Reports\Editors\ColumnEditor.js" />
+    <EmbeddedResource Include="Reports\Scripts\ProductFamilyBehavior.js" />
+    <EmbeddedResource Include="Reports\Scripts\ReportDispatchTaskLayout.js" />
+    <EmbeddedResource Include="Reports\Scripts\ReportGenerator.js" />
+    <EmbeddedResource Include="Reports\Scripts\ReportBehavior.js" />
+    <EmbeddedResource Include="Reports\Scripts\ReportRecordBehavior.js" />
+    <EmbeddedResource Include="Reports\Scripts\ReportWipBatchBatchColumnColor.js" />
+    <EmbeddedResource Include="SchedulingInfs\Commands\SchedulingInfCancelCommand.js" />
+    <EmbeddedResource Include="SchedulingInfs\Commands\SchedulingInfGenerateTaskCommand.js" />
+    <EmbeddedResource Include="SchedulingInfs\Commands\SchedulingInfImportCommand.js" />
+    <EmbeddedResource Include="SchedulingInfs\Commands\SchedulingInfReportExportAllCommand.js" />
+    <EmbeddedResource Include="SchedulingInfs\Commands\SchedulingInfReportExportCommand.js" />
+    <EmbeddedResource Include="SchedulingInfs\Commands\SchedulingInfValidCommand.js" />
+    <EmbeddedResource Include="SchedulingInfs\Scripts\ReportIsImportColorChange.js" />
+    <EmbeddedResource Include="SchedulingInfs\Scripts\SchedulingInfBehavior.js" />
+    <EmbeddedResource Include="SchedulingInfs\Scripts\SchedulingInfReportBehavior.js" />
+    <EmbeddedResource Include="Specifications\Commands\DeletedProdSpecificationCommand.js" />
+    <EmbeddedResource Include="Specifications\Commands\ProductSpecificationDetailCommand.js" />
+    <EmbeddedResource Include="Specifications\Commands\SelectItemCommand.js" />
+    <EmbeddedResource Include="Specifications\Commands\SelectSpecificationCommand.js" />
+    <EmbeddedResource Include="Specifications\Commands\SpecificationCategoryCommand.js" />
+    <EmbeddedResource Include="Specifications\Commands\SpecificationCategoryCopyCommand.js" />
+    <EmbeddedResource Include="Specifications\Commands\SpecificationCopyCommand.js" />
+    <EmbeddedResource Include="Specifications\Commands\SpecificationSaveCommand.js" />
+    <EmbeddedResource Include="StandardWorkHours\Commands\StandardHourSetImportCommand.js" />
+    <EmbeddedResource Include="StandardWorkHours\Commands\StandardHourSetSaveCommand.js" />
+    <EmbeddedResource Include="SuspectProductLabels\Commands\SuspectLabelProcessingCommand.js" />
+    <EmbeddedResource Include="SuspectProductLabels\Scripts\SuspectQtyColorChange.js" />
+    <EmbeddedResource Include="TaskConfigs\Editors\ByQtyEditor.js" />
+    <EmbeddedResource Include="WipProgress\Behaviors\WipProgressBatchBehavior.js" />
+    <EmbeddedResource Include="WipProgress\Commands\WipProgressWipBatchViewCommand.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\Resources\SIE.Web.Resources\SIE.Web.Resources.csproj" />
+    <ProjectReference Include="..\..\Barcodes\SIE.Web.Barcodes\SIE.Web.Barcodes.csproj" />
+    <ProjectReference Include="..\SIE.MES.TaskManagement\SIE.MES.TaskManagement.csproj" />
+  </ItemGroup>
+</Project>

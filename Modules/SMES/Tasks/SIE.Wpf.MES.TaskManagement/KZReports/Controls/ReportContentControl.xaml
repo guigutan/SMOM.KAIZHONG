@@ -1,0 +1,253 @@
+﻿<UserControl x:Class="SIE.Wpf.MES.TaskManagement.KZReports.Controls.ReportContentControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SIE.Wpf.MES.TaskManagement.KZReports.Controls"
+             xmlns:conv="clr-namespace:SIE.Wpf.MES.TaskManagement.KZReports.Converters"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="1200">
+    <UserControl.Resources>
+        <ResourceDictionary >
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/SIE.Wpf.MES.TaskManagement;component/Styles/ReportStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <conv:IotStatusConverter x:Key="IotStatusConverter"/>
+            <conv:TaskStatusConverter x:Key="TaskStatusConverter"/>
+            <conv:BooleanToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Border Grid.Row="1" Background="White" Margin="0 0" BorderThickness="0" BorderBrush="#CCC" VerticalAlignment="Center">
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <StackPanel Name="templetePanel"  >
+                
+                <Expander Header="生产详情" IsExpanded="True" FontSize="16" FontWeight="Normal" Margin="10 0" Padding="0 5">
+                    <Border BorderThickness="1" Name="templeteBorder" Margin="0 0" BorderBrush="#CCC" Background="AliceBlue"  HorizontalAlignment="Stretch" VerticalAlignment="Center">
+
+                        <Grid Grid.Row="2" x:Name="grid1" >
+                            <Grid.RowDefinitions >
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="40"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Border Grid.Row="0" BorderThickness="0 0 0 1" BorderBrush="#CCC">
+                                <StackPanel  Orientation="Horizontal" HorizontalAlignment="Stretch" >
+                                    <Label Style="{StaticResource FormLabelStyle_16}" Content="产线" Width="150" VerticalContentAlignment="Center" ></Label>
+                                    <Label Style="{StaticResource FormLabelStyle2_16}" Content="{Binding Resource.Name}" ></Label>
+                                </StackPanel>
+                            </Border>
+                            <Border Grid.Row="0" Grid.Column="1" BorderThickness="1 0 0 1" BorderBrush="#CCC">
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" >
+                                    <Label Style="{StaticResource FormLabelStyle_16}" Content="模具"  ></Label>
+                                    <Label Style="{StaticResource FormLabelStyle2_16}" Content="{Binding Model}" ></Label>
+                                </StackPanel>
+                            </Border>
+
+                            <Border Grid.Row="1" BorderThickness="0 0 0 1" BorderBrush="#CCC">
+                                <StackPanel  Orientation="Horizontal" HorizontalAlignment="Stretch" >
+                                    <Label Style="{StaticResource FormLabelStyle_16}" Content="实际数/计划数"  ></Label>
+                                    <Label Style="{StaticResource FormLabelStyle2_16}" Content="{Binding DispatchTask.ActualReportQty}" Margin="5 0 0 0" Padding="0"></Label>
+                                    <Label Style="{StaticResource FormLabelStyle2_16}" Content="/" Margin="0" ></Label>
+                                    <Label Style="{StaticResource FormLabelStyle2_16}" Content="{Binding DispatchTask.DispatchQty}" Margin="0" Padding="0"></Label>
+                                    <Label Style="{StaticResource FormLabelStyle2_16}" Content="{Binding DispatchTask.UnitName}" ></Label>
+                                    <ProgressBar x:Name="progressBarReport"
+                                         Maximum="{Binding DispatchTask.DispatchQty}"
+                                         MinHeight="15" MaxHeight="20" MinWidth="100" MaxWidth="200" Margin="10 5"
+                                         Foreground="LightGreen" Background="#eee"
+                                         HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                                         Value="{Binding DispatchTask.ActualReportQty,Mode=OneWay}" />
+                                    <Label Style="{StaticResource FormLabelStyle2_16}" Content="{Binding DispatchTask.ReportProgress}" Margin="0" Padding="0"></Label>
+                                    <Label Style="{StaticResource FormLabelStyle2_16}" Content="%" Margin="0" Padding="0"></Label>
+
+                                </StackPanel>
+                            </Border>
+                            <Border Grid.Row="1" Grid.Column="1" BorderThickness="1 0 0 1" BorderBrush="#CCC">
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" >
+                                    <Label Style="{StaticResource FormLabelStyle_16}" Content="任务单/工单剩余数"></Label>
+                                    <Label Style="{StaticResource FormLabelStyle2_16}" Content="{Binding MaxRemainQty}" ></Label>
+                                    <Label Style="{StaticResource FormLabelStyle2_16}" Content="/" Margin="0" ></Label>
+                                    <Label Style="{StaticResource FormLabelStyle2_16}" Content="{Binding ProcessMaxRemainQty}" Margin="0" Padding="0"></Label>
+
+                                </StackPanel>
+                            </Border>
+
+                            <Border Grid.Row="2" BorderThickness="0 0 0 1" BorderBrush="#CCC">
+                                <StackPanel  Orientation="Horizontal" HorizontalAlignment="Stretch" >
+                                    <Label Style="{StaticResource FormLabelStyle_16}" Content="累计良品数量"  ></Label>
+                                    <Label Style="{StaticResource FormLabelStyle2_16}" Content="{Binding DispatchTask.OkQty}" ></Label>
+                                </StackPanel>
+                            </Border>
+                            <Border Grid.Row="2" Grid.Column="1" BorderThickness="1 0 0 1" BorderBrush="#CCC">
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" >
+                                    <Label Style="{StaticResource FormLabelStyle_16}" Content="累计可疑/不良数量"  ></Label>
+                                    <Label Style="{StaticResource FormLabelStyle2_16}" Content="{Binding DispatchTask.SuspectQty}" ></Label>
+                                    <Label Style="{StaticResource FormLabelStyle2_16}" Content="/" Margin="0" Padding="0"></Label>
+                                    <Label Style="{StaticResource FormLabelStyle2_16}" Content="{Binding DispatchTask.NgQty}" ></Label>
+                                </StackPanel>
+                            </Border>
+
+
+                            <Border Grid.Row="3" BorderThickness="0 0 0 0" BorderBrush="#CCC">
+                                <StackPanel  Orientation="Horizontal" HorizontalAlignment="Stretch" >
+                                    <Label Style="{StaticResource FormLabelStyle_16}" Content="设备产出数"  ></Label>
+                                    <Label Style="{StaticResource FormLabelStyle2_16}" Content="{Binding DispatchTask.IotQty}" Foreground="Red"></Label>
+                                </StackPanel>
+                            </Border>
+                            <Border Grid.Row="3" Grid.Column="1" BorderThickness="1 0 0 0" BorderBrush="#CCC">
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" >
+                                    <Label Style="{StaticResource FormLabelStyle_16}" Content="IOT设备状态"  ></Label>
+                                    <Label Style="{StaticResource FormLabelStyle2_16}" Content="{Binding DispatchTask.IotStatus, Converter={StaticResource IotStatusConverter}}" Foreground="Red"></Label>
+                                    <ProgressBar x:Name="progressBar" Width="100" MinHeight="15" MaxHeight="20" Margin="20 0" IsIndeterminate="True" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="{Binding IsShowLoading, Converter={StaticResource BoolToVisibilityConverter}}"/>
+                                </StackPanel>
+                            </Border>
+
+                        </Grid>
+                    </Border>
+                </Expander>
+
+                <Expander Header="任务单信息" IsExpanded="True" FontSize="16" FontWeight="Normal" Margin="10 0" Padding="0 5">
+                    <Border BorderThickness="1" Name="templeteBorder2" Margin="0 0" BorderBrush="#CCC" Background="AliceBlue"  HorizontalAlignment="Stretch" VerticalAlignment="Top">
+
+                        <Grid Grid.Row="2" x:Name="grid2">
+                            <Grid.RowDefinitions >
+                                <RowDefinition MinHeight="40"/>
+                                <RowDefinition MinHeight="40"/>
+                                <RowDefinition MinHeight="40"/>
+                                <RowDefinition MinHeight="40" x:Name="row3"/>
+                                <RowDefinition MinHeight="40" x:Name="row4"/>
+                                <RowDefinition MinHeight="40" x:Name="row5"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Border Grid.Row="0" BorderThickness="0 0 0 1" BorderBrush="#CCC">
+                                <StackPanel  Orientation="Horizontal" HorizontalAlignment="Stretch" >
+                                    <Label Style="{StaticResource FormLabelStyle_16}" Content="派工单号" Width="150" VerticalContentAlignment="Center" ></Label>
+                                    <Label Style="{StaticResource FormLabelStyle2_16}" Content="{Binding DispatchTask.No}" ></Label>
+                                    <Label Style="{StaticResource FormLabelStyle2_16}" Content="{Binding DispatchTask.TaskStatus, Converter={StaticResource TaskStatusConverter}}" Foreground="Red" ></Label>
+                                </StackPanel>
+                            </Border>
+                            <Border Grid.Row="0" Grid.Column="1" BorderThickness="1 0 0 1" BorderBrush="#CCC">
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" >
+                                    <Label Style="{StaticResource FormLabelStyle_16}" Content="工单号"  ></Label>
+                                    <Label Style="{StaticResource FormLabelStyle2_16}" Content="{Binding DispatchTask.WorkOrderNo}" ></Label>
+                                </StackPanel>
+                            </Border>
+
+                            <Border Grid.Row="1" BorderThickness="0 0 0 1" BorderBrush="#CCC">
+                                <StackPanel  Orientation="Horizontal" HorizontalAlignment="Stretch" >
+                                    <Label Style="{StaticResource FormLabelStyle_16}" Content="物料名称"  ></Label>
+                                    <TextBlock Text="{Binding DispatchTask.ProductName}" TextWrapping="Wrap" MaxWidth="320" VerticalAlignment="Center" FontWeight="Bold" Padding="5"></TextBlock>
+                                </StackPanel>
+                            </Border>
+                            <Border Grid.Row="1" Grid.Column="1" BorderThickness="1 0 0 1" BorderBrush="#CCC">
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" >
+                                    <Label Style="{StaticResource FormLabelStyle_16}" Content="物料编码/旧物料号"  ></Label>
+                                    <Label Style="{StaticResource FormLabelStyle2_16}" Content="{Binding DispatchTask.ProductCode}" ></Label>
+                                    <Label Style="{StaticResource FormLabelStyle2_16}" Content="/" Margin="0" Padding="0"></Label>
+                                    <Label Style="{StaticResource FormLabelStyle2_16}" Content="{Binding DispatchTask.ShortDescription}" ></Label>
+                                </StackPanel>
+                            </Border>
+
+                            <Border Grid.Row="2" BorderThickness="0 0 0 1" BorderBrush="#CCC">
+                                <StackPanel  Orientation="Horizontal" HorizontalAlignment="Stretch" >
+                                    <Label Style="{StaticResource FormLabelStyle_16}" Content="计划数量"  ></Label>
+                                    <Label Style="{StaticResource FormLabelStyle2_16}" Content="{Binding DispatchTask.DispatchQty}" ></Label>
+                                </StackPanel>
+                            </Border>
+                            <Border Grid.Row="2" Grid.Column="1" BorderThickness="1 0 0 1" BorderBrush="#CCC">
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" >
+                                    <Label Style="{StaticResource FormLabelStyle_16}" Content="分单数量"  ></Label>
+                                    <Label Style="{StaticResource FormLabelStyle2_16}" Content="{Binding Zcode}" ></Label>
+                                </StackPanel>
+                            </Border>
+
+                            <Border Grid.Row="3" BorderThickness="0 0 0 1" BorderBrush="#CCC">
+                                <StackPanel  Orientation="Horizontal" HorizontalAlignment="Stretch" >
+                                    <Label Style="{StaticResource FormLabelStyle_16}" Content="良品数量"  ></Label>
+                                    <Label x:Name="lbOkQty" Style="{StaticResource FormLabelStyle2_16}" Content="{Binding IotOkQty}"  MinWidth="100"></Label>
+                                    <TextBox x:Name="txtOkQty" VerticalContentAlignment="Center" MinWidth="250" Height="auto" Text="{Binding OkQty}"  FontSize="16" Background="LightGreen" Margin="2" Focusable="False"></TextBox>
+                                    <Button x:Name="btnOkQty" Content="C" MinWidth="40" Margin="2"  Click="btnOkQty_Click" />
+                                </StackPanel>
+                            </Border>
+                            <Border Grid.Row="3" Grid.Column="1" BorderThickness="1 0 0 1" BorderBrush="#CCC">
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" >
+                                    <Label Style="{StaticResource FormLabelStyle_16}" Content="可疑品数量"  ></Label>
+                                    <TextBox x:Name="txtSuspectQty" VerticalContentAlignment="Center" MinWidth="250" Height="auto" Text="{Binding SuspectQty}"  FontSize="16" Background="Yellow" Margin="2"  Focusable="False"></TextBox>
+                                    <Button x:Name="btnSuspectQty" Content="C" MinWidth="40" Margin="2"  Click="btnSuspectQty_Click" />
+                                </StackPanel>
+                            </Border>
+
+                            <Border Grid.Row="4" BorderThickness="0 0 0 1" BorderBrush="#CCC">
+                                <StackPanel  Orientation="Horizontal" HorizontalAlignment="Stretch" >
+                                    <Label Style="{StaticResource FormLabelStyle_16}" Content="计米数量"  ></Label>
+                                    <Label Style="{StaticResource FormLabelStyle2_16}" Content="{Binding MeterCount}" ></Label>
+                                </StackPanel>
+                            </Border>
+                            <Border Grid.Row="4" Grid.Column="1" BorderThickness="1 0 0 1" BorderBrush="#CCC">
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" >
+                                    <Label Style="{StaticResource FormLabelStyle_16}" Content="换轴米数"  ></Label>
+                                    <Label Style="{StaticResource FormLabelStyle2_16}" Content="{Binding AxisQty}" ></Label>
+                                </StackPanel>
+                            </Border>
+
+                            <Border Grid.Row="5"  BorderThickness="0 0 0 0" BorderBrush="#CCC">
+                                <StackPanel  Orientation="Horizontal" HorizontalAlignment="Stretch" >
+                                    <Label Style="{StaticResource FormLabelStyle_16}" Content="父旧料号"  ></Label>
+                                    <TextBlock x:Name="ParShortDescription" Text="{Binding DispatchTask.ParShortDescription}" TextWrapping="Wrap" MaxWidth="320" VerticalAlignment="Center" FontWeight="Bold" Padding="5"></TextBlock>
+                                </StackPanel>
+                            </Border>
+
+                            <Border Grid.Row="5" Grid.Column="1"  BorderThickness="1 0 0 0" BorderBrush="#CCC">
+                                <StackPanel  Orientation="Horizontal" HorizontalAlignment="Stretch" >
+                                    <Label Style="{StaticResource FormLabelStyle_16}" Content=""  ></Label>
+                                    <!--<TextBlock x:Name="ParShortDescription" Text="{Binding DispatchTask.ParShortDescription}" TextWrapping="Wrap" MaxWidth="320" VerticalAlignment="Center" FontWeight="Bold" Padding="5"></TextBlock>-->
+                                </StackPanel>
+                            </Border>
+
+                        </Grid>
+                    </Border>
+                </Expander>
+                
+                <Expander Header="打印配置" IsExpanded="True" FontSize="16" FontWeight="Normal" Margin="10 0" Padding="0 5">
+                    <Border BorderThickness="1" Name="templeteBorder3" Margin="0 0" BorderBrush="#CCC" Background="AliceBlue"  HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                        <Grid Grid.Row="2" x:Name="grid3">
+                            <Grid.RowDefinitions >
+                                <RowDefinition Height="40"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Border Grid.Row="0" BorderThickness="0 0 0 0" BorderBrush="#CCC">
+                                <StackPanel  Orientation="Horizontal" HorizontalAlignment="Stretch" >
+                                    <Label Style="{StaticResource FormLabelStyle_16}" Content="打印模式" Width="150" VerticalContentAlignment="Center" ></Label>
+                                    <RadioButton Content="本地打印" IsChecked="{Binding IsLocalPrint}" VerticalContentAlignment="Center" Margin="10 0" IsEnabled="False"/>
+                                    <RadioButton Content="远程打印" IsChecked="{Binding IsRemotePrint}" VerticalContentAlignment="Center" Margin="10 0" IsEnabled="False"/>
+                                </StackPanel>
+                            </Border>
+                            <Border Grid.Row="0" Grid.Column="1" BorderThickness="1 0 0 0" BorderBrush="#CCC">
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" >
+                                    <Label Style="{StaticResource FormLabelStyle_16}" Content="打印机"  ></Label>
+                                    <Label Style="{StaticResource FormLabelStyle2_16}" Content="{Binding Printer}" Visibility="{Binding IsRemotePrint, Converter={StaticResource BoolToVisibilityConverter}}"></Label>
+                                    <ComboBox x:Name="cbbPrinter" SelectedValue="{Binding Printer}" Width="250" VerticalContentAlignment="Center" FontSize="16" Margin="2" Visibility="{Binding IsLocalPrint, Converter={StaticResource BoolToVisibilityConverter}}"></ComboBox>
+
+                                </StackPanel>
+                            </Border>
+
+
+                        </Grid>
+                    </Border>
+                </Expander>
+            </StackPanel>
+        </ScrollViewer>
+    </Border>
+
+</UserControl>

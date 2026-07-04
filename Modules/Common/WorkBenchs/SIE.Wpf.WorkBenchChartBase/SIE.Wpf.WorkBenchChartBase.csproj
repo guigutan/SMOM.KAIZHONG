@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7D5D5693-B483-4AA7-A297-F7B715FDA928}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SIE.Wpf.WorkBenchChartBase</RootNamespace>
+    <AssemblyName>SIE.Wpf.WorkBenchChartBase</AssemblyName>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <UseWPF>true</UseWPF>
+    <CodeAnalysisRuleSet>..\..\..\..\.sonarlint\sie.smomcsharp.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0-windows\SIE.Wpf.WorkBenchChartBase.xml</DocumentationFile>
+    <CodeAnalysisRuleSet>
+    </CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0-windows\SIE.Wpf.WorkBenchChartBase.xml</DocumentationFile>
+    <CodeAnalysisRuleSet>
+    </CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ChartControls\BarLineSeriesControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="ChartControls\BarSeriesControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="ChartControls\RadarDiagramControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="ChartControls\SimpleDiagram.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="ChartControls\XYDiagramControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    
+    
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SIE.WorkBenchChartBase\SIE.WorkBenchChartBase.csproj">
+      <Project>{c891ef29-b689-4418-81ea-dce9c81a8db5}</Project>
+      <Name>SIE.WorkBenchChartBase</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\SIE.Wpf.WorkBenchCommon\SIE.Wpf.WorkBenchCommon.csproj">
+      <Project>{7bc556dc-c8c6-4b10-b717-8ee8e4dc82f2}</Project>
+      <Name>SIE.Wpf.WorkBenchCommon</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\..\..\.sonarlint\sie.smom\CSharp\SonarLint.xml">
+      <Link>SonarLint.xml</Link>
+    </AdditionalFiles>
+  </ItemGroup>
+  <ItemGroup>
+		<Page Remove="ChartControls/BarLineSeriesControl.xaml" />
+		<Page Remove="ChartControls/BarSeriesControl.xaml" />
+		<Page Remove="ChartControls/RadarDiagramControl.xaml" />
+		<Page Remove="ChartControls/SimpleDiagram.xaml" />
+		<Page Remove="ChartControls/XYDiagramControl.xaml" />
+  </ItemGroup>
+</Project>

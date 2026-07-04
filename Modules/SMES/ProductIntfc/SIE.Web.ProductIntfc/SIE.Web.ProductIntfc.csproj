@@ -1,0 +1,87 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <CodeAnalysisRuleSet>..\..\..\..\.sonarlint\sie.smomcsharp.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.ProductIntfc.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.ProductIntfc.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="FirstInsps\Scripts\**" />
+    <Compile Remove="InspRecords\Scripts\**" />
+    <EmbeddedResource Remove="FirstInsps\Scripts\**" />
+    <EmbeddedResource Remove="InspRecords\Scripts\**" />
+    <None Remove="FirstInsps\Scripts\**" />
+    <None Remove="InspRecords\Scripts\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Configs\InspNoConfigValueViewConfig.cs" />
+    <Compile Remove="InspRecords\InspRecordCriteriaViewConfig.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="FirstInsps\Commands\FirstInspCommand.js" />
+    <None Remove="FirstInsps\Commands\FirstInspListCommand.js" />
+    <None Remove="FirstInsps\Commands\FirstInspRuleCommand.js" />
+    <None Remove="FirstInsps\Commands\listSaveCommand.js" />
+    <None Remove="InspLogs\Commands\InspLogExamineCommand.js" />
+    <None Remove="InspLogs\Commands\InspLogExamineSubmitCommand.js" />
+    <None Remove="InspRecords\Commands\ShippingInspCommand.js" />
+    <None Remove="InspSettings\Commands\InspParameterAddCommand.js" />
+    <None Remove="InspSettings\Commands\InspParameterEditCommand.js" />
+    <None Remove="OutputProducts\AbnomalRuleDetailBehavior.js" />
+    <None Remove="OutputProducts\Commands\AddOutPutProductCommand.js" />
+    <None Remove="OutputProducts\Commands\DeleteOutPutProductCommand.js" />
+    <None Remove="OutputProducts\Commands\EditOutPutProductCommand.js" />
+    <None Remove="OutputProducts\Commands\OutPutProductConfigCommand.js" />
+    <None Remove="OutputProducts\Commands\ToStorageCommand.js" />
+    <None Remove="ProductStorages\Commands\ParamAddCommand.js" />
+    <None Remove="ProductStorages\Commands\ToStorageCommand.js" />
+    <None Remove="ProductStorages\Scripts\CheckBoxUIGenerator.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\..\..\.sonarlint\sie.smom\CSharp\SonarLint.xml" Link="SonarLint.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FirstInsps\Commands\FirstInspCommand.js" />
+    <EmbeddedResource Include="FirstInsps\Commands\FirstInspListCommand.js" />
+    <EmbeddedResource Include="FirstInsps\Commands\FirstInspRuleCommand.js" />
+    <EmbeddedResource Include="FirstInsps\Commands\ListSaveCommand.js" />
+    <EmbeddedResource Include="InspLogs\Commands\InspLogExamineCommand.js" />
+    <EmbeddedResource Include="InspLogs\Commands\InspLogExamineSubmitCommand.js" />
+    <EmbeddedResource Include="InspRecords\Commands\ShippingInspCommand.js" />
+    <EmbeddedResource Include="InspSettings\Commands\InspParameterAddCommand.js" />
+    <EmbeddedResource Include="InspSettings\Commands\InspParameterEditCommand.js" />
+    <EmbeddedResource Include="OutputProducts\Commands\DeleteOutPutProductCommand.js" />
+    <EmbeddedResource Include="OutputProducts\Commands\EditOutPutProductCommand.js" />
+    <EmbeddedResource Include="OutputProducts\Commands\OutPutProductConfigCommand.js" />
+    <EmbeddedResource Include="OutputProducts\Commands\OutputProductReceiveCommand.js" />
+    <EmbeddedResource Include="OutputProducts\Scripts\OutputProductBehavior.js" />
+    <EmbeddedResource Include="OutputProducts\Commands\AddOutPutProductCommand.js" />
+    <EmbeddedResource Include="OutputProducts\Commands\ToStorageCommand.js" />
+    <EmbeddedResource Include="ProductStorages\Commands\ParamAddCommand.js" />
+    <EmbeddedResource Include="ProductStorages\Commands\ToStorageCommand.js" />
+    <EmbeddedResource Include="ProductStorages\Scripts\CheckBoxUIGenerator.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="SIE.Web.Common" Version="10.0.5" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\Items\SIE.Web.Items\SIE.Web.Items.csproj" />
+    <ProjectReference Include="..\..\..\Common\Resources\SIE.Web.Resources\SIE.Web.Resources.csproj" />
+    <ProjectReference Include="..\SIE.ProductIntfc\SIE.ProductIntfc.csproj">
+      <Private>false</Private>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

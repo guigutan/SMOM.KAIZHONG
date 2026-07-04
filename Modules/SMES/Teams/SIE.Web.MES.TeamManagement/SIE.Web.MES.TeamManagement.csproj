@@ -1,0 +1,115 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <CodeAnalysisRuleSet>..\..\..\..\.sonarlint\sie.smomcsharp.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.MES.TeamManagement.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.MES.TeamManagement.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="ClockingIns\Commands\EmployeeAttentEditCommand.js" />
+    <None Remove="ClockingIns\Commands\EmployeeAttentExport.js" />
+    <None Remove="ClockingIns\Commands\EmployeeAttentSaveCommand.js" />
+    <None Remove="ClockingIns\Commands\GetAttRecordCommand.js" />
+    <None Remove="ClockingIns\Commands\MachineLinkCommand.js" />
+    <None Remove="ClockingIns\Commands\MachineSaveCommand.js" />
+    <None Remove="ClockingIns\Commands\SetClockInStateStyle.js" />
+    <None Remove="ClockingIns\Scripts\SetClockInStateStyle.js" />
+    <None Remove="Editors\ClearWorkGroupEditor.js" />
+    <None Remove="Editors\FlowEditor.js" />
+    <None Remove="RatedItems\Commands\RatedItemCategoryCommand.js" />
+    <None Remove="RatedItems\Commands\RatedItemEditCommand.js" />
+    <None Remove="RatedItems\Commands\RatedItemSystemCommand.js" />
+    <None Remove="ScoreRecords\Commands\AchieveLevelSetCommand.js" />
+    <None Remove="ScoreRecords\Commands\AchieveLevelSetEditCommand.js" />
+    <None Remove="ScoreRecords\Commands\AchieveLevelSetIniCommand.js" />
+    <None Remove="ShiftSchedules\Commands\RestartCommand.js" />
+    <None Remove="ShiftSchedules\Commands\SaveScheduleCommand.js" />
+    <None Remove="ShiftSchedules\Commands\ScheduleCommand.js" />
+    <None Remove="ShiftSchedules\Commands\ScheduleExportCommand.js" />
+    <None Remove="ShiftSchedules\Commands\ScheduleImportCommand.js" />
+    <None Remove="ShiftSchedules\Commands\ScheduleInfoQuery.js" />
+    <None Remove="ShiftSchedules\Commands\ScheduleQuery.js" />
+    <None Remove="ShiftSchedules\Scripts\SchedulePage.js" />
+    <None Remove="ShiftSchedules\Scripts\ShiftScheduleBehavior.js" />
+    <None Remove="ShiftSchedules\Scripts\ShiftScheduleLayout.js" />
+    <None Remove="SikllAuthentications\Commands\ExamResultDelCommand.js" />
+    <None Remove="SikllAuthentications\Commands\ExamResultEditCommand.js" />
+    <None Remove="SikllAuthentications\Commands\ExamResultImportCommand.js" />
+    <None Remove="SikllAuthentications\Commands\OperationRecordDelCommand.js" />
+    <None Remove="SikllAuthentications\Commands\OperationRecordEditCommand.js" />
+    <None Remove="SikllAuthentications\Commands\OperationRecordImportCommand.js" />
+    <None Remove="SikllAuthentications\Commands\RecordCopyCommand.js" />
+    <None Remove="SikllAuthentications\Commands\SkillAuthCopyCommand.js" />
+    <None Remove="SikllAuthentications\Commands\SkillAuthEditCommand.js" />
+    <None Remove="SikllAuthentications\Commands\TrainingRecordCopyCommand.js" />
+    <None Remove="SikllAuthentications\Commands\TrainingRecordDelCommand.js" />
+    <None Remove="SikllAuthentications\Commands\TrainingRecordEditCommand.js" />
+    <None Remove="SikllAuthentications\Commands\TrainingRecordImportCommand.js" />
+    <None Remove="SikllAuthentications\Layouts\SkillAuthUIGenerator.js" />
+    <None Remove="Vacancies\Commands\VacancyExport.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\..\..\.sonarlint\sie.smom\CSharp\SonarLint.xml" Link="SonarLint.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ClockingIns\Commands\EmployeeAttentEditCommand.js" />
+    <EmbeddedResource Include="ClockingIns\Commands\EmployeeAttentExport.js" />
+    <EmbeddedResource Include="ClockingIns\Commands\EmployeeAttentSaveCommand.js" />
+    <EmbeddedResource Include="ClockingIns\Commands\GetAttRecordCommand.js" />
+    <EmbeddedResource Include="ClockingIns\Commands\MachineLinkCommand.js" />
+    <EmbeddedResource Include="ClockingIns\Commands\MachineSaveCommand.js" />
+    <EmbeddedResource Include="ClockingIns\Scripts\SetClockInStateStyle.js" />
+    <EmbeddedResource Include="Editors\ClearWorkGroupEditor.js" />
+    <EmbeddedResource Include="Editors\FlowEditor.js" />
+    <EmbeddedResource Include="RatedItems\Commands\RatedItemCategoryCommand.js" />
+    <EmbeddedResource Include="RatedItems\Commands\RatedItemEditCommand.js" />
+    <EmbeddedResource Include="RatedItems\Commands\RatedItemSystemCommand.js" />
+    <EmbeddedResource Include="ScoreRecords\Commands\AchieveLevelSetCommand.js" />
+    <EmbeddedResource Include="ScoreRecords\Commands\AchieveLevelSetEditCommand.js" />
+    <EmbeddedResource Include="ScoreRecords\Commands\AchieveLevelSetIniCommand.js" />
+    <EmbeddedResource Include="ShiftSchedules\Commands\RestartCommand.js" />
+    <EmbeddedResource Include="ShiftSchedules\Commands\SaveScheduleCommand.js" />
+    <EmbeddedResource Include="ShiftSchedules\Commands\ScheduleCommand.js" />
+    <EmbeddedResource Include="ShiftSchedules\Commands\ScheduleExportCommand.js" />
+    <EmbeddedResource Include="ShiftSchedules\Commands\ScheduleImportCommand.js" />
+    <EmbeddedResource Include="ShiftSchedules\Commands\ScheduleInfoQuery.js" />
+    <EmbeddedResource Include="ShiftSchedules\Commands\ScheduleQuery.js" />
+    <EmbeddedResource Include="ShiftSchedules\Scripts\SchedulePage.js" />
+    <EmbeddedResource Include="ShiftSchedules\Scripts\ShiftScheduleLayout.js" />
+    <EmbeddedResource Include="SikllAuthentications\Commands\ExamResultDelCommand.js" />
+    <EmbeddedResource Include="SikllAuthentications\Commands\ExamResultEditCommand.js" />
+    <EmbeddedResource Include="SikllAuthentications\Commands\ExamResultImportCommand.js" />
+    <EmbeddedResource Include="SikllAuthentications\Commands\OperationRecordDelCommand.js" />
+    <EmbeddedResource Include="SikllAuthentications\Commands\OperationRecordEditCommand.js" />
+    <EmbeddedResource Include="SikllAuthentications\Commands\OperationRecordImportCommand.js" />
+    <EmbeddedResource Include="SikllAuthentications\Commands\RecordCopyCommand.js" />
+    <EmbeddedResource Include="SikllAuthentications\Commands\SkillAuthCopyCommand.js" />
+    <EmbeddedResource Include="SikllAuthentications\Commands\SkillAuthEditCommand.js" />
+    <EmbeddedResource Include="SikllAuthentications\Commands\TrainingRecordCopyCommand.js" />
+    <EmbeddedResource Include="SikllAuthentications\Commands\TrainingRecordDelCommand.js" />
+    <EmbeddedResource Include="SikllAuthentications\Commands\TrainingRecordEditCommand.js" />
+    <EmbeddedResource Include="SikllAuthentications\Commands\TrainingRecordImportCommand.js" />
+    <EmbeddedResource Include="SikllAuthentications\Layouts\SkillAuthUIGenerator.js" />
+    <EmbeddedResource Include="Vacancies\Commands\VacancyExport.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\Resources\SIE.Web.Resources\SIE.Web.Resources.csproj" />
+    <ProjectReference Include="..\..\Common\SIE.Web.MES.Common\SIE.Web.MES.Common.csproj" />
+    <ProjectReference Include="..\SIE.MES.TeamManagement\SIE.MES.TeamManagement.csproj">
+      <Private>false</Private>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

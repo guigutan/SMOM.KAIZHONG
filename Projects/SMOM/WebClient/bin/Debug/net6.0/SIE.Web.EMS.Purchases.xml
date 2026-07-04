@@ -1,0 +1,2506 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Web.EMS.Purchases</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Web.EMS.Purchases._Extensions_.EntityPropertyViewMetaExtension">
+            <summary>
+            扩展编辑器
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases._Extensions_.EntityPropertyViewMetaExtension.UsePurchaseObjectEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.EMS.Purchases._Extensions_.PurchaseObjectBoxConfig})">
+            <summary>
+            使用采购对象编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases._Extensions_.EntityPropertyViewMetaExtension.UseCustomerEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},SIE.CSM.Customers.CustomerType,System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig,``0})">
+            <summary>
+            使用客户信息编辑器
+            </summary>
+            <typeparam name="T">T</typeparam>
+            <param name="meta">meta</param>
+            <param name="customerType">客户类型</param>
+            <param name="action">action</param>
+            <returns>客户列表</returns>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases._Extensions_.EntityPropertyViewMetaExtension.UseSupplierEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig,``0})">
+            <summary>
+            使用供应商信息编辑器
+            </summary>
+            <typeparam name="T">T</typeparam>
+            <param name="meta">meta</param>
+            <param name="action">action</param>
+            <returns>客户列表</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases._Extensions_.PurchaseObjectBoxConfig">
+            <summary>
+            采购对象的编辑器配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases._Extensions_.PurchaseObjectBoxConfig.FilterEnum(System.Collections.Generic.List{SIE.Utils.EnumViewModel})">
+            <summary>
+            过滤枚举
+            </summary>
+            <param name="models">枚举值</param>
+            <returns>枚举值</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.Common.DataQuery.PurchaseDataQueryer">
+            <summary>
+            采购模块查询器
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.Common.DataQuery.PurchaseDataQueryer.GetEnableApproval(System.Int32)">
+            <summary>
+            获取是否启用审批流程
+            </summary>
+            <param name="typeQty">界面类型（0：采购申请，1：采购订单，2：付款计划，3：设备开箱验收，4：备件验收,5:工治具验收,6:安装调试）</param>
+            <returns>是否启用审批流程</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentAcceptances.Commands.CancelEquipAcceptCommand">
+            <summary>
+            撤回设备验收
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentAcceptances.Commands.CancelEquipAcceptCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentAcceptances.Commands.DeleteAcceptanceAttachmentCommand">
+            <summary>
+            附件删除
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentAcceptances.Commands.DetermineEquipAcceptCommand">
+            <summary>
+            验收确定
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentAcceptances.Commands.DetermineEquipAcceptCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentAcceptances.Commands.DownloadAcceptanceAttachmentCommand">
+            <summary>
+            CAM文件下载
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentAcceptances.Commands.DownloadAcceptanceAttachmentCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentAcceptances.Commands.ExamineEquipAcceptCommand">
+            <summary>
+            审核设备验收
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentAcceptances.Commands.ExamineEquipAcceptCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentAcceptances.Commands.SaveAcceptanceAttachmentCommand">
+            <summary>
+            保存命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentAcceptances.Commands.SaveAcceptanceAttachmentCommand.OnSaving(SIE.Domain.Entity)">
+            <summary>
+            保存前动作
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentAcceptances.Commands.SaveAcceptanceAttachmentCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行上传和复传
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentAcceptances.Commands.SaveEquipAcceptCommand">
+            <summary>
+            保存验收数据
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentAcceptances.Commands.SaveEquipAcceptCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentAcceptances.Commands.SubmitEquipAcceptCommand">
+            <summary>
+            提交设备验收
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentAcceptances.Commands.SubmitEquipAcceptCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentAcceptances.DataQueryers.AcceptanceAttachmentDataQueryer">
+            <summary>
+            设备开箱验收附件查询器
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentAcceptances.DataQueryers.AcceptanceAttachmentDataQueryer.GetAcceptanceAttachmentDataForUpload(System.Double)">
+            <summary>
+            获取设备开箱验收附件查询器的视图模型
+            </summary>
+            <param name="equipmentAcceptanceId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentAcceptances.DataQueryers.AcceptanceAttachmentDataQueryer.SaveEquipmentAcceptanceAttachment(System.String,System.String)">
+            <summary>
+            保存设备开箱验收附件
+            </summary>
+            <param name="fileContent">文件内容</param>
+            <param name="fileName">文件名</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentAcceptances.EquipmentAcceptanceAttachmentViewConfig">
+            <summary>
+            设备开箱验收附件视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentAcceptances.EquipmentAcceptanceAttachmentViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentAcceptances.EquipmentAcceptanceAttachmentViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentAcceptances.EquipmentAcceptanceAttachmentViewConfig.ConfigDetailsView">
+            <summary>
+             配置明细视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentAcceptances.EquipmentAcceptanceCriteriaViewConfig">
+            <summary>
+            采购订单查询实体界面
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentAcceptances.EquipmentAcceptanceCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentAcceptances.EquipmentAcceptanceDetailViewConfig">
+            <summary>
+            设备开箱验收明细视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.Purchases.EquipmentAcceptances.EquipmentAcceptanceDetailViewConfig.EditView">
+            <summary>
+            编辑视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentAcceptances.EquipmentAcceptanceDetailViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentAcceptances.EquipmentAcceptanceDetailViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentAcceptances.EquipmentAcceptanceDetailViewConfig.ConfigEditView">
+            <summary>
+            编辑视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentAcceptances.EquipmentAcceptanceDetailViewModelViewConfig">
+            <summary>
+            设备开箱验收明细视图的视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentAcceptances.EquipmentAcceptanceDetailViewModelViewConfig.ConfigSelectionView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentAcceptances.EquipmentAcceptanceItemViewConfig">
+            <summary>
+            验收项目视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.Purchases.EquipmentAcceptances.EquipmentAcceptanceItemViewConfig.EditView">
+            <summary>
+            编辑视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentAcceptances.EquipmentAcceptanceItemViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentAcceptances.EquipmentAcceptanceItemViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentAcceptances.EquipmentAcceptanceItemViewConfig.ConfigEditView">
+            <summary>
+            编辑视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentAcceptances.EquipmentAcceptanceViewConfig">
+            <summary>
+            设备开箱验收视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentAcceptances.EquipmentAcceptanceViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentAcceptances.EquipmentAcceptanceViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentInbounds.Commands.WarehousingCommand">
+            <summary>
+            入库
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentInbounds.Commands.WarehousingCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentInbounds.EquipmentInboundCriteriaViewConfig">
+            <summary>
+            设备入库查询实体界面
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentInbounds.EquipmentInboundCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentInbounds.EquipmentInboundDataQueryer">
+            <summary>
+            设备入库查询器
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentInbounds.EquipmentInboundDataQueryer.SelectLocation(System.Double,System.Double)">
+            <summary>
+            批量选择库位
+            </summary>
+            <param name="locationId">库位id</param>
+            <param name="inboundId">入库id</param>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentInbounds.EquipmentInboundDetailViewConfig">
+            <summary>
+            设备入库明细视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentInbounds.EquipmentInboundDetailViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentInbounds.EquipmentInboundDetailViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentInbounds.EquipmentInboundViewConfig">
+            <summary>
+            设备入库视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentInbounds.EquipmentInboundViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentReceives.Commands.DeleteEquipmentReceiveCommand">
+            <summary>
+            删除设备接收
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentReceives.Commands.DeleteEquipmentReceiveCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentReceives.Commands.SaveEquipmentReceiveCommand">
+            <summary>
+            保存设备接收
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentReceives.Commands.SaveEquipmentReceiveCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentReceives.Commands.SubmitEquipmentReceiveCommand">
+            <summary>
+            提交设备接收
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentReceives.Commands.SubmitEquipmentReceiveCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentReceives.Configs.ReceiveSnNoConfigValueViewConfig">
+            <summary>
+            序列号编码规则配置视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentReceives.Configs.ReceiveSnNoConfigValueViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentReceives.EquipmentReceiveCriteriaViewConfig">
+            <summary>
+            设备接收查询界面
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentReceives.EquipmentReceiveCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentReceives.EquipmentReceiveDataQueryer">
+            <summary>
+            设备接收查询器
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentReceives.EquipmentReceiveDataQueryer.GetNewEquipmentReceive">
+            <summary>
+            创建一个新的设备接收
+            </summary>
+            <returns>新的设备接收</returns>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentReceives.EquipmentReceiveDataQueryer.GetEquipModelInfo(System.Double)">
+            <summary>
+            根据采购订单行获取设备型号数据
+            </summary>
+            <param name="orderItemId">采购订单行</param>
+            <returns>设备型号数据</returns>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentReceives.EquipmentReceiveDataQueryer.GetReceiveScanInfo(System.Double)">
+            <summary>
+            获取设备接收扫描信息
+            </summary>
+            <param name="receiveId">设备接收id</param>
+            <returns>设备接收扫描信息</returns>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentReceives.EquipmentReceiveDataQueryer.ReceiveExecute(System.String,SIE.EMS.Purchases.EquipmentReceives.ReceiveScanViewModel)">
+            <summary>
+            设备接收扫描
+            </summary>
+            <param name="sn">条码</param>
+            <param name="model">设备接收模型</param>
+            <returns>扫描信息</returns>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentReceives.EquipmentReceiveDataQueryer.Determine(SIE.EMS.Purchases.EquipmentReceives.ReceiveScanViewModel)">
+            <summary>
+            委外返厂确定
+            </summary>
+            <param name="model">设备接收模型</param>
+            <returns>序列号信息</returns>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentReceives.EquipmentReceiveDataQueryer.GetEquipmentReceiveSnInfo(System.Double)">
+            <summary>
+            获取序列号列表信息
+            </summary>
+            <param name="ReceiveId">设备接收Id</param>
+            <returns>序列号信息</returns>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentReceives.EquipmentReceiveDataQueryer.DetermineOnQty(SIE.EMS.Purchases.EquipmentReceives.ReceiveScanViewModel)">
+            <summary>
+            非委外返厂确定
+            </summary>
+            <param name="model">设备接收模型</param>
+            <returns>序列号信息</returns>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentReceives.EquipmentReceiveDataQueryer.SaveReceiveScan(SIE.EMS.Purchases.EquipmentReceives.ReceiveScanViewModel,System.Collections.Generic.List{SIE.EMS.Purchases.EquipmentReceives.ReceiveScanSnViewModel})">
+            <summary>
+            保存设备接收扫描
+            </summary>
+            <param name="model">设备接收模型</param>
+            <param name="snList">序列号信息</param>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentReceives.EquipmentReceiveDataQueryer.ReceiveSnPrint(System.Collections.Generic.List{System.Double},SIE.EMS.Purchases.EquipmentReceives.ReceiveSnPrintViewModel)">
+            <summary>
+            序列号打印
+            </summary>
+            <param name="barcodeIds">序列号id列表</param>
+            <param name="printInfo">打印信息</param>
+            <returns>打印结果</returns>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentReceives.EquipmentReceiveDataQueryer.DeterminePrint(System.Collections.Generic.List{SIE.EMS.Purchases.EquipmentReceives.ReceiveScanSnViewModel},SIE.EMS.Purchases.EquipmentReceives.ReceiveSnPrintViewModel)">
+            <summary>
+            序列号打印
+            </summary>
+            <param name="snList">序列号列表</param>
+            <param name="printInfo">打印信息</param>
+            <returns>打印结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentReceives.EquipmentReceiveDetailViewConfig">
+            <summary>
+            接收明细视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.Purchases.EquipmentReceives.EquipmentReceiveDetailViewConfig.EditView">
+            <summary>
+            编辑视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentReceives.EquipmentReceiveDetailViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentReceives.EquipmentReceiveDetailViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentReceives.EquipmentReceiveDetailViewConfig.ConfigSelectionView">
+            <summary>
+            配置下拉视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentReceives.EquipmentReceiveDetailViewConfig.ConfigEditView">
+            <summary>
+            编辑视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentReceives.EquipmentReceiveSnViewConfig">
+            <summary>
+            序列号明细视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentReceives.EquipmentReceiveSnViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentReceives.EquipmentReceiveViewConfig">
+            <summary>
+            设备接收视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentReceives.EquipmentReceiveViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentReceives.EquipmentReceiveViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentReceives.ReceiveScanSnViewModelViewConfig">
+            <summary>
+            设备接收序列号模型界面
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentReceives.ReceiveScanSnViewModelViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentReceives.ReceiveScanViewModelViewConfig">
+            <summary>
+            设备接收界面
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentReceives.ReceiveScanViewModelViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentReceives.ReceiveSnPrintViewModelViewConfig">
+            <summary>
+            序列号打印界面
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.Purchases.EquipmentReceives.ReceiveSnPrintViewModelViewConfig.SparePartView">
+            <summary>
+            备件视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentReceives.ReceiveSnPrintViewModelViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentReceives.ReceiveSnPrintViewModelViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentReceives.ReceiveSnPrintViewModelViewConfig.ConfigSparePartView">
+            <summary>
+            备件视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentReceives.ReceiveSnScreenViewModelViewConfig">
+            <summary>
+            序列号筛选界面
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentReceives.ReceiveSnScreenViewModelViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentSetups.Commands.CancelEquipmentSetupCommand">
+            <summary>
+            撤回
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentSetups.Commands.CancelEquipmentSetupCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentSetups.Commands.DeleteSetupCommand">
+            <summary>
+            删除安装调试
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentSetups.Commands.DeleteSetupCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentSetups.Commands.DeleteSetupSparePartCommand">
+            <summary>
+            删除备件使用
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentSetups.Commands.DeleteWorkHourCommand">
+            <summary>
+            删除工时
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentSetups.Commands.ExamineEquipmentSetupCommand">
+            <summary>
+            审核
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentSetups.Commands.ExamineEquipmentSetupCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentSetups.Commands.FormSaveEquipSetupCommand">
+            <summary>
+            保存安装调试
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentSetups.Commands.FormSaveEquipSetupCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentSetups.Commands.HandoverConfirmCommand">
+            <summary>
+            交机确认
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentSetups.Commands.HandoverConfirmCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentSetups.Commands.PlanEndCommand">
+            <summary>
+            计划完成
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentSetups.Commands.PlanEndCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentSetups.Commands.PlanStartCommand">
+            <summary>
+            计划开始
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentSetups.Commands.PlanStartCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentSetups.Commands.ReassignmentCommand">
+            <summary>
+            转派
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentSetups.Commands.ReassignmentCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentSetups.Commands.SaveEquipSetupCommand">
+            <summary>
+            保存安装调试
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentSetups.Commands.SaveEquipSetupCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentSetups.Commands.SaveSetupAttachmentCommand">
+            <summary>
+            保存命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentSetups.Commands.SaveSetupAttachmentCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentSetups.Commands.SubmitEquipmentSetupCommand">
+            <summary>
+            提交
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentSetups.Commands.SubmitEquipmentSetupCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentSetups.Configs.RelationOutDepotConfigValueViewConfig">
+            <summary>
+            备件使用是否必须关联出库单
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentSetups.Configs.RelationOutDepotConfigValueViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentSetups.EquipmentDetailViewConfig">
+            <summary>
+            安装调试设备明细视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.Purchases.EquipmentSetups.EquipmentDetailViewConfig.EditView">
+            <summary>
+            编辑视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentSetups.EquipmentDetailViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentSetups.EquipmentDetailViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentSetups.EquipmentDetailViewConfig.ConfigEditView">
+            <summary>
+            编辑视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentSetups.EquipmentSetupCriteriaViewConfig">
+            <summary>
+            安装调试查询界面
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentSetups.EquipmentSetupCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentSetups.EquipmentSetupDataQueryer">
+            <summary>
+            安装调试查询器
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentSetups.EquipmentSetupDataQueryer.GetNewEquipmentSetup">
+            <summary>
+            创建一个新的安装调试
+            </summary>
+            <returns>新的安装调试</returns>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentSetups.EquipmentSetupDataQueryer.SaveSetupAttachment(System.String,System.String)">
+            <summary>
+            保存安装调试附件
+            </summary>
+            <param name="fileContent">文件内容</param>
+            <param name="fileName">文件名</param>
+            <returns>路径</returns>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentSetups.EquipmentSetupDataQueryer.MaterialApply(SIE.EMS.Purchases.EquipmentSetups.ViewModels.MaterialApplyViewModel,System.Collections.Generic.List{SIE.EMS.Purchases.EquipmentSetups.ViewModels.MaterialApplyDetailViewModel})">
+            <summary>
+            领料申请
+            </summary>
+            <param name="model">领料申请</param>
+            <param name="list">领料申请明细</param>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentSetups.EquipmentSetupDataQueryer.GetWarehouseQty(System.Double,System.Double)">
+            <summary>
+            根据备件+仓库查询可用库存数
+            </summary>
+            <param name="sparePartId">备件</param>
+            <param name="warehouseId">仓库</param>
+            <returns>可用库存数</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentSetups.EquipmentSetupPlanViewConfig">
+            <summary>
+            安装调试工作计划视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.Purchases.EquipmentSetups.EquipmentSetupPlanViewConfig.EditView">
+            <summary>
+            编辑视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentSetups.EquipmentSetupPlanViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentSetups.EquipmentSetupPlanViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentSetups.EquipmentSetupPlanViewConfig.ConfigSelectionView">
+            <summary>
+            配置下拉视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentSetups.EquipmentSetupPlanViewConfig.ConfigEditView">
+            <summary>
+            编辑视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentSetups.EquipmentSetupViewConfig">
+            <summary>
+            安装调试视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.Purchases.EquipmentSetups.EquipmentSetupViewConfig.ExplainView">
+            <summary>
+            安装说明界面
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentSetups.EquipmentSetupViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentSetups.EquipmentSetupViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentSetups.EquipmentSetupViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentSetups.EquipmentSetupViewConfig.ConfigExplainView">
+            <summary>
+            安装说明界面
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentSetups.SetupAttachmentViewConfig">
+            <summary>
+            安装调试附件视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentSetups.SetupAttachmentViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentSetups.SetupAttachmentViewConfig.ConfigDetailsView">
+            <summary>
+             配置明细视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentSetups.SetupLogViewConfig">
+            <summary>
+            操作记录视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentSetups.SetupLogViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentSetups.SetupSparePartApplyViewConfig">
+            <summary>
+            安装调试备件申请视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentSetups.SetupSparePartApplyViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentSetups.SetupSparePartViewConfig">
+            <summary>
+            安装调试备件使用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentSetups.SetupSparePartViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentSetups.SetupSparePartViewConfig.ConfigLotSnView">
+            <summary>
+             配置批次号、序列号视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentSetups.SetupWorkHourViewConfig">
+            <summary>
+            安装调试工时登记视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentSetups.SetupWorkHourViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentSetups.ViewModels.MaterialApplyViewModelViewConfig">
+            <summary>
+            领料申请界面
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentSetups.ViewModels.MaterialApplyViewModelViewConfig.ConfigDetailsView">
+            <summary>
+            明细界面
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentSetups.ViewModels.MaterialApplyDetailViewModelViewConfig">
+            <summary>
+            领料申请明细界面
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentSetups.ViewModels.MaterialApplyDetailViewModelViewConfig.ConfigListView">
+            <summary>
+            列表界面
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentSetups.ViewModels.SelEquipDetailViewModelViewConfig">
+            <summary>
+            选择设备台账界面
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentSetups.ViewModels.SelEquipDetailViewModelViewConfig.ConfigListView">
+            <summary>
+            列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentSetups.ViewModels.SelEquipDetailCriteriaViewModelViewConfig">
+            <summary>
+            选择设备台账查询界面
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentSetups.ViewModels.SelEquipDetailCriteriaViewModelViewConfig.ConfigQueryView">
+            <summary>
+            查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentSetups.ViewModels.SelPrincipalViewModelViewConfig">
+            <summary>
+            选择员工界面
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentSetups.ViewModels.SelPrincipalViewModelViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.EquipmentSetups.ViewModels.SetupLotSnInfoViewConfig">
+            <summary>
+            安装调试备件使用条码视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.EquipmentSetups.ViewModels.SetupLotSnInfoViewConfig.ConfigSelectionView">
+            <summary>
+            下拉视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.FixtureAcceptances.Commands.CancelFixtureAcceptanceCommand">
+            <summary>
+            撤回设备验收
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.FixtureAcceptances.Commands.CancelFixtureAcceptanceCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.FixtureAcceptances.Commands.DeleteAcceptanceAttachmentCommand">
+            <summary>
+            附件删除
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.FixtureAcceptances.Commands.ExamineFixtureAcceptanceCommand">
+            <summary>
+            审核设备验收
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.FixtureAcceptances.Commands.ExamineFixtureAcceptanceCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.FixtureAcceptances.Commands.SaveAcceptanceAttachmentCommand">
+            <summary>
+            保存命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.FixtureAcceptances.Commands.SaveAcceptanceAttachmentCommand.OnSaving(SIE.Domain.Entity)">
+            <summary>
+            保存前动作
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.FixtureAcceptances.Commands.SaveAcceptanceAttachmentCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行上传和复传
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.FixtureAcceptances.Commands.SaveFixtureAcceptanceCommand">
+            <summary>
+            保存备件验收
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.FixtureAcceptances.Commands.SaveFixtureAcceptanceCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.FixtureAcceptances.Commands.SubmitFixtureAcceptanceCommand">
+            <summary>
+            提交备件验收
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.FixtureAcceptances.Commands.SubmitFixtureAcceptanceCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.FixtureAcceptances.FixtureAcceptanceAttachmentViewConfig">
+            <summary>
+            验收附件视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.FixtureAcceptances.FixtureAcceptanceAttachmentViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.FixtureAcceptances.FixtureAcceptanceAttachmentViewConfig.ConfigDetailsView">
+            <summary>
+             配置明细视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.FixtureAcceptances.FixtureAcceptanceCriteriaViewConfig">
+            <summary>
+            备件验收查询界面
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.FixtureAcceptances.FixtureAcceptanceCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.FixtureAcceptances.FixtureAcceptanceDataQueryer">
+            <summary>
+            备件验收查询器
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.FixtureAcceptances.FixtureAcceptanceDataQueryer.SaveFixtureAcceptanceAttachment(System.String,System.String)">
+            <summary>
+            保存备件验收附件
+            </summary>
+            <param name="fileContent">文件内容</param>
+            <param name="fileName">文件名</param>
+            <returns>路径</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.FixtureAcceptances.FixtureAcceptanceDetailViewConfig">
+            <summary>
+            工治具验收明细视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.FixtureAcceptances.FixtureAcceptanceDetailViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.FixtureAcceptances.FixtureAcceptanceItemViewConfig">
+            <summary>
+            工治验收项目视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.FixtureAcceptances.FixtureAcceptanceItemViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.FixtureAcceptances.FixtureAcceptanceSnViewConfig">
+            <summary>
+            序列号明细视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.FixtureAcceptances.FixtureAcceptanceSnViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.FixtureAcceptances.FixtureAcceptanceSnViewConfig.ConfigSelectionView">
+            <summary>
+            配置下拉列表
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.FixtureAcceptances.FixtureAcceptanceViewConfig">
+            <summary>
+            工治具验收视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.FixtureAcceptances.FixtureAcceptanceViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.FixtureReceives.Commands.DeleteFixtureReceiveCommand">
+            <summary>
+            删除工治具接收
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.FixtureReceives.Commands.DeleteFixtureReceiveCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.FixtureReceives.Commands.DeleteReceiveSnCommand">
+            <summary>
+            删除接收序列号
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.FixtureReceives.Commands.DeleteReceiveSnCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.FixtureReceives.Commands.SaveFixtureReceiveCommand">
+            <summary>
+            保存设备接收
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.FixtureReceives.Commands.SaveFixtureReceiveCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.FixtureReceives.Commands.SubmitFixtureReceiveCommand">
+            <summary>
+            提交工治具接收
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.FixtureReceives.Commands.SubmitFixtureReceiveCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.FixtureReceives.Configs.ReceiveSnNoConfigValueViewConfig">
+            <summary>
+            序列号编码规则配置视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.FixtureReceives.Configs.ReceiveSnNoConfigValueViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.FixtureReceives.Configs.ReceiveSnPrintTempConfigValueViewConfig">
+            <summary>
+            序列号编码规则配置视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.FixtureReceives.Configs.ReceiveSnPrintTempConfigValueViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.FixtureReceives.FixtureReceiveCriteriaViewConfig">
+            <summary>
+            工治具接受查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.FixtureReceives.FixtureReceiveCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            配置查询
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.FixtureReceives.FixtureReceiveDataQueryer">
+            <summary>
+            工治具接收数据查询器
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.FixtureReceives.FixtureReceiveDataQueryer.GetNewFixtureReceive">
+            <summary>
+            创建一个新的工治具接收
+            </summary>
+            <returns>新的设备接收</returns>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.FixtureReceives.FixtureReceiveDataQueryer.GetFixtureInfo(System.Double)">
+            <summary>
+            获取工治具信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.FixtureReceives.FixtureReceiveDataQueryer.GetReceiveScanInfo(System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="receiveId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.FixtureReceives.FixtureReceiveDataQueryer.LoadScanChildData(System.Double)">
+            <summary>
+            获取扫描的子列表数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.FixtureReceives.FixtureReceiveDataQueryer.SaveReceiveScan(SIE.EMS.Purchases.FixtureReceives.ReceiveScanViewModel,System.Collections.Generic.IList{SIE.EMS.Purchases.FixtureReceives.FixtureReceiveDetail},System.Collections.Generic.IList{SIE.EMS.Purchases.FixtureReceives.FixtureReceiveSn})">
+            <summary>
+            保存接收扫描
+            </summary>
+            <param name="model"></param>
+            <param name="details"></param>
+            <param name="snList"></param>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.FixtureReceives.FixtureReceiveDataQueryer.ReceiveExecute(System.String,SIE.EMS.Purchases.FixtureReceives.ReceiveScanViewModel)">
+            <summary>
+            接收执行
+            </summary>
+            <param name="code"></param>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.FixtureReceives.FixtureReceiveDataQueryer.SnPrint(System.Collections.Generic.List{System.Double},SIE.EMS.Purchases.EquipmentReceives.ReceiveSnPrintViewModel)">
+            <summary>
+            序列号打印
+            </summary>
+            <param name="barcodeIds">条码id列表</param>
+            <param name="printInfo">打印信息</param>
+            <returns>打印结果</returns>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.FixtureReceives.FixtureReceiveDataQueryer.SnDetermine(SIE.EMS.Purchases.FixtureReceives.ReceiveScanViewModel,System.Int32)">
+            <summary>
+            确定
+            </summary>
+            <param name="model"></param>
+            <param name="maxLineNo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.FixtureReceives.FixtureReceiveDataQueryer.DeterminePrint(System.Collections.Generic.List{SIE.EMS.Purchases.FixtureReceives.FixtureReceiveSn},SIE.EMS.Purchases.FixtureReceives.ReceiveSnPrintViewModel)">
+            <summary>
+            序列号打印
+            </summary>
+            <param name="snList">序列号列表</param>
+            <param name="printInfo">打印信息</param>
+            <returns>打印结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.FixtureReceives.FixtureReceiveDetailViewConfig">
+            <summary>
+            工治具接收明细视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.Purchases.FixtureReceives.FixtureReceiveDetailViewConfig.EditView">
+            <summary>
+            编辑视图
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.Purchases.FixtureReceives.FixtureReceiveDetailViewConfig.ScanView">
+            <summary>
+            扫描视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.FixtureReceives.FixtureReceiveDetailViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.FixtureReceives.FixtureReceiveDetailViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.FixtureReceives.FixtureReceiveDetailViewConfig.ConfigSelectionView">
+            <summary>
+            配置下拉视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.FixtureReceives.FixtureReceiveDetailViewConfig.DefualtDetailConfig">
+            <summary>
+            默认明细视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.FixtureReceives.FixtureReceiveDetailViewConfig.OtherCloumns">
+            <summary>
+            隐藏字段
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.FixtureReceives.FixtureReceiveDetailViewConfig.ConfigEditView">
+            <summary>
+            编辑视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.FixtureReceives.FixtureReceiveDetailViewConfig.ConfigScanView">
+            <summary>
+            扫描视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.FixtureReceives.FixtureReceiveSnViewConfig">
+            <summary>
+            工治具接收序列号明细视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.Purchases.FixtureReceives.FixtureReceiveSnViewConfig.ScanView">
+            <summary>
+            扫描视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.FixtureReceives.FixtureReceiveSnViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.FixtureReceives.FixtureReceiveSnViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.FixtureReceives.FixtureReceiveSnViewConfig.ConfigScanView">
+            <summary>
+            配置扫描视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.FixtureReceives.FixtureReceiveSnViewConfig.DefaultListView">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.FixtureReceives.FixtureReceiveViewConfig">
+            <summary>
+            工治具接收视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.FixtureReceives.FixtureReceiveViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.FixtureReceives.FixtureReceiveViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.FixtureReceives.FixtureReceiveViewConfig.ConfigDetailsView">
+            <summary>
+             配置明细视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.FixtureReceives.ReceiveScanViewModelViewConfig">
+            <summary>
+            设备接收界面
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.FixtureReceives.ReceiveScanViewModelViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.FixtureReceives.ReceiveSnPrintViewModelViewConfig">
+            <summary>
+            序列号打印界面
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.Purchases.FixtureReceives.ReceiveSnPrintViewModelViewConfig.FixtureView">
+            <summary>
+            备件视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.FixtureReceives.ReceiveSnPrintViewModelViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.FixtureReceives.ReceiveSnPrintViewModelViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.FixtureReceives.ReceiveSnPrintViewModelViewConfig.ConfigSparePartView">
+            <summary>
+            备件视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.FixtureReceives.ReceiveSnScreenViewModelViewConfig">
+            <summary>
+            序列号筛选界面
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.FixtureReceives.ReceiveSnScreenViewModelViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.PurchasesMenuInit">
+            <summary>
+            菜单初始化
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.PurchasesMenuInit.GetMenuDtos">
+            <summary>
+            获取菜单列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.Module">
+            <summary>
+            模块配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化模块
+            </summary>
+            <param name="app">应用程序</param>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.Module.App_ModuleOperations(System.Object,System.EventArgs)">
+            <summary>
+            模块定义
+            </summary>
+            <param name="sender">应用程序</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.PaymentPlans.Commands.CancelPaymentPlanCommand">
+            <summary>
+            撤回付款计划
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.PaymentPlans.Commands.CancelPaymentPlanCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.PaymentPlans.Commands.DeletePaymentPlanCommand">
+            <summary>
+            删除付款计划
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.PaymentPlans.Commands.DeletePaymentPlanCommand.OnSaving(SIE.Domain.EntityList)">
+            <summary>
+            保存前动作
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.PaymentPlans.Commands.ExaminePaymentPlanCommand">
+            <summary>
+            审核采购
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.PaymentPlans.Commands.ExaminePaymentPlanCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.PaymentPlans.Commands.SavePaymentPlanCommand">
+            <summary>
+            保存付款计划
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.PaymentPlans.Commands.SavePaymentPlanCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.PaymentPlans.Commands.SubmitPaymentPlanCommand">
+            <summary>
+            提交付款计划
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.PaymentPlans.Commands.SubmitPaymentPlanCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.PaymentPlans.PaymentPlanCriteriaViewConfig">
+            <summary>
+            付款计划查询界面
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.PaymentPlans.PaymentPlanCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.PaymentPlans.PaymentPlanDataQueryer">
+            <summary>
+            付款计划查询器
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.PaymentPlans.PaymentPlanDataQueryer.GetNewPaymentPlan">
+            <summary>
+            创建一个新的付款计划
+            </summary>
+            <returns>新的付款计划</returns>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.PaymentPlans.PaymentPlanDataQueryer.GetPurOrderInfo(System.Double)">
+            <summary>
+            获取采购订单信息
+            </summary>
+            <param name="orderId">订单id</param>
+            <returns>采购订单信息</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.PaymentPlans.PaymentPlanViewConfig">
+            <summary>
+            付款计划视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.PaymentPlans.PaymentPlanViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.PaymentPlans.PaymentPlanViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.PurchaseOrders.Commands.CancelPurOrderCommand">
+            <summary>
+            撤回采购
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.PurchaseOrders.Commands.CancelPurOrderCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.PurchaseOrders.Commands.CompletePurDetailCommand">
+            <summary>
+            完成采购
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.PurchaseOrders.Commands.CompletePurDetailCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.PurchaseOrders.Commands.DeletePurOrderCommand">
+            <summary>
+            删除采购订单
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.PurchaseOrders.Commands.DeletePurOrderCommand.OnSaving(SIE.Domain.EntityList)">
+            <summary>
+            保存前动作
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.PurchaseOrders.Commands.DeletePurOrderDetailCommand">
+            <summary>
+            删除采购订单明细
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.PurchaseOrders.Commands.ExaminePurOrderCommand">
+            <summary>
+            审核采购
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.PurchaseOrders.Commands.ExaminePurOrderCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.PurchaseOrders.Commands.PaymentMoveBottomCommand">
+            <summary>
+            置底
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.PurchaseOrders.Commands.PaymentMoveDownCommand">
+            <summary>
+            下移
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.PurchaseOrders.Commands.PaymentMoveTopCommand">
+            <summary>
+            置顶
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.PurchaseOrders.Commands.PaymentMoveUpCommand">
+            <summary>
+            上移
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.PurchaseOrders.Commands.SavePurOrderCommand">
+            <summary>
+            保存采购订单
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.PurchaseOrders.Commands.SavePurOrderCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.PurchaseOrders.Commands.SubmitPurOrderCommand">
+            <summary>
+            提交采购
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.PurchaseOrders.Commands.SubmitPurOrderCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.PurchaseOrders.HistoryOrderViewModelCriteriaViewConfig">
+            <summary>
+            历史订单查询界面
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.PurchaseOrders.HistoryOrderViewModelCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.PurchaseOrders.HistoryOrderViewModelViewConfig">
+            <summary>
+            历史订单界面
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.PurchaseOrders.HistoryOrderViewModelViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.PurchaseOrders.PaymentTermsViewConfig">
+            <summary>
+            付款条件视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.Purchases.PurchaseOrders.PaymentTermsViewConfig.EditView">
+            <summary>
+            编辑视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.PurchaseOrders.PaymentTermsViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.PurchaseOrders.PaymentTermsViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.PurchaseOrders.PaymentTermsViewConfig.ConfigSelectionView">
+            <summary>
+            配置下拉视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.PurchaseOrders.PaymentTermsViewConfig.ConfigEditView">
+            <summary>
+            编辑视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.PurchaseOrders.PurchaseAttachmentViewConfig">
+            <summary>
+            资产采购订单附件视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.PurchaseOrders.PurchaseAttachmentViewConfig.ConfigListView">
+            <summary>
+            列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.PurchaseOrders.PurchaseOrderCriteriaViewConfig">
+            <summary>
+            采购订单查询实体界面
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.PurchaseOrders.PurchaseOrderCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.PurchaseOrders.PurchaseOrderDataQueryer">
+            <summary>
+            采购订单查询器
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.PurchaseOrders.PurchaseOrderDataQueryer.GetNewPurchaseOrder">
+            <summary>
+            创建一个新的采购订单
+            </summary>
+            <returns>新的采购订单</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.PurchaseOrders.PurchaseOrderItemViewConfig">
+            <summary>
+            采购订单明细视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.Purchases.PurchaseOrders.PurchaseOrderItemViewConfig.EditView">
+            <summary>
+            编辑视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.PurchaseOrders.PurchaseOrderItemViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.PurchaseOrders.PurchaseOrderItemViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.PurchaseOrders.PurchaseOrderItemViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.PurchaseOrders.PurchaseOrderItemViewConfig.ConfigEditView">
+            <summary>
+            编辑视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.PurchaseOrders.PurchaseOrderViewConfig">
+            <summary>
+            采购订单视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.PurchaseOrders.PurchaseOrderViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.PurchaseOrders.PurchaseOrderViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.PurchaseOrders.PurchaseOrderViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.PurchaseRequisitions.Commands.CancelPurRequireCommand">
+            <summary>
+            撤回采购
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.PurchaseRequisitions.Commands.CancelPurRequireCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.PurchaseRequisitions.Commands.DeletePurReqAttachmentCommand">
+            <summary>
+            附件删除
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.PurchaseRequisitions.Commands.DeletePurRequireCommand">
+            <summary>
+            删除采购申请
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.PurchaseRequisitions.Commands.DeletePurRequireCommand.OnSaving(SIE.Domain.EntityList)">
+            <summary>
+            保存前动作
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.PurchaseRequisitions.Commands.ExaminePurRequireCommand">
+            <summary>
+            审核采购
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.PurchaseRequisitions.Commands.ExaminePurRequireCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.PurchaseRequisitions.Commands.SavePurRequireCommand">
+            <summary>
+            保存采购申请
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.PurchaseRequisitions.Commands.SavePurRequireCommand.OnSaving(SIE.Domain.Entity)">
+            <summary>
+            
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.PurchaseRequisitions.Commands.SavePurRequireCommand.DoSave(SIE.Domain.Entity)">
+            <summary>
+            
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.PurchaseRequisitions.Commands.SubmitPurRequireCommand">
+            <summary>
+            提交采购
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.PurchaseRequisitions.Commands.SubmitPurRequireCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.PurchaseRequisitions.Commands.UploadPurReqAttachmentCommand">
+            <summary>
+            上传附件
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.PurchaseRequisitions.ObjectCodeInfoViewConfig">
+            <summary>
+            采购对象编码视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.PurchaseRequisitions.ObjectCodeInfoViewConfig.ConfigSelectionView">
+            <summary>
+            下拉视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.PurchaseRequisitions.PurchaseRequisitionAttachmentViewConfig">
+            <summary>
+            附件界面
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.PurchaseRequisitions.PurchaseRequisitionAttachmentViewConfig.ConfigView">
+            <summary>
+            附件视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.PurchaseRequisitions.PurchaseRequisitionCriteriaViewConfig">
+            <summary>
+            采购申请查询实体界面
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.PurchaseRequisitions.PurchaseRequisitionCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.PurchaseRequisitions.PurchaseRequisitionItemViewConfig">
+            <summary>
+            采购申请明细视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.Purchases.PurchaseRequisitions.PurchaseRequisitionItemViewConfig.EditView">
+            <summary>
+            编辑视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.PurchaseRequisitions.PurchaseRequisitionItemViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.PurchaseRequisitions.PurchaseRequisitionItemViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.PurchaseRequisitions.PurchaseRequisitionItemViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.PurchaseRequisitions.PurchaseRequisitionItemViewConfig.ConfigEditView">
+            <summary>
+            编辑视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.PurchaseRequisitions.PurchaseRequisitionViewConfig">
+            <summary>
+            采购申请视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.PurchaseRequisitions.PurchaseRequisitionViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.PurchaseRequisitions.PurchaseRequisitionViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.PurchaseRequisitions.PurchaseRequisitionViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.PurchaseRequisitions.PurRequireDataQueryer">
+            <summary>
+            采购申请查询器
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.PurchaseRequisitions.PurRequireDataQueryer.GetNewPurchaseRequisition">
+            <summary>
+            创建一个新的采购申请
+            </summary>
+            <returns>新的采购申请</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.SparePartAcceptances.Commands.CancelSparePartAcceptanceCommand">
+            <summary>
+            撤回备件验收
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartAcceptances.Commands.CancelSparePartAcceptanceCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.SparePartAcceptances.Commands.ExamineSparePartAcceptCommand">
+            <summary>
+            审核备件验收
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartAcceptances.Commands.ExamineSparePartAcceptCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.SparePartAcceptances.Commands.SaveAcceptAttachmentCommand">
+            <summary>
+            保存命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartAcceptances.Commands.SaveAcceptAttachmentCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.SparePartAcceptances.Commands.SaveSparePartAcceptanceCommand">
+            <summary>
+            保存备件验收
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartAcceptances.Commands.SaveSparePartAcceptanceCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.SparePartAcceptances.Commands.SubmitSparePartAcceptanceCommand">
+            <summary>
+            提交备件验收
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartAcceptances.Commands.SubmitSparePartAcceptanceCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.SparePartAcceptances.SparePartAcceptanceAttachmentViewConfig">
+            <summary>
+            验收附件视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartAcceptances.SparePartAcceptanceAttachmentViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartAcceptances.SparePartAcceptanceAttachmentViewConfig.ConfigDetailsView">
+            <summary>
+             配置明细视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.SparePartAcceptances.SparePartAcceptanceCriteriaViewConfig">
+            <summary>
+            备件验收查询界面
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartAcceptances.SparePartAcceptanceCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.SparePartAcceptances.SparePartAcceptanceDataQueryer">
+            <summary>
+            备件验收查询器
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartAcceptances.SparePartAcceptanceDataQueryer.SaveSparePartAcceptanceAttachment(System.String,System.String)">
+            <summary>
+            保存备件验收附件
+            </summary>
+            <param name="fileContent">文件内容</param>
+            <param name="fileName">文件名</param>
+            <returns>路径</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.SparePartAcceptances.SparePartAcceptanceDetailViewConfig">
+            <summary>
+            备件验收明细视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartAcceptances.SparePartAcceptanceDetailViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.SparePartAcceptances.SparePartAcceptanceItemViewConfig">
+            <summary>
+            备件验收项目视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartAcceptances.SparePartAcceptanceItemViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.SparePartAcceptances.SparePartAcceptanceLotViewConfig">
+            <summary>
+            批次明细视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartAcceptances.SparePartAcceptanceLotViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.SparePartAcceptances.SparePartAcceptanceSnViewConfig">
+            <summary>
+            序列号明细视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartAcceptances.SparePartAcceptanceSnViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartAcceptances.SparePartAcceptanceSnViewConfig.ConfigSelectionView">
+            <summary>
+            下拉选择视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.SparePartAcceptances.SparePartAcceptanceViewConfig">
+            <summary>
+            备件验收视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartAcceptances.SparePartAcceptanceViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartAcceptances.ViewModels.SparePartAcceptanceLotViewModelViewConfig.ConfigSelectionView">
+            <summary>
+            下拉选择视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartAcceptances.ViewModels.SparePartAcceptanceSnViewModelViewConfig.ConfigSelectionView">
+            <summary>
+            下拉选择视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.SparePartReceives.Commands.DeleteReceiveLotCommand">
+            <summary>
+            删除接收批次
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartReceives.Commands.DeleteReceiveLotCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.SparePartReceives.Commands.DeleteReceiveSnCommand">
+            <summary>
+            删除接收序列号
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartReceives.Commands.DeleteReceiveSnCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.SparePartReceives.Commands.DeleteSparePartReceiveCommand">
+            <summary>
+            删除备件接收
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.SparePartReceives.Commands.ImportLotSnCommand">
+            <summary>
+            备件明细-导入
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartReceives.Commands.ImportLotSnCommand.OnSave(System.Collections.Generic.IList{SIE.Common.Import.RowData})">
+            <summary>
+            数据保存
+            </summary>
+            <param name="batch">数据</param>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.SparePartReceives.Commands.SaveSparePartReceiveCommand">
+            <summary>
+            保存备件接收
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartReceives.Commands.SaveSparePartReceiveCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.SparePartReceives.Commands.SubmitSparePartReceiveCommand">
+            <summary>
+            提交备件接收
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartReceives.Commands.SubmitSparePartReceiveCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.SparePartReceives.Configs.SparePartReceiveNoConfigValueViewConfig">
+            <summary>
+            批次序列号编码规则配置界面
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartReceives.Configs.SparePartReceiveNoConfigValueViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.SparePartReceives.SparePartReceiveCriteriaViewConfig">
+            <summary>
+            备件接收查询界面
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartReceives.SparePartReceiveCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.SparePartReceives.SparePartReceiveDataQueryer">
+            <summary>
+            备件接收查询器
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartReceives.SparePartReceiveDataQueryer.GetNewSparePartReceive">
+            <summary>
+            创建一个新的备件接收
+            </summary>
+            <returns>新的备件接收</returns>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartReceives.SparePartReceiveDataQueryer.GetSparePartInfo(System.Double)">
+            <summary>
+            根据采购订单行获取备件数据
+            </summary>
+            <param name="orderItemId">采购订单行</param>
+            <returns>备件数据</returns>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartReceives.SparePartReceiveDataQueryer.OnekeyReceive(System.Double)">
+            <summary>
+            一键接收
+            </summary>
+            <param name="receiveId">接收id</param>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartReceives.SparePartReceiveDataQueryer.LotPrint(System.Collections.Generic.List{System.Double},SIE.EMS.Purchases.EquipmentReceives.ReceiveSnPrintViewModel)">
+            <summary>
+            批次打印
+            </summary>
+            <param name="barcodeIds">条码id列表</param>
+            <param name="printInfo">打印信息</param>
+            <returns>打印结果</returns>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartReceives.SparePartReceiveDataQueryer.SnPrint(System.Collections.Generic.List{System.Double},SIE.EMS.Purchases.EquipmentReceives.ReceiveSnPrintViewModel)">
+            <summary>
+            序列号打印
+            </summary>
+            <param name="barcodeIds">条码id列表</param>
+            <param name="printInfo">打印信息</param>
+            <returns>打印结果</returns>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartReceives.SparePartReceiveDataQueryer.GetReceiveScanInfo(System.Double)">
+            <summary>
+            获取备件接收扫描信息
+            </summary>
+            <param name="receiveId">备件接收id</param>
+            <returns>备件接收扫描信息</returns>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartReceives.SparePartReceiveDataQueryer.ReceiveLotExecute(System.String,SIE.EMS.Purchases.SparePartReceives.ViewModels.ReceiveScanViewModel)">
+            <summary>
+            备件接收扫描-批次
+            </summary>
+            <param name="sn">条码</param>
+            <param name="model">备件接收模型</param>
+            <returns>扫描信息</returns>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartReceives.SparePartReceiveDataQueryer.ReceiveSnExecute(System.String,SIE.EMS.Purchases.SparePartReceives.ViewModels.ReceiveScanViewModel)">
+            <summary>
+            备件接收扫描-序列号
+            </summary>
+            <param name="sn">条码</param>
+            <param name="model">备件接收模型</param>
+            <returns>扫描信息</returns>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartReceives.SparePartReceiveDataQueryer.SaveReceiveScan(SIE.EMS.Purchases.SparePartReceives.ViewModels.ReceiveScanViewModel,System.Collections.Generic.List{SIE.EMS.Purchases.SparePartReceives.SparePartReceiveDetail},System.Collections.Generic.List{SIE.EMS.Purchases.SparePartReceives.SparePartReceiveLot},System.Collections.Generic.List{SIE.EMS.Purchases.SparePartReceives.SparePartReceiveSn})">
+            <summary>
+            保存备件接收扫描
+            </summary>
+            <param name="model">备件接收模型</param>
+            <param name="detailList">明细信息</param>
+            <param name="lotList">批次信息</param>
+            <param name="snList">序列号信息</param>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartReceives.SparePartReceiveDataQueryer.LotDetermine(SIE.EMS.Purchases.SparePartReceives.ViewModels.ReceiveScanViewModel)">
+            <summary>
+            批次管控确定
+            </summary>
+            <param name="model">备件接收模型</param>
+            <returns>返回信息</returns>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartReceives.SparePartReceiveDataQueryer.SnDetermine(SIE.EMS.Purchases.SparePartReceives.ViewModels.ReceiveScanViewModel)">
+            <summary>
+            序列号管控确定
+            </summary>
+            <param name="model">备件接收模型</param>
+            <returns>返回信息</returns>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartReceives.SparePartReceiveDataQueryer.DeterminePrint(System.Collections.Generic.List{SIE.EMS.Purchases.SparePartReceives.SparePartReceiveLot},System.Collections.Generic.List{SIE.EMS.Purchases.SparePartReceives.SparePartReceiveSn},SIE.EMS.Purchases.SparePartReceives.ViewModels.ReceiveScanViewModel,SIE.EMS.Purchases.EquipmentReceives.ReceiveSnPrintViewModel)">
+            <summary>
+            批次序列号打印
+            </summary>
+            <param name="lotList">批次列表</param>
+            <param name="snList">序列号列表</param>
+            <param name="model">备件接收模型</param>
+            <param name="printInfo">打印信息</param>
+            <returns>打印结果</returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.SparePartReceives.SparePartReceiveDetailViewConfig">
+            <summary>
+            备件接收明细视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.Purchases.SparePartReceives.SparePartReceiveDetailViewConfig.EditView">
+            <summary>
+            编辑视图
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.Purchases.SparePartReceives.SparePartReceiveDetailViewConfig.ScanView">
+            <summary>
+            扫描视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartReceives.SparePartReceiveDetailViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartReceives.SparePartReceiveDetailViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartReceives.SparePartReceiveDetailViewConfig.ConfigSelectionView">
+            <summary>
+            配置下拉视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartReceives.SparePartReceiveDetailViewConfig.ConfigImportView">
+            <summary>
+            配置导入视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartReceives.SparePartReceiveDetailViewConfig.ConfigEditView">
+            <summary>
+            编辑视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartReceives.SparePartReceiveDetailViewConfig.ConfigEditDetailView">
+            <summary>
+            编辑视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartReceives.SparePartReceiveDetailViewConfig.ConfigScanView">
+            <summary>
+            扫描视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.SparePartReceives.SparePartReceiveLotViewConfig">
+            <summary>
+            批次明细视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.Purchases.SparePartReceives.SparePartReceiveLotViewConfig.ScanView">
+            <summary>
+            扫描视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartReceives.SparePartReceiveLotViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartReceives.SparePartReceiveLotViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartReceives.SparePartReceiveLotViewConfig.ConfigScanView">
+            <summary>
+            扫描视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.SparePartReceives.SparePartReceiveSnViewConfig">
+            <summary>
+            序列号明细视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.Purchases.SparePartReceives.SparePartReceiveSnViewConfig.ScanView">
+            <summary>
+            扫描视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartReceives.SparePartReceiveSnViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartReceives.SparePartReceiveSnViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartReceives.SparePartReceiveSnViewConfig.ConfigScanView">
+            <summary>
+            扫描视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.SparePartReceives.SparePartReceiveViewConfig">
+            <summary>
+            备件接收视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartReceives.SparePartReceiveViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartReceives.SparePartReceiveViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.SparePartReceives.ViewModels.LotScreenViewModelViewConfig">
+            <summary>
+            序列号筛选界面
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartReceives.ViewModels.LotScreenViewModelViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.SparePartReceives.ViewModels.ReceiveScanViewModelViewConfig">
+            <summary>
+            备件接收界面
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.SparePartReceives.ViewModels.ReceiveScanViewModelViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Purchases.WorkFlows.WorkFlowRecordViewConfig">
+            <summary>
+            审核记录-界面
+            </summary>
+        </member>
+        <member name="F:SIE.Web.EMS.Purchases.WorkFlows.WorkFlowRecordViewConfig.PurSeeView">
+            <summary>
+            附加查看-审核进度
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.WorkFlows.WorkFlowRecordViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Purchases.WorkFlows.WorkFlowRecordViewConfig.ConfigPurSeeView">
+            <summary>
+            附加查看-审核进度
+            </summary>
+        </member>
+    </members>
+</doc>

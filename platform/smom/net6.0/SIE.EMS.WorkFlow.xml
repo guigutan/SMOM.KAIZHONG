@@ -1,0 +1,298 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.EMS.WorkFlow</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.EMS.WorkFlow.Module">
+            <summary>
+            当前工程所对应的模块类
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.WorkFlow.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化
+            </summary>
+            <param name="app">应用程序对象</param>
+        </member>
+        <member name="T:SIE.EMS.WorkFlow.PurchaseRequisition.PurchaseRequisitionWorkflowService">
+            <summary>
+            资产采购申请工作流控制器
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.WorkFlow.PurchaseRequisition.PurchaseRequisitionWorkflowService._flowDefinitionController">
+            <summary>
+            工作流定义控制器
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.WorkFlow.PurchaseRequisition.PurchaseRequisitionWorkflowService._flowCustomFormController">
+            <summary>
+            通用表单控制器
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.WorkFlow.PurchaseRequisition.PurchaseRequisitionWorkflowService.#ctor(SIE.WorkFlow.Base.FlowDefinitions.FlowDefinitionController,SIE.WorkFlow.Base.CustomForms.FlowCustomFormController)">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.WorkFlow.PurchaseRequisition.PurchaseRequisitionWorkflowService.GetWorkflowDefinition(System.Nullable{SIE.Equipments.Enums.PurchaseType},System.Nullable{SIE.Equipments.Enums.PurchaseObjectType})">
+            <summary>
+            匹配资产采购申请工作流定义
+            </summary>
+            <param name="purchaseType">采购类型</param>
+            <param name="purchaseObjectType">采购对象类型</param>        
+            <returns>工作流定义</returns>
+        </member>
+        <member name="M:SIE.EMS.WorkFlow.PurchaseRequisition.PurchaseRequisitionWorkflowService.GetWorkflowDefinition(SIE.Domain.EntityList{SIE.WorkFlow.Base.FlowDefinitions.FlowDefinition},System.Collections.Generic.Dictionary{System.Double,SIE.EMS.WorkFlow.PurchaseRequisition.WorkFlowCategoryConfig.PurchaseRequisitionWorkFlowCategoryConfig},System.Nullable{SIE.Equipments.Enums.PurchaseType},System.Nullable{SIE.Equipments.Enums.PurchaseObjectType})">
+            <summary>
+            按【采购类型】、【采购对象】匹配
+            </summary>
+            <param name="flowDefinitions">工作流定义列表</param>
+            <param name="flowConfigDictionary">工作流配置字典</param>
+            <param name="purchaseType">采购类型（项目采购、非项目采购）</param>
+            <param name="purchaseObjectType">采购对象类型（设备、备件...)</param> 
+            <returns></returns>
+        </member>
+        <member name="M:SIE.EMS.WorkFlow.PurchaseRequisition.PurchaseRequisitionWorkflowService.GetWorkflowDefinition(SIE.Domain.EntityList{SIE.WorkFlow.Base.FlowDefinitions.FlowDefinition},System.Collections.Generic.Dictionary{System.Double,SIE.EMS.WorkFlow.PurchaseRequisition.WorkFlowCategoryConfig.PurchaseRequisitionWorkFlowCategoryConfig},System.Nullable{SIE.Equipments.Enums.PurchaseType})">
+            <summary>
+            按【采购类型】、【空采购对象】匹配
+            </summary>
+            <param name="flowDefinitions">工作流定义列表</param>
+            <param name="flowConfigDictionary">工作流配置字典</param>
+            <param name="purchaseType">采购类型（项目采购、非项目采购）</param>        
+            <returns></returns>
+        </member>
+        <member name="M:SIE.EMS.WorkFlow.PurchaseRequisition.PurchaseRequisitionWorkflowService.GetWorkflowDefinition(SIE.Domain.EntityList{SIE.WorkFlow.Base.FlowDefinitions.FlowDefinition},System.Collections.Generic.Dictionary{System.Double,SIE.EMS.WorkFlow.PurchaseRequisition.WorkFlowCategoryConfig.PurchaseRequisitionWorkFlowCategoryConfig})">
+            <summary>
+            按【空采购类型】、【空采购对象】匹配
+            </summary>
+            <param name="flowDefinitions">工作流定义列表</param>
+            <param name="flowConfigDictionary">工作流配置字典</param>        
+            <returns></returns>
+        </member>
+        <member name="M:SIE.EMS.WorkFlow.PurchaseRequisition.PurchaseRequisitionWorkflowService.CreateCustomFormWorkFlowProxy(SIE.EMS.WorkFlow.WorkFlowForm)">
+            <summary>
+            创建通用表单工作流
+            </summary>
+            <param name="workFlowForm"></param>
+        </member>
+        <member name="M:SIE.EMS.WorkFlow.PurchaseRequisition.PurchaseRequisitionWorkflowService.CreatePurchaseRequisitionWorkFlow(SIE.EMS.WorkFlow.WorkFlowForm,System.Nullable{SIE.Equipments.Enums.PurchaseType},System.Nullable{SIE.Equipments.Enums.PurchaseObjectType})">
+            <summary>
+            创建资产采购申请的工作流实例
+            </summary>
+            <param name="workFlowForm">自定表单</param>
+            <param name="purchaseType">采购类型</param>
+            <param name="purchaseObjectType">采购对象类型</param>
+        </member>
+        <member name="T:SIE.EMS.WorkFlow.PurchaseRequisition.WorkFlowCategoryConfig.PurchaseRequisitionWorkFlowCategory">
+            <summary>
+            工作流分类-资产采购申请
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.WorkFlow.PurchaseRequisition.WorkFlowCategoryConfig.PurchaseRequisitionWorkFlowCategory.CategoryName">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.WorkFlow.PurchaseRequisition.WorkFlowCategoryConfig.PurchaseRequisitionWorkFlowCategory.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.WorkFlow.PurchaseRequisition.WorkFlowCategoryConfig.PurchaseRequisitionWorkFlowCategoryConfig">
+            <summary>
+            资产采购申请工作流分类配置
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.WorkFlow.PurchaseRequisition.WorkFlowCategoryConfig.PurchaseRequisitionWorkFlowCategoryConfig.PurchaseObjectTypeProperty">
+            <summary>
+            采购对象
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.WorkFlow.PurchaseRequisition.WorkFlowCategoryConfig.PurchaseRequisitionWorkFlowCategoryConfig.PurchaseObjectType">
+            <summary>
+            采购对象
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.WorkFlow.PurchaseRequisition.WorkFlowCategoryConfig.PurchaseRequisitionWorkFlowCategoryConfig.PurchaseTypeProperty">
+            <summary>
+            采购类型
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.WorkFlow.PurchaseRequisition.WorkFlowCategoryConfig.PurchaseRequisitionWorkFlowCategoryConfig.PurchaseType">
+            <summary>
+            采购类型
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.WorkFlow.PurchaseRequisition.WorkFlowCategoryConfig.PurchaseRequisitionWorkFlowCategoryConfig.ToConfigJson">
+            <summary>
+            转换成Json配置字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.EMS.WorkFlow.PurchaseRequisition.WorkFlowCategoryConfig.PurchaseRequisitionWorkFlowCategoryConfig.GetDisplayConfigStr">
+            <summary>
+            获取展示内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.EMS.WorkFlow.PurchaseRequisition.WorkFlowCategoryConfig.PurchaseRequisitionWorkFlowCategoryConfigViewConfig">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.WorkFlow.PurchaseRequisition.WorkFlowCategoryConfig.PurchaseRequisitionWorkFlowCategoryConfigViewConfig.ConfigDetailsView">
+            <summary>
+            明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.WorkFlow.WorkFlowAttachmentInfoModel">
+            <summary>
+            附件信息
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.WorkFlow.WorkFlowAttachmentInfoModel.FileName">
+            <summary>
+            文件名称
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.WorkFlow.WorkFlowAttachmentInfoModel.FilePath">
+            <summary>
+            文件路径
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.WorkFlow.WorkFlowAttachmentInfoModel.FileExtesion">
+            <summary>
+            文件扩展名
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.WorkFlow.WorkFlowAttachmentInfoModel.FileSize">
+            <summary>
+            文件大小
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.WorkFlow.WorkFlowForm">
+            <summary>
+            工作流通用表单
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.WorkFlow.WorkFlowForm.FieldList">
+            <summary>
+            表格键值对集合
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.WorkFlow.WorkFlowForm.StarterId">
+            <summary>
+            发起人,默认为当前操作人
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.WorkFlow.WorkFlowForm.FlowDefinitionId">
+            <summary>
+            工作流定义ID
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.WorkFlow.WorkFlowForm.WorkFlowCustomLists">
+            <summary>
+            自定义列表
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.WorkFlow.WorkFlowForm.Attachments">
+            <summary>
+            附件列表
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.WorkFlow.WorkFlowFormField">
+            <summary>
+            表单属性
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.WorkFlow.WorkFlowFormField.Name">
+            <summary>
+            属性名称
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.WorkFlow.WorkFlowFormField.Value">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.WorkFlow.WorkFlowCutomListField">
+            <summary>
+            工作流通用表单自定义列表字段
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.WorkFlow.WorkFlowCutomListField.FieldName">
+            <summary>
+            字段名
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.WorkFlow.WorkFlowCutomListField.FieldLabel">
+            <summary>
+            字段值
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.WorkFlow.WorkFlowCutomListField.FieldWidth">
+            <summary>
+            栏位宽度
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.WorkFlow.WorkFlowCutomListValue">
+            <summary>
+            工作流通用表单自定义列表值
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.WorkFlow.WorkFlowCutomListValue.FieldName">
+            <summary>
+            字段名
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.WorkFlow.WorkFlowCutomListValue.FieldValue">
+            <summary>
+            字段值
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.WorkFlow.WorkFlowCustomList">
+            <summary>
+            工作流通用表单的子表
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.WorkFlow.WorkFlowCustomList.ListName">
+            <summary>
+            列表名称
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.WorkFlow.WorkFlowCustomList.CutomListFields">
+            <summary>
+            自定义列表字段名列表
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.WorkFlow.WorkFlowCustomList.CutomListValueList">
+            <summary>
+            自定义列表值列表
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.WorkFlow.WorkflowService">
+            <summary>
+            通用工作流服务
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.WorkFlow.WorkflowService._sieWorkflow">
+            <summary>
+            工作流接口
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.WorkFlow.WorkflowService.#ctor(SIE.WorkFlow.Base.Common.Interfaces.ISieWorkflow)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="sieWorkflow">工作流接口</param>
+        </member>
+        <member name="M:SIE.EMS.WorkFlow.WorkflowService.CancelWorkflow(System.Double,System.String)">
+            <summary>
+            撤销工作流
+            </summary>
+            <param name="flowInstanceId">实例ID</param>
+            <param name="reason">撤销原因</param>
+        </member>
+    </members>
+</doc>

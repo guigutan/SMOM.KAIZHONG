@@ -1,0 +1,1106 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.ERPInterface.Api</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.ERPInterface.Api.EbsWebApi.EbsToSmomWebApiController">
+            <summary>
+            Erp返回数据
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.EbsWebApi.EbsToSmomWebApiController.SaveShippingOrders(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.EbsDeliveryPlanData},System.String)">
+            <summary>
+            保存发货计划数据-销售发货
+            </summary>
+            <param name="orderDatas">销售发货</param>
+            <param name="invOrgId">组织ID，大于0有效</param>
+            <returns>处理结果</returns>       
+        </member>
+        <member name="M:SIE.ERPInterface.Api.EbsWebApi.EbsToSmomWebApiController.SavePurOrders(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.SmomOrder.EbsPurOrderData},System.String)">
+            <summary>
+            保存采购订单数据
+            </summary>
+            <param name="orderDatas">采购订单数据</param>
+            <param name="invOrgId">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.EbsWebApi.EbsToSmomWebApiController.SaveWorkFeed(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.EbsDeliveryPlanData},System.String)">
+            <summary>
+            保存发货计划数据-销售发货
+            </summary>
+            <param name="orderDatas">销售发货</param>
+            <param name="invOrgId">组织ID，大于0有效</param>
+            <returns>处理结果</returns>       
+        </member>
+        <member name="M:SIE.ERPInterface.Api.EbsWebApi.EbsToSmomWebApiController.SaveSaleReturn(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.EbsToSmomAsnDetailData},System.String)">
+            <summary>
+            保存ASN数据-销售退货
+            </summary>
+            <param name="orderDatas">销售退货</param>
+            <param name="invOrgId">组织ID，大于0有效</param>
+            <returns>处理结果</returns>       
+        </member>
+        <member name="M:SIE.ERPInterface.Api.EbsWebApi.EbsToSmomWebApiController.TextGetErpOnHandData">
+            <summary>
+            获取库存现有量
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.EbsWebApi.EbsToSmomWebApiController.SaveWorkOrders(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.SmomOrder.EbsWorkOrderData},System.String)">
+            <summary>
+            保存工单数据
+            </summary>
+            <param name="workOrderDatas">工单数据</param>
+            <param name="invOrgId">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Api.Module">
+            <summary>
+            当前工程所对应的模块类
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化
+            </summary>
+            <param name="app">应用程序对象</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Api.WebApi.UnitDataValueProvider">
+            <summary>
+            单位API参数显示提
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Api.WebApi.ItemDataValueProvider">
+            <summary>
+            物料API参数显示提
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Api.WebApi.ItemCategoryDataValueProvider">
+            <summary>
+            物料分类API参数显示提
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Api.WebApi.EnterpriseDataValueProvider">
+            <summary>
+            企业模型API参数显示提
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Api.WebApi.CustomerDataValueProvider">
+            <summary>
+            客户API参数显示提
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Api.WebApi.CustomerAddressDataValueProvider">
+            <summary>
+            客户地址API参数显示提
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Api.WebApi.SupplierDataValueProvider">
+            <summary>
+            供应商API参数显示提
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Api.WebApi.SupplierAddressDataValueProvider">
+            <summary>
+            供应商地址API参数显示提
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Api.WebApi.EmployeeDataValueProvider">
+            <summary>
+            员工API参数显示提
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Api.WebApi.ProductBomDataValueProvider">
+            <summary>
+            产品BOM API参数显示提
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Api.WebApi.ProductBomDetailDataValueProvider">
+            <summary>
+            产品BOM明细API参数显示提
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Api.WebApi.ErpWarehouseDataValueProvider">
+            <summary>
+            仓库API参数显示提
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Api.WebApi.ErpStorageAreaDataValueProvider">
+            <summary>
+            库区API参数显示提
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Api.WebApi.ErpLocationDataValueProvider">
+            <summary>
+            库位API参数显示提
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Api.WebApi.DefectCategoryDataValueProvider">
+            <summary>
+            缺陷分类API参数显示提示
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Api.WebApi.DefectGradeDataValueProvider">
+            <summary>
+            缺陷等级API参数显示提示
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Api.WebApi.DefectCodeDataValueProvider">
+            <summary>
+            缺陷代码API参数显示提示
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Api.WebApi.ItemInspStandardDataValueProvider">
+            <summary>
+            物料检验标准API参数显示提示
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Api.WebApi.CategoryInspStandardDataValueProvider">
+            <summary>
+            分类检验标准API参数显示提示
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Api.WebApi.ErpWorkOrderDataValueProvider">
+            <summary>
+            工单API参数显示提
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Api.WebApi.ErpWorkOrderBomDataValueProvider">
+            <summary>
+            工单BOM API参数显示提
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Api.WebApi.PoDataValueProvider">
+            <summary>
+            采购订单API参数显示提
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Api.WebApi.PoDetailDataValueProvider">
+            <summary>
+            采购订单明细API参数显示提
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Api.WebApi.AsnDataValueProvider">
+            <summary>
+            ASN单API参数显示提
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Api.WebApi.AsnDetailDataValueProvider">
+            <summary>
+            ASN单明细API参数显示提
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Api.WebApi.ShippingOrderDataValueProvider">
+            <summary>
+            发运单API参数显示提
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Api.WebApi.ShippingOrderDetailDataValueProvider">
+            <summary>
+            发运单明细API参数显示提
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Api.WebApi.ProductOrderBomDataDataValueProvider">
+            <summary>
+            生产订单BOM API参数显示提
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Api.WebApi.ProductOrderDataDataValueProvider">
+            <summary>
+            生产订单 API参数显示提
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Api.WebApi.InventoryAllocateDataValueProvider">
+            <summary>
+            库存调拨 API参数显示提
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Api.WebApi.DeliveryPlanDataValueProvider">
+            <summary>
+            发货计划 API参数显示提
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Api.WebApi.ApiResultValueProvider">
+            <summary>
+            接口API结果返回显示
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Api.WebApi.EbsToSmomShippingOrderValueProvider">
+            <summary>
+            Ebs发运单API参数显示提
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Api.WebApi.EbsToSmomPurOrderValueProvider">
+            <summary>
+            Ebs发运单API参数显示提
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Api.WebApi.EbsToSmomAsnValueProvider">
+            <summary>
+            EbsASN单API参数显示提
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Api.WebApi.InfWebApiController">
+            <summary>
+            数据下载API接口
+            ERP下载数据到中间表，需另外通过SMOM的调度，把中间表数据执行到业务表
+            </summary>
+            <summary>
+            数据下载API接口
+            ERP下载数据到中间表，需另外通过SMOM的调度，把中间表数据执行到业务表
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.InfWebApiController.SaveItems(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ItemData},System.Int32)">
+            <summary>
+            保存物料数据
+            </summary>
+            <param name="itemDatas">物料数据</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.InfWebApiController.SaveItemCategorys(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ItemCategoryData},System.Int32)">
+            <summary>
+            保存物料分类数据
+            </summary>
+            <param name="itemCategoryDatas">物料分类数据</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.InfWebApiController.SaveEnterprises(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.EnterpriseData},System.Int32)">
+            <summary>
+            保存企业模型数据
+            </summary>
+            <param name="enterpriseDatas">企业模型数据</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.InfWebApiController.SaveCustomers(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.CustomerData},System.Int32)">
+            <summary>
+            保存客户数据
+            </summary>
+            <param name="customerDatas">客户数据</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.InfWebApiController.SaveCustomerAddresss(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.CustomerAddressData},System.Int32)">
+            <summary>
+            保存客户地址数据
+            </summary>
+            <param name="customerAddressDatas">客户地址数据</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.InfWebApiController.SaveSuppliers(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.SupplierData},System.Int32)">
+            <summary>
+            保存供应商数据
+            </summary>
+            <param name="supplierDatas">供应商数据</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.InfWebApiController.SaveSupplierAddresss(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.SupplierAddressData},System.Int32)">
+            <summary>
+            保存供应商地址数据
+            </summary>
+            <param name="supplierAddressDatas">供应商地址数据</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.InfWebApiController.SaveEmployees(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.EmployeeData},System.Int32)">
+            <summary>
+            保存员工数据
+            </summary>
+            <param name="employeeDatas">员工数据</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.InfWebApiController.SaveProductBoms(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ProductBomData},System.Int32)">
+            <summary>
+            保存产品BOM数据
+            </summary>
+            <param name="productBomDatas">产品BOM数据</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.InfWebApiController.SaveProductBomDetails(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ProductBomDetailData},System.Int32)">
+            <summary>
+            保存产品BOM明细数据
+            </summary>
+            <param name="productBomDetailDatas">产品BOM明细数据</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.InfWebApiController.SaveWarehouses(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.WarehouseData},System.Int32)">
+            <summary>
+            保存仓库数据
+            </summary>
+            <param name="warehouseDatas">仓库数据</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.InfWebApiController.SaveStorageAreas(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.StorageAreaData},System.Int32)">
+            <summary>
+            保存库区数据
+            </summary>
+            <param name="storageAreaDatas">库区数据</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.InfWebApiController.SaveStorageLocations(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.StorageLocationData},System.Int32)">
+            <summary>
+            保存库位数据
+            </summary>
+            <param name="storageLocDatas">库位数据</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.InfWebApiController.SaveWorkOrders(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.WorkOrderData},System.Int32)">
+            <summary>
+            保存工单数据
+            </summary>
+            <param name="workOrderDatas">工单数据</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.InfWebApiController.SaveWorkOrderBoms(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.WorkOrderBomData},System.Int32)">
+            <summary>
+            保存工单Bom数据
+            </summary>
+            <param name="workOrderBomDatas">工单Bom数据</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.InfWebApiController.SavePurchaseOrders(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.PoData},System.Int32)">
+            <summary>
+            保存采购订单数据
+            </summary>
+            <param name="poDatas">采购订单数据</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.InfWebApiController.SavePurchaseOrderDtls(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.PoDetailData},System.Int32)">
+            <summary>
+            保存采购订单明细数据
+            </summary>
+            <param name="poDtlDatas">采购订单明细数据</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.InfWebApiController.SaveAsns(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.AsnData},System.Int32)">
+            <summary>
+            保存ASN数据
+            </summary>
+            <param name="asnDatas">ASN数据</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.InfWebApiController.SaveAsnDtls(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.AsnDetailData},System.Int32)">
+            <summary>
+            保存ASN明细数据
+            </summary>
+            <param name="asnDtlDatas">ASN明细数据</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.InfWebApiController.SaveShippingOrders(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ShippingOrderData},System.Int32)">
+            <summary>
+            保存发运单数据
+            </summary>
+            <param name="orderDatas">发运单数据</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.InfWebApiController.SaveShippingOrderDtls(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ShippingOrderDetailData},System.Int32)">
+            <summary>
+            保存发运单明细数据
+            </summary>
+            <param name="orderDtlDatas">发运单明细数据</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.InfWebApiController.SaveProductionOrderBoms(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ProductionOrderBomData},System.Int32)">
+            <summary>
+            保存生产订单BOM数据
+            </summary>
+            <param name="poBomDatas">生产订单BOM</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.InfWebApiController.SaveProductOrders(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ProductOrderData},System.Int32)">
+            <summary>
+            保存生产订单数据
+            </summary>
+            <param name="poDatas">生产订单</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.InfWebApiController.SaveItem(SIE.ERPInterface.Common.Datas.ItemData)">
+            <summary>
+            保存物料数据中间表
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.InfWebApiController.SaveItemCategory(SIE.ERPInterface.Common.Datas.ItemCategoryData)">
+            <summary>
+            保存物料分类数据中间表
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.InfWebApiController.SaveEnterprise(SIE.ERPInterface.Common.Datas.EnterpriseData)">
+            <summary>
+            保存企业模型数据
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.InfWebApiController.SaveCustomer(SIE.ERPInterface.Common.Datas.CustomerData)">
+            <summary>
+            保存数据到客户中间表
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.InfWebApiController.SaveCustomerAddress(SIE.ERPInterface.Common.Datas.CustomerAddressData)">
+            <summary>
+            保存客户地址数据中间表
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.InfWebApiController.SaveSupplier(SIE.ERPInterface.Common.Datas.SupplierData)">
+            <summary>
+            保存供应商数据中间表
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.InfWebApiController.SaveSupplierAddress(SIE.ERPInterface.Common.Datas.SupplierAddressData)">
+            <summary>
+            保存供应商地址数据中间表
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.InfWebApiController.SaveEmployee(SIE.ERPInterface.Common.Datas.EmployeeData)">
+            <summary>
+            保存员工数据中间表
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.InfWebApiController.SaveProductBom(SIE.ERPInterface.Common.Datas.ProductBomData)">
+            <summary>
+            保存产品BOM数据中间表
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.InfWebApiController.SaveProductBomDetail(SIE.ERPInterface.Common.Datas.ProductBomDetailData)">
+            <summary>
+            保存产品BOM明细数据中间表
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.InfWebApiController.SaveWarehouse(SIE.ERPInterface.Common.Datas.WarehouseData)">
+            <summary>
+            保存仓库数据中间表
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.InfWebApiController.SaveStorageArea(SIE.ERPInterface.Common.Datas.StorageAreaData)">
+            <summary>
+            保存库区数据中间表
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.InfWebApiController.SaveStorageLocation(SIE.ERPInterface.Common.Datas.StorageLocationData)">
+            <summary>
+            保存库位数据中间表
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.InfWebApiController.SaveWorkOrder(SIE.ERPInterface.Common.Datas.WorkOrderData)">
+            <summary>
+            保存工单数据中间表
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.InfWebApiController.SaveWorkOrderBom(SIE.ERPInterface.Common.Datas.WorkOrderBomData)">
+            <summary>
+            保存工单BOM数据中间表
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.InfWebApiController.SavePurchaseOrder(SIE.ERPInterface.Common.Datas.PoData)">
+            <summary>
+            保存采购订单数据中间表
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.InfWebApiController.SavePurchaseOrderDtl(SIE.ERPInterface.Common.Datas.PoDetailData)">
+            <summary>
+            保存采购订单明细数据中间表
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.InfWebApiController.SaveAsn(SIE.ERPInterface.Common.Datas.AsnData)">
+            <summary>
+            保存ASN单数据中间表
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.InfWebApiController.SaveAsnDtl(SIE.ERPInterface.Common.Datas.AsnDetailData)">
+            <summary>
+            保存ASN明细数据中间表
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.InfWebApiController.SaveShippingOrder(SIE.ERPInterface.Common.Datas.ShippingOrderData)">
+            <summary>
+            保存发运单数据中间表
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.InfWebApiController.SaveShippingOrderDtl(SIE.ERPInterface.Common.Datas.ShippingOrderDetailData)">
+            <summary>
+            保存发运单明细数据中间表
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.InfWebApiController.SaveProductOrder(SIE.ERPInterface.Common.Datas.ProductOrderData)">
+            <summary>
+            保存生产订单数据中间表
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.InfWebApiController.SaveProductionOrderBom(SIE.ERPInterface.Common.Datas.ProductionOrderBomData)">
+            <summary>
+            保存生产订单BOM数据中间表
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.IWebApiController.InfNcDataLogGroupReUpload(System.Collections.Generic.List{System.Double})">
+            <summary>
+            SAP与总控重传
+            </summary>
+            <param name="InfNcDataLogGroupId"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.KaiZhongGroup.KzGroupBaseDateInfController.distributeMd(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            其他系统调用，数据传给集团
+            </summary>
+            <param name="systemCode">系统编码</param>
+            <param name="infCode">主数据类型</param>
+            <param name="operationType">操作类型</param>
+            <param name="dataJsons">主数据(JSON数组格式)</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.KaiZhongGroup.KzGroupBaseDateInfController.DistributeFactory(System.String,System.String,System.String,System.String,SIE.KZ.Base.Interfaces.Enums.InfType,System.String,System.String)">
+            <summary>
+            指定工厂分发给其他工厂
+            </summary>
+            <param name="systemCode"></param>
+            <param name="infCode"></param>
+            <param name="operationType"></param>
+            <param name="dataJsons"></param>
+            <param name="infType"></param>
+            <param name="parameterCom"></param>
+            <param name="invOrg"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.KaiZhongGroup.KzGroupBaseDateInfController.SaveInfDatasToBusiness(System.String,System.String,System.String,System.String,SIE.KZ.Base.Interfaces.Enums.InfType,System.String,System.String,SIE.KZ.Base.Interfaces.InfNcDataLogGroup)">
+            <summary>
+            将NC接口数据保存到MES业务表中
+            </summary>
+            <param name="systemCode">系统编码</param>
+            <param name="infCode">主数据类型</param>
+            <param name="operationType">操作类型</param>
+            <param name="dataJsons">主数据(JSON数组格式)</param>
+            <param name="infMapping">接口基础信息</param>
+            <param name="parameterCom">接口关键信息</param>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.KaiZhongGroup.KzGroupBaseDateInfController.GroupToFactory(SIE.KZ.Base.Interfaces.InfNcDataLogGroup,SIE.KZ.Base.Interfaces.Enums.InfType)">
+            <summary>
+            集团直接发送到工厂
+            </summary>
+            <param name="infDataLog"></param>
+            <param name="infType"></param>
+            <returns></returns>
+            <exception cref="T:SIE.Domain.Validation.ValidationException"></exception>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.KaiZhongGroup.KZGroupWebApiController.SaveEnterpriseData(System.Collections.Generic.List{SIE.KZ.Base.Interfaces.Datas.EnterpriseData})">
+            <summary>
+            保存物料标签信息数据
+            </summary>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.KaiZhongGroup.KZGroupWebApiController.SaveItemLabelDatas(System.Collections.Generic.List{SIE.KZ.Base.Interfaces.Datas.ItemLabelData})">
+            <summary>
+            保存物料标签信息数据
+            </summary>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.KaiZhongGroup.KZGroupWebApiController.SaveSkillData(System.Collections.Generic.List{SIE.KZ.Base.Interfaces.Datas.SkillData})">
+            <summary>
+            保存人员技能信息数据
+            </summary>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.KaiZhongGroup.KZGroupWebApiController.SaveEquipAccount(System.Collections.Generic.List{SIE.KZ.Base.Interfaces.Datas.EquipAccountData})">
+            <summary>
+            保存设备信息数据
+            </summary>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.KaiZhongGroup.KZGroupWebApiController.SaveWorkOrder(SIE.KZ.Base.Interfaces.Datas.WorkOrderData)">
+            <summary>
+            保存工单信息数据
+            </summary>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.KaiZhongGroup.KZGroupWebApiController.SaveProcess(System.Collections.Generic.List{SIE.KZ.Base.Interfaces.Datas.ProcessData})">
+            <summary>
+            保存工序信息数据
+            </summary>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.KaiZhongGroup.KZGroupWebApiController.SaveEmployee(System.Collections.Generic.List{SIE.KZ.Base.Interfaces.Datas.EmployeeData})">
+            <summary>
+            保存员工信息数据
+            </summary>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.KaiZhongGroup.KZGroupWebApiController.SaveOrgLevel(System.Collections.Generic.List{SIE.MES.OrgLevels.OrgLevelInfo})">
+            <summary>
+            保存人员组织架构信息数据
+            </summary>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.KaiZhongGroup.KZGroupWebApiController.SaveWorkCenter(System.Collections.Generic.List{SIE.KZ.Base.Interfaces.Datas.WorkCenterData})">
+            <summary>
+            保存工作中心数据(其他系统到集团)
+            </summary>
+            <param name="datas"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.KaiZhongGroup.KZGroupWebApiController.SaveItem(System.Collections.Generic.List{SIE.KZ.Base.Interfaces.Datas.ItemData})">
+            <summary>
+            保存物料数据(其他系统到集团)
+            </summary>
+            <param name="datas"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.KaiZhongGroup.KZGroupWebApiController.ToasyncSaveItems(System.Collections.Generic.List{SIE.KZ.Base.Interfaces.Datas.ItemData})">
+            <summary>
+            异步执行，先让接口返回，无需等待
+            </summary>
+            <param name="datas"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.KaiZhongGroup.KZGroupWebApiController.SaveItemCategory(System.Collections.Generic.List{SIE.KZ.Base.Interfaces.Datas.ItemCategoryData})">
+            <summary>
+            下载分类(其他接口传给集团)
+            </summary>
+            <param name="datas"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.KaiZhongGroup.KZGroupWebApiController.SaveBlueLabel(System.Collections.Generic.List{SIE.KZ.Base.Interfaces.Datas.BlueLabelData})">
+            <summary>
+            保存蓝标数据
+            </summary>
+            <param name="datas"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.KaiZhongGroup.KZGroupWebApiController.GetEquipmentDatas(SIE.KZ.Base.Interfaces.Datas.EquipmentQuery)">
+            <summary>
+            设备台账查询
+            </summary>
+            <param name="query"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.KaiZhongGroup.KZGroupWebApiController.UpadteReportResult(System.Collections.Generic.List{SIE.KZ.Base.Interfaces.Datas.ReportReturnData})">
+            <summary>
+            更新报工回传结果
+            </summary>
+            <param name="datas"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.KaiZhongGroup.KZGroupWebApiController.OAFlowReturn(System.Collections.Generic.List{SIE.KZ.Base.Interfaces.Datas.OAFlowReturnData})">
+            <summary>
+            OA流程退回
+            </summary>
+            <param name="datas"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.KaiZhongGroup.KZGroupWebApiController.SaveThreshold(System.Collections.Generic.List{SIE.KZ.Base.Interfaces.Datas.ThresholdData})">
+            <summary>
+            可疑品阈值下载
+            </summary>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.KaiZhongGroup.KZGroupWebApiController.SaveAndonLine(System.Collections.Generic.List{SIE.KZ.Base.Interfaces.Datas.AndonLineData})">
+            <summary>
+            产线与安灯区域下载
+            </summary>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.KaiZhongGroup.KZGroupWebApiController.SaveProductLine(System.Collections.Generic.List{SIE.KZ.Base.Interfaces.Datas.ProductLineData})">
+            <summary>
+            产品与产线的关系下载
+            </summary>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.KaiZhongGroup.KZGroupWebApiController.SaveFixtureUphold(System.Collections.Generic.List{SIE.KZ.Base.Interfaces.Datas.FixtureUpholdData})">
+            <summary>
+            工装维护下载
+            </summary>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.KaiZhongGroup.KZGroupWebApiController.SaveFixtureItem(System.Collections.Generic.List{SIE.KZ.Base.Interfaces.Datas.FixtureItemData})">
+            <summary>
+            工装与产品的关系下载
+            </summary>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.KaiZhongGroup.KZGroupWebApiController.SaveCheckerUphold(System.Collections.Generic.List{SIE.KZ.Base.Interfaces.Datas.CheckerUpholdData})">
+            <summary>
+            检具维护下载
+            </summary>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.KaiZhongGroup.KZGroupWebApiController.SaveCheckerItem(System.Collections.Generic.List{SIE.KZ.Base.Interfaces.Datas.CheckerItemData})">
+            <summary>
+            检具与产品的关系下载
+            </summary>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.KaiZhongGroup.KZGroupWebApiController.SaveEquipAccountItem(System.Collections.Generic.List{SIE.KZ.Base.Interfaces.Datas.EquipAccountItemData})">
+            <summary>
+            模具与产品的关系
+            </summary>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.KaiZhongGroup.KZGroupWebApiController.SaveRewrokLayoutVersion(SIE.KZ.Base.Interfaces.Datas.Rlvd)">
+            <summary>
+            返工工艺路线版本
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.KaiZhongGroup.KZGroupWebApiController.ToasyncSave(SIE.KZ.Base.Interfaces.Enums.InfType,System.String,System.String)">
+            <summary>
+            异步执行，防止并发
+            </summary>
+            <param name="infType"></param>
+            <param name="dataJsons"></param>
+            <param name="WERKS"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.KaiZhong.KzBaseDateInfController.distributeMdFactory(System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            集团调用方法发给下面的工厂
+            </summary>
+            <param name="systemCode"></param>
+            <param name="infCode"></param>
+            <param name="operationType"></param>
+            <param name="dataJsons"></param>
+            <param name="str">里面可以夹带从集团带过来的信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.KaiZhong.KzBaseDateInfController.DistributeMdFactorySO(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            集团调用方法发给下面的工厂
+            </summary>
+            <param name="systemCode"></param>
+            <param name="infCode"></param>
+            <param name="operationType"></param>
+            <param name="dataJsons"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.KaiZhong.KzBaseDateInfController.SaveInfDatasToBusinessFactory(System.String,System.String,System.String,System.String,SIE.KZ.Base.Interfaces.Enums.InfType,SIE.KZ.Base.Interfaces.InfNcDataLog,System.String)">
+            <summary>
+            将NC接口数据保存到MES业务表中
+            </summary>
+            <param name="systemCode">系统编码</param>
+            <param name="infCode">主数据类型</param>
+            <param name="operationType">操作类型</param>
+            <param name="dataJsons">主数据(JSON数组格式)</param>
+            <param name="infMapping">接口基础信息</param>
+            <param name="infDataLog">接口日志</param>
+            <param name="str">里面可以夹带从集团带过来的信息</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Api.WebApi.KaiZhong.KZWebApiController">
+            <summary>
+            基础数据下载控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.KaiZhong.KZWebApiController.SyncItemLabel(System.Collections.Generic.List{System.String},System.String,System.String)">
+            <summary>
+            跨库存组织物料标签同步发起
+            </summary>
+            <param name="itemCodes"></param>
+            <param name="SourceFactory"></param>
+            <param name="ToFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.KaiZhong.KZWebApiController.GetSyncItemLabelInfo(System.Collections.Generic.List{SIE.Packages.ItemLabels.ItemLabel},System.String)">
+            <summary>
+            跨库存组织物料标签同步接收
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Api.WebApi.SmomWebApiController">
+            <summary>
+            数据下载API接口
+            不经过中间表，ERP下载数据到业务表
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.SmomWebApiController.SaveUnits(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.UnitData},System.Int32)">
+            <summary>
+            保存物料数据
+            </summary>
+            <param name="unitDatas">单位数据</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.SmomWebApiController.SaveItems(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ItemData},System.Int32)">
+            <summary>
+            保存物料数据
+            </summary>
+            <param name="itemDatas">物料数据</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.SmomWebApiController.SaveItemCategorys(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ItemCategoryData},System.Int32)">
+            <summary>
+            保存物料分类数据
+            </summary>
+            <param name="itemCategoryDatas">物料分类数据</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.SmomWebApiController.SaveEnterprises(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.EnterpriseData},System.Int32)">
+            <summary>
+            保存企业模型数据
+            </summary>
+            <param name="enterpriseDatas">企业模型数据</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.SmomWebApiController.SaveCustomers(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.CustomerData},System.Int32)">
+            <summary>
+            保存客户数据
+            </summary>
+            <param name="customerDatas">客户数据</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.SmomWebApiController.SaveCustomerAddresss(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.CustomerAddressData},System.Int32)">
+            <summary>
+            保存客户地址数据
+            </summary>
+            <param name="customerAddressDatas">客户地址数据</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.SmomWebApiController.SaveSuppliers(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.SupplierData},System.Int32)">
+            <summary>
+            保存供应商数据
+            </summary>
+            <param name="supplierDatas">供应商数据</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.SmomWebApiController.SaveSupplierAddresss(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.SupplierAddressData},System.Int32)">
+            <summary>
+            保存供应商地址数据
+            </summary>
+            <param name="supplierAddressDatas">供应商地址数据</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.SmomWebApiController.SaveEmployees(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.EmployeeData},System.Int32)">
+            <summary>
+            保存员工数据
+            </summary>
+            <param name="employeeDatas">员工数据</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.SmomWebApiController.SaveProductBoms(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ProductBomData},System.Int32)">
+            <summary>
+            保存产品BOM数据
+            </summary>
+            <param name="productBomDatas">产品BOM数据</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.SmomWebApiController.SaveProductBomDetails(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ProductBomDetailData},System.Int32)">
+            <summary>
+            保存产品BOM明细数据
+            </summary>
+            <param name="productBomDetailDatas">产品BOM明细数据</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.SmomWebApiController.SaveWarehouses(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.WarehouseData},System.Int32)">
+            <summary>
+            保存仓库数据
+            </summary>
+            <param name="warehouseDatas">仓库数据</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.SmomWebApiController.SaveStorageAreas(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.StorageAreaData},System.Int32)">
+            <summary>
+            保存库区数据
+            </summary>
+            <param name="storageAreaDatas">库区数据</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.SmomWebApiController.SaveStorageLocations(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.StorageLocationData},System.Int32)">
+            <summary>
+            保存库位数据
+            </summary>
+            <param name="storageLocDatas">库位数据</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.SmomWebApiController.SaveDefectCategory(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ErpInfoDatas.DefectCategoryData},System.Int32)">
+            <summary>
+            保存缺陷分类
+            </summary>
+            <param name="defectCategoryList">缺陷分类数据</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.SmomWebApiController.SaveDefectGrade(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ErpInfoDatas.DefectGradeData},System.Int32)">
+            <summary>
+            保存缺陷等级
+            </summary>
+            <param name="defectGradeList">缺陷等级数据</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.SmomWebApiController.SaveDefectCode(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ErpInfoDatas.DefectCodeData},System.Int32)">
+            <summary>
+            保存缺陷代码
+            </summary>
+            <param name="defectCodeList">缺陷代码数据</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.SmomWebApiController.SaveInspectionItemStandards(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ErpInfoDatas.InspStandards.ItemInspStandardData},System.Int32)">
+            <summary>
+            保存物料检验标准
+            </summary>
+            <param name="itemInspStandardList">物料检验标准数据</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.SmomWebApiController.SaveInspectionCategoryStandards(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ErpInfoDatas.InspStandards.CategoryInspStandardData},System.Int32)">
+            <summary>
+            保存分类检验标准
+            </summary>
+            <param name="categoryInspStandardList">分类检验标准数据</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.SmomWebApiController.SaveWorkOrders(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.WorkOrderData},System.Int32)">
+            <summary>
+            保存工单数据
+            </summary>
+            <param name="workOrderDatas">工单数据</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.SmomWebApiController.SaveWorkOrderBoms(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.WorkOrderBomData},System.Int32)">
+            <summary>
+            保存工单Bom数据
+            </summary>
+            <param name="workOrderBomDatas">工单Bom数据</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.SmomWebApiController.SavePurchaseOrders(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.PoData},System.Int32)">
+            <summary>
+            保存采购订单数据
+            </summary>
+            <param name="poDatas">采购订单数据</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.SmomWebApiController.SavePurchaseOrderDtls(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.PoDetailData},System.Int32)">
+            <summary>
+            保存采购订单明细数据
+            </summary>
+            <param name="poDtlDatas">采购订单明细数据</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.SmomWebApiController.SaveAsns(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.AsnData},System.Int32)">
+            <summary>
+            保存ASN数据
+            </summary>
+            <param name="asnDatas">ASN数据</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.SmomWebApiController.SaveAsnDtls(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.AsnDetailData},System.Int32)">
+            <summary>
+            保存ASN明细数据
+            </summary>
+            <param name="asnDtlDatas">ASN明细数据</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.SmomWebApiController.SaveShippingOrders(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ShippingOrderData},System.Int32)">
+            <summary>
+            保存发运单数据
+            </summary>
+            <param name="orderDatas">发运单数据</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.SmomWebApiController.SaveShippingOrderDtls(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ShippingOrderDetailData},System.Int32)">
+            <summary>
+            保存发运单明细数据
+            </summary>
+            <param name="orderDtlDatas">发运单明细数据</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.SmomWebApiController.SaveProductionOrderBoms(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ProductionOrderBomData},System.Int32)">
+            <summary>
+            保存生产订单BOM数据
+            </summary>
+            <param name="poBomDatas">生产订单BOM</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.SmomWebApiController.SaveProductOrders(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.ProductOrderData},System.Int32)">
+            <summary>
+            保存生产订单数据
+            </summary>
+            <param name="poDatas">生产订单</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.SmomWebApiController.SaveInventoryAllocateDatas(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.InventoryAllocateData},System.Int32)">
+            <summary>
+            保存库存调拨数据
+            </summary>
+            <param name="allocateDatas">库存调拨</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Api.WebApi.SmomWebApiController.SaveDeliveryPlanDatas(System.Collections.Generic.List{SIE.ERPInterface.Common.Datas.DeliveryPlanData},System.Int32)">
+            <summary>
+            保存发货计划数据
+            </summary>
+            <param name="planDatas">发货计划</param>
+            <param name="invOrg">组织ID，大于0有效</param>
+            <returns>处理结果</returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,317 @@
+﻿<UserControl
+    x:Class="SIE.Wpf.Andon.Controls.AndonButtonControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:SIE.Wpf.Andon.Controls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:uic="http://schemas.siestudio.com/winfx/xaml/core"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+        <Grid Margin="10">
+            <Grid.Resources>
+                <SolidColorBrush x:Key="brush" Color="#C1C1C1" />
+                <Style x:Key="TabButton" TargetType="Button">
+                    <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                    <Setter Property="TextBlock.VerticalAlignment" Value="Center" />
+                    <Setter Property="Width" Value="160" />
+                    <Setter Property="Height" Value="64" />
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border
+                                    Margin="0,0,5,0"
+                                    Background="White"
+                                    BorderBrush="#C1C1C1"
+                                    BorderThickness="1"
+                                    CornerRadius="5">
+                                    <ContentPresenter
+                                        x:Name="contentPresenter"
+                                        Margin="{TemplateBinding Padding}"
+                                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                        Content="{TemplateBinding Content}"
+                                        ContentTemplate="{TemplateBinding ContentTemplate}" />
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Grid.Resources>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="110" />
+                <RowDefinition Height="110" />
+                <RowDefinition Height="110" />
+                <RowDefinition Height="110" />
+                <RowDefinition Height="110" />
+                <RowDefinition Height="110" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Border
+                Grid.Row="0"
+                Grid.Column="0"
+                BorderBrush="{StaticResource brush}"
+                BorderThickness="1">
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontSize="24"
+                    Text="{Binding [人], Source={uic:L10N}}" />
+            </Border>
+
+            <Border
+                Grid.Row="0"
+                Grid.Column="1"
+                BorderBrush="{StaticResource brush}"
+                BorderThickness="0,1,1,1">
+                <ScrollViewer
+                    Margin="5"
+                    VerticalAlignment="Center"
+                    HorizontalScrollBarVisibility="Auto"
+                    VerticalScrollBarVisibility="Disabled">
+                    <ItemsControl Name="ctlAndonPerson" Margin="0,0,0,0">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Button
+                                    x:Name="btnAndon"
+                                    Click="btnAndon_Click"
+                                    Style="{StaticResource TabButton}"
+                                    Tag="{Binding Id}">
+                                    <TextBlock FontSize="18px"  TextWrapping="Wrap" Text="{Binding AndonName}" ToolTip="{Binding AndonName}" />
+                                </Button>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel IsItemsHost="True" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </ScrollViewer>
+            </Border>
+
+            <Border
+                Grid.Row="1"
+                Grid.Column="0"
+                BorderBrush="{StaticResource brush}"
+                BorderThickness="1,0,1,1">
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontSize="24"
+                    Text="{Binding [机], Source={uic:L10N}}" />
+            </Border>
+
+            <Border
+                Grid.Row="1"
+                Grid.Column="1"
+                BorderBrush="{StaticResource brush}"
+                BorderThickness="0,0,1,1">
+                <ScrollViewer
+                    Margin="5"
+                    VerticalAlignment="Center"
+                    HorizontalScrollBarVisibility="Disabled"
+                    VerticalScrollBarVisibility="Auto">
+                    <ItemsControl Name="ctlAndonMachine" Margin="0,0,0,0">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Button
+                                    x:Name="btnAndon"
+                                    Click="btnAndon_Click"
+                                    Style="{StaticResource TabButton}"
+                                    Tag="{Binding Id}">
+                                    <TextBlock FontSize="18px"  TextWrapping="Wrap" Text="{Binding AndonName}" ToolTip="{Binding AndonName}" />
+                                </Button>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel IsItemsHost="True" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </ScrollViewer>
+            </Border>
+            <Border
+                Grid.Row="2"
+                Grid.Column="0"
+                BorderBrush="{StaticResource brush}"
+                BorderThickness="1,0,1,1">
+                <TextBlock
+                    Grid.Row="2"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontSize="24"
+                    Text="{Binding [料], Source={uic:L10N}}" />
+            </Border>
+
+            <Border
+                Grid.Row="2"
+                Grid.Column="1"
+                BorderBrush="{StaticResource brush}"
+                BorderThickness="0,0,1,1">
+                <ScrollViewer
+                    Margin="5"
+                    VerticalAlignment="Center"
+                    HorizontalScrollBarVisibility="Disabled"
+                    VerticalScrollBarVisibility="Auto">
+                    <ItemsControl Name="ctlAndonMaterial" Margin="0,0,0,0">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Button
+                                    x:Name="btnAndon"
+                                    Click="btnAndon_Click"
+                                    Style="{StaticResource TabButton}"
+                                    Tag="{Binding Id}">
+                                    <TextBlock FontSize="18px" TextWrapping="Wrap" Text="{Binding AndonName}" ToolTip="{Binding AndonName}"/>
+                                </Button>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel IsItemsHost="True" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </ScrollViewer>
+            </Border>
+
+            <Border
+                Grid.Row="3"
+                Grid.Column="0"
+                BorderBrush="{StaticResource brush}"
+                BorderThickness="1,0,1,1">
+                <TextBlock
+                    Grid.Row="3"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontSize="24"
+                    Text="{Binding [法], Source={uic:L10N}}" />
+            </Border>
+
+            <Border
+                Grid.Row="3"
+                Grid.Column="1"
+                BorderBrush="{StaticResource brush}"
+                BorderThickness="0,0,1,1">
+                <ScrollViewer
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    Margin="5"
+                    VerticalAlignment="Center"
+                    HorizontalScrollBarVisibility="Disabled"
+                    VerticalScrollBarVisibility="Auto">
+                    <ItemsControl Name="ctlAndonMethod" Margin="0,0,0,0">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Button
+                                    x:Name="btnAndon"
+                                    Click="btnAndon_Click"
+                                    Style="{StaticResource TabButton}"
+                                    Tag="{Binding Id}">
+                                    <TextBlock FontSize="18px" TextWrapping="Wrap" Text="{Binding AndonName}" ToolTip="{Binding AndonName}"/>
+                                </Button>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel IsItemsHost="True" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </ScrollViewer>
+            </Border>
+
+            <Border
+                Grid.Row="4"
+                Grid.Column="0"
+                BorderBrush="{StaticResource brush}"
+                BorderThickness="1,0,1,1">
+                <TextBlock
+                    Grid.Row="4"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontSize="24"
+                    Text="{Binding [环], Source={uic:L10N}}" />
+            </Border>
+
+            <Border
+                Grid.Row="4"
+                Grid.Column="1"
+                BorderBrush="{StaticResource brush}"
+                BorderThickness="0,0,1,1">
+                <ScrollViewer
+                    Margin="5"
+                    VerticalAlignment="Center"
+                    HorizontalScrollBarVisibility="Disabled"
+                    VerticalScrollBarVisibility="Auto">
+                    <ItemsControl Name="ctlAndonEvnironment" Margin="0,0,0,0">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Button
+                                    x:Name="btnAndon"
+                                    Click="btnAndon_Click"
+                                    Style="{StaticResource TabButton}"
+                                    Tag="{Binding Id}">
+                                    <TextBlock FontSize="18px" TextWrapping="Wrap" Text="{Binding AndonName}" ToolTip="{Binding AndonName}"/>
+                                </Button>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel IsItemsHost="True" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </ScrollViewer>
+            </Border>
+            <Border
+                Grid.Row="5"
+                Grid.Column="0"
+                BorderBrush="{StaticResource brush}"
+                BorderThickness="1,0,1,1">
+                <TextBlock
+                    Grid.Row="5"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontSize="24"
+                    Text="{Binding [测], Source={uic:L10N}}" />
+            </Border>
+            <Border
+                Grid.Row="5"
+                Grid.Column="1"
+                BorderBrush="{StaticResource brush}"
+                BorderThickness="0,0,1,1">
+                <ScrollViewer
+                    Margin="5"
+                    VerticalAlignment="Center"
+                    HorizontalScrollBarVisibility="Disabled"
+                    VerticalScrollBarVisibility="Auto">
+                    <ItemsControl Name="ctlAndonTest" Margin="0,0,0,0">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Button
+                                    x:Name="btnAndon"
+                                    Click="btnAndon_Click"
+                                    Style="{StaticResource TabButton}"
+                                    Tag="{Binding Id}">
+                                    <TextBlock FontSize="18px" TextWrapping="Wrap" Text="{Binding AndonName}" ToolTip="{Binding AndonName}"/>
+                                </Button>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel IsItemsHost="True" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </ScrollViewer>
+            </Border>
+        </Grid>
+    </ScrollViewer>
+</UserControl>

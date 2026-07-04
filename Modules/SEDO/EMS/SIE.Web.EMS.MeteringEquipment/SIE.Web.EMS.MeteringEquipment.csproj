@@ -1,0 +1,93 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup Label="Globals">
+		<SccProjectName>SAK</SccProjectName>
+		<SccProvider>SAK</SccProvider>
+		<SccAuxPath>SAK</SccAuxPath>
+		<SccLocalPath>SAK</SccLocalPath>
+	</PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<OutputPath>..\..\..\..\platform\smom\</OutputPath>
+		<DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.EMS.MeteringEquipment.xml</DocumentationFile>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<OutputPath>..\..\..\..\platform\smom\</OutputPath>
+		<DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.EMS.MeteringEquipment.xml</DocumentationFile>
+	</PropertyGroup>
+	<ItemGroup>
+		<None Remove="Calibrations\Behaviors\AddCalibrationBehavior.js" />
+		<None Remove="Calibrations\Behaviors\CalibrationListBehavior.js" />
+		<None Remove="Calibrations\Behaviors\EquipmentInputBehavior.js" />
+		<None Remove="Calibrations\Commands\AllPassCommand.js" />
+		<None Remove="Calibrations\Commands\AuditCommand.js" />
+		<None Remove="Calibrations\Commands\AuditRejectCommand.js" />
+		<None Remove="Calibrations\Commands\AuditSubmitCommand.js" />
+		<None Remove="Calibrations\Commands\CalibrationDetailSaveCommand.js" />
+		<None Remove="Calibrations\Commands\CalibrationDetailSubmitCommand.js" />
+		<None Remove="Calibrations\Commands\CalibrationSaveCommand.js" />
+		<None Remove="Calibrations\Commands\InputReportCommand.js" />
+		<None Remove="Calibrations\Commands\ResetResultCommand.js" />
+		<None Remove="Calibrations\Commands\SeeReportCommand.js" />
+		<None Remove="Calibrations\Commands\SelCalibrationEquipmentCommand.js" />
+		<None Remove="Calibrations\Commands\SelCalibrationItemCommand.js" />
+		<None Remove="Calibrations\Scripts\CatalogPagingLookUpMethod.js" />
+		<None Remove="Calibrations\Scripts\Enum.js" />
+		<None Remove="Common\Behaviors\ApprovalBehavior.js" />
+		<None Remove="EquipModelExtensions\Commands\SelModelCalibrationCommand.js" />
+		<None Remove="MeteringEquipmentAccounts\Behaviors\AddMeteringEquipAccountBehavior.js" />
+		<None Remove="MeteringEquipmentAccounts\Behaviors\EquipModelCalibrationChangedBehavior.js" />
+		<None Remove="MeteringEquipmentAccounts\Commands\EquipAccountCalibrationSaveCommand.js" />
+		<None Remove="MeteringEquipmentAccounts\Commands\MeterEquipAccountLubricationProjectSaveCommand.js" />
+		<None Remove="MeteringEquipmentAccounts\Commands\MeterEquipAccountSlotSaveCommand.js" />
+		<None Remove="MeteringEquipmentAccounts\Commands\MeterEquipResumeSearchCommand.js" />
+		<None Remove="MeteringEquipmentAccounts\Commands\MeterEquipSearchRepairCommand.js" />
+		<None Remove="MeteringEquipmentAccounts\Commands\MeteringEquipSaveCommand.js" />
+		<None Remove="MeteringEquipmentAccounts\Commands\SelEquipAccountCalibrationCommand.js" />
+		<None Remove="MeteringEquipmentAccounts\Commands\SelMeterAccountPhysicalUnionCommand.js" />
+		<None Remove="MeteringEquipmentAccounts\Commands\SelMeterAccountProcessCommand.js" />
+		<None Remove="MeteringEquipmentAccounts\Commands\SynMeteringModelCommand.js" />
+	</ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Include="Calibrations\Behaviors\AddCalibrationBehavior.js" />
+		<EmbeddedResource Include="Calibrations\Behaviors\CalibrationListBehavior.js" />
+		<EmbeddedResource Include="Calibrations\Behaviors\EquipmentInputBehavior.js" />
+		<EmbeddedResource Include="Calibrations\Commands\AllPassCommand.js" />
+		<EmbeddedResource Include="Calibrations\Commands\AuditCommand.js" />
+		<EmbeddedResource Include="Calibrations\Commands\AuditRejectCommand.js" />
+		<EmbeddedResource Include="Calibrations\Commands\AuditSubmitCommand.js" />
+		<EmbeddedResource Include="Calibrations\Commands\CalibrationDetailSaveCommand.js" />
+		<EmbeddedResource Include="Calibrations\Commands\CalibrationDetailSubmitCommand.js" />
+		<EmbeddedResource Include="Calibrations\Commands\CalibrationSaveCommand.js" />
+		<EmbeddedResource Include="Calibrations\Commands\InputReportCommand.js" />
+		<EmbeddedResource Include="Calibrations\Commands\SeeReportCommand.js" />
+		<EmbeddedResource Include="Calibrations\Commands\SelCalibrationEquipmentCommand.js" />
+		<EmbeddedResource Include="Calibrations\Commands\SelCalibrationItemCommand.js" />
+		<EmbeddedResource Include="Calibrations\Scripts\CatalogPagingLookUpMethod.js" />
+		<EmbeddedResource Include="Calibrations\Scripts\Enum.js" />
+		<EmbeddedResource Include="Common\Behaviors\ApprovalBehavior.js" />
+		<EmbeddedResource Include="EquipModelExtensions\Commands\SelModelCalibrationCommand.js" />
+		<EmbeddedResource Include="MeteringEquipmentAccounts\Behaviors\AddMeteringEquipAccountBehavior.js" />
+		<EmbeddedResource Include="MeteringEquipmentAccounts\Behaviors\EquipModelCalibrationChangedBehavior.js" />
+		<EmbeddedResource Include="MeteringEquipmentAccounts\Commands\EquipAccountCalibrationSaveCommand.js" />
+		<EmbeddedResource Include="MeteringEquipmentAccounts\Commands\MeterEquipSearchRepairCommand.js" />
+		<EmbeddedResource Include="MeteringEquipmentAccounts\Commands\MeterEquipAccountSlotSaveCommand.js" />
+		<EmbeddedResource Include="MeteringEquipmentAccounts\Commands\MeterEquipResumeSearchCommand.js" />
+		<EmbeddedResource Include="MeteringEquipmentAccounts\Commands\MeterEquipAccountLubricationProjectSaveCommand.js" />
+		<EmbeddedResource Include="MeteringEquipmentAccounts\Commands\MeteringEquipSaveCommand.js" />
+		<EmbeddedResource Include="MeteringEquipmentAccounts\Commands\SelMeterAccountProcessCommand.js" />
+		<EmbeddedResource Include="MeteringEquipmentAccounts\Commands\SelMeterAccountPhysicalUnionCommand.js" />
+		<EmbeddedResource Include="MeteringEquipmentAccounts\Commands\SelEquipAccountCalibrationCommand.js" />
+		<EmbeddedResource Include="MeteringEquipmentAccounts\Commands\SynMeteringModelCommand.js" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\SIE.EMS.MeteringEquipment\SIE.EMS.MeteringEquipment.csproj" />
+		<ProjectReference Include="..\SIE.Web.EMS.EquipRepair\SIE.Web.EMS.EquipRepair.csproj" />
+		<ProjectReference Include="..\SIE.Web.EMS\SIE.Web.EMS.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+	  <EmbeddedResource Include="Calibrations\Commands\ResetResultCommand.js" />
+	</ItemGroup>
+</Project>

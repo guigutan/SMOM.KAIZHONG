@@ -1,0 +1,520 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Wpf.CSM</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Wpf.CSM.EntityPropertyViewMetaExtension">
+            <summary>
+            实体属性视图元数据扩展
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.CSM.EntityPropertyViewMetaExtension.UseRegionalEditor``1(SIE.MetaModel.View.WPFEntityPropertyViewMeta{``0},System.Action{SIE.Wpf.CSM.Edtors.RegionalInfoEditorConfig})">
+            <summary>
+            使用区域信息编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Wpf.CSM.EntityPropertyViewMetaExtension.UseCustomerEditor``1(SIE.MetaModel.View.WPFEntityPropertyViewMeta{``0},System.Action{SIE.Wpf.CSM.Edtors.CustomerLookUpEditorConfig})">
+            <summary>
+            使用客户信息编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="T:SIE.Wpf.CSM.Customers.Commands.CustomerAddressDefaultCommand">
+            <summary>
+            客户地址默认按钮
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Customers.Commands.CustomerAddressDefaultCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            是否可执行
+            </summary>
+            <param name="view">逻辑视图对象</param>
+            <returns>返回是否可执行</returns>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Customers.Commands.CustomerAddressDefaultCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            设置默认逻辑
+            </summary>
+            <param name="view">逻辑视图对象</param>
+        </member>
+        <member name="T:SIE.Wpf.CSM.Customers.Commands.CustomerAddressDeleteCommand">
+            <summary>
+            删除命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Customers.Commands.CustomerAddressDeleteCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            是否可以执行
+            </summary>
+            <param name="view">视图</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Wpf.CSM.Customers.CustomerAddressViewConfig">
+            <summary>
+            客户地址视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Customers.CustomerAddressViewConfig.ConfigView">
+            <summary>
+            默认配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Customers.CustomerAddressViewConfig.ConfigListView">
+            <summary>
+            视图列表配置
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.CSM.Customers.CustomerViewConfig">
+            <summary>
+            客户视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.CSM.Customers.CustomerViewConfig.IsSupplierModifyProperty">
+            <summary>
+            供应商是否可编辑
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Customers.CustomerViewConfig.ConfigSelectionView">
+            <summary>
+            选择视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Customers.CustomerViewConfig.ConfigView">
+            <summary>
+            默认配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Customers.CustomerViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Customers.CustomerViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.CSM.Customers.ViewBehaviors.CustomerChangeBehavior">
+            <summary>
+            顾客变更行为
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.CSM.Customers.ViewBehaviors.CustomerChangeBehavior.isRun">
+            <summary>
+            是否正在更改
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.CSM.Customers.ViewBehaviors.CustomerChangeBehavior.Current">
+            <summary>
+            当前实体
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Customers.ViewBehaviors.CustomerChangeBehavior.OnAttach">
+            <summary>
+            附加
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Customers.ViewBehaviors.CustomerChangeBehavior.Customer_CurrentChanged(System.Object,System.EventArgs)">
+            <summary>
+            当前顾客对象变更
+            </summary>
+            <param name="sender">当前变更的视图对象</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Customers.ViewBehaviors.CustomerChangeBehavior.Customer_PropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            顾客属性变更
+            </summary>
+            <param name="sender">变更对象</param>
+            <param name="e">变更事件</param>
+        </member>
+        <member name="T:SIE.Wpf.CSM.Edtors.CustomerLookupEditor">
+            <summary>
+            客户编辑器
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.CSM.Edtors.CustomerLookupEditor.EditorName">
+            <summary>
+            编辑器名称
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Edtors.CustomerLookupEditor.GetDataSourceCore(SIE.Domain.Entity,SIE.PagingInfo,System.String,SIE.ManagedProperty.IManagedProperty)">
+            <summary>
+            重新数据源
+            </summary>
+            <param name="source">实体</param>
+            <param name="pagingInfo">分页</param>
+            <param name="keyword">搜索关键词</param>
+            <param name="titleProperty">IManagedProperty</param>
+            <returns>EntityList</returns>
+        </member>
+        <member name="T:SIE.Wpf.CSM.Edtors.CustomerLookUpEditorConfig">
+            <summary>
+            客户编辑器配置类
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.CSM.Edtors.CustomerLookUpEditorConfig.CustomerType">
+            <summary>
+            客户类型
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.CSM.Edtors.RegionalInfoEditor">
+            <summary>
+            区域信息编辑器
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.CSM.Edtors.RegionalInfoEditor.EditorName">
+            <summary>
+            区域信息编辑器名称
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.CSM.Edtors.RegionalInfoEditor.mulComboBoxEdit">
+            <summary>
+            下拉框
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Edtors.RegionalInfoEditor.BindingProperty">
+            <summary>
+            绑定属性
+            </summary>
+            <returns>依赖属性</returns>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Edtors.RegionalInfoEditor.CreateBinding">
+            <summary>
+            重写绑定更新方式
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Edtors.RegionalInfoEditor.CreateEditSettingsCore">
+            <summary>
+            创建编辑器设置
+            </summary>
+            <returns>编辑器设置</returns>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Edtors.RegionalInfoEditor.AssignToEdit(SIE.Wpf.Controls.MulComboBoxEdit)">
+            <summary>
+            生成编辑控件后，注入变更事件，此方法被调用后<see cref="T:SIE.Wpf.Controls.MulComboBoxEdit"/>属性才有值
+            </summary>
+            <param name="comboBox">MulComboBoxEdit对象</param>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Edtors.RegionalInfoEditor.MulComboBoxEdit_EditValueChanging(System.Object,DevExpress.Xpf.Editors.EditValueChangingEventArgs)">
+            <summary>
+            下拉框值变更触发
+            </summary>
+            <param name="sender">当前对象</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Edtors.RegionalInfoEditor.MulComboBoxEdit_DataContextChanged(System.Object,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            下拉框上下文变更
+            </summary>
+            <param name="sender">当前对象</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Edtors.RegionalInfoEditor.GetDataSourceCore(SIE.Domain.Entity)">
+            <summary>
+            下拉框获取数据源的核心方法
+            </summary>
+            <param name="source">实体源数据</param>
+            <returns>返回数据源列表</returns>
+        </member>
+        <member name="T:SIE.Wpf.CSM.Edtors.RegionalInfoEditor.ComboBoxEditorSettings">
+            <summary>
+            下拉框配置类
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.CSM.Edtors.RegionalInfoEditor.ComboBoxEditorSettings.AssignToEditAction">
+            <summary>
+            创建控件后触发
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Edtors.RegionalInfoEditor.ComboBoxEditorSettings.#cctor">
+            <summary>
+            静态初始化
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Edtors.RegionalInfoEditor.ComboBoxEditorSettings.AssignToEditCore(DevExpress.Xpf.Editors.IBaseEdit)">
+            <summary>
+            创建控件后触发
+            </summary>
+            <param name="edit">当前编辑器</param>
+        </member>
+        <member name="T:SIE.Wpf.CSM.Edtors.RegionalInfoEditorConfig">
+            <summary>
+            区域信息配置文件帮助类
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.CSM.Edtors.RegionalInfoEditorConfig.ReloadDataOnPopping">
+            <summary>
+            是否每次下拉时重新加载数据
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.CSM.Edtors.RegionalInfoEditorConfig.UpperLevelProperty">
+            <summary>
+            上一级对应托管属性
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.CSM.Edtors.RegionalInfoEditorConfig.UpperLevel2Property">
+            <summary>
+            上两级对应托管属性
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.CSM.Module">
+            <summary>
+            UI
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Module.Initialize(SIE.IApp)">
+            <summary>
+            程序
+            </summary>
+            <param name="app">app</param>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Module.App_ModuleOperations(System.Object,System.EventArgs)">
+            <summary>
+            配置菜单
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Module.AddNewPropertyEditor(SIE.IApp)">
+            <summary>
+            属性编辑器
+            </summary>
+            <param name="app">IApp</param>
+        </member>
+        <member name="T:SIE.Wpf.CSM.Suppliers.Commonds.AddressEnabledCommand">
+            <summary>
+            启用供应商地址
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Suppliers.Commonds.AddressEnabledCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            是否可执行
+            </summary>
+            <param name="view">视图</param>
+            <returns>返回结果</returns>
+        </member>
+        <member name="T:SIE.Wpf.CSM.Suppliers.Commonds.AddressDisEnabledCommand">
+            <summary>
+            禁用供应商地址
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Suppliers.Commonds.AddressDisEnabledCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            是否可执行
+            </summary>
+            <param name="view">视图</param>
+            <returns>返回结果</returns>
+        </member>
+        <member name="T:SIE.Wpf.CSM.Suppliers.Commonds.CopyCommand">
+            <summary>
+            供应商复制添加
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Suppliers.Commonds.CopyCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            是否可执行
+            </summary>
+            <param name="view">视图</param>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Suppliers.Commonds.CopyCommand.OnItemCreated(SIE.Domain.Entity)">
+            <summary>
+            实体创建后执行克隆操作
+            </summary>
+            <param name="entity">供应商</param>
+        </member>
+        <member name="T:SIE.Wpf.CSM.Suppliers.Commonds.PortalEnabledCommand">
+            <summary>
+            供应商启用门户
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Suppliers.Commonds.PortalEnabledCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            是否可执行
+            </summary>
+            <param name="view">视图</param>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Suppliers.Commonds.PortalEnabledCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            启用门户
+            </summary>
+            <param name="view">视图</param>
+        </member>
+        <member name="T:SIE.Wpf.CSM.Suppliers.Commonds.PortalDisEnabledCommand">
+            <summary>
+            供应商禁用门户
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Suppliers.Commonds.PortalDisEnabledCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            是否可执行
+            </summary>
+            <param name="view">视图</param>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Suppliers.Commonds.PortalDisEnabledCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            禁用门户
+            </summary>
+            <param name="view">视图</param>
+        </member>
+        <member name="T:SIE.Wpf.CSM.Suppliers.Commonds.SelectItemCommand">
+            <summary>
+            供应商选择物料关系
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Suppliers.Commonds.SelectItemCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            判断按钮是否可用
+            </summary>
+            <param name="view">视图</param>
+            <returns>返回值表示按钮是否可用</returns>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Suppliers.Commonds.SelectItemCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            点击按钮方法
+            </summary>
+            <param name="view">视图</param>
+        </member>
+        <member name="T:SIE.Wpf.CSM.Suppliers.Commonds.DetaisViewSelectUserCommand">
+            <summary>
+            供应商选择账户按钮
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Suppliers.Commonds.DetaisViewSelectUserCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            监听按钮是否可用
+            </summary>
+            <param name="view">视图</param>
+            <returns>返回值表示按钮是否可用</returns>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Suppliers.Commonds.DetaisViewSelectUserCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            点击按钮操作
+            </summary>
+            <param name="view">视图</param>
+        </member>
+        <member name="T:SIE.Wpf.CSM.Suppliers.Commonds.SupplierAddressDefaultCommand">
+            <summary>
+            供应商地址默认按钮
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Suppliers.Commonds.SupplierAddressDefaultCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            是否可执行
+            </summary>
+            <param name="view">逻辑视图对象</param>
+            <returns>返回是否可执行</returns>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Suppliers.Commonds.SupplierAddressDefaultCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            设置默认逻辑
+            </summary>
+            <param name="view">逻辑视图对象</param>
+        </member>
+        <member name="T:SIE.Wpf.CSM.Suppliers.Commonds.AddressCopyCommand">
+            <summary>
+            复制添加供应商地址
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Suppliers.Commonds.AddressCopyCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            是否可执行
+            </summary>
+            <param name="view">视图</param>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Suppliers.Commonds.AddressCopyCommand.OnItemCreated(SIE.Domain.Entity)">
+            <summary>
+            实体创建后执行克隆操作
+            </summary>
+            <param name="entity">供应商地址</param>
+        </member>
+        <member name="T:SIE.Wpf.CSM.Suppliers.SupplierAddressViewConfig">
+            <summary>
+            供应商地址视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Suppliers.SupplierAddressViewConfig.ConfigView">
+            <summary>
+            默认配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Suppliers.SupplierAddressViewConfig.ConfigListView">
+            <summary>
+            视图列表配置
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.CSM.Suppliers.SupplierItemViewConfig">
+            <summary>
+            供应商与物料关系视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Suppliers.SupplierItemViewConfig.ConfigView">
+            <summary>
+            默认配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Suppliers.SupplierItemViewConfig.ConfigListView">
+            <summary>
+            视图列表配置
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.CSM.Suppliers.SupplierUserViewConfig">
+            <summary>
+            供应商与用户关系视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Suppliers.SupplierUserViewConfig.ConfigView">
+            <summary>
+            默认配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Suppliers.SupplierUserViewConfig.ConfigListView">
+            <summary>
+            视图列表配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Suppliers.SupplierUserViewConfig.ConfigChildrenUser">
+            <summary>
+            供应商关联的用户视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.CSM.Suppliers.SupplierViewConfig">
+            <summary>
+            供应商视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Suppliers.SupplierViewConfig.ConfigView">
+            <summary>
+            默认配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Suppliers.SupplierViewConfig.ConfigListView">
+            <summary>
+            视图列表配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Suppliers.SupplierViewConfig.ConfigQueryView">
+            <summary>
+            查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.CSM.Suppliers.SupplierViewConfig.ConfigSelectionView">
+            <summary>
+            选择视图配置
+            </summary>
+        </member>
+    </members>
+</doc>

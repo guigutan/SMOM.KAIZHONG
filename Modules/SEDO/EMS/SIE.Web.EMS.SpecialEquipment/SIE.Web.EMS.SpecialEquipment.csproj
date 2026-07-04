@@ -1,0 +1,79 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup Label="Globals">
+		<SccProjectName>SAK</SccProjectName>
+		<SccProvider>SAK</SccProvider>
+		<SccAuxPath>SAK</SccAuxPath>
+		<SccLocalPath>SAK</SccLocalPath>
+	</PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<OutputPath>..\..\..\..\platform\smom\</OutputPath>
+		<DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.EMS.SpecialEquipment.xml</DocumentationFile>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<OutputPath>..\..\..\..\platform\smom\</OutputPath>
+		<DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.EMS.SpecialEquipment.xml</DocumentationFile>
+	</PropertyGroup>
+	<ItemGroup>
+	  <None Remove="Commands\SelEquipAccountInspectionCommand.js" />
+	  <None Remove="Commands\SelModelInspectionCommand.js" />
+	  <None Remove="Commands\SynSpecialModelCommand.js" />
+	  <None Remove="Common\Behaviors\ApprovalBehavior.js" />
+	  <None Remove="RegularInspections\Behaviors\ConfigWritDetailChangedBehavior.js" />
+	  <None Remove="RegularInspections\Behaviors\RegularInspectionBehavior.js" />
+	  <None Remove="RegularInspections\Behaviors\RegularInspectionClearBehavior.js" />
+	  <None Remove="RegularInspections\Behaviors\RegularInspectionDetailBehavior.js" />
+	  <None Remove="RegularInspections\Behaviors\RegularInspectionListBehavior.js" />
+	  <None Remove="RegularInspections\Commands\AddColumnCommand.js" />
+	  <None Remove="RegularInspections\Commands\AllPassCommand.js" />
+	  <None Remove="RegularInspections\Commands\AuditCommand.js" />
+	  <None Remove="RegularInspections\Commands\AuditRejectCommand.js" />
+	  <None Remove="RegularInspections\Commands\AuditSubmitCommand.js" />
+	  <None Remove="RegularInspections\Commands\DeleteColumnCommand.js" />
+	  <None Remove="RegularInspections\Commands\InputSaveCommand.js" />
+	  <None Remove="RegularInspections\Commands\InputSubmitCommand.js" />
+	  <None Remove="RegularInspections\Commands\ResetResultCommand.js" />
+	  <None Remove="RegularInspections\Commands\SaveRegularInspectionCommand.js" />
+	  <None Remove="RegularInspections\Commands\SelModelRegularInspectionCommand.js" />
+	  <None Remove="RegularInspections\Commands\ViewReportCommand.js" />
+	  <None Remove="RegularInspections\Commands\WritingReportCommand.js" />
+	  <None Remove="RegularInspections\Scripts\Enum.js" />
+	  <None Remove="RegularInspections\Scripts\RegularInsDtlController.js" />
+	</ItemGroup>
+	<ItemGroup>
+	  <AdditionalFiles Include="..\..\..\..\.sonarlint\sie.smom\CSharp\SonarLint.xml" Link="SonarLint.xml" />
+	</ItemGroup>
+	<ItemGroup>
+	  <EmbeddedResource Include="Commands\SelEquipAccountInspectionCommand.js" />
+	  <EmbeddedResource Include="Commands\SelModelInspectionCommand.js" />
+	  <EmbeddedResource Include="Commands\SynSpecialModelCommand.js" />
+	  <EmbeddedResource Include="Common\Behaviors\ApprovalBehavior.js" />
+	  <EmbeddedResource Include="RegularInspections\Behaviors\ConfigWritDetailChangedBehavior.js" />
+	  <EmbeddedResource Include="RegularInspections\Behaviors\RegularInspectionBehavior.js" />
+	  <EmbeddedResource Include="RegularInspections\Behaviors\RegularInspectionClearBehavior.js" />
+	  <EmbeddedResource Include="RegularInspections\Behaviors\RegularInspectionDetailBehavior.js" />
+	  <EmbeddedResource Include="RegularInspections\Behaviors\RegularInspectionListBehavior.js" />
+	  <EmbeddedResource Include="RegularInspections\Commands\AddColumnCommand.js" />
+	  <EmbeddedResource Include="RegularInspections\Commands\AllPassCommand.js" />
+	  <EmbeddedResource Include="RegularInspections\Commands\AuditCommand.js" />
+	  <EmbeddedResource Include="RegularInspections\Commands\AuditRejectCommand.js" />
+	  <EmbeddedResource Include="RegularInspections\Commands\AuditSubmitCommand.js" />
+	  <EmbeddedResource Include="RegularInspections\Commands\DeleteColumnCommand.js" />
+	  <EmbeddedResource Include="RegularInspections\Commands\InputSaveCommand.js" />
+	  <EmbeddedResource Include="RegularInspections\Commands\InputSubmitCommand.js" />
+	  <EmbeddedResource Include="RegularInspections\Commands\ResetResultCommand.js" />
+	  <EmbeddedResource Include="RegularInspections\Commands\SaveRegularInspectionCommand.js" />
+	  <EmbeddedResource Include="RegularInspections\Commands\SelModelRegularInspectionCommand.js" />
+	  <EmbeddedResource Include="RegularInspections\Commands\ViewReportCommand.js" />
+	  <EmbeddedResource Include="RegularInspections\Commands\WritingReportCommand.js" />
+	  <EmbeddedResource Include="RegularInspections\Scripts\Enum.js" />
+	  <EmbeddedResource Include="RegularInspections\Scripts\RegularInsDtlController.js" />
+	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\SIE.Web.EMS.EquipRepair\SIE.Web.EMS.EquipRepair.csproj" />
+	  <ProjectReference Include="..\SIE.Web.EMS\SIE.Web.EMS.csproj" />
+	</ItemGroup>
+</Project>

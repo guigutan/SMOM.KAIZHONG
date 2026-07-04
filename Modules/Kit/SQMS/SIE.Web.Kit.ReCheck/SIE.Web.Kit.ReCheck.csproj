@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.Kit.ReCheck.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.Kit.ReCheck.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="RecheckInspBills\Behaviors\RecheckInspBillReelIdBehavior.js" />
+    <None Remove="RecheckInspBills\Commands\ReelIDs\AddCommand.js" />
+    <None Remove="RecheckInspBills\Commands\ReelIDs\DeleteCommand.js" />
+    <None Remove="RecheckInspBills\Commands\ReelIDs\EditCommand.js" />
+    <None Remove="RecheckInspBills\Controls\ReelIDTextField.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RecheckInspBills\Behaviors\RecheckInspBillReelIdBehavior.js" />
+    <EmbeddedResource Include="RecheckInspBills\Commands\ReelIDs\AddCommand.js" />
+    <EmbeddedResource Include="RecheckInspBills\Commands\ReelIDs\DeleteCommand.js" />
+    <EmbeddedResource Include="RecheckInspBills\Commands\ReelIDs\EditCommand.js" />
+    <EmbeddedResource Include="RecheckInspBills\Controls\ReelIDTextField.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\SQMS\Recheck\SIE.Web.Recheck\SIE.Web.Recheck.csproj" />
+    <ProjectReference Include="..\SIE.Kit.ReCheck\SIE.Kit.ReCheck.csproj" />
+  </ItemGroup>
+</Project>

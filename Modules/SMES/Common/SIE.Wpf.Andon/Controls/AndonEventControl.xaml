@@ -1,0 +1,109 @@
+﻿<UserControl
+    x:Class="SIE.Wpf.Andon.Controls.AndonEventControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converter="clr-namespace:SIE.Wpf.Andon.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:local="clr-namespace:SIE.Wpf.Andon.Controls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:uic="http://schemas.siestudio.com/winfx/xaml/core"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    dx:ThemeManager.ThemeName="VS2017Light"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <Style x:Key="CustomButtonStyle" TargetType="Button">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="LightGray" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <SolidColorBrush x:Key="brush" Color="Silver" />
+    </UserControl.Resources>
+    <Grid>
+        <Grid.Resources>
+            <converter:AndonStateToColorConverter x:Key="AndonStateToColorConverter" />
+            <converter:AndonStateToBorderColorConverter x:Key="AndonStateToBorderColorConverter" />
+        </Grid.Resources>
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+            <Border BorderBrush="{StaticResource brush}" BorderThickness="1">
+                <ItemsControl Name="ctlAndonEvent" Height="85">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Button
+                                x:Name="btnAndonEvent"
+                                Margin="0,0,2,0"
+                                Background="{Binding State, Converter={StaticResource AndonStateToColorConverter}}"
+                                BorderBrush="{Binding State, Converter={StaticResource AndonStateToBorderColorConverter}}"
+                                Click="btnAndonEvent_Click"
+                                FontSize="12px"
+                                Foreground="White"
+                                Tag="{Binding Id}">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="60" />
+                                        <ColumnDefinition Width="126" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="25" />
+                                        <RowDefinition Height="25" />
+                                        <RowDefinition Height="25" />
+                                    </Grid.RowDefinitions>
+                                    <TextBlock
+                                        Grid.Column="0"
+                                        Grid.Row="0"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Text="{Binding [事件编码：], Source={uic:L10N}}" />
+                                    <TextBlock
+                                        Grid.Column="1"
+                                        Grid.Row="0"
+                                        HorizontalAlignment="Left"
+                                        VerticalAlignment="Center"
+                                        Text="{Binding AndonManageCode}" />
+
+                                    <!--<TextBlock
+                                        Grid.Row="1"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Text="{Binding [安灯名称：], Source={uic:L10N}}" />
+                                    <TextBlock
+                                        Grid.Row="1"
+                                        Grid.Column="1"
+                                        HorizontalAlignment="Left"
+                                        VerticalAlignment="Center"
+                                        Text="{Binding AndonName}" />-->
+                                    <TextBlock
+                                        Grid.Column="0"
+                                        Grid.Row="1"
+                                        Grid.ColumnSpan="2"
+                                        HorizontalAlignment="Left"
+                                        VerticalAlignment="Center"
+                                        Text="{Binding AndonEventControlShow}" />
+                                    <TextBlock
+                                        Grid.Row="2"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Text="{Binding [状　　态：], Source={uic:L10N}}" />
+                                    <TextBlock
+                                        Grid.Row="2"
+                                        Grid.Column="1"
+                                        HorizontalAlignment="Left"
+                                        VerticalAlignment="Center"
+                                        Text="{Binding StateDesc}" />
+                                </Grid>
+                            </Button>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel IsItemsHost="True" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+            </Border>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

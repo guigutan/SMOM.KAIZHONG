@@ -1,0 +1,81 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Templates\包装标签模板.siedev" />
+    <None Remove="Templates\条码标签模板.siedev" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\..\..\Common\Core\SIE.xUnit.Core\appsettings.json" Link="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\包装标签模板.siedev">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\条码标签模板.siedev">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.0" />
+    <PackageReference Include="coverlet.collector" Version="1.2.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\Core\SIE.Core\SIE.Core.csproj" />
+    <ProjectReference Include="..\..\..\Common\Core\SIE.xUnit.Core\SIE.xUnit.Core.csproj" />
+    <ProjectReference Include="..\..\..\Common\Items\SIE.xUnit.Items\SIE.xUnit.Items.csproj" />
+    <ProjectReference Include="..\..\..\Common\Packages\SIE.xUnit.Packages\SIE.xUnit.Packages.csproj" />
+    <ProjectReference Include="..\..\..\Common\Resources\SIE.xUnit.Resources\SIE.xUnit.Resources.csproj" />
+    <ProjectReference Include="..\..\..\Elec\Common\Core\SIE.Elec.Core\SIE.Elec.Core.csproj" />
+    <ProjectReference Include="..\..\..\Elec\SMES\SIE.Elec.MES\SIE.Elec.MES.csproj" />
+    <ProjectReference Include="..\..\Barcodes\SIE.xUnit.Barcodes\SIE.xUnit.Barcodes.csproj" />
+    <ProjectReference Include="..\..\DIST\SIE.xUnit.DIST\SIE.xUnit.DIST.csproj" />
+    <ProjectReference Include="..\..\..\Common\Techs\SIE.xUnit.Tech\SIE.xUnit.Tech.csproj" />
+    <ProjectReference Include="..\SIE.MES\SIE.MES.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="SIE">
+      <HintPath>..\..\..\..\platform\nest\netstandard2.0\SIE.dll</HintPath>
+    </Reference>
+    <Reference Include="SIE.Caches">
+      <HintPath>..\..\..\..\platform\nest\netstandard2.0\SIE.Caches.dll</HintPath>
+    </Reference>
+    <Reference Include="SIE.Common">
+      <HintPath>..\..\..\..\platform\nest\netstandard2.0\SIE.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SIE.Log4Net">
+      <HintPath>..\..\..\..\platform\nest\netstandard2.0\SIE.Log4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="SIE.Mda">
+      <HintPath>..\..\..\..\platform\nest\netstandard2.0\SIE.Mda.dll</HintPath>
+    </Reference>
+    <Reference Include="SIE.Messages">
+      <HintPath>..\..\..\..\platform\nest\netstandard2.0\SIE.Messages.dll</HintPath>
+    </Reference>
+    <Reference Include="SIE.ORM.MappingColumn">
+      <HintPath>..\..\..\..\platform\nest\netstandard2.0\SIE.ORM.MappingColumn.dll</HintPath>
+    </Reference>
+    <Reference Include="SIE.Rbac">
+      <HintPath>..\..\..\..\platform\nest\netstandard2.0\SIE.Rbac.dll</HintPath>
+    </Reference>
+    <Reference Include="SIE.SqlLogger">
+      <HintPath>..\..\..\..\platform\nest\netstandard2.0\SIE.SqlLogger.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>

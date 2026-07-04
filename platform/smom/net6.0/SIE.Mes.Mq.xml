@@ -1,0 +1,436 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Mes.Mq</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Mes.Mq.Edge.CollectDataDao">
+            <summary>
+            采集数据Dao类
+            </summary>
+        </member>
+        <member name="M:SIE.Mes.Mq.Edge.CollectDataDao.#ctor(SIE.Core.Common.IService.IRepositoryFactoryService)">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Mes.Mq.Edge.CollectDataDao.SaveCollectData(SIE.MES.WIP.Products.WipProductProcess,SIE.MES.WIP.Products.WipProductVersion,SIE.MES.WIP.Products.WipProduct)">
+            <summary>
+            保存采集数据到数据库
+            </summary>
+            <param name="pp"></param>
+            <param name="version"></param>
+            <param name="pd"></param>
+        </member>
+        <member name="M:SIE.Mes.Mq.Edge.CollectDataDao.GetWipProductVersion(System.String)">
+            <summary>
+            获取产品生产版本
+            </summary>
+            <param name="puid">产品ID</param>
+            <returns>产品生产版本</returns>
+        </member>
+        <member name="M:SIE.Mes.Mq.Edge.CollectDataDao.FindLastWipProductVersion(System.String,SIE.Core.Barcodes.BarcodeType)">
+            <summary>
+            查找最后一个产品版本
+            </summary>
+            <param name="barcode">采集条码</param>
+            <param name="barcodeType">采集类型</param>
+            <returns>生产产品版本</returns>
+        </member>
+        <member name="M:SIE.Mes.Mq.Edge.CollectDataDao.SaveWipProductVersion(SIE.MES.WIP.Products.WipProductVersion,SIE.MES.WIP.Products.WipProduct)">
+            <summary>
+            创建产品在制信息
+            </summary>
+            <param name="pv"></param>
+            <param name="pd"></param>
+        </member>
+        <member name="M:SIE.Mes.Mq.Edge.CollectDataDao.GetUserId(System.Double)">
+            <summary>
+            取员工的登录用户ID
+            </summary>
+            <param name="employeeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Mes.Mq.Edge.CollectDataDao.UpdateItemLabel(System.Decimal,System.String)">
+            <summary>
+            更新物料标签
+            </summary>
+            <param name="decreaseQty"></param>
+            <param name="label"></param>
+        </member>
+        <member name="M:SIE.Mes.Mq.Edge.CollectDataDao.UpdateWorkOrderState(System.Double,SIE.Core.WorkOrders.WorkOrderState)">
+            <summary>
+            更新工单状态
+            </summary>
+            <param name="woId">工单Id</param>
+            <param name="state">状态</param>
+        </member>
+        <member name="M:SIE.Mes.Mq.Edge.CollectDataDao.UpdateWorkOrderQty(System.Double,System.Decimal)">
+            <summary>
+            更新工单完工数
+            </summary>
+            <param name="woId">标签号</param>
+            <param name="qty">完工数量</param>
+        </member>
+        <member name="T:SIE.Mes.Mq.Edge.CollectDataService">
+            <summary>
+            采集服务
+            </summary>
+        </member>
+        <member name="M:SIE.Mes.Mq.Edge.CollectDataService.#ctor(SIE.Mes.Mq.Edge.ICollectDataDao,SIE.MES.Edge.IEdgeErrorMessageDao,SIE.MES.Edge.IEdgeWipDao,SIE.MES.Edge.LoadItemService)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="collectDataDao"></param>
+            <param name="errorMessageDao"></param>
+            <param name="wipDao"></param>
+            <param name="loadItemService"></param>
+        </member>
+        <member name="M:SIE.Mes.Mq.Edge.CollectDataService.CollectData(SIE.Mes.Mq.Edge.EdgeMessage)">
+            <summary>
+            采集数据处理
+            </summary>
+            <param name="em"></param>
+        </member>
+        <member name="M:SIE.Mes.Mq.Edge.CollectDataService.SaveErrorMessage(SIE.Mes.Mq.Edge.EdgeMessage,System.Exception)">
+            <summary>
+            保存异常消息
+            </summary>
+            <param name="em"></param>
+            <param name="ex"></param>
+        </member>
+        <member name="M:SIE.Mes.Mq.Edge.CollectDataService.SetKeyMaterials(SIE.MES.WIP.Products.WipProductProcess,SIE.MES.Edge.Models.EdgeCollectData)">
+            <summary>
+            维修后如换料则更新非当前工步的关键件
+            </summary>
+            <param name="wipProductProcess"></param>
+            <param name="data"></param>
+        </member>
+        <member name="M:SIE.Mes.Mq.Edge.CollectDataService.CreateWipProductProcess(SIE.MES.Edge.Models.EdgeCollectData,SIE.MES.WIP.Products.WipProductVersion)">
+            <summary>
+            记录采集记录
+            </summary>
+            <param name="data">采集数据</param>
+            <param name="version">生产产品版本</param>
+            <returns>生产采集记录</returns>
+        </member>
+        <member name="M:SIE.Mes.Mq.Edge.CollectDataService.ExecuteAfterMove(SIE.MES.Edge.Models.EdgeCollectData,SIE.MES.WIP.Products.WipProductProcess,SIE.MES.WIP.Products.WipProductVersion)">
+            <summary>
+            过站完成后触发
+            </summary>
+            <param name="data">采集数据</param>
+            <param name="wipProcess">生产产品采集记录</param>
+            <param name="version">生产产品版本</param>
+        </member>
+        <member name="M:SIE.Mes.Mq.Edge.CollectDataService.AddDefects(SIE.MES.WIP.Products.WipProductProcess,SIE.MES.Edge.Models.EdgeCollectData,SIE.MES.WIP.Products.WipProductVersion)">
+            <summary>
+            添加缺陷记录
+            </summary>
+            <param name="wipProductProcess"></param>
+            <param name="collectData"></param>
+            <param name="version"></param>
+        </member>
+        <member name="M:SIE.Mes.Mq.Edge.CollectDataService.AddInspectionItems(SIE.MES.WIP.Products.WipProductProcess,SIE.MES.Edge.Models.EdgeCollectData,SIE.MES.WIP.Products.WipProductVersion)">
+            <summary>
+            添加产品检验记录
+            </summary>
+            <param name="wipProductProcess"></param>
+            <param name="collectData"></param>
+            <param name="version"></param>
+        </member>
+        <member name="M:SIE.Mes.Mq.Edge.CollectDataService.CreateWipProductVersion(SIE.MES.WIP.Products.WipProduct,SIE.MES.Edge.Models.EdgeCollectData,SIE.MES.WIP.Products.WipProductVersion)">
+            <summary>
+            创建在制产品版本
+            </summary>
+            <param name="wipProduct">生产产品</param>
+            <param name="data">采集条码</param>
+            <param name="versionOfSource">来源运行时</param>
+            <returns>生产产品版本</returns>
+        </member>
+        <member name="M:SIE.Mes.Mq.Edge.CollectDataService.CreateWipProduct(SIE.MES.Edge.Models.EdgeCollectData)">
+            <summary>
+            创建在制产品
+            </summary>
+            <param name="product">运行时产品</param>
+            <returns>生产产品</returns>
+        </member>
+        <member name="M:SIE.Mes.Mq.Edge.CollectDataService.CreateProcessKeyItem(System.Collections.Generic.List{SIE.MES.Edge.Models.EdgeMaterial},SIE.MES.WIP.Products.WipProductProcess,SIE.MES.Edge.Models.EdgeCollectData)">
+            <summary>
+            创建关键物料数据
+            </summary>
+            <param name="materials"></param>
+            <param name="wipProductProcess"></param>
+            <param name="data"></param>
+        </member>
+        <member name="M:SIE.Mes.Mq.Edge.CollectDataService.CreatePackingRelation(SIE.MES.Edge.Models.EdgeCollectData)">
+            <summary>
+            创建包装记录
+            </summary>
+            <param name="data">采集数据</param>
+        </member>
+        <member name="M:SIE.Mes.Mq.Edge.CollectDataService.CreateTobeWarehouseNo(SIE.MES.Edge.Models.EdgeCollectData,SIE.MES.WorkOrders.WorkOrder)">
+            <summary>
+            生成待入库条码
+            </summary>
+            <param name="data"></param>
+            <param name="wo"></param>
+        </member>
+        <member name="T:SIE.Mes.Mq.Edge.CollectMaterialDao">
+            <summary>
+            物料采集Dao类
+            </summary>
+        </member>
+        <member name="T:SIE.Mes.Mq.Edge.CollectMaterialService">
+            <summary>
+            物料采集消息处理服务
+            </summary>
+        </member>
+        <member name="M:SIE.Mes.Mq.Edge.CollectMaterialService.#ctor(SIE.Mes.Mq.Edge.ICollectDataDao,SIE.Mes.Mq.Edge.ICollectMaterialDao,SIE.MES.Edge.IEdgeErrorMessageDao,SIE.MES.Edge.IEdgeWipDao)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="collectDataDao"></param>
+            <param name="materialDao"></param>
+            <param name="errorMessageDao"></param>
+            <param name="wipDao"></param>
+        </member>
+        <member name="M:SIE.Mes.Mq.Edge.CollectMaterialService.CollectData(SIE.Mes.Mq.Edge.EdgeMessage)">
+            <summary>
+            采集数据处理
+            </summary>
+            <param name="em"></param>
+        </member>
+        <member name="M:SIE.Mes.Mq.Edge.CollectMaterialService.SaveErrorMessage(SIE.Mes.Mq.Edge.EdgeMessage,System.Exception)">
+            <summary>
+            保存异常消息
+            </summary>
+            <param name="em"></param>
+            <param name="ex"></param>
+        </member>
+        <member name="T:SIE.Mes.Mq.Edge.EdgeMessage">
+            <summary>
+            消息定义
+            </summary>
+        </member>
+        <member name="P:SIE.Mes.Mq.Edge.EdgeMessage.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:SIE.Mes.Mq.Edge.EdgeMessage.Name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="P:SIE.Mes.Mq.Edge.EdgeMessage.Body">
+            <summary>
+            Body
+            </summary>
+        </member>
+        <member name="P:SIE.Mes.Mq.Edge.EdgeMessage.InvOrg">
+            <summary>
+            库存组织
+            </summary>
+        </member>
+        <member name="T:SIE.Mes.Mq.Edge.EdgeMessageController">
+            <summary>
+            边端消息控制器
+            </summary>
+        </member>
+        <member name="M:SIE.Mes.Mq.Edge.EdgeMessageController.ReSubmitErrorMessage(System.Double[])">
+            <summary>
+            重传失败消息
+            </summary>
+            <param name="msgIds">消息Ids</param>
+            <returns>成功条数</returns>
+        </member>
+        <member name="T:SIE.Mes.Mq.Edge.ICollectBaseService">
+            <summary>
+            采集处理基础接口
+            </summary>
+        </member>
+        <member name="M:SIE.Mes.Mq.Edge.ICollectBaseService.CollectData(SIE.Mes.Mq.Edge.EdgeMessage)">
+            <summary>
+            采集数据处理
+            </summary>
+            <param name="em">消息定义</param>
+        </member>
+        <member name="M:SIE.Mes.Mq.Edge.ICollectBaseService.SaveErrorMessage(SIE.Mes.Mq.Edge.EdgeMessage,System.Exception)">
+            <summary>
+            保存异常消息
+            </summary>
+            <param name="em"></param>
+            <param name="ex"></param>
+        </member>
+        <member name="T:SIE.Mes.Mq.Edge.ICollectDataDao">
+            <summary>
+            采集Dao接口
+            </summary>
+        </member>
+        <member name="M:SIE.Mes.Mq.Edge.ICollectDataDao.SaveCollectData(SIE.MES.WIP.Products.WipProductProcess,SIE.MES.WIP.Products.WipProductVersion,SIE.MES.WIP.Products.WipProduct)">
+            <summary>
+            保存采集数据到数据库
+            </summary>
+            <param name="pp"></param>
+            <param name="version"></param>
+            <param name="pd"></param>
+        </member>
+        <member name="M:SIE.Mes.Mq.Edge.ICollectDataDao.GetWipProductVersion(System.String)">
+            <summary>
+            获取产品生产版本
+            </summary>
+            <param name="puid">产品ID</param>
+            <returns>产品生产版本</returns>
+        </member>
+        <member name="M:SIE.Mes.Mq.Edge.ICollectDataDao.SaveWipProductVersion(SIE.MES.WIP.Products.WipProductVersion,SIE.MES.WIP.Products.WipProduct)">
+            <summary>
+            创建产品在制信息
+            </summary>
+            <param name="pv"></param>
+            <param name="pd"></param>
+        </member>
+        <member name="M:SIE.Mes.Mq.Edge.ICollectDataDao.GetUserId(System.Double)">
+            <summary>
+            取员工的登录用户ID
+            </summary>
+            <param name="employeeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Mes.Mq.Edge.ICollectDataDao.UpdateItemLabel(System.Decimal,System.String)">
+            <summary>
+            更新物料标签
+            </summary>
+            <param name="decreaseQty"></param>
+            <param name="label"></param>
+        </member>
+        <member name="M:SIE.Mes.Mq.Edge.ICollectDataDao.UpdateWorkOrderState(System.Double,SIE.Core.WorkOrders.WorkOrderState)">
+            <summary>
+            更新工单状态
+            </summary>
+            <param name="woId">工单Id</param>
+            <param name="state">状态</param>
+        </member>
+        <member name="M:SIE.Mes.Mq.Edge.ICollectDataDao.UpdateWorkOrderQty(System.Double,System.Decimal)">
+            <summary>
+            更新工单完工数
+            </summary>
+            <param name="woId">标签号</param>
+            <param name="qty">完工数量</param>
+        </member>
+        <member name="T:SIE.Mes.Mq.Edge.ICollectDataService">
+            <summary>
+            采集数据处理接口
+            </summary>
+        </member>
+        <member name="T:SIE.Mes.Mq.Edge.ICollectMaterialDao">
+            <summary>
+            物料采集Dao接口
+            </summary>
+        </member>
+        <member name="T:SIE.Mes.Mq.Edge.ICollectMaterialService">
+            <summary>
+            物料采集消息处理服务接口
+            </summary>
+        </member>
+        <member name="T:SIE.Mes.Mq.Listener.IEdgeBaseListener">
+            <summary>
+            消息侦听接口
+            </summary>
+        </member>
+        <member name="M:SIE.Mes.Mq.Listener.IEdgeBaseListener.Start">
+            <summary>
+            启动
+            </summary>
+        </member>
+        <member name="T:SIE.Mes.Mq.Listener.IMesEdgeListener">
+            <summary>
+            边缘消息接收接口
+            </summary>
+        </member>
+        <member name="T:SIE.Mes.Mq.Listener.MesEdgeListener">
+            <summary>
+            边缘消息
+            </summary>
+        </member>
+        <member name="F:SIE.Mes.Mq.Listener.MesEdgeListener.MAX_THREADS">
+            <summary>
+            消息处理线程
+            </summary>
+        </member>
+        <member name="F:SIE.Mes.Mq.Listener.MesEdgeListener.collectService">
+            <summary>
+            采集服务
+            </summary>
+        </member>
+        <member name="M:SIE.Mes.Mq.Listener.MesEdgeListener.#ctor(SIE.Mes.Mq.Edge.ICollectDataService)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="collectService"></param>
+        </member>
+        <member name="M:SIE.Mes.Mq.Listener.MesEdgeListener.Start">
+            <summary>
+            启动
+            </summary>
+        </member>
+        <member name="M:SIE.Mes.Mq.Listener.MesEdgeListener.RunCollectAsync">
+            <summary>
+            执行采集数据监听
+            </summary>
+        </member>
+        <member name="M:SIE.Mes.Mq.Listener.MesEdgeListener.Dispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="M:SIE.Mes.Mq.Listener.MesEdgeListener.Dispose(System.Boolean)">
+            <summary>
+            释放数据
+            </summary>
+        </member>
+        <member name="T:SIE.Mes.Mq.MesMqEntityRepository`1">
+            <summary>
+            指定仓库的数据提供者
+            </summary>
+            <typeparam name="T">实体仓库</typeparam> 
+        </member>
+        <member name="T:SIE.Mes.Mq.MesMqEntityDataProvider">
+            <summary>
+            MES MQ数据提供者
+            </summary>
+        </member>
+        <member name="F:SIE.Mes.Mq.MesMqEntityDataProvider.ConnectionStringName">
+            <summary>
+            数据库连接字符串的名称
+            </summary>
+        </member>
+        <member name="P:SIE.Mes.Mq.MesMqEntityDataProvider.ConnectionStringSettingName">
+            <summary>
+            数据库连接字符串的名称
+            </summary>
+        </member>
+        <member name="T:SIE.Mes.Mq.Module">
+            <summary>
+            模块配置
+            </summary>
+        </member>
+        <member name="M:SIE.Mes.Mq.Module.Initialize(SIE.IApp)">
+            <summary>
+            模块初始化
+            </summary>
+            <param name="app">应用程序</param>  
+        </member>
+        <member name="M:SIE.Mes.Mq.Module.App_StartupCompleted(System.Object,System.EventArgs)">
+            <summary>
+            程序启动完成事件
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Mes.Mq.Module.InitEventListener">
+            <summary>
+            初始化事件监听
+            </summary>
+        </member>
+    </members>
+</doc>

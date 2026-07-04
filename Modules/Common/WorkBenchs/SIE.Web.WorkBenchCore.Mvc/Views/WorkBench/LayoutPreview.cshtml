@@ -1,0 +1,67 @@
+﻿@{
+
+    ViewBag.Title = "布局预览".L10N();
+
+    Layout = "~/Views/Shared/_WorkBenchLayout.cshtml";
+
+}
+
+@section headjs{
+    <script type="text/javascript">
+        Ext.define('Sie.Workbench', {
+            extend: 'Ext.dashboard.Dashboard',
+            xtype: 'Workbench',
+            stateful: false,
+            draggable: false,
+            border: false,
+            scrollable:'y',
+            defaultType: 'dashboard-panel',
+            layout: 'responsivecolumn',
+            deserializeItems: function(serialized) {
+                var me = this,
+                    length = serialized.length,
+                    columns = [],
+                    columnWidths = me.columnWidths,
+                    maxColumns = me.getMaxColumns(),
+                    column, columnIndex, columnWidth, i, item, partConfig;
+                for (i = 0; i < length; ++i) {
+                    partConfig = serialized[i];
+
+                    item = me.createView(partConfig);
+                    columns.push(item);
+                }
+
+                return columns;
+            },
+            parts: {
+                moduleTmpl: {
+                    viewTemplate: {
+                        closable: false,
+                        draggable: false,
+                        title: '{title}'.t(),
+                        responsiveCls: '{responsiveCls}',
+                        items: [{
+                            xtype: '{xtype}',
+                        }]
+                    }
+                }
+            },
+           //布局存放参数
+            @Html.Raw(ViewBag.Content)
+        });
+
+
+        Ext.onReady(function () {
+
+            Ext.create('Ext.container.Viewport', {
+                layout: 'fit',
+                border: true,
+                items: { xtype: "Workbench" },
+                renderTo: Ext.getBody()
+            })
+        });
+
+
+    
+     </script>
+}

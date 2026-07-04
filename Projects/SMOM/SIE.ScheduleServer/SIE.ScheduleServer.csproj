@@ -1,0 +1,94 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..\..</DockerfileContext>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="appsettings.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\Common\SIE.ScheduleServer\Configuration.cs" Link="Configuration.cs" />
+    <Compile Include="..\..\..\Common\SIE.ScheduleServer\CustomBackgroundJobFactory.cs" Link="CustomBackgroundJobFactory.cs" />
+    <Compile Include="..\..\..\Common\SIE.ScheduleServer\HostApp.cs" Link="HostApp.cs" />
+    <Compile Include="..\..\..\Common\SIE.ScheduleServer\HostService.cs" Link="HostService.cs" />
+    <Compile Include="..\..\..\Common\SIE.ScheduleServer\Program.cs" Link="Program.cs" />
+    <Compile Include="..\..\..\Common\SIE.ScheduleServer\Startup.cs" Link="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\Common\SIE.ScheduleServer\log4net.config" Link="log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\Common\SIE.ScheduleServer\_运行.cmd" Link="_运行.cmd" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.1.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
+    <PackageReference Include="SIE.Alert.Job" Version="10.0.5" />
+    <PackageReference Include="SIE.AppSenders" Version="10.0.5" />
+    <PackageReference Include="SIE.Caches" Version="10.0.5" />
+    <PackageReference Include="SIE.DashBoard" Version="10.0.5" />
+    <PackageReference Include="SIE.Data.MySql" Version="10.0.5" />
+    <PackageReference Include="SIE.Data.PostgreSQL" Version="10.0.5" />
+    <PackageReference Include="SIE.Data.SqlServer" Version="10.0.5" />
+    <PackageReference Include="SIE.Data.VastData" Version="10.0.5" />
+    <PackageReference Include="SIE.DataSync" Version="10.0.5" />
+    <PackageReference Include="SIE.Diagnostics" Version="10.0.5" />
+    <PackageReference Include="SIE.Localization" Version="10.0.5" />
+    <PackageReference Include="SIE.Messages" Version="10.0.5" />
+	<PackageReference Include="SIE.MQ" Version="10.0.5" />
+    <PackageReference Include="SIE.ORM.MappingColumn" Version="10.0.5" />
+    <PackageReference Include="SIE.Print" Version="10.0.5" />
+    <PackageReference Include="SIE.ReportServerCore" Version="10.0.5" />
+    <PackageReference Include="SIE.Schedule" Version="10.0.5" />
+    <PackageReference Include="SIE.Script" Version="10.0.5" />
+    <PackageReference Include="SIE.Senders.WxWorkSender" Version="10.0.5" />
+    <PackageReference Include="Topshelf" Version="4.2.1" />
+    <PackageReference Include="Topshelf.Log4Net" Version="4.2.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Modules\Common\AbnormalInfo\SIE.AbnormalInfo.Job\SIE.AbnormalInfo.Job.csproj" />
+    <ProjectReference Include="..\..\..\Modules\Common\Core\SIE.Core.Job\SIE.Core.Job.csproj" />
+    <ProjectReference Include="..\..\..\Modules\Common\LES\SIE.LES.Job\SIE.LES.Job.csproj" />
+    <ProjectReference Include="..\..\..\Modules\ERPInterface\SIE.ERPInterface.Job\SIE.ERPInterface.Job.csproj" />
+    <ProjectReference Include="..\..\..\Modules\KaiZhong\SIE.KZ.Base\SIE.KZ.Base.csproj" />
+    <ProjectReference Include="..\..\..\Modules\KaiZhong\SIE.KZ.FactoryToGroup\SIE.KZ.FactoryToGroup.csproj" />
+    <ProjectReference Include="..\..\..\Modules\KaiZhong\SIE.KZ.Group\SIE.KZ.Group.csproj" />
+    <ProjectReference Include="..\..\..\Modules\SEDO\EMS\SIE.EMS.Job\SIE.EMS.Job.csproj" />
+    <ProjectReference Include="..\..\..\Modules\SMES\Common\SIE.Andon\SIE.Andon.csproj" />
+    <ProjectReference Include="..\..\..\Modules\SMES\DashBoards\SIE.MES.DashBoard\SIE.MES.DashBoard.csproj" />
+    <ProjectReference Include="..\..\..\Modules\SMES\Esop\SIE.ESop\SIE.ESop.csproj" />
+    <ProjectReference Include="..\..\..\Modules\SMES\MES\SIE.MES.Job\SIE.MES.Job.csproj" />
+    <ProjectReference Include="..\..\..\Modules\SMES\ProductIntfc\SIE.ProductInsp.Job\SIE.ProductInsp.Job.csproj" />
+    <ProjectReference Include="..\..\..\Modules\SMES\Reports\SIE.MES.Report\SIE.MES.Report.csproj" />
+    <ProjectReference Include="..\..\..\Modules\SMES\Tasks\SIE.MES.TaskManagement\SIE.MES.TaskManagement.csproj" />
+    <ProjectReference Include="..\..\..\Modules\SMES\Teams\SIE.MES.TeamManagement.Job\SIE.MES.TeamManagement.Job.csproj" />
+    <ProjectReference Include="..\..\..\Modules\SMES\Workbenchs\SIE.MES.Workbench\SIE.MES.Workbench.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Dockerfile">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="_运行.cmd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>

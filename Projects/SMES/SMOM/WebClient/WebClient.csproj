@@ -1,0 +1,185 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
+    <MvcRazorCompileOnPublish>false</MvcRazorCompileOnPublish>
+    <CodeAnalysisRuleSet></CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="logs\**" />
+    <Content Remove="logs\**" />
+    <EmbeddedResource Remove="logs\**" />
+    <None Remove="logs\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\..\Common\WebClient\Configuration.cs" Link="Configuration.cs" />
+    <Compile Include="..\..\..\..\Common\WebClient\HostService.cs" Link="HostService.cs" />
+    <Compile Include="..\..\..\..\Common\WebClient\Program.cs" Link="Program.cs" />
+    <Compile Include="..\..\..\..\Common\WebClient\Startup.cs" Link="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\Common\WebClient\log4net.config" Link="log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <AdditionalFiles Include="..\..\..\..\.sonarlint\sie.smom\CSharp\SonarLint.xml" Link="SonarLint.xml" />
+    <Content Include="..\..\..\..\Common\WebClient\wwwroot\Bartender\SIEBartenderPrint.exe" Link="wwwroot\Bartender\SIEBartenderPrint.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="..\..\..\..\Common\WebClient\wwwroot\Templates\产品机型导入模板.xlsx" Link="wwwroot\Templates\产品机型导入模板.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\..\Common\WebClient\wwwroot\Templates\分类检验标准导入模板.xlsx" Link="wwwroot\Templates\分类检验标准导入模板.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\..\Common\WebClient\wwwroot\Templates\单体条码导入模板.xls" Link="wwwroot\Templates\单体条码导入模板.xls">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\..\Common\WebClient\wwwroot\Templates\工单条码导入模板.xls" Link="wwwroot\Templates\工单条码导入模板.xls">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\..\Common\WebClient\wwwroot\Templates\工艺路线导入模板.xlsx" Link="wwwroot\Templates\工艺路线导入模板.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\..\Common\WebClient\wwwroot\Templates\手工录入数据导入模板(计数型).xlsx" />
+    <None Include="..\..\..\..\Common\WebClient\wwwroot\Templates\手工录入数据导入模板(计量型).xlsx" />
+    <None Include="..\..\..\..\Common\WebClient\wwwroot\Templates\抽样方案导入模板.xlsx" Link="wwwroot\Templates\抽样方案导入模板.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\..\Common\WebClient\wwwroot\Templates\机型技能导入模板.xlsx" Link="wwwroot\Templates\机型技能导入模板.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\..\Common\WebClient\wwwroot\Templates\物料标签导入模板.xlsx" Link="wwwroot\Templates\物料标签导入模板.xlsx" />
+    <None Include="..\..\..\..\Common\WebClient\wwwroot\Templates\红牌ReelID导入模板.xlsx" Link="wwwroot\Templates\红牌ReelID导入模板.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\..\Common\WebClient\wwwroot\Templates\经验库导入模板.xlsx" Link="wwwroot\Templates\经验库导入模板.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Protocols.NewtonsoftJson" Version="3.1.5" />
+    <PackageReference Include="Senparc.CO2NET" Version="3.1.3" />
+    <PackageReference Include="Senparc.Weixin" Version="6.22.0" />
+    <PackageReference Include="SIE.Alert.Job" Version="10.0.5" />
+    <PackageReference Include="SIE.Data.MySql" Version="10.0.1" />
+    <PackageReference Include="SIE.Data.VastData" Version="10.0.5" />
+    <PackageReference Include="SIE.Messages" Version="10.0.5" />
+    <PackageReference Include="SIE.ORM.MappingColumn" Version="10.0.5" />
+    <PackageReference Include="SIE.Queue" Version="10.0.5" />
+    <PackageReference Include="SIE.Script" Version="10.0.5" />
+    <PackageReference Include="SIE.Session.Redis" Version="10.0.5" />
+    <PackageReference Include="SIE.SimpleListReport" Version="10.0.5" />
+    <PackageReference Include="SIE.Web.Alert" Version="10.0.5" />
+    <PackageReference Include="SIE.Web.DashBoard" Version="10.0.5" />
+    <PackageReference Include="SIE.Web.Diagnostics" Version="10.0.5" />
+    <PackageReference Include="SIE.Web.Localization" Version="10.0.5" />
+    <PackageReference Include="SIE.Web.Mda" Version="10.0.5" />
+    <PackageReference Include="SIE.Web.Print" Version="10.0.5" />
+    <PackageReference Include="SIE.Web.RBAC" Version="10.0.5" />
+    <PackageReference Include="SIE.Web.ReportServerCore" Version="10.0.5" />
+    <PackageReference Include="SIE.Web.ReportServerCore.Mvc" Version="10.0.5" />
+    <PackageReference Include="SIE.Web.Schedule" Version="10.0.5" />
+    <PackageReference Include="SIE.Web.Senders" Version="10.0.5" />
+    <PackageReference Include="SuperSocket.ClientEngine" Version="0.10.0" />
+    <PackageReference Include="SuperSocket.ProtoBase" Version="1.7.0.17" />
+    <PackageReference Include="System.Reflection.Emit" Version="4.7.0" />
+    <PackageReference Include="Topshelf" Version="4.2.1" />
+    <PackageReference Include="Topshelf.Log4Net" Version="4.2.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="appsettings.Development.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="..\..\..\..\Common\WebClient\wwwroot\Templates\手工录入数据导入模板%28计数型%29.xlsx" Link="wwwroot\Templates\手工录入数据导入模板%28计数型%29.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="..\..\..\..\Common\WebClient\wwwroot\Templates\手工录入数据导入模板%28计量型%29.xlsx" Link="wwwroot\Templates\手工录入数据导入模板%28计量型%29.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Dockerfile">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="_运行.cmd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\Templates\" />
+    <Folder Include="wwwroot\Bartender\" />
+    <Folder Include="wwwroot\Bartender\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Modules\Common\Core\SIE.Core\SIE.Core.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Core\SIE.Web.Core\SIE.Web.Core.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\CSM\SIE.CSM\SIE.CSM.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\CSM\SIE.Web.CSM\SIE.Web.CSM.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Defects\SIE.Defects\SIE.Defects.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Defects\SIE.Web.Defects\SIE.Web.Defects.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Equipments\SIE.Equipments\SIE.Equipments.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Equipments\SIE.Web.Equipments\SIE.Web.Equipments.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\FMS\SIE.Web.FMS\SIE.Web.FMS.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Items\SIE.Items\SIE.Items.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Items\SIE.Web.Items\SIE.Web.Items.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\LES\SIE.Web.LES\SIE.Web.LES.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Messages\SIE.EventMessages\SIE.EventMessages.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Packages\SIE.Packages\SIE.Packages.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Packages\SIE.Web.Packages\SIE.Web.Packages.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Resources\SIE.Resources\SIE.Resources.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Resources\SIE.Web.Resources\SIE.Web.Resources.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\ShipPlans\SIE.Web.ShipPlan\SIE.Web.ShipPlan.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Techs\SIE.Web.Tech.Common\SIE.Web.Tech.Common.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Warehouses\SIE.Warehouses\SIE.Warehouses.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Warehouses\SIE.Web.Warehouses\SIE.Web.Warehouses.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\WorkBenchs\SIE.WorkBenchChartBase\SIE.WorkBenchChartBase.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\WorkBenchs\SIE.WorkBenchCommon\SIE.WorkBenchCommon.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\Barcodes\SIE.Barcodes\SIE.Barcodes.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\Barcodes\SIE.Web.Barcodes\SIE.Web.Barcodes.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\Common\SIE.MES.Common\SIE.MES.Common.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\Common\SIE.Web.Andon\SIE.Web.Andon.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\Common\SIE.Web.MES.Common\SIE.Web.MES.Common.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\DashBoards\SIE.MES.DashBoard\SIE.MES.DashBoard.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\DashBoards\SIE.Web.MES.DashBoard\SIE.Web.MES.DashBoard.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\DIST\SIE.DIST\SIE.DIST.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\DIST\SIE.Web.DIST\SIE.Web.DIST.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\Esop\SIE.ESop.DocumentTransform\SIE.ESop.DocumentTransform.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\Esop\SIE.ESop.MainService\SIE.ESop.MainService.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\Esop\SIE.ESop\SIE.ESop.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\Esop\SIE.Web.ESop\SIE.Web.ESop.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\MES\SIE.MES.Statistics\SIE.MES.Statistics.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\MES\SIE.MES\SIE.MES.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\MES\SIE.Web.MES\SIE.Web.MES.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\ProductIntfc\SIE.ProductIntfc\SIE.ProductIntfc.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\ProductIntfc\SIE.Web.ProductIntfc\SIE.Web.ProductIntfc.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\Reports\SIE.MES.Report\SIE.MES.Report.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\Reports\SIE.Web.MES.Report\SIE.Web.MES.Report.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\Tasks\SIE.MES.TaskManagement\SIE.MES.TaskManagement.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\Tasks\SIE.Web.MES.TaskManagement\SIE.Web.MES.TaskManagement.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\Teams\SIE.MES.TeamManagement\SIE.MES.TeamManagement.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\Teams\SIE.Web.MES.TeamManagement\SIE.Web.MES.TeamManagement.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Techs\SIE.Tech\SIE.Tech.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Techs\SIE.Web.Tech\SIE.Web.Tech.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SMES\Workbenchs\SIE.MES.Workbench\SIE.MES.Workbench.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties appsettings_1json__JSONSchema="" appsettings_1Development_1json__JSONSchema="" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

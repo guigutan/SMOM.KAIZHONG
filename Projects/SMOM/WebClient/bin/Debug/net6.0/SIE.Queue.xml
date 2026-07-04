@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Queue</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Queue.RabbitMqQueueAdapter">
+            <summary>
+            基于主题的事件队列适配器实现
+            </summary>
+            <seealso cref="T:SIE.Common.Queues.EventQueueAdapter" />
+        </member>
+        <member name="F:SIE.Queue.RabbitMqQueueAdapter._buses">
+            <summary>
+            缓存已经创建的连接
+            </summary>
+        </member>
+        <member name="F:SIE.Queue.RabbitMqQueueAdapter._cacheCount">
+            <summary>
+            缓存数量
+            </summary>
+        </member>
+        <member name="F:SIE.Queue.RabbitMqQueueAdapter.myRabbitMQConnectionString">
+            <summary>
+            RabbitMQ连接字符串
+            </summary>
+        </member>
+        <member name="M:SIE.Queue.RabbitMqQueueAdapter.#ctor(System.Int32)">
+            <summary>
+            构造器
+            </summary>
+            <param name="cacheCount">缓存的IBus数量</param>
+        </member>
+        <member name="M:SIE.Queue.RabbitMqQueueAdapter.Publish``1(System.String,System.String,``0)">
+            <summary>
+            发布
+            </summary>
+            <typeparam name="T">队列类型，对于标记了TTLMessageAttribute特性的类设置过期时间</typeparam>
+            <param name="topic"></param>
+            <param name="tag"></param>
+            <param name="data"></param>
+        </member>
+        <member name="M:SIE.Queue.RabbitMqQueueAdapter.Subscribe``1(System.String,System.String,System.Action{``0},System.String)">
+            <summary>
+            订阅
+            </summary>
+            <typeparam name="T">队列类型，对于标记了TTLMessageAttribute特性的类设置过期时间</typeparam>
+            <param name="topic">主题</param>
+            <param name="tag"></param>
+            <param name="handler">事件处理委托</param>
+            <param name="group"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Queue.RemotingEventBus">
+            <summary>
+            MQ消息总线
+            </summary>
+        </member>
+        <member name="M:SIE.Queue.RemotingEventBus.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Queue.RemotingEventBus.PublishAsync``1(``0)">
+            <summary>
+            异步发送
+            </summary>
+            <typeparam name="TEvent"></typeparam>
+            <param name="eventModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Queue.RemotingEventBus.SubscribeAsync``1(System.Object,System.Action{``0})">
+            <summary>
+            异步订阅
+            </summary>
+            <typeparam name="TEvent"></typeparam>
+            <param name="owner"></param>
+            <param name="handler"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Queue.RemotingEventBus.Publish``1(``0)">
+            <summary>
+            发送
+            </summary>
+            <typeparam name="TEvent"></typeparam>
+            <param name="eventModel"></param>
+        </member>
+        <member name="M:SIE.Queue.RemotingEventBus.AutoExchangeCreate``1(EasyNetQ.IAdvancedBus)">
+            <summary>
+            自动建立类型消息的交换器
+            </summary>
+            <typeparam name="TEvent">消息类型</typeparam>
+            <param name="bus">The bus.</param>
+            <returns>IExchange.</returns>
+        </member>
+        <member name="M:SIE.Queue.RemotingEventBus.AutoQueueCreate``1(EasyNetQ.IAdvancedBus)">
+            <summary>
+            自动建立类型消息的队列（处理好RabbitMQ的交互与队列绑定）
+            </summary>
+            <typeparam name="TEvent">消息类型</typeparam>
+            <param name="bus">The bus.</param>
+            <returns>IQueue.</returns>
+        </member>
+        <member name="M:SIE.Queue.RemotingEventBus.Subscribe``1(System.Object,System.Action{``0})">
+            <summary>
+            订阅
+            </summary>
+            <typeparam name="TEvent"></typeparam>
+            <param name="owner"></param>
+            <param name="handler"></param>
+        </member>
+    </members>
+</doc>

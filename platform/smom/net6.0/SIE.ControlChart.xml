@@ -1,0 +1,2566 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.ControlChart</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.ControlChart.ChartDatas.IChartCalConstInitializer">
+            <summary>
+            控制图参数初始化
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.IChartCalConstInitializer.Initialize">
+            <summary>
+            初始化
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.ControlChart.ChartDatas.ChartCalConstInitializer">
+            <summary>
+            接口的默认实现
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.ChartCalConstInitializer.Initialize">
+            <summary>
+            默认实现
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:SIE.ControlChart.ChartDatas.SpcCCharts.CCharts">
+            <summary>
+            缺陷数控制图
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcCCharts.CCharts.#ctor">
+            <summary>
+            缺陷数控制图构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcCCharts.CCharts.GetDrawData">
+            <summary>
+            绘制
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcCCharts.CCharts.DrawCChart">
+            <summary>
+            绘制均值图表
+            </summary>
+        </member>
+        <member name="T:SIE.ControlChart.ChartDatas.SpcCCharts.CData">
+            <summary>
+            C图数据处理
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcCCharts.CData.Calculate">
+            <summary>
+            C图计算
+            </summary>
+        </member>
+        <member name="T:SIE.ControlChart.ChartDatas.SpcChartBase">
+            <summary>
+            控制图抽象类
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcChartBase.ChartConst">
+            <summary>
+            控制图参数
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcChartBase.GetDrawData">
+            <summary>
+             获取绘图需要的数据
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcChartBase.Type">
+            <summary>
+            控制图类型
+            </summary>
+        </member>
+        <member name="F:SIE.ControlChart.ChartDatas.SpcChartBase.StableControlLine">
+            <summary>
+            稳定控制线
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcChartBase.ChartMaximum">
+            <summary>
+            chart横轴最大显示数
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcChartBase.MouseLocal">
+            <summary>
+            鼠标滚动事件中，当前拾取的位置
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcChartBase.XAreaStartLocal">
+            <summary>
+            横轴的开始位置
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcChartBase.RullWarnings">
+            <summary>
+            判异规则提示信息汇总
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcChartBase.RullWarningInfos">
+            <summary>
+            判异规则提示信息
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcChartBase.IsStableControlLine">
+            <summary>
+            稳定控制限
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcChartBase.StableValue">
+            <summary>
+            稳定控制限-子组数
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcChartBase.PointIndex">
+            <summary>
+            控制图运行计算定位
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcChartBase.NoWarnPointSize">
+            <summary>
+            统计目前连续没有异常点数
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcChartBase.SetDefineControlLineByCustomStdDeviation(System.Double,System.Double,System.Int32)">
+            <summary>
+            自定义均值
+            </summary>
+            <param name="meanValue"></param>
+            <param name="standardDeviation"></param>
+            <param name="subGroupSize"></param>
+        </member>
+        <member name="T:SIE.ControlChart.ChartDatas.SpcIMRCharts.ImrCharts">
+            <summary>
+            I-MR图
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcIMRCharts.ImrCharts.IsRta">
+            <summary>
+            是否实时监控
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcIMRCharts.ImrCharts.RtaItemName">
+            <summary>
+            实时监控项目名称
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcIMRCharts.ImrCharts.ShowMRChart">
+            <summary>
+            是否显示移动极差图
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcIMRCharts.ImrCharts.ShowCa">
+            <summary>
+            是否显示CA指数
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcIMRCharts.ImrCharts.#ctor">
+            <summary>
+            I-MR图构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcIMRCharts.ImrCharts.GetDrawData">
+            <summary>
+            获取绘图需要的数据
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcIMRCharts.ImrCharts.GetDrawXChartInfo">
+            <summary>
+            绘制均值图表
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcIMRCharts.ImrCharts.SetRullsParams">
+            <summary>
+            设置规则警示参数
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcIMRCharts.ImrCharts.SetDefineControlLineByCustomStdDeviation(System.Double,System.Double,System.Int32)">
+            <summary>
+            自定义均值、标准差 设置控制限
+            </summary>
+        </member>
+        <member name="T:SIE.ControlChart.ChartDatas.SpcIMRCharts.ImrData">
+            <summary>
+            I-MR图数据处理
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcIMRCharts.ImrData.Calculate">
+            <summary>
+            I-MR图计算
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcIMRCharts.ImrData.CalculateControlLine">
+            <summary>
+            计算控制限
+            </summary>
+        </member>
+        <member name="T:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcNgCharts">
+            <summary>
+            缺陷类型控制图基类
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcNgCharts.#ctor">
+            <summary>
+            缺陷类型控制图基类
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcNgCharts.ChartsData">
+            <summary>
+            控制图数据
+            </summary>
+        </member>
+        <member name="F:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcNgCharts.ShowAreaLineForRule">
+            <summary>
+            因规则显示ABC区
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcNgCharts.Rulls">
+            <summary>
+            判异常规则
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcNgCharts.DefineControlLine">
+            <summary>
+            自定义控制线
+            </summary>
+        </member>
+        <member name="F:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcNgCharts._Digits">
+            <summary>
+            数据计算精确度 
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcNgCharts.Digits">
+            <summary>
+            数据计算精确度 
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcNgCharts.SubGroupSize">
+            <summary>
+            子组容量
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcNgCharts.AutoGroupName">
+            <summary>
+            是否自动显示分组名称（1，2，3，4，5...)
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcNgCharts.AllSampleDatas">
+            <summary>
+            样本组数据
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcNgCharts.SampleDatas">
+            <summary>
+            子组数量样本组数据
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcNgCharts.ShowSampleTimeInDataInfo">
+            <summary>
+            是否在图表浮动信息中显示抽样时间
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcNgCharts.SubGroupCount">
+            <summary>
+            子组数量
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcNgCharts.Title">
+            <summary>
+            控制图标题
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcNgCharts.GetDrawData">
+            <summary>
+            获取绘制控制图数据
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcNgCharts.SetRullsParams">
+            <summary>
+            设置规则警示参数
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcNgCharts.GetNgSampleDatasBySubGroupCount">
+            <summary>
+            获取chart显示的数据
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcNgCharts.doUpChartNoWarnning">
+            <summary>
+            一个完整样本组数无预警（上控制图）
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcNgCharts.UpChartNoWarnning(System.Object,System.EventArgs)">
+            <summary>
+            稳定控制线
+            </summary>
+            <param name="o"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcNgCharts.SetDefineControlLineByCustomStdDeviation(System.Double,System.Double,System.Int32)">
+            <summary>
+            自定义均值、标准差 设置控制限
+            </summary>
+        </member>
+        <member name="T:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcSampleGroupCharts">
+            <summary>
+            样本组类型控制图基类
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcSampleGroupCharts.Chart2Title">
+            <summary>
+            下图标题
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcSampleGroupCharts.Chart1Title">
+            <summary>
+            上图标题
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcSampleGroupCharts.ChartsData">
+            <summary>
+            控制图数据
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcSampleGroupCharts.CpkHigh">
+            <summary>
+            高阈值
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcSampleGroupCharts.CpkMid">
+            <summary>
+            中阈值
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcSampleGroupCharts.Lsl">
+            <summary>
+            目标下限
+            </summary> 
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcSampleGroupCharts.Usl">
+            <summary>
+            目标上限
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcSampleGroupCharts.LabelRotate">
+            <summary>
+            x轴文本倾斜度
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcSampleGroupCharts.CpkLow">
+            <summary>
+            低阈值
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcSampleGroupCharts.IsdisplayCpk">
+            <summary>
+            是否显示CPK等级
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcSampleGroupCharts.ShowSampleTimeInDataInfo">
+            <summary>
+            是否在图表浮动信息中显示抽样时间
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcSampleGroupCharts.SampleTimeFormat">
+            <summary>
+            抽样时间显示格式
+            </summary>
+        </member>
+        <member name="F:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcSampleGroupCharts._Digits">
+            <summary>
+            数据计算精确度 
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcSampleGroupCharts.Digits">
+            <summary>
+            数据计算精确度
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcSampleGroupCharts.ShowIndex">
+            <summary>
+            是否显示CPK（默认显示）
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcSampleGroupCharts.ShowSlLine">
+            <summary>
+            是否绘制规格线
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcSampleGroupCharts.SubGroupSize">
+            <summary>
+            子组容量
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcSampleGroupCharts.SubGroupCount">
+            <summary>
+            子组数量
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcSampleGroupCharts.AllSampleGroupDatas">
+            <summary>
+            所有样本组数据
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcSampleGroupCharts.SampleGroupDatas">
+            <summary>
+            子组数量样本组数据
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcSampleGroupCharts.SelectEnabled">
+            <summary>
+            是否可以选择数据（提供选择框，会触发SelectedData事件）
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcSampleGroupCharts.Rulls">
+            <summary>
+            判异常规则
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcSampleGroupCharts.StdEstimateMode">
+            <summary>
+            标准差估值方式
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcSampleGroupCharts.DefineUpChartControlLine">
+            <summary>
+            自定义上图控制线
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcSampleGroupCharts.DefineDownChartControlLine">
+            <summary>
+            自定义下图控制线
+            </summary>
+        </member>
+        <member name="F:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcSampleGroupCharts.ShowAreaLineForRule">
+            <summary>
+            因规则显示ABC区
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcSampleGroupCharts.AutoGroupName">
+            <summary>
+            是否自动显示分组名称（1，2，3，4，5...)
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcSampleGroupCharts.GetDrawData">
+            <summary>
+            获取绘图需要的数据
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcSampleGroupCharts.GetRealDigits">
+            <summary>
+            获取数据计算精确度
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcSampleGroupCharts.SetRullsParams">
+            <summary>
+            设置规则警示参数
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcSampleGroupCharts.doUpChartNoWarnning">
+            <summary>
+            一个完整样本组数无预警（上控制图）
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcSampleGroupCharts.UpChartNoWarnning(System.Object,System.EventArgs)">
+            <summary>
+            稳定控制线
+            </summary>
+            <param name="o"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcSampleGroupCharts.GetSampleGroupDatasBySubGroupCount">
+            <summary>
+            获取chart显示的数据
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcLineCharts.SpcSampleGroupCharts.SetDefineControlLineByCustomStdDeviation(System.Double,System.Double,System.Int32)">
+            <summary>
+            自定义均值、标准差 设置控制限
+            </summary>
+        </member>
+        <member name="T:SIE.ControlChart.ChartDatas.SpcMRCharts.MRCharts">
+            <summary>
+            中值极差控制图
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcMRCharts.MRCharts.IsRta">
+            <summary>
+            是否实时监控
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcMRCharts.MRCharts.RtaItemName">
+            <summary>
+            实时监控项目名称
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcMRCharts.MRCharts.ShowRChart">
+            <summary>
+            是否显示极差图
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcMRCharts.MRCharts.#ctor">
+            <summary>
+            中值极差图构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcMRCharts.MRCharts.GetDrawData">
+            <summary>
+            获取绘图数据
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcMRCharts.MRCharts.GetDrawXChartInfo">
+            <summary>
+            获取绘制X图信息
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcMRCharts.MRCharts.SetDefineControlLineByCustomStdDeviation(System.Double,System.Double,System.Int32)">
+            <summary>
+            自定义均值、标准差 设置控制限
+            </summary>
+        </member>
+        <member name="T:SIE.ControlChart.ChartDatas.SpcMRCharts.MRData">
+            <summary>
+            中值数据处理
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcMRCharts.MRData.Calculate">
+            <summary>
+            中值计算
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcMRCharts.MRData.CalculateControlLine">
+            <summary>
+            计算控制限
+            </summary>
+        </member>
+        <member name="T:SIE.ControlChart.ChartDatas.SpcNormalDistributionCharts.SpcNormalDistributionCharts">
+            <summary>
+            正态分布图
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcNormalDistributionCharts.SpcNormalDistributionCharts._Digits">
+            <summary>
+            数据计算精确度 
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcNormalDistributionCharts.SpcNormalDistributionCharts.Digits">
+            <summary>
+            数据计算精确度
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcNormalDistributionCharts.SpcNormalDistributionCharts.ShowIndex">
+            <summary>
+            显示CPK等指数
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcNormalDistributionCharts.SpcNormalDistributionCharts.Datas">
+            <summary>
+            样本数据
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcNormalDistributionCharts.SpcNormalDistributionCharts.SubGroupSize">
+            <summary>
+            样本大小
+            </summary>
+        </member>
+        <member name="F:SIE.ControlChart.ChartDatas.SpcNormalDistributionCharts.SpcNormalDistributionCharts.Groups">
+            <summary>
+            样本组
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcNormalDistributionCharts.SpcNormalDistributionCharts.Usl">
+            <summary>
+            目标上限
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcNormalDistributionCharts.SpcNormalDistributionCharts.Lsl">
+            <summary>
+            目标下限
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcNormalDistributionCharts.SpcNormalDistributionCharts.StdDev">
+            <summary>
+            整体标准差
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcNormalDistributionCharts.SpcNormalDistributionCharts.GroupStdDev">
+            <summary>
+            组内标准差
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcNormalDistributionCharts.SpcNormalDistributionCharts.Cp">
+            <summary>
+            CP
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcNormalDistributionCharts.SpcNormalDistributionCharts.Cpu">
+            <summary>
+            CP
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcNormalDistributionCharts.SpcNormalDistributionCharts.Cpl">
+            <summary>
+            CPU
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcNormalDistributionCharts.SpcNormalDistributionCharts.Cpk">
+            <summary>
+            CPL
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcNormalDistributionCharts.SpcNormalDistributionCharts.Pp">
+            <summary>
+            CPK
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcNormalDistributionCharts.SpcNormalDistributionCharts.Ppu">
+            <summary>
+            PP
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcNormalDistributionCharts.SpcNormalDistributionCharts.Ppl">
+            <summary>
+            PPU
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcNormalDistributionCharts.SpcNormalDistributionCharts.Ppk">
+            <summary>
+            PPL
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcNormalDistributionCharts.SpcNormalDistributionCharts.Ppm">
+            <summary>
+            PPM
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcNormalDistributionCharts.SpcNormalDistributionCharts.Title">
+            <summary>
+            平均值
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcNormalDistributionCharts.SpcNormalDistributionCharts.ShowPercent">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcNormalDistributionCharts.SpcNormalDistributionCharts.ShowTitle">
+            <summary>
+            显示标题
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcNormalDistributionCharts.SpcNormalDistributionCharts.DefineGroupCount">
+            <summary>
+            自定义直方图数量(不自动生成直方图数)
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcNormalDistributionCharts.SpcNormalDistributionCharts.Avg">
+            <summary>
+            平均数
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcNormalDistributionCharts.SpcNormalDistributionCharts.StdEstimateMode">
+            <summary>
+            标准差估值方式
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcNormalDistributionCharts.SpcNormalDistributionCharts.#ctor">
+            <summary>
+            正态分布图构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcNormalDistributionCharts.SpcNormalDistributionCharts.GetDrawData">
+            <summary>
+            获取绘图需要的数据
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcNormalDistributionCharts.SpcNormalDistributionCharts.Calculate">
+            <summary>
+            数据运算
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcNormalDistributionCharts.SpcNormalDistributionCharts.SetDefineControlLineByCustomStdDeviation(System.Double,System.Double,System.Int32)">
+            <summary>
+            自定义均值、标准差 设置控制限
+            </summary>
+        </member>
+        <member name="T:SIE.ControlChart.ChartDatas.SpcNPCharts.NPCharts">
+            <summary>
+            不合格品数控制图
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcNPCharts.NPCharts.#ctor">
+            <summary>
+            不合格品数控制图构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcNPCharts.NPCharts.GetDrawData">
+            <summary>
+            获取绘制数据
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcNPCharts.NPCharts.GetDrawXChartInfo">
+            <summary>
+            绘制均值图表
+            </summary>
+        </member>
+        <member name="T:SIE.ControlChart.ChartDatas.SpcNPCharts.NPData">
+            <summary>
+            NP图数据处理
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcNPCharts.NPData.SubGroupSize">
+            <summary>
+            子组容量
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcNPCharts.NPData.Calculate">
+            <summary>
+            NP图计算
+            </summary>
+        </member>
+        <member name="T:SIE.ControlChart.ChartDatas.SpcPCharts2.PCharts2">
+            <summary>
+            不合格品率控制图
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcPCharts2.PCharts2.#ctor">
+            <summary>
+            不合格品率控制图构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcPCharts2.PCharts2.GetDrawData">
+            <summary>
+            获取绘图数据
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcPCharts2.PCharts2.GetDrawXChartInfo">
+            <summary>
+            绘制均值图表
+            </summary>
+        </member>
+        <member name="T:SIE.ControlChart.ChartDatas.SpcPCharts2.PData2">
+            <summary>
+            P图数据处理
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcPCharts2.PData2.Calculate">
+            <summary>
+            P图计算
+            </summary>
+        </member>
+        <member name="T:SIE.ControlChart.ChartDatas.SpcPCharts.PCharts">
+            <summary>
+            不合格品率控制图
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcPCharts.PCharts.#ctor">
+            <summary>
+            不合格品率控制图构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcPCharts.PCharts.GetDrawData">
+            <summary>
+            获取绘图数据
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcPCharts.PCharts.GetDrawXChartInfo">
+            <summary>
+            绘制均值图表
+            </summary>
+        </member>
+        <member name="T:SIE.ControlChart.ChartDatas.SpcPCharts.PData">
+            <summary>
+            P图数据
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcPCharts.PData.SubGroupSize">
+            <summary>
+            子组容量
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcPCharts.PData.Calculate">
+            <summary>
+            P图计算
+            </summary>
+        </member>
+        <member name="T:SIE.ControlChart.ChartDatas.SpcUCharts.UCharts">
+            <summary>
+            缺陷率控制图
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcUCharts.UCharts.#ctor">
+            <summary>
+            U图构造函数
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcUCharts.UCharts.Drawed">
+            <summary>
+            是否已绘制
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcUCharts.UCharts.GetDrawData">
+            <summary>
+            获取绘图数据
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcUCharts.UCharts.GetDrawXChartInfo">
+            <summary>
+            获取绘制X图信息
+            </summary>
+        </member>
+        <member name="T:SIE.ControlChart.ChartDatas.SpcUCharts.UData">
+            <summary>
+            U图数据类
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcUCharts.UData.SubGroupSize">
+            <summary>
+            子组容量
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcUCharts.UData.Calculate">
+            <summary>
+            U图计算
+            </summary>
+        </member>
+        <member name="T:SIE.ControlChart.ChartDatas.SpcXBarRCharts.XBarRCharts">
+            <summary>
+            XBAR-R图
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcXBarRCharts.XBarRCharts.IsRta">
+            <summary>
+            是否实时监控
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcXBarRCharts.XBarRCharts.RtaItemName">
+            <summary>
+            实时监控项目名称
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcXBarRCharts.XBarRCharts.ShowRChart">
+            <summary>
+            是否显示极差图
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcXBarRCharts.XBarRCharts.ShowCa">
+            <summary>
+            是否显示CA指数
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcXBarRCharts.XBarRCharts.#ctor">
+            <summary>
+            XBAR-R图构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcXBarRCharts.XBarRCharts.GetDrawData">
+            <summary>
+            获取绘图需要的数据
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcXBarRCharts.XBarRCharts.GetDrawXChartInfo">
+            <summary>
+            绘制均值图表
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcXBarRCharts.XBarRCharts.SetDefineControlLineByCustomStdDeviation(System.Double,System.Double,System.Int32)">
+            <summary>
+            自定义均值、标准差 设置控制限
+            </summary>
+        </member>
+        <member name="T:SIE.ControlChart.ChartDatas.SpcXBarRCharts.XBarRData">
+            <summary>
+            XBAR-R图数据类
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcXBarRCharts.XBarRData.Calculate">
+            <summary>
+            XBAR-R图计算
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcXBarRCharts.XBarRData.CalculateControlLine">
+            <summary>
+            计算控制限
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcXBarSCharts.XBarSCharts.IsRta">
+            <summary>
+            是否实时监控
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcXBarSCharts.XBarSCharts.RtaItemName">
+            <summary>
+            实时监控项目名称
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ChartDatas.SpcXBarSCharts.XBarSCharts.ShowRChart">
+            <summary>
+            是否显示极差图
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcXBarSCharts.XBarSCharts.#ctor">
+            <summary>
+            均值标准差控制图构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcXBarSCharts.XBarSCharts.GetDrawData">
+            <summary>
+            均值标准差控制图获取绘制数据
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcXBarSCharts.XBarSCharts.GetDrawXChartInfo">
+            <summary>
+            获取绘制X控制图信息
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcXBarSCharts.XBarSCharts.SetRullsParamsAsXbarS">
+            <summary>
+            设置规则警示参数
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcXBarSCharts.XBarSCharts.SetDefineControlLineByCustomStdDeviation(System.Double,System.Double,System.Int32)">
+            <summary>
+            自定义均值、标准差 设置控制限
+            </summary>
+        </member>
+        <member name="T:SIE.ControlChart.ChartDatas.SpcXBarSCharts.XBarSData">
+            <summary>
+            均值标准差控制图数据类
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcXBarSCharts.XBarSData.Calculate">
+            <summary>
+            均值标准差控制图计算
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.ChartDatas.SpcXBarSCharts.XBarSData.CalculateControlLine">
+            <summary>
+            计算控制限
+            </summary>
+        </member>
+        <member name="T:SIE.ControlChart.Common.SpcChartType">
+            <summary>
+            控制图类型
+            </summary> 
+        </member>
+        <member name="F:SIE.ControlChart.Common.SpcChartType.Xbar_R">
+            <summary>
+            Xbar_R
+            </summary>
+        </member>
+        <member name="F:SIE.ControlChart.Common.SpcChartType.Xbar_S">
+            <summary>
+            Xbar_S
+            </summary>
+        </member>
+        <member name="F:SIE.ControlChart.Common.SpcChartType.Me_R">
+            <summary>
+            Me_R
+            </summary>
+        </member>
+        <member name="F:SIE.ControlChart.Common.SpcChartType.I_MR">
+            <summary>
+            I_MR
+            </summary>
+        </member>
+        <member name="F:SIE.ControlChart.Common.SpcChartType.P">
+            <summary>
+            P
+            </summary>
+        </member>
+        <member name="F:SIE.ControlChart.Common.SpcChartType.Np">
+            <summary>
+            Np
+            </summary>
+        </member>
+        <member name="F:SIE.ControlChart.Common.SpcChartType.C">
+            <summary>
+            C
+            </summary>
+        </member>
+        <member name="F:SIE.ControlChart.Common.SpcChartType.U">
+            <summary>
+            U
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.Common.SpcChartType.AllTypes">
+            <summary>
+            所有图表类型
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.Common.SpcChartType.IsContinuousCharType(System.String)">
+            <summary>
+            判断类型是否是计量型控制图
+            </summary>
+            <param name="type">控制图类型名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ControlChart.Common.SpcChartType.IsAttributeCharType(System.String)">
+            <summary>
+            判断类型是否是计数型控制图
+            </summary>
+            <param name="type">控制图类型名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ControlChart.Common.SpcChartType.IsNgPerCharType(System.String)">
+            <summary>
+            判断类型是否是计数型Ng百分比控制图
+            </summary>
+            <param name="type">控制图类型名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ControlChart.Common.SpcChartType.IsNgNumCharType(System.String)">
+            <summary>
+            判断类型是否是计数型Ng数量控制图
+            </summary>
+            <param name="type">控制图类型名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ControlChart.Common.SpcChartType.IsFailQtyType(System.String)">
+            <summary>
+            判断类型是否计数型-不合格品数控制图
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ControlChart.Common.SpcChartType.IsDefectQtyType(System.String)">
+            <summary>
+            判断类型是否计数型-缺陷数控制图
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ControlChart.Common.SpcChartType.GetAllTypes">
+            <summary>
+            获取控制图所有类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.ControlChart.ContorlChartEntityRepository`1">
+            <summary>
+            本程序集的数据提供者
+            </summary>
+            <typeparam name="T">t</typeparam>
+        </member>
+        <member name="T:SIE.ControlChart.ContorlChartEntityDataProvider">
+            <summary>
+            SPC实体数据提供者
+            </summary>
+        </member>
+        <member name="F:SIE.ControlChart.ContorlChartEntityDataProvider.ConnectionStringName">
+            <summary>
+            数据库连接字符串的名称
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.ContorlChartEntityDataProvider.ConnectionStringSettingName">
+            <summary>
+            数据库连接字符串的名称
+            </summary>
+        </member>
+        <member name="T:SIE.ControlChart.Extension.LangExt">
+            <summary>
+            基础类型转换扩展
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.Extension.LangExt.ToInt16(System.String)">
+            <summary>
+            将String转Int16类型
+            </summary>
+            <param name="val"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ControlChart.Extension.LangExt.ToInt32(System.String)">
+            <summary>
+            将String转Int32类型
+            </summary>
+            <param name="val"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ControlChart.Extension.LangExt.ToInt64(System.String)">
+            <summary>
+            将String转Int64类型
+            </summary>
+            <param name="val"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ControlChart.Extension.LangExt.ToFloat(System.String)">
+            <summary>
+            将String转Float类型
+            </summary>
+            <param name="val"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ControlChart.Extension.LangExt.ToObject(System.Object)">
+            <summary>
+            将任何类型装箱为Object
+            </summary>
+            <param name="val"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ControlChart.Extension.LangExt.ToDecimal(System.String)">
+            <summary>
+            将String转Decimal类型
+            </summary>
+            <param name="val"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ControlChart.Extension.LangExt.ToInt(System.Double)">
+            <summary>
+            将Double转Int类型
+            </summary>
+            <param name="val"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ControlChart.Extension.LangExt.ToDouble(System.String)">
+            <summary>
+            将String转Double类型
+            </summary>
+            <param name="val"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ControlChart.Extension.LangExt.ToDouble(System.Int32)">
+            <summary>
+            将Int转Double类型
+            </summary>
+            <param name="val"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ControlChart.Extension.LangExt.ToFixed(System.Double,System.Int32)">
+            <summary>
+            对Double值取N位小数（四舍五入）
+            </summary>
+            <param name="val"></param>
+            <param name="digits"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ControlChart.Extension.LangExt.ToFixed(System.Nullable{System.Double},System.Int32)">
+            <summary>
+            对Double?值取N位小数（四舍五入）
+            </summary>
+            <param name="val"></param>
+            <param name="digits"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.ControlChart.Module">
+            <summary>
+            模块配置
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化程序集
+            </summary>
+            <param name="app">应用程序</param>
+        </member>
+        <member name="T:SIE.ControlChart.SpcUtils.CalculateUtil">
+            <summary>
+            计算帮助类
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.SpcUtils.CalculateUtil.CalculateGroupStdDevRBar(System.Collections.Generic.List{SIE.ControlChart.SpcUtils.SampleGroup},System.Int32,SIE.ControlChart.SpcUtils.ChartCalConst)">
+            <summary>
+            计算组内标准差(subgroupsize为1时计算为单值移动的组内标准差)
+            </summary>
+            <param name="datas">样本组数据集合</param>
+            <param name="subgroupsize">样本数</param>
+            <param name="chartConst">控制图参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ControlChart.SpcUtils.CalculateUtil.CalculateGroupStdDevSBar(System.Collections.Generic.List{SIE.ControlChart.SpcUtils.SampleGroup},System.Int32,SIE.ControlChart.SpcUtils.ChartCalConst)">
+            <summary>
+            计算组内标准差
+            </summary>
+            <param name="datas">样本组数据集合</param>
+            <param name="subgroupsize">样本数</param>
+            <param name="chartConst">控制图参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ControlChart.SpcUtils.CalculateUtil.CalculateStdDev(System.Collections.Generic.IEnumerable{System.Double})">
+            <summary>
+            计算标准差（无偏估计）
+            </summary>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ControlChart.SpcUtils.CalculateUtil.CalculateStdDevP(System.Collections.Generic.IEnumerable{System.Double})">
+            <summary>
+            计算标准差（有偏估计）
+            </summary>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ControlChart.SpcUtils.CalculateUtil.CalculateMRStdDev(System.Collections.Generic.List{SIE.ControlChart.SpcUtils.SampleGroup},SIE.ControlChart.SpcUtils.ChartCalConst)">
+            <summary>
+            移动极差中位数估算法
+            </summary>
+            <param name="datas"></param>
+            <param name="chartConst"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ControlChart.SpcUtils.CalculateUtil.CalculatePooledStdDev(System.Collections.Generic.List{SIE.ControlChart.SpcUtils.SampleGroup},System.Int32)">
+            <summary>
+            合拼标准差
+            </summary>
+            <param name="groups"></param>
+            <param name="subgroupsize"></param>
+            <param name="sp"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ControlChart.SpcUtils.CalculateUtil.CalculateGamma(System.Double)">
+            <summary>
+            计算C4(d+1):无偏常量C4
+            </summary>
+            <param name="x"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ControlChart.SpcUtils.CalculateUtil.CalculateC4(System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="d"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ControlChart.SpcUtils.CalculateUtil.CalculateStdMethod(SIE.ControlChart.SpcUtils.EstimateMode,System.Collections.Generic.List{SIE.ControlChart.SpcUtils.SampleGroup},System.Int32,SIE.ControlChart.SpcUtils.ChartCalConst)">
+            <summary>
+            标准差估算法
+            </summary>
+            <param name="stdEstimateMode">估值方式</param>
+            <param name="datas">数据集</param>
+            <param name="subgroupsize">子组数</param>
+            <param name="chartConst">无偏常量参数</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.ControlChart.SpcUtils.ChartCalConst">
+            <summary>
+            图表常量
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ChartCalConst.A">
+            <summary>
+            Spc计算公式常量A
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ChartCalConst.A2">
+            <summary>
+            Spc计算公式常量A2
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ChartCalConst.A3">
+            <summary>
+            Spc计算公式常量A3
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ChartCalConst.B3">
+            <summary>
+            Spc计算公式常量B3
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ChartCalConst.B4">
+            <summary>
+            Spc计算公式常量B4
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ChartCalConst.B5">
+            <summary>
+            Spc计算公式常量B5
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ChartCalConst.B6">
+            <summary>
+            Spc计算公式常量B6
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ChartCalConst.C4">
+            <summary>
+            Spc计算公式常量C4
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ChartCalConst.D1">
+            <summary>
+            Spc计算公式常量D1
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ChartCalConst.D2">
+            <summary>
+            Spc计算公式常量D2
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ChartCalConst.D3">
+            <summary>
+            Spc计算公式常量D3
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ChartCalConst.D4">
+            <summary>
+            Spc计算公式常量D4-适用于柯西分布
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ChartCalConst.D2Nd">
+            <summary>
+            Spc计算公式常量d2
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ChartCalConst.D3Nd">
+            <summary>
+            Spc计算公式常量d3
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ChartCalConst.D4Nd">
+            <summary>
+            Spc计算公式常量D4-适用于正太分布
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ChartCalConst.E2">
+            <summary>
+            Spc计算公式常量E2
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ChartCalConst.MeA2">
+            <summary>
+            中值图
+            </summary>
+        </member>
+        <member name="T:SIE.ControlChart.SpcUtils.ChartData">
+            <summary>
+            控制图数据类
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ChartData.ChartConst">
+            <summary>
+            控制图参数
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ChartData.Ca">
+            <summary>
+            CA
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ChartData.UpChartControlLine">
+            <summary>
+            上控制图控制限
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ChartData.DownChartControlLine">
+            <summary>
+            下控制图控制限
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ChartData.DefineUpChartControlLine">
+            <summary>
+            自定义上控制图控制限
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ChartData.DefineDownChartControlLine">
+            <summary>
+            自定义下控制图控制限
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ChartData.StdDev">
+            <summary>
+            标准差（整体）
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ChartData.GroupStdDev">
+            <summary>
+            标准差（组内）
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ChartData.Usl">
+            <summary>
+            上限
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ChartData.Lsl">
+            <summary>
+            下限
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ChartData.Cp">
+            <summary>
+            CP指数
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ChartData.Cpu">
+            <summary>
+            CPU指数
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ChartData.Cpl">
+            <summary>
+            CPL指数
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ChartData.Cpk">
+            <summary>
+            CPK指数
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ChartData.Pp">
+            <summary>
+            PP指数
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ChartData.Ppu">
+            <summary>
+            PPU指数
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ChartData.Ppl">
+            <summary>
+            PPL指数
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ChartData.Ppk">
+            <summary>
+            PPK指数
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ChartData.Ppm">
+            <summary>
+            PPM指数
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ChartData.CPKGrade">
+            <summary>
+            CPK等级
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ChartData.SubGroupSize">
+            <summary>
+            子组大小
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ChartData.SubGroupCount">
+            <summary>
+            样本组数
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ChartData.AllSample">
+            <summary>
+            所有样本
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ChartData.AllDatas">
+            <summary>
+            所有样本组数据
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ChartData.Datas">
+            <summary>
+            样本组数据
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ChartData.UpChartAvg">
+            <summary>
+            上图均值 
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ChartData.DownChartAvg">
+            <summary>
+            下图均值
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ChartData.StdEstimateMode">
+            <summary>
+            标准差估值方式
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ChartData.CpkLow">
+            <summary>
+            低阈值
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ChartData.CpkMid">
+            <summary>
+            中阈值
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ChartData.CpkHigh">
+            <summary>
+            高阈值
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ChartData.IsdisplayCpk">
+            <summary>
+            是否显示CPK等级
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.SpcUtils.ChartData.Calculate">
+            <summary>
+            计算
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.SpcUtils.ChartData.CalculateExponent(System.Double)">
+            <summary>
+            计算各指数
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.SpcUtils.ChartData.CalculatePPM">
+            <summary>
+            计算PPM
+            </summary>
+        </member>
+        <member name="T:SIE.ControlChart.SpcUtils.ChartDataBase">
+            <summary>
+            控制图数据基类
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ChartDataBase.Digits">
+            <summary>
+            数据计算精确度
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.SpcUtils.ChartDataBase.GetMaxDigits(System.Collections.Generic.List{System.Object})">
+            <summary>
+            计算最大精度
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.SpcUtils.ChartDataBase.GetDigits(System.Object)">
+            <summary>
+            计算最大精度
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ControlChart.SpcUtils.ChartDataBase.GetMaxDigitsDouble(System.Collections.Generic.List{System.Double})">
+            <summary>
+            计算最大精度
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.SpcUtils.ChartDataBase.GetDigitsDouble(System.Double)">
+            <summary>
+            计算最大精度
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ControlChart.SpcUtils.ChartDataBase.Ceiling(System.Decimal,System.Int32)">
+            <summary>
+            实现小数的向上取整（保留精度）
+            </summary>
+            <param name="v">要进行处理的数据</param>
+            <param name="digit">保留的小数位数</param>
+            <returns>小数的向上取整后的结果</returns>
+        </member>
+        <member name="M:SIE.ControlChart.SpcUtils.ChartDataBase.GetDigitMinValue(System.Int32)">
+            <summary>
+            获取精度的最小值
+            </summary>
+            <param name="digit">精度</param>
+            <returns>如精度1返回0.1 精度2返回0.01</returns>
+        </member>
+        <member name="T:SIE.ControlChart.SpcUtils.ControlLine">
+            <summary>
+            控制线
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ControlLine.Ucl">
+            <summary>
+            上控制线
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ControlLine.Lcl">
+            <summary>
+            下控制线
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ControlLine.Cl">
+            <summary>
+            中线
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ControlLine.Usl">
+            <summary>
+            规格上限
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ControlLine.Lsl">
+            <summary>
+            规格下限
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ControlLine.Ucb">
+            <summary>
+            均值图上CB分区值
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ControlLine.Uba">
+            <summary>
+            均值图上BA分区值
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ControlLine.Lcb">
+            <summary>
+            均值图下CB分区值
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ControlLine.Lba">
+            <summary>
+            均值图下BA分区值
+            </summary>
+        </member>
+        <member name="T:SIE.ControlChart.SpcUtils.CountingChartData">
+            <summary>
+            控制图数据
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.CountingChartData.DefineControlLine">
+            <summary>
+            自定义控制线
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.CountingChartData.AllDatas">
+            <summary>
+            所有样本数据
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.CountingChartData.Datas">
+            <summary>
+            子组数量样本数据
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.CountingChartData.Avg">
+            <summary>
+            均值图平均数
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.CountingChartData.ControlLine">
+            <summary>
+            控制线
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.SpcUtils.CountingChartData.Calculate">
+            <summary>
+            计算
+            </summary>
+        </member>
+        <member name="T:SIE.ControlChart.SpcUtils.DataPoint">
+            <summary>
+            数据点信息
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.DataPoint.SamplingTime">
+            <summary>
+            抽样时间
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.DataPoint.DataTime">
+            <summary>
+            数据时间
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.DataPoint.Warnings">
+            <summary>
+            警告信息
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.DataPoint.Value">
+            <summary>
+            数值
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.DataPoint.IsWarnPoint">
+            <summary>
+            是否预警点
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.DataPoint.IsWarnPointRchart">
+            <summary>
+            是否预警点
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.DataPoint.IsWarnLine">
+            <summary>
+            是否预警点连线
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.DataPoint.IsWarnLineRchart">
+            <summary>
+            是否预警点连线
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.DataPoint.IsRejectPoint">
+            <summary>
+            是否是剔除点
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.DataPoint.Source">
+            <summary>
+            样本原始数据(原始来自DataRow的数据)
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.DataPoint.Number">
+            <summary>
+            点位置
+            </summary>
+        </member>
+        <member name="T:SIE.ControlChart.SpcUtils.EstimateMode">
+            <summary>
+            标准差估值方式
+            </summary>
+        </member>
+        <member name="F:SIE.ControlChart.SpcUtils.EstimateMode.RBar">
+            <summary>
+            Rbar 子组极差估算法
+            </summary>
+        </member>
+        <member name="F:SIE.ControlChart.SpcUtils.EstimateMode.SBar">
+            <summary>
+            Sbar 子组标准差估算法
+            </summary>
+        </member>
+        <member name="F:SIE.ControlChart.SpcUtils.EstimateMode.IMREstimateStdDeviation">
+            <summary>
+            移动极差估算法
+            </summary>
+        </member>
+        <member name="F:SIE.ControlChart.SpcUtils.EstimateMode.IMedianEstimateStdDeviation">
+            <summary>
+            移动极差中位数估算法
+            </summary>
+        </member>
+        <member name="F:SIE.ControlChart.SpcUtils.EstimateMode.CombinedStdDeviation">
+            <summary>
+            合并标准差
+            </summary>
+        </member>
+        <member name="T:SIE.ControlChart.SpcUtils.ExceedRuleSample">
+            <summary>
+            超出规格样本数
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ExceedRuleSample.SamplingTime">
+            <summary>
+            抽样时间
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ExceedRuleSample.GroupName">
+            <summary>
+            样本组名称
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ExceedRuleSample.NgQty">
+            <summary>
+            不合格数
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ExceedRuleSample.SampleQty">
+            <summary>
+            样本数
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ExceedRuleSample.Avg">
+            <summary>
+            平均值
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ExceedRuleSample.R">
+            <summary>
+            极差值
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ExceedRuleSample.Median">
+            <summary>
+            中值
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.ExceedRuleSample.Datas">
+            <summary>
+            样本组数据
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.SpcUtils.ExceedRuleSample.GetMedian">
+            <summary>
+            计算中值
+            </summary>
+        </member>
+        <member name="T:SIE.ControlChart.SpcUtils.NgSample">
+            <summary>
+            缺陷类样本数
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.NgSample.GroupName">
+            <summary>
+            组名
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.NgSample.NgQty">
+            <summary>
+            不合格数
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.NgSample.SampleQty">
+            <summary>
+            样本数
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.NgSample.NP">
+            <summary>
+            获取合格率
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.NgSample.U">
+            <summary>
+            缺陷率
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.NgSample.C">
+            <summary>
+            缺陷数
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.NgSample.ControlLine">
+            <summary>
+            控制线
+            </summary>
+        </member>
+        <member name="T:SIE.ControlChart.SpcUtils.SampleGroup">
+            <summary>
+            样本组类
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.SampleGroup.GroupName">
+            <summary>
+            样本组名称
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.SampleGroup.Avg">
+            <summary>
+            平均值
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.SampleGroup.R">
+            <summary>
+            极差值
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.SampleGroup.Std">
+            <summary>
+            标准差
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.SampleGroup.Median">
+            <summary>
+            中值
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.SampleGroup.Cpk">
+            <summary>
+            CPK
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.SampleGroup.Ppk">
+            <summary>
+            PPK
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.SampleGroup.Cp">
+            <summary>
+            CP
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.SampleGroup.Datas">
+            <summary>
+            样本组数据
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.SpcUtils.SampleGroup.GetMedian">
+            <summary>
+            计算中值
+            </summary>
+        </member>
+        <member name="T:SIE.ControlChart.SpcUtils.SpcChartConst">
+            <summary>
+            控制图默认常数
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.SpcUtils.SpcChartConst.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="T:SIE.ControlChart.SpcUtils.TakeRecord">
+            <summary>
+            剔除的数据
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.TakeRecord.DataTime">
+            <summary>
+            数据时间
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.TakeRecord.FailQty">
+            <summary>
+            不合格品数
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.TakeRecord.DefectQty">
+            <summary>
+            缺陷数
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.TakeRecord.SampleQty">
+            <summary>
+            样本数
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcUtils.TakeRecord.CheckValue">
+            <summary>
+            测试值
+            </summary>
+        </member>
+        <member name="T:SIE.ControlChart.SpcWarningRull.SimpleSpcRull">
+            <summary>
+            Spc判异规则简单信息
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcWarningRull.SimpleSpcRull.N">
+            <summary>
+            连接N个点
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcWarningRull.SimpleSpcRull.RullDescription">
+            <summary>
+            规则说明
+            </summary>
+        </member>
+        <member name="T:SIE.ControlChart.SpcWarningRull.SpcBelowCpkRull">
+            <summary>
+            Spc判异规则-CPK低于K值预警
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcWarningRull.SpcBelowCpkRull.Cpk">
+            <summary>
+            cpk
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcBelowCpkRull.#ctor(System.Nullable{System.Double})">
+            <summary>
+            CPK低于K值预警
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcBelowCpkRull.GetDrawInfo">
+            <summary>
+            获取绘制控制图信息
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcBelowCpkRull.JudgeViolationRull(System.Collections.Generic.List{SIE.ControlChart.SpcUtils.DataPoint})">
+            <summary>
+            判断数据是否触发判异规则
+            </summary>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.ControlChart.SpcWarningRull.SpcBelowPpkRull">
+            <summary>
+            Spc判异规则-PPK低于K值预警
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcWarningRull.SpcBelowPpkRull.Ppk">
+            <summary>
+            K值
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcBelowPpkRull.#ctor(System.Nullable{System.Double})">
+            <summary>
+            PPK低于K值预警
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcBelowPpkRull.GetDrawInfo">
+            <summary>
+            获取绘制控制图信息
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcBelowPpkRull.JudgeViolationRull(System.Collections.Generic.List{SIE.ControlChart.SpcUtils.DataPoint})">
+            <summary>
+            判断数据是否触发判异规则
+            </summary>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.ControlChart.SpcWarningRull.SpcKeepDownOfCLRull">
+            <summary>
+            Spc判异规则-连续n个点保持在中心线下侧
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcWarningRull.SpcKeepDownOfCLRull.Cl">
+            <summary>
+            Spc计算公式常量C1
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcKeepDownOfCLRull.#ctor(System.Nullable{System.Int32})">
+            <summary>
+            连续n个点保持在中心线下侧构造函数
+            </summary>
+            <param name="n"></param>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcKeepDownOfCLRull.GetDrawInfo">
+            <summary>
+            获取绘制控制图信息
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcKeepDownOfCLRull.JudgeViolationRull(System.Collections.Generic.List{SIE.ControlChart.SpcUtils.DataPoint})">
+            <summary>
+            判断数据是否触发判异规则
+            </summary>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcKeepDownOfCLRull.KeepDownOfCLPointsViolationRull(System.Collections.Generic.List{SIE.ControlChart.SpcWarningRull.ViolateSpcRullEvent},System.Collections.Generic.List{System.Tuple{System.Double,System.Nullable{System.DateTime}}})">
+            <summary>
+            连续N个点保持在中心线下侧（N为违反SPC判异规则的连续数据点数）
+            </summary>
+            <param name="violateRullEvents">违反SPC判异规则事件</param>
+            <param name="violateRullDatas">违反SPC判异规则的数据点集合</param>
+        </member>
+        <member name="T:SIE.ControlChart.SpcWarningRull.SpcKeepDownRull">
+            <summary>
+            Spc判异规则-连续n个点保持递减
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcKeepDownRull.#ctor(System.Nullable{System.Int32})">
+            <summary>
+            构造函数
+            </summary>
+            <param name="n">数据点</param>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcKeepDownRull.GetDrawInfo">
+            <summary>
+            获取绘图信息
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcKeepDownRull.JudgeViolationRull(System.Collections.Generic.List{SIE.ControlChart.SpcUtils.DataPoint})">
+            <summary>
+            连续N个点保持递减（N为违反SPC判异规则的连续数据点数）
+            </summary>
+            <param name="datas">连续的数据点</param>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcKeepDownRull.KeepDownPointsViolationRull(System.Collections.Generic.List{SIE.ControlChart.SpcUtils.DataPoint},System.Collections.Generic.List{SIE.ControlChart.SpcWarningRull.ViolateSpcRullEvent},System.Int32,System.Int32)">
+            <summary>
+            连续N个点保持递增（N为违反SPC判异规则的连续数据点数）
+            </summary>
+            <param name="datas">连续的数据点</param>
+            <param name="violateRullEvents">违反SPC判异规则事件</param>
+            <param name="count"></param>
+            <param name="i"></param>
+        </member>
+        <member name="T:SIE.ControlChart.SpcWarningRull.SpcKeepOneSideOutBRull">
+            <summary>
+            Spc判异规则-连续m个点中有n个点在同一侧B区外
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcWarningRull.SpcKeepOneSideOutBRull.M">
+            <summary>
+            中心线
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcWarningRull.SpcKeepOneSideOutBRull.Uba">
+            <summary>
+            均值图上BA分区值
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcWarningRull.SpcKeepOneSideOutBRull.Lba">
+            <summary>
+            均值图上BA分区值
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcKeepOneSideOutBRull.#ctor(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            连续m个点中有n个点在同一侧B区外构造函数
+            </summary>
+            <param name="m"></param>
+            <param name="n"></param>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcKeepOneSideOutBRull.GetDrawInfo">
+            <summary>
+            获取绘图信息
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcKeepOneSideOutBRull.JudgeViolationRull(System.Collections.Generic.List{SIE.ControlChart.SpcUtils.DataPoint})">
+            <summary>
+            判断数据是否触发预警规则
+            </summary>
+            <param name="datas">数据点集合</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.ControlChart.SpcWarningRull.SpcKeepOneSideOutCRull">
+            <summary>
+            Spc判异规则-连续m个点中有n个点在同一侧C区外
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcWarningRull.SpcKeepOneSideOutCRull.M">
+            <summary>
+            中心点
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcWarningRull.SpcKeepOneSideOutCRull.Ucb">
+            <summary>
+            均值图上CB分区值
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcWarningRull.SpcKeepOneSideOutCRull.Lcb">
+            <summary>
+            均值图上CB分区值
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcKeepOneSideOutCRull.#ctor(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            连续m个点中有n个点在同一侧C区外构造函数
+            </summary>
+            <param name="m"></param>
+            <param name="n"></param>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcKeepOneSideOutCRull.GetDrawInfo">
+            <summary>
+            获取绘图信息
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcKeepOneSideOutCRull.JudgeViolationRull(System.Collections.Generic.List{SIE.ControlChart.SpcUtils.DataPoint})">
+            <summary>
+            判断数据是否触发预警规则
+            </summary>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.ControlChart.SpcWarningRull.SpcKeepSideInCRull">
+            <summary>
+            Spc判异规则-连续n个点在C区内
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcWarningRull.SpcKeepSideInCRull.Ucb">
+            <summary>
+            均值图上CB分区值
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcWarningRull.SpcKeepSideInCRull.Lcb">
+            <summary>
+            均值图上CB分区值
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcKeepSideInCRull.#ctor(System.Nullable{System.Int32})">
+            <summary>
+            连续n个点在C区内构造函数
+            </summary>
+            <param name="n"></param>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcKeepSideInCRull.GetDrawInfo">
+            <summary>
+            获取绘制控制图信息
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcKeepSideInCRull.JudgeViolationRull(System.Collections.Generic.List{SIE.ControlChart.SpcUtils.DataPoint})">
+            <summary>
+            判断数据是否触发预警规则
+            </summary>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcKeepSideInCRull.KeepSideInCPointsViolationRull(System.Collections.Generic.List{SIE.ControlChart.SpcWarningRull.ViolateSpcRullEvent},System.Collections.Generic.List{System.Tuple{System.Double,System.Nullable{System.DateTime}}})">
+            <summary>
+            连续K点，距离中心线（任一侧）1个标准差以内（K为违反SPC判异规则的连续数据点数）
+            </summary>
+            <param name="violateRullEvents">违反SPC判异规则事件</param>
+            <param name="violateRullDatas">违反SPC判异规则的数据点集合</param>
+        </member>
+        <member name="T:SIE.ControlChart.SpcWarningRull.SpcKeepSideOutCRull">
+            <summary>
+            Spc判异规则-连续n个点在C区外
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcWarningRull.SpcKeepSideOutCRull.Ucb">
+            <summary>
+            均值图上CB分区值
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcWarningRull.SpcKeepSideOutCRull.Lcb">
+            <summary>
+            均值图上CB分区值
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcKeepSideOutCRull.#ctor(System.Nullable{System.Int32})">
+            <summary>
+            连续n个点在C区外构造函数
+            </summary>
+            <param name="n"></param>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcKeepSideOutCRull.GetDrawInfo">
+            <summary>
+            获取绘制控制图信息
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcKeepSideOutCRull.JudgeViolationRull(System.Collections.Generic.List{SIE.ControlChart.SpcUtils.DataPoint})">
+            <summary>
+            判断数据是否触发判异规则
+            </summary>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcKeepSideOutCRull.KeepSideOutCPointsViolationRull(System.Collections.Generic.List{SIE.ControlChart.SpcWarningRull.ViolateSpcRullEvent},System.Collections.Generic.List{System.Tuple{System.Double,System.Nullable{System.DateTime}}})">
+            <summary>
+            连续K点，距离中心线（任一侧）大于1个标准差（K为违反SPC判异规则的连续数据点数）
+            </summary>
+            <param name="violateRullEvents">违反SPC判异规则事件</param>
+            <param name="violateRullDatas">违反SPC判异规则的数据点集合</param>
+        </member>
+        <member name="T:SIE.ControlChart.SpcWarningRull.SpcKeepSideOutDownARull">
+            <summary>
+            Spc判异规则-连续n个点小于外控下限
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcWarningRull.SpcKeepSideOutDownARull.Lcl">
+            <summary>
+            控制下线
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcKeepSideOutDownARull.#ctor(System.Nullable{System.Int32})">
+            <summary>
+            连续n个点小于外控下限构造函数
+            </summary>
+            <param name="n"></param>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcKeepSideOutDownARull.GetDrawInfo">
+            <summary>
+            获取绘制控制图信息
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcKeepSideOutDownARull.JudgeViolationRull(System.Collections.Generic.List{SIE.ControlChart.SpcUtils.DataPoint})">
+            <summary>
+            判读数据是否触发判异规则
+            </summary>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.ControlChart.SpcWarningRull.SpcKeepSideOutUpARull">
+            <summary>
+            Spc判异规则-连续n个点大于外控上限
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcWarningRull.SpcKeepSideOutUpARull.Ucl">
+            <summary>
+            控制上线
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcKeepSideOutUpARull.#ctor(System.Nullable{System.Int32})">
+            <summary>
+            连续n个点大于外控上限构造函数
+            </summary>
+            <param name="n"></param>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcKeepSideOutUpARull.GetDrawInfo">
+            <summary>
+            获取绘制控制图信息
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcKeepSideOutUpARull.JudgeViolationRull(System.Collections.Generic.List{SIE.ControlChart.SpcUtils.DataPoint})">
+            <summary>
+            判断数据是否触发判异规则
+            </summary>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.ControlChart.SpcWarningRull.SpcKeepStaggeredRull">
+            <summary>
+            Spc判异规则-连续n个保持上下交替
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcKeepStaggeredRull.#ctor(System.Nullable{System.Int32})">
+            <summary>
+            连续n个保持上下交替构造函数
+            </summary>
+            <param name="n"></param>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcKeepStaggeredRull.GetDrawInfo">
+            <summary>
+            获取绘制控制图信息
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcKeepStaggeredRull.JudgeViolationRull(System.Collections.Generic.List{SIE.ControlChart.SpcUtils.DataPoint})">
+            <summary>
+            判断数据是否触发判异规则
+            </summary>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcKeepStaggeredRull.ContinousPointsViolationRull(System.Collections.Generic.List{SIE.ControlChart.SpcUtils.DataPoint},System.Collections.Generic.List{SIE.ControlChart.SpcWarningRull.ViolateSpcRullEvent},System.Int32,System.Int32)">
+            <summary>
+            连续N点，上下交错（N > K时，N为违反SPC判异规则的连续数据点数，K为控制图规则中判异规则设定的值）
+            </summary>
+            <param name="datas">连续的数据点</param>
+            <param name="violateRullEvents">违反SPC判异规则事件</param>
+            <param name="count"></param>
+            <param name="i"></param>
+        </member>
+        <member name="T:SIE.ControlChart.SpcWarningRull.SpcKeepUpOfCLRull">
+            <summary>
+            Spc判异规则-连续n个点保持在中心线上侧
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcWarningRull.SpcKeepUpOfCLRull.Cl">
+            <summary>
+            中线
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcKeepUpOfCLRull.#ctor(System.Nullable{System.Int32})">
+            <summary>
+            连续n个点保持在中心线上侧构造函数
+            </summary>
+            <param name="n"></param>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcKeepUpOfCLRull.GetDrawInfo">
+            <summary>
+            获取绘制控制图信息
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcKeepUpOfCLRull.JudgeViolationRull(System.Collections.Generic.List{SIE.ControlChart.SpcUtils.DataPoint})">
+            <summary>
+            判断数据是否触发判异规则
+            </summary>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcKeepUpOfCLRull.KeepUpOfCLPointsViolationRull(System.Collections.Generic.List{SIE.ControlChart.SpcWarningRull.ViolateSpcRullEvent},System.Collections.Generic.List{System.Tuple{System.Double,System.Nullable{System.DateTime}}})">
+            <summary>
+            连续N个点保持在中心线上侧（N为违反SPC判异规则的连续数据点数）
+            </summary>
+            <param name="violateRullEvents">违反SPC判异规则事件</param>
+            <param name="violateRullDatas">违反SPC判异规则的数据点集合</param>
+        </member>
+        <member name="T:SIE.ControlChart.SpcWarningRull.SpcKeepUpRull">
+            <summary>
+            Spc判异规则-连续n个点保持递增
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcKeepUpRull.#ctor(System.Nullable{System.Int32})">
+            <summary>
+            连续n个点保持递增构造函数
+            </summary>
+            <param name="n"></param>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcKeepUpRull.GetDrawInfo">
+            <summary>
+            获取绘制控制图信息
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcKeepUpRull.JudgeViolationRull(System.Collections.Generic.List{SIE.ControlChart.SpcUtils.DataPoint})">
+            <summary>
+            判断数据是否触发判异规则
+            </summary>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcKeepUpRull.KeepUpPointsViolationRull(System.Collections.Generic.List{SIE.ControlChart.SpcUtils.DataPoint},System.Collections.Generic.List{SIE.ControlChart.SpcWarningRull.ViolateSpcRullEvent},System.Int32,System.Int32)">
+            <summary>
+            连续N个点保持递增（N为违反SPC判异规则的连续数据点数）
+            </summary>
+            <param name="datas">连续的数据点</param>
+            <param name="violateRullEvents">违反SPC判异规则事件</param>
+            <param name="count"></param>
+            <param name="i"></param>
+        </member>
+        <member name="T:SIE.ControlChart.SpcWarningRull.SpcOverLslRull">
+            <summary>
+            Spc判异规则-超出规格下限预警
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcWarningRull.SpcOverLslRull.Lsl">
+            <summary>
+            规格下线
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcOverLslRull.#ctor">
+            <summary>
+            超出规格下限预警构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcOverLslRull.GetDrawInfo">
+            <summary>
+            获取绘制控制图信息
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcOverLslRull.JudgeViolationRull(System.Collections.Generic.List{SIE.ControlChart.SpcUtils.DataPoint})">
+            <summary>
+            判断数据是否触发判异规则
+            </summary>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.ControlChart.SpcWarningRull.SpcOverUslRull">
+            <summary>
+            Spc判异规则-超出规格上限预警
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcWarningRull.SpcOverUslRull.Usl">
+            <summary>
+            规则上线
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcOverUslRull.#ctor">
+            <summary>
+            超出规格上限预警构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcOverUslRull.GetDrawInfo">
+            <summary>
+            获取绘制控制图信息
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcOverUslRull.JudgeViolationRull(System.Collections.Generic.List{SIE.ControlChart.SpcUtils.DataPoint})">
+            <summary>
+            判断数据是否触发规则预警
+            </summary>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.ControlChart.SpcWarningRull.SpcOverValueRull">
+            <summary>
+            Spc判异规则-一个点大于或小于n个标准差 
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcWarningRull.SpcOverValueRull.UCL">
+            <summary>
+            上控制线
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcWarningRull.SpcOverValueRull.LCL">
+            <summary>
+            下控制线
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcWarningRull.SpcOverValueRull.CL">
+            <summary>
+            中线
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcWarningRull.SpcOverValueRull.UpStd">
+            <summary>
+            上标准线
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcWarningRull.SpcOverValueRull.DownStd">
+            <summary>
+            下标准线
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcWarningRull.SpcOverValueRull.SameSampleQty">
+            <summary>
+            非恒定样本数
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcWarningRull.SpcOverValueRull.rUCL">
+            <summary>
+            下图上控制线
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcOverValueRull.#ctor(System.Nullable{System.Int32})">
+            <summary>
+            一个点大于或小于n个标准差构造函数
+            </summary>
+            <param name="n"></param>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcOverValueRull.GetDrawInfo">
+            <summary>
+            获取绘制控制图信息
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcOverValueRull.JudgeViolationRull(System.Collections.Generic.List{SIE.ControlChart.SpcUtils.DataPoint})">
+            <summary>
+            判断数据是否触发判异规则
+            </summary>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcOverValueRull.RangeExceedsUclRule(System.Double,SIE.ControlChart.SpcUtils.DataPoint,System.Collections.Generic.List{SIE.ControlChart.SpcWarningRull.ViolateSpcRullEvent})">
+            <summary>
+             获取绘制R图信息
+            </summary>
+            <param name="R"></param>
+            <param name="data"></param>
+            <param name="violateRullEvents"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.ControlChart.SpcWarningRull.SpcRull">
+            <summary>
+            Spc判异规则基类
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcWarningRull.SpcRull.N">
+            <summary>
+            连接N个点
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcWarningRull.SpcRull.Datas">
+            <summary>
+            数据点
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcWarningRull.SpcRull.RullDescription">
+            <summary>
+            规则说明
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcRull.GetDrawInfo">
+            <summary>
+            获取绘制信息
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcRull.JudgeViolationRull(System.Collections.Generic.List{SIE.ControlChart.SpcUtils.DataPoint})">
+            <summary>
+            判断数据是否触发规则预警
+            </summary>
+            <param name="datas">数据</param>
+            <returns>规则预警信息列表</returns>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.SpcRull.GetSimple">
+            <summary>
+            获取样本数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.ControlChart.SpcWarningRull.ViolateSpcRullEvent">
+            <summary>
+            违反SPC规则事件
+            </summary>
+        </member>
+        <member name="M:SIE.ControlChart.SpcWarningRull.ViolateSpcRullEvent.#ctor(System.String,System.Nullable{System.Int32},System.Collections.Generic.List{System.Double},System.Nullable{System.DateTime})">
+            <summary>
+            违反SPC规则事件构造函数
+            </summary>
+            <param name="rullDescription"></param>
+            <param name="k"></param>
+            <param name="datas"></param>
+            <param name="lastDataTime"></param>
+        </member>
+        <member name="P:SIE.ControlChart.SpcWarningRull.ViolateSpcRullEvent.K">
+            <summary>
+            K值
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcWarningRull.ViolateSpcRullEvent.ViolateTime">
+            <summary>
+            违反规则时间
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcWarningRull.ViolateSpcRullEvent.RullDescription">
+            <summary>
+            规则说明
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcWarningRull.ViolateSpcRullEvent.LastDataTime">
+            <summary>
+            最后一个数据的时间
+            </summary>
+        </member>
+        <member name="P:SIE.ControlChart.SpcWarningRull.ViolateSpcRullEvent.Datas">
+            <summary>
+            违反规则的数据
+            </summary>
+        </member>
+    </members>
+</doc>

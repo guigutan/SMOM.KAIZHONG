@@ -1,0 +1,1154 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Wpf.Warehouses</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Wpf.Warehouses.EntityPropertyViewMetaExtension">
+            <summary>
+            实体属性视图元数据扩展
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.EntityPropertyViewMetaExtension.UseWarehouseLookUpEditor``1(SIE.MetaModel.View.WPFEntityPropertyViewMeta{``0},System.Action{SIE.Wpf.Editors.PagingLookUpEditorConfig})">
+            <summary>
+            使用仓库下拉查询编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.EntityPropertyViewMetaExtension.UseAvailableWarehouseEditor``1(SIE.MetaModel.View.WPFEntityPropertyViewMeta{``0},System.Action{SIE.Wpf.Editors.PagingLookUpEditorConfig})">
+            <summary>
+            使用仓库（可用、非冻结状态）下拉查询编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.EntityPropertyViewMetaExtension.UseRoHsGradeEditor``1(SIE.MetaModel.View.WPFEntityPropertyViewMeta{``0},System.Action{SIE.Wpf.Items.Editors.CustomInputEditorConfig})">
+            <summary>
+            使用RoHS等级编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.EntityPropertyViewMetaExtension.UseStorageTemperatureEditor``1(SIE.MetaModel.View.WPFEntityPropertyViewMeta{``0},System.Action{SIE.Wpf.Items.Editors.CustomInputEditorConfig})">
+            <summary>
+            使用存储温度编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.EntityPropertyViewMetaExtension.UseStorageHumidityEditor``1(SIE.MetaModel.View.WPFEntityPropertyViewMeta{``0},System.Action{SIE.Wpf.Items.Editors.CustomInputEditorConfig})">
+            <summary>
+            使用存储湿度编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.EntityPropertyViewMetaExtension.UseStorageAreaEditor``1(SIE.MetaModel.View.WPFEntityPropertyViewMeta{``0},System.Action{SIE.Wpf.Editors.PagingLookUpEditorConfig})">
+            <summary>
+            使用库区编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.EntityPropertyViewMetaExtension.UsePrintTemplateEditor``1(SIE.MetaModel.View.WPFEntityPropertyViewMeta{``0},System.Action{SIE.Wpf.Editors.PagingLookUpEditorConfig})">
+            <summary>
+            使用打印编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.EntityPropertyViewMetaExtension.UseAreaLocationLookUpEditor``1(SIE.MetaModel.View.WPFEntityPropertyViewMeta{``0},System.Action{SIE.Wpf.Editors.PagingLookUpEditorConfig})">
+            <summary>
+            使用库位下拉查询编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.Command.FrozenCommand">
+            <summary>
+            更改冻结状态
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Command.FrozenCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            是否能执行
+            </summary>
+            <param name="view">列表逻辑视图</param>
+            <returns>返回true代表可以执行，否则返回false</returns>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Command.FrozenCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            执行具体的逻辑。
+            </summary>
+            <param name="view">此命令对应的视图对象。</param>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.Command.StorageAreaAddCommand">
+            <summary>
+            库区添加命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Command.StorageAreaAddCommand.OnItemCreated(SIE.Domain.Entity)">
+            <summary>
+            重写创建实体后方法
+            </summary>
+            <param name="entity">Entity</param>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.Command.StorageAreaDeleteCommand">
+            <summary>
+            库区删除命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Command.StorageAreaDeleteCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            子类重写此方法来返回是否可执行的逻辑
+            </summary>
+            <param name="view">列表逻辑视图</param>
+            <returns>是否可执行</returns>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.Command.StorageAreaEnableCommand">
+            <summary>
+            库区启用命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Command.StorageAreaEnableCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            命令是否可执行
+            </summary>
+            <param name="view">列表视图</param>
+            <returns>true/false</returns>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Command.StorageAreaEnableCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            命令是否可执行
+            </summary>
+            <param name="view">列表视图</param>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.Command.StorageAreaDisableCommand">
+            <summary>
+            库区禁用命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Command.StorageAreaDisableCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            命令是否可执行
+            </summary>
+            <param name="view">列表视图</param>
+            <returns>true/false</returns>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Command.StorageAreaDisableCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            命令是否可执行
+            </summary>
+            <param name="view">列表视图</param>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.Command.StorageAreaFrozenCommand">
+            <summary>
+            库区更改冻结状态
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Command.StorageAreaFrozenCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            是否能执行
+            </summary>
+            <param name="view">列表逻辑视图</param>
+            <returns>返回true代表可以执行，否则返回false</returns>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Command.StorageAreaFrozenCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            执行具体的逻辑。
+            </summary>
+            <param name="view">此命令对应的视图对象。</param>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.Command.StorageAreaSaveCommand">
+            <summary>
+            库区保存命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Command.StorageAreaSaveCommand.OnSaving(SIE.Wpf.ListLogicalView)">
+            <summary>
+            库区保存命令
+            </summary>
+            <param name="view"></param>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.Command.StorageLocationAddCommand">
+            <summary>
+            库位添加命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Command.StorageLocationAddCommand.OnItemCreated(SIE.Domain.Entity)">
+            <summary>
+            重写创建实体后方法
+            </summary>
+            <param name="entity">Entity</param>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.Command.StorageLocationSaveCommand">
+            <summary>
+            保存命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Command.StorageLocationSaveCommand.OnSaving(SIE.Wpf.ListLogicalView)">
+            <summary>
+            保存前逻辑
+            </summary>
+            <param name="view">当前视图对象</param>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.Command.StorageLocationFrozenCommand">
+            <summary>
+            冻结解冻命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Command.StorageLocationFrozenCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            是否能执行
+            </summary>
+            <param name="view">列表逻辑视图</param>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Command.StorageLocationFrozenCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            执行逻辑
+            </summary>
+            <param name="view">视图对象</param>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.Command.PrintStorageLocationCommand">
+            <summary>
+            打印标签
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Command.PrintStorageLocationCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            是否能执行
+            </summary>
+            <param name="view">列表逻辑视图</param>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Command.PrintStorageLocationCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            执行逻辑
+            </summary>
+            <param name="view">视图对象</param>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.Command.StorageLocationDeleteCommand">
+            <summary>
+            库位删除命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Command.StorageLocationDeleteCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            能否执行删除
+            </summary>
+            <param name="view">当前列表逻辑视图</param>
+            <returns>返回是否可执行删除</returns>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.Command.StorageLocationEnableCommand">
+            <summary>
+            启用命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Command.StorageLocationEnableCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            能否执行启用
+            </summary>
+            <param name="view">当前列表逻辑视图</param>
+            <returns>返回是否可执行启用</returns>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Command.StorageLocationEnableCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            执行逻辑
+            </summary>
+            <param name="view">视图对象</param>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.Command.StorageLocationDisableCommand">
+            <summary>
+            启用命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Command.StorageLocationDisableCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            能否执行启用
+            </summary>
+            <param name="view">当前列表逻辑视图</param>
+            <returns>返回是否可执行启用</returns>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Command.StorageLocationDisableCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            执行逻辑
+            </summary>
+            <param name="view">视图对象</param>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.Command.StorageLocationCopyCommand">
+            <summary>
+            库位复制新增命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Command.StorageLocationCopyCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            子类重写此方法来返回是否可执行的逻辑
+            </summary>
+            <param name="view">列表逻辑视图</param>
+            <returns>是否可执行</returns>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Command.StorageLocationCopyCommand.OnItemCreated(SIE.Domain.Entity)">
+            <summary>
+            复制新增
+            </summary>
+            <param name="entity">仓库实体</param>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.Command.StorageLocationItemLookUpCommand">
+            <summary>
+            选择物料
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Warehouses.Command.StorageLocationItemLookUpCommand.currStorageLocationItemList">
+            <summary>
+            当前选中的缺陷信息
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Command.StorageLocationItemLookUpCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            能否执行弹出窗口
+            </summary>
+            <param name="view">当前列表逻辑视图</param>
+            <returns>是否可弹出窗口</returns>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Command.StorageLocationItemLookUpCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            执行
+            </summary>
+            <param name="view">列表逻辑视图</param>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Command.StorageLocationItemLookUpCommand.OnAccept">
+            <summary>
+            点击确定
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Command.StorageLocationItemLookUpCommand.LoadSelectedViewDataCore(SIE.Domain.Entity)">
+            <summary>
+            加载已选择数据
+            </summary>
+            <param name="parent">父</param>
+            <returns>已选择数据</returns>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.Command.WarehouseAddCommand">
+            <summary>
+            仓库添加命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Command.WarehouseAddCommand.OnItemCreated(SIE.Domain.Entity)">
+            <summary>
+            重写创建实体后方法
+            </summary>
+            <param name="entity">Entity</param>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Command.WarehouseAddressCopyCommand.OnItemCreated(SIE.Domain.Entity)">
+            <summary>
+            复制新增
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.Command.WarehouseDeleteCommand">
+            <summary>
+            仓库删除命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Command.WarehouseDeleteCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            子类重写此方法来返回是否可执行的逻辑
+            </summary>
+            <param name="view">列表逻辑视图</param>
+            <returns>是否可执行</returns>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.Command.WarehouseEnableCommand">
+            <summary>
+            仓库启用命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Command.WarehouseEnableCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            命令是否可执行
+            </summary>
+            <param name="view">列表视图</param>
+            <returns>true/false</returns>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Command.WarehouseEnableCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            命令是否可执行
+            </summary>
+            <param name="view">列表视图</param>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.Command.WarehouseDisableCommand">
+            <summary>
+            仓库禁用命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Command.WarehouseDisableCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            命令是否可执行
+            </summary>
+            <param name="view">列表视图</param>
+            <returns>true/false</returns>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Command.WarehouseDisableCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            命令是否可执行
+            </summary>
+            <param name="view">列表视图</param>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.Command.WarehouseListCopyCommand">
+            <summary>
+            仓库复制新增命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Command.WarehouseListCopyCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            子类重写此方法来返回是否可执行的逻辑
+            </summary>
+            <param name="view">列表逻辑视图</param>
+            <returns>是否可执行</returns>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Command.WarehouseListCopyCommand.OnItemCreated(SIE.Domain.Entity)">
+            <summary>
+            复制新增时清空简码
+            </summary>
+            <param name="entity">仓库实体</param>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.Command.WarehouseSaveCommand">
+            <summary>
+            库区保存命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Command.WarehouseSaveCommand.OnSaving(SIE.Wpf.ListLogicalView)">
+            <summary>
+            库区保存命令
+            </summary>
+            <param name="view"></param>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.Configs.StorageAreaCodeConfigValueViewConfig">
+            <summary>
+            仓库编码 视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Configs.StorageAreaCodeConfigValueViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.Configs.StorageLocationCodeConfigValueViewConfig">
+            <summary>
+            库位配置 视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Configs.StorageLocationCodeConfigValueViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.Configs.WarehousesCodeConfigValueViewConfig">
+            <summary>
+            仓库编码 视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Configs.WarehousesCodeConfigValueViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.Editors.AvailableWarehouseEditor">
+            <summary>
+            可用非冻结仓库编辑器
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Warehouses.Editors.AvailableWarehouseEditor.EditorName">
+            <summary>
+            编辑器名称
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Editors.AvailableWarehouseEditor.GetDataSourceCore(SIE.Domain.Entity,SIE.PagingInfo,System.String,SIE.ManagedProperty.IManagedProperty)">
+            <summary>
+            重新数据源
+            </summary>
+            <param name="source">实体</param>
+            <param name="pagingInfo">分页</param>
+            <param name="keyword">搜索关键词</param>
+            <param name="titleProperty">IManagedProperty</param>
+            <returns>EntityList</returns>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.Editors.PrintTemplateEditor">
+            <summary>
+            打印模板编辑器
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Warehouses.Editors.PrintTemplateEditor.EditorName">
+            <summary>
+            打印模板编辑器名称
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Editors.PrintTemplateEditor.GetDataSourceCore(SIE.Domain.Entity,SIE.PagingInfo,System.String,SIE.ManagedProperty.IManagedProperty)">
+            <summary>
+            设置数据源
+            </summary>
+            <param name="source">实体</param>
+            <param name="pagingInfo">分页信息</param>
+            <param name="keyword">关键词</param>
+            <param name="titleProperty">托管属性</param>
+            <returns>EntityList</returns>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.Editors.RoHsGradeEditor">
+            <summary>
+            RoHS等级编辑器
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Warehouses.Editors.RoHsGradeEditor.EditorName">
+            <summary>
+            RoHS等级编辑器
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Editors.RoHsGradeEditor.BindingProperty">
+            <summary>
+            绑定实体
+            </summary>
+            <returns>属性</returns>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Editors.RoHsGradeEditor.CreateBaseEdit(System.String,System.Int32,System.Boolean@)">
+            <summary>
+            创建控件
+            </summary>
+            <param name="fieldName">创建控件对应的字段</param>
+            <param name="colIndex">创建控件对应字段的索引</param>
+            <param name="isBindReadOnly">是否绑定只读字段</param>
+            <returns>返回新建的控件</returns>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Editors.RoHsGradeEditor.CreateCheckEdit">
+            <summary>
+            创建数值控件
+            </summary>
+            <returns>返回数值控件</returns>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Editors.RoHsGradeEditor.CreateComboBoxEdit">
+            <summary>
+            创建枚举下拉框控件
+            </summary>
+            <returns>返回枚举下拉框控件</returns>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Editors.RoHsGradeEditor.GetDataSource">
+            <summary>
+            创建下拉框的数据源
+            </summary>
+            <returns>返回下拉框的数据源</returns>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.Editors.StorageAreaEditor">
+            <summary>
+            库区编辑器
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Warehouses.Editors.StorageAreaEditor.EditorName">
+            <summary>
+            库区编辑器名称
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Editors.StorageAreaEditor.GetDataSourceCore(SIE.Domain.Entity,SIE.PagingInfo,System.String,SIE.ManagedProperty.IManagedProperty)">
+            <summary>
+            设置数据源
+            </summary>
+            <param name="source">实体</param>
+            <param name="pagingInfo">分页信息</param>
+            <param name="keyword">关键词</param>
+            <param name="titleProperty">托管属性</param>
+            <returns>EntityList</returns>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.Editors.StorageEditor">
+            <summary>
+            仓储编辑器
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Editors.StorageEditor.BindingProperty">
+            <summary>
+            绑定实体
+            </summary>
+            <returns>属性</returns>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Editors.StorageEditor.CreateBaseEdit(System.String,System.Int32,System.Boolean@)">
+            <summary>
+            创建控件
+            </summary>
+            <param name="fieldName">创建控件对应的字段</param>
+            <param name="colIndex">创建控件对应字段的索引</param>
+            <param name="isBindReadOnly">是否绑定只读字段</param>
+            <returns>返回新建的控件</returns>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Editors.StorageEditor.CreateSpinEdit">
+            <summary>
+            创建数值控件
+            </summary>
+            <returns>返回数值控件</returns>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Editors.StorageEditor.CreateLabel">
+            <summary>
+            创建"至" Label控件
+            </summary>
+            <returns>返回Label控件</returns>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Editors.StorageEditor.CreateComboBoxEdit">
+            <summary>
+            创建枚举下拉框控件
+            </summary>
+            <returns>返回枚举下拉框控件</returns>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Editors.StorageEditor.GetDataSource">
+            <summary>
+            创建下拉框的数据源
+            </summary>
+            <returns>返回下拉框的数据源</returns>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.Editors.StorageHumidityEditor">
+            <summary>
+            存储湿度编辑器
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Warehouses.Editors.StorageHumidityEditor.EditorName">
+            <summary>
+            存储湿度编辑器
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Editors.StorageHumidityEditor.GetDataSource">
+            <summary>
+            创建下拉框的数据源
+            </summary>
+            <returns>返回下拉框的数据源</returns>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.Editors.AreaLocationLookUpEditor">
+            <summary>
+            根据仓库类型来获取仓库数据下拉编辑器
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Warehouses.Editors.AreaLocationLookUpEditor.EditorName">
+            <summary>
+            编辑器名称
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Editors.AreaLocationLookUpEditor.GetDataSourceCore(SIE.Domain.Entity,SIE.PagingInfo,System.String,SIE.ManagedProperty.IManagedProperty)">
+            <summary>
+            重新数据源
+            </summary>
+            <param name="source">实体</param>
+            <param name="pagingInfo">分页</param>
+            <param name="keyword">搜索关键词</param>
+            <param name="titleProperty">IManagedProperty</param>
+            <returns>EntityList</returns>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.Editors.StorageTemperatureEditor">
+            <summary>
+            存储温度编辑器
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Warehouses.Editors.StorageTemperatureEditor.EditorName">
+            <summary>
+            存储温度编辑器
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Editors.StorageTemperatureEditor.GetDataSource">
+            <summary>
+            创建下拉框的数据源
+            </summary>
+            <returns>返回下拉框的数据源</returns>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.Editors.WarehouseLookUpEditor">
+            <summary>
+            根据仓库类型来获取仓库数据下拉编辑器
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Warehouses.Editors.WarehouseLookUpEditor.EditorName">
+            <summary>
+            编辑器名称
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Editors.WarehouseLookUpEditor.GetDataSourceCore(SIE.Domain.Entity,SIE.PagingInfo,System.String,SIE.ManagedProperty.IManagedProperty)">
+            <summary>
+            重新数据源
+            </summary>
+            <param name="source">实体</param>
+            <param name="pagingInfo">分页</param>
+            <param name="keyword">搜索关键词</param>
+            <param name="titleProperty">IManagedProperty</param>
+            <returns>EntityList</returns>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.Module">
+            <summary>
+            当前工程所对应的模块类
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化
+            </summary>
+            <param name="app">应用程序</param>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Module.AddNewPropertyEditor(SIE.IApp)">
+            <summary>
+            属性编辑器
+            </summary>
+            <param name="app">IApp</param>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.Module.App_ModuleOperations(System.Object,System.EventArgs)">
+            <summary>
+            模块菜单定义
+            </summary>
+            <param name="sender">发送者</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.Printables.StorageLocationPrintable">
+            <summary>
+            库位标签
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.StorageAreaInfoViewConfig">
+            <summary>
+            库区基本资料视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.StorageAreaInfoViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.StorageAreaInfoViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.StorageAreaOperationViewConfig">
+            <summary>
+            库区操作管理视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.StorageAreaOperationViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.StorageAreaOperationViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.StorageAreaViewConfig">
+            <summary>
+            库区视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.StorageAreaViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.StorageAreaViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.StorageAreaViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.StorageLocationInfoViewConfig">
+            <summary>
+            库区基本资料 视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.StorageLocationInfoViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.StorageLocationInfoViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.StorageLocationItemListViewConfig">
+            <summary>
+            库区专储物料清单 视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.StorageLocationItemListViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.StorageLocationItemListViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.StorageLocationLayinInfoViewConfig">
+            <summary>
+            库位 仓储资料 视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.StorageLocationLayinInfoViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.StorageLocationLayinInfoViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.StorageLocationOperationViewConfig">
+            <summary>
+            库区操作管理 视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.StorageLocationOperationViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.StorageLocationOperationViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.StorageLocationViewConfig">
+            <summary>
+            货位视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.StorageLocationViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.StorageLocationViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.ViewBehaviors.SpecialItemBehavior">
+            <summary>
+            专储物料行为
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Warehouses.ViewBehaviors.SpecialItemBehavior.isChanging">
+            <summary>
+            是否正在修改
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.ViewBehaviors.SpecialItemBehavior.OnAttach">
+            <summary>
+            附加
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.ViewBehaviors.SpecialItemBehavior.StorageLocation_CurrentChanged(System.Object,System.EventArgs)">
+            <summary>
+            当前库位对象变更
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.ViewBehaviors.SpecialItemBehavior.LayinInfoView_CurrentChanged(System.Object,System.EventArgs)">
+            <summary>
+            当前仓储资料对象变更
+            </summary>
+            <param name="sender">当前变更的视图对象</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.ViewBehaviors.SpecialItemBehavior.LayinInfo_PropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            值变更
+            </summary>
+            <param name="sender">变更的对象</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.ViewBehaviors.StorageAreaChangeBehavior">
+            <summary>
+            库区所属范围变更
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.ViewBehaviors.StorageAreaChangeBehavior.OnAttach">
+            <summary>
+            附加
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.ViewBehaviors.StorageAreaChangeBehavior.StorageArea_CurrentChanged(System.Object,System.EventArgs)">
+            <summary>
+            当前库区对象变更
+            </summary>
+            <param name="sender">当前变更的视图对象</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.ViewBehaviors.StorageAreaChangeBehavior.Area_PropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            值变更
+            </summary>
+            <param name="sender">变更的对象</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.ViewBehaviors.StorageLocationChangeBehavior">
+            <summary>
+            库位所属范围变更
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.ViewBehaviors.StorageLocationChangeBehavior.OnAttach">
+            <summary>
+            附加
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.ViewBehaviors.StorageLocationChangeBehavior.StorageLocation_CurrentChanged(System.Object,System.EventArgs)">
+            <summary>
+            当前库位对象变更
+            </summary>
+            <param name="sender">当前变更的视图对象</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.ViewBehaviors.StorageLocationChangeBehavior.Location_PropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            值变更
+            </summary>
+            <param name="sender">变更的对象</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.ViewBehaviors.TemperateAndHumidityBehavior">
+            <summary>
+            库位仓储资料温度变更行为
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Warehouses.ViewBehaviors.TemperateAndHumidityBehavior.isChangeing">
+            <summary>
+            是否正在变更
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Warehouses.ViewBehaviors.TemperateAndHumidityBehavior.layinInfo">
+            <summary>
+            仓储资料对象
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.ViewBehaviors.TemperateAndHumidityBehavior.OnAttach">
+            <summary>
+            附加
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.ViewBehaviors.TemperateAndHumidityBehavior.StorageLocationLayinInfo_CurrentChanged(System.Object,System.EventArgs)">
+            <summary>
+            当前库位仓储资料对象变更
+            </summary>
+            <param name="sender">当前变更的视图对象</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.ViewBehaviors.TemperateAndHumidityBehavior.LayinInfo_PropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            值变更
+            </summary>
+            <param name="sender">变更的对象</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.ViewBehaviors.TemperateAndHumidityBehavior.TemperateChange(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            温度变更
+            </summary>
+            <param name="sender">变更的对象</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.ViewBehaviors.TemperateAndHumidityBehavior.HumidityChange(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            湿度变更
+            </summary>
+            <param name="sender">变更的对象</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.ViewModels.StorageLocationPrintViewModel">
+            <summary>
+            库位打印标签命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.ViewModels.StorageLocationPrintViewModel.#ctor">
+            <summary>
+            库位打印标签命令
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Warehouses.ViewModels.StorageLocationPrintViewModel.PrintCountProperty">
+            <summary>
+            打印份数
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Warehouses.ViewModels.StorageLocationPrintViewModel.PrintCount">
+            <summary>
+            打印份数
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Warehouses.ViewModels.StorageLocationPrintViewModel.PrinterProperty">
+            <summary>
+            打印机
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Warehouses.ViewModels.StorageLocationPrintViewModel.Printer">
+            <summary>
+            打印机
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.ViewModels.StorageLocationPrintViewModel.OnPrinterChanged">
+            <summary>
+            打印机变更
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.ViewModels.StorageLocationPrintViewModelViewConfig">
+            <summary>
+            库位 打印标签视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.ViewModels.StorageLocationPrintViewModelViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.WarehouseAddressViewConfig">
+            <summary>
+            仓库地址视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.WarehouseAddressViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.WarehouseAddressViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.WarehouseAddressViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.WarehouseEmployeeViewConfig">
+            <summary>
+            仓库与员工关系视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.WarehouseEmployeeViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.WarehouseEmployeeViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.WarehouseEmployeeViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.WarehouseInfoViewConfig">
+            <summary>
+            仓库资料视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.WarehouseInfoViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.WarehouseInfoViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Warehouses.WarehouseViewConfig">
+            <summary>
+            仓库视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.WarehouseViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.WarehouseViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.WarehouseViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Warehouses.WarehouseViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="T:SIE.WPF.Warehouses.MultiQueryAreaCriteriaViewConfig">
+            <summary>
+            库区查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.WPF.Warehouses.MultiQueryAreaCriteriaViewConfig.ConfigView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.WPF.Warehouses.MultiQueryLocCriteriaViewConfig">
+            <summary>
+            库区查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.WPF.Warehouses.MultiQueryLocCriteriaViewConfig.ConfigView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.WPF.Warehouses.MultiQueryWhCriteriaViewConfig">
+            <summary>
+            库区查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.WPF.Warehouses.MultiQueryWhCriteriaViewConfig.ConfigView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.WPF.Warehouses.StorageAreaCriteriaViewConfig">
+            <summary>
+            库区查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.WPF.Warehouses.StorageAreaCriteriaViewConfig.ConfigView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.WPF.Warehouses.StorageLocationCriteriaVierConfig">
+            <summary>
+            库区查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.WPF.Warehouses.StorageLocationCriteriaVierConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,4688 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Dock</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Dock.Common.Datas.WxSenderType">
+            <summary>
+            通知类型-预约通知/排队通知
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.Common.Datas.WxSenderType.Appoint">
+            <summary>
+            预约
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.Common.Datas.WxSenderType.Queue">
+            <summary>
+            排队
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.Common.MapHelper">
+            <summary>
+            计算距离工具类 参考文章https://www.cnblogs.com/hugeboke/p/13348034.html
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.Common.MapHelper.EarthRadius">
+            <summary>
+            地球半径
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.Common.MapHelper.Rad(System.Double)">
+            <summary>
+            经纬度转化成弧度
+            </summary>
+            <param name="d"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Dock.Common.MapHelper.GetDistance(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            计算两个坐标点之间的距离
+            </summary>
+            <param name="firstLongitude">第一个坐标的经度</param>
+            <param name="firstLatitude">第一个坐标的纬度</param>
+            <param name="secondLongitude">第二个坐标的经度</param>
+            <param name="secondLatitude">第二个坐标的纬度</param>
+            <returns>返回两点之间的距离，单位：公里/千米</returns>
+        </member>
+        <member name="T:SIE.Dock.Common.WechatSenderController">
+            <summary>
+            微信公众号推送类
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.Common.WechatSenderController.SendMessage(SIE.Dock.Datas.MessageTemplateSendDto)">
+            <summary>
+            推送模板消息给微信平台
+            </summary>
+            <param name="sendData">模板数据</param>
+            <exception cref="T:SIE.Domain.Validation.ValidationException"></exception>
+        </member>
+        <member name="M:SIE.Dock.Common.WechatSenderController.GetAccessToken(System.String,System.String)">
+            <summary>
+            获取AccessToken
+            </summary>
+            <param name="appid">APPID</param>
+            <param name="appSecret">SECRET</param>
+            <returns>AccessToken</returns>
+            <exception cref="T:SIE.Domain.Validation.ValidationException">异常信息</exception>
+        </member>
+        <member name="M:SIE.Dock.Common.WechatSenderController.GetWxSenderDataByAppoint(SIE.Dock.DockAppoints.DockAppoint,System.String)">
+            <summary>
+            获取预约模板数据
+            </summary>
+            <param name="dockAppoint">预约数据</param>
+            <param name="openId">openID</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Dock.Common.WechatSenderController.GetWxSenderDataByQueue(SIE.Dock.DockQueues.DockQueue,System.String)">
+            <summary>
+            获取排队模板数据
+            </summary>
+            <param name="dockQueue">排队数据</param>
+            <param name="openId">openID</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Dock.Common.WechatSenderController.GetWxSenderDataByAssign(SIE.Dock.DockQueues.DockQueue,System.String,System.String)">
+            <summary>
+            获取分配模板数据
+            </summary>
+            <param name="dockQueue">排队数据</param>
+            <param name="openId">openId</param>
+            <param name="DockName">月台名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Dock.Common.WechatSenderController.GetPushPlug">
+            <summary>
+            获取微信插件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Dock.Common.WechatSenderController.GetWxSenderConfig">
+            <summary>
+            获取微信插件config
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Dock.Datas.DefaultTemplateData">
+            <summary>
+            默认模板数据
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Datas.DefaultTemplateData.TemplateId">
+            <summary>
+            模板ID
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Datas.DefaultTemplateData.TemplateFileName">
+            <summary>
+            模板名称
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.Datas.DockAppointData">
+            <summary>
+            默认模板数据
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Datas.DockAppointData.BillIds">
+            <summary>
+            单据ID集合
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Datas.DockAppointData.PrintTemplateId">
+            <summary>
+            模板ID
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Datas.DockAppointData.ReasonDesc">
+            <summary>
+            原因描述
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.Datas.DockAppointTimeData">
+            <summary>
+            月台预约时间数据
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Datas.DockAppointTimeData.BeginTimes">
+            <summary>
+            开始时间
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Datas.DockAppointTimeData.EndTimes">
+            <summary>
+            结束时间
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.Datas.DockHandleData">
+            <summary>
+            月台处理能力数据
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Datas.DockHandleData.BeginTime">
+            <summary>
+            开始时间
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Datas.DockHandleData.EndTime">
+            <summary>
+            结束时间
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Datas.DockHandleData.ShipAppoNum">
+            <summary>
+            送货可预约数
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Datas.DockHandleData.ReceiveAppoNum">
+            <summary>
+            提货可预约数
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Datas.DockHandleData.UseTime">
+            <summary>
+            可用时间
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Datas.DockHandleData.MaxRestTime">
+            <summary>
+            最大剩余可用时间
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Datas.DockHandleData.RemainUseTime">
+            <summary>
+            剩余可用时间
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Datas.DockHandleData.HasAppointCount">
+            <summary>
+            已预约数
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Datas.DockHandleData.UseHours">
+            <summary>
+            预计占用时间
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Datas.DockHandleData.DockId">
+            <summary>
+            月台ID
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.Datas.DockMaxRestTimeData">
+            <summary>
+            最大可用时间数据
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Datas.DockMaxRestTimeData.MaxRestTime">
+            <summary>
+            最大可用时间
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Datas.DockMaxRestTimeData.DockId">
+            <summary>
+            月台ID
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.Datas.DockMapSaveReturnData">
+            <summary>
+            预约图保存数据返回
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Datas.DockMapSaveReturnData.ErrorMsg">
+            <summary>
+            报错信息（空代表是成功）
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Datas.DockMapSaveReturnData.Codes">
+            <summary>
+            报错需要点亮的格子
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.Datas.AccessTokenData">
+            <summary>
+            AccessToken数据
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Datas.AccessTokenData.access_token">
+            <summary>
+            获取到的凭证
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Datas.AccessTokenData.expires_in">
+            <summary>
+            凭证有效时间。单位：秒
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Datas.MessageTemplateSendDataContentDto.value">
+            <summary>
+            文本内容
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Datas.MessageTemplateSendDataContentDto.color">
+            <summary>
+            文本颜色
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Datas.MessageTemplateSendDto.touser">
+            <summary>
+            必填
+            接收者openid
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Datas.MessageTemplateSendDto.template_id">
+            <summary>
+            必填
+            模板ID
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Datas.MessageTemplateSendDto.url">
+            <summary>
+            模板跳转链接（海外帐号没有跳转能力）
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Datas.MessageTemplateSendDto.miniprogram">
+            <summary>
+            跳小程序所需数据，不需跳小程序可不用传该数据
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Datas.MessageTemplateSendDto.data">
+            <summary>
+            必填
+            模板数据
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Datas.MessageTemplateSendDto.color">
+            <summary>
+            模板内容字体颜色，不填默认为黑色
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Datas.MessageTemplateSendDto.client_msg_id">
+            <summary>
+            防重入id。对于同一个openid + client_msg_id, 只发送一条消息,10分钟有效,超过10分钟不保证效果。若无防重入需求，可不填
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Datas.MiniprogramDto.appid">
+            <summary>
+            必填
+            所需跳转到的小程序appid（该小程序 appid 必须与发模板消息的公众号是绑定关联关系，暂不支持小游戏）
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Datas.MiniprogramDto.pagepath">
+            <summary>
+            所需跳转到小程序的具体页面路径，支持带参数,（示例index? foo = bar），要求该小程序已发布，暂不支持小游戏
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.Datas.WeChatTicketData">
+            <summary>
+            Ticket数据
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Datas.WeChatTicketData.errcode">
+            <summary>
+            错误编码
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Datas.WeChatTicketData.errmsg">
+            <summary>
+            错误信息
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Datas.WeChatTicketData.ticket">
+            <summary>
+            Ticket
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Datas.WeChatTicketData.expires_in">
+            <summary>
+            凭证有效时间。单位：秒
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.Datas.WeChatSignatureData">
+            <summary>
+            微信签名数据
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Datas.WeChatSignatureData.TimeStamp">
+            <summary>
+            时间戳字符串
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Datas.WeChatSignatureData.AccessToken">
+            <summary>
+            Accsee_Token
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Datas.WeChatSignatureData.Ticket">
+            <summary>
+            Ticket
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Datas.WeChatSignatureData.NonceStr">
+            <summary>
+            随机字符串
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Datas.WeChatSignatureData.Signature">
+            <summary>
+            签名
+            </summary>
+        </member>
+        <member name="T:SIE.Dock._20250609_095201_Dock">
+            <summary>
+            库内编码规则初始化
+            </summary>
+        </member>
+        <member name="P:SIE.Dock._20250609_095201_Dock.DbSetting">
+            <summary>
+            数据库设置
+            </summary>
+        </member>
+        <member name="P:SIE.Dock._20250609_095201_Dock.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:SIE.Dock._20250609_095201_Dock.Type">
+            <summary>
+            手动升级的类型：数据
+            </summary>
+        </member>
+        <member name="M:SIE.Dock._20250609_095201_Dock.Down">
+            <summary>
+            不支持 Down
+            </summary>
+        </member>
+        <member name="M:SIE.Dock._20250609_095201_Dock.Up">
+            <summary>
+            注入
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.DockAppoints.AppointType">
+            <summary>
+            预约类型
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.AppointType.Delivery">
+            <summary>
+            送货
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.AppointType.PickUp">
+            <summary>
+            提货
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.DockAppoints.Configs.DockAppointNoConfig">
+            <summary>
+            月台预约号生成规则
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.Configs.DockAppointNoConfig.defaultValue">
+            <summary>
+            默认值
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockAppoints.Configs.DockAppointNoConfig.DefaultValue">
+            <summary>
+            默认值
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.DockAppoints.Configs.DockAppointNoConfigValue">
+            <summary>
+            月台预约配置项内容
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.Configs.DockAppointNoConfigValue.NumberRuleIdProperty">
+            <summary>
+            编码规则ID
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockAppoints.Configs.DockAppointNoConfigValue.NumberRuleId">
+            <summary>
+            编码规则ID
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.Configs.DockAppointNoConfigValue.NumberRuleProperty">
+            <summary>
+            编码规则
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockAppoints.Configs.DockAppointNoConfigValue.NumberRule">
+            <summary>
+            编码规则
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.Configs.DockAppointNoConfigValue.PrintTemplateIdProperty">
+            <summary>
+            打印模板ID
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockAppoints.Configs.DockAppointNoConfigValue.PrintTemplateId">
+            <summary>
+            打印模板ID
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.Configs.DockAppointNoConfigValue.PrintTemplateProperty">
+            <summary>
+            打印模板
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockAppoints.Configs.DockAppointNoConfigValue.PrintTemplate">
+            <summary>
+            打印模板
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.Configs.DockAppointNoConfigValue.MaxAppointTimeProperty">
+            <summary>
+            最大预约时间(H)
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockAppoints.Configs.DockAppointNoConfigValue.MaxAppointTime">
+            <summary>
+            最大预约时间(H)
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.DockAppoints.Configs.DockAppointNoConfigValue.Display">
+            <summary>
+             显示值
+            </summary>
+            <returns>string</returns>
+        </member>
+        <member name="T:SIE.Dock.DockAppoints.Dao.DockAppointDao">
+            <summary>
+            月台预约DAO
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.DockAppoints.Dao.DockAppointDao.GetDockAppoints(SIE.Dock.DockAppoints.DockAppointCriteria)">
+            <summary>
+            获取月台预约数据
+            </summary>
+            <param name="criteria">查询实体</param>
+            <returns>月台预约数据</returns>
+        </member>
+        <member name="M:SIE.Dock.DockAppoints.Dao.DockAppointDao.GetDockAppointNumberRule">
+            <summary>
+            获取发运单配置的编码规则
+            </summary>
+            <returns>返回编码规则</returns>
+        </member>
+        <member name="M:SIE.Dock.DockAppoints.Dao.DockAppointDao.GetDockAppointNo">
+            <summary>
+            获取月台预约单号
+            </summary>
+            <returns>月台预约单号</returns>
+        </member>
+        <member name="M:SIE.Dock.DockAppoints.Dao.DockAppointDao.GetDockAppointList(System.Collections.Generic.List{System.Double},SIE.Domain.EagerLoadOptions)">
+            <summary>
+            获取月台预约数据
+            </summary>
+            <param name="ids">ID集合</param>
+            <param name="elo">贪婪加载</param>
+            <returns>月台预约数据</returns>
+        </member>
+        <member name="M:SIE.Dock.DockAppoints.Dao.DockAppointDao.GetDockAppointByDockIds(System.Collections.Generic.List{System.Double},System.Nullable{System.DateTime})">
+            <summary>
+            获取月台预约数据
+            </summary>
+            <param name="dockIds">月台维护ID集合</param>
+            <param name="appointDate">大于等于预约日期</param>
+            <returns>月台预约数据</returns>
+        </member>
+        <member name="M:SIE.Dock.DockAppoints.Dao.DockAppointDao.GetDockAppointByDockIds(System.Collections.Generic.List{System.Double},System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.String,System.String)">
+            <summary>
+            获取月台预约数据
+            </summary>
+            <param name="dockIds">月台维护ID集合</param>
+            <param name="beginDate">开始日期</param>
+            <param name="endDate">结束日期</param>
+            <param name="appointNo">预约号</param>
+            <param name="billNo">单据号</param>
+            <returns>月台预约数据</returns>
+        </member>
+        <member name="M:SIE.Dock.DockAppoints.Dao.DockAppointDao.GetSelectDockAppoints(System.String,SIE.PagingInfo)">
+            <summary>
+            获取预约数据
+            </summary>
+            <param name="keyword">查询关键子</param>
+            <param name="pagingInfo">分页信息</param>
+            <returns>预约数据</returns>
+        </member>
+        <member name="M:SIE.Dock.DockAppoints.Dao.DockAppointDao.GetAppointDateDockAppoints(System.Double,System.Nullable{SIE.Dock.DockAppoints.AppointType},System.Nullable{System.DateTime},System.Nullable{System.DateTime},SIE.Domain.EntityList{SIE.Dock.DockMaintains.DockMaintain})">
+            <summary>
+            获取预约日期范围的预约月台数据
+            </summary>
+            <param name="yardZoneId">园区ID</param>
+            <param name="appointType">预约类型</param>
+            <param name="beginTime">开始时间集合</param>
+            <param name="endTime">结束时间集合</param>
+            <param name="dockList">园区下的月台</param>
+            <returns>预约月台数据</returns>
+        </member>
+        <member name="M:SIE.Dock.DockAppoints.Dao.DockAppointDao.GetDockAppointById(System.Double)">
+            <summary>
+            预约ID
+            </summary>
+            <param name="Id">预约ID</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Dock.DockAppoints.DockAppoint">
+            <summary>
+            月台预约
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.DockAppoint.NoProperty">
+            <summary>
+            预约号
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockAppoints.DockAppoint.No">
+            <summary>
+            预约号
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.DockAppoint.BillNoProperty">
+            <summary>
+            单据号
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockAppoints.DockAppoint.BillNo">
+            <summary>
+            单据号
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.DockAppoint.AppointDateProperty">
+            <summary>
+            预约日期
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockAppoints.DockAppoint.AppointDate">
+            <summary>
+            预约日期
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.DockAppoint.AppointStartDateProperty">
+            <summary>
+            预约开始时间
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockAppoints.DockAppoint.AppointStartDate">
+            <summary>
+            预约开始时间
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.DockAppoint.AppointEndDateProperty">
+            <summary>
+            预约结束时间
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockAppoints.DockAppoint.AppointEndDate">
+            <summary>
+            预约结束时间
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.DockAppoint.CompanyNameProperty">
+            <summary>
+            公司名称
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockAppoints.DockAppoint.CompanyName">
+            <summary>
+            公司名称
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.DockAppoint.CarNumProperty">
+            <summary>
+            车牌号
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockAppoints.DockAppoint.CarNum">
+            <summary>
+            车牌号
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.DockAppoint.ContactsProperty">
+            <summary>
+            联系人
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockAppoints.DockAppoint.Contacts">
+            <summary>
+            联系人
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.DockAppoint.ContactNumProperty">
+            <summary>
+            联系电话
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockAppoints.DockAppoint.ContactNum">
+            <summary>
+            联系电话
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.DockAppoint.IDNumberProperty">
+            <summary>
+            身份证号
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockAppoints.DockAppoint.IDNumber">
+            <summary>
+            身份证号
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.DockAppoint.IsCancelAppointProperty">
+            <summary>
+            是否取消预约
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockAppoints.DockAppoint.IsCancelAppoint">
+            <summary>
+            是否取消预约
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.DockAppoint.CancelAppointDateProperty">
+            <summary>
+            取消预约时间
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockAppoints.DockAppoint.CancelAppointDate">
+            <summary>
+            取消预约时间
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.DockAppoint.CancelReasonProperty">
+            <summary>
+            取消预约原因
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockAppoints.DockAppoint.CancelReason">
+            <summary>
+            取消预约原因
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.DockAppoint.WeChatIDProperty">
+            <summary>
+            微信ID
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockAppoints.DockAppoint.WeChatID">
+            <summary>
+            微信ID
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.DockAppoint.RemarkProperty">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockAppoints.DockAppoint.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.DockAppoint.DockMaintainIdProperty">
+            <summary>
+            月台编码Id
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockAppoints.DockAppoint.DockMaintainId">
+            <summary>
+            月台编码Id
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.DockAppoint.DockMaintainProperty">
+            <summary>
+            月台编码
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockAppoints.DockAppoint.DockMaintain">
+            <summary>
+            月台编码
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.DockAppoint.CancelAppointByProperty">
+            <summary>
+            取消预约人Id
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockAppoints.DockAppoint.CancelAppointBy">
+            <summary>
+            取消预约人Id
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.DockAppoint.CancelAppointProperty">
+            <summary>
+            取消预约人
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockAppoints.DockAppoint.CancelAppoint">
+            <summary>
+            取消预约人
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.DockAppoint.AppointTypeProperty">
+            <summary>
+            预约类型
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockAppoints.DockAppoint.AppointType">
+            <summary>
+            预约类型
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.DockAppoint.YardZoneIdProperty">
+            <summary>
+            预约地点Id
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockAppoints.DockAppoint.YardZoneId">
+            <summary>
+            预约地点Id
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.DockAppoint.YardZoneProperty">
+            <summary>
+            预约地点
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockAppoints.DockAppoint.YardZone">
+            <summary>
+            预约地点
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.DockAppoint.UseHoursProperty">
+            <summary>
+            预计占用(H)
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockAppoints.DockAppoint.UseHours">
+            <summary>
+            预计占用(H)
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.DockAppoint.UseHoursDisplayProperty">
+            <summary>
+            预计占用显示
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockAppoints.DockAppoint.UseHoursDisplay">
+            <summary>
+            预计占用显示
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.DockAppoint.DockSourceTypeProperty">
+            <summary>
+            来源类型
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockAppoints.DockAppoint.DockSourceType">
+            <summary>
+            来源类型
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.DockAppoint.DockMaintainCodeProperty">
+            <summary>
+            月台编码
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockAppoints.DockAppoint.DockMaintainCode">
+            <summary>
+            月台编码
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.DockAppoint.DockMaintainNameProperty">
+            <summary>
+            月台名称
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockAppoints.DockAppoint.DockMaintainName">
+            <summary>
+            月台名称
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.DockAppoint.YardZoneNameProperty">
+            <summary>
+            预约地点名称
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockAppoints.DockAppoint.YardZoneName">
+            <summary>
+            排队地点名称
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.DockAppoint.LongitudeProperty">
+            <summary>
+            排队地点经度
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockAppoints.DockAppoint.Longitude">
+            <summary>
+            排队地点经度
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.DockAppoint.LatitudeProperty">
+            <summary>
+            排队地点纬度
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockAppoints.DockAppoint.Latitude">
+            <summary>
+            排队地点纬度
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.DockAppoint.DistanceProperty">
+            <summary>
+            排队取号围栏距离(km)
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockAppoints.DockAppoint.Distance">
+            <summary>
+            排队取号围栏距离(km)
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.DockAppoint.AppointDockProperty">
+            <summary>
+            预约月台
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockAppoints.DockAppoint.AppointDock">
+            <summary>
+            预约月台
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.DockAppoints.DockAppointConfig">
+            <summary>
+            月台预约 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.DockAppoints.DockAppointConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.DockAppoints.DockAppointCriteria">
+            <summary>
+            月台预约查询实体
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.DockAppointCriteria.NoProperty">
+            <summary>
+            预约号
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockAppoints.DockAppointCriteria.No">
+            <summary>
+            预约号
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.DockAppointCriteria.BillNoProperty">
+            <summary>
+            单据号
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockAppoints.DockAppointCriteria.BillNo">
+            <summary>
+            单据号
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.DockAppointCriteria.DockMaintainCodeProperty">
+            <summary>
+            月台编码
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockAppoints.DockAppointCriteria.DockMaintainCode">
+            <summary>
+            月台编码
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.DockAppointCriteria.DockMaintainNameProperty">
+            <summary>
+            月台名称
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockAppoints.DockAppointCriteria.DockMaintainName">
+            <summary>
+            月台名称
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.DockAppointCriteria.YardZoneIdProperty">
+            <summary>
+            预约地点Id
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockAppoints.DockAppointCriteria.YardZoneId">
+            <summary>
+            预约地点Id
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.DockAppointCriteria.YardZoneProperty">
+            <summary>
+            预约地点
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockAppoints.DockAppointCriteria.YardZone">
+            <summary>
+            预约地点
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.DockAppointCriteria.CarNumProperty">
+            <summary>
+            车牌号
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockAppoints.DockAppointCriteria.CarNum">
+            <summary>
+            车牌号
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.DockAppointCriteria.ContactsProperty">
+            <summary>
+            联系人
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockAppoints.DockAppointCriteria.Contacts">
+            <summary>
+            联系人
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.DockAppointCriteria.AppointTypeProperty">
+            <summary>
+            预约类型
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockAppoints.DockAppointCriteria.AppointType">
+            <summary>
+            预约类型
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.DockAppointCriteria.AppointDateProperty">
+            <summary>
+            预约时间
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockAppoints.DockAppointCriteria.AppointDate">
+            <summary>
+            预约时间
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.DockAppoints.DockAppointCriteria.Fetch">
+            <summary>
+            重写此方法实现查询
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.DockAppoints.DockSourceType">
+            <summary>
+            月台来源类型
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.DockSourceType.PC">
+            <summary>
+            PC
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.DockSourceType.ASN">
+            <summary>
+            ASN单
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.DockSourceType.WECHAT">
+            <summary>
+            微信
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.DockAppoints.Service.DockAppointService">
+            <summary>
+            月台预约Service
+            </summary>
+            <summary>
+            月台预约Service
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockAppoints.Service.DockAppointService._dockAppointDao">
+            <summary>
+            月台维护数据访问
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.DockAppoints.Service.DockAppointService.#ctor(SIE.Dock.DockAppoints.Dao.DockAppointDao)">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.DockAppoints.Service.DockAppointService.GetDockAppoints(SIE.Dock.DockAppoints.DockAppointCriteria)">
+            <summary>
+            获取月台预约数据
+            </summary>
+            <param name="criteria">查询实体</param>
+            <returns>月台预约数据</returns>
+        </member>
+        <member name="M:SIE.Dock.DockAppoints.Service.DockAppointService.GetDockAppointNo">
+            <summary>
+            获取月台预约单号
+            </summary>
+            <returns>月台预约单号</returns>
+        </member>
+        <member name="M:SIE.Dock.DockAppoints.Service.DockAppointService.GetDockAppointList(System.Collections.Generic.List{System.Double},SIE.Domain.EagerLoadOptions)">
+            <summary>
+            获取月台预约数据
+            </summary>
+            <param name="ids">ID集合</param>
+            <param name="elo">贪婪加载</param>
+            <returns>月台预约数据</returns>
+        </member>
+        <member name="M:SIE.Dock.DockAppoints.Service.DockAppointService.GetDockAppointByDockIds(System.Collections.Generic.List{System.Double},System.Nullable{System.DateTime})">
+            <summary>
+            获取月台预约数据
+            </summary>
+            <param name="dockIds">月台维护ID集合</param>
+            <param name="appointDate">大于等于预约日期</param>
+            <returns>月台预约数据</returns>
+        </member>
+        <member name="M:SIE.Dock.DockAppoints.Service.DockAppointService.GetDockAppointByDockIds(System.Collections.Generic.List{System.Double},System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.String,System.String)">
+            <summary>
+            获取月台预约数据
+            </summary>
+            <param name="dockIds">月台维护ID集合</param>
+            <param name="beginDate">开始日期</param>
+            <param name="endDate">结束日期</param>
+            <param name="appointNo">预约号</param>
+            <param name="billNo">单据号</param>
+            <returns>月台预约数据</returns>
+        </member>
+        <member name="M:SIE.Dock.DockAppoints.Service.DockAppointService.GetSelectDockAppoints(System.String,SIE.PagingInfo)">
+            <summary>
+            获取预约数据
+            </summary>
+            <param name="keyword">查询关键子</param>
+            <param name="pagingInfo">分页信息</param>
+            <returns>预约数据</returns>
+        </member>
+        <member name="M:SIE.Dock.DockAppoints.Service.DockAppointService.GetAppointDateDockAppoints(System.Double,System.Nullable{SIE.Dock.DockAppoints.AppointType},System.Nullable{System.DateTime},System.Nullable{System.DateTime},SIE.Domain.EntityList{SIE.Dock.DockMaintains.DockMaintain})">
+            <summary>
+            获取月台预约数据
+            </summary>
+            <param name="yardZoneId">园片区ID</param>
+            <param name="appointType">预约类型</param>
+            <param name="beginTime">开始时间</param>
+            <param name="endTime">结束时间</param>
+            <param name="dockList">园区下的月台</param>
+            <returns>月台预约数据</returns>
+        </member>
+        <member name="M:SIE.Dock.DockAppoints.Service.DockAppointService.GetSelectAppointDockViewModels(System.DateTime,System.Double,SIE.Dock.DockAppoints.AppointType,System.String,SIE.PagingInfo)">
+            <summary>
+            获取月台数据
+            </summary>
+            <param name="appointDate">预约时间</param>
+            <param name="yardZoneId">预约地点ID</param>
+            <param name="appointType">预约类型</param>
+            <param name="keyword">查询关键字</param>
+            <param name="pagingInfo">分页信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Dock.DockAppoints.Service.DockAppointService.GetDockHandleDatas(System.DateTime,System.Double,SIE.Dock.DockAppoints.AppointType,SIE.Domain.EntityList{SIE.Dock.DockMaintains.DockMaintain},System.Boolean)">
+            <summary>
+            获取预约月台处理数据
+            </summary>
+            <param name="appointDate">预约日期</param>
+            <param name="yardZoneId">园片区维护ID</param>
+            <param name="appointType">预约类型</param>
+            <param name="dockList">月台数据</param>
+            <returns>预约月台处理数据</returns>
+        </member>
+        <member name="M:SIE.Dock.DockAppoints.Service.DockAppointService.GetDockMaxRestTime(SIE.Domain.EntityList{SIE.Dock.DockMaintains.DockMaintain},SIE.Domain.EntityList{SIE.Dock.DockAppoints.DockAppoint},System.Double)">
+            <summary>
+            获取最大可用时间
+            </summary>
+            <param name="dockList">月台数据</param>
+            <param name="dockAppoints">月台预约数据</param>
+            <param name="workTime">工作时段</param>
+            <returns>最大可用时间</returns>
+        </member>
+        <member name="M:SIE.Dock.DockAppoints.Service.DockAppointService.ValidDockAppointData(SIE.Dock.DockAppoints.DockAppoint)">
+            <summary>
+            验证月台预约数据
+            </summary>
+            <param name="data">月台预约数据</param>
+        </member>
+        <member name="M:SIE.Dock.DockAppoints.Service.DockAppointService.SaveDockAppointDatas(SIE.Dock.DockAppoints.DockAppoint)">
+            <summary>
+            保存月台预约数据
+            </summary>
+            <param name="data">月台预约数据</param>
+        </member>
+        <member name="M:SIE.Dock.DockAppoints.Service.DockAppointService.UpdateDockAppointDatas(SIE.Dock.DockAppoints.DockAppoint)">
+            <summary>
+            更新月台预约数据
+            </summary>
+            <param name="data">月台预约数据</param>
+        </member>
+        <member name="M:SIE.Dock.DockAppoints.Service.DockAppointService.CancelDockAppointData(System.Collections.Generic.List{System.Double},System.String)">
+            <summary>
+            取消预约数据
+            </summary>
+            <param name="dockAppointIds">月台预约ID集合</param>
+            <param name="reasonDes">原因描述</param>
+            <exception cref="T:SIE.Domain.Validation.ValidationException">异常信息</exception>
+        </member>
+        <member name="M:SIE.Dock.DockAppoints.Service.DockAppointService.CancelDockAppointByAsn(System.String,System.String)">
+            <summary>
+            更新取消预约月台数据来自ASN
+            </summary>
+            <param name="dockNo"></param>
+            <param name="reasonDes"></param>
+        </member>
+        <member name="M:SIE.Dock.DockAppoints.Service.DockAppointService.GetDockAppointById(System.Double)">
+            <summary>
+            获取预约数据
+            </summary>
+            <param name="Id">预约ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Dock.DockAppoints.Service.DockAppointService.SaveAppoints(System.Collections.Generic.List{SIE.Dock.DockAppoints.DockAppoint})">
+            <summary>
+            预约图保存数据
+            </summary>
+            <param name="appoints">预约数据</param>
+        </member>
+        <member name="M:SIE.Dock.DockAppoints.Service.DockAppointService.MapValidate(System.Collections.Generic.List{SIE.Dock.DockAppoints.DockAppoint})">
+            <summary>
+            验证数据
+            </summary>
+            <param name="appoints"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Dock.DockAppoints.Service.DockAppointService.NewCheckAppointDatas(SIE.Dock.DockAppoints.DockAppoint)">
+            <summary>
+            检查时间
+            </summary>
+            <param name="dockAppoint"></param>
+        </member>
+        <member name="T:SIE.Dock.DockEntityRepository`1">
+            <summary>
+            指定仓库的数据提供者
+            </summary>
+            <typeparam name="T">实体仓库</typeparam>
+        </member>
+        <member name="T:SIE.Dock.DockEntityDataProvider">
+            <summary>
+            数据提供者
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockEntityDataProvider.ConnectionStringName">
+            <summary>
+            数据库连接字符串的名称
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockEntityDataProvider.ConnectionStringSettingName">
+            <summary>
+            数据库连接字符串的名称
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.DockGantt.DockGantt">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.DockJobs.AssignDockJob">
+            <summary>
+            月台排队数据分配月台调度Job
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.DockJobs.AssignDockJob.ExecuteJob(System.Object)">
+            <summary>
+            超期规则执行调度
+            </summary>
+            <param name="param">调度参数</param>
+        </member>
+        <member name="T:SIE.Dock.DockJobs.DelayAndCheckOutJob">
+            <summary>
+            月台排队推迟和签出调度Job
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.DockJobs.DelayAndCheckOutJob.ExecuteJob(System.Object)">
+            <summary>
+            超期规则执行调度
+            </summary>
+            <param name="param">调度参数</param>
+        </member>
+        <member name="T:SIE.Dock.DockMaintains.Dao.DockMaintainDao">
+            <summary>
+            月台维护数据访问
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.DockMaintains.Dao.DockMaintainDao.GetDockMaintain(System.Double,SIE.Domain.EagerLoadOptions)">
+            <summary>
+            获取月台维护数据
+            </summary>
+            <param name="id">id</param>
+            <param name="elo">贪婪加载</param>
+            <returns>月台维护数据</returns>
+        </member>
+        <member name="M:SIE.Dock.DockMaintains.Dao.DockMaintainDao.GetDockMaintains(SIE.Dock.DockMaintains.DockMaintainCriteria)">
+            <summary>
+            查询方法
+            </summary>
+            <param name="criteria">查询实体</param>
+            <returns>返回查询结果</returns>
+        </member>
+        <member name="M:SIE.Dock.DockMaintains.Dao.DockMaintainDao.GetDockMaintains(System.Collections.Generic.List{System.Double},SIE.Domain.EagerLoadOptions)">
+            <summary>
+            获取月台数据
+            </summary>
+            <param name="dockIds">月台Id</param>
+            <param name="elo">贪婪加载</param>
+            <returns>月台数据</returns>
+        </member>
+        <member name="M:SIE.Dock.DockMaintains.Dao.DockMaintainDao.GetDockMaintains(System.Nullable{System.Double},System.Nullable{System.Double},System.Nullable{System.Int32},SIE.Domain.EagerLoadOptions)">
+            <summary>
+            获取月台数据
+            </summary>
+            <param name="parkId">园区Id</param>
+            <param name="warehouseId">仓库Id</param>
+            <param name="state">状态</param>
+            <param name="elo">贪婪</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Dock.DockMaintains.Dao.DockMaintainDao.GetDockMaintainsByZones(System.Double,System.Int32)">
+            <summary>
+            通过园片区获取可用的月台
+            </summary>
+            <param name="ZoneId">圆片区ID</param>
+            <param name="Appoint">预约类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Dock.DockMaintains.Dao.DockMaintainDao.GetDockMaintainByParkIds(System.Double,System.String,System.Nullable{System.Boolean},System.Nullable{System.Boolean},SIE.PagingInfo)">
+            <summary>
+            获取园区的月台数据
+            </summary>
+            <param name="parkId">园区ID</param>
+            <param name="keyword">查询关键子</param>
+            <param name="isReceive">是否收货</param>
+            <param name="isShip">是否发货</param>
+            <param name="pagingInfo">分页信息</param>
+            <returns>月台数据</returns>
+        </member>
+        <member name="M:SIE.Dock.DockMaintains.Dao.DockMaintainDao.GetEnabelDockMaintains(System.String,SIE.PagingInfo)">
+            <summary>
+            获取可用的月台维护数据
+            </summary>
+            <param name="keyword">查询关键字</param>
+            <param name="pagingInfo">分页信息</param>
+            <returns>月台维护数据</returns>
+        </member>
+        <member name="M:SIE.Dock.DockMaintains.Dao.DockMaintainDao.GetDockMaintainsByIds(System.Collections.Generic.List{System.Double})">
+            <summary>
+            根据月台ID集合获取月台数据
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Dock.DockMaintains.Dao.DockMaintainWhDao">
+            <summary>
+            月台维护适用仓库数据访问
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.DockMaintains.Dao.DockMaintainWhDao.GetWhs(System.Collections.Generic.List{System.Double})">
+            <summary>
+            获取适用仓库数据
+            </summary>
+            <param name="idlist">Id列表</param>
+            <returns>适用仓库数据</returns>
+        </member>
+        <member name="M:SIE.Dock.DockMaintains.Dao.DockMaintainWhDao.DeleteDockWh(System.Collections.Generic.List{System.Double})">
+            <summary>
+            删除适用仓库方法
+            </summary>
+            <param name="whids">适用仓库列表</param>
+        </member>
+        <member name="T:SIE.Dock.DockMaintains.DockMaintain">
+            <summary>
+            月台维护
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockMaintains.DockMaintain.CodeProperty">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockMaintains.DockMaintain.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockMaintains.DockMaintain.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockMaintains.DockMaintain.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockMaintains.DockMaintain.IsReceiveProperty">
+            <summary>
+            是否收货月台
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockMaintains.DockMaintain.IsReceive">
+            <summary>
+            是否收货月台
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockMaintains.DockMaintain.IsShipProperty">
+            <summary>
+            是否发货月台
+            </summary>
+            <remarks>提货</remarks>
+        </member>
+        <member name="P:SIE.Dock.DockMaintains.DockMaintain.IsShip">
+            <summary>
+            是否发货月台
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockMaintains.DockMaintain.RecPriorityProperty">
+            <summary>
+            收货优先级
+            </summary>
+            <remarks>送货</remarks>
+        </member>
+        <member name="P:SIE.Dock.DockMaintains.DockMaintain.RecPriority">
+            <summary>
+            收货优先级
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockMaintains.DockMaintain.ShipPriorityProperty">
+            <summary>
+            发货优先级
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockMaintains.DockMaintain.ShipPriority">
+            <summary>
+            发货优先级
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockMaintains.DockMaintain.StateProperty">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockMaintains.DockMaintain.State">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockMaintains.DockMaintain.RemarkProperty">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockMaintains.DockMaintain.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockMaintains.DockMaintain.YardZoneIdProperty">
+            <summary>
+            园片区维护Id
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockMaintains.DockMaintain.YardZoneId">
+            <summary>
+            园片区维护Id
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockMaintains.DockMaintain.YardZoneProperty">
+            <summary>
+            园片区维护
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockMaintains.DockMaintain.YardZone">
+            <summary>
+            园片区维护
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockMaintains.DockMaintain.DockMaintainWhListProperty">
+            <summary>
+            列表
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockMaintains.DockMaintain.DockMaintainWhList">
+            <summary>
+            列表
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockMaintains.DockMaintain.YardZoneCodeProperty">
+            <summary>
+            园片区编码
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockMaintains.DockMaintain.YardZoneCode">
+            <summary>
+            园片区编码
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockMaintains.DockMaintain.YardZoneNameProperty">
+            <summary>
+            园片区名称
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockMaintains.DockMaintain.YardZoneName">
+            <summary>
+            园片区名称
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.DockMaintains.DockMaintainConfig">
+            <summary>
+            月台维护 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.DockMaintains.DockMaintainConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.DockMaintains.DockMaintainCriteria">
+            <summary>
+            月台维护查询实体
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockMaintains.DockMaintainCriteria.CodeProperty">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockMaintains.DockMaintainCriteria.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockMaintains.DockMaintainCriteria.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockMaintains.DockMaintainCriteria.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockMaintains.DockMaintainCriteria.IsReceiveProperty">
+            <summary>
+            是否收货月台
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockMaintains.DockMaintainCriteria.IsReceive">
+            <summary>
+            是否收货月台
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockMaintains.DockMaintainCriteria.IsShipProperty">
+            <summary>
+            是否发货月台
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockMaintains.DockMaintainCriteria.IsShip">
+            <summary>
+            是否发货月台
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockMaintains.DockMaintainCriteria.StateProperty">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockMaintains.DockMaintainCriteria.State">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.DockMaintains.DockMaintainCriteria.Fetch">
+            <summary>
+            查询逻辑
+            </summary>
+            <returns>返回查询后的数据</returns>
+        </member>
+        <member name="T:SIE.Dock.DockMaintains.UndeleteDockMaintainRule">
+            <summary>
+            月台维护被引用不允许删除
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.DockMaintains.UndeleteDockMaintainRule.#ctor">
+            <summary>
+            添加验证规则
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.DockMaintains.DockMaintainWh">
+            <summary>
+            月台维护适用仓库
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockMaintains.DockMaintainWh.WarehouseIdProperty">
+            <summary>
+            仓库Id
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockMaintains.DockMaintainWh.WarehouseId">
+            <summary>
+            仓库Id
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockMaintains.DockMaintainWh.WarehouseProperty">
+            <summary>
+            仓库
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockMaintains.DockMaintainWh.Warehouse">
+            <summary>
+            仓库
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockMaintains.DockMaintainWh.WarehouseCodeProperty">
+            <summary>
+            仓库编码
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockMaintains.DockMaintainWh.WarehouseCode">
+            <summary>
+            仓库编码
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockMaintains.DockMaintainWh.WarehouseNameProperty">
+            <summary>
+            仓库名称
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockMaintains.DockMaintainWh.WarehouseName">
+            <summary>
+            仓库名称
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockMaintains.DockMaintainWh.WarehouseStateProperty">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockMaintains.DockMaintainWh.WarehouseState">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockMaintains.DockMaintainWh.DockMaintainIdProperty">
+            <summary>
+            月台维护Id
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockMaintains.DockMaintainWh.DockMaintainId">
+            <summary>
+            月台维护Id
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockMaintains.DockMaintainWh.DockMaintainProperty">
+            <summary>
+            月台维护
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockMaintains.DockMaintainWh.DockMaintain">
+            <summary>
+            月台维护
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.DockMaintains.DockMaintainWhConfig">
+            <summary>
+             实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.DockMaintains.DockMaintainWhConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.DockMaintains.Service.DockMaintainService">
+            <summary>
+            月台维护服务
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockMaintains.Service.DockMaintainService._dockmaintainDao">
+            <summary>
+            月台维护数据访问
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.DockMaintains.Service.DockMaintainService.#ctor(SIE.Dock.DockMaintains.Dao.DockMaintainDao)">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.DockMaintains.Service.DockMaintainService.GetDockMaintain(System.Double,SIE.Domain.EagerLoadOptions)">
+            <summary>
+            获取月台维护数据
+            </summary>
+            <param name="id">id</param>
+            <param name="elo">贪婪加载</param>
+            <returns>月台维护数据</returns>
+        </member>
+        <member name="M:SIE.Dock.DockMaintains.Service.DockMaintainService.GetDockMaintainByParkIds(System.Double,System.String,System.Nullable{System.Boolean},System.Nullable{System.Boolean},SIE.PagingInfo)">
+            <summary>
+            获取园区的月台数据
+            </summary>
+            <param name="parkId">园区ID</param>
+            <param name="keyword">查询关键子</param>
+            <param name="isReceive">是否收货</param>
+            <param name="isShip">是否发货</param>
+            <param name="pagingInfo">分页信息</param>
+            <returns>月台数据</returns>
+        </member>
+        <member name="M:SIE.Dock.DockMaintains.Service.DockMaintainService.GetDockMaintains(SIE.Dock.DockMaintains.DockMaintainCriteria)">
+            <summary>
+            查询方法
+            </summary>
+            <param name="criteria">查询实体</param>
+            <returns>返回查询结果</returns>
+        </member>
+        <member name="M:SIE.Dock.DockMaintains.Service.DockMaintainService.GetDockMaintains(System.Collections.Generic.List{System.Double},SIE.Domain.EagerLoadOptions)">
+            <summary>
+            获取月台数据
+            </summary>
+            <param name="dockIds">月台Id</param>
+            <param name="elo">贪婪加载</param>
+            <returns>月台数据</returns>
+        </member>
+        <member name="M:SIE.Dock.DockMaintains.Service.DockMaintainService.GetDockMaintains(System.Nullable{System.Double},System.Nullable{System.Double},System.Nullable{System.Int32},SIE.Domain.EagerLoadOptions)">
+            <summary>
+            获取月台数据
+            </summary>
+            <param name="parkId">园区Id</param>
+            <param name="warehouseId">仓库Id</param>
+            <param name="state">状态</param>
+            <param name="elo">贪婪</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Dock.DockMaintains.Service.DockMaintainService.GetEnabelDockMaintains(System.String,SIE.PagingInfo)">
+            <summary>
+            获取可用的月台维护数据
+            </summary>
+            <param name="keyword">查询关键字</param>
+            <param name="pagingInfo">分页信息</param>
+            <returns>月台维护数据</returns>
+        </member>
+        <member name="M:SIE.Dock.DockMaintains.Service.DockMaintainService.GetDockMaintainsByZones(System.Double,System.Int32)">
+            <summary>
+            通过排队地点ID获取月台
+            </summary>
+            <param name="ZonesId">园区ID</param>
+            <param name="Appoint">排队状态</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Dock.DockMaintains.Service.DockMaintainService.PraseDate(System.String)">
+            <summary>
+            预约图提交检查时间是否正确
+            </summary>      
+        </member>
+        <member name="M:SIE.Dock.DockMaintains.Service.DockMaintainService.GetDockMaintainsByIds(System.Collections.Generic.List{System.Double})">
+            <summary>
+            通过月台ID集合获取月台数据
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Dock.DockMaintains.Service.DockMaintainWhService">
+            <summary>
+            月台维护适用仓库服务
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockMaintains.Service.DockMaintainWhService._dockwhDao">
+            <summary>
+            月台维护数据访问
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.DockMaintains.Service.DockMaintainWhService.#ctor(SIE.Dock.DockMaintains.Dao.DockMaintainWhDao)">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.DockMaintains.Service.DockMaintainWhService.GetWhs(System.Collections.Generic.List{System.Double})">
+            <summary>
+            获取适用仓库数据
+            </summary>
+            <param name="idlist">Id列表</param>
+            <returns>适用仓库数据</returns>
+        </member>
+        <member name="M:SIE.Dock.DockMaintains.Service.DockMaintainWhService.DeleteDockWh(System.Collections.Generic.List{System.Double})">
+            <summary>
+            删除适用仓库数据
+            </summary>
+            <param name="whids">适用仓库列表</param>
+        </member>
+        <member name="T:SIE.Dock.DockQueues.Configs.DockQueueNumberConfig">
+            <summary>
+            月台排队号生成规则
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.Configs.DockQueueNumberConfig.defaultValue">
+            <summary>
+            默认值
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.Configs.DockQueueNumberConfig.DefaultValue">
+            <summary>
+            默认值
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.DockQueues.Configs.DockQueueNumberConfigValue">
+            <summary>
+            月台排队配置项内容
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.Configs.DockQueueNumberConfigValue.NumberRuleIdProperty">
+            <summary>
+            排队号生成规则Id
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.Configs.DockQueueNumberConfigValue.NumberRuleId">
+            <summary>
+            排队号生成规则Id
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.Configs.DockQueueNumberConfigValue.NumberRuleProperty">
+            <summary>
+            排队号生成规则
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.Configs.DockQueueNumberConfigValue.NumberRule">
+            <summary>
+            排队号生成规则
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.Configs.DockQueueNumberConfigValue.PrintTemplateIdProperty">
+            <summary>
+            默认打印模板Id
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.Configs.DockQueueNumberConfigValue.PrintTemplateId">
+            <summary>
+            默认打印模板Id
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.Configs.DockQueueNumberConfigValue.PrintTemplateProperty">
+            <summary>
+            默认打印模板
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.Configs.DockQueueNumberConfigValue.PrintTemplate">
+            <summary>
+            默认打印模板
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.Configs.DockQueueNumberConfigValue.MaxDelayNumProperty">
+            <summary>
+            最大推迟次数
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.Configs.DockQueueNumberConfigValue.MaxDelayNum">
+            <summary>
+            最大推迟次数
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.Configs.DockQueueNumberConfigValue.CheckOutTimeOutProperty">
+            <summary>
+            作业超时强制签出时间(H)
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.Configs.DockQueueNumberConfigValue.CheckOutTimeOut">
+            <summary>
+            作业超时强制签出时间(H)
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.Configs.DockQueueNumberConfigValue.CheckOutDelayProperty">
+            <summary>
+            签到超时强制推迟时间(Min)
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.Configs.DockQueueNumberConfigValue.CheckOutDelay">
+            <summary>
+            签到超时强制推迟时间(Min)
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.Configs.DockQueueNumberConfigValue.AutoCheckInProperty">
+            <summary>
+            分配月台后自动签到
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.Configs.DockQueueNumberConfigValue.AutoCheckIn">
+            <summary>
+            分配月台后自动签到
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.DockQueues.Configs.DockQueueNumberConfigValue.Display">
+            <summary>
+            显示值
+            </summary>
+            <returns>string</returns>
+        </member>
+        <member name="T:SIE.Dock.DockQueues.Dao.DockQueueDao">
+            <summary>
+            月台排队Dao
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.DockQueues.Dao.DockQueueDao.GetDockQueues(SIE.Dock.DockQueues.DockQueueCriteria)">
+            <summary>
+            获取月台排队数据
+            </summary>
+            <param name="criteria">查询实体</param>
+            <returns>月台排队数据</returns>
+        </member>
+        <member name="M:SIE.Dock.DockQueues.Dao.DockQueueDao.GetDockQueueNumberRule">
+            <summary>
+            获取月台排队配置的编码规则
+            </summary>
+            <returns>返回编码规则</returns>
+        </member>
+        <member name="M:SIE.Dock.DockQueues.Dao.DockQueueDao.GetDockQueueNo">
+            <summary>
+            获取月台排队的排队号
+            </summary>
+            <returns>月台排队号</returns>
+        </member>
+        <member name="M:SIE.Dock.DockQueues.Dao.DockQueueDao.GetDockQueueList(System.Collections.Generic.List{System.Double})">
+            <summary>
+            获取月台排队数据
+            </summary>
+            <param name="ids">ID集合</param>
+            <returns>月台排队数据</returns>
+        </member>
+        <member name="M:SIE.Dock.DockQueues.Dao.DockQueueDao.GetDockQueueByDockIds(System.Collections.Generic.List{System.Double})">
+            <summary>
+            根据月台查询月台排队数据
+            </summary>
+            <param name="dockIds">月台ID集合</param>
+            <returns>月台排队数据</returns>
+        </member>
+        <member name="M:SIE.Dock.DockQueues.Dao.DockQueueDao.GetDockQueueByDockAppointIds(System.Collections.Generic.List{System.Double})">
+            <summary>
+            获取根据月台预约ID查询月台排队数据
+            </summary>
+            <param name="dockAppointIds">月台预约ID集合</param>
+            <returns>月台排队数据</returns>
+        </member>
+        <member name="M:SIE.Dock.DockQueues.Dao.DockQueueDao.GetDockQueueByStates(SIE.Dock.DockQueues.QueueState)">
+            <summary>
+            获取对应状态的月台排队数据
+            </summary>
+            <param name="state">状态</param>
+            <returns>月台排队数据</returns>
+        </member>
+        <member name="M:SIE.Dock.DockQueues.Dao.DockQueueDao.GetDockQueueForJob">
+            <summary>
+            获取月台排队用于调度
+            </summary>
+            <returns>月台排队数据</returns>
+        </member>
+        <member name="M:SIE.Dock.DockQueues.Dao.DockQueueDao.DelayQueue(System.Collections.Generic.List{System.Double})">
+            <summary>
+            月台排队推迟
+            </summary>
+            <param name="delayIdList">需要推迟的排队号Id</param>
+        </member>
+        <member name="M:SIE.Dock.DockQueues.Dao.DockQueueDao.CheckInQueue(System.Collections.Generic.List{System.Double})">
+            <summary>
+            月台排队签到
+            </summary>
+            <param name="inIdList">需要签到的排队号Id</param>
+        </member>
+        <member name="M:SIE.Dock.DockQueues.Dao.DockQueueDao.CheckOutQueue(System.Collections.Generic.List{System.Double})">
+            <summary>
+            月台排队签出
+            </summary>
+            <param name="outIdList">需要签出的排队号Id</param>
+        </member>
+        <member name="M:SIE.Dock.DockQueues.Dao.DockQueueDao.UpDockQueueData(System.Double)">
+            <summary>
+            月台排队升级
+            </summary>
+            <param name="upQueueId">需要升级的排队号Id</param>
+        </member>
+        <member name="M:SIE.Dock.DockQueues.Dao.DockQueueDao.DownDockQueueData(System.Double)">
+            <summary>
+            月台排队降级
+            </summary>
+            <param name="downQueueId">需要降级的排队号Id</param>
+        </member>
+        <member name="M:SIE.Dock.DockQueues.Dao.DockQueueDao.GetDockQueuesList(System.Int32,System.Int32,System.String,System.Nullable{System.DateTime})">
+            <summary>
+            
+            </summary>
+            <param name="PageNum">页号</param>
+            <param name="PageSize">页码</param>
+            <param name="keyWord">查询关键字</param>
+            <param name="date">日期</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Dock.DockQueues.Dao.DockQueueDao.GetDockQueueByState(System.String,SIE.Dock.DockQueues.QueueState)">
+            <summary>
+            获取排队数据
+            </summary>
+            <param name="Code">月台编码</param>
+            <param name="QueueState">排队状态</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Dock.DockQueues.DockQueue">
+            <summary>
+            月台排队
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.DockQueue.NoProperty">
+            <summary>
+            排队号
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.DockQueue.No">
+            <summary>
+            排队号
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.DockQueue.DelayNumProperty">
+            <summary>
+            推迟次数
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.DockQueue.DelayNum">
+            <summary>
+            推迟次数
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.DockQueue.DistributionTimeProperty">
+            <summary>
+            分配时间
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.DockQueue.DistributionTime">
+            <summary>
+            分配时间
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.DockQueue.LastDistriTimeProperty">
+            <summary>
+            上次分配时间
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.DockQueue.LastDistriTime">
+            <summary>
+            上次分配时间
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.DockQueue.BillNoProperty">
+            <summary>
+            单据号
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.DockQueue.BillNo">
+            <summary>
+            单据号
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.DockQueue.CompanyNameProperty">
+            <summary>
+            公司名称
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.DockQueue.CompanyName">
+            <summary>
+            公司名称
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.DockQueue.CarNumProperty">
+            <summary>
+            车牌号
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.DockQueue.CarNum">
+            <summary>
+            车牌号
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.DockQueue.ContactsProperty">
+            <summary>
+            联系人
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.DockQueue.Contacts">
+            <summary>
+            联系人
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.DockQueue.ContactNumProperty">
+            <summary>
+            联系电话
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.DockQueue.ContactNum">
+            <summary>
+            联系电话
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.DockQueue.IDNumberProperty">
+            <summary>
+            身份证号
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.DockQueue.IDNumber">
+            <summary>
+            身份证号
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.DockQueue.RemarkProperty">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.DockQueue.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.DockQueue.CheckInTimeProperty">
+            <summary>
+            签到时间
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.DockQueue.CheckInTime">
+            <summary>
+            签到时间
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.DockQueue.CheckOutTimeProperty">
+            <summary>
+            签出时间
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.DockQueue.CheckOutTime">
+            <summary>
+            签出时间
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.DockQueue.JobTimeProperty">
+            <summary>
+            作业时间(Min)
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.DockQueue.JobTime">
+            <summary>
+            作业时间(Min)
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.DockQueue.WeChatIDProperty">
+            <summary>
+            微信ID
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.DockQueue.WeChatID">
+            <summary>
+            微信ID
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.DockQueue.TakeNoWayProperty">
+            <summary>
+            取号方式
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.DockQueue.TakeNoWay">
+            <summary>
+            取号方式
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.DockQueue.QueuePriorityProperty">
+            <summary>
+            优先级
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.DockQueue.QueuePriority">
+            <summary>
+            优先级
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.DockQueue.QueueStateProperty">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.DockQueue.QueueState">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.DockQueue.AppointTypeProperty">
+            <summary>
+            排队类型
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.DockQueue.AppointType">
+            <summary>
+            排队类型
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.DockQueue.DockAppointIdProperty">
+            <summary>
+            预约号Id
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.DockQueue.DockAppointId">
+            <summary>
+            预约号Id
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.DockQueue.DockAppointProperty">
+            <summary>
+            预约号
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.DockQueue.DockAppoint">
+            <summary>
+            预约号
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.DockQueue.YardZoneIdProperty">
+            <summary>
+            排队地点Id
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.DockQueue.YardZoneId">
+            <summary>
+            排队地点Id
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.DockQueue.YardZoneProperty">
+            <summary>
+            排队地点
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.DockQueue.YardZone">
+            <summary>
+            排队地点
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.DockQueue.AssignDockIdProperty">
+            <summary>
+            分配月台编码Id
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.DockQueue.AssignDockId">
+            <summary>
+            分配月台编码Id
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.DockQueue.AssignDockProperty">
+            <summary>
+            分配月台编码
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.DockQueue.AssignDock">
+            <summary>
+            分配月台编码
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.DockQueue.CancelEmployeeIdProperty">
+            <summary>
+            取消人Id
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.DockQueue.CancelEmployeeId">
+            <summary>
+            取消人Id
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.DockQueue.CancelEmployeeProperty">
+            <summary>
+            取消人
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.DockQueue.CancelEmployee">
+            <summary>
+            取消人
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.DockQueue.CancelTimeProperty">
+            <summary>
+            取消时间
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.DockQueue.CancelTime">
+            <summary>
+            取消时间
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.DockQueue.CancelReasonProperty">
+            <summary>
+            取消原因
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.DockQueue.CancelReason">
+            <summary>
+            取消原因
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.DockQueue.PrioritySeqProperty">
+            <summary>
+            优先系数
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.DockQueue.PrioritySeq">
+            <summary>
+            优先系数
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.DockQueue.AppointDockCodeProperty">
+            <summary>
+            预约月台编码
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.DockQueue.AppointDockCode">
+            <summary>
+            预约月台编码
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.DockQueue.AppointDockNameProperty">
+            <summary>
+            预约月台名称
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.DockQueue.AppointDockName">
+            <summary>
+            预约月台名称
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.DockQueue.AppointStartDateProperty">
+            <summary>
+            预约开始时间
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.DockQueue.AppointStartDate">
+            <summary>
+            预约开始时间
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.DockQueue.AppointEndDateProperty">
+            <summary>
+            预约结束时间
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.DockQueue.AppointEndDate">
+            <summary>
+            预约结束时间
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.DockQueue.AssignDockNameProperty">
+            <summary>
+            分配月台名称
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.DockQueue.AssignDockName">
+            <summary>
+            分配月台名称
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.DockQueue.YardZoneCodeProperty">
+            <summary>
+            园片区编码
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.DockQueue.YardZoneCode">
+            <summary>
+            园片区编码
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.DockQueue.YardZoneNameProperty">
+            <summary>
+            排队地点名称
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.DockQueue.YardZoneName">
+            <summary>
+            排队地点名称
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.DockQueue.DockAppointNoProperty">
+            <summary>
+            预约号编码
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.DockQueue.DockAppointNo">
+            <summary>
+            预约号编码
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.DockQueue.CancelByNameProperty">
+            <summary>
+            取消人名称
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.DockQueue.CancelByName">
+            <summary>
+            取消人名称
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.DockQueues.DockQueueConfig">
+            <summary>
+            月台排队 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.DockQueues.DockQueueConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.DockQueues.DockQueueCriteria">
+            <summary>
+            月台排队查询实体
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.DockQueueCriteria.NoProperty">
+            <summary>
+            排队号
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.DockQueueCriteria.No">
+            <summary>
+            排队号
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.DockQueueCriteria.QueueStateProperty">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.DockQueueCriteria.QueueState">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.DockQueueCriteria.AppointTypeProperty">
+            <summary>
+            排队类型
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.DockQueueCriteria.AppointType">
+            <summary>
+            排队类型
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.DockQueueCriteria.YardZoneIdProperty">
+            <summary>
+            排队地点Id
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.DockQueueCriteria.YardZoneId">
+            <summary>
+            排队地点Id
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.DockQueueCriteria.YardZoneProperty">
+            <summary>
+            排队地点
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.DockQueueCriteria.YardZone">
+            <summary>
+            排队地点
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.DockQueueCriteria.BillNoProperty">
+            <summary>
+            单据号
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.DockQueueCriteria.BillNo">
+            <summary>
+            单据号
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.DockQueueCriteria.DockAppointNoProperty">
+            <summary>
+            预约号
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.DockQueueCriteria.DockAppointNo">
+            <summary>
+            预约号
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.DockQueueCriteria.DockMaintainCodeProperty">
+            <summary>
+            分配月台编码
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.DockQueueCriteria.DockMaintainCode">
+            <summary>
+            分配月台编码
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.DockQueueCriteria.ContactsProperty">
+            <summary>
+            联系人
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.DockQueueCriteria.Contacts">
+            <summary>
+            联系人
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.DockQueueCriteria.CarNumProperty">
+            <summary>
+            车牌号
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.DockQueueCriteria.CarNum">
+            <summary>
+            车牌号
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.DockQueueCriteria.CreateDateProperty">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockQueues.DockQueueCriteria.CreateDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.DockQueues.DockQueueCriteria.Fetch">
+            <summary>
+            查询逻辑
+            </summary>
+            <returns>返回查询后的数据</returns>
+        </member>
+        <member name="T:SIE.Dock.DockQueues.QueuePriority">
+            <summary>
+            优先级
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.QueuePriority.Last">
+            <summary>
+            最靠后
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.QueuePriority.Normal">
+            <summary>
+            普通
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.QueuePriority.Urgent">
+            <summary>
+            紧急
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.QueuePriority.Surpass">
+            <summary>
+            越库
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.QueuePriority.Highest">
+            <summary>
+            最优先
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.DockQueues.QueueState">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.QueueState.Waiting">
+            <summary>
+            等候
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.QueueState.Handling">
+            <summary>
+            装卸中
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.QueueState.Finish">
+            <summary>
+            完工
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.QueueState.Cancel">
+            <summary>
+            取消
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.DockQueues.Service.DockQueueService">
+            <summary>
+            月台排队Service
+            </summary>
+            <summary>
+            用于调度Job的服务
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.Service.DockQueueService._dockQueueDao">
+            <summary>
+            月台排队数据访问
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.DockQueues.Service.DockQueueService.#ctor(SIE.Dock.DockQueues.Dao.DockQueueDao)">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.DockQueues.Service.DockQueueService.GetDockQueues(SIE.Dock.DockQueues.DockQueueCriteria)">
+            <summary>
+            获取月台排队数据
+            </summary>
+            <param name="criteria">查询实体</param>
+            <returns>月台排队数据</returns>
+        </member>
+        <member name="M:SIE.Dock.DockQueues.Service.DockQueueService.GetDockQueueNo">
+            <summary>
+            获取月台排队的排队号
+            </summary>
+            <returns>月台排队号</returns>
+        </member>
+        <member name="M:SIE.Dock.DockQueues.Service.DockQueueService.GetDockQueueList(System.Collections.Generic.List{System.Double})">
+            <summary>
+            获取月台排队数据
+            </summary>
+            <param name="ids">ID集合</param>
+            <returns>月台排队数据</returns>
+        </member>
+        <member name="M:SIE.Dock.DockQueues.Service.DockQueueService.GetDockQueueByDockIds(System.Collections.Generic.List{System.Double})">
+            <summary>
+            根据月台查询月台排队数据
+            </summary>
+            <param name="dockIds">月台ID集合</param>
+            <returns>月台排队数据</returns>
+        </member>
+        <member name="M:SIE.Dock.DockQueues.Service.DockQueueService.GetDockQueueByDockAppointIds(System.Collections.Generic.List{System.Double})">
+            <summary>
+            获取根据月台预约ID查询月台排队数据
+            </summary>
+            <param name="dockAppointIds">月台预约ID集合</param>
+            <returns>月台排队数据</returns>
+        </member>
+        <member name="M:SIE.Dock.DockQueues.Service.DockQueueService.GetDockQueueForJob">
+            <summary>
+            获取月台排队用于调度
+            </summary>
+            <returns>月台排队数据</returns>
+        </member>
+        <member name="M:SIE.Dock.DockQueues.Service.DockQueueService.GetDockQueueByStates(SIE.Dock.DockQueues.QueueState)">
+            <summary>
+            获取对应状态的月台排队数据
+            </summary>
+            <param name="state">状态</param>
+            <returns>月台排队数据</returns>
+        </member>
+        <member name="M:SIE.Dock.DockQueues.Service.DockQueueService.ValidDockQueueData(SIE.Dock.DockQueues.DockQueue)">
+            <summary>
+            验证月台预约数据
+            </summary>
+            <param name="data">月台预约数据</param>
+        </member>
+        <member name="M:SIE.Dock.DockQueues.Service.DockQueueService.SaveDockQueueDatas(SIE.Dock.DockQueues.DockQueue)">
+            <summary>
+            保存月台预约数据
+            </summary>
+            <param name="data">月台预约数据</param>
+        </member>
+        <member name="M:SIE.Dock.DockQueues.Service.DockQueueService.CancelDockQueueData(System.Collections.Generic.List{System.Double},System.String)">
+            <summary>
+            取消月台排队数据
+            </summary>
+            <param name="dockQueueIds">月台排队ID集合</param>
+            <param name="reasonDes">原因描述</param>
+            <exception cref="T:SIE.Domain.Validation.ValidationException">异常信息</exception>
+        </member>
+        <member name="M:SIE.Dock.DockQueues.Service.DockQueueService.AssignDockData(System.Double,System.Double,System.Boolean)">
+            <summary>
+            分配月台
+            </summary>
+            <param name="dockQueueId">月台排队ID</param>
+            <param name="dockId">月台ID</param>
+            <param name="isAtOnceAssign">是否立即分配</param>
+        </member>
+        <member name="M:SIE.Dock.DockQueues.Service.DockQueueService.UpdateDockQueueData(SIE.Domain.EntityList{SIE.Dock.DockQueues.DockQueue})">
+            <summary>
+            更新数据
+            </summary>
+            <param name="dockQueues">月台排队数据</param>
+        </member>
+        <member name="M:SIE.Dock.DockQueues.Service.DockQueueService.UpdateDockQueueJobTimes(SIE.Domain.EntityList{SIE.Dock.DockQueues.DockQueue})">
+            <summary>
+            更新作业时间
+            </summary>
+            <param name="dockQueues"></param>
+        </member>
+        <member name="M:SIE.Dock.DockQueues.Service.DockQueueService.DelayQueue(System.Collections.Generic.List{System.Double})">
+            <summary>
+            月台排队推迟
+            </summary>
+            <param name="delayIdList">需要推迟的排队号Id</param>
+        </member>
+        <member name="M:SIE.Dock.DockQueues.Service.DockQueueService.CheckInQueue(System.Collections.Generic.List{System.Double})">
+            <summary>
+            月台排队签到
+            </summary>
+            <param name="inIdList">需要签到的排队号Id</param>
+        </member>
+        <member name="M:SIE.Dock.DockQueues.Service.DockQueueService.CheckOutQueue(System.Collections.Generic.List{System.Double})">
+            <summary>
+            月台排队签出
+            </summary>
+            <param name="outIdList">需要签出的排队号Id</param>
+        </member>
+        <member name="M:SIE.Dock.DockQueues.Service.DockQueueService.UpDockQueueData(System.Double)">
+            <summary>
+            月台排队升级
+            </summary>
+            <param name="upQueueId">需要升级的排队号Id</param>
+        </member>
+        <member name="M:SIE.Dock.DockQueues.Service.DockQueueService.DownDockQueueData(System.Double)">
+            <summary>
+            月台排队降级
+            </summary>
+            <param name="downQueueId">需要降级的排队号Id</param>
+        </member>
+        <member name="M:SIE.Dock.DockQueues.Service.DockQueueService.GetDockQueuesList(System.Int32,System.Int32,System.String,System.Nullable{System.DateTime})">
+            <summary>
+            获取月台排队数据
+            </summary>
+            <param name="PageNum">页号</param>
+            <param name="PageSize">页码</param>
+            <param name="keyword">关键字</param>
+            <param name="date">日期</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Dock.DockQueues.Service.DockQueueService.GetDockQueueByState(System.String,SIE.Dock.DockQueues.QueueState)">
+            <summary>
+            获取月台数据
+            </summary>
+            <param name="Code">月台编码</param>
+            <param name="state">状态</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Dock.DockQueues.Service.DockQueueService.ExecuteAssignDockQueues(SIE.Domain.EntityList{SIE.Dock.DockQueues.DockQueue})">
+            <summary>
+            执行分配月台排队数据
+            </summary>
+            <param name="dockQueues">月台排队数据</param>
+        </member>
+        <member name="M:SIE.Dock.DockQueues.Service.DockQueueService.HandleAssignDock(SIE.Dock.DockQueues.DockQueue,System.Collections.Generic.List{SIE.Dock.DockMaintains.DockMaintain},SIE.Dock.DockQueues.Configs.DockQueueNumberConfigValue)">
+            <summary>
+            处理分配月台
+            </summary>
+            <param name="dockQueue"></param>
+            <param name="docks"></param>
+            <param name="config"></param>
+        </member>
+        <member name="M:SIE.Dock.DockQueues.Service.DockQueueService.ExecuteDelayAndCheckOutData(System.DateTime)">
+            <summary>
+            执行推迟和签出调度
+            </summary>
+            <param name="dt">当前时间</param>
+        </member>
+        <member name="T:SIE.Dock.DockQueues.TakeNoWay">
+            <summary>
+            取号方式
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.TakeNoWay.Scene">
+            <summary>
+            现场取号
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockQueues.TakeNoWay.Appoint">
+            <summary>
+            预约取号
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.DockRunMts.Dao.DockRunMtDao">
+            <summary>
+            月台运行维护数据访问
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.DockRunMts.Dao.DockRunMtDao.GetDockRunMt(System.Double,SIE.Domain.EagerLoadOptions)">
+            <summary>
+            获取月台运行维护数据
+            </summary>
+            <param name="id">id</param>
+            <param name="elo">贪婪加载</param>
+            <returns>月台维护数据</returns>
+        </member>
+        <member name="M:SIE.Dock.DockRunMts.Dao.DockRunMtDao.GetDockRunMts(SIE.Dock.DockRunMts.DockRunMtCriteria)">
+            <summary>
+            查询方法
+            </summary>
+            <param name="criteria">查询实体</param>
+            <returns>返回查询结果</returns>
+        </member>
+        <member name="M:SIE.Dock.DockRunMts.Dao.DockRunMtDao.GetDockRunMtByDockIds(System.Collections.Generic.List{System.Double})">
+            <summary>
+            根据月台ID获取月台运行数据
+            </summary>
+            <param name="dockIds">月台ID集合</param>
+            <returns>月台运行数据</returns>
+        </member>
+        <member name="T:SIE.Dock.DockRunMts.DockRunMt">
+            <summary>
+            月台运行维护
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockRunMts.DockRunMt.DockMaintainIdProperty">
+            <summary>
+            月台维护Id
+            </summary>      
+        </member>
+        <member name="P:SIE.Dock.DockRunMts.DockRunMt.DockMaintainId">
+            <summary>
+            月台维护Id
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockRunMts.DockRunMt.DockMaintainProperty">
+            <summary>
+            月台维护
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockRunMts.DockRunMt.DockMaintain">
+            <summary>
+            月台维护
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockRunMts.DockRunMt.DockMaintainCodeProperty">
+            <summary>
+            月台编码
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockRunMts.DockRunMt.DockMaintainCode">
+            <summary>
+            月台编码
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockRunMts.DockRunMt.DockMaintainNameProperty">
+            <summary>
+            月台名称
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockRunMts.DockRunMt.DockMaintainName">
+            <summary>
+            月台名称
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockRunMts.DockRunMt.RemarkProperty">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockRunMts.DockRunMt.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockRunMts.DockRunMt.WorkTimeListProperty">
+            <summary>
+            工作时段列表
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockRunMts.DockRunMt.WorkTimeList">
+            <summary>
+            工作时段列表
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockRunMts.DockRunMt.ExcepTimeListProperty">
+            <summary>
+            例外时段列表
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockRunMts.DockRunMt.ExcepTimeList">
+            <summary>
+            例外时段列表
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.DockRunMts.DockRunMtConfig">
+            <summary>
+            月台运行维护 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.DockRunMts.DockRunMtConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.DockRunMts.DockRunMtCriteria">
+            <summary>
+            月台运行维护查询实体
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockRunMts.DockRunMtCriteria.CodeProperty">
+            <summary>
+            月台编码
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockRunMts.DockRunMtCriteria.Code">
+            <summary>
+            月台编码
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockRunMts.DockRunMtCriteria.NameProperty">
+            <summary>
+            月台名称
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockRunMts.DockRunMtCriteria.Name">
+            <summary>
+            月台名称
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.DockRunMts.DockRunMtCriteria.Fetch">
+            <summary>
+            查询逻辑
+            </summary>
+            <returns>返回查询后的数据</returns>
+        </member>
+        <member name="T:SIE.Dock.DockRunMts.DockRunMtNotDuplicateRule">
+            <summary>
+            月台运行维护的月台编码不允许重复
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.DockRunMts.DockRunMtNotDuplicateRule.#ctor">
+            <summary>
+            添加验证规则
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.DockRunMts.DockRunMtWorkTimeRule">
+            <summary>
+            工作时段结束时间必须大于开始时间
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.DockRunMts.DockRunMtWorkTimeRule.#ctor">
+            <summary>
+            初始化需要进行验证的属性
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.DockRunMts.DockRunMtWorkTimeRule.Validate(SIE.Domain.IEntity,SIE.MetaModel.RuleArgs)">
+            <summary>
+            添加验证规则
+            </summary>
+            <param name="entity">验证实体</param>
+            <param name="e">为业务规则验证方法提供一些必要的参数</param>
+        </member>
+        <member name="T:SIE.Dock.DockRunMts.DockRunMtExcepTimeRule">
+            <summary>
+            例外时段结束时间必须大于开始时间
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.DockRunMts.DockRunMtExcepTimeRule.#ctor">
+            <summary>
+            初始化需要进行验证的属性
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.DockRunMts.DockRunMtExcepTimeRule.Validate(SIE.Domain.IEntity,SIE.MetaModel.RuleArgs)">
+            <summary>
+            添加验证规则
+            </summary>
+            <param name="entity">验证实体</param>
+            <param name="e">为业务规则验证方法提供一些必要的参数</param>
+        </member>
+        <member name="T:SIE.Dock.DockRunMts.ExcepTime">
+            <summary>
+            例外时段
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockRunMts.ExcepTime.ExcepTypeProperty">
+            <summary>
+            例外类型
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockRunMts.ExcepTime.ExcepType">
+            <summary>
+            例外类型
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockRunMts.ExcepTime.BeginTimeProperty">
+            <summary>
+            开始时间
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockRunMts.ExcepTime.BeginTime">
+            <summary>
+            开始时间
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockRunMts.ExcepTime.EndTimeProperty">
+            <summary>
+            结束时间
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockRunMts.ExcepTime.EndTime">
+            <summary>
+            结束时间
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockRunMts.ExcepTime.RemarkProperty">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockRunMts.ExcepTime.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockRunMts.ExcepTime.DockRunMtIdProperty">
+            <summary>
+            月台运行维护Id
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockRunMts.ExcepTime.DockRunMtId">
+            <summary>
+            月台运行维护Id
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockRunMts.ExcepTime.DockRunMtProperty">
+            <summary>
+            月台运行维护
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockRunMts.ExcepTime.DockRunMt">
+            <summary>
+            月台运行维护
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.DockRunMts.ExcepTimeConfig">
+            <summary>
+            例外时段 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.DockRunMts.ExcepTimeConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.DockRunMts.ExcepType">
+            <summary>
+            例外类型
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockRunMts.ExcepType.Enable">
+            <summary>
+            启用
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockRunMts.ExcepType.Disable">
+            <summary>
+            停用
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.DockRunMts.Service.DockRunMtService">
+            <summary>
+            月台运行维护服务
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockRunMts.Service.DockRunMtService._dockRunmtDao">
+            <summary>
+            月台运行维护数据访问
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.DockRunMts.Service.DockRunMtService.#ctor(SIE.Dock.DockRunMts.Dao.DockRunMtDao)">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.DockRunMts.Service.DockRunMtService.GetDockRunMt(System.Double,SIE.Domain.EagerLoadOptions)">
+            <summary>
+            获取月台运行维护数据
+            </summary>
+            <param name="id">id</param>
+            <param name="elo">贪婪加载</param>
+            <returns>月台运行维护数据</returns>
+        </member>
+        <member name="M:SIE.Dock.DockRunMts.Service.DockRunMtService.GetDockRunMts(SIE.Dock.DockRunMts.DockRunMtCriteria)">
+            <summary>
+            查询方法
+            </summary>
+            <param name="criteria">查询实体</param>
+            <returns>返回查询结果</returns>
+        </member>
+        <member name="M:SIE.Dock.DockRunMts.Service.DockRunMtService.GetDockRunMtByDockIds(System.Collections.Generic.List{System.Double})">
+            <summary>
+            根据月台ID获取月台运行数据
+            </summary>
+            <param name="dockIds">月台ID集合</param>
+            <returns>月台运行数据</returns>
+        </member>
+        <member name="M:SIE.Dock.DockRunMts.Service.DockRunMtService.GetWorkTimeList(System.Double)">
+            <summary>
+            获取工作时段列表
+            </summary>
+            <param name="billId">单据ID</param>
+            <returns>工作时段列表</returns>
+        </member>
+        <member name="M:SIE.Dock.DockRunMts.Service.DockRunMtService.GetExcepTimeList(System.Double)">
+            <summary>
+            获取例外时段列表
+            </summary>
+            <param name="billId">单据ID</param>
+            <returns>例外时段列表</returns>
+        </member>
+        <member name="M:SIE.Dock.DockRunMts.Service.DockRunMtService.ValidateDockRunMtData(SIE.Dock.DockRunMts.DockRunMt)">
+            <summary>
+            验证月台运行维护数据
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="T:SIE.Dock.DockRunMts.WorkTime">
+            <summary>
+            工作时段
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockRunMts.WorkTime.BeginTimeProperty">
+            <summary>
+            开始时间
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockRunMts.WorkTime.BeginTime">
+            <summary>
+            开始时间
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockRunMts.WorkTime.EndTimeProperty">
+            <summary>
+            结束时间
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockRunMts.WorkTime.EndTime">
+            <summary>
+            结束时间
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockRunMts.WorkTime.RemarkProperty">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockRunMts.WorkTime.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockRunMts.WorkTime.DockRunMtIdProperty">
+            <summary>
+            月台运行维护Id
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockRunMts.WorkTime.DockRunMtId">
+            <summary>
+            月台运行维护Id
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.DockRunMts.WorkTime.DockRunMtProperty">
+            <summary>
+            月台运行维护
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.DockRunMts.WorkTime.DockRunMt">
+            <summary>
+            月台运行维护
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.DockRunMts.WorkTimeConfig">
+            <summary>
+            工作时段 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.DockRunMts.WorkTimeConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.Interfaces.Datas.ApointStatus">
+            <summary>
+            预约状态
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.Interfaces.Datas.ApointStatus.Effective">
+            <summary>
+            有效
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.Interfaces.Datas.ApointStatus.Cancel">
+            <summary>
+            取消
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.Interfaces.Datas.ApointStatus.Failure">
+            <summary>
+            失效
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.Interfaces.Datas.ApointStatus.OnLine">
+            <summary>
+            已排队
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.Interfaces.Datas.DockQueuesDatas">
+            <summary>
+            月台排队数据
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.DockQueuesDatas.Id">
+            <summary>
+            排队ID
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.DockQueuesDatas.No">
+            <summary>
+            排队号
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.DockQueuesDatas.QueueState">
+            <summary>
+            排队状态
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.DockQueuesDatas.QueueStateStr">
+            <summary>
+            排队状态显示
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.DockQueuesDatas.AppointType">
+            <summary>
+            排队类型
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.DockQueuesDatas.AppointTypeStr">
+            <summary>
+            排队类型显示
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.DockQueuesDatas.QueuePriority">
+            <summary>
+            优先级
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.DockQueuesDatas.QueuePriorityStr">
+            <summary>
+            优先级显示
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.DockQueuesDatas.BillNo">
+            <summary>
+            单据号
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.DockQueuesDatas.CarNum">
+            <summary>
+            车牌号码
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.DockQueuesDatas.CompanyName">
+            <summary>
+            公司名称
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.DockQueuesDatas.Contacts">
+            <summary>
+            联系人
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.DockQueuesDatas.ContactNum">
+            <summary>
+            联系电话
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.DockQueuesDatas.CreateDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.DockQueuesDatas.CreateDateStr">
+            <summary>
+            创建时间显示
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.DockQueuesDatas.DistributionTime">
+            <summary>
+            分配时间
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.DockQueuesDatas.CheckInTime">
+            <summary>
+            签到时间(装卸开始时间)
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.DockQueuesDatas.CheckInTimeStr">
+            <summary>
+            签到时间(装卸开始时间)显示
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.DockQueuesDatas.CheckOutTime">
+            <summary>
+            签出时间(装卸结束时间)
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.DockQueuesDatas.CheckOutTimeStr">
+            <summary>
+            签出时间(装卸结束时间)显示
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.DockQueuesDatas.YardMaintainCode">
+            <summary>
+            排队地点编码
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.DockQueuesDatas.YardMaintainName">
+            <summary>
+            排队地点名称
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.DockQueuesDatas.YardMaintainId">
+            <summary>
+            排队地点ID
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.DockQueuesDatas.AssignDockName">
+            <summary>
+            分配月台名称
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.DockQueuesDatas.MachineTime">
+            <summary>
+            服务器时间
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.DockQueuesDatas.IDNumber">
+            <summary>
+            身份证号码
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.DockQueuesDatas.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.DockQueuesDatas.AppointNo">
+            <summary>
+            预约号
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.Interfaces.Datas.DockData">
+            <summary>
+            月台数据
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.DockData.Id">
+            <summary>
+            月台ID
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.DockData.Code">
+            <summary>
+            月台编码
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.DockData.Name">
+            <summary>
+            月台名称
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.DockData.State">
+            <summary>
+            占用情况
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.DockData.IsReceive">
+            <summary>
+            是否收货
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.DockData.IsShip">
+            <summary>
+            是否发货
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.Interfaces.Datas.AppointsUserData">
+            <summary>
+            用户数据
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.AppointsUserData.Contacts">
+            <summary>
+            联系人
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.AppointsUserData.ContactNum">
+            <summary>
+            联系电话
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.AppointsUserData.CarNum">
+            <summary>
+            车牌号码
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.AppointsUserData.IDNumber">
+            <summary>
+            身份证号
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.AppointsUserData.CompanyName">
+            <summary>
+            公司名称
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.AppointsUserData.AppointType">
+            <summary>
+            预约类型
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.AppointsUserData.AppointTypeStr">
+            <summary>
+            预约类型
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.AppointsUserData.CreateDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.AppointsUserData.AppointStartDate">
+            <summary>
+            预约开始时间
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.AppointsUserData.AppointEndDate">
+            <summary>
+            预约结束时间
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.AppointsUserData.AppointDate">
+            <summary>
+            预约时间
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.Interfaces.Datas.YardZoneData">
+            <summary>
+            圆片区
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.Interfaces.Datas.TimePeriodData">
+            <summary>
+            时间段数据
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.TimePeriodData.StartDate">
+            <summary>
+            开始时间
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.TimePeriodData.EndDate">
+            <summary>
+            结束时间
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.TimePeriodData.AppointTimeDisplay">
+            <summary>
+            显示时间
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.TimePeriodData.AppointUseTime">
+            <summary>
+            预计占用时间
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.TimePeriodData.MaxRestTime">
+            <summary>
+            月台剩余最大时间
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.Interfaces.Datas.AppointConfig">
+            <summary>
+            预约配置项数据
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.AppointConfig.MaxTime">
+            <summary>
+            配置项配置的最大时间
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.AppointConfig.MaxDockTime">
+            <summary>
+            月台最大时间
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.AppointConfig.NowDate">
+            <summary>
+            当前日期
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.Interfaces.Datas.ZonesAwaitData">
+            <summary>
+            园区排队数据和等候数据
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.ZonesAwaitData.ReceiveCount">
+            <summary>
+            送货排队数量
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.ZonesAwaitData.ShipCount">
+            <summary>
+            提货排队数量
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.ZonesAwaitData.ReceiveAwaitTime">
+            <summary>
+            送货等待时间
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.ZonesAwaitData.ShipAwaitTime">
+            <summary>
+            提货等待时间
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.Interfaces.Datas.AppointData">
+            <summary>
+            预约数据
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.AppointData.DockAppointId">
+            <summary>
+            预约号ID
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.AppointData.AppointUseTime">
+            <summary>
+            占用时间
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.AppointData.ApointStatus">
+            <summary>
+            预约状态
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.AppointData.ApointStatusStr">
+            <summary>
+            预约状态显示
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.AppointData.AppointTypeStr">
+            <summary>
+            类型显示
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.AppointData.BillNo">
+            <summary>
+            单据号
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.AppointData.YardZoneId">
+            <summary>
+            预约地点
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.AppointData.YardZoneName">
+            <summary>
+            预约地点名称
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.AppointData.AppointDate">
+            <summary>
+            预约日期
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.AppointData.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.AppointData.IDNumber">
+            <summary>
+            身份证号码
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.AppointData.No">
+            <summary>
+            预约号
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.Interfaces.Datas.AppointData.CancelDate">
+            <summary>
+            取消时间
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.Interfaces.DockManageController">
+            <summary>
+            月台管理接口控制器
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.Interfaces.DockManageController.StringToDateTime(System.String)">
+            <summary>
+            字符串转化为时间
+            </summary>
+            <param name="deliveryTime">交货日期</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Dock.Interfaces.DockManageController.SetDockQueuesDatas(SIE.Domain.EntityList{SIE.Dock.DockQueues.DockQueue})">
+            <summary>
+            设置月台排队数据
+            </summary>
+            <param name="dockQueues">月台排队</param>
+            <returns>月台排队数据</returns>
+        </member>
+        <member name="M:SIE.Dock.Interfaces.DockManageController.CheckYardZonesLocations(System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            根据经纬度判断当前园区是否显示
+            </summary>
+            <param name="zoneLongitude">园片区经度</param>
+            <param name="zoneLatitude">园片区纬度</param>
+            <param name="longitude">目的地经度</param>
+            <param name="latitude">目的地纬度</param>
+            <param name="Distance">排队取号围栏距离(km)</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Dock.Interfaces.DockManageController.GetYardZoneAwaitTime(SIE.Domain.EntityList{SIE.Dock.DockQueues.DockQueue},SIE.Dock.DockAppoints.AppointType,SIE.Dock.DockQueues.DockQueue)">
+            <summary>
+            获取等待时间
+            </summary>
+            <param name="dockQueues">排队数据</param>
+            <param name="appointType">排队类型</param>
+            <param name="dockQueue">当前排队数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Dock.Interfaces.DockManageController.GetZonesAwaitDataByZoneId(System.Double)">
+            <summary>
+            根据园片区ID获取等待时间/排队个数
+            </summary>
+            <param name="YardZoneId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Dock.Interfaces.DockManageController.GetDockQueuesList(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            月台分配-获取月台排队列表
+            </summary>
+            <param name="keyword"></param>
+            <param name="queryDate"></param>
+            <param name="pageNumber"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Dock.Interfaces.DockManageController.GetDockDataByYardMaintain(System.Double,System.Int32)">
+            <summary>
+            获取排队地点的月台数据
+            </summary>
+            <param name="YardMaintainId">排队地点ID</param>
+            <param name="Appoint">排队类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Dock.Interfaces.DockManageController.ConfirmAssignDock(System.Double,System.String,System.Boolean,System.Double,System.String)">
+            <summary>
+            月台分配
+            </summary>
+            <param name="DockQueueId">月台排队ID</param>
+            <param name="DockCode">月台编码</param>
+            <param name="IsAtOnceAssign">是否立即分配</param>
+            <param name="YardZoneId">园片区ID</param>
+            <param name="YardZoneCode">园片区Code</param>
+        </member>
+        <member name="M:SIE.Dock.Interfaces.DockManageController.GetReleaseDockQueues(System.String,System.Boolean)">
+            <summary>
+            月台释放-获取月台排队列表
+            </summary>
+            <param name="dockCode">月台编码</param>
+            <param name="isAutoRelease">是否自动释放</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Dock.Interfaces.DockManageController.GetDockList(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            获取月台列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Dock.Interfaces.DockManageController.DelayDockQueues(System.Collections.Generic.List{System.Double})">
+            <summary>
+            月台释放推迟
+            </summary>
+            <param name="dockQueueIds">月台排队ID集合</param>
+        </member>
+        <member name="M:SIE.Dock.Interfaces.DockManageController.ReleaseDockQueues(System.Collections.Generic.List{System.Double})">
+            <summary>
+            月台释放
+            </summary>
+            <param name="dockQueueIds">月台排队ID集合</param>
+        </member>
+        <member name="M:SIE.Dock.Interfaces.DockManageController.GetAppointsUserData(System.String)">
+            <summary>
+            公众号-预约：获取历史记录
+            </summary>
+            <param name="WeChatID">微信ID/OPenID/UninID</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Dock.Interfaces.DockManageController.GetQueueUserData(System.String)">
+            <summary>
+            公众号-预约：获取历史排队记录
+            </summary>
+            <param name="WeChatID">微信ID/OPenID/UninID</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Dock.Interfaces.DockManageController.GetEnableZone">
+            <summary>
+            获取园片区数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Dock.Interfaces.DockManageController.GetTimePeriod(System.DateTime,System.Double,System.Int32)">
+            <summary>
+            获取预约时间
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Dock.Interfaces.DockManageController.GetAppointConfig">
+            <summary>
+            获取当前时间和月台最大时间
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Dock.Interfaces.DockManageController.SubmitAppoint(SIE.Dock.DockAppoints.DockAppoint,System.String,System.String)">
+            <summary>
+            预约确认
+            </summary>
+            <param name="SubmitData">提交的数据</param>
+            <param name="appId">appId</param>
+            <param name="secret">微信密码</param>
+            <exception cref="T:SIE.Domain.Validation.ValidationException"></exception>
+        </member>
+        <member name="M:SIE.Dock.Interfaces.DockManageController.GetAppointDtl(System.Double)">
+            <summary>
+            获取预约详情
+            </summary>
+            <param name="AppointId">预约ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Dock.Interfaces.DockManageController.GetEnableZoneByLocation(System.Double,System.Double)">
+            <summary>
+            通过经纬度获取园片区数据
+            </summary>
+            <param name="Longitude">经度</param>
+            <param name="Latitude">纬度</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Dock.Interfaces.DockManageController.SubmitDockQueue(SIE.Dock.DockQueues.DockQueue,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="DockQueue">排队数据</param>
+            <param name="appId">appId</param>
+            <param name="secret">secret</param>
+            <exception cref="T:SIE.Domain.Validation.ValidationException"></exception>
+        </member>
+        <member name="M:SIE.Dock.Interfaces.DockManageController.SubmitAppointQueue(System.Double,System.Double,System.Double,System.String,System.String,System.String)">
+            <summary>
+            现场预约
+            </summary>
+            <param name="appointId">预约ID</param>
+            <param name="longitude">经度</param>
+            <param name="latitude">纬度</param>
+            <param name="WechatID">微信ID</param>
+            <param name="appId">appId</param>
+            <param name="secret">secret</param>
+        </member>
+        <member name="M:SIE.Dock.Interfaces.DockManageController.GetZonesAwaitData(System.Double)">
+            <summary>
+            获取园片区的送货/提货个数、等候时间
+            </summary>
+            <param name="YardZoneId">园片区ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Dock.Interfaces.DockManageController.GetAppointByCode(System.String)">
+            <summary>
+            通过预约号获取预约数据
+            </summary>
+            <param name="AppointCode">预约号</param>
+        </member>
+        <member name="M:SIE.Dock.Interfaces.DockManageController.GetQueuesDtl(System.Double)">
+            <summary>
+            获取排队数据
+            </summary>
+            <param name="id">排队ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Dock.Interfaces.DockManageController.CancelQueue(System.Collections.Generic.List{System.Double},System.Int32,System.String,System.String,System.String)">
+            <summary>
+            取消排队/预约
+            </summary>
+            <param name="ids">id集合</param>
+            <param name="type">0-取消排队 1-取消预约</param>
+            <param name="appId">appId</param>
+            <param name="secret">secret</param>
+            <param name="weChatID">weChatID</param>
+        </member>
+        <member name="M:SIE.Dock.Interfaces.DockManageController.PostWebRequest(System.String,System.String)">
+            <summary>
+            postweb请求
+            </summary>
+            <param name="postUrl"></param>
+            <param name="paramData"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Dock.Module">
+            <summary>
+            当前工程所对应的模块类
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化
+            </summary>
+            <param name="app">应用程序对象</param>
+        </member>
+        <member name="T:SIE.Dock.Printables.DockAppointPrintable">
+            <summary>
+            月台预约标签
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.Printables.DockAppointPrintable.GetPropertys(System.Type)">
+            <summary>
+            获取属性列表
+            </summary>
+            <param name="type">类型</param>
+            <returns>属性列表</returns>
+        </member>
+        <member name="M:SIE.Dock.Printables.DockAppointPrintable.ConverterData(System.Object)">
+            <summary>
+            转换数据
+            </summary>
+            <param name="data">对象</param>
+            <returns>字符串</returns>
+        </member>
+        <member name="T:SIE.Dock.Printables.DockQueuePrintable">
+            <summary>
+            月台排队标签
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.Printables.DockQueuePrintable.GetPropertys(System.Type)">
+            <summary>
+            获取属性列表
+            </summary>
+            <param name="type">类型</param>
+            <returns>属性列表</returns>
+        </member>
+        <member name="M:SIE.Dock.Printables.DockQueuePrintable.ConverterData(System.Object)">
+            <summary>
+            转换数据
+            </summary>
+            <param name="data">对象</param>
+            <returns>字符串</returns>
+        </member>
+        <member name="T:SIE.Dock.ViewModels.AssignDockViewModel">
+            <summary>
+            分配月台
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.ViewModels.AssignDockViewModel.YardIdProperty">
+            <summary>
+            园区ID
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.ViewModels.AssignDockViewModel.YardId">
+            <summary>
+            园区ID
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.ViewModels.AssignDockViewModel.AppointTypeProperty">
+            <summary>
+            预约类型
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.ViewModels.AssignDockViewModel.AppointType">
+            <summary>
+            预约类型
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.ViewModels.AssignDockViewModel.DockQueueIdProperty">
+            <summary>
+            月台排队Id
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.ViewModels.AssignDockViewModel.DockQueueId">
+            <summary>
+            月台排队Id
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.ViewModels.AssignDockViewModel.IsAtOnceAssignProperty">
+            <summary>
+            是否立即分配
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.ViewModels.AssignDockViewModel.IsAtOnceAssign">
+            <summary>
+            是否立即分配
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.ViewModels.AssignDockViewModel.DockMaintainIdProperty">
+            <summary>
+            月台Id
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.ViewModels.AssignDockViewModel.DockMaintainId">
+            <summary>
+            月台Id
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.ViewModels.AssignDockViewModel.DockMaintainProperty">
+            <summary>
+            月台
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.ViewModels.AssignDockViewModel.DockMaintain">
+            <summary>
+            月台
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.ViewModels.CancelAppointViewModel">
+            <summary>
+            取消预约
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.ViewModels.CancelAppointViewModel.TypeProperty">
+            <summary>
+            操作类型(Type=0是预约取消，Type=1是排队取消)
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.ViewModels.CancelAppointViewModel.Type">
+            <summary>
+            操作类型
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.ViewModels.CancelAppointViewModel.CancelReasonIdProperty">
+            <summary>
+            取消原因Id
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.ViewModels.CancelAppointViewModel.CancelReasonId">
+            <summary>
+            取消原因Id
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.ViewModels.CancelAppointViewModel.CancelReasonProperty">
+            <summary>
+            取消原因
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.ViewModels.CancelAppointViewModel.CancelReason">
+            <summary>
+            取消原因
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.ViewModels.CancelAppointViewModel.ReasonNameProperty">
+            <summary>
+            原因名称
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.ViewModels.CancelAppointViewModel.ReasonName">
+            <summary>
+            原因名称
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.ViewModels.CancelAppointViewModel.ReasonDescProperty">
+            <summary>
+            原因描述
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.ViewModels.CancelAppointViewModel.ReasonDesc">
+            <summary>
+            原因描述
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.ViewModels.DockAppointPrintViewModel">
+            <summary>
+            月台预约打印
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.ViewModels.DockAppointPrintViewModel.PrintTemplateIdProperty">
+            <summary>
+            打印模板Id
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.ViewModels.DockAppointPrintViewModel.PrintTemplateId">
+            <summary>
+            打印模板Id
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.ViewModels.DockAppointPrintViewModel.PrintTemplateProperty">
+            <summary>
+            打印模板
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.ViewModels.DockAppointPrintViewModel.PrintTemplate">
+            <summary>
+            打印模板
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.ViewModels.DockQueuePrintViewModel">
+            <summary>
+            月台排队打印
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.ViewModels.DockQueuePrintViewModel.PrintTemplateIdProperty">
+            <summary>
+            打印模板Id
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.ViewModels.DockQueuePrintViewModel.PrintTemplateId">
+            <summary>
+            打印模板Id
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.ViewModels.DockQueuePrintViewModel.PrintTemplateProperty">
+            <summary>
+            打印模板
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.ViewModels.DockQueuePrintViewModel.PrintTemplate">
+            <summary>
+            打印模板
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.ViewModels.SelectAppointDockViewModel">
+            <summary>
+            选择预约月台ViewModel
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.ViewModels.SelectAppointDockViewModel.StartDateProperty">
+            <summary>
+            预约开始时间
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.ViewModels.SelectAppointDockViewModel.StartDate">
+            <summary>
+            预约开始时间
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.ViewModels.SelectAppointDockViewModel.EndDateProperty">
+            <summary>
+            预约结束时间
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.ViewModels.SelectAppointDockViewModel.EndDate">
+            <summary>
+            预约结束时间
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.ViewModels.SelectAppointDockViewModel.AppointTimeDisplayProperty">
+            <summary>
+            预约时段显示
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.ViewModels.SelectAppointDockViewModel.AppointTimeDisplay">
+            <summary>
+            预约时段显示
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.ViewModels.SelectAppointDockViewModel.AppointUseTimeProperty">
+            <summary>
+            预计占用时间
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.ViewModels.SelectAppointDockViewModel.AppointUseTime">
+            <summary>
+            预计占用时间
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.ViewModels.SelectAppointDockViewModel.MaxRestTimeProperty">
+            <summary>
+            预计占用时间
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.ViewModels.SelectAppointDockViewModel.MaxRestTime">
+            <summary>
+            预计占用时间
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.WXPackage.OAuthManage">
+            <summary>
+            获取微信信息
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.WXPackage.OAuthManage.GetCodeBase(System.String,System.String)">
+            <summary>
+            获取CODE,后期用于获取微信用户openid
+            </summary>
+            <param name="appid">appid</param>
+            <param name="redirect_url">url</param>
+            <returns>用户url信息</returns>
+        </member>
+        <member name="M:SIE.Dock.WXPackage.OAuthManage.GetOpenId(System.String,System.String,System.String)">
+            <summary>
+            获取OpenId
+            </summary>
+            <param name="code">用户Code</param>
+            <param name="appid">appid</param>
+            <param name="secret">secret</param>
+            <returns>OpenId</returns>
+        </member>
+        <member name="M:SIE.Dock.WXPackage.OAuthManage.GetUserInfo(System.String,System.String)">
+            <summary>
+            获取用户信息，包含头像和昵称等
+            </summary>
+            <param name="open_id">open_id</param>
+            <param name="access_token">access_token</param>
+            <returns>用户信息</returns>
+        </member>
+        <member name="M:SIE.Dock.WXPackage.OAuthManage.GetCurrTimeStamp">
+            <summary>
+            获取当前时间戳
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Dock.WXPackage.OAuthManage.GetRandomGuid">
+            <summary>
+            获取随机字符串
+            </summary>
+            <returns>Guid随机字符串</returns>
+        </member>
+        <member name="M:SIE.Dock.WXPackage.OAuthManage.GetWeChatSignature(System.String,System.String,System.String)">
+            <summary>
+            获取微信签名
+            </summary>
+            <param name="appid">appId</param>
+            <param name="appSecret">secret</param>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Dock.WXPackage.OAuthManage.GetWeChatTicketData(System.String)">
+            <summary>
+            获取Ticket数据
+            </summary>
+            <param name="accessToken">AccssToken</param>
+            <returns>Ticket</returns>
+            <exception cref="T:SIE.Domain.Validation.ValidationException">异常信息</exception>
+        </member>
+        <member name="T:SIE.Dock.YardMaintains.Dao.YardMaintainDao">
+            <summary>
+            园区维护数据访问
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.YardMaintains.Dao.YardMaintainDao.GetYardMaintain(System.Double,SIE.Domain.EagerLoadOptions)">
+            <summary>
+            获取园区维护数据
+            </summary>
+            <param name="id">id</param>
+            <param name="elo">贪婪加载</param>
+            <returns>园区维护数据</returns>
+        </member>
+        <member name="M:SIE.Dock.YardMaintains.Dao.YardMaintainDao.GetYardMaintains(SIE.Dock.YardMaintains.YardMaintainCriteria)">
+            <summary>
+            查询方法
+            </summary>
+            <param name="criteria">查询实体</param>
+            <returns>返回查询结果</returns>
+        </member>
+        <member name="M:SIE.Dock.YardMaintains.Dao.YardMaintainDao.GetEnableYardMaintains(System.String,SIE.PagingInfo)">
+            <summary>
+            获取可用园区维护数据
+            </summary>
+            <param name="keyword">查询关键字</param>
+            <param name="pagingInfo">分页信息</param>
+            <returns>园区维护数据</returns>
+        </member>
+        <member name="M:SIE.Dock.YardMaintains.Dao.YardMaintainDao.GetYardMaintainList(System.String,SIE.PagingInfo)">
+            <summary>
+            获取所有园区维护数据
+            </summary>
+            <param name="keyword">查询关键字</param>
+            <param name="pagingInfo">分页信息</param>
+            <returns>园区维护数据</returns>
+        </member>
+        <member name="T:SIE.Dock.YardMaintains.Service.YardMaintainService">
+            <summary>
+            园区维护服务
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.YardMaintains.Service.YardMaintainService._yardmaintainDao">
+            <summary>
+            园区维护数据访问
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.YardMaintains.Service.YardMaintainService.#ctor(SIE.Dock.YardMaintains.Dao.YardMaintainDao)">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.YardMaintains.Service.YardMaintainService.GetYardMaintain(System.Double,SIE.Domain.EagerLoadOptions)">
+            <summary>
+            获取园区维护数据
+            </summary>
+            <param name="id">id</param>
+            <param name="elo">贪婪加载</param>
+            <returns>园区维护数据</returns>
+        </member>
+        <member name="M:SIE.Dock.YardMaintains.Service.YardMaintainService.GetYardMaintains(SIE.Dock.YardMaintains.YardMaintainCriteria)">
+            <summary>
+            查询方法
+            </summary>
+            <param name="criteria">查询实体</param>
+            <returns>返回查询结果</returns>
+        </member>
+        <member name="M:SIE.Dock.YardMaintains.Service.YardMaintainService.GetEnableYardMaintains(System.String,SIE.PagingInfo)">
+            <summary>
+            获取可用园区维护数据
+            </summary>
+            <param name="keyword">查询关键字</param>
+            <param name="pagingInfo">分页信息</param>
+            <returns>园区维护数据</returns>
+        </member>
+        <member name="M:SIE.Dock.YardMaintains.Service.YardMaintainService.GetYardMaintainList(System.String,SIE.PagingInfo)">
+            <summary>
+            获取所有园区维护数据
+            </summary>
+            <param name="keyword">查询关键字</param>
+            <param name="pagingInfo">分页信息</param>
+            <returns>园区维护数据</returns>
+        </member>
+        <member name="T:SIE.Dock.YardMaintains.YardMaintain">
+            <summary>
+            园区维护
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.YardMaintains.YardMaintain.CodeProperty">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.YardMaintains.YardMaintain.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.YardMaintains.YardMaintain.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.YardMaintains.YardMaintain.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.YardMaintains.YardMaintain.StateProperty">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.YardMaintains.YardMaintain.State">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.YardMaintains.YardMaintain.RemarkProperty">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.YardMaintains.YardMaintain.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.YardMaintains.YardMaintainConfig">
+            <summary>
+            园区维护 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.YardMaintains.YardMaintainConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.YardMaintains.YardMaintainCriteria">
+            <summary>
+            园区维护查询实体
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.YardMaintains.YardMaintainCriteria.CodeProperty">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.YardMaintains.YardMaintainCriteria.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.YardMaintains.YardMaintainCriteria.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.YardMaintains.YardMaintainCriteria.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.YardMaintains.YardMaintainCriteria.Fetch">
+            <summary>
+            查询逻辑
+            </summary>
+            <returns>返回查询后的数据</returns>
+        </member>
+        <member name="T:SIE.Dock.YardMaintains.UndeleteYardMaintainRule">
+            <summary>
+            园区维护被引用不允许删除
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.YardMaintains.UndeleteYardMaintainRule.#ctor">
+            <summary>
+            添加验证规则
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.YardZones.Dao.DockHandlingDao">
+            <summary>
+            月台装卸能力数据访问
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.YardZones.Dao.DockHandlingDao.GetDockHandlings(System.Collections.Generic.List{System.Double})">
+            <summary>
+            获取月台装卸能力列表
+            </summary>
+            <returns>返回月台装卸能力列表</returns>
+        </member>
+        <member name="M:SIE.Dock.YardZones.Dao.DockHandlingDao.GetDockHandlingsByDockIds(System.Collections.Generic.List{System.Double})">
+            <summary>
+            获取月台装卸能力列表
+            </summary>
+            <returns>返回月台装卸能力列表</returns>
+        </member>
+        <member name="T:SIE.Dock.YardZones.Dao.YardZoneDao">
+            <summary>
+            园片区维护数据访问
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.YardZones.Dao.YardZoneDao.GetYardZones(SIE.Dock.YardZones.YardZoneCriteria)">
+            <summary>
+            查询方法
+            </summary>
+            <param name="criteria">查询实体</param>
+            <returns>返回查询结果</returns>
+        </member>
+        <member name="M:SIE.Dock.YardZones.Dao.YardZoneDao.GetEnableYardZones(System.String,SIE.PagingInfo)">
+            <summary>
+            获取可用园片区维护数据
+            </summary>
+            <param name="keyword">查询关键字</param>
+            <param name="pagingInfo">分页信息</param>
+            <returns>园片区维护数据</returns>
+        </member>
+        <member name="T:SIE.Dock.YardZones.DockHandling">
+            <summary>
+            月台装卸能力
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.YardZones.DockHandling.BeginTimeProperty">
+            <summary>
+            开始时间
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.YardZones.DockHandling.BeginTime">
+            <summary>
+            开始时间
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.YardZones.DockHandling.EndTimeProperty">
+            <summary>
+            结束时间
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.YardZones.DockHandling.EndTime">
+            <summary>
+            结束时间
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.YardZones.DockHandling.ShipAppoNumProperty">
+            <summary>
+            送货可预约数
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.YardZones.DockHandling.ShipAppoNum">
+            <summary>
+            送货可预约数
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.YardZones.DockHandling.ReceiveAppoNumProperty">
+            <summary>
+            提货可预约数
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.YardZones.DockHandling.ReceiveAppoNum">
+            <summary>
+            提货可预约数
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.YardZones.DockHandling.RemarkProperty">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.YardZones.DockHandling.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.YardZones.DockHandling.YardZoneIdProperty">
+            <summary>
+            园片区维护Id
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.YardZones.DockHandling.YardZoneId">
+            <summary>
+            园片区维护Id
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.YardZones.DockHandling.YardZoneProperty">
+            <summary>
+            园片区维护
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.YardZones.DockHandling.YardZone">
+            <summary>
+            园片区维护
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.YardZones.DockHandlingConfig">
+            <summary>
+            月台装卸能力 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.YardZones.DockHandlingConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.YardZones.Service.DockHandlingService">
+            <summary>
+            月台装卸能力服务
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.YardZones.Service.DockHandlingService._dockhandlingDao">
+            <summary>
+            月台装卸能力数据访问
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.YardZones.Service.DockHandlingService.#ctor(SIE.Dock.YardZones.Dao.DockHandlingDao)">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.YardZones.Service.DockHandlingService.GetDockHandlings(System.Collections.Generic.List{System.Double})">
+            <summary>
+            获取月台装卸能力数据
+            </summary>
+            <param name="yardZoneIds">园片区Id</param>
+            <returns>月台装卸能力数据</returns>
+        </member>
+        <member name="M:SIE.Dock.YardZones.Service.DockHandlingService.GetDockHandlingsByDockIds(System.Collections.Generic.List{System.Double})">
+            <summary>
+            获取月台装卸能力列表
+            </summary>
+            <returns>返回月台装卸能力列表</returns>
+        </member>
+        <member name="T:SIE.Dock.YardZones.Service.YardZoneService">
+            <summary>
+            园片区维护服务
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.YardZones.Service.YardZoneService._yardzoneDao">
+            <summary>
+            园片区维护数据访问
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.YardZones.Service.YardZoneService.#ctor(SIE.Dock.YardZones.Dao.YardZoneDao)">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.YardZones.Service.YardZoneService.GetYardZones(SIE.Dock.YardZones.YardZoneCriteria)">
+            <summary>
+            查询方法
+            </summary>
+            <param name="criteria">查询实体</param>
+            <returns>返回查询结果</returns>
+        </member>
+        <member name="M:SIE.Dock.YardZones.Service.YardZoneService.GetEnableYardZones(System.String,SIE.PagingInfo)">
+            <summary>
+            获取可用园片区维护数据
+            </summary>
+            <param name="keyword">查询关键字</param>
+            <param name="pagingInfo">分页信息</param>
+            <returns>园片区维护数据</returns>
+        </member>
+        <member name="M:SIE.Dock.YardZones.Service.YardZoneService.GetEnableYardZoneByReceiveDocks(System.String,SIE.PagingInfo)">
+            <summary>
+            获取可用园片区有收货月台的数据
+            </summary>
+            <param name="keyword">查询关键字</param>
+            <param name="pagingInfo">分页信息</param>
+            <returns>园区维护数据</returns>
+        </member>
+        <member name="M:SIE.Dock.YardZones.Service.YardZoneService.GetDockHandlingList(System.Double)">
+            <summary>
+            获取月台装卸能力列表
+            </summary>
+            <param name="billId">单据ID</param>
+            <returns>月台装卸能力列表</returns>
+        </member>
+        <member name="M:SIE.Dock.YardZones.Service.YardZoneService.ValidateYardZoneData(SIE.Dock.YardZones.YardZone)">
+            <summary>
+            验证园片区维护数据
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="T:SIE.Dock.YardZones.YardZone">
+            <summary>
+            园片区维护
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.YardZones.YardZone.CodeProperty">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.YardZones.YardZone.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.YardZones.YardZone.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.YardZones.YardZone.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.YardZones.YardZone.YardMaintainIdProperty">
+            <summary>
+            园区Id
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.YardZones.YardZone.YardMaintainId">
+            <summary>
+            园区Id
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.YardZones.YardZone.YardMaintainProperty">
+            <summary>
+            园区
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.YardZones.YardZone.YardMaintain">
+            <summary>
+            园区
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.YardZones.YardZone.LongitudeProperty">
+            <summary>
+            经度
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.YardZones.YardZone.Longitude">
+            <summary>
+            经度
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.YardZones.YardZone.LatitudeProperty">
+            <summary>
+            纬度
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.YardZones.YardZone.Latitude">
+            <summary>
+            纬度
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.YardZones.YardZone.DistanceProperty">
+            <summary>
+            排队取号围栏距离(km)
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.YardZones.YardZone.Distance">
+            <summary>
+            排队取号围栏距离(km)
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.YardZones.YardZone.StateProperty">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.YardZones.YardZone.State">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.YardZones.YardZone.RemarkProperty">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.YardZones.YardZone.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.YardZones.YardZone.DockHandlingListProperty">
+            <summary>
+            月台装卸能力列表
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.YardZones.YardZone.DockHandlingList">
+            <summary>
+            月台装卸能力列表
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.YardZones.YardZoneConfig">
+            <summary>
+            园片区维护 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.YardZones.YardZoneConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.YardZones.YardZoneCriteria">
+            <summary>
+            园片区维护查询实体
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.YardZones.YardZoneCriteria.CodeProperty">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.YardZones.YardZoneCriteria.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.YardZones.YardZoneCriteria.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.YardZones.YardZoneCriteria.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.YardZones.YardZoneCriteria.YardMaintainNameIdProperty">
+            <summary>
+            园区Id
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.YardZones.YardZoneCriteria.YardMaintainNameId">
+            <summary>
+            园区Id
+            </summary>
+        </member>
+        <member name="F:SIE.Dock.YardZones.YardZoneCriteria.YardMaintainNameProperty">
+            <summary>
+            园区
+            </summary>
+        </member>
+        <member name="P:SIE.Dock.YardZones.YardZoneCriteria.YardMaintainName">
+            <summary>
+            园区
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.YardZones.YardZoneCriteria.Fetch">
+            <summary>
+            查询逻辑
+            </summary>
+            <returns>返回查询后的数据</returns>
+        </member>
+        <member name="T:SIE.Dock.YardZones.UndeleteYardZoneRule">
+            <summary>
+            园片区维护被引用不允许删除
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.YardZones.UndeleteYardZoneRule.#ctor">
+            <summary>
+            添加验证规则
+            </summary>
+        </member>
+        <member name="T:SIE.Dock.YardZones.DockHandlingNotNullRule">
+            <summary>
+            月台装卸能力页签不能为空
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.YardZones.DockHandlingNotNullRule.#ctor">
+            <summary>
+            初始化需要验证的属性、影响范围、规则
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.YardZones.DockHandlingNotNullRule.Validate(SIE.Domain.IEntity,SIE.MetaModel.RuleArgs)">
+            <summary>
+            添加验证规则
+            </summary>
+            <param name="entity">验证实体</param>
+            <param name="e">为业务规则验证方法提供一些必要的参数</param>
+        </member>
+        <member name="T:SIE.Dock.YardZones.DockHandlingTimeRule">
+            <summary>
+            月台装卸能力结束时间大于开始时间
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.YardZones.DockHandlingTimeRule.#ctor">
+            <summary>
+            构造方法
+            </summary>
+        </member>
+        <member name="M:SIE.Dock.YardZones.DockHandlingTimeRule.Validate(SIE.Domain.IEntity,SIE.MetaModel.RuleArgs)">
+            <summary>
+            添加验证规则
+            </summary>
+            <param name="entity">验证实体</param>
+            <param name="e">为业务规则验证方法提供一些必要的参数</param>
+        </member>
+    </members>
+</doc>

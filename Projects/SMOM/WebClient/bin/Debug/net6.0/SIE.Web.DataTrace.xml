@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Web.DataTrace</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Web.DataTrace.Module">
+            <summary>
+            UI模块
+            </summary>
+        </member>
+        <member name="M:SIE.Web.DataTrace.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化
+            </summary>
+            <param name="app">程序</param>
+        </member>
+        <member name="M:SIE.Web.DataTrace.Module.App_ModuleOperations(System.Object,System.EventArgs)">
+            <summary>
+            配置菜单
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="T:SIE.Web.DataTrace.TraceMainDatas.Commands.UploadAttachmentCommand">
+            <summary>
+            文件留档
+            </summary>
+        </member>
+        <member name="T:SIE.Web.DataTrace.TraceMainDatas.Commands.ViewMutiDocumenttCommand">
+            <summary>
+            打印二维码命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.DataTrace.TraceMainDatas.Commands.ViewMutiDocumenttCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.DataTrace.TraceMainDatas.Commands.ViewMutiDocumenttCommand.GeneralTemplate(SIE.DataTrace.TraceMainDatas.TraceDataPrintDataViewmodel)">
+            <summary>
+            生成打印模板
+            </summary>
+            <param name="printBind"></param>
+            <returns></returns>
+            <exception cref="T:SIE.Domain.Validation.ValidationException"></exception>
+        </member>
+        <member name="T:SIE.Web.DataTrace.TraceMainDatas.TraceEvent.TraceEventListener">
+            <summary>
+            追溯数据存档EventBus监听类
+            </summary>
+        </member>
+        <member name="P:SIE.Web.DataTrace.TraceMainDatas.TraceEvent.TraceEventListener.Instance">
+            <summary>
+            实例
+            </summary>
+        </member>
+        <member name="M:SIE.Web.DataTrace.TraceMainDatas.TraceEvent.TraceEventListener.Start">
+            <summary>
+            订阅追溯数据存档接收信息
+            </summary>
+        </member>
+        <member name="M:SIE.Web.DataTrace.TraceMainDatas.TraceEvent.TraceEventListener.SaveTraceFile(SIE.MQueue.SubscribeEventArgs{SIE.DataTrace.TraceMainDatas.TraceFileViewmodel})">
+            <summary>
+            追溯数据存档
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:SIE.Web.DataTrace.TraceMainDatas.TraceEvent.TraceEventListener.GeneralTemplate(SIE.DataTrace.TraceMainDatas.TraceDataPrintDataViewmodel)">
+            <summary>
+            生成打印模板
+            </summary>
+            <param name="printBind"></param>
+            <returns></returns>
+            <exception cref="T:SIE.Domain.Validation.ValidationException"></exception>
+        </member>
+        <member name="M:SIE.Web.DataTrace.TraceMainDatas.TraceEvent.TraceEventListener.UploadAttachment(System.Collections.Generic.List{System.String},SIE.DataTrace.TraceMainDatas.TraceFileViewmodel)">
+            <summary>
+            模板pdf文件上传
+            </summary>
+            <param name="paths"></param>
+            <param name="traceMain"></param>
+            <returns></returns>
+            <exception cref="T:SIE.Domain.Validation.ValidationException"></exception>
+        </member>
+        <member name="E:SIE.Web.DataTrace.TraceMainDatas.TraceEvent.TraceEventListener.SavingAttachement">
+            <summary>
+            附件保存前事件，子类可以根据需要扩展
+            </summary>
+        </member>
+        <member name="E:SIE.Web.DataTrace.TraceMainDatas.TraceEvent.TraceEventListener.SavedAttachement">
+            <summary>
+            附件保存后事件，子类可以根据需要扩展，比如保存实体相关的内容
+            </summary>
+        </member>
+        <member name="M:SIE.Web.DataTrace.TraceMainDatas.TraceEvent.TraceEventListener.OnSavingAttachement(SIE.Web.Common.Attachments.Commands.UploadAttachmentViewArgs)">
+            <summary>
+            保存前事件
+            </summary>
+            <param name="viewArgs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.DataTrace.TraceMainDatas.TraceEvent.TraceEventListener.SaveAttachement(SIE.Web.Common.Attachments.Commands.UploadAttachmentViewArgs,System.Type)">
+            <summary>
+            保存附件
+            </summary>
+            <param name="viewArgs"></param>
+            <param name="type"></param>
+        </member>
+        <member name="M:SIE.Web.DataTrace.TraceMainDatas.TraceEvent.TraceEventListener.Dispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="M:SIE.Web.DataTrace.TraceMainDatas.TraceEvent.TraceEventListener.Dispose(System.Boolean)">
+            <summary>
+            释放数据
+            </summary>
+        </member>
+        <member name="T:SIE.Web.DataTrace.TraceMainDatas.TraceMainDataCriteriaViewConfig">
+            <summary>
+            追溯主数据查询实体视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.DataTrace.TraceMainDatas.TraceMainDataCriteriaViewConfig.ConfigView">
+            <summary>
+            查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.DataTrace.TraceMainDatas.TraceMainDataViewConfig">
+            <summary>
+            追溯主数据视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.DataTrace.TraceMainDatas.TraceMainDataViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="SIE.Wpf.ESop.Editors.MediaPlayer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+			 xmlns:editors="clr-namespace:SIE.Wpf.ESOP.Editors"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <editors:ViewboxPanel x:Name="viewBox" Grid.Row="0" >
+			<MediaElement x:Name="mediaViewerControl" Source="" />
+        </editors:ViewboxPanel>
+
+        <StackPanel  Grid.Row="1" Orientation="Horizontal" MaxHeight="40" Background="Transparent">
+            <Button Name="btnSelect" Content="播放" Height="40" Width="80" Click="BtnSelect_Click"></Button>
+            <Button Name="btnHand" Content="暂停" Height="40" Width="80" Click="BtnHand_Click"></Button>
+            <Button Name="btnFast" Content="快放1倍" Height="40" Width="80" Click="btnFast_Click"></Button>
+            <Button Name="btnSlow" Content="慢放1倍" Height="40" Width="80" Click="btnSlow_Click"></Button>
+            <Button Name="btnOriginal" Content="正常倍速" Height="40" Width="80" Click="btnOriginal_Click"></Button>
+            <Button Name="btnZoomIn" Content="放大" Height="40" Width="80" Click="BtnZoomIn_Click"></Button>
+            <Button Name="btnZoomOut" Content="缩小" Height="40" Width="80" Click="BtnZoomOut_Click"></Button>
+        </StackPanel>
+    </Grid>
+
+</UserControl>

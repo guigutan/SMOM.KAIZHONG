@@ -1,0 +1,157 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.Tech.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.Tech.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Processs\Commands\ProcessCollectStepMoveBottom.cs" />
+    <Compile Remove="Routings\Commands\AddProcess.cs" />
+    <Compile Remove="Stations\Commands\StationSaveCommand.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Common\Commands\ImportDataCommonCommand.js" />
+    <None Remove="Common\Commands\ProductRoutingBomAddCommand.js" />
+    <None Remove="Common\Commands\ProductRoutingBomEditCommand.js" />
+    <None Remove="Common\ProductRoutingBomAction.js" />
+    <None Remove="Processs\Commands\AddParameterCommand.js" />
+    <None Remove="Processs\Commands\AddProcessCommand.js" />
+    <None Remove="Processs\Commands\CopyProcessCommand.js" />
+    <None Remove="Processs\Commands\EditParameterCommand.js" />
+    <None Remove="Processs\Commands\EditProcessCommand.js" />
+    <None Remove="Processs\Commands\ProcessCollectStepAddCommand.js" />
+    <None Remove="Processs\Commands\ProcessCollectStepMoveBottom.js" />
+    <None Remove="Processs\Commands\ProcessCollectStepMoveDown.js" />
+    <None Remove="Processs\Commands\ProcessCollectStepMoveTop.js" />
+    <None Remove="Processs\Commands\ProcessCollectStepMoveUp.js" />
+    <None Remove="Processs\Commands\ProcessDefectCommand.js" />
+    <None Remove="Processs\Commands\ProcessDownloadTemplateCommand.js" />
+    <None Remove="Processs\Commands\ProcessEmployeeDLTemplateCommand.js" />
+    <None Remove="Processs\Commands\ProcessEmployeeImportCommand.js" />
+    <None Remove="Processs\Commands\ProcessImportCommand.js" />
+    <None Remove="Processs\Commands\ProcessPackingUnitCommand.js" />
+    <None Remove="Processs\Commands\ProcessSkillCommand.js" />
+    <None Remove="Processs\Commands\ProcessUserGroupDeleteCommand.js" />
+    <None Remove="Processs\Commands\SaveProcessCommand.js" />
+    <None Remove="Processs\Commands\SaveProcessConditionCommand.js" />
+    <None Remove="Processs\Commands\SelectProcessCommand.js" />
+    <None Remove="Processs\Commands\SelectProcessUserGroupCommand.js" />
+    <None Remove="Routings\Commands\AddProcess.js" />
+    <None Remove="Routings\Commands\AddProductRoutingBom.js" />
+    <None Remove="Routings\Commands\AddRouting.js" />
+    <None Remove="Routings\Commands\AddRoutingVersion.js" />
+    <None Remove="Routings\Commands\DeleteProcess.js" />
+    <None Remove="Routings\Commands\DeleteRouting.js" />
+    <None Remove="Routings\Commands\DeleteRoutingVersion.js" />
+    <None Remove="Routings\Commands\EditProcess.js" />
+    <None Remove="Routings\Commands\EditRouting.js" />
+    <None Remove="Routings\Commands\HorizontalDistributionCommand.js" />
+    <None Remove="Routings\Commands\ImportRouting.js" />
+    <None Remove="Routings\Commands\LeftRightCommand.js" />
+    <None Remove="Routings\Commands\PublishCommand.js" />
+    <None Remove="Routings\Commands\SaveProcess.js" />
+    <None Remove="Routings\Commands\SaveRoutingCommand.js" />
+    <None Remove="Routings\Commands\SelectCategoryCommand.js" />
+    <None Remove="Routings\Commands\SelectItemCommand.js" />
+    <None Remove="Routings\Commands\UpDownCommand.js" />
+    <None Remove="Routings\Commands\VerticalDistributionCommand.js" />
+    <None Remove="Routings\Commands\ZoomInCommand.js" />
+    <None Remove="Routings\Commands\ZoomOriginalCommand.js" />
+    <None Remove="Routings\Commands\ZoomOutCommand.js" />
+    <None Remove="Routings\Editors\RoutingDisplayEditor.js" />
+    <None Remove="Routings\jsplumb.js" />
+    <None Remove="Scripts\ProcessListBehavior.js" />
+    <None Remove="Scripts\Routings\Controls\RoutingProcessProperty.js" />
+    <None Remove="Scripts\Stations\Behaviors\StationBehavior.js" />
+    <None Remove="Stations\Commands\StationCopyCommand.js" />
+    <None Remove="Stations\Commands\StationImportCommand.js" />
+    <None Remove="Stations\Commands\StationItemAddCommand.js" />
+    <None Remove="Stations\Commands\StationItemImportCommand.js" />
+    <None Remove="Stations\Commands\StationProcessImportCommand.js" />
+    <None Remove="Stations\Commands\StationSaveCommand.js" />
+    <None Remove="VictoryStandards\Commands\VictoryStandardAddCommand.js" />
+    <None Remove="VictoryStandards\Commands\VictoryStandardDeleteCommand.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\..\..\.sonarlint\sie.smom\CSharp\SonarLint.xml" Link="SonarLint.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Common\Commands\ImportDataCommonCommand.js" />
+    <EmbeddedResource Include="Processs\Commands\EditProcessCommand.js" />
+    <EmbeddedResource Include="Processs\Commands\ProcessDownloadTemplateCommand.js" />
+    <EmbeddedResource Include="Processs\Commands\ProcessEmployeeDLTemplateCommand.js" />
+    <EmbeddedResource Include="Processs\Commands\ProcessEmployeeImportCommand.js" />
+    <EmbeddedResource Include="Processs\Commands\ProcessUserGroupDeleteCommand.js" />
+    <EmbeddedResource Include="Processs\Commands\SelectProcessUserGroupCommand.js" />
+    <EmbeddedResource Include="Routings\Commands\AddProductRoutingBom.js" />
+    <EmbeddedResource Include="Processs\Commands\AddParameterCommand.js" />
+    <EmbeddedResource Include="Processs\Commands\ProcessImportCommand.js" />
+    <EmbeddedResource Include="Processs\Commands\SaveProcessCommand.js" />
+    <EmbeddedResource Include="Processs\Commands\CopyProcessCommand.js" />
+    <EmbeddedResource Include="Processs\Commands\AddProcessCommand.js" />
+    <EmbeddedResource Include="Processs\Commands\EditParameterCommand.js" />
+    <EmbeddedResource Include="Processs\Commands\ProcessCollectStepAddCommand.js" />
+    <EmbeddedResource Include="Processs\Commands\ProcessCollectStepMoveBottom.js" />
+    <EmbeddedResource Include="Processs\Commands\ProcessCollectStepMoveDown.js" />
+    <EmbeddedResource Include="Processs\Commands\ProcessCollectStepMoveTop.js" />
+    <EmbeddedResource Include="Processs\Commands\ProcessCollectStepMoveUp.js" />
+    <EmbeddedResource Include="Processs\Commands\ProcessDefectCommand.js" />
+    <EmbeddedResource Include="Processs\Commands\ProcessPackingUnitCommand.js" />
+    <EmbeddedResource Include="Processs\Commands\ProcessSkillCommand.js" />
+    <EmbeddedResource Include="Processs\Commands\SaveProcessConditionCommand.js" />
+    <EmbeddedResource Include="Processs\Commands\SelectProcessCommand.js" />
+    <EmbeddedResource Include="Routings\Commands\AddProcess.js" />
+    <EmbeddedResource Include="Routings\Commands\AddRouting.js" />
+    <EmbeddedResource Include="Routings\Commands\AddRoutingVersion.js" />
+    <EmbeddedResource Include="Routings\Commands\DeleteProcess.js" />
+    <EmbeddedResource Include="Routings\Commands\DeleteRouting.js" />
+    <EmbeddedResource Include="Routings\Commands\DeleteRoutingVersion.js" />
+    <EmbeddedResource Include="Routings\Commands\EditProcess.js" />
+    <EmbeddedResource Include="Routings\Commands\EditRouting.js" />
+    <EmbeddedResource Include="Routings\Commands\HorizontalDistributionCommand.js" />
+    <EmbeddedResource Include="Routings\Commands\LeftRightCommand.js" />
+    <EmbeddedResource Include="Routings\Commands\PublishCommand.js" />
+    <EmbeddedResource Include="Routings\Commands\SaveRoutingCommand.js" />
+    <EmbeddedResource Include="Routings\Commands\SelectCategoryCommand.js" />
+    <EmbeddedResource Include="Routings\Commands\SelectItemCommand.js" />
+    <EmbeddedResource Include="Routings\Commands\ImportRouting.js" />
+    <EmbeddedResource Include="Routings\Commands\ZoomInCommand.js" />
+    <EmbeddedResource Include="Routings\Commands\ZoomOriginalCommand.js" />
+    <EmbeddedResource Include="Routings\Commands\UpDownCommand.js" />
+    <EmbeddedResource Include="Routings\Commands\VerticalDistributionCommand.js" />
+    <EmbeddedResource Include="Routings\Commands\ZoomOutCommand.js" />
+    <EmbeddedResource Include="Stations\Commands\StationEquipmentSetMasterCommand.js" />
+    <EmbeddedResource Include="Stations\Commands\StationCopyCommand.js" />
+    <EmbeddedResource Include="Stations\Commands\StationImportCommand.js" />
+    <EmbeddedResource Include="Stations\Commands\StationItemAddCommand.js" />
+    <EmbeddedResource Include="Stations\Commands\StationItemImportCommand.js" />
+    <EmbeddedResource Include="Stations\Commands\StationProcessImportCommand.js" />
+    <EmbeddedResource Include="VictoryStandards\Commands\VictoryStandardAddCommand.js" />
+    <EmbeddedResource Include="VictoryStandards\Commands\VictoryStandardDeleteCommand.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SIE.Tech\SIE.Tech.csproj" />
+    <ProjectReference Include="..\SIE.Web.Tech.Common\SIE.Web.Tech.Common.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Templates\工艺路线导入模板.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>

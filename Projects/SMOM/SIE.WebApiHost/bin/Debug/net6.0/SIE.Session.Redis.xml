@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Session.Redis</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Extensions.Caching.Distributed.IDistributedCacheExtensions">
+            <summary>
+            扩展
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.Caching.Distributed.IDistributedCacheExtensions.GetObject(Microsoft.Extensions.Caching.Distributed.IDistributedCache,System.String)">
+            <summary>
+            获取缓存，反序列化成对象返回
+            </summary>
+            <param name="cache"></param>
+            <param name="key">key</param>
+            <returns>对象</returns>
+        </member>
+        <member name="M:Microsoft.Extensions.Caching.Distributed.IDistributedCacheExtensions.GetObject``1(Microsoft.Extensions.Caching.Distributed.IDistributedCache,System.String)">
+            <summary>
+            获取缓存，反序列化成对象返回
+            </summary>
+            <typeparam name="T">反序列化类型</typeparam>
+            <param name="cache"></param>
+            <param name="key">key</param>
+            <returns>对象</returns>
+        </member>
+        <member name="M:Microsoft.Extensions.Caching.Distributed.IDistributedCacheExtensions.GetObjectAsync(Microsoft.Extensions.Caching.Distributed.IDistributedCache,System.String)">
+            <summary>
+            获取缓存，反序列化成对象
+            </summary>
+            <param name="cache"></param>
+            <param name="key">key</param>
+            <returns>对象</returns>
+        </member>
+        <member name="M:Microsoft.Extensions.Caching.Distributed.IDistributedCacheExtensions.GetObjectAsync``1(Microsoft.Extensions.Caching.Distributed.IDistributedCache,System.String)">
+            <summary>
+            获取缓存，反序列化成对象
+            </summary>
+            <typeparam name="T">反序列化类型</typeparam>
+            <param name="cache"></param>
+            <param name="key">key</param>
+            <returns>对象</returns>
+        </member>
+        <member name="M:Microsoft.Extensions.Caching.Distributed.IDistributedCacheExtensions.SetObject(Microsoft.Extensions.Caching.Distributed.IDistributedCache,System.String,System.Object)">
+            <summary>
+            序列化对象后，设置缓存
+            </summary>
+            <param name="cache"></param>
+            <param name="key">key</param>
+            <param name="value">对象</param>
+        </member>
+        <member name="M:Microsoft.Extensions.Caching.Distributed.IDistributedCacheExtensions.SetObject(Microsoft.Extensions.Caching.Distributed.IDistributedCache,System.String,System.Object,Microsoft.Extensions.Caching.Distributed.DistributedCacheEntryOptions)">
+            <summary>
+            序列化对象后，设置缓存
+            </summary>
+            <param name="cache"></param>
+            <param name="key">key</param>
+            <param name="value">对象</param>
+            <param name="options">策略</param>
+        </member>
+        <member name="M:Microsoft.Extensions.Caching.Distributed.IDistributedCacheExtensions.SetObjectAsync(Microsoft.Extensions.Caching.Distributed.IDistributedCache,System.String,System.Object)">
+            <summary>
+            序列化对象后，设置缓存
+            </summary>
+            <param name="cache"></param>
+            <param name="key">key</param>
+            <param name="value">对象</param>
+        </member>
+        <member name="M:Microsoft.Extensions.Caching.Distributed.IDistributedCacheExtensions.SetObjectAsync(Microsoft.Extensions.Caching.Distributed.IDistributedCache,System.String,System.Object,Microsoft.Extensions.Caching.Distributed.DistributedCacheEntryOptions)">
+            <summary>
+            序列化对象后，设置缓存
+            </summary>
+            <param name="cache"></param>
+            <param name="key">key</param>
+            <param name="value">对象</param>
+            <param name="options">策略</param>
+        </member>
+        <member name="M:Microsoft.Extensions.Caching.Distributed.IDistributedCacheExtensions.Serialize(System.Object)">
+            <summary>
+            序列化
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Extensions.Caching.Distributed.IDistributedCacheExtensions.Deserialize(System.Byte[])">
+            <summary>
+            反序列化
+            </summary>
+            <param name="stream"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Session.Redis.Module">
+            <summary>
+            Redis分布式会话支持模块
+            Implements the <see cref="T:SIE.Modules.DomainModule" />
+            Implements the <see cref="T:SIE.Web.Interface.IStartupExtension" />
+            </summary>
+            <seealso cref="T:SIE.Modules.DomainModule" />
+            <seealso cref="T:SIE.Web.Interface.IStartupExtension" />
+        </member>
+        <member name="M:SIE.Session.Redis.Module.ConfigServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            应用分布式缓存
+            </summary>
+            <param name="services">The services.</param>
+            <param name="env">The env.</param>
+        </member>
+        <member name="M:SIE.Session.Redis.Module.ConfigureApp(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            Configures the application.
+            </summary>
+            <param name="app">The application.</param>
+            <param name="env">The env.</param>
+        </member>
+        <member name="P:SIE.Session.Redis.Module.SetupLevel">
+            <summary>
+            模块的启动级别。默认值为 <see cref="F:SIE.Modules.ReuseLevel.Main" />。
+            </summary>
+        </member>
+        <member name="M:SIE.Session.Redis.Module.Initialize(SIE.IApp)">
+            <summary>
+            模块的初始化方法。
+            框架会在启动时根据启动级别顺序调用本方法。
+            方法有两个职责：
+            1.依赖注入。
+            2.注册 app 生命周期中事件，进行特定的初始化工作。
+            </summary>
+            <param name="app">应用程序对象。</param>
+        </member>
+    </members>
+</doc>

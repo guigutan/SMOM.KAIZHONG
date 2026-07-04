@@ -1,0 +1,1158 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Web.Core</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Web.Core.EntityPropertyViewMetaExtension">
+            <summary>
+            视图属性扩展类
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.EntityPropertyViewMetaExtension.UseMultipleCagetoryEnumEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.Core.Editors.MultipleCagetoryEnumConfig})">
+            <summary>
+            多分类枚举筛选编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Web.Core.EntityPropertyViewMetaExtension.UseYearMonthEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.Core.YearMonthConfig})">
+            <summary>
+            使用年月编辑器
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="meta">实体属性视图元数据 <see cref="T:SIE.MetaModel.View.WebEntityPropertyViewMeta"/></param>
+            <param name="action">枚举</param>
+            <returns>实体属性元数据</returns>  
+        </member>
+        <member name="M:SIE.Web.Core.EntityPropertyViewMetaExtension.UseYearEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.Core.Configs.YearConfig})">
+            <summary>
+            使用年编辑器
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="meta">实体属性视图元数据 <see cref="T:SIE.MetaModel.View.WebEntityPropertyViewMeta"/></param>
+            <param name="action">委托</param>
+            <returns>实体属性元数据</returns>  
+        </member>
+        <member name="M:SIE.Web.Core.EntityPropertyViewMetaExtension.UseCurrencyFieldEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.Core.Configs.CurrencyConfig})">
+            <summary>
+            货币编辑器配置文件
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="meta"></param>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Core.EntityPropertyViewMetaExtension.UseInvOrgEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.Core.Configs.InvOrgConfig})">
+            <summary>
+            使用库存组织编辑器
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="meta"></param>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Core.EntityPropertyViewMetaExtension.UseSelectTimeEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.Core.Configs.SelectTimeConfig})">
+            <summary>
+            使用时间选择编辑器
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="meta"></param>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Core.Algorithms.VolkswagenSnConfigViewConfig">
+            <summary>
+            配置界面
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.Algorithms.VolkswagenSnConfigViewConfig.ConfigDetailsView">
+            <summary>
+            配置界面
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Core.ApiLogs.ApiLogCriteriaViewConfig">
+            <summary>
+             视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.ApiLogs.ApiLogCriteriaViewConfig.ConfigView">
+            <summary>
+            查询
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Core.ApiLogs.ApiLogViewConfig">
+            <summary>
+            API接口日志 视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.ApiLogs.ApiLogViewConfig.ConfigListView">
+            <summary>
+            配置列表
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.ApiLogs.ApiLogViewConfig.ConfigDetailsView">
+            <summary>
+            明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.ApiLogs.ApiLogViewConfig.ConfigQueryView">
+            <summary>
+            配置查询
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Core.ApiLogs.Commands.LookUpContextCommand">
+            <summary>
+            查看报文命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.ApiLogs.Commands.LookUpContextCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Core.Common.Commands.ImmediateDeleteCommand">
+            <summary>
+            立即删除
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Core.Common.Commands.Import.ImportMasterSubordinateCommand">
+            <summary>
+            主从表导入命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.Common.Commands.Import.ImportMasterSubordinateCommand.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.Common.Commands.Import.ImportMasterSubordinateCommand.CreateMasterSubordinateImportData">
+            <summary>
+            创建主从结构信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Core.Common.Commands.Import.ImportMasterSubordinateCommand.Excute(SIE.Web.Common.Import.Commands.ImportViewArgs,System.String)">
+            <summary>
+            重载执行方法，添加自定义下载模板方法
+            </summary>
+            <param name="importViewArgs"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Core.Common.Commands.Import.ImportMasterSubordinateCommand.ImportData(SIE.Web.Common.Import.Commands.ImportViewArgs,System.String,System.Boolean)">
+            <summary>
+            导入处理逻辑
+            </summary>
+            <param name="args">视图参数</param>
+            <param name="sheetName">excel工作薄sheet的名称</param>
+            <param name="isFirstRowColumn">第一行是否是DataTable的列名</param>
+            <returns>导入结果信息</returns>
+        </member>
+        <member name="M:SIE.Web.Core.Common.Commands.Import.ImportMasterSubordinateCommand.DownloadTemplate(SIE.Web.Common.Import.Commands.ImportViewArgs,System.String)">
+            <summary>
+            自定义下载模板方法
+            </summary>
+            <param name="importViewArgs"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Core.Common.Commands.Import.ImportMasterSubordinateCommand.SetTemplateFileName(SIE.Web.Common.Import.Commands.ImportViewArgs,System.String)">
+            <summary>
+            设置模板文件信息
+            </summary>
+            <param name="importViewArgs"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Core.Common.Commands.Import.ImportMasterSubordinateCommand.TemplatePathInfo">
+            <summary>
+            模板文件信息
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Core.Common.Commands.Import.ImportMasterSubordinateCommand.TemplatePathInfo.FullPath">
+            <summary>
+            路径 
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Core.Common.Commands.Import.ImportMasterSubordinateCommand.TemplatePathInfo.FileName">
+            <summary>
+            文件名
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Core.Common.Commands.Import.ImportMasterSubordinateDynamicCommand">
+            <summary>
+            主从表(动态列)导入命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.Common.Commands.Import.ImportMasterSubordinateDynamicCommand.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.Common.Commands.Import.ImportMasterSubordinateDynamicCommand.CreateMasterSubordinateDynamicImportData">
+            <summary>
+            创建主从结构信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Core.Common.Commands.Import.ImportMasterSubordinateDynamicCommand.Excute(SIE.Web.Common.Import.Commands.ImportViewArgs,System.String)">
+            <summary>
+            重载执行方法，添加自定义下载模板方法
+            </summary>
+            <param name="importViewArgs"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Core.Common.Commands.Import.ImportMasterSubordinateDynamicCommand.ImportData(SIE.Web.Common.Import.Commands.ImportViewArgs,System.String,System.Boolean)">
+            <summary>
+            导入处理逻辑
+            </summary>
+            <param name="args">视图参数</param>
+            <param name="sheetName">excel工作薄sheet的名称</param>
+            <param name="isFirstRowColumn">第一行是否是DataTable的列名</param>
+            <returns>导入结果信息</returns>
+        </member>
+        <member name="M:SIE.Web.Core.Common.Commands.Import.ImportMasterSubordinateDynamicCommand.DownloadTemplate(SIE.Web.Common.Import.Commands.ImportViewArgs,System.String)">
+            <summary>
+            自定义下载模板方法
+            </summary>
+            <param name="importViewArgs"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Core.Common.Commands.Import.ImportMasterSubordinateDynamicCommand.SetTemplateFileName(SIE.Web.Common.Import.Commands.ImportViewArgs,System.String)">
+            <summary>
+            设置模板文件信息
+            </summary>
+            <param name="importViewArgs"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Core.Common.Commands.Import.ImportMasterSubordinateDynamicCommand.TemplatePathInfo">
+            <summary>
+            模板文件信息
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Core.Common.Commands.Import.ImportMasterSubordinateDynamicCommand.TemplatePathInfo.FullPath">
+            <summary>
+            路径 
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Core.Common.Commands.Import.ImportMasterSubordinateDynamicCommand.TemplatePathInfo.FileName">
+            <summary>
+            文件名
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Core.Common.Commands.PrintExportCommand">
+            <summary>
+            导出报告命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Core.Common.Commands.UploadZipAttachmentCommand">
+            <summary>
+            压缩上传图片
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.Common.Commands.UploadZipAttachmentCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            上传图片
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Core.Common.Commands.UploadZipAttachmentCommand.ImgZipOperate(SIE.Web.Common.Attachments.Commands.UploadAttachmentViewArgs)">
+            <summary>
+            图片压缩
+            </summary>
+            <param name="viewArgs">文件参数</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Core.Common.WebCommon">
+            <summary>
+            Web通用方法
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.Common.WebCommon.GetAttachmentDownloadUrl">
+            <summary>
+            获取附件下载路径
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Core.Common.WebCommon.GetDisplayName(System.String)">
+            <summary>
+            获取引用实体在前端的显示属性
+            </summary>
+            <param name="entityName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Core.Configs.AfterSpliteAutoScanConfigViewConfig">
+            <summary>
+            拣货时拆标，是否自动扫描标签
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.Configs.AfterSpliteAutoScanConfigViewConfig.ConfigDetailsView">
+            <summary>
+             拣货时拆标，是否自动扫描标签
+             </summary>
+        </member>
+        <member name="T:SIE.Web.Core.Configs.CurrencyConfig">
+            <summary>
+            货币编辑器
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.Configs.CurrencyConfig.#ctor">
+            <summary>
+            货币编辑器配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Core.Configs.DashboardDataSourceConfigValueViewConfig">
+            <summary>
+             看板数据源配置项视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.Configs.DashboardDataSourceConfigValueViewConfig.ConfigDetailsView">
+            <summary>
+             配置明细视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.Core.Configs.ElecSignTypeConfigViewConfig">
+            <summary>
+             签名方式配置项视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.Configs.ElecSignTypeConfigViewConfig.ConfigDetailsView">
+            <summary>
+             配置明细视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.Core.Configs.InterfaceSourceConfigValueViewConfig">
+            <summary>
+             启用接口配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.Configs.InterfaceSourceConfigValueViewConfig.ConfigDetailsView">
+            <summary>
+             配置明细视图
+             </summary>
+        </member>
+        <member name="P:SIE.Web.Core.Configs.InvOrgConfig.ContainCurInvorg">
+            <summary>
+            包含当前库存组织
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Core.Configs.InvOrgConfig.WarehouseFieldName">
+            <summary>
+            仓库字段名称（默认是WarehouseId）
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Core.Configs.SelectTimeConfig">
+            <summary>
+            用于列表下拉选择时间（00:00-23:30）
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.Configs.SelectTimeConfig.InitStore">
+            <summary>
+            初始化数据
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.Configs.SelectTimeConfig.ToJson(SIE.Web.Json.LiteJsonWriter)">
+            <summary>
+            序列化
+            </summary>
+            <param name="json"></param>
+        </member>
+        <member name="T:SIE.Web.Core.Configs.YearConfig">
+            <summary>
+            年编辑器配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.Configs.YearConfig.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.Configs.YearConfig.ToJson(SIE.Web.Json.LiteJsonWriter)">
+            <summary>
+            序列化
+            </summary>
+            <param name="json"></param>
+        </member>
+        <member name="T:SIE.Web.Core.YearMonthConfig">
+            <summary>
+            年月编辑器配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.YearMonthConfig.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Core.YearMonthConfig.Format">
+            <summary>
+            日期格式
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.YearMonthConfig.ToJson(SIE.Web.Json.LiteJsonWriter)">
+            <summary>
+            序列化
+            </summary>
+            <param name="json"></param>
+        </member>
+        <member name="T:SIE.Web.Core.Editors.MultipleCagetoryEnumConfig">
+            <summary>
+            多分类枚举筛选编辑器
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Core.Editors.MultipleCagetoryEnumConfig.ValuesList">
+            <summary>
+            显示枚举值集合
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Core.Editors.MultipleCagetoryEnumConfig.CategoryList">
+            <summary>
+            分类集合
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.Editors.MultipleCagetoryEnumConfig.FilterEnum(System.Collections.Generic.List{SIE.Utils.EnumViewModel})">
+            <summary>
+            过滤分类枚举
+            </summary>
+            <param name="models"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Core.Equipments.EquipAccountViewConfig">
+            <summary>
+            设备台账视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.Equipments.EquipAccountViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.Equipments.EquipAccountViewConfig.ConfigSelectionView">
+            <summary>
+            配置下拉视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Core.Module">
+            <summary>
+            模块配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化模块
+            </summary>
+            <param name="app">应用程序</param>
+        </member>
+        <member name="M:SIE.Web.Core.Module.App_ModuleOperations(System.Object,System.EventArgs)">
+            <summary>
+            模块定义
+            </summary>
+            <param name="sender">应用程序</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="T:SIE.Web.Core.Prints.Commands.InitDefaultTplCommand">
+            <summary>
+            PDA标签补打
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.Prints.Commands.InitDefaultTplCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            命令执行方法
+            </summary>
+            <param name="args">视图参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.Core.Prints.Commands.RePrintCommand">
+            <summary>
+            PDA标签补打
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.Prints.Commands.RePrintCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            命令执行方法
+            </summary>
+            <param name="args">视图参数</param>
+            <param name="scope">作用域</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.Core.Prints.PrinterSettingTplViewConfig">
+            <summary>
+            KZ打印模板设置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.Prints.PrinterSettingTplViewConfig.ConfigView">
+            <summary>
+            视图函数
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.Prints.PrinterSettingTplViewConfig.ConfigListView">
+            <summary>
+            列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.Prints.PrinterSettingTplViewConfig.ConfigDetailsView">
+            <summary>
+            表单视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.Prints.PrinterSettingTplViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.Prints.PrinterSettingTplViewConfig.ConfigQueryView">
+            <summary>
+            查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Core.Prints.PrintLogViewConfig">
+            <summary>
+            打印日志
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.Prints.PrintLogViewConfig.ConfigView">
+            <summary>
+            视图函数
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.Prints.PrintLogViewConfig.ConfigListView">
+            <summary>
+            列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.Prints.PrintLogViewConfig.ConfigQueryView">
+            <summary>
+            查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Core.ProjectMaintains.Commands.DeleteProjectMaintainCommand">
+            <summary>
+            删除命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Core.ProjectMaintains.ProjectMaintainViewConfig">
+            <summary>
+            项目维护视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Core.ProjectMaintains.ProjectMaintainViewConfig.readOnlyView">
+            <summary>
+            只读视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.ProjectMaintains.ProjectMaintainViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.ProjectMaintains.ProjectMaintainViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Core.ProjectMaintains.ProjectMaintainViewConfig.ReadOnlyConfigView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Core.ProjectMaintains.ProjectMaintainViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.ProjectMaintains.ProjectMaintainViewConfig.ConfigSelectionView">
+            <summary>
+            下拉选择视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Core.QmsStaticConst.Commands.AddConstCommand">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Core.QmsStaticConst.Commands.AddConstCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行方法
+            </summary>
+            <param name="args">视图参数</param>
+            <param name="scope">SIE.MetaModel.View.Block.EntityType</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Core.QmsStaticConst.Commands.ImportCommand">
+            <summary>
+            Static常用参数导入命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.QmsStaticConst.Commands.ImportCommand.GetImportCompleted">
+            <summary>
+            导入完成后处理
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Core.QmsStaticConst.Commands.ImportCommand.GetImportHandleType">
+            <summary>
+            获取导入处理者
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Core.QmsStaticConst.Commands.ImportCommand.CreateMasterSubordinateDynamicImportData">
+            <summary>
+            创建主从结构信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Core.QmsStaticConst.Commands.ImportCommand.SetTemplateFileName(SIE.Web.Common.Import.Commands.ImportViewArgs,System.String)">
+            <summary>
+            设置模板文件信息
+            </summary>
+            <param name="importViewArgs"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Core.QmsStaticConst.Commands.SaveConstCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Core.QmsStaticConst.ControlChartConstViewConfig">
+            <summary>
+            控制图参数视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.QmsStaticConst.ControlChartConstViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.Core.QmsStaticConst.StaticConstD2ViewConfig">
+            <summary>
+            d2*表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.QmsStaticConst.StaticConstD2ViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.Core.QmsStaticConst.StaticConstK1ViewConfig">
+            <summary>
+            K1视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.QmsStaticConst.StaticConstK1ViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.Core.QmsStaticConst.StaticConstK2ViewConfig">
+            <summary>
+            K2视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.QmsStaticConst.StaticConstK2ViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.Core.QmsStaticConst.StaticConstK3ViewConfig">
+            <summary>
+            K3视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.QmsStaticConst.StaticConstK3ViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.Core.QmsStaticConst.StaticConstTViewConfig">
+            <summary>
+            t值视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.QmsStaticConst.StaticConstTViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.Core.QmsStaticConst.StaticConstViewConfig">
+            <summary>
+            MAS常用参数视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.QmsStaticConst.StaticConstViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Core.QmsStaticConst.StaticConstViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Core.QmsStaticConst.StaticConstViewConfig.ConfigQueryView">
+            <summary>
+            查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Core.QmsStaticConst.ViewModels.AddType">
+            <summary>
+            子表添加操作的类型
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Core.QmsStaticConst.ViewModels.AddType.Column">
+            <summary>
+            添加列
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Core.QmsStaticConst.ViewModels.AddType.Row">
+            <summary>
+            添加行
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Core.QmsStaticConst.ViewModels.D2AddColumnViewModel">
+            <summary>
+            D2添加列ViewModel
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Core.QmsStaticConst.ViewModels.D2AddColumnViewModel.TestQtyProperty">
+            <summary>
+            TestQty
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Core.QmsStaticConst.ViewModels.D2AddColumnViewModel.TestQty">
+            <summary>
+            测量次数
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Core.QmsStaticConst.ViewModels.D2AddColumnViewModel.D2Property">
+            <summary>
+            v
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Core.QmsStaticConst.ViewModels.D2AddColumnViewModel.D2">
+            <summary>
+            v
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Core.QmsStaticConst.ViewModels.D2AddColumnViewModel.CdProperty">
+            <summary>
+            cd
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Core.QmsStaticConst.ViewModels.D2AddColumnViewModel.Cd">
+            <summary>
+            v
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Core.QmsStaticConst.ViewModels.D2AddColumnViewModel.VProperty">
+            <summary>
+            V
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Core.QmsStaticConst.ViewModels.D2AddColumnViewModel.V">
+            <summary>
+            V
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Core.QmsStaticConst.ViewModels.D2AddColumnViewModel.D2SProperty">
+            <summary>
+            D2S
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Core.QmsStaticConst.ViewModels.D2AddColumnViewModel.D2S">
+            <summary>
+            D2S
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.QmsStaticConst.ViewModels.D2AddColumnViewModelViewConfig.ConfigDetailsView">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Core.QmsStaticConst.ViewModels.D2AddRowViewModel">
+            <summary>
+            多值输入ViewModel
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Core.QmsStaticConst.ViewModels.D2AddRowViewModel.NProperty">
+            <summary>
+            n
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Core.QmsStaticConst.ViewModels.D2AddRowViewModel.N">
+            <summary>
+            n
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Core.QmsStaticConst.ViewModels.D2AddRowViewModel.VProperty">
+            <summary>
+            v
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Core.QmsStaticConst.ViewModels.D2AddRowViewModel.V">
+            <summary>
+            v
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Core.QmsStaticConst.ViewModels.D2AddRowViewModel.D2Property">
+            <summary>
+            D2
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Core.QmsStaticConst.ViewModels.D2AddRowViewModel.D2">
+            <summary>
+            D2
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.QmsStaticConst.ViewModels.D2AddRowViewModelViewConfig.ConfigDetailsView">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Core.QmsStaticConst.ViewModels.StaticConstImportViewModel">
+            <summary>
+            Static常用参数导入ViewModel
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Core.QmsStaticConst.ViewModels.StaticConstImportViewModel.ErrorMessageProperty">
+            <summary>
+            导入失败原因
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Core.QmsStaticConst.ViewModels.StaticConstImportViewModel.ErrorMessage">
+            <summary>
+            导入失败原因
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Core.QmsStaticConst.ViewModels.StaticConstImportViewModel.SheetNameProperty">
+            <summary>
+            Sheet
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Core.QmsStaticConst.ViewModels.StaticConstImportViewModel.SheetName">
+            <summary>
+            Sheet
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Core.QmsStaticConst.ViewModels.StaticConstImportViewModel.CodeProperty">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Core.QmsStaticConst.ViewModels.StaticConstImportViewModel.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Core.QmsStaticConst.ViewModels.StaticConstImportViewModel.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Core.QmsStaticConst.ViewModels.StaticConstImportViewModel.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Core.QmsStaticConst.ViewModels.StaticConstImportViewModel.SampleQtyProperty">
+            <summary>
+            n
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Core.QmsStaticConst.ViewModels.StaticConstImportViewModel.SampleQty">
+            <summary>
+            n
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Core.QmsStaticConst.ViewModels.StaticConstImportViewModel.A2Property">
+            <summary>
+            A2
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Core.QmsStaticConst.ViewModels.StaticConstImportViewModel.A2">
+            <summary>
+            A2
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Core.QmsStaticConst.ViewModels.StaticConstImportViewModel.D2Property">
+            <summary>
+            D2
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Core.QmsStaticConst.ViewModels.StaticConstImportViewModel.D2">
+            <summary>
+            D2
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Core.QmsStaticConst.ViewModels.StaticConstImportViewModel.D3Property">
+            <summary>
+            D3
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Core.QmsStaticConst.ViewModels.StaticConstImportViewModel.D3">
+            <summary>
+            D3
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Core.QmsStaticConst.ViewModels.StaticConstImportViewModel.D4Property">
+            <summary>
+            D4
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Core.QmsStaticConst.ViewModels.StaticConstImportViewModel.D4">
+            <summary>
+            D4
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Core.QmsStaticConst.ViewModels.StaticConstImportViewModel.A3Property">
+            <summary>
+            A3
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Core.QmsStaticConst.ViewModels.StaticConstImportViewModel.A3">
+            <summary>
+            A3
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Core.QmsStaticConst.ViewModels.StaticConstImportViewModel.C4Property">
+            <summary>
+            C4
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Core.QmsStaticConst.ViewModels.StaticConstImportViewModel.C4">
+            <summary>
+            C4
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Core.QmsStaticConst.ViewModels.StaticConstImportViewModel.B3Property">
+            <summary>
+            B3
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Core.QmsStaticConst.ViewModels.StaticConstImportViewModel.B3">
+            <summary>
+            B3
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Core.QmsStaticConst.ViewModels.StaticConstImportViewModel.B4Property">
+            <summary>
+            B4
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Core.QmsStaticConst.ViewModels.StaticConstImportViewModel.B4">
+            <summary>
+            B4
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Core.QmsStaticConst.ViewModels.TAddColumnViewModel">
+            <summary>
+            D2添加列ViewModel
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Core.QmsStaticConst.ViewModels.TAddColumnViewModel.AlphaProperty">
+            <summary>
+            n
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Core.QmsStaticConst.ViewModels.TAddColumnViewModel.Alpha">
+            <summary>
+            n
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Core.QmsStaticConst.ViewModels.TAddColumnViewModel.SampleQtyProperty">
+            <summary>
+            SampleQty
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Core.QmsStaticConst.ViewModels.TAddColumnViewModel.SampleQty">
+            <summary>
+            SampleQty
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.QmsStaticConst.ViewModels.TAddColumnViewModelViewConfig.ConfigDetailsView">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Core.QmsStaticConst.ViewModels.TAddRowViewModel">
+            <summary>
+            多值输入ViewModel
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Core.QmsStaticConst.ViewModels.TAddRowViewModel.SampleQtyProperty">
+            <summary>
+            n
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Core.QmsStaticConst.ViewModels.TAddRowViewModel.SampleQty">
+            <summary>
+            n
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Core.QmsStaticConst.ViewModels.TAddRowViewModel.AlphaProperty">
+            <summary>
+            t
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Core.QmsStaticConst.ViewModels.TAddRowViewModel.Alpha">
+            <summary>
+            n
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.QmsStaticConst.ViewModels.TAddRowViewModelViewConfig.ConfigDetailsView">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Core.Reports.PassDataViewModel">
+            <summary>
+            报表数据视图模型
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Core.Reports.PassDataViewModel.PassDataProperty">
+            <summary>
+            合格数
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Core.Reports.PassDataViewModel.PassData">
+            <summary>
+            合格数
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Core.Reports.PassDataViewModel.DateProperty">
+            <summary>
+            日期
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Core.Reports.PassDataViewModel.Date">
+            <summary>
+            日期
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Core.Reports.PassDataViewModel.ReportInfoProperty">
+            <summary>
+            报表属性
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Core.Reports.PassDataViewModel.ReportInfo">
+            <summary>
+            报表属性
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Core.Reports.ReportViewModel">
+            <summary>
+            报表
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Core.Reports.ReportViewModel.PassDataList">
+            <summary>
+            合格率数据集合
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Core.Reports.ReportViewModel.ChartJsonData">
+            <summary>
+            图表数据
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Core.UserAgreements.Commands.EnableAgreementCommand">
+            <summary>
+            启用命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.UserAgreements.Commands.EnableAgreementCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+            <exception cref="T:SIE.Domain.Validation.ValidationException"></exception>
+        </member>
+        <member name="T:SIE.Web.Core.UserAgreements.Commands.UploadAgreementCommand">
+            <summary>
+            导入协议命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.UserAgreements.Commands.UploadAgreementCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            命令对应的服务端事件
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Core.UserAgreements.DataQueryers.UserAgreementDataQueryer">
+            <summary>
+            用户协议查询器
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.UserAgreements.DataQueryers.UserAgreementDataQueryer.GetUserAgreements">
+            <summary>
+            获取用户协议
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Core.UserAgreements.DataQueryers.UserAgreementDataQueryer.GetUserAgreementAttach(System.Double)">
+            <summary>
+            查询用户协议文件
+            </summary>
+            <returns></returns>    
+        </member>
+        <member name="M:SIE.Web.Core.UserAgreements.Templates.UserAgreementTemplate.DefineBlocks">
+            <summary>
+            定义块
+            </summary>
+            <returns>聚合块</returns>
+        </member>
+        <member name="T:SIE.Web.Core.UserAgreements.UserAgreementViewConfig">
+            <summary>
+            用户协议表视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Core.UserAgreements.UserAgreementViewConfig.CustomCmdViewGroup">
+            <summary>
+            自定义命令视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.UserAgreements.UserAgreementViewConfig.ConfigCustomCmdView">
+            <summary>
+            配置自定义命令权限
+            </summary>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:SIE.Web.Core.UserAgreements.UserAgreementViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.Core.WorkOrders.WorkOrderCriteriaViewConfig">
+            <summary>
+            工单查询实体视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.WorkOrders.WorkOrderCriteriaViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Core.WorkOrders.WorkOrderViewConfig.ConfigSelectionView">
+            <summary>
+            选择视图
+            </summary>
+        </member>
+    </members>
+</doc>

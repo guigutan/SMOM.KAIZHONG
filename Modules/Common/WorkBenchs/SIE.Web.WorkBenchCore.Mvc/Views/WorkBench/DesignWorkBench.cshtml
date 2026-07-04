@@ -1,0 +1,379 @@
+﻿@using SIE.WorkBenchCommon.Workbench.Base; 
+@{
+
+    ViewBag.Title = "设计工作台".L10N();
+
+    Layout = "~/Views/Shared/_WorkBenchLayout.cshtml";
+
+}
+@model WorkbenchViewModel;
+@section headjs{
+    <script type="text/javascript">
+        var g_WorkbenchInfo = {
+            layoutCode: '@Model.LayoutCode',
+            token: '@Html.Raw(Model.Token)',
+            workbenchCode: '@Model.Code',
+            componentBindData: {},
+        };
+
+         @Html.Raw(Model.ComponentScript)
+      
+        Ext.define('Sie.Workbench', {
+            extend: 'Ext.dashboard.Dashboard',
+            xtype: 'Workbench',
+            stateful: false,
+            draggable: false,
+            border: false,
+            scrollable:'y',
+            defaultType: 'dashboard-panel',
+            layout: 'responsivecolumn',
+            deserializeItems: function(serialized) {
+                var me = this,
+                    length = serialized.length,
+                    columns = [],
+                    columnWidths = me.columnWidths,
+                    maxColumns = me.getMaxColumns(),
+                    column, columnIndex, columnWidth, i, item, partConfig;
+                for (i = 0; i < length; ++i) {
+                    partConfig = serialized[i];
+
+                    item = me.createView(partConfig);
+                    columns.push(item);
+                }
+
+                return columns;
+            },
+            tbar:  ['->',
+                    {
+                        xtype: 'button',
+                        iconCls: 'iconfont icon-SaveEntity icon-blue',
+                        text: '保存'.L10N(),
+                        handler: function () {
+                            var me = this;
+
+                            var dashboardPanelArr = me.up("Workbench").query("[$className=Ext.dashboard.Panel]");
+                            var componentBindData = {};
+
+                    
+                            for (var i = 0; i < dashboardPanelArr.length;i++) {
+                                var panel = dashboardPanelArr[i];
+                                if (panel.items.length == 0)
+                                    continue;
+
+                                if(!panel.items.items[0].superclass || panel.items.items[0].superclass.$className!="Portal.ComponentBase")
+                                    continue;
+
+
+                                 //获取当前面板组件
+                                var component = panel.items.items[0];
+
+                                //获取组件信息
+                                var componentCode = component.xtype;
+                                var bindOutPutParamMap = component.getBindOutPutParam();
+                                var refreshInterval = component.getRefreshInterval();
+
+                                if (refreshInterval == null)
+                                    refreshInterval = 60;
+
+                                componentBindData[panel._partConfig.title] = { 'Panel': panel._partConfig.title, 'ComponentCode': componentCode, 'BindOutputparam': [], 'RefreshInterval': refreshInterval }
+
+                                bindOutPutParamMap.forEach(function (value, key, map) {
+                                    componentBindData[panel._partConfig.title].BindOutputparam.push({"OutputParam":key,"InputParam":value});
+                                });
+                            }
+
+
+
+                            var postData = {
+                                'Code': g_WorkbenchInfo.workbenchCode,
+                                'LayoutCode': g_WorkbenchInfo.layoutCode,
+                                'ComponentContent': Ext.encode(componentBindData),
+                                'IsNewData': false
+                            };
+
+                              var indata = {};
+                                indata.data = Ext.encode(postData);
+                                //调用添加命令保存工作台
+
+                                SIE.invokeCommand({
+                                cmd: 'SIE.Web.WorkBenchCommon.Workbench.Base.Commands.DesignWorkbenchCommand',
+                                data: indata,
+                                token:g_WorkbenchInfo.token,
+                                callback: function (res) {
+                                        if (res.Success) {
+                                            //保存成功
+                                            g_WorkbenchInfo.workbenchCode = postData.Code;
+                                            if (parent) {
+                                                //刷新父页面，子列表
+                                                parent.CRT.Event.fire("SIE.WorkBenchCommon.Workbench.Base.WorkbenchDefinition_refresh", "");
+                                                SIE.Msg.showInstantMessage("保存成功".L10N())
+                                            }
+                                        }
+                                        else {
+                                                SIE.Msg.showError(res.Message);
+                                        }
+                                    }
+                                });//END  SIE.invokeCommand
+                     
+                             
+                        }
+                    }
+                ],
+            parts: {
+                moduleTmpl: {
+                    viewTemplate: {
+                        closable: false,
+                        draggable: false,
+                        title: '{title}',
+                        responsiveCls: '{responsiveCls}',
+                        tools: [{
+                                //glyph: 0xe7fb,
+                                type: 'plus',
+                                tooltip: '添加组件'.L10N(),
+                                handler: function (event, toolEl, panelHeader) {
+                                    var currModule = panelHeader.ownerCt;
+                                    console.log("Design添加组件");
+                                    //创建组件选择列表
+                                    var opt = { model: 'SIE.WorkBenchCommon.Workbench.Base.ComponentInfo', viewGroup: 'ListView', title: "选择组件".L10N() };
+                                        SIE.AutoUI.getMeta({
+                                                model: opt.model,
+                                                 viewGroup: opt.viewGroup,
+                                                ignoreCommands: true,
+                                                isDetail: false,
+                                                ignoreQuery: false,
+                                                isReadonly: true,
+                                                ignoreChild: true,
+                                                 isAggt: true,
+                                                callback: function (res) {
+                                                    /// 查询块处理-只读为false
+                                                    if (res.surrounders) {
+                                                        var surround = res.surrounders["0"];
+                                                        if (surround) {
+                                                            var items = surround.mainBlock.formConfig.items;
+                                                            for (var i = 0, len = items.length; i < len; i++) {
+                                                                var item = items[i];
+                                                                item.readOnly = false;
+                                                            }
+                                                        }
+                                                    }
+                                                    var ui = SIE.AutoUI.generateAggtControl(res);
+                                                    //ui.token = view.getToken();
+
+                                                    var win = SIE.Window.show({
+                                                         width: 800,
+                                                         height: 420,
+                                                        title: opt.title.t(),
+                                                        items: ui.getControl(),
+                                                        callback: function (btn) {
+                                                            if (btn == "确定".t()) {
+                                                                var mainView = ui.getView();
+                                                                var selectEntity = ui.getView().getCurrent();
+                                                                if (selectEntity) {
+                                                                    var cmpData = selectEntity.getData();
+                                                                    var component = currModule.items.items[0];
+                                                                    currModule.remove(component, true);
+                                                                    component.destroy();
+                                                                    if (cmpData.Content)
+                                                                        try {
+                                                                            if(!Ext.ClassManager.getNameByAlias("widget."+cmpData.Code))
+                                                                                eval(cmpData.Content)
+                                                                        }
+                                                                        catch (ex) {
+                                                                            console.error("组件脚本执行失败！请检代码".L10N());
+                                                                        }
+                                                                    //g_WorkbenchInfo.componentBindData[currModule._partConfig.title] = { 'Panel': currModule._partConfig.title, 'ComponentCode': cmpData.Code, 'BindOutputparam': [], 'RefreshInterval': 0 };
+                                                                    currModule.add({
+                                                                        xtype: cmpData.Code,
+                                                                        bindOutPutParam: new Map()
+                                                                    });
+                                                                }
+                          
+                                                            }
+                                                        }
+                                                    });
+                                                }
+                                         });
+                                }
+                            },
+                            {
+                                type: 'gear',
+                                tooltip: '参数绑定'.L10N(),
+                                // hidden:true,
+                                handler: function (event, toolEl, panelHeader) {
+                                    var currPanel = panelHeader.ownerCt; //获取当前面板
+                                    var currModule = panelHeader.ownerCt.items.items[0];//获取当前组件
+
+                                    //判断组件是否存在输入参数
+                                    if (!currModule.getInputParams) {
+                                        return;
+                                    }
+
+                                    var inputParamArr = currModule.getInputParams();//获取组件输入参数
+                                    var g_outputparamArr = currModule.globalOutputParams; //获取合局输出参数，输出参数一般是其他组件定义，当组件加入到工作台就会把该 组件的输出参数加到到全局输出参数
+                                    var bindData = [];
+                                    Ext.Array.each(inputParamArr, function (param) {
+                                        var outputparam = "";
+                                        for (let [key, value] of currModule.getBindOutPutParam()) {
+                                            if (value == param) {
+                                                outputparam = key;
+                                                break;
+                                            }
+                                        }
+
+                                        bindData.push({ inputparam: param, outputparam: outputparam });
+                                    });
+
+                                    var bindstore = Ext.create('Ext.data.Store', {
+                                        fields: ['inputparam', 'outputparam'],
+                                        data: bindData
+                                    });
+
+
+                                   var formPanel = Ext.create('Ext.form.Panel', {
+                                        layout: 'column',
+                                         defaults: {
+                                            layout: 'form',
+                                            xtype: 'container',
+                                            defaultType: 'textfield',
+                                            style: 'width: 50%'
+                                        },
+                                        items: [{
+                                            items: [
+                                                {
+                                                    name:'RefreshInterval',
+                                                    xtype: 'numberfield',
+                                                    fieldLabel: '刷新间隔(ms)',
+                                                    minValue: 60,
+                                                    value:currModule.getRefreshInterval(),
+                                                    allowExponential: false,
+                                                    allowBlank: false,
+                                                }
+                                            ]
+                                        }]
+                                    });
+
+
+                                    var gridPanel = Ext.create('Ext.grid.Panel', {
+                                        plugins: {
+                                            cellediting: {
+                                                clicksToEdit: 1
+                                            }
+                                        },
+                                        store: bindstore,
+                                        columns: [
+                                            {
+                                                text: '输入参数'.L10N(),
+                                                dataIndex: 'inputparam',
+                                                flex: 1
+                                            },
+                                            {
+                                                text: '输出参数'.L10N(),
+                                                dataIndex: 'outputparam',
+                                                flex: 1,
+                                                editor: {
+                                                    xtype: 'combo',
+                                                    typeAhead: true,
+                                                    triggerAction: 'all',
+                                                    store: g_outputparamArr
+                                                }
+                                            },
+                                        ],
+                                        height: 200,
+                                        width: 400,
+                                    });
+
+                                    var panel = Ext.create("Ext.panel.Panel", {
+                                        layout:'vbox',
+                                        items:[formPanel,gridPanel]
+                                    });
+
+                                    var win = Ext.create('Ext.window.Window', {
+                                        border: false,
+                                        modal: true,
+                                        draggable: true, // 禁止移动
+                                        resizable: true,
+                                        maximizable: false, // 禁止最大化
+                                        title: panelHeader.title.text + "参数绑定".L10N(),
+                                        height: 200,
+                                        width: 400,
+                                        layout: 'fit',
+                                        buttons: [
+                                            {
+                                                type: 'button',
+                                                text: '确认'.L10N(),
+                                                handler: function () {
+
+                                                    var form = formPanel;
+                                                    var refreshInterval = form.down('[name=RefreshInterval]').value;
+                                                    if (!form.isValid())
+                                                        return false;
+
+                                                    var paramStore = bindstore;
+                                                    var component = currModule;//当前组件
+                                                   // var pdata = g_WorkbenchInfo.componentBindData[currPanel._partConfig.title];//当前组件componentBindData数据
+                                                      component.getBindOutPutParam().clear();
+                                                    //if (pdata)
+                                                    //    pdata.BindOutputparam = [];
+                                                    component.setRefreshInterval(refreshInterval);
+                                                    Ext.Array.forEach(paramStore.getData().items, function (item) {
+                                                        var bindData = item.data;
+                                                        if (bindData.outputparam !== "") {
+                                                            component.getBindOutPutParam().set(bindData.outputparam, bindData.inputparam);
+
+
+                                                            //if (pdata) {
+                                                            //    pdata.BindOutputparam.push({"OutputParam":bindData.outputparam,"InputParam":bindData.inputparam});
+                                                            //}
+                                                        }
+                                                    });
+                                                    win.close();
+                                                }
+                                            },
+                                            {
+                                                type: 'button',
+                                                text: '取消'.L10N(),
+                                                handler: function () {
+                                                    win.close();
+                                                }
+                                            }],
+                                        items: panel
+                                    });
+
+                                    win.show();
+
+                                }
+                            }
+                            ],
+                        items: [{
+                            xtype: '{xtype}',
+                            bindOutPutParam: '{bindOutPutParam}',
+                            refreshInterval: '{refreshInterval}'
+                        }]
+                    }
+                }
+            },
+           //布局存放参数
+            @Html.Raw(ViewBag.Content)
+        });
+
+
+        Ext.onReady(function () {
+            Ext.setGlyphFontFamily("iconfont");
+            //g_WorkbenchInfo.componentBindData = @Html.Raw(Model.ComponentContent);
+            Ext.create('Ext.container.Viewport', {
+                layout: 'fit',
+               
+                border: true,
+                items: [{
+                        xtype: "Workbench",
+                         scrollable:true,
+                    }
+                ],
+                renderTo: Ext.getBody()
+            })
+        });
+
+
+
+    </script>
+}

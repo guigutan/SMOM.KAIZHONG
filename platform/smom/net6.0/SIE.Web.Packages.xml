@@ -1,0 +1,980 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Web.Packages</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Web.Packages.Boxs.Commands.AddCpaacityCommand">
+            <summary>
+            周转箱选择物料 命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.Boxs.Commands.AddCpaacityCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行方法
+            </summary>
+            <param name="args">视图参数</param>
+            <param name="scope">SIE.MetaModel.View.Block.EntityType</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Packages.Boxs.Configs.ProductTrunoverBoxTypeConfigValueViewConfig">
+            <summary>
+            RFID类型配置值视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.Boxs.Configs.ProductTrunoverBoxTypeConfigValueViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Packages.Boxs.DataQuery.BoxDataQuery">
+            <summary>
+            周转箱查找
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.Boxs.DataQuery.BoxDataQuery.GetItems(SIE.Packages.Boxs.TurnoverBox)">
+            <summary>
+            查找物料
+            </summary>
+            <param name="box">周转箱</param>
+            <returns>物料列表</returns>
+        </member>
+        <member name="M:SIE.Web.Packages.Boxs.DataQuery.BoxDataQuery.GetProductTrunoverBoxType">
+            <summary>
+            获取生产周转箱类型
+            </summary>
+            <returns>生产周转箱类型</returns>
+        </member>
+        <member name="T:SIE.Web.Packages.Boxs.ProductCapacityViewConfig">
+            <summary>
+            产品容量视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.Boxs.ProductCapacityViewConfig.ConfigView">
+            <summary>
+            默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.Boxs.ProductCapacityViewConfig.ConfigListView">
+            <summary>
+            列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.Boxs.ProductCapacityViewConfig.ConfigDetailsView">
+            <summary>
+            表单视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.Boxs.ProductCapacityViewConfig.ConfigSelectionView">
+            <summary>
+            选择视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Packages.Boxs.TurnoverBoxViewConfig">
+            <summary>
+            周转箱视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.Boxs.TurnoverBoxViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.Boxs.TurnoverBoxViewConfig.ConfigSelectionView">
+            <summary>
+            选择视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.Boxs.TurnoverBoxViewConfig.ConfigQueryView">
+            <summary>
+            查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.Boxs.TurnoverBoxViewConfig.ConfigImportView">
+            <summary>
+            导入视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Packages.Boxs.ViewModels.ItemViewModel">
+            <summary>
+            物料ViewModel 用于周转箱
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Packages.Boxs.ViewModels.ItemViewModel.CodeProperty">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Packages.Boxs.ViewModels.ItemViewModel.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Packages.Boxs.ViewModels.ItemViewModel.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Packages.Boxs.ViewModels.ItemViewModel.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Packages.Boxs.ViewModels.ItemViewModel.DescriptionProperty">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Packages.Boxs.ViewModels.ItemViewModel.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Packages.Boxs.ViewModels.ItemViewModel.StateProperty">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Packages.Boxs.ViewModels.ItemViewModel.State">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Packages.Boxs.ViewModels.ItemViewModel.TypeProperty">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Packages.Boxs.ViewModels.ItemViewModel.Type">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Packages.Boxs.ViewModels.ItemViewModelViewConfig">
+            <summary>
+            物料ViewModel 视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Packages.ItemLabels.Commands.ItemLabelDeleteCommand">
+            <summary>
+            物料标签删除
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.ItemLabels.Commands.ItemLabelDeleteCommand.Excute(System.Collections.Generic.List{System.Double},System.String)">
+            <summary>
+            命令执行
+            </summary>
+            <param name="args">参数</param>
+            <param name="scope">作用域</param>
+            <returns>命令执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.Packages.ItemLabels.Commands.ItemLabelExportCommand">
+            <summary>
+            产品产前准备设置导出命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Packages.ItemLabels.Commands.ItemLabelImportCommand">
+            <summary>
+            物料标签导入命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.ItemLabels.Commands.ItemLabelImportCommand.GetImportCompleted">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Packages.ItemLabels.Commands.ItemLabelImportCommand.GetImportHandleType">
+            <summary>
+            获取导入处理类型
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:SIE.Web.Packages.ItemLabels.Commands.ItemLabelImportCommand.Excute(SIE.Web.Common.Import.Commands.ImportViewArgs,System.String)">
+            <summary>
+            导入数据
+            </summary>
+            <param name="importViewArgs">导入视图参数</param>
+            <param name="scope">使用范围</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:SIE.Web.Packages.ItemLabels.Commands.ItemLabelImportCommand.DownloadTemplate">
+            <summary>
+            直接从服务器上下载模板
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Packages.ItemLabels.Commands.ItemLabelLabelPrintCommand">
+            <summary>
+            物料标签打印
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.ItemLabels.Commands.ItemLabelLabelPrintCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            补打命令执行方法
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>补打结果</returns>
+        </member>
+        <member name="T:SIE.Web.Packages.ItemLabels.Commands.ItemLabelLabelPrintCommand.BatchReprintDataModel">
+            <summary>
+            批次补打数据类
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Packages.ItemLabels.Commands.ItemLabelLabelPrintCommand.BatchReprintDataModel.HuIds">
+            <summary>
+            选中条码Id列表
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Packages.ItemLabels.Commands.ItemLabelLabelPrintCommand.BatchReprintDataModel.TemplateId">
+            <summary>
+            补打模板Id
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.ItemLabels.DataQuerys.ItemLabelDataQuery.GetReprintInfo(System.Double)">
+            <summary>
+            物料标签打印
+            </summary>
+            <param name="huId">物料标签ID</param>
+            <returns>补打信息</returns>
+        </member>
+        <member name="M:SIE.Web.Packages.ItemLabels.DataQuerys.ItemLabelDataQuery.ExportAll(SIE.Domain.EntityList{SIE.Packages.ItemLabels.ItemLabel})">
+            <summary>
+            导出所有
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Packages.ItemLabels.DataQuerys.ExportOption">
+            <summary>
+            生产通用报表导出选项
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Packages.ItemLabels.DataQuerys.ExportOption.Current">
+            <summary>
+            当前页
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Packages.ItemLabels.DataQuerys.ExportOption.Selected">
+            <summary>
+            选中行
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Packages.ItemLabels.DataQuerys.ExportOption.All">
+            <summary>
+            查询结果
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Packages.ItemLabels.ItemLabelCriteriaViewConfig">
+            <summary>
+            物料标签查询实体视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.ItemLabels.ItemLabelCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Packages.ItemLabels.ItemLabelNoConfigValueViewConfig">
+            <summary>
+            物料标签号配置值视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.ItemLabels.ItemLabelNoConfigValueViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Packages.ItemLabels.ItemLabelViewConfig">
+            <summary>
+            物料标签视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.ItemLabels.ItemLabelViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.ItemLabels.ItemLabelViewConfig.ConfigQueryView">
+            <summary>
+            查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.ItemLabels.ItemLabelViewConfig.ConfigSelectionView">
+            <summary>
+            选择视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Packages.ItemLabels.ItemLabelWorkOrderViewConfig">
+            <summary>
+            物料标签投入工单
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Packages.ItemLabels.ItemLabelWorkOrderViewConfig.SingleCharWidth">
+            <summary>
+            单个英文字符宽度
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.ItemLabels.ItemLabelWorkOrderViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Packages.ItemLabels.LabelPropertyValueViewConfig">
+            <summary>
+            物料标签视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.ItemLabels.LabelPropertyValueViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Packages.ItemLabels.NotSerLabelNumControlConfigViewConfig">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.ItemLabels.NotSerLabelNumControlConfigViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Packages.ItemLabels.ScanLabelLogConfigValueViewConfig">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.ItemLabels.ScanLabelLogConfigValueViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.ItemLabels.ScanLabelLogViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Packages.PackagesMenuInit">
+            <summary>
+            菜单初始化
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.PackagesMenuInit.GetMenuDtos">
+            <summary>
+            获取菜单列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Packages.Module">
+            <summary>
+            Module配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化
+            </summary>
+            <param name="app">程序</param>
+        </member>
+        <member name="M:SIE.Web.Packages.Module.App_ModuleOperations(System.Object,System.EventArgs)">
+            <summary>
+            配置菜单
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="T:SIE.Web.Packages.Packages.Commands.InitPackingUnitCommand">
+            <summary>
+            功能初始化
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.Packages.Commands.InitPackingUnitCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            事务初始化按钮
+            </summary>
+            <param name="args"></param>
+            <param name="scope">view</param>
+        </member>
+        <member name="T:SIE.Web.Packages.Packages.Commands.PackingUnitDeleteCommand">
+            <summary>
+            包装单位删除
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Packages.Packages.Commands.ItemPackageDefautlRuleCommand">
+            <summary>
+            物料包装规则默认命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.Packages.Commands.ItemPackageDefautlRuleCommand.Excute(System.Double[],System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Packages.Packages.Commands.DeleteItemPackageRuleCommand">
+            <summary>
+            删除命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.Packages.Commands.DeleteItemPackageRuleCommand.Excute(System.Double[],System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Packages.Packages.Commands.AddItemPackageRuleDetailCommand">
+            <summary>
+            物料包装规则明细添加命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.Packages.Commands.AddItemPackageRuleDetailCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Packages.Packages.Commands.AddItemPkgRuleDtlCommand">
+            <summary>
+            添加
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.Packages.Commands.AddItemPkgRuleDtlCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Packages.Packages.Commands.EditItemPkgRuleDtlCommand">
+            <summary>
+            修改
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.Packages.Commands.EditItemPkgRuleDtlCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Packages.Packages.Commands.DeleteItemPkgRuleDtlCommand">
+            <summary>
+            删除命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Packages.Packages.Commands.MoveBottomItemPkgRuleDtlCommand">
+            <summary>
+            置底
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.Packages.Commands.MoveBottomItemPkgRuleDtlCommand.OnSaving(SIE.Domain.EntityList)">
+            <summary>
+            保存前
+            </summary>
+            <param name="data">实体列表数据</param>
+        </member>
+        <member name="T:SIE.Web.Packages.Packages.Commands.MoveDownItemPkgRuleDtlCommand">
+            <summary>
+            下移
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.Packages.Commands.MoveDownItemPkgRuleDtlCommand.OnSaving(SIE.Domain.EntityList)">
+            <summary>
+            保存前
+            </summary>
+            <param name="data">实体列表数据</param>
+        </member>
+        <member name="T:SIE.Web.Packages.Packages.Commands.MoveTopItemPkgRuleDtlCommand">
+            <summary>
+            置顶
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.Packages.Commands.MoveTopItemPkgRuleDtlCommand.OnSaving(SIE.Domain.EntityList)">
+            <summary>
+            保存前
+            </summary>
+            <param name="data">实体列表数据</param>
+        </member>
+        <member name="T:SIE.Web.Packages.Packages.Commands.MoveUpItemPkgRuleDtlCommand">
+            <summary>
+            上移
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.Packages.Commands.MoveUpItemPkgRuleDtlCommand.OnSaving(SIE.Domain.EntityList)">
+            <summary>
+            保存前
+            </summary>
+            <param name="data">实体列表数据</param>
+        </member>
+        <member name="T:SIE.Web.Packages.Packages.Commands.PackageRuleAddCommand">
+            <summary>
+            添加包装规则命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.Packages.Commands.PackageRuleAddCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行方法
+            </summary>
+            <param name="args">视图参数</param>
+            <param name="scope">SIE.MetaModel.View.Block.EntityType</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Packages.Packages.Commands.PackageRuleDetailEditCommand">
+            <summary>
+            获得单位名称
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.Packages.Commands.PackageRuleDetailEditCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行方法
+            </summary>
+            <param name="args">视图参数</param>
+            <param name="scope">SIE.MetaModel.View.Block.EntityType</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Packages.Packages.Commands.PackageRuleSaveCommand">
+            <summary>
+            包装规则保存命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.Packages.Commands.PackageRuleSaveCommand.OnSaving(SIE.Domain.EntityList)">
+            <summary>
+            保存前事件
+            </summary>
+            <param name="data">实体列表</param>
+        </member>
+        <member name="T:SIE.Web.Packages.Packages.Commands.PackageUnitAddCommand">
+            <summary>
+            包装单位主单位添加命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.Packages.Commands.PackageUnitAddCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">js传入数据</param>
+            <param name="scope">作用域</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Packages.Packages.Commands.RePackageEnableCommand">
+            <summary>
+            启用
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.Packages.Commands.RePackageEnableCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.Packages.Packages.ItemExtViewConfig">
+            <summary>
+            Item扩展视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Packages.Packages.ItemExtViewConfig.ExperienceItemView">
+            <summary>
+            历史经验库物料视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.Packages.ItemExtViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Packages.Packages.ItemPackageRuleDetailViewConfig">
+            <summary>
+            物料包装规则明细主视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Packages.Packages.ItemPackageRuleDetailViewConfig.ItemPackRuleDtlMasterView">
+            <summary>
+            包装规则明细主信息视图ViewGroup
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Packages.Packages.ItemPackageRuleDetailViewConfig.ItemPackRuleDtlAttachView">
+            <summary>
+            包装规则明细附加信息视图ViewGroup
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.Packages.ItemPackageRuleDetailViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.Packages.ItemPackageRuleDetailViewConfig.ItemPackRuleDtlAttachConfigView">
+            <summary>
+            物料包装规则明细附加视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.Packages.ItemPackageRuleDetailViewConfig.ItemPackRuleDtlMasterConfigView">
+            <summary>
+            物料包装规则明细主视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.Packages.ItemPackageRuleDetailViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Packages.Packages.ItemPackageRuleViewConfig">
+            <summary>
+            物料包装规则视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Packages.Packages.ItemPackageRuleViewConfig.ItemPackageRuleDetailView">
+            <summary>
+            物料包装规则视图ViewGroup
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.Packages.ItemPackageRuleViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.Packages.ItemPackageRuleViewConfig.ItemPackageRuleDetail">
+            <summary>
+            列表显示的视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.Packages.ItemPackageRuleViewConfig.ConfigListView">
+            <summary>
+            配置默认视图（为了LookUpCommand写的视图）
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.Packages.ItemPackageRuleViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Packages.Packages.PackageRuleDataQuery">
+            <summary>
+            包装规则查询器
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.Packages.PackageRuleDataQuery.SetItemPackageRule(System.Collections.Generic.List{SIE.Web.Packages.Packages.SelectPackageRule})">
+            <summary>
+            设置产品机型
+            </summary>
+            <param name="selPackageRuleList">productModel</param>
+            <returns>true</returns>
+        </member>
+        <member name="T:SIE.Web.Packages.Packages.SelectPackageRule">
+            <summary>
+            选择包装规则数据
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Packages.Packages.SelectPackageRule.ItemId">
+            <summary>
+            物料Id
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Packages.Packages.SelectPackageRule.PackageRuleId">
+            <summary>
+            包装规则Id
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Packages.Packages.PackageUnitDataQuery">
+            <summary>
+            包装单位数据查找类
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.Packages.PackageUnitDataQuery.IsExistMasterUnit">
+            <summary>
+            判断是否存在主单位
+            </summary>
+            <returns>返回是否存在主单位</returns>
+        </member>
+        <member name="T:SIE.Web.Packages.Packages.PackingRelationViewConfig">
+            <summary>
+            包装关系视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.Packages.PackingRelationViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Packages.Packages.PackingUnitViewConfig">
+            <summary>
+            包装单位视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.Packages.PackingUnitViewConfig.ConfigListView">
+            <summary>
+            通用列表配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.Packages.PackingUnitViewConfig.ConfigSelectionView">
+            <summary>
+            通用下拉配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.Packages.PackingUnitViewConfig.ConfigQueryView">
+            <summary>
+            通用查询配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Packages.PackageRuleDetailViewConfig">
+            <summary>
+            包装规则明细视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Packages.PackageRuleDetailViewConfig.DetailMainViewGroup">
+            <summary>
+            包装规则明细 - 主信息 ViewGroup名
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Packages.PackageRuleDetailViewConfig.DetailSubViewGroup">
+            <summary>
+            包装规则明细 - 附加 ViewGroup名
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Packages.PackageRuleDetailViewConfig.IsReadOnlyProperty">
+            <summary>
+            只读控制
+            </summary> 
+        </member>
+        <member name="M:SIE.Web.Packages.PackageRuleDetailViewConfig.GetIsReadOnly(SIE.Packages.PackageRuleDetail)">
+            <summary>
+            只读控制
+            </summary>
+            <param name="me">包装规则明细</param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:SIE.Web.Packages.PackageRuleDetailViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.PackageRuleDetailViewConfig.DetailSubConfigView">
+            <summary>
+            包装规则明细主信息视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.PackageRuleDetailViewConfig.DetailMainConfigView">
+            <summary>
+            包装规则明细附加信息视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.PackageRuleDetailViewConfig.ConfigSelectionView">
+            <summary>
+            选择视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Packages.PackageRuleViewConfig">
+            <summary>
+            包装规则视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.PackageRuleViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.PackageRuleViewConfig.ConfigQueryView">
+            <summary>
+            查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.PackageRuleViewConfig.ConfigSelectionView">
+            <summary>
+            默认选择视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Packages.QrCodeParseRules.Commands.EditQrCodeParseRuleCommand">
+            <summary>
+            修改命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.QrCodeParseRules.Commands.EditQrCodeParseRuleCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.Packages.QrCodeParseRules.Commands.DeleteQrCodeParseRuleCommand">
+            <summary>
+            删除命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Packages.QrCodeParseRules.Commands.EnableQrCodeParseRuleCommand">
+            <summary>
+            启用
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.QrCodeParseRules.Commands.EnableQrCodeParseRuleCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.Packages.QrCodeParseRules.Commands.SaveQrCodeParseRuleCommand">
+            <summary>
+            保存命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.QrCodeParseRules.Commands.SaveQrCodeParseRuleCommand.OnSaving(SIE.Domain.EntityList)">
+            <summary>
+            保存前事件
+            </summary>
+            <param name="data">实体列表</param>
+        </member>
+        <member name="T:SIE.Web.Packages.QrCodeParseRules.Commands.AddQrCodeParseRuleDetailCommand">
+            <summary>
+            添加命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.QrCodeParseRules.Commands.AddQrCodeParseRuleDetailCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Packages.QrCodeParseRules.Commands.EditQrCodeParseRuleDetailCommand">
+            <summary>
+            修改命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.QrCodeParseRules.Commands.EditQrCodeParseRuleDetailCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.Packages.QrCodeParseRules.DataQueryer.QrCodeDataQueryer">
+            <summary>
+            二维码解析
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.QrCodeParseRules.DataQueryer.QrCodeDataQueryer.QrCodeTest(System.Double,System.String)">
+            <summary>
+            QrCode测试
+            </summary>
+            <param name="billId">单据ID</param>
+            <param name="sn">序列号</param>
+            <returns>二维码解析数据列表</returns>
+        </member>
+        <member name="T:SIE.Web.Packages.QrCodeParseRules.QrCodeParseRuleDetailViewConfig">
+            <summary>
+            二维码解析规则明细视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.QrCodeParseRules.QrCodeParseRuleDetailViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.Packages.QrCodeParseRules.QrCodeParseRuleViewConfig">
+            <summary>
+            二维码解析规则视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.QrCodeParseRules.QrCodeParseRuleViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Packages.QrCodeParseRules.QrCodeParseRuleViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.WPF.Packages.Boxs.TurnoverBoxActionLogViewConfig">
+            <summary>
+            操作日志视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.WPF.Packages.Boxs.TurnoverBoxActionLogViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.WPF.Packages.Boxs.TurnoverBoxBindingViewConfig">
+            <summary>
+            周转工具绑定明细视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.WPF.Packages.Boxs.TurnoverBoxBindingViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.WPF.Packages.Boxs.TurnoverBoxModelViewConfig">
+            <summary>
+            周转工具型号视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.WPF.Packages.Boxs.TurnoverBoxModelViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.WPF.Packages.Boxs.TurnoverBoxModelViewConfig.ConfigQueryView">
+            <summary>
+            查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.WPF.Packages.Boxs.TurnoverBoxModelViewConfig.ConfigSelectionView">
+            <summary>
+            选择视图
+            </summary>
+        </member>
+        <member name="T:SIE.WPF.Packages.Packages.RePackageRuleDetailViewConfig">
+            <summary>
+            复核包装规则明细视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.WPF.Packages.Packages.RePackageRuleDetailViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.WPF.Packages.Packages.RePackageRuleDetailViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.WPF.Packages.Packages.RePackageRuleViewConfig">
+            <summary>
+            复核包装规则视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.WPF.Packages.Packages.RePackageRuleViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.WPF.Packages.Packages.RePackageRuleViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.WPF.Packages.Packages.RePackageRuleViewConfig.ConfigQueryView">
+            <summary>
+            查询视图
+            </summary>
+        </member>
+    </members>
+</doc>

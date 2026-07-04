@@ -1,0 +1,42 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="58"
+             x:Class="SIE.CrossPlatform.Collect.Common.Controls.XPDialogTitle">
+	<UserControl.Styles>
+		<Style Selector="Button#buttonOK:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+			<Setter Property="Background" Value="#b0293c"></Setter>
+			<Setter Property="Foreground" Value="White"/>
+		</Style>
+		<Style Selector="Button#buttonOK:pressed /template/ ContentPresenter#PART_ContentPresenter">
+			<Setter Property="Background" Value="#b0293c"></Setter>
+			<Setter Property="Foreground" Value="White"/>
+		</Style>
+		<Style Selector="Button#buttonCancel:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+			<Setter Property="Foreground" Value="White"/>
+		</Style>
+		
+	</UserControl.Styles>
+	<Grid  Background="LightGray">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="4*"></ColumnDefinition>
+			<ColumnDefinition Width="95"></ColumnDefinition>
+			<ColumnDefinition Width="95"></ColumnDefinition>
+		</Grid.ColumnDefinitions>
+		<TextBlock  FontSize="24" x:Name="labelTitle"  Grid.Column="0" VerticalAlignment="Center"  TextWrapping="Wrap">输入数量</TextBlock>
+		<Button x:Name="buttonOK" Background="#b0293c"  Grid.Column="1" 
+				HorizontalContentAlignment="Center"
+				VerticalAlignment="Stretch"
+				VerticalContentAlignment="Center"
+				HorizontalAlignment="Stretch"  
+				Foreground="White" FontSize="20" Click="buttonOk_Click">确定</Button>
+		<Button x:Name="buttonCancel" Background="LightGray" Margin="1"  Grid.Column="2"
+				HorizontalContentAlignment="Center"
+				HorizontalAlignment="Stretch"
+				Foreground="White" FontSize="20"
+				VerticalAlignment="Stretch"
+				VerticalContentAlignment="Center" Click="buttonCancel_Click"
+				>取消</Button>
+	</Grid>
+</UserControl>

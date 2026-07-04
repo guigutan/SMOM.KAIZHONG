@@ -1,0 +1,1216 @@
+[
+  {
+    "ContainingType": "SIE.WebApiHost.Controllers.DataPortalController",
+    "Method": "Execute",
+    "RelativePath": "api/dataportal/execute",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "api-version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SIE.WebApiHost.Controllers.DataPortalController",
+    "Method": "Invoke",
+    "RelativePath": "api/dataportal/invoke",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "SIE.DataPortal.ApiRequest",
+        "IsRequired": true
+      },
+      {
+        "Name": "api-version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SIE.DataPortal.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Elsa.Activities.Http.Endpoints.Signals.DispatchEndpoint",
+    "Method": "Handle",
+    "RelativePath": "signals/dispatch/{token}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "token",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "api-version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Elsa.Activities.Http.Endpoints.Signals.DispatchEndpoint",
+    "Method": "Handle",
+    "RelativePath": "signals/dispatch/{token}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "token",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "api-version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Elsa.Activities.Http.Endpoints.Signals.TriggerEndpoint",
+    "Method": "Handle",
+    "RelativePath": "signals/trigger/{token}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "token",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "api-version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Elsa.Activities.Http.Endpoints.Signals.TriggerEndpoint",
+    "Method": "Handle",
+    "RelativePath": "signals/trigger/{token}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "token",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "api-version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Elsa.Server.Api.Endpoints.Activities.List",
+    "Method": "Handle",
+    "RelativePath": "v1/activities",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "category",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Elsa.Metadata.ActivityDescriptor, Elsa.Abstractions, Version=2.2.1.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Elsa.Server.Api.Endpoints.Designer.RuntimeSelectListItems.Get",
+    "Method": "Handle",
+    "RelativePath": "v1/designer/runtime-select-list-items",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "Elsa.Server.Api.Endpoints.Designer.RuntimeSelectListItems.RuntimeSelectListItemsContextHolder",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.OkObjectResult",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Elsa.Server.Api.Endpoints.Scripting.JavaScript.TypeDefinitions.Get",
+    "Method": "Handle",
+    "RelativePath": "v1/scripting/javascript/type-definitions/{workflowDefinitionId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "workflowDefinitionId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "context",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "version",
+        "Type": "System.Nullable\u00601[[Elsa.Models.VersionOptions, Elsa.Abstractions, Version=2.2.1.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.FileContentResult",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Elsa.Server.Api.Endpoints.Signals.Dispatch",
+    "Method": "Handle",
+    "RelativePath": "v1/signals/{signalName}/dispatch",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "signalName",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "Elsa.Server.Api.Endpoints.Signals.DispatchSignalRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Elsa.Server.Api.Endpoints.Signals.DispatchSignalResponse",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Elsa.Server.Api.Endpoints.Signals.Execute",
+    "Method": "Handle",
+    "RelativePath": "v1/signals/{signalName}/execute",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "signalName",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "Elsa.Server.Api.Endpoints.Signals.ExecuteSignalRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Elsa.Server.Api.Endpoints.Signals.ExecuteSignalResponse",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Elsa.Server.Api.Endpoints.WorkflowChannels.List",
+    "Method": "Handle",
+    "RelativePath": "v1/workflow-channels",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Elsa.Server.Api.Endpoints.WorkflowDefinitions.GetMany",
+    "Method": "Handle",
+    "RelativePath": "v1/workflow-definitions",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ids",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "version",
+        "Type": "System.Nullable\u00601[[Elsa.Models.VersionOptions, Elsa.Abstractions, Version=2.2.1.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Elsa.Server.Api.Models.ListModel\u00601[[Elsa.Server.Api.Endpoints.WorkflowDefinitions.WorkflowDefinitionSummaryModel, Elsa.Server.Api, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Elsa.Server.Api.Endpoints.WorkflowDefinitions.List",
+    "Method": "Handle",
+    "RelativePath": "v1/workflow-definitions",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "version",
+        "Type": "System.Nullable\u00601[[Elsa.Models.VersionOptions, Elsa.Abstractions, Version=2.2.1.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Elsa.Server.Api.Models.PagedList\u00601[[Elsa.Server.Api.Endpoints.WorkflowDefinitions.WorkflowDefinitionSummaryModel, Elsa.Server.Api, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Elsa.Server.Api.Endpoints.WorkflowDefinitions.Save",
+    "Method": "Handle",
+    "RelativePath": "v1/workflow-definitions",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Elsa.Server.Api.Endpoints.WorkflowDefinitions.Save\u002BSaveWorkflowDefinitionRequest",
+        "IsRequired": true
+      },
+      {
+        "Name": "GroupVersion",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "MajorVersion",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "MinorVersion",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Status",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Elsa.Models.WorkflowDefinition",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 201
+      }
+    ]
+  },
+  {
+    "ContainingType": "Elsa.Server.Api.Endpoints.WorkflowDefinitions.Delete",
+    "Method": "Handle",
+    "RelativePath": "v1/workflow-definitions/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 202
+      }
+    ]
+  },
+  {
+    "ContainingType": "Elsa.Server.Api.Endpoints.WorkflowDefinitions.GetByVersionId",
+    "Method": "Handle",
+    "RelativePath": "v1/workflow-definitions/{versionId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "versionId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Elsa.Models.WorkflowDefinition",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
+      }
+    ]
+  },
+  {
+    "ContainingType": "Elsa.Server.Api.Endpoints.WorkflowDefinitions.GetByDefinitionAndVersion",
+    "Method": "Handle",
+    "RelativePath": "v1/workflow-definitions/{workflowDefinitionId}/{versionOptions}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "workflowDefinitionId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "versionOptions",
+        "Type": "Elsa.Models.VersionOptions",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Elsa.Models.WorkflowDefinition",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
+      }
+    ]
+  },
+  {
+    "ContainingType": "Elsa.Server.Api.Endpoints.WorkflowDefinitions.Export",
+    "Method": "Handle",
+    "RelativePath": "v1/workflow-definitions/{workflowDefinitionId}/{versionOptions}/export",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "workflowDefinitionId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "versionOptions",
+        "Type": "Elsa.Models.VersionOptions",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
+      }
+    ]
+  },
+  {
+    "ContainingType": "Elsa.Server.Api.Endpoints.WorkflowDefinitions.Import",
+    "Method": "Handle",
+    "RelativePath": "v1/workflow-definitions/{workflowDefinitionId}/import",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "workflowDefinitionId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "ContentType",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ContentDisposition",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Headers",
+        "Type": "Microsoft.AspNetCore.Http.IHeaderDictionary",
+        "IsRequired": false
+      },
+      {
+        "Name": "Length",
+        "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "FileName",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Elsa.Server.Api.Endpoints.WorkflowDefinitions.Retract",
+    "Method": "Handle",
+    "RelativePath": "v1/workflow-definitions/{workflowDefinitionId}/retract",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "workflowDefinitionId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Elsa.Models.WorkflowDefinition",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 202
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
+      }
+    ]
+  },
+  {
+    "ContainingType": "Elsa.Server.Api.Endpoints.WorkflowInstances.List",
+    "Method": "Handle",
+    "RelativePath": "v1/workflow-instances",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "workflow",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "status",
+        "Type": "System.Nullable\u00601[[Elsa.Models.WorkflowStatus, Elsa.Abstractions, Version=2.2.1.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "correlationId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "orderBy",
+        "Type": "System.Nullable\u00601[[Elsa.Server.Api.Models.OrderBy, Elsa.Server.Api, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "searchTerm",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Elsa.Server.Api.Models.PagedList\u00601[[Elsa.Server.Api.Endpoints.WorkflowInstances.WorkflowInstanceSummaryModel, Elsa.Server.Api, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Elsa.Server.Api.Endpoints.WorkflowInstances.Delete",
+    "Method": "Handle",
+    "RelativePath": "v1/workflow-instances/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 204
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
+      }
+    ]
+  },
+  {
+    "ContainingType": "Elsa.Server.Api.Endpoints.WorkflowInstances.Get",
+    "Method": "Handle",
+    "RelativePath": "v1/workflow-instances/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Elsa.Models.WorkflowInstance",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Elsa.Server.Api.Endpoints.WorkflowExecutionLog.Get",
+    "Method": "Handle",
+    "RelativePath": "v1/workflow-instances/{id}/execution-log",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "page",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Elsa.Server.Api.Models.PagedList\u00601[[Elsa.Models.WorkflowExecutionLogRecord, Elsa.Abstractions, Version=2.2.1.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Elsa.Server.Api.Endpoints.WorkflowInstances.Retry",
+    "Method": "Handle",
+    "RelativePath": "v1/workflow-instances/{id}/retry",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "options",
+        "Type": "Elsa.Server.Api.Endpoints.WorkflowInstances.RetryWorkflowRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 202
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 400
+      }
+    ]
+  },
+  {
+    "ContainingType": "Elsa.Server.Api.Endpoints.ActivityStats.Get",
+    "Method": "Handle",
+    "RelativePath": "v1/workflow-instances/{workflowInstanceId}/activity-stats/{activityId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "workflowInstanceId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "activityId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Elsa.Server.Api.Endpoints.ActivityStats.ActivityStats",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Elsa.Server.Api.Endpoints.WorkflowInstances.Dispatch",
+    "Method": "Handle",
+    "RelativePath": "v1/workflow-instances/{workflowInstanceId}/dispatch",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "workflowInstanceId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "Elsa.Server.Api.Endpoints.WorkflowInstances.DispatchWorkflowInstanceRequestModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Elsa.Server.Api.Endpoints.WorkflowInstances.DispatchWorkflowInstanceResponseModel",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
+      }
+    ]
+  },
+  {
+    "ContainingType": "Elsa.Server.Api.Endpoints.WorkflowInstances.Execute",
+    "Method": "Handle",
+    "RelativePath": "v1/workflow-instances/{workflowInstanceId}/execute",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "workflowInstanceId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "Elsa.Services.ExecuteWorkflowInstanceRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Elsa.Server.Api.Endpoints.WorkflowInstances.ExecuteWorkflowInstanceResponseModel",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
+      }
+    ]
+  },
+  {
+    "ContainingType": "Elsa.Server.Api.Endpoints.WorkflowInstances.BulkDelete",
+    "Method": "Handle",
+    "RelativePath": "v1/workflow-instances/bulk",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Elsa.Server.Api.Endpoints.WorkflowInstances.BulkDeleteWorkflowsRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
+      }
+    ]
+  },
+  {
+    "ContainingType": "Elsa.Server.Api.Endpoints.WorkflowInstances.BulkRetry",
+    "Method": "Handle",
+    "RelativePath": "v1/workflow-instances/bulk/retry",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Elsa.Server.Api.Endpoints.WorkflowInstances.BulkRetryWorkflowsRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Elsa.Server.Api.Endpoints.WorkflowsOrg.List",
+    "Method": "Handle",
+    "RelativePath": "v1/workflow-organizational",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "checkedNode",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "definitionId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Elsa.Server.Api.Endpoints.WorkflowsOrg.Save",
+    "Method": "Handle",
+    "RelativePath": "v1/workflow-organizational",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "System.Collections.Generic.List\u00601[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": true
+      },
+      {
+        "Name": "GroupVersion",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "MajorVersion",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "MinorVersion",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Status",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 201
+      }
+    ]
+  },
+  {
+    "ContainingType": "Elsa.Server.Api.Endpoints.WorkflowRegistry.List",
+    "Method": "Handle",
+    "RelativePath": "v1/workflow-registry",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "version",
+        "Type": "System.Nullable\u00601[[Elsa.Models.VersionOptions, Elsa.Abstractions, Version=2.2.1.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Elsa.Server.Api.Models.PagedList\u00601[[Elsa.Server.Api.Endpoints.WorkflowRegistry.WorkflowBlueprintSummaryModel, Elsa.Server.Api, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Elsa.Server.Api.Endpoints.WorkflowRegistry.Get",
+    "Method": "Handle",
+    "RelativePath": "v1/workflow-registry/{id}/{versionOptions}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "versionOptions",
+        "Type": "System.Nullable\u00601[[Elsa.Models.VersionOptions, Elsa.Abstractions, Version=2.2.1.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Elsa.Server.Api.Models.PagedList\u00601[[Elsa.Server.Api.Endpoints.WorkflowRegistry.WorkflowBlueprintModel, Elsa.Server.Api, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Elsa.Server.Api.Endpoints.WorkflowStorageProviders.List",
+    "Method": "Handle",
+    "RelativePath": "v1/workflow-storage-providers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Elsa.Server.Api.Endpoints.WorkflowStorageProviders.WorkflowStorageDescriptor, Elsa.Server.Api, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Elsa.Server.Api.Endpoints.Workflows.Dispatch",
+    "Method": "Handle",
+    "RelativePath": "v1/workflows/{workflowDefinitionId}/dispatch",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "workflowDefinitionId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "Elsa.Server.Api.Endpoints.Workflows.DispatchWorkflowDefinitionRequestModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Elsa.Server.Api.Endpoints.Workflows.DispatchWorkflowDefinitionResponseModel",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
+      }
+    ]
+  },
+  {
+    "ContainingType": "Elsa.Server.Api.Endpoints.Workflows.Execute",
+    "Method": "Handle",
+    "RelativePath": "v1/workflows/{workflowDefinitionId}/execute",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "workflowDefinitionId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "Elsa.Server.Api.Endpoints.Workflows.ExecuteWorkflowDefinitionRequestModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Elsa.Server.Api.Endpoints.Workflows.ExecuteWorkflowDefinitionResponseModel",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
+      }
+    ]
+  },
+  {
+    "ContainingType": "Elsa.Server.Api.Endpoints.Workflows.Trigger",
+    "Method": "Handle",
+    "RelativePath": "v1/workflows/trigger",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Elsa.Server.Api.Endpoints.Workflows.TriggerWorkflowsRequestModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Elsa.Server.Api.Endpoints.Workflows.TriggerWorkflowsRequestModel",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
+      }
+    ]
+  }
+]

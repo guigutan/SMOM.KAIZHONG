@@ -1,0 +1,67 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.EMS.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.EMS.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Checks\Plans\AlertPlugs\**" />
+    <Compile Remove="Common\Entity\**" />
+    <Compile Remove="Common\Service\**" />
+    <Compile Remove="Common\Share\**" />
+    <Compile Remove="Common\Utils\**" />
+    <Compile Remove="Common\Work\**" />
+    <Compile Remove="Senders\**" />
+    <Compile Remove="Temp\**" />
+    <EmbeddedResource Remove="Checks\Plans\AlertPlugs\**" />
+    <EmbeddedResource Remove="Common\Entity\**" />
+    <EmbeddedResource Remove="Common\Service\**" />
+    <EmbeddedResource Remove="Common\Share\**" />
+    <EmbeddedResource Remove="Common\Utils\**" />
+    <EmbeddedResource Remove="Common\Work\**" />
+    <EmbeddedResource Remove="Senders\**" />
+    <EmbeddedResource Remove="Temp\**" />
+    <None Remove="Checks\Plans\AlertPlugs\**" />
+    <None Remove="Common\Entity\**" />
+    <None Remove="Common\Service\**" />
+    <None Remove="Common\Share\**" />
+    <None Remove="Common\Utils\**" />
+    <None Remove="Common\Work\**" />
+    <None Remove="Senders\**" />
+    <None Remove="Temp\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Entity\CycleTypeInfo.cs" />
+    <Compile Include="Common\Entity\DevicePurInfo.cs" />
+    <Compile Include="Common\Entity\CheckProjectInfo.cs" />
+    <Compile Include="Common\Utils\BatchDataEntity.cs" />
+    <Compile Include="Common\Utils\FileUrlHelper.cs" />
+    <Compile Include="Common\Utils\ToolController.cs" />
+    <Compile Include="Senders\StringAlertResult.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\..\..\.sonarlint\sie.smom\CSharp\SonarLint.xml" Link="SonarLint.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <!--<ProjectReference Include="..\..\..\Common\Equipments\SIE.Equipments\SIE.Equipments.csproj" />-->
+    <ProjectReference Include="..\..\..\Common\AbnormalInfo\SIE.AbnormalInfo\SIE.AbnormalInfo.csproj" />
+    <ProjectReference Include="..\..\..\Common\Equipments\SIE.Fixtures\SIE.Fixtures.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Maintains\Records\Details\" />
+    <Folder Include="InspectionRules\" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,36 @@
+﻿<UserControl xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"  x:Class="SIE.Wpf.MES.Workbench.EmployeeManages.LineLookUpEditor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SIE.Wpf.MES.Workbench.EmployeeManages"
+             xmlns:uic="http://schemas.siestudio.com/winfx/xaml/core"
+             mc:Ignorable="d" >
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ControlTemplate x:Key="groupContentTemplate">
+                <dxg:GridControl x:Name="PART_GridControl" AutoExpandAllGroups="True">
+                    <dxg:GridControl.Columns>
+                        <dxg:GridColumn FieldName="Code" Header="{Binding [编码], Source={uic:L10N}}" HeaderToolTip="{Binding [编码], Source={uic:L10N}}"/>
+                        <dxg:GridColumn FieldName="Name" Header="{Binding [名称], Source={uic:L10N}}" HeaderToolTip="{Binding [名称], Source={uic:L10N}}"/>
+                    </dxg:GridControl.Columns>
+                    <dxg:GridControl.View>
+                        <dxg:TableView
+                        Name="View"
+                        ShowGroupedColumns="True"
+                        AutoWidth="True"
+                        AllowPerPixelScrolling="True"
+                        ScrollAnimationDuration="0"
+                        ShowAutoFilterRow="True"
+                        ShowTotalSummary="True"
+                        IsSynchronizedWithCurrentItem="False">
+                        </dxg:TableView>
+                    </dxg:GridControl.View>
+                </dxg:GridControl>
+            </ControlTemplate> 
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid x:Name="displayGrid">
+        <dxg:LookUpEdit Grid.Row="0" x:Name="groupLookupEdit" AllowNullInput="True" DisplayMember="Name" ValueMember="Id" PopupWidth="400" PopupMaxWidth="500" AutoPopulateColumns="False" EditValue="{Binding ResourceId,Mode=TwoWay}" PopupContentTemplate="{StaticResource groupContentTemplate}" PopupOpening="PopupOpening"/>
+    </Grid>
+</UserControl>

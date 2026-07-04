@@ -1,0 +1,704 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Web.Mda</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Web.Mda.ClassHierarchyViewConfig">
+            <summary>
+            实体继承关系视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Mda.ClassHierarchyViewConfig.ConfigView">
+            <summary>
+            默认配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Mda.ClassHierarchyViewConfig.ConfigListView">
+            <summary>
+            列表配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Mda.Controllers.ControllerMetadataViewConfig">
+            <summary>
+            控制器元数据视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Mda.Controllers.ControllerMetadataViewConfig.ConfigView">
+            <summary>
+            默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Mda.Controllers.ControllerMetadataViewConfig.ConfigListView">
+            <summary>
+            列表逻辑视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Mda.Controllers.ControllerMetadataViewConfig.ConfigQueryView">
+            <summary>
+            查询面板逻辑视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Mda.Controllers.MethodMetadataViewConfig">
+            <summary>
+            控制器方法元数据视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Mda.Controllers.MethodMetadataViewConfig.ConfigListView">
+            <summary>
+            表单逻辑视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Mda.Controllers.SubControllerMetadataViewConfig">
+            <summary>
+            控制器子类视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Mda.Controllers.SubControllerMetadataViewConfig.ConfigListView">
+            <summary>
+            列表逻辑视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Mda.DbManagement.DbSettingQuery">
+            <summary>
+            获取链接字符串
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Mda.DbManagement.DbSettingQuery.GetList">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Mda.DbManagement.DbSettingQuery.DbSettingDTO">
+            <summary>
+            DbSettingDTO
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Mda.DbManagement.DbSettingQuery.DbSettingDTO.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Mda.DbManagement.DbSettingQuery.DbSettingDTO.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Mda.Domain.Commands.DisableStateCommand">
+            <summary>
+            禁用状态命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Mda.Domain.Commands.DisableStateCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            禁用状态命令
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Mda.Domain.Commands.EnableStateCommand">
+            <summary>
+            启用状态
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Mda.Domain.Commands.EnableStateCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            启用状态
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Mda.Domain.Commands.StateViewArgs">
+            <summary>
+            参数
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Mda.Domain.Commands.StateViewArgs.EntityId">
+            <summary>
+            当前实体ID
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Mda.Domain.Commands.UpdateMetadataCommand">
+            <summary>
+            初始化
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Mda.Domain.Commands.UpdateMetadataCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            初始化
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Mda.Domain.Commands.UpdateMetadataCommand.UpdateMetadata(System.Collections.Generic.IEnumerable{SIE.MetaModel.EntityMeta})">
+            <summary>
+            执行更新
+            </summary>
+            <param name="entityMetaList"></param>
+        </member>
+        <member name="T:SIE.Web.Mda.Domain.Commands.UpdateSelectedMetaCommand">
+            <summary>
+            指定初始化
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Mda.Domain.Commands.UpdateSelectedMetaCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            指定初始化
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Mda.Domain.Commands.UpgradeDatabaseCommand">
+            <summary>
+            升级数据库命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Mda.Domain.Commands.UpgradeDatabaseCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Mda.Domain.Commands.UpgradeDatabaseCommand.MigratingOptionsDTO">
+            <summary>
+            dto
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Mda.Domain.EntityMetadataDataQuery">
+            <summary>
+            实体元数据初始化查询
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Mda.Domain.EntityMetadataDataQuery.GetEntityMetadataViewModel">
+            <summary>
+            获取实体元数据的ViewModel
+            </summary>
+            <returns>返回实体元数据的ViewModel</returns>
+        </member>
+        <member name="M:SIE.Web.Mda.Domain.EntityMetadataDataQuery.GetEntityMetadataViewModelByCondition(System.String,System.String)">
+            <summary>
+             根据查询条件，获取实体元数据的ViewModel
+            </summary>
+            <param name="dllName"></param>
+            <param name="entityName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Mda.Domain.EntityMetadataDataQuery.GetEntityPropertyMetadata(System.Double)">
+            <summary>
+            根据实体元数据Id获取它的属性值列表
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Mda.Domain.EntityMetadataDataQuery.GetModuleConfigDateViewModel">
+            <summary>
+            获取所有模块配置
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Mda.Domain.EntityMetadataDataQuery.GetModuleConfigDateViewModelByCondition(System.String,System.String)">
+            <summary>
+            获取所有模块配置
+            </summary>
+            <param name="key">模块键</param>
+            <param name="label">名称</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Mda.Domain.EntityMetadataViewConfig">
+            <summary>
+            实体元数据视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Mda.Domain.EntityMetadataViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Mda.Domain.EntityMetadataViewConfig.ConfigQueryView">
+            <summary>
+            查询面板视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Mda.Domain.EntityMetadataViewModel">
+            <summary>
+            实体元数据ViewModel
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Mda.Domain.EntityMetadataViewModel.DLLNameProperty">
+            <summary>
+            DLL名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Mda.Domain.EntityMetadataViewModel.DLLName">
+            <summary>
+            DLL名称
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Mda.Domain.EntityMetadataViewModel.EntityNameProperty">
+            <summary>
+            实体名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Mda.Domain.EntityMetadataViewModel.EntityName">
+            <summary>
+            实体名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Mda.Domain.EntityMetadataViewModel.Meta">
+            <summary>
+            实体元数据
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Mda.Domain.EntityMetadataViewModelViewConfig">
+            <summary>
+            实体元数据ViewModel视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Mda.Domain.EntityMetadataViewModelViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Mda.Domain.EntityMetadataViewModelViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Mda.Domain.EntityPropertyMetadataViewConfig">
+            <summary>
+            实体属性元数据视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Mda.Domain.EntityPropertyMetadataViewConfig.ConfigListView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Mda.Domain.EntityRuleViewConfig">
+            <summary>
+            实体规则视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Mda.Domain.EntityRuleViewModel">
+            <summary>
+            视图验证规则ViewModel
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Mda.Domain.EntityRuleViewModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:SIE.Web.Mda.Domain.EntityRuleViewModel"/> class.
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Mda.Domain.EntityRuleViewModel.#ctor(SIE.Mda.Metadatas.Domain.EntityRule,System.Boolean)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="rule">验证规则实体</param>
+            <param name="isCreating">是否创建</param>
+        </member>
+        <member name="M:SIE.Web.Mda.Domain.EntityRuleViewModel.GetValue``1(System.String,System.String)">
+            <summary>
+            获取值
+            </summary>
+            <typeparam name="T">泛型</typeparam>
+            <param name="script">脚本</param>
+            <param name="key">键值</param>
+            <returns>值</returns>
+        </member>
+        <member name="P:SIE.Web.Mda.Domain.EntityRuleViewModel.IsCreating">
+            <summary>
+            是否创建
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Mda.Domain.EntityRuleViewModel.AcceptChanges">
+            <summary>
+            完成编辑
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Mda.Domain.EntityRuleViewModel.EntityRule_PropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            实体验证规则改变事件
+            </summary>
+            <param name="sender">发送者</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="F:SIE.Web.Mda.Domain.EntityRuleViewModel.EntityRuleIdProperty">
+            <summary>
+            实体验证规则Id
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Mda.Domain.EntityRuleViewModel.EntityRuleId">
+            <summary>
+            实体验证规则Id
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Mda.Domain.EntityRuleViewModel.EntityRuleProperty">
+            <summary>
+            实体验证规则
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Mda.Domain.EntityRuleViewModel.EntityRule">
+            <summary>
+            实体验证规则
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Mda.Domain.EntityRuleViewModel.LengthValueProperty">
+            <summary>
+            长度参数
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Mda.Domain.EntityRuleViewModel.LengthValue">
+            <summary>
+            长度参数
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Mda.Domain.EntityRuleViewModel.ValueProperty">
+            <summary>
+            规则参数
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Mda.Domain.EntityRuleViewModel.Value">
+            <summary>
+            规则参数
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Mda.Domain.EntityRuleViewModel.IsScriptVisibleProperty">
+            <summary>
+            脚本是否可见
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Mda.Domain.EntityRuleViewModel.IsScriptVisible">
+            <summary>
+            脚本是否可见
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Mda.Domain.EntityRuleViewModel.GetIsScriptVisible">
+            <summary>
+            获取脚本可见性
+            </summary>
+            <returns>脚本可见性</returns>
+        </member>
+        <member name="F:SIE.Web.Mda.Domain.EntityRuleViewModel.IsLengthValueVisibleProperty">
+            <summary>
+            长度参数是否可见
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Mda.Domain.EntityRuleViewModel.IsLengthValueVisible">
+            <summary>
+            长度参数是否可见
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Mda.Domain.EntityRuleViewModel.GetIsLengthValueVisible">
+            <summary>
+            获取长度参数可见性
+            </summary>
+            <returns>长度可见性</returns>
+        </member>
+        <member name="F:SIE.Web.Mda.Domain.EntityRuleViewModel.IsValueVisibleProperty">
+            <summary>
+            参数是否可见
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Mda.Domain.EntityRuleViewModel.IsValueVisible">
+            <summary>
+            参数是否可见
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Mda.Domain.EntityRuleViewModel.GetIsValueVisible">
+            <summary>
+            获取参数可见性
+            </summary>
+            <returns>参数可见性</returns>
+        </member>
+        <member name="F:SIE.Web.Mda.Domain.EntityRuleViewModel.EntityRuleDescriptionProperty">
+            <summary>
+            实体规则描述
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Mda.Domain.EntityRuleViewModel.EntityRuleDescription">
+            <summary>
+            实体规则描述
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Mda.Domain.EntityRuleViewModel.EntityRulesPropertyProperty">
+            <summary>
+            属性
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Mda.Domain.EntityRuleViewModel.EntityRulesProperty">
+            <summary>
+            属性
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Mda.Domain.EntityRuleViewModel.EntityRuleRuleTypeProperty">
+            <summary>
+            规则类型
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Mda.Domain.EntityRuleViewModel.EntityRuleRuleType">
+            <summary>
+            规则类型
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Mda.Domain.EntityRuleViewModel.EntityRuleScriptProperty">
+            <summary>
+            脚本
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Mda.Domain.EntityRuleViewModel.EntityRuleScript">
+            <summary>
+            脚本
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Mda.Domain.EntityRuleViewModel.EntityRuleStateProperty">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Mda.Domain.EntityRuleViewModel.EntityRuleState">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Mda.Domain.EntityRuleViewModel.RuleTypes">
+            <summary>
+            规则类型
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Mda.Domain.EntityRuleViewModel.RuleTypesToDictionary">
+            <summary>
+            Rules the types to dictionary.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Mda.Domain.EntityRuleViewModel.OnValuePropertyChanged(SIE.ManagedProperty.ManagedPropertyChangedEventArgs)">
+            <summary>
+            值改变事件
+            </summary>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="T:SIE.Web.Mda.Domain.EntityRuleViewModelViewConfig">
+            <summary>
+            实体视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Mda.Domain.EntityRuleViewModelViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Mda.Domain.EntityRuleViewModelViewConfig.ConfigDetailsView">
+            <summary>
+            表单明细视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Mda.Domain.SubmitEventViewConfig">
+            <summary>
+            提交事件视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Mda.Domain.SubmitEventViewConfig.ConfigListView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Mda.Domain.SubmittingEventViewConfig">
+            <summary>
+            提交前事件视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Mda.Domain.SubmittingEventViewConfig.ConfigListView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Mda.Domain.SubmittedEventViewConfig">
+            <summary>
+            提交后事件视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Mda.Domain.SubmittedEventViewConfig.ConfigListView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Mda.Menus.MdaWebMenuInit">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Mda.Menus.MdaWebMenuInit.GetMenuDtos">
+            <summary>
+            获取菜单列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Mda.Metadatas.Modules.CmdConfigViewConfig">
+            <summary>
+            命令配置视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Mda.Metadatas.Modules.CmdConfigViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Mda.Metadatas.Modules.CmdConfigViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Mda.Metadatas.Modules.CmdConfigViewConfig.ConfigDetailsView">
+            <summary>
+             配置明细视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Mda.Metadatas.Modules.CmdConfigViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.Mda.Metadatas.Modules.Commands.UpdateModuleConfigCommand">
+            <summary>
+            更新功能模块命令
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Mda.Metadatas.Modules.Commands.UpdateModuleConfigCommand.CommandName">
+            <summary>
+            命令名称
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Mda.Metadatas.Modules.Commands.UpdateModuleConfigCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Mda.Metadatas.Modules.Commands.UpdateModuleConfigCommand.UpdateModules(System.Collections.Generic.IEnumerable{SIE.MetaModel.ModuleMeta},System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="moduleMetas"></param>
+            <param name="isCleanModelConfig"></param>
+        </member>
+        <member name="T:SIE.Web.Mda.Metadatas.Modules.Commands.UpdateSelectedModuleConfigCommand">
+            <summary>
+            更新选择的功能模块
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Mda.Metadatas.Modules.Commands.UpdateSelectedModuleConfigCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="F:SIE.Web.Mda.Metadatas.Modules.ModuleConfigDateViewModel.KeyProperty">
+            <summary>
+            模块键
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Mda.Metadatas.Modules.ModuleConfigDateViewModel.Key">
+            <summary>
+            模块键
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Mda.Metadatas.Modules.ModuleConfigDateViewModel.LabelProperty">
+            <summary>
+            显示名称
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Mda.Metadatas.Modules.ModuleConfigDateViewModel.Label">
+            <summary>
+            显示名称
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Mda.Metadatas.Modules.ModuleConfigDateViewModel.PlatformProperty">
+            <summary>
+            平台
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Mda.Metadatas.Modules.ModuleConfigDateViewModel.Platform">
+            <summary>
+            平台
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Mda.Metadatas.Modules.ModuleConfigDateViewModel.Meta">
+            <summary>
+            模块定义
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Mda.Metadatas.Modules.ModuleConfigDateViewModelViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Mda.Metadatas.Modules.ModuleConfigDateViewModelViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Mda.Metadatas.Modules.ModuleConfigDateViewModelViewConfig.ConfigQueryView">
+            <summary>
+            查询试图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Mda.Metadatas.Modules.ModuleConfigViewConfig">
+            <summary>
+            系统模块配置视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Mda.Metadatas.Modules.ModuleConfigViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Mda.Metadatas.Modules.ModuleConfigViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Mda.Metadatas.Modules.ModuleConfigViewConfig.ConfigDetailsView">
+            <summary>
+             配置明细视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Mda.Metadatas.Modules.ModuleConfigViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.Mda.Metadatas.Modules.ModuleViewConfigViewConfig">
+            <summary>
+            视图配置视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Mda.Metadatas.Modules.ModuleViewConfigViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Mda.Metadatas.Modules.ModuleViewConfigViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Mda.Metadatas.Modules.ModuleViewConfigViewConfig.ConfigDetailsView">
+            <summary>
+             配置明细视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Mda.Metadatas.Modules.ModuleViewConfigViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+    </members>
+</doc>

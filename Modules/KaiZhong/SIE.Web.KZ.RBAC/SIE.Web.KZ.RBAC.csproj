@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<OutputPath>..\..\..\platform\smom\</OutputPath>
+		<DocumentationFile>..\..\..\platform\smom\net6.0\SIE.Web.KZ.RBAC.xml</DocumentationFile>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<OutputPath>..\..\..\platform\smom\</OutputPath>
+		<DocumentationFile>..\..\..\platform\smom\net6.0\SIE.Web.KZ.RBAC.xml</DocumentationFile>
+	</PropertyGroup>
+	<ItemGroup>
+	  <EmbeddedResource Include="InvOrgs\Commands\SwitchInvOrgCommand.js" />
+	  <EmbeddedResource Include="InvOrgs\Scripts\SIE.InvOrgPlugin.js" />
+	</ItemGroup>
+	
+  <ItemGroup>
+    <PackageReference Include="SIE.Web.RBAC" Version="10.0.5" />
+  </ItemGroup>
+	
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\Resources\SIE.Resources\SIE.Resources.csproj" />
+    <ProjectReference Include="..\SIE.KZ.Base\SIE.KZ.Base.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="..\..\..\Common\Core\SIE.xUnit.Core\appsettings.json" Link="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\Packages\SIE.xUnit.Packages\SIE.xUnit.Packages.csproj" />
+    <ProjectReference Include="..\..\..\SQMS\IQC\SIE.xUnit.IQC\SIE.xUnit.IQC.csproj" />
+    <ProjectReference Include="..\SIE.Kit.IQC\SIE.Kit.IQC.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="SIE">
+      <HintPath>..\..\..\..\platform\nest\netstandard2.0\SIE.dll</HintPath>
+    </Reference>
+    <Reference Include="SIE.Caches">
+      <HintPath>..\..\..\..\platform\nest\netstandard2.0\SIE.Caches.dll</HintPath>
+    </Reference>
+    <Reference Include="SIE.Common">
+      <HintPath>..\..\..\..\platform\nest\netstandard2.0\SIE.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SIE.Log4Net">
+      <HintPath>..\..\..\..\platform\nest\netstandard2.0\SIE.Log4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="SIE.Mda">
+      <HintPath>..\..\..\..\platform\nest\netstandard2.0\SIE.Mda.dll</HintPath>
+    </Reference>
+    <Reference Include="SIE.ORM.MappingColumn">
+      <HintPath>..\..\..\..\platform\nest\netstandard2.0\SIE.ORM.MappingColumn.dll</HintPath>
+    </Reference>
+    <Reference Include="SIE.Rbac">
+      <HintPath>..\..\..\..\platform\nest\netstandard2.0\SIE.Rbac.dll</HintPath>
+    </Reference>
+    <Reference Include="SIE.SqlLogger">
+      <HintPath>..\..\..\..\platform\nest\netstandard2.0\SIE.SqlLogger.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

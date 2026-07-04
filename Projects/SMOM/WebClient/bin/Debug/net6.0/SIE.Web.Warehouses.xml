@@ -1,0 +1,1650 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Web.Warehouses</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Web.Warehouses.EntityPropertyViewMetaExtension">
+            <summary>
+            实体属性视图元数据扩展
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.EntityPropertyViewMetaExtension.UseWarehouseLookUpEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig,``0})">
+            <summary>
+            使用仓库下拉查询编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Web.Warehouses.EntityPropertyViewMetaExtension.UseWarehouseEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig},System.Nullable{SIE.Warehouses.LibraryType},System.Boolean,System.Boolean)">
+            <summary>
+            使用仓库(可用，未冻结)下拉查询编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <param name="type">仓库类型</param>
+            <param name="contianFrozen">包含冻结</param>
+            <param name="containLineWareHouse">是否过滤线边仓</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Web.Warehouses.EntityPropertyViewMetaExtension.UseWarehouseEditorWithOutLine``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig},System.Nullable{SIE.Warehouses.LibraryType},System.Boolean,System.Boolean)">
+            <summary>
+            使用仓库(可用，未冻结)下拉查询编辑器（默认只查询实体仓库）
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <param name="type">仓库类型</param>
+            <param name="contianFrozen">包含冻结</param>
+            <param name="containLineWareHouse">是否过滤线边仓</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Web.Warehouses.EntityPropertyViewMetaExtension.UseAllWarehouseEditorWithOutLine``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig},System.Nullable{SIE.Domain.State},System.Nullable{SIE.Warehouses.LibraryType},System.Boolean,System.Boolean)">
+            <summary>
+            获取库存组织下的所有仓库（包括禁用、冻结）默认过滤掉线边仓
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <param name="state">仓库状态</param>
+            <param name="type">仓库类型</param>
+            <param name="contianFrozen">包含冻结</param>
+            <param name="containLineWareHouse">是否过滤线边仓</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Web.Warehouses.EntityPropertyViewMetaExtension.UseAllWarehouseEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig},System.Nullable{SIE.Warehouses.LibraryType},System.Boolean)">
+            <summary>
+            使用仓库（所有）下拉查询编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <param name="type">仓库类型</param>
+            <param name="containLineWareHouse">是否过滤线边仓-默认不过滤</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Web.Warehouses.EntityPropertyViewMetaExtension.UseStorageLocationLookUpEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig})">
+            <summary>
+            使用库位下拉查询编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Web.Warehouses.EntityPropertyViewMetaExtension.UseStorageAreaEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig})">
+            <summary>
+            使用库区编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Web.Warehouses.EntityPropertyViewMetaExtension.UsePrintTemplateEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig})">
+            <summary>
+            使用打印编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Web.Warehouses.EntityPropertyViewMetaExtension.UseAddressTypeCatalogEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.Common.Editors.CatalogConfig})">
+            <summary>
+            使用快码编辑器
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="meta"></param>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Warehouses.EntityPropertyViewMetaExtension.UseEmployeeEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig,``0})">
+            <summary>
+            员工编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Commands.AddBaseItemIOLimitCommand">
+            <summary>
+            添加命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Commands.AddBaseItemIOLimitCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            添加
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Commands.LogicAreaImportCommand">
+            <summary>
+            导入命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Commands.LogicAreaImportCommand.GetImportCompleted">
+            <summary>
+            导入命令
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Commands.LogicAreaImportCommand.GetImportHandleType">
+            <summary>
+            获取导入处理类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Commands.LogicAreaAddCommand">
+            <summary>
+            添加命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Commands.LogicAreaAddCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Commands.LogicAreaDeleteCommand">
+            <summary>
+            删除命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Commands.LogicAreaDeleteCommand.Excute(System.Collections.Generic.IList{SIE.Domain.Entity},System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Commands.LogicAreaSelLocationCommand">
+            <summary>
+            选择库位命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Commands.LogicAreaSelLocationCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Commands.LogicAreaLocDeleteCommand">
+            <summary>
+            库位关系删除命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Commands.LogicAreaLocDeleteCommand.Excute(System.Double[],System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Commands.RoutewayImportCommand">
+            <summary>
+            导入命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Commands.RoutewayImportCommand.GetImportCompleted">
+            <summary>
+            导入命令
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Commands.RoutewayImportCommand.GetImportHandleType">
+            <summary>
+            获取导入处理类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Commands.RoutewayAddCommand">
+            <summary>
+            添加命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Commands.RoutewayAddCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Commands.StorageAreaAddCommand">
+            <summary>
+            库区添加命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Commands.StorageAreaAddCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Commands.StorageAreaDeleteCommand">
+            <summary>
+            库区删除命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Commands.StorageAreaDeleteCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Commands.StorageAreaEnableCommand">
+            <summary>
+            库区启用命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Commands.StorageAreaEnableCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Commands.StorageAreaDisableCommand">
+            <summary>
+            库区禁用命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Commands.StorageAreaDisableCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Commands.StorageAreaFrozenCommand">
+            <summary>
+            库区更改冻结状态
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Commands.StorageAreaFrozenCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Commands.StorageLocationAddCommand">
+            <summary>
+            库位添加命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Commands.StorageLocationAddCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Commands.StorageLocationCopyCommand">
+            <summary>
+            库位复制新增命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Commands.StorageLocationCopyCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Commands.StorageLocationDeleteCommand">
+            <summary>
+            库位删除命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Commands.StorageLocationDeleteCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Commands.StorageLocationEnableCommand">
+            <summary>
+            启用命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Commands.StorageLocationEnableCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Commands.StorageLocationDisableCommand">
+            <summary>
+            启用命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Commands.StorageLocationDisableCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Commands.StorageLocationImportCommand">
+            <summary>
+            库位导入命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Commands.StorageLocationImportCommand.GetImportCompleted">
+            <summary>
+            导入命令
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Commands.StorageLocationImportCommand.GetImportHandleType">
+            <summary>
+            获取导入处理类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Commands.StorageLocationRouteImportCommand">
+            <summary>
+            库位导入命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Commands.StorageLocationRouteImportCommand.Excute(SIE.Web.Common.Import.Commands.ImportViewArgs,System.String)">
+            <summary>
+            导入数据
+            </summary>
+            <param name="importViewArgs">导入视图参数</param>
+            <param name="scope">使用范围</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Commands.StorageLocationRouteImportCommand.DownloadTemplate">
+            <summary>
+            直接从服务器上下载模板
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Commands.StorageLocationRouteImportCommand.GetImportCompleted">
+            <summary>
+            导入完成
+            </summary>
+            <returns>ImportCompleted</returns>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Commands.StorageLocationRouteImportCommand.GetImportHandleType">
+            <summary>
+            获取导入处理类型
+            </summary>
+            <returns>Type</returns>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Commands.StorageLocationFrozenCommand">
+            <summary>
+            冻结解冻命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Commands.StorageLocationFrozenCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Commands.StorageLocationItemLookUpCommand">
+            <summary>
+            选择物料
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Commands.StorageLocationItemLookUpCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Commands.PrintStorageLocationCommand">
+            <summary>
+            打印标签
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Commands.PrintStorageLocationCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Commands.StorageLocationItemDeleteCommand">
+            <summary>
+            删除
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Commands.StorageLocationItemDeleteCommand.Excute(System.Double[],System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Commands.WarehouseAddCommand">
+            <summary>
+            仓库添加命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Commands.WarehouseAddCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Commands.WarehouseDeleteCommand">
+            <summary>
+            仓库删除命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Commands.WarehouseDeleteCommand.Excute(System.Collections.Generic.IList{SIE.Domain.Entity},System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Commands.WarehouseEnableCommand">
+            <summary>
+            仓库启用命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Commands.WarehouseEnableCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Commands.WarehouseDisableCommand">
+            <summary>
+            仓库禁用命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Commands.WarehouseDisableCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Commands.WarehouseListCopyCommand">
+            <summary>
+            仓库复制新增命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Commands.WarehouseListCopyCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Commands.FrozenCommand">
+            <summary>
+            更改冻结状态
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Commands.FrozenCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Commands.WarehouseAddressCopyCommand">
+            <summary>
+            仓库地址复制新增命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Commands.WarehouseAddressCopyCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Commands.WarehouseEmployeeLookupCommand">
+            <summary>
+            选择仓库与员工关系
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Commands.WarehouseEmployeeLookupCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Commands.EmployeeWarehouseCommand">
+            <summary>
+            选择仓库与员工关系
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Commands.EmployeeWarehouseCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Commands.InEmployeeWarehouseCommand">
+            <summary>
+            选择调拨仓与员工的关系
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Commands.InEmployeeWarehouseCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Commands.SynchronizeToEmployeesCommand">
+            <summary>
+            同步给员工
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:SIE.Web.Warehouses.Commands.SynchronizeToEmployeesCommand.Excute(SIE.Web.Warehouses.Commands.SynchronizeData,System.String)" -->
+        <member name="T:SIE.Web.Warehouses.Commands.SynchronizeData">
+            <summary>
+            同步提交的数据
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Warehouses.Commands.SynchronizeData.EmployeeId">
+            <summary>
+            员工ID(同步的数据源ID)
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Warehouses.Commands.SynchronizeData.EmployeeIds">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Warehouses.Commands.SynchronizeData.Type">
+            <summary>
+            类型 1-覆盖同步 2-追加同步
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Commands.WorkAreaAddCommand">
+            <summary>
+            添加命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Commands.WorkAreaAddCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Commands.WorkAreaDeleteCommand">
+            <summary>
+            删除命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Commands.WorkAreaSelLocationCommand">
+            <summary>
+            选择库位命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Commands.WorkAreaSelLocationCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Commands.WorkAreaLocDeleteCommand">
+            <summary>
+            库位关系删除命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Commands.WorkAreaLocDeleteCommand.Excute(System.Double[],System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Commands.WorkAreaSelEmployeeCommand">
+            <summary>
+            选择员工命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Commands.WorkAreaSelEmployeeCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Commands.WorkAreaEmployeeDeleteCommand">
+            <summary>
+            员工关系删除命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Commands.WorkAreaEmployeeDeleteCommand.Excute(System.Double[],System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Commands.WorkAreaEmployeeOnDutyCommand">
+            <summary>
+            在岗命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Commands.WorkAreaEmployeeOnDutyCommand.Excute(System.Double[],System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Commands.WorkAreaEmployeeOffDutyCommand">
+            <summary>
+            离岗命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Commands.WorkAreaEmployeeOffDutyCommand.Excute(System.Double[],System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Commands.AddReasonCommand">
+            <summary>
+            添加命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Commands.AddReasonCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            添加
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Commands.DeleteReasonCommand">
+            <summary>
+            删除命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Commands.InitReasonCommand">
+            <summary>
+            初始化命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Commands.InitReasonCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            初始化
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Configs.StorageAreaCodeConfigValueViewConfig">
+            <summary>
+            库区编码 视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Configs.StorageAreaCodeConfigValueViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Configs.StorageLocationCodeConfigValueViewConfig">
+            <summary>
+            库位配置 视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Configs.StorageLocationCodeConfigValueViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Configs.WarehousesCodeConfigValueViewConfig">
+            <summary>
+            仓库编码 视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Configs.WarehousesCodeConfigValueViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Configs.ReasonNoConfigValueViewConfig">
+            <summary>
+            事务原因编码生成 视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Configs.ReasonNoConfigValueViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.DataQueryer.WarehouseDataQueryer">
+            <summary>
+            仓库查询
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.DataQueryer.WarehouseDataQueryer.GetWarehouseInvorg(System.Boolean,System.Nullable{System.Int32},System.String)">
+            <summary>
+            获取库存组织
+            </summary>
+            <param name="isOnlyCurOrg"></param>
+            <param name="keyword"></param>
+            <param name="AllotModel">发运单调拨模式</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.Warehouses.DataQueryer.WarehouseDataQueryer.GetWarehouseInvorgByAsn(SIE.Core.Enums.OrderType,System.String)">
+            <summary>
+            获取仓库数据，ASN跨组织入库、转仓入库
+            </summary>
+            <param name="orderType">单据大类</param>
+            <param name="keyword">关键字</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Warehouses.BaseItemExtViewConfig">
+            <summary>
+            WMS物料扩展视图
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Warehouses.BaseItemExtViewConfig.BaseExperienceItemView">
+            <summary>
+            历史经验库物料视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.BaseItemIOLimitViewConfig">
+            <summary>
+            收发控制视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.BaseItemIOLimitViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.ItemStockDatas.ItemStockDataQueryer">
+            <summary>
+            库存资料
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.ItemStockDatas.ItemStockDataQueryer.CheckIsSer(System.Double)">
+            <summary>
+            检查是否序列号管理
+            </summary>
+            <param name="itemId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Warehouses.LogicAreaCriteriaViewConfig">
+            <summary>
+            逻辑分区查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.LogicAreaCriteriaViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.LogicAreaLocationViewConfig">
+            <summary>
+            逻辑分区与库位关系表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.LogicAreaLocationViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.LogicAreaLocationViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.LogicAreaLocationViewConfig.ConfigDetailsView">
+            <summary>
+             配置明细视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.LogicAreaLocationViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.LogicAreaViewConfig">
+            <summary>
+            逻辑分区视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.LogicAreaViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.LogicAreaViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.LogicAreaViewConfig.ConfigImportView">
+            <summary>
+            导入视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.LogicAreaViewConfig.ConfigQueryView">
+            <summary>
+            查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.LogicAreaViewConfig.ConfigSelectionView">
+            <summary>
+            选择视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Menus.WarehouseMenuInit">
+            <summary>
+            菜单初始化
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Menus.WarehouseMenuInit.GetMenuDtos">
+            <summary>
+            获取菜单列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Module">
+            <summary>
+            UIModule
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化
+            </summary>
+            <param name="app">程序</param>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Module.App_ModuleOperations(System.Object,System.EventArgs)">
+            <summary>
+            配置菜单
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="T:SIE.Web.Warehouses.ReasonViewConfig">
+            <summary>
+            事务原因 视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.ReasonViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.ReasonViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.ReasonViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.RouteViewConfig">
+            <summary>
+            路径基础信息视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.RouteViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.RouteViewConfig.ConfigImportView">
+            <summary>
+            导入模板
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.RoutewayCriteriaViewConfig">
+            <summary>
+            巷道查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.RoutewayCriteriaViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.RoutewayViewConfig">
+            <summary>
+            巷道基础数据表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.RoutewayViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.RoutewayViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.RoutewayViewConfig.ConfigImportView">
+            <summary>
+            导入视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.RoutewayViewConfig.ConfigSelectionView">
+            <summary>
+            选择视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Stations.Commands.StationImportCommand">
+            <summary>
+            站台导入
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Warehouses.Stations.Commands.StationImportCommand.IsHasError">
+            <summary>
+            是否有错误
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Stations.Commands.StationImportCommand.OnRowDataRead(SIE.Common.Import.RowData,SIE.Common.Import.CacheData)">
+            <summary>
+            行数据读取, 默认按视图配置把数据读取后，还可以进行自定义处理
+            </summary>
+            <param name="data"></param>
+            <param name="cache"></param>
+            <exception cref="T:SIE.Domain.Validation.ValidationException"></exception>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Stations.Commands.StationImportCommand.OnSave(System.Collections.Generic.IList{SIE.Common.Import.RowData})">
+            <summary>
+            保存方法
+            </summary>
+            <param name="batch">数据</param>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Stations.Commands.SelectStationCommand">
+            <summary>
+            选择站台
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Stations.Commands.SelectStationCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Stations.LEDShowStyleViewConfig">
+            <summary>
+            LED屏幕显示的风格样式视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Stations.LEDShowStyleViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Stations.LEDShowStyleViewConfig.ConfigQueryView">
+            <summary>
+            查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Stations.LEDShowStyleViewConfig.ConfigSelectionView">
+            <summary>
+            选择视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Stations.LEDShowStyleViewConfig.ConfigImportView">
+            <summary>
+            导入视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Stations.LEDViewConfig">
+            <summary>
+            LED屏幕基础数据视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Stations.LEDViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Stations.LEDViewConfig.ConfigQueryView">
+            <summary>
+            查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Stations.LEDViewConfig.ConfigSelectionView">
+            <summary>
+            选择视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Stations.LEDViewConfig.ConfigImportView">
+            <summary>
+            导入视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Stations.StationCriteriaViewConfig">
+            <summary>
+            查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Stations.StationCriteriaViewConfig.ConfigView">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Stations.StationGroupCriteriaViewConfig">
+            <summary>
+            查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Stations.StationGroupCriteriaViewConfig.ConfigView">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Stations.StationGroupLineViewConfig">
+            <summary>
+            站台组明细视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Stations.StationGroupLineViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Stations.StationGroupViewConfig">
+            <summary>
+            站台组视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Stations.StationGroupViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Stations.StationGroupViewConfig.ConfigQueryView">
+            <summary>
+            查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Stations.StationGroupViewConfig.ConfigSelectionView">
+            <summary>
+            选择视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Stations.StationViewConfig">
+            <summary>
+            站台视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Warehouses.Stations.StationViewConfig.BaseDataViewGroup">
+            <summary>
+            站台配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Warehouses.Stations.StationViewConfig.FloorViewGroup">
+            <summary>
+            楼层站台配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Warehouses.Stations.StationViewConfig.PickViewGroup">
+            <summary>
+            拣选站台配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Stations.StationViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Stations.StationViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Stations.StationViewConfig.ConfigBaseDataView">
+            <summary>
+            站台配置数据视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Stations.StationViewConfig.ConfigFloorView">
+            <summary>
+            楼层站台视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Stations.StationViewConfig.ConfigPickView">
+            <summary>
+            拣选站台视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Stations.StationViewConfig.ConfigQueryView">
+            <summary>
+            查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Stations.StationViewConfig.ConfigSelectionView">
+            <summary>
+            选择视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.Stations.StationViewConfig.ConfigImportView">
+            <summary>
+            导入模板
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.StorageAreaCriteriaViewConfig">
+            <summary>
+            库区查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.StorageAreaCriteriaViewConfig.ConfigView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.StorageAreaInfoViewConfig">
+            <summary>
+            库区基本资料视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.StorageAreaInfoViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.StorageAreaOperationViewConfig">
+            <summary>
+            库区操作管理视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.StorageAreaOperationViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.StorageAreaViewConfig">
+            <summary>
+            库区视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.StorageAreaViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.StorageAreaViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.StorageAreaViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.StorageAreaWcsViewConfig">
+            <summary>
+            库区操作管理视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.StorageAreaWcsViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.StorageLocationCriteriaViewConfig">
+            <summary>
+            库区查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.StorageLocationCriteriaViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.StorageLocationFrozenReasonViewConfig">
+            <summary>
+            库位冻结原因视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.StorageLocationFrozenReasonViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.StorageLocationFrozenReasonViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.StorageLocationInfoViewConfig">
+            <summary>
+            库位基本资料 视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.StorageLocationInfoViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.StorageLocationItemListViewConfig">
+            <summary>
+            库区专储物料清单 视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.StorageLocationItemListViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.StorageLocationLayinInfoViewConfig">
+            <summary>
+            库位 仓储资料 视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.StorageLocationLayinInfoViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.StorageLocationLayinInfoViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.StorageLocationOperationViewConfig">
+            <summary>
+            库区操作管理 视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.StorageLocationOperationViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.StorageLocationViewConfig">
+            <summary>
+            库位视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.StorageLocationViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.StorageLocationViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.StorageLocationViewConfig.ConfigImportView">
+            <summary>
+            导入模板
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.StorageLocationViewConfig.RoutewayListView">
+            <summary>
+            巷道使用的附加视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.ViewModels.StorageLocationPrintViewModel">
+            <summary>
+            库位 打印标签命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.ViewModels.StorageLocationPrintViewModel.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Warehouses.ViewModels.StorageLocationPrintViewModel.PrintCountProperty">
+            <summary>
+            打印份数
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Warehouses.ViewModels.StorageLocationPrintViewModel.PrintCount">
+            <summary>
+            打印份数
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Warehouses.ViewModels.StorageLocationPrintViewModel.PrinterProperty">
+            <summary>
+            打印机
+            </summary>
+        </member>
+        <member name="P:SIE.Web.Warehouses.ViewModels.StorageLocationPrintViewModel.Printer">
+            <summary>
+            打印机
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.ViewModels.StorageLocationPrintViewModelViewConfig">
+            <summary>
+            库位 打印标签视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.ViewModels.StorageLocationPrintViewModelViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.Warehouses.Commands.SaveErpWarehouseCommand">
+            <summary>
+            ERP子库保存
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.EmployeeExtViewConfig">
+            <summary>
+            员工扩展视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.EmployeeExtViewConfig.ConfigListView">
+            <summary>
+            列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.ErpWarehouseCriteriaViewConfig">
+            <summary>
+            配置ERP子库查询实体视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.ErpWarehouseCriteriaViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.ErpWarehouseDetailViewConfig">
+            <summary>
+            Erp子库 视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.ErpWarehouseDetailViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.ErpWarehouseViewConfig">
+            <summary>
+            Erp子库 视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.ErpWarehouseViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.ErpWarehouseViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.ErpWarehouseViewConfig.ConfigSelectionView">
+            <summary>
+            选择视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.InWarehouseEmployeeSelectCriteriaViewConfig">
+            <summary>
+            配置仓库查询实体视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.InWarehouseEmployeeSelectCriteriaViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.InWarehouseEmployeeSelectViewConfig">
+            <summary>
+            配置仓库查询实体视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.InWarehouseEmployeeSelectViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.InWarehouseEmployeeViewConfig">
+            <summary>
+            仓库与员工关系视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.InWarehouseEmployeeViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.InWarehouseEmployeeViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.InWarehouseEmployeeViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.InWarehouseEmployeeViewConfig.ConfigEmpReadOnlyView">
+            <summary>
+            员工查看仓库视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.WarehouseAddressViewConfig">
+            <summary>
+            仓库地址
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.WarehouseAddressViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.WarehouseAddressViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.WarehouseCriteriaViewConfig">
+            <summary>
+            配置仓库查询实体视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.WarehouseCriteriaViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.WarehouseEmployeeViewConfig">
+            <summary>
+            仓库与员工关系视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.WarehouseEmployeeViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.WarehouseEmployeeViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.WarehouseEmployeeViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.WarehouseEmployeeViewConfig.ConfigEmpReadOnlyView">
+            <summary>
+            员工查看仓库视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.WarehouseInfoViewConfig">
+            <summary>
+            仓库资料视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.WarehouseInfoViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.WarehouseViewConfig">
+            <summary>
+            仓库视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Warehouses.WarehouseViewConfig.ReadonlyView">
+            <summary>
+            只读视图
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Warehouses.WarehouseViewConfig.WarehouseInvorgView">
+            <summary>
+             库存组织视图
+            </summary>
+        </member>
+        <member name="F:SIE.Web.Warehouses.WarehouseViewConfig.SearchWarehouseView">
+            <summary>
+            查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.WarehouseViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.WarehouseViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.WarehouseViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.WarehouseViewConfig.ConfigWarehouseInvorgView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.WorkAreaCriteriaViewConfig">
+            <summary>
+            配置工作区查询实体视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.WorkAreaCriteriaViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.WorkAreaEmployeeViewConfig">
+            <summary>
+            工作区与员工关系视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.WorkAreaEmployeeViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.WorkAreaLocationViewConfig">
+            <summary>
+            工作区与库位关系视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.WorkAreaLocationViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.Warehouses.WorkAreaViewConfig">
+            <summary>
+            工作区视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.WorkAreaViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.WorkAreaViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.Warehouses.WorkAreaViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.WCS.Devices.RouteCriteriaViewConfig">
+            <summary>
+            路径查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.WCS.Devices.RouteCriteriaViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+    </members>
+</doc>

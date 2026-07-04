@@ -1,0 +1,193 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup Label="Globals">
+		<SccProjectName>SAK</SccProjectName>
+		<SccProvider>SAK</SccProvider>
+		<SccAuxPath>SAK</SccAuxPath>
+		<SccLocalPath>SAK</SccLocalPath>
+	</PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<OutputPath>..\..\..\..\platform\smom\</OutputPath>
+		<DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.EMS.EquipRepair.xml</DocumentationFile>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<OutputPath>..\..\..\..\platform\smom\</OutputPath>
+		<DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.EMS.EquipRepair.xml</DocumentationFile>
+	</PropertyGroup>
+	<ItemGroup>
+	  <Compile Remove="Repairs\ExperienceDepots\Details\ExperienceDepotAttachmentViewConfig.cs" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Remove="EquipRepairs\Behaviors\CreateEquipRepairBillBehavior.js" />
+	  <None Remove="EquipRepairs\Behaviors\EngineerConfirmDetailBehavior.js" />
+	  <None Remove="EquipRepairs\Behaviors\EquipRepairBehavior.js" />
+	  <None Remove="EquipRepairs\Behaviors\EquipRepairListBehavior.js" />
+	  <None Remove="EquipRepairs\Behaviors\EquipRepairReportBehavior.js" />
+	  <None Remove="EquipRepairs\Behaviors\EquipRepairWorkingHoursBehavior.js" />
+	  <None Remove="EquipRepairs\Behaviors\HandoverConfirmDetailBehavior.js" />
+		<None Remove="EquipRepairs\Behaviors\RepairAttachmentBehavior.js" />
+		<None Remove="EquipRepairs\Commands\AddAlarmDetailRepairCommand.js" />
+	  <None Remove="EquipRepairs\Commands\AddCheckEquipRepairCommand.js" />
+	  <None Remove="EquipRepairs\Commands\AddEquipAlarmRecordRepairCommand.js" />
+	  <None Remove="EquipRepairs\Commands\AddEquipRepairCommand.js" />
+	  <None Remove="EquipRepairs\Commands\AddExperienceDepotCommand.js" />
+	  <None Remove="EquipRepairs\Commands\AddLubricationRepairCommand.js" />
+	  <None Remove="EquipRepairs\Commands\AddRegularInspectionRepairCommand.js" />
+	  <None Remove="EquipRepairs\Commands\CancelCommand.js" />
+	  <None Remove="EquipRepairs\Commands\CompelCloseCommand.js" />
+	  <None Remove="EquipRepairs\Commands\ContinueCommand.js" />
+	  <None Remove="EquipRepairs\Commands\DeleteEquipRepairSparePartAplCommand.js" />
+	  <None Remove="EquipRepairs\Commands\DeleteEquipRepairSparePartChgCommand.js" />
+	  <None Remove="EquipRepairs\Commands\DeleteRepairAttachmentCommand.js" />
+	  <None Remove="EquipRepairs\Commands\DelWorkingHourCommand.js" />
+		<None Remove="EquipRepairs\Commands\DispatchEquipRepairCommand.js" />
+		<None Remove="EquipRepairs\Commands\EditEquipRepairSparePartAplCommand.js" />
+		<None Remove="EquipRepairs\Commands\EditEquipRepairSparePartChgCommand.js" />
+		<None Remove="EquipRepairs\Commands\EngineerConfirmCommand.js" />
+		<None Remove="EquipRepairs\Commands\EngineerFileDownloadCommand.js" />
+		<None Remove="EquipRepairs\Commands\EquipSearchRepairCommand.js" />
+		<None Remove="EquipRepairs\Commands\ExeChangeSparePartCommand.js" />
+		<None Remove="EquipRepairs\Commands\FinishEquipRepairBillCommand.js" />
+		<None Remove="EquipRepairs\Commands\GenerateSparePartAppCommand.js" />
+		<None Remove="EquipRepairs\Commands\HandoverConfirmCommand.js" />
+		<None Remove="EquipRepairs\Commands\HandoverFileDownloadCommand.js" />
+		<None Remove="EquipRepairs\Commands\OpenRepairBillViewCommand.js" />
+		<None Remove="EquipRepairs\Commands\RepairStartCommand.js" />
+		<None Remove="EquipRepairs\Commands\ReportDownloadCommand.js" />
+		<None Remove="EquipRepairs\Commands\SaveCommand.js" />
+		<None Remove="EquipRepairs\Commands\SelEquipBomAplCommand.js" />
+		<None Remove="EquipRepairs\Commands\SelEquipBomCommand.js" />
+		<None Remove="EquipRepairs\Commands\SelSparePartAplCommand.js" />
+		<None Remove="EquipRepairs\Commands\SelSparePartCommand.js" />
+		<None Remove="EquipRepairs\Commands\SelStandardSparePartAplCommand.js" />
+		<None Remove="EquipRepairs\Commands\SelWorkingHourCommand.js" />
+		<None Remove="EquipRepairs\Commands\ShowExperienceDepotCommand.js" />
+		<None Remove="EquipRepairs\Commands\SuspendCommand.js" />
+		<None Remove="EquipRepairs\Commands\TransferEquipRepairCommand.js" />
+		<None Remove="EquipRepairs\Commands\UploadRepairAttachmentCommand.js" />
+		<None Remove="EquipRepairs\Scripts\EngineerConfirmPictureEditor.js" />
+		<None Remove="EquipRepairs\Scripts\EquipRepairReportBehavior.js" />
+		<None Remove="EquipRepairs\Scripts\HandoverConfirmPictureEditor.js" />
+		<None Remove="EquipRepairs\Scripts\MultiEmployeeComboPopup.js" />
+	  <None Remove="EquipRepairs\Commands\SaveEquipRepairCommand.js" />
+		<None Remove="EquipRepairs\Commands\TakeOrderCommand.js" />
+		<None Remove="EquipRepairs\Scripts\RepairAttachmentPictureEditor.js" />
+		<None Remove="EquipRepairs\Scripts\UploadAbnormalFileEditor.js" />
+		<None Remove="EquipRepairs\Scripts\UploadEngineerFileEditor.js" />
+		<None Remove="EquipRepairs\Scripts\UploadFileEditor.js" />
+		<None Remove="EquipRepairs\Scripts\UploadRepoterFileEditor.js" />
+		<None Remove="EquipRepairs\Script\ToolBarBehavior.js" />
+		<None Remove="EquipRepairs\ViewModels\Behaviors\EquipRepairViewModelBehavior.js" />
+		<None Remove="PlanRepairs\Commands\AddPlanRepairsCommand.js" />
+		<None Remove="PlanRepairs\Commands\ApprovalCommand.js" />
+		<None Remove="PlanRepairs\Commands\CancelCommand.js" />
+		<None Remove="PlanRepairs\Commands\EditPlanRepairsCommand.js" />
+		<None Remove="PlanRepairs\Commands\ForcedShutdownCommand.js" />
+		<None Remove="PlanRepairs\Commands\PromptlyDeleteCommand.js" />
+		<None Remove="PlanRepairs\Commands\SavePlanRepairsCommand.js" />
+		<None Remove="PlanRepairs\Commands\SelPlanRepairsProjectCommand.js" />
+		<None Remove="PlanRepairs\Commands\SubmitCommand.js" />
+		<None Remove="PlanRepairs\Scripts\PlanRepairsBehavior.js" />
+		<None Remove="Repairs\ExperienceDepots\Behaviors\EquipTypeComboList.js" />
+	  <None Remove="Repairs\ExperienceDepots\Behaviors\ExpBehavior.js" />
+		<None Remove="Repairs\ExperienceDepots\Behaviors\ExpDepotPictureBehavior.js" />
+		<None Remove="Repairs\ExperienceDepots\Behaviors\ExpDepotPictureEditor.js" />
+		<None Remove="Repairs\ExperienceDepots\Behaviors\FaultEditorComboList.js" />
+	  <None Remove="Repairs\ExperienceDepots\Commands\AddExpCommand.js" />
+	  <None Remove="Repairs\ExperienceDepots\Details\ViewNewImageCommand.js" />
+	</ItemGroup>
+	<ItemGroup>
+	  <AdditionalFiles Include="..\..\..\..\.sonarlint\sie.smom\CSharp\SonarLint.xml" Link="SonarLint.xml" />
+	</ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Include="EquipRepairs\Behaviors\EngineerConfirmDetailBehavior.js" />
+		<EmbeddedResource Include="EquipRepairs\Behaviors\CreateEquipRepairBillBehavior.js" />
+		<EmbeddedResource Include="EquipRepairs\Behaviors\EquipRepairListBehavior.js" />
+		<EmbeddedResource Include="EquipRepairs\Behaviors\EquipRepairReportBehavior.js" />
+		<EmbeddedResource Include="EquipRepairs\Behaviors\EquipRepairWorkingHoursBehavior.js" />
+		<EmbeddedResource Include="EquipRepairs\Behaviors\HandoverConfirmDetailBehavior.js" />
+		<EmbeddedResource Include="EquipRepairs\Behaviors\RepairAttachmentBehavior.js" />
+		<EmbeddedResource Include="EquipRepairs\Commands\AddAlarmDetailRepairCommand.js" />
+		<EmbeddedResource Include="EquipRepairs\Commands\AddCheckEquipRepairCommand.js" />
+		<EmbeddedResource Include="EquipRepairs\Commands\AddEquipAlarmRecordRepairCommand.js" />
+		<EmbeddedResource Include="EquipRepairs\Commands\AddEquipRepairCommand.js" />
+		<EmbeddedResource Include="EquipRepairs\Commands\AddExperienceDepotCommand.js" />
+		<EmbeddedResource Include="EquipRepairs\Commands\AddLubricationRepairCommand.js" />
+		<EmbeddedResource Include="EquipRepairs\Commands\AddRegularInspectionRepairCommand.js" />
+		<EmbeddedResource Include="EquipRepairs\Commands\CancelCommand.js" />
+		<EmbeddedResource Include="EquipRepairs\Commands\CompelCloseCommand.js" />
+		<EmbeddedResource Include="EquipRepairs\Commands\ContinueCommand.js" />
+		<EmbeddedResource Include="EquipRepairs\Commands\DeleteEquipRepairSparePartAplCommand.js" />
+		<EmbeddedResource Include="EquipRepairs\Commands\DeleteEquipRepairSparePartChgCommand.js" />
+		<EmbeddedResource Include="EquipRepairs\Commands\DeleteRepairAttachmentCommand.js" />
+		<EmbeddedResource Include="EquipRepairs\Commands\DelWorkingHourCommand.js" />
+		<EmbeddedResource Include="EquipRepairs\Commands\EditEquipRepairSparePartAplCommand.js" />
+		<EmbeddedResource Include="EquipRepairs\Commands\EditEquipRepairSparePartChgCommand.js" />
+		<EmbeddedResource Include="EquipRepairs\Commands\EngineerConfirmCommand.js" />
+		<EmbeddedResource Include="EquipRepairs\Commands\EngineerFileDownloadCommand.js" />
+		<EmbeddedResource Include="EquipRepairs\Commands\EquipSearchRepairCommand.js" />
+		<EmbeddedResource Include="EquipRepairs\Commands\ExeChangeSparePartCommand.js" />
+		<EmbeddedResource Include="EquipRepairs\Commands\FinishEquipRepairBillCommand.js" />
+		<EmbeddedResource Include="EquipRepairs\Commands\GenerateSparePartAppCommand.js" />
+		<EmbeddedResource Include="EquipRepairs\Commands\HandoverConfirmCommand.js" />
+		<EmbeddedResource Include="EquipRepairs\Commands\HandoverFileDownloadCommand.js" />
+		<EmbeddedResource Include="EquipRepairs\Commands\OpenRepairBillViewCommand.js" />
+		<EmbeddedResource Include="EquipRepairs\Commands\RepairStartCommand.js" />
+		<EmbeddedResource Include="EquipRepairs\Commands\ReportDownloadCommand.js" />
+		<EmbeddedResource Include="EquipRepairs\Commands\SaveCommand.js" />
+		<EmbeddedResource Include="EquipRepairs\Commands\SelEquipBomAplCommand.js" />
+		<EmbeddedResource Include="EquipRepairs\Commands\SelEquipBomCommand.js" />
+		<EmbeddedResource Include="EquipRepairs\Commands\SelSparePartAplCommand.js" />
+		<EmbeddedResource Include="EquipRepairs\Commands\SelSparePartCommand.js" />
+		<EmbeddedResource Include="EquipRepairs\Commands\SelStandardSparePartAplCommand.js" />
+		<EmbeddedResource Include="EquipRepairs\Commands\SelWorkingHourCommand.js" />
+		<EmbeddedResource Include="EquipRepairs\Commands\ShowExperienceDepotCommand.js" />
+		<EmbeddedResource Include="EquipRepairs\Commands\SuspendCommand.js" />
+		<EmbeddedResource Include="EquipRepairs\Commands\TakeOrderCommand.js" />
+		<EmbeddedResource Include="EquipRepairs\Commands\TransferEquipRepairCommand.js" />
+		<EmbeddedResource Include="EquipRepairs\Commands\UploadRepairAttachmentCommand.js" />
+		<EmbeddedResource Include="EquipRepairs\Scripts\EngineerConfirmPictureEditor.js" />
+		<EmbeddedResource Include="EquipRepairs\Scripts\EquipRepairReportBehavior.js" />
+		<EmbeddedResource Include="EquipRepairs\Scripts\HandoverConfirmPictureEditor.js" />
+		<EmbeddedResource Include="EquipRepairs\Scripts\RepairAttachmentPictureEditor.js" />
+		<EmbeddedResource Include="EquipRepairs\Scripts\UploadAbnormalFileEditor.js" />
+		<EmbeddedResource Include="EquipRepairs\Scripts\UploadEngineerFileEditor.js" />
+		<EmbeddedResource Include="EquipRepairs\Scripts\UploadFileEditor.js" />
+		<EmbeddedResource Include="EquipRepairs\Behaviors\EquipRepairToolBarBehavior.js" />
+		<EmbeddedResource Include="EquipRepairs\Scripts\UploadRepoterFileEditor.js" />
+		<EmbeddedResource Include="EquipRepairs\ViewModels\Behaviors\EquipRepairViewModelBehavior.js" />
+		<EmbeddedResource Include="PlanRepairs\Commands\AddPlanRepairsCommand.js" />
+		<EmbeddedResource Include="PlanRepairs\Commands\ApprovalCommand.js" />
+		<EmbeddedResource Include="PlanRepairs\Commands\CancelCommand.js" />
+		<EmbeddedResource Include="PlanRepairs\Commands\EditPlanRepairsCommand.js" />
+		<EmbeddedResource Include="PlanRepairs\Commands\ForcedShutdownCommand.js" />
+		<EmbeddedResource Include="PlanRepairs\Commands\PromptlyDeleteCommand.js" />
+		<EmbeddedResource Include="PlanRepairs\Commands\SavePlanRepairsCommand.js" />
+		<EmbeddedResource Include="PlanRepairs\Commands\SelPlanRepairsProjectCommand.js" />
+		<EmbeddedResource Include="PlanRepairs\Commands\SubmitCommand.js" />
+		<EmbeddedResource Include="PlanRepairs\Scripts\PlanRepairsBehavior.js" />
+		<EmbeddedResource Include="Repairs\ExperienceDepots\Behaviors\EquipTypeComboList.js" />
+		<EmbeddedResource Include="Repairs\ExperienceDepots\Behaviors\FaultEditorComboList.js" />
+		<EmbeddedResource Include="Repairs\ExperienceDepots\Behaviors\ExpDepotPictureBehavior.js" />
+	  <EmbeddedResource Include="EquipRepairs\Behaviors\EquipRepairBehavior.js" />
+	</ItemGroup>
+	<ItemGroup>
+	  <EmbeddedResource Include="EquipRepairs\Commands\SaveEquipRepairCommand.js" />
+		<EmbeddedResource Include="EquipRepairs\Commands\DispatchEquipRepairCommand.js" />
+		<EmbeddedResource Include="EquipRepairs\Scripts\MultiEmployeeComboPopup.js" />
+		<EmbeddedResource Include="Repairs\ExperienceDepots\Details\ExperienceDepotAttachmentViewConfig.cs" />
+		<EmbeddedResource Include="Repairs\ExperienceDepots\Details\Commands\ViewNewImageCommand.js" />
+		<Resource Include="EquipRepairs\Behaviors\EquipRepairToolBarBehavior.js" />
+	  <EmbeddedResource Include="Repairs\ExperienceDepots\Behaviors\ExpBehavior.js" />
+		<EmbeddedResource Include="Repairs\ExperienceDepots\Behaviors\ExpDepotPictureEditor.js" />
+	  <EmbeddedResource Include="Repairs\ExperienceDepots\Commands\AddExpCommand.js" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\Common\Core\SIE.Web.Core\SIE.Web.Core.csproj" />
+		<ProjectReference Include="..\..\..\Common\CSM\SIE.Web.CSM\SIE.Web.CSM.csproj" />
+		<ProjectReference Include="..\SIE.EMS.SpecialEquipment\SIE.EMS.SpecialEquipment.csproj" />
+	</ItemGroup>
+</Project>

@@ -1,0 +1,91 @@
+﻿<UserControl
+    x:Class="SIE.Wpf.Resources.CalendarSchemes.Layouts.ChildLayout"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+    xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:uic="http://schemas.siestudio.com/winfx/xaml/core"
+    xmlns:cld="clr-namespace:SIE.Wpf.Resources.CalendarSchemes.Controls"
+    xmlns:convert="clr-namespace:SIE.Wpf.Resources.CalendarSchemes.Layouts.Converters"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <convert:CreateByNameConverter x:Key="CreateByNameConverter" />
+    </UserControl.Resources>
+    <Grid Margin="-10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="2.5*"/>
+        </Grid.ColumnDefinitions>
+        <dxg:GridControl Name="shiftTypeControl" MouseEnter="ShiftTypeControl_MouseEnter">
+            <dxg:GridControl.Columns>
+                <dxg:GridColumn
+                        FieldName="Name"
+                        Header="{Binding [班制], Source={uic:L10N}}"
+                        ReadOnly="True"
+                        ToolTip="{Binding Name}" />
+            </dxg:GridControl.Columns>
+            <dxg:GridControl.View>
+                <dxg:TableView
+                        x:Name="tableView1"
+                        AllowPerPixelScrolling="True"
+                        PreviewMouseDown="TableView1_PreviewMouseDown"
+                        PreviewMouseMove="TableView1_PreviewMouseMove"
+                        ShowGroupPanel="False" />
+            </dxg:GridControl.View>
+        </dxg:GridControl>
+        <cld:SchemeCalendarControl x:Name="calendar" Grid.Column="1" Margin="5,-5,5,-5"/> 
+        <dxg:GridControl Name="exceptionControl" SelectionMode="Cell" Grid.Column="2">
+            <dxg:GridControl.Columns>
+                <dxg:GridColumn 
+                        FieldName="CalendarDay"
+                        Header="{Binding [例外日期], Source={uic:L10N}}"
+                        ReadOnly="True">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:DateEditSettings
+                                Mask="D"
+                                MaskType="DateTime"
+                                MaskUseAsDisplayFormat="True"
+                                ShowWeekNumbers="True" />
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+                <dxg:GridColumn 
+                        FieldName="ShiftType.Name"
+                        Header="{Binding [班制], Source={uic:L10N}}"
+                        ReadOnly="True"
+                        ToolTip="{Binding Name}" />
+                <dxg:GridColumn 
+                        FieldName="CreateBy"
+                        Header="{Binding [创建人], Source={uic:L10N}}"
+                        ReadOnly="True">
+                    <dxg:GridColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding RowData.Row.CreateByName, Mode=OneWay}" />
+                            <!--<TextBlock Text="{Binding RowData.Row.CreateBy, Mode=OneWay, Converter={StaticResource CreateByNameConverter}}" />-->
+                        </DataTemplate>
+                    </dxg:GridColumn.CellTemplate>
+                </dxg:GridColumn>
+                <dxg:GridColumn 
+                        Width="160"
+                        FieldName="CreateDate"
+                        Header="{Binding [创建时间], Source={uic:L10N}}"
+                        ReadOnly="True">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:DateEditSettings
+                                Mask="F"
+                                MaskType="DateTime"
+                                MaskUseAsDisplayFormat="True"
+                                ShowWeekNumbers="True" />
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+            </dxg:GridControl.Columns>
+            <dxg:GridControl.View>
+                <dxg:TableView BestFitMode="AllRows" ShowGroupPanel="False" />
+            </dxg:GridControl.View>
+        </dxg:GridControl>
+    </Grid>
+</UserControl>

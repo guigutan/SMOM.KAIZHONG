@@ -1,0 +1,59 @@
+﻿<sd:ComponentItem x:Class="SIE.Wpf.MES.Workbench.SwitchWorkShop.SwitchWorkShopControl"
+                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                  xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                  xmlns:uic="http://schemas.siestudio.com/winfx/xaml/core"
+                  xmlns:uit="http://schemas.siestudio.com/winfx/xaml/themes"
+                  xmlns:sd="clr-namespace:SIE.Wpf.Common.Diagram;assembly=SIE.Wpf.Common"
+                  mc:Ignorable="d"  
+             sd:DiagramDesigner.ToolBarTitle="{Binding [管理-车间切换],Source={uic:L10N}}"
+             sd:DiagramDesigner.DefaultSize="200,25" d:DesignWidth="200" Height="25">
+    <sd:ComponentItem.Resources>
+        <ResourceDictionary>
+            <ControlTemplate x:Key="groupContentTemplate">
+                <dxg:GridControl x:Name="PART_GridControl" AutoExpandAllGroups="True">
+                    <dxg:GridControl.Columns>
+                        <dxg:GridColumn FieldName="Code" Header="{Binding [编号], Source={uic:L10N}}" HeaderToolTip="{Binding [编号], Source={uic:L10N}}"/>
+                        <dxg:GridColumn FieldName="Name" Header="{Binding [名称], Source={uic:L10N}}" HeaderToolTip="{Binding [名称], Source={uic:L10N}}"/>
+                        <dxg:GridColumn FieldName="Level.IsResource" Header="{Binding [资源], Source={uic:L10N}}" HeaderToolTip="{Binding [资源], Source={uic:L10N}}"/>
+                    </dxg:GridControl.Columns>
+                    <dxg:GridControl.View>
+                        <dxg:TableView
+                        Name="View"
+                        ShowGroupedColumns="True"
+                        AutoWidth="True"
+                        AllowPerPixelScrolling="True"
+                        ScrollAnimationDuration="0"
+                        ShowAutoFilterRow="True"
+                        ShowTotalSummary="True"
+                        IsSynchronizedWithCurrentItem="False">
+                        </dxg:TableView>
+                    </dxg:GridControl.View>
+                </dxg:GridControl>
+            </ControlTemplate>
+            <Style TargetType="DockPanel">
+                <Style.Setters>
+                    <Setter Property="DockPanel.Opacity" Value="0"></Setter>
+                    <Setter Property="DockPanel.Background" Value="{DynamicResource {uit:BrushesThemeKey ResourceKey=Background}}"></Setter>
+                    <Setter Property="DockPanel.Width" Value="200"></Setter>
+                    <Setter Property="DockPanel.Height" Value="25"></Setter>
+                </Style.Setters>
+                <Style.Triggers>
+                    <Trigger Property="DockPanel.IsMouseOver" Value="True">
+                        <Setter Property="DockPanel.Opacity" Value="1"></Setter>
+                    </Trigger>
+                    <Trigger Property="DockPanel.Focusable" Value="True">
+                        <Setter Property="DockPanel.Opacity" Value="1"></Setter>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </ResourceDictionary>
+    </sd:ComponentItem.Resources> 
+        <DockPanel Panel.ZIndex="999">
+            <Label DockPanel.Dock="Left" Content="{Binding [切换车间:],Source={uic:L10N}}" Margin="0,0,10,0"></Label>
+            <dxg:LookUpEdit Name="resourceControl" AssignNullValueOnClearingEditText="True" IsTextEditable="True" AllowNullInput="True" PopupWidth="400" PopupMaxWidth="500" DisplayMember="Name" ValueMember="Id" AutoPopulateColumns="False" PopupContentTemplate="{StaticResource groupContentTemplate}" PopupOpening="PopupOpening" NullText="{Binding [请选择车间], Source={uic:L10N}}" EditValueChanged="ResourceControl_EditValueChanged" FindMode="Always">
+            </dxg:LookUpEdit>
+        </DockPanel> 
+</sd:ComponentItem>

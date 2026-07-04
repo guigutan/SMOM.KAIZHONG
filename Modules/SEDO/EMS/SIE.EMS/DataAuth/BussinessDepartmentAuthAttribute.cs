@@ -1,0 +1,34 @@
+﻿using System;
+
+namespace SIE.EMS.DataAuth
+{
+    /// <summary>
+    /// 业务部门实体数据权限特性，标记需要控制数据权限的实体
+    /// </summary>
+    [AttributeUsage(AttributeTargets.Class, AllowMultiple = true)]
+    public sealed class BussinessDepartmentAuthAttribute : Attribute
+    {        
+        /// <summary>
+        /// 控制业务权限的属性名称
+        /// </summary>
+        public string AuthIdProperty { get; }
+
+        /// <summary>
+        /// 控制业务权限的属性字段是否可以为空
+        /// </summary>
+        public bool Nullable { get; }
+
+        /// <summary>
+        /// 创建<see cref="BudgetDepartmentAuthAttribute"/>
+        /// </summary>
+        /// <param name="authIdProperty"></param>
+        /// <param name="nullable">authIdProperty值是否可空</param>
+        public BussinessDepartmentAuthAttribute( string authIdProperty, bool nullable = false)
+        {
+            Check.NotNullOrEmpty(authIdProperty, nameof(authIdProperty));
+           
+            AuthIdProperty = authIdProperty;
+            Nullable = nullable;
+        }
+    }
+}

@@ -1,0 +1,100 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\..\Common\SIE.WebApiHost\Configuration.cs" Link="Configuration.cs" />
+    <Compile Include="..\..\..\..\Common\SIE.WebApiHost\Controllers\DataPortalController.cs" Link="Controllers\DataPortalController.cs" />
+    <Compile Include="..\..\..\..\Common\SIE.WebApiHost\HostService.cs" Link="HostService.cs" />
+    <Compile Include="..\..\..\..\Common\SIE.WebApiHost\Program.cs" Link="Program.cs" />
+    <Compile Include="..\..\..\..\Common\SIE.WebApiHost\WebApiStartup.cs" Link="WebApiStartup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\Common\SIE.WebApiHost\Dockerfile" Link="Dockerfile" />
+    <None Include="..\..\..\..\Common\SIE.WebApiHost\log4net.config" Link="log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\..\Common\SIE.WebApiHost\_安装服务.bat" Link="_安装服务.bat" />
+    <None Include="..\..\..\..\Common\SIE.WebApiHost\_运行.cmd" Link="_运行.cmd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Elsa.Activities.Http" Version="2.2.1" />
+    <PackageReference Include="Elsa.Persistence.MongoDb" Version="2.2.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.19" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.2" >
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="NetEscapades.AspNetCore.SecurityHeaders" Version="0.11.0" />
+    <PackageReference Include="SIE" Version="10.0.5" />
+    <PackageReference Include="SIE.Alert.Job" Version="10.0.5" />
+    <PackageReference Include="SIE.Caches" Version="10.0.5" />
+    <PackageReference Include="SIE.Common" Version="10.0.5" />
+    <PackageReference Include="SIE.DashBoard" Version="10.0.5" />
+    <PackageReference Include="SIE.Diagnostics" Version="10.0.5" />
+    <PackageReference Include="SIE.Localization" Version="10.0.5" />
+    <PackageReference Include="SIE.Mda" Version="10.0.5" />
+    <PackageReference Include="SIE.Messages" Version="10.0.5" />
+    <PackageReference Include="SIE.ORM.MappingColumn" Version="10.0.5" />
+    <PackageReference Include="SIE.Print" Version="10.0.5" />
+    <PackageReference Include="SIE.Queue" Version="10.0.5" />
+    <PackageReference Include="SIE.Rbac" Version="10.0.5" />
+    <PackageReference Include="SIE.ReportServerCore" Version="10.0.5" />
+    <PackageReference Include="SIE.Schedule" Version="10.0.5" />
+    <PackageReference Include="SIE.Script" Version="10.0.5" />
+    <PackageReference Include="SIE.Senders" Version="10.0.5" />
+    <PackageReference Include="SIE.ServerCore" Version="10.0.5" />
+    <PackageReference Include="SuperSocket.ClientEngine" Version="0.10.0" />
+    <PackageReference Include="SuperSocket.ProtoBase" Version="1.7.0.17" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="5.0.0" />
+    <PackageReference Include="Topshelf" Version="4.2.1" />
+    <PackageReference Include="Topshelf.Log4Net" Version="4.2.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Modules\Common\Core\SIE.Core\SIE.Core.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\CSM\SIE.CSM\SIE.CSM.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Defects\SIE.Defects\SIE.Defects.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Items\SIE.Items\SIE.Items.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Messages\SIE.EventMessages\SIE.EventMessages.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Packages\SIE.Packages\SIE.Packages.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Resources\SIE.Resources\SIE.Resources.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Warehouses\SIE.Warehouses\SIE.Warehouses.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Kit\Core\SIE.Kit.EventMessages\SIE.Kit.EventMessages.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Kit\SIE.Kit.Fixtures\SIE.Kit.Fixtures.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Kit\SIE.Kit.TurnoverTools\SIE.Kit.TurnoverTools.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\SEDO\EMS\SIE.EMS\SIE.EMS.csproj" />
+    <ProjectReference Include="..\..\..\..\Modules\Common\Techs\SIE.Tech\SIE.Tech.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="_安装服务.bat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="_运行.cmd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties appsettings_1json__JSONSchema="" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,64 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <OutputType>Library</OutputType>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWPF>true</UseWPF>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>..\..\platform\nest\</OutputPath>
+    <LangVersion>6</LangVersion>
+    <DocumentationFile>..\..\platform\nest\net6.0-windows\Resources.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>..\..\platform\nest\</OutputPath>
+    <DocumentationFile>..\..\platform\nest\net6.0-windows\Resources.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>platform.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Resource Include="Fonts\Quartz Regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\log.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\SlashScreenEarth.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\logo-dark.png" />
+    <Resource Include="UI\logo-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\loading.gif" />
+    <Resource Include="UI\loading.mp4" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\splash.mp4" />
+    <Resource Include="UI\LoginImgTop.png" />
+    <Resource Include="UI\SplashLogo.png" />
+    <Resource Include="UI\LoginImg.png" />
+    <Resource Include="UI\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <SplashScreen Include="UI\splash.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Data.PostgreSQL</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Data.PostgreSQL.Module">
+            <summary>
+            模块配置
+            </summary>
+        </member>
+        <member name="M:SIE.Data.PostgreSQL.PostgreSqlColumn.Write(SIE.Domain.Entity,System.Object)">
+            <summary>
+            实体绑定（从数据库）的特殊处理
+            </summary>
+            <param name="entity"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:SIE.Data.PostgreSQL.PostgreSqlDialect.GetParameterName(System.Object)">
+            <summary>
+            生成SQL执行命名参数
+            </summary>
+            <param name="name">序号数字或列名称字符</param>
+            <returns></returns>
+        </member>
+        <member name="P:SIE.Data.PostgreSQL.PostgreSqlDialect.UpdateAddTable">
+            <summary>
+            PostgreSQL不支持在update语句前加表名
+            </summary>
+        </member>
+        <member name="M:SIE.Data.PostgreSQL.PostgreSqlDialect.PrepareValue(System.Object)">
+            <summary>
+            存储数据库的值转换（枚举值自动转换为int）
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Data.PostgreSQL.PostgreSqlDialect.PrepareParameter(System.Data.IDbDataParameter)">
+            <summary>
+            所有PostgreSQL的布尔值都转换未byte
+            </summary>
+            <param name="p"></param>
+        </member>
+        <member name="M:SIE.Data.PostgreSQL.PostgreSqlGenerator.ModifyToPagingTree(SIE.Data.SqlTree.SqlSelect,SIE.PagingInfo)">
+            <summary>
+            ORM MySql为指定的原始查询生成指定分页效果的新查询。
+            </summary>
+            <param name="raw">原始查询</param>
+            <param name="pagingInfo">分页信息。</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Data.PostgreSQL.PostgreSqlTable.GetPagingLocation(SIE.PagingInfo)">
+            <summary>
+            支持在数据库层面进行分页。
+            </summary>
+        </member>
+        <member name="M:SIE.Data.DbMigration.PostgreSQL.PostgreSqlDbTypeHelper.ConvertFromCLRType(System.Type)">
+            <summary>
+            布尔类型处理
+            </summary>
+            <param name="clrType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Data.DbMigration.PostgreSQL.PostgreSqlDbTypeHelper.ConvertToPostgreSqlTypeString(System.Data.DbType,System.String)">
+            <summary>
+            把 DbType 转换为 PostgreSql 中的数据类型
+            </summary>
+            <param name="fieldType">Type of the field.</param>
+            <param name="length">The length.</param>
+            <returns></returns>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:SIE.Data.DbMigration.PostgreSQL.PostgreSqlDbTypeHelper.ConvertFromPostgreSQLTypeString(System.String)">
+                     * 神男说：PostgreSQL与.NET 数据类型对应
+                    // https://blog.csdn.net/allycs/article/details/103967890
+                    *
+            <summary>
+            把 PostgerSql 中的数据类型 转换为 DbType
+            </summary>
+            <param name="sqlType">Type of the SQL.</param>
+            <returns></returns>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:SIE.Data.DbMigration.PostgreSQL.PostgreSqlMetaReader.ReadAllIndexes">
+            <summary>
+            ORM读取所有索引实现(PostgreSql)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Data.DbMigration.PostgreSQL.PostgreSqlRunGenerator.Generate(SIE.Data.DbMigration.Operations.RemoveDBIndex)">
+            <summary>
+            Generates the specified op.
+            </summary>
+            <param name="op">The op.</param>
+        </member>
+    </members>
+</doc>

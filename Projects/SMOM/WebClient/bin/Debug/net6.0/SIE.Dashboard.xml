@@ -1,0 +1,681 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Dashboard</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Dashboard.DashboardAttribute">
+            <summary>
+            看板特性
+            </summary>
+        </member>
+        <member name="P:SIE.Dashboard.DashboardAttribute.ParameterType">
+            <summary>
+            参数类型
+            </summary>
+        </member>
+        <member name="M:SIE.Dashboard.DashboardAttribute.#ctor">
+            <summary>
+            构造方法
+            </summary>
+        </member>
+        <member name="M:SIE.Dashboard.DashboardAttribute.#ctor(System.Type)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="type">参数类型</param>
+        </member>
+        <member name="T:SIE.Dashboard.DashboardController">
+            <summary>
+            看板控制器
+            </summary>
+        </member>
+        <member name="M:SIE.Dashboard.DashboardController.GetAllModules">
+            <summary>
+            获取所有模菜单
+            </summary>
+            <returns>看板菜单列表</returns>
+        </member>
+        <member name="M:SIE.Dashboard.DashboardController.UploadAttachments(SIE.Domain.EntityList{SIE.Dashboard.WebCustomes.WebBoardChartAttachment})">
+            <summary>
+            上传文件夹
+            </summary>
+            <param name="attachments"></param>
+        </member>
+        <member name="M:SIE.Dashboard.DashboardController.DeleteAttachmentFile(SIE.Dashboard.WebCustomes.WebBoardChartAttachment)">
+            <summary>
+            删除上传的文件(单个)
+            </summary>
+            <param name="attachment"></param>
+        </member>
+        <member name="M:SIE.Dashboard.DashboardController.getIgonreFirstDirPath(System.String)">
+            <summary>
+            过滤第一个文件夹
+            </summary>
+            <param name="fullPathName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Dashboard.DashboardController.GenerateWebBoardDevice(System.Decimal,System.Decimal)">
+            <summary>
+            初始化一个电视端设备
+            </summary>
+            <param name="height"></param>
+            <param name="width"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Dashboard.DashboardController.FetchWebBoardDeviceList(System.Nullable{System.Double})">
+            <summary>
+            获取电视端设备列表
+            <paramref name="TVId">查询设备ID,如0返所有</paramref>
+            </summary>
+            <param name="height"></param>
+            <param name="width"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Dashboard.DashboardController.FetchWebBoardDeviceList(System.Collections.Generic.List{System.Double})">
+            <summary>
+            获取电视端设备列表
+            <paramref name="TVIds">查询设备Id列表</paramref>
+            </summary>
+            <param name="height"></param>
+            <param name="width"></param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:SIE.Dashboard.DashboardController.UpdateWebBoardDeviceLayout(System.Double,System.String)" -->
+        <member name="M:SIE.Dashboard.DashboardController.FetchBoardChartList">
+            <summary>
+            获取看板图表列表
+            </summary>
+            <param name="height"></param>
+            <param name="width"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Dashboard.DashboardController.IsExistWebBoardChartType">
+            <summary>
+            判断是否存在看板首页
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Dashboard.DashboardController.WebBoardChartUrl">
+            <summary>
+            判断是否host配置
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Dashboard.DashboardController.SetWebBoardChart(System.String)">
+            <summary>
+            设置
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Dashboard.DashboardEntityRepository`1">
+            <summary>
+            实体仓库基类
+            </summary>
+            <typeparam name="T">泛型</typeparam>
+        </member>
+        <member name="T:SIE.Dashboard.DashboardEntityDataProvider">
+            <summary>
+            数据提供者
+            </summary>
+        </member>
+        <member name="F:SIE.Dashboard.DashboardEntityDataProvider.ConnectionStringName">
+            <summary>
+            连接字符串名称
+            </summary>
+        </member>
+        <member name="P:SIE.Dashboard.DashboardEntityDataProvider.ConnectionStringSettingName">
+            <summary>
+            连接字符串名称
+            </summary>
+        </member>
+        <member name="T:SIE.Dashboard.DbMigrations._20230912_000001_InitCulture">
+            <summary>
+            初始化本地化数据
+            </summary>
+        </member>
+        <member name="P:SIE.Dashboard.DbMigrations._20230912_000001_InitCulture.DbSetting">
+            <summary>
+            Db设置
+            </summary>
+        </member>
+        <member name="M:SIE.Dashboard.DbMigrations._20230912_000001_InitCulture.Up">
+            <summary>
+            升级
+            </summary>
+        </member>
+        <member name="M:SIE.Dashboard.DbMigrations._20230912_000001_InitCulture.Down">
+            <summary>
+            降级
+            </summary>
+        </member>
+        <member name="P:SIE.Dashboard.DbMigrations._20230912_000001_InitCulture.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:SIE.Dashboard.DbMigrations._20230912_000001_InitCulture.Type">
+            <summary>
+            类型为<see cref="F:SIE.Data.DbMigration.ManualMigrationType.Data"/>
+            </summary>
+        </member>
+        <member name="T:SIE.Dashboard.Definitions.DashboardDefinition">
+            <summary>
+            看板定义
+            </summary>
+        </member>
+        <member name="M:SIE.Dashboard.Definitions.DashboardDefinition.#ctor">
+            <summary>
+            构造方法
+            </summary>
+        </member>
+        <member name="F:SIE.Dashboard.Definitions.DashboardDefinition.CodeProperty">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:SIE.Dashboard.Definitions.DashboardDefinition.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="F:SIE.Dashboard.Definitions.DashboardDefinition.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.Dashboard.Definitions.DashboardDefinition.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.Dashboard.Definitions.DashboardDefinition.DashboardSettingsListProperty">
+            <summary>
+            看板配置列表
+            </summary>
+        </member>
+        <member name="P:SIE.Dashboard.Definitions.DashboardDefinition.DashboardSettingsList">
+            <summary>
+            看板配置
+            </summary>
+        </member>
+        <member name="F:SIE.Dashboard.Definitions.DashboardDefinition.LayoutScaleProperty">
+            <summary>
+            布局缩放
+            </summary>
+        </member>
+        <member name="P:SIE.Dashboard.Definitions.DashboardDefinition.LayoutScale">
+            <summary>
+            布局缩放
+            </summary>
+        </member>
+        <member name="F:SIE.Dashboard.Definitions.DashboardDefinition.TypeProperty">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:SIE.Dashboard.Definitions.DashboardDefinition.Type">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="T:SIE.Dashboard.Definitions.DashboardType">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="F:SIE.Dashboard.Definitions.DashboardType.Dashboard">
+            <summary>
+            看板
+            </summary>
+        </member>
+        <member name="F:SIE.Dashboard.Definitions.DashboardType.Workbranch">
+            <summary>
+            工作台
+            </summary>
+        </member>
+        <member name="T:SIE.Dashboard.Definitions.DashboardDefinitionConfig">
+            <summary>
+            看板定义 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Dashboard.Definitions.DashboardDefinitionConfig.ConfigMeta">
+            <summary>
+            元数据配置
+            </summary>
+        </member>
+        <member name="T:SIE.Dashboard.Definitions.DashboardSettings">
+            <summary>
+            看板配置
+            </summary>
+        </member>
+        <member name="M:SIE.Dashboard.Definitions.DashboardSettings.#ctor">
+            <summary>
+            构造方法
+            </summary>
+        </member>
+        <member name="F:SIE.Dashboard.Definitions.DashboardSettings.IntervalsProperty">
+            <summary>
+            时间间隔
+            </summary>
+        </member>
+        <member name="P:SIE.Dashboard.Definitions.DashboardSettings.Intervals">
+            <summary>
+            时间间隔, 单位秒
+            </summary>
+        </member>
+        <member name="F:SIE.Dashboard.Definitions.DashboardSettings.UITemplateProperty">
+            <summary>
+            配置类型
+            </summary>
+        </member>
+        <member name="P:SIE.Dashboard.Definitions.DashboardSettings.UITemplate">
+            <summary>
+            配置类型
+            </summary>
+        </member>
+        <member name="F:SIE.Dashboard.Definitions.DashboardSettings.DashboardDefinitionIdProperty">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:SIE.Dashboard.Definitions.DashboardSettings.DashboardDefinitionId">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="F:SIE.Dashboard.Definitions.DashboardSettings.DashboardDefinitionProperty">
+            <summary>
+            看板定义
+            </summary>
+        </member>
+        <member name="P:SIE.Dashboard.Definitions.DashboardSettings.DashboardDefinition">
+            <summary>
+            看板定义
+            </summary>
+        </member>
+        <member name="F:SIE.Dashboard.Definitions.DashboardSettings.LayoutScaleProperty">
+            <summary>
+            布局缩放
+            </summary>
+        </member>
+        <member name="P:SIE.Dashboard.Definitions.DashboardSettings.LayoutScale">
+            <summary>
+            布局缩放
+            </summary>
+        </member>
+        <member name="F:SIE.Dashboard.Definitions.DashboardSettings.ParameterProperty">
+            <summary>
+            参数配置
+            </summary>
+        </member>
+        <member name="P:SIE.Dashboard.Definitions.DashboardSettings.Parameter">
+            <summary>
+            参数配置保存于数据库的值
+            </summary>
+        </member>
+        <member name="P:SIE.Dashboard.Definitions.DashboardSettings.ConfigValue">
+            <summary>
+            配置值
+            </summary>
+        </member>
+        <member name="P:SIE.Dashboard.Definitions.DashboardSettings.ValueType">
+            <summary>
+            值类型
+            </summary>
+        </member>
+        <member name="F:SIE.Dashboard.Definitions.DashboardSettings.LayoutProperty">
+            <summary>
+            xaml设计
+            </summary>
+        </member>
+        <member name="P:SIE.Dashboard.Definitions.DashboardSettings.Layout">
+            <summary>
+            xaml设计
+            </summary>
+        </member>
+        <member name="T:SIE.Dashboard.Definitions.DashboardSettingsConfig">
+            <summary>
+            看板配置 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Dashboard.Definitions.DashboardSettingsConfig.ConfigMeta">
+            <summary>
+            元数据配置
+            </summary>
+        </member>
+        <member name="T:SIE.Dashboard.IDashboardParameterType">
+            <summary>
+            看板菜蔬类型接口
+            </summary>
+        </member>
+        <member name="M:SIE.Dashboard.IDashboardParameterType.GetParameterType">
+            <summary>
+            获取参数类型
+            </summary>
+            <returns>类型</returns>
+        </member>
+        <member name="T:SIE.Dashboard.EmptyConfigType">
+            <summary>
+            空配置类型
+            </summary>
+        </member>
+        <member name="T:SIE.Dashboard.Module">
+            <summary>
+            模块
+            </summary>
+        </member>
+        <member name="M:SIE.Dashboard.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化
+            </summary>
+            <param name="app">应用程序生成周期定义</param>
+        </member>
+        <member name="T:SIE.Dashboard.Modules.DashboardModule">
+            <summary>
+            看板模块
+            </summary>
+        </member>
+        <member name="M:SIE.Dashboard.Modules.DashboardModule.#ctor">
+            <summary>
+            构造方法
+            </summary>
+        </member>
+        <member name="F:SIE.Dashboard.Modules.DashboardModule.KeyLabelProperty">
+            <summary>
+            关键标签
+            </summary>
+        </member>
+        <member name="P:SIE.Dashboard.Modules.DashboardModule.KeyLabel">
+            <summary>
+            关键标签
+            </summary>
+        </member>
+        <member name="F:SIE.Dashboard.Modules.DashboardModule.LabelProperty">
+            <summary>
+            标签
+            </summary>
+        </member>
+        <member name="P:SIE.Dashboard.Modules.DashboardModule.Label">
+            <summary>
+            标签
+            </summary>
+        </member>
+        <member name="F:SIE.Dashboard.Modules.DashboardModule.IsFullScreenProperty">
+            <summary>
+            是否全屏
+            </summary>
+        </member>
+        <member name="P:SIE.Dashboard.Modules.DashboardModule.IsFullScreen">
+            <summary>
+            是否全屏
+            </summary>
+        </member>
+        <member name="F:SIE.Dashboard.Modules.DashboardModule.DashboardDefinitionIdProperty">
+            <summary>
+            看板定义Id
+            </summary>
+        </member>
+        <member name="P:SIE.Dashboard.Modules.DashboardModule.DashboardDefinitionId">
+            <summary>
+            看板定义Id
+            </summary>
+        </member>
+        <member name="F:SIE.Dashboard.Modules.DashboardModule.DashboardDefinitionProperty">
+            <summary>
+            看板定义
+            </summary>
+        </member>
+        <member name="P:SIE.Dashboard.Modules.DashboardModule.DashboardDefinition">
+            <summary>
+            看板定义
+            </summary>
+        </member>
+        <member name="T:SIE.Dashboard.Modules.DashboardModuleConfig">
+            <summary>
+            看板模块 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Dashboard.Modules.DashboardModuleConfig.ConfigMeta">
+            <summary>
+            元数据配置
+            </summary>
+        </member>
+        <member name="T:SIE.Dashboard.ViewModels.AssemblyViewModel">
+            <summary>
+            程序集ViewModel
+            </summary>
+        </member>
+        <member name="F:SIE.Dashboard.ViewModels.AssemblyViewModel.ClassTypeProperty">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:SIE.Dashboard.ViewModels.AssemblyViewModel.ClassType">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="F:SIE.Dashboard.ViewModels.AssemblyViewModel.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.Dashboard.ViewModels.AssemblyViewModel.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.Dashboard.ViewModels.AssemblyViewModel.AssemblyProperty">
+            <summary>
+            程序集
+            </summary>
+        </member>
+        <member name="P:SIE.Dashboard.ViewModels.AssemblyViewModel.Assembly">
+            <summary>
+            程序集
+            </summary>
+        </member>
+        <member name="T:SIE.Dashboard.ViewModels.DashboardViewModel">
+            <summary>
+            看板ViewModel
+            </summary>
+        </member>
+        <member name="F:SIE.Dashboard.ViewModels.DashboardViewModel.TitleProperty">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:SIE.Dashboard.ViewModels.DashboardViewModel.Title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="M:SIE.Dashboard.ViewModels.DashboardViewModel.Initialize(SIE.Dashboard.Definitions.DashboardSettings)">
+            <summary>
+            运行看板，要实现加载数据，定时刷新数据
+            </summary>
+            <param name="setting">看板配置</param>
+        </member>
+        <member name="M:SIE.Dashboard.ViewModels.DashboardViewModel.Closed">
+            <summary>
+            关闭
+            </summary>
+        </member>
+        <member name="T:SIE.Dashboard.WebCustomes.WebBoardChart">
+            <summary>
+            Web端看板图表
+            </summary>
+        </member>
+        <member name="F:SIE.Dashboard.WebCustomes.WebBoardChart.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.Dashboard.WebCustomes.WebBoardChart.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.Dashboard.WebCustomes.WebBoardChart.AttachmentUrlProperty">
+            <summary>
+            上传路径
+            </summary>
+        </member>
+        <member name="P:SIE.Dashboard.WebCustomes.WebBoardChart.AttachmentUrl">
+            <summary>
+            上传路径
+            </summary>
+        </member>
+        <member name="F:SIE.Dashboard.WebCustomes.WebBoardChart.DescriptionProperty">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:SIE.Dashboard.WebCustomes.WebBoardChart.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="F:SIE.Dashboard.WebCustomes.WebBoardChart.TypeProperty">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:SIE.Dashboard.WebCustomes.WebBoardChart.Type">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="F:SIE.Dashboard.WebCustomes.WebBoardChart.FilesProperty">
+            <summary>
+            附件明细
+            </summary>
+        </member>
+        <member name="P:SIE.Dashboard.WebCustomes.WebBoardChart.Files">
+            <summary>
+            附件
+            </summary>
+        </member>
+        <member name="T:SIE.Dashboard.WebCustomes.WebBoardChartConfig">
+            <summary>
+            Web端看板设备 实体配置
+            </summary>
+        </member>
+        <member name="T:SIE.Dashboard.WebCustomes.WebBoardChartRepository">
+            <summary>
+            仓库
+            </summary>
+        </member>
+        <member name="M:SIE.Dashboard.WebCustomes.WebBoardChartRepository.Insert(SIE.Domain.Entity)">
+            <summary>
+            
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:SIE.Dashboard.WebCustomes.WebBoardChartRepository.InsertToPersistence(SIE.Domain.Entity)">
+            <summary>
+            
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="T:SIE.Dashboard.WebCustomes.WebBoardChartAttachment">
+            <summary>
+            附件
+            </summary>
+        </member>
+        <member name="T:SIE.Dashboard.WebCustomes.WebBoardChartAttachmentConfig">
+            <summary>
+            附件 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Dashboard.WebCustomes.WebBoardChartAttachmentConfig.ConfigMeta">
+            <summary>
+            配置
+            </summary>
+        </member>
+        <member name="F:SIE.Dashboard.WebCustomes.WebBoardChartType.Default">
+            <summary>
+            默认
+            </summary>
+        </member>
+        <member name="F:SIE.Dashboard.WebCustomes.WebBoardChartType.UserAttachmentUrl">
+            <summary>
+            指定地址
+            </summary>
+        </member>
+        <member name="T:SIE.Dashboard.WebCustomes.WebBoardChatSubmitted">
+            <summary>
+            看板保存前自动添加首页信息
+            </summary>
+        </member>
+        <member name="M:SIE.Dashboard.WebCustomes.WebBoardChatSubmitted.Invoke(SIE.Dashboard.WebCustomes.WebBoardChart,SIE.Domain.EntitySubmittedEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="entity"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:SIE.Dashboard.WebCustomes.WebBoardDevice">
+            <summary>
+            Web端看板设备
+            </summary>
+        </member>
+        <member name="F:SIE.Dashboard.WebCustomes.WebBoardDevice.NameProperty">
+            <summary>
+            图片
+            </summary>
+        </member>
+        <member name="P:SIE.Dashboard.WebCustomes.WebBoardDevice.Name">
+            <summary>
+            图片
+            </summary>
+        </member>
+        <member name="F:SIE.Dashboard.WebCustomes.WebBoardDevice.HeightProperty">
+            <summary>
+            屏幕高度
+            </summary>
+        </member>
+        <member name="P:SIE.Dashboard.WebCustomes.WebBoardDevice.Height">
+            <summary>
+            屏幕高度
+            </summary>
+        </member>
+        <member name="F:SIE.Dashboard.WebCustomes.WebBoardDevice.WidthProperty">
+            <summary>
+            屏幕宽度
+            </summary>
+        </member>
+        <member name="P:SIE.Dashboard.WebCustomes.WebBoardDevice.Width">
+            <summary>
+            屏幕宽度
+            </summary>
+        </member>
+        <member name="F:SIE.Dashboard.WebCustomes.WebBoardDevice.LayoutJSONProperty">
+            <summary>
+            视图布局配置Json
+            </summary>
+        </member>
+        <member name="P:SIE.Dashboard.WebCustomes.WebBoardDevice.LayoutJSON">
+            <summary>
+            视图布局配置Json
+            </summary>
+        </member>
+        <member name="F:SIE.Dashboard.WebCustomes.WebBoardDevice.DescriptionProperty">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:SIE.Dashboard.WebCustomes.WebBoardDevice.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="T:SIE.Dashboard.WebCustomes.WebBoardDeviceConfig">
+            <summary>
+            Web端看板设备 实体配置
+            </summary>
+        </member>
+    </members>
+</doc>

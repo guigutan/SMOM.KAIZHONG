@@ -1,0 +1,814 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Web.WorkFlow</name>
+    </assembly>
+    <members>
+        <member name="M:SIE.Web.WorkFlow._Extentions_.EntityPropertyViewMetaExtension.UseWorkflowRejectActivityEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig})">
+            <summary>
+            自定义驳回选择节点编辑器名称
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="T:SIE.Web.WorkFlow.Activities.Audit.AuditActivityViewConfig">
+            <summary>
+            审核节点视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.Activities.Audit.AuditActivityViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.Activities.Audit.AuditActivityViewConfig.ConfigWorkFlowDetailsView">
+            <summary>
+            工作流编辑视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.Activities.Audit.AuditActivityViewConfig.ConfigWorkFlowReadonlyView">
+            <summary>
+            工作流只读视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.WorkFlow.Activities.Audit.Commands.AuditCommand">
+            <summary>
+            审核同意命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.Activities.Audit.Commands.AuditCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="P:SIE.Web.WorkFlow.Activities.Audit.Commands.ArgsData.Task">
+            <summary>
+            工作流任务
+            </summary>
+        </member>
+        <member name="T:SIE.Web.WorkFlow.Activities.CustomForm.CustomFormViewModelViewConfig">
+            <summary>
+            通用表单节点视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.Activities.CustomForm.CustomFormViewModelViewConfig.ConfigWorkFlowReadonlyView">
+            <summary>
+            工作流表单视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.WorkFlow.Activities.CustomForm.DataQueryers.CustomFormDataQueryer">
+            <summary>
+            通用表单查询器
+            </summary>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.Activities.CustomForm.DataQueryers.CustomFormDataQueryer.GetCustomFormData(System.Double,System.String)">
+            <summary>
+            获取通用表单数据
+            </summary>
+            <param name="instanceId"></param>
+            <param name="activityId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.Areas.wf.Controllers.WorkFlowController.Dashboard">
+            <summary>
+            测试主页
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.Areas.wf.Controllers.WorkFlowController.GetOrCreate(System.String)">
+            <summary>
+            新增/更新工作流
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.Areas.wf.Controllers.WorkFlowController.GetHostAddress">
+            <summary>
+            获取服务端地址
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.Areas.wf.Controllers.WorkFlowController.Viewer(System.String,System.Nullable{System.Int32})">
+            <summary>
+            新增/更新工作流
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.WorkFlow.Commands.CustomRejectCommand">
+            <summary>
+            自定义驳回命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.Commands.CustomRejectCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            驳回
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="P:SIE.Web.WorkFlow.Commands.CustomRejectCommand.ArgsData.Task">
+            <summary>
+            工作流任务
+            </summary>
+        </member>
+        <member name="T:SIE.Web.WorkFlow.Commands.RejectCommand">
+            <summary>
+            驳回命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.Commands.RejectCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            驳回命令执行
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="P:SIE.Web.WorkFlow.Commands.RejectCommand.ArgsData.Task">
+            <summary>
+            工作流任务
+            </summary>
+        </member>
+        <member name="T:SIE.Web.WorkFlow.Commands.TrunCommand">
+            <summary>
+            转办命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.Commands.TrunCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            转办
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="P:SIE.Web.WorkFlow.Commands.TrunCommand.ArgsData.Task">
+            <summary>
+            工作流任务
+            </summary>
+        </member>
+        <member name="T:SIE.Web.WorkFlow.Commands.WorkflowCommands">
+            <summary>
+            工作流命令定义集合
+            </summary>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.Commands.WorkflowCommands.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="F:SIE.Web.WorkFlow.Commands.WorkflowCommands.commandNameSpace">
+            <summary>
+            命令命名空间
+            </summary>
+        </member>
+        <member name="F:SIE.Web.WorkFlow.Commands.WorkflowCommands.WorkflowListSaveCommand">
+            <summary>
+            列表保存命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.WorkFlow.Commands.WorkflowListSaveCommand">
+            <summary>
+            工作流列表节点保存命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.Extensions.ViewConfigExtension.UseWorkFlowCategoryEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig})">
+            <summary>
+            来料检验料号检验标准版本切换编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="T:SIE.Web.WorkFlow.Menus.WorkFlowMenuInit">
+            <summary>
+            工作流菜单初始化
+            </summary>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.Menus.WorkFlowMenuInit.GetMenuDtos">
+            <summary>
+            获取菜单列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.WorkFlow.Module">
+            <summary>
+            UI模块
+            </summary>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.Module.Initialize(SIE.IApp)">
+            <summary>
+            模块初始化
+            </summary>
+            <param name="app">应用程序</param>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.Module.App_ModuleOperations(System.Object,System.EventArgs)">
+            <summary>
+            添加模块
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.ViewModels.ActivityViewModelViewViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.WorkFlow.ViewModels.RejectViewModel">
+            <summary>
+            驳回ViewModel
+            </summary>
+        </member>
+        <member name="F:SIE.Web.WorkFlow.ViewModels.RejectViewModel.FlowTaskIdProperty">
+            <summary>
+            来源流程任务
+            </summary>
+        </member>
+        <member name="P:SIE.Web.WorkFlow.ViewModels.RejectViewModel.FlowTaskId">
+            <summary>
+            流程任务Id
+            </summary>
+        </member>
+        <member name="F:SIE.Web.WorkFlow.ViewModels.RejectViewModel.ActivityIdProperty">
+            <summary>
+            驳回节点（自定义驳回）
+            </summary>
+        </member>
+        <member name="P:SIE.Web.WorkFlow.ViewModels.RejectViewModel.ActivityId">
+            <summary>
+            流程任务Id
+            </summary>
+        </member>
+        <member name="F:SIE.Web.WorkFlow.ViewModels.RejectViewModel.ReasonProperty">
+            <summary>
+            原因
+            </summary>
+        </member>
+        <member name="P:SIE.Web.WorkFlow.ViewModels.RejectViewModel.Reason">
+            <summary>
+            原因
+            </summary>
+        </member>
+        <member name="T:SIE.Web.WorkFlow.ViewModels.RejectViewModelViewConfig">
+            <summary>
+            转办ViewModel视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.WorkFlow.ViewModels.RejectViewModelViewConfig.CustomRejectViewGroup">
+            <summary>
+            自定义驳回视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.ViewModels.RejectViewModelViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.ViewModels.RejectViewModelViewConfig.ConfigCustomRejectViewGroupView">
+            <summary>
+            自定义驳回视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.ViewModels.RejectViewModelViewConfig.ConfigDetailsView">
+            <summary>
+            驳回视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.WorkFlow.ViewModels.TrunViewModel">
+            <summary>
+            转办ViewModel
+            </summary>
+        </member>
+        <member name="F:SIE.Web.WorkFlow.ViewModels.TrunViewModel.FlowTaskIdProperty">
+            <summary>
+            流程任务Id
+            </summary>
+        </member>
+        <member name="P:SIE.Web.WorkFlow.ViewModels.TrunViewModel.FlowTaskId">
+            <summary>
+            流程任务Id
+            </summary>
+        </member>
+        <member name="F:SIE.Web.WorkFlow.ViewModels.TrunViewModel.TrunToPeopleIdProperty">
+            <summary>
+            转办人Id
+            </summary>
+        </member>
+        <member name="P:SIE.Web.WorkFlow.ViewModels.TrunViewModel.TrunToPeopleId">
+            <summary>
+            转办人Id
+            </summary>
+        </member>
+        <member name="F:SIE.Web.WorkFlow.ViewModels.TrunViewModel.TrunToPeopleProperty">
+            <summary>
+            转办人
+            </summary>
+        </member>
+        <member name="P:SIE.Web.WorkFlow.ViewModels.TrunViewModel.TrunToPeople">
+            <summary>
+            转办人
+            </summary>
+        </member>
+        <member name="F:SIE.Web.WorkFlow.ViewModels.TrunViewModel.ReasonProperty">
+            <summary>
+            原因
+            </summary>
+        </member>
+        <member name="P:SIE.Web.WorkFlow.ViewModels.TrunViewModel.Reason">
+            <summary>
+            原因
+            </summary>
+        </member>
+        <member name="T:SIE.Web.WorkFlow.ViewModels.TrunViewModelViewConfig">
+            <summary>
+            转办ViewModel视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.ViewModels.TrunViewModelViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.WorkFlowInstances.CancelViewModelViewConfig.ConfigDetailsView">
+            <summary>
+            表单视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.WorkFlow.WorkFlowInstances.Commands.CancelCommand">
+            <summary>
+            撤销工作流命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.WorkFlowInstances.Commands.CancelCommand.Excute(SIE.Web.WorkFlow.WorkFlowInstances.ViewModels.CancelViewModel,System.String)">
+            <summary>
+            执行方法
+            </summary>
+            <param name="args">视图参数</param>
+            <param name="scope">SIE.MetaModel.View.Block.EntityType</param>
+            <returns>object</returns> 
+        </member>
+        <member name="T:SIE.Web.WorkFlow.WorkFlowInstances.Commands.DeleteFlowTaskAttachmentCommand">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="E:SIE.Web.WorkFlow.WorkFlowInstances.Commands.DeleteFlowTaskAttachmentCommand.DeletingAttachement">
+            <summary>
+            附件删除前事件，子类可以根据需要扩展
+            </summary>
+        </member>
+        <member name="E:SIE.Web.WorkFlow.WorkFlowInstances.Commands.DeleteFlowTaskAttachmentCommand.DeletedAttachement">
+            <summary>
+            附件删除后事件，子类可以根据需要扩展，
+            </summary>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.WorkFlowInstances.Commands.DeleteFlowTaskAttachmentCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.WorkFlowInstances.Commands.DeleteFlowTaskAttachmentCommand.OnDeletedAttachement(SIE.Web.Common.Attachments.Commands.DeleteAttachmentViewArgs)">
+            <summary>
+            附件删除后事件
+            提供删除附件后，额外的动作，比如级联删除其他实体
+            </summary>
+            <param name="viewArgs">AttachmentViewArgs 对象，提供了文件流和实体对象</param>
+            <returns>返回值暂时没有作用</returns>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.WorkFlowInstances.Commands.DeleteFlowTaskAttachmentCommand.OnDeletingAttachement(SIE.Web.Common.Attachments.Commands.DeleteAttachmentViewArgs)">
+            <summary>
+            删除前事件，比如提供一些特殊验证，是否被引用等。
+            </summary>
+            <param name="viewArgs"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.WorkFlow.WorkFlowInstances.DataQueryers.FlowInstanceDataQueryer">
+            <summary>
+            工作流实例查询器
+            </summary>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.WorkFlowInstances.DataQueryers.FlowInstanceDataQueryer.GetFlowInstanceInfo(System.Double)">
+            <summary>
+            查询工作流实例节点信息
+            </summary>
+            <param name="instanceId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.WorkFlowInstances.DataQueryers.FlowInstanceDataQueryer.GetFlowProcessRecords(System.Double)">
+            <summary>
+            查询工作流流程处理记录信息
+            </summary>
+            <param name="instanceId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.WorkFlowInstances.DataQueryers.FlowInstanceDataQueryer.IsNodePanelUnFlod">
+            <summary>
+            节点面板是否默认展开
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.WorkFlowInstances.DataQueryers.FlowProcessRecordDataQueryer.GetFlowProcessRecordsByTaskId(System.Double)">
+            <summary>
+            查找流程执行记录
+            </summary>
+            <param name="taskId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.WorkFlow.WorkFlowInstances.DataQueryers.FlowTaskDataQueryer">
+            <summary>
+            工作流任务查询器
+            </summary>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.WorkFlowInstances.DataQueryers.FlowTaskDataQueryer.GetFlowTaskInfo(System.Double)">
+            <summary>
+            查询工作流实例节点信息
+            </summary>
+            <param name="taskId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.WorkFlowInstances.DataQueryers.FlowTaskDataQueryer.GetFlowProcessRecords(System.Double)">
+            <summary>
+            查询工作流流程处理记录信息
+            </summary>
+            <param name="taskId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.WorkFlowInstances.DataQueryers.FlowTaskDataQueryer.GetActivityEntity(System.String,System.Nullable{System.Double},System.String,System.String)">
+            <summary>
+            获取节点关联实体
+            </summary>
+            <param name="variablesJson"></param>
+            <param name="flowTaskId"></param>
+            <param name="activityType"></param>
+            <param name="entityTypeName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.WorkFlowInstances.DataQueryers.FlowTaskDataQueryer.GetActivityEntityList(System.String,System.String)">
+            <summary>
+            summary>
+            获取节点列表数据
+            </summary>
+            <param name="variablesJson"></param>
+            <param name="activityType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.WorkFlowInstances.DataQueryers.FlowTaskDataQueryer.SetFlowTaskDoing(System.Double)">
+            <summary>
+            设置工作流任务处理状态为进行中
+            </summary>
+            <param name="taskId">工作流任务ID</param>
+        </member>
+        <member name="T:SIE.Web.WorkFlow.WorkFlowInstances.FlowInstanceViewConfig">
+            <summary>
+            工作流实例视图
+            </summary>
+        </member>
+        <member name="F:SIE.Web.WorkFlow.WorkFlowInstances.FlowInstanceViewConfig.ViewFlowInstanceViewGroup">
+            <summary>
+            查看视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.WorkFlowInstances.FlowInstanceViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.WorkFlowInstances.FlowInstanceViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.WorkFlowInstances.FlowInstanceViewConfig.ConfigQueryView">
+            <summary>
+            查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.WorkFlowInstances.FlowInstanceViewConfig.ConfigSelectionView">
+            <summary>
+            下拉视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.WorkFlowInstances.FlowInstanceViewConfig.ConfigViewFlowInstanceViewGroup">
+            <summary>
+            查看视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.WorkFlow.WorkFlowInstances.FlowProcessRecordViewConfig">
+            <summary>
+            工作流节点处理视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.WorkFlow.WorkFlowInstances.FlowTaskAttachmentViewConfig">
+            <summary>
+            工作流任务视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.WorkFlowInstances.FlowTaskAttachmentViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.WorkFlow.WorkFlowInstances.FlowTaskCriteriaViewConfig">
+            <summary>
+            流程任务查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.WorkFlowInstances.FlowTaskCriteriaViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.WorkFlowInstances.FlowTaskdefineViewModelViewConfig.ConfigDetailsView">
+            <summary>
+            表单视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.WorkFlow.WorkFlowInstances.FlowTaskPortalViewConfig">
+            <summary>
+            工作流任务（门户）视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.WorkFlow.WorkFlowInstances.FlowTaskPortalViewConfig.PortalViewGroup">
+            <summary>
+            门户视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.WorkFlowInstances.FlowTaskPortalViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.WorkFlowInstances.FlowTaskPortalViewConfig.ConfigPortalViewGroupView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.WorkFlow.WorkFlowInstances.FlowTaskViewConfig">
+            <summary>
+            工作流任务视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.WorkFlow.WorkFlowInstances.FlowTaskViewConfig.ProcessViewGroup">
+            <summary>
+            处理视图
+            </summary>
+        </member>
+        <member name="F:SIE.Web.WorkFlow.WorkFlowInstances.FlowTaskViewConfig.ViewProcessViewGroup">
+            <summary>
+            查看视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.WorkFlowInstances.FlowTaskViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.WorkFlowInstances.FlowTaskViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.WorkFlowInstances.FlowTaskViewConfig.ConfigProcessView">
+            <summary>
+            任务处理视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.WorkFlowInstances.FlowTaskViewConfig.ConfigReadonlyProcessView">
+            <summary>
+            任务只读视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.WorkFlow.WorkFlowInstances.ViewModels.CancelViewModel">
+            <summary>
+            工作流撤销ViewModel
+            </summary>
+        </member>
+        <member name="F:SIE.Web.WorkFlow.WorkFlowInstances.ViewModels.CancelViewModel.FlowTaskIdProperty">
+            <summary>
+            任务
+            </summary>
+        </member>
+        <member name="P:SIE.Web.WorkFlow.WorkFlowInstances.ViewModels.CancelViewModel.FlowTaskId">
+            <summary>
+            任务
+            </summary>
+        </member>
+        <member name="F:SIE.Web.WorkFlow.WorkFlowInstances.ViewModels.CancelViewModel.FlowTaskProperty">
+            <summary>
+            任务
+            </summary>
+        </member>
+        <member name="P:SIE.Web.WorkFlow.WorkFlowInstances.ViewModels.CancelViewModel.FlowTask">
+            <summary>
+            任务
+            </summary>
+        </member>
+        <member name="F:SIE.Web.WorkFlow.WorkFlowInstances.ViewModels.CancelViewModel.ReasonProperty">
+            <summary>
+            撤销原因
+            </summary>
+        </member>
+        <member name="P:SIE.Web.WorkFlow.WorkFlowInstances.ViewModels.CancelViewModel.Reason">
+            <summary>
+            撤销原因
+            </summary>
+        </member>
+        <member name="T:SIE.Web.WorkFlow.WorkFlowInstances.ViewModels.FlowTaskdefineViewModel">
+            <summary>
+            工作流程ViewModel
+            </summary>
+        </member>
+        <member name="F:SIE.Web.WorkFlow.WorkFlowInstances.ViewModels.FlowTaskdefineViewModel.FlowTaskIdProperty">
+            <summary>
+            任务
+            </summary>
+        </member>
+        <member name="P:SIE.Web.WorkFlow.WorkFlowInstances.ViewModels.FlowTaskdefineViewModel.FlowTaskId">
+            <summary>
+            任务
+            </summary>
+        </member>
+        <member name="F:SIE.Web.WorkFlow.WorkFlowInstances.ViewModels.FlowTaskdefineViewModel.FlowTaskProperty">
+            <summary>
+            任务
+            </summary>
+        </member>
+        <member name="P:SIE.Web.WorkFlow.WorkFlowInstances.ViewModels.FlowTaskdefineViewModel.FlowTask">
+            <summary>
+            任务
+            </summary>
+        </member>
+        <member name="T:SIE.Web.WorkFlow.Razor.WorkFlowInstances.FlowInstanceCriteriaViewConfig">
+            <summary>
+            工作流实例查询实例视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.Razor.WorkFlowInstances.FlowInstanceCriteriaViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.WorkFlow.WorkFlows.Categorys.WorkFlowCategoryConfigBaseViewConfig">
+            <summary>
+            工作流分类配置基类视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.WorkFlow.WorkFlows.Categorys.WorkFlowCategoryViewModelViewConfig">
+            <summary>
+            工作流分类视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.WorkFlows.Categorys.WorkFlowCategoryViewModelViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.WorkFlows.Categorys.WorkFlowCategoryViewModelViewConfig.ConfigSelectionView">
+            <summary>
+            下拉视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.WorkFlows.Commands.EditDesignCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.WorkFlow.WorkFlows.Commands.SaveDesignCommand">
+            <summary>
+            保存工作流定义命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.WorkFlows.Commands.SaveDesignCommand.OnSaving(SIE.Domain.EntityList)">
+            <summary>
+            保存前处理，把删除的数据进行状态，后台不做删除
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="T:SIE.Web.WorkFlow.WorkFlows.Commands.WorkFlowDesignCommands">
+            <summary>
+            工作流定义命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.WorkFlows.Commands.WorkFlowDesignCommands.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="F:SIE.Web.WorkFlow.WorkFlows.Commands.WorkFlowDesignCommands.commandNameSpace">
+            <summary>
+            命令命名空间
+            </summary>
+        </member>
+        <member name="F:SIE.Web.WorkFlow.WorkFlows.Commands.WorkFlowDesignCommands.AddDesignCommand">
+            <summary>
+            添加命令
+            </summary>
+        </member>
+        <member name="F:SIE.Web.WorkFlow.WorkFlows.Commands.WorkFlowDesignCommands.CopyDesignCommand">
+            <summary>
+            复制新增命令
+            </summary>
+        </member>
+        <member name="F:SIE.Web.WorkFlow.WorkFlows.Commands.WorkFlowDesignCommands.EditDesignCommand">
+            <summary>
+            设计命令
+            </summary>
+        </member>
+        <member name="F:SIE.Web.WorkFlow.WorkFlows.Commands.WorkFlowDesignCommands.ViewWorkflowDefinitionVersionCommand">
+            <summary>
+            查看流程定义版本
+            </summary>
+        </member>
+        <member name="T:SIE.Web.WorkFlow.WorkFlows.Config.WorkflowNodePanelUnFlodConifgValueViewConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.WorkFlows.Config.WorkflowNodePanelUnFlodConifgValueViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.WorkFlows.Config.WorkflowTaskNotificationConifgValueViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.WorkFlow.WorkFlows.DataQueryers.WorkFlowDesignDataQueryer">
+            <summary>
+            工作流定义查询器
+            </summary>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.WorkFlows.DataQueryers.WorkFlowDesignDataQueryer.GetNewWorkFlowId">
+            <summary>
+            生成工作流定义ID
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.WorkFlows.DataQueryers.WorkFlowDesignDataQueryer.GetWorkflowConfig(System.String)">
+            <summary>
+            获取工作流分类配置
+            </summary>
+            <param name="categoryName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.WorkFlows.DataQueryers.WorkFlowDesignDataQueryer.GetConfigDisplayString(System.String,System.String)">
+            <summary>
+            获取工作流分类配置显示内容
+            </summary>
+            <param name="categoryName"></param>
+            <param name="dataJson"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.WorkFlows.DataQueryers.WorkFlowDesignDataQueryer.SetHost(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="host"></param>
+        </member>
+        <member name="T:SIE.Web.WorkFlow.WorkFlows.DesignWorkFlowViewConfig">
+            <summary>
+            工作流定义视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.WorkFlows.DesignWorkFlowViewConfig.ConfigListView">
+            <summary>
+            列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.WorkFlows.DesignWorkFlowViewConfig.ConfigSelectionView">
+            <summary>
+            下拉视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.WorkFlow.WorkFlows.FlowDefinitionVersionViewModelViewConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.WorkFlows.FlowDefinitionVersionViewModelViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.WorkFlow.WorkFlows.FlowDefinitionVersionViewModelViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+    </members>
+</doc>

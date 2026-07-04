@@ -1,0 +1,280 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.RedCardManagment.WorkFlow</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.RedCardManagment.WorkFlow.Activities.RedCardApplyBill.PdcaReportActivityEntityProvider">
+            <summary>
+            PDCA获取节点单据
+            </summary>
+        </member>
+        <member name="M:SIE.RedCardManagment.WorkFlow.Activities.RedCardApplyBill.PdcaReportActivityEntityProvider.GetActivityEntity(SIE.WorkFlow.Base.Common.GetActivityEntityInput)">
+            <summary>
+            
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.RedCardManagment.WorkFlow.Activities.RedCardApplyBill.RedCardApplyBillActivity">
+            <summary>
+            红牌申请-单据信息节点
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.WorkFlow.Activities.RedCardApplyBill.RedCardApplyBillActivity.entityTypeName">
+            <summary>
+            实体类型
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.WorkFlow.Activities.RedCardApplyBill.RedCardApplyBillActivity.isRequired">
+            <summary>
+            节点必选
+            </summary>
+        </member>
+        <member name="M:SIE.RedCardManagment.WorkFlow.Activities.RedCardApplyBill.RedCardApplyBillActivity.OnActivityExecute(Elsa.Services.Models.ActivityExecutionContext)">
+            <summary>
+            流程到达
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.WorkFlow.Activities.RedCardApplyBill.RedCardApplyBillActivity.ReturnResult(Elsa.Services.Models.ActivityExecutionContext)">
+            <summary>
+            返回节点结果
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.WorkFlow.Activities.RedCardApplyBill.RedCardApplyBillActivity.OnRejectArrive(Elsa.Services.Models.ActivityExecutionContext,SIE.WorkFlow.Models.RejectArriveInput)">
+            <summary>
+            被驳回到该节点时，回写驳回标识和驳回原因
+            </summary>
+            <param name="context"></param>
+            <param name="input"></param>
+        </member>
+        <member name="T:SIE.RedCardManagment.WorkFlow.Activities.RedCardApplyBill.RedCardApplyBillActivityInput">
+            <summary>
+            红牌申请-单据信息节点-输入Input
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.WorkFlow.Activities.RedCardApplyBill.RedCardApplyBillActivityInput.Variable">
+            <summary>
+            变量
+            </summary>
+        </member>
+        <member name="T:SIE.RedCardManagment.WorkFlow.Activities.RedCardApplyFinish.RedCardApplyFinishActivity">
+            <summary>
+            红牌申请-结束节点
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.WorkFlow.Activities.RedCardApplyFinish.RedCardApplyFinishActivity.isRequired">
+            <summary>
+            节点必选
+            </summary>
+        </member>
+        <member name="M:SIE.RedCardManagment.WorkFlow.Activities.RedCardApplyFinish.RedCardApplyFinishActivity.OnActivityExecute(Elsa.Services.Models.ActivityExecutionContext)">
+            <summary>
+            节点具体业务 
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:SIE.RedCardManagment.WorkFlow.Activities.RedCardApplyFinish.RedCardApplyFinishActivity.SaveFlowProcessRecord(Elsa.Services.Models.ActivityExecutionContext)">
+            <summary>
+            任务处理记录 
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:SIE.RedCardManagment.WorkFlow.CategoryConfig.RedCardApplyCategory">
+            <summary>
+            工作流分类-红牌申请
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.WorkFlow.CategoryConfig.RedCardApplyCategory.CategoryName">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="M:SIE.RedCardManagment.WorkFlow.CategoryConfig.RedCardApplyCategory.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="T:SIE.RedCardManagment.WorkFlow.CategoryConfig.RedCardApplyCategoryConfig">
+            <summary>
+            红牌申请工作流分类配置(标品不提供详细的分类配置，可自行扩展)
+            </summary>
+        </member>
+        <member name="M:SIE.RedCardManagment.WorkFlow.CategoryConfig.RedCardApplyCategoryConfig.ToConfigJson">
+            <summary>
+            转换成Json配置字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.WorkFlow.CategoryConfig.RedCardApplyCategoryConfig.GetDisplayConfigStr">
+            <summary>
+            获取展示内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.RedCardManagment.WorkFlow.Common.RedCardWorkFlowText">
+            <summary>
+            静态文本
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.WorkFlow.Common.RedCardWorkFlowText.RedCardWorkFlowName">
+            <summary>
+            流程分类名称
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.WorkFlow.Common.RedCardWorkFlowText.StartNode">
+            <summary>
+            开始节点
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.WorkFlow.Common.RedCardWorkFlowText.ApplyInfo">
+            <summary>
+            红牌申请信息
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.WorkFlow.Common.RedCardWorkFlowText.EndNode">
+            <summary>
+            结束节点
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.WorkFlow.Common.RedCardWorkFlowText.End">
+            <summary>
+            结束
+            </summary>
+        </member>
+        <member name="T:SIE.RedCardManagment.WorkFlow.Events.RedCardManagmentListener">
+            <summary>
+            红牌管理事件监听器
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.WorkFlow.Events.RedCardManagmentListener.Instance">
+            <summary>
+            实例
+            </summary>
+        </member>
+        <member name="M:SIE.RedCardManagment.WorkFlow.Events.RedCardManagmentListener.Start">
+            <summary>
+            订阅不合格审核流程完成信息
+            </summary>
+        </member>
+        <member name="T:SIE.RedCardManagment.WorkFlow.Module">
+            <summary>
+            模块配置
+            </summary>
+        </member>
+        <member name="M:SIE.RedCardManagment.WorkFlow.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化程序集
+            </summary>
+            <param name="app">应用程序</param>
+        </member>
+        <member name="T:SIE.RedCardManagment.WorkFlow.RedCardApplyBillWorkflowController">
+            <summary>
+            红牌申请-流程-控制器
+            </summary>
+        </member>
+        <member name="M:SIE.RedCardManagment.WorkFlow.RedCardApplyBillWorkflowController.#ctor(SIE.WorkFlow.WorkFlowInstances.FlowInstanceController,SIE.WorkFlow.Base.FlowDefinitions.FlowDefinitionController,SIE.WorkFlow.Base.Common.Interfaces.ISieWorkflow,SIE.Core.Common.IService.IRepositoryFactoryService)">
+            <summary>
+            
+            </summary>
+            <param name="flowInstanceController"></param>
+            <param name="flowDefinitionController"></param>
+            <param name="sieWorkflow"></param>
+            <param name="rfs"></param>
+        </member>
+        <member name="M:SIE.RedCardManagment.WorkFlow.RedCardApplyBillWorkflowController.HasRedCardApplyWorkflowDefinition(System.Int32)">
+            <summary>
+            是否能匹配到流程定义
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.WorkFlow.RedCardApplyBillWorkflowController.WithDrawWorkflow(System.Double,System.String)">
+            <summary>
+             撤回工作流（撤回至首节点）
+            </summary>
+            <param name="billId"></param>
+            <param name="reason"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.WorkFlow.RedCardApplyBillWorkflowController.StartWorkflow(SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill)">
+            <summary>
+            启动流程
+            </summary>
+            <param name="bill"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.WorkFlow.RedCardApplyBillWorkflowController.ResumeWorkflow(SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill)">
+            <summary>
+            恢复工作流
+            </summary>
+            <param name="bill"></param>
+        </member>
+        <member name="M:SIE.RedCardManagment.WorkFlow.RedCardApplyBillWorkflowController.NewWorkflow(SIE.RedCardManagment.RedCardApplyBills.RedCardApplyBill)">
+            <summary>
+            开始工作流
+            </summary>
+            <param name="bill"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.WorkFlow.RedCardApplyBillWorkflowController.GetWorkflowDefinition">
+            <summary>
+            匹配流程定义
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.RedCardManagment.WorkFlow.RedCardApplyBillWorkflowController.RejectArriveRedCardApplyBillActivity(Elsa.Services.Models.ActivityExecutionContext,SIE.WorkFlow.Models.RejectArriveInput)">
+            <summary>
+            驳回至【申请信息】节点，即首节点
+            </summary>
+            <param name="context"></param>
+            <param name="input"></param>
+        </member>
+        <member name="M:SIE.RedCardManagment.WorkFlow.RedCardApplyBillWorkflowController.FinishApply(Elsa.Services.Models.ActivityExecutionContext)">
+            <summary>
+            结束节点执行逻辑
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:SIE.RedCardManagment.WorkFlow.RedCardApplyBillWorkflowController.CancelFlowInstanceEventHandle(SIE.WorkFlow.WorkFlowInstances.CancelFlowInstanceEvent)">
+            <summary>
+            订阅[终止工作流]事件的处理、终止操作在[流程任务]端
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="T:SIE.RedCardManagment.WorkFlow.RedCardWorkFlowEntityRepository`1">
+            <summary>
+            本程序集的数据提供者
+            </summary>
+            <typeparam name="T">t</typeparam>
+        </member>
+        <member name="T:SIE.RedCardManagment.WorkFlow.RedCardWorkFlowEntityDataProvider">
+            <summary>
+            Iqc实体数据提供者
+            </summary>
+        </member>
+        <member name="F:SIE.RedCardManagment.WorkFlow.RedCardWorkFlowEntityDataProvider.ConnectionStringName">
+            <summary>
+            数据库连接字符串的名称
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.WorkFlow.RedCardWorkFlowEntityDataProvider.ConnectionStringSettingName">
+            <summary>
+            数据库连接字符串的名称
+            </summary>
+        </member>
+        <member name="T:SIE.RedCardManagment.WorkFlow.Variables.RedCardApplyVariable">
+            <summary>
+            红牌申请流程变量类
+            </summary>
+        </member>
+        <member name="P:SIE.RedCardManagment.WorkFlow.Variables.RedCardApplyVariable.BillId">
+            <summary>
+            单据Id
+            </summary>
+        </member>
+    </members>
+</doc>

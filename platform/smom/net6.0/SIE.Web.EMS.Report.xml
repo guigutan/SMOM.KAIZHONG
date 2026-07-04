@@ -1,0 +1,533 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Web.EMS.Report</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Web.EMS.Report.EquipCostAnalyses.EquipCostAnalyseCriteriaViewConfig">
+            <summary>
+            设备成本分析-查询界面
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.EquipCostAnalyses.EquipCostAnalyseCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Report.EquipCostAnalyses.EquipCostAnalysesDataQueryer">
+            <summary>
+            综合报表查询器
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.EquipCostAnalyses.EquipCostAnalysesDataQueryer.GetReportData(SIE.EMS.Report.EquipCostAnalyses.EquipCostAnalyseCriteria)">
+            <summary>
+            获取报表数据
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Report.EquipCostAnalyses.EquipCostAnalysesReportUITemplate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.EquipCostAnalyses.EquipCostAnalysesReportUITemplate.DefineBlocks">
+            <summary>
+            定义块方法
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Report.EquipCostAnalyses.EquipCostAnalyseViewConfig">
+            <summary>
+            设备成本分析-界面
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Report.EquipCostAnalyses.EquipCostInfoViewConfig">
+            <summary>
+            设备成本分析-界面
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.EquipCostAnalyses.EquipCostInfoViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Report.EquipCostAnalyses.MonthlyCostInfoViewConfig">
+            <summary>
+            月度成本分析-界面
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.EquipCostAnalyses.MonthlyCostInfoViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Report.EquipmentIntegrateStatistics.Commands.EmsExcelHelper">
+            <summary>
+            导入导出共用方法
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.EquipmentIntegrateStatistics.Commands.EmsExcelHelper.SetCellStyle(NPOI.SS.UserModel.IWorkbook,NPOI.SS.UserModel.ICell)">
+            <summary>
+            设置单元格样式
+            </summary>
+            <param name="workbook">工作簿</param>
+            <param name="cell">单元格</param>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.EquipmentIntegrateStatistics.Commands.EmsExcelHelper.ExportData(Newtonsoft.Json.Linq.JObject,System.Collections.Generic.List{System.Drawing.Bitmap})">
+            <summary>
+            导出数据至Excel (带图片导出)
+            </summary>        
+            <param name="dataView">数据视图</param>
+            <param name="images">图片</param>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.EquipmentIntegrateStatistics.Commands.EmsExcelHelper.SetGridData(NPOI.SS.UserModel.ISheet,Newtonsoft.Json.Linq.JObject,NPOI.SS.UserModel.ICellStyle)">
+            <summary>
+            设置抽样数据列表
+            </summary>
+            <param name="sheet">工作表</param>
+            <param name="dataView"></param>
+            <param name="style">样式</param>
+        </member>
+        <member name="T:SIE.Web.EMS.Report.EquipmentIntegrateStatistics.Commands.ExportCommand">
+            <summary>
+            导出
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.EquipmentIntegrateStatistics.Commands.ExportCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行导出，保存至Excel
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.EquipmentIntegrateStatistics.Commands.ExportCommand.Base64StrToImage(Newtonsoft.Json.Linq.JToken)">
+            <summary>
+            将Base64字符串转换为Image对象
+            </summary>
+            <param name="Images">base64字符串</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Report.EquipmentIntegrateStatistics.EquipIntegrateStatisticsDataQueryer">
+            <summary>
+            设备综合统计查询器
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.EquipmentIntegrateStatistics.EquipIntegrateStatisticsDataQueryer.GetEquipmentIntegrateStatisticViewModels(SIE.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticCriteria)">
+            <summary>
+            查询设备综合统计数据
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Report.EquipmentIntegrateStatistics.EquipIntStatisticsUITemplate">
+            <summary>
+            ESD数据分析报表UITemplate
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.EquipmentIntegrateStatistics.EquipIntStatisticsUITemplate.DefineBlocks">
+            <summary>
+            定义块方法
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticCriteriaViewConfig">
+            <summary>
+            ESD分析查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticCriteriaViewConfig.ConfigView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticViewConfig">
+            <summary>
+            不通过明细
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.EquipmentIntegrateStatistics.EquipmentIntegrateStatisticViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Report.EquipmentMixReport.Commands.EmsExcelHelper">
+            <summary>
+            导入导出共用方法
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.EquipmentMixReport.Commands.EmsExcelHelper.SetCellStyle(NPOI.SS.UserModel.IWorkbook,NPOI.SS.UserModel.ICell)">
+            <summary>
+            设置单元格样式
+            </summary>
+            <param name="workbook">工作簿</param>
+            <param name="cell">单元格</param>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.EquipmentMixReport.Commands.EmsExcelHelper.ExportData(Newtonsoft.Json.Linq.JObject,System.Collections.Generic.List{System.Drawing.Bitmap})">
+            <summary>
+            导出数据至Excel (带图片导出)
+            </summary>        
+            <param name="dataView">数据视图</param>
+            <param name="images">图片</param>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.EquipmentMixReport.Commands.EmsExcelHelper.SetGridData(NPOI.SS.UserModel.ISheet,Newtonsoft.Json.Linq.JObject,NPOI.SS.UserModel.ICellStyle)">
+            <summary>
+            设置抽样数据列表
+            </summary>
+            <param name="sheet">工作表</param>
+            <param name="dataView"></param>
+            <param name="style">样式</param>
+        </member>
+        <member name="T:SIE.Web.EMS.Report.EquipmentMixReport.Commands.ExportMixCommand">
+            <summary>
+            导出
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.EquipmentMixReport.Commands.ExportMixCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行导出，保存至Excel
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.EquipmentMixReport.Commands.ExportMixCommand.Base64StrToImage(Newtonsoft.Json.Linq.JToken)">
+            <summary>
+            将Base64字符串转换为Image对象
+            </summary>
+            <param name="Images">base64字符串</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Report.EquipmentMixReport.EmsMixReportDataQueryer">
+            <summary>
+            综合报表查询器
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.EquipmentMixReport.EmsMixReportDataQueryer.GetReportData(SIE.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModelCriteria)">
+            <summary>
+            获取报表数据
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModelCriteriaViewConfig">
+            <summary>
+            查询
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModelCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            配置查询界面
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModelViewConfig">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModelViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.EquipmentMixReport.EquipmentMixReportMonViewModelViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Report.EquipmentMixReport.MixReportUITemplate">
+            <summary>
+            模板基类
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.EquipmentMixReport.MixReportUITemplate.DefineBlocks">
+            <summary>
+            定义块方法
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Report.FaultCountReports.FaultCountReportCriteriaViewConfig">
+            <summary>
+            故障统计报表查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.FaultCountReports.FaultCountReportCriteriaViewConfig.ConfigView">
+            <summary>
+            默认配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Report.FaultCountReports.FaultCountReportViewConfig">
+            <summary>
+            故障统计报表查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.FaultCountReports.FaultCountReportViewConfig.ConfigView">
+            <summary>
+            默认配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Report.ReportMenuInit">
+            <summary>
+            菜单初始化
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.ReportMenuInit.GetMenuDtos">
+            <summary>
+            获取菜单列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Report.Module">
+            <summary>
+            模块配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化模块
+            </summary>
+            <param name="app">应用程序</param>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.Module.App_ModuleOperations(System.Object,System.EventArgs)">
+            <summary>
+            模块定义
+            </summary>
+            <param name="sender">应用程序</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="T:SIE.Web.EMS.Report.MttrAndMtbfReports.Commands.MttrAndMtbfReportExportCommand">
+            <summary>
+            导出
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.MttrAndMtbfReports.Commands.MttrAndMtbfReportExportCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行导出，保存至Excel
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.MttrAndMtbfReports.Commands.MttrAndMtbfReportExportCommand.Base64StrToImage(Newtonsoft.Json.Linq.JToken)">
+            <summary>
+            将Base64字符串转换为Image对象
+            </summary>
+            <param name="Images">base64字符串</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Report.MttrAndMtbfReports.Commands.ReportExcelHelper">
+            <summary>
+            导入导出共用方法
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.MttrAndMtbfReports.Commands.ReportExcelHelper.SetCellStyle(NPOI.SS.UserModel.IWorkbook,NPOI.SS.UserModel.ICell)">
+            <summary>
+            设置单元格样式
+            </summary>
+            <param name="workbook">工作簿</param>
+            <param name="cell">单元格</param>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.MttrAndMtbfReports.Commands.ReportExcelHelper.ExportData(Newtonsoft.Json.Linq.JObject,System.Collections.Generic.List{System.Drawing.Bitmap})">
+            <summary>
+            导出数据至Excel (带图片导出)
+            </summary>        
+            <param name="dataView">数据视图</param>
+            <param name="images">图片</param>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.MttrAndMtbfReports.Commands.ReportExcelHelper.SetGridData(NPOI.SS.UserModel.ISheet,Newtonsoft.Json.Linq.JObject,NPOI.SS.UserModel.ICellStyle)">
+            <summary>
+            设置抽样数据列表
+            </summary>
+            <param name="sheet">工作表</param>
+            <param name="dataView"></param>
+            <param name="style">样式</param>
+        </member>
+        <member name="T:SIE.Web.EMS.Report.MttrAndMtbfReports.DataQueryers.MttrAndMtbfReportDataQueryer">
+            <summary>
+            MTTR/MTBF统计报表查询器
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.MttrAndMtbfReports.DataQueryers.MttrAndMtbfReportDataQueryer.GetMttrAndMtbfReportData(SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModelCriteria)">
+            <summary>
+            获取报表数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.MttrAndMtbfReports.DataQueryers.MttrAndMtbfReportDataQueryer.GetItemValue(SIE.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModel,SIE.EMS.API.APIModels.EquipmentFaultStatistics)">
+            <summary>
+            获取对应项目的值
+            </summary>
+            <param name="data"></param>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Report.MttrAndMtbfReports.DataQueryers.MttrAndMtbfReportInfo">
+            <summary>
+            MTTR/MTBF统计报表数据
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.Report.MttrAndMtbfReports.DataQueryers.MttrAndMtbfReportInfo.EquipmentCount">
+            <summary>
+            设备数
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.Report.MttrAndMtbfReports.DataQueryers.MttrAndMtbfReportInfo.MttrAndMtbfBarReport">
+            <summary>
+            MTTR/MTBF报表数据
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.Report.MttrAndMtbfReports.DataQueryers.MttrAndMtbfReportInfo.MttrAndMtbfList">
+            <summary>
+            MTTR/MTBF统计明细
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Report.MttrAndMtbfReports.DataQueryers.MttrAndMtbfBarReportInfo">
+            <summary>
+            MTTR/MTBF统计报表数据
+            </summary>
+        </member>
+        <member name="P:SIE.Web.EMS.Report.MttrAndMtbfReports.DataQueryers.MttrAndMtbfBarReportInfo.MttrAndMtbfBarDatas">
+            <summary>
+            报表数据
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportUITemplate">
+            <summary>
+            MTTR/MTBF统计报表UITemplate
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportUITemplate.DefineBlocks">
+            <summary>
+            定义块方法
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModelCriteriaViewConfig">
+            <summary>
+            MTTR/MTBF统计报表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModelCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModelViewConfig">
+            <summary>
+            MTTR/MTBF统计报表明细
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModelViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.MttrAndMtbfReports.MttrAndMtbfReportViewModelViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Report.SparePartMitReports.DataQueryers.SparePartMixReportDataQueryer">
+            <summary>
+            MTTR/MTBF统计报表查询器
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.SparePartMitReports.DataQueryers.SparePartMixReportDataQueryer.GetSparePartMixReportData(SIE.EMS.Report.SparePartMitReports.SparePartMixReportViewModelCriteria)">
+            <summary>
+            获取报表数据
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Report.SparePartMitReports.SparePartMitReportsUITemplate">
+            <summary>
+            MTTR/MTBF统计报表UITemplate
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.SparePartMitReports.SparePartMitReportsUITemplate.DefineBlocks">
+            <summary>
+            定义块方法
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Report.SparePartMitReports.SparePartMitReportViewModelCriteriaViewConfig">
+            <summary>
+            备件库综合统计查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.SparePartMitReports.SparePartMitReportViewModelCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            配置查询列表
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Report.SparePartMitReports.SparePartMitReportViewModelViewConfig">
+            <summary>
+            备件库综合统计报表
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.SparePartMitReports.SparePartMitReportViewModelViewConfig.ConfigView">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.SparePartMitReports.SparePartMitReportViewModelViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Report.WorkOrderExcuteReports.DataQueryers.WorkOrderExcuteReportDataQueryer">
+            <summary>
+            工单执行报表查询器
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.WorkOrderExcuteReports.DataQueryers.WorkOrderExcuteReportDataQueryer.GetWorkOrderExcuteReportData(SIE.EMS.Report.WorkOrderExcuteReports.WorkOrderExcuteReportViewModelCriteria)">
+            <summary>
+            获取报表数据
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Report.WorkOrderExcuteReports.WorkOrderExcuteReportCriteriaViewConfig">
+            <summary>
+            工单执行统计报表查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.WorkOrderExcuteReports.WorkOrderExcuteReportCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            配置查询列表
+            </summary>
+        </member>
+        <member name="T:SIE.Web.EMS.Report.WorkOrderExcuteReports.WorkOrderExcuteReportUITemplate">
+            <summary>
+            工单执行统计报表
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.WorkOrderExcuteReports.WorkOrderExcuteReportUITemplate.DefineBlocks">
+            <summary>
+            定义块方法
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.EMS.Report.WorkOrderExcuteReports.WorkOrderExcuteReportViewModelViewConfig">
+            <summary>
+            工单执行统计报表
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.WorkOrderExcuteReports.WorkOrderExcuteReportViewModelViewConfig.ConfigView">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Web.EMS.Report.WorkOrderExcuteReports.WorkOrderExcuteReportViewModelViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+    </members>
+</doc>

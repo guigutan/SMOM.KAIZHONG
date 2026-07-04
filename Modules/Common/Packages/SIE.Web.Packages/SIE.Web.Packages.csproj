@@ -1,0 +1,141 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.Packages.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.Packages.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="DataQuery\**" />
+    <EmbeddedResource Remove="DataQuery\**" />
+    <None Remove="DataQuery\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Boxs\Commands\AddCpaacityCommand.js" />
+    <None Remove="Boxs\Commands\TurnoverBoxAddCommand.js" />
+    <None Remove="Boxs\Commands\TurnoverBoxCopyCommand.js" />
+    <None Remove="Boxs\Commands\TurnoverBoxDeleteCommand.js" />
+    <None Remove="Boxs\Commands\TurnoverBoxEditCommand.js" />
+    <None Remove="Boxs\Commands\TurnoverBoxScrapCommand.js" />
+    <None Remove="Boxs\Layouts\BoxsAuthUIGenerator.js" />
+    <None Remove="ItemLabels\Commands\ItemLabelDeleteCommand.js" />
+    <None Remove="ItemLabels\Commands\ItemLabelExportCommand.js" />
+    <None Remove="ItemLabels\Commands\ItemLabelImportCommand.js" />
+    <None Remove="ItemLabels\Commands\ItemLabelLabelPrintCommand.js" />
+    <None Remove="Packages\Commands\AddItemPkgRuleDtlCommand.js" />
+    <None Remove="Packages\Commands\DeleteItemPackageRuleCommand.js" />
+    <None Remove="Packages\Commands\DeleteItemPkgRuleDtlCommand.js" />
+    <None Remove="Packages\Commands\EditItemPkgRuleDtlCommand.js" />
+    <None Remove="Packages\Commands\InitPackingUnitCommand.js" />
+    <None Remove="Packages\Commands\ItemPackageDefautlRuleCommand.js" />
+    <None Remove="Packages\Commands\MoveBottomItemPkgRuleDtlCommand.js" />
+    <None Remove="Packages\Commands\MoveDownItemPkgRuleDtlCommand.js" />
+    <None Remove="Packages\Commands\MoveTopItemPkgRuleDtlCommand.js" />
+    <None Remove="Packages\Commands\MoveUpItemPkgRuleDtlCommand.js" />
+    <None Remove="Packages\Commands\PackageRuleAddCommand.js" />
+    <None Remove="Packages\Commands\PackageRuleCopyCommand.js" />
+    <None Remove="Packages\Commands\PackageRuleDefaultCommand.js" />
+    <None Remove="Packages\Commands\PackageRuleDetailAddCommand.js" />
+    <None Remove="Packages\Commands\PackageRuleDetailAttachEditCommand.js" />
+    <None Remove="Packages\Commands\PackageRuleDetailDeleteCommand.js" />
+    <None Remove="Packages\Commands\PackageRuleDetailEditCommand.js" />
+    <None Remove="Packages\Commands\PackageRuleDetailMoveBottomCommand.js" />
+    <None Remove="Packages\Commands\PackageRuleDetailMoveDownCommand.js" />
+    <None Remove="Packages\Commands\PackageRuleDetailMoveTopCommand.js" />
+    <None Remove="Packages\Commands\PackageRuleDetailMoveUpCommand.js" />
+    <None Remove="Packages\Commands\PackageRuleSaveCommand.js" />
+    <None Remove="Packages\Commands\PackageUnitAddCommand.js" />
+    <None Remove="Packages\Commands\PackingUnitDeleteCommand.js" />
+    <None Remove="Packages\Commands\RePackageEnableCommand.js" />
+    <None Remove="Packages\Commands\SelectPackageRuleCommand.js" />
+    <None Remove="Packages\Contorl\ItemPackageRuleDetailCheckEditor.js" />
+    <None Remove="Packages\Scripts\PackageRuleDetailAction.js" />
+    <None Remove="QrCodeParseRules\Commands\AddQrCodeParseRuleDetailCommand.js" />
+    <None Remove="QrCodeParseRules\Commands\DeleteQrCodeParseRuleCommand.js" />
+    <None Remove="QrCodeParseRules\Commands\EditQrCodeParseRuleCommand.js" />
+    <None Remove="QrCodeParseRules\Commands\EditQrCodeParseRuleDetailCommand.js" />
+    <None Remove="QrCodeParseRules\Commands\EnableQrCodeParseRuleCommand.js" />
+    <None Remove="QrCodeParseRules\Commands\SaveQrCodeParseRuleCommand.js" />
+    <None Remove="QrCodeParseRules\Scripts\QrCodeParseRuleDetailBehavior.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\..\..\.sonarlint\sie.smom\CSharp\SonarLint.xml" Link="SonarLint.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Boxs\Commands\AddCpaacityCommand.js" />
+    <EmbeddedResource Include="Boxs\Commands\TurnoverBoxAddCommand.js" />
+    <EmbeddedResource Include="Boxs\Commands\TurnoverBoxCopyCommand.js" />
+    <EmbeddedResource Include="Boxs\Commands\TurnoverBoxDeleteCommand.js" />
+    <EmbeddedResource Include="Boxs\Commands\TurnoverBoxEditCommand.js" />
+    <EmbeddedResource Include="Boxs\Commands\TurnoverBoxScrapCommand.js" />
+    <EmbeddedResource Include="Boxs\Layouts\BoxsAuthUIGenerator.js" />
+    <EmbeddedResource Include="ItemLabels\Commands\ItemLabelDeleteCommand.js" />
+    <EmbeddedResource Include="ItemLabels\Commands\ItemLabelImportCommand.js" />
+    <EmbeddedResource Include="ItemLabels\Commands\ItemLabelExportCommand.js" />
+    <EmbeddedResource Include="ItemLabels\Commands\ItemLabelLabelPrintCommand.js" />
+    <EmbeddedResource Include="Packages\Commands\AddItemPkgRuleDtlCommand.js" />
+    <EmbeddedResource Include="Packages\Commands\DeleteItemPkgRuleDtlCommand.js" />
+    <EmbeddedResource Include="Packages\Commands\DeleteItemPackageRuleCommand.js" />
+    <EmbeddedResource Include="Packages\Commands\EditItemPkgRuleDtlCommand.js">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Packages\Commands\InitPackingUnitCommand.js" />
+    <EmbeddedResource Include="Packages\Commands\PackingUnitDeleteCommand.js" />
+    <EmbeddedResource Include="Packages\Commands\RePackageEnableCommand.js" />
+    <EmbeddedResource Include="Packages\Commands\ItemPackageDefautlRuleCommand.js" />
+    <EmbeddedResource Include="Packages\Commands\MoveBottomItemPkgRuleDtlCommand.js" />
+    <EmbeddedResource Include="Packages\Commands\MoveDownItemPkgRuleDtlCommand.js" />
+    <EmbeddedResource Include="Packages\Commands\MoveTopItemPkgRuleDtlCommand.js" />
+    <EmbeddedResource Include="Packages\Commands\MoveUpItemPkgRuleDtlCommand.js" />
+    <EmbeddedResource Include="Packages\Commands\PackageRuleAddCommand.js" />
+    <EmbeddedResource Include="Packages\Commands\PackageRuleCopyCommand.js" />
+    <EmbeddedResource Include="Packages\Commands\PackageRuleDefaultCommand.js" />
+    <EmbeddedResource Include="Packages\Commands\PackageRuleDetailAddCommand.js" />
+    <EmbeddedResource Include="Packages\Commands\PackageRuleDetailAttachEditCommand.js" />
+    <EmbeddedResource Include="Packages\Commands\PackageRuleDetailDeleteCommand.js" />
+    <EmbeddedResource Include="Packages\Commands\PackageRuleDetailEditCommand.js" />
+    <EmbeddedResource Include="Packages\Commands\PackageRuleDetailMoveBottomCommand.js" />
+    <EmbeddedResource Include="Packages\Commands\PackageRuleDetailMoveDownCommand.js" />
+    <EmbeddedResource Include="Packages\Commands\PackageRuleDetailMoveTopCommand.js" />
+    <EmbeddedResource Include="Packages\Commands\PackageRuleDetailMoveUpCommand.js" />
+    <EmbeddedResource Include="Packages\Commands\PackageRuleSaveCommand.js" />
+    <EmbeddedResource Include="Packages\Commands\PackageUnitAddCommand.js" />
+    <EmbeddedResource Include="Packages\Commands\SelectPackageRuleCommand.js" />
+    <EmbeddedResource Include="Packages\Contorl\ItemPackageRuleDetailCheckEditor.js" />
+    <EmbeddedResource Include="Packages\Scripts\PackageRuleDetailAction.js" />
+    <EmbeddedResource Include="QrCodeParseRules\Commands\AddQrCodeParseRuleDetailCommand.js" />
+    <EmbeddedResource Include="QrCodeParseRules\Commands\EditQrCodeParseRuleDetailCommand.js" />
+    <EmbeddedResource Include="QrCodeParseRules\Commands\EditQrCodeParseRuleCommand.js" />
+    <EmbeddedResource Include="QrCodeParseRules\Commands\DeleteQrCodeParseRuleCommand.js" />
+    <EmbeddedResource Include="QrCodeParseRules\Commands\EnableQrCodeParseRuleCommand.js" />
+    <EmbeddedResource Include="QrCodeParseRules\Commands\SaveQrCodeParseRuleCommand.js" />
+    <EmbeddedResource Include="QrCodeParseRules\Scripts\QrCodeParseRuleDetailBehavior.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\SMES\Barcodes\SIE.Barcodes\SIE.Barcodes.csproj" />
+    <ProjectReference Include="..\SIE.Packages\SIE.Packages.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Templates\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Templates\单体条码导入模板.xls">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="SIE.Web.Common" Version="10.0.5" />
+  </ItemGroup>
+</Project>

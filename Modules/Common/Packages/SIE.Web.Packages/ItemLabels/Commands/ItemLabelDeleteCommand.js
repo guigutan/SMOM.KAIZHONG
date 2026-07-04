@@ -1,0 +1,26 @@
+﻿SIE.defineCommand('SIE.Web.Packages.ItemLabels.Commands.ItemLabelDeleteCommand', {
+    extend: 'SIE.cmd.Delete',
+    meta: { text: "删除", group: "edit", iconCls: "icon-DeleteEntity icon-red" },
+    canExecute: function (listView) {
+        var selectModels = listView.getSelection();
+        if (selectModels.length == 0) return false;
+        var res = true;
+        SIE.each(selectModels, function (model) {
+            if (model.data.ItemLabelState != 1)
+                res = false;
+        });
+        return res;
+    },
+    execute: function (view, source) {
+        var sel = view.getSelection();
+        SIE.Msg.askQuestion(Ext.String.format('你确定删除选择的{0}条数据吗？'.t(), sel.length), function () {
+            view.execute({
+                data: sel.select(p=>p.data.Id),//view.getCurrent().data.Id,
+                success: function (res) {
+                    view.reloadData();
+                    view.setCurrent(null, true);
+                },
+            });
+        });
+    }
+});

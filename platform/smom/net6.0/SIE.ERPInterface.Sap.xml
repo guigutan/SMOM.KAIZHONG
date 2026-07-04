@@ -1,0 +1,2379 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.ERPInterface.Sap</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.ERPInterface.Sap.Upload.BlueLabel.HttpSapBlueLabelController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Upload.BlueLabel.HttpSapBlueLabelController.UploadBlueLabelToSap(System.Collections.Generic.IList{SIE.MES.PackingQC.PackingQc})">
+            <summary>
+            蓝标装箱上传
+            </summary>      
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Upload.Allocate.HttpAllocateController">
+            <summary>
+            库存调拨上传接口
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Upload.Allocate.HttpAllocateController.UploadAllocateToErp(System.Collections.Generic.List{System.Tuple{SIE.Core.Enums.OrderType,SIE.Inventory.Transactions.TransactionType,System.Nullable{System.Double},System.String}})">
+            <summary>
+            库存调拨上传
+            </summary>      
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Upload.Allocate.IUploadAllocateHandle">
+            <summary>
+            库存调拨
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Upload.Deduction.HttpSapDeductionController.UploadDeductionToErp">
+            <summary>
+            扣料上传
+            </summary>      
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Upload.Deduction.UploadDeductionHandle.Grouped(SIE.Domain.EntityList{SIE.ERPInterface.Common.Logs.UploadTransaction})">
+            <summary>
+            分组
+            </summary>
+            <param name="uploadTransactions"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Upload.Deduction.UploadDeductionHandle.SetParam(SIE.Domain.EntityList{SIE.ERPInterface.Common.Logs.UploadTransaction})">
+            <summary>
+            设置参数
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Upload.Finished.HttpSapFinishedController">
+            <summary>
+            SAP成品入库控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Upload.Finished.HttpSapFinishedController.UploadInStorageToErp(System.Collections.Generic.List{System.Tuple{SIE.Core.Enums.OrderType,SIE.Inventory.Transactions.TransactionType,System.Nullable{System.Double},System.String}})">
+            <summary>
+            成品入库上传
+            </summary>      
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Upload.Finished.HttpSapFinishedController.InStorageSuccessCallBack(System.Collections.Generic.Dictionary{System.Double,System.String})">
+            <summary>
+            成品入库接口调用成功处理数据
+            </summary>
+            <param name="dic"></param>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Upload.Finished.UploadFinishedInStorageHandle">
+            <summary>
+            成品入库上传业务数据接口实现
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Upload.MaterialReturn.HttpMaterialReturnController">
+            <summary>
+            生产退料事务上传
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Upload.MaterialReturn.HttpMaterialReturnController.UploadMaterialReturnToErp(System.Collections.Generic.List{System.Tuple{SIE.Core.Enums.OrderType,SIE.Inventory.Transactions.TransactionType,System.Nullable{System.Double},System.String}})">
+            <summary>
+            生产退料事务上传
+            </summary>      
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Upload.MaterialReturn.IUploadMaterialReturnHandle">
+            <summary>
+            工单退料事务上传
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Upload.MaterialReturn.IUploadMaterialReturnHandle.SIE#ERPInterface#Sap#IUploadDataHandler{SIE#ERPInterface#Sap#Datas#ErpInfoDatas#WorkFeed#SapOrderParamWorkFeed{SIE#ERPInterface#Sap#Datas#ErpInfoDatas#WorkFeed#WorkFeedUploadData}}#SetUploadData(System.Collections.Generic.List{SIE.ERPInterface.Common.Logs.UploadTransaction})">
+            <summary>
+            工单退料事务上传
+            </summary>
+            <param name="uploadTransactions"></param>    
+            <returns></returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Upload.OtherIn.HttpSapOtherInController">
+            <summary>
+            Sap其他入库控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Upload.OtherIn.HttpSapOtherInController.UploadInStorageToErp(System.Collections.Generic.List{System.Tuple{SIE.Core.Enums.OrderType,SIE.Inventory.Transactions.TransactionType,System.Nullable{System.Double},System.String}})">
+            <summary>
+            其他入库上传
+            </summary>      
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Upload.OtherIn.HttpSapOtherInController.InStorageSuccessCallBack(System.Collections.Generic.Dictionary{System.Double,System.String})">
+            <summary>
+            其他入库接口调用成功数据处理
+            </summary>
+            <param name="dic"></param>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Upload.OtherIn.UploadOtherInStorageHandle">
+            <summary>
+            其他入库上传业务数据接口实现
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Upload.OtherOut.HttpSapOtherOutController">
+            <summary>
+            Sap其他出库控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Upload.OtherOut.HttpSapOtherOutController.UploadOutStorageToErp(System.Collections.Generic.List{System.Tuple{SIE.Core.Enums.OrderType,SIE.Inventory.Transactions.TransactionType,System.Nullable{System.Double},System.String}})">
+            <summary>
+            其他出库上传
+            </summary>      
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Upload.OtherOut.HttpSapOtherOutController.OutStorageSuccessCallBack(System.Collections.Generic.Dictionary{System.Double,System.String})">
+            <summary>
+            其他出库接口调用成功数据处理
+            </summary>
+            <param name="dic"></param>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Upload.OtherOut.UploadOtherOutStorageHandle">
+            <summary>
+            其他出库上传业务数据接口实现
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Upload.OutboundConfirm.HttpSapOutboundConfirmController.UploadOutboundConfirm">
+            <summary>
+            
+            </summary>      
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Upload.OutPurchase.HttpOutPurchaseController">
+            <summary>
+            委外发/退事务
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Upload.OutPurchase.HttpOutPurchaseController.UploadPurchaseOutToErp(System.Collections.Generic.List{System.Tuple{SIE.Core.Enums.OrderType,SIE.Inventory.Transactions.TransactionType,System.Nullable{System.Double},System.String}})">
+            <summary>
+            委外出库事务上传接口
+            </summary>      
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Upload.OutPurchase.HttpOutPurchaseController.UploadPurchaseInToErp(System.Collections.Generic.List{System.Tuple{SIE.Core.Enums.OrderType,SIE.Inventory.Transactions.TransactionType,System.Nullable{System.Double},System.String}})">
+            <summary>
+            委外入库事务上传接口
+            </summary>      
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Upload.OutPurchase.IUploadOutPurchaseHandle">
+            <summary>
+            委外出库事务上传
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Upload.OutPurchase.IUploadOutPurchaseHandle.SIE#ERPInterface#Sap#IUploadDataHandler{SIE#ERPInterface#Sap#Datas#ErpInfoDatas#OutPurchase#SapOrderParamOutPur{SIE#ERPInterface#Sap#Datas#ErpInfoDatas#OutPurchase#UploadOutPurchaseData}}#SetUploadData(System.Collections.Generic.List{SIE.ERPInterface.Common.Logs.UploadTransaction})">
+            <summary>
+            上传业务数据接口
+            </summary>
+            <param name="uploadTransactions"></param>    
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Upload.OutPurchase.IUploadOutPurchaseInHandle.SIE#ERPInterface#Sap#IUploadDataHandler{SIE#ERPInterface#Sap#Datas#ErpInfoDatas#OutPurchase#SapOrderParamOutPur{SIE#ERPInterface#Sap#Datas#ErpInfoDatas#OutPurchase#UploadOutPurchaseInData}}#SetUploadData(System.Collections.Generic.List{SIE.ERPInterface.Common.Logs.UploadTransaction})">
+            <summary>
+            上传业务数据接口
+            </summary>
+            <param name="uploadTransactions"></param>    
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Upload.OutputProduct.HttpSapOutputProductController.UploadOutputProductToErp">
+            <summary>
+            副产品上传
+            </summary>      
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Upload.OutputProduct.UploadOutputProductHandle.Grouped(SIE.Domain.EntityList{SIE.ERPInterface.Common.Logs.UploadTransaction})">
+            <summary>
+            分组
+            </summary>
+            <param name="uploadTransactions"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Upload.OutputProduct.UploadOutputProductHandle.SetParam(SIE.Domain.EntityList{SIE.ERPInterface.Common.Logs.UploadTransaction})">
+            <summary>
+            设置参数
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Upload.PurchaseIn.HttpSapPurchaseInController">
+            <summary>
+            Sap采购入库控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Upload.PurchaseIn.HttpSapPurchaseInController.UploadTemporaryReceiveToErp(System.Collections.Generic.List{System.Tuple{SIE.Core.Enums.OrderType,SIE.Inventory.Transactions.TransactionType,System.Nullable{System.Double},System.String}})">
+            <summary>
+            采购送货单暂收上传
+            </summary>      
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Upload.PurchaseIn.HttpSapPurchaseInController.TemporaryReceiveSuccessCallBack(System.Collections.Generic.Dictionary{System.Double,System.String})">
+            <summary>
+            暂收更新SAP凭证
+            </summary>
+            <param name="dic"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Upload.PurchaseIn.HttpSapPurchaseInController.UploadInStorageToErp(System.Collections.Generic.List{System.Tuple{SIE.Core.Enums.OrderType,SIE.Inventory.Transactions.TransactionType,System.Nullable{System.Double},System.String}})">
+            <summary>
+            采购入库上传
+            </summary>      
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Upload.PurchaseIn.HttpSapPurchaseInController.InStorageSuccessCallBack(System.Collections.Generic.Dictionary{System.Double,System.String})">
+            <summary>
+            采购入库更新SAP凭证
+            </summary>
+            <param name="dic"></param>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Upload.PurchaseIn.UploadPurchaseInStorageHandle">
+            <summary>
+            采购入库上传业务数据接口实现
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Upload.PurchaseIn.UploadTemporaryReceiveHandle">
+            <summary>
+            采购送货单暂收上传业务数据接口实现
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Upload.ReworkLayoutVersions.HttpSapReworkLayoutVersionController.UploadReworkLayoutVersionToErp">
+            <summary>
+            扣料上传
+            </summary>      
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Upload.SaleOut.HttpSapSaleOutController">
+            <summary>
+            销售出库事务上传
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Upload.SaleOut.HttpSapSaleOutController.UploadSaleOutToErp(System.Collections.Generic.List{System.Tuple{SIE.Core.Enums.OrderType,SIE.Inventory.Transactions.TransactionType,System.Nullable{System.Double},System.String}})">
+            <summary>
+            销售出库事务上传
+            </summary>      
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Upload.SaleOut.IUploadSaleOutHandle">
+            <summary>
+            销售出库上传业务数据接口实现
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Upload.SaleOut.IUploadSaleOutHandle.SIE#ERPInterface#Sap#IUploadDataHandler{SIE#ERPInterface#Sap#Datas#ErpInfoDatas#SaleOut#SapOrderParamSale{SIE#ERPInterface#Sap#Datas#ErpInfoDatas#SaleOut#SapSaleOutUploadDetail}}#SetUploadData(System.Collections.Generic.List{SIE.ERPInterface.Common.Logs.UploadTransaction})">
+            <summary>
+            上传接口实现
+            </summary>
+            <param name="uploadTransactions"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Upload.RfcSapSaleOutController">
+            <summary>
+            销售出库事务上传
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Upload.RfcSapSaleOutController.UploadSaleOutToErp(System.Collections.Generic.List{System.Tuple{SIE.Core.Enums.OrderType,SIE.Inventory.Transactions.TransactionType,System.Nullable{System.Double},System.String}})">
+            <summary>
+            从SMOM中间表上传销售出库事务到ERP
+            </summary>
+            <param name="tuples"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Upload.RfcSapSaleOutController.SapUploadSaleOut(System.Collections.Generic.List{SIE.ERPInterface.Sap.Datas.SapParameter})">
+            <summary>
+            过账接口
+            </summary>
+            <param name="sapParameters"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Upload.SaleReturn.HttpSapSaleReturnController">
+            <summary>
+            销售退货事务上传
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Upload.SaleReturn.HttpSapSaleReturnController.UploadSaleReturnToErp(System.Collections.Generic.List{System.Tuple{SIE.Core.Enums.OrderType,SIE.Inventory.Transactions.TransactionType,System.Nullable{System.Double},System.String}})">
+            <summary>
+            销售退货（非冲销）事务上传
+            </summary>      
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Upload.SaleReturn.HttpSapSaleReturnController.UploadSaleReturnWriteOffToErp(System.Collections.Generic.List{System.Tuple{SIE.Core.Enums.OrderType,SIE.Inventory.Transactions.TransactionType,System.Nullable{System.Double},System.String}})">
+            <summary>
+            销售退货（冲销）事务上传
+            </summary>      
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Upload.SaleReturn.UploadSaleReturnHandle">
+            <summary>
+            销售退货上传（非冲销）业务数据接口实现
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Upload.SaleReturn.UploadSaleReturnWriteOffHandle">
+            <summary>
+            销售退货上传（冲销）业务数据接口实现
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Upload.ScrapWeighingRecord.HttpSapScrapWeighingController.UploadScrapWeighingToErp">
+            <summary>
+            
+            </summary>      
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Upload.SupplierReturn.HttpSupplierReturnController">
+            <summary>
+            供应商退货事务上传
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Upload.SupplierReturn.HttpSupplierReturnController.UploadSupplierReturnToErp(System.Collections.Generic.List{System.Tuple{SIE.Core.Enums.OrderType,SIE.Inventory.Transactions.TransactionType,System.Nullable{System.Double},System.String}})">
+            <summary>
+            供应商退货上传接口
+            </summary>      
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Upload.SupplierReturn.IUploadSupplierReturnHandle">
+            <summary>
+            供应商退货业务上传
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Upload.SupplierReturn.IUploadSupplierReturnHandle.SIE#ERPInterface#Sap#IUploadDataHandler{SIE#ERPInterface#Sap#Datas#ErpInfoDatas#Suppliers#SapOrderParamSupplierReturn{SIE#ERPInterface#Sap#Datas#ErpInfoDatas#Suppliers#SupplierReturnUploadData}}#SetUploadData(System.Collections.Generic.List{SIE.ERPInterface.Common.Logs.UploadTransaction})">
+            <summary>
+            上传业务数据接口
+            </summary>
+            <param name="uploadTransactions"></param>    
+            <returns></returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Upload.TaskReport.HttpSapTaskReportController">
+            <summary>
+            报工上传
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Upload.TaskReport.HttpSapTaskReportController.UploadTaskReportToErp">
+            <summary>
+            报工上传
+            </summary>      
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Upload.TaskReport.UploadTaskReportHandle">
+            <summary>
+            报工业务数据接口实现
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Upload.WorkFeed.HttpWorkFeedController">
+            <summary>
+            工单发料事务上传
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Upload.WorkFeed.HttpWorkFeedController.UploadWorkFeedToErp(System.Collections.Generic.List{System.Tuple{SIE.Core.Enums.OrderType,SIE.Inventory.Transactions.TransactionType,System.Nullable{System.Double},System.String}})">
+            <summary>
+            工单发料事务上传
+            </summary>      
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Upload.WorkFeed.IUploadWorkFeedHandle">
+            <summary>
+            工单发料
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Upload.WorkFeed.IUploadWorkFeedHandle.SIE#ERPInterface#Sap#IUploadDataHandler{SIE#ERPInterface#Sap#Datas#ErpInfoDatas#WorkFeed#SapOrderParamWorkFeed{SIE#ERPInterface#Sap#Datas#ErpInfoDatas#WorkFeed#WorkFeedUploadData}}#SetUploadData(System.Collections.Generic.List{SIE.ERPInterface.Common.Logs.UploadTransaction})">
+            <summary>
+            上传业务数据接口
+            </summary>
+            <param name="uploadTransactions"></param>    
+            <returns></returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Deduction.KzBlueLabelResultData">
+            <summary>
+            蓝标上传SAP接口返回
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Deduction.KzBlueLabelResultData.Return">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Deduction.KzBlueLabelResult">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Deduction.KzBlueLabelResult.ZFKBS">
+            <summary>
+            返回标识
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Deduction.KzBlueLabelResult.ZFKXX">
+            <summary>
+            返回消息
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Deduction.KzBlueLabelRequestData">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Deduction.KzBlueLabelRequestData.EXIDV">
+            <summary>
+            蓝标
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Deduction.KzBlueLabelRequestData.WERKS">
+            <summary>
+            工厂
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Deduction.KzBlueLabelRequestData.ZPACK">
+            <summary>
+            标识 Y/N
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Deduction.KzDeductionResultData">
+            <summary>
+            扣料接口返回
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Deduction.KzDeductionResultData.AUFNR">
+            <summary>
+            工单号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Deduction.KzDeductionResultData.ZFKBS">
+            <summary>
+            返回标识
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Deduction.KzDeductionResultData.ZFKXX">
+            <summary>
+            返回消息
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Deduction.KzDeductionResultData.MBLNR">
+            <summary>
+            返回物料凭证
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Deduction.KzDeductionResultData.MJAHR">
+            <summary>
+            返回物料凭证年度
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Deduction.KzDeductionUploadData">
+            <summary>
+            上传数据
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Deduction.KzDeductionUploadData.AUFNR">
+            <summary>
+            工单号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Deduction.KzDeductionUploadData.PLANT">
+            <summary>
+            工厂
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Deduction.KzDeductionUploadData.BUDAT">
+            <summary>
+            过账日期
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Deduction.KzDeductionUploadData.MATNR">
+            <summary>
+            物料号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Deduction.KzDeductionUploadData.MEINS">
+            <summary>
+            单位
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Deduction.KzDeductionUploadData.MENGE">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Deduction.KzDeductionUploadData.CHARG">
+            <summary>
+            批次
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Deduction.KzDeductionUploadData.LGORT">
+            <summary>
+            库位
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Deduction.KzDeductionUploadData.BWART">
+            <summary>
+            移动类型
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Deduction.KzDeductionUploadData.GRUND">
+            <summary>
+            移动原因
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Allocate.UploadAllocateData">
+            <summary>
+            库存调拨事务上传
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Allocate.UploadAllocateData.BILL_DTL_NO">
+            <summary>
+            WMS行号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Allocate.UploadAllocateData.WERKS">
+            <summary>
+            工厂(库存组织)
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Allocate.UploadAllocateData.BWART">
+            <summary>
+            移动类型
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Allocate.UploadAllocateData.LGORT">
+            <summary>
+            发货仓库编码
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Allocate.UploadAllocateData.UMLGO">
+            <summary>
+            目标仓库编码
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Allocate.UploadAllocateData.UMMAT">
+            <summary>
+            收货物料
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Allocate.UploadAllocateData.ERFMG">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Allocate.UploadAllocateData.ERFME">
+            <summary>
+            基本单位
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Allocate.UploadAllocateData.CHARG">
+            <summary>
+            发出批次
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Allocate.UploadAllocateData.UMCHA">
+            <summary>
+            接受批次
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Allocate.UploadAllocateData.SOBKZ">
+            <summary>
+            特殊库存 批次属性06有值时，取Q；
+            批次属性08 、09都有值时，取E；
+            批次属性06 、08 、09都为空时，取空值；
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Allocate.UploadAllocateData.MAT_PSPNR">
+            <summary>
+            发出WBS项目号(取批次属性06)
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Allocate.UploadAllocateData.UMMAT_PSPNR">
+            <summary>
+            接收WBS项目号(取批次属性06)
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Allocate.UploadAllocateData.MAT_KDAUF">
+            <summary>
+            发出销售订单号 特殊库存=E时必填;(批次属性08)
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Allocate.UploadAllocateData.MAT_KDPOS">
+            <summary>
+            发出销售订单行号  批次属性09
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Allocate.UploadAllocateData.UMMAT_KDAUF">
+            <summary>
+            接收销售订单号 批次属性08
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Allocate.UploadAllocateData.UMMAT_KDPOS">
+            <summary>
+            接收销售订单行号 批次属性09
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Allocate.UploadAllocateData.KDAUF">
+            <summary>
+            整备销售订单 批次属性11
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Allocate.UploadAllocateData.KDPOS">
+            <summary>
+            整备销售订单行号 批次属性12
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Allocate.SapAllocateUploadData`1">
+            <summary>
+            采购入库上传数据
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Allocate.SapAllocateUploadData`1.BILL_NO">
+            <summary>
+            WMS单号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Allocate.SapAllocateUploadData`1.DBDH">
+            <summary>
+            整备调拨单号
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Finished.SapInStorageUploadDataDetail">
+            <summary>
+            成品入库上传数据明细
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Finished.SapInStorageUploadDataDetail.BWART">
+            <summary>
+            移动类型
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Finished.SapInStorageUploadDataDetail.BILL_DTL_NO">
+            <summary>
+            WMS行号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Finished.SapInStorageUploadDataDetail.WERKS">
+            <summary>
+            工厂
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Finished.SapInStorageUploadDataDetail.LGORT">
+            <summary>
+            库存地点
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Finished.SapInStorageUploadDataDetail.ERFMG">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Finished.SapInStorageUploadDataDetail.ERFME">
+            <summary>
+            基本单位
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Finished.SapInStorageUploadDataDetail.AUFNR">
+            <summary>
+            生产订单
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Finished.SapInStorageUploadDataDetail.CHARG">
+            <summary>
+            批次
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Finished.SapInStorageUploadData`1">
+            <summary>
+            成品入库上传数据
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Finished.SapInStorageUploadData`1.BILL_NO">
+            <summary>
+            单号
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherIn.SapOtherInStorageUploadDataDetail">
+            <summary>
+            其他入库上传数据明细
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherIn.SapOtherInStorageUploadDataDetail.BILL_DTL_NO">
+            <summary>
+            WMS行号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherIn.SapOtherInStorageUploadDataDetail.ZEILE">
+            <summary>
+            其他出库物料凭证行号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherIn.SapOtherInStorageUploadDataDetail.WERKS">
+            <summary>
+            工厂
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherIn.SapOtherInStorageUploadDataDetail.BWART">
+            <summary>
+            移动类型
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherIn.SapOtherInStorageUploadDataDetail.LGORT">
+            <summary>
+            收货仓库
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherIn.SapOtherInStorageUploadDataDetail.ERFMG">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherIn.SapOtherInStorageUploadDataDetail.ERFME">
+            <summary>
+            基本单位
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherIn.SapOtherInStorageUploadDataDetail.SOBKZ">
+            <summary>
+            特殊库存
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherIn.SapOtherInStorageUploadDataDetail.KUNNR">
+            <summary>
+            客户编码
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherIn.SapOtherInStorageUploadDataDetail.LIFNR">
+            <summary>
+            供应商
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherIn.SapOtherInStorageUploadDataDetail.KOSTL">
+            <summary>
+            成本中心
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherIn.SapOtherInStorageUploadDataDetail.PS_POSNR">
+            <summary>
+            WBS项目号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherIn.SapOtherInStorageUploadDataDetail.KDAUF">
+            <summary>
+            销售订单号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherIn.SapOtherInStorageUploadDataDetail.KDPOS">
+            <summary>
+            销售订单行号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherIn.SapOtherInStorageUploadDataDetail.ANLN1">
+            <summary>
+            主资产号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherIn.SapOtherInStorageUploadDataDetail.NPLNR">
+            <summary>
+            网络
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherIn.SapOtherInStorageUploadDataDetail.AUFNR">
+            <summary>
+            订单号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherIn.SapOtherInStorageUploadDataDetail.SGTXT">
+            <summary>
+            项目文本
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherIn.SapOtherInStorageUploadDataDetail.CHARG">
+            <summary>
+            发出批次
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherIn.SapOtherInStorageUploadDataDetail.UMCHA">
+            <summary>
+            接收批次
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherIn.SapOtherInStorageUploadDataDetail.EXBWR">
+            <summary>
+            过账金额
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherIn.SapOtherInStorageUploadDataDetail.WEMPF">
+            <summary>
+            收货方
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherIn.SapOtherInStorageUploadData`1">
+            <summary>
+            其他入库上传数据
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherIn.SapOtherInStorageUploadData`1.BILL_NO">
+            <summary>
+            WMS单号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherIn.SapOtherInStorageUploadData`1.MBLNR">
+            <summary>
+            其他出库物料凭证号
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherOut.SapOtherOutStorageUploadDataDetail">
+            <summary>
+            其他出库上传数据明细
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherOut.SapOtherOutStorageUploadDataDetail.BILL_DTL_NO">
+            <summary>
+            WMS行号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherOut.SapOtherOutStorageUploadDataDetail.ZEILE">
+            <summary>
+            其他出库物料凭证行号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherOut.SapOtherOutStorageUploadDataDetail.WERKS">
+            <summary>
+            工厂
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherOut.SapOtherOutStorageUploadDataDetail.BWART">
+            <summary>
+            移动类型
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherOut.SapOtherOutStorageUploadDataDetail.LGORT">
+            <summary>
+            发货仓库
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherOut.SapOtherOutStorageUploadDataDetail.ERFMG">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherOut.SapOtherOutStorageUploadDataDetail.ERFME">
+            <summary>
+            基本单位
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherOut.SapOtherOutStorageUploadDataDetail.SOBKZ">
+            <summary>
+            特殊库存
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherOut.SapOtherOutStorageUploadDataDetail.KUNNR">
+            <summary>
+            客户编码
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherOut.SapOtherOutStorageUploadDataDetail.LIFNR">
+            <summary>
+            供应商
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherOut.SapOtherOutStorageUploadDataDetail.KOSTL">
+            <summary>
+            成本中心
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherOut.SapOtherOutStorageUploadDataDetail.PS_POSNR">
+            <summary>
+            WBS项目号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherOut.SapOtherOutStorageUploadDataDetail.KDAUF">
+            <summary>
+            销售订单号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherOut.SapOtherOutStorageUploadDataDetail.KDPOS">
+            <summary>
+            销售订单行号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherOut.SapOtherOutStorageUploadDataDetail.ANLN1">
+            <summary>
+            主资产号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherOut.SapOtherOutStorageUploadDataDetail.NPLNR">
+            <summary>
+            网络
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherOut.SapOtherOutStorageUploadDataDetail.AUFNR">
+            <summary>
+            订单号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherOut.SapOtherOutStorageUploadDataDetail.SGTXT">
+            <summary>
+            项目文本
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherOut.SapOtherOutStorageUploadDataDetail.CHARG">
+            <summary>
+            发出批次
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherOut.SapOtherOutStorageUploadDataDetail.UMCHA">
+            <summary>
+            接收批次
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherOut.SapOtherOutStorageUploadDataDetail.EXBWR">
+            <summary>
+            过账金额
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherOut.SapOtherOutStorageUploadDataDetail.WEMPF">
+            <summary>
+            收货方
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherOut.SapOtherOutStorageUploadData`1">
+            <summary>
+            其他出库上传数据
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OtherOut.SapOtherOutStorageUploadData`1.BILL_NO">
+            <summary>
+            WMS单号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OutboundConfirm.KzOutboundConfirmResultData.state">
+            <summary>
+            状态(E失败，S成功)
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OutboundConfirm.KzOutboundConfirmResultData.message">
+            <summary>
+            信息
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OutboundConfirm.KzOutboundConfirmResultData.FLOWNO">
+            <summary>
+            流程单号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OutboundConfirm.KzOutboundConfirmResultData.ZUID">
+            <summary>
+            唯一码
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OutboundConfirm.KzOutboundConfirmUploadData.FLOWNO">
+            <summary>
+            流程单号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OutboundConfirm.KzOutboundConfirmUploadData.OUTER">
+            <summary>
+            发货人
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OutboundConfirm.KzOutboundConfirmUploadData.INITIATORFACTORY">
+            <summary>
+            发出工厂
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OutboundConfirm.KzOutboundConfirmUploadData.OUTFACTORY">
+            <summary>
+            接收工厂
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OutboundConfirm.KzOutboundConfirmUploadData.STATE">
+            <summary>
+            状态(0:新建,1:更新)
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OutboundConfirm.KzOutboundConfirmUploadData.DATE">
+            <summary>
+            发货时间
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OutboundConfirm.KzOutboundConfirmUploadData.QTY">
+            <summary>
+            框数
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OutboundConfirm.KzOutboundConfirmUploadData.ZUID">
+            <summary>
+            唯一码
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OutPurchase.UploadOutPurchaseData">
+            <summary>
+            委外出库上传数据
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OutPurchase.UploadOutPurchaseData.CHARG">
+            <summary>
+            生产批次
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OutPurchase.UploadOutPurchaseData.BWART">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OutPurchase.UploadOutPurchaseData.LGORT">
+            <summary>
+            发货仓库编码
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OutPurchase.UploadOutPurchaseData.ERFMG">
+            <summary>
+            数量（主）
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OutPurchase.UploadOutPurchaseData.ERFME">
+            <summary>
+            主单位编码
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OutPurchase.UploadOutPurchaseData.BILL_DTL_NO">
+            <summary>
+            行号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OutPurchase.UploadOutPurchaseData.EBELN">
+            <summary>
+            采购订单
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OutPurchase.UploadOutPurchaseData.EBELP">
+            <summary>
+            采购订单行号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OutPurchase.UploadOutPurchaseData.LIFNR">
+            <summary>
+            供应商
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OutPurchase.UploadOutPurchaseData.WERKS">
+            <summary>
+            工厂(库存组织)
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OutPurchase.UploadOutPurchaseInData">
+            <summary>
+            委外退料数据
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OutPurchase.UploadOutPurchaseInData.BILL_DTL_NO">
+            <summary>
+            行号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OutPurchase.UploadOutPurchaseInData.BWART">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OutPurchase.UploadOutPurchaseInData.EBELN">
+            <summary>
+            采购订单
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OutPurchase.UploadOutPurchaseInData.EBELP">
+            <summary>
+            采购订单行号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OutPurchase.UploadOutPurchaseInData.ERFMG">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OutPurchase.UploadOutPurchaseInData.ERFME">
+            <summary>
+            单位
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OutPurchase.UploadOutPurchaseInData.LGORT">
+            <summary>
+            库存地点(入库仓库编码)
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OutPurchase.UploadOutPurchaseInData.CHARG">
+            <summary>
+            生产批次
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OutPurchase.UploadOutPurchaseInData.WERKS">
+            <summary>
+            库存组织
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OutPurchase.UploadOutPurchaseInData.LIFNR">
+            <summary>
+            供应商
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OutPurchase.SapOrderParamOutPur`1">
+            <summary>
+            委外出库单头数据
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.OutPurchase.SapOrderParamOutPur`1.BILL_NO">
+            <summary>
+            wms单号
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.PurchaseIn.SapInStorageUploadDataDetail">
+            <summary>
+            采购入库上传数据明细
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.PurchaseIn.SapInStorageUploadDataDetail.BWART">
+            <summary>
+            移动类型
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.PurchaseIn.SapInStorageUploadDataDetail.SGTXT">
+            <summary>
+            SRM行号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.PurchaseIn.SapInStorageUploadDataDetail.EBELN">
+            <summary>
+            采购凭证
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.PurchaseIn.SapInStorageUploadDataDetail.EBELP">
+            <summary>
+            项目
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.PurchaseIn.SapInStorageUploadDataDetail.LGORT">
+            <summary>
+            库存地点
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.PurchaseIn.SapInStorageUploadDataDetail.ERFMG">
+            <summary>
+            基本单位数量
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.PurchaseIn.SapInStorageUploadDataDetail.ERFME">
+            <summary>
+            基本单位
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.PurchaseIn.SapInStorageUploadDataDetail.CHARG">
+            <summary>
+            批次
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.PurchaseIn.SapInStorageUploadDataDetail.TARME">
+            <summary>
+            目标单位
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.PurchaseIn.SapInStorageUploadDataDetail.LIFNR">
+            <summary>
+            供应商
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.PurchaseIn.SapInStorageUploadDataDetail.LFBNR">
+            <summary>
+            暂收凭证号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.PurchaseIn.SapInStorageUploadDataDetail.LFPOS">
+            <summary>
+            暂收凭证行号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.PurchaseIn.SapInStorageUploadDataDetail.WERKS">
+            <summary>
+            工厂
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.PurchaseIn.SapInStorageUploadData`1">
+            <summary>
+            采购入库上传数据
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.PurchaseIn.SapInStorageUploadData`1.ZSRMID">
+            <summary>
+            SRM单号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.PurchaseIn.SapInStorageUploadData`1.BKTXT">
+            <summary>
+            抬头文本
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.PurchaseIn.SapTemporaryReceiveUploadDataDetail">
+            <summary>
+            采购送货单暂收上传数据明细
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.PurchaseIn.SapTemporaryReceiveUploadDataDetail.WERKS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.PurchaseIn.SapTemporaryReceiveUploadDataDetail.BWART">
+            <summary>
+            移动类型
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.PurchaseIn.SapTemporaryReceiveUploadDataDetail.SGTXT">
+            <summary>
+            SRM行号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.PurchaseIn.SapTemporaryReceiveUploadDataDetail.EBELN">
+            <summary>
+            采购凭证
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.PurchaseIn.SapTemporaryReceiveUploadDataDetail.EBELP">
+            <summary>
+            项目
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.PurchaseIn.SapTemporaryReceiveUploadDataDetail.ERFMG">
+            <summary>
+            基本单位数量
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.PurchaseIn.SapTemporaryReceiveUploadDataDetail.ERFME">
+            <summary>
+            基本单位
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.PurchaseIn.SapTemporaryReceiveUploadDataDetail.CHARG">
+            <summary>
+            批次
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.PurchaseIn.SapTemporaryReceiveUploadDataDetail.TARME">
+            <summary>
+            采购单位
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.PurchaseIn.SapTemporaryReceiveUploadData`1">
+            <summary>
+            采购送货单暂收上传数据
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.PurchaseIn.SapTemporaryReceiveUploadData`1.ZSRMID">
+            <summary>
+            SRM单号
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.ReworkLayoutVersions.KzReworkLayoutVersionResultData">
+            <summary>
+            返工信息返工数据
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.ReworkLayoutVersions.KzReworkLayoutVersionResultData.AUFNR">
+            <summary>
+            生产订单
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.ReworkLayoutVersions.KzReworkLayoutVersionResultData.ABLAD">
+            <summary>
+            卸货点
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.ReworkLayoutVersions.KzReworkLayoutVersionResultData.ZFKBS">
+            <summary>
+            反馈标识(S代表成功，E代表失败)
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.ReworkLayoutVersions.KzReworkLayoutVersionResultData.ZFKXX">
+            <summary>
+            反馈信息
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.ReworkLayoutVersions.KzReworkLayoutVersionUploadData">
+            <summary>
+            上传数据
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.ReworkLayoutVersions.KzReworkLayoutVersionUploadData.ZJSBS">
+            <summary>
+            标记(1、新增 2、修改3、关闭)
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.ReworkLayoutVersions.KzReworkLayoutVersionUploadData.WERKS">
+            <summary>
+            工厂
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.ReworkLayoutVersions.KzReworkLayoutVersionUploadData.MATNR">
+            <summary>
+            产品编码
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.ReworkLayoutVersions.KzReworkLayoutVersionUploadData.GAMNG">
+            <summary>
+            订单数量
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.ReworkLayoutVersions.KzReworkLayoutVersionUploadData.DAUAT">
+            <summary>
+            订单类型
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.ReworkLayoutVersions.KzReworkLayoutVersionUploadData.GSTRP">
+            <summary>
+            基本开始日期
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.ReworkLayoutVersions.KzReworkLayoutVersionUploadData.GLTRP">
+            <summary>
+            基本完成日期
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.ReworkLayoutVersions.KzReworkLayoutVersionUploadData.VERID">
+            <summary>
+            生产版本
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.ReworkLayoutVersions.KzReworkLayoutVersionUploadData.ABLAD">
+            <summary>
+            卸货点
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.ReworkLayoutVersions.KzReworkLayoutVersionUploadData.WEMPF">
+            <summary>
+            收货方
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.SaleOut.SapSaleOutUploadDetail">
+            <summary>
+            销售出库上传数据明细
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.SaleOut.SapSaleOutUploadDetail.WERKS">
+            <summary>
+            工厂
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.SaleOut.SapSaleOutUploadDetail.POSNR">
+            <summary>
+            交货单行号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.SaleOut.SapSaleOutUploadDetail.LGORT">
+            <summary>
+            发货仓库
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.SaleOut.SapSaleOutUploadDetail.MENGE">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.SaleOut.SapSaleOutUploadDetail.MEINS">
+            <summary>
+            单位编码
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.SaleOut.SapSaleOutUploadDetail.CHARG">
+            <summary>
+            批次
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.SaleOut.SapSaleOutUploadDetail.VRKM1">
+            <summary>
+            辅助单位
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.SaleOut.SapOrderParamSale`1">
+            <summary>
+            销售出库上传数据
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.SaleOut.SapOrderParamSale`1.VBELN">
+            <summary>
+            交货单号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.SaleOut.SapOrderParamSale`1.KUNNR">
+            <summary>
+            客户编码
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.SaleReturn.SapSaleReturnUploadDataDetail">
+            <summary>
+            销售退货（非冲销）上传数据明细
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.SaleReturn.SapSaleReturnUploadDataDetail.WERKS">
+            <summary>
+            工厂
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.SaleReturn.SapSaleReturnUploadDataDetail.POSNR">
+            <summary>
+            交货单行号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.SaleReturn.SapSaleReturnUploadDataDetail.LGORT">
+            <summary>
+            收货仓库
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.SaleReturn.SapSaleReturnUploadDataDetail.MENGE">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.SaleReturn.SapSaleReturnUploadDataDetail.MEINS">
+            <summary>
+            单位编码
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.SaleReturn.SapSaleReturnUploadDataDetail.VRKM1">
+            <summary>
+            销售单位(辅助单位)
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.SaleReturn.SapSaleReturnUploadData`1">
+            <summary>
+            销售退货（非冲销）上传数据
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.SaleReturn.SapSaleReturnUploadData`1.VBELN">
+            <summary>
+            交货单号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.SaleReturn.SapSaleReturnUploadData`1.KUNNR">
+            <summary>
+            客户编码
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.SaleReturn.SapSaleReturnWriteOffUploadDataDetail">
+            <summary>
+            销售退货（冲销）上传数据明细
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.SaleReturn.SapSaleReturnWriteOffUploadDataDetail.WERKS">
+            <summary>
+            工厂
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.SaleReturn.SapSaleReturnWriteOffUploadDataDetail.POSNR">
+            <summary>
+            交货单行号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.SaleReturn.SapSaleReturnWriteOffUploadDataDetail.LGORT">
+            <summary>
+            收货仓库
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.SaleReturn.SapSaleReturnWriteOffUploadDataDetail.MENGE">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.SaleReturn.SapSaleReturnWriteOffUploadDataDetail.MEINS">
+            <summary>
+            单位编码
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.SaleReturn.SapSaleReturnWriteOffUploadData`1">
+            <summary>
+            销售退货（冲销）上传数据
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.SaleReturn.SapSaleReturnWriteOffUploadData`1.VBELN">
+            <summary>
+            交货单号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.SaleReturn.SapSaleReturnWriteOffUploadData`1.KUNNR">
+            <summary>
+            客户编码
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.SaleReturn.KzTaskReportUploadData">
+            <summary>
+            凯中报工上传数据
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.SaleReturn.KzTaskReportUploadData.AUFNR">
+            <summary>
+            工单号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.SaleReturn.KzTaskReportUploadData.WERKS">
+            <summary>
+            工序工厂
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.SaleReturn.KzTaskReportUploadData.VORNR">
+            <summary>
+            操作/活动编号 (工序流水号)
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.SaleReturn.KzTaskReportUploadData.KTSCH">
+            <summary>
+            工序文本编码（工序编码）
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.SaleReturn.KzTaskReportUploadData.ARBPL">
+            <summary>
+            工作中心
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.SaleReturn.KzTaskReportUploadData.YIELD">
+            <summary>
+            待确认数量（良品数量）
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.SaleReturn.KzTaskReportUploadData.ZTQTY">
+            <summary>
+            特殊良品数量-可疑品数量 (返工数)
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.SaleReturn.KzTaskReportUploadData.SCRAP">
+            <summary>
+            废品数量（不良品数量）
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.SaleReturn.KzTaskReportUploadData.BUDAT">
+            <summary>
+            过账日期（报工日期）
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.SaleReturn.KzTaskReportUploadData.ZUID">
+            <summary>
+            MES系统唯一ID
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.SaleReturn.TaskReportUploadData">
+            <summary>
+            报工上传数据
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.SaleReturn.TaskReportUploadData.AUFNR">
+            <summary>
+            工单号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.SaleReturn.TaskReportUploadData.LMNGA">
+            <summary>
+            合格数
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.SaleReturn.TaskReportUploadData.VORNR">
+            <summary>
+            工序编码
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.SaleReturn.TaskReportUploadData.LAR01">
+            <summary>
+            （实际完成时间-实际开始时间  ）H  * （投入人数
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.SaleReturn.TaskReportUploadData.VGW01">
+            <summary>
+            （实际完成时间-实际开始时间  ）H  * （投入人数
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.SaleReturn.TaskReportUploadData.LAR02">
+            <summary>
+            （实际完成时间-实际开始时间  ）H  
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.SaleReturn.TaskReportUploadData.LAR03">
+            <summary>
+            （实际完成时间-实际开始时间  ）H  
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.SaleReturn.TaskReportUploadData.LAR04">
+            <summary>
+            （实际完成时间-实际开始时间  ）H  * （投入人数）
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.ScrapWeighingRecord.KzScrapWeighingResultData">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.ScrapWeighingRecord.KzScrapWeighingUploadData">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Suppliers.SupplierReturnUploadData">
+            <summary>
+            供应商退货
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Suppliers.SupplierReturnUploadData.BILL_DTL_NO">
+            <summary>
+            WMS行号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Suppliers.SupplierReturnUploadData.EBELN">
+            <summary>
+            采购凭证(发运单明细，采购退货单传的单号)
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Suppliers.SupplierReturnUploadData.EBELP">
+            <summary>
+            采购订单项目号(发运单明细，采购退货单传的行号)
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Suppliers.SupplierReturnUploadData.WERKS">
+            <summary>
+            工厂(库存组织编码)
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Suppliers.SupplierReturnUploadData.LGORT">
+            <summary>
+            库存地点(发货仓库编码)
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Suppliers.SupplierReturnUploadData.ERFMG">
+            <summary>
+            基本单位数量（事务交易数量(主)）
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Suppliers.SupplierReturnUploadData.ERFME">
+            <summary>
+            主单位
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Suppliers.SupplierReturnUploadData.TARME">
+            <summary>
+            采购单位（发运单明细，辅助单位编码）
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Suppliers.SupplierReturnUploadData.BWART">
+            <summary>
+            移动类型
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Suppliers.SupplierReturnUploadData.LFBNR">
+            <summary>
+            暂收凭证号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Suppliers.SupplierReturnUploadData.LFPOS">
+            <summary>
+            暂收凭证行号
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Suppliers.SapOrderParamSupplierReturn`1">
+            <summary>
+            销售出库上传数据
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.Suppliers.SapOrderParamSupplierReturn`1.BILL_NO">
+            <summary>
+            WMS单行号
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.WorkFeed.WorkFeedUploadData">
+            <summary>
+            工单发料上传数据
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.WorkFeed.WorkFeedUploadData.BILL_DTL_NO">
+            <summary>
+            行号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.WorkFeed.WorkFeedUploadData.WERKS">
+            <summary>
+            （工厂）库存组织
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.WorkFeed.WorkFeedUploadData.LGORT">
+            <summary>
+            发货仓库编码
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.WorkFeed.WorkFeedUploadData.ERFMG">
+            <summary>
+            数量（主）
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.WorkFeed.WorkFeedUploadData.ERFME">
+            <summary>
+            主单位编码
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.WorkFeed.WorkFeedUploadData.AUFNR">
+            <summary>
+            工单号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.WorkFeed.WorkFeedUploadData.CHARG">
+            <summary>
+            生产批次
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.WorkFeed.WorkFeedUploadData.BWART">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.WorkFeed.SapOrderParamWorkFeed`1">
+            <summary>
+            工单发料单头数据
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ErpInfoDatas.WorkFeed.SapOrderParamWorkFeed`1.BILL_NO">
+            <summary>
+            WMS单号
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Datas.ItemInfo">
+            <summary>
+            物料信息
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ItemInfo.MATNR">
+            <summary>
+            物料编码
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ItemInfo.MAKTX">
+            <summary>
+            物料描述
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ItemInfo.MEINS">
+            <summary>
+            基本计量单位
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ItemInfo.MSEHL">
+            <summary>
+            度量单位文本
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ItemInfo.ZCGFL">
+            <summary>
+            采购分类
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ItemInfo.VTEXT">
+            <summary>
+            采购分类描述
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ItemInfo.MATKL">
+            <summary>
+            物料组
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ItemInfo.WGBEZ">
+            <summary>
+            物料组描述
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ItemInfo.MTART">
+            <summary>
+            物料类型
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ItemInfo.ZJXFL">
+            <summary>
+            机型分类
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ItemInfo.ZCPX">
+            <summary>
+            产品线
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ItemInfo.ZSJBS">
+            <summary>
+            散件标识
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ItemInfo.ZDEBZ">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ItemInfo.ZCPTMGZ">
+            <summary>
+            成品条码规则
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ItemInfo.ZCPXH">
+            <summary>
+            产品型号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ItemInfo.ZDYXCT">
+            <summary>
+            电源线插头 
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ItemInfo.ZDY">
+            <summary>
+            电压
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ItemInfo.ZLMMC">
+            <summary>
+            ZLMMC
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ItemInfo.ZYSM">
+            <summary>
+            颜色码
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ItemInfo.ZSBM">
+            <summary>
+            识别码
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ItemInfo.ZKZYS">
+            <summary>
+            扩展颜色
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ItemInfo.ZKHDM">
+            <summary>
+            客户代码
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ItemInfo.ZYSJ">
+            <summary>
+            压缩机
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ItemInfo.ZRJ">
+            <summary>
+            容积
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ItemInfo.ZLMM">
+            <summary>
+            冷媒码
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ItemInfo.ZTZM">
+            <summary>
+            特征码
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ItemInfo.ZZTM">
+            <summary>
+            状态码
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ItemInfo.WERKS">
+            <summary>
+            工厂
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ItemInfo.DISPO">
+            <summary>
+            物料需求计划控制员
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ItemInfo.BESKZ">
+            <summary>
+            采购类型
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ItemInfo.SOBSL">
+            <summary>
+            特殊采购类
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ItemInfo.RGEKZ">
+            <summary>
+            反冲
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ItemInfo.ZNWXBS">
+            <summary>
+            内外销标识
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ItemInfo.ZKHXH">
+            <summary>
+            客户型号
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Datas.ItemParameter">
+            <summary>
+            物料下载参数
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ItemParameter.ItemCode">
+            <summary>
+            物料编码
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ItemParameter.InvOrgId">
+            <summary>
+            工厂编码
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ItemParameter.LastUpdateTime">
+            <summary>
+            最后更新时间
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Datas.ItemResult">
+            <summary>
+            SAP物料信息返回结果
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.ItemResult.ItemList">
+            <summary>
+             物料信息集合
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Datas.SapParameter">
+            <summary>
+            Sap参数
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.SapParameter.ZBLDH">
+            <summary>
+            单据号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.SapParameter.ZDJLX">
+            <summary>
+            单据类型
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.SapParameter.BWART">
+            <summary>
+            移动类型
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.SapParameter.ZBLDHXM">
+            <summary>
+            行项目号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.SapParameter.MATNR">
+            <summary>
+            物料编码
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.SapParameter.MAKTX">
+            <summary>
+            物料名称
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.SapParameter.ZBDMNG">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.SapParameter.MEINS">
+            <summary>
+            单位
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.SapParameter.ABLAD">
+            <summary>
+            批次
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.SapParameter.UploadTransactionId">
+            <summary>
+            事务上传ID
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Datas.SapParameterBase`1">
+            <summary>
+            参数
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.SapParameterBase`1.IT_DATA">
+            <summary>
+            IT_DATA
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Datas.SapResultBase">
+            <summary>
+            SAP返回基类
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.SapResultBase.E_CODE">
+            <summary>
+            消息类型
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.SapResultBase.E_MSG">
+            <summary>
+            反馈操作消息
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Datas.SapResultErr`1">
+            <summary>
+            返回结果
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.SapResultErr`1.ERR_DATA">
+            <summary>
+            错误信息
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Datas.SapErrorData">
+            <summary>
+            返回错误信息类
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.SapErrorData.E_CODE">
+            <summary>
+            成功失败字段
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.SapErrorData.INF_KEY">
+            <summary>
+            Key单据号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.SapErrorData.ERR_MSG">
+            <summary>
+            错误信息
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.SapErrorData.UploadTransactionId">
+            <summary>
+            事务上传ID
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Datas.SapMoreErrorData">
+            <summary>
+            返回错误信息类
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.SapMoreErrorData.MATERUAL_VOUCHER_CODE">
+            <summary>
+            物料凭证号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.SapMoreErrorData.DOCUMENT_DATE">
+            <summary>
+            凭证日期
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.SapMoreErrorData.POSTING_DATE">
+            <summary>
+            过账日期
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Datas.SupplierInfo">
+            <summary>
+            供应商信息
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.SupplierInfo.LIFNR">
+            <summary>
+            供应商编码
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.SupplierInfo.NAME1">
+            <summary>
+            供应商名称
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.SupplierInfo.LastUpdateTime">
+            <summary>
+            记录建立时间
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Datas.SupplierParameter">
+            <summary>
+            供应商下载参数
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.SupplierParameter.Selection">
+            <summary>
+             查询参数
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Datas.Selection">
+            <summary>
+             参数字段
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.Selection.SupplierType">
+            <summary>
+            供应商分类
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.Selection.ExtCode">
+            <summary>
+            外部系统中的业务伙伴编号
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.Selection.Name">
+            <summary>
+            供应商名称
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.Selection.LastUpdateTime">
+            <summary>
+            记录建立时间
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Datas.SupplierResult">
+            <summary>
+            SAP供应商信息返回结果
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.SupplierResult.SupplierList">
+            <summary>
+            供应商信息集合
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Datas.SapParameters`2">
+            <summary>
+            批量传入SAP且回传数据与现有数据进行一对一关联
+            </summary>
+            <typeparam name="T">入参类型</typeparam>
+            <typeparam name="R"></typeparam>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.SapParameters`2.key">
+            <summary>
+            唯一标识
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.SapParameters`2.InputParams">
+            <summary>
+            入参
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.Datas.SapParameters`2.OutputParams">
+            <summary>
+            出参类型
+            </summary>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Connection.HttpHelper">
+            <summary>
+            Http协议接口帮助类
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Sap.Connection.HttpHelper.Url">
+            <summary>
+            上传地址
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Sap.Connection.HttpHelper.AuthUser">
+            <summary>
+            登录账号
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Sap.Connection.HttpHelper.AuthPassword">
+            <summary>
+            登录密码
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Sap.Connection.HttpHelper.TimeOutMin">
+            <summary>
+            超时设置分钟
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Connection.HttpHelper.InvokeSapAPI``1(System.String,``0,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            调用SAP的HTTP POST接口
+            </summary>
+            <typeparam name="IN">输入泛型，包含参数与表</typeparam>
+            <param name="interfaceName">接口名称</param>      
+            <param name="inParams"></param>
+            <param name="headers">头部参数</param>    
+        </member>
+        <member name="F:SIE.ERPInterface.Sap.Connection.HttpHelper.JsonSerializerSettings">
+            <summary>
+            序列化
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Connection.HttpHelper.DeserializeObject``1(System.String)">
+            <summary>
+            序列化处理
+            </summary>      
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Connection.HttpHelper.DownLoadSapAPI``2(System.String,``0,``1@,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            调用SAP的HTTP POST接口获取SAP数据
+            </summary>
+            <typeparam name="IN">输入泛型，包含参数与表</typeparam>      
+            <typeparam name="OUT">输出泛型</typeparam>
+            <param name="interfaceName">接口名称</param>  
+            <param name="inParams"></param>
+            <param name="result">输出结果</param>
+            <param name="headers">头部参数</param>    
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Connection.RfcHelper">
+            <summary>
+            SAP RFC帮助类
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Sap.Connection.RfcHelper.ConnectionString">
+            <summary>
+            SAP连接配置
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Connection.RfcHelper.Sap``2(System.String,``1,System.Func{``0,System.Collections.IList})">
+            <summary>
+            执行SAP查询
+            </summary>
+            <typeparam name="T">返回结构类型</typeparam>
+            <typeparam name="M">结果数据集类型</typeparam>
+            <typeparam name="E">查询参数类型</typeparam>
+            <param name="functionName">参数数据类型</param>
+            <param name="sapParameters">查询参数</param>
+            <param name="func">结果数据集转换委托</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Connection.RfcHelper.Sap``1(System.String)">
+            <summary>
+            SAP无参数调用
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="functionName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Connection.RfcHelper.Sap(System.String,System.Object)">
+            <summary>
+            无返回结果
+            </summary>
+            <param name="functionName"></param>
+            <param name="sapParameters"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Connection.RfcHelper.Sap``2(System.String,System.Collections.Generic.List{``0})">
+            <summary>
+            在同一次连接中使用循环调用。（部分接口缺少批量传参的情况可以使用）
+            </summary>
+            <param name="functionName">方法名</param>
+            <param name="list">入参数组</param>
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Connection.RfcHelper.Sap``2(System.String,System.Collections.Generic.List{SIE.ERPInterface.Sap.Datas.SapParameters{``0,``1}})">
+            <summary>
+            批量传入SAP且回传数据与现有数据进行一对一关联
+            </summary>
+            <param name="functionName">方法名</param>
+            <param name="list">入参数组</param>
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Controller.ISapController.HttpOutboundConfirm(System.Collections.Generic.List{System.String})">
+            <summary>
+            发货确认上传接口
+            </summary>
+            <param name="zuids"></param>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Controller.SapUploadController">
+            <summary>
+            SAP上传控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Controller.SapUploadController.SaveTransactionData(SIE.ERPInterface.Common.Datas.SapResult,System.Collections.Generic.List{SIE.ERPInterface.Common.Logs.UploadTransaction},SIE.ERPInterface.Common.Datas.ProcessResult,System.String)">
+            <summary>
+            保存事务上传记录
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Controller.SapUploadController.UpdateTranData(SIE.ERPInterface.Common.Datas.SapResult,System.Collections.Generic.List{SIE.ERPInterface.Common.Logs.UploadTransaction},SIE.ERPInterface.Common.Enums.ProcessState,System.String,System.String,SIE.ERPInterface.Common.Datas.ProcessResult)">
+            <summary>
+            更新上传记录信息及日志信息
+            </summary>      
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Controller.SapUploadController.SetUploadLogs(SIE.ERPInterface.Common.Datas.SapResult,System.Collections.Generic.List{SIE.ERPInterface.Common.Logs.UploadTransaction},SIE.ERPInterface.Common.Enums.ProcessState,System.String,System.String,SIE.ERPInterface.Common.Datas.ProcessResult)">
+            <summary>
+            设置日志数据
+            </summary>        
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Controller.SapUploadController.UpdateTranStateData(SIE.ERPInterface.Common.Datas.SapResult,System.Collections.Generic.List{SIE.ERPInterface.Common.Logs.UploadTransaction},SIE.ERPInterface.Common.Enums.ProcessState,System.String,System.String)">
+            <summary>
+            更新上传记录状态信息（异步处理只更新状态）
+            </summary>      
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Controller.SapUploadController.SetLogData(SIE.ERPInterface.Common.Logs.UploadTransaction,SIE.ERPInterface.Common.Datas.SapResult,SIE.ERPInterface.Common.Enums.ProcessState,System.String,System.String)">
+            <summary>
+            设置日志数据
+            </summary>      
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Controller.SapUploadController.TimeOutHandle(SIE.ERPInterface.Common.Datas.SapResult,System.Collections.Generic.List{SIE.ERPInterface.Common.Logs.UploadTransaction},SIE.ERPInterface.Common.Datas.ProcessResult,System.String)">
+            <summary>
+            超时请求处理
+            </summary>        
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Controller.SapUploadController.SetSapItemParamBase(SIE.ERPInterface.Common.Logs.UploadTransaction,SIE.ERPInterface.Common.Datas.SapItemParamBase,System.Nullable{System.Double})">
+            <summary>
+            设置基类的值
+            </summary>
+            <param name="uploadTransaction">主事务Id</param>
+            <param name="sapItemParamBase"></param>
+            <param name="relationTranId">关联的事务Id</param>
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Controller.SapUploadController.ConvertDate(System.DateTime)">
+            <summary>
+            转换时间格式数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Controller.SapUploadController.UploadDataToErp``1(System.Collections.Generic.List{System.Tuple{SIE.Core.Enums.OrderType,SIE.Inventory.Transactions.TransactionType,System.Nullable{System.Double},System.String}},SIE.ERPInterface.Sap.IUploadDataHandler{``0},System.String,System.String)">
+            <summary>
+            从SMOM中间表上传销售出库事务到ERP
+            </summary>
+            <param name="tuples"></param>
+            <param name="interfaceName">接口名称</param>
+            <param name="zifcd">SAP接口参数，每个接口不一样</param>
+            <param name="uploadDataHandler">继承IUploadDataHandler</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.IUploadDataHandler`1">
+            <summary>
+            设置上传数据的接口
+            </summary>
+            <typeparam name="T">泛型</typeparam>
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.IUploadDataHandler`1.SetUploadData(System.Collections.Generic.List{SIE.ERPInterface.Common.Logs.UploadTransaction})">
+            <summary>
+            设置业务上传的数据
+            </summary>
+            <param name="uploadTransactions"></param>      
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.IUploadDataHandler`1.Uploaded(SIE.ERPInterface.Common.Datas.SapResult,SIE.Domain.EntityList{SIE.ERPInterface.Common.Logs.UploadTransaction},System.String)">
+            <summary>
+            上传后事件
+            </summary>
+            <param name="response"></param>
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.IUploadDataHandler`1.SetParam(SIE.Domain.EntityList{SIE.ERPInterface.Common.Logs.UploadTransaction})">
+            <summary>
+            设置参数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.IUploadDataHandler`1.Grouped(SIE.Domain.EntityList{SIE.ERPInterface.Common.Logs.UploadTransaction})">
+            <summary>
+            分组
+            </summary>
+            <param name="uploadTransactions"></param>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.Module">
+            <summary>
+            当前工程所对应的模块类
+            </summary>
+        </member>
+        <member name="M:SIE.ERPInterface.Sap.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化
+            </summary>
+            <param name="app">应用程序对象</param>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.SapInterfaceEntityRepository`1">
+            <summary>
+            指定仓库的数据提供者
+            </summary>
+            <typeparam name="T">实体仓库</typeparam>
+        </member>
+        <member name="T:SIE.ERPInterface.Sap.SapInterfaceEntityDataProvider">
+            <summary>
+            数据提供者
+            </summary>
+        </member>
+        <member name="F:SIE.ERPInterface.Sap.SapInterfaceEntityDataProvider.ConnectionStringName">
+            <summary>
+            数据库连接字符串的名称
+            </summary>
+        </member>
+        <member name="P:SIE.ERPInterface.Sap.SapInterfaceEntityDataProvider.ConnectionStringSettingName">
+            <summary>
+            数据库连接字符串的名称
+            </summary>
+        </member>
+    </members>
+</doc>

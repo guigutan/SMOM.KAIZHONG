@@ -1,0 +1,3631 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Wpf.Tech</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Wpf.Tech.Helpers.ModelHelper">
+            <summary>
+            模块帮助类
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Helpers.ModelHelper.ConvertToActivity(SIE.Tech.Processs.Process)">
+            <summary>
+            转换为活动模型
+            </summary>
+            <param name="process">工序</param>
+            <returns>活动模型</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Helpers.ModelHelper.ConvertToContainer(SIE.Tech.Routings.RoutingVersion)">
+            <summary>
+            转换为容器
+            </summary>
+            <param name="version">工艺路线版本</param>
+            <returns>工艺路线设置容器</returns>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Helpers.TreeHelper">
+            <summary>
+            树帮助类
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Helpers.TreeHelper.GetKey(SIE.Wpf.Tech.Processs.TreeInfo)">
+            <summary>
+            获取Key
+            </summary>
+            <param name="entity">树信息</param>
+            <returns>键</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Helpers.TreeHelper.ExpandNode(SIE.Wpf.Tech.Processs.TreeInfo)">
+            <summary>
+            展开节点
+            </summary>
+            <param name="entity">树信息</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Helpers.TreeHelper.SelectedTreeViewItem(SIE.Wpf.Tech.Processs.TreeInfo)">
+            <summary>
+            选中节点
+            </summary>
+            <param name="entity">树信息</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Helpers.TreeHelper.SetIsExpanded(SIE.Wpf.Tech.Processs.TreeInfo,DevExpress.Xpf.Grid.TreeListNode)">
+            <summary>
+            根据之前保存的 TreeViewItem.IsExpanded 设置 TreeViewItem.IsExpanded 是否展开
+            </summary>
+            <param name="entity">树信息</param>
+            <param name="treeViewItem">树节点</param>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Helpers.TreeHelper._treeListNodes">
+            <summary>
+            树节点字典
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Helpers.TreeHelper.AddTreeListNode(System.String,DevExpress.Xpf.Grid.TreeListNode)">
+            <summary>
+            添加树节点
+            </summary>
+            <param name="key">键</param>
+            <param name="node">树节点</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Helpers.TreeHelper.GetTreeListNode(System.String)">
+            <summary>
+            获取树节点
+            </summary>
+            <param name="key">键</param>
+            <returns>树节点</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Helpers.TreeHelper.ExpandingNodes(DevExpress.Xpf.Grid.GridControl,System.Collections.Generic.IList{SIE.Wpf.Tech.Processs.TreeInfo},System.Collections.Generic.Dictionary{System.String,System.Tuple{System.String,System.Double}},SIE.Wpf.Tech.Processs.TreeInfo)">
+            <summary>
+            刷新时展开已展开节点
+            </summary>
+            <param name="gridControl">树列表控件</param>
+            <param name="treeInfoList">全部树节点信息</param>
+            <param name="keyValuePairs">已打开节点集合（key:Type + "_" + EntityId; value: Type, EntityId）</param>
+            <param name="currentInfo">当前选择节点</param>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Module">
+            <summary>
+            工艺模块初始化器
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化
+            </summary>
+            <param name="app">应用程序</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Module.App_ModuleOperations(System.Object,System.EventArgs)">
+            <summary>
+            菜单设置
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Processs.Behaviors.ProcessBehavior">
+            <summary>
+            工序列表视图行为
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Processs.Behaviors.ProcessBehavior._column">
+            <summary>
+            批次工序需显示采集步骤列
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Processs.Behaviors.ProcessBehavior._unboundColumn">
+            <summary>
+            采集步骤是否解绑列，批次工序需隐藏
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.Behaviors.ProcessBehavior.OnAttach">
+            <summary>
+            附加视图行为
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.Behaviors.ProcessBehavior.MainView_CurrentChanged(System.Object,System.EventArgs)">
+            <summary>
+            当前实体变更事件
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.Behaviors.ProcessBehavior.ActiveView">
+            <summary>
+            激活视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.Behaviors.ProcessBehavior.Process_PropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            工序属性变更事件
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.Behaviors.ProcessBehavior.SetColumnVisible(SIE.Tech.Processs.Process)">
+            <summary>
+            设置列是否可见
+            </summary>
+            <param name="process">工序</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.Behaviors.ProcessBehavior.SetUnboundColumnVisible(System.Boolean)">
+            <summary>
+            设置采集步骤是否解绑列是否可见
+            </summary>
+            <param name="isVisible">是否可见</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.Behaviors.ProcessBehavior.GetPlugTypeColumn">
+            <summary>
+            获取出入类型列
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Processs.Commands.AddProcessCommand">
+            <summary>
+            工序添加命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.Commands.AddProcessCommand.OnItemCreated(SIE.Domain.Entity)">
+            <summary>
+            新实体创建后-提供扩展
+            </summary>
+            <param name="entity">新实体</param>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Processs.Commands.CopyProcessCommand">
+            <summary>
+            工序复制命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.Commands.CopyProcessCommand.OnItemCreated(SIE.Domain.Entity)">
+            <summary>
+            实体创建后执行克隆操作
+            </summary>
+            <param name="entity">实体</param>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Processs.Commands.EditProcessCommand">
+            <summary>
+            工序修改命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.Commands.EditProcessCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            能否执行修改
+            </summary>
+            <param name="view">当前列表逻辑视图</param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.Commands.EditProcessCommand.GetEditEntity">
+            <summary>
+            获取实体（如果是行内编辑，则在当前页面编辑，否则克隆当前实体，然后弹出标签页）
+            </summary>
+            <returns>获取到的实体</returns>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Processs.Commands.LookupPackingUnitCommand">
+            <summary>
+            工序对应包装选择命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.Commands.LookupPackingUnitCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            能否执行弹出
+            </summary>
+            <param name="view">当前列表逻辑视图</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Processs.Commands.ProcessCollectStepDownCommand">
+            <summary>
+            采集步骤下移
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.Commands.ProcessCollectStepDownCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            能否执行修改
+            </summary>
+            <param name="view">当前列表逻辑视图</param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.Commands.ProcessCollectStepDownCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="view">当前列表逻辑视图</param>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Processs.Commands.ProcessCollectStepUpCommand">
+            <summary>
+            采集步骤上移
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.Commands.ProcessCollectStepUpCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            能否执行修改
+            </summary>
+            <param name="view">当前列表逻辑视图</param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.Commands.ProcessCollectStepUpCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="view">当前列表逻辑视图</param>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Processs.Commands.ProcessCollectStepPopupAddCommand">
+            <summary>
+            采集步骤添加
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.Commands.ProcessCollectStepPopupAddCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            能否执行修改
+            </summary>
+            <param name="view">当前列表逻辑视图</param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.Commands.ProcessCollectStepPopupAddCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="view">当前列表逻辑视图</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.Commands.ProcessCollectStepPopupAddCommand.OnEditting(SIE.Domain.Entity)">
+            <summary>
+            命令执行前（如果是行内编辑，则在视图中新增一行）
+            </summary>
+            <param name="editEntity">当前实体</param>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Processs.Commands.ProcessDefectCommand">
+            <summary>
+            缺陷信息选择按钮（列表视图调用）
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.Commands.ProcessDefectCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            能否执行弹出
+            </summary>
+            <param name="view">当前列表逻辑视图</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Processs.Commands.SelProcessDefectCommand">
+            <summary>
+            缺陷信息选择按钮(明细视图调用)
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Processs.Commands.SelProcessDefectCommand.currProcessDefect">
+            <summary>
+            当前选中的缺陷信息
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.Commands.SelProcessDefectCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            执行
+            </summary>
+            <param name="view">列表逻辑视图</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.Commands.SelProcessDefectCommand.OnAccept">
+            <summary>
+            点击确定
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.Commands.SelProcessDefectCommand.LoadSelectedViewDataCore(SIE.Domain.Entity)">
+            <summary>
+            加载已选择数据
+            </summary>
+            <param name="parent">父</param>
+            <returns>已选择数据</returns>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Processs.Commands.DelProcessDefectCommand">
+            <summary>
+            缺陷信息明细时删除数据
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.Commands.DelProcessDefectCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            执行删除逻辑
+            </summary>
+            <param name="view">视图对象</param>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Processs.ProcessCollectStepViewConfig">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Processs.ProcessCollectStepViewConfig.ProcessCollectStepView">
+            <summary>
+            工艺路线维护工序的采集步骤视图
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Processs.ProcessCollectStepViewConfig.IsReadOnlyProperty">
+            <summary>
+            出入类型只读
+            </summary> 
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessCollectStepViewConfig.GetIsReadOnly(SIE.Tech.Processs.ProcessCollectStep)">
+            <summary>
+            出入类型只读
+            </summary>
+            <param name="me">工序采集步骤</param>
+            <returns>返回false</returns>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Processs.ProcessCollectStepViewConfig.BatchTypeFilterProperty">
+            <summary>
+            批次类型过滤
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessCollectStepViewConfig.GetBatchTypeFilter(SIE.Tech.Processs.ProcessCollectStep)">
+            <summary>
+            批次类型过滤
+            </summary>
+            <param name="me">工序采集步骤</param>
+            <returns>批次工序返回Batch，否则返回Single</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessCollectStepViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessCollectStepViewConfig.ConfigProcessCollectStepView">
+            <summary>
+            配置工艺路线维护工序的采集步骤视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessCollectStepViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessCollectStepViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessCollectStepViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Processs.ProcessDefectViewConfig">
+            <summary>
+            缺陷信息视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Processs.ProcessDefectViewConfig.SelProcessDefectViewGroup">
+            <summary>
+            工艺路线新增工序ViewGroup
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessDefectViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessDefectViewConfig.SelProcessDefectView">
+            <summary>
+            工艺路线新增工序视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessDefectViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessDefectViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessDefectViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Processs.ProcessEmployeeViewConfig">
+            <summary>
+            工序与用户视图
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Processs.ProcessEmployeeViewConfig.EmplProcessView">
+            <summary>
+            员工维护ViewGroup
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessEmployeeViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessEmployeeViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessEmployeeViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessEmployeeViewConfig.EmplProcessTabView">
+            <summary>
+            员工维护 - 工序页签视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Processs.EmployeeExtViewConfig">
+            <summary>
+            员工维护 - 工序页签
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.EmployeeExtViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.EmployeeExtViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Processs.ProcessPackingUnitViewConfig">
+            <summary>
+            工序对应包装视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessPackingUnitViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessPackingUnitViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessPackingUnitViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessPackingUnitViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Processs.ProcessParameterViewConfig">
+            <summary>
+            工序参数视图设置
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Processs.ProcessParameterViewConfig.ProcessParameterView">
+            <summary>
+            工艺路线维护工序的工序参数视图
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Processs.ProcessParameterViewConfig.IsReadOnlyProperty">
+            <summary>
+            脚本只读
+            </summary> 
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessParameterViewConfig.GetIsReadOnly(SIE.Tech.Processs.ProcessParameter)">
+            <summary>
+            脚本只读
+            </summary>
+            <param name="me">工序参数</param>
+            <returns>非客制化结果返回true，否则返回false</returns>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Processs.ProcessParameterViewConfig.TypeFilterProperty">
+            <summary>
+            类型过滤
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessParameterViewConfig.GetTypeFilter(SIE.Tech.Processs.ProcessParameter)">
+            <summary>
+            类型过滤
+            </summary>
+            <param name="me">工序参数</param>
+            <returns>批次检验返回空字符，否则返回common</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessParameterViewConfig.ConfigView">
+            <summary>
+            配置默认视图 
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessParameterViewConfig.ConfigProcessParameterView">
+            <summary>
+            配置工序参数视图（工艺连续维护工序使用）
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessParameterViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessParameterViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessParameterViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Processs.ProcessTree">
+            <summary>
+            ProcessTree.xaml 的交互逻辑
+            </summary>
+            <summary>
+            ProcessTree
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Processs.ProcessTree.helper">
+            <summary>
+            树帮助类
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Processs.ProcessTree._categoryList">
+            <summary>
+            产品簇分类列表
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Processs.ProcessTree._processList">
+            <summary>
+            工序列表
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Processs.ProcessTree._treeInfos">
+            <summary>
+            工序树信息
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Processs.ProcessTree._contextMenus">
+            <summary>
+            快捷菜单字典
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Processs.ProcessTree._id">
+            <summary>
+            自定义树实体ID，用于构建树
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Processs.ProcessTree.keyValuePairs">
+            <summary>
+            用于存储已展开Node
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Processs.ProcessTree.currentInfo">
+            <summary>
+            当前选择节点信息
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessTree.#ctor">
+            <summary>
+            工序树控件
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessTree.ProcessControl_PreviewMouseLeftButtonDown(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            工序树控件左键点击事件
+            </summary>
+            <param name="sender">发送者</param>
+            <param name="e">鼠标按键参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessTree.ProcessControl_PreviewMouseDoubleClick(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            工序信息列表双击事件，如果节点为工序则编辑工序，否则不做处理
+            </summary>
+            <param name="sender">工序控件</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessTree.ProcessControl_ContextMenuOpening(System.Object,System.Windows.Controls.ContextMenuEventArgs)">
+            <summary>
+            设置右键快捷菜单
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessTree.ProcessControl_CurrentItemChanged(System.Object,DevExpress.Xpf.Grid.CurrentItemChangedEventArgs)">
+            <summary>
+            当前项变更事件
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessTree.GetCategoryContextMenu">
+            <summary>
+            获取分类快捷菜单
+            </summary>
+            <returns>快捷菜单</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessTree.GetProcessContextMenu">
+            <summary>
+            获取工序快捷菜单
+            </summary>
+            <returns>快捷菜单</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessTree.CreateMenuItem(System.String,System.String,System.Object,System.Nullable{Resources.IconPacks.PackIconKind})">
+            <summary>
+            创建菜单项
+            </summary>
+            <param name="header">标题</param>
+            <param name="tooltip">提示信息</param>
+            <param name="dataContext">上下文</param>
+            <param name="icon">图标</param>
+            <returns>菜单项</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessTree.ArrangeOverride(System.Windows.Size)">
+            <summary>
+            设置布局
+            </summary>
+            <param name="arrangeBounds">原尺寸</param>
+            <returns>尺寸</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessTree.RefreshData">
+            <summary>
+            重新加载数据
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessTree.QueryInfo">
+            <summary>
+            查询过来信息，并加载出节点
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessTree.LoadProductFamilyNodes(System.Collections.Generic.IEnumerable{SIE.Items.ProductFamilyCategory},System.Collections.Generic.IEnumerable{SIE.Tech.Processs.Process})">
+            <summary>
+            加载产品簇分类节点
+            </summary>
+            <param name="categoryList">产品簇分类列表</param>
+            <param name="processList">工序列表</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessTree.LoadProductFamilyCategoryNodes(SIE.Items.ProductFamilyCategory,System.Collections.Generic.IEnumerable{SIE.Tech.Processs.Process},SIE.Wpf.Tech.Processs.TreeInfo)">
+            <summary>
+            加载产品簇分类节点
+            </summary>
+            <param name="category">产品簇分类</param>
+            <param name="processList">工序列表</param>
+            <param name="parentTreeInfo">工序树信息</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessTree.LoadProcessNodes(System.Collections.Generic.IEnumerable{SIE.Tech.Processs.Process},SIE.Wpf.Tech.Processs.TreeInfo)">
+            <summary>
+            加载工序节点
+            </summary>
+            <param name="processList">工序列表</param>
+            <param name="parentTreeInfo">工序树信息</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessTree.Delete_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            删除工序
+            </summary>
+            <param name="sender">菜单项</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessTree.Edit_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            修改工序
+            </summary>
+            <param name="sender">菜单项</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessTree.Add_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            添加工序
+            </summary>
+            <param name="sender">菜单项</param>
+            <param name="e">路由事件参数</param>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Processs.ProcessTree.Add">
+            <summary>
+            定义新增命令
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Processs.ProcessTree.Refresh">
+            <summary>
+            定义刷新命令
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Processs.ProcessTree.Edit">
+            <summary>
+            定义编辑命令
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Processs.ProcessTree.Delete">
+            <summary>
+            定义删除命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessTree.Refresh_Executed(System.Object,System.Windows.Input.ExecutedRoutedEventArgs)">
+            <summary>
+            刷新命令
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessTree.Add_CanExecute(System.Object,System.Windows.Input.CanExecuteRoutedEventArgs)">
+            <summary>
+            添加命令是否可执行
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessTree.Add_Executed(System.Object,System.Windows.Input.ExecutedRoutedEventArgs)">
+            <summary>
+            添加命令
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessTree.Edit_CanExecute(System.Object,System.Windows.Input.CanExecuteRoutedEventArgs)">
+            <summary>
+            编辑命令是否可执行
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessTree.Edit_Executed(System.Object,System.Windows.Input.ExecutedRoutedEventArgs)">
+            <summary>
+            编辑命令
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessTree.Delete_CanExecute(System.Object,System.Windows.Input.CanExecuteRoutedEventArgs)">
+            <summary>
+            删除命令是否可执行
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessTree.Delete_Executed(System.Object,System.Windows.Input.ExecutedRoutedEventArgs)">
+            <summary>
+            删除命令
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessTree.AddProcess(SIE.Items.ProductFamily)">
+            <summary>
+            添加工序
+            </summary>
+            <param name="category">产品族分类</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessTree.EditProcess(SIE.Tech.Processs.Process)">
+            <summary>
+            编辑工序
+            </summary>
+            <param name="process">工序</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessTree.DeleteProcess(SIE.Tech.Processs.Process)">
+            <summary>
+            删除工序
+            </summary>
+            <param name="process">工序</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessTree.ShowProcessDialog(System.String,SIE.Tech.Processs.Process,System.Action)">
+            <summary>
+            显示工序编辑窗口
+            </summary>
+            <param name="title">标题</param>
+            <param name="process">工序</param>
+            <param name="save">处理方法</param>
+            <returns>窗口编辑结果，0为确定，1为取消</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessTree.SearchEdit_KeyDown(System.Object,System.Windows.Input.KeyEventArgs)">
+            <summary>
+            查找工序
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessTree.BtnSearch_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            查找工序
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessTree.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Processs.ProcessViewConfig">
+            <summary>
+            工序配置视图
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Processs.ProcessViewConfig._productFamilyLabel">
+            <summary>
+            产品族编码的Label
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Processs.ProcessViewConfig.CategoryFormatProperty">
+            <summary>
+            产品族
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessViewConfig.GetCategoryFormat(SIE.Tech.Processs.Process)">
+            <summary>
+            获取产品族（编码+名称）
+            </summary>
+            <param name="me">工序</param>
+            <returns>编码+名称</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessViewConfig.ConfigDetailsView">
+            <summary>
+            表单视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessViewConfig.ConfigQueryView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Processs.ProcessViewConfig.ConfigSelectionView">
+            <summary>
+            选择实体配置
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Processs.TreeInfo">
+            <summary>
+            树信息（表示工序树、工艺路线树）
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Processs.TreeInfo.Id">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Processs.TreeInfo.DisplayName">
+            <summary>
+            显示名称
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Processs.TreeInfo.Pid">
+            <summary>
+            父ID
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Processs.TreeInfo.Tag">
+            <summary>
+            标识
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Processs.TreeInfo.Type">
+            <summary>
+            节点类型
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Processs.TreeInfo.EntityId">
+            <summary>
+            实体ID
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Routings.Commands.AddKeyItemCommand">
+            <summary>
+            添加关键物料 按钮
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Commands.AddKeyItemCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            执行
+            </summary>
+            <param name="view">界面</param>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Routings.Commands.AddProcessBomByCtgCommand">
+            <summary>
+            添加工序BOM命令（分类添加）
+            </summary> 
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Commands.AddProcessBomByCtgCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            工序BOM命令能否执行 
+            </summary>
+            <param name="view">列表逻辑视图</param>
+            <returns>流程状态为保存且选中的活动节点非开始结束节点且节点工序类型为装配返回true，否则返回false</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Commands.AddProcessBomByCtgCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            添加工序BOM命令执行方法
+            </summary>
+            <param name="view">列表逻辑视图</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Commands.AddProcessBomByCtgCommand.Template_BlocksDefined(System.Object,SIE.MetaModel.View.CodeBlocksDefinedEventArgs)">
+            <summary>
+            块定义，替换查询实体
+            </summary>
+            <param name="sender">模板</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Routings.Commands.AddProcessBomByItemCommand">
+            <summary>
+            添加工序BOM命令（分类添加）
+            </summary> 
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Commands.AddProcessBomByItemCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            工序BOM命令能否执行 
+            </summary>
+            <param name="view">列表逻辑视图</param>
+            <returns>流程状态为保存且选中的活动节点非开始结束节点且节点工序类型为装配返回true，否则返回false</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Commands.AddProcessBomByItemCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            添加工序BOM命令执行方法
+            </summary>
+            <param name="view">列表逻辑视图</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Commands.AddProcessBomByItemCommand.Template_BlocksDefined(System.Object,SIE.MetaModel.View.CodeBlocksDefinedEventArgs)">
+            <summary>
+            块定义，替换查询实体
+            </summary>
+            <param name="sender">模板</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Routings.Commands.DownloadRoutingCommand">
+            <summary>
+            下载条码模板
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Commands.DownloadRoutingCommand.Execute(SIE.Wpf.DetailLogicalView)">
+            <summary>
+            执行
+            </summary>
+            <param name="view">列表逻辑视图</param>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Routings.Commands.ExportFailedDataCommand">
+            <summary>
+            导出工单导入失败的数据
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Commands.ExportFailedDataCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            是否可执行导出Excel
+            </summary>
+            <param name="view">当前视图对象</param>
+            <returns>返回是否可执行导出Excel</returns>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Routings.Commands.ClearImportDateCommand">
+            <summary>
+            清除导入结果
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Commands.ClearImportDateCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            清除导入结果命令能否执行
+            </summary>
+            <param name="view">列表逻辑视图</param>
+            <returns>能执行返回true，不能执行返回false</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Commands.ClearImportDateCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            清除导入结果命令执行
+            </summary>
+            <param name="view">列表逻辑视图</param>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Routings.Commands.ImportRoutingDataCommand">
+            <summary>
+            工单 导入命令
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Routings.Commands.ImportRoutingDataCommand.isRun">
+            <summary>
+            是否正在导入中
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Commands.ImportRoutingDataCommand.CanExecute(SIE.Wpf.DetailLogicalView)">
+            <summary>
+            是否可执行导入逻辑
+            </summary>
+            <param name="view">明细视图</param>
+            <returns>true/false</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Commands.ImportRoutingDataCommand.Execute(SIE.Wpf.DetailLogicalView)">
+            <summary>
+            执行导入逻辑
+            </summary>
+            <param name="view">当前视图对象</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Commands.ImportRoutingDataCommand.ImportCompleted(System.Data.DataRow[],System.Data.DataRow[],SIE.Wpf.Tech.Routings.ViewModels.ImportRoutingCheckViewModel)">
+            <summary>
+            导入完成触发
+            </summary>
+            <param name="importSuccess">导入成功数据集</param>
+            <param name="importFailed">导入失败数据集</param>
+            <param name="current">当前界面数据对象</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Commands.ImportRoutingDataCommand.RefreshData">
+            <summary>
+            刷新数据
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Commands.ImportRoutingDataCommand.CreateCheckData(System.Data.DataRow)">
+            <summary>
+            创建工艺路线视图模型
+            </summary>
+            <param name="dr">数据行</param>
+            <returns>工艺路线视图模型</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Commands.ImportRoutingDataCommand.ConvertInt(System.String)">
+            <summary>
+            整数转换
+            </summary>
+            <param name="str">str</param>
+            <returns>int?</returns>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Routings.Commands.RuntingImportDataHandle">
+            <summary>
+            导入处理逻辑类
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Commands.RuntingImportDataHandle.ProcessImportDataPre(System.Data.DataTable,System.Type)">
+            <summary>
+            处理导入数据之前执行
+            </summary>
+            <param name="importTable">处理导入数据</param>
+            <param name="type">处理导入数据的业务类</param>
+            <returns>返回需要处理的导入数据</returns>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Routings.DesignPropertys.ActivityProperty">
+            <summary>
+            ActivityProperty.xaml 的交互逻辑
+            </summary>
+            <summary>
+            ActivityProperty
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.DesignPropertys.ActivityProperty.#ctor">
+            <summary>
+            工序属性
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.DesignPropertys.ActivityProperty.InitActivityProperty(SIE.Tech.Routings.Technologys.IActivity,System.Nullable{SIE.Tech.Routings.RoutingState})">
+            <summary>
+            初始化选中工序属性
+            </summary>
+            <param name="activity">当前选中</param>
+            <param name="state">工艺流程状态</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.DesignPropertys.ActivityProperty.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Routings.DesignPropertys.ContainerProperty">
+            <summary>
+            ContainerProperty.xaml 的交互逻辑
+            </summary>
+            <summary>
+            ContainerProperty
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.DesignPropertys.ContainerProperty.#ctor">
+            <summary>
+            画布属性配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.DesignPropertys.ContainerProperty.InitContainerProperty(SIE.Tech.Routings.Technologys.IContainer,System.Nullable{SIE.Tech.Routings.RoutingState})">
+            <summary>
+            初始化画布属性控件
+            工艺路线版本发布状态不能修改属性
+            </summary>
+            <param name="container">容器</param>
+            <param name="state">工艺路线状态</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.DesignPropertys.ContainerProperty.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Routings.DesignPropertys.ProcessBomControl">
+            <summary>
+            工序BOM控件
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Routings.DesignPropertys.ProcessBomControl._ui">
+            <summary>
+            控件结果
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.DesignPropertys.ProcessBomControl.InitProcessBom(SIE.Tech.Routings.Technologys.IActivity,System.Nullable{SIE.Tech.Routings.RoutingState})">
+            <summary>
+            初始化工序BOM信息
+            </summary>
+            <param name="activity">活动接口</param>
+            <param name="state">工艺流程状态</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.DesignPropertys.ProcessBomControl.Template_BlocksDefined(System.Object,SIE.MetaModel.View.CodeBlocksDefinedEventArgs)">
+            <summary>
+            模板定义，移除查询块
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Routings.DesignPropertys.RuleProperty">
+            <summary>
+            RuleProperty.xaml 的交互逻辑
+            </summary>
+            <summary>
+            RuleProperty
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.DesignPropertys.RuleProperty.#ctor">
+            <summary>
+            线条规则属性控件
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.DesignPropertys.RuleProperty.InitRuleProperty(SIE.Tech.Routings.Technologys.IRule,System.Nullable{SIE.Tech.Routings.RoutingState})">
+            <summary>
+            初始化线条属性
+            工艺路线版本为发布状态不能修改属性
+            </summary>
+            <param name="rule">规则接口</param>
+            <param name="state">工艺路线版本状态</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.DesignPropertys.RuleProperty.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Routings.KeyItemViewConfig">
+            <summary>
+            关键物料视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.KeyItemViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.KeyItemViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.KeyItemViewConfig.ConfigQueryView">
+            <summary>
+            查询视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Routings.ProcessBomViewConfig">
+            <summary>
+            工艺路线工序BOM视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Routings.ProcessBomViewConfig.ProcessBomViewGroup">
+            <summary>
+            工序BOM视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.ProcessBomViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.ProcessBomViewConfig.ProcessBomConfigView">
+            <summary>
+            工序BOM配置视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Routings.RoutingDesign">
+            <summary>
+            RoutingDegisn.xaml 的交互逻辑
+            </summary>
+            <summary>
+            RoutingDesign
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Routings.RoutingDesign.routingVersion">
+            <summary>
+            工艺路线版本
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingDesign.#ctor">
+            <summary>
+            工艺路线设计
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingDesign.RoutingDesign_PreviewMouseDoubleClick(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            鼠标双击事件
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingDesign.Container_ModelChanged(SIE.Tech.Routings.Technologys.IContainer)">
+            <summary>
+            设计器模型变更事件
+            </summary>
+            <param name="obj">容器接口</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingDesign.Model_SelectedElementChanged(SIE.Tech.Routings.Technologys.IElement)">
+            <summary>
+            流程元素选中事件
+            </summary>
+            <param name="obj">元素</param>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Routings.RoutingDesign.Save">
+            <summary>
+            保存流程命令
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Routings.RoutingDesign.Publish">
+            <summary>
+            发布流程命令
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Routings.RoutingDesign.HorizontalCenter">
+            <summary>
+            水平居中命令
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Routings.RoutingDesign.VerticalCenter">
+            <summary>
+            垂直居中命令
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Routings.RoutingDesign.HorizontalDistribution">
+            <summary>
+            横向分布命令
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Routings.RoutingDesign.VerticalDistribution">
+            <summary>
+            纵向分布命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingDesign.Save_CanExecute(System.Object,System.Windows.Input.CanExecuteRoutedEventArgs)">
+            <summary>
+            控制保存命令能否执行
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingDesign.Save_Executed(System.Object,System.Windows.Input.ExecutedRoutedEventArgs)">
+            <summary>
+            保存流程
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingDesign.Publish_CanExecute(System.Object,System.Windows.Input.CanExecuteRoutedEventArgs)">
+            <summary>
+            控制发布命令能否执行
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingDesign.Publish_Executed(System.Object,System.Windows.Input.ExecutedRoutedEventArgs)">
+            <summary>
+            发布流程
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingDesign.VerticalDistribution_CanExecute(System.Object,System.Windows.Input.CanExecuteRoutedEventArgs)">
+            <summary>
+            控制纵向分布命令能否执行
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingDesign.VerticalDistribution_Executed(System.Object,System.Windows.Input.ExecutedRoutedEventArgs)">
+            <summary>
+            纵向分布命令
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingDesign.HorizontalDistribution_CanExecute(System.Object,System.Windows.Input.CanExecuteRoutedEventArgs)">
+            <summary>
+            控制横向分布命令能否执行
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingDesign.HorizontalDistribution_Executed(System.Object,System.Windows.Input.ExecutedRoutedEventArgs)">
+            <summary>
+            横向分布命令
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingDesign.VerticalCenter_CanExecute(System.Object,System.Windows.Input.CanExecuteRoutedEventArgs)">
+            <summary>
+            控制上下居中命令能否执行
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingDesign.VerticalCenter_Executed(System.Object,System.Windows.Input.ExecutedRoutedEventArgs)">
+            <summary>
+            上下居中命令
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingDesign.HorizontalCenter_CanExecute(System.Object,System.Windows.Input.CanExecuteRoutedEventArgs)">
+            <summary>
+            控制左右居中命令能否执行
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingDesign.HorizontalCenter_Executed(System.Object,System.Windows.Input.ExecutedRoutedEventArgs)">
+            <summary>
+            左右居中命令
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingDesign.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Routings.RoutingPath">
+            <summary>
+            工艺路线路径
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Routings.RoutingPath.Title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Routings.RoutingPath.VersionPath">
+            <summary>
+            版本对应路径
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Routings.RoutingTree">
+            <summary>
+            RoutingTree.xaml 的交互逻辑
+            </summary>
+            <summary>
+            RoutingTree
+            </summary>
+        </member>
+        <member name="E:SIE.Wpf.Tech.Routings.RoutingTree.AddFlow_Click">
+            <summary>
+            添加流程事件
+            </summary>
+        </member>
+        <member name="E:SIE.Wpf.Tech.Routings.RoutingTree.EditFlow_Click">
+            <summary>
+            编辑流程事件
+            </summary>
+        </member>
+        <member name="E:SIE.Wpf.Tech.Routings.RoutingTree.CopyRoutingVersion_Click">
+            <summary>
+            复制工艺路线版本事件
+            </summary>
+        </member>
+        <member name="E:SIE.Wpf.Tech.Routings.RoutingTree.PasteRoutingVersion_Click">
+            <summary>
+            粘贴工艺路线版本事件
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Routings.RoutingTree.helper">
+            <summary>
+            树帮助类，用于控制树节点的是否展开
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Routings.RoutingTree._productFamilyList">
+            <summary>
+            产品族分类集合
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Routings.RoutingTree._routingList">
+            <summary>
+            工艺路线集合
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Routings.RoutingTree._treeInfos">
+            <summary>
+            工艺信息树
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Routings.RoutingTree._contextMenus">
+            <summary>
+            快捷菜单字典
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Routings.RoutingTree._id">
+            <summary>
+            用于构建工艺信息树
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Routings.RoutingTree.keyValuePairs">
+            <summary>
+            用于存储已展开Node
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Routings.RoutingTree._currentInfo">
+            <summary>
+            当前选择节点信息
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Routings.RoutingTree._loadedInfo">
+            <summary>
+            当前已加载节点信息
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Routings.RoutingTree.CopyViewModel">
+            <summary>
+            工艺流程版本复制选项ViewModel
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Routings.RoutingTree.IsCopyFinished">
+            <summary>
+            复制完成标记
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.#ctor">
+            <summary>
+            工艺信息树
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.RoutingControl_SelectedItemChanged(System.Object,DevExpress.Xpf.Grid.SelectedItemChangedEventArgs)">
+            <summary>
+            单击项变更时的事件
+            </summary>
+            <param name="sender">事件源对象</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.CopyPasteRoutingVersionIni">
+            <summary>
+            复制、粘贴工艺路线版本初始化
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.RoutingControl_PreviewMouseDoubleClick(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            双击工艺路线版本加载工艺路线
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.RoutingControl_CurrentItemChanged(System.Object,DevExpress.Xpf.Grid.CurrentItemChangedEventArgs)">
+            <summary>
+            当前项变更事件
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.SetCurrentInfo(System.Double,System.String)">
+            <summary>
+            设置当前选择和已加载节点信息
+            </summary>
+            <param name="entityId">实体Id</param>
+            <param name="type">实体类型</param>
+            <returns>显示名称集合</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.GetDisplayNames(SIE.Wpf.Tech.Processs.TreeInfo)">
+            <summary>
+            加载当前路径显示名称
+            </summary>
+            <param name="loadedInfo">已加载节点信息</param>
+            <returns>各层级显示名称</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.RefreshData(System.Nullable{System.Double},System.String)">
+            <summary>
+            刷新数据
+            </summary>
+            <param name="entityId">实体Id</param>
+            <param name="type">实体类型</param>
+            <returns>显示名称集合</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.QueryProductFamily">
+            <summary>
+            查询产品族大类
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.LoadProductFamilyNodes(System.Collections.Generic.IEnumerable{SIE.Items.ProductFamilyCategory},System.Collections.Generic.IEnumerable{SIE.Tech.Routings.Routing})">
+            <summary>
+            加载产品族分类的节点
+            </summary>
+            <param name="productFamilyList">产品族分类集合</param>
+            <param name="routingList">工艺路线集合</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.LoadRoutingNodes(System.Collections.Generic.IEnumerable{SIE.Tech.Routings.Routing},SIE.Wpf.Tech.Processs.TreeInfo)">
+            <summary>
+            加载工艺路线节点
+            </summary>
+            <param name="routings">工艺路线集合</param>
+            <param name="parentTreeInfo">父节点</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.LoadRoutingVersionNodes(System.Collections.Generic.IEnumerable{SIE.Tech.Routings.RoutingVersion},SIE.Wpf.Tech.Processs.TreeInfo)">
+            <summary>
+            加载工艺路线版本节点
+            </summary>
+            <param name="versions">工艺路线版本集合</param>
+            <param name="parentTreeInfo">父节点</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.CreateMenuItem(System.String,System.String,System.Object,System.Nullable{Resources.IconPacks.PackIconKind})">
+            <summary>
+            创建菜单
+            </summary>
+            <param name="header">标题</param>
+            <param name="tooltip">提示信心</param>
+            <param name="dataContext">内容</param>
+            <param name="icon">图标</param>
+            <returns>菜单项</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.GetProductFamilyContextMenu">
+            <summary>
+            获取产品簇分类快捷菜单
+            </summary>
+            <returns>快捷菜单</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.GetRoutingContextMenu">
+            <summary>
+            获取工艺路线快捷菜单
+            </summary>
+            <returns>快捷菜单</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.CreatePasteRVMenuItem(System.Windows.Controls.ContextMenu)">
+            <summary>
+            创建右键菜单-粘贴工艺流程版本
+            </summary>
+            <param name="contextMenu">菜单对象</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.CreatePasteRVCommandBinding">
+            <summary>
+            创建粘贴工艺路线版本CommandBinding，绑定命令PasteRVCommand
+            </summary>
+            <returns>CommandBinding</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.PasteRVCmdBinding_CanExecute(System.Object,System.Windows.Input.CanExecuteRoutedEventArgs)">
+            <summary>
+            pasteRVCmdBinding的是否可以执行方法
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.PasteRVCmdBinding_Executed(System.Object,System.Windows.Input.ExecutedRoutedEventArgs)">
+            <summary>
+            pasteRVCmdBinding的执行方法
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.PasteVersionEvent(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            粘贴工艺路线版本到右键单击的工艺路线
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.PasteRoutingVersion(SIE.Tech.Routings.Routing)">
+            <summary>
+            粘贴工艺路线版本
+            </summary>
+            <param name="routing">工艺路线</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.GetVersionContextMenu">
+            <summary>
+            获取工艺路线版本快捷菜单
+            </summary>
+            <returns>快捷菜单</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.GetReleaseVersionContextMenu">
+            <summary>
+            获取工艺路线发布版本快捷菜单
+            </summary>
+            <returns>快捷菜单</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.GetRoutingVersionCommonMenu">
+            <summary>
+            获取工艺路线版本通用右键菜单
+            </summary>
+            <returns>右键菜单</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.CreateCopyRVMenuItem(System.Windows.Controls.ContextMenu)">
+            <summary>
+            创建右键菜单--复制工艺流程版本
+            </summary>
+            <param name="contextMenu">菜单对象</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.CreateCopyRVCommandBinding">
+            <summary>
+            创建CommandBinding，绑定CopyRVCommand
+            </summary>
+            <returns>copyRVCmdBinding</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.CopyRVCmdBinding_CanExecute(System.Object,System.Windows.Input.CanExecuteRoutedEventArgs)">
+            <summary>
+            copyRVCmdBinding的是否可以执行方法
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.CopyRVCmdBinding_Executed(System.Object,System.Windows.Input.ExecutedRoutedEventArgs)">
+            <summary>
+            copyRVCmdBinding的执行方法
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.CopyRoutingVersionEvent(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            复制工艺路线版本
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.ShowCopyDialog(SIE.Wpf.Tech.Routings.RoutingVersionCopyViewModel)">
+            <summary>
+            工艺路线版本复制对话框
+            </summary>
+            <param name="copyModel">工艺路线版本复制ViewModel对象</param>
+            <returns>-1或0</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.CheckProcessChanged(System.String)">
+            <summary>
+            校验工序是否发生变更
+            </summary>
+            <param name="xml">工艺路线版本</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.AddRouting_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            新增工艺路线
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.CreateAddRouting(SIE.Wpf.Tech.Processs.TreeInfo)">
+            <summary>
+            在当前产品族下新增工艺路线
+            </summary>
+            <param name="item">当前树节点</param>
+            <returns>工艺路线</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.AddRouting(SIE.Tech.Routings.Routing)">
+            <summary>
+            新增工艺路线
+            </summary>
+            <param name="routing">工艺路线</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.EditRouting_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            修改工艺路线
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.EditRouting(SIE.Tech.Routings.Routing)">
+            <summary>
+            修改工艺路线
+            </summary>
+            <param name="routing">工艺路线</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.DeleteRouting_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            删除工艺路线
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.DeleteRouting(SIE.Tech.Routings.Routing)">
+            <summary>
+            删除工艺路线
+            </summary>
+            <param name="routing">工艺路线</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.SetDefault_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            设置默认事件
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.AddRoutingVersion_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            新增流程
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.AddRoutingVersion(SIE.Tech.Routings.Routing)">
+            <summary>
+            新增工艺路线版本
+            </summary>
+            <param name="routing">工艺路线</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.EditRoutingVersion_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            编辑工艺路线版本
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.DeleteRoutingVersion_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            删除工艺路线版本
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.DeleteRoutingVersion(SIE.Tech.Routings.RoutingVersion)">
+            <summary>
+            删除工艺路线版本
+            </summary>
+            <param name="routingVersion">工艺路线版本</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.ShowRoutingDialog(System.String,SIE.Tech.Routings.Routing,System.Action{System.ComponentModel.CancelEventArgs})">
+            <summary>
+            弹出工艺路线对话框
+            </summary>
+            <param name="title">标题</param>
+            <param name="routing">工艺路线</param>
+            <param name="save">行为</param>
+            <returns>对话结果，0为确认，1为取消</returns>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Routings.RoutingTree.Refresh">
+            <summary>
+            刷新工艺路线信息命令
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Routings.RoutingTree.Locate">
+            <summary>
+            重新定位
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Routings.RoutingTree.Add">
+            <summary>
+            添加工艺路线、工艺流程
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Routings.RoutingTree.Edit">
+            <summary>
+            编辑工艺路线
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Routings.RoutingTree.Delete">
+            <summary>
+            删除工艺路线、工艺流程
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Routings.RoutingTree.Import">
+            <summary>
+            导入工艺路线
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.Refresh_Executed(System.Object,System.Windows.Input.ExecutedRoutedEventArgs)">
+            <summary>
+            刷新工艺路线信息
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.Locate_CanExecute(System.Object,System.Windows.Input.CanExecuteRoutedEventArgs)">
+            <summary>
+            定位命令执行条件
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.Locate_Executed(System.Object,System.Windows.Input.ExecutedRoutedEventArgs)">
+            <summary>
+            定位命令执行方法
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.Add_CanExecute(System.Object,System.Windows.Input.CanExecuteRoutedEventArgs)">
+            <summary>
+            添加工艺路线、工艺流程命令是否能执行
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.Add_Executed(System.Object,System.Windows.Input.ExecutedRoutedEventArgs)">
+            <summary>
+            添加工艺路线、工艺流程
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.Edit_CanExecute(System.Object,System.Windows.Input.CanExecuteRoutedEventArgs)">
+            <summary>
+            编辑工艺路线命令能够执行
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.Edit_Executed(System.Object,System.Windows.Input.ExecutedRoutedEventArgs)">
+            <summary>
+            编辑工艺路线
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.Delete_CanExecute(System.Object,System.Windows.Input.CanExecuteRoutedEventArgs)">
+            <summary>
+            删除工艺路线、工艺流程命令能够执行
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.Delete_Executed(System.Object,System.Windows.Input.ExecutedRoutedEventArgs)">
+            <summary>
+            删除工艺路线、工艺流程
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.Import_Executed(System.Object,System.Windows.Input.ExecutedRoutedEventArgs)">
+            <summary>
+            导入命令
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.Import_CanExecute(System.Object,System.Windows.Input.CanExecuteRoutedEventArgs)">
+            <summary>
+            判断导入是否能执行
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.SearchEdit_KeyDown(System.Object,System.Windows.Input.KeyEventArgs)">
+            <summary>
+            工艺路线信息查询事件，回车触发
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.BtnSearch_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            工艺路线信息查询事件，按钮触发
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingTree.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Routings.RoutingVersionCopyViewModel">
+            <summary>
+            工艺路线版本复制视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingVersionCopyViewModel.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Routings.RoutingVersionCopyViewModel.IsCopyBomProperty">
+            <summary>
+            是否复制工序BOM
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Routings.RoutingVersionCopyViewModel.IsCopyBom">
+            <summary>
+            是否复制工序BOM
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Routings.RoutingVersionCopyViewModel.IsCopyActivityPropertyProperty">
+            <summary>
+            是否复制流程属性
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Routings.RoutingVersionCopyViewModel.IsCopyActivityProperty">
+            <summary>
+            是否复制流程属性
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Routings.RoutingVersionCopyViewModelViewConfig">
+            <summary>
+            工艺路线版本复制视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingVersionCopyViewModelViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingVersionCopyViewModelViewConfig.ConfigDetailsView">
+            <summary>
+            明细视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Routings.RoutingVersionViewConfig">
+            <summary>
+            工艺路线版本视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingVersionViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingVersionViewConfig.ConfigListView">
+            <summary>
+            列表配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingVersionViewConfig.ConfigDetailsView">
+            <summary>
+            表单配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingVersionViewConfig.ConfigSelectionView">
+            <summary>
+            下拉配置
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Routings.RoutingViewConfig">
+            <summary>
+            工艺路线 视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingViewConfig.ConfigDetailsView">
+            <summary>
+            明细视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingViewConfig.ConfigQueryView">
+            <summary>
+            查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.RoutingViewConfig.ConfigSelectionView">
+            <summary>
+            选择视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Routings.Technologys.Controls.Activity">
+            <summary>
+            Activity.xaml 的交互逻辑
+            </summary>
+            <summary>
+            Activity
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Routings.Technologys.Controls.Activity.Container">
+            <summary>
+            容器
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Routings.Technologys.Controls.Activity.Model">
+            <summary>
+            活动节点
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Activity.#ctor(SIE.Wpf.Tech.Routings.Technologys.Controls.Container,SIE.Tech.Routings.Technologys.IActivity)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="container">容器</param>
+            <param name="model">活动节点</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Activity.SetContextMenu">
+            <summary>
+            设置右键菜单
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Activity.DeleteControls(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            删除活动节点
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Activity.UserControl_MouseMove(System.Object,System.Windows.Input.MouseEventArgs)">
+            <summary>
+            鼠标移动到活动节点时触发
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Activity.UserControl_MouseLeftButtonUp(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            鼠标左击回弹事件
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Activity.CenterEllipse_MouseLeftButtonDown(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            鼠标点击规则节点时触发，
+            创建规则
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Activity.CenterEllipse_MouseLeftButtonUp(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            鼠标点击规则节点时触发
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Activity.UserControl_MouseLeftButtonDown(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            鼠标左键点击活动节点时触发
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Activity.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Routings.Technologys.Controls.Arrowhead">
+            <summary>
+            箭头画布
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Routings.Technologys.Controls.Arrowhead.Stroke">
+            <summary>
+            画笔颜色
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Routings.Technologys.Controls.Arrowhead.StrokeProperty">
+            <summary>
+            画笔颜色
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Arrowhead.OnStrokeChanged(System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            画笔颜色变更事件
+            </summary>
+            <param name="e">参数</param>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Routings.Technologys.Controls.Arrowhead.BeginPoint">
+            <summary>
+            开始位置
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Routings.Technologys.Controls.Arrowhead.BeginPointProperty">
+            <summary>
+            开始位置
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Routings.Technologys.Controls.Arrowhead.EndPoint">
+            <summary>
+            结束位置
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Routings.Technologys.Controls.Arrowhead.EndPointProperty">
+            <summary>
+            结束位置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Arrowhead.OnPointChanged(System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            开始结束位置变更事件
+            </summary>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Arrowhead.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Routings.Technologys.Controls.Arrowhead.arrowLenght">
+            <summary>
+            箭头的长度
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Routings.Technologys.Controls.Arrowhead.arrowAngle">
+            <summary>
+            箭头的与直线的夹角
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Routings.Technologys.Controls.Arrowhead.lineLeft">
+            <summary>
+            左线
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Routings.Technologys.Controls.Arrowhead.lineRight">
+            <summary>
+            右线
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Routings.Technologys.Controls.Arrowhead.lineCenter">
+            <summary>
+            中线
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Routings.Technologys.Controls.Arrowhead.Opacity">
+            <summary>
+            透明度
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Routings.Technologys.Controls.Arrowhead.StrokeThickness">
+            <summary>
+            箭头宽度
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Arrowhead.SetAngleByDegree(System.Double,System.Double)">
+            <summary>
+            设置箭头的旋转角度
+            </summary>
+            <param name="degreeLeft">左角度</param>
+            <param name="degreeRight">右角度</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Arrowhead.SetAngleByPoint(SIE.Tech.Routings.Technologys.Point,SIE.Tech.Routings.Technologys.Point)">
+            <summary>
+            根据直线的起始点和结束点的坐标设置箭头的旋转角度
+            </summary>
+            <param name="beginPoint">开始位置</param>
+            <param name="endPoint">结束位置</param>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Routings.Technologys.Controls.Container">
+            <summary>
+            Container.xaml 的交互逻辑
+            </summary>
+            <summary>
+            Container
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Routings.Technologys.Controls.Container.IsReadOnly">
+            <summary>
+            工艺是否只读
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Routings.Technologys.Controls.Container.Model">
+            <summary>
+            设计容器接口
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Routings.Technologys.Controls.Container.Children">
+            <summary>
+            子元素集合
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Routings.Technologys.Controls.Container.CopyPasteXml">
+            <summary>
+            复制粘贴的Layoyut字符串
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Routings.Technologys.Controls.Container.IsCopyFinished">
+            <summary>
+            粘贴时，复制操作是否执行成功。
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Routings.Technologys.Controls.Container.GridLines">
+            <summary>
+            画布
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Routings.Technologys.Controls.Container.tempRectangle">
+            <summary>
+            矩形选中框
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Routings.Technologys.Controls.Container.TempRule">
+            <summary>
+            规则
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Routings.Technologys.Controls.Container.CopyViewModel">
+            <summary>
+            工艺流程版本复制选项
+            </summary>
+        </member>
+        <member name="E:SIE.Wpf.Tech.Routings.Technologys.Controls.Container.ModelChanged">
+            <summary>
+            模型变更事件
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Container.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Container.AddActivityAnimation(SIE.Tech.Routings.Technologys.IActivity)">
+            <summary>
+            添加活动节点
+            </summary>
+            <param name="activity">活动节点（开始、结束、工序等）</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Container.Activity_UnselectedEvent(SIE.Tech.Routings.Technologys.IElement)">
+            <summary>
+            活动节点取消选中事件
+            </summary>
+            <param name="obj">元素</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Container.Activity_SelectedEvent(SIE.Tech.Routings.Technologys.IElement)">
+            <summary>
+            活动节点选中事件
+            </summary>
+            <param name="obj">元素</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Container.InitModel(SIE.Tech.Routings.Technologys.IContainer)">
+            <summary>
+            初始化Model
+            </summary>
+            <param name="model">容器</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Container.InitGridLines">
+            <summary>
+            初始化网格
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Container.AddFlow_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            添加流程
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Container.PasteRoutingVersion_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            粘贴工艺流程版本
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Container.Copylow_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            复制流程
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Container.CopyRoutingVersion_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            复制工艺路线版本
+            </summary>
+            <param name="sender">事件源</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Container.ProcessCopyRoutingVersion(System.String)">
+            <summary>
+            根据复制选项处理复制的工艺路线版本
+            </summary>
+            <param name="copyPasteXml">复制粘贴的xml字符串</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Container.EditFlow_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            编辑流程
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Container.CreateNewWorkFlow">
+            <summary>
+            创建一个默认新流程
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Container.LoadFromXmlString(System.String,System.Boolean)">
+            <summary>
+            加载xml到容器
+            </summary>
+            <param name="xml">xml</param>
+            <param name="isCopying">复制命令触发时为true</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Container.Container_PreviewDrop(System.Object,System.Windows.DragEventArgs)">
+            <summary>
+            对象拖动到容器时触发
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Routings.Technologys.Controls.Container.mousePosition">
+            <summary>
+            鼠标位置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Container.Container_MouseLeftButtonDown(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            容器鼠标左键点击事件，显示临时矩形选中框
+            用于选中容器元素
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Routings.Technologys.Controls.Container.TrackingMouseMove">
+            <summary>
+            是否跟踪鼠标移动
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Routings.Technologys.Controls.Container.MoveEllipse1">
+            <summary>
+            规则1矩形
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Routings.Technologys.Controls.Container.MoveEllipse2">
+            <summary>
+            规则2矩形
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Container.Container_MouseMove(System.Object,System.Windows.Input.MouseEventArgs)">
+            <summary>
+            鼠标移动事件
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Container.Container_MouseLeftButtonUp(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            容器鼠标左键点击事件
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Routings.Technologys.Controls.Container.runPoints">
+            <summary>
+            运动点集合
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Routings.Technologys.Controls.Container._pathPoint">
+            <summary>
+            位置
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Routings.Technologys.Controls.Container._storyboard">
+            <summary>
+            故事板
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Container.InitStoryboard(SIE.Tech.Routings.Technologys.IActivity)">
+            <summary>
+            初始化故事板
+            </summary>
+            <param name="activity">活动节点</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Container.GetParticlePath(System.Windows.Point,System.Windows.Point,System.Windows.Point,System.Windows.Point,System.String)">
+            <summary>
+            获取运动轨迹
+            </summary>
+            <param name="startPoint">起点</param>
+            <param name="point1">控制点</param>
+            <param name="point2">终点</param>
+            <param name="endPoint">结束位置</param>
+            <param name="color">颜色:r,g,b</param>
+            <returns>Path</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Container.GetRunPoint(System.String)">
+            <summary>
+            获取跑动的点
+            </summary>
+            <param name="color">颜色:r,g,b</param>
+            <returns>Grid</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Container.AddPointToStoryboard(System.Windows.Controls.Grid,System.Windows.Media.Animation.Storyboard,System.Windows.Shapes.Path)">
+            <summary>
+            将点加入到动画故事版
+            </summary>
+            <param name="point">运动的点</param>
+            <param name="sb">故事版</param>
+            <param name="particlePath">运动轨迹</param>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Routings.Technologys.Controls.Container.CtrlKeyIsPress">
+            <summary>
+            Ctrl键是否按下
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Routings.Technologys.Controls.Container._moveStepLenght">
+            <summary>
+            键盘控制活动节点移动长度
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Container.UserControl_PreviewKeyDown(System.Object,System.Windows.Input.KeyEventArgs)">
+            <summary>
+            控件键盘触发事件
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Container.MoveDown">
+            <summary>
+            向下移动滚动条一行
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Container.MoveUp">
+            <summary>
+            向上移动滚动条一行
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Container.MoveLeft">
+            <summary>
+            向左移动滚动条一行
+            </summary> 
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Container.MoveRight">
+            <summary>
+            向右移动滚动条一行
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Container.Scrollable">
+            <summary>
+            屏幕容器滚动条移动
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Routings.Technologys.Controls.Container.svContainer">
+            <summary>
+            svContainer Name Field
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Container.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Routings.Technologys.Controls.DesignerCanvas">
+            <summary>
+            设计画布
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.DesignerCanvas.MeasureOverride(System.Windows.Size)">
+            <summary>
+            测量
+            </summary>
+            <param name="constraint">尺寸(参数)</param>
+            <returns>尺寸(返回值)</returns>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Routings.Technologys.Controls.Gridding">
+            <summary>
+            画布
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Gridding.#ctor(System.Double,System.Double)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="width">宽</param>
+            <param name="height">高</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Gridding.Update(System.Double,System.Double)">
+            <summary>
+            根据画布大小更新网格线
+            </summary>
+            <param name="width">宽度</param>
+            <param name="height">高度</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Gridding.SetGridLines(System.Double,System.Double,System.Double,System.Double,System.Double,System.Windows.Media.Color,System.Double,System.Windows.Media.DoubleCollection)">
+            <summary>
+            设置网格线
+            </summary>
+            <param name="width">宽</param>
+            <param name="height">高</param>
+            <param name="left">起点位置距离画布左侧距离</param>
+            <param name="top">起点位置距离画布顶部距离</param>
+            <param name="stepLength">表格长度</param>
+            <param name="color">颜色</param>
+            <param name="thickness">边框宽度</param>
+            <param name="strokeDashArray">Double集合</param>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Routings.Technologys.Controls.Rule">
+            <summary>
+            Rule.xaml 的交互逻辑
+            </summary>
+            <summary>
+            Rule
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Routings.Technologys.Controls.Rule.Container">
+            <summary>
+            容器
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Routings.Technologys.Controls.Rule.Model">
+            <summary>
+            规则
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Rule.#ctor(SIE.Wpf.Tech.Routings.Technologys.Controls.Container,SIE.Tech.Routings.Technologys.IRule)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="container">容器</param>
+            <param name="model">规则</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Rule.SetContextMenu">
+            <summary>
+            设置右键菜单
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Rule.ConfigExpression(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            配置脚本
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Rule.DeleteControls(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            删除规则
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Rule.SetEndActivity">
+            <summary>
+            设置结束活动节点
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Rule.BezierSegment_MouseLeftButtonDown(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            鼠标左键点击规则节点时触发
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Rule.Ellipse1_PreviewMouseLeftButtonDown(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            规则1鼠标左键点击事件
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Rule.Ellipse2_PreviewMouseLeftButtonDown(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            规则2鼠标左键点击事件
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Controls.Rule.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Routings.Technologys.Converters.BooleanToVisibilityConverterExtension">
+            <summary>
+            Bool转换Visibility转换器
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Converters.BooleanToVisibilityConverterExtension.ProvideValue(System.IServiceProvider)">
+            <summary>
+            当在派生类中实现时，返回一个对象，该对象作为此标记扩展的目标属性的值。
+            </summary>
+            <param name="serviceProvider">标记扩展服务的服务提供者</param>
+            <returns>对象</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Converters.BooleanToVisibilityConverterExtension.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            转换值
+            </summary>
+            <param name="value">Bool值</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">本地化</param>
+            <returns>Visibility枚举</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Converters.BooleanToVisibilityConverterExtension.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            转换值
+            </summary>
+            <param name="value">Visibility枚举</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">本地化</param>
+            <returns>Bool值</returns>
+            <exception cref="T:System.NotImplementedException">未实现</exception>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Routings.Technologys.Converters.CompletionFillConverterExtension">
+            <summary>
+            Bool转换颜色转换器
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Converters.CompletionFillConverterExtension.ProvideValue(System.IServiceProvider)">
+            <summary>
+            当在派生类中实现时，返回一个对象，该对象作为此标记扩展的目标属性的值。
+            </summary>
+            <param name="serviceProvider">标记扩展服务的服务提供者</param>
+            <returns>对象</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Converters.CompletionFillConverterExtension.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            转换值
+            </summary>
+            <param name="value">Bool值</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">本地化</param>
+            <returns>SolidColorBrush对象</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Converters.CompletionFillConverterExtension.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            转换值
+            </summary>
+            <param name="value">SolidColorBrush对象</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">本地化</param>
+            <returns>Bool值</returns>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Routings.Technologys.Converters.CompletionVisibilityConverterExtension">
+            <summary>
+            活动类型枚举转Visibility枚举值转换器
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Converters.CompletionVisibilityConverterExtension.ProvideValue(System.IServiceProvider)">
+            <summary>
+            当在派生类中实现时，返回一个对象，该对象作为此标记扩展的目标属性的值。
+            </summary>
+            <param name="serviceProvider">标记扩展服务的服务提供者</param>
+            <returns>对象</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Converters.CompletionVisibilityConverterExtension.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            转换值
+            </summary>
+            <param name="value">活动类型枚举</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">本地化</param>
+            <returns>Visibility枚举</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Converters.CompletionVisibilityConverterExtension.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            转换值
+            </summary>
+            <param name="value">Visibility枚举</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">本地化</param>
+            <returns>活动类型枚举</returns>
+            <exception cref="T:System.NotImplementedException">未实现</exception>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Routings.Technologys.Converters.CurveToVisibilityConverterExtension">
+            <summary>
+            规则类型枚举转Visibility枚举值转换器
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Converters.CurveToVisibilityConverterExtension.ProvideValue(System.IServiceProvider)">
+            <summary>
+            当在派生类中实现时，返回一个对象，该对象作为此标记扩展的目标属性的值。
+            </summary>
+            <param name="serviceProvider">标记扩展服务的服务提供者</param>
+            <returns>对象</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Converters.CurveToVisibilityConverterExtension.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            转换值
+            </summary>
+            <param name="value">规则类型枚举</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">本地化</param>
+            <returns>Visibility枚举</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Converters.CurveToVisibilityConverterExtension.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            转换值
+            </summary>
+            <param name="value">Visibility枚举</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">本地化</param>
+            <returns>规则类型枚举</returns>
+            <exception cref="T:System.NotImplementedException">未实现</exception>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Routings.Technologys.Converters.EllipseStrokeConverterExtension">
+            <summary>
+            采集结果枚举转SolidColorBrush对象值转换器
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Converters.EllipseStrokeConverterExtension.ProvideValue(System.IServiceProvider)">
+            <summary>
+            当在派生类中实现时，返回一个对象，该对象作为此标记扩展的目标属性的值。
+            </summary>
+            <param name="serviceProvider">标记扩展服务的服务提供者</param>
+            <returns>对象</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Converters.EllipseStrokeConverterExtension.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            转换值
+            </summary>
+            <param name="value">采集结果</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">本地化</param>
+            <returns>SolidColorBrush对象</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Converters.EllipseStrokeConverterExtension.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            转换值
+            </summary>
+            <param name="value">SolidColorBrush对象</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">本地化</param>
+            <returns>采集结果</returns>
+            <exception cref="T:System.NotImplementedException">未实现</exception>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Routings.Technologys.Converters.IActivityToVisibilityConverterExtension">
+            <summary>
+            活动接口转Visibility枚举值转换器
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Converters.IActivityToVisibilityConverterExtension.ProvideValue(System.IServiceProvider)">
+            <summary>
+            当在派生类中实现时，返回一个对象，该对象作为此标记扩展的目标属性的值。
+            </summary>
+            <param name="serviceProvider">标记扩展服务的服务提供者</param>
+            <returns>对象</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Converters.IActivityToVisibilityConverterExtension.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            转换值
+            </summary>
+            <param name="value">活动接口</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">本地化</param>
+            <returns>Visibility枚举</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Converters.IActivityToVisibilityConverterExtension.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            转换值
+            </summary>
+            <param name="value">Visibility枚举</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">本地化</param>
+            <returns>活动接口</returns>
+            <exception cref="T:System.NotImplementedException">未实现</exception>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Routings.Technologys.Converters.InitialFillConverterExtension">
+            <summary>
+            活动接口转换SolidColorBrush对象值转换器
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Converters.InitialFillConverterExtension.ProvideValue(System.IServiceProvider)">
+            <summary>
+            当在派生类中实现时，返回一个对象，该对象作为此标记扩展的目标属性的值。
+            </summary>
+            <param name="serviceProvider">标记扩展服务的服务提供者</param>
+            <returns>对象</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Converters.InitialFillConverterExtension.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            转换值
+            </summary>
+            <param name="value">IActivity接口</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">本地化</param>
+            <returns>SolidColorBrush对象</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Converters.InitialFillConverterExtension.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            转换值
+            </summary>
+            <param name="value">SolidColorBrush对象</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">本地化</param>
+            <returns>IActivity接口</returns>
+            <exception cref="T:System.NotImplementedException">未实现</exception>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Routings.Technologys.Converters.InitialVisibilityConverterExtension">
+            <summary>
+            活动类型枚举转Visibility枚举值转换器
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Converters.InitialVisibilityConverterExtension.ProvideValue(System.IServiceProvider)">
+            <summary>
+            当在派生类中实现时，返回一个对象，该对象作为此标记扩展的目标属性的值。
+            </summary>
+            <param name="serviceProvider">标记扩展服务的服务提供者</param>
+            <returns>对象</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Converters.InitialVisibilityConverterExtension.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            转换值
+            </summary>
+            <param name="value">活动类型枚举</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">本地化</param>
+            <returns>Visibility枚举</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Converters.InitialVisibilityConverterExtension.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            转换值
+            </summary>
+            <param name="value">Visibility枚举</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">本地化</param>
+            <returns>活动类型枚举</returns>
+            <exception cref="T:System.NotImplementedException">未实现</exception>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Routings.Technologys.Converters.InteractionFillConverterExtension">
+            <summary>
+            活动节点转SolidColorBrush对象值转换器
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Converters.InteractionFillConverterExtension.ProvideValue(System.IServiceProvider)">
+            <summary>
+            当在派生类中实现时，返回一个对象，该对象作为此标记扩展的目标属性的值。
+            </summary>
+            <param name="serviceProvider">标记扩展服务的服务提供者</param>
+            <returns>对象</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Converters.InteractionFillConverterExtension.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            转换值
+            </summary>
+            <param name="value">IActivity接口</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">本地化</param>
+            <returns>SolidColorBrush对象</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Converters.InteractionFillConverterExtension.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            转换值
+            </summary>
+            <param name="value">SolidColorBrush对象</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">本地化</param>
+            <returns>IActivity接口</returns>
+            <exception cref="T:System.NotImplementedException">未实现</exception>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Routings.Technologys.Converters.InteractionVisibilityConverterExtension">
+            <summary>
+            活动类型枚举字符串转Visibility枚举值转换器
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Converters.InteractionVisibilityConverterExtension.ProvideValue(System.IServiceProvider)">
+            <summary>
+            当在派生类中实现时，返回一个对象，该对象作为此标记扩展的目标属性的值。
+            </summary>
+            <param name="serviceProvider">标记扩展服务的服务提供者</param>
+            <returns>对象</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Converters.InteractionVisibilityConverterExtension.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            转换值
+            </summary>
+            <param name="value">活动类型枚举字符串转</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">本地化</param>
+            <returns>Visibility枚举</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Converters.InteractionVisibilityConverterExtension.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            转换值
+            </summary>
+            <param name="value">Visibility枚举</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">本地化</param>
+            <returns>活动类型枚举字符串转</returns>
+            <exception cref="T:System.NotImplementedException">未实现</exception>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Routings.Technologys.Converters.IRuleToColorConverterExtension">
+            <summary>
+            规则转颜色值转换器
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Converters.IRuleToColorConverterExtension.ProvideValue(System.IServiceProvider)">
+            <summary>
+            当在派生类中实现时，返回一个对象，该对象作为此标记扩展的目标属性的值。
+            </summary>
+            <param name="serviceProvider">标记扩展服务的服务提供者</param>
+            <returns>对象</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Converters.IRuleToColorConverterExtension.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            转换值
+            </summary>
+            <param name="value">规则</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">本地化</param>
+            <returns>SolidColorBrush对象</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Converters.IRuleToColorConverterExtension.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            转换值
+            </summary>
+            <param name="value">SolidColorBrush对象</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">本地化</param>
+            <returns>规则</returns>
+            <exception cref="T:System.NotImplementedException">未实现</exception>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Routings.Technologys.Converters.IRuleToVisibilityConverterExtension">
+            <summary>
+            规则转换Visibility枚举值转换器
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Converters.IRuleToVisibilityConverterExtension.ProvideValue(System.IServiceProvider)">
+            <summary>
+            当在派生类中实现时，返回一个对象，该对象作为此标记扩展的目标属性的值。
+            </summary>
+            <param name="serviceProvider">标记扩展服务的服务提供者</param>
+            <returns>对象</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Converters.IRuleToVisibilityConverterExtension.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            转换值
+            </summary>
+            <param name="value">规则</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">本地化</param>
+            <returns>Visibility枚举</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Converters.IRuleToVisibilityConverterExtension.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            转换值
+            </summary>
+            <param name="value">Visibility枚举</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">本地化</param>
+            <returns>规则</returns>
+            <exception cref="T:System.NotImplementedException">未实现</exception>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Routings.Technologys.Converters.LineToVisibilityConverterExtension">
+            <summary>
+            规则类型转换Visibility枚举转换器
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Converters.LineToVisibilityConverterExtension.ProvideValue(System.IServiceProvider)">
+            <summary>
+            当在派生类中实现时，返回一个对象，该对象作为此标记扩展的目标属性的值。
+            </summary>
+            <param name="serviceProvider">标记扩展服务的服务提供者</param>
+            <returns>对象</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Converters.LineToVisibilityConverterExtension.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            转换值
+            </summary>
+            <param name="value">RuleType枚举</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">本地化</param>
+            <returns>Visibility枚举</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Converters.LineToVisibilityConverterExtension.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            转换值
+            </summary>
+            <param name="value">Visibility枚举</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">本地化</param>
+            <returns>RuleType枚举</returns>
+            <exception cref="T:System.NotImplementedException">未实现</exception>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Routings.Technologys.Converters.PointConverterExtension">
+            <summary>
+            位置值转换器
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Converters.PointConverterExtension.ProvideValue(System.IServiceProvider)">
+            <summary>
+            当在派生类中实现时，返回一个对象，该对象作为此标记扩展的目标属性的值。
+            </summary>
+            <param name="serviceProvider">标记扩展服务的服务提供者</param>
+            <returns>对象</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Converters.PointConverterExtension.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            转换值
+            </summary>
+            <param name="value">位置对象</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">本地化</param>
+            <returns>Point对象</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Converters.PointConverterExtension.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            转换值
+            </summary>
+            <param name="value">Point对象</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">本地化</param>
+            <returns>位置对象</returns>
+            <exception cref="T:System.NotImplementedException">未实现</exception>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Routings.Technologys.Converters.ProcessTypeToVisibilityConverter">
+            <summary>
+            工序类型为批次的重复过站属性隐藏
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Converters.ProcessTypeToVisibilityConverter.ProvideValue(System.IServiceProvider)">
+            <summary>
+            当在派生类中实现时，返回一个对象，该对象作为此标记扩展的目标属性的值。
+            </summary>
+            <param name="serviceProvider">标记扩展服务的服务提供者</param>
+            <returns>对象</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Converters.ProcessTypeToVisibilityConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            转换值
+            </summary>
+            <param name="value">Bool值</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">本地化</param>
+            <returns>SolidColorBrush对象</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Converters.ProcessTypeToVisibilityConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            转换值
+            </summary>
+            <param name="value">SolidColorBrush对象</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">本地化</param>
+            <returns>Bool值</returns>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Routings.Technologys.Converters.StringToColorConverterExtension">
+            <summary>
+            字符串转换颜色转换器
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Converters.StringToColorConverterExtension.ProvideValue(System.IServiceProvider)">
+            <summary>
+            当在派生类中实现时，返回一个对象，该对象作为此标记扩展的目标属性的值。
+            </summary>
+            <param name="serviceProvider">标记扩展服务的服务提供者</param>
+            <returns>对象</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Converters.StringToColorConverterExtension.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            转换值
+            </summary>
+            <param name="value">字符串</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">本地化</param>
+            <returns>SolidColorBrush对象</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.Technologys.Converters.StringToColorConverterExtension.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            转换值
+            </summary>
+            <param name="value">SolidColorBrush对象</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">本地化</param>
+            <returns>字符串</returns>
+            <exception cref="T:System.NotImplementedException">未实现</exception>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Routings.TreeInfoImageSelector">
+            <summary>
+            工序树 工艺路线版本树图片选择器
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.TreeInfoImageSelector.Select(DevExpress.Xpf.Grid.TreeList.TreeListRowData)">
+            <summary>
+            选择图片，树节点展开收缩时触发
+            </summary>
+            <param name="rowData">当前行数据</param>
+            <returns>图片</returns>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Routings.ViewModels.ImportRoutingCheckViewModel">
+            <summary>
+            工艺路线导入ViewModel
+            </summary>
+        </member>
+        <member name="E:SIE.Wpf.Tech.Routings.ViewModels.ImportRoutingCheckViewModel.ImportFinishEvent">
+            <summary>
+            导入完成事件
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Routings.ViewModels.ImportRoutingCheckViewModel.ImportFilePathProperty">
+            <summary>
+            导入模板文件路径
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Routings.ViewModels.ImportRoutingCheckViewModel.ImportFilePath">
+            <summary>
+            导入模板文件路径
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Routings.ViewModels.ImportRoutingCheckViewModel.ImportSuccessAmountProperty">
+            <summary>
+            导入成功数量
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Routings.ViewModels.ImportRoutingCheckViewModel.ImportSuccessAmount">
+            <summary>
+            导入成功数量
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Routings.ViewModels.ImportRoutingCheckViewModel.ImportFailAmountProperty">
+            <summary>
+            导入失败数量
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Routings.ViewModels.ImportRoutingCheckViewModel.ImportFailAmount">
+            <summary>
+            导入失败数量
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Routings.ViewModels.ImportRoutingCheckViewModel.ImportProcessMsgProperty">
+            <summary>
+            导入处理消息
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Routings.ViewModels.ImportRoutingCheckViewModel.ImportProcessMsg">
+            <summary>
+            导入处理消息
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Routings.ViewModels.ImportRoutingCheckViewModel.ImportDataViewModelListProperty">
+            <summary>
+            导入工单数据集
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Routings.ViewModels.ImportRoutingCheckViewModel.ImportDataViewModelList">
+            <summary>
+            导入工单数据集
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.ViewModels.ImportRoutingCheckViewModel.ImportFinish">
+            <summary>
+            导入完成方法
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Routings.ViewModels.ImportRoutingCheckViewModelConfig">
+            <summary>
+            工单导入ViewModel视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.ViewModels.ImportRoutingCheckViewModelConfig.ConfigView">
+            <summary>
+            默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.ViewModels.ImportRoutingCheckViewModelConfig.ConfigDetailsView">
+            <summary>
+            明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Routings.ViewModels.RoutingCheckDataViewModel">
+            <summary>
+            导入工艺路线 实体
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Routings.ViewModels.RoutingCheckDataViewModel.CategoryProperty">
+            <summary>
+            产品族分类
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Routings.ViewModels.RoutingCheckDataViewModel.Category">
+            <summary>
+            产品族分类
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Routings.ViewModels.RoutingCheckDataViewModel.RoutingNameProperty">
+            <summary>
+            工艺路线名称
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Routings.ViewModels.RoutingCheckDataViewModel.RoutingName">
+            <summary>
+            工艺路线名称
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Routings.ViewModels.RoutingCheckDataViewModel.RoutingDescProperty">
+            <summary>
+            工艺路线描述
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Routings.ViewModels.RoutingCheckDataViewModel.RoutingDesc">
+            <summary>
+            工艺路线描述
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Routings.ViewModels.RoutingCheckDataViewModel.ErrorMessageProperty">
+            <summary>
+            导入失败原因
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Routings.ViewModels.RoutingCheckDataViewModel.ErrorMessage">
+            <summary>
+            导入失败原因
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Routings.ViewModels.RoutingCheckDataViewModel.IsSuccessProperty">
+            <summary>
+            是否导入成功，汇总导入成功数量
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Routings.ViewModels.RoutingCheckDataViewModel.IsSuccess">
+            <summary>
+            是否导入成功，汇总导入成功数量
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Routings.ViewModels.RoutingCheckDataDetailViewModelConfig">
+            <summary>
+            导入工艺路线 视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.ViewModels.RoutingCheckDataDetailViewModelConfig.ConfigView">
+            <summary>
+            默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Routings.ViewModels.RoutingCheckDataDetailViewModelConfig.ConfigListView">
+            <summary>
+            列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Stations.Commands.DownLoadStationItemCommand">
+            <summary>
+            下载条码模板
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Stations.Commands.DownLoadStationItemCommand.Execute(SIE.Wpf.DetailLogicalView)">
+            <summary>
+            执行
+            </summary>
+            <param name="view">列表逻辑视图</param>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Stations.Commands.ExportFailedDataCommand">
+            <summary>
+            导出工单导入失败的数据
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Stations.Commands.ExportFailedDataCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            是否可执行导出Excel
+            </summary>
+            <param name="view">当前视图对象</param>
+            <returns>返回是否可执行导出Excel</returns>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Stations.Commands.ImportStationItemCommand">
+            <summary>
+            数据导入 工单
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Stations.Commands.ImportStationItemCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            没数据不能使用
+            </summary>
+            <param name="view">view</param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Stations.Commands.ImportStationItemCommand.Execute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            执行数据导入逻辑
+            </summary>
+            <param name="view">视图对象</param>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Stations.Commands.ImportStationItemDataCommand">
+            <summary>
+            导入命令
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Stations.Commands.ImportStationItemDataCommand.isRun">
+            <summary>
+            是否正在导入中
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Stations.Commands.ImportStationItemDataCommand.CanExecute(SIE.Wpf.DetailLogicalView)">
+            <summary>
+            是否可执行导入逻辑
+            </summary>
+            <param name="view">明细视图</param>
+            <returns>true/false</returns>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Stations.Commands.ImportStationItemDataCommand.Execute(SIE.Wpf.DetailLogicalView)">
+            <summary>
+            执行导入逻辑
+            </summary>
+            <param name="view">当前视图对象</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Stations.Commands.ImportStationItemDataCommand.ImportCompleted(System.Data.DataRow[],System.Data.DataRow[],SIE.Wpf.Tech.Stations.ImportStationItemViewModel)">
+            <summary>
+            导入完成触发
+            </summary>
+            <param name="importSuccess">导入成功数据集</param>
+            <param name="importFailed">导入失败数据集</param>
+            <param name="current">当前界面数据对象</param>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Stations.Commands.ImportStationItemDataCommand.RefreshData">
+            <summary>
+            刷新数据
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Stations.Commands.ImportStationItemDataHandle">
+            <summary>
+            写子类继承导入处理，给StationId赋值
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Stations.Commands.ImportStationItemDataHandle.StationId">
+            <summary>
+            当前工位Id
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Stations.Commands.ImportStationItemDataHandle.ProcessImportDataPre(System.Data.DataTable,System.Type)">
+            <summary>
+            处理导入数据之前执行
+            </summary>
+            <param name="importTable">处理导入数据</param>
+            <param name="type">处理导入数据的业务类</param>
+            <returns>返回需要处理的导入数据</returns>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Stations.ImportStationItemViewModel">
+            <summary>
+            工位物料导入ViewModel
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Stations.ImportStationItemViewModel.ImportFilePathProperty">
+            <summary>
+            导入模板文件路径
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Stations.ImportStationItemViewModel.ImportFilePath">
+            <summary>
+            导入模板文件路径
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Stations.ImportStationItemViewModel.ImportSuccessAmountProperty">
+            <summary>
+            导入成功数量
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Stations.ImportStationItemViewModel.ImportSuccessAmount">
+            <summary>
+            导入成功数量
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Stations.ImportStationItemViewModel.ImportFailAmountProperty">
+            <summary>
+            导入失败数量
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Stations.ImportStationItemViewModel.ImportFailAmount">
+            <summary>
+            导入失败数量
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Stations.ImportStationItemViewModel.ImportProcessMsgProperty">
+            <summary>
+            导入处理消息
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Stations.ImportStationItemViewModel.ImportProcessMsg">
+            <summary>
+            导入处理消息
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Stations.ImportStationItemViewModel.ImportDataViewModelListProperty">
+            <summary>
+            导入工单数据集
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Stations.ImportStationItemViewModel.ImportDataViewModelList">
+            <summary>
+            导入工单数据集
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Stations.ImportStationItemViewModel.StationIdProperty">
+            <summary>
+            工位Id
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Stations.ImportStationItemViewModel.StationId">
+            <summary>
+            工位Id
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Stations.ImportStationItemViewModel.StationProperty">
+            <summary>
+            工位
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Stations.ImportStationItemViewModel.Station">
+            <summary>
+            工位
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Stations.ImportStationItemViewModelConfig">
+            <summary>
+            工位物料导入ViewModel视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Stations.ImportStationItemViewModelConfig.ConfigView">
+            <summary>
+            默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Stations.ImportStationItemViewModelConfig.ConfigDetailsView">
+            <summary>
+            明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Stations.StationItemCheckDataViewModel">
+            <summary>
+            导入工位物料实体
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Stations.StationItemCheckDataViewModel.ItemCodeProperty">
+            <summary>
+            物料编码
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Stations.StationItemCheckDataViewModel.ItemCode">
+            <summary>
+            物料编码
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Stations.StationItemCheckDataViewModel.ItemNameProperty">
+            <summary>
+            物料名称
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Stations.StationItemCheckDataViewModel.ItemName">
+            <summary>
+            物料名称
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Stations.StationItemCheckDataViewModel.CapacityProperty">
+            <summary>
+            容量值
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Stations.StationItemCheckDataViewModel.Capacity">
+            <summary>
+            容量值
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Stations.StationItemCheckDataViewModel.WarningProperty">
+            <summary>
+            预警值
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Stations.StationItemCheckDataViewModel.Warning">
+            <summary>
+            预警值
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Tech.Stations.StationItemCheckDataViewModel.ErrorMessageProperty">
+            <summary>
+            导入失败原因
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Tech.Stations.StationItemCheckDataViewModel.ErrorMessage">
+            <summary>
+            导入失败原因
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Stations.StationItemCheckDataViewModelConfig">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Stations.StationItemCheckDataViewModelConfig.ConfigView">
+            <summary>
+            默认视图授权给父MODEL
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Stations.StationItemCheckDataViewModelConfig.ConfigListView">
+            <summary>
+            列表实体
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Stations.StationItemViewConfig">
+            <summary>
+            工位物料视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Stations.StationItemViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Stations.StationItemViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Stations.StationItemViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Stations.StationItemViewConfig.ConfigSelectionView">
+            <summary>
+            配置下拉视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Stations.StationProcessViewConfig">
+            <summary>
+            工位工序视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Stations.StationProcessViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Stations.StationProcessViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Stations.StationProcessViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Stations.StationProcessViewConfig.ConfigSelectionView">
+            <summary>
+            配置下拉视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Tech.Stations.StationViewConfig">
+            <summary>
+            工位视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Stations.StationViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Stations.StationViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Stations.StationViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Tech.Stations.StationViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
+            <summary>
+            GeneratedInternalTypeHelper
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
+            <summary>
+            CreateInstance
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            GetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            SetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
+            <summary>
+            CreateDelegate
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+            <summary>
+            AddEventHandler
+            </summary>
+        </member>
+    </members>
+</doc>

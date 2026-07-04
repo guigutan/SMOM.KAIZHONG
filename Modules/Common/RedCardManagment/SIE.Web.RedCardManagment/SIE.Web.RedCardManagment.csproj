@@ -1,0 +1,89 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+	<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+	<OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.RedCardManagment.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.RedCardManagment.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="RedCardApplyBills\Behaviors\EditRedCardApplyBillBehavior.js" />
+    <None Remove="RedCardApplyBills\Commands\AddRedCardApplyBillCommand.js" />
+    <None Remove="RedCardApplyBills\Commands\CancelReasonCommand.js" />
+    <None Remove="RedCardApplyBills\Commands\EditRedCardApplyBillCommand.js" />
+    <None Remove="RedCardApplyBills\Commands\OpenStartWorkflowCommand.js" />
+    <None Remove="RedCardApplyBills\Commands\SaveRedCardApplyBillCommand.js" />
+    <None Remove="RedCardApplyBills\Commands\StartWorkflowCommand.js" />
+    <None Remove="RedCardApplyBills\Commands\ViewApplyBillCommand.js" />
+    <None Remove="RedCardApplyBills\Commands\WithDrawReasonCommand.js" />
+    <None Remove="RedCardApplyBills\Common\Enums.js" />
+    <None Remove="RedCards\Behaviors\CreateProductDisableBehavior.js" />
+    <None Remove="RedCards\Behaviors\CreateRedCardBehavior.js" />
+    <None Remove="RedCards\Behaviors\ProductRetroactiveCriteriaBehavior.js" />
+    <None Remove="RedCards\Commands\BatchDisableRedCardCommand.js" />
+    <None Remove="RedCards\Commands\BatchEnableRedCardCommand.js" />
+    <None Remove="RedCards\Commands\BatchRelatedProductsCommand.js" />
+    <None Remove="RedCards\Commands\CheckLogCommand.js" />
+    <None Remove="RedCards\Commands\DisableRedCardCommand.js" />
+    <None Remove="RedCards\Commands\EnableRedCardCommand.js" />
+    <None Remove="RedCards\Commands\ImportRedCardItemSnCommand.js" />
+    <None Remove="RedCards\Commands\ItemSnDisableRedCardCommand.js" />
+    <None Remove="RedCards\Commands\ItemSnEnableRedCardCommand.js" />
+    <None Remove="RedCards\Commands\ItemSnRelatedProductsCommand.js" />
+    <None Remove="RedCards\Commands\ProductDisableRedCardCommand.js" />
+    <None Remove="RedCards\Commands\ProductEnableRedCardCommand.js" />
+    <None Remove="RedCards\Commands\SaveRedCardCommand.js" />
+    <None Remove="RedCards\Commands\SyncRedCardReelsCommand.js" />
+    <None Remove="RedCards\Common\Enums.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RedCardApplyBills\Behaviors\EditRedCardApplyBillBehavior.js" />
+    <EmbeddedResource Include="RedCardApplyBills\Commands\AddRedCardApplyBillCommand.js" />
+    <EmbeddedResource Include="RedCardApplyBills\Commands\CancelReasonCommand.js" />
+    <EmbeddedResource Include="RedCardApplyBills\Commands\EditRedCardApplyBillCommand.js" />
+    <EmbeddedResource Include="RedCardApplyBills\Commands\OpenStartWorkflowCommand.js" />
+    <EmbeddedResource Include="RedCardApplyBills\Commands\SaveRedCardApplyBillCommand.js" />
+    <EmbeddedResource Include="RedCardApplyBills\Commands\StartWorkflowCommand.js" />
+    <EmbeddedResource Include="RedCardApplyBills\Commands\ViewApplyBillCommand.js" />
+    <EmbeddedResource Include="RedCardApplyBills\Commands\WithDrawReasonCommand.js" />
+    <EmbeddedResource Include="RedCardApplyBills\Common\Enums.js" />
+    <EmbeddedResource Include="RedCards\Behaviors\CreateProductDisableBehavior.js" />
+    <EmbeddedResource Include="RedCards\Behaviors\CreateRedCardBehavior.js" />
+    <EmbeddedResource Include="RedCards\Behaviors\ProductRetroactiveCriteriaBehavior.js" />
+    <EmbeddedResource Include="RedCards\Commands\BatchDisableRedCardCommand.js" />
+    <EmbeddedResource Include="RedCards\Commands\ImportRedCardItemSnCommand.js" />
+    <EmbeddedResource Include="RedCards\Commands\ItemSnDisableRedCardCommand.js" />
+    <EmbeddedResource Include="RedCards\Commands\DisableRedCardCommand.js" />
+    <EmbeddedResource Include="RedCards\Commands\CheckLogCommand.js" />
+    <EmbeddedResource Include="RedCards\Commands\BatchEnableRedCardCommand.js" />
+    <EmbeddedResource Include="RedCards\Commands\ItemSnEnableRedCardCommand.js" />
+    <EmbeddedResource Include="RedCards\Commands\BatchRelatedProductsCommand.js" />
+    <EmbeddedResource Include="RedCards\Commands\ItemSnRelatedProductsCommand.js" />
+    <EmbeddedResource Include="RedCards\Commands\ProductDisableRedCardCommand.js" />
+    <EmbeddedResource Include="RedCards\Commands\ProductEnableRedCardCommand.js" />
+    <EmbeddedResource Include="RedCards\Commands\SaveRedCardCommand.js" />
+    <EmbeddedResource Include="RedCards\Commands\SyncRedCardReelsCommand.js" />
+    <EmbeddedResource Include="RedCards\Commands\EnableRedCardCommand.js" />
+    <EmbeddedResource Include="RedCards\Common\Enums.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="SIE.Web" Version="10.0.5" />
+    <PackageReference Include="SIE.Web.Common" Version="10.0.5" />
+    <PackageReference Include="SIE.Web.WorkFlow" Version="10.0.5" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SIE.RedCardManagment.WorkFlow\SIE.RedCardManagment.WorkFlow.csproj" />
+    <ProjectReference Include="..\SIE.RedCardManagment\SIE.RedCardManagment.csproj" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,191 @@
+{
+    "success"    : true,
+   
+    "resources"  : {
+        "rows" : [
+            {
+                "id"   : 1,//月台Id
+                "name" : "Arcady",//月台
+                "groupName":"Arcady",//园区
+               // "role" : "Core developer",
+                "calendar": "weekends", //日历,对应下面的json
+               // "stateColour":"red",
+                "state":"OFF",//状态
+                //"backgroundColor":"#eacb5e",
+                "type":"all"//出入库类型
+            },
+            {
+                "id"   : 2,
+                "name" : "ewewe",
+                "groupName":"Arcady",
+                "role" : "Tech Sales",
+                "calendar": "weekends1",
+                "stateColour":"red",
+                "state":"OFF",
+                "backgroundColor":"#6fbef4",
+                "type":"out"
+            },
+            {
+                "id"   : 3,
+                "name" : "Henrik",
+                "groupName":"Arcady",//
+                "role" : "Sales",//
+                "calendar": "weekends",//
+                "stateColour":"red",
+                "state":"OFF",
+                "backgroundColor":"#61dda9",
+                "type":"in"
+            },
+           
+            {
+                "id"   : 4,
+                "name" : "Mike",
+                "groupName":"boord",
+                "role" : "CEO",
+                "calendar": "weekends" ,
+                "stateColour":"blue",
+                "state":"NO",
+                "backgroundColor":"#eacb5e",
+                "type":"all"
+            },
+           
+            {
+                "id"   : 5,
+                "name" : "Kate",
+                "groupName":"xinya",
+                "role" : "Tech Sales",
+                "calendar": "weekends1" ,
+                "stateColour":"blue",
+                "state":"NO",
+                "backgroundColor":"#6fbef4",
+                "type":"out"
+            },
+            {
+                "id"   : 6,
+                "name" : "Jong",
+                "groupName":"xinya",
+                "role" : "Sales",
+                "calendar": "weekends" ,
+                "stateColour":"red",
+                "state":"OFF",
+                "backgroundColor":"#61dda9",
+                "type":"in"
+            }
+   
+        ]
+    },
+    "events"     : {
+        "rows" : [
+            {
+                "id"    : "",//预约Id
+                "name"       : "赛意",//公司名称 
+                "startDate":"2022-01-01 01:00:00",//开始时间 新增修改
+                "durationUnit" : "hour",//时间单位  新增修改
+                "duration"     : 0.5,//单位值
+                "startDateRange":"2022-01-01 01:00:00",//开始时间段
+                "endDateRange":"2022-01-01 04:00:00",//结束时间段
+                "eventColor" : "blue",//马克龙颜色
+                "resourceId":1, //月台Id
+                "orderType":0,//预约类型 //不可改
+                "billNo":"N200323033",//单号
+                "orderPlace":"广州",//地址 //不可改
+                "orderNo":"Test001",//预约号  
+                "carNumber":"A000001",//车牌
+                "contacts":"张三",//联系人
+                "phone":13800138000,//电话
+                "identity":"44522419555555555",//身份证
+                "orderDate":"2021/01/01",//时间
+                "orderTime":"01:00-04:00",//时段                
+                "operateType": "UnChanged"//数据状态 null就是添加 Edit 、Delete
+            },
+            {
+                "id"           : 2,
+                "name"         : "顺丰",
+                "startDate":"2022-01-01 01:30:00",
+                "durationUnit" : "hour",
+                "duration"     : 1,
+                "startDateRange":"2022-01-01 01:00:00",
+                "endDateRange":"2022-01-01 04:00:00",
+                "eventColor" : "orange",
+                "resourceId":1,
+                "orderType":"A",
+                "billNo":"N200323033",
+                "orderPlace":"广州",
+                "orderNo":"Test002",
+                "carNumber":"A000001",
+                "contacts":"张三",
+                "phone":13800138000,
+                "identity":"44522419555555555",
+                "orderDate":"2021/01/01",
+                "orderTime":"01:00-04:00",
+                "occupancy":12,
+                "operateType": "UnChanged"
+               
+            },
+            {
+                "id"         : 3,
+                "name"       : "圆通",
+                "startDate"  : "2022-01-01 02:30:00",
+                "durationUnit" : "hour",
+                "duration"     : 1,
+                "startDateRange":"2022-01-01 01:00:00",
+                "endDateRange":"2022-01-01 04:00:00",
+                "eventColor" : "purple",
+                "resourceId":4,
+                "orderType":"A",
+                "billNo":"N200323033",
+                "orderPlace":"佛山",
+                "orderNo":"Test003",
+                "carNumber":"A000001",
+                "contacts":"张三",
+                "phone":13800138000,
+                "identity":"44522419555555555",
+                "orderDate":"2021/01/01",
+                "orderTime":"01:00-04:00",
+                "occupancy":4,
+                "operateType":"UnChanged"
+                
+            }
+        
+   
+        ]
+    },
+   
+    "calendars" : {
+        "rows" : [
+          {
+            "id"        : "weekends",
+            "name"      : "weekends",
+            "intervals" : [
+               {
+                "recurrentStartDate" : "at 01:00",
+                "recurrentEndDate"   : "at 04:00",
+                "isWorking"          :true
+                },
+            
+                {
+                    "recurrentStartDate" : "at 05:00",
+                    "recurrentEndDate"   : "at 8:00",
+                    "isWorking"          :true
+                }
+                
+            ]
+          },
+          
+          {
+            "id"        : "weekends1",
+            "name"      : "weekends1",
+            "intervals" : [
+                {
+                  "startDate"          : "2022-01-9",
+                  "endDate"            : "2022-01-10",
+                  "recurrentStartDate" : null,
+                  "recurrentEndDate": null,
+                  "isWorking"          : true 
+                }  
+              ]
+          }
+        
+        ]
+    }
+}

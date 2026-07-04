@@ -1,0 +1,18 @@
+﻿<UserControl
+    x:Class="SIE.Wpf.MES.WorkOrders.Routings.WorkOrderRoutingView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:dock="http://schemas.devexpress.com/winfx/2008/xaml/docking"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:uic="http://schemas.siestudio.com/winfx/xaml/core"
+    xmlns:technology="clr-namespace:SIE.Wpf.Tech.Routings.Technologys.Controls;assembly=SIE.Wpf.Tech">
+    <Grid>
+        <dock:DockLayoutManager>
+            <dock:LayoutGroup Orientation="Horizontal" AllowSplitters="True" AllowClose="False">
+                <dock:LayoutPanel AllowDock="False" AllowClose="False" AllowFloat="False" AllowHide="False">
+                    <technology:Container x:Name="container" IsReadOnly="True"/>
+                </dock:LayoutPanel>
+                <dock:LayoutPanel Caption="{Binding [工序属性],Source={uic:L10N}}" AllowClose="False" MaxWidth="250" Name="propertyControl"/>
+            </dock:LayoutGroup>
+        </dock:DockLayoutManager>
+    </Grid>
+</UserControl>

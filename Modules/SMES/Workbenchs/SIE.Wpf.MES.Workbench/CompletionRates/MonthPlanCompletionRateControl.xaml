@@ -1,0 +1,73 @@
+﻿<sd:ComponentItem x:Class="SIE.Wpf.MES.Workbench.CompletionRates.MonthPlanCompletionRateControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SIE.Wpf.MES.Workbench.CompletionRates"
+             xmlns:uic="http://schemas.siestudio.com/winfx/xaml/core"
+             xmlns:sd="clr-namespace:SIE.Wpf.Common.Diagram;assembly=SIE.Wpf.Common"
+             xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/charts"
+             xmlns:dxga="http://schemas.devexpress.com/winfx/2008/xaml/gauges"
+             xmlns:uit="http://schemas.siestudio.com/winfx/xaml/themes"     
+             sd:DiagramDesigner.ToolBarTitle="{Binding [生产-日均达成率], Source={uic:L10N}}"
+             mc:Ignorable="d" 
+             sd:DiagramDesigner.DefaultSize="341,150"
+             d:DesignHeight="150" d:DesignWidth="341">
+    <sd:ComponentItem.Resources>
+        <!--w286,h152-->
+        <Style x:Key="LabelStyle" TargetType="Label">
+            <Setter Property="Foreground" Value="#666666"/>
+            <Setter Property="FontSize" Value="16"></Setter>
+            <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+        </Style>
+    </sd:ComponentItem.Resources>
+    <Grid Background="{DynamicResource {uit:BrushesThemeKey ResourceKey=Background}}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="28"></RowDefinition>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Label Name="titleName" Content="{Binding [计划达成率], Source={uic:L10N}}" Grid.Row="0" Padding="5,0,0,0" Grid.Column="0" FontSize="20" FontWeight="Bold" Foreground="#666666"></Label>
+            
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Canvas Grid.Row="0" Margin="0,10,0,0" Name="img"  SizeChanged="img_SizeChanged" Background="{DynamicResource {uit:BrushesThemeKey ResourceKey=Background}}">
+
+                </Canvas>
+                <Label Grid.Row="0" Name="laPercent" Content="80%" Foreground="#e33043" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="22"  Grid.ColumnSpan="3"   ></Label>
+                <Label Grid.Row="1" Content="本月达成" FontSize="14" Foreground="#333333" HorizontalAlignment="Center"  Margin="0"></Label>
+            </Grid>
+
+            <Grid Grid.Column="1" Name="GridContent" Margin="20,0,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0" Orientation="Horizontal" >
+                    <Label Style="{StaticResource LabelStyle}"  HorizontalContentAlignment="Right" Content="{Binding [本月目标:],Source={uic:L10N}}"></Label>
+                    <Label Style="{StaticResource LabelStyle}" Foreground="#128BEF"  HorizontalContentAlignment="center" Content="{Binding CurMonthTarget}"></Label>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Orientation="Horizontal">
+                    <Label Style="{StaticResource LabelStyle}" HorizontalContentAlignment="Right" Content="{Binding [上月目标:],Source={uic:L10N}}"></Label>
+                    <Label Style="{StaticResource LabelStyle}" Foreground="#128BEF"  HorizontalContentAlignment="center" Content="{Binding LastMonthTarget}"></Label>
+                </StackPanel>
+                <StackPanel Grid.Row="2" Orientation="Horizontal">
+                    <Label Style="{StaticResource  LabelStyle}" HorizontalContentAlignment="Right" Content="{Binding [上月达成:],Source={uic:L10N}}"></Label>
+                    <Label Style="{StaticResource  LabelStyle}" Foreground="#128BEF"  HorizontalContentAlignment="center" Content="{Binding LastMonthReal}"></Label>
+                </StackPanel>
+            </Grid>
+        </Grid>
+
+    </Grid>
+</sd:ComponentItem>

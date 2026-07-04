@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\..\platform\smom\net6.0\SIE.Web.Kit.UrgentOrder.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\..\platform\smom\net6.0\SIE.Web.Kit.UrgentOrder.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="ItemUrgentOrders\Behaviors\ItemUrgentOrderBehavior.js" />
+    <None Remove="ItemUrgentOrders\Commands\ItemUrgentOrderAddCommand.js" />
+    <None Remove="ItemUrgentOrders\Commands\ItemUrgentOrderCopyCommand.js" />
+    <None Remove="ItemUrgentOrders\Commands\ItemUrgentOrderSaveCommand.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ItemUrgentOrders\Behaviors\ItemUrgentOrderBehavior.js" />
+    <EmbeddedResource Include="ItemUrgentOrders\Commands\ItemUrgentOrderAddCommand.js" />
+    <EmbeddedResource Include="ItemUrgentOrders\Commands\ItemUrgentOrderCopyCommand.js" />
+    <EmbeddedResource Include="ItemUrgentOrders\Commands\ItemUrgentOrderSaveCommand.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Common\Items\SIE.Web.Items\SIE.Web.Items.csproj" />
+    <ProjectReference Include="..\SIE.Kit.UrgentOrder\SIE.Kit.UrgentOrder.csproj" />
+  </ItemGroup>
+</Project>

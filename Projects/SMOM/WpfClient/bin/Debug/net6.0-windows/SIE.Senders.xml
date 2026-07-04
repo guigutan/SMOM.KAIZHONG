@@ -1,0 +1,1241 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Senders</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Senders.AppMsgSender">
+            <summary>
+            App消息推送
+            </summary>
+        </member>
+        <member name="M:SIE.Senders.AppMsgSender.CreateMessageTemplate">
+            <summary>
+            创建APP模板对象
+            </summary>
+            <returns>邮件消息模板</returns>
+        </member>
+        <member name="M:SIE.Senders.AppMsgSender.Send(SIE.Common.Sender.ISendParam)">
+            <summary>
+            推送信息
+            </summary>
+            <param name="param">推送参数</param>
+        </member>
+        <member name="M:SIE.Senders.AppMsgSender.CreateSendParam(SIE.Common.Alert.AlertResultBase,SIE.Common.Alert.ReceiveParam)">
+            <summary>
+            创建推送参数
+            </summary>
+            <param name="result">预警参数基类</param>
+            <param name="param">接收参数</param>
+            <returns>推送参数</returns>
+        </member>
+        <member name="T:SIE.Senders.AppMsgSenderConfig">
+            <summary>
+            APP消息推送配置，是个推发送是需要的参数
+            </summary>
+        </member>
+        <member name="F:SIE.Senders.AppMsgSenderConfig.AppIDProperty">
+            <summary>
+            应用都对应一个唯一的AppID
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.AppMsgSenderConfig.AppID">
+            <summary>
+            应用都对应一个唯一的AppID
+            </summary>
+        </member>
+        <member name="F:SIE.Senders.AppMsgSenderConfig.AppKeyProperty">
+            <summary>
+            第三方应用对应的Key，是您的应用与SDK通信的标识之一
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.AppMsgSenderConfig.AppKey">
+            <summary>
+            第三方应用对应的Key，是您的应用与SDK通信的标识之一
+            </summary>
+        </member>
+        <member name="F:SIE.Senders.AppMsgSenderConfig.MastersecretProperty">
+            <summary>
+            个推服务端API鉴权码，用于验证调用方合法性。在调用个推服务端API时需要提供
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.AppMsgSenderConfig.Mastersecret">
+            <summary>
+            个推服务端API鉴权码，用于验证调用方合法性。在调用个推服务端API时需要提供
+            </summary>
+        </member>
+        <member name="F:SIE.Senders.AppMsgSenderConfig.AppsecretProperty">
+            <summary>
+            第三方客户端个推集成鉴权码，用于验证第三方合法性。在客户端集成SDK时需要提供
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.AppMsgSenderConfig.Appsecret">
+            <summary>
+            第三方客户端个推集成鉴权码，用于验证第三方合法性。在客户端集成SDK时需要提供 MGhkvGwjpV5wdE8f4rlnM9
+            </summary>
+        </member>
+        <member name="F:SIE.Senders.AppMsgSenderConfig.HostProperty">
+            <summary>
+            个推服务器地址
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.AppMsgSenderConfig.Host">
+            <summary>
+            个推服务器地址
+            </summary>
+        </member>
+        <member name="M:SIE.Senders.AppMsgSenderConfig.Initialize(System.String)">
+            <summary>
+            初始化值
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:SIE.Senders.AppMsgSenderConfig.ToString">
+            <summary>
+             ToString
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Senders.AppMsgSendParam">
+            <summary>
+            APP 消息发送参数
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.AppMsgSendParam.ClientIds">
+            <summary>
+            接受的APP设备id集合
+            </summary>
+        </member>
+        <member name="T:SIE.Senders.AppMsgTemplate">
+            <summary>
+            个推消息模板
+            </summary>
+        </member>
+        <member name="F:SIE.Senders.AppMsgTemplate.TitleProperty">
+            <summary>
+            通知标题
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.AppMsgTemplate.Title">
+            <summary>
+            通知标题
+            </summary>
+        </member>
+        <member name="F:SIE.Senders.AppMsgTemplate.TextProperty">
+            <summary>
+            通知内容
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.AppMsgTemplate.Text">
+            <summary>
+            通知内容
+            </summary>
+        </member>
+        <member name="F:SIE.Senders.AppMsgTemplate.LogoProperty">
+            <summary>
+            通知栏显示本地图片
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.AppMsgTemplate.Logo">
+            <summary>
+            通知栏显示本地图片
+            </summary>
+        </member>
+        <member name="F:SIE.Senders.AppMsgTemplate.LogoURLProperty">
+            <summary>
+            通知栏显示网络图标
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.AppMsgTemplate.LogoURL">
+            <summary>
+            通知栏显示网络图标
+            </summary>
+        </member>
+        <member name="F:SIE.Senders.AppMsgTemplate.IsRingProperty">
+            <summary>
+            收到通知是否响铃：true响铃，false不响铃。默认响铃
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.AppMsgTemplate.IsRing">
+            <summary>
+            收到通知是否响铃：true响铃，false不响铃。默认响铃
+            </summary>
+        </member>
+        <member name="F:SIE.Senders.AppMsgTemplate.IsVibrateProperty">
+            <summary>
+            收到通知是否振动：true振动，false不振动。默认振动
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.AppMsgTemplate.IsVibrate">
+            <summary>
+            收到通知是否振动：true振动，false不振动。默认振动
+            </summary>
+        </member>
+        <member name="F:SIE.Senders.AppMsgTemplate.IsClearableProperty">
+            <summary>
+            通知是否可清除：true可清除，false不可清除。默认可清除
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.AppMsgTemplate.IsClearable">
+            <summary>
+            通知是否可清除：true可清除，false不可清除。默认可清除
+            </summary>
+        </member>
+        <member name="F:SIE.Senders.AppMsgTemplate.TransmissionTypeProperty">
+            <summary>
+            收到消息是否立即启动应用： 1为立即启动，2则广播等待客户端自启动
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.AppMsgTemplate.TransmissionType">
+            <summary>
+            收到消息是否立即启动应用： 1为立即启动，2则广播等待客户端自启动
+            </summary>
+        </member>
+        <member name="F:SIE.Senders.AppMsgTemplate.TransmissionContentProperty">
+            <summary>
+            透传内容，不支持转义字符
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.AppMsgTemplate.TransmissionContent">
+            <summary>
+            透传内容，不支持转义字符
+            </summary>
+        </member>
+        <member name="F:SIE.Senders.AppMsgTemplate.AppMsgTypeProperty">
+            <summary>
+            APP接受的消息类型
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.AppMsgTemplate.AppMsgType">
+            <summary>
+            APP接受的消息类型
+            </summary>
+        </member>
+        <member name="F:SIE.Senders.AppMsgTemplate.TargetProperty">
+            <summary>
+            目标，即要打开的APP的页面
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.AppMsgTemplate.Target">
+            <summary>
+            目标，即要打开的APP的页面
+            </summary>
+        </member>
+        <member name="F:SIE.Senders.AppMsgTemplate.AppMenuIdProperty">
+            <summary>
+            关联的APP菜单Id
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.AppMsgTemplate.AppMenuId">
+            <summary>
+            关联的APP菜单Id
+            </summary>
+        </member>
+        <member name="F:SIE.Senders.AppMsgTemplate.AppMenuProperty">
+            <summary>
+            关联的APP菜单
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.AppMsgTemplate.AppMenu">
+            <summary>
+            关联的APP菜单
+            </summary>
+        </member>
+        <member name="M:SIE.Senders.AppMsgTemplate.Initialize(System.String)">
+            <summary>
+            初始化模板对像
+            这里只初始化了最基本的3个，其他只根据需要开放出来
+            </summary>
+            <param name="value">模板配置JSON值</param>
+        </member>
+        <member name="M:SIE.Senders.AppMsgTemplate.ToString">
+            <summary>
+            返回JSON字符串
+            </summary>
+            <returns>JSON字符串</returns>
+        </member>
+        <member name="T:SIE.Senders.AppMsgType">
+            <summary>
+            APP接受的消息类型
+            </summary>
+        </member>
+        <member name="F:SIE.Senders.AppMsgType.hybrid">
+            <summary>
+            混合型
+            </summary>
+        </member>
+        <member name="F:SIE.Senders.AppMsgType.web">
+            <summary>
+            H5页面
+            </summary>
+        </member>
+        <member name="F:SIE.Senders.AppMsgType.native">
+            <summary>
+            原生
+            </summary>
+        </member>
+        <member name="T:SIE.Senders.EmailMessageTemplate">
+            <summary>
+            邮件模板对象
+            </summary>
+        </member>
+        <member name="F:SIE.Senders.EmailMessageTemplate.SubjectProperty">
+            <summary>
+            主题
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.EmailMessageTemplate.Subject">
+            <summary>
+            主题
+            </summary>
+        </member>
+        <member name="M:SIE.Senders.EmailMessageTemplate.Initialize(System.String)">
+            <summary>
+            初始化模板对像
+            </summary>
+            <param name="value">模板配置JSON值</param>
+        </member>
+        <member name="M:SIE.Senders.EmailMessageTemplate.ToString">
+            <summary>
+            返回JSON字符串
+            </summary>
+            <returns>JSON字符串</returns>
+        </member>
+        <member name="T:SIE.Senders.EmailSender">
+            <summary>
+            邮件推送
+            </summary>
+        </member>
+        <member name="M:SIE.Senders.EmailSender.CreateMessageTemplate">
+            <summary>
+            创建邮件模板对象
+            </summary>
+            <returns>邮件消息模板</returns>
+        </member>
+        <member name="M:SIE.Senders.EmailSender.Send(SIE.Common.Sender.ISendParam)">
+            <summary>
+            发送邮件
+            </summary>
+            <param name="param">发送参数</param>
+        </member>
+        <member name="M:SIE.Senders.EmailSender.SendEmail(SIE.Senders.EmailSenderConfig,MimeKit.MimeMessage,SIE.Senders.EmailSendParam)">
+            <summary>
+            实际发送邮件的方法, 带有重试逻辑
+            </summary>
+        </member>
+        <member name="M:SIE.Senders.EmailSender.GenerateMimeMessage(MimeKit.MimeMessage,SIE.Senders.EmailSendParam,SIE.Senders.EmailSenderConfig)">
+            <summary>
+            生成邮件消息数据
+            </summary>
+            <param name="mimeMessage"></param>
+            <param name="emailSendParam"></param>
+            <param name="config"></param>
+        </member>
+        <member name="M:SIE.Senders.EmailSender.CreateSendParam(SIE.Common.Alert.AlertResultBase,SIE.Common.Alert.ReceiveParam)">
+            <summary>
+            创建发送参数对象
+            </summary>
+            <param name="result">预警结果</param>
+            <param name="param">接收信息参数</param>
+            <returns>发送参数对象</returns>
+        </member>
+        <member name="M:SIE.Senders.EmailSender.IsHtml(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Senders.EmailSender.ConvertHtmlToExcel(System.String,System.String)">
+            <summary>
+            把内容转换为Excel
+            </summary>
+            <param name="html"></param>
+            <param name="excelFileName"></param>
+        </member>
+        <member name="M:SIE.Senders.EmailSender.HasProperty(System.Object,System.String)">
+            <summary>
+            判断一个动态类型是否存在某个属性
+            </summary>
+            <param name="data">动态类型数据</param>
+            <param name="propertyname">属性名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Senders.EmailSender.containsRazorSyntax(System.String)">
+            <summary>
+            判断是否需要C#及razor语法解析
+            </summary>
+            <param name="template"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Senders.EmailSenderConfig">
+            <summary>
+            邮件推送配置
+            </summary>
+        </member>
+        <member name="F:SIE.Senders.EmailSenderConfig.HostProperty">
+            <summary>
+            服务器
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.EmailSenderConfig.Host">
+            <summary>
+            服务器
+            </summary>
+        </member>
+        <member name="F:SIE.Senders.EmailSenderConfig.PortProperty">
+            <summary>
+            端口
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.EmailSenderConfig.Port">
+            <summary>
+            端口
+            </summary>
+        </member>
+        <member name="F:SIE.Senders.EmailSenderConfig.UserNameProperty">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.EmailSenderConfig.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="F:SIE.Senders.EmailSenderConfig.PasswordProperty">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.EmailSenderConfig.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="F:SIE.Senders.EmailSenderConfig.SendFromDisplayNameProperty">
+            <summary>
+            发送邮箱名称
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.EmailSenderConfig.SendFromDisplayName">
+            <summary>
+            发送邮箱名称
+            </summary>
+        </member>
+        <member name="F:SIE.Senders.EmailSenderConfig.SendFromProperty">
+            <summary>
+            发件邮箱
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.EmailSenderConfig.SendFrom">
+            <summary>
+            发件邮箱
+            </summary>
+        </member>
+        <member name="F:SIE.Senders.EmailSenderConfig.EnableSSLProperty">
+            <summary>
+            启用SSL
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.EmailSenderConfig.EnableSSL">
+            <summary>
+            启用SSL
+            </summary>
+        </member>
+        <member name="M:SIE.Senders.EmailSenderConfig.Initialize(System.String)">
+            <summary>
+            初始化配置
+            </summary>
+            <param name="value">配置JOSN值</param>
+        </member>
+        <member name="M:SIE.Senders.EmailSenderConfig.ToString">
+            <summary>
+            返回JSON字符串
+            </summary>
+            <returns>JSON字符串</returns>
+        </member>
+        <member name="T:SIE.Senders.EmailSenderConfigEntityConfig">
+            <summary>
+            验证配置
+            </summary>
+        </member>
+        <member name="M:SIE.Senders.EmailSenderConfigEntityConfig.AddValidations(SIE.MetaModel.IValidationDeclarer)">
+            <summary>
+            验证规则
+            </summary>
+            <param name="rules">验证规则声明</param>
+        </member>
+        <member name="T:SIE.Senders.EmailSendParam">
+            <summary>
+            邮件对数象
+            </summary>
+        </member>
+        <member name="M:SIE.Senders.EmailSendParam.#ctor">
+             <summary>
+            构造函数
+             </summary>
+        </member>
+        <member name="P:SIE.Senders.EmailSendParam.SendTos">
+            <summary>
+            收件人
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.EmailSendParam.CCTos">
+            <summary>
+            抄送
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.EmailSendParam.BCCTos">
+            <summary>
+            秘送
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.EmailSendParam.Subject">
+            <summary>
+            主题
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.EmailSendParam.Body">
+            <summary>
+            邮件内容
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.EmailSendParam.Attachments">
+            <summary>
+            附件
+            </summary>
+        </member>
+        <member name="T:SIE.Senders.FeiShus.FeiShuApi">
+            <summary>
+            飞书
+            </summary>
+        </member>
+        <member name="F:SIE.Senders.FeiShus.FeiShuApi.TestGroupRobotUrl">
+            <summary>
+            测试[群机器人]
+            </summary>
+        </member>
+        <member name="F:SIE.Senders.FeiShus.FeiShuApi.RequestBoxMaxLength">
+            <summary>
+            请求体大小
+            </summary>
+        </member>
+        <member name="F:SIE.Senders.FeiShus.FeiShuApi.RequestBodyContentLength">
+            <summary>
+            {"msg_type":"post","content":{"post":{"zh_cn":{"title":"","content":[[]]}}}}的长度
+            </summary>
+        </member>
+        <member name="F:SIE.Senders.FeiShus.FeiShuApi.RequestBodyTextLength">
+            <summary>
+            {"tag":"text","text":""},
+            </summary>
+        </member>
+        <member name="M:SIE.Senders.FeiShus.FeiShuApi.FeiShuGroupApi(SIE.Senders.FeiShus.FeiShuGroupSenderRequest,System.String)">
+            <summary>
+            飞书群组发送接口
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Senders.FeiShus.FeiShuGroupSender">
+            <summary>
+            飞书群组
+            </summary>
+        </member>
+        <member name="M:SIE.Senders.FeiShus.FeiShuGroupSender.CreateMessageTemplate">
+            <summary>
+            创建消息模板
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Senders.FeiShus.FeiShuGroupSender.CreateSendParam(SIE.Common.Alert.AlertResultBase,SIE.Common.Alert.ReceiveParam)">
+            <summary>
+            创建推送参数
+            </summary>
+            <param name="result"></param>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Senders.FeiShus.FeiShuGroupSender.Send(SIE.Common.Sender.ISendParam)">
+            <summary>
+            推送
+            </summary>
+            <param name="param"></param>
+        </member>
+        <member name="M:SIE.Senders.FeiShus.FeiShuGroupSender.TrimMessage(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="title"></param>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Senders.FeiShus.FeiShuGroupSenderConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SIE.Senders.FeiShus.FeiShuGroupSenderConfig.FeiShuGroupUrlProperty">
+            <summary>
+            Url
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.FeiShus.FeiShuGroupSenderConfig.FeiShuGroupUrl">
+            <summary>
+            Url
+            </summary>
+        </member>
+        <member name="M:SIE.Senders.FeiShus.FeiShuGroupSenderConfig.Initialize(System.String)">
+            <summary>
+            初始化
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:SIE.Senders.FeiShus.FeiShuGroupSenderConfig.ToString">
+            <summary>
+            返回json字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Senders.FeiShus.FeiShuGroupSenderConfig.DisplayValue">
+            <summary>
+            展示值
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Senders.FeiShus.FeiShuGroupSenderParam">
+            <summary>
+            飞书推送参数
+            </summary>
+        </member>
+        <member name="M:SIE.Senders.FeiShus.FeiShuGroupSenderParam.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.FeiShus.FeiShuGroupSenderParam.Message">
+            <summary>
+            消息内容
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.FeiShus.FeiShuGroupSenderParam.url">
+            <summary>
+            飞书webhook地址
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.FeiShus.FeiShuGroupSenderParam.title">
+            <summary>
+            消息标题
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.FeiShus.FeiShuGroupSenderParam.userIds">
+            <summary>
+            At群员的userid
+            </summary>
+        </member>
+        <member name="T:SIE.Senders.FeiShus.FeiShuGroupSenderRequest">
+            <summary>
+            飞书消息请求实体
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.FeiShus.FeiShuGroupSenderRequest.msg_type">
+            <summary>
+            消息类型
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.FeiShus.FeiShuGroupSenderRequest.content">
+            <summary>
+            消息内容
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.FeiShus.FeiShuGroupSenderRequest.details">
+            <summary>
+            内容明细
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.FeiShus.FeiShuGroupSenderRequest.title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="M:SIE.Senders.FeiShus.FeiShuGroupSenderRequest.#ctor(System.Collections.Generic.List{SIE.Senders.FeiShus.FeiShuGroupSenderRequestDetail},System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="_details"></param>
+            <param name="_title"></param>
+        </member>
+        <member name="M:SIE.Senders.FeiShus.FeiShuGroupSenderRequest.Init">
+            <summary>
+            参数初始化
+            </summary>
+        </member>
+        <member name="T:SIE.Senders.FeiShus.FeiShuGroupSenderRequestData">
+            <summary>
+            数据请求
+            </summary>
+        </member>
+        <member name="M:SIE.Senders.FeiShus.FeiShuGroupSenderRequestData.#ctor">
+            <summary>
+            构造
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.FeiShus.FeiShuGroupSenderRequestData.title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.FeiShus.FeiShuGroupSenderRequestData.content">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="T:SIE.Senders.FeiShus.FeiShuGroupSenderRequestDetail">
+            <summary>
+            消息明细
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.FeiShus.FeiShuGroupSenderRequestDetail.tag">
+            <summary>
+            标签 text：文本 a：超链接 at：@群员 img：图片
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.FeiShus.FeiShuGroupSenderRequestDetail.text">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.FeiShus.FeiShuGroupSenderRequestDetail.user_id">
+            <summary>
+            at群员userid
+            </summary>
+        </member>
+        <member name="T:SIE.Senders.FeiShus.FeiShuMessageTemplate">
+            <summary>
+            飞书消息模板
+            </summary>
+        </member>
+        <member name="M:SIE.Senders.FeiShus.FeiShuMessageTemplate.Initialize(System.String)">
+            <summary>
+            初始化模板对像
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:SIE.Senders.FeiShus.FeiShuMessageTemplate.ToString">
+            <summary>
+            返回json字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Senders.FeiShus.UploadManage">
+            <summary>
+            飞书请求上传数据
+            </summary>
+        </member>
+        <member name="M:SIE.Senders.FeiShus.UploadManage.#ctor(System.String,System.String)">
+            <summary>
+            构造
+            </summary>
+            <param name="_requestStr"></param>
+            <param name="_apiPath"></param>
+        </member>
+        <member name="F:SIE.Senders.FeiShus.UploadManage.apiPath">
+            <summary>
+            访问的Api路径
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.FeiShus.UploadManage.requestStr">
+            <summary>
+            请求实体
+            </summary>
+        </member>
+        <member name="M:SIE.Senders.FeiShus.UploadManage.Post">
+            <summary>
+            请求
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:SIE.Senders.FeiShus.UploadManage.SetHttpWebRequest(System.Net.HttpWebRequest)">
+            <summary>
+            特殊处理请求头
+            </summary>
+        </member>
+        <member name="T:SIE.Senders.Module">
+            <summary>
+            模块
+            </summary>
+        </member>
+        <member name="M:SIE.Senders.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化程序集
+            </summary>
+            <param name="app"></param>
+        </member>
+        <member name="T:SIE.Senders.SMSMessageTemplate">
+            <summary>
+            短信模板
+            </summary>
+        </member>
+        <member name="M:SIE.Senders.SMSMessageTemplate.Initialize(System.String)">
+            <summary>
+            初始化短信模板对象
+            </summary>
+            <param name="value">短信模板对象JSON字符串</param>
+        </member>
+        <member name="M:SIE.Senders.SMSMessageTemplate.ToString">
+            <summary>
+            返回JSON字符串
+            </summary>
+            <returns>JSON字符串</returns>
+        </member>
+        <member name="T:SIE.Senders.SMSSender">
+            <summary>
+            短信推送插件
+            </summary>
+        </member>
+        <member name="M:SIE.Senders.SMSSender.CreateMessageTemplate">
+            <summary>
+            创建模板对象
+            </summary>
+            <returns>模板对象</returns>
+        </member>
+        <member name="M:SIE.Senders.SMSSender.Send(SIE.Common.Sender.ISendParam)">
+            <summary>
+            发送短信
+            </summary>
+            <param name="param">发送参数</param>
+        </member>
+        <member name="M:SIE.Senders.SMSSender.CreateSendParam(SIE.Common.Alert.AlertResultBase,SIE.Common.Alert.ReceiveParam)">
+            <summary>
+            创建发送参数
+            </summary>
+            <param name="result">预警结果</param>
+            <param name="param">接收参数</param>
+            <returns>推送参数</returns>
+        </member>
+        <member name="T:SIE.Senders.SMSSenderConfig">
+            <summary>
+            短信推送配置
+            </summary>
+        </member>
+        <member name="F:SIE.Senders.SMSSenderConfig.UserNameProperty">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.SMSSenderConfig.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="F:SIE.Senders.SMSSenderConfig.PasswordProperty">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.SMSSenderConfig.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="F:SIE.Senders.SMSSenderConfig.UrlProperty">
+            <summary>
+            服务地址
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.SMSSenderConfig.Url">
+            <summary>
+            服务地址
+            </summary>
+        </member>
+        <member name="M:SIE.Senders.SMSSenderConfig.Initialize(System.String)">
+            <summary>
+            初始化
+            </summary>
+            <param name="value">对象JSON字符串</param>
+        </member>
+        <member name="M:SIE.Senders.SMSSenderConfig.ToString">
+            <summary>
+            返回JSON字符串
+            </summary>
+            <returns>JSON字符串</returns>
+        </member>
+        <member name="T:SIE.Senders.SMSSendParam">
+            <summary>
+            短信发送参数
+            </summary>
+        </member>
+        <member name="M:SIE.Senders.SMSSendParam.#ctor">
+            <summary>
+            无参构造器
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.SMSSendParam.PhoneList">
+            <summary>
+            电话号码集合
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.SMSSendParam.Messge">
+            <summary>
+            信息
+            </summary>
+        </member>
+        <member name="T:SIE.Senders.WebServiceCaller">
+            <summary>
+             利用WebRequest/WebResponse进行WebService调用的类
+            </summary>
+        </member>
+        <member name="M:SIE.Senders.WebServiceCaller.QueryPostWebService(System.String,System.String,System.Collections.Hashtable)">
+            <summary>
+            需要WebService支持Post调用
+            </summary>
+            <param name="url">URL</param>
+            <param name="methodName">方法名</param>
+            <param name="pars">Hashtable</param>
+            <returns>XML文档</returns>
+        </member>
+        <member name="M:SIE.Senders.WebServiceCaller.QueryGetWebService(System.String,System.String,System.Collections.Hashtable)">
+            <summary>
+            需要WebService支持Get调用
+            </summary>
+            <param name="url">URL</param>
+            <param name="methodName">方法名</param>
+            <param name="pars">Hashtable</param>
+            <returns>Xml文档</returns>
+        </member>
+        <member name="M:SIE.Senders.WebServiceCaller.QuerySoapWebService(System.String,System.String,System.Collections.Hashtable)">
+            <summary>
+            通用WebService调用(Soap),参数Pars为String类型的参数名、参数值
+            </summary>
+            <param name="url">URL</param>
+            <param name="methodName">方法名</param>
+            <param name="pars">参数</param>
+            <returns>XML文档</returns>
+        </member>
+        <member name="M:SIE.Senders.WebServiceCaller.QuerySoapWebService(System.String,System.String,System.Collections.Hashtable,System.String)">
+            <summary>
+            查询WebService调用(Soap)
+            </summary>
+            <param name="url">URL</param>
+            <param name="methodName">方法名</param>
+            <param name="pars">Hashtable</param>
+            <param name="xmlNs">缓存</param>
+            <returns>xml文档</returns>
+        </member>
+        <member name="M:SIE.Senders.WebServiceCaller.GetNamespace(System.String)">
+            <summary>
+            获得命名空间
+            </summary>
+            <param name="url">URL</param>
+            <returns>命名空间</returns>
+        </member>
+        <member name="M:SIE.Senders.WebServiceCaller.EncodeParsToSoap(System.Collections.Hashtable,System.String,System.String)">
+            <summary>
+            Soap
+            </summary>
+            <param name="pars">Hashtable</param>
+            <param name="xmlNs">缓存</param>
+            <param name="methodName">方法名</param>
+            <returns>byte[]</returns>
+        </member>
+        <member name="M:SIE.Senders.WebServiceCaller.ObjectToSoapXml(System.Object)">
+            <summary>
+            Soap转换
+            </summary>
+            <param name="o">对象</param>
+            <returns>SoapXml</returns>
+        </member>
+        <member name="M:SIE.Senders.WebServiceCaller.SetWebRequest(System.Net.HttpWebRequest)">
+            <summary>
+            设置凭证与超时时间
+            </summary>
+            <param name="request">请求</param>
+        </member>
+        <member name="M:SIE.Senders.WebServiceCaller.WriteRequestData(System.Net.HttpWebRequest,System.Byte[])">
+            <summary>
+            请求数据
+            </summary>
+            <param name="request">HttpWebRequest</param>
+            <param name="data">字节流</param>
+        </member>
+        <member name="M:SIE.Senders.WebServiceCaller.EncodePars(System.Collections.Hashtable)">
+            <summary>
+            编码
+            </summary>
+            <param name="pars">参数</param>
+            <returns>byte[]</returns>
+        </member>
+        <member name="M:SIE.Senders.WebServiceCaller.ParsToString(System.Collections.Hashtable)">
+            <summary>
+            转化为string
+            </summary>
+            <param name="pars">参数</param>
+            <returns>转换</returns>
+        </member>
+        <member name="M:SIE.Senders.WebServiceCaller.ReadXmlResponse(System.Net.WebResponse)">
+            <summary>
+            读取XML文档并响应
+            </summary>
+            <param name="response">响应</param>
+            <returns>XML文档</returns>
+        </member>
+        <member name="M:SIE.Senders.WebServiceCaller.AddDelaration(System.Xml.XmlDocument)">
+            <summary>
+            添加声明
+            </summary>
+            <param name="doc">XML文档</param>
+        </member>
+        <member name="F:SIE.Senders.WebServiceCaller._xmlNamespaces">
+            <summary>
+            缓存xmlNamespace，避免重复调用GetNamespace
+            </summary>
+        </member>
+        <member name="T:SIE.Senders.WeChatMessageTemplate">
+            <summary>
+            微信模板
+            </summary>
+        </member>
+        <member name="F:SIE.Senders.WeChatMessageTemplate.SubjectProperty">
+            <summary>
+            主题
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.WeChatMessageTemplate.Subject">
+            <summary>
+            主题
+            </summary>
+        </member>
+        <member name="F:SIE.Senders.WeChatMessageTemplate.RemarkProperty">
+            <summary>
+            主题
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.WeChatMessageTemplate.Remark">
+            <summary>
+            主题
+            </summary>
+        </member>
+        <member name="M:SIE.Senders.WeChatMessageTemplate.Initialize(System.String)">
+            <summary>
+            初始化微信模板对象
+            </summary>
+            <param name="value">微信模板对象JSON字符串</param>
+        </member>
+        <member name="M:SIE.Senders.WeChatMessageTemplate.ToString">
+            <summary>
+            返回JSON字符串
+            </summary>
+            <returns>JSON字符串</returns>
+        </member>
+        <member name="T:SIE.Senders.WeChatSender">
+            <summary>
+            微信公众号推送插件
+            </summary>
+        </member>
+        <member name="F:SIE.Senders.WeChatSender.gToken">
+            <summary>
+            类变量
+            </summary>
+        </member>
+        <member name="M:SIE.Senders.WeChatSender.CreateMessageTemplate">
+            <summary>
+            重写信息模板基类
+            </summary>
+            <returns>微信消息模板</returns>
+        </member>
+        <member name="M:SIE.Senders.WeChatSender.CreateSendParam(SIE.Common.Alert.AlertResultBase,SIE.Common.Alert.ReceiveParam)">
+            <summary>
+            创建推送参数
+            </summary>
+            <param name="result">预警参数基类</param>
+            <param name="param">接收参数</param>
+            <returns>推送参数</returns>
+        </member>
+        <member name="M:SIE.Senders.WeChatSender.Send(SIE.Common.Sender.ISendParam)">
+            <summary>
+            推送信息
+            </summary>
+            <param name="param">推送参数</param>
+        </member>
+        <member name="M:SIE.Senders.WeChatSender.GetAccessToken(System.String,System.String)">
+            <summary>
+            获取AccessToken
+            </summary>
+            <param name="appId">凭证</param>
+            <param name="secret">凭证密码</param>
+            <returns>票据</returns>
+        </member>
+        <member name="M:SIE.Senders.WeChatSender.SendTemplateMsg(System.String,System.String)">
+            <summary>
+            发送模板信息
+            </summary>
+            <param name="accessToken">票据</param>
+            <param name="data">数据</param>
+        </member>
+        <member name="M:SIE.Senders.WeChatSender.GetSendData(System.String,System.String,System.String)">
+            <summary>
+            获取推送模板内容
+            </summary>
+            <param name="openid">openid</param>
+            <param name="message">信息</param>
+            <param name="templateId">模板Id</param>
+            <returns>推送模板内容</returns>
+        </member>
+        <member name="T:SIE.Senders.WeChatSenderConfig">
+            <summary>
+            微信推送配置
+            </summary>
+        </member>
+        <member name="F:SIE.Senders.WeChatSenderConfig.AppidProperty">
+            <summary>
+            凭证
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.WeChatSenderConfig.Appid">
+            <summary>
+            凭证
+            </summary>
+        </member>
+        <member name="F:SIE.Senders.WeChatSenderConfig.SecretProperty">
+            <summary>
+            凭证密码
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.WeChatSenderConfig.Secret">
+            <summary>
+            凭证密码
+            </summary>
+        </member>
+        <member name="F:SIE.Senders.WeChatSenderConfig.TemplateIdProperty">
+            <summary>
+            模板ID
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.WeChatSenderConfig.TemplateId">
+            <summary>
+            模板ID
+            </summary>
+        </member>
+        <member name="M:SIE.Senders.WeChatSenderConfig.Initialize(System.String)">
+            <summary>
+            初始化
+            </summary>
+            <param name="value">对象JSON字符串</param>
+        </member>
+        <member name="M:SIE.Senders.WeChatSenderConfig.ToString">
+            <summary>
+            返回JSON字符串
+            </summary>
+            <returns>JSON字符串</returns>
+        </member>
+        <member name="T:SIE.Senders.WeChatSendParam">
+            <summary>
+            短信发送参数
+            </summary>
+        </member>
+        <member name="M:SIE.Senders.WeChatSendParam.#ctor">
+            <summary>
+            无参构造器
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.WeChatSendParam.OpenIdList">
+            <summary>
+            OpenID集合
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.WeChatSendParam.Subject">
+            <summary>
+            主题
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.WeChatSendParam.Messge">
+            <summary>
+            信息
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.WeChatSendParam.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="T:SIE.Senders.WeChat.WeChatController">
+            <summary>
+            微信公众号控制器
+            </summary>
+        </member>
+        <member name="M:SIE.Senders.WeChat.WeChatController.GetWeChatUser(SIE.Senders.WeChat.WeChatUser)">
+            <summary>
+            获取/创建微信用户
+            </summary>
+            <param name="user">用户对象</param>
+            <returns>微信用户</returns>
+        </member>
+        <member name="M:SIE.Senders.WeChat.WeChatController.GetOpenID(System.String)">
+            <summary>
+            获取微信用户的OpenId
+            </summary>
+            <param name="phone">电话号码</param>
+            <returns>OpenId</returns>
+        </member>
+        <member name="M:SIE.Senders.WeChat.WeChatController.GetWeChatUsers(System.String[])">
+            <summary>
+            获取微信用户对象集合
+            </summary>
+            <param name="phoneArray">手机号集合</param>
+            <returns>微信用户</returns>
+        </member>
+        <member name="M:SIE.Senders.WeChat.WeChatController.GetWaChatUserByOpenID(System.String)">
+            <summary>
+            根据OPENID获取微信用户信息
+            </summary>
+            <param name="openID">OpenId</param>
+            <returns>微信用户信息</returns>
+        </member>
+        <member name="T:SIE.Senders.WeChat.WeChatUser">
+            <summary>
+            微信用户
+            </summary>
+        </member>
+        <member name="F:SIE.Senders.WeChat.WeChatUser.CodeProperty">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.WeChat.WeChatUser.Code">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="F:SIE.Senders.WeChat.WeChatUser.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.WeChat.WeChatUser.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.Senders.WeChat.WeChatUser.MobileProperty">
+            <summary>
+            手机号
+            </summary>
+        </member>
+        <member name="P:SIE.Senders.WeChat.WeChatUser.Mobile">
+            <summary>
+            手机号
+            </summary>
+        </member>
+        <member name="T:SIE.Senders.WeChat.WeChatUserConfig">
+            <summary>
+            配置
+            </summary>
+        </member>
+        <member name="M:SIE.Senders.WeChat.WeChatUserConfig.ConfigMeta">
+            <summary>
+            Meta属性配置
+            </summary>
+        </member>
+    </members>
+</doc>

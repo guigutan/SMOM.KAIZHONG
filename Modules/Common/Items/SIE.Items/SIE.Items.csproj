@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Items.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Items.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Items\新文件夹\**" />
+    <EmbeddedResource Remove="Items\新文件夹\**" />
+    <None Remove="Items\新文件夹\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Items\ItemUnitCriteria.cs" />
+    <Compile Remove="Items\Models\ItemCategoryData.cs" />
+    <Compile Remove="Items\UnitChange.cs" />
+    <Compile Remove="ProductBoms\Models\ProductBomData.cs" />
+    <Compile Remove="ProductBoms\ProductBomController.Api.cs" />
+    <Compile Remove="ProductBoms\ProductBomPool - 副本.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="SIE.Items.ruleset" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\..\..\.sonarlint\sie.smom\CSharp\SonarLint.xml" Link="SonarLint.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Resources\SIE.Resources\SIE.Resources.csproj" />
+  </ItemGroup>
+</Project>

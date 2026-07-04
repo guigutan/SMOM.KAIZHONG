@@ -1,0 +1,2327 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Web.LES</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Web.LES.Extensions.EntityPropertyViewMetaExtension">
+            <summary>
+            视图扩展类
+            </summary>
+        </member>
+        <member name="F:SIE.Web.LES.Extensions.EntityPropertyViewMetaExtension.FactoryIdPropertyName">
+            <summary>
+            工厂字段名
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.Extensions.EntityPropertyViewMetaExtension.UseDepartmentEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig})">
+             <summary>
+            部门编辑器
+             </summary>
+             <typeparam name="T">实体类型</typeparam>
+             <param name="meta">属性视图元数据</param>
+             <param name="action">委托</param>
+             <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Web.LES.Extensions.EntityPropertyViewMetaExtension.UseResourceWorkShopEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig})">
+            <summary>
+            车间编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Web.LES.Extensions.EntityPropertyViewMetaExtension.UseFactoryDepartmentsEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig})">
+            <summary>
+            获取工厂下的部门下拉编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Web.LES.Extensions.EntityPropertyViewMetaExtension.UseFactoryWorkshopEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig},System.String)">
+            <summary>
+            获取工厂下的车间下拉编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <param name="factoryIdPropertyName"></param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Web.LES.Extensions.EntityPropertyViewMetaExtension.UseWorkShopResourceEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig},System.String)">
+            <summary>
+            获取车间下的产线下拉编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <param name="workShopIdPropertyName"></param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Web.LES.Extensions.EntityPropertyViewMetaExtension.UseWorkShopWipResourceEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig},System.String)">
+            <summary>
+            根据车间获取生产资源
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="meta"></param>
+            <param name="action"></param>
+            <param name="workShopIdPropertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.LES.Extensions.EntityPropertyViewMetaExtension.UseSCDetailItemEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig,``0})">
+            <summary>
+            使用盘点物料编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Web.LES.Extensions.EntityPropertyViewMetaExtension.UseSCDetailWarehouseEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig})">
+            <summary>
+            使用盘点仓库编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Web.LES.Extensions.EntityPropertyViewMetaExtension.UseSCDetailLocationEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig})">
+            <summary>
+            使用盘点库位编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Web.LES.Extensions.EntityPropertyViewMetaExtension.UseSCDetailLotEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig})">
+            <summary>
+            使用盘点批次编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Web.LES.Extensions.EntityPropertyViewMetaExtension.UseBillPrintEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig})">
+            <summary>
+            使用打印单据规则编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="T:SIE.Web.LES.LesStockCounts.Commands.AddLesStockCountCommand">
+            <summary>
+            添加
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.LesStockCounts.Commands.AddLesStockCountCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.LES.LesStockCounts.Commands.EditLesStockCountCommand">
+            <summary>
+            编辑
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.LesStockCounts.Commands.EditLesStockCountCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.LES.LesStockCounts.Commands.DeleteLesStockCountCommand">
+            <summary>
+            删除
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.LesStockCounts.Commands.DeleteLesStockCountCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.LES.LesStockCounts.Commands.CloseLesStockCountCommand">
+            <summary>
+            关闭命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.LesStockCounts.Commands.CloseLesStockCountCommand.Excute(System.Double[],System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.LES.LesStockCounts.Commands.CloseLesCountCommand">
+            <summary>
+            关闭
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.LesStockCounts.Commands.CloseLesCountCommand.DoSave(SIE.Domain.Entity)">
+            <summary>
+            关闭
+            </summary>
+            <param name="entity">entity</param>
+        </member>
+        <member name="T:SIE.Web.LES.LesStockCounts.Commands.PrintLesStockCountCommand">
+            <summary>
+            打印单据
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.LesStockCounts.Commands.PrintLesStockCountCommand.Excute(SIE.Warehouses.PrintDatas,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">打印数据</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.LES.LesStockCounts.Commands.SaveLesCountFromCommand">
+            <summary>
+            保存
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.LesStockCounts.Commands.SaveLesCountFromCommand.OnSaving(SIE.Domain.Entity)">
+            <summary>
+            保存前
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:SIE.Web.LES.LesStockCounts.Commands.SaveLesCountFromCommand.DoSave(SIE.Domain.Entity)">
+            <summary>
+            保存
+            </summary>
+            <param name="entity">entity</param>
+        </member>
+        <member name="T:SIE.Web.LES.LesStockCounts.Commands.AduitLesCountFromCommand">
+            <summary>
+            生成明细
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.LesStockCounts.Commands.AduitLesCountFromCommand.DoSave(SIE.Domain.Entity)">
+            <summary>
+            保存
+            </summary>
+            <param name="entity">entity</param>
+        </member>
+        <member name="T:SIE.Web.LES.LesStockCounts.Commands.FinishCountCommand">
+            <summary>
+            完工（无差异）
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.LesStockCounts.Commands.FinishCountCommand.DoSave(SIE.Domain.Entity)">
+            <summary>
+            保存
+            </summary>
+            <param name="entity">entity</param>
+        </member>
+        <member name="T:SIE.Web.LES.LesStockCounts.Commands.FinishStockCountsCommand">
+            <summary>
+            完工命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.LesStockCounts.Commands.FinishStockCountsCommand.Excute(System.Double[],System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.LES.LesStockCounts.Commands.EditSCDetailCommand">
+            <summary>
+            修改
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.LesStockCounts.Commands.EditSCDetailCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.LES.LesStockCounts.Commands.DeleteSCDetailCommand">
+            <summary>
+            删除
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.LesStockCounts.Commands.DeleteSCDetailCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.LES.LesStockCounts.Commands.CloseSCDetailCommand">
+            <summary>
+            关闭
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.LesStockCounts.Commands.CloseSCDetailCommand.DoSave(SIE.Domain.EntityList)">
+            <summary>
+            关闭
+            </summary>
+            <param name="data">data</param>
+        </member>
+        <member name="M:SIE.Web.LES.LesStockCounts.Commands.CloseSCDetailCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.LES.LesStockCounts.Commands.DefaultSCDetailCommand">
+            <summary>
+            默认实盘
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.LesStockCounts.Commands.DefaultSCDetailCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.LES.LesStockCounts.Commands.InputSCDetailQtyCommand">
+            <summary>
+            输入实盘数
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.LesStockCounts.Commands.InputSCDetailQtyCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.LES.LesStockCounts.Commands.AddSCDetailCommand">
+            <summary>
+            新增盘盈
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.LesStockCounts.Commands.AddSCDetailCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.LES.LesStockCounts.Commands.SCDetailImportCommand">
+            <summary>
+            导入命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.LesStockCounts.Commands.SCDetailImportCommand.GetImportCompleted">
+            <summary>
+            导入命令
+            </summary>
+            <returns>DataRow[]</returns>
+        </member>
+        <member name="M:SIE.Web.LES.LesStockCounts.Commands.SCDetailImportCommand.GetImportHandleType">
+            <summary>
+            获取导入处理类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.LES.LesStockCounts.Commands.BatchAnalysisSCDetailCommand">
+            <summary>
+            明细批量分析命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.LesStockCounts.Commands.BatchAnalysisSCDetailCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            明细批量分析命令
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>true</returns>
+        </member>
+        <member name="T:SIE.Web.LES.LesStockCounts.DataQueryer.LesStockCountDataQueryer">
+            <summary>
+            线边仓盘点数据查询器
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.LesStockCounts.DataQueryer.LesStockCountDataQueryer.GetLesStockCountState(System.Double)">
+            <summary>
+            获取盘点单状态
+            </summary>
+            <param name="id">盘点单ID</param>
+            <returns>盘点单状态</returns>
+        </member>
+        <member name="M:SIE.Web.LES.LesStockCounts.DataQueryer.LesStockCountDataQueryer.GetFinishCountDetail(System.Double)">
+            <summary>
+            获取库存盘点数据
+            </summary>
+            <param name="stockCountId">库存盘点Id</param>
+            <returns>库存盘点数据</returns>
+        </member>
+        <member name="M:SIE.Web.LES.LesStockCounts.DataQueryer.LesStockCountDataQueryer.StockCountFinishDiff(System.Double,SIE.LES.LesStockCounts.LesStockCountResult)">
+            <summary>
+            执行完工
+            </summary>
+            <param name="stockCountId">库存盘点Id</param>
+            <param name="viewModel">视图模型</param>   
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.LES.LesStockCounts.DataQueryer.LesStockCountDataQueryer.SaveDiffAdjust(System.Double,System.Collections.Generic.List{SIE.LES.LesStockCounts.ViewModels.AdjustWorkOrderViewModel})">
+            <summary>
+            保存差异调账数据
+            </summary>
+            <param name="billId"></param>
+            <param name="adjustWorkOrderViewModels"></param>
+        </member>
+        <member name="M:SIE.Web.LES.LesStockCounts.DataQueryer.LesStockCountDataQueryer.GetAdjustWorkOrderViewModels(System.Double)">
+            <summary>
+            获取调整数据
+            </summary>
+            <param name="countDtlId">盘点明细Id</param>
+            <returns>调整数据</returns>
+        </member>
+        <member name="M:SIE.Web.LES.LesStockCounts.DataQueryer.LesStockCountDataQueryer.GetStockCountNumberRule(SIE.Core.Enums.OrderType)">
+            <summary>
+            获取配置的模板的值
+            </summary>
+            <returns>模板数据</returns>
+        </member>
+        <member name="T:SIE.Web.LES.LesStockCounts.DataQueryer.StockCountTempleteData">
+            <summary>
+            库存盘点配置模板
+            </summary>
+        </member>
+        <member name="P:SIE.Web.LES.LesStockCounts.DataQueryer.StockCountTempleteData.PrintBillRuleId">
+            <summary>
+            单据模板
+            </summary>
+        </member>
+        <member name="P:SIE.Web.LES.LesStockCounts.DataQueryer.StockCountTempleteData.PrintBillRuleName">
+            <summary>
+            单据模板
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.LesStockCounts.LesStockCountCriteriaViewConfig">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.LesStockCounts.LesStockCountCriteriaViewConfig.ConfigView">
+            <summary>
+            默认配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.LesStockCounts.LesStockCountDetailViewConfig">
+            <summary>
+            盘点单明细视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.LES.LesStockCounts.LesStockCountDetailViewConfig.ReadonlyView">
+            <summary>
+            只读视图
+            </summary>
+        </member>
+        <member name="F:SIE.Web.LES.LesStockCounts.LesStockCountDetailViewConfig.NEWINVENTORYCANEDIT">
+            <summary>
+            新增盘盈可编辑
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.LesStockCounts.LesStockCountDetailViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.LES.LesStockCounts.LesStockCountDetailViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.LES.LesStockCounts.LesStockCountDetailViewConfig.ConfigReadOnlyView">
+            <summary>
+            查看视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.LesStockCounts.LesStockCountDetailViewConfig.ConfigImportView">
+            <summary>
+            配置导出模板视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.LesStockCounts.LesStockCountRangeViewConfig">
+            <summary>
+            盘点范围视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.LES.LesStockCounts.LesStockCountRangeViewConfig.ReadonlyView">
+            <summary>
+            只读视图
+            </summary>
+        </member>
+        <member name="F:SIE.Web.LES.LesStockCounts.LesStockCountRangeViewConfig.STATECREATECANEDIT">
+            <summary>
+            单据状态等于创建可编辑
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.LesStockCounts.LesStockCountRangeViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.LES.LesStockCounts.LesStockCountRangeViewConfig.ConfigDetailsView">
+            <summary>
+             配置明细视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.LES.LesStockCounts.LesStockCountRangeViewConfig.ConfigReadonlyView">
+            <summary>
+            只读视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.LesStockCounts.LesStockCountViewConfig">
+            <summary>
+            盘点单视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.LES.LesStockCounts.LesStockCountViewConfig.ReadonlyView">
+            <summary>
+             扩展查看视图
+            </summary>
+        </member>
+        <member name="F:SIE.Web.LES.LesStockCounts.LesStockCountViewConfig.STATECREATECANEDIT">
+            <summary>
+            盘点状态等于创建可编辑
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.LesStockCounts.LesStockCountViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.LES.LesStockCounts.LesStockCountViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.LES.LesStockCounts.LesStockCountViewConfig.ConfigDetailsView">
+            <summary>
+             配置明细视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.LES.LesStockCounts.LesStockCountViewConfig.ConfigReadOnlyView">
+            <summary>
+            查看视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.LesStockCounts.LesStockCountWorkOrderViewConfig">
+            <summary>
+            盘点单明细视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.LesStockCounts.LesStockCountWorkOrderViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.LES.LesStockCounts.LesStockCountWorkOrderViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.LES.LesStockCounts.ViewModels.DiffAdjustViewModelViewConfig">
+            <summary>
+            差异调账视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.LesStockCounts.ViewModels.AdjustWorkOrderViewModelViewConfig">
+            <summary>
+            差异调账视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.LesStockCounts.ViewModels.LesProcessModeViewModelViewConfig">
+            <summary>
+            盘点单完工视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.LesStockCounts.ViewModels.LesProcessModeViewModelViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.LesStockCounts.ViewModels.LesProcessModeViewModelViewConfig.ConfigDetailsView">
+            <summary>
+            表单视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.LesStockCounts.ViewModels.LesStockCountDetailAnalysisViewModel">
+            <summary>
+            批量分析ViewModel
+            </summary>
+        </member>
+        <member name="F:SIE.Web.LES.LesStockCounts.ViewModels.LesStockCountDetailAnalysisViewModel.AnalysisResultProperty">
+            <summary>
+            分析结果
+            </summary>
+        </member>
+        <member name="P:SIE.Web.LES.LesStockCounts.ViewModels.LesStockCountDetailAnalysisViewModel.AnalysisResult">
+            <summary>
+            分析结果
+            </summary>
+        </member>
+        <member name="F:SIE.Web.LES.LesStockCounts.ViewModels.LesStockCountDetailAnalysisViewModel.ResultDescProperty">
+            <summary>
+            结果描述
+            </summary>
+        </member>
+        <member name="P:SIE.Web.LES.LesStockCounts.ViewModels.LesStockCountDetailAnalysisViewModel.ResultDesc">
+            <summary>
+            结果描述
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.LesStockCounts.ViewModels.LesStockCountDetailAnalysisViewModelViewConfig">
+            <summary>
+            输入实盘 视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.LesStockCounts.ViewModels.LesStockCountDetailAnalysisViewModelViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.LesStockCounts.ViewModels.LesStockCountDetailAnalysisViewModelViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细试图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.LesStockCounts.ViewModels.LesStockCountDetailQtyViewModel">
+            <summary>
+            输入实盘ViewModel
+            </summary>
+        </member>
+        <member name="F:SIE.Web.LES.LesStockCounts.ViewModels.LesStockCountDetailQtyViewModel.LineNoProperty">
+            <summary>
+            行号
+            </summary>
+        </member>
+        <member name="P:SIE.Web.LES.LesStockCounts.ViewModels.LesStockCountDetailQtyViewModel.LineNo">
+            <summary>
+            行号
+            </summary>
+        </member>
+        <member name="F:SIE.Web.LES.LesStockCounts.ViewModels.LesStockCountDetailQtyViewModel.QtyProperty">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:SIE.Web.LES.LesStockCounts.ViewModels.LesStockCountDetailQtyViewModel.Qty">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="F:SIE.Web.LES.LesStockCounts.ViewModels.LesStockCountDetailQtyViewModel.LabelNoProperty">
+            <summary>
+            标签
+            </summary>
+        </member>
+        <member name="P:SIE.Web.LES.LesStockCounts.ViewModels.LesStockCountDetailQtyViewModel.LabelNo">
+            <summary>
+            标签
+            </summary>
+        </member>
+        <member name="F:SIE.Web.LES.LesStockCounts.ViewModels.LesStockCountDetailQtyViewModel.ItemMessageProperty">
+            <summary>
+            物料信息
+            </summary>
+        </member>
+        <member name="P:SIE.Web.LES.LesStockCounts.ViewModels.LesStockCountDetailQtyViewModel.ItemMessage">
+            <summary>
+            物料信息
+            </summary>
+        </member>
+        <member name="F:SIE.Web.LES.LesStockCounts.ViewModels.LesStockCountDetailQtyViewModel.MessageProperty">
+            <summary>
+            处理消息
+            </summary>
+        </member>
+        <member name="P:SIE.Web.LES.LesStockCounts.ViewModels.LesStockCountDetailQtyViewModel.Message">
+            <summary>
+            处理消息
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.LesStockCounts.ViewModels.StockCountDetailQtyViewModelViewConfig">
+            <summary>
+            输入实盘 视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.LesStockCounts.ViewModels.StockCountDetailQtyViewModelViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.LesStockCounts.ViewModels.StockCountDetailQtyViewModelViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细试图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.LesStockCounts.ViewModels.LesStockCountPrintViewModelViewConfig">
+            <summary>
+            线边仓盘点打印视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.LesStockCounts.ViewModels.LesStockCountPrintViewModelViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.LinesideWarehouses.Commands.LinesideWarehouseAddCommand">
+            <summary>
+            添加
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.LinesideWarehouses.Commands.LinesideWarehouseAddCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:SIE.Web.LES.LinesideWarehouses.Commands.LinesideWarehouseSaveCommand">
+            <summary>
+            保存
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.LinesideWarehouses.Commands.LinesideWarehouseSaveCommand.OnSaving(SIE.Domain.EntityList)">
+            <summary>
+            保存验证
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="T:SIE.Web.LES.LinesideWarehouses.LinesideWarehouseCriteriaViewConfig">
+            <summary>
+            查询对象
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.LinesideWarehouses.LinesideWarehouseCriteriaViewConfig.ConfigView">
+            <summary>
+            查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.LinesideWarehouses.LinesideWarehouseDataQueryer">
+            <summary>
+            产线线边仓数据请求
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.LinesideWarehouses.LinesideWarehouseDataQueryer.GetWipResourceInfo(System.Double)">
+            <summary>
+            获取生产资源的工厂车间
+            </summary>
+            <param name="wipId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.LES.LinesideWarehouses.LinesideWarehouseDataQueryer.GetWorkShopInfo(System.Double)">
+            <summary>
+            获取车间的工厂
+            </summary>
+            <param name="workShopId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.LES.LinesideWarehouses.LinesideWarehouseViewConfig">
+             <summary>
+            产线线边仓
+             </summary>
+        </member>
+        <member name="M:SIE.Web.LES.LinesideWarehouses.LinesideWarehouseViewConfig.ConfigListView">
+            <summary>
+            配置列表
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.LinesideWarehouses.LinesideWarehouseViewConfig.ConfigSelectionView">
+            <summary>
+            选择视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialMoves.MaterialMoveRecordCriteriaViewConfig">
+            <summary>
+            挪料记录查询条件
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialMoves.MaterialMoveRecordCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialMoves.MaterialMoveRecordViewConfig">
+            <summary>
+            挪料记录视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialMoves.MaterialMoveRecordViewConfig.ConfigListView">
+            <summary>
+            列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialPreparations.Commands.AddWorkOrderPrepareCommand">
+            <summary>
+            添加工单备料
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialPreparations.Commands.AddWorkOrderPrepareCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialPreparations.Commands.AddWorkShopPrepareCommand">
+            <summary>
+            添加车间领料
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialPreparations.Commands.AddWorkShopPrepareCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialPreparations.Commands.DeletePrepareCommand">
+            <summary>
+            备料需求单删除命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialPreparations.Commands.ListSubmitPreCommand">
+            <summary>
+            提交
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialPreparations.Commands.ListSubmitPreCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialPreparations.Commands.MaterialPreExportCommand">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialPreparations.Commands.MaterialPreExportCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialPreparations.Commands.SavePrepareCommand">
+            <summary>
+            备料需求单保存命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialPreparations.Commands.SavePrepareCommand.OnSaving(SIE.Domain.Entity)">
+            <summary>
+            保存前
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialPreparations.Commands.SavePrepareCommand.DoSave(SIE.Domain.Entity)">
+            <summary>
+            
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialPreparations.Commands.SubmitPrepareCommand">
+            <summary>
+            车间备料提交命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialPreparations.Commands.SubmitPrepareCommand.DoSave(SIE.Domain.Entity)">
+            <summary>
+            保存后提交
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialPreparations.Commands.WithDrawPreDetailCommand">
+            <summary>
+            取消备料需求明细
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialPreparations.Commands.WithDrawPreDetailCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialPreparations.Commands.WithDrawPrepareCommand">
+            <summary>
+            取消备料数
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialPreparations.Commands.WithDrawPrepareCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            取消备料数
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialPreparations.Commands.WorkOrderMpViewExportCommand">
+            <summary>
+            工单备料汇总
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialPreparations.Commands.WorkOrderMpViewExportCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialPreparations.Configs.LimitedPrepareMaxConfigValueViewConfig">
+            <summary>
+            推式备料是否限制最高存量配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialPreparations.Configs.LimitedPrepareMaxConfigValueViewConfig.ConfigView">
+            <summary>
+            配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialPreparations.MaterialPreCancelRecordViewConfig">
+            <summary>
+            备料需求单取消记录视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialPreparations.MaterialPreCancelRecordViewConfig.ConfigListView">
+            <summary>
+            列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialPreparations.MaterialPreparationCriteriaViewConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialPreparations.MaterialPreparationCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialPreparations.MaterialPreparationDataqueryer">
+            <summary>
+            备料需求单
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialPreparations.MaterialPreparationDataqueryer.GetWorkOrderBomPrepration(System.Double,System.Int32)">
+            <summary>
+            获取工单bom信息
+            </summary>
+            <param name="woId">工单Id</param>
+            <param name="preType">0-生产领料 1-生产超领 2-车间领料</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialPreparations.MaterialPreparationDataqueryer.GetLinesideWarehouse(System.Nullable{System.Double},System.Nullable{System.Double})">
+            <summary>
+            根据车间产线获取产线线边仓
+            </summary>
+            <param name="workShopId">车间Id</param>
+            <param name="wipResourceId">产线Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialPreparations.MaterialPreparationDataqueryer.GetExportData(System.Int32,SIE.Domain.EntityList{SIE.LES.MaterialPreparations.MaterialPreparation},System.Int32,System.Int32,SIE.LES.MaterialPreparations.MaterialPreparationCriteria)">
+            <summary>
+            导出命令
+            </summary>
+            <param name="rangeOption">导出类型</param>
+            <param name="selectEntity">当前选择行</param>
+            <param name="pagesize">页面大小</param>
+            <param name="currentpage">当前页</param>
+            <param name="criteria">查询条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialPreparations.MaterialPreparationDataqueryer.Export(SIE.Domain.EntityList{SIE.LES.MaterialPreparations.MaterialPreparation})">
+            <summary>
+            导出excel
+            </summary>
+            <param name="datas">导出数据</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialPreparations.MaterialPreparationDetailSelectViewConfig">
+            <summary>
+            备料需求单明细选择视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialPreparations.MaterialPreparationDetailSelectViewConfig.ConfigListView">
+            <summary>
+            列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialPreparations.MaterialPreparationDtlSelCriteriaViewConfig">
+            <summary>
+            备料需求单选择明细查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialPreparations.MaterialPreparationDtlSelCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            查询
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialPreparations.MaterialPreparationDetailViewConfig">
+            <summary>
+            备料需求单明细视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.LES.MaterialPreparations.MaterialPreparationDetailViewConfig.WorkOrderModeStr">
+            <summary>
+            工单备料
+            </summary>
+        </member>
+        <member name="F:SIE.Web.LES.MaterialPreparations.MaterialPreparationDetailViewConfig.WorkShopModeStr">
+            <summary>
+            车间备料模式
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialPreparations.MaterialPreparationDetailViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialPreparations.MaterialPreparationDetailViewConfig.ConfigListView">
+            <summary>
+            列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialPreparations.MaterialPreparationDetailViewConfig.WorkShopMode">
+            <summary>
+            车间模式
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialPreparations.MaterialPreparationDetailViewConfig.WorkOrderMode">
+            <summary>
+            工单模式
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialPreparations.MaterialPreparationViewConfig">
+            <summary>
+            备料需求单视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.LES.MaterialPreparations.MaterialPreparationViewConfig.WorkOrderModeViewStr">
+            <summary>
+            工单备料
+            </summary>
+        </member>
+        <member name="F:SIE.Web.LES.MaterialPreparations.MaterialPreparationViewConfig.WorkShopModeViewStr">
+            <summary>
+            车间备料
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialPreparations.MaterialPreparationViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialPreparations.MaterialPreparationViewConfig.ConfigListView">
+            <summary>
+            列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialPreparations.MaterialPreparationViewConfig.WorkShopMode">
+            <summary>
+            车间备料模式
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialPreparations.MaterialPreparationViewConfig.WorkOrderMode">
+            <summary>
+            工单备料
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialPreparations.MaterialWoMpDataqueryer">
+            <summary>
+            工单备料汇总Query
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialPreparations.MaterialWoMpDataqueryer.GetExportData(System.Int32,SIE.Domain.EntityList{SIE.LES.MaterialPreparations.ViewModels.WorkOrderMpViewModel},System.Int32,System.Int32,SIE.LES.MaterialPreparations.ViewModels.WorkOrderMpViewModelCriteria)">
+            <summary>
+            导出命令
+            </summary>
+            <param name="rangeOption">导出类型</param>
+            <param name="selectEntity">当前选择行</param>
+            <param name="pagesize">页面大小</param>
+            <param name="currentpage">当前页</param>
+            <param name="criteria">查询条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialPreparations.MaterialWoMpDataqueryer.Export(SIE.Domain.EntityList{SIE.LES.MaterialPreparations.ViewModels.WorkOrderMpViewModel})">
+            <summary>
+            导出excel
+            </summary>
+            <param name="datas">导出数据</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialPreparations.ViewModels.MaterialPrepareItemViewConfig">
+            <summary>
+            车间备料选择物料视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialPreparations.ViewModels.MaterialPrepareItemViewConfig.ConfigListView">
+            <summary>
+            列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialPreparations.ViewModels.MaterialPrepareItemCriteriaViewConfig">
+            <summary>
+            车间备料选择物料查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialPreparations.ViewModels.MaterialPrepareItemCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialPreparations.ViewModels.MaterialPrepareWoViewConfig">
+            <summary>
+            备料需求单选择工单视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialPreparations.ViewModels.MaterialPrepareWoViewConfig.ConfigListView">
+            <summary>
+            列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialPreparations.ViewModels.MaterialPrepareWoCriteriaViewConfig">
+            <summary>
+            备料需求单选择工单查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialPreparations.ViewModels.MaterialPrepareWoCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialPreparations.ViewModels.WorkOrderMpViewModelViewConfig">
+            <summary>
+            工单备料汇总
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialPreparations.ViewModels.WorkOrderMpViewModelViewConfig.ConfigListView">
+            <summary>
+            列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialPreparations.ViewModels.WorkOrderMpViewModelCriteriaViewConfig">
+            <summary>
+            备料需求单汇总
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialPreparations.ViewModels.WorkOrderMpViewModelCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialPreparations.ViewModels.WorkOrderMpDetailViewModelViewConfig">
+            <summary>
+            工单备料汇总明细视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialPreparations.ViewModels.WorkOrderMpDetailViewModelViewConfig.ConfigListView">
+            <summary>
+            列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialReceives.Commands.PartReceiveDetailCommand">
+            <summary>
+            部分接收
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialReceives.Commands.PartReceiveDetailCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialReceives.Commands.ReceiveCommand">
+            <summary>
+            接收(整单)
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialReceives.Commands.ReceiveCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialReceives.Commands.ReceiveDetailCommand">
+            <summary>
+            接收(整行)
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialReceives.Commands.ReceiveDetailCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialReceives.Commands.RejectCommand">
+            <summary>
+            拒收(整单)
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialReceives.Commands.RejectCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialReceives.Commands.RejectDetailCommand">
+            <summary>
+            拒收(整行)
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialReceives.Commands.RejectDetailCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialReceives.DataQueryer.MaterialReceiveQueryer">
+            <summary>
+            物料接收查询器
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialReceives.DataQueryer.MaterialReceiveQueryer.GetMaterialReceiveLabels(System.Double,System.Collections.Generic.List{System.Nullable{System.Double}})">
+            <summary>
+            查询接收标签
+            </summary>
+            <param name="soNo"></param>
+            <param name="dtlIds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialReceives.DataQueryer.MaterialReceiveQueryer.ReceiveLabels(SIE.LES.MaterialReceives.MaterialReceiveDetail,System.Collections.Generic.List{SIE.LES.MaterialReceives.MaterialReceiveLabel})">
+            <summary>
+            标签接收
+            </summary>
+            <param name="detail"></param>
+            <param name="labels"></param>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialReceives.DataQueryer.MaterialReceiveQueryer.ValidationOverReceive(System.Collections.Generic.List{System.Double})">
+            <summary>
+            校验单据是否超收
+            </summary>
+            <param name="receiveIds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialReceives.DataQueryer.MaterialReceiveQueryer.ValidationOverReceiveDetail(System.Collections.Generic.List{SIE.LES.MaterialReceives.MaterialReceiveDetail})">
+            <summary>
+            校验明细是否超收
+            </summary>
+            <param name="receiveDtls"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialReceives.MaterialReceiveCriteriaViewConfig">
+            <summary>
+            物料接收查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialReceives.MaterialReceiveCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialReceives.MaterialReceiveDetailViewConfig">
+            <summary>
+            物料接收明细视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.LES.MaterialReceives.MaterialReceiveDetailViewConfig.PartReceiveView">
+            <summary>
+            部分接收视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialReceives.MaterialReceiveDetailViewConfig.ConfigView">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialReceives.MaterialReceiveDetailViewConfig.ConfigListView">
+            <summary>
+            列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialReceives.MaterialReceiveDetailViewConfig.ConfigPartReceiveView">
+            <summary>
+            部分接收视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialReceives.MaterialReceiveLabelViewConfig">
+            <summary>
+            物料接收标签明细视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.LES.MaterialReceives.MaterialReceiveLabelViewConfig.PartReceiveView">
+            <summary>
+            部分接收视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialReceives.MaterialReceiveLabelViewConfig.ConfigView">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialReceives.MaterialReceiveLabelViewConfig.ConfigListView">
+            <summary>
+            列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialReceives.MaterialReceiveLabelViewConfig.ConfigPartReceiveView">
+            <summary>
+            部分接收视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialReceives.MaterialReceiveRecordCriteriaViewConfig">
+            <summary>
+            物料接收查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialReceives.MaterialReceiveRecordCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialReceives.MaterialReceiveRecordViewConfig">
+            <summary>
+            物料接收视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialReceives.MaterialReceiveRecordViewConfig.ConfigListView">
+            <summary>
+            列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialReceives.MaterialReceiveViewConfig">
+            <summary>
+            物料接收视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialReceives.MaterialReceiveViewConfig.ConfigListView">
+            <summary>
+            列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialReturnApplys.Commands.MaterialReAddCommand">
+            <summary>
+            退料申请添加命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialReturnApplys.Commands.MaterialReAddCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialReturnApplys.Commands.MaterialReturnCancelCommand">
+            <summary>
+            退料申请取消命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialReturnApplys.Commands.MaterialReturnCancelCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialReturnApplys.Commands.MaterialReturnDeleteCommand">
+            <summary>
+            退料申请删除命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialReturnApplys.Commands.MaterialReturnExportCommand">
+            <summary>
+            退料申请导出命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialReturnApplys.Commands.MaterialReturnExportCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialReturnApplys.Commands.MaterialReturnListSubmitCommand">
+            <summary>
+            列表提交
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialReturnApplys.Commands.MaterialReturnListSubmitCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            提交
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialReturnApplys.Commands.MaterialReturnSaveCommand">
+            <summary>
+            退料申请保存命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialReturnApplys.Commands.MaterialReturnSaveCommand.OnSaving(SIE.Domain.Entity)">
+            <summary>
+            保存前事件
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialReturnApplys.Commands.MaterialReturnSubmitCommand">
+            <summary>
+            退料申请提交命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialReturnApplys.Commands.MaterialReturnSubmitCommand.DoSave(SIE.Domain.Entity)">
+            <summary>
+            保存后提交
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialReturnApplys.MaterialReturnApplyCriteriaViewConfig">
+            <summary>
+            退料申请查询实体视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialReturnApplys.MaterialReturnApplyCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialReturnApplys.MaterialReturnApplyDataQueryer">
+            <summary>
+            退料申请前端数据请求
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialReturnApplys.MaterialReturnApplyDataQueryer.GetLinesideWarehouse(System.Nullable{System.Double},System.Nullable{System.Double})">
+            <summary>
+            根据车间产线获取产线线边仓
+            </summary>
+            <param name="workShopId">车间Id</param>
+            <param name="wipResourceId">产线Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialReturnApplys.MaterialReturnApplyDataQueryer.CaseLpnOnHand(System.Collections.Generic.List{SIE.LES.MaterialReturnApplys.MaterialReturnApplyDetailSelect},System.Nullable{System.Double},System.Nullable{System.Double})">
+            <summary>
+            计算明细lpn库存
+            </summary>
+            <param name="details">明细</param>
+            <param name="wareId">仓库Id</param>
+            <param name="storageId">库位Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialReturnApplys.MaterialReturnApplyDataQueryer.GetExportData(System.Int32,SIE.Domain.EntityList{SIE.LES.MaterialReturnApplys.MaterialReturnApply},System.Int32,System.Int32,SIE.LES.MaterialReturnApplys.MaterialReturnApplyCriteria)">
+            <summary>
+            导出命令
+            </summary>
+            <param name="rangeOption">导出类型</param>
+            <param name="selectEntity">当前选择行</param>
+            <param name="pagesize">页面大小</param>
+            <param name="currentpage">当前页</param>
+            <param name="criteria">查询条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialReturnApplys.MaterialReturnApplyDataQueryer.Export(SIE.Domain.EntityList{SIE.LES.MaterialReturnApplys.MaterialReturnApply})">
+            <summary>
+            导出excel
+            </summary>
+            <param name="datas">导出数据</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialReturnApplys.MaterialReturnApplyDetailSelectViewConfig">
+            <summary>
+            选择退料申请明细视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialReturnApplys.MaterialReturnApplyDetailSelectViewConfig.ConfigListView">
+            <summary>
+            列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialReturnApplys.MaterialReturnApplyDtlSelCriteriaViewConfig">
+            <summary>
+            查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialReturnApplys.MaterialReturnApplyDtlSelCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            查询
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialReturnApplys.MaterialReturnApplyDetailViewConfig">
+            <summary>
+            退料申请视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.LES.MaterialReturnApplys.MaterialReturnApplyDetailViewConfig.EditViewStr">
+            <summary>
+            编辑
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialReturnApplys.MaterialReturnApplyDetailViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialReturnApplys.MaterialReturnApplyDetailViewConfig.ConfigListView">
+            <summary>
+            列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialReturnApplys.MaterialReturnApplyDetailViewConfig.EditView">
+            <summary>
+            编辑视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialReturnApplys.MaterialReturnApplyViewConfig">
+            <summary>
+            退料申请视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialReturnApplys.MaterialReturnApplyViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialReturnApplys.MaterialReturnApplyViewConfig.ConfigListView">
+            <summary>
+            列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialReturnApplys.MaterialReturnApplyViewConfig.ConfigDetailsView">
+            <summary>
+            表单视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialReturnApplys.ViewModels.MaterialReturnWoViewConfig">
+            <summary>
+            退料申请选取工单视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialReturnApplys.ViewModels.MaterialReturnWoViewConfig.ConfigListView">
+            <summary>
+            列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.MaterialReturnApplys.ViewModels.MaterialReturnWoCriteriaViewConfig">
+            <summary>
+            退料申请选取工单查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.MaterialReturnApplys.ViewModels.MaterialReturnWoCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.LESMenuInit">
+            <summary>
+            菜单初始化
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.LESMenuInit.GetMenuDtos">
+            <summary>
+            获取菜单列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.LES.Module">
+            <summary>
+            模块配置
+            </summary> 
+        </member>
+        <member name="M:SIE.Web.LES.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化模块
+            </summary>
+            <param name="app">应用程序</param>
+        </member>
+        <member name="M:SIE.Web.LES.Module.App_ModuleOperations(System.Object,System.EventArgs)">
+            <summary>
+            配置菜单
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="T:SIE.Web.LES.PrepareItems.Commands.SavePrepareItemPullCommand">
+            <summary>
+            备料模式-拉式保存命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.PrepareItems.Commands.SavePrepareItemPullCommand.OnSaving(SIE.Domain.EntityList)">
+            <summary>
+            保存前方法
+            </summary>
+            <param name="data">数据集合</param>
+        </member>
+        <member name="T:SIE.Web.LES.PrepareItems.Commands.AddPrepareItemPullCommand">
+            <summary>
+            备料模式-拉式添加命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.PrepareItems.Commands.AddPrepareItemPullCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.LES.PrepareItems.Commands.AddPrepareItemPushCommand">
+            <summary>
+            备料模式-推式添加命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.PrepareItems.Commands.AddPrepareItemPushCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.LES.PrepareItems.Commands.EditPrepareItemPushCommand">
+            <summary>
+            备料模式-推式修改命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.PrepareItems.Commands.EditPrepareItemPushCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.LES.PrepareItems.Commands.SavePrepareItemPushCommand">
+            <summary>
+            备料模式-推式保存命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.PrepareItems.Commands.SavePrepareItemPushCommand.OnSaving(SIE.Domain.EntityList)">
+            <summary>
+            保存前方法
+            </summary>
+            <param name="data">数据集合</param>
+        </member>
+        <member name="T:SIE.Web.LES.PrepareItems.Commands.ImportPrepareItemPushCommand">
+            <summary>
+            导入备料模式维护-推式命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.PrepareItems.Commands.ImportPrepareItemPushCommand.Excute(SIE.Web.Common.Import.Commands.ImportViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="importViewArgs"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.LES.PrepareItems.Commands.ImportPrepareItemPushCommand.DownloadTemplate">
+            <summary>
+            直接从服务器上下载模板
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.LES.PrepareItems.Commands.ImportPrepareItemPushCommand.GetImportCompleted">
+            <summary>
+            导入命令
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.LES.PrepareItems.Commands.ImportPrepareItemPushCommand.GetImportHandleType">
+            <summary>
+            获取导入处理类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.LES.PrepareItems.Commands.ImportPrepareItemPullCommand">
+            <summary>
+            导入备料模式维护-拉式命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.PrepareItems.Commands.ImportPrepareItemPullCommand.Excute(SIE.Web.Common.Import.Commands.ImportViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="importViewArgs"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.LES.PrepareItems.Commands.ImportPrepareItemPullCommand.DownloadTemplate">
+            <summary>
+            直接从服务器上下载模板
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.LES.PrepareItems.Commands.ImportPrepareItemPullCommand.GetImportCompleted">
+            <summary>
+            导入命令
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.LES.PrepareItems.Commands.ImportPrepareItemPullCommand.GetImportHandleType">
+            <summary>
+            获取导入处理类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.LES.PrepareItems.Model.QueryPrepareItemPull">
+            <summary>
+            赋值类
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.PrepareItems.Model.QueryPrepareItemPull.QueryMaxStock(System.Double,System.Double)">
+            <summary>
+            获取最高库量
+            </summary>
+            <param name="warehouseId">仓库ID</param>
+            <param name="itemId">物料ID</param>
+        </member>
+        <member name="T:SIE.Web.LES.PrepareItemPullCriteriaViewConfig">
+            <summary>
+            备料单查询实体配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.PrepareItemPullCriteriaViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.PrepareItemPullViewConfig">
+            <summary>
+            备料模式拉式视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.PrepareItemPullViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.LES.PrepareItemPushCriteriaViewConfig">
+            <summary>
+            备料单查询实体配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.PrepareItemPushCriteriaViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.PrepareItemPushViewConfig">
+            <summary>
+            备料模式推式视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.PrepareItemPushViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.LES.Reports.WoDemandReportCriteriaViewConfig">
+            <summary>
+            工单需求汇总报表 查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.Reports.WoDemandReportCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.Reports.WoDemandReportViewConfig">
+            <summary>
+            工单需求汇总报表 视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.Reports.WoDemandReportViewConfig.ConfigListView">
+            <summary>
+            列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.StockOrders.Commands.IssuedStockOrderCommand">
+            <summary>
+            下发命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.StockOrders.Commands.IssuedStockOrderCommand.Excute(System.Double[],System.String)">
+            <summary>
+            下发命令
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>true</returns>
+        </member>
+        <member name="T:SIE.Web.LES.StockOrders.Commands.AddStockOrderCommand">
+            <summary>
+            添加
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.StockOrders.Commands.AddStockOrderCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.LES.StockOrders.Commands.EditStockOrderCommand">
+            <summary>
+            修改命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.StockOrders.Commands.ReCallStockOrderCommand">
+            <summary>
+            撤回命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.StockOrders.Commands.ReCallStockOrderCommand.Excute(System.Double[],System.String)">
+            <summary>
+            撤回命令
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>true</returns>
+        </member>
+        <member name="T:SIE.Web.LES.StockOrders.Commands.AduitStockOrderCommand">
+            <summary>
+            审核确认命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.StockOrders.Commands.AduitStockOrderCommand.Excute(System.Double[],System.String)">
+            <summary>
+            审核确认命令
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>true</returns>
+        </member>
+        <member name="T:SIE.Web.LES.StockOrders.Commands.SubmitStockOrderCommand">
+            <summary>
+            提交审核命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.StockOrders.Commands.SubmitStockOrderCommand.Excute(System.Double[],System.String)">
+            <summary>
+            提交审核命令
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>true</returns>
+        </member>
+        <member name="T:SIE.Web.LES.StockOrders.Commands.ForceCloseStockOrderCommand">
+            <summary>
+            强制关闭命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.StockOrders.Commands.ForceCloseStockOrderCommand.Excute(System.Double[],System.String)">
+            <summary>
+            审核命令
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>true</returns>
+        </member>
+        <member name="T:SIE.Web.LES.StockOrders.Commands.SaveStockOrderCommand">
+            <summary>
+            保存命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.StockOrders.Commands.SaveStockOrderCommand.OnSaving(SIE.Domain.Entity)">
+            <summary>
+            保存前动作
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.StockOrders.Commands.AddStockOrderDetailCommand">
+            <summary>
+            明细添加命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.StockOrders.Commands.AddStockOrderDetailCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>true</returns>
+        </member>
+        <member name="T:SIE.Web.LES.StockOrders.Commands.MulAddStockOrderDetailCommand">
+            <summary>
+            批量添加明细
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.StockOrders.Commands.MulAddStockOrderDetailCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            实现
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.LES.StockOrders.Commands.MulAddStockOrderDetailPushCommand">
+            <summary>
+            推式批量添加明细
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.StockOrders.Commands.MulAddStockOrderDetailPushCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            实现
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:SIE.Web.LES.StockOrders.Commands.MultAddData">
+            <summary>
+            批量添加参数
+            </summary>
+        </member>
+        <member name="P:SIE.Web.LES.StockOrders.Commands.MultAddData.ResourceId">
+            <summary>
+            资源Id
+            </summary>
+        </member>
+        <member name="P:SIE.Web.LES.StockOrders.Commands.MultAddData.WoId">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="P:SIE.Web.LES.StockOrders.Commands.MultAddData.ItemList">
+            <summary>
+            物料列表
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.StockOrders.Configs.StockOrderIsAuditConfigValueViewConfig">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.StockOrders.Configs.StockOrderIsAuditConfigValueViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.StockOrders.DataQueryer.StockOrderQueryer">
+            <summary>
+            备料单查询器
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.StockOrders.DataQueryer.StockOrderQueryer.GetRequireItemData(SIE.LES.StockOrders.StockOrder)">
+            <summary>
+            获取物料需求明细数据
+            </summary>
+            <param name="bill">备料单</param>
+            <returns>物料需求明细数据</returns>
+        </member>
+        <member name="M:SIE.Web.LES.StockOrders.DataQueryer.StockOrderQueryer.SetPullRequireData(SIE.LES.StockOrders.StockOrder,SIE.LES.LinesideWarehouses.LinesideWarehouse,System.Double)">
+            <summary>
+            获取拉式备料需求数据
+            </summary>
+            <param name="bill">备料单</param>
+            <param name="lineWh">线边仓</param>
+            <param name="warehouseId">仓库ID</param>
+            <returns>拉式备料需求数据</returns>
+        </member>
+        <member name="M:SIE.Web.LES.StockOrders.DataQueryer.StockOrderQueryer.SetPushRequireData(SIE.LES.StockOrders.StockOrder,SIE.LES.LinesideWarehouses.LinesideWarehouse)">
+            <summary>
+            获取推式备料需求数据
+            </summary>
+            <param name="bill">备料单</param>
+            <param name="lineWh">线边仓</param>
+            <returns>推式备料需求数据</returns>
+        </member>
+        <member name="M:SIE.Web.LES.StockOrders.DataQueryer.StockOrderQueryer.GetStockOrder(System.Double)">
+            <summary>
+            获取备料单数据
+            </summary>
+            <param name="billId">备料单ID</param>
+            <returns>备料单</returns>
+        </member>
+        <member name="M:SIE.Web.LES.StockOrders.DataQueryer.StockOrderQueryer.ChangeItemGetWorkTotalQty(System.Double,System.Double,System.String)">
+            <summary>
+            根据物料Id 工单ID 物料扩展属性获取工单需求总量
+            </summary>
+            <param name="itemId"></param>
+            <param name="woId"></param>
+            <param name="itemExtProp"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.LES.StockOrders.DataQueryer.StockOrderQueryer.GetLineWaresHouse(System.Double)">
+            <summary>
+            获取线边仓
+            </summary>
+            <param name="resouceId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.LES.StockOrders.DataQueryer.StockOrderQueryer.GetStockOrderWoViewModels">
+            <summary>
+            备料单查询工单
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.LES.StockOrders.DataQueryer.StockOrderQueryer.GetStockOrderItemViewModels(SIE.Web.LES.StockOrders.WorkOrders.StockOrderItemViewModelCriteria)">
+            <summary>
+            备料单查询物料
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.LES.StockOrders.LimitedMaximumStockConfigValueViewConfig">
+            <summary>
+            推式备料是否限制最高存量
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.StockOrders.LimitedMaximumStockConfigValueViewConfig.ConfigView">
+            <summary>
+            配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.StockOrders.PushedSchedulingMethodsConfigValueViewConfig">
+            <summary>
+            推式调度多触发方式同时满足的处理方式
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.StockOrders.PushedSchedulingMethodsConfigValueViewConfig.ConfigView">
+            <summary>
+            配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.StockOrders.SchedulingTriggeredStatusConfigValueViewConfig">
+            <summary>
+            调度触发的备料单状态
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.StockOrders.SchedulingTriggeredStatusConfigValueViewConfig.ConfigView">
+            <summary>
+            配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.StockOrders.StockOrderCriteriaViewConfig">
+            <summary>
+            备料单查询实体配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.StockOrders.StockOrderCriteriaViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.StockOrders.StockOrderDetailViewConfig">
+            <summary>
+            物料需求明细视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.LES.StockOrders.StockOrderDetailViewConfig.ReadonlyView">
+            <summary>
+            只读视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.StockOrders.StockOrderDetailViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.LES.StockOrders.StockOrderDetailViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.LES.StockOrders.StockOrderDetailViewConfig.ConfigReadOnlyView">
+            <summary>
+             配置只读视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.LES.StockOrders.StockOrderMergeIssuedViewConfig">
+            <summary>
+            备料单合并下发规则视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.StockOrders.StockOrderMergeIssuedViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.LES.StockOrders.StockOrderMergeTimesViewConfig">
+            <summary>
+            合并时间段视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.StockOrders.StockOrderMergeTimesViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.LES.StockOrders.StockOrderSnViewConfig">
+            <summary>
+            接收记录视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.LES.StockOrders.StockOrderSnViewConfig.ReadonlyView">
+            <summary>
+            只读视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.StockOrders.StockOrderSnViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.LES.StockOrders.StockOrderSnViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.StockOrders.StockOrderSnViewConfig.ConfigReadOnlyView">
+            <summary>
+            只读视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.StockOrders.StockOrderViewConfig">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.StockOrders.StockOrderViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.LES.StockOrders.StockOrderViewConfig.ConfigDetailsView">
+            <summary>
+            配置表单视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.StockOrders.StockReceiveTypeConfigValueViewConfig">
+            <summary>
+            备料单APP接收方式配置项视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.StockOrders.StockReceiveTypeConfigValueViewConfig.ConfigView">
+            <summary>
+            配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.StockOrders.WorkOrders.StockOrderItemViewModelCriteriaViewConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.StockOrders.WorkOrders.StockOrderItemViewModelCriteriaViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.StockOrders.WorkOrders.StockOrderItemViewModelViewConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.StockOrders.WorkOrders.StockOrderItemViewModelViewConfig.ConfigListView">
+            <summary>
+            列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.StockOrders.WorkOrders.StockOrderWoViewModelCriteriaViewConfig">
+            <summary>
+            备料单查询工单视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.StockOrders.WorkOrders.StockOrderWoViewModelCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.StockOrders.WorkOrders.StockOrderWoViewModelViewConfig">
+            <summary>
+            备料单查询工单视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.StockOrders.WorkOrders.StockOrderWoViewModelViewConfig.ConfigListView">
+            <summary>
+            列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.StockPlans.Commands.InitMergeCreateRuleCommand">
+            <summary>
+            合并创单规则命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.StockPlans.Commands.InitMergeCreateRuleCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.LES.StockPlans.Commands.AddStockPlanCommand">
+            <summary>
+            添加命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.StockPlans.Commands.AddStockPlanCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.LES.StockPlans.Commands.DeleteStockPlanCommand">
+            <summary>
+            删除命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.LES.StockPlans.Commands.SaveStockPlanCommand">
+            <summary>
+            保存命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.StockPlans.Commands.SaveStockPlanCommand.OnSaving(SIE.Domain.EntityList)">
+            <summary>
+            保存前事件
+            </summary>
+            <param name="data">实体列表</param>
+        </member>
+        <member name="T:SIE.Web.LES.StockPlans.Commands.AuditStockPlanCommand">
+            <summary>
+            审核命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.StockPlans.Commands.AuditStockPlanCommand.Excute(System.Double[],System.String)">
+            <summary>
+            审核命令
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>true</returns>
+        </member>
+        <member name="T:SIE.Web.LES.StockPlans.Commands.AssignWarehouseCommand">
+            <summary>
+            分配仓库命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.StockPlans.Commands.AssignWarehouseCommand.Excute(System.Double[],System.String)">
+            <summary>
+            审核命令
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>true</returns>
+        </member>
+        <member name="T:SIE.Web.LES.StockPlans.Commands.ForceCompleteCommand">
+            <summary>
+            强制完成命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.StockPlans.Commands.ForceCompleteCommand.Excute(System.Double[],System.String)">
+            <summary>
+            强制完成命令
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>true</returns>
+        </member>
+        <member name="T:SIE.Web.LES.StockPlans.Commands.CreateSoCommand">
+            <summary>
+            创建发运订单命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.StockPlans.Commands.CreateSoCommand.Excute(System.Double[],System.String)">
+            <summary>
+            创建发运订单命令
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>true</returns>
+        </member>
+        <member name="T:SIE.Web.LES.StockPlans.Commands.KittingCommands">
+            <summary>
+            齐套分析
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.StockPlans.Commands.KittingCommands.Excute(SIE.ShipPlan.Datas.KittingData,System.String)">
+            <summary>
+            齐套分析
+            </summary>
+            <param name="args">KittingData</param>
+            <param name="scope">scope</param>
+            <returns>true</returns>
+        </member>
+        <member name="T:SIE.Web.LES.StockPlans.StockPlansViewConfig">
+            <summary>
+            工单备料视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.StockPlans.StockPlansViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.LES.StockPlans.ViewModels.StockPlanDetailViewModelViewConfig">
+            <summary>
+            齐套弹出视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.LES.StockPlans.ViewModels.StockPlanDetailViewModelViewConfig.ConfigView">
+            <summary>
+            视图
+            </summary>
+        </member>
+    </members>
+</doc>

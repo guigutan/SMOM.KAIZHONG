@@ -1,0 +1,2764 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Mda</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Mda.DbManagement.DbSettingItem">
+            <summary>
+            数据库配置项
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.DbManagement.DbSettingItem.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.DbManagement.DbSettingItemController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Mda.DbManagement.DbSettingItemController.GetAll">
+            <summary>
+            获取所有
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.MetaRuntimeType">
+            <summary>
+            Type类型封装
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.MetaRuntimeType.Name">
+            <summary>
+            类型名称（简称）
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.MetaRuntimeType.AssemblyName">
+            <summary>
+            程序集名称（简称）
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.MetaRuntimeType.FullName">
+            <summary>
+            类型完整名称
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.MetaRuntimeType.AssemblyQualifiedName">
+            <summary>
+            带程序集的类型完整名称
+            </summary>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.MetaRuntimeType.Wrapper(System.Type)">
+            <summary>
+            生成Type类型封装
+            </summary>
+            <param name="type">CLR类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.MetaRuntimeType.UnWrapper(SIE.Mda.Metadatas.MetaRuntimeType)">
+            <summary>
+            还原Type类型封装
+            </summary>
+            <param name="runtimeType">类型封装实例</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.MetaRuntimeType.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Object" />, is equal to this instance.
+            </summary>
+            <param name="obj">The <see cref="T:System.Object" /> to compare with this instance.</param>
+            <returns>
+              <c>true</c> if the specified <see cref="T:System.Object" /> is equal to this instance; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.MetaRuntimeType.GetHashCode">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <returns>
+            A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+            </returns>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.MetaRuntimeType.op_Equality(SIE.Mda.Metadatas.MetaRuntimeType,SIE.Mda.Metadatas.MetaRuntimeType)">
+            <summary>
+            Implements the operator ==.
+            </summary>
+            <param name="left">The left.</param>
+            <param name="right">The right.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.MetaRuntimeType.op_Inequality(SIE.Mda.Metadatas.MetaRuntimeType,SIE.Mda.Metadatas.MetaRuntimeType)">
+            <summary>
+            Implements the operator !=.
+            </summary>
+            <param name="left">The left.</param>
+            <param name="right">The right.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.ClassHierarchy">
+            <summary>
+            类继承关系
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.ClassHierarchy.ChildrenTypeProperty">
+            <summary>
+            子类类型
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.ClassHierarchy.ChildrenType">
+            <summary>
+            子类类型
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.ClassHierarchy.BaseTypeProperty">
+            <summary>
+            基类类型
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.ClassHierarchy.BaseType">
+            <summary>
+            基类类型
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.ClassHierarchy.ChildrenTypeNameProperty">
+            <summary>
+            子类名
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.ClassHierarchy.ChildrenTypeName">
+            <summary>
+            子类名
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.ClassHierarchy.ChildrenTypeFullNameProperty">
+            <summary>
+            子类全名
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.ClassHierarchy.ChildrenTypeFullName">
+            <summary>
+            子类全名
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.ClassHierarchy.BaseTypeNameProperty">
+            <summary>
+            基类名
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.ClassHierarchy.BaseTypeName">
+            <summary>
+            基类名
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.ClassHierarchy.BaseTypeFullNameProperty">
+            <summary>
+            基类全名
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.ClassHierarchy.BaseTypeFullName">
+            <summary>
+            基类全名
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.ClassHierarchyConfig">
+            <summary>
+            实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.ClassHierarchyConfig.ConfigMeta">
+            <summary>
+            子类重写此方法，并完成对 Meta 属性的配置。
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.ClassHierarchyController">
+            <summary>
+            实体继承关系控制器
+            </summary>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.ClassHierarchyController.GetHierarchy(System.Type)">
+            <summary>
+            获取实体继承关系
+            </summary>
+            <param name="type">Type</param>
+            <returns>
+            实体继承关系列表
+            </returns>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Controllers.ControllerMetadata">
+            <summary>
+            控制器元数据
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Controllers.ControllerMetadata.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Controllers.ControllerMetadata.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Controllers.ControllerMetadata.TypeProperty">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Controllers.ControllerMetadata.Type">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Controllers.ControllerMetadata.AssemblyProperty">
+            <summary>
+            程序集
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Controllers.ControllerMetadata.Assembly">
+            <summary>
+            程序集
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Controllers.ControllerMetadata.SubControllerMetadataListProperty">
+            <summary>
+            控制器子类
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Controllers.ControllerMetadata.SubControllerMetadataList">
+            <summary>
+            控制器子类
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Controllers.ControllerMetadata.MethodMetadataListProperty">
+            <summary>
+            控制器方法
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Controllers.ControllerMetadata.MethodMetadataList">
+            <summary>
+            控制器方法
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Controllers.ControllerMetadataConfig">
+            <summary>
+            控制器元数据 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Controllers.ControllerMetadataConfig.ConfigMeta">
+            <summary>
+            子类重写此方法，并完成对 Meta 属性的配置。
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Controllers.ControllerMetadataController">
+            <summary>
+            控制器元数据控制器
+            </summary>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Controllers.ControllerMetadataController.GetControllerMetadatas(System.String)">
+            <summary>
+            获取子控制器元数据
+            </summary>
+            <param name="ctlType">父控制器类型</param>
+            <returns>控制器元数据</returns>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Controllers.ControllerMetadataController.BatchInsert``1(SIE.Domain.EntityList{``0})">
+            <summary>
+            数据实体的批量插入
+            </summary>
+            <param name="entityList"></param>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Controllers.MethodMetadata">
+            <summary>
+            控制器方法元数据
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Controllers.MethodMetadata.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Controllers.MethodMetadata.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Controllers.MethodMetadata.MethodProperty">
+            <summary>
+            方法
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Controllers.MethodMetadata.Method">
+            <summary>
+            方法
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Controllers.MethodMetadata.ReturnTypeProperty">
+            <summary>
+            返回值
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Controllers.MethodMetadata.ReturnType">
+            <summary>
+            返回值
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Controllers.MethodMetadata.ModifierProperty">
+            <summary>
+            修饰符
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Controllers.MethodMetadata.Modifier">
+            <summary>
+            修饰符
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Controllers.MethodMetadata.DeclareTypeProperty">
+            <summary>
+            声明类型
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Controllers.MethodMetadata.DeclareType">
+            <summary>
+            声明类型
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Controllers.MethodMetadata.ControllerMetadataIdProperty">
+            <summary>
+            控制器元数据Id
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Controllers.MethodMetadata.ControllerMetadataId">
+            <summary>
+            控制器元数据Id
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Controllers.MethodMetadata.ControllerMetadataProperty">
+            <summary>
+            控制器元数据
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Controllers.MethodMetadata.ControllerMetadata">
+            <summary>
+            控制器元数据
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Controllers.MethodMetadataConfig">
+            <summary>
+            控制器方法元数据 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Controllers.MethodMetadataConfig.ConfigMeta">
+            <summary>
+            子类重写此方法，并完成对 Meta 属性的配置。
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Controllers.SubControllerMetadata">
+            <summary>
+            控制器子类
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Controllers.SubControllerMetadata.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Controllers.SubControllerMetadata.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Controllers.SubControllerMetadata.TypeProperty">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Controllers.SubControllerMetadata.Type">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Controllers.SubControllerMetadata.AssemblyProperty">
+            <summary>
+            程序集
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Controllers.SubControllerMetadata.Assembly">
+            <summary>
+            程序集
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Controllers.SubControllerMetadata.ControllerMetadataIdProperty">
+            <summary>
+            控制器元数据Id
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Controllers.SubControllerMetadata.ControllerMetadataId">
+            <summary>
+            控制器元数据Id
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Controllers.SubControllerMetadata.ControllerMetadataProperty">
+            <summary>
+            控制器元数据
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Controllers.SubControllerMetadata.ControllerMetadata">
+            <summary>
+            控制器元数据
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Controllers.SubClassConfig">
+            <summary>
+            控制器子类 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Controllers.SubClassConfig.ConfigMeta">
+            <summary>
+            子类重写此方法，并完成对 Meta 属性的配置。
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Domain.EntityMetadata">
+            <summary>
+            实体元数据
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Domain.EntityMetadata.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Domain.EntityMetadata.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Domain.EntityMetadata.TypeProperty">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Domain.EntityMetadata.Type">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Domain.EntityMetadata.AssemblyProperty">
+            <summary>
+            程序集
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Domain.EntityMetadata.Assembly">
+            <summary>
+            程序集
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Domain.EntityMetadata.TableNameProperty">
+            <summary>
+            表名
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Domain.EntityMetadata.TableName">
+            <summary>
+            表名
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Domain.EntityMetadata.ViewSqlProperty">
+            <summary>
+            视图Sql
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Domain.EntityMetadata.ViewSql">
+            <summary>
+            视图Sql
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Domain.EntityMetadata.EntityRuleListProperty">
+            <summary>
+            验证规则
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Domain.EntityMetadata.EntityRuleList">
+            <summary>
+            验证规则
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Domain.EntityMetadata.EntityPropertyMetadataListProperty">
+            <summary>
+            属性元数据
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Domain.EntityMetadata.EntityPropertyMetadataList">
+            <summary>
+            属性元数据
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Domain.EntityMetadata.SubmittingEventListProperty">
+            <summary>
+            提交前事件
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Domain.EntityMetadata.SubmittingEventList">
+            <summary>
+            提交前事件
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Domain.EntityMetadata.SubmittedEventListProperty">
+            <summary>
+            提交后事件
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Domain.EntityMetadata.SubmittedEventList">
+            <summary>
+            提交后事件
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Domain.EntityMetadataConfig">
+            <summary>
+            实体元数据 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Domain.EntityMetadataConfig.ConfigMeta">
+            <summary>
+            子类重写此方法，并完成对 Meta 属性的配置。
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Domain.EntityMetadataController">
+            <summary>
+            实体元数据控制器
+            </summary>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Domain.EntityMetadataController.GetRules(System.String)">
+            <summary>
+            根据类型获取规则
+            </summary>
+            <param name="entityType">实体类型</param>
+            <returns>实体验证规则列表</returns>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Domain.EntityMetadataController.GetSubmittingEvents(System.String)">
+            <summary>
+            根据类型获取提交前事件
+            </summary>
+            <param name="entityType">实体类型</param>
+            <returns>提交前事件类别</returns>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Domain.EntityMetadataController.GetSubmittedEvents(System.String)">
+            <summary>
+            根据类型获取提交后事件
+            </summary>
+            <param name="entityType">实体类型</param>
+            <returns>提交后事件列表</returns>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Domain.EntityMetadataController.GetEntityMetadata(System.String)">
+            <summary>
+            根据类型获取实体元数据
+            </summary>
+            <param name="type">类型</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Domain.EntityPropertyMetadata">
+            <summary>
+            实体属性元数据
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Domain.EntityPropertyMetadata.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Domain.EntityPropertyMetadata.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Domain.EntityPropertyMetadata.PropertyProperty">
+            <summary>
+            属性
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Domain.EntityPropertyMetadata.Property">
+            <summary>
+            属性
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Domain.EntityPropertyMetadata.FieldNameProperty">
+            <summary>
+            字段名
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Domain.EntityPropertyMetadata.FieldName">
+            <summary>
+            字段名
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Domain.EntityPropertyMetadata.TypeProperty">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Domain.EntityPropertyMetadata.Type">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Domain.EntityPropertyMetadata.DeclareTypeProperty">
+            <summary>
+            声明类型
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Domain.EntityPropertyMetadata.DeclareType">
+            <summary>
+            声明类型
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Domain.EntityPropertyMetadata.EntityMetadataIdProperty">
+            <summary>
+            属性元数据Id
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Domain.EntityPropertyMetadata.EntityMetadataId">
+            <summary>
+            属性元数据Id
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Domain.EntityPropertyMetadata.EntityMetadataProperty">
+            <summary>
+            属性元数据
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Domain.EntityPropertyMetadata.EntityMetadata">
+            <summary>
+            属性元数据
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Domain.EntityPropertyMetadataConfig">
+            <summary>
+            实体属性元数据 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Domain.EntityPropertyMetadataConfig.ConfigMeta">
+            <summary>
+            子类重写此方法，并完成对 Meta 属性的配置。
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Domain.EntityRule">
+            <summary>
+            实体规则
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Domain.EntityRule.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Domain.EntityRule.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Domain.EntityRule.DescriptionProperty">
+            <summary>
+            说明
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Domain.EntityRule.Description">
+            <summary>
+            说明
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Domain.EntityRule.PropertyProperty">
+            <summary>
+            属性
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Domain.EntityRule.Property">
+            <summary>
+            属性
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Domain.EntityRule.DeclareTypeProperty">
+            <summary>
+            声明类型
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Domain.EntityRule.DeclareType">
+            <summary>
+            声明类型
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Domain.EntityRule.RuleTypeProperty">
+            <summary>
+            规则类型
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Domain.EntityRule.RuleType">
+            <summary>
+            规则类型
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Domain.EntityRule.ScriptProperty">
+            <summary>
+            脚本
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Domain.EntityRule.Script">
+            <summary>
+            脚本
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Domain.EntityRule.StateProperty">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Domain.EntityRule.State">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Domain.EntityRule.EntityMetadataIdProperty">
+            <summary>
+            验证规则Id
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Domain.EntityRule.EntityMetadataId">
+            <summary>
+            验证规则Id
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Domain.EntityRule.EntityMetadataProperty">
+            <summary>
+            验证规则
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Domain.EntityRule.EntityMetadata">
+            <summary>
+            验证规则
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Domain.EntityRuleConfig">
+            <summary>
+            实体规则 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Domain.EntityRuleConfig.AddValidations(SIE.MetaModel.IValidationDeclarer)">
+            <summary>
+            子类重写此方法，并完成对实体验证规则的配置。
+            </summary>
+            <param name="rules">验证规则声明器</param>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Domain.EntityRuleConfig.ConfigMeta">
+            <summary>
+            子类重写此方法，并完成对 Meta 属性的配置。
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Domain.EntityRuleInterceptor">
+            <summary>
+            动态验证规则
+            </summary>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Domain.EntityRuleInterceptor.Intercept">
+            <summary>
+            注入动态规则
+            </summary>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Domain.EntityRuleInterceptor.RdbDataProvider_Submitted(System.Object,SIE.Domain.EntitySubmittedEventArgs)">
+            <summary>
+            提交前事件
+            </summary>
+            <param name="sender">发送者</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Domain.EntityRuleManager">
+            <summary>
+            实体验证规则管理
+            </summary>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Domain.EntityRuleManager.GetRules(System.Type)">
+            <summary>
+            获取验证规则<br/>
+            验证规则<see cref="T:SIE.Domain.Validation.EntityRule`1"/>受实体继承树影响,基类有的规则,会带到子类去。
+            验证规则更新到数据库后，以数据库的为准，禁用后只影响当前类，不影响到子类<br/>
+            动态规则<see cref="T:SIE.Domain.Validation.DynamicRule"/>需要更新到数据库后，以数据库的为准，
+            修改后只影响当前类，不影响到子类<br/>
+            <code>
+            class A {}<br/>
+            class ARule：EntityRule&lt;A&gt; {}<br/>
+            class B:A {} //B也会执行ARule验证
+            </code>
+            </summary>
+            <param name="entityType">实体类型</param>
+            <returns>动态验证规则列表</returns>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Domain.EntityRuleManager.GetProperty(System.Type,SIE.Mda.Metadatas.Domain.EntityRule)">
+            <summary>
+            查找实体验证规则属性信息
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Domain.EntityRuleRule">
+            <summary>
+            同一实体元数据，实体规则属性和规则类型唯一校验规则
+            </summary>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Domain.EntityRuleRule.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Domain.EntitySubmitInterceptor">
+            <summary>
+            实体提交拦截器
+            </summary>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Domain.EntitySubmitInterceptor.Intercept">
+            <summary>
+            注入
+            </summary>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Domain.EntitySubmitInterceptor.RepositoryDataProvider_Submitted(System.Object,SIE.Domain.EntitySubmittedEventArgs)">
+            <summary>
+            仓库数据层提交前事件
+            </summary>
+            <param name="sender">发送者</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Domain.EntitySubmitInterceptor.RepositoryDataProvider_Submitting(System.Object,SIE.Domain.EntitySubmittingEventArgs)">
+            <summary>
+            仓库数据层提交后事件
+            </summary>
+            <param name="sender">发送者</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Domain.SubmitEvent">
+            <summary>
+            提交事件
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Domain.SubmitEvent.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Domain.SubmitEvent.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Domain.SubmitEvent.DescriptionProperty">
+            <summary>
+            说明
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Domain.SubmitEvent.Description">
+            <summary>
+            说明
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Domain.SubmitEvent.DeclareTypeProperty">
+            <summary>
+            声明类型
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Domain.SubmitEvent.DeclareType">
+            <summary>
+            声明类型
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Domain.SubmitEvent.EventTypeProperty">
+            <summary>
+            事件类型
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Domain.SubmitEvent.EventType">
+            <summary>
+            事件类型
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Domain.SubmitEvent.StateProperty">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Domain.SubmitEvent.State">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Domain.SubmitEvent.EntityMetadataIdProperty">
+            <summary>
+            提交事件Id
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Domain.SubmitEvent.EntityMetadataId">
+            <summary>
+            提交事件Id
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Domain.SubmitEvent.EntityMetadataProperty">
+            <summary>
+            提交事件
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Domain.SubmitEvent.EntityMetadata">
+            <summary>
+            提交事件
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Domain.SubmittingEvent">
+            <summary>
+            提交前事件
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Domain.SubmittedEvent">
+            <summary>
+            提交后事件
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Domain.SubmitEventConfig">
+            <summary>
+            提交事件 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Domain.SubmitEventConfig.ConfigMeta">
+            <summary>
+            子类重写此方法，并完成对 Meta 属性的配置。
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Domain.SubmittingEventConfig">
+            <summary>
+            提交前事件 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Domain.SubmittingEventConfig.ConfigMeta">
+            <summary>
+            子类重写此方法，并完成对 Meta 属性的配置。
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Domain.SubmittedEventConfig">
+            <summary>
+            提交后事件 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Domain.SubmittedEventConfig.ConfigMeta">
+            <summary>
+            子类重写此方法，并完成对 Meta 属性的配置。
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Domain.SubmitEventContainer">
+            <summary>
+            提交事件容器
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Domain.SubmitEventContainer.Instance">
+            <summary>
+            单例
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Domain.SubmitEventContainer.submittingEvents">
+            <summary>
+            提交前事件集合
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Domain.SubmitEventContainer.submittedEvents">
+            <summary>
+            提交后事件
+            </summary>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Domain.SubmitEventContainer.GetSubmitVersion(System.Type)">
+            <summary>
+            获取规则版本，当版本发生变化时需要重新加载规则
+            </summary>
+            <param name="entityType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Domain.SubmitEventContainer.UpdateSubmitVersion(System.Type)">
+            <summary>
+            更新规则版本，当用户修改验证规则时需要更新版本以刷新规则
+            </summary>
+            <param name="entityType"></param>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Domain.SubmitEventContainer.GetSubmittingEvents(System.Type)">
+            <summary>
+            获取提交前事件,每次对比版本，版本不一致重新加载<br/>
+            如果数据库中未生成，将执行所有代码的提交事件，提交事件受继承树影响，基类的事件将带到子类<br/>
+            如果数据库中已生成，将执行启用的提交事件，禁用提交事件只对当前类起作用，不影响到子类
+            </summary>
+            <param name="entityType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Domain.SubmitEventContainer.GetSubmittedEvents(System.Type)">
+            <summary>
+            获取提交后事件,每次对比版本，版本不一致重新加载<br/>
+            如果数据库中未生成，将执行所有代码的提交事件，提交事件受继承树影响，基类的事件将带到子类<br/>
+            如果数据库中已生成，将执行启用的提交事件，禁用提交事件只对当前类起作用，不影响到子类
+            </summary>
+            <param name="entityType"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Modules.CmdConfig">
+            <summary>
+            命令配置
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Modules.CmdConfig.IsOnlyAdminProperty">
+            <summary>
+            是否管理员专有
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Modules.CmdConfig.IsOnlyAdmin">
+            <summary>
+            是否管理员专有
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Modules.CmdConfig.ModuleViewConfigIdProperty">
+            <summary>
+            模块视图域定义配置Id
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Modules.CmdConfig.ModuleViewConfigId">
+            <summary>
+            模块视图域定义配置Id
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Modules.CmdConfig.ModuleViewConfigProperty">
+            <summary>
+            模块视图域定义配置
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Modules.CmdConfig.ModuleViewConfig">
+            <summary>
+            模块视图域定义配置
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Modules.CmdConfigConfig">
+            <summary>
+            命令配置 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Modules.CmdConfigConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Modules.Events.ModuleOnSubmitted">
+            <summary>
+            模块提交后事件
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Modules.MetaConfigBase">
+            <summary>
+            元数据配置基类
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Modules.MetaConfigBase.KeyProperty">
+            <summary>
+            识别键
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Modules.MetaConfigBase.Key">
+            <summary>
+            识别键
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Modules.MetaConfigBase.LabelProperty">
+            <summary>
+            友好显示
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Modules.MetaConfigBase.Label">
+            <summary>
+            友好显示
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Modules.MetaConfigBase.EntityTypeProperty">
+            <summary>
+            实体类型
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Modules.MetaConfigBase.EntityType">
+            <summary>
+            实体类型
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Modules.MetadatasComparision">
+            <summary>
+            视图元数据比较
+            </summary>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Modules.MetadatasComparision.CompareModuleMeta(SIE.Mda.Metadatas.Modules.ModuleMetadata,SIE.MetaModel.WPFModuleMeta)">
+            <summary>
+            合并模块元数据
+            </summary>
+            <param name="databaseMeta">持久化后的模块元数据</param>
+            <param name="moduleMeta">模块元数据</param>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Modules.MetadatasComparision.CompareModuleOperationMeta(SIE.MetaModel.WPFModuleMeta,SIE.Mda.Metadatas.Modules.ModuleOperationMetadata)">
+            <summary>
+            合并模块操作元数据
+            </summary>
+            <param name="moduleMeta">模块元数据</param>
+            <param name="databaseMeta">持久化后的模块操作元数据</param>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Modules.ModuleConfig">
+            <summary>
+            功能模块，用于菜单配置
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Modules.ModuleConfig.CustomUrlProperty">
+            <summary>
+            自定义界面
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Modules.ModuleConfig.CustomUrl">
+            <summary>
+            自定义界面
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Modules.ModuleConfig.IsInsideProperty">
+            <summary>
+            是否内置
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Modules.ModuleConfig.IsInside">
+            <summary>
+            是否内置
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Modules.ModuleConfig.ModuleViewConfigListProperty">
+            <summary>
+            ModuleViews
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Modules.ModuleConfig.ModuleViewConfigList">
+            <summary>
+            ModuleViews
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Modules.ModuleConfig.PlatformProperty">
+            <summary>
+            平台
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Modules.ModuleConfig.Platform">
+            <summary>
+            平台
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Modules.ModuleConfig.IsOnlyAdminProperty">
+            <summary>
+            是否管理员专有
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Modules.ModuleConfig.IsOnlyAdmin">
+            <summary>
+            是否管理员专有
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Modules.ModuleConfigConfig">
+            <summary>
+            系统模块配置 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Modules.ModuleConfigConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Modules.ModuleConfigController">
+            <summary>
+            模块配置控制器
+            </summary>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Modules.ModuleConfigController.GetAllModuleConfig">
+            <summary>
+            获取所有模块
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Modules.ModuleConfigController.GetAllModuleConfig2">
+            <summary>
+            获取所有模块
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Modules.ModuleConfigController.GetAllModuleViewConfig">
+            <summary>
+            获取所有视图域
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Modules.ModuleConfigController.GetAllCmdConfig">
+            <summary>
+            获取所有命令
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Modules.ModuleConfigController.GetModuleConfig(System.String)">
+            <summary>
+            获取模块定义配置
+            </summary>
+            <param name="moduleKey">模块Key.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Modules.ModuleConfigController.GetModuleConfig(System.String,SIE.Common.Platform.Platform)">
+            <summary>
+            获取模块定义配置
+            </summary>
+            <param name="moduleKey">模块Key.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Modules.ModuleConfigController.GetModuleConfig(System.String,SIE.PagingInfo)">
+            <summary>
+            获取所有视图域
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Modules.ModuleMetadata">
+            <summary>
+            模块元数据
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Modules.ModuleMetadata.KeyProperty">
+            <summary>
+            模块唯一键
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Modules.ModuleMetadata.Key">
+            <summary>
+            模块唯一键
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Modules.ModuleMetadata.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Modules.ModuleMetadata.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Modules.ModuleMetadata.TemplateProperty">
+            <summary>
+            模板
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Modules.ModuleMetadata.Template">
+            <summary>
+            模板
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Modules.ModuleMetadata.CustomUiProperty">
+            <summary>
+            自定义界面
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Modules.ModuleMetadata.CustomUi">
+            <summary>
+            自定义界面
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Modules.ModuleMetadata.EntityTypeProperty">
+            <summary>
+            实体类型
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Modules.ModuleMetadata.EntityType">
+            <summary>
+            实体类型
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Modules.ModuleMetadata.AggtBlocksNameProperty">
+            <summary>
+            聚合块名称
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Modules.ModuleMetadata.AggtBlocksName">
+            <summary>
+            聚合块名称
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Modules.ModuleMetadata.CustomOperationListProperty">
+            <summary>
+            自定义操作
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Modules.ModuleMetadata.CustomOperationList">
+            <summary>
+            自定义操作
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Modules.ModuleMetadata.IsCustomProperty">
+            <summary>
+            是否重写
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Modules.ModuleMetadata.IsOverride">
+            <summary>
+            是否自定义,如果手动添加则true
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Modules.ModuleMetadata.ViewGroupProperty">
+            <summary>
+            视图组
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Modules.ModuleMetadata.ViewGroup">
+            <summary>
+            视图组
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Modules.ModuleMetadata.IsFullScreenProperty">
+            <summary>
+            是否全屏
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Modules.ModuleMetadata.IsFullScreen">
+            <summary>
+            是否全屏
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Modules.ModuleMetadata.TryAutoLoadDataProperty">
+            <summary>
+            是否加载数据
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Modules.ModuleMetadata.TryAutoLoadData">
+            <summary>
+            是否加载数据
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Modules.ModuleMetadata.IsOnlyAdminProperty">
+            <summary>
+            是否管理员功能
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Modules.ModuleMetadata.IsOnlyAdmin">
+            <summary>
+            是否管理员功能
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Modules.ModuleMetadataConfig">
+            <summary>
+            页面元数据定义 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Modules.ModuleMetadataConfig.ConfigMeta">
+            <summary>
+            /实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Modules.ModuleMetadataConfig.AddValidations(SIE.MetaModel.IValidationDeclarer)">
+            <summary>
+            新增验证规则
+            </summary>
+            <param name="rules">规则生命器</param>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Modules.ModuleMetadataController">
+            <summary>
+            模块元数据服务
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Modules.ModuleMetadataController.metadata">
+            <summary>
+            定义一个字典用于缓存从数据库中加载出来的视图元数据viewMetadata
+            </summary>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Modules.ModuleMetadataController.GetViewMetadata">
+            <summary>
+            返回字典中的缓存数据
+            </summary>
+            <returns>缓存数据</returns>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Modules.ModuleMetadataController.LoadMetadataFromDatabase(System.String)">
+            <summary>
+            从视图元数据表中获取视图元数据
+            </summary>
+            <param name="moduleKey">数据类型</param>
+            <returns>视图元数据</returns>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Modules.ModuleMetadataController.AddViewMetadataToMemory(System.String,SIE.Mda.Metadatas.Modules.ModuleMetadata)">
+            <summary>
+            判断从数据库中返回的元数据是否存在内存中，不存在则写入内存
+            </summary>
+            <param name="name">实体类型全名称</param>
+            <param name="meta">元数据</param>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Modules.ModuleMetadataController.GetCacheViewdata(System.String)">
+            <summary>
+            判断内存中是否已存在对应的元数据，若存在则直接从内存中加载
+            </summary>
+            <param name="name">实体类型全名称</param>
+            <returns>对应实体类型的元数据</returns>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Modules.ModuleOperationMetadata">
+            <summary>
+            模块操作元数据
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Modules.ModuleOperationMetadata.KeyProperty">
+            <summary>
+            操作唯一键
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Modules.ModuleOperationMetadata.Key">
+            <summary>
+            操作唯一键
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Modules.ModuleOperationMetadata.NameProperty">
+            <summary>
+            操作名称
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Modules.ModuleOperationMetadata.Name">
+            <summary>
+            操作名称
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Modules.ModuleOperationMetadata.RefPropertyNameIdProperty">
+            <summary>
+            模块元数据ID
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Modules.ModuleOperationMetadata.ModuleId">
+            <summary>
+            模块元数据ID
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Modules.ModuleOperationMetadata.RefPropertyNameProperty">
+            <summary>
+            模块元数据
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Modules.ModuleOperationMetadata.ModuleMetadata">
+            <summary>
+            模块元数据
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Modules.ModuleOperationMetadataConfig">
+            <summary>
+            实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Modules.ModuleOperationMetadataConfig.ConfigMeta">
+            <summary>
+            /实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Modules.ModuleOperationMetadataConfig.AddValidations(SIE.MetaModel.IValidationDeclarer)">
+            <summary>
+            新增验证规则
+            </summary>
+            <param name="rules">规则生命器</param>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Modules.ModuleViewConfig">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Modules.ModuleViewConfig.CmdConfigListProperty">
+            <summary>
+            Cmds
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Modules.ModuleViewConfig.CmdConfigList">
+            <summary>
+            Cmds
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Modules.ModuleViewConfig.ModuleConfigIdProperty">
+            <summary>
+            系统模块定义配置Id
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Modules.ModuleViewConfig.ModuleConfigId">
+            <summary>
+            系统模块定义配置Id
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Modules.ModuleViewConfig.ModuleConfigProperty">
+            <summary>
+            系统模块定义配置
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Modules.ModuleViewConfig.ModuleConfig">
+            <summary>
+            系统模块定义配置
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Modules.ModuleViewConfigConfig">
+            <summary>
+            视图配置 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Modules.ModuleViewConfigConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Views.CommandMetaBase">
+            <summary>
+            命令元数据基类
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.CommandMetaBase.LabelProperty">
+            <summary>
+            显示名称
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.CommandMetaBase.Label">
+            <summary>
+            显示名称
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.CommandMetaBase.NameProperty">
+            <summary>
+            命令唯一标识
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.CommandMetaBase.Name">
+            <summary>
+            命令唯一标识
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.CommandMetaBase.ToolTipProperty">
+            <summary>
+            提示
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.CommandMetaBase.ToolTip">
+            <summary>
+            提示
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.CommandMetaBase.ImageNameProperty">
+            <summary>
+            图片名称
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.CommandMetaBase.ImageName">
+            <summary>
+            图片名称
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.CommandMetaBase.GesturesProperty">
+            <summary>
+            快捷键
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.CommandMetaBase.Gestures">
+            <summary>
+            快捷键
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.CommandMetaBase.DisplayModeProperty">
+            <summary>
+            显示模式
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.CommandMetaBase.DisplayMode">
+            <summary>
+            显示模式
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.CommandMetaBase.GroupAlgorithmTypeProperty">
+            <summary>
+            分组算法
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.CommandMetaBase.GroupAlgorithmType">
+            <summary>
+            分组算法
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.CommandMetaBase.HierarchyProperty">
+            <summary>
+            分级
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.CommandMetaBase.Hierarchy">
+            <summary>
+            分级
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.CommandMetaBase.GroupTypeProperty">
+            <summary>
+             命令的按钮分类类型。
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.CommandMetaBase.GroupType">
+            <summary>
+             命令的按钮分类类型。
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.CommandMetaBase.LocationProperty">
+            <summary>
+            命令生成的控件的位置
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.CommandMetaBase.Location">
+            <summary>
+            命令生成的控件的位置
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.CommandMetaBase.IsOnlyAdminProperty">
+            <summary>
+            是否只能管理员使用
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.CommandMetaBase.IsOnlyAdmin">
+            <summary>
+            是否只能管理员使用
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.CommandMetaBase.IsVisibleProperty">
+            <summary>
+            是否显示
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.CommandMetaBase.IsVisible">
+            <summary>
+            是否显示
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.CommandMetaBase.ScopeProperty">
+            <summary>
+            范围
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.CommandMetaBase.Scope">
+            <summary>
+            范围
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.CommandMetaBase.IsCustomOperationProperty">
+            <summary>
+            是否自定义操作
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.CommandMetaBase.IsCustomOperation">
+            <summary>
+            是否自定义操作
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.CommandMetaBase.RuntimeTypeProperty">
+            <summary>
+            命令运行时类型
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.CommandMetaBase.RuntimeType">
+            <summary>
+            命令运行时类型
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.CommandMetaBase.OrderNoProperty">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.CommandMetaBase.OrderNo">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.CommandMetaBase.ExtensionProperty">
+            <summary>
+            扩展属性
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.CommandMetaBase.Extension">
+            <summary>
+            扩展属性
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Views.CommandMetadata">
+            <summary>
+            命令元数据
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.CommandMetadata.ScriptIdProperty">
+            <summary>
+            脚本元数据Id
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.CommandMetadata.ScriptId">
+            <summary>
+            脚本元数据Id
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.CommandMetadata.ScriptProperty">
+            <summary>
+            脚本元数据
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.CommandMetadata.Script">
+            <summary>
+            脚本元数据
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.CommandMetadata.EntityViewMetadataIdProperty">
+            <summary>
+            实体视图元数据Id
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.CommandMetadata.EntityViewMetadataId">
+            <summary>
+            实体视图元数据Id
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.CommandMetadata.EntityViewMetadataProperty">
+            <summary>
+            实体视图元数据
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.CommandMetadata.EntityViewMetadata">
+            <summary>
+            实体视图元数据
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Views.CommandMetadataConfig">
+            <summary>
+            命令元数据 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Views.CommandMetadataConfig.ConfigMeta">
+            <summary>
+            实体配置
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Views.CommandMetadataVer">
+            <summary>
+            命令元数据版本
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.CommandMetadataVer.Commands">
+            <summary>
+            所有默认命令
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.CommandMetadataVer.CommandsGroupType">
+            <summary>
+            命令按钮分类类型
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.CommandMetadataVer.EntityViewMetadataVerIdProperty">
+            <summary>
+            实体视图元数据版本Id
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.CommandMetadataVer.EntityViewMetadataVerId">
+            <summary>
+            实体视图元数据版本Id
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.CommandMetadataVer.EntityViewMetadataVerProperty">
+            <summary>
+            实体视图元数据版本
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.CommandMetadataVer.EntityViewMetadataVer">
+            <summary>
+            实体视图元数据版本
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Views.CommandMetadataVerConfig">
+            <summary>
+            命令元数据版本 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Views.CommandMetadataVerConfig.ConfigMeta">
+            <summary>
+            实体配置
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Views.DetailPropertyGroup">
+            <summary>
+            明细属性分组
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.DetailPropertyGroup.EntityViewMetadataIdProperty">
+            <summary>
+            实体视图元数据Id
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.DetailPropertyGroup.EntityViewMetadataId">
+            <summary>
+            实体视图元数据Id
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.DetailPropertyGroup.EntityViewMetadataProperty">
+            <summary>
+            实体视图元数据
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.DetailPropertyGroup.EntityViewMetadata">
+            <summary>
+            实体视图元数据
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Views.DetailPropertyGroupConfig">
+            <summary>
+            明细属性分组 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Views.DetailPropertyGroupConfig.ConfigMeta">
+            <summary>
+            实体配置
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Views.DetailPropertyGroupBase">
+            <summary>
+            明细属性分组基类
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.DetailPropertyGroupBase.CollapsableProperty">
+            <summary>
+            是否可以收起
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.DetailPropertyGroupBase.Collapsable">
+            <summary>
+            是否可以收起
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.DetailPropertyGroupBase.LabelProperty">
+            <summary>
+            分组的名称
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.DetailPropertyGroupBase.Label">
+            <summary>
+            分组的名称
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.DetailPropertyGroupBase.ColumnCountProperty">
+            <summary>
+            列数
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.DetailPropertyGroupBase.ColumnCount">
+            <summary>
+            列数
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Views.DetailPropertyGroupVer">
+            <summary>
+            明细属性分组版本
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.DetailPropertyGroupVer.EntityViewMetadataVerIdProperty">
+            <summary>
+            实体视图元数据版本Id
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.DetailPropertyGroupVer.EntityViewMetadataVerId">
+            <summary>
+            实体视图元数据版本Id
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.DetailPropertyGroupVer.EntityViewMetadataVerProperty">
+            <summary>
+            实体视图元数据版本
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.DetailPropertyGroupVer.EntityViewMetadataVer">
+            <summary>
+            实体视图元数据版本
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Views.DetailPropertyGroupVerConfig">
+            <summary>
+            明细属性分组版本 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Views.DetailPropertyGroupVerConfig.ConfigMeta">
+            <summary>
+            实体配置
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Views.EntityChildrenPropertyViewMetaBase">
+            <summary>
+            实体子属性视图元数据基类
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityChildrenPropertyViewMetaBase.NameProperty">
+            <summary>
+            属性名
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityChildrenPropertyViewMetaBase.Name">
+            <summary>
+            属性名
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityChildrenPropertyViewMetaBase.LabelProperty">
+            <summary>
+            显示的标题
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityChildrenPropertyViewMetaBase.Label">
+            <summary>
+            显示的标题
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityChildrenPropertyViewMetaBase.IsVisibleProperty">
+            <summary>
+            是否可见
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityChildrenPropertyViewMetaBase.IsVisible">
+            <summary>
+            是否可见
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityChildrenPropertyViewMetaBase.OrderNoProperty">
+            <summary>
+            排序此属性使用的属性
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityChildrenPropertyViewMetaBase.OrderNo">
+            <summary>
+            排序此属性使用的属性
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityChildrenPropertyViewMetaBase.IsReadonlyProperty">
+            <summary>
+            是否只读
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityChildrenPropertyViewMetaBase.IsReadonly">
+            <summary>
+            是否只读
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityChildrenPropertyViewMetaBase.ViewGroupProperty">
+            <summary>
+            视图类型
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityChildrenPropertyViewMetaBase.ViewGroup">
+            <summary>
+            视图类型
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityChildrenPropertyViewMetaBase.AttachTypeProperty">
+            <summary>
+            附加视图类型
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityChildrenPropertyViewMetaBase.AttachType">
+            <summary>
+            附加视图类型
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityChildrenPropertyViewMetaBase.ExtensionProperty">
+            <summary>
+            扩展属性
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityChildrenPropertyViewMetaBase.Extension">
+            <summary>
+            扩展属性
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Views.EntityChildrenPropertyViewMetadata">
+            <summary>
+            实体子属性视图元数据
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityChildrenPropertyViewMetadata.EntityViewMetadataIdProperty">
+            <summary>
+            实体视图元数据Id
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityChildrenPropertyViewMetadata.EntityViewMetadataId">
+            <summary>
+            实体视图元数据Id
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityChildrenPropertyViewMetadata.EntityViewMetadataProperty">
+            <summary>
+            实体视图元数据
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityChildrenPropertyViewMetadata.EntityViewMetadata">
+            <summary>
+            实体视图元数据
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Views.EntityChildrenPropertyViewMetadataConfig">
+            <summary>
+            实体子属性视图元数据 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Views.EntityChildrenPropertyViewMetadataConfig.ConfigMeta">
+            <summary>
+            实体配置
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Views.EntityChildrenPropertyViewMetadataVer">
+            <summary>
+            实体子属性视图元数据版本
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityChildrenPropertyViewMetadataVer.EntityViewMetadataVerIdProperty">
+            <summary>
+            实体视图元数据版本Id
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityChildrenPropertyViewMetadataVer.EntityViewMetadataVerId">
+            <summary>
+            实体视图元数据版本Id
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityChildrenPropertyViewMetadataVer.EntityViewMetadataVerProperty">
+            <summary>
+            实体视图元数据版本
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityChildrenPropertyViewMetadataVer.EntityViewMetadataVer">
+            <summary>
+            实体视图元数据版本
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Views.EntityChildrenPropertyViewMetadataVerConfig">
+            <summary>
+            实体子属性视图元数据版本 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Views.EntityChildrenPropertyViewMetadataVerConfig.ConfigMeta">
+            <summary>
+            实体配置
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Views.EntityPropertyViewMetaBase">
+            <summary>
+            实体属性视图元数据基类
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityPropertyViewMetaBase.NameProperty">
+            <summary>
+            属性名
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityPropertyViewMetaBase.Name">
+            <summary>
+            属性名
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityPropertyViewMetaBase.LabelProperty">
+            <summary>
+            显示的标题
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityPropertyViewMetaBase.Label">
+            <summary>
+            显示的标题
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityPropertyViewMetaBase.IsVisibleProperty">
+            <summary>
+            是否可见
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityPropertyViewMetaBase.IsVisible">
+            <summary>
+            是否可见
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityPropertyViewMetaBase.OrderNoProperty">
+            <summary>
+            排序此属性使用的属性
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityPropertyViewMetaBase.OrderNo">
+            <summary>
+            排序此属性使用的属性
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityPropertyViewMetaBase.IsReferenceProperty">
+            <summary>
+            是否为“引用属性”
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityPropertyViewMetaBase.IsReference">
+            <summary>
+            是否为“引用属性”
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityPropertyViewMetaBase.EditorNameProperty">
+            <summary>
+            编辑器名称
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityPropertyViewMetaBase.EditorName">
+            <summary>
+            编辑器名称
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityPropertyViewMetaBase.GridWidthProperty">
+            <summary>
+            用于初始化表格控件的宽度属性
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityPropertyViewMetaBase.GridWidth">
+            <summary>
+            用于初始化表格控件的宽度属性
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityPropertyViewMetaBase.DetailColumnsSpanProperty">
+            <summary>
+            表单中该属性所占的列数
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityPropertyViewMetaBase.DetailColumnsSpan">
+            <summary>
+            表单中该属性所占的列数
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityPropertyViewMetaBase.DetailRowSpanProperty">
+            <summary>
+            表单中该属性所占的列数
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityPropertyViewMetaBase.DetailRowSpan">
+            <summary>
+            表单中该属性所占的列数
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityPropertyViewMetaBase.DetailHeightProperty">
+            <summary>
+            表单中该属性所占的总高度
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityPropertyViewMetaBase.DetailHeight">
+            <summary>
+            表单中该属性所占的总高度
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityPropertyViewMetaBase.HideLabelInDetailProperty">
+            <summary>
+            隐藏标签
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityPropertyViewMetaBase.HideLabelInDetail">
+            <summary>
+            隐藏标签
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityPropertyViewMetaBase.XPathProperty">
+            <summary>
+            绑定显示的属性名
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityPropertyViewMetaBase.XPath">
+            <summary>
+            绑定显示的属性名
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityPropertyViewMetaBase.PropertyTypeProperty">
+            <summary>
+            属性类型
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityPropertyViewMetaBase.PropertyType">
+            <summary>
+            属性类型
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityPropertyViewMetaBase.ConfigProperty">
+            <summary>
+            属性配置
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityPropertyViewMetaBase.Config">
+            <summary>
+            属性配置
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Views.EntityPropertyViewMetadata">
+            <summary>
+            实体属性视图元数据
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityPropertyViewMetadata.GroupIdProperty">
+            <summary>
+            明细属性分组Id
+            </summary>        
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityPropertyViewMetadata.GroupId">
+            <summary>
+            明细属性分组Id
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityPropertyViewMetadata.GroupProperty">
+            <summary>
+            明细属性分组
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityPropertyViewMetadata.Group">
+            <summary>
+            明细属性分组
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityPropertyViewMetadata.EntityViewMetadataIdProperty">
+            <summary>
+            实体视图元数据Id
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityPropertyViewMetadata.EntityViewMetadataId">
+            <summary>
+            实体视图元数据Id
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityPropertyViewMetadata.EntityViewMetadataProperty">
+            <summary>
+            实体视图元数据
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityPropertyViewMetadata.EntityViewMetadata">
+            <summary>
+            实体视图元数据
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Views.EntityPropertyViewMetadataConfig">
+            <summary>
+            实体属性视图元数据 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Views.EntityPropertyViewMetadataConfig.ConfigMeta">
+            <summary>
+            实体配置
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Views.EntityPropertyViewMetadataVer">
+            <summary>
+            实体属性视图元数据版本
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityPropertyViewMetadataVer.GroupIdProperty">
+            <summary>
+            明细属性分组版本Id
+            </summary>        
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityPropertyViewMetadataVer.GroupId">
+            <summary>
+            明细属性分组版本Id
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityPropertyViewMetadataVer.GroupProperty">
+            <summary>
+            明细属性分组版本
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityPropertyViewMetadataVer.Group">
+            <summary>
+            明细属性分组版本
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityPropertyViewMetadataVer.EntityViewMetadataVerIdProperty">
+            <summary>
+            实体视图元数据版本Id
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityPropertyViewMetadataVer.EntityViewMetadataVerId">
+            <summary>
+            实体视图元数据版本Id
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityPropertyViewMetadataVer.EntityViewMetadataVerProperty">
+            <summary>
+            实体视图元数据版本
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityPropertyViewMetadataVer.EntityViewMetadataVer">
+            <summary>
+            实体视图元数据版本
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Views.EntityPropertyViewMetadataVerConfig">
+            <summary>
+            实体属性视图元数据版本 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Views.EntityPropertyViewMetadataVerConfig.ConfigMeta">
+            <summary>
+            实体配置
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Views.EntityViewMetaBase">
+            <summary>
+            实体视图元数据基类
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityViewMetaBase.NameProperty">
+            <summary>
+            实体元数据名字
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityViewMetaBase.Name">
+            <summary>
+            实体元数据名字
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityViewMetaBase.LabelProperty">
+            <summary>
+            显示的标题
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityViewMetaBase.Label">
+            <summary>
+            显示的标题
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityViewMetaBase.EntityTypeProperty">
+            <summary>
+            实体类型
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityViewMetaBase.EntityType">
+            <summary>
+            实体类型
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityViewMetaBase.ViewGroupProperty">
+            <summary>
+            视图类型
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityViewMetaBase.ViewGroup">
+            <summary>
+            视图类型
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityViewMetaBase.DetailColumnsCountProperty">
+            <summary>
+            在Detail里显示为几列
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityViewMetaBase.DetailColumnsCount">
+            <summary>
+            在Detail里显示为几列
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityViewMetaBase.NotAllowEditProperty">
+            <summary>
+            获取是否不允许编辑
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityViewMetaBase.NotAllowEdit">
+            <summary>
+            获取是否不允许编辑
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityViewMetaBase.AuthModuleTypeProperty">
+            <summary>
+            授权模块
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityViewMetaBase.AuthModuleType">
+            <summary>
+            授权模块
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityViewMetaBase.DetailColumnMaxWidthProperty">
+            <summary>
+            明细列最大宽度
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityViewMetaBase.DetailColumnMaxWidth">
+            <summary>
+            明细列最大宽度
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityViewMetaBase.DetailColumnMinWidthProperty">
+            <summary>
+            明细列最小宽度
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityViewMetaBase.DetailColumnMinWidth">
+            <summary>
+            明细列最小宽度
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityViewMetaBase.EditModeProperty">
+            <summary>
+            编辑模式
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityViewMetaBase.EditMode">
+            <summary>
+            编辑模式
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityViewMetaBase.IsLayoutChildrenHorizonalProperty">
+            <summary>
+            子视图是否水平布局
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityViewMetaBase.IsLayoutChildrenHorizonal">
+            <summary>
+            子视图是否水平布局
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityViewMetaBase.ExtensionProperty">
+            <summary>
+            扩展属性
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityViewMetaBase.Extension">
+            <summary>
+            扩展属性
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Views.EntityViewMetadata">
+            <summary>
+            实体视图元数据
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityViewMetadata.CommandsProperty">
+            <summary>
+            命令元数据列表
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityViewMetadata.Commands">
+            <summary>
+            命令元数据列表
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityViewMetadata.ChildPropertysProperty">
+            <summary>
+            实体子属性视图元数据列表
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityViewMetadata.ChildPropertys">
+            <summary>
+            实体子属性视图元数据列表
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityViewMetadata.GroupsProperty">
+            <summary>
+            明细属性分组列表
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityViewMetadata.Groups">
+            <summary>
+            明细属性分组列表
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityViewMetadata.PropertysProperty">
+            <summary>
+            实体属性视图元数据列表
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityViewMetadata.Propertys">
+            <summary>
+            实体属性视图元数据列表
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Views.EntityViewMetadataConfig">
+            <summary>
+            实体视图元数据 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Views.EntityViewMetadataConfig.ConfigMeta">
+            <summary>
+            实体配置
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Views.EntityViewMetadataVer">
+            <summary>
+            实体视图元数据版本
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityViewMetadataVer.IsDraftProperty">
+            <summary>
+            是否草稿
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityViewMetadataVer.IsDraft">
+            <summary>
+            是否草稿
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityViewMetadataVer.VersionNoProperty">
+            <summary>
+            版本号
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityViewMetadataVer.VersionNo">
+            <summary>
+            版本号
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityViewMetadataVer.RemarkProperty">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityViewMetadataVer.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityViewMetadataVer.ChildPropertysProperty">
+            <summary>
+            实体子属性视图元数据版本列表
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityViewMetadataVer.ChildPropertys">
+            <summary>
+            实体子属性视图元数据版本列表
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityViewMetadataVer.CommandsProperty">
+            <summary>
+            命令元数据版本列表
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityViewMetadataVer.Commands">
+            <summary>
+            命令元数据版本列表
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityViewMetadataVer.GroupsProperty">
+            <summary>
+            明细属性分组版本列表
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityViewMetadataVer.Groups">
+            <summary>
+            明细属性分组版本列表
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.EntityViewMetadataVer.PropertysProperty">
+            <summary>
+            实体属性视图元数据版本列表
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.EntityViewMetadataVer.Propertys">
+            <summary>
+            实体属性视图元数据版本列表
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Views.EntityViewMetadataVerConfig">
+            <summary>
+            实体视图元数据版本 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Views.EntityViewMetadataVerConfig.ConfigMeta">
+            <summary>
+            实体配置
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Views.ScriptMetadaata">
+            <summary>
+            脚本元数据
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.ScriptMetadaata.ScriptProperty">
+            <summary>
+            脚本
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Metadatas.Views.ScriptMetadaata.Script">
+            <summary>
+            脚本
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Views.ScriptMetadaataConfig">
+            <summary>
+            脚本元数据 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Views.ScriptMetadaataConfig.ConfigMeta">
+            <summary>
+            实体配置
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Metadatas.Views.ViewMetadatasController">
+            <summary>
+            视图元数据控制器
+            </summary>
+        </member>
+        <member name="F:SIE.Mda.Metadatas.Views.ViewMetadatasController.viewMetadata">
+            <summary>
+            定义一个字典用于缓存从数据库中加载出来的视图元数据
+            </summary>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Views.ViewMetadatasController.GetViewMetadata">
+            <summary>
+            返回字典中的缓存数据
+            </summary>
+            <returns>缓存数据</returns>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Views.ViewMetadatasController.LoadMetadataFromDatabase(System.String,System.String)">
+            <summary>
+            从视图元数据表中获取视图元数据
+            </summary>
+            <param name="entityType">数据类型</param>
+            <param name="viewGroup">视图类型</param>
+            <returns>视图元数据</returns>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Views.ViewMetadatasController.GetMetadataVer(System.Double)">
+            <summary>
+            根据实体视图元数据版本Id去查找相应的实体视图元数据
+            </summary>
+            <param name="id">实体视图元数据版本id</param>
+            <returns>实体视图元数据版本</returns>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Views.ViewMetadatasController.GetVesionNo(System.String,System.String)">
+            <summary>
+            根据实体类型和ViewGroup去查找实体视图元数据版本号
+            </summary>
+            <param name="entityType">实体类型</param>
+            <param name="viewGroup">视图类型</param>
+            <returns>实体视图元数据版本</returns>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Views.ViewMetadatasController.AddViewMetadataToMemory(System.String,SIE.Mda.Metadatas.Views.EntityViewMetadata)">
+            <summary>
+            判断从数据库中返回的元数据是否存在内存中，不存在则写入内存
+            </summary>
+            <param name="name">实体类型全名称</param>
+            <param name="meta">元数据</param>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Views.ViewMetadatasController.GetCacheViewdata(System.String)">
+            <summary>
+            判断内存中是否已存在对应的元数据，若存在则直接从内存中加载
+            </summary>
+            <param name="name">实体类型全名称</param>
+            <returns>对应实体类型的元数据</returns>
+        </member>
+        <member name="M:SIE.Mda.Metadatas.Views.ViewMetadatasController.LoadMetadataVerFromDatabase(System.String,System.String,System.String)">
+            <summary>
+            从视图元数据表中获取当前实体的所有旧版本的视图元数据
+            </summary>
+            <param name="entityType">数据类型</param>
+            <param name="viewGroup">视图类型</param>
+            <param name="versionNo">当前版本号</param>
+            <returns>当前实体所有旧版本的视图元数据</returns>
+        </member>
+        <member name="T:SIE.Mda.UpdateLogger">
+            <summary>
+            更新日志
+            </summary>
+            <param name="msg">信息</param>
+            <param name="isError">是否错误信息</param>
+        </member>
+        <member name="T:SIE.Mda.MetadataUpdator">
+            <summary>
+            元数据更新工具类
+            </summary>
+        </member>
+        <member name="M:SIE.Mda.MetadataUpdator.LoadRuleAndEventTypes(System.Collections.Generic.IEnumerable{SIE.Modules.ModuleAssembly})">
+            <summary>
+            从代码中加载所有规则和事件的类型
+            </summary>
+            <param name="modules"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Mda.MetadataUpdator.UpdateMetadata(SIE.MetaModel.EntityMeta,SIE.Mda.Metadatas.Domain.EntityMetadata,System.Collections.Generic.IList{System.Type},SIE.Mda.UpdateLogger,SIE.Threading.CancellationToken)">
+            <summary>
+            更新元数据到数据库
+            </summary>
+            <param name="meta">要更新的实体元数据</param>
+            <param name="metadata">数据库已存在的元数据,可能为null</param>
+            <param name="ruleAndEvent">所有规则事件类</param>
+            <param name="logger">日志输出{msg,isError}</param>
+            <param name="token">取消令牌</param>
+        </member>
+        <member name="M:SIE.Mda.MetadataUpdator.UpdateRuleAndEvent(SIE.Mda.Metadatas.Domain.EntityMetadata,System.Collections.Generic.IList{System.Type},System.Type,SIE.Mda.UpdateLogger,SIE.Threading.CancellationToken)">
+            <summary>
+            规则和提交事件都受实体继承树影响
+            <code>
+            class A {}<br/>
+            class ARule：EntityRule&lt;A&gt; {}<br/>
+            class B:A {} //B也会执行ARule验证
+            </code>
+            </summary>
+        </member>
+        <member name="M:SIE.Mda.MetadataUpdator.HasProperty(SIE.ManagedProperty.IManagedProperty,SIE.MetaModel.EntityMeta)">
+            <summary>
+            判断是否包含系统扩展属性，扩展属性没映射数据库，则认为没使用到
+            </summary>
+        </member>
+        <member name="T:SIE.Mda.Module">
+            <summary>
+            Module 
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Module.SetupLevel">
+            <summary>
+            启动级别
+            </summary>
+        </member>
+        <member name="M:SIE.Mda.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化
+            </summary>
+            <param name="app">应用程序生命周期定义</param>
+        </member>
+        <member name="T:SIE.Mda.ModuleConfigUpdator">
+            <summary>
+            更新<see cref="T:SIE.Mda.Metadatas.Modules.ModuleConfig"/>
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.ModuleConfigUpdator.Instance">
+            <summary>
+            单例
+            </summary>
+        </member>
+        <member name="M:SIE.Mda.ModuleConfigUpdator.LoadViewMetas(SIE.Threading.CancellationToken)">
+            <summary>
+            加载所有实体类型<see cref="P:SIE.MetaModel.CommonModel.Entities"/>的视图元数据
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Mda.ModuleConfigUpdator.LoadAllModules">
+            <summary>
+            加载数据库的功能模块，按<see cref="P:SIE.Mda.Metadatas.Modules.MetaConfigBase.Key"/>+!+<see cref="P:SIE.Mda.Metadatas.Modules.ModuleConfig.Platform"/>生成字典键
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Mda.ModuleConfigUpdator.UpdateModule(SIE.Mda.Metadatas.Modules.ModuleConfig,SIE.MetaModel.ModuleMeta,System.Collections.Generic.Dictionary{System.Type,System.Collections.Generic.List{SIE.MetaModel.View.EntityViewMeta}},SIE.Mda.UpdateLogger,SIE.Threading.CancellationToken)">
+            <summary>
+            更新指定的模块元数据
+            </summary>
+            <param name="moduleConfig">可以为null</param>
+            <param name="moduleMeta"></param>
+            <param name="typeMetas"></param>
+            <param name="logger"></param>
+            <param name="token"></param>
+        </member>
+        <member name="M:SIE.Mda.ModuleConfigUpdator.GetUiPlatform(SIE.MetaModel.ModuleMeta)">
+            <summary>
+            获取模块的所属的平台
+            </summary>
+            <param name="moduleMeta"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Mda.Properties.Resources">
+            <summary>
+              一个强类型的资源类，用于查找本地化的字符串等。
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Properties.Resources.ResourceManager">
+            <summary>
+              返回此类使用的缓存的 ResourceManager 实例。
+            </summary>
+        </member>
+        <member name="P:SIE.Mda.Properties.Resources.Culture">
+            <summary>
+              重写当前线程的 CurrentUICulture 属性
+              重写当前线程的 CurrentUICulture 属性。
+            </summary>
+        </member>
+    </members>
+</doc>

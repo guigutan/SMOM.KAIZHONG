@@ -1,0 +1,261 @@
+﻿using SIE.Common.Utils;
+using SIE.ESop.Documents;
+using SIE.Wpf.ESOP.ESOPFactory;
+using System;
+using System.IO;
+using System.Windows;
+using System.Windows.Controls;
+
+namespace SIE.Wpf.ESop.Editors
+{
+    /// <summary>
+    /// PdfPlayer.xaml 的交互逻辑
+    /// </summary>
+    public partial class WordPlayer : UserControl, IPlayer
+    {
+        /// <summary>
+        /// 记录当前文件路径
+        /// </summary>
+        public Uri CurrentUri { get; private set; }
+
+        /// <summary>
+        /// 记录当前文件MD5加密内容
+        /// </summary>
+        private string MD5 { get; set; } = string.Empty;
+
+        /// <summary>
+        /// 是否显示
+        /// </summary>
+        public bool IsShow { get; set; }
+
+        /// <summary>
+        /// 构造函数
+        /// </summary>
+        public WordPlayer()
+        {
+            InitializeComponent();
+            WordPlayer owner = this;
+            wordEditControl.DataContext = owner;
+            wordEditControl.SetBinding(FrameworkElement.WidthProperty, "ActualWidth");
+            wordEditControl.SetBinding(FrameworkElement.HeightProperty, "ActualHeight");
+            wordEditControl.Visibility = Visibility.Visible;
+            wordEditControl.SizeChanged += wordEditControl_SizeChanged;
+            wordEditControl.Loaded += wordEditControl_Loaded;
+            wordEditControl.IsVisibleChanged += wordEditControl_IsVisibleChanged;
+            wordEditControl.OverridesDefaultStyle = true;
+
+        }
+
+        /// <summary>
+        /// 带参构造
+        /// </summary>
+        /// <param name="showControl"></param>
+        public WordPlayer(FactoryShowControl showControl)
+        {
+            InitializeComponent();
+            WordPlayer owner = this;
+            wordEditControl.DataContext = owner;
+            wordEditControl.SetBinding(FrameworkElement.WidthProperty, "ActualWidth");
+            wordEditControl.SetBinding(FrameworkElement.HeightProperty, "ActualHeight");
+            wordEditControl.Visibility = Visibility.Visible;
+            wordEditControl.SizeChanged += wordEditControl_SizeChanged;
+            wordEditControl.Loaded += wordEditControl_Loaded;
+            wordEditControl.IsVisibleChanged += wordEditControl_IsVisibleChanged;
+            wordEditControl.OverridesDefaultStyle = true;
+
+            this.DataContext = showControl;
+            this.HideUI();
+            foreach (var ctr in showControl.Children)
+            {
+                var child = ctr as WordPlayer;
+                if (child != null)
+                {
+                    return;
+                }
+            }
+            showControl.Children.Add(owner);
+        }
+
+        /// <summary>
+        /// 控件初始化加载数据
+        /// </summary>
+        /// <param name="sender">当前初始化控件</param>
+        /// <param name="e">路由事件参数</param>
+        private void wordEditControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            MatchUseRangeSize();
+            ZoomUseRange();
+        }
+
+        /// <summary>
+        /// 控件可视化变化时触发
+        /// </summary>
+        /// <param name="sender">当前控件</param>
+        /// <param name="e">事件参数</param>
+        private void wordEditControl_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            MatchUseRangeSize();
+            ZoomUseRange();
+        }
+
+        /// <summary>
+        /// 控件尺寸改变时触发
+        /// </summary>
+        /// <param name="sender">改变的控件对象</param>
+        /// <param name="e">尺寸大小改变参数</param>
+        private void wordEditControl_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            ZoomUseRange();
+        }
+
+        /// <summary>
+        /// 根据路径加载文件
+        /// </summary>
+        /// <param name="uri">路径</param>
+        public void LoadData(Uri uri)
+        {
+            var md5 = FileHelper.ComputeHash(new FileInfo(uri.OriginalString));
+            if (uri.OriginalString == CurrentUri?.OriginalString && md5 == MD5) return;
+            wordEditControl.LoadDocument(uri.OriginalString);
+            CurrentUri = uri;
+        }
+
+        /// <summary>
+        /// 显示指定页签
+        /// </summary>
+        /// <param name="sheetName">页签名称</param>
+        public void Show(string sheetName)
+        {
+            MatchUseRangeSize();
+            ZoomUseRange();
+        }
+
+        /// <summary>
+        /// 计算用户范围大小
+        /// </summary>
+        private void MatchUseRangeSize()
+        {
+            // 计算用户范围大小
+        }
+
+        /// <summary>
+        /// 焦点根据用户范围和控件大小进行调整
+        /// </summary>
+        private void ZoomUseRange()
+        {
+            // 焦点根据用户范围和控件大小进行调整
+        }
+
+        /// <summary>
+        /// 放大
+        /// </summary>
+        public void MagnifyAdd()
+        {
+            BtnZoomIn_Click(null, null);
+        }
+
+        /// <summary>
+        /// 缩小
+        /// </summary>
+        public void MagnifyMinus()
+        {
+            BtnZoomOut_Click(null, null);
+        }
+
+        /// <summary>
+        /// 按钮事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void BtnZoomIn_Click(object sender, RoutedEventArgs e)
+        {
+            if (wordEditControl.ActiveView != null)
+            {
+                wordEditControl.ActiveView.ZoomFactor += 0.1f;
+            }
+
+        }
+
+        /// <summary>
+        /// 按钮事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void BtnZoomOut_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (wordEditControl.ActiveView==null||wordEditControl.ActiveView.ZoomFactor <= 0.01)
+                {
+                    return;
+                }
+                wordEditControl.ActiveView.ZoomFactor -= 0.1f;
+            }
+            catch (Exception ex)
+            {
+                wordEditControl.ActiveView.ZoomFactor = 0.01f;
+            }
+        }
+
+        /// <summary>
+        /// 还原
+        /// </summary>
+
+        internal void SetActualSize()
+        {
+            if (wordEditControl.ActiveView != null)
+            {
+                wordEditControl.ActiveView.ZoomFactor = 1f;
+            }
+        }
+
+        /// <summary>
+        /// 更新播放内容
+        /// </summary>
+        /// <param name="document"></param>
+        public void UpdatePlayer(Document document)
+        {
+            this.ShowUI();
+            this.LoadData(new Uri(document.FilePath));
+            this.Show(document.FileName);
+        }
+
+        public void Play()
+        {
+            // 播放图片
+            // ...
+        }
+
+        public void Stop()
+        {
+            // 停止播放图片
+            // ...
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void ActualSize()
+        {
+            this.SetActualSize();
+        }
+        /// <summary>
+        ///  添加显示界面的方法
+        /// </summary>
+        public void ShowUI()
+        {
+            this.Visibility = Visibility.Visible;
+            IsShow = true;
+
+        }
+
+        /// <summary>
+        /// 添加隐藏界面的方法
+        /// </summary>
+        public void HideUI()
+        {
+            this.Visibility = Visibility.Collapsed;
+            IsShow = false;
+        }
+    }
+}

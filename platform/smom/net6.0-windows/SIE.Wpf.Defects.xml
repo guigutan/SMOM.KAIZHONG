@@ -1,0 +1,1496 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Wpf.Defects</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Wpf.Defects.Commands.AddChildrenCommand">
+            <summary>
+            添加子缺陷责任分类命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Commands.AddChildrenCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            是否可执行
+            </summary>
+            <param name="view">视图</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Wpf.Defects.Commands.ServiceDataCommand">
+            <summary>
+            数据维护命令
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Commands.ServiceDataCommand.EntityType">
+            <summary>
+            维护数据的实体类型
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Commands.ServiceDataCommand.TryAutoLoadData">
+            <summary>
+            自动加载数据，默认true
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Commands.ServiceDataCommand.ViewGroup">
+            <summary>
+            视图组，默认ListView
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Commands.ServiceDataCommand.Title">
+            <summary>
+            标题，默认取Label，内部实现已调用L10N()
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Commands.ServiceDataCommand.ExecuteCore">
+            <summary>
+            执行视图创建
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Commands.ServiceDataCommand.CreateUI">
+            <summary>
+            创建控件结果
+            </summary>
+            <returns>控件结果</returns>
+        </member>
+        <member name="T:SIE.Wpf.Defects.Commands.DefectCategoryCommand">
+            <summary>
+            缺陷代码分类维护命令
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Commands.DefectCategoryCommand.EntityType">
+            <summary>
+            维护数据的实体类型
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Commands.DefectCategoryCommand.Title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Defects.Commands.DefectRespCategoryCommand">
+            <summary>
+            缺陷责任分类维护命令
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Commands.DefectRespCategoryCommand.EntityType">
+            <summary>
+            维护数据的实体类型
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Commands.DefectRespCategoryCommand.Title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Defects.Commands.InsertCommand">
+            <summary>
+            插入命令
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Defects.DefectCategoryViewConfig">
+            <summary>
+            缺陷分类视图配置类
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.DefectCategoryViewConfig.ConfigView">
+            <summary>
+            默认配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.DefectCategoryViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.DefectCategoryViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.DefectCategoryViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Defects.DefectCriteriaViewConfig">
+            <summary>
+            缺陷代码视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.DefectCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            查询面板视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Defects.DefectResponsibilityCategoryViewConfig">
+            <summary>
+            缺陷责任分类视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.DefectResponsibilityCategoryViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.DefectResponsibilityCategoryViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.DefectResponsibilityCategoryViewConfig.ConfigQueryView">
+            <summary>
+            查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.DefectResponsibilityCategoryViewConfig.ConfigSelectionView">
+            <summary>
+            选择视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Defects.DefectResponsibilityViewConfig">
+            <summary>
+            缺陷责任视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.DefectResponsibilityViewConfig.ConfigView">
+            <summary>
+            视图通用配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.DefectResponsibilityViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.DefectResponsibilityViewConfig.ConfigQueryView">
+            <summary>
+            查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.DefectResponsibilityViewConfig.ConfigSelectionView">
+            <summary>
+            选择视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Defects.DefectViewConfig">
+            <summary>
+            缺陷代码视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.DefectViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.DefectViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.DefectViewConfig.ConfigQueryView">
+            <summary>
+            查询面板视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.DefectViewConfig.ConfigSelectionView">
+            <summary>
+            选择视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Defects.Editors.DefectControl">
+            <summary>
+            DefectControl.xaml 的交互逻辑
+            </summary>
+            <summary>
+            DefectControl
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.DefectControl.DefectList">
+            <summary>
+            所有缺陷项目
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.DefectControl.CurrentDefectList">
+            <summary>
+            当前列表中的缺陷项目
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.DefectControl.CategoryList">
+            <summary>
+            所有分类
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.DefectControl.SelectedCategoryList">
+            <summary>
+            选中的分类
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.DefectControl.CurrentCategoryList">
+            <summary>
+            当前列表中的分类
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.DefectControl.SelectedValue">
+            <summary>
+            选中的值
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Defects.Editors.DefectControl.SelectedValueProperty">
+            <summary>
+            选中的值
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.DefectControl.OnValueChanged(System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            值变更通知
+            </summary>
+            <param name="e">DependencyPropertyChangedEventArgs</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.DefectControl.SelectedValue_CollectionChanged(System.Object,System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <summary>
+            值选择变更
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.DefectControl.Defects">
+            <summary>
+            缺陷列表
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Defects.Editors.DefectControl.DefectsProperty">
+            <summary>
+            缺陷列表
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.DefectControl.OnDefectsChanged(System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            值变更
+            </summary>
+            <param name="e">e</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.DefectControl.Defects_CollectionChanged(System.Object,System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <summary>
+            缺陷列表变更
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.DefectControl.Clear">
+            <summary>
+            清空内存数据
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.DefectControl.AllowMultiple">
+            <summary>
+            是否允许多选
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.DefectControl.AllowQty">
+            <summary>
+            是否允许输入数量
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.DefectControl.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.DefectControl.OnDefectRemoved(SIE.Defects.Defect)">
+            <summary>
+            从缺陷列表移除缺陷
+            </summary>
+            <param name="defect">缺陷对象</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.DefectControl.OnDefectAdded(SIE.Defects.Defect)">
+            <summary>
+            增加缺陷到缺陷列表
+            </summary>
+            <param name="defect">缺陷对象</param>
+        </member>
+        <member name="F:SIE.Wpf.Defects.Editors.DefectControl.allCategoryItem">
+            <summary>
+            缺陷分类项目 字典
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Defects.Editors.DefectControl._allCategory">
+            <summary>
+            缺陷分类 字典
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.DefectControl.AllCategory">
+            <summary>
+            缺陷分类 字典
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.DefectControl.AddCategory(System.Double)">
+            <summary>
+            AddCategory
+            </summary>
+            <param name="categoryId">categoryId</param>
+            <returns>DefectCategoryItem</returns>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.DefectControl.BtnCategory_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            BtnCategory_Click
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.DefectControl.OnCategorySelected(SIE.Wpf.Defects.Editors.DefectCategoryItem)">
+            <summary>
+            选中分类
+            </summary>
+            <param name="selected">selected</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.DefectControl.ShowCurrentDefect(SIE.Wpf.Defects.Editors.DefectCategoryItem)">
+            <summary>
+            ShowCurrentDefect
+            </summary>
+            <param name="selected">selected</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.DefectControl.FindItems(SIE.Wpf.Defects.Editors.DefectCategoryItem)">
+            <summary>
+            FindItems
+            </summary>
+            <param name="selected">selected</param>
+            <returns>DefectItem列表</returns>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.DefectControl.BtnDefect_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            BtnDefect_Click
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.DefectControl.OnDefectUnselected(SIE.Wpf.Defects.Editors.DefectItem)">
+            <summary>
+            取消选中缺陷
+            </summary>
+            <param name="selected">selected</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.DefectControl.OnDefectSelected(SIE.Wpf.Defects.Editors.DefectItem)">
+            <summary>
+            选中缺陷
+            </summary>
+            <param name="selected">selected</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.DefectControl.AddSelected(SIE.Wpf.Defects.Editors.DefectItem)">
+            <summary>
+            AddSelected
+            </summary>
+            <param name="selected">selected</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.DefectControl.BtnNavigation_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            BtnNavigation_Click
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.DefectControl.OnNavigationChanged(SIE.Wpf.Defects.Editors.DefectCategoryItem)">
+            <summary>
+            OnNavigationChanged
+            </summary>
+            <param name="selected">selected</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.DefectControl.BtnAll_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            BtnAll_Click
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.DefectControl.BtnSelected_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            BtnSelected_Click
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.DefectControl.OnDefectUnselectd(SIE.Wpf.Defects.Editors.DefectItem)">
+            <summary>
+            取消选中缺陷
+            </summary>
+            <param name="selected">selected</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.DefectControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Defects.Editors.DefectCategoryItem">
+            <summary>
+            缺陷分类项目
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.DefectCategoryItem.Category">
+            <summary>
+            缺陷分类
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.DefectCategoryItem.Children">
+            <summary>
+            缺陷分类集合
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.DefectCategoryItem.Parent">
+            <summary>
+            缺陷分类项目
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.DefectCategoryItem.Equals(System.Object)">
+            <summary>
+            比较缺陷分类ID是否一致
+            </summary>
+            <param name="obj">需要比较的对象</param>
+            <returns>返回是否与传入的对象的缺陷分类ID一致</returns>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.DefectCategoryItem.GetHashCode">
+            <summary>
+            获取缺陷分类的哈希编码
+            </summary>
+            <returns>返回缺陷分类的哈希编码</returns>
+        </member>
+        <member name="T:SIE.Wpf.Defects.Editors.DefectItem">
+            <summary>
+            缺陷项目
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.DefectItem.Control">
+            <summary>
+            Control
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.DefectItem.Defect">
+            <summary>
+            缺陷
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.DefectItem.Location">
+            <summary>
+            缺陷位置
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.DefectItem.Qty">
+            <summary>
+            不良数量,不允许输入数量时,返回1
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.DefectItem.Equals(System.Object)">
+            <summary>
+            比较缺陷分类ID是否一致
+            </summary>
+            <param name="obj">需要比较的对象</param>
+            <returns>返回是否与传入的对象的缺陷分类ID一致</returns>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.DefectItem.GetHashCode">
+            <summary>
+            获取缺陷分类的哈希编码
+            </summary>
+            <returns>返回缺陷分类的哈希编码</returns>
+        </member>
+        <member name="T:SIE.Wpf.Defects.Editors.QtyVisibilityConverter">
+            <summary>
+            数量是否可见
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.QtyVisibilityConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            正向转换
+            </summary>
+            <param name="value">是否允许输入数值</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">文化</param>
+            <returns>允许输入数值则可见，否则不可见</returns>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.QtyVisibilityConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            逆向转换
+            </summary>
+            <param name="value">是否允许输入数值</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">文化</param>
+            <returns>允许输入数值则可见，否则不可见</returns>
+        </member>
+        <member name="T:SIE.Wpf.Defects.Editors.DefectControlFactory">
+            <summary>
+            DefectControlFactory
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Defects.Editors.DefectControlFactory.DefectControlType">
+            <summary>
+            缺陷控件类型
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.DefectControlFactory.CreateControl">
+            <summary>
+            创建缺陷控件类型
+            </summary>
+            <returns>DefectControl</returns>
+        </member>
+        <member name="T:SIE.Wpf.Defects.Editors.LimitLowEditor">
+            <summary>
+            规格下限编辑器
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Defects.Editors.LimitLowEditor.EditorName">
+            <summary>
+            LimitLowEditor
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Defects.Editors.LimitLowEditor.cbx">
+            <summary>
+            下拉列表选择控件
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Defects.Editors.LimitLowEditor.tbk">
+            <summary>
+            SpinEdit
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.LimitLowEditor.BindingProperty">
+            <summary>
+            绑定实体
+            </summary>
+            <returns>属性</returns>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.LimitLowEditor.CreateEditingElement">
+            <summary>
+            创建编辑器样式
+            </summary>
+            <returns>FrameworkElement</returns>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.LimitLowEditor.Cbx_SelectionChanged(System.Object,System.Windows.Controls.SelectionChangedEventArgs)">
+            <summary>
+            清空规格下限符号的同时清空规范下限的值
+            </summary>
+            <param name="sender">发送者</param>
+            <param name="e">选择变更事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.LimitLowEditor.Tbk_EditValueChanged(System.Object,DevExpress.Xpf.Editors.EditValueChangedEventArgs)">
+            <summary>
+            清空规格下限值的同时清空规范下限符号
+            </summary>
+            <param name="sender">发送者</param>
+            <param name="e">编辑值变更事件参数</param>
+        </member>
+        <member name="T:SIE.Wpf.Defects.Editors.LimitMaxEditor">
+            <summary>
+            规格上限编辑器
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Defects.Editors.LimitMaxEditor.EditorName">
+            <summary>
+            LimitMaxEditor
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Defects.Editors.LimitMaxEditor.cbx">
+            <summary>
+            下拉列表选择控件
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Defects.Editors.LimitMaxEditor.tbk">
+            <summary>
+            SpinEdit
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.LimitMaxEditor.BindingProperty">
+            <summary>
+            绑定实体
+            </summary>
+            <returns>属性</returns>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.LimitMaxEditor.CreateEditingElement">
+            <summary>
+            创建编辑器样式
+            </summary>
+            <returns>FrameworkElement</returns>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.LimitMaxEditor.Tbk_EditValueChanged(System.Object,DevExpress.Xpf.Editors.EditValueChangedEventArgs)">
+            <summary>
+            清空规格上限值的同时清空规格上限符号
+            </summary>
+            <param name="sender">发送者</param>
+            <param name="e">编辑值变更事件参数</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.LimitMaxEditor.Cbx_SelectionChanged(System.Object,System.Windows.Controls.SelectionChangedEventArgs)">
+            <summary>
+            清空规格上限符号的同时清空规格上限的值
+            </summary>
+            <param name="sender">发送者</param>
+            <param name="e">选择变更事件参数</param>
+        </member>
+        <member name="T:SIE.Wpf.Defects.Editors.DecimalValueConverter">
+            <summary>
+            SpinEdit数值转换器
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.DecimalValueConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            将源值转换为绑定源的值。数据绑定引擎在将值从绑定源传播给绑定目标时，调用此方法。
+            </summary>
+            <param name="value">源绑定生成的值的数组</param>
+            <param name="targetType">绑定目标属性的类型</param>
+            <param name="parameter">要使用的转换器参数</param>
+            <param name="culture">要用在转换器中的区域性</param>
+            <returns> 转换后的值</returns>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.DecimalValueConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            将绑定目标值转换为源绑定值
+            </summary>
+            <param name="value">绑定目标生成的值</param>
+            <param name="targetType"> 要转换到的类型数组</param>
+            <param name="parameter">要使用的转换器参数</param>
+            <param name="culture">要用在转换器中的区域性</param>
+            <returns>从目标值转换回源值的值的数组</returns>
+        </member>
+        <member name="T:SIE.Wpf.Defects.Editors.MeasureControl">
+            <summary>
+            MeasureControl.xaml 的交互逻辑
+            </summary>
+            <summary>
+            MeasureControl
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.MeasureControl.AllowMultiple">
+            <summary>
+            是否允许多选
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.MeasureControl.#ctor">
+            <summary>
+            MeasureControl
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.MeasureControl.MeasureList">
+            <summary>
+            所有维修措施
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.MeasureControl.Measures">
+            <summary>
+            维修措施列表
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Defects.Editors.MeasureControl.MeasuresProperty">
+            <summary>
+            维修措施列表
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.MeasureControl.OnMeasuresChanged(System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            OnMeasuresChanged
+            </summary>
+            <param name="e">e</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.MeasureControl.Measures_CollectionChanged(System.Object,System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <summary>
+            Measures_CollectionChanged
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.MeasureControl.SelectedValues">
+            <summary>
+            SelectedValues
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Defects.Editors.MeasureControl.SelectedValuesProperty">
+            <summary>
+            SelectedValues
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.MeasureControl.OnValuesChanged(System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            OnValuesChanged
+            </summary>
+            <param name="e">e</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.MeasureControl.SelectedValues_CollectionChanged(System.Object,System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <summary>
+            SelectedValues_CollectionChanged
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.MeasureControl.OnMeasuresAdded(SIE.Defects.Measures.RepairMeasure)">
+            <summary>
+            OnMeasuresAdded
+            </summary>
+            <param name="measure">measure</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.MeasureControl.OnSelectedAdded(SIE.Defects.Measures.RepairMeasure)">
+            <summary>
+            OnSelectedAdded
+            </summary>
+            <param name="measure">measure</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.MeasureControl.BtnMeasure_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            BtnMeasure_Click
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.MeasureControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Defects.Editors.MeasureItem">
+            <summary>
+            维修措施项
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.MeasureItem.Control">
+            <summary>
+            Control
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.MeasureItem.Measure">
+            <summary>
+            Measure
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.MeasureItem.IsChecked">
+            <summary>
+            IsChecked
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Defects.Editors.MeasureControlFactory">
+            <summary>
+            维修措施控件工厂
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Defects.Editors.MeasureControlFactory.MeasureControlType">
+            <summary>
+            MeasureControlType
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.MeasureControlFactory.CreateControl">
+            <summary>
+            CreateControl
+            </summary>
+            <returns>MeasureControl</returns>
+        </member>
+        <member name="T:SIE.Wpf.Defects.Editors.ResponsibilityControl">
+            <summary>
+            ResponsibilityControl.xaml 的交互逻辑
+            </summary>
+            <summary>
+            ResponsibilityControl
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.ResponsibilityControl.ResponsibilityList">
+            <summary>
+            所有缺陷责任
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.ResponsibilityControl.CurrentResponsibilityList">
+            <summary>
+            当前列表中的缺陷责任
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.ResponsibilityControl.CategoryList">
+            <summary>
+            所有缺陷责任分类
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.ResponsibilityControl.SelectedCategoryList">
+            <summary>
+            选中的缺陷责任分类
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.ResponsibilityControl.CurrentCategoryList">
+            <summary>
+            当前列表中的缺陷责任分类
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.ResponsibilityControl.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Defects.Editors.ResponsibilityControl.RemarkProperty">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.ResponsibilityControl.SelectedValue">
+            <summary>
+            选中的值
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Defects.Editors.ResponsibilityControl.SelectedValueProperty">
+            <summary>
+            选中的值
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.ResponsibilityControl.OnValueChanged(System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            OnValueChanged
+            </summary>
+            <param name="e">e</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.ResponsibilityControl.SelectedValue_CollectionChanged(System.Object,System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <summary>
+            SelectedValue_CollectionChanged
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.ResponsibilityControl.Responsibilities">
+            <summary>
+            缺陷责任列表
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Defects.Editors.ResponsibilityControl.ResponsibilitiesProperty">
+            <summary>
+            缺陷责任列表
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.ResponsibilityControl.OnDefectsChanged(System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            OnDefectsChanged
+            </summary>
+            <param name="e">e</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.ResponsibilityControl.Defects_CollectionChanged(System.Object,System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <summary>
+            Defects_CollectionChanged
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.ResponsibilityControl.Clear">
+            <summary>
+            清理
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.ResponsibilityControl.AllowMultiple">
+            <summary>
+            是否允许多选
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Defects.Editors.ResponsibilityControl._reloadCategory">
+            <summary>
+            重新加载责任分类
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.ResponsibilityControl.#ctor">
+            <summary>
+            ResponsibilityControl
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.ResponsibilityControl.OnDefectRemoved(SIE.Defects.DefectResponsibility)">
+            <summary>
+            OnDefectRemoved
+            </summary>
+            <param name="defect">defect</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.ResponsibilityControl.OnDefectAdded(SIE.Defects.DefectResponsibility)">
+            <summary>
+            OnDefectAdded
+            </summary>
+            <param name="responsibility">responsibility</param>
+        </member>
+        <member name="F:SIE.Wpf.Defects.Editors.ResponsibilityControl.allCategoryItem">
+            <summary>
+            缺陷责任分类项目 字典
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Defects.Editors.ResponsibilityControl._allCategory">
+            <summary>
+            缺陷责任分类 字典
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.ResponsibilityControl.AllCategory">
+            <summary>
+            缺陷责任分类 字典
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.ResponsibilityControl.AddCategory(System.Double)">
+            <summary>
+            AddCategory
+            </summary>
+            <param name="categoryId">categoryId</param>
+            <returns>ResponsibilityCategoryItem</returns>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.ResponsibilityControl.BtnCategory_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            BtnCategory_Click
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.ResponsibilityControl.OnCategorySelected(SIE.Wpf.Defects.Editors.ResponsibilityCategoryItem)">
+            <summary>
+            选中分类
+            </summary>
+            <param name="selected">selected</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.ResponsibilityControl.ShowCurrentDefect(SIE.Wpf.Defects.Editors.ResponsibilityCategoryItem)">
+            <summary>
+            ShowCurrentDefect
+            </summary>
+            <param name="selected">selected</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.ResponsibilityControl.FindItems(SIE.Wpf.Defects.Editors.ResponsibilityCategoryItem)">
+            <summary>
+            FindItems
+            </summary>
+            <param name="selected">select</param>
+            <returns>缺陷责任项目 集合</returns>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.ResponsibilityControl.BtnDefect_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            BtnDefect_Click
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.ResponsibilityControl.OnDefectUnselected(SIE.Wpf.Defects.Editors.DefectResponsibilityItem)">
+            <summary>
+            取消选中缺陷责任
+            </summary>
+            <param name="selected">select</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.ResponsibilityControl.OnDefectSelected(SIE.Wpf.Defects.Editors.DefectResponsibilityItem)">
+            <summary>
+            选中缺陷责任
+            </summary>
+            <param name="selected">select</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.ResponsibilityControl.AddSelected(SIE.Wpf.Defects.Editors.DefectResponsibilityItem)">
+            <summary>
+            AddSelected
+            </summary>
+            <param name="selected">select</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.ResponsibilityControl.BtnNavigation_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            BtnNavigation_Click
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.ResponsibilityControl.OnNavigationChanged(SIE.Wpf.Defects.Editors.ResponsibilityCategoryItem)">
+            <summary>
+            OnNavigationChanged
+            </summary>
+            <param name="selected">selected</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.ResponsibilityControl.BtnAll_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            BtnAll_Click
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.ResponsibilityControl.BtnSelected_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            BtnSelected_Click
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.ResponsibilityControl.OnDefectUnselectd(SIE.Wpf.Defects.Editors.DefectResponsibilityItem)">
+            <summary>
+            取消选中缺陷责任
+            </summary>
+            <param name="selected">selected</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.ResponsibilityControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Defects.Editors.ResponsibilityCategoryItem">
+            <summary>
+            缺陷责任分类项目
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.ResponsibilityCategoryItem.Category">
+            <summary>
+            缺陷责任分类
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.ResponsibilityCategoryItem.Children">
+            <summary>
+            缺陷责任分类项目 集合
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.ResponsibilityCategoryItem.Parent">
+            <summary>
+            缺陷责任分类项目
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.ResponsibilityCategoryItem.Equals(System.Object)">
+            <summary>
+            Equals
+            </summary>
+            <param name="obj">obj</param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.ResponsibilityCategoryItem.GetHashCode">
+            <summary>
+            GetHashCode
+            </summary>
+            <returns>int</returns>
+        </member>
+        <member name="T:SIE.Wpf.Defects.Editors.DefectResponsibilityItem">
+            <summary>
+            缺陷责任项目
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.DefectResponsibilityItem.Control">
+            <summary>
+            Control
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.DefectResponsibilityItem.Responsibility">
+            <summary>
+            缺陷责任
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.DefectResponsibilityItem.Location">
+            <summary>
+            缺陷责任位置
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.DefectResponsibilityItem.Qty">
+            <summary>
+            不良数量,不允许输入数量时,返回1
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.DefectResponsibilityItem.Equals(System.Object)">
+            <summary>
+            Equals
+            </summary>
+            <param name="obj">obj</param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.DefectResponsibilityItem.GetHashCode">
+            <summary>
+            GetHashCode
+            </summary>
+            <returns>int</returns>
+        </member>
+        <member name="T:SIE.Wpf.Defects.Editors.ResponsibilityControlFactory">
+            <summary>
+            缺陷责任控件工厂
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Defects.Editors.ResponsibilityControlFactory.ResponsibilityControlType">
+            <summary>
+            缺陷责任控件类型
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.ResponsibilityControlFactory.CreateControl">
+            <summary>
+            创建控件
+            </summary>
+            <returns>缺陷责任控件</returns>
+        </member>
+        <member name="T:SIE.Wpf.Defects.Editors.WorkBenchDefectControl">
+            <summary>
+            WorkBenchDefectControl.xaml 的交互逻辑
+            </summary>
+            <summary>
+            WorkBenchDefectControl
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.WorkBenchDefectControl.DefectList">
+            <summary>
+            所有缺陷项目
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.WorkBenchDefectControl.CurrentDefectList">
+            <summary>
+            当前列表中的缺陷项目
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.WorkBenchDefectControl.CategoryList">
+            <summary>
+            所有分类
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.WorkBenchDefectControl.SelectedCategoryList">
+            <summary>
+            选中的分类
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.WorkBenchDefectControl.CurrentCategoryList">
+            <summary>
+            当前列表中的分类
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.WorkBenchDefectControl.SelectedValue">
+            <summary>
+            选中的值
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Defects.Editors.WorkBenchDefectControl.SelectedValueProperty">
+            <summary>
+            选中的值
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.WorkBenchDefectControl.OnValueChanged(System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            值变更通知
+            </summary>
+            <param name="e">DependencyPropertyChangedEventArgs</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.WorkBenchDefectControl.SelectedValue_CollectionChanged(System.Object,System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <summary>
+            值选择变更
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.WorkBenchDefectControl.Defects">
+            <summary>
+            缺陷列表
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Defects.Editors.WorkBenchDefectControl.DefectsProperty">
+            <summary>
+            缺陷列表
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.WorkBenchDefectControl.OnDefectsChanged(System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            值变更
+            </summary>
+            <param name="e">e</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.WorkBenchDefectControl.Defects_CollectionChanged(System.Object,System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <summary>
+            缺陷列表变更
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.WorkBenchDefectControl.Clear">
+            <summary>
+            清空内存数据
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.WorkBenchDefectControl.AllowMultiple">
+            <summary>
+            是否允许多选
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.WorkBenchDefectControl.AllowQty">
+            <summary>
+            是否允许输入数量
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.WorkBenchDefectControl.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.WorkBenchDefectControl.OnDefectRemoved(SIE.Defects.Defect)">
+            <summary>
+            从缺陷列表移除缺陷
+            </summary>
+            <param name="defect">缺陷对象</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.WorkBenchDefectControl.OnDefectAdded(SIE.Defects.Defect)">
+            <summary>
+            增加缺陷到缺陷列表
+            </summary>
+            <param name="defect">缺陷对象</param>
+        </member>
+        <member name="F:SIE.Wpf.Defects.Editors.WorkBenchDefectControl.allCategoryItem">
+            <summary>
+            缺陷分类项目 字典
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Defects.Editors.WorkBenchDefectControl._allCategory">
+            <summary>
+            缺陷分类 字典
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.WorkBenchDefectControl.AllCategory">
+            <summary>
+            缺陷分类 字典
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.WorkBenchDefectControl.AddCategory(System.Double)">
+            <summary>
+            AddCategory
+            </summary>
+            <param name="categoryId">categoryId</param>
+            <returns>DefectCategoryItemInfo</returns>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.WorkBenchDefectControl.BtnCategory_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            BtnCategory_Click
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.WorkBenchDefectControl.OnCategorySelected(SIE.Wpf.Defects.Editors.DefectCategoryItemInfo)">
+            <summary>
+            选中分类
+            </summary>
+            <param name="selected">selected</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.WorkBenchDefectControl.ShowCurrentDefect(SIE.Wpf.Defects.Editors.DefectCategoryItemInfo)">
+            <summary>
+            ShowCurrentDefect
+            </summary>
+            <param name="selected">selected</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.WorkBenchDefectControl.FindItems(SIE.Wpf.Defects.Editors.DefectCategoryItemInfo)">
+            <summary>
+            FindItems
+            </summary>
+            <param name="selected">selected</param>
+            <returns>DefectItemInfo列表</returns>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.WorkBenchDefectControl.BtnDefect_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            BtnDefect_Click
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.WorkBenchDefectControl.OnDefectUnselected(SIE.Wpf.Defects.Editors.DefectItemInfo)">
+            <summary>
+            取消选中缺陷
+            </summary>
+            <param name="selected">selected</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.WorkBenchDefectControl.OnDefectSelected(SIE.Wpf.Defects.Editors.DefectItemInfo)">
+            <summary>
+            选中缺陷
+            </summary>
+            <param name="selected">selected</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.WorkBenchDefectControl.AddSelected(SIE.Wpf.Defects.Editors.DefectItemInfo)">
+            <summary>
+            AddSelected
+            </summary>
+            <param name="selected">selected</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.WorkBenchDefectControl.BtnNavigation_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            BtnNavigation_Click
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.WorkBenchDefectControl.OnNavigationChanged(SIE.Wpf.Defects.Editors.DefectCategoryItemInfo)">
+            <summary>
+            OnNavigationChanged
+            </summary>
+            <param name="selected">selected</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.WorkBenchDefectControl.BtnAll_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            BtnAll_Click
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.WorkBenchDefectControl.BtnSelected_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            BtnSelected_Click
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.WorkBenchDefectControl.OnDefectUnselectd(SIE.Wpf.Defects.Editors.DefectItemInfo)">
+            <summary>
+            取消选中缺陷
+            </summary>
+            <param name="selected">selected</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.WorkBenchDefectControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Defects.Editors.DefectCategoryItemInfo">
+            <summary>
+            缺陷分类项目
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.DefectCategoryItemInfo.Category">
+            <summary>
+            缺陷分类
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.DefectCategoryItemInfo.Children">
+            <summary>
+            缺陷分类集合
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.DefectCategoryItemInfo.Parent">
+            <summary>
+            缺陷分类项目
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.DefectCategoryItemInfo.Equals(System.Object)">
+            <summary>
+            比较缺陷分类ID是否一致
+            </summary>
+            <param name="obj">需要比较的对象</param>
+            <returns>返回是否与传入的对象的缺陷分类ID一致</returns>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.DefectCategoryItemInfo.GetHashCode">
+            <summary>
+            获取缺陷分类的哈希编码
+            </summary>
+            <returns>返回缺陷分类的哈希编码</returns>
+        </member>
+        <member name="T:SIE.Wpf.Defects.Editors.DefectItemInfo">
+            <summary>
+            缺陷项目
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.DefectItemInfo.Control">
+            <summary>
+            Control
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.DefectItemInfo.Defect">
+            <summary>
+            缺陷
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.DefectItemInfo.Location">
+            <summary>
+            缺陷位置
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.Defects.Editors.DefectItemInfo.Qty">
+            <summary>
+            不良数量,不允许输入数量时,返回1
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.DefectItemInfo.Equals(System.Object)">
+            <summary>
+            比较缺陷分类ID是否一致
+            </summary>
+            <param name="obj">需要比较的对象</param>
+            <returns>返回是否与传入的对象的缺陷分类ID一致</returns>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.DefectItemInfo.GetHashCode">
+            <summary>
+            获取缺陷分类的哈希编码
+            </summary>
+            <returns>返回缺陷分类的哈希编码</returns>
+        </member>
+        <member name="T:SIE.Wpf.Defects.Editors.WorkBenchDefectControlFactory">
+            <summary>
+            工作台缺陷录入控件工厂
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.Defects.Editors.WorkBenchDefectControlFactory.DefectControlType">
+            <summary>
+            工作台缺陷控件类型
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Editors.WorkBenchDefectControlFactory.CreateControl">
+            <summary>
+            创建工作台缺陷控件类型
+            </summary>
+            <returns>WorkBenchDefectControl</returns>
+        </member>
+        <member name="T:SIE.Wpf.Defects.InspectionItems.InspectionModeViewConfig">
+            <summary>
+            检验方式视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.InspectionItems.InspectionModeViewConfig.ConfigView">
+            <summary>
+            默认配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.InspectionItems.InspectionModeViewConfig.ConfigListView">
+            <summary>
+            视图列表配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.InspectionItems.InspectionModeViewConfig.ConfigQueryView">
+            <summary>
+            查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.InspectionItems.InspectionModeViewConfig.ConfigSelectionView">
+            <summary>
+            配置选择视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Defects.Measures.Commands.RepairMeasureCopyCommand">
+            <summary>
+            维修措施复制新增按钮
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Measures.Commands.RepairMeasureCopyCommand.CanExecute(SIE.Wpf.ListLogicalView)">
+            <summary>
+            是否可以执行
+            </summary>
+            <param name="view">列表逻辑视图</param>
+            <returns>true/false</returns>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Measures.Commands.RepairMeasureCopyCommand.OnItemCreated(SIE.Domain.Entity)">
+            <summary>
+            执行复制新增
+            </summary>
+            <param name="entity">实体</param>
+        </member>
+        <member name="T:SIE.Wpf.Defects.Measures.RepairMeasureViewConfig">
+            <summary>
+            维修措施视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Measures.RepairMeasureViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Measures.RepairMeasureViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Measures.RepairMeasureViewConfig.ConfigSelectionView">
+            <summary>
+            配置下拉选择视图
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.Defects.Module">
+            <summary>
+            UI模块
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Module.Initialize(SIE.IApp)">
+            <summary>
+            模块初始化
+            </summary>
+            <param name="app">应用程序</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Module.AddNewPropertyEditor(SIE.IApp)">
+            <summary>
+            注册属性编辑器
+            </summary>
+            <param name="app">app</param>
+        </member>
+        <member name="M:SIE.Wpf.Defects.Module.App_ModuleOperations(System.Object,System.EventArgs)">
+            <summary>
+            添加模块
+            </summary>
+            <param name="sender">所有者</param>
+            <param name="e">参数</param>
+        </member>
+    </members>
+</doc>

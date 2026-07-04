@@ -1,0 +1,1796 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Web.MES.TaskManagement</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Web.MES.TaskManagement.EntityPropertyViewMetaExtension">
+            <summary>
+            视图扩展类
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.EntityPropertyViewMetaExtension.UseResourceWorkShopEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig})">
+            <summary>
+            车间编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.EntityPropertyViewMetaExtension.UseDispatchTaskBillEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig})">
+            <summary>
+            使用打印单据规则编辑器
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="meta">属性视图元数据</param>
+            <param name="action">委托</param>
+            <returns>泛型属性视图元数据</returns>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Completion.ProductCompletionCriteriaViewConfig">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Completion.ProductCompletionCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Completion.ProductCompletionDetailViewConfig">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Completion.ProductCompletionViewConfig">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Configs.DispatchConfigValueViewConfig">
+            <summary>
+            派工任务配置项视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Configs.DispatchConfigValueViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Configs.DispatchTaskConfigValueViewConfig">
+            <summary>
+            派工任务单配置值视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Configs.DispatchTaskConfigValueViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Configs.PreStartupSetupRecordConfigValueViewConfig">
+            <summary>
+            开机准备配置值视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Configs.PreStartupSetupRecordConfigValueViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Configs.ProcessPrepareRecordConfigValueViewConfig">
+            <summary>
+            工序产前准备配置值视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Configs.ProcessPrepareRecordConfigValueViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Configs.ReportRecordConfigValueViewConfig">
+            <summary>
+            报工记录配置值视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Configs.ReportRecordConfigValueViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Configs.ReportRecordUploadConfigValueViewConfig">
+            <summary>
+            报工记录配置值视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Configs.ReportRecordUploadConfigValueViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.DailyOutputReports.DailyOutputReportCriteriaViewConfig">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.DailyOutputReports.DailyOutputReportCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.DailyOutputReports.DailyOutputReportViewConfig">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Dispatchs.AssociatedTaskViewConfig">
+            <summary>
+            关联任务单视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.AssociatedTaskViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.AssociatedTaskViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Dispatchs.Commands.CancelDispatchTaskCommand">
+            <summary>
+            撤销派工任务单
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.Commands.CancelDispatchTaskCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行撤销派工操作
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>撤销派工结果</returns>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Dispatchs.Commands.CancelMergeTaskCommand">
+            <summary>
+            取消合并派工任务单
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.Commands.CancelMergeTaskCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行取消合并操作
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>取消合并结果</returns>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Dispatchs.Commands.CloseTaskCommand">
+            <summary>
+            强制关闭任务单
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.Commands.CloseTaskCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行强制关闭操作
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>强制关闭结果</returns>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Dispatchs.Commands.DispatchTaskCommand">
+            <summary>
+            派工任务单
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.Commands.DispatchTaskCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行取消合并操作
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>取消合并结果</returns>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Dispatchs.Commands.GenerateTaskBIllCommand">
+            <summary>
+            生成任务单
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.Commands.GenerateTaskBIllCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            生成任务单命令
+            </summary>
+            <param name="args">数据</param>
+            <param name="scope">scope</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Dispatchs.Commands.MergeTaskCommand">
+            <summary>
+            合并派工任务单
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.Commands.MergeTaskCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行合并操作
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>合并结果</returns>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Dispatchs.Commands.OpenFeedingCloseCommand">
+            <summary>
+            打开上料命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Dispatchs.Commands.PauseTaskCommand">
+            <summary>
+            暂停任务单
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.Commands.PauseTaskCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行暂停操作
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>暂停结果</returns>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Dispatchs.Commands.PrintDispatchTaskCommand">
+            <summary>
+            任务单打印
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.Commands.PrintDispatchTaskCommand.Excute(SIE.Web.MES.TaskManagement.Dispatchs.Commands.PrintDatas,System.String)">
+            <summary>
+            执行打印
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>打印</returns>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Dispatchs.Commands.PrintDatas">
+            <summary>
+            打印信息
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.TaskManagement.Dispatchs.Commands.PrintDatas.TaskIdList">
+            <summary>
+            任务单Id列表
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.TaskManagement.Dispatchs.Commands.PrintDatas.TaskTemplateId">
+            <summary>
+            模板Id
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Dispatchs.Commands.ResumeTaskCommand">
+            <summary>
+            恢复任务单
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.Commands.ResumeTaskCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行恢复操作
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>恢复结果</returns>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Dispatchs.Commands.SchedulingInfReturnCommand">
+            <summary>
+            排程退回
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Dispatchs.Commands.SetNormalCommand">
+            <summary>
+            设置普通任务单
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.Commands.SetNormalCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行设置普通操作
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>设置普通结果</returns>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Dispatchs.Commands.SetUrgentCommand">
+            <summary>
+            设置紧急任务单
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.Commands.SetUrgentCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行设置紧急操作
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>设置紧急结果</returns>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Dispatchs.Commands.ShowTaskDetailCommand">
+            <summary>
+            个人任务详情
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Dispatchs.Commands.SplitTaskCommand">
+            <summary>
+            拆分任务单
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.Commands.SplitTaskCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行拆分操作
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>拆分结果</returns>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Dispatchs.Commands.TaskDeleteCommand">
+            <summary>
+            删除命令
+            </summary>
+        </member>
+        <member name="F:SIE.Web.MES.TaskManagement.Dispatchs.Commands.TaskDeleteCommand.CommandName">
+            <summary>
+            删除命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.Commands.TaskDeleteCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>结果</returns>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Dispatchs.Commands.TaskFinishOrOpenCommand">
+            <summary>
+            完工/执行按钮
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Dispatchs.Commands.TaskPerformerCommand">
+            <summary>
+            保存派工任务可执行对象
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.Commands.TaskPerformerCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            派工任务可执行对象命令执行方法
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>保存结果</returns>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Dispatchs.DispatchDataQueryer">
+            <summary>
+            派工数据查询者
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.DispatchDataQueryer.IsDispatchTaskWipResource(System.Collections.Generic.List{System.Double})">
+            <summary>
+            是否派工到产线
+            </summary>
+            <param name="taskIds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.DispatchDataQueryer.DispatchTaskWipResource(SIE.MES.TaskManagement.Dispatchs.ViewModels.DispatchTaskViewModel)">
+            <summary>
+            选择资源派工
+            </summary>
+            <param name="model"></param>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.DispatchDataQueryer.SchedulingInfReturnValid(System.Collections.Generic.List{System.Double})">
+            <summary>
+            排程退回校验
+            </summary>
+            <param name="taskId"></param>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.DispatchDataQueryer.GetIsSelectedTaskPerformer(System.Collections.Generic.List{System.Double})">
+            <summary>
+            选择两笔或者两笔以上的任务单，判断是否已选对象
+            </summary>
+            <param name="dispatchTaskIds">所勾选的任单Ids</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.DispatchDataQueryer.GetTaskPerformerInfo(System.Collections.Generic.List{System.Double},System.Double,System.String,System.String)">
+            <summary>
+            获取可执行对象数据
+            </summary>
+            <param name="dispatchTaskIds">任务单Id列表</param>
+            <param name="dispatchTaskId">当前任务单Id</param>
+            <param name="adoType">可执行对象类型</param>
+            <param name="adoName">可执行对象名称</param>
+            <returns>可执行对象数据</returns>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.DispatchDataQueryer.GetWoIsGenerateTask">
+            <summary>
+            获取配置项是否生成任务单
+            </summary>
+            <returns>bool</returns>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.DispatchDataQueryer.GetAssociatedTasks(System.Double)">
+            <summary>
+            获取关联任务单列表
+            </summary>
+            <param name="dispatchTaskId">任务单Id</param>
+            <returns>关联任务单列表</returns>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.DispatchDataQueryer.GetReportDispatchTaskList(SIE.MES.TaskManagement.Dispatchs.AdoInfo)">
+            <summary>
+            通过对象信息获取报工管理信息
+            </summary>
+            <param name="adoInfo">对象信息</param>
+            <returns>报工管理信息</returns>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.DispatchDataQueryer.IsCanSyntypeReport(SIE.MES.WorkOrders.WorkOrder)">
+            <summary>
+            验证共模主料的工单是否能进行共模比报工
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Dispatchs.DispatchEquipmentViewConfig">
+            <summary>
+            派工对象设备视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.DispatchEquipmentViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.DispatchEquipmentViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.DispatchEquipmentViewConfig.ConfigDetailsView">
+            <summary>
+             配置明细视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.DispatchEquipmentViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Dispatchs.DispatchTaskCriteriaViewConfig">
+            <summary>
+            派工管理查询实体视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.DispatchTaskCriteriaViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Dispatchs.DispatchTaskDetailViewConfig">
+            <summary>
+            派工任务明细视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.DispatchTaskDetailViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.DispatchTaskDetailViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.DispatchTaskDetailViewConfig.ConfigDetailsView">
+            <summary>
+             配置明细视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.DispatchTaskDetailViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Dispatchs.DispatchTaskViewConfig">
+            <summary>
+            派工任务视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.MES.TaskManagement.Dispatchs.DispatchTaskViewConfig.workOrderTaskView">
+            <summary>
+            工单列表任务单视图
+            </summary>
+        </member>
+        <member name="F:SIE.Web.MES.TaskManagement.Dispatchs.DispatchTaskViewConfig.CanSendQtyProperty">
+            <summary>
+            可派工数量
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.DispatchTaskViewConfig.GetCanSendQty(SIE.MES.TaskManagement.Dispatchs.DispatchTask)">
+            <summary>
+            可派工数量
+            </summary>
+            <param name="me">DispatchTask</param>
+            <returns>decimal</returns>
+        </member>
+        <member name="F:SIE.Web.MES.TaskManagement.Dispatchs.DispatchTaskViewConfig.DisplayPriorityProperty">
+            <summary>
+            显示优先级
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.DispatchTaskViewConfig.GetDisplayPriority(SIE.MES.TaskManagement.Dispatchs.DispatchTask)">
+            <summary>
+            显示优先级
+            </summary>
+            <param name="me">任务单</param>
+            <returns>优先级</returns>
+        </member>
+        <member name="F:SIE.Web.MES.TaskManagement.Dispatchs.DispatchTaskViewConfig.DisplayStateProperty">
+            <summary>
+            显示状态  用一个字段显示工单状态和排产状态，工单状态有值时显示工单状态，排产状态有值时显示排产状态
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.DispatchTaskViewConfig.GetDisplayState(SIE.MES.TaskManagement.Dispatchs.DispatchTask)">
+            <summary>
+            显示状态
+            </summary>
+            <param name="me">工单</param>
+            <returns>工单状态/排产状态</returns>
+        </member>
+        <member name="F:SIE.Web.MES.TaskManagement.Dispatchs.DispatchTaskViewConfig.PieWightProperty">
+            <summary>
+            饼重
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.DispatchTaskViewConfig.GetPieWight(SIE.MES.TaskManagement.Dispatchs.DispatchTask)">
+            <summary>
+            饼重
+            </summary>
+            <param name="me">任务单</param>
+            <returns>饼重</returns>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.DispatchTaskViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.DispatchTaskViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.DispatchTaskViewConfig.ConfigDetailsView">
+            <summary>
+             配置明细视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.DispatchTaskViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.DispatchTaskViewConfig.WorkOrderTaskView">
+            <summary>
+            工单列表任务单视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Dispatchs.TaskProcessBomViewConfig">
+            <summary>
+            任务工序BOM视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.MES.TaskManagement.Dispatchs.TaskProcessBomViewConfig.reportDispatchView">
+            <summary>
+            报工管理工序BOM视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.TaskProcessBomViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.TaskProcessBomViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.TaskProcessBomViewConfig.ConfigDetailsView">
+            <summary>
+             配置明细视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.TaskProcessBomViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.TaskProcessBomViewConfig.ReportDispatchView">
+            <summary>
+            报工管理BOM视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Dispatchs.ViewModels.DispatchTaskPrintViewModelViewConfig">
+            <summary>
+            任务单打印 视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.ViewModels.DispatchTaskPrintViewModelViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Dispatchs.ViewModels.ResourcesTasksViewModelView">
+            <summary>
+            资源已派任务
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.ViewModels.ResourcesTasksViewModelView.ConfigView">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.ViewModels.ResourcesTasksViewModelView.ConfigListView">
+            <summary>
+            配置列表
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Dispatchs.ViewModels.SplitTaskViewModelViewConfig">
+            <summary>
+            拆分任务ViewModel主视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Dispatchs.ViewModels.TaskDetailViewModelViewConfig">
+            <summary>
+            任务详情ViewModel视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.ViewModels.TaskDetailViewModelViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.ViewModels.TaskDetailViewModelViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Dispatchs.WorkOrderExtView">
+            <summary>
+            工单扩展视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.WorkOrderExtView.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Dispatchs.ProductionDispatchReportCriteriaViewConfig">
+            <summary>
+            生产任务报表查询实体视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.ProductionDispatchReportCriteriaViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Dispatchs.ReportDispatchTaskCriteriaViewConfig">
+            <summary>
+            派工管理查询实体视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.ReportDispatchTaskCriteriaViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Dispatchs.ReportDispatchTaskViewConfig">
+            <summary>
+            报工任务视图配置
+            </summary>  
+        </member>
+        <member name="F:SIE.Web.MES.TaskManagement.Dispatchs.ReportDispatchTaskViewConfig.dispatchTaskDetailView">
+            <summary>
+            个人任务详情
+            </summary>
+        </member>
+        <member name="F:SIE.Web.MES.TaskManagement.Dispatchs.ReportDispatchTaskViewConfig.reportDispatchListView">
+            <summary>
+            报工任务单视图
+            </summary>
+        </member>
+        <member name="F:SIE.Web.MES.TaskManagement.Dispatchs.ReportDispatchTaskViewConfig.dispatchTaskInspView">
+            <summary>
+            任务单报检视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.ReportDispatchTaskViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.ReportDispatchTaskViewConfig.ReportDispatchListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Dispatchs.ReportDispatchTaskViewConfig.DispatchTaskDetailView">
+            <summary>
+             配置个人任务详情列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.FeedingRecords.Commands.DeductionRecordEditCommand">
+            <summary>
+            修改按钮
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.FeedingRecords.Commands.FeedingAreaItemDelCommand">
+             <summary>
+            删除命令
+             </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.FeedingRecords.Commands.FeedingAreaItemDelCommand.Excute(System.Double[],System.String)">
+            <summary>
+            命令执行
+            </summary>
+            <param name="args"></param>
+            <param name="scope">作用域</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.FeedingRecords.Commands.FeedingAreaItemSelectCommand">
+            <summary>
+            添加命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.FeedingRecords.Commands.FeedingAreaItemSelectCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            添加用户
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.FeedingRecords.Commands.FeedingAreaLabelPrintCommand">
+            <summary>
+            打印
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.FeedingRecords.Commands.FeedingAreaLabelPrintCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            打印命令执行方法
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>打印结果</returns>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.FeedingRecords.Commands.FeedingAreaLabelPrintCommand.BatchReprintDataModel">
+            <summary>
+            打印数据类
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.TaskManagement.FeedingRecords.Commands.FeedingAreaLabelPrintCommand.BatchReprintDataModel.Ids">
+            <summary>
+            选中条码Id列表
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.TaskManagement.FeedingRecords.Commands.FeedingAreaLabelPrintCommand.BatchReprintDataModel.TemplateId">
+            <summary>
+            打印模板Id
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.FeedingRecords.Commands.FeedingAreaResourceDelCommand">
+             <summary>
+            删除命令
+             </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.FeedingRecords.Commands.FeedingAreaResourceDelCommand.Excute(System.Double[],System.String)">
+            <summary>
+            命令执行
+            </summary>
+            <param name="args"></param>
+            <param name="scope">作用域</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.FeedingRecords.Commands.FeedingAreaResourceSelectCommand">
+            <summary>
+            添加命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.FeedingRecords.Commands.FeedingAreaResourceSelectCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            添加用户
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.FeedingRecords.DeductionRecordDataQueryer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.FeedingRecords.DeductionRecordDataQueryer.GetDeductionRecordsByIds(System.Collections.Generic.List{System.Double})">
+            <summary>
+            
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.FeedingRecords.DeductionRecordDataQueryer.GetDeductionRecordsByReportId(System.Double)">
+            <summary>
+            根据报工记录获取扣料记录
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.FeedingRecords.DeductionRecordViewConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.FeedingRecords.DeductionRecordViewConfig.ConfigListView">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.FeedingRecords.FeedingAreaItemViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.FeedingRecords.FeedingAreaLineViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.FeedingRecords.FeedingAreaViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.FeedingRecords.FeedingAreaViewConfig.ConfigQueryView">
+            <summary>
+            查询视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.FeedingRecords.ViewModels.FeedingAreaViewModels">
+            <summary>
+            供料区条码化打印 ViewModel
+            </summary> 
+        </member>
+        <member name="F:SIE.Web.MES.TaskManagement.FeedingRecords.ViewModels.FeedingAreaViewModels.TemplateIdProperty">
+            <summary>
+            打印模板Id
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.TaskManagement.FeedingRecords.ViewModels.FeedingAreaViewModels.TemplateId">
+            <summary>
+            打印模板Id
+            </summary>
+        </member>
+        <member name="F:SIE.Web.MES.TaskManagement.FeedingRecords.ViewModels.FeedingAreaViewModels.TemplateProperty">
+            <summary>
+            打印模板
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.TaskManagement.FeedingRecords.ViewModels.FeedingAreaViewModels.Template">
+            <summary>
+            打印模板
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.FeedingRecords.ViewModels.FeedingAreaViewModels.FeedingAreaViewModelConfig">
+            <summary>
+            打印 视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.FeedingRecords.ViewModels.FeedingAreaViewModels.FeedingAreaViewModelConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.HeatTreatments.Commands.HeatTreatmentReportCommand">
+            <summary>
+            报工命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.HeatTreatments.Commands.HeatTreatmentReportCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.HeatTreatments.HeatTreatmentViewConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.HeatTreatments.HeatTreatmentViewConfig.ConfigListView">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.HeatTreatments.HeatTreatmentViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.IOT.AxisChangeRecordViewConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.IOT.AxisChangeRecordViewConfig.ConfigListView">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.TaskManagementMenuInit">
+            <summary>
+            菜单初始化
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.TaskManagementMenuInit.GetMenuDtos">
+            <summary>
+            获取菜单列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Module">
+            <summary>
+            模块配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化模块
+            </summary>
+            <param name="app">应用程序</param>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Module.App_ModuleOperations(System.Object,System.EventArgs)">
+            <summary>
+            模块定义
+            </summary>
+            <param name="sender">应用程序</param>
+            <param name="e">参数</param>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.PackingDetailReports.PackingDetailReportCriteriaViewConfig">
+            <summary>
+            包装QC确认明细报表 视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.PackingDetailReports.PackingDetailReportCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            包装QC确认明细报表 视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.PackingDetailReports.PackingDetailReportViewConfig">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.PackingDetailReports.PackingDetailReportViewConfig.ConfigListView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.ProcessPrepareRecords.ProcessPrepareRecordCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.ProcessPrepareRecords.ProcessPrepareRecordDetailViewConfig.ConfigListView">
+            <summary>
+            列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.ProcessPrepareRecords.ProcessPrepareRecordDetailViewConfig.ExecuteView">
+            <summary>
+            执行视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.ProcessPrepareRecords.ProcessPrepareRecordsQuery.CreateProcessPrepareRecordDetail(System.Double)">
+            <summary>
+            创建产品准备记录
+            </summary>
+            <param name="workOrderId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.ProcessPrepareRecords.ProcessPrepareRecordsQuery.ExportPrepareProduct(SIE.MES.TaskManagement.ProcessPrepareRecords.ProcessPrepareRecord)">
+            <summary>
+            产前准备记录导出命令
+            </summary>
+            <param name="record"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.ProcessTaskLists.Commands.CancelDispatchTaskCommand">
+            <summary>
+            撤销派工任务单
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.ProcessTaskLists.Commands.CancelDispatchTaskCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行撤销派工操作
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>撤销派工结果</returns>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.ProcessTaskLists.Commands.SplitTaskCommand">
+            <summary>
+            拆分任务单
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.ProcessTaskLists.Commands.SplitTaskCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行拆分操作
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>拆分结果</returns>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.ProcessTaskLists.Commands.TaskDeleteCommand">
+            <summary>
+            删除命令
+            </summary>
+        </member>
+        <member name="F:SIE.Web.MES.TaskManagement.ProcessTaskLists.Commands.TaskDeleteCommand.CommandName">
+            <summary>
+            删除命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.ProcessTaskLists.Commands.TaskDeleteCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>结果</returns>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.ProcessTaskLists.ProcessTaskListCriteriaViewConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.ProcessTaskLists.ProcessTaskListCriteriaViewConfig.ConfigView">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.ProcessTaskLists.ProcessTaskListViewModelViewConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.ProcessTaskLists.ProcessTaskListViewModelViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.ProcessTaskLists.ProcessTaskListViewModelViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.ProcessTaskLists.ProcessTaskListViewModelViewConfig.ConfigDetailsView">
+            <summary>
+             配置明细视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.ProcessTaskLists.ProcessTaskListViewModelViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.ProcessTaskLists.ResourcesTasksViewModelView">
+            <summary>
+            资源已派任务
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.ProcessTaskLists.ResourcesTasksViewModelView.ConfigView">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.ProcessTaskLists.ResourcesTasksViewModelView.ConfigListView">
+            <summary>
+            配置列表
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.ProcessTaskLists.SplitTaskViewModelViewConfig">
+            <summary>
+            拆分任务ViewModel主视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.ProcessTaskLists.SplitTaskViewModelViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Reports.Commands.ReportCommand">
+            <summary>
+            报工
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Reports.Commands.ReportExamineConfirmCommand">
+            <summary>
+            报工记录审核确认命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Reports.Commands.ReportExamineConfirmCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Reports.Commands.ReportExamineRevokeCommand">
+            <summary>
+            报工记录审核撤回命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Reports.Commands.ReportExamineRevokeCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Reports.Commands.ReportExportByMonthCommand">
+            <summary>
+            报工记录按月导出命令
+            注：实际导出逻辑在前端JavaScript中实现，此类仅作为命令注册使用
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Reports.Commands.ReportExportByMonthCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行按月导出（占位方法，实际逻辑由前端处理）
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Reports.Commands.ReportFinishConfirmCommand">
+            <summary>
+            报工记录完工确认命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Reports.Commands.ReportFinishConfirmCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Reports.Commands.ReportFirstInspCommand">
+            <summary>
+            任务单首件报检
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Reports.Commands.ReportFirstInspCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Reports.Commands.ReportPrintCommand">
+            <summary>
+            打印
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Reports.Commands.ReportSaveCommand">
+            <summary>
+            保存报工记录
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Reports.Commands.ReportTaskResumeCommand">
+            <summary>
+            报工关联恢复命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Reports.Commands.ReportTaskResumeCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行恢复操作
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>恢复结果</returns>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Reports.Commands.ReportTaskStartWorkCommand">
+            <summary>
+            开工
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Reports.Commands.ReportTaskStopCommand">
+            <summary>
+            报工暂停命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Reports.Commands.ReportTaskStopCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Reports.ProductFamilyExtViewConfig">
+            <summary>
+            产品族扩展属性
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Reports.ProductionDispatchReportViewConfig">
+            <summary>
+            生产任务统计报表视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.MES.TaskManagement.Reports.ProductionDispatchReportViewConfig.productionDispatchReportView">
+            <summary>
+            生产任务统计报表视图
+            </summary>
+        </member>
+        <member name="F:SIE.Web.MES.TaskManagement.Reports.ProductionDispatchReportViewConfig.ReportHourProperty">
+            <summary>
+            工时统计
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Reports.ProductionDispatchReportViewConfig.GetReportHour(SIE.MES.TaskManagement.Reports.ProductionDispatchReport)">
+            <summary>
+            显示工时
+            </summary>
+            <param name="me">任务单</param>
+            <returns>工时</returns>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Reports.ProductionDispatchReportViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Reports.ProductionDispatchReportViewConfig.ProductionDispatchReportView">
+            <summary>
+            列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Reports.ReportDataQueryer">
+            <summary>
+            报工数据查询者
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Reports.ReportDataQueryer.GetReportRuleConfig(System.Double)">
+            <summary>
+            获取报工规则配置
+            SIE.Web.MES.TaskManagement.Reports.ProductFamilyBehavior.js 引用
+            </summary>
+            <param name="familyId">产品族ID</param>
+            <returns>报工规则配置</returns>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Reports.ReportDataQueryer.GetTaskConfig(System.Double)">
+            <summary>
+            获取任务单生成规则配置
+            SIE.Web.MES.TaskManagement.Reports.ProductFamilyBehavior.js 引用
+            </summary>
+            <param name="familyId">产品族ID</param>
+            <returns>任务单生成规则配置</returns>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Reports.ReportDataQueryer.SaveReportRuleConfigs(System.String)">
+            <summary>
+            保存报工规则配置信息
+            SIE.Web.MES.TaskManagement.Reports.ProductFamilyBehavior.js 引用
+            </summary>
+            <param name="result">规则json</param>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Reports.ReportDataQueryer.SaveTaskConfigs(System.String)">
+            <summary>
+            保存任务单生成规则配置信息
+            SIE.Web.MES.TaskManagement.Reports.ProductFamilyBehavior.js 引用
+            </summary>
+            <param name="result">规则json</param>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Reports.ReportDataQueryer.ValidateTaskConfigs(System.String)">
+            <summary>
+            验证任务单生成规则配置信息
+            SIE.Web.MES.TaskManagement.Reports.ProductFamilyBehavior.js 引用
+            </summary>
+            <param name="result">规则json</param>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Reports.ReportDataQueryer.GetCommonModeInfo(System.Double)">
+            <summary>
+            获取共模任务单信息
+            SIE.Web.MES.TaskManagement.Reports.ReportCommon.js调用
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Reports.ReportDataQueryer.GetMainDefectIds(System.Double)">
+            <summary>
+            获取主任务单缺陷列表
+            SIE.Web.MES.TaskManagement.Reports.ReportGenerator.js调用
+            </summary>
+            <param name="dispatchTaskId">任务单Id</param>
+            <returns>缺陷列表</returns>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Reports.ReportDataQueryer.GetOrCreateReportRecord(System.Double)">
+            <summary>
+            获取报工记录
+            SIE.Web.MES.TaskManagement.Reports.ReportRefreshCommand.js调用
+            </summary>
+            <param name="dispatchTaskId">任务单Id</param>
+            <returns>报工记录</returns>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Reports.ReportDataQueryer.TryGetReportPrintemplate">
+            <summary>
+            判断是否维护了报工打印模板
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Reports.ReportDataQueryer.ReportLabelPrint(System.Double)">
+             <summary>
+            报工标签打印
+             </summary>
+             <param name="reportRecordId">报工记录Id</param>
+             <returns>打印结果</returns>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Reports.ReportDataQueryer.Report(SIE.MES.TaskManagement.Reports.ReportRecord,System.Collections.Generic.List{System.Double},System.Collections.Generic.List{SIE.MES.TaskManagement.Models.ReportTaskInfo},System.Boolean)">
+            <summary>
+            报工
+            SIE.Web.MES.TaskManagement.Reports.ReportCommon.js 调用
+            </summary>
+            <param name="record">报工记录</param>
+            <param name="defectIds">缺陷Id</param>
+            <param name="assTaskInfo">关联任务单</param>
+            <param name="isReport">是否直接报工</param>
+            <returns>true/false</returns>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Reports.ReportDataQueryer.GetDispatchReport(SIE.MES.TaskManagement.Reports.ReportDispatchTaskViewModelCriteria)">
+            <summary>
+            获取任务统计报表数据
+            </summary>
+            <param name="criteria">查询实体</param>
+            <returns>任务统计报表数据列表</returns>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Reports.ReportDataQueryer.ReportLabelPrintResult">
+            <summary>
+            Lot打印返回结果
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.TaskManagement.Reports.ReportDataQueryer.ReportLabelPrintResult.Type">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.TaskManagement.Reports.ReportDataQueryer.ReportLabelPrintResult.ErrMsg">
+            <summary>
+            错误信息
+            </summary>
+        </member>
+        <member name="P:SIE.Web.MES.TaskManagement.Reports.ReportDataQueryer.ReportLabelPrintResult.Url">
+            <summary>
+            路径
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Reports.ReportDataQueryer.ExportReportRecordExamineByMonth(SIE.MES.TaskManagement.Reports.ReportRecordExamineCriteria)">
+            <summary>
+            按月导出报工记录审核数据
+            SIE.Web.MES.TaskManagement.Reports.Commands.ReportExportByMonthCommand.js 调用
+            </summary>
+            <param name="criteria">查询条件（包含时间范围）</param>
+            <returns>报工记录列表</returns>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Reports.ReportDefectViewConfig">
+            <summary>
+            报工缺陷视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Reports.ReportDefectViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Reports.ReportDefectViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Reports.ReportDefectViewConfig.ConfigDetailsView">
+            <summary>
+             配置明细视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Reports.ReportDefectViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Reports.ReportDispatchTaskTemplate.DefineBlocks">
+            <summary>
+            定义块
+            </summary>
+            <returns>聚合块</returns>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Reports.ReportDispatchTaskViewModelCriteriaViewConfig.ConfigView">
+            <summary>
+            通用视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Reports.ReportDispatchTaskViewModelViewConfig.ProdReportViewConfig">
+            <summary>
+            产品报表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Reports.ReportDispatchTaskViewModelViewConfig.ProdReportViewConfig.ConfigView">
+            <summary>
+            默认视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Reports.ReportOperateLogViewConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Reports.ReportOperateLogViewConfig.ConfigListView">
+            <summary>
+            列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Reports.ReportPrintConfigViewConfig">
+            <summary>
+            报工打印设置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Reports.ReportPrintConfigViewConfig.ConfigView">
+            <summary>
+            视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Reports.ReportRecordExamineCriteriaViewConfig">
+            <summary>
+            报工记录审核查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Reports.ReportRecordExamineCriteriaViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Reports.ReportRecordExamineViewConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Reports.ReportRecordExamineViewConfig.ConfigListView">
+            <summary>
+            列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Reports.ReportRecordViewConfig">
+            <summary>
+            报工记录视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Reports.ReportRecordViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Reports.ReportRecordViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Reports.ReportRecordViewConfig.ConfigDetailsView">
+            <summary>
+             配置明细视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Reports.ReportRecordViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Reports.ReportTransferLabelViewConfig">
+            <summary>
+            转入标签视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Reports.ReportTransferLabelViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Reports.ReportTransferLabelViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Reports.ReportTransferLabelViewConfig.ConfigDetailsView">
+            <summary>
+             配置明细视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Reports.ReportTransferLabelViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Reports.ReportWipBatchViewConfig">
+            <summary>
+            报工批次标签视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Reports.ReportWipBatchViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Reports.ReportWipBatchViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Reports.ReportWipBatchViewConfig.ConfigDetailsView">
+            <summary>
+             配置明细视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Reports.ReportWipBatchViewConfig.ConfigSelectionView">
+            <summary>
+             配置下拉视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.SchedulingInfReports.SchedulingInfReportCriteriaViewConfig">
+            <summary>
+            排程状态查询表-Web查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.SchedulingInfReports.SchedulingInfReportCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            查询视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.SchedulingInfReports.SchedulingInfReportViewConfig">
+            <summary>
+            排程状态查询表-Web视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.SchedulingInfReports.SchedulingInfReportViewConfig.ConfigListView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.SchedulingInfs.Commands.SchedulingInfCancelCommand">
+            <summary>
+            作废按钮
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.SchedulingInfs.Commands.SchedulingInfGenerateTaskCommand">
+            <summary>
+            排程下发(创建派工任务单)
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.SchedulingInfs.Commands.SchedulingInfImportCommand">
+            <summary>
+            导入
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.SchedulingInfs.Commands.SchedulingInfImportCommand.DownloadTemplate">
+            <summary>
+            直接从服务器上下载模板
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.SchedulingInfs.Commands.SchedulingInfValidCommand">
+            <summary>
+            排程校验
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Specifications.Commands.ProductSpecificationDetailCommand">
+            <summary>
+            导入
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Specifications.Commands.ProductSpecificationDetailCommand.OnRowDataRead(SIE.Common.Import.RowData,SIE.Common.Import.CacheData)">
+            <summary>
+            重写导入
+            </summary>
+            <param name="data"></param>
+            <param name="cache"></param>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Specifications.Commands.SelectItemCommand">
+            <summary>
+            产品规格件物料选择
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Specifications.Commands.SelectItemCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行选择
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Specifications.Commands.SelectSpecificationCommand">
+            <summary>
+            规格件选择
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Specifications.Commands.SelectSpecificationCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行选择
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Specifications.Commands.SpecificationSaveCommand">
+            <summary>
+            产品规格件清单保存命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Specifications.ProductSpecificationCriteriaViewConfig">
+            <summary>
+            叫料工单查询实体视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Specifications.ProductSpecificationDetailViewConfig">
+            <summary>
+            产品规格件清单视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Specifications.ProductSpecificationViewConfig">
+            <summary>
+            产品规格件对照表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Specifications.ProductSpecificationViewConfig.ConfigImportView">
+            <summary>
+            配置导入模板
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Specifications.SpecificationCategoryViewConfig">
+            <summary>
+            规格件分类视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Specifications.SpecificationCategoryViewConfig.ConfigImportView">
+            <summary>
+            配置导入视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.Specifications.SpecificationViewConfig">
+            <summary>
+            规格件清单视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Specifications.SpecificationViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Specifications.SpecificationViewConfig.ConfigQueryView">
+            <summary>
+            查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.Specifications.SpecificationViewConfig.ConfigImportView">
+            <summary>
+            配置导入视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.StandardWorkHours.Commands.StandardHourSetImportCommand">
+            <summary>
+            产品标准工时维护导入命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.StandardWorkHours.Commands.StandardHourSetImportCommand.GetImportCompleted">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.StandardWorkHours.Commands.StandardHourSetImportCommand.GetImportHandleType">
+            <summary>
+            获取导入处理类型
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.StandardWorkHours.Commands.StandardHourSetImportCommand.Excute(SIE.Web.Common.Import.Commands.ImportViewArgs,System.String)">
+            <summary>
+            导入数据
+            </summary>
+            <param name="importViewArgs">导入视图参数</param>
+            <param name="scope">使用范围</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.StandardWorkHours.Commands.StandardHourSetImportCommand.DownloadTemplate">
+            <summary>
+            直接从服务器上下载模板
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.StandardWorkHours.Commands.StandardHourSetSaveCommand">
+            <summary>
+            产品标准工时维护-保存命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.StandardWorkHours.Commands.StandardHourSetSaveCommand.OnSaving(SIE.Domain.EntityList)">
+            <summary>
+            保存前校验
+            </summary>
+            <param name="data">保存数据</param>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.StandardWorkHours.StandardHourSetCriteriaViewConfig">
+            <summary>
+            产品标准工时维护查询实体视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.StandardWorkHours.StandardHourSetCriteriaViewConfig.ConfigQueryView">
+            <summary>
+            查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.StandardWorkHours.StandardHourSetViewConfig">
+            <summary>
+            产品标准工时维护视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.StandardWorkHours.StandardHourSetViewConfig.ConfigListView">
+            <summary>
+            列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.WipProgress.WipProgressViewModelCriteriaViewConfig">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.WipProgress.WipProgressViewModelViewConfig">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.WipProgress.WipProgressWipBatchCriteriaViewConfig">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.TaskManagement.WipProgress.WipProgressWipBatchViewConfig">
+            <summary>
+            生产批次视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.MES.TaskManagement.WipProgress.WipProgressWipBatchViewConfig.WipProgressBatchView">
+            <summary>
+            在制品查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.WipProgress.WipProgressWipBatchViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.MES.TaskManagement.WipProgress.WipProgressWipBatchViewConfig.ConfigWipProgressBatchView">
+            <summary>
+            配置在制品查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.SuspectProductLabels.SuspectProductLabelCriteriaViewConfig">
+            <summary>
+            可疑品标签查询 视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.SuspectProductLabels.SuspectProductLabelDetailViewConfig">
+            <summary>
+            可疑品标签明细 视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.MES.SuspectProductLabels.SuspectProductLabelViewConfig">
+            <summary>
+            可疑品标签 视图配置
+            </summary>
+        </member>
+    </members>
+</doc>

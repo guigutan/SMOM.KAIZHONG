@@ -1,0 +1,2590 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.ESop</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.ESop.DbMigrations._20220920_000000_InitDashboard">
+            <summary>
+            初始化周转箱类型数据
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.DbMigrations._20220920_000000_InitDashboard.DbSetting">
+            <summary>
+            数据库连接
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.DbMigrations._20220920_000000_InitDashboard.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.DbMigrations._20220920_000000_InitDashboard.Type">
+            <summary>
+            手动升级的类型：数据
+            </summary>
+        </member>
+        <member name="M:SIE.ESop.DbMigrations._20220920_000000_InitDashboard.Down">
+            <summary>
+            不支持 Down
+            </summary>
+        </member>
+        <member name="M:SIE.ESop.DbMigrations._20220920_000000_InitDashboard.Up">
+            <summary>
+            升级数据
+            </summary>
+        </member>
+        <member name="T:SIE.ESop.DbMigrations._20240117_000000_initDocUseType">
+            <summary>
+            工程文件使用类型快码
+            </summary>
+        </member>
+        <member name="T:SIE.ESop.Configs.DisplayConfig">
+            <summary>
+            文档服务器配置
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Configs.DisplayConfig.defaultValue">
+            <summary>
+            默认值
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Configs.DisplayConfig.DefaultValue">
+            <summary>
+            默认值
+            </summary>
+        </member>
+        <member name="T:SIE.ESop.Configs.DisplayPointConfigValue">
+            <summary>
+            显示点配置实体
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Configs.DisplayPointConfigValue.IntervalProperty">
+            <summary>
+            播放间隔(秒)
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Configs.DisplayPointConfigValue.Interval">
+            <summary>
+            播放间隔秒数
+            </summary> 
+        </member>
+        <member name="F:SIE.ESop.Configs.DisplayPointConfigValue.ReTryCountProperty">
+            <summary>
+            重试次数
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Configs.DisplayPointConfigValue.ReTryCount">
+            <summary>
+            重试次数
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Configs.DisplayPointConfigValue.ModifierKeysProperty">
+            <summary>
+            组合键
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Configs.DisplayPointConfigValue.ModifierKeys">
+            <summary>
+            组合键
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Configs.DisplayPointConfigValue.KeyProperty">
+            <summary>
+            热键
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Configs.DisplayPointConfigValue.Key">
+            <summary>
+            热键
+            </summary>
+        </member>
+        <member name="M:SIE.ESop.Configs.DisplayPointConfigValue.Display">
+            <summary>
+            显示
+            </summary>
+            <returns>返回显示内容</returns>
+        </member>
+        <member name="T:SIE.ESop.Configs.AttachmentConfig">
+            <summary>
+            文档服务器配置
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Configs.AttachmentConfig.defaultValue">
+            <summary>
+            默认值
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Configs.AttachmentConfig.DefaultValue">
+            <summary>
+            默认值
+            </summary>
+        </member>
+        <member name="M:SIE.ESop.Configs.AttachmentConfig.GetValue">
+            <summary>
+            获取界面的值，假设工序匹配正则表达式或适用产品页为空则设置默认值
+            </summary>
+            <returns>返回界面设置的值</returns>
+        </member>
+        <member name="T:SIE.ESop.Configs.AttachmentConfigValue">
+            <summary>
+            文件上传参数配置 
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Configs.AttachmentConfigValue.REGULAR">
+            <summary>
+            @包装1#01
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Configs.AttachmentConfigValue.APPLY_ITEM_SHEET">
+            <summary>
+            工作表:适用物料 
+            位置：第一行第一列 至 第一列 第 N 行
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Configs.AttachmentConfigValue.APPLY_WORKORDER_SHEET">
+            <summary>
+            工作表:适用工单
+            位置：第一行第一列 至 第一列 第 N 行
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Configs.AttachmentConfigValue.MaxSizeProperty">
+            <summary>
+            文件大小限制（Mb）
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Configs.AttachmentConfigValue.MaxSize">
+            <summary>
+            文件大小限制（Mb）
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Configs.AttachmentConfigValue.MappingSheetRegularProperty">
+            <summary>
+            工序匹配正则表达式
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Configs.AttachmentConfigValue.MappingSheetRegular">
+            <summary>
+            工序匹配正则表达式
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Configs.AttachmentConfigValue.ItemSheetProperty">
+            <summary>
+            适用产品页
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Configs.AttachmentConfigValue.ItemSheet">
+            <summary>
+            适用产品页
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Configs.AttachmentConfigValue.WorkOrderSheetProperty">
+            <summary>
+            适用工单页
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Configs.AttachmentConfigValue.WorkOrderSheet">
+            <summary>
+            适用工单页
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Configs.AttachmentConfigValue.UseComProperty">
+            <summary>
+            使用Com组件
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Configs.AttachmentConfigValue.UseCom">
+            <summary>
+            使用Com组件
+            </summary>
+        </member>
+        <member name="M:SIE.ESop.Configs.AttachmentConfigValue.Display">
+            <summary>
+            显示
+            </summary>
+            <returns>返回显示内容</returns>
+        </member>
+        <member name="T:SIE.ESop.Displays.Configs.DisplayPointDataConfig">
+            <summary>
+            ESOP文档来源
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Displays.Configs.DisplayPointDataConfig.DefaultValue">
+            <summary>
+            默认值
+            </summary>
+        </member>
+        <member name="T:SIE.ESop.Displays.Configs.DisplayPointDataConfigValue">
+            <summary>
+            ESOP文档来源
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Displays.Configs.DisplayPointDataConfigValue.DataFromProperty">
+            <summary>
+            数据来源
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Displays.Configs.DisplayPointDataConfigValue.DataFrom">
+            <summary>
+            数据来源
+            </summary>
+        </member>
+        <member name="M:SIE.ESop.Displays.Configs.DisplayPointDataConfigValue.Display">
+            <summary>
+            显示
+            </summary>
+            <returns>返回显示内容</returns>
+        </member>
+        <member name="T:SIE.ESop.Displays.DisplayPoint">
+            <summary>
+            显示点
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Displays.DisplayPoint.CodeProperty">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Displays.DisplayPoint.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Displays.DisplayPoint.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Displays.DisplayPoint.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Displays.DisplayPoint.ResourceIdProperty">
+            <summary>
+            资源ID
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Displays.DisplayPoint.ResourceId">
+            <summary>
+            资源ID
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Displays.DisplayPoint.ResourceProperty">
+            <summary>
+            资源
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Displays.DisplayPoint.Resource">
+            <summary>
+            资源
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Displays.DisplayPoint.PlaySpaceProperty">
+            <summary>
+            播放间隔
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Displays.DisplayPoint.PlaySpace">
+            <summary>
+            播放间隔
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Displays.DisplayPoint.PlayScreenNumProperty">
+            <summary>
+            扩展屏
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Displays.DisplayPoint.PlayScreenNum">
+            <summary>
+            扩展屏
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Displays.DisplayPoint.RemarkProperty">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Displays.DisplayPoint.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Displays.DisplayPoint.DisplayPointProcessListProperty">
+            <summary>
+            显示点对应工序列表
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Displays.DisplayPoint.DisplayPointProcessList">
+            <summary>
+            显示点对应工序列表
+            </summary>
+        </member>
+        <member name="T:SIE.ESop.Displays.DisplayPointConfig">
+            <summary>
+            显示点 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.ESop.Displays.DisplayPointConfig.ConfigMeta">
+            <summary>
+            配置数据库的映射
+            </summary>
+        </member>
+        <member name="T:SIE.ESop.Displays.DisplayPointController">
+            <summary>
+            显示点控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ESop.Displays.DisplayPointController.InitEsop">
+            <summary>
+            初始化ESOP控制台等
+            </summary>
+        </member>
+        <member name="M:SIE.ESop.Displays.DisplayPointController.GetDisplayPointList(SIE.ESop.Displays.DisplayPointCriteria)">
+            <summary>
+            查询显示点
+            </summary>
+            <param name="criteria">查询实体</param>
+            <returns>查询点列表</returns>
+        </member>
+        <member name="M:SIE.ESop.Displays.DisplayPointController.GetDisplayPointList(System.Double,System.String,SIE.PagingInfo)">
+            <summary>
+            获取显示点数据
+            </summary>
+            <param name="resourceId">资源Id</param>
+            <param name="keyword">搜索</param>
+            <param name="pagingInfo">分页信息</param>
+            <returns>返回显示点数据</returns>
+        </member>
+        <member name="M:SIE.ESop.Displays.DisplayPointController.HasResourceDisplayPoint(System.Double,System.Double)">
+            <summary>
+            资源是否关联显示点
+            </summary>
+            <param name="resourceId">资源ID</param>
+            <param name="displayPointId">显示点ID</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.ESop.Displays.DisplayPointCriteria">
+            <summary>
+            显示点
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Displays.DisplayPointCriteria.CodeProperty">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Displays.DisplayPointCriteria.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Displays.DisplayPointCriteria.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Displays.DisplayPointCriteria.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Displays.DisplayPointCriteria.ResourceIdProperty">
+            <summary>
+            资源ID
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Displays.DisplayPointCriteria.ResourceId">
+            <summary>
+            资源ID
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Displays.DisplayPointCriteria.ResourceProperty">
+            <summary>
+            资源
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Displays.DisplayPointCriteria.Resource">
+            <summary>
+            资源
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Displays.DisplayPointCriteria.ProcessIdProperty">
+            <summary>
+            工序ID
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Displays.DisplayPointCriteria.ProcessId">
+            <summary>
+            工序ID
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Displays.DisplayPointCriteria.ProcessProperty">
+            <summary>
+            工序
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Displays.DisplayPointCriteria.Process">
+            <summary>
+            工序
+            </summary>
+        </member>
+        <member name="M:SIE.ESop.Displays.DisplayPointCriteria.Fetch">
+            <summary>
+            查询方法
+            </summary>
+            <returns>返回查询的显示点数据集</returns>
+        </member>
+        <member name="T:SIE.ESop.Displays.DisplayPointProcess">
+            <summary>
+            工位显示点关系
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Displays.DisplayPointProcess.ProcessIdProperty">
+            <summary>
+            工序ID
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Displays.DisplayPointProcess.ProcessId">
+            <summary>
+            工序ID
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Displays.DisplayPointProcess.ProcessProperty">
+            <summary>
+            工序
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Displays.DisplayPointProcess.Process">
+            <summary>
+            工序
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Displays.DisplayPointProcess.DisplayPointIdProperty">
+            <summary>
+            显示点Id
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Displays.DisplayPointProcess.DisplayPointId">
+            <summary>
+            显示点Id
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Displays.DisplayPointProcess.DisplayPointProperty">
+            <summary>
+            显示点
+            </summary> 
+        </member>
+        <member name="P:SIE.ESop.Displays.DisplayPointProcess.DisplayPoint">
+            <summary>
+            显示点
+            </summary>
+        </member>
+        <member name="T:SIE.ESop.Displays.DisplayPointStationConfig">
+            <summary>
+            工位显示点关系 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.ESop.Displays.DisplayPointStationConfig.ConfigMeta">
+            <summary>
+            数据库配置映射
+            </summary>
+        </member>
+        <member name="T:SIE.ESop.Displays.Enums.DisplayDataSource">
+            <summary>
+            显示点数据源
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Displays.Enums.DisplayDataSource.Document">
+            <summary>
+            文档集
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Displays.Enums.DisplayDataSource.Engineer">
+            <summary>
+            工程文件维护
+            </summary>
+        </member>
+        <member name="T:SIE.ESop.Documents.DocumentCollectionWorkOrderRemoveRule">
+            <summary>
+            文档集关联工单处理规则
+            </summary>
+        </member>
+        <member name="M:SIE.ESop.Documents.DocumentCollectionWorkOrderRemoveRule.Invoke(SIE.ESop.Documents.DocumentCollectionWorkOrder,SIE.Domain.EntitySubmittingEventArgs)">
+            <summary>
+            文档集提交时,把工单从以前关联的文档集移除
+            </summary>
+            <param name="entity">实体对象</param>
+            <param name="e">提交参数对象</param>
+        </member>
+        <member name="T:SIE.ESop.Documents.Document">
+            <summary>
+            文档
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.Document.CodeProperty">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.Document.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.Document.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.Document.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.Document.FileNameProperty">
+            <summary>
+            文件名
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.Document.FileName">
+            <summary>
+            文件名
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.Document.FileExtensionProperty">
+            <summary>
+            文件扩展名
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.Document.FileExtension">
+            <summary>
+            文件扩展名
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.Document.FileSizeProperty">
+            <summary>
+            文件大小
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.Document.FileSize">
+            <summary>
+            文件大小
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.Document.FilePathProperty">
+            <summary>
+            存储路径
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.Document.FilePath">
+            <summary>
+            存储路径
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.Document.IsProcessedProperty">
+            <summary>
+            已处理
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.Document.IsProcessed">
+            <summary>
+            已处理
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.Document.ProcessedDateProperty">
+            <summary>
+            处理时间
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.Document.ProcessedDate">
+            <summary>
+            处理时间
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.Document.Md5Property">
+            <summary>
+            MD5
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.Document.Md5">
+            <summary>
+            MD5
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.Document.ProcessIdProperty">
+            <summary>
+            工序ID
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.Document.ProcessId">
+            <summary>
+            工序ID
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.Document.ProcessProperty">
+            <summary>
+            工序
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.Document.Process">
+            <summary>
+            工序
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.Document.DocumentTypeProperty">
+            <summary>
+            文档类型
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.Document.DocumentType">
+            <summary>
+            文档类型
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.Document.SourceProperty">
+            <summary>
+            来源
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.Document.Source">
+            <summary>
+            来源
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.Document.DocumentCollectionIdProperty">
+            <summary>
+            文档集Id
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.Document.DocumentCollectionId">
+            <summary>
+            文档集Id
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.Document.DocumentCollectionProperty">
+            <summary>
+            文档集
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.Document.DocumentCollection">
+            <summary>
+            文档集
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.Document.ContentProperty">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.Document.Content">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.Document.ProcessNameProperty">
+            <summary>
+            工序
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.Document.ProcessName">
+            <summary>
+            工序
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.Document.SheetNameProperty">
+            <summary>
+            Sheet页
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.Document.SheetName">
+            <summary>
+            Sheet页
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.Document.PdfPlayBeginPageProperty">
+            <summary>
+            PDF播放开始页
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.Document.PdfPlayBeginPage">
+            <summary>
+            PDF播放开始页
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.Document.PdfPlayEndPageProperty">
+            <summary>
+            PDF播放结束页
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.Document.PdfPlayEndPage">
+            <summary>
+            PDF播放结束页
+            </summary>
+        </member>
+        <member name="T:SIE.ESop.Documents.DocumentConfig">
+            <summary>
+            文档 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.ESop.Documents.DocumentConfig.ConfigMeta">
+            <summary>
+            数据库映射配置
+            </summary>
+        </member>
+        <member name="M:SIE.ESop.Documents.DocumentConfig.AddValidations(SIE.MetaModel.IValidationDeclarer)">
+            <summary>
+            增加验证规则
+            </summary>
+            <param name="rules">验证规则集合</param>
+        </member>
+        <member name="T:SIE.ESop.Documents.DocumentCollection">
+            <summary>
+            文档集
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCollection.CodeProperty">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCollection.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCollection.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCollection.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCollection.Md5Property">
+            <summary>
+            MD5
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCollection.Md5">
+            <summary>
+            MD5
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCollection.SourceProperty">
+            <summary>
+            来源
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCollection.Source">
+            <summary>
+            来源
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCollection.FileNameProperty">
+            <summary>
+            文件名
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCollection.FileName">
+            <summary>
+            文件名
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCollection.FilePathProperty">
+            <summary>
+            存储路径
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCollection.FilePath">
+            <summary>
+            存储路径
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCollection.FileExtensionProperty">
+            <summary>
+            文件扩展名
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCollection.FileExtension">
+            <summary>
+            文件扩展名
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCollection.FileSizeProperty">
+            <summary>
+            文件大小
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCollection.FileSize">
+            <summary>
+            文件大小
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCollection.IsProcessedProperty">
+            <summary>
+            已处理
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCollection.IsProcessed">
+            <summary>
+            已处理
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCollection.ProcessedDateProperty">
+            <summary>
+            处理时间
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCollection.ProcessedDate">
+            <summary>
+            处理时间
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCollection.ContentProperty">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCollection.Content">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCollection.StrContentProperty">
+            <summary>
+            字符串内容
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCollection.StrContent">
+            <summary>
+            字符串内容
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCollection.DocumentListProperty">
+            <summary>
+            文档列表
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCollection.DocumentList">
+            <summary>
+            文档列表
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCollection.UploadFilePathProperty">
+            <summary>
+            上传
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCollection.UploadFilePath">
+            <summary>
+            存储路径
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCollection.ItemListProperty">
+            <summary>
+            适用产品集合
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCollection.ItemList">
+            <summary>
+            适用产品集合
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCollection.WorkOrderListProperty">
+            <summary>
+            适用工单
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCollection.WorkOrderList">
+            <summary>
+            适用工单
+            </summary>
+        </member>
+        <member name="T:SIE.ESop.Documents.DocumentCollectionConfig">
+            <summary>
+            文档集 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.ESop.Documents.DocumentCollectionConfig.ConfigMeta">
+            <summary>
+            数据库映射配置
+            </summary>
+        </member>
+        <member name="T:SIE.ESop.Documents.DocumentCollectionController">
+            <summary>
+            文档集控制器
+            </summary>
+        </member>
+        <member name="M:SIE.ESop.Documents.DocumentCollectionController.GetList(SIE.ESop.Documents.DocumentCollectionCriteria)">
+            <summary>
+            查询文档集
+            </summary>
+            <param name="criteria">查询实体</param>
+            <returns>文档集列表</returns>
+        </member>
+        <member name="M:SIE.ESop.Documents.DocumentCollectionController.GetList(SIE.ESop.Documents.DocumentCriteria)">
+            <summary>
+            查询文档
+            </summary>
+            <param name="criteria">查询实体</param>
+            <returns>文档列表</returns>
+        </member>
+        <member name="M:SIE.ESop.Documents.DocumentCollectionController.GetOnServiceExcelSheetNames(SIE.ESop.Documents.DocumentCollection)">
+            <summary>
+            获取服务器的EXCEL工作表
+            </summary>
+            <param name="documentCollection">文档集对象</param>
+            <returns>返回excel页签</returns>
+        </member>
+        <member name="M:SIE.ESop.Documents.DocumentCollectionController.DownLoadToTempPath(System.String)">
+            <summary>
+            下载文件到临时目录
+            </summary>
+            <param name="filePath">服务器文件路径  XXX/XXX/XX.xlxs</param>
+        </member>
+        <member name="M:SIE.ESop.Documents.DocumentCollectionController.GetDocumentCollectionItemsByItem(System.Double[])">
+            <summary>
+            根据物料ID获取文档集适用物料
+            </summary>
+            <param name="itemIds">物料ID</param>
+            <returns>文档与适用物料对应关系列表</returns>
+        </member>
+        <member name="M:SIE.ESop.Documents.DocumentCollectionController.DeleteOldRefCollectionItem(System.Double,System.Double)">
+            <summary>
+            删除引用该物料的旧的文档物料关系
+            </summary>
+            <param name="documentId">新关联的文档集ID</param>
+            <param name="itemId">物料ID</param>
+        </member>
+        <member name="M:SIE.ESop.Documents.DocumentCollectionController.IsItemRefCollection(System.Double,System.Double)">
+            <summary>
+            判断物料是否被其他文档集关联
+            </summary>
+            <param name="documentId">当前待关联文档集ID</param>
+            <param name="itemId">物料ID</param>
+            <returns>被关联返回true，否则返回false</returns>
+        </member>
+        <member name="M:SIE.ESop.Documents.DocumentCollectionController.IsItemRefCollection(System.Double,System.Double[])">
+            <summary>
+            判断物料是否被其他文档集关联
+            </summary>
+            <param name="documentId">当前待关联文档集ID</param>
+            <param name="itemIds">物料ID数组</param>
+            <returns>结果字典，key 物料ID，value 是否存在</returns>
+        </member>
+        <member name="M:SIE.ESop.Documents.DocumentCollectionController.GetItemsByDocumentCollection(System.Double)">
+            <summary>
+            获取文档集关联的物料
+            </summary>
+            <param name="documentCollectionId">文档集ID</param>
+            <returns>文档与适用物料对应关系列表</returns>
+        </member>
+        <member name="M:SIE.ESop.Documents.DocumentCollectionController.SaveDocumentCollection(SIE.ESop.Documents.DocumentCollection,SIE.Domain.EntityList{SIE.ESop.Documents.DocumentCollectionItem})">
+            <summary>
+            保存文档集
+            </summary>
+            <param name="documentCollection">文档集(参数)</param>
+            <param name="documentCollectionItems">文档与适用物料对应关系</param>
+            <returns>文档集</returns>
+        </member>
+        <member name="M:SIE.ESop.Documents.DocumentCollectionController.GetDocumentType(System.String)">
+            <summary>
+            获取文档类型
+            </summary>
+            <param name="fileExtension">文件扩展</param>
+            <returns>文档类型</returns>
+        </member>
+        <member name="M:SIE.ESop.Documents.DocumentCollectionController.GetUploadDocumentBaseDir">
+            <summary>
+            获取文档保存基地址
+            </summary>
+            <returns>基地址</returns>
+        </member>
+        <member name="M:SIE.ESop.Documents.DocumentCollectionController.GetESopDir">
+            <summary>
+            esop文件夹名称
+            </summary>
+            <returns>名称</returns>
+        </member>
+        <member name="M:SIE.ESop.Documents.DocumentCollectionController.IsWorkOrderRefCollection(System.Double,System.Double[])">
+            <summary>
+            判断工单是否被其他文档集关联
+            </summary>
+            <param name="documentId">当前待关联文档集ID</param>
+            <param name="workOrderIds">工单ID</param>
+            <returns>结果字典，key 工单ID，value 是否存在</returns>
+        </member>
+        <member name="M:SIE.ESop.Documents.DocumentCollectionController.IsWorkOrderRefCollection(System.Double,System.Double)">
+            <summary>
+            判断工单是否被其他文档集关联
+            </summary>
+            <param name="documentId">当前待关联文档集ID</param>
+            <param name="workOrderId">工单ID</param>
+            <returns>被关联返回true，否则返回false</returns>
+        </member>
+        <member name="M:SIE.ESop.Documents.DocumentCollectionController.DeleteOldRefCollectionWorkOrder(System.Double,System.Double)">
+            <summary>
+            删除引用该工单的旧的文档工单关系
+            </summary>
+            <param name="documentId">新关联的文档集ID</param>
+            <param name="workOrderId">工单ID</param>
+        </member>
+        <member name="M:SIE.ESop.Documents.DocumentCollectionController.GetDocumentCollectionWorkOrder(System.Double)">
+            <summary>
+            获取文档集与工单关系(贪婪加载工单属性)
+            </summary>
+            <param name="documentCollectionId">文档集Id</param>
+            <returns>文档集与工单关系</returns>
+        </member>
+        <member name="M:SIE.ESop.Documents.DocumentCollectionController.GetDocumentListByWoId(System.Double)">
+            <summary>
+            文档列表
+            </summary>
+            <param name="workOrderId">工单</param>
+            <returns>文档列表</returns>
+        </member>
+        <member name="M:SIE.ESop.Documents.DocumentCollectionController.SaveGetDocumentListByWoIdLog(System.Double)">
+            <summary>
+            保存获取文档列表日志
+            </summary>
+            <param name="workOrderId">工单Id</param>
+        </member>
+        <member name="M:SIE.ESop.Documents.DocumentCollectionController.GetDocumentListByItemId(System.Double)">
+            <summary>
+            文档列表
+            </summary>
+            <param name="itemId">物料Id</param>
+            <returns>文档列表</returns>
+        </member>
+        <member name="M:SIE.ESop.Documents.DocumentCollectionController.SaveGetDocumentListByItemIdLog(System.Double)">
+            <summary>
+            保存获取文档列表日志
+            </summary>
+            <param name="itemId">物料Id</param>
+        </member>
+        <member name="M:SIE.ESop.Documents.DocumentCollectionController.OnDocumentCollectionFilePathProperChanged(SIE.ESop.Documents.DocumentCollection)">
+            <summary>
+            文档文件发生变更时候
+            </summary>
+            <param name="documentCollection"></param>
+        </member>
+        <member name="M:SIE.ESop.Documents.DocumentCollectionController.AnalysisAttachment(SIE.ESop.Documents.DocumentCollection)">
+             <summary>
+            分析附件信息
+             </summary>
+             <param name="documentCollection"></param>
+        </member>
+        <member name="M:SIE.ESop.Documents.DocumentCollectionController.RestForNotAttachment(SIE.ESop.Documents.DocumentCollection)">
+            <summary>
+            重置文档集数据
+            </summary>
+            <param name="documentCollection">文档集对象</param>
+        </member>
+        <member name="M:SIE.ESop.Documents.DocumentCollectionController.ReadSheetValues(NPOI.SS.UserModel.IWorkbook,System.String,System.Int32,System.Int32,System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            读取页签的内容
+            </summary>
+            <param name="workbook">文件</param>
+            <param name="sheetName">页签名称</param>
+            <param name="startRowNum">开始行索引</param>
+            <param name="startColNum">开始列索引</param>
+            <param name="endRowNum">结束行索引</param>
+            <param name="endColNum">结束列索引</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ESop.Documents.DocumentCollectionController.ReSetDocumentCollectionItemByFilePath(SIE.ESop.Documents.DocumentCollection,SIE.Domain.EntityList{SIE.ESop.Documents.DocumentCollectionItem},SIE.ESop.Configs.AttachmentConfigValue,NPOI.SS.UserModel.IWorkbook)">
+            <summary>
+            物料重新关联文档集
+            </summary>
+            <param name="documentCollection"></param>
+            <param name="documentCollectionItems"></param>
+            <param name="config"></param>
+            <param name="wk"></param>
+        </member>
+        <member name="M:SIE.ESop.Documents.DocumentCollectionController.RegexProcessWithDocument(SIE.ESop.Documents.DocumentCollection,System.Collections.Generic.IList{System.String},SIE.ESop.Configs.AttachmentConfigValue)">
+            <summary>
+            正则表达是匹配工序工作表
+            </summary>
+            <param name="documentCollection">文档集对象</param>
+            <param name="sheetNames">选中文件对应所有页签名称集合</param>
+            <param name="config">配置信息对象</param>
+            <returns>返回文档实体集合</returns>
+        </member>
+        <member name="M:SIE.ESop.Documents.DocumentCollectionController.ReSetDocumentWorkOrderByFilePath(SIE.ESop.Documents.DocumentCollection,SIE.ESop.Configs.AttachmentConfigValue,NPOI.SS.UserModel.IWorkbook)">
+            <summary>
+            工单重新关联文档集
+            </summary>
+            <param name="documentCollection"></param>
+            <param name="config"></param>
+            <param name="wk"></param>
+        </member>
+        <member name="T:SIE.ESop.Documents.DocumentCollectionCriteria">
+            <summary>
+            文档集 查询实体
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCollectionCriteria.CodeProperty">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCollectionCriteria.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCollectionCriteria.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCollectionCriteria.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCollectionCriteria.FileNameProperty">
+            <summary>
+            文件名
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCollectionCriteria.FileName">
+            <summary>
+            文件名
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCollectionCriteria.ItemIdProperty">
+            <summary>
+            产品Id
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCollectionCriteria.ItemId">
+            <summary>
+            产品Id
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCollectionCriteria.ItemProperty">
+            <summary>
+            产品
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCollectionCriteria.Item">
+            <summary>
+            产品
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCollectionCriteria.WorkOrderIdProperty">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCollectionCriteria.WorkOrderId">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCollectionCriteria.WorkOrderProperty">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCollectionCriteria.WorkOrder">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCollectionCriteria.SourceProperty">
+            <summary>
+            来源
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCollectionCriteria.Source">
+            <summary>
+            来源
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCollectionCriteria.UnProcessProperty">
+            <summary>
+            未处理
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCollectionCriteria.UnProcess">
+            <summary>
+            未处理
+            </summary>
+        </member>
+        <member name="M:SIE.ESop.Documents.DocumentCollectionCriteria.Fetch">
+            <summary>
+            查询方法
+            </summary>
+            <returns>返回查询的结果集</returns>
+        </member>
+        <member name="T:SIE.ESop.Documents.DocumentCollectionItem">
+            <summary>
+            文档与适用产品对应关系
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCollectionItem.DocumentCollectionIdProperty">
+            <summary>
+            文档集合ID
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCollectionItem.DocumentCollectionId">
+            <summary>
+            文档集合ID
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCollectionItem.DocumentCollectionProperty">
+            <summary>
+            文档集合
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCollectionItem.DocumentCollection">
+            <summary>
+            文档集合
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCollectionItem.ItemIdProperty">
+            <summary>
+            适用产品ID
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCollectionItem.ItemId">
+            <summary>
+            适用产品ID
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCollectionItem.ItemProperty">
+            <summary>
+            适用产品
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCollectionItem.Item">
+            <summary>
+            适用产品
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCollectionItem.ItemNameProperty">
+            <summary>
+            产品名称
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCollectionItem.ItemName">
+            <summary>
+            产品名称
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCollectionItem.ItemCodeProperty">
+            <summary>
+            产品编码
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCollectionItem.ItemCode">
+            <summary>
+            产品编码
+            </summary>
+        </member>
+        <member name="T:SIE.ESop.Documents.DocumentCollectionItemConfig">
+            <summary>
+            文档与适用物料对应关系 配置
+            </summary>
+        </member>
+        <member name="M:SIE.ESop.Documents.DocumentCollectionItemConfig.ConfigMeta">
+            <summary>
+            数据库映射配置
+            </summary>
+        </member>
+        <member name="T:SIE.ESop.Documents.DocumentCollectionItemRemoveOldItemRule">
+            <summary>
+            文档集关联物料处理规则
+            </summary>
+        </member>
+        <member name="M:SIE.ESop.Documents.DocumentCollectionItemRemoveOldItemRule.Invoke(SIE.ESop.Documents.DocumentCollectionItem,SIE.Domain.EntitySubmittingEventArgs)">
+            <summary>
+            文档集提交时,把物料从以前关联的文档集移除
+            </summary>
+            <param name="entity">实体对象</param>
+            <param name="e">提交参数对象</param>
+        </member>
+        <member name="T:SIE.ESop.Documents.AddDocumentCollectionToContentFile">
+            <summary>
+            添加文档集时，保存文件
+            </summary>
+        </member>
+        <member name="M:SIE.ESop.Documents.AddDocumentCollectionToContentFile.Invoke(SIE.ESop.Documents.DocumentCollection,SIE.Domain.EntitySubmittingEventArgs)">
+            <summary>
+            保存文档集前触发，
+            </summary>
+            <param name="entity">文档集实体对象</param>
+            <param name="e">提交事件参数</param>
+        </member>
+        <member name="T:SIE.ESop.Documents.DocumentCollectionWorkOrder">
+            <summary>
+            文档集与工单关系
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCollectionWorkOrder.WorkOrderIdProperty">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCollectionWorkOrder.WorkOrderId">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCollectionWorkOrder.WorkOrderProperty">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCollectionWorkOrder.WorkOrder">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCollectionWorkOrder.CollectionIdProperty">
+            <summary>
+            文档集Id
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCollectionWorkOrder.CollectionId">
+            <summary>
+            文档集Id
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCollectionWorkOrder.CollectionProperty">
+            <summary>
+            文档集
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCollectionWorkOrder.Collection">
+            <summary>
+            文档集
+            </summary>
+        </member>
+        <member name="T:SIE.ESop.Documents.DocumentCollectionWorkOrderConfig">
+            <summary>
+            文档与适用工单对应关系 配置
+            </summary>
+        </member>
+        <member name="M:SIE.ESop.Documents.DocumentCollectionWorkOrderConfig.ConfigMeta">
+            <summary>
+            数据库映射配置
+            </summary>
+        </member>
+        <member name="T:SIE.ESop.Documents.DocumentCriteria">
+            <summary>
+            文档 查询实体
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCriteria.CodeProperty">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCriteria.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCriteria.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCriteria.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCriteria.DocumentCollectionIdProperty">
+            <summary>
+            文档集ID
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCriteria.DocumentCollectionId">
+            <summary>
+            文档集ID
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCriteria.DocumentCollectionProperty">
+            <summary>
+            文档集
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCriteria.DocumentCollection">
+            <summary>
+            文档集
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCriteria.FileNameProperty">
+            <summary>
+            文件名
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCriteria.FileName">
+            <summary>
+            文件名
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCriteria.FileExtesionProperty">
+            <summary>
+            文件扩展名
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCriteria.FileExtesion">
+            <summary>
+            文件扩展名
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCriteria.FileSizeProperty">
+            <summary>
+            文件大小
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCriteria.FileSize">
+            <summary>
+            文件大小
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCriteria.Md5Property">
+            <summary>
+            MD5
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCriteria.Md5">
+            <summary>
+            MD5
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCriteria.ProcessIdProperty">
+            <summary>
+            工序Id
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCriteria.ProcessId">
+            <summary>
+            工序Id
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCriteria.ProcessProperty">
+            <summary>
+            工序
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCriteria.Process">
+            <summary>
+            工序
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCriteria.DocumentTypeProperty">
+            <summary>
+            文档类型
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCriteria.DocumentType">
+            <summary>
+            文档类型
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCriteria.SourceProperty">
+            <summary>
+            来源
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCriteria.Source">
+            <summary>
+            来源
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCriteria.ItemIdProperty">
+            <summary>
+            物料ID
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCriteria.ItemId">
+            <summary>
+            物料ID
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCriteria.ItemProperty">
+            <summary>
+            物料
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCriteria.Item">
+            <summary>
+            物料
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCriteria.WorkOrderIdProperty">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCriteria.WorkOrderId">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentCriteria.WorkOrderProperty">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.DocumentCriteria.WorkOrder">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="M:SIE.ESop.Documents.DocumentCriteria.Fetch">
+            <summary>
+            查询方法
+            </summary>
+            <returns>返回查询结果集</returns>
+        </member>
+        <member name="T:SIE.ESop.Documents.AddDocumentToContentFile">
+            <summary>
+            添加文档时，保存文件
+            </summary>
+        </member>
+        <member name="M:SIE.ESop.Documents.AddDocumentToContentFile.Invoke(SIE.ESop.Documents.Document,SIE.Domain.EntitySubmittingEventArgs)">
+            <summary>
+            文档提交前执行逻辑(保存文档的数据到指定位置)
+            </summary>
+            <param name="entity">实体对象</param>
+            <param name="e">实体提交参数</param>
+        </member>
+        <member name="T:SIE.ESop.Documents.DocumentPropertyChanged">
+            <summary>
+            文档集属性变更类
+            </summary>
+        </member>
+        <member name="M:SIE.ESop.Documents.DocumentPropertyChanged.OnDocumentCollectionPropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            文档集属性变更触发
+            </summary>
+            <param name="docSet">当前变更</param>
+            <param name="e">属性变更参数</param>
+        </member>
+        <member name="M:SIE.ESop.Documents.DocumentPropertyChanged.OnDocumentCollectionFilePathPropertyChanged(SIE.ESop.Documents.DocumentCollection)">
+            <summary>
+            文档集属性变更
+            </summary>
+            <param name="documentCollection">文档集</param>
+        </member>
+        <member name="M:SIE.ESop.Documents.DocumentPropertyChanged.RestForNotAttachment(SIE.ESop.Documents.DocumentCollection)">
+            <summary>
+            重置文档集数据
+            </summary>
+            <param name="documentCollection">文档集对象</param>
+        </member>
+        <member name="M:SIE.ESop.Documents.DocumentPropertyChanged.AnalysisAttachment(SIE.ESop.Documents.DocumentCollection)">
+            <summary>
+            解析附件
+            </summary>
+            <param name="documentCollection">文档集</param>
+        </member>
+        <member name="M:SIE.ESop.Documents.DocumentPropertyChanged.RegexProcessWithDocument(SIE.ESop.Documents.DocumentCollection,System.Collections.Generic.IList{System.String},SIE.ESop.Configs.AttachmentConfigValue)">
+            <summary>
+            正则表达是匹配工序工作表
+            </summary>
+            <param name="documentCollection">文档集对象</param>
+            <param name="sheetNames">选中文件对应所有页签名称集合</param>
+            <param name="config">配置信息对象</param>
+            <returns>返回文档实体集合</returns>
+        </member>
+        <member name="M:SIE.ESop.Documents.DocumentPropertyChanged.ReSetDocumentCollectionItemByFilePath(SIE.ESop.Documents.DocumentCollection,SIE.Domain.EntityList{SIE.ESop.Documents.DocumentCollectionItem},SIE.ESop.Configs.AttachmentConfigValue)">
+            <summary>
+            物料重新关联文档集
+            </summary>
+            <param name="documentCollection">文档集</param>
+            <param name="documentCollectionItems">适用物料</param>
+            <param name="config">配置项</param>
+        </member>
+        <member name="M:SIE.ESop.Documents.DocumentPropertyChanged.ReSetDocumentWorkOrderByFilePath(SIE.ESop.Documents.DocumentCollection,SIE.ESop.Configs.AttachmentConfigValue)">
+            <summary>
+            工单重新关联文档集
+            </summary>
+            <param name="documentCollection">文档集</param>
+            <param name="config">配置项</param> 
+        </member>
+        <member name="M:SIE.ESop.Documents.DocumentPropertyChanged.OnDocumentPropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            文档属性变更
+            </summary>
+            <param name="doc">文档实体对象</param>
+            <param name="e">属性变更参数对象</param>
+        </member>
+        <member name="M:SIE.ESop.Documents.DocumentPropertyChanged.OnDocumentFilePathPropertyChanged(SIE.ESop.Documents.Document)">
+            <summary>
+            文档的文件路径变更
+            </summary>
+            <param name="document">文档对象</param>
+        </member>
+        <member name="M:SIE.ESop.Documents.DocumentPropertyChanged.OnDocumentSheetNamePropertyChanged(SIE.ESop.Documents.Document)">
+            <summary>
+            文档文件名变更
+            </summary>
+            <param name="document">文档对象</param>
+        </member>
+        <member name="M:SIE.ESop.Documents.DocumentPropertyChanged.GetSheetNames(SIE.ESop.Documents.DocumentCollection)">
+            <summary>
+            生成新的文档，根据文档集中excel的页签个数生成对应的文档
+            </summary>
+            <param name="documentCollection">文档集对象</param>
+            <returns>返回文档集合</returns>
+        </member>
+        <member name="T:SIE.ESop.Documents.DocumentType">
+            <summary>
+            文档类型
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentType.Document">
+            <summary>
+            文档
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentType.Img">
+            <summary>
+            图片
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.DocumentType.Video">
+            <summary>
+            视频
+            </summary>
+        </member>
+        <member name="T:SIE.ESop.Documents.ViewModels.ImportFileViewModel">
+            <summary>
+            文件信息
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.ViewModels.ImportFileViewModel.FileNameProperty">
+            <summary>
+            FileName
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.Documents.ViewModels.ImportFileViewModel.FileName">
+            <summary>
+            FileName
+            </summary>
+        </member>
+        <member name="T:SIE.ESop.Documents.Source">
+            <summary>
+            来源
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.Source.Manual">
+            <summary>
+            手工来源
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.Source.ByProgram">
+            <summary>
+            外部程序
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.Documents.Source.ByInterface">
+            <summary>
+            接口
+            </summary>
+        </member>
+        <member name="T:SIE.ESop.EngDocuments.Controllers.EngDocumentController">
+            <summary>
+            Controller层
+            </summary>
+        </member>
+        <member name="M:SIE.ESop.EngDocuments.Controllers.EngDocumentController.GetFileUseDetailList(System.Collections.Generic.IList{SIE.Domain.OrderInfo},SIE.PagingInfo)">
+            <summary>
+            配置项获取
+            </summary>
+            <param name="orderInfos"></param>
+            <param name="pagingInfo"></param>
+        </member>
+        <member name="T:SIE.ESop.EngDocuments.Daos.EngDocumentDao">
+            <summary>
+            Dao层
+            </summary>
+        </member>
+        <member name="M:SIE.ESop.EngDocuments.Daos.EngDocumentDao.EngDocCriteriaFetch(SIE.ESop.EngDocuments.EngDocCriteria)">
+            <summary>
+            查询
+            </summary>
+            <param name="engDocCriteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ESop.EngDocuments.Daos.EngDocumentDao.GetEngDocumentByProductIds(System.Collections.Generic.List{System.Double},System.Collections.Generic.List{System.Double})">
+            <summary>
+            根据产品Ids获取数据
+            </summary>
+            <param name="productIds"></param>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ESop.EngDocuments.Daos.EngDocumentDao.GetEngDocumentByWoIds(System.Collections.Generic.List{System.Double},System.Collections.Generic.List{System.Double})">
+            <summary>
+            根据工单Ids获取数据
+            </summary>
+            <param name="woIds"></param>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.ESop.EngDocuments.Daos.EngDocumentDetailDao">
+            <summary>
+            Dao
+            </summary>
+        </member>
+        <member name="M:SIE.ESop.EngDocuments.Daos.EngDocumentDetailDao.GetEngDocumentDetailByDocCodes(System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.Double})">
+            <summary>
+            根据文件编码获取数据
+            </summary>
+            <param name="docCodes"></param>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ESop.EngDocuments.Daos.EngDocumentDetailDao.CreateMD5(System.String)">
+            <summary>
+            临时生成MD5
+            </summary>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ESop.EngDocuments.Daos.EngDocumentDetailDao.ChangeToDocument(SIE.Domain.EntityList{SIE.ESop.Documents.Document},SIE.Domain.EntityList{SIE.ESop.EngDocuments.EngDocumentDetail})">
+            <summary>
+            工程文件转化为文档集数据类型
+            </summary>
+            <param name="docs"></param>
+            <param name="engDocDetails"></param>
+        </member>
+        <member name="M:SIE.ESop.EngDocuments.Daos.EngDocumentDetailDao.GetDocuments(System.Nullable{System.Double},System.Nullable{System.Double})">
+            <summary>
+            ESOP读取工程文件
+            </summary>
+            <param name="woId"></param>
+            <param name="itemId"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:SIE.ESop.EngDocuments.Daos.FileUseDetailDao">
+            <summary>
+            Dao
+            </summary>
+        </member>
+        <member name="M:SIE.ESop.EngDocuments.Daos.FileUseDetailDao.GetFileUseDetails(System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.Double})">
+            <summary>
+            根据使用类型获取
+            </summary>
+            <param name="useTypes"></param>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ESop.EngDocuments.Daos.FileUseDetailDao.GetConfigUseTypeFolderId(System.String)">
+            <summary>
+            根据使用类型获取配置项文件夹
+            </summary>
+            <param name="useType"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.ESop.EngDocuments.EngDocCriteria">
+            <summary>
+            工程文件维护查询实体
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.EngDocuments.EngDocCriteria.ProductCodeProperty">
+            <summary>
+            产品编码
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.EngDocuments.EngDocCriteria.ProductCode">
+            <summary>
+            产品编码
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.EngDocuments.EngDocCriteria.ProductNameProperty">
+            <summary>
+            产品名称
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.EngDocuments.EngDocCriteria.ProductName">
+            <summary>
+            产品名称
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.EngDocuments.EngDocCriteria.WoNoProperty">
+            <summary>
+            工单号
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.EngDocuments.EngDocCriteria.WoNo">
+            <summary>
+            工单号
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.EngDocuments.EngDocCriteria.TypeProperty">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.EngDocuments.EngDocCriteria.Type">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.EngDocuments.EngDocCriteria.DocCodeProperty">
+            <summary>
+            文件编码
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.EngDocuments.EngDocCriteria.DocCode">
+            <summary>
+            文件编码
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.EngDocuments.EngDocCriteria.DocNameProperty">
+            <summary>
+            文件名称
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.EngDocuments.EngDocCriteria.DocName">
+            <summary>
+            文件名称
+            </summary>
+        </member>
+        <member name="M:SIE.ESop.EngDocuments.EngDocCriteria.Fetch">
+            <summary>
+            查询
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.ESop.EngDocuments.EngDocument">
+            <summary>
+            工程文件维护实体
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.EngDocuments.EngDocument.TypeProperty">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.EngDocuments.EngDocument.Type">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.EngDocuments.EngDocument.ProductIdProperty">
+            <summary>
+            产品Id
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.EngDocuments.EngDocument.ProductId">
+            <summary>
+            产品Id
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.EngDocuments.EngDocument.ProductProperty">
+            <summary>
+            产品
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.EngDocuments.EngDocument.Product">
+            <summary>
+            产品
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.EngDocuments.EngDocument.WorkOrderIdProperty">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.EngDocuments.EngDocument.WorkOrderId">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.EngDocuments.EngDocument.WorkOrderProperty">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.EngDocuments.EngDocument.WorkOrder">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.EngDocuments.EngDocument.EngDocumentDetailListProperty">
+            <summary>
+            工程文件
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.EngDocuments.EngDocument.EngDocumentDetailList">
+            <summary>
+            工程文件
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.EngDocuments.EngDocument.ProductNameProperty">
+            <summary>
+            产品名称
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.EngDocuments.EngDocument.ProductName">
+            <summary>
+            产品名称
+            </summary>
+        </member>
+        <member name="T:SIE.ESop.EngDocuments.EngDocumentConfig">
+            <summary>
+            实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.ESop.EngDocuments.EngDocumentConfig.ConfigMeta">
+            <summary>
+            数据库配置
+            </summary>
+        </member>
+        <member name="T:SIE.ESop.EngDocuments.EngDocumentDetail">
+            <summary>
+            工程文件子表
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.EngDocuments.EngDocumentDetail.DocTypeCatalogType">
+            <summary>
+            使用类型快码
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.EngDocuments.EngDocumentDetail.EngDocumentIdProperty">
+            <summary>
+            工程文件维护Id
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.EngDocuments.EngDocumentDetail.EngDocumentId">
+            <summary>
+            工程文件维护Id
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.EngDocuments.EngDocumentDetail.EngDocumentProperty">
+            <summary>
+            工程文件维护
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.EngDocuments.EngDocumentDetail.EngDocument">
+            <summary>
+            工程文件维护
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.EngDocuments.EngDocumentDetail.DocCodeProperty">
+            <summary>
+            文件编码
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.EngDocuments.EngDocumentDetail.DocCode">
+            <summary>
+            文件编码
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.EngDocuments.EngDocumentDetail.DocNameProperty">
+            <summary>
+            文件名称
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.EngDocuments.EngDocumentDetail.DocName">
+            <summary>
+            文件名称
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.EngDocuments.EngDocumentDetail.UseTypeProperty">
+            <summary>
+            使用类型
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.EngDocuments.EngDocumentDetail.UseType">
+            <summary>
+            使用类型
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.EngDocuments.EngDocumentDetail.SavePathProperty">
+            <summary>
+            存储路径
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.EngDocuments.EngDocumentDetail.SavePath">
+            <summary>
+            存储路径
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.EngDocuments.EngDocumentDetail.SavePathDisplayProperty">
+            <summary>
+            存储路径展示
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.EngDocuments.EngDocumentDetail.SavePathDisplay">
+            <summary>
+            存储路径展示
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.EngDocuments.EngDocumentDetail.FileSizeProperty">
+            <summary>
+            文件大小
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.EngDocuments.EngDocumentDetail.FileSize">
+            <summary>
+            文件大小
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.EngDocuments.EngDocumentDetail.DocumentTypeProperty">
+            <summary>
+            文件类型
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.EngDocuments.EngDocumentDetail.DocumentType">
+            <summary>
+            文件类型
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.EngDocuments.EngDocumentDetail.FIdProperty">
+            <summary>
+            存储路径Id
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.EngDocuments.EngDocumentDetail.FId">
+            <summary>
+            存储路径Id
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.EngDocuments.EngDocumentDetail.ServerFileNameProperty">
+            <summary>
+            存储名称
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.EngDocuments.EngDocumentDetail.ServerFileName">
+            <summary>
+            存储名称
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.EngDocuments.EngDocumentDetail.ProcessIdProperty">
+            <summary>
+            工序Id
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.EngDocuments.EngDocumentDetail.ProcessId">
+            <summary>
+            工序Id
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.EngDocuments.EngDocumentDetail.ProcessProperty">
+            <summary>
+            工序
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.EngDocuments.EngDocumentDetail.Process">
+            <summary>
+            工序
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.EngDocuments.EngDocumentDetail.SheetPageProperty">
+            <summary>
+            Sheet页
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.EngDocuments.EngDocumentDetail.SheetPage">
+            <summary>
+            Sheet页
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.EngDocuments.EngDocumentDetail.MD5Property">
+            <summary>
+            MD5加密
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.EngDocuments.EngDocumentDetail.MD5">
+            <summary>
+            MD5加密
+            </summary>
+        </member>
+        <member name="T:SIE.ESop.EngDocuments.EngDocumentDetailConfig">
+            <summary>
+            工程文件子表配置
+            </summary>
+        </member>
+        <member name="M:SIE.ESop.EngDocuments.EngDocumentDetailConfig.ConfigMeta">
+            <summary>
+            数据库配置
+            </summary>
+        </member>
+        <member name="T:SIE.ESop.EngDocuments.Enums.EngDocType">
+            <summary>
+            工程文件维护类型
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.EngDocuments.Enums.EngDocType.Product">
+            <summary>
+            产品
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.EngDocuments.Enums.EngDocType.WorkOrder">
+            <summary>
+            工单
+            </summary>
+        </member>
+        <member name="T:SIE.ESop.EngDocuments.FileUseDetail">
+            <summary>
+            工程文件使用类型
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.EngDocuments.FileUseDetail.UseTypeProperty">
+            <summary>
+            使用类型
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.EngDocuments.FileUseDetail.UseType">
+            <summary>
+            使用类型
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.EngDocuments.FileUseDetail.FileProperty">
+            <summary>
+            文件夹
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.EngDocuments.FileUseDetail.File">
+            <summary>
+            文件夹
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.EngDocuments.FileUseDetail.FolderIdProperty">
+            <summary>
+            文件夹Id
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.EngDocuments.FileUseDetail.FolderId">
+            <summary>
+            文件夹Id
+            </summary>
+        </member>
+        <member name="T:SIE.ESop.EngDocuments.FileUseDetailConfig">
+            <summary>
+            工程文件使用明细配置项
+            </summary>
+        </member>
+        <member name="M:SIE.ESop.EngDocuments.FileUseDetailConfig.ConfigMeta">
+            <summary>
+            数据库配置
+            </summary>
+        </member>
+        <member name="T:SIE.ESop.EngDocuments.Handles.EngDocSaveHandle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.EngDocuments.Handles.EngDocSaveHandle.EngDocumentIds">
+            <summary>
+            主表ids
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.EngDocuments.Handles.EngDocSaveHandle.EngDocumentDetailIds">
+            <summary>
+            子表Ids
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.EngDocuments.Handles.EngDocSaveHandle.EngDocuments">
+            <summary>
+            主表
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.EngDocuments.Handles.EngDocSaveHandle.EngDocumentDetails">
+            <summary>
+            子表
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.EngDocuments.Handles.EngDocSaveHandle.EngDocumentProductIds">
+            <summary>
+            主表产品编码
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.EngDocuments.Handles.EngDocSaveHandle.EngDocumentWoIds">
+            <summary>
+            主表工单编码
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.EngDocuments.Handles.EngDocSaveHandle.EngDocumentDetailCodes">
+            <summary>
+            子表文件编码
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.EngDocuments.Handles.EngDocSaveHandle.EngDocumentService">
+            <summary>
+            主表服务
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.EngDocuments.Handles.EngDocSaveHandle.EngDocumentDetailService">
+            <summary>
+            子表服务
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:SIE.ESop.EngDocuments.Handles.EngDocSaveHandle.ProcessIdNames">
+            <summary>
+            工序名称集合
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.EngDocuments.Handles.EngDocSaveHandle.ItemCodes">
+            <summary>
+            产品编码
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.EngDocuments.Handles.EngDocSaveHandle.WoNos">
+            <summary>
+            工单号
+            </summary>
+        </member>
+        <member name="M:SIE.ESop.EngDocuments.Handles.EngDocSaveHandle.ParentNotRequired">
+            <summary>
+            主表必填校验
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ESop.EngDocuments.Handles.EngDocSaveHandle.ChildrenNotRequired">
+            <summary>
+            子表必填校验
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ESop.EngDocuments.Handles.EngDocSaveHandle.WebProductIsRepeat">
+            <summary>
+            前端新增修改的数据产品编码或工单重复
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ESop.EngDocuments.Handles.EngDocSaveHandle.DBProductIsRepeat">
+            <summary>
+            验证新增修改的数据产品编码与数据库重复
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ESop.EngDocuments.Handles.EngDocSaveHandle.WebChildIsRepeat">
+            <summary>
+            验证前端子表重复添加
+            </summary>
+            <returns></returns>
+            <exception cref="T:SIE.Domain.Validation.ValidationException"></exception>
+        </member>
+        <member name="M:SIE.ESop.EngDocuments.Handles.EngDocSaveHandle.DBChildIsRepeat">
+            <summary>
+            验证数据库子表重复添加
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ESop.EngDocuments.Handles.EngDocSaveHandle.#ctor(SIE.Domain.EntityList)">
+            <summary>
+            构造
+            </summary>
+        </member>
+        <member name="M:SIE.ESop.EngDocuments.Handles.EngDocSaveHandle.Init">
+            <summary>
+            初始化
+            </summary>
+        </member>
+        <member name="T:SIE.ESop.EngDocuments.Handles.FileUseSaveHandle">
+            <summary>
+            工程文件使用明细保存帮助类
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.EngDocuments.Handles.FileUseSaveHandle.Ids">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.EngDocuments.Handles.FileUseSaveHandle.UseTypeList">
+            <summary>
+            使用类型
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.EngDocuments.Handles.FileUseSaveHandle.FileUseDetails">
+            <summary>
+            数据
+            </summary>
+        </member>
+        <member name="M:SIE.ESop.EngDocuments.Handles.FileUseSaveHandle.ParentNotRequired">
+            <summary>
+            重复校验
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ESop.EngDocuments.Handles.FileUseSaveHandle.WebUseTypeIsRepeat">
+            <summary>
+            验证前端是否重复
+            </summary>
+            <returns></returns>
+            <exception cref="T:SIE.Domain.Validation.ValidationException"></exception>
+        </member>
+        <member name="M:SIE.ESop.EngDocuments.Handles.FileUseSaveHandle.DBUseTypeIsRepeat">
+            <summary>
+            验证与数据库后端是否重复
+            </summary>
+            <returns></returns>
+            <exception cref="T:SIE.Domain.Validation.ValidationException"></exception>
+        </member>
+        <member name="M:SIE.ESop.EngDocuments.Handles.FileUseSaveHandle.#ctor(SIE.Domain.EntityList)">
+            <summary>
+            构造
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="T:SIE.ESop.EngDocuments.Services.EngDocumentDetailService">
+            <summary>
+            Service
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.EngDocuments.Services.EngDocumentDetailService._engDocumentDetailDao">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.ESop.EngDocuments.Services.EngDocumentDetailService.#ctor(SIE.ESop.EngDocuments.Daos.EngDocumentDetailDao)">
+            <summary>
+            构造
+            </summary>
+            <param name="engDocumentDetailDao"></param>
+        </member>
+        <member name="M:SIE.ESop.EngDocuments.Services.EngDocumentDetailService.GetEngDocumentDetailByDocCodes(System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.Double})">
+            <summary>
+            根据文件编码获取数据
+            </summary>
+            <param name="docCodes"></param>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ESop.EngDocuments.Services.EngDocumentDetailService.GetDocuments(System.Nullable{System.Double},System.Nullable{System.Double})">
+            <summary>
+            ESOP读取工程文件
+            </summary>
+            <param name="woId"></param>
+            <param name="itemId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ESop.EngDocuments.Services.EngDocumentDetailService.CreateMD5(System.String)">
+            <summary>
+            解析文件生成MD5
+            </summary>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.ESop.EngDocuments.Services.EngDocumentService">
+            <summary>
+            Service层
+            </summary>
+        </member>
+        <member name="M:SIE.ESop.EngDocuments.Services.EngDocumentService.#ctor(SIE.ESop.EngDocuments.Daos.EngDocumentDao)">
+            <summary>
+            
+            </summary>
+            <param name="engDocumentDao"></param>
+        </member>
+        <member name="M:SIE.ESop.EngDocuments.Services.EngDocumentService.EngDocSave(SIE.Domain.EntityList)">
+            <summary>
+            工程文件保存命令
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:SIE.ESop.EngDocuments.Services.EngDocumentService.EngDocCriteriaFetch(SIE.ESop.EngDocuments.EngDocCriteria)">
+            <summary>
+            查询
+            </summary>
+            <param name="engDocCriteria"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:SIE.ESop.EngDocuments.Services.EngDocumentService.GetEngDocumentByProductIds(System.Collections.Generic.List{System.Double},System.Collections.Generic.List{System.Double})">
+            <summary>
+            根据产品Ids获取数据
+            </summary>
+            <param name="productIds"></param>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ESop.EngDocuments.Services.EngDocumentService.GetEngDocumentByWoIds(System.Collections.Generic.List{System.Double},System.Collections.Generic.List{System.Double})">
+            <summary>
+            根据工单Ids获取数据
+            </summary>
+            <param name="woIds"></param>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.ESop.EngDocuments.Services.FileUseDetailService">
+            <summary>
+            Service
+            </summary>
+        </member>
+        <member name="M:SIE.ESop.EngDocuments.Services.FileUseDetailService.#ctor(SIE.ESop.EngDocuments.Daos.FileUseDetailDao)">
+            <summary>
+            构造
+            </summary>
+            <param name="fileUseDetailDao"></param>
+        </member>
+        <member name="M:SIE.ESop.EngDocuments.Services.FileUseDetailService.FileUseSave(SIE.Domain.EntityList)">
+            <summary>
+            工程文件保存命令
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:SIE.ESop.EngDocuments.Services.FileUseDetailService.GetFileUseDetails(System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.Double})">
+            <summary>
+            根据使用类型获取
+            </summary>
+            <param name="useTypes"></param>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ESop.EngDocuments.Services.FileUseDetailService.GetConfigUseTypeFolderId(System.String)">
+            <summary>
+            根据使用类型获取配置项文件夹
+            </summary>
+            <param name="useType"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.ESop.ESopEntityRepository`1">
+            <summary>
+            实体仓库
+            </summary>
+            <typeparam name="T">泛型</typeparam>
+        </member>
+        <member name="T:SIE.ESop.ESopEntityDataProvider">
+            <summary>
+            实体数据提供者
+            </summary>
+        </member>
+        <member name="F:SIE.ESop.ESopEntityDataProvider.ConnectionStringName">
+            <summary>
+            数据库连接字符串的名称
+            </summary>
+        </member>
+        <member name="P:SIE.ESop.ESopEntityDataProvider.ConnectionStringSettingName">
+            <summary>
+            数据库连接字符串的名称
+            </summary>
+        </member>
+        <member name="T:SIE.ESop.ForWinform.WinESopController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIE.ESop.ForWinform.WinESopController.GetDocuments(System.Nullable{System.Double},System.Nullable{System.Double},System.Nullable{System.Double})">
+            <summary>
+            获取文档接口
+            </summary>
+            <param name="processId"></param>
+            <param name="workOrderId"></param>
+            <param name="itemId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ESop.ForWinform.WinESopController.DisplayPointConfigValue">
+            <summary>
+            获取现实点配置项
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ESop.ForWinform.WinESopController.GetResourcesByUserId(System.Double,System.String,SIE.PagingInfo)">
+            <summary>
+            
+            </summary>
+            <param name="userId"></param>
+            <param name="keyword"></param>
+            <param name="pagingInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ESop.ForWinform.WinESopController.GetDisplayPointList(System.Double,System.String,SIE.PagingInfo)">
+            <summary>
+            
+            </summary>
+            <param name="resourceId"></param>
+            <param name="pagingInfo"></param>
+            <param name="keyword"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ESop.ForWinform.WinESopController.GetDisplayPointDetail(System.Double)">
+            <summary>
+            EOSP-获取显示点明细信息
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ESop.ForWinform.WinESopController.GetDocumentCollection(System.Double)">
+            <summary>
+            获取文档集
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.ESop.Module">
+            <summary>
+            模块配置
+            </summary>
+        </member>
+        <member name="M:SIE.ESop.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化
+            </summary>
+            <param name="app">app</param>
+        </member>
+        <member name="M:SIE.ESop.Module.RegisterService">
+            <summary>
+            注册服务
+            </summary>
+        </member>
+        <member name="T:SIE.ESop.Uilts.ExcelHelper">
+            <summary>
+            Excel帮助类
+            </summary>
+        </member>
+        <member name="M:SIE.ESop.Uilts.ExcelHelper.ExcelSheetNames(System.String)">
+            <summary>
+            获取Excel页签名称
+            </summary>
+            <param name="fileName">文件名</param>
+            <returns>页签名称数组</returns>
+        </member>
+        <member name="M:SIE.ESop.Uilts.ExcelHelper.ReadSheetValues(System.String,System.String,System.Int32,System.Int32,System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            读取Excel页签数据
+            </summary>
+            <param name="fileName">文件名称</param>
+            <param name="sheetName">页签名称</param>
+            <param name="startRowNum">开始行号</param>
+            <param name="startColNum">开始列号</param>
+            <param name="endRowNum">结束行号</param>
+            <param name="endColNum">结束列号</param>
+            <returns>数据集合</returns>
+        </member>
+        <member name="T:SIE.ESop.Uilts.FileHelper">
+            <summary>
+            文件帮助类
+            </summary>
+        </member>
+        <member name="M:SIE.ESop.Uilts.FileHelper.FormatFileSize(System.Int64)">
+            <summary>
+            格式文件大小
+            </summary>
+            <param name="fileSize">文件大小</param>
+            <returns>格式后文件大小</returns>
+        </member>
+        <member name="M:SIE.ESop.Uilts.FileHelper.ComputeHash(System.IO.FileInfo)">
+            <summary>
+            计算哈希
+            </summary>
+            <param name="file">文件</param>
+            <returns>哈希</returns>
+        </member>
+        <member name="M:SIE.ESop.Uilts.FileHelper.GetDocumentType(System.String)">
+            <summary>
+            获取文档类型
+            </summary>
+            <param name="fileExtension">文档扩展名</param>
+            <returns>文档类型</returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,161 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.MES.Traces</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.MES.Traces.Models.RecursiveProductInfo">
+            <summary>
+            产品信息
+            </summary>
+        </member>
+        <member name="P:SIE.MES.Traces.Models.RecursiveProductInfo.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.MES.Traces.Models.RecursiveProductInfo.TreeId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.MES.Traces.Models.RecursiveProductInfo.SnId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIE.MES.Traces.Models.RecursiveProductInfo.ProductId">
+            <summary>
+            产品Id
+            </summary>
+        </member>
+        <member name="P:SIE.MES.Traces.Models.RecursiveProductInfo.ProductSn">
+            <summary>
+            产品Sn
+            </summary>
+        </member>
+        <member name="P:SIE.MES.Traces.Models.RecursiveProductInfo.ProductExtPropName">
+            <summary>
+            产品扩展属性
+            </summary>
+        </member>
+        <member name="P:SIE.MES.Traces.Models.RecursiveProductInfo.ItemExtPropName">
+            <summary>
+            物料扩展属性
+            </summary>
+        </member>
+        <member name="P:SIE.MES.Traces.Models.RecursiveProductInfo.WorkOrderId">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="P:SIE.MES.Traces.Models.RecursiveProductInfo.CreateDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="T:SIE.MES.Traces.Module">
+            <summary>
+            报表Module
+            </summary>
+        </member>
+        <member name="M:SIE.MES.Traces.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化
+            </summary>
+            <param name="app">app</param>
+        </member>
+        <member name="M:SIE.MES.Traces.Module.RegisterService">
+            <summary>
+            注册服务
+            </summary>
+        </member>
+        <member name="T:SIE.MES.Traces.TraceController">
+            <summary>
+            MES追溯管理控制器
+            </summary>
+        </member>
+        <member name="M:SIE.MES.Traces.TraceController.GetTraceInfoForProduct(SIE.EventMessages.MES.Traces.TraceInfoForProductCriteria)">
+            <summary>
+            过程追溯-关联产品追溯
+            </summary>
+            <param name="criteria">查询条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.MES.Traces.TraceController.GetTraceInfoForProcssKeyItem(SIE.EventMessages.MES.Traces.TraceInfoForProcssKeyItemCriteria)">
+            <summary>
+            过程追溯-采集记录追溯
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.MES.Traces.TraceController.GetTraceInfoForProductInspect(SIE.EventMessages.MES.Traces.TraceInfoForProductInspectCriteria)">
+            <summary>
+            过程追溯-产品检验记录追溯
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.MES.Traces.TraceController.GetTraceInfoForProductDefect(SIE.EventMessages.MES.Traces.TraceInfoForProductDefectCriteria)">
+            <summary>
+            过程追溯-产品缺陷记录追溯
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.MES.Traces.TraceController.GetTraceInfoForProductRepair(SIE.EventMessages.MES.Traces.TraceInfoForProductRepairCriteria)">
+            <summary>
+            过程追溯-产品维修记录追溯
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.MES.Traces.TraceController.GetProductInspectInfo(SIE.EventMessages.MES.Traces.ProductInspectInfoCriteria)">
+            <summary>
+            获取产品报检信息
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.MES.Traces.TraceController.GetPackageInfos(SIE.EventMessages.MES.Traces.PackageInfoCriteria)">
+            <summary>
+            获取包装信息
+            </summary>
+            <param name="criteriaInfo">查询条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.MES.Traces.TraceController.GetMesProductInfo(SIE.EventMessages.MES.Traces.MesProductInfoCriteria)">
+            <summary>
+            获取Mes产品列表信息
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.MES.Traces.TraceController.GetMesProcessCollectInfo(SIE.EventMessages.MES.Traces.MesProcessCollectInfoCriteria)">
+            <summary>
+            获取Mes工序采集信息-反向追溯
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.MES.Traces.TraceController.GetMesProcessCollectKeyItemInfo(SIE.EventMessages.MES.Traces.MesProcessCollectKeyItemInfoCriteria)">
+            <summary>
+            获取Mes关键件采集信息-反向追溯
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.MES.Traces.TreeProcessor">
+            <summary>
+            树结构处理类
+            </summary>
+        </member>
+        <member name="M:SIE.MES.Traces.TreeProcessor.FlattenAndReverseTrees(System.Collections.Generic.List{SIE.MES.Traces.Models.RecursiveProductInfo})">
+            <summary>
+            拆分并反转树
+            </summary>
+            <param name="treeList"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

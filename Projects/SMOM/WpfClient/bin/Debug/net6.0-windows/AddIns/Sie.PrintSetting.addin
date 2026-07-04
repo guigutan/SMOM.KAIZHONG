@@ -1,0 +1,18 @@
+﻿<AddIn name        = "SieStudio"
+       author      = "huchuqiang"
+       copyright   = "prj:///doc/copyright.txt"
+       url         = "http://siestudio.chinasie.com"
+       description = "PrintSetting"
+       addInManagerHidden = "true">
+
+  <Manifest>
+    <Identity name = "PrintSetting" version = "@AssemblyVersion"/>
+  </Manifest>
+  <Runtime> 
+    <Import assembly=":SIE.Wpf.Common"/>
+  </Runtime> 
+  <Path name = "/Main/Workbench/HeaderBar/SysMenu/Setting"> 
+    <Tab id="printerSetting" type="Tab" header="打印设置" content="SIE.Wpf.Common.Prints.PrinterSetting,SIE.Wpf.Common"> 
+      </Tab> 
+  </Path>
+</AddIn>

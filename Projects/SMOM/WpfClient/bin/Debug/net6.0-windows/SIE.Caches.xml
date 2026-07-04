@@ -1,0 +1,227 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Caches</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Caches.CSRedisCache">
+            <summary>
+            Redis分布式缓存（CSRedis实现）
+            </summary>
+        </member>
+        <member name="M:SIE.Caches.CSRedisCache.#ctor(SIE.Caches.CSRedisCacheOptions)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="redisConfig"></param>
+        </member>
+        <member name="M:SIE.Caches.CSRedisCache.RedisInitTryConnect(System.Boolean,SIE.Caches.CSRedisCacheOptions)">
+            <summary>
+            校验redis是否可连接
+            </summary>
+            <param name="isSentinel">是否哨兵模式</param>
+            <param name="redisConfig">配置</param>
+            <exception cref="T:SIE.PlatformException"></exception>
+        </member>
+        <member name="M:SIE.Caches.CSRedisCache.GetObjectFieldValue(System.Object,System.String)">
+            <summary>
+            获取对象指定字段的值
+            </summary>
+            <param name="obj"></param>
+            <param name="fieldName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Caches.CSRedisCache.Add``1(System.String,``0,System.DateTime)">
+            <summary>
+            添加
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <param name="value"></param>
+            <param name="absoluteExpiration"></param>
+        </member>
+        <member name="M:SIE.Caches.CSRedisCache.GetOrAdd``1(System.String,System.Func{``0},System.DateTime)">
+            <summary>
+            获取或添加
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <param name="orAdd"></param>
+            <param name="absoluteExpiration"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Caches.CSRedisCache.Remove(System.String)">
+            <summary>
+            移除
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="M:SIE.Caches.CSRedisCache.TryGet``1(System.String,``0@)">
+            <summary>
+            尝试获取
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Caches.CSRedisCache.Expire(System.String,System.TimeSpan)">
+            <summary>
+            为给定 key 设置过期时间
+            </summary>
+            <param name="key"></param>
+            <param name="expire"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Caches.CSRedisCache.Exists(System.String)">
+            <summary>
+            检查给定 key 是否存在
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Caches.CSRedisCacheOptions">
+            <summary>
+            Redis缓存配置
+            </summary>
+        </member>
+        <member name="P:SIE.Caches.CSRedisCacheOptions.EnableDistributedCache">
+            <summary>
+            启用分布式缓存
+            </summary>
+        </member>
+        <member name="P:SIE.Caches.CSRedisCacheOptions.Host">
+            <summary>
+            主节点配置(哨兵模式下可为空)
+            </summary>
+        </member>
+        <member name="P:SIE.Caches.CSRedisCacheOptions.Password">
+            <summary>
+            Password
+            </summary>
+        </member>
+        <member name="P:SIE.Caches.CSRedisCacheOptions.DbName">
+            <summary>
+            默认DB
+            </summary>
+        </member>
+        <member name="P:SIE.Caches.CSRedisCacheOptions.Poolsize">
+            <summary>
+            连接池大小
+            </summary>
+        </member>
+        <member name="P:SIE.Caches.CSRedisCacheOptions.SSL">
+            <summary>
+            是否支持ssl
+            </summary>
+        </member>
+        <member name="P:SIE.Caches.CSRedisCacheOptions.WriteBuffer">
+            <summary>
+            写入缓冲区
+            </summary>
+        </member>
+        <member name="P:SIE.Caches.CSRedisCacheOptions.SentinelInfo">
+            <summary>
+            哨兵节点配置
+            </summary>
+        </member>
+        <member name="T:SIE.Caches.CSRedisCacheOptions.SentinelConfig">
+            <summary>
+            哨兵配置
+            </summary>
+        </member>
+        <member name="P:SIE.Caches.CSRedisCacheOptions.SentinelConfig.MasterName">
+            <summary>
+            master name
+            </summary>
+        </member>
+        <member name="P:SIE.Caches.CSRedisCacheOptions.SentinelConfig.Sentinel">
+            <summary>
+            哨兵节点
+            </summary>
+        </member>
+        <member name="T:SIE.Caches.InMemoryCache">
+            <summary>
+            内存缓存
+            </summary>
+        </member>
+        <member name="M:SIE.Caches.InMemoryCache.#ctor">
+            <summary>
+            构建内存缓存
+            </summary>
+        </member>
+        <member name="M:SIE.Caches.InMemoryCache.GetOrAdd``1(System.String,System.Func{``0},System.DateTime)">
+            <summary>
+            获取或添加
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <param name="orAdd"></param>
+            <param name="absoluteExpiration"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Caches.InMemoryCache.GetOrAdd``1(System.String,System.Func{``0},System.TimeSpan)">
+            <summary>
+            获取或添加
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <param name="orAdd"></param>
+            <param name="expiration"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Caches.InMemoryCache.Add``1(System.String,``0,System.DateTime)">
+            <summary>
+            添加
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <param name="value"></param>
+            <param name="absoluteExpiration"></param>
+        </member>
+        <member name="M:SIE.Caches.InMemoryCache.Add``1(System.String,``0,System.TimeSpan)">
+            <summary>
+            添加
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <param name="value"></param>
+            <param name="expiration"></param>
+        </member>
+        <member name="M:SIE.Caches.InMemoryCache.Remove(System.String)">
+            <summary>
+            移除
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="M:SIE.Caches.InMemoryCache.TryGet``1(System.String,``0@)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Caches.RedisCache">
+            <summary>
+            Redis分布式缓存
+            </summary>
+        </member>
+        <member name="T:SIE.Caches.RedisCacheOptions">
+            <summary>
+            Redis缓存配置
+            </summary>
+        </member>
+        <member name="P:SIE.Caches.RedisCacheOptions.Configuration">
+             <summary>
+            缓存连接配置（连接字符串)
+             </summary>
+        </member>
+        <member name="P:SIE.Caches.RedisCacheOptions.EnableDistributedCache">
+            <summary>
+            启用分布式缓存
+            </summary>
+        </member>
+    </members>
+</doc>

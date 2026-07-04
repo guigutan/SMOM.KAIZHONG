@@ -1,0 +1,200 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup Label="Globals">
+		<SccProjectName>SAK</SccProjectName>
+		<SccProvider>SAK</SccProvider>
+		<SccAuxPath>SAK</SccAuxPath>
+		<SccLocalPath>SAK</SccLocalPath>
+	</PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<AssemblyName>SIE.Web.Fixtures</AssemblyName>
+		<RootNamespace>SIE.Web.Fixtures</RootNamespace>
+		<CodeAnalysisRuleSet></CodeAnalysisRuleSet>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<OutputPath>..\..\..\..\platform\smom\</OutputPath>
+		<DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.Fixtures.xml</DocumentationFile>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<OutputPath>..\..\..\..\platform\smom\</OutputPath>
+		<DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.Fixtures.xml</DocumentationFile>
+	</PropertyGroup>
+	<ItemGroup>
+	  <Compile Remove="Demands\Commands\CancelPurOrderCommand.cs" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Remove="Abnormals\Commands\AddAbnormalCommand.js" />
+	  <None Remove="Accounts\Commands\AddCodeAccCommand.js" />
+	  <None Remove="Accounts\Commands\AddIDAccountCommand.js" />
+	  <None Remove="Accounts\Commands\EditSaveCodeAccCommand.js" />
+	  <None Remove="Accounts\Commands\EditSaveIDAccountCommand.js" />
+	  <None Remove="Accounts\Commands\SaveCodeAccCommand.js" />
+	  <None Remove="Accounts\Commands\SaveIDAccountCommand.js" />
+	  <None Remove="Accounts\Scripts\AddCodeAccBehavior.js" />
+	  <None Remove="Accounts\Scripts\AddFixtureCodeAccountBehavior.js" />
+	  <None Remove="Accounts\Scripts\AddFixtureIDAccountBehavior.js" />
+	  <None Remove="Accounts\Scripts\AddIDAccountBehavior.js" />
+	  <None Remove="Accounts\Scripts\FixtureAccountModelBehavior.js" />
+	  <None Remove="Accounts\Scripts\FixtureAccountModelLayout.js" />
+	  <None Remove="Accounts\Scripts\FixtureIDAccountBehavior.js" />
+	  <None Remove="Demands\Commands\AddDemandCommand.js" />
+	  <None Remove="Demands\Commands\AddDetailCommand.js" />
+	  <None Remove="Demands\Commands\CancelPurOrderCommand.js" />
+	  <None Remove="Demands\Commands\EditDemandCommand.js" />
+	  <None Remove="Demands\Commands\EditDetailCommand.js" />
+	  <None Remove="Demands\Commands\ExamineDemandCommand.js" />
+	  <None Remove="Demands\Commands\ForcedShutdownCommand.js" />
+	  <None Remove="Demands\Commands\SaveDemandCommand.js" />
+	  <None Remove="Demands\Commands\SubmitDemandsCommand.js" />
+	  <None Remove="Demands\Commands\UnLoadCommand.js" />
+	  <None Remove="Demands\Commands\UnloadDeleteCommand.js" />
+	  <None Remove="Demands\Commands\UnloadEditCommand.js" />
+	  <None Remove="Demands\Commands\UnloadSaveCommand.js" />
+	  <None Remove="Demands\Commands\UnloadStockCommand.js" />
+	  <None Remove="Demands\Editors\EncodeEditor.js" />
+	  <None Remove="Demands\Scripts\AddDemandBehavior.js" />
+	  <None Remove="Demands\Scripts\DemandBehavior.js" />
+	  <None Remove="Demands\Scripts\DemandCommonFun.js" />
+	  <None Remove="Demands\Scripts\FixtureDemandBehavior.js" />
+	  <None Remove="Demands\Scripts\UnloadPage.js" />
+	  <None Remove="InboundOrders\Commands\InboundCommand.js" />
+	  <None Remove="InboundOrders\Commands\OneKeyPassCommand.js" />
+	  <None Remove="InboundOrders\Commands\SaveInboundCommand.js" />
+	  <None Remove="InboundOrders\Commands\SumbitInboundCommand.js" />
+	  <None Remove="InboundOrders\Scripts\InboundOrdersBehavior.js" />
+	  <None Remove="InboundOrders\Scripts\InboundOrdersChildListBehavior.js" />
+	  <None Remove="MaintainTasks\Commands\DeleteDetailCommand.js" />
+	  <None Remove="MaintainTasks\Commands\MaintainCommand.js" />
+	  <None Remove="MaintainTasks\Commands\MaintainSaveCommand.js" />
+	  <None Remove="MaintainTasks\Commands\OnekeyPassCommand.js" />
+	  <None Remove="MaintainTasks\Commands\ShowMaintainTaskDetail.js" />
+	  <None Remove="MaintainTasks\Commands\ShowTaskDetail.js" />
+	  <None Remove="MaintainTasks\Scripts\MaintainTaskBehavior.js" />
+	  <None Remove="MaintainTasks\Scripts\MaintainTaskDetailBehavior.js" />
+	  <None Remove="Models\Commands\AddFixtureEncodeCommand.js" />
+	  <None Remove="Models\Commands\AddMaintainProjCommand.js" />
+	  <None Remove="Models\Commands\FixtureEncodeImportCommand.js" />
+	  <None Remove="Models\Commands\FixtureEncodeSaveCommand.js" />
+	  <None Remove="Models\Commands\FixtureModelEquipImportCommand.js" />
+	  <None Remove="Models\Commands\FixtureModelMaintainImportCommand.js" />
+	  <None Remove="Models\Commands\SelEquipModelCommand.js" />
+	  <None Remove="Models\Commands\SelProductDetailCommand.js" />
+	  <None Remove="Models\Commands\SyncFixtureEncodeCommand.js" />
+	  <None Remove="Models\Scripts\EISBaseDataViewGroupBehavior.js" />
+	  <None Remove="Models\Scripts\FixtureModelBehavior.js" />
+	  <None Remove="Models\Scripts\MutilCatalogEditor.js" />
+	  <None Remove="Querys\Commands\UnloadCommand.js" />
+	  <None Remove="Querys\Scripts\FixtureCriteriaBehavior.js" />
+	  <None Remove="Querys\Scripts\FixtureQueryBehavior.js" />
+	  <None Remove="Repairs\Commands\AddFixtureRepairCommand.js" />
+	  <None Remove="Repairs\Commands\AddRecordCommand.js" />
+	  <None Remove="Repairs\Commands\AddRepairDetailCommand.js" />
+	  <None Remove="Repairs\Commands\DeleteRecordCommand.js" />
+	  <None Remove="Repairs\Commands\DeleteRepairDetailCommand.js" />
+	  <None Remove="Repairs\Commands\EditDetailCommand.js" />
+	  <None Remove="Repairs\Commands\EditRecordCommand.js" />
+	  <None Remove="Repairs\Commands\EditRepairDetailCommand.js" />
+	  <None Remove="Repairs\Commands\FixtureRepairCommand.js" />
+	  <None Remove="Repairs\Commands\SaveAddRepairCommand.js" />
+	  <None Remove="Repairs\Commands\SaveRepairCommand.js" />
+	  <None Remove="Repairs\Commands\ShowRepairPicture.js" />
+	  <None Remove="Repairs\Commands\UploadPictureCommand.js" />
+	  <None Remove="Repairs\Script\AddFixtureRepairBehavior.js" />
+	  <None Remove="Repairs\Script\FixRepairPage.js" />
+	  <None Remove="Repairs\Script\FixtureRepairDetailBehavior.js" />
+	</ItemGroup>
+	<ItemGroup>
+	  <AdditionalFiles Include="..\..\..\..\.sonarlint\sie.smom\CSharp\SonarLint.xml" Link="SonarLint.xml" />
+	</ItemGroup>
+	<ItemGroup>
+	  <EmbeddedResource Include="Accounts\Scripts\AddFixtureCodeAccountBehavior.js" />
+	  <EmbeddedResource Include="Accounts\Scripts\AddFixtureIDAccountBehavior.js" />
+	  <EmbeddedResource Include="Demands\Commands\AddDemandCommand.js" />
+	  <EmbeddedResource Include="Demands\Commands\EditDemandCommand.js" />
+	  <EmbeddedResource Include="Demands\Commands\ExamineDemandCommand.js" />
+	  <EmbeddedResource Include="Demands\Commands\ForcedShutdownCommand.js" />
+	  <EmbeddedResource Include="Demands\Commands\SubmitDemandsCommand.js" />
+	  <EmbeddedResource Include="Demands\Editors\EncodeEditor.js" />
+	</ItemGroup>
+	<ItemGroup>
+	  <EmbeddedResource Include="Abnormals\Commands\AddAbnormalCommand.js" />
+	  <EmbeddedResource Include="Accounts\Commands\AddCodeAccCommand.js" />
+	  <EmbeddedResource Include="Accounts\Commands\AddIDAccountCommand.js" />
+	  <EmbeddedResource Include="Accounts\Commands\EditSaveCodeAccCommand.js" />
+	  <EmbeddedResource Include="Accounts\Commands\EditSaveIDAccountCommand.js" />
+	  <EmbeddedResource Include="Accounts\Commands\SaveCodeAccCommand.js" />
+	  <EmbeddedResource Include="Accounts\Commands\SaveIDAccountCommand.js" />
+	  <EmbeddedResource Include="Accounts\Scripts\AddCodeAccBehavior.js" />
+	  <EmbeddedResource Include="Accounts\Scripts\AddIDAccountBehavior.js" />
+	  <EmbeddedResource Include="Accounts\Scripts\FixtureAccountModelBehavior.js" />
+	  <EmbeddedResource Include="Accounts\Scripts\FixtureAccountModelLayout.js" />
+	  <EmbeddedResource Include="Accounts\Scripts\FixtureIDAccountBehavior.js" />
+	  <EmbeddedResource Include="Demands\Commands\AddDetailCommand.js" />
+	  <EmbeddedResource Include="Demands\Commands\EditDetailCommand.js" />
+	  <EmbeddedResource Include="Demands\Commands\SaveDemandCommand.js" />
+	  <EmbeddedResource Include="Demands\Commands\UnLoadCommand.js" />
+	  <EmbeddedResource Include="Demands\Commands\UnloadDeleteCommand.js" />
+	  <EmbeddedResource Include="Demands\Commands\UnloadEditCommand.js" />
+	  <EmbeddedResource Include="Demands\Commands\UnloadSaveCommand.js" />
+	  <EmbeddedResource Include="Demands\Commands\UnloadStockCommand.js" />
+	  <EmbeddedResource Include="Demands\Scripts\AddDemandBehavior.js" />
+	  <EmbeddedResource Include="Demands\Scripts\DemandBehavior.js" />
+	  <EmbeddedResource Include="Demands\Scripts\DemandCommonFun.js" />
+	  <EmbeddedResource Include="Demands\Scripts\FixtureDemandBehavior.js" />
+	  <EmbeddedResource Include="Demands\Scripts\UnloadPage.js" />
+	  <EmbeddedResource Include="InboundOrders\Commands\InboundCommand.js" />
+	  <EmbeddedResource Include="InboundOrders\Commands\OneKeyPassCommand.js" />
+	  <EmbeddedResource Include="InboundOrders\Commands\SaveInboundCommand.js" />
+	  <EmbeddedResource Include="InboundOrders\Commands\SumbitInboundCommand.js" />
+	  <EmbeddedResource Include="InboundOrders\Scripts\InboundOrdersBehavior.js" />
+	  <EmbeddedResource Include="InboundOrders\Scripts\InboundOrdersChildListBehavior.js" />
+	  <EmbeddedResource Include="MaintainTasks\Commands\DeleteDetailCommand.js" />
+	  <EmbeddedResource Include="MaintainTasks\Commands\MaintainCommand.js" />
+	  <EmbeddedResource Include="MaintainTasks\Commands\MaintainSaveCommand.js" />
+	  <EmbeddedResource Include="MaintainTasks\Commands\OnekeyPassCommand.js" />
+	  <EmbeddedResource Include="MaintainTasks\Commands\ShowMaintainTaskDetail.js" />
+	  <EmbeddedResource Include="MaintainTasks\Commands\ShowTaskDetail.js" />
+	  <EmbeddedResource Include="MaintainTasks\Scripts\MaintainTaskBehavior.js" />
+	  <EmbeddedResource Include="MaintainTasks\Scripts\MaintainTaskDetailBehavior.js" />
+	  <EmbeddedResource Include="Models\Commands\AddFixtureEncodeCommand.js" />
+	  <EmbeddedResource Include="Models\Commands\AddMaintainProjCommand.js" />
+	  <EmbeddedResource Include="Models\Commands\FixtureEncodeImportCommand.js" />
+	  <EmbeddedResource Include="Models\Commands\FixtureEncodeSaveCommand.js" />
+	  <EmbeddedResource Include="Models\Commands\FixtureModelEquipImportCommand.js" />
+	  <EmbeddedResource Include="Models\Commands\FixtureModelMaintainImportCommand.js" />
+	  <EmbeddedResource Include="Models\Commands\SelEquipModelCommand.js" />
+	  <EmbeddedResource Include="Models\Commands\SelProductDetailCommand.js" />
+	  <EmbeddedResource Include="Models\Commands\SyncFixtureEncodeCommand.js" />
+	  <EmbeddedResource Include="Models\Scripts\EISBaseDataViewGroupBehavior.js" />
+	  <EmbeddedResource Include="Models\Scripts\FixtureModelBehavior.js" />
+	  <EmbeddedResource Include="Models\Scripts\MutilCatalogEditor.js" />
+	  <EmbeddedResource Include="Querys\Commands\UnloadCommand.js" />
+	  <EmbeddedResource Include="Querys\Scripts\FixtureCriteriaBehavior.js" />
+	  <EmbeddedResource Include="Querys\Scripts\FixtureQueryBehavior.js" />
+	  <EmbeddedResource Include="Repairs\Commands\AddFixtureRepairCommand.js" />
+	  <EmbeddedResource Include="Repairs\Commands\AddRecordCommand.js" />
+	  <EmbeddedResource Include="Repairs\Commands\AddRepairDetailCommand.js" />
+	  <EmbeddedResource Include="Repairs\Commands\DeleteRecordCommand.js" />
+	  <EmbeddedResource Include="Repairs\Commands\DeleteRepairDetailCommand.js" />
+	  <EmbeddedResource Include="Repairs\Commands\EditDetailCommand.js" />
+	  <EmbeddedResource Include="Repairs\Commands\EditRecordCommand.js" />
+	  <EmbeddedResource Include="Repairs\Commands\EditRepairDetailCommand.js" />
+	  <EmbeddedResource Include="Repairs\Commands\FixtureRepairCommand.js" />
+	  <EmbeddedResource Include="Repairs\Commands\SaveAddRepairCommand.js" />
+	  <EmbeddedResource Include="Repairs\Commands\SaveRepairCommand.js" />
+	  <EmbeddedResource Include="Repairs\Commands\ShowRepairPicture.js" />
+	  <EmbeddedResource Include="Repairs\Commands\UploadPictureCommand.js" />
+	  <EmbeddedResource Include="Repairs\Script\AddFixtureRepairBehavior.js" />
+	  <EmbeddedResource Include="Repairs\Script\FixRepairPage.js" />
+	  <EmbeddedResource Include="Repairs\Script\FixtureRepairDetailBehavior.js" />
+	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\..\..\SEDO\EMS\SIE.EMS\SIE.EMS.csproj" />
+	  <ProjectReference Include="..\..\Items\SIE.Web.Items\SIE.Web.Items.csproj" />
+	  <ProjectReference Include="..\SIE.Fixtures\SIE.Fixtures.csproj" />
+	  <ProjectReference Include="..\SIE.Web.Equipments\SIE.Web.Equipments.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Resource Include="Accounts\Scripts\SetFixtureAccountDirtyBehavior.js" />
+	</ItemGroup>
+</Project>

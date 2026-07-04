@@ -1,0 +1,124 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+	<PropertyGroup Label="Globals">
+		<SccProjectName>SAK</SccProjectName>
+		<SccProvider>SAK</SccProvider>
+		<SccAuxPath>SAK</SccAuxPath>
+		<SccLocalPath>SAK</SccLocalPath>
+	</PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
+	</PropertyGroup>
+	<ItemGroup>
+		<!-- 匹配所有依赖项的 XML 文件 -->
+		<ContentWithTargetPath Include="$(NuGetPackageRoot)\SIE*\10.0.5\lib\net6.0\*.xml" TargetPath="%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+	</ItemGroup>
+	<ItemGroup>
+		<!-- 匹配所有依赖项的 XML 文件 -->
+		<ContentWithTargetPath Include="$(NuGetPackageRoot)\SIE*\10.0.5\lib\net6.0\*.xml" TargetPath="%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Include="..\..\..\Common\SIE.WebApiHost\Configuration.cs" Link="Configuration.cs" />
+		<Compile Include="..\..\..\Common\SIE.WebApiHost\Controllers\DataPortalController.cs" Link="Controllers\DataPortalController.cs" />
+		<Compile Include="..\..\..\Common\SIE.WebApiHost\HostService.cs" Link="HostService.cs" />
+		<Compile Include="..\..\..\Common\SIE.WebApiHost\Program.cs" Link="Program.cs" />
+		<Compile Include="..\..\..\Common\SIE.WebApiHost\WebApiStartup.cs" Link="WebApiStartup.cs" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="..\..\..\Common\SIE.WebApiHost\Dockerfile" Link="Dockerfile" />
+		<None Include="..\..\..\Common\SIE.WebApiHost\log4net.config" Link="log4net.config">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Include="..\..\..\Common\SIE.WebApiHost\_安装服务.bat" Link="_安装服务.bat" />
+		<None Include="..\..\..\Common\SIE.WebApiHost\_运行.cmd" Link="_运行.cmd">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.19" />
+		<PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.4">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
+		<PackageReference Include="NetEscapades.AspNetCore.SecurityHeaders" Version="0.11.0" />
+		<PackageReference Include="SIE.Alert.Job" Version="10.0.5" />
+		<PackageReference Include="SIE.AppSenders" Version="10.0.5" />
+		<PackageReference Include="SIE.AspNetCore.WorkFlow" Version="10.0.5" />
+		<PackageReference Include="SIE.Dashboard" Version="10.0.5" />
+		<PackageReference Include="SIE.Data.DmClient" Version="10.0.5" />
+		<PackageReference Include="SIE.Data.MySql" Version="10.0.5" />
+		<PackageReference Include="SIE.Data.PostgreSQL" Version="10.0.5" />
+		<PackageReference Include="SIE.Data.SqlServer" Version="10.0.5" />
+		<PackageReference Include="SIE.Data.VastData" Version="10.0.5" />
+		<PackageReference Include="SIE.Diagnostics" Version="10.0.5" />
+		<PackageReference Include="SIE.FileView" Version="10.0.5" />
+		<PackageReference Include="SIE.Localization" Version="10.0.5" />
+		<PackageReference Include="SIE.Messages" Version="10.0.5" />
+		<PackageReference Include="SIE.MQ" Version="10.0.5" />
+		<PackageReference Include="SIE.ORM.MappingColumn" Version="10.0.5" />
+		<PackageReference Include="SIE.Print" Version="10.0.5" />
+		<PackageReference Include="SIE.Queue" Version="10.0.5" />
+		<PackageReference Include="SIE.ReportServerCore" Version="10.0.5" />
+		<PackageReference Include="SIE.Schedule" Version="10.0.5" />
+		<PackageReference Include="SIE.Script" Version="10.0.5" />
+		<PackageReference Include="SIE.Senders.AspNetCore.WxWorkSender" Version="10.0.5" />
+		<PackageReference Include="SIE.ServerCore" Version="10.0.5" />
+		<PackageReference Include="Topshelf.Log4Net" Version="4.2.1" />
+	</ItemGroup>
+	<ItemGroup>
+		<Content Update="appsettings.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+	<ItemGroup>
+		<None Update="Dockerfile">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="_安装服务.bat">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="_运行.cmd">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\Modules\Common\AbnormalInfo\SIE.AbnormalInfo.Job\SIE.AbnormalInfo.Job.csproj" />
+		<ProjectReference Include="..\..\..\Modules\Common\Core\SIE.Core.Job\SIE.Core.Job.csproj" />
+		<ProjectReference Include="..\..\..\Modules\Common\Defects\SIE.Defects\SIE.Defects.csproj" />
+		<ProjectReference Include="..\..\..\Modules\Common\FMS\SIE.FMS\SIE.FMS.csproj" />
+		<ProjectReference Include="..\..\..\Modules\Common\LES\SIE.Dock\SIE.Dock.csproj" />
+		<ProjectReference Include="..\..\..\Modules\Common\LES\SIE.LES.Job\SIE.LES.Job.csproj" />
+		<ProjectReference Include="..\..\..\Modules\Common\Traces\SIE.Traces\SIE.Traces.csproj" />
+		<ProjectReference Include="..\..\..\Modules\ERPInterface\SIE.ERPInterface.API\SIE.ERPInterface.Api.csproj" />
+		<ProjectReference Include="..\..\..\Modules\ERPInterface\SIE.ERPInterface.Job\SIE.ERPInterface.Job.csproj" />
+		<ProjectReference Include="..\..\..\Modules\KaiZhong\SIE.KZ.Base\SIE.KZ.Base.csproj" />
+		<ProjectReference Include="..\..\..\Modules\KaiZhong\SIE.KZ.FactoryToGroup\SIE.KZ.FactoryToGroup.csproj" />
+		<ProjectReference Include="..\..\..\Modules\KaiZhong\SIE.KZ.Group\SIE.KZ.Group.csproj" />
+		<ProjectReference Include="..\..\..\Modules\KaiZhong\SIE.KZ.Print\SIE.KZ.Print.csproj" />
+		<ProjectReference Include="..\..\..\Modules\SEDO\EMS\SIE.EMS.EarlierStage\SIE.EMS.EarlierStage.csproj" />
+		<ProjectReference Include="..\..\..\Modules\SEDO\EMS\SIE.EMS.Job\SIE.EMS.Job.csproj" />
+		<ProjectReference Include="..\..\..\Modules\SEDO\EMS\SIE.EMS.MeteringEquipment\SIE.EMS.MeteringEquipment.csproj" />
+		<ProjectReference Include="..\..\..\Modules\SEDO\EMS\SIE.EMS.Purchases\SIE.EMS.Purchases.csproj" />
+		<ProjectReference Include="..\..\..\Modules\SEDO\EMS\SIE.EMS.Report\SIE.EMS.Report.csproj" />
+		<ProjectReference Include="..\..\..\Modules\SEDO\EMS\SIE.EMS.SpecialEquipment\SIE.EMS.SpecialEquipment.csproj" />
+		<ProjectReference Include="..\..\..\Modules\SMES\Common\SIE.Andon\SIE.Andon.csproj" />
+		<ProjectReference Include="..\..\..\Modules\SMES\Common\SIE.MES.Common\SIE.MES.Common.csproj" />
+		<ProjectReference Include="..\..\..\Modules\SMES\DashBoards\SIE.MES.DashBoard\SIE.MES.DashBoard.csproj" />
+		<ProjectReference Include="..\..\..\Modules\SMES\Esop\SIE.ESop\SIE.ESop.csproj" />
+		<ProjectReference Include="..\..\..\Modules\SMES\MES\SIE.MES.Job\SIE.MES.Job.csproj" />
+		<ProjectReference Include="..\..\..\Modules\SMES\MES\SIE.Mes.Mq\SIE.Mes.Mq.csproj" />
+		<ProjectReference Include="..\..\..\Modules\SMES\MES\SIE.MES.Traces\SIE.MES.Traces.csproj" />
+		<ProjectReference Include="..\..\..\Modules\SMES\ProductIntfc\SIE.ProductInsp.Job\SIE.ProductInsp.Job.csproj" />
+		<ProjectReference Include="..\..\..\Modules\SMES\Reports\SIE.MES.Report\SIE.MES.Report.csproj" />
+		<ProjectReference Include="..\..\..\Modules\SMES\Tasks\SIE.MES.TaskManagement\SIE.MES.TaskManagement.csproj" />
+		<ProjectReference Include="..\..\..\Modules\SMES\Teams\SIE.MES.TeamManagement.Job\SIE.MES.TeamManagement.Job.csproj" />
+		<ProjectReference Include="..\..\..\Modules\SMES\Workbenchs\SIE.MES.Workbench\SIE.MES.Workbench.csproj" />
+	</ItemGroup>
+	<ProjectExtensions>
+		<VisualStudio>
+			<UserProperties appsettings_1json__JSONSchema="" />
+		</VisualStudio>
+	</ProjectExtensions>
+</Project>

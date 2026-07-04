@@ -1,0 +1,54 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <CodeAnalysisRuleSet>..\..\..\..\.sonarlint\sie.smomcsharp.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.MES.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.MES.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Abnormal\**" />
+    <Compile Remove="TaskManagement\**" />
+    <EmbeddedResource Remove="Abnormal\**" />
+    <EmbeddedResource Remove="TaskManagement\**" />
+    <None Remove="Abnormal\**" />
+    <None Remove="TaskManagement\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Events\TaskManagerListener.cs" />
+    <Compile Remove="WIP\Moves\WipMoveInfo.cs" />
+    <Compile Remove="WIP\PanelWipController.cs" />
+    <Compile Remove="WIP\Products\WipProductInspectionItem - 副本.cs" />
+    <Compile Remove="WIP\Products\WipProductVersionController - 副本.cs" />
+    <Compile Remove="WorkOrders\EmployeeMove.cs" />
+    <Compile Remove="WorkOrders\Models\ErpWorkOrderData.cs" />
+    <Compile Remove="WorkOrders\PropertyComparer.cs" />
+    <Compile Remove="WorkOrders\WipResourceMove.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\..\..\.sonarlint\sie.smom\CSharp\SonarLint.xml" Link="SonarLint.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="SIE.DataSync" Version="10.0.5" />
+    <PackageReference Include="SIE.Script" Version="10.0.5" />
+    <PackageReference Include="SIE.Senders" Version="10.0.5" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\Equipments\SIE.Equipments\SIE.Equipments.csproj" />
+    <ProjectReference Include="..\..\..\Common\LES\SIE.LES\SIE.LES.csproj" />
+    <ProjectReference Include="..\..\..\KaiZhong\SIE.KZ.Base\SIE.KZ.Base.csproj" />
+    <ProjectReference Include="..\..\Barcodes\SIE.Barcodes\SIE.Barcodes.csproj" />
+  </ItemGroup>
+</Project>

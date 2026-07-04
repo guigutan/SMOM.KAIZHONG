@@ -1,0 +1,1147 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Wpf.WorkBenchChartBase</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartGroup">
+            <summary>
+            ChartGroup.xaml 的交互逻辑
+            </summary>
+            <summary>
+            ChartGroup
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartGroup.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartGroup.OnRun">
+            <summary>
+            运行后
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartGroup.OnClose">
+            <summary>
+            关闭后
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartGroup.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartGroupProperty">
+            <summary>
+            工作台控件的属性类
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartGroupProperty.Title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartGroupProperty.Module">
+            <summary>
+            产品模块
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartGroupProperty.ContentCategory">
+            <summary>
+            目标参数类型
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartGroupProperty.TimeSpan">
+            <summary>
+            刷新间隔
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartGroupProperty.Id">
+            <summary>
+            当前图表容器的唯一标识
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartDefinition">
+            <summary>
+            图表信息的定义
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartDefinition.Type">
+            <summary>
+            图表对应的类型
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartDefinition.definition">
+            <summary>
+            图表的特性
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartDefinition.Definition">
+            <summary>
+            图表的特性
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartDefinition.IsSelected">
+            <summary>
+            是否被勾选
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartDefinition.Icon">
+            <summary>
+            图表的类型（柱形、折线、饼图等）
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartType">
+            <summary>
+            图表对象的定义
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartType.Type">
+            <summary>
+            图表类型
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartType.Instance">
+            <summary>
+            图表对象
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartGroupViewModel.charts">
+            <summary>
+            记录所有的图表控件
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartGroupViewModel.Def_PropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            属性变更
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartGroupViewModel.Selection">
+            <summary>
+            选择的图表集合
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartGroupViewModel.Selected">
+            <summary>
+            当前已选的图表集合
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartGroupViewModel.Module">
+            <summary>
+            产品模块
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartGroupViewModel.ContentCategory">
+            <summary>
+            图表类型
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartGroupViewModel.Id">
+            <summary>
+            图表容器唯一标识
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartGroupViewModel.TimeSpan">
+            <summary>
+            刷新的时间间隔
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartGroupViewModel.Chart1">
+            <summary>
+            第一个图表
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartGroupViewModel.Chart2">
+            <summary>
+            第二个图表
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartGroupViewModel.Chart3">
+            <summary>
+            第三个图表
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartGroupViewModel.PrevCommand">
+            <summary>
+            前一个图表对象
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartGroupViewModel.NextCommand">
+            <summary>
+            下一个图表对象
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartGroupViewModel.MoreCommand">
+            <summary>
+            更多图表对象
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartGroupViewModel.PageIndex">
+            <summary>
+            记录第一个显示的图表控件的索引
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartGroupViewModel.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartGroupViewModel.Run">
+            <summary>
+            展示图表控件
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartGroupViewModel.ShowMore">
+            <summary>
+            更多的逻辑
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartGroupViewModel.GetLayout">
+            <summary>
+            读取配置文件获取需要展示的图表控件
+            </summary>
+            <returns>返回展示的图表控件</returns>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartGroupViewModel.GetFileName">
+            <summary>
+            获取配置文件的路径
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartGroupViewModel.SaveLayout">
+            <summary>
+            保存需要展示的图表控件
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartGroupViewModel.LoadCharts">
+            <summary>
+            加载图表控件
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartGroupViewModel.LoadChart(System.Int32)">
+            <summary>
+            根据索引加载图表控件对象
+            </summary>
+            <param name="index">展示图表索引</param>
+            <returns>返回图表控件对象</returns>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartGroupViewModel.Prev">
+            <summary>
+            上一个
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartGroupViewModel.CanPrev">
+            <summary>
+            上一个是否可点击
+            </summary>
+            <returns>返回是否可点击</returns>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartGroupViewModel.Next">
+            <summary>
+            下一个
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartGroupViewModel.CanNext">
+            <summary>
+            下一个是否可点击
+            </summary>
+            <returns>返回是否可点击</returns>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartGroupViewModel.SetTimerInterval(System.Double)">
+            <summary>
+            设置每一个图表控件刷新数据的时间
+            </summary>
+            <param name="timeSpan">刷新数据间隔</param>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartGroupViewModel.Disposes">
+            <summary>
+            释放数据
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartLayout">
+            <summary>
+            图表
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartInfo">
+            <summary>
+            ChartInfo.xaml 的交互逻辑
+            </summary>
+            <summary>
+            ChartInfo
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartInfo.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.ChartGroups.ChartInfo.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchChartBase.ChartGroups.VisibleConverter">
+            <summary>
+            转换
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchChartBase.ChartGroups.VisibleConverter.Invert">
+            <summary>
+            是否转换
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.ChartGroups.VisibleConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            转换
+            </summary>
+            <param name="value">值</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">区域信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.ChartGroups.VisibleConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <param name="targetType"></param>
+            <param name="parameter"></param>
+            <param name="culture"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.ChartGroups.VisibleConverter.ProvideValue(System.IServiceProvider)">
+            <summary>
+            
+            </summary>
+            <param name="serviceProvider"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchChartBase.Commons.BarChart">
+            <summary>
+            柱形图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.BarChart.CreateSeries">
+            <summary>
+            创建Series
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.BarChart.BuildDataContext">
+            <summary>
+            构建数据上下文
+            </summary>
+            <returns>数据上下文</returns>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.BarChart.NewCommandBinding_Executed(System.Object,System.Windows.Input.ExecutedRoutedEventArgs)">
+            <summary>
+            新建命令委托
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.BarChart.PrintToImage">
+            <summary>
+            打印图片
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchChartBase.Commons.BarLineSeriesReportChart">
+            <summary>
+            BarLineSeriesControl.xaml 的交互逻辑
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.WorkBenchChartBase.Commons.BarLineSeriesReportChart.LegendBatch">
+            <summary>
+            柱形图例
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.WorkBenchChartBase.Commons.BarLineSeriesReportChart.LegendPercenta">
+            <summary>
+            折线图例
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.WorkBenchChartBase.Commons.BarLineSeriesReportChart._AxisY">
+            <summary>
+            Y轴
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.WorkBenchChartBase.Commons.BarLineSeriesReportChart._SecondaryAxisY2D">
+            <summary>
+            第二Y轴
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.WorkBenchChartBase.Commons.BarLineSeriesReportChart.BarSeries">
+            <summary>
+            柱形系列
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.WorkBenchChartBase.Commons.BarLineSeriesReportChart.LineSeries">
+            <summary>
+            折线系列
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.BarLineSeriesReportChart.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.BarLineSeriesReportChart.BuildViewContent">
+            <summary>
+            加载UI页面
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.BarLineSeriesReportChart.InitControl">
+            <summary>
+            初始化控件
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.BarLineSeriesReportChart.GetData(System.Data.DataTable@,System.Data.DataTable@)">
+            <summary>
+            获取数据
+            </summary>
+            <param name="barSeriesTable">柱形的数据集合(第一列为X轴显示的内容，第二列为Y轴显示内容)</param>
+            <param name="lineSeriesTable">折线的数据集合(第一列为X轴显示的内容，第二列为Y轴显示内容)</param>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.BarLineSeriesReportChart.Grid_Loaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            初始加載
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.BarLineSeriesReportChart.OnRun">
+            <summary>
+            运行后
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.BarLineSeriesReportChart.Refresh">
+            <summary>
+            刷新
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.BarLineSeriesReportChart.BindingChart">
+            <summary>
+            柏拉图按维度显示
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchChartBase.Commons.BarSeriesReportChart">
+            <summary>
+            BarSeriesControl.xaml 交互逻辑
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.WorkBenchChartBase.Commons.BarSeriesReportChart.LegendBatch">
+            <summary>
+            柱形图例
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.WorkBenchChartBase.Commons.BarSeriesReportChart._AxisY">
+            <summary>
+            Y轴
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.WorkBenchChartBase.Commons.BarSeriesReportChart.BarSeries">
+            <summary>
+            柱形系列
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.BarSeriesReportChart.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.BarSeriesReportChart.BuildViewContent">
+            <summary>
+            加载UI页签
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.BarSeriesReportChart.InitControl">
+            <summary>
+            初始化控件
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.BarSeriesReportChart.Grid_Loaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            初始化加载
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.BarSeriesReportChart.OnRun">
+            <summary>
+            运行后
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.BarSeriesReportChart.Refresh">
+            <summary>
+            刷新
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.BarSeriesReportChart.GetData(System.Data.DataTable@)">
+            <summary>
+            获取数据
+            </summary>
+            <param name="barSeriesTable">柱形的数据集合(第一列为X轴显示的内容，第二列为Y轴显示内容)</param>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.BarSeriesReportChart.BindingChart">
+            <summary>
+            柏拉图按维度显示
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchChartBase.Commons.ChartHeaderControl">
+            <summary>
+            图标头控件
+            </summary>
+        </member>
+        <member name="E:SIE.Wpf.WorkBenchChartBase.Commons.ChartHeaderControl.NewAction">
+            <summary>
+            新建命令委托
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchChartBase.Commons.ChartHeaderControl.New">
+            <summary>
+            新建命令
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchChartBase.Commons.ChartHeaderControl.Collect">
+            <summary>
+            收藏命令
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.ChartHeaderControl.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.ChartHeaderControl.ChartHeaderControl_Loaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            获取关注状态
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.ChartHeaderControl.NewCommandBinding_Executed(System.Object,System.Windows.Input.ExecutedRoutedEventArgs)">
+            <summary>
+            新建命令执行方法
+            </summary>
+            <param name="sender">控件对象</param>
+            <param name="e">命令参数</param>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.ChartHeaderControl.CollectCommandBinding_Executed(System.Object,System.Windows.Input.ExecutedRoutedEventArgs)">
+            <summary>
+            收藏命令执行方法
+            </summary>
+            <param name="sender">控件对象</param>
+            <param name="e">命令参数</param>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchChartBase.Commons.ColorConverter">
+            <summary>
+            预警级别与背景颜色转换器
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.ColorConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            转换
+            </summary>
+            <param name="value"></param>
+            <param name="targetType"></param>
+            <param name="parameter"></param>
+            <param name="culture"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.ColorConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            颜色转换
+            </summary>
+            <param name="value">值</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">区域信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.ColorConverter.ProvideValue(System.IServiceProvider)">
+            <summary>
+            当在派生类中实现时，返回一个对象，该对象作为此标记扩展的目标属性的值。
+            </summary>
+            <param name="serviceProvider">标记扩展服务的服务提供者</param>
+            <returns>对象</returns>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchChartBase.Commons.ColorDescriptionConverter">
+            <summary>
+            预警级别与背景颜色描述转换器
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.ColorDescriptionConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            转换
+            </summary>
+            <param name="value">值</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">区域信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.ColorDescriptionConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            颜色转换
+            </summary>
+            <param name="value">值</param>
+            <param name="targetType">目标类型</param>
+            <param name="parameter">参数</param>
+            <param name="culture">区域信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.ColorDescriptionConverter.ProvideValue(System.IServiceProvider)">
+            <summary>
+            当在派生类中实现时，返回一个对象，该对象作为此标记扩展的目标属性的值。
+            </summary>
+            <param name="serviceProvider">标记扩展服务的服务提供者</param>
+            <returns>对象</returns>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchChartBase.Commons.LineChart">
+            <summary>
+            折线图
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.WorkBenchChartBase.Commons.LineChart._title">
+            <summary>
+            控件标题
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.WorkBenchChartBase.Commons.LineChart._timer">
+            <summary>
+            时间刷新器
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.WorkBenchChartBase.Commons.LineChart._headerControl">
+            <summary>
+            图表头控件
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.WorkBenchChartBase.Commons.LineChart._control">
+            <summary>
+            图表控件
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.WorkBenchChartBase.Commons.LineChart._diagram">
+            <summary>
+            图表
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.WorkBenchChartBase.Commons.LineChart._baseModel">
+            <summary>
+            数据上下文Model
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.WorkBenchChartBase.Commons.LineChart.MinDispatchTimeSpanMilSecs">
+            <summary>
+            最小刷新时间间隔（秒）
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.LineChart.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.LineChart.NetworkChangeMonitor">
+            <summary>
+            网络监听
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.LineChart.Chart_MouseDoubleClick(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            图表鼠标双击事件
+            </summary>
+            <param name="sender">控件对象</param>
+            <param name="e">时间参数</param>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.LineChart.BuildDataContext">
+            <summary>
+            构建数据上下文
+            </summary>
+            <returns>数据上下文</returns>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.LineChart.BuildViewContent">
+            <summary>
+            构建视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.LineChart.CreateAxisx">
+            <summary>
+            创建X轴
+            </summary>
+            <returns>X轴</returns>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.LineChart.CreateSecondarAxisx">
+            <summary>
+            创建第二X轴
+            </summary>
+            <returns>第二X轴</returns>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.LineChart.CreateAxisY">
+            <summary>
+            创建Y轴
+            </summary>
+            <returns>Y轴</returns>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.LineChart.CreateSecondarAxisY">
+            <summary>
+            创建第二Y轴
+            </summary>
+            <returns>第二Y轴</returns>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.LineChart.CreateSeries">
+            <summary>
+            创建Series
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.LineChart.NewCommandBinding_Executed(System.Object,System.Windows.Input.ExecutedRoutedEventArgs)">
+            <summary>
+            新建命令执行方法
+            </summary>
+            <param name="sender">控件对象</param>
+            <param name="e">命令参数</param>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.LineChart.GetConstantLines">
+            <summary>
+            创建限制线
+            </summary>
+            <returns>限制线列表</returns>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.LineChart.CreateLegend">
+            <summary>
+            定制Legend位置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.LineChart.GetChartAlertLevel(System.Collections.Generic.List{DevExpress.Xpf.Charts.SeriesPoint},System.String,System.String)">
+            <summary>
+            设置预警级别
+            </summary>
+            <param name="dayPoints">显示点</param>
+            <param name="groupName">指标分类</param>
+            <param name="title">指标名称</param>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.LineChart.Timer_Tick(System.Object,System.EventArgs)">
+            <summary>
+            异步刷新时间
+            </summary>
+            <param name="sender">时间对象</param>
+            <param name="e">时间参数</param>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.LineChart.SetTimerInterval(System.Double)">
+            <summary>
+            定时器
+            </summary>
+            <param name="timeSpan">时间间隔</param>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.LineChart.SubscribeWorkShopChanged">
+            <summary>
+            订阅车间变更事件
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.LineChart.Dispose">
+            <summary>
+            释放事件
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.LineChart.Dispose(System.Boolean)">
+            <summary>
+            释放资源
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.LineChart.LoadData">
+            <summary>
+            数据加载
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchChartBase.Commons.LineChart._workShopId">
+            <summary>
+            车间Id
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchChartBase.Commons.LineChart._workShop">
+            <summary>
+            车间
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchChartBase.Commons.LineChart._dbTime">
+            <summary>
+            数据库时间
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.LineChart.SubscribeHandle(SIE.WorkBenchChartBase.WorkShopChangedEvent)">
+            <summary>
+            订阅事件处理
+            </summary>
+            <param name="e">e</param>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchChartBase.Commons.PieChart">
+            <summary>
+            饼状图
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.WorkBenchChartBase.Commons.PieChart._timer">
+            <summary>
+            时间刷新器
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.WorkBenchChartBase.Commons.PieChart._headerControl">
+            <summary>
+            图表头控件
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.WorkBenchChartBase.Commons.PieChart._control">
+            <summary>
+            图表控件
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.WorkBenchChartBase.Commons.PieChart._diagram">
+            <summary>
+            图表
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.WorkBenchChartBase.Commons.PieChart._baseModel">
+            <summary>
+            数据上下文Model
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.WorkBenchChartBase.Commons.PieChart.MinDispatchTimeSpanMilSecs">
+            <summary>
+            最小刷新时间间隔（秒）
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.PieChart.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.PieChart.NetworkChangeMonitor">
+            <summary>
+            网络监听
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.PieChart.Chart_MouseDoubleClick(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            图表鼠标双击事件
+            </summary>
+            <param name="sender">控件对象</param>
+            <param name="e">时间参数</param>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.PieChart.CreateSeries">
+            <summary>
+            创建Series
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.PieChart.BuildDataContext">
+            <summary>
+            构建数据上下文
+            </summary>
+            <returns>数据上下文</returns>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.PieChart.BuildViewContent">
+            <summary>
+            构建视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.PieChart.CreateLegend">
+            <summary>
+            定制Legend位置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.PieChart.NewCommandBinding_Executed(System.Object,System.Windows.Input.ExecutedRoutedEventArgs)">
+            <summary>
+            新建命令执行方法
+            </summary>
+            <param name="sender">控件对象</param>
+            <param name="e">命令参数</param>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.PieChart.Timer_Tick(System.Object,System.EventArgs)">
+            <summary>
+            异步刷新时间
+            </summary>
+            <param name="sender">时间对象</param>
+            <param name="e">时间参数</param>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.PieChart.SetTimerInterval(System.Double)">
+            <summary>
+            定时器
+            </summary>
+            <param name="timeSpan">时间间隔</param>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.PieChart.Dispose">
+            <summary>
+            Dispose
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchChartBase.Commons.PopupForm">
+            <summary>
+            弹框表单
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchChartBase.Commons.PopupForm.Items">
+            <summary>
+            Items
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.PopupForm.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchChartBase.Commons.PopupItem">
+            <summary>
+            ControlGroup.xaml 的交互逻辑
+            </summary>
+            <summary>
+            PopupItem
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.PopupItem.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchChartBase.Commons.PopupItem.Title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchChartBase.Commons.PopupItem.InfoContent">
+            <summary>
+            内容信息
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.PopupItem.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchChartBase.Commons.RadarChart">
+            <summary>
+            雷达图
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.WorkBenchChartBase.Commons.RadarChart._timer">
+            <summary>
+            时间刷新器
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.WorkBenchChartBase.Commons.RadarChart._headerControl">
+            <summary>
+            图表头控件
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.WorkBenchChartBase.Commons.RadarChart._control">
+            <summary>
+            图表控件
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.WorkBenchChartBase.Commons.RadarChart._diagram">
+            <summary>
+            图表
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.WorkBenchChartBase.Commons.RadarChart._baseModel">
+            <summary>
+            数据上下文Model
+            </summary>
+        </member>
+        <member name="F:SIE.Wpf.WorkBenchChartBase.Commons.RadarChart.MinDispatchTimeSpanMilSecs">
+            <summary>
+            最小刷新时间间隔（秒）
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.RadarChart.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.RadarChart.NetworkChangeMonitor">
+            <summary>
+            网络监听
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.RadarChart.Chart_MouseDoubleClick(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            图表鼠标双击事件
+            </summary>
+            <param name="sender">控件对象</param>
+            <param name="e">时间参数</param>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.RadarChart.BuildDataContext">
+            <summary>
+            构建数据上下文
+            </summary>
+            <returns>数据上下文</returns>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.RadarChart.BuildViewContent">
+            <summary>
+            构建视图
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.RadarChart.NewCommandBinding_Executed(System.Object,System.Windows.Input.ExecutedRoutedEventArgs)">
+            <summary>
+            新建命令执行方法
+            </summary>
+            <param name="sender">控件对象</param>
+            <param name="e">命令参数</param>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.RadarChart.CreateAxisx">
+            <summary>
+            创建X轴
+            </summary>
+            <returns>X轴</returns>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.RadarChart.CreateAxisY">
+            <summary>
+            创建Y轴
+            </summary>
+            <returns>Y轴</returns>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.RadarChart.CreateSeries">
+            <summary>
+            创建Series
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.RadarChart.CreateLegend">
+            <summary>
+            定制Legend位置
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.RadarChart.Timer_Tick(System.Object,System.EventArgs)">
+            <summary>
+            异步刷新时间
+            </summary>
+            <param name="sender">时间对象</param>
+            <param name="e">时间参数</param>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.RadarChart.SetTimerInterval(System.Double)">
+            <summary>
+            定时器
+            </summary>
+            <param name="timeSpan">时间间隔</param>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.RadarChart.Dispose">
+            <summary>
+            释放数据
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.RadarChart.Dispose(System.Boolean)">
+            <summary>
+            释放数据
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchChartBase.Commons.RadiusConverter">
+            <summary>
+            圆角转换器
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.RadiusConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            转换
+            </summary>
+            <param name="value">The value produced by the binding source.</param>
+            <param name="targetType">The type of the binding target property.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>A converted value. If the method returns null, the valid null value is used.</returns>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.RadiusConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            转换
+            </summary>
+            <param name="value">The value that is produced by the binding target.</param>
+            <param name="targetType">The type to convert to.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>A converted value. If the method returns null, the valid null value is used.</returns>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.RadiusConverter.ProvideValue(System.IServiceProvider)">
+            <summary>
+            When implemented in a derived class, returns an object that is provided as the
+            value of the target property for this markup extension.
+            </summary>
+            <param name="serviceProvider">A service provider helper that can provide services for the markup extension.</param>
+            <returns>The object value to set on the property where the extension is applied.</returns>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchChartBase.Commons.XamlParseHelper">
+            <summary>
+            帮助类
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.XamlParseHelper.BuildViewContent``1(System.String)">
+            <summary>
+            根据字符串xaml构建控件
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="xamlStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.XamlParseHelper.LoadEmbeddedXaml``1(System.String,System.UriKind)">
+            <summary>
+            从资源文件中加载控件
+            </summary>
+            <typeparam name="T">生成控件类型</typeparam>
+            <param name="uriStr">Uri字符串</param>
+            <param name="uriKind">Uri类型</param>
+            <returns>控件</returns>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchChartBase.Commons.ReportChartTemplate">
+            <summary>
+            ReportChartTemplate.xaml 的交互逻辑
+            </summary>
+            <summary>
+            ReportChartTemplate
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchChartBase.Commons.ReportChartTemplate.LineSeriesLabel">
+            <summary>
+            线条系列标签
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchChartBase.Commons.ReportChartTemplate.LineSeriesLabel2">
+            <summary>
+            线条系列标签2
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchChartBase.Commons.ReportChartTemplate.LineSeriesLabel3">
+            <summary>
+            线条系列标签3
+            </summary>
+        </member>
+        <member name="P:SIE.Wpf.WorkBenchChartBase.Commons.ReportChartTemplate.SideSeriesLabel">
+            <summary>
+            边框系列标签
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.ReportChartTemplate.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Commons.ReportChartTemplate.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:SIE.Wpf.WorkBenchChartBase.Module">
+            <summary>
+            模块定义
+            </summary>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Module.Initialize(SIE.IApp)">
+            <summary>
+            模块初始化
+            </summary>
+            <param name="app">应用程序</param>
+        </member>
+        <member name="M:SIE.Wpf.WorkBenchChartBase.Module.App_ModuleOperations(System.Object,System.EventArgs)">
+            <summary>
+            模块操作
+            </summary>
+            <param name="sender">发送者</param>
+            <param name="e">事件参数</param>
+        </member>
+    </members>
+</doc>

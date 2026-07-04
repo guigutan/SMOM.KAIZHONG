@@ -1,0 +1,539 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Web.CSM</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Web.CSM._Extentions_.EntityPropertyViewMetaExtension">
+            <summary>
+            扩展编辑器
+            </summary>
+        </member>
+        <member name="M:SIE.Web.CSM._Extentions_.EntityPropertyViewMetaExtension.UseSupplierProvinceEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Int32,System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig})">
+            <summary>
+            获取区域下拉编辑器
+            </summary>
+            <typeparam name="T">T</typeparam>
+            <param name="meta">meta</param>
+            <param name="type">1、国家； 2、省； 3、市； 4、区</param>
+            <param name="action">action</param>
+            <returns>省列表</returns>
+        </member>
+        <member name="M:SIE.Web.CSM._Extentions_.EntityPropertyViewMetaExtension.UseCustomerEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},SIE.CSM.Customers.CustomerType,System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig,``0})">
+            <summary>
+            使用客户信息编辑器
+            </summary>
+            <typeparam name="T">T</typeparam>
+            <param name="meta">meta</param>
+            <param name="customerType">客户类型</param>
+            <param name="action">action</param>
+            <returns>客户列表</returns>
+        </member>
+        <member name="T:SIE.Web.CSM.Customers.Commands.CustomerDeleteCommand">
+            <summary>
+            删除命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.CSM.Customers.Commands.CustomerSaveCommand">
+            <summary>
+            客户保存命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.CSM.Customers.Commands.CustomerSaveCommand.DoSave(SIE.Domain.EntityList)">
+            <summary>
+            验证
+            </summary>
+            <param name="data"></param>
+            <exception cref="T:SIE.Domain.Validation.ValidationException"></exception>
+        </member>
+        <member name="T:SIE.Web.CSM.Customers.CustomerAddressViewConfig">
+            <summary>
+            客户地址视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.CSM.Customers.CustomerAddressViewConfig.ConfigListView">
+            <summary>
+            视图列表配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.CSM.Customers.CustomerCriteriaViewConfig">
+            <summary>
+            客户视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.CSM.Customers.CustomerCriteriaViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.CSM.Customers.CustomerViewConfig">
+            <summary>
+            客户视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.CSM.Customers.CustomerViewConfig.readOnlyView">
+            <summary>
+            只读视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.CSM.Customers.CustomerViewConfig.ConfigView">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.CSM.Customers.CustomerViewConfig.ConfigListView">
+            <summary>
+            配置列表视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.CSM.Customers.CustomerViewConfig.ReadOnlyConfigView">
+            <summary>
+            选择视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.CSM.Customers.CustomerViewConfig.ConfigSelectionView">
+            <summary>
+            选择视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.CSM.ItemInspCharacteristicses.Commands.BatchSettingCommand">
+            <summary>
+            批量设置命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.CSM.ItemInspCharacteristicses.Commands.BatchSettingCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            重写执行方法
+            </summary>
+            <param name="args"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.CSM.ItemInspCharacteristicses.Commands.BatchSettingViewArgs">
+            <summary>
+            批量设置参数类
+            </summary>
+        </member>
+        <member name="P:SIE.Web.CSM.ItemInspCharacteristicses.Commands.BatchSettingViewArgs.EntityIdList">
+            <summary>
+            实体ID
+            </summary>
+        </member>
+        <member name="P:SIE.Web.CSM.ItemInspCharacteristicses.Commands.BatchSettingViewArgs.RecurringInspection">
+            <summary>
+            物料周期检
+            </summary>
+        </member>
+        <member name="P:SIE.Web.CSM.ItemInspCharacteristicses.Commands.BatchSettingViewArgs.ConfirmInspection">
+            <summary>
+            确认检
+            </summary>
+        </member>
+        <member name="P:SIE.Web.CSM.ItemInspCharacteristicses.Commands.BatchSettingViewArgs.IntervalPeriod">
+            <summary>
+            间隔周期
+            </summary>
+        </member>
+        <member name="P:SIE.Web.CSM.ItemInspCharacteristicses.Commands.BatchSettingViewArgs.PeriodType">
+            <summary>
+            周期类型
+            </summary>
+        </member>
+        <member name="T:SIE.Web.CSM.ItemInspCharacteristicses.Commands.ListSaveCommand">
+            <summary>
+            列表保存命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.CSM.ItemInspCharacteristicses.ItemInspCharacteristicsCriteriaViewConfig">
+            <summary>
+            物料检验特性查询实体视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.CSM.ItemInspCharacteristicses.ItemInspCharacteristicsCriteriaViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.CSM.ItemInspCharacteristicses.ItemInspCharacteristicsViewConfig">
+            <summary>
+            物料检验特性维护视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.CSM.ItemInspCharacteristicses.ItemInspCharacteristicsViewConfig.BatchSettingView">
+            <summary>
+            批量设置扩展视图名称
+            </summary>
+        </member>
+        <member name="F:SIE.Web.CSM.ItemInspCharacteristicses.ItemInspCharacteristicsViewConfig.IsReadonlyProperty">
+            <summary>
+            周期类型、间隔周期是否只读
+            </summary>
+        </member>
+        <member name="M:SIE.Web.CSM.ItemInspCharacteristicses.ItemInspCharacteristicsViewConfig.GetIsReadonly(SIE.CSM.ItemInspCharacteristicses.ItemInspCharacteristics)">
+            <summary>
+            周期类型、间隔周期是否只读
+            </summary>
+            <param name="me">物料检验特性</param>
+            <returns>true/false</returns>
+        </member>
+        <member name="F:SIE.Web.CSM.ItemInspCharacteristicses.ItemInspCharacteristicsViewConfig.IsReadonlyForbitProperty">
+            <summary>
+            供方状态禁用时只读
+            </summary>
+        </member>
+        <member name="M:SIE.Web.CSM.ItemInspCharacteristicses.ItemInspCharacteristicsViewConfig.ConfigBatchSettingView">
+            <summary>
+            配置批量设置视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.CSM.Menus.CSMMenuInit">
+            <summary>
+            菜单初始化
+            </summary>
+        </member>
+        <member name="M:SIE.Web.CSM.Menus.CSMMenuInit.GetMenuDtos">
+            <summary>
+            获取菜单列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.CSM.Module">
+            <summary>
+            菜单模型
+            </summary>
+        </member>
+        <member name="M:SIE.Web.CSM.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化
+            </summary>
+            <param name="app"></param>
+        </member>
+        <member name="M:SIE.Web.CSM.Module.App_ModuleOperations(System.Object,System.EventArgs)">
+            <summary>
+            菜单初始化
+            </summary>
+            <param name="sender">sender</param>
+            <param name="e">e</param>
+        </member>
+        <member name="T:SIE.Web.CSM.Suppliers.Commands.AddAddressCommand">
+            <summary>
+            添加
+            </summary>
+        </member>
+        <member name="M:SIE.Web.CSM.Suppliers.Commands.AddAddressCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.CSM.Suppliers.Commands.EditAddressCommand">
+            <summary>
+            编辑
+            </summary>
+        </member>
+        <member name="M:SIE.Web.CSM.Suppliers.Commands.EditAddressCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.CSM.Suppliers.Commands.AddSupplierCommand">
+            <summary>
+            添加供应商
+            </summary>
+        </member>
+        <member name="M:SIE.Web.CSM.Suppliers.Commands.AddSupplierCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.CSM.Suppliers.Commands.DisableCommand">
+            <summary>
+            禁用
+            </summary>
+        </member>
+        <member name="M:SIE.Web.CSM.Suppliers.Commands.DisableCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.CSM.Suppliers.Commands.EnableCommand">
+            <summary>
+            启用
+            </summary>
+        </member>
+        <member name="M:SIE.Web.CSM.Suppliers.Commands.EnableCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.CSM.Suppliers.Commands.SelectItemCommand">
+            <summary>
+            供应商选择账户按钮
+            </summary>
+        </member>
+        <member name="M:SIE.Web.CSM.Suppliers.Commands.SelectItemCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.CSM.Suppliers.Commands.SelectUserCommand">
+            <summary>
+            供应商选择物料关系
+            </summary>
+        </member>
+        <member name="M:SIE.Web.CSM.Suppliers.Commands.SelectUserCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:SIE.Web.CSM.Suppliers.Commands.EnablePortalCommand">
+            <summary>
+            设置为门户
+            </summary>
+        </member>
+        <member name="M:SIE.Web.CSM.Suppliers.Commands.EnablePortalCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>结果</returns>
+        </member>
+        <member name="T:SIE.Web.CSM.Suppliers.Commands.DisablePortalCommand">
+            <summary>
+            禁用门户
+            </summary>
+        </member>
+        <member name="M:SIE.Web.CSM.Suppliers.Commands.DisablePortalCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>结果</returns>
+        </member>
+        <member name="T:SIE.Web.CSM.Suppliers.Commands.SupplierDeleteCommand">
+            <summary>
+            删除命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.CSM.Suppliers.Commands.SupplierItemDeleteCommand">
+            <summary>
+            删除命令
+            </summary>
+        </member>
+        <member name="F:SIE.Web.CSM.Suppliers.Commands.SupplierItemDeleteCommand.CommandName">
+            <summary>
+            删除命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.CSM.Suppliers.Commands.SupplierItemDeleteCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>结果</returns>
+        </member>
+        <member name="T:SIE.Web.CSM.Suppliers.Configs.SupplierIsAutoCreateConfigValueViewConfig">
+            <summary>
+            是否自动创建供应商用户 视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.CSM.Suppliers.Configs.SupplierIsAutoCreateConfigValueViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.CSM.Suppliers.Configs.SupplierOutsourcingConfigValueViewConfig">
+            <summary>
+            供应商委外参数配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.CSM.Suppliers.Configs.SupplierOutsourcingConfigValueViewConfig.ConfigView">
+            <summary>
+            默认视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.CSM.Suppliers.RegionalInfoViewConfig">
+            <summary>
+            区域视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.CSM.Suppliers.RegionalInfoViewConfig.ConfigSelectionView">
+            <summary>
+            查询视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.CSM.Suppliers.SupplierAddressViewConfig">
+            <summary>
+            供应商地址视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.CSM.Suppliers.SupplierAddressViewConfig.ConfigView">
+            <summary>
+            视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.CSM.Suppliers.SupplierAddressViewConfig.ConfigListView">
+            <summary>
+            视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.CSM.Suppliers.SupplierItemViewConfig">
+            <summary>
+            供应商物料视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.CSM.Suppliers.SupplierItemViewConfig.ConfigView">
+            <summary>
+            视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.CSM.Suppliers.SupplierItemViewConfig.ConfigListView">
+            <summary>
+            列表视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.CSM.Suppliers.SupplierUserViewConfig">
+            <summary>
+            供应商与用户关系视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.CSM.Suppliers.SupplierUserViewConfig.ConfigView">
+            <summary>
+            视图列表
+            </summary>
+        </member>
+        <member name="M:SIE.Web.CSM.Suppliers.SupplierUserViewConfig.ConfigListView">
+            <summary>
+            视图列表配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.CSM.Suppliers.SupplierUserViewConfig.ConfigChildrenUser">
+            <summary>
+            供应商关联的用户视图配置
+            </summary>
+        </member>
+        <member name="T:SIE.Web.CSM.Suppliers.SupplierViewConfig">
+             <summary>
+            供应商视图配置
+             </summary>
+        </member>
+        <member name="M:SIE.Web.CSM.Suppliers.SupplierViewConfig.ConfigSelectionView">
+            <summary>
+            选择视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.CSM.Suppliers.SupplierViewConfig.ConfigQueryView">
+            <summary>
+            查询视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.CSM.Suppliers.ViewModels.RegionalViewModel">
+            <summary>
+            区域
+            </summary>
+        </member>
+        <member name="F:SIE.Web.CSM.Suppliers.ViewModels.RegionalViewModel.CountryProperty">
+            <summary>
+            国家
+            </summary>
+        </member>
+        <member name="P:SIE.Web.CSM.Suppliers.ViewModels.RegionalViewModel.Country">
+            <summary>
+            国家
+            </summary>
+        </member>
+        <member name="F:SIE.Web.CSM.Suppliers.ViewModels.RegionalViewModel.ProvinceProperty">
+            <summary>
+            省
+            </summary>
+        </member>
+        <member name="P:SIE.Web.CSM.Suppliers.ViewModels.RegionalViewModel.Province">
+            <summary>
+            省
+            </summary>
+        </member>
+        <member name="F:SIE.Web.CSM.Suppliers.ViewModels.RegionalViewModel.CityProperty">
+            <summary>
+            市
+            </summary>
+        </member>
+        <member name="P:SIE.Web.CSM.Suppliers.ViewModels.RegionalViewModel.City">
+            <summary>
+            市
+            </summary>
+        </member>
+        <member name="F:SIE.Web.CSM.Suppliers.ViewModels.RegionalViewModel.AreaProperty">
+            <summary>
+            区
+            </summary>
+        </member>
+        <member name="P:SIE.Web.CSM.Suppliers.ViewModels.RegionalViewModel.Area">
+            <summary>
+            区
+            </summary>
+        </member>
+        <member name="F:SIE.Web.CSM.Suppliers.ViewModels.RegionalViewModel.AddressProperty">
+            <summary>
+            详细地址
+            </summary>
+        </member>
+        <member name="P:SIE.Web.CSM.Suppliers.ViewModels.RegionalViewModel.Address">
+            <summary>
+            详细地址
+            </summary>
+        </member>
+        <member name="F:SIE.Web.CSM.Suppliers.ViewModels.RegionalViewModel.FullAddressProperty">
+            <summary>
+            地址
+            </summary>
+        </member>
+        <member name="P:SIE.Web.CSM.Suppliers.ViewModels.RegionalViewModel.FullAddress">
+            <summary>
+            地址
+            </summary>
+        </member>
+        <member name="T:SIE.Web.CSM.Suppliers.ViewModels.RegionalViewModelViewConfig">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.CSM.Suppliers.ViewModels.RegionalViewModelViewConfig.ConfigDetailsView">
+            <summary>
+            配置明细视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.CSM.Suppliers.ViewModels.SupplierPswViewModelViewConfig">
+            <summary>
+            视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.CSM.Suppliers.ViewModels.SupplierPswViewModelViewConfig.ConfigView">
+            <summary>
+            视图
+            </summary>
+        </member>
+    </members>
+</doc>

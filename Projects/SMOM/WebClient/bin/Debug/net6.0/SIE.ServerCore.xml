@@ -1,0 +1,239 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.ServerCore</name>
+    </assembly>
+    <members>
+        <member name="M:SIE.ServerCore.Configuration.ApolloConfiguration.GetAppConfig(System.String)">
+            <summary>
+            Get the config from app config via key
+            </summary>
+            <returns> the value or null if not found </returns>
+        </member>
+        <member name="M:SIE.ServerCore.Configuration.ApolloConfiguration.GetValue(System.String)">
+            <summary>
+            取值
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ServerCore.Configuration.ApolloConfiguration.GetValue``1(System.String)">
+            <summary>
+            获取配置项。
+            </summary>
+            <typeparam name="TValue">值类型</typeparam>
+            <param name="key">键</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ServerCore.Configuration.ApolloConfiguration.GetDefaultValue(System.String,System.String)">
+            <summary>
+            获取配置项，如果值为 null 则取参数 <see cref="!:defaultValue"/> 值。
+            </summary>
+            <param name="key">键</param>
+            <param name="defaultValue">默认值</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ServerCore.Configuration.ApolloConfiguration.GetDefaultValue``1(System.String,``0)">
+            <summary>
+            获取配置项，如果值为 null 则取参数 <see cref="!:defaultValue"/> 值。
+            </summary>
+            <typeparam name="TValue">值类型</typeparam>
+            <param name="key">键</param>
+            <param name="defaultValue">默认值</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ServerCore.Configuration.IConfiguration.GetValue(System.String)">
+            <summary>
+            获取配置项。
+            </summary>
+            <param name="key">键</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ServerCore.Configuration.IConfiguration.GetValue``1(System.String)">
+            <summary>
+            获取配置项。
+            </summary>
+            <typeparam name="TValue">值类型</typeparam>
+            <param name="key">键</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ServerCore.Configuration.IConfiguration.GetDefaultValue(System.String,System.String)">
+            <summary>
+            获取配置项，如果值为 null 则取参数 <see cref="!:defaultValue"/> 值。
+            </summary>
+            <param name="key">键</param>
+            <param name="defaultValue">默认值</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ServerCore.Configuration.IConfiguration.GetDefaultValue``1(System.String,``0)">
+            <summary>
+            获取配置项，如果值为 null 则取参数 <see cref="!:defaultValue"/> 值。
+            </summary>
+            <typeparam name="TValue">值类型</typeparam>
+            <param name="key">键</param>
+            <param name="defaultValue">默认值</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.ServerCore.Consul.ServiceDiscoveryOptions">
+            <summary>
+            服务治理第三方组件Consul相关配置参数
+            </summary>
+        </member>
+        <member name="P:SIE.ServerCore.Consul.ServiceDiscoveryOptions.ServiceName">
+            <summary>
+            服务注册名称
+            </summary>
+        </member>
+        <member name="P:SIE.ServerCore.Consul.ServiceDiscoveryOptions.Host">
+            <summary>
+            站点配置
+            </summary>
+        </member>
+        <member name="P:SIE.ServerCore.Consul.ServiceDiscoveryOptions.Consul">
+            <summary>
+            Conusl配置
+            </summary>
+        </member>
+        <member name="T:SIE.ServerCore.Consul.HostOptions">
+            <summary>
+            站点配置
+            </summary>
+        </member>
+        <member name="P:SIE.ServerCore.Consul.HostOptions.Ip">
+            <summary>
+            站点IP
+            </summary>
+        </member>
+        <member name="P:SIE.ServerCore.Consul.HostOptions.Port">
+            <summary>
+            站点端口号
+            </summary>
+        </member>
+        <member name="T:SIE.ServerCore.Consul.ConsulOptions">
+            <summary>
+            Consul配置
+            </summary>
+        </member>
+        <member name="P:SIE.ServerCore.Consul.ConsulOptions.DataCenter">
+            <summary>
+            DataCenter名称
+            </summary>
+        </member>
+        <member name="P:SIE.ServerCore.Consul.ConsulOptions.HttpEndPoint">
+            <summary>
+            Consul地址
+            </summary>
+        </member>
+        <member name="T:SIE.ServerCore.Consul.ConsulExtension">
+            <summary>
+            服务注册
+            </summary>
+        </member>
+        <member name="M:SIE.ServerCore.Consul.ConsulExtension.AddConsul(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Add Consul
+            添加consul
+            </summary>
+            <param name="services"></param>
+            <param name="configuration"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ServerCore.Consul.ConsulExtension.UseConsul(Microsoft.AspNetCore.Builder.IApplicationBuilder,System.String,System.String)">
+            <summary>
+            服务注册与发现
+            </summary>
+            <param name="consulKey">Consul配置Key，可不传，默认是Consul</param>
+            <param name="consulConfStr">Consul配置字符串</param>
+        </member>
+        <member name="M:SIE.ServerCore.Consul.ConsulExtension.GetLocalIPAddress">
+            <summary>
+            获取本地 IP 地址。
+            </summary>
+            <returns>一个 <see cref="T:System.Net.IPAddress"/> 实例。</returns>
+        </member>
+        <member name="T:SIE.ServerCore.Helper.ConfigurationHelper">
+            <summary>
+            取配置文件帮助类
+            </summary>
+        </member>
+        <member name="M:SIE.ServerCore.Helper.ConfigurationHelper.GetValue(System.String)">
+            <summary>
+            取值
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ServerCore.Helper.ConfigurationHelper.GetValue``1(System.String)">
+            <summary>
+            获取配置项。
+            </summary>
+            <typeparam name="TValue">值类型</typeparam>
+            <param name="key">键</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ServerCore.Helper.ConfigurationHelper.GetDefaultValue(System.String,System.String)">
+            <summary>
+            获取配置项，如果值为 null 则取参数 <see cref="!:defaultValue"/> 值。
+            </summary>
+            <param name="key">键</param>
+            <param name="defaultValue">默认值</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ServerCore.Helper.ConfigurationHelper.GetDefaultValue``1(System.String,``0)">
+            <summary>
+            获取配置项，如果值为 null 则取参数 <see cref="!:defaultValue"/> 值。
+            </summary>
+            <typeparam name="TValue">值类型</typeparam>
+            <param name="key">键</param>
+            <param name="defaultValue">默认值</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ServerCore.Helper.ConfigurationHelper.GetAppConfig(System.String)">
+            <summary>
+            Get the config from app config via key
+            </summary>
+            <returns> the value or null if not found </returns>
+        </member>
+        <member name="M:SIE.ServerCore.Helper.ConfigurationHelper.GetValue(System.String,System.String)">
+            <summary>
+            取值
+            </summary>
+            <param name="key"></param>
+            <param name="projectName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ServerCore.Helper.ConfigurationHelper.GetValue``1(System.String,System.String)">
+            <summary>
+            获取配置项。
+            </summary>
+            <typeparam name="TValue">值类型</typeparam>
+            <param name="projectName"></param>
+            <param name="key">键</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ServerCore.Helper.ConfigurationHelper.GetDefaultValue(System.String,System.String,System.String)">
+            <summary>
+            获取配置项，如果值为 null 则取参数 <see cref="!:defaultValue"/> 值。
+            </summary>
+            <param name="key">键</param>
+            <param name="projectName"></param>
+            <param name="defaultValue">默认值</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.ServerCore.Helper.ConfigurationHelper.GetDefaultValue``1(System.String,System.String,``0)">
+            <summary>
+            获取配置项，如果值为 null 则取参数 <see cref="!:defaultValue"/> 值。
+            </summary>
+            <typeparam name="TValue">值类型</typeparam>
+            <param name="key">键</param>
+            <param name="projectName"></param>
+            <param name="defaultValue">默认值</param>
+            <returns></returns>
+        </member>
+        <member name="F:SIE.ServerCore.Models.ApolloKeys.Consul">
+            <summary>
+            服务注册与发现
+            </summary>
+        </member>
+    </members>
+</doc>

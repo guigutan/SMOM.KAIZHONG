@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\platform\smom\net6.0\SIE.ERPInterface.Common.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\platform\smom\net6.0\SIE.ERPInterface.Common.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="InfDataEntitys\Upload\**" />
+    <EmbeddedResource Remove="InfDataEntitys\Upload\**" />
+    <None Remove="InfDataEntitys\Upload\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Datas\SapDatas\SapResult.cs" />
+    <Compile Remove="Enums\JobType - 副本.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.DirectoryServices" Version="4.7.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\SMES\MES\SIE.MES\SIE.MES.csproj" />
+    <ProjectReference Include="..\..\SMES\Tasks\SIE.MES.TaskManagement\SIE.MES.TaskManagement.csproj" />
+  </ItemGroup>
+</Project>

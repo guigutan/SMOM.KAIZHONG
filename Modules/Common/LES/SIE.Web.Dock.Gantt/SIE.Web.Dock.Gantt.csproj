@@ -1,0 +1,121 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+	<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	<AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+	<GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
+	<CodeAnalysisRuleSet>..\..\..\..\.sonarlint\sie.smomcsharp.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.Dock.Gantt.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\..\..\platform\smom\</OutputPath>
+    <DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Web.Dock.Gantt.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Areas\Dock\Controllers\CalendarWebController.cs" />
+    <Compile Remove="Areas\Dock\Controllers\TaskWebController.cs" />
+    <Compile Remove="Areas\Dock\ViewModel\AssignmentModel.cs" />
+    <Compile Remove="Areas\Dock\ViewModel\ConfigViewModel.cs" />
+    <Compile Remove="Areas\Dock\ViewModel\GanttReturnViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\css\app.css" />
+    <Content Remove="wwwroot\css\DockGantt\fonts\fa-brands-400.eot" />
+    <Content Remove="wwwroot\css\DockGantt\fonts\fa-brands-400.svg" />
+    <Content Remove="wwwroot\css\DockGantt\fonts\fa-brands-400.ttf" />
+    <Content Remove="wwwroot\css\DockGantt\fonts\fa-brands-400.woff" />
+    <Content Remove="wwwroot\css\DockGantt\fonts\fa-brands-400.woff2" />
+    <Content Remove="wwwroot\css\DockGantt\fonts\fa-regular-400.eot" />
+    <Content Remove="wwwroot\css\DockGantt\fonts\fa-regular-400.svg" />
+    <Content Remove="wwwroot\css\DockGantt\fonts\fa-regular-400.ttf" />
+    <Content Remove="wwwroot\css\DockGantt\fonts\fa-regular-400.woff" />
+    <Content Remove="wwwroot\css\DockGantt\fonts\fa-regular-400.woff2" />
+    <Content Remove="wwwroot\css\DockGantt\fonts\fa-solid-900.eot" />
+    <Content Remove="wwwroot\css\DockGantt\fonts\fa-solid-900.svg" />
+    <Content Remove="wwwroot\css\DockGantt\fonts\fa-solid-900.ttf" />
+    <Content Remove="wwwroot\css\DockGantt\fonts\fa-solid-900.woff" />
+    <Content Remove="wwwroot\css\DockGantt\fonts\fa-solid-900.woff2" />
+    <Content Remove="wwwroot\css\DockGantt\fonts\Roboto-Bold.woff" />
+    <Content Remove="wwwroot\css\DockGantt\fonts\Roboto-Bold.woff2" />
+    <Content Remove="wwwroot\css\DockGantt\fonts\Roboto-Light.woff" />
+    <Content Remove="wwwroot\css\DockGantt\fonts\Roboto-Light.woff2" />
+    <Content Remove="wwwroot\css\DockGantt\fonts\Roboto-Medium.woff" />
+    <Content Remove="wwwroot\css\DockGantt\fonts\Roboto-Medium.woff2" />
+    <Content Remove="wwwroot\css\DockGantt\fonts\Roboto-Regular.woff" />
+    <Content Remove="wwwroot\css\DockGantt\fonts\Roboto-Regular.woff2" />
+    <Content Remove="wwwroot\css\index.css" />
+    <Content Remove="wwwroot\css\schedulerpro.stockholm.css" />
+    <Content Remove="wwwroot\css\shared.css" />
+    <Content Remove="wwwroot\js\data\orderPlaceData.json" />
+    <Content Remove="wwwroot\js\data\orderTypeData.json" />
+    <Content Remove="wwwroot\js\data\parkData.json" />
+    <Content Remove="wwwroot\js\data\test.json" />
+    <Content Remove="wwwroot\js\data\test1.json" />
+    <Content Remove="wwwroot\js\data\warehouseData.json" />
+    <Content Remove="wwwroot\lib\app.js" />
+    <Content Remove="wwwroot\lib\DockGantt\localization\zh.js" />
+    <Content Remove="wwwroot\lib\index.js" />
+    <Content Remove="wwwroot\lib\schedulerpro.umd.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="wwwroot\css\DockGantt\fonts\fa-brands-400.eot" />
+    <EmbeddedResource Include="wwwroot\css\DockGantt\fonts\fa-brands-400.svg" />
+    <EmbeddedResource Include="wwwroot\css\DockGantt\fonts\fa-brands-400.ttf" />
+    <EmbeddedResource Include="wwwroot\css\DockGantt\fonts\fa-brands-400.woff" />
+    <EmbeddedResource Include="wwwroot\css\DockGantt\fonts\fa-brands-400.woff2" />
+    <EmbeddedResource Include="wwwroot\css\DockGantt\fonts\fa-regular-400.eot" />
+    <EmbeddedResource Include="wwwroot\css\DockGantt\fonts\fa-regular-400.svg" />
+    <EmbeddedResource Include="wwwroot\css\DockGantt\fonts\fa-regular-400.ttf" />
+    <EmbeddedResource Include="wwwroot\css\DockGantt\fonts\fa-regular-400.woff" />
+    <EmbeddedResource Include="wwwroot\css\DockGantt\fonts\fa-regular-400.woff2" />
+    <EmbeddedResource Include="wwwroot\css\DockGantt\fonts\fa-solid-900.eot" />
+    <EmbeddedResource Include="wwwroot\css\DockGantt\fonts\fa-solid-900.svg" />
+    <EmbeddedResource Include="wwwroot\css\DockGantt\fonts\fa-solid-900.ttf" />
+    <EmbeddedResource Include="wwwroot\css\DockGantt\fonts\fa-solid-900.woff" />
+    <EmbeddedResource Include="wwwroot\css\DockGantt\fonts\fa-solid-900.woff2" />
+    <EmbeddedResource Include="wwwroot\css\DockGantt\fonts\Roboto-Bold.woff" />
+    <EmbeddedResource Include="wwwroot\css\DockGantt\fonts\Roboto-Bold.woff2" />
+    <EmbeddedResource Include="wwwroot\css\DockGantt\fonts\Roboto-Light.woff" />
+    <EmbeddedResource Include="wwwroot\css\DockGantt\fonts\Roboto-Light.woff2" />
+    <EmbeddedResource Include="wwwroot\css\DockGantt\fonts\Roboto-Medium.woff" />
+    <EmbeddedResource Include="wwwroot\css\DockGantt\fonts\Roboto-Medium.woff2" />
+    <EmbeddedResource Include="wwwroot\css\DockGantt\fonts\Roboto-Regular.woff" />
+    <EmbeddedResource Include="wwwroot\css\DockGantt\fonts\Roboto-Regular.woff2" />
+    <EmbeddedResource Include="wwwroot\css\DockGantt\index.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="wwwroot\css\DockGantt\app.css" />
+    <EmbeddedResource Include="wwwroot\css\DockGantt\schedulerpro.stockholm.css" />
+    <EmbeddedResource Include="wwwroot\css\DockGantt\shared.css" />
+    <EmbeddedResource Include="wwwroot\js\data\orderPlaceData.json" />
+    <EmbeddedResource Include="wwwroot\js\data\orderTypeData.json" />
+    <EmbeddedResource Include="wwwroot\js\data\parkData.json" />
+    <EmbeddedResource Include="wwwroot\js\data\test.json" />
+    <EmbeddedResource Include="wwwroot\js\data\test1.json" />
+    <EmbeddedResource Include="wwwroot\js\data\warehouseData.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="wwwroot\lib\DockGantt\index.js" />
+    <EmbeddedResource Include="wwwroot\lib\DockGantt\localization\zh.js" />
+    <EmbeddedResource Include="wwwroot\lib\DockGantt\schedulerpro.umd.js" />
+    <Resource Include="wwwroot\lib\app.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="SIE.Web" Version="10.0.5" />
+		<PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="6.0.19" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\SIE.Core\SIE.Core.csproj" />
+    <ProjectReference Include="..\..\Warehouses\SIE.Warehouses\SIE.Warehouses.csproj" />
+    <ProjectReference Include="..\SIE.Dock\SIE.Dock.csproj" />
+  </ItemGroup>
+</Project>

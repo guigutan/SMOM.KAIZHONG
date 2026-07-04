@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Data.SqlServer</name>
+    </assembly>
+    <members>
+        <member name="M:SIE.Data.SqlServer.SqlServerBackuper.BackupDatabase(System.String,System.String,System.Boolean)">
+            <summary>
+            Backup a special database
+            </summary>
+            <param name="databaseName"></param>
+            <param name="filename">database file path to save.</param>
+            <param name="isErase">if exists, whether to delete current file.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Data.SqlServer.SqlServerBackuper.RestoreDatabase(System.String,System.String)">
+            <summary>
+            restore a special database from a file
+            </summary>
+            <param name="databaseName"></param>
+            <param name="filename">the file path which is a database backup</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Data.SqlServer.SqlServerBackuper.DealFile(System.String,System.Boolean)">
+            <summary>
+            处理文件
+            </summary>
+            <param name="filename">文件名</param>
+            <param name="isErase">是否擦除</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Data.SqlServer.SqlServerDbTypeHelper.ConvertToSQLTypeString(System.Data.DbType,System.String)">
+            <summary>
+            把 DbType 转换为 SqlServer 中的数据类型
+            </summary>
+            <param name="fieldType">Type of the field.</param>
+            <param name="length">The length.</param>
+            <returns></returns>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:SIE.Data.SqlServer.SqlServerDbTypeHelper.ConvertFromSQLTypeString(System.String)">
+            <summary>
+            把 SqlServer 中的数据类型 转换为 DbType
+            </summary>
+            <param name="sqlType">Type of the SQL.</param>
+            <returns></returns>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:SIE.Data.SqlServer.SqlServerDialect.GetParameterName(System.Object)">
+            <summary>
+            生成SQL执行命名参数
+            </summary>
+            <param name="name">序号数字或列名称字符</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Data.SqlServer.SqlServerDialect.PrepareValue(System.Object)">
+            <summary>
+            存储数据库的值转换（枚举值自动转换为int）
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Data.SqlServer.SqlServerDialect.SelectSeqNextValueSql(System.String,System.String)">
+            <summary>
+            获取序列下一个值(Oracle,SqlServer2012)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Data.SqlServer.SqlServerMetaReader">
+            <summary>
+            SqlServer 2005 数据库的元数据读取器
+            </summary>
+        </member>
+        <member name="M:SIE.Data.SqlServer.SqlServerMetaReader.LoadAllTables(SIE.Data.DbMigration.Model.Database)">
+            <summary>
+            添加所有表
+            </summary>
+            <param name="database"></param>
+        </member>
+        <member name="M:SIE.Data.SqlServer.SqlServerMetaReader.LoadAllColumns(SIE.Data.DbMigration.Model.Database)">
+            <summary>
+            加载每个表的所有列
+            </summary>
+            <param name="database"></param>
+        </member>
+        <member name="M:SIE.Data.SqlServer.SqlServerMetaReader.ReadAllIdentities">
+            <summary>
+            查询当前数据库中所有的 Identity 列。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Data.SqlServer.SqlServerMetaReader.ReadAllIndexes">
+            <summary>
+            ORM读取所有索引实现(SQLServer)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Data.SqlServer.SqlServerMigrationProvider">
+            <summary>
+            SqlServer 2008 的数据库迁移提供程序
+            </summary>
+        </member>
+        <member name="T:SIE.Data.SqlServer.SqlServerRunGenerator">
+            <summary>
+            SqlServer 的执行项生成器
+            </summary>
+        </member>
+        <member name="M:SIE.Data.SqlServer.SqlServerSqlGenerator.ModifyToPagingTree(SIE.Data.SqlTree.SqlSelect,SIE.PagingInfo)">
+            <summary>
+            为指定的原始查询生成指定分页效果的新查询。
+            </summary>
+            <param name="raw">原始查询</param>
+            <param name="pagingInfo">分页信息。</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

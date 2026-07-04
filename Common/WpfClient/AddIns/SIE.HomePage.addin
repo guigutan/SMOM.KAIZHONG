@@ -1,0 +1,22 @@
+﻿<AddIn name        = "SIE-HomePage"
+       author      = "Lilang"
+       copyright   = "prj:///doc/copyright.txt"
+       url         = "http://siestudio.chinasie.com"
+       description = "Common module"
+       addInManagerHidden = "true">
+
+  <Manifest>
+    <Identity name = "HomePage" version = "@AssemblyVersion"/>
+  </Manifest>
+  <Runtime>
+    <Import assembly=":SIE.Wpf.Common"/>
+    <Import assembly=":SIE.Wpf.Rbac"/>
+  </Runtime>
+  <!--首页-->
+  <!--<Path name = "/Main/Workbench/MainBar">
+    <ContentItem id="homepage"  content=" SIE.Wpf.Common.Portals.Menus.HomePageItem,SIE.Wpf.Common"></ContentItem>
+  </Path>-->
+  <Path name = "/Main/Workbench/Autostart">
+    <Class class="SIE.Wpf.Rbac.Menus.Commands.MenuPageStartupCommand"></Class>
+  </Path>
+</AddIn>

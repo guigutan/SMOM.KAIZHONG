@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup Label="Globals">
+		<SccProjectName>SAK</SccProjectName>
+		<SccProvider>SAK</SccProvider>
+		<SccAuxPath>SAK</SccAuxPath>
+		<SccLocalPath>SAK</SccLocalPath>
+	</PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<OutputPath>..\..\..\..\platform\smom\</OutputPath>
+		<DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Andon.xml</DocumentationFile>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<OutputPath>..\..\..\..\platform\smom\</OutputPath>
+		<DocumentationFile>..\..\..\..\platform\smom\net6.0\SIE.Andon.xml</DocumentationFile>
+	</PropertyGroup>
+	<ItemGroup>
+	  <PackageReference Include="DotLiquid" Version="2.2.692" />
+	  <PackageReference Include="Microsoft.AspNetCore.Antiforgery" Version="2.2.0" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\Common\Core\SIE.Core\SIE.Core.csproj" />
+		<ProjectReference Include="..\..\..\Common\Equipments\SIE.Equipments\SIE.Equipments.csproj" />
+		<ProjectReference Include="..\..\..\Common\LES\SIE.LES\SIE.LES.csproj" />
+		<ProjectReference Include="..\..\..\Common\Resources\SIE.Resources\SIE.Resources.csproj" />
+		<ProjectReference Include="..\..\..\Common\Techs\SIE.Tech\SIE.Tech.csproj" />
+		<ProjectReference Include="..\..\..\KaiZhong\SIE.KZ.Base\SIE.KZ.Base.csproj" />
+		<ProjectReference Include="..\..\MES\SIE.MES\SIE.MES.csproj" />
+	</ItemGroup>
+</Project>

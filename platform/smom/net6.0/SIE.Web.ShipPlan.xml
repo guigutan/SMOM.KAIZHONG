@@ -1,0 +1,258 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Web.ShipPlan</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.Web.ShipPlan.EntityPropertyViewMetaExtension">
+            <summary>
+            实体属性视图元数据扩展
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ShipPlan.EntityPropertyViewMetaExtension.UseDeliveryPlanStorerCodeEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig})">
+            <summary>
+            货主编码选择客户和货主数据编辑器，用于返回编码字符串
+            </summary>
+            <typeparam name="T">T</typeparam>
+            <param name="meta">meta</param>
+            <param name="action">action</param>
+            <returns>货主编码编辑器</returns>
+        </member>
+        <member name="M:SIE.Web.ShipPlan.EntityPropertyViewMetaExtension.UseDeliveryPlanLotEditor``1(SIE.MetaModel.View.WebEntityPropertyViewMeta{``0},System.Action{SIE.Web.ClientMetaModel.PagingLookUpBaseConfig})">
+            <summary>
+            货主编码选择客户和货主数据编辑器，用于返回编码字符串
+            </summary>
+            <typeparam name="T">T</typeparam>
+            <param name="meta">meta</param>
+            <param name="action">action</param>
+            <returns>货主编码编辑器</returns>
+        </member>
+        <member name="T:SIE.Web.ShipPlan.Commands.AssignWarehouseRuleCriteriaViewConfig">
+            <summary>
+            上架规则
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ShipPlan.Commands.AssignWarehouseRuleCriteriaViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ShipPlan.Commands.AddAssignWarehouseRuleCommand">
+            <summary>
+            添加命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ShipPlan.Commands.AddAssignWarehouseRuleCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.ShipPlan.Commands.AddDeliveryPlanCommand">
+            <summary>
+            添加命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ShipPlan.Commands.AddDeliveryPlanCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:SIE.Web.ShipPlan.Commands.DeleteDeliveryPlanCommand">
+            <summary>
+            删除命令
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ShipPlan.Commands.SaveDeliveryPlanCommand">
+            <summary>
+            保存命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ShipPlan.Commands.SaveDeliveryPlanCommand.OnSaving(SIE.Domain.EntityList)">
+            <summary>
+            保存前事件
+            </summary>
+            <param name="data">实体列表</param>
+        </member>
+        <member name="T:SIE.Web.ShipPlan.Commands.AuditDeliveryPlanCommand">
+            <summary>
+            审核命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ShipPlan.Commands.AuditDeliveryPlanCommand.Excute(System.Double[],System.String)">
+            <summary>
+            审核命令
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>true</returns>
+        </member>
+        <member name="T:SIE.Web.ShipPlan.Commands.AssignWarehouseCommand">
+            <summary>
+            分配仓库命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ShipPlan.Commands.AssignWarehouseCommand.Excute(System.Double[],System.String)">
+            <summary>
+            审核命令
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>true</returns>
+        </member>
+        <member name="T:SIE.Web.ShipPlan.Commands.ForceCompleteCommand">
+            <summary>
+            强制完成命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ShipPlan.Commands.ForceCompleteCommand.Excute(System.Double[],System.String)">
+            <summary>
+            审核命令
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>true</returns>
+        </member>
+        <member name="T:SIE.Web.ShipPlan.Commands.CreateSoCommand">
+            <summary>
+            创建发运订单命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ShipPlan.Commands.CreateSoCommand.Excute(System.Double[],System.String)">
+            <summary>
+            审核命令
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>true</returns>
+        </member>
+        <member name="T:SIE.Web.ShipPlan.Commands.KittingCommand">
+            <summary>
+            齐套分析
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ShipPlan.Commands.KittingCommand.Excute(SIE.ShipPlan.Datas.KittingData,System.String)">
+            <summary>
+            齐套分析
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>true</returns>
+        </member>
+        <member name="T:SIE.Web.ShipPlan.Commands.InitMergeCreateRuleCommand">
+            <summary>
+            合并创单规则命令
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ShipPlan.Commands.InitMergeCreateRuleCommand.Excute(SIE.Web.Command.ViewArgs,System.String)">
+            <summary>
+            执行
+            </summary>
+            <param name="args">args</param>
+            <param name="scope">scope</param>
+            <returns>object</returns>
+        </member>
+        <member name="T:SIE.Web.ShipPlan.AssignWarehouseRuleViewConfig">
+            <summary>
+            分配仓库规则视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ShipPlan.AssignWarehouseRuleViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="T:SIE.Web.ShipPlan.DeliveryPlanCriteriaViewConfig">
+            <summary>
+            发货计划查询视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ShipPlan.DeliveryPlanCriteriaViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ShipPlan.DeliveryPlanViewConfig">
+            <summary>
+            发货计划视图配置
+            </summary>
+        </member>
+        <member name="F:SIE.Web.ShipPlan.DeliveryPlanViewConfig.StockPlanKittingViewGroup">
+            <summary>
+             扩展查看视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ShipPlan.DeliveryPlanViewConfig.ConfigView">
+            <summary>
+            配置默认视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ShipPlan.DeliveryPlanViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.ShipPlan.DeliveryPlanViewConfig.StockPlanKittingView">
+            <summary>
+            配置查看视图
+            </summary>
+        </member>
+        <member name="T:SIE.Web.ShipPlan.MergeCreateRuleViewConfig">
+            <summary>
+            合并创单规则视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ShipPlan.MergeCreateRuleViewConfig.ConfigView">
+            <summary>
+            配置视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ShipPlan.MergeCreateRuleViewConfig.ConfigListView">
+            <summary>
+            列表视图配置
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ShipPlan.MergeCreateRuleViewConfig.ConfigQueryView">
+            <summary>
+            配置查询视图
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ShipPlan.Menus.ShipPlanMenuInit.GetMenuDtos">
+            <summary>
+            获取菜单列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.Web.ShipPlan.Module">
+            <summary>
+            Module
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ShipPlan.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化
+            </summary>
+            <param name="app"></param>
+        </member>
+        <member name="T:SIE.Web.ShipPlan.ViewModels.StockPlanAssignViewModelViewConfig">
+            <summary>
+            备料计划/发货计划齐套分析-预分配明细
+            </summary>
+        </member>
+        <member name="M:SIE.Web.ShipPlan.ViewModels.StockPlanAssignViewModelViewConfig.ConfigView">
+            <summary>
+             配置视图
+             </summary>
+        </member>
+        <member name="M:SIE.Web.ShipPlan.ViewModels.StockPlanAssignViewModelViewConfig.ConfigListView">
+            <summary>
+             配置列表视图
+             </summary>
+        </member>
+    </members>
+</doc>

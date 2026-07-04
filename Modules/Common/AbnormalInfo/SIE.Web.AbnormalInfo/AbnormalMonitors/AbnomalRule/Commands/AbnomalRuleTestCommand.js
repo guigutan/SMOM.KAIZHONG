@@ -1,0 +1,4 @@
+﻿SIE.defineCommand('SIE.Web.AbnormalInfo.AbnormalMonitors.Commands.AbnomalRuleTestCommand', {    meta: { text: "异常测试", group: "edit", iconCls: "icon-FileEye icon-red" },    executeIntervalMode: SIE.cmd.IntervalMode.Debounce.value,//使用防抖模式    canExecute: function (view) {        return view.getCurrent();    },    execute: function (view) {        var entity = view.getCurrent();        SIE.invokeDataQuery({            type: "SIE.Web.AbnormalInfo.AbnormalMonitors.DataQuerys.AnomalyMonitorQueryer",            method: "AbnomalRuleTest",            params: [entity.getId()],            async: false,            token: view.token,            callback: function (res) {                if (res.Success) {                    if (res.Result) {
+                        SIE.Msg.showInstantMessage("测试完成".t());                    }                 } else {
+                    SIE.Msg.showError(res.Message);
+                }            }        });    }});

@@ -1,0 +1,2260 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.EMS.SpecialEquipment</name>
+    </assembly>
+    <members>
+        <member name="T:SIE.EMS.SpecialEquipment.DbMigrations._20220609_143400_InitSpecialEquipmentData">
+            <summary>
+            升级数据库加载数据
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.DbMigrations._20220609_143400_InitSpecialEquipmentData.DbSetting">
+            <summary>
+            数据库设置
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.DbMigrations._20220609_143400_InitSpecialEquipmentData.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.DbMigrations._20220609_143400_InitSpecialEquipmentData.Type">
+            <summary>
+            手动升级的类型：数据
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.DbMigrations._20220609_143400_InitSpecialEquipmentData.Down">
+            <summary>
+            不支持 Down
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.DbMigrations._20220609_143400_InitSpecialEquipmentData.Up">
+            <summary>
+            注入
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.DbMigrations._20220609_143400_InitSpecialEquipmentData.InitRegularInspectionNoConfig">
+            <summary>
+            初始化 特种设备定检单号编码规则
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.SpecialEquipment.EntityDataRepository`1">
+            <summary>
+            当前模块数据仓库
+            </summary>
+            <typeparam name="T">实体泛型参数</typeparam>
+        </member>
+        <member name="T:SIE.EMS.SpecialEquipment.EntityDataProvider">
+            <summary>
+            数据提供者
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.EntityDataProvider.ConnectionStringName">
+            <summary>
+            数据库连接字符串的名称
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.EntityDataProvider.ConnectionStringSettingName">
+            <summary>
+            数据库连接字符串的名称
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.SpecialEquipment.Enums.RegularInspectionStatus">
+            <summary>
+            定检状态
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.Enums.RegularInspectionStatus.OK">
+            <summary>
+            合格
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.Enums.RegularInspectionStatus.NG">
+            <summary>
+            不合格
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.SpecialEquipment.Models.EquipModelExtension">
+            <summary>
+            设备型号扩展
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.Models.EquipModelExtension.EquipModelRegularInspectionListProperty">
+            <summary>
+            特殊设备列表 扩展属性。
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.Models.EquipModelExtension.GetEquipModelRegularInspectionList(SIE.Equipments.EquipModels.EquipModel)">
+            <summary>
+            获取 特殊设备列表 属性的值。
+            </summary>
+            <param name="me">要获取扩展属性值的对象。</param>
+            <returns>特殊设备列表</returns>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.Models.EquipModelExtension.SetEquipModelRegularInspectionList(SIE.Equipments.EquipModels.EquipModel,SIE.Domain.EntityList{SIE.EMS.SpecialEquipment.Models.EquipModelRegularInspection})">
+            <summary>
+            设置特殊设备列表 属性的值。
+            </summary>
+            <param name="me">要设置扩展属性值的对象。</param>
+            <param name="value">值</param>
+        </member>
+        <member name="T:SIE.EMS.SpecialEquipment.Models.EquipModelConfig">
+            <summary>
+            设备型号维护 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.Models.EquipModelConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.SpecialEquipment.Models.EquipModelExtensionController">
+            <summary>
+            设备型号维护扩展控制器
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.Models.EquipModelExtensionController.GetEquipModelRegularInspectionList(System.Double,SIE.PagingInfo,System.Collections.Generic.IList{SIE.Domain.OrderInfo})">
+            <summary>
+            根据设备型号维护Id获取检验规程
+            </summary>
+            <param name="modelId"></param>
+            <param name="pagingInfo"></param>
+            <param name="orderInfos"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.Models.EquipModelExtensionController.SaveSelModelInspection(System.Collections.Generic.List{SIE.EMS.SpecialEquipment.Models.EquipModelRegularInspection})">
+            <summary>
+            保存选择的检验规程数据
+            </summary>
+            <param name="equipModelRegularInspectionInfos"></param>
+        </member>
+        <member name="T:SIE.EMS.SpecialEquipment.Models.EquipModelRegularInspection">
+            <summary>
+            设备定检规程（型号）
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.Models.EquipModelRegularInspection.InspectionRuleIdProperty">
+            <summary>
+            检验规程Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.Models.EquipModelRegularInspection.InspectionRuleId">
+            <summary>
+            检验规程Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.Models.EquipModelRegularInspection.InspectionRuleProperty">
+            <summary>
+            检验规程
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.Models.EquipModelRegularInspection.InspectionRule">
+            <summary>
+            检验规程
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.Models.EquipModelRegularInspection.EquipModelIdProperty">
+            <summary>
+            设备型号维护Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.Models.EquipModelRegularInspection.EquipModelId">
+            <summary>
+            设备型号维护Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.Models.EquipModelRegularInspection.EquipModelProperty">
+            <summary>
+            设备型号维护
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.Models.EquipModelRegularInspection.EquipModel">
+            <summary>
+            设备型号维护
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.Models.EquipModelRegularInspection.CodeProperty">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.Models.EquipModelRegularInspection.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.Models.EquipModelRegularInspection.NameProperty">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.Models.EquipModelRegularInspection.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.Models.EquipModelRegularInspection.PeriodDaysProperty">
+            <summary>
+            周期(天)
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.Models.EquipModelRegularInspection.PeriodDays">
+            <summary>
+            周期(天)
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.Models.EquipModelRegularInspection.WarningPeriodProperty">
+            <summary>
+            预警期(天)
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.Models.EquipModelRegularInspection.WarningPeriod">
+            <summary>
+            预警期(天)
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.Models.EquipModelRegularInspection.InspectionRuleTypeProperty">
+            <summary>
+            项目类型
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.Models.EquipModelRegularInspection.InspectionRuleType">
+            <summary>
+            项目类型
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.Models.EquipModelRegularInspection.CheckCategoryProperty">
+            <summary>
+            校验类别
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.Models.EquipModelRegularInspection.CheckCategory">
+            <summary>
+            校验类别
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.SpecialEquipment.Models.EquipModelRegularInspectionConfig">
+            <summary>
+            设备定检规程 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.Models.EquipModelRegularInspectionConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.SpecialEquipment.Models.EquipModelRegularInspectionRule">
+            <summary>
+            被引用的检验规程，不允许删除
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.Models.EquipModelRegularInspectionRule.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.SpecialEquipment.Module">
+            <summary>
+            当前工程所对应的模块类
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.Module.Initialize(SIE.IApp)">
+            <summary>
+            初始化
+            </summary>
+            <param name="app">应用程序对象</param>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.Module.RegisterService">
+            <summary>                                                                                                      
+            注册服务
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.SpecialEquipment.RegularInspections.Configs.ValueConfig">
+            <summary>
+            数据列数量配置项
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.Configs.ValueConfig.defaultValue">
+            <summary>
+            数据列数量
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.Configs.ValueConfig.DefaultValue">
+            <summary>
+            默认值
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.SpecialEquipment.RegularInspections.Configs.ValueConfigValue">
+            <summary>
+            数据列数量配置值
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.Configs.ValueConfigValue.QtyProperty">
+            <summary>
+            数据列数量
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.Configs.ValueConfigValue.Qty">
+            <summary>
+            数据列数量
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.RegularInspections.Configs.ValueConfigValue.Display">
+            <summary>
+            把值显示出来
+            </summary>
+            <returns>string</returns>
+        </member>
+        <member name="T:SIE.EMS.SpecialEquipment.RegularInspections.Criterias.RegularInspectionCriteria">
+            <summary>
+            检验规程查询实体
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.Criterias.RegularInspectionCriteria.InspectionNoProperty">
+            <summary>
+            检验单号
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.Criterias.RegularInspectionCriteria.InspectionNo">
+            <summary>
+            检验单号
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.Criterias.RegularInspectionCriteria.SpecialEquipmentAccountIdProperty">
+            <summary>
+            特种设备台账Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.Criterias.RegularInspectionCriteria.SpecialEquipmentAccountId">
+            <summary>
+            特种设备台账Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.Criterias.RegularInspectionCriteria.SpecialEquipmentAccountProperty">
+            <summary>
+            特种设备台账
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.Criterias.RegularInspectionCriteria.SpecialEquipmentAccount">
+            <summary>
+            特种设备台账
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.Criterias.RegularInspectionCriteria.InspectionStatusProperty">
+            <summary>
+            检验状态
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.Criterias.RegularInspectionCriteria.InspectionStatus">
+            <summary>
+            检验状态
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.Criterias.RegularInspectionCriteria.InspectionResultProperty">
+            <summary>
+            检验结果
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.Criterias.RegularInspectionCriteria.InspectionResult">
+            <summary>
+            检验结果
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.Criterias.RegularInspectionCriteria.UseDepartmentIdProperty">
+            <summary>
+            使用部门Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.Criterias.RegularInspectionCriteria.UseDepartmentId">
+            <summary>
+            使用部门Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.Criterias.RegularInspectionCriteria.UseDepartmentProperty">
+            <summary>
+            使用部门
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.Criterias.RegularInspectionCriteria.UseDepartment">
+            <summary>
+            使用部门
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.Criterias.RegularInspectionCriteria.ResPersonIdProperty">
+            <summary>
+            资产责任人Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.Criterias.RegularInspectionCriteria.ResPersonId">
+            <summary>
+            资产责任人Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.Criterias.RegularInspectionCriteria.ResPersonProperty">
+            <summary>
+            责任人
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.Criterias.RegularInspectionCriteria.ResPerson">
+            <summary>
+            责任人
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.Criterias.RegularInspectionCriteria.AgencyIdProperty">
+            <summary>
+            检验机构Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.Criterias.RegularInspectionCriteria.AgencyId">
+            <summary>
+            检验机构Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.Criterias.RegularInspectionCriteria.AgencyProperty">
+            <summary>
+            检验机构
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.Criterias.RegularInspectionCriteria.Agency">
+            <summary>
+            检验机构
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.Criterias.RegularInspectionCriteria.PlanInspectionDateProperty">
+            <summary>
+            计划检验日期
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.Criterias.RegularInspectionCriteria.PlanInspectionDate">
+            <summary>
+            计划检验日期
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.Criterias.RegularInspectionCriteria.ActualInspectionDateProperty">
+            <summary>
+            实际检验日期
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.Criterias.RegularInspectionCriteria.ActualInspectionDate">
+            <summary>
+            实际检验日期
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.RegularInspections.Criterias.RegularInspectionCriteria.Fetch">
+            <summary>
+            查询方法
+            </summary>
+            <returns>检验规程列表</returns>
+        </member>
+        <member name="T:SIE.EMS.SpecialEquipment.RegularInspections.Criterias.SelInspectionProjectCriteria">
+            <summary>
+            选择检验规程点检项目
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.Criterias.SelInspectionProjectCriteria.SpecialEquipmentAccountIdProperty">
+            <summary>
+            设备型号Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.Criterias.SelInspectionProjectCriteria.SpecialEquipmentAccountId">
+            <summary>
+            工单Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.Criterias.SelInspectionProjectCriteria.InspectionRuleIdProperty">
+            <summary>
+            检验规程Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.Criterias.SelInspectionProjectCriteria.InspectionRuleId">
+            <summary>
+            检验规程Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.Criterias.SelInspectionProjectCriteria.NameProperty">
+            <summary>
+            项目名称
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.Criterias.SelInspectionProjectCriteria.Name">
+            <summary>
+            项目名称
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.Criterias.SelInspectionProjectCriteria.ProjectTypeProperty">
+            <summary>
+            项目类型
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.Criterias.SelInspectionProjectCriteria.ProjectType">
+            <summary>
+            项目类型
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.RegularInspections.Criterias.SelInspectionProjectCriteria.Fetch">
+            <summary>
+            获取工治具需求清单列表
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.SpecialEquipment.RegularInspections.Handle.AtuoScheduleHandle">
+            <summary>
+            自动生产特种设备定检计划
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.Handle.AtuoScheduleHandle.ilpool">
+            <summary>
+            检验规程配置池
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.Handle.AtuoScheduleHandle.GenerateIdHelper">
+            <summary>
+            快速生成关键事件进度ID对象
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.Handle.AtuoScheduleHandle.DicSpecialEquipmentAccount">
+            <summary>
+            特种设备台账字典集合  key：特种设备台账id value:特种设备台账
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.Handle.AtuoScheduleHandle.DicRegularIns">
+            <summary>
+            特种设备台账与设备定检规程关联关系字典集合
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.Handle.AtuoScheduleHandle.DicInspectionPro">
+            <summary>
+            检验规程字典集合    key：检验规程id value:检验规程
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.Handle.AtuoScheduleHandle.RegularInspectionList">
+            <summary>
+            保存的数据实体
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.RegularInspections.Handle.AtuoScheduleHandle.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.RegularInspections.Handle.AtuoScheduleHandle.DoSchedule">
+            <summary>
+             入口
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.RegularInspections.Handle.AtuoScheduleHandle.LoadBase">
+            <summary>
+            加载基础数据
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.RegularInspections.Handle.AtuoScheduleHandle.InitDate">
+            <summary>
+            加载数据
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.RegularInspections.Handle.AtuoScheduleHandle.InitDetail">
+            <summary>
+            加载数据
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.RegularInspections.Handle.AtuoScheduleHandle.CreateRegularInspectionResume(SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection)">
+            <summary>
+            创建操作记录对象
+            </summary>
+            <param name="regularInspection">设备定检对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.RegularInspections.Handle.AtuoScheduleHandle.CreateRegularInspection(SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.EquipAccountRegularInspection)">
+            <summary>
+            创建特种设备定检
+            </summary>
+            <param name="RegularIns"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.RegularInspections.Handle.AtuoScheduleHandle.CreateRegularInspectionDetail(System.Double,SIE.EMS.InspectionRules.InspectionProjectItem)">
+            <summary>
+            创建特种设备定检明细
+            </summary>
+            <param name="RegularInspectionId">特种设备定检单Id</param>
+            <param name="insproitem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.RegularInspections.Handle.AtuoScheduleHandle.SaveDate">
+            <summary>
+            保存数据d
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.SpecialEquipment.RegularInspections.RegularInsAutoScheduleJob">
+            <summary>
+            自动生成特种设备定检计划
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.RegularInspections.RegularInsAutoScheduleJob.ExecuteJob(System.Object)">
+            <summary>
+            设备点检计划自动生成
+            </summary>
+            <param name="param">调度参数</param>
+        </member>
+        <member name="T:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection">
+            <summary>
+            特种设备定检
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.InspectionNoProperty">
+            <summary>
+            检验单号
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.InspectionNo">
+            <summary>
+            检验单号
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.PlanInspectionDateProperty">
+            <summary>
+            计划检验日期
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.PlanInspectionDate">
+            <summary>
+            计划检验日期
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.ActualInspectionDateProperty">
+            <summary>
+            实际检验日期
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.ActualInspectionDate">
+            <summary>
+            实际检验日期
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.RemarkProperty">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.InspectionRemarkProperty">
+            <summary>
+            检验说明
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.InspectionRemark">
+            <summary>
+            检验说明
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.InspectorIdProperty">
+            <summary>
+            检验人Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.InspectorId">
+            <summary>
+            检验人Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.InspectorProperty">
+            <summary>
+            检验人
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.Inspector">
+            <summary>
+            检验人
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.RegularInspectionDetailListProperty">
+            <summary>
+            检验明细列表
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.RegularInspectionDetailList">
+            <summary>
+            检验明细列表
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.RegularInspectionResumeListProperty">
+            <summary>
+            操作记录列表
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.RegularInspectionResumeList">
+            <summary>
+            操作记录列表
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.InspectionResultProperty">
+            <summary>
+            检验结果
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.InspectionResult">
+            <summary>
+            检验结果
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.InspectionStatusProperty">
+            <summary>
+            检验状态
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.InspectionStatus">
+            <summary>
+            检验状态
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.BillSourceTypeProperty">
+            <summary>
+            单据来源
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.BillSourceType">
+            <summary>
+            单据来源
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.AgencyIdProperty">
+            <summary>
+            检验机构Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.AgencyId">
+            <summary>
+            检验机构Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.AgencyProperty">
+            <summary>
+            检验机构
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.Agency">
+            <summary>
+            检验机构
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.RegularInspectionAttachmentListProperty">
+            <summary>
+            设备定检附件列表
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.RegularInspectionAttachmentList">
+            <summary>
+            设备定检附件列表
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.SpecialEquipmentAccountIdProperty">
+            <summary>
+            特种设备台账Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.SpecialEquipmentAccountId">
+            <summary>
+            特种设备台账Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.SpecialEquipmentAccountProperty">
+            <summary>
+            特种设备台账
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.SpecialEquipmentAccount">
+            <summary>
+            特种设备台账
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.SpecialEquipmentAccountNameProperty">
+            <summary>
+            特种设备台账名称
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.SpecialEquipmentAccountName">
+            <summary>
+            设备名称
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.ApprovalStatusProperty">
+            <summary>
+            审核状态
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.ApprovalStatus">
+            <summary>
+            审核状态
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.ApprovalInfoProperty">
+            <summary>
+            审核意见
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.ApprovalInfo">
+            <summary>
+            审核意见
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.InspectionRuleIdProperty">
+            <summary>
+            检验规程Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.InspectionRuleId">
+            <summary>
+            检验规程Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.InspectionRuleProperty">
+            <summary>
+            检验规程
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.InspectionRule">
+            <summary>
+            检验规程
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.CheckCategoryProperty">
+            <summary>
+            校验类型
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.CheckCategory">
+            <summary>
+            校验类型
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.PoNoProperty">
+            <summary>
+            采购订单号
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.PoNo">
+            <summary>
+            采购订单号
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.EquipTypeNameProperty">
+            <summary>
+            设备类型
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.EquipTypeName">
+            <summary>
+            设备类型
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.ResPersonProperty">
+            <summary>
+            资产责任人
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.ResPerson">
+            <summary>
+            资产责任人
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.UseDepartmentProperty">
+            <summary>
+            使用部门
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.UseDepartment">
+            <summary>
+            使用部门
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.ManufacturerProperty">
+            <summary>
+            生产厂商
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.Manufacturer">
+            <summary>
+            生产厂商
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.EquipModelNameProperty">
+            <summary>
+            设备型号
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.EquipModelName">
+            <summary>
+            设备型号
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.EnterDateProperty">
+            <summary>
+            入厂日期
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.EnterDate">
+            <summary>
+            入厂日期
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.AgencyNameProperty">
+            <summary>
+            检验机构名称
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection.AgencyName">
+            <summary>
+            检验机构名称
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionConfig">
+            <summary>
+            特种设备定检 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionAttachment">
+            <summary>
+            设备定检附件
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionAttachmentRepository">
+            <summary>
+             仓库
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionAttachmentConfig">
+            <summary>
+            附件资料 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionAttachmentConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionController">
+            <summary>
+            特种设备定检控制器
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionController.GetRegularInspectionList(SIE.EMS.SpecialEquipment.RegularInspections.Criterias.RegularInspectionCriteria)">
+            <summary>
+            获取订单评审配置项
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionController.SaveSelRegularInspection(System.Collections.Generic.List{SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection})">
+            <summary>
+            保存选择的检验规程的检验项目数据
+            </summary>
+            <param name="regularInspectionInfos"></param>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionController.GetInspectionProjects(SIE.EMS.SpecialEquipment.RegularInspections.Criterias.SelInspectionProjectCriteria)">
+            <summary>
+            特种设备定检新增页面选择点检项目
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionController.GetInspectionRuleList(System.Double,SIE.PagingInfo,System.String)">
+            <summary>
+            根绝设备型号获取检验规程
+            </summary>
+            <param name="SpecialEquipmentAccountId"></param>
+            <param name="pagingInfo"></param>
+            <param name="keyword"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionController.CreateOrEditRegularInspection(SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection)">
+            <summary>
+            创建或修改特种设备定检
+            </summary>
+            <param name="ri">待保存的特种设备定检</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionController.CreateRegularInspectionResume(SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection,SIE.EMS.Enums.OperationType)">
+            <summary>
+            创建操作记录对象
+            </summary>
+            <param name="regularInspection">设备定检对象</param>
+            <param name="operationType">操作类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionController.GetInspectionNo(System.Int32)">
+            <summary>
+            获取新的销售订单编号
+            </summary>
+            <param name="qty">生成多少个新的销售订单编号</param>
+            <returns>返回销售订单编号集合</returns>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionController.GetDetailValues(System.Collections.Generic.List{System.Double})">
+            <summary>
+            根据明细ID查询数据集合
+            </summary>
+            <param name="dtlIds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionController.SaveRegularInspection(SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection)">
+            <summary>
+            录入保存
+            </summary>
+            <param name="ri">特种设备定检</param>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionController.SumbitRegularInspection(SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection)">
+            <summary>
+            录入提交
+            </summary>
+            <param name="ri">特种设备定检</param>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionController.ValidationRegularInspection(SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection)">
+            <summary>
+            验证录入提交的特种设备定检
+            </summary>
+            <param name="ri">特种设备定检</param>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionController.GetRegularInspectionAttachment(System.Double)">
+            <summary>
+            根据特种设备定检ID查询是否有附件
+            </summary>
+            <param name="riaId">特种设备定检ID</param>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionController.CheckBillState(SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection)">
+            <summary>
+            并行操作校验
+            </summary>
+            <param name="bill"></param>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionController.GetAllBillInfo(SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection)">
+            <summary>
+            获取完整单据信息
+            </summary>
+            <param name="bill">提交的单据</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionController.CheckBillAuditState(SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection)">
+            <summary>
+            审核并行操作校验
+            </summary>
+            <param name="bill"></param>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionController.AuditRejectRecord(SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection)">
+            <summary>
+            驳回校验记录
+            </summary>
+            <param name="ri"></param>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionController.AuditSaveRecord(SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection)">
+            <summary>
+            保存校验记录
+            </summary>
+            <param name="ri"></param>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionController.AuditSumbitRecord(SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection)">
+            <summary>
+            审核
+            </summary>
+            <param name="ri"></param>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionController.AuditSumbitRecordInner(SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection)">
+            <summary>
+            审核
+            </summary>
+            <param name="ri"></param>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionController.AtuoSchedule">
+            <summary>
+            自动生成特种设备定检计划
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionController.GenerateEquipAccountResume(SIE.EMS.SpecialEquipment.RegularInspections.RegularInspection)">
+            <summary>
+            生成设备台账的特种设备定检类型的设备履历
+            </summary>
+            <param name="regularIn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionController.PurchaseGetRegularInspectionNo(SIE.PagingInfo,System.String)">
+            <summary>
+            采购对象获取定检任务单号
+            </summary>
+            <param name="pagingInfo">分页</param>
+            <param name="keyword">关键字</param>
+            <returns>定检任务单号</returns>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionController.CloseRegularInspectionByEquipAccountIds(System.Collections.Generic.IList{System.Double})">
+            <summary>
+            关闭未完结的特种设备定检任务
+            </summary>
+            <param name="equipAccountIds">设备台账Id</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionDetail">
+            <summary>
+            检验明细
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionDetail.MinValueProperty">
+            <summary>
+            最小值
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionDetail.MinValue">
+            <summary>
+            最小值
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionDetail.MaxValueProperty">
+            <summary>
+            最大值
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionDetail.MaxValue">
+            <summary>
+            最大值
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionDetail.InspectionResultProperty">
+            <summary>
+            检验结果
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionDetail.InspectionResult">
+            <summary>
+            检验结果
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionDetail.RegularInspectionValueListProperty">
+            <summary>
+            定检检验数据列表
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionDetail.RegularInspectionValueList">
+            <summary>
+            定检检验数据列表
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionDetail.ProjectDetailIdProperty">
+            <summary>
+            点检保养项目Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionDetail.ProjectDetailId">
+            <summary>
+            点检保养项目Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionDetail.ProjectDetailProperty">
+            <summary>
+            点检保养项目
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionDetail.ProjectDetail">
+            <summary>
+            点检保养项目
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionDetail.RegularInspectionIdProperty">
+            <summary>
+            特种设备定检Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionDetail.RegularInspectionId">
+            <summary>
+            特种设备定检Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionDetail.RegularInspectionProperty">
+            <summary>
+            特种设备定检
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionDetail.RegularInspection">
+            <summary>
+            特种设备定检
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionDetail.InspectorIdProperty">
+            <summary>
+            检验人Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionDetail.InspectorId">
+            <summary>
+            检验人Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionDetail.InspectorProperty">
+            <summary>
+            检验人
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionDetail.Inspector">
+            <summary>
+            检验人
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionDetail.InspectionDateTimeProperty">
+            <summary>
+            检验时间
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionDetail.InspectionDateTime">
+            <summary>
+            检验时间
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionDetail.ProjectNameProperty">
+            <summary>
+            项目名称
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionDetail.ProjectName">
+            <summary>
+            项目名称
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionDetail.PartProperty">
+            <summary>
+            部位
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionDetail.Part">
+            <summary>
+            部位
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionDetail.ConsumableProperty">
+            <summary>
+            项目耗材
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionDetail.Consumable">
+            <summary>
+            项目耗材
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionDetail.MethodProperty">
+            <summary>
+            操作方法
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionDetail.Method">
+            <summary>
+            操作方法
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionDetail.UnitProperty">
+            <summary>
+            单位
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionDetail.Unit">
+            <summary>
+            单位
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionDetail.UseTimeProperty">
+            <summary>
+            用时(分钟)
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionDetail.UseTime">
+            <summary>
+            用时(分钟)
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionDetail.CycleTypeProperty">
+            <summary>
+            周期类型
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionDetail.CycleType">
+            <summary>
+            周期类型
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionDetail.StandardProperty">
+            <summary>
+            标准
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionDetail.Standard">
+            <summary>
+            标准
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionDetailConfig">
+            <summary>
+            检验明细 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionDetailConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionResume">
+            <summary>
+            操作记录
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionResume.OperationTypeProperty">
+            <summary>
+            操作类型
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionResume.OperationType">
+            <summary>
+            操作类型
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionResume.OperationDateTimeProperty">
+            <summary>
+            操作时间
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionResume.OperationDateTime">
+            <summary>
+            操作时间
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionResume.InspectionResultProperty">
+            <summary>
+            检验结果
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionResume.InspectionResult">
+            <summary>
+            检验结果
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionResume.OperatorIdProperty">
+            <summary>
+            操作人Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionResume.OperatorId">
+            <summary>
+            操作人Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionResume.OperatorProperty">
+            <summary>
+            操作人
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionResume.Operator">
+            <summary>
+            操作人
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionResume.RegularInspectionIdProperty">
+            <summary>
+            特种设备定检Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionResume.RegularInspectionId">
+            <summary>
+            特种设备定检Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionResume.RegularInspectionProperty">
+            <summary>
+            特种设备定检
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionResume.RegularInspection">
+            <summary>
+            特种设备定检
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionResumeConfig">
+            <summary>
+            操作记录 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionResumeConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionValue">
+            <summary>
+            定检检验数据
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionValue.ValueProperty">
+            <summary>
+            数据
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionValue.Value">
+            <summary>
+            数据
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionValue.IndexProperty">
+            <summary>
+            序号
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionValue.Index">
+            <summary>
+            序号
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionValue.RegularInspectionDetailIdProperty">
+            <summary>
+            检验明细Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionValue.RegularInspectionDetailId">
+            <summary>
+            检验明细Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionValue.RegularInspectionDetailProperty">
+            <summary>
+            检验明细
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionValue.RegularInspectionDetail">
+            <summary>
+            检验明细
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionValueConfig">
+            <summary>
+            定检检验数据 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.RegularInspections.RegularInspectionValueConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.SpecialEquipment.RegularInspections.ViewModels.SelInspectionProjectViewModel">
+            <summary>
+            检验规程的检验项目的点检保养项目ViewModel
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.ViewModels.SelInspectionProjectViewModel.ProjectDetailIdProperty">
+            <summary>
+            项目id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.ViewModels.SelInspectionProjectViewModel.ProjectDetailId">
+            <summary>
+            项目id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.ViewModels.SelInspectionProjectViewModel.NameProperty">
+            <summary>
+            项目名称
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.ViewModels.SelInspectionProjectViewModel.Name">
+            <summary>
+            项目名称
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.ViewModels.SelInspectionProjectViewModel.PartProperty">
+            <summary>
+            部位
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.ViewModels.SelInspectionProjectViewModel.Part">
+            <summary>
+            部位
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.ViewModels.SelInspectionProjectViewModel.ConsumableProperty">
+            <summary>
+            项目耗材
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.ViewModels.SelInspectionProjectViewModel.Consumable">
+            <summary>
+            项目耗材
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.ViewModels.SelInspectionProjectViewModel.MethodProperty">
+            <summary>
+            操作方法
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.ViewModels.SelInspectionProjectViewModel.Method">
+            <summary>
+            操作方法
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.ViewModels.SelInspectionProjectViewModel.StandardProperty">
+            <summary>
+            标准
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.ViewModels.SelInspectionProjectViewModel.Standard">
+            <summary>
+            标准
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.ViewModels.SelInspectionProjectViewModel.MinValueProperty">
+            <summary>
+            最小值
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.ViewModels.SelInspectionProjectViewModel.MinValue">
+            <summary>
+            最小值
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.ViewModels.SelInspectionProjectViewModel.MaxValueProperty">
+            <summary>
+            最大值
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.ViewModels.SelInspectionProjectViewModel.MaxValue">
+            <summary>
+            最大值
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.ViewModels.SelInspectionProjectViewModel.UnitProperty">
+            <summary>
+            单位
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.ViewModels.SelInspectionProjectViewModel.Unit">
+            <summary>
+            单位
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.ViewModels.SelInspectionProjectViewModel.UseTimeProperty">
+            <summary>
+            用时(分钟)
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.ViewModels.SelInspectionProjectViewModel.UseTime">
+            <summary>
+            用时(分钟)
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.RegularInspections.ViewModels.SelInspectionProjectViewModel.CycleTypeProperty">
+            <summary>
+            周期类型
+            </summary>        
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.RegularInspections.ViewModels.SelInspectionProjectViewModel.CycleType">
+            <summary>
+            周期类型
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.EquipAccountRegularInspection">
+            <summary>
+            设备定检规程
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.EquipAccountRegularInspection.FirstInspectionDateProperty">
+            <summary>
+            首次定检日期
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.EquipAccountRegularInspection.FirstInspectionDate">
+            <summary>
+            首次定检日期
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.EquipAccountRegularInspection.PrevInspectionDateProperty">
+            <summary>
+            上次检验日期
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.EquipAccountRegularInspection.PrevInspectionDate">
+            <summary>
+            上次检验日期
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.EquipAccountRegularInspection.NextInspectionDateProperty">
+            <summary>
+            下次检验日期
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.EquipAccountRegularInspection.NextInspectionDate">
+            <summary>
+            下次检验日期
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.EquipAccountRegularInspection.PeriodDaysProperty">
+            <summary>
+            周期(天)
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.EquipAccountRegularInspection.PeriodDays">
+            <summary>
+            周期(天)
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.EquipAccountRegularInspection.WarningPeriodProperty">
+            <summary>
+            预警期(天)
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.EquipAccountRegularInspection.WarningPeriod">
+            <summary>
+            预警期(天)
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.EquipAccountRegularInspection.NotSubmitProperty">
+            <summary>
+            是否未提交
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.EquipAccountRegularInspection.NotSubmit">
+            <summary>
+            是否未提交
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.EquipAccountRegularInspection.InspectionRuleIdProperty">
+            <summary>
+            检验规程Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.EquipAccountRegularInspection.InspectionRuleId">
+            <summary>
+            检验规程Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.EquipAccountRegularInspection.InspectionRuleProperty">
+            <summary>
+            检验规程
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.EquipAccountRegularInspection.InspectionRule">
+            <summary>
+            检验规程
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.EquipAccountRegularInspection.SpecialEquipmentAccountIdProperty">
+            <summary>
+            特种设备台账Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.EquipAccountRegularInspection.SpecialEquipmentAccountId">
+            <summary>
+            特种设备台账Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.EquipAccountRegularInspection.SpecialEquipmentAccountProperty">
+            <summary>
+            特种设备台账
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.EquipAccountRegularInspection.SpecialEquipmentAccount">
+            <summary>
+            特种设备台账
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.EquipAccountRegularInspection.CodeProperty">
+            <summary>
+            检验编码
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.EquipAccountRegularInspection.Code">
+            <summary>
+            检验编码
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.EquipAccountRegularInspection.NameProperty">
+            <summary>
+            检验名称
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.EquipAccountRegularInspection.Name">
+            <summary>
+            检验名称
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.EquipAccountRegularInspection.InspectionRuleTypeProperty">
+            <summary>
+            项目类型
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.EquipAccountRegularInspection.InspectionRuleType">
+            <summary>
+            项目类型
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.EquipAccountRegularInspection.CheckCategoryProperty">
+            <summary>
+            校验类别
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.EquipAccountRegularInspection.CheckCategory">
+            <summary>
+            校验类别
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.EquipAccountRegularInspectionConfig">
+            <summary>
+            设备定检规程 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.EquipAccountRegularInspectionConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.EquipAccountRegularInspectionRule">
+            <summary>
+            被引用的检验规程，不允许删除
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.EquipAccountRegularInspectionRule.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipAccountController">
+            <summary>
+            特种设备台账控制器
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipAccountController.GetSpecialEquipAccountCriteria(SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountCriteria)">
+            <summary>
+            查询特种设备台账列表
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipAccountController.GetSpecialEquipAccountList(SIE.PagingInfo,System.String)">
+            <summary>
+            获取特种设备台账的所有数据
+            </summary>
+            <param name="pagingInfo"></param>
+            <param name="keyword"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipAccountController.GetAllSpecialEquipAccountList">
+            <summary>
+            获取所有特种设备台账的所有数据
+            </summary>        
+            <returns></returns>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipAccountController.SaveSelEquipAccountRegularInspection(System.Collections.Generic.List{SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.EquipAccountRegularInspection})">
+            <summary>
+            保存选择的检验规程数据
+            </summary>
+            <param name="equipModelRegularInspectionInfos"></param>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipAccountController.SynSpecialModelDatas(System.Collections.Generic.List{System.Double})">
+            <summary>
+            根据设备台账Id列表更新点检保养项目、单元组成和单元组成物料清单
+            </summary>
+            <param name="accountIds">设备台账Id列表</param>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipAccountController.SaveEquipAccountRelateInfos(SIE.Domain.EntityList{SIE.EMS.Equipments.Accounts.EquipAccountCheckProject},SIE.Domain.EntityList{SIE.EMS.Equipments.Accounts.EquipAccountMaintainProject},SIE.Domain.EntityList{SIE.EMS.Equipments.Accounts.EquipAccountLubricationProject},SIE.Domain.EntityList{SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.EquipAccountRegularInspection})">
+            <summary>
+            保存设备台账点检/保养/单元组成/单元物料信息
+            </summary>
+            <param name="checkProjectList">设备台账点检项目列表</param>
+            <param name="maintainProjectList">设备台账保养项目列表</param>                
+            <param name="lubricationProjectsList">设备台账润滑项目</param>
+            <param name="regularInspectionList">特种设备台账设备定检规程</param>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipAccountController.GetEquipModelRegularInspection(System.Collections.Generic.List{System.Double})">
+            <summary>
+            根据设备型号集合获取检验规程列表
+            </summary>
+            <param name="modelIds">设备型号Id列表</param>
+            <returns>检验规程列表</returns>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipAccountController.GetRegularInspectionOfAccounts(System.Collections.Generic.List{System.Double})">
+            <summary>
+            获取检验规程列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipAccountController.UpdateInspectionRuleList(System.Collections.Generic.Dictionary{System.Double,System.Collections.Generic.List{SIE.EMS.SpecialEquipment.Models.EquipModelRegularInspection}},SIE.Equipments.EquipAccounts.EquipAccount,System.Collections.Generic.List{SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.EquipAccountRegularInspection})">
+            <summary>
+            修改特种设备台账的检验规程
+            </summary>
+            <param name="dicRegularInspectionOfModels">设备型号检验规程字典</param>
+            <param name="equipAccount">设备台账</param>
+            <param name="regularInspectionOfAccount">特种设备台账已存在的检验规程</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipAccountController.CreateInspectionRuleList(System.Collections.Generic.Dictionary{System.Double,System.Collections.Generic.List{SIE.EMS.SpecialEquipment.Models.EquipModelRegularInspection}},SIE.Equipments.EquipAccounts.EquipAccount)">
+            <summary>
+            创建特种设备台账检验规程列表
+            </summary>
+            <param name="dicRegularInspectionOfModels"></param>
+            <param name="equipAccount">设备台账</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipAccountController.CreateEquipAccountRegularInspection(SIE.Equipments.EquipAccounts.EquipAccount,SIE.EMS.SpecialEquipment.Models.EquipModelRegularInspection)">
+             <summary>
+            创建设备定检规程
+             </summary>
+             <param name="equipAccount"></param>
+             <param name="lubricationPrjOfModel"></param>
+             <returns></returns>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipAccountController.GetSpecialEquipAccountById(System.Double)">
+            <summary>
+            根据Id获取设备台账
+            </summary>
+            <param name="id">设备台账Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipAccountController.UpdtaeEquipAccountRegularInspection(System.Double,System.Double,SIE.Equipments.Enums.BillSourceType,System.Nullable{System.DateTime})">
+            <summary>
+            根据特种设备台账Id和设备定检规程Id修改特种设备台账设备定检规程的下次检验时间
+            </summary>
+            <param name="SpecialEquipmentAccountId"></param>
+            <param name="InspectionRuleId"></param>
+            <param name="BillSourceType">单据类型</param>
+            <param name="NextInspectionDate"></param>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipAccountController.GetEquipAccountRegularInspection(System.Double,System.Double)">
+            <summary>
+            根据特种设备台账和检验规程编码获取相关联的数据
+            </summary>
+            <param name="SpecialEquipmentAccountId"></param>
+            <param name="InspectionRuleId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipAccountController.GetEquipAccountRegularInsById(System.Collections.Generic.List{System.Double})">
+            <summary>
+            根据设备台账Id获取特种设备台站与设备定检规程关联关系（并且首次定检时间和下次检验时间不可同时为null）
+            </summary>
+            <param name="ids">设备台账Id</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccount">
+            <summary>
+            特种设备台账
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccount.EquipAccountRegularInspectionListProperty">
+            <summary>
+            设备定检规程列表
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccount.EquipAccountRegularInspectionList">
+            <summary>
+            设备定检规程列表
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccount.PcbSlotListProperty">
+            <summary>
+            缸槽列表
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccount.PcbSlotList">
+            <summary>
+            缸槽列表
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccount.ResumeListProperty">
+            <summary>
+            设备履历列表
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccount.ResumeList">
+            <summary>
+            设备履历列表
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccount.ProcessListProperty">
+            <summary>
+            工序列表
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccount.ProcessList">
+            <summary>
+            工序列表
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccount.EquipAccountLocationListProperty">
+            <summary>
+            设备位置列表
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccount.EquipAccountLocationList">
+            <summary>
+            设备位置列表
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccount.EquipAccountPhysicalUnionListProperty">
+            <summary>
+            设备物联列表
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccount.EquipAccountPhysicalUnionList">
+            <summary>
+            设备物联列表
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountConfig">
+            <summary>
+            特种设备台账 实体配置
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountConfig.ConfigMeta">
+            <summary>
+            配置元数据
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountCriteria">
+            <summary>
+            设备台账查询实体
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountCriteria.CodeProperty">
+            <summary>
+            设备编码
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountCriteria.Code">
+            <summary>
+            设备编码
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountCriteria.NameProperty">
+            <summary>
+            设备名称
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountCriteria.Name">
+            <summary>
+            设备名称
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountCriteria.WorkShopIdProperty">
+            <summary>
+            车间Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountCriteria.WorkShopId">
+            <summary>
+            车间Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountCriteria.WorkShopProperty">
+            <summary>
+            车间
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountCriteria.WorkShop">
+            <summary>
+            车间
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountCriteria.ResourceIdProperty">
+            <summary>
+            产线Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountCriteria.ResourceId">
+            <summary>
+            产线Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountCriteria.ResourceProperty">
+            <summary>
+            产线
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountCriteria.Resource">
+            <summary>
+            产线
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountCriteria.ProcessIdProperty">
+            <summary>
+            工序Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountCriteria.ProcessId">
+            <summary>
+            工序Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountCriteria.ProcessProperty">
+            <summary>
+            工序
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountCriteria.Process">
+            <summary>
+            工序
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountCriteria.TypeCategoryProperty">
+            <summary>
+            设备类型
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountCriteria.TypeCategory">
+            <summary>
+            设备类型
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountCriteria.ModelCodeProperty">
+            <summary>
+            型号编码
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountCriteria.ModelCode">
+            <summary>
+            型号编码
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountCriteria.ModelNameProperty">
+            <summary>
+            型号名称
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountCriteria.ModelName">
+            <summary>
+            型号名称
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountCriteria.StateProperty">
+            <summary>
+            设备状态
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountCriteria.State">
+            <summary>
+            设备状态
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountCriteria.AccountUseStateProperty">
+            <summary>
+            管理状态（原使用状态）
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountCriteria.AccountUseState">
+            <summary>
+            使用状态
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountCriteria.CreateDateProperty">
+            <summary>
+            创建日期
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountCriteria.CreateDate">
+            <summary>
+            创建日期
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountCriteria.RegularInspectionStatusProperty">
+            <summary>
+            定检状态
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountCriteria.RegularInspectionStatus">
+            <summary>
+            定检状态
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountCriteria.NextInspectionDateProperty">
+            <summary>
+            下次检验时间
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountCriteria.NextInspectionDate">
+            <summary>
+            下次检验时间
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountCriteria.IsCalibrationEquipProperty">
+            <summary>
+            是否检验设备
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountCriteria.IsCalibrationEquip">
+            <summary>
+            是否检验设备
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountCriteria.Fetch">
+            <summary>
+            重写此方法实现查询
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountRule">
+            <summary>
+            被引用的特种设备台账，不允许删除
+            </summary>
+        </member>
+        <member name="M:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.SpecialEquipmentAccountRule.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.Tab.SpecialEquipAccountAttachment">
+            <summary>
+            附件资料
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.Tab.SpecialEquipAccountLocation">
+            <summary>
+            特种设备台账位置
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.Tab.SpecialEquipAccountLocation.EquipAccountIdProperty">
+            <summary>
+            设备台账Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.Tab.SpecialEquipAccountLocation.EquipAccountId">
+            <summary>
+            设备台账Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.Tab.SpecialEquipAccountLocation.EquipAccountProperty">
+            <summary>
+            设备台账
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.Tab.SpecialEquipAccountLocation.EquipAccount">
+            <summary>
+            设备台账
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.Tab.SpecialEquipAccountLubricationProject">
+            <summary>
+            特种设备型号润滑项目
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.Tab.SpecialEquipAccountLubricationProject.EquipAccountIdProperty">
+            <summary>
+            润滑项目列表Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.Tab.SpecialEquipAccountLubricationProject.EquipAccountId">
+            <summary>
+            润滑项目列表Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.Tab.SpecialEquipAccountLubricationProject.EquipModelProperty">
+            <summary>
+            润滑项目列表
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.Tab.SpecialEquipAccountLubricationProject.EquipAccount">
+            <summary>
+            润滑项目列表
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.Tab.SpecialEquipAccountPhysicalUnion">
+            <summary>
+            特种设备台账物联参数
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.Tab.SpecialEquipAccountPhysicalUnion.EquipAccountIdProperty">
+            <summary>
+            设备台账Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.Tab.SpecialEquipAccountPhysicalUnion.EquipAccountId">
+            <summary>
+            设备台账Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.Tab.SpecialEquipAccountPhysicalUnion.EquipAccountProperty">
+            <summary>
+            设备台账
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.Tab.SpecialEquipAccountPhysicalUnion.EquipAccount">
+            <summary>
+            设备台账
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.Tab.SpecialEquipAccountProcess">
+            <summary>
+            特种设备台账工序
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.Tab.SpecialEquipAccountProcess.EquipAccountIdProperty">
+            <summary>
+            设备台账Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.Tab.SpecialEquipAccountProcess.EquipAccountId">
+            <summary>
+            设备台账Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.Tab.SpecialEquipAccountProcess.EquipAccountProperty">
+            <summary>
+            设备台账
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.Tab.SpecialEquipAccountProcess.EquipAccount">
+            <summary>
+            设备台账
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.Tab.SpecialEquipAccountResume">
+            <summary>
+            特种设备履历
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.Tab.SpecialEquipAccountResume.EquipAccountIdProperty">
+            <summary>
+            设备台账Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.Tab.SpecialEquipAccountResume.EquipAccountId">
+            <summary>
+            设备台账Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.Tab.SpecialEquipAccountResume.EquipAccountProperty">
+            <summary>
+            设备台账
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.Tab.SpecialEquipAccountResume.EquipAccount">
+            <summary>
+            设备台账
+            </summary>
+        </member>
+        <member name="T:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.Tab.SpecialEquipAccountSlot">
+            <summary>
+            特种设备缸槽
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.Tab.SpecialEquipAccountSlot.EquipAccountIdProperty">
+            <summary>
+            设备台账Id
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.Tab.SpecialEquipAccountSlot.EquipAccountId">
+            <summary>
+            设备台账Id
+            </summary>
+        </member>
+        <member name="F:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.Tab.SpecialEquipAccountSlot.EquipAccountProperty">
+            <summary>
+            设备台账
+            </summary>
+        </member>
+        <member name="P:SIE.EMS.SpecialEquipment.SpecialEquipmentAcounts.Tab.SpecialEquipAccountSlot.EquipAccount">
+            <summary>
+            设备台账
+            </summary>
+        </member>
+    </members>
+</doc>

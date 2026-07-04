@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SIE.Data.MySql</name>
+    </assembly>
+    <members>
+        <member name="M:SIE.Data.MySql.MySqlBackuper.BackupDatabase(System.String,System.String,System.Boolean)">
+            <summary>
+            Backup a special database
+            </summary>
+            <param name="databaseName"></param>
+            <param name="filename">database file path to save.</param>
+            <param name="isErase">if exists, whether to delete current file.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Data.MySql.MySqlBackuper.RestoreDatabase(System.String,System.String)">
+            <summary>
+            restore a special database from a file
+            </summary>
+            <param name="databaseName"></param>
+            <param name="filename">the file path which is a database backup</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Data.MySql.MySqlColumn.Write(SIE.Domain.Entity,System.Object)">
+            <summary>
+            实体绑定（从数据库）的特殊处理
+            </summary>
+            <param name="entity"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:SIE.Data.MySql.MySqlDbTypeHelper.ConvertToMySQLTypeString(System.Data.DbType,System.String)">
+            <summary>
+            把 DbType 转换为 MySqlServer 中的数据类型
+            </summary>
+            <param name="fieldType">Type of the field.</param>
+            <param name="length">The length.</param>
+            <returns></returns>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:SIE.Data.MySql.MySqlDbTypeHelper.ConvertFromMySQLTypeString(System.String)">
+                     * Sql Server中的数据类型和Mysql中的数据类型的对应关系
+                    //https://blog.csdn.net/lilong329329/article/details/78899477
+                    *
+            <summary>
+            把 MySqlServer 中的数据类型 转换为 DbType
+            </summary>
+            <param name="sqlType">Type of the SQL.</param>
+            <returns></returns>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:SIE.Data.MySql.MySqlDialect.DbTimeValueSql">
+            <summary>
+            当前时间SQL
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Data.MySql.MySqlDialect.GetParameterName(System.Object)">
+            <summary>
+            生成SQL执行命名参数
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Data.MySql.MySqlDialect.PrepareIdentifier(System.String)">
+            <summary>
+            处理标识符
+            </summary>
+            <param name="identifier"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:SIE.Data.MySql.MySqlDialect.PrepareValue(System.Object)">
+            <summary>
+            值转换
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Data.MySql.MySqlDialect.SelectDbTimeSql">
+            <summary>
+            获取当前时间SQL
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Data.MySql.MySqlDialect.SeqNextValueSql(System.String,System.String)">
+            <summary>
+            获取下一个序列值（雪花算法）
+            </summary>
+            <param name="tableName"></param>
+            <param name="columnName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Data.MySql.MySqlMetaReader.ReadAllIndexes">
+            <summary>
+            ORM读取所有索引实现(MySql)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Data.MySql.MySqlRunGenerator.Generate(SIE.Data.DbMigration.Operations.RemoveDBIndex)">
+            <summary>
+            Generates the specified op.
+            </summary>
+            <param name="op">The op.</param>
+        </member>
+        <member name="M:SIE.Data.MySql.MySqlSqlGenerator.ModifyToPagingTree(SIE.Data.SqlTree.SqlSelect,SIE.PagingInfo)">
+            <summary>
+            ORM MySql为指定的原始查询生成指定分页效果的新查询。
+            </summary>
+            <param name="raw">原始查询</param>
+            <param name="pagingInfo">分页信息。</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIE.Data.MySql.MySqlTable.GetPagingLocation(SIE.PagingInfo)">
+            <summary>
+            支持在数据库层面进行分页
+            </summary>
+            <param name="pagingInfo"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
