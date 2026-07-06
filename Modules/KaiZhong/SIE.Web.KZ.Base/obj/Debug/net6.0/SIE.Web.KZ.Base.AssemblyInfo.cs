@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SIE.Web.KZ.Base")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5a518819adf9185497e2d0ddca09818c0301bcff")]
 [assembly: System.Reflection.AssemblyProductAttribute("SIE.Web.KZ.Base")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SIE.Web.KZ.Base")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

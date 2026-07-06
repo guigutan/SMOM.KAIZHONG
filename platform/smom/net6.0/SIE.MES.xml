@@ -69927,6 +69927,51 @@
             子组30
             </summary>
         </member>
+        <member name="F:SIE.MES.SpcFromMesDetails.SpcFromMesDetail.SumXProperty">
+            <summary>
+            ∑X：子组大小GroupCount对应数量的ObservedValue之和
+            </summary>
+        </member>
+        <member name="P:SIE.MES.SpcFromMesDetails.SpcFromMesDetail.SumX">
+            <summary>
+            ∑X
+            </summary>
+        </member>
+        <member name="F:SIE.MES.SpcFromMesDetails.SpcFromMesDetail.AvgXProperty">
+            <summary>
+            X̄：∑X / 子组大小GroupCount
+            </summary>
+        </member>
+        <member name="P:SIE.MES.SpcFromMesDetails.SpcFromMesDetail.AvgX">
+            <summary>
+            X̄
+            </summary>
+        </member>
+        <member name="F:SIE.MES.SpcFromMesDetails.SpcFromMesDetail.RangeXProperty">
+            <summary>
+            R：子组大小GroupCount对应数量的ObservedValue最大值减最小值
+            </summary>
+        </member>
+        <member name="P:SIE.MES.SpcFromMesDetails.SpcFromMesDetail.RangeX">
+            <summary>
+            R
+            </summary>
+        </member>
+        <member name="M:SIE.MES.SpcFromMesDetails.SpcFromMesDetail.CalcSumX(SIE.MES.SpcFromMesDetails.SpcFromMesDetail)">
+            <summary>
+            ∑X = ObservedValue1 + ... + ObservedValue[GroupCount]
+            </summary>
+        </member>
+        <member name="M:SIE.MES.SpcFromMesDetails.SpcFromMesDetail.CalcAvgX(SIE.MES.SpcFromMesDetails.SpcFromMesDetail)">
+            <summary>
+            X̄ = ∑X / GroupCount
+            </summary>
+        </member>
+        <member name="M:SIE.MES.SpcFromMesDetails.SpcFromMesDetail.CalcRangeX(SIE.MES.SpcFromMesDetails.SpcFromMesDetail)">
+            <summary>
+            R = Max(ObservedValue1..N) - Min(ObservedValue1..N)，N=GroupCount
+            </summary>
+        </member>
         <member name="T:SIE.MES.SpcFromMesDetails.SpcFromMesDetailConfig">
             <summary>
             配置数据库映射
@@ -70127,66 +70172,6 @@
             子组大小
             </summary>
         </member>
-        <member name="F:SIE.MES.SpcFromMess.SpcFromMes.AverageUslProperty">
-            <summary>
-            均值上限
-            </summary>
-        </member>
-        <member name="P:SIE.MES.SpcFromMess.SpcFromMes.AverageUsl">
-            <summary>
-            均值上限
-            </summary>
-        </member>
-        <member name="F:SIE.MES.SpcFromMess.SpcFromMes.AverageSlProperty">
-            <summary>
-            均值中心限
-            </summary>
-        </member>
-        <member name="P:SIE.MES.SpcFromMess.SpcFromMes.AverageSl">
-            <summary>
-            均值中心限
-            </summary>
-        </member>
-        <member name="F:SIE.MES.SpcFromMess.SpcFromMes.AverageLslProperty">
-            <summary>
-            均值下限
-            </summary>
-        </member>
-        <member name="P:SIE.MES.SpcFromMess.SpcFromMes.AverageLsl">
-            <summary>
-            均值下限
-            </summary>
-        </member>
-        <member name="F:SIE.MES.SpcFromMess.SpcFromMes.RangeUslProperty">
-            <summary>
-            极差上限
-            </summary>
-        </member>
-        <member name="P:SIE.MES.SpcFromMess.SpcFromMes.RangeUsl">
-            <summary>
-            极差上限
-            </summary>
-        </member>
-        <member name="F:SIE.MES.SpcFromMess.SpcFromMes.RangeSlProperty">
-            <summary>
-            极差中心限
-            </summary>
-        </member>
-        <member name="P:SIE.MES.SpcFromMess.SpcFromMes.RangeSl">
-            <summary>
-            极差中心限
-            </summary>
-        </member>
-        <member name="F:SIE.MES.SpcFromMess.SpcFromMes.RangeLslProperty">
-            <summary>
-            极差下限
-            </summary>
-        </member>
-        <member name="P:SIE.MES.SpcFromMess.SpcFromMes.RangeLsl">
-            <summary>
-            极差下限
-            </summary>
-        </member>
         <member name="F:SIE.MES.SpcFromMess.SpcFromMes.ProductionDeptProperty">
             <summary>
             生产部门
@@ -70287,6 +70272,66 @@
             统计过程控制明细表
             </summary>
         </member>
+        <member name="F:SIE.MES.SpcFromMess.SpcFromMes.AverageUslProperty">
+            <summary>
+            均值上限
+            </summary>
+        </member>
+        <member name="P:SIE.MES.SpcFromMess.SpcFromMes.AverageUsl">
+            <summary>
+            均值上限
+            </summary>
+        </member>
+        <member name="F:SIE.MES.SpcFromMess.SpcFromMes.AverageSlProperty">
+            <summary>
+            均值中心限
+            </summary>
+        </member>
+        <member name="P:SIE.MES.SpcFromMess.SpcFromMes.AverageSl">
+            <summary>
+            均值中心限
+            </summary>
+        </member>
+        <member name="F:SIE.MES.SpcFromMess.SpcFromMes.AverageLslProperty">
+            <summary>
+            均值下限
+            </summary>
+        </member>
+        <member name="P:SIE.MES.SpcFromMess.SpcFromMes.AverageLsl">
+            <summary>
+            均值下限
+            </summary>
+        </member>
+        <member name="F:SIE.MES.SpcFromMess.SpcFromMes.RangeUslProperty">
+            <summary>
+            极差上限
+            </summary>
+        </member>
+        <member name="P:SIE.MES.SpcFromMess.SpcFromMes.RangeUsl">
+            <summary>
+            极差上限
+            </summary>
+        </member>
+        <member name="F:SIE.MES.SpcFromMess.SpcFromMes.RangeSlProperty">
+            <summary>
+            极差中心限
+            </summary>
+        </member>
+        <member name="P:SIE.MES.SpcFromMess.SpcFromMes.RangeSl">
+            <summary>
+            极差中心限
+            </summary>
+        </member>
+        <member name="F:SIE.MES.SpcFromMess.SpcFromMes.RangeLslProperty">
+            <summary>
+            极差下限
+            </summary>
+        </member>
+        <member name="P:SIE.MES.SpcFromMess.SpcFromMes.RangeLsl">
+            <summary>
+            极差下限
+            </summary>
+        </member>
         <member name="F:SIE.MES.SpcFromMess.SpcFromMes.QtyProperty">
             <summary>
             样本组数（子表记录数）
@@ -70305,6 +70350,171 @@
         <member name="P:SIE.MES.SpcFromMess.SpcFromMes.TotalQty">
             <summary>
             总组数
+            </summary>
+        </member>
+        <member name="F:SIE.MES.SpcFromMess.SpcFromMes.TotalSumXProperty">
+            <summary>
+            ∑X（父级）：所有样本组中GroupCount对应数量的ObservedValue值的总和
+            </summary>
+        </member>
+        <member name="P:SIE.MES.SpcFromMess.SpcFromMes.TotalSumX">
+            <summary>
+            ∑X（父级）：所有样本组中GroupCount对应数量的ObservedValue值的总和
+            </summary>
+        </member>
+        <member name="F:SIE.MES.SpcFromMess.SpcFromMes.TotalSumRProperty">
+            <summary>
+            ∑R（父级）：所有样本组极差(R)之和
+            </summary>
+        </member>
+        <member name="P:SIE.MES.SpcFromMess.SpcFromMes.TotalSumR">
+            <summary>
+            ∑R（父级）：所有样本组极差(R)之和
+            </summary>
+        </member>
+        <member name="F:SIE.MES.SpcFromMess.SpcFromMes.TotalAvgXProperty">
+            <summary>
+            X̄（父级）：∑X(总) / 总组数TotalQty
+            </summary>
+        </member>
+        <member name="P:SIE.MES.SpcFromMess.SpcFromMes.TotalAvgX">
+            <summary>
+            X̄（父级）：∑X(总) / 总组数TotalQty
+            </summary>
+        </member>
+        <member name="F:SIE.MES.SpcFromMess.SpcFromMes.TotalAvgRProperty">
+            <summary>
+            R̄（父级）：∑R(总) / 样本组数Qty
+            </summary>
+        </member>
+        <member name="P:SIE.MES.SpcFromMess.SpcFromMes.TotalAvgR">
+            <summary>
+            R̄（父级）：∑R(总) / 样本组数Qty
+            </summary>
+        </member>
+        <member name="F:SIE.MES.SpcFromMess.SpcFromMes.SigmaProperty">
+            <summary>
+            σ = R̄ / d2，d2为SPC常数（按子组大小查表）
+            </summary>
+        </member>
+        <member name="P:SIE.MES.SpcFromMess.SpcFromMes.Sigma">
+            <summary>
+            σ：过程标准差，σ = R̄ / d2（d2为SPC常数，按子组大小查表）
+            </summary>
+        </member>
+        <member name="F:SIE.MES.SpcFromMess.SpcFromMes.CpuProperty">
+            <summary>
+            CPU = (标准上限USL - X̄) / (3σ)
+            </summary>
+        </member>
+        <member name="P:SIE.MES.SpcFromMess.SpcFromMes.Cpu">
+            <summary>
+            CPU：过程能力指数（上限），CPU = (标准上限USL - X̄) / (3σ)
+            </summary>
+        </member>
+        <member name="F:SIE.MES.SpcFromMess.SpcFromMes.CplProperty">
+            <summary>
+            CPL = (X̄ - 标准下限LSL) / (3σ)
+            </summary>
+        </member>
+        <member name="P:SIE.MES.SpcFromMess.SpcFromMes.Cpl">
+            <summary>
+            CPL：过程能力指数（下限），CPL = (X̄ - 标准下限LSL) / (3σ)
+            </summary>
+        </member>
+        <member name="F:SIE.MES.SpcFromMess.SpcFromMes.StdevProperty">
+            <summary>
+            STDEV：各样本组SumX值的样本标准差
+            </summary>
+        </member>
+        <member name="P:SIE.MES.SpcFromMess.SpcFromMes.Stdev">
+            <summary>
+            STDEV：各样本组∑X值的样本标准差
+            </summary>
+        </member>
+        <member name="F:SIE.MES.SpcFromMess.SpcFromMes.PpkProperty">
+            <summary>
+            PPK = (X̄ - 标准下限LSL) / (3σ)，同CPL
+            </summary>
+        </member>
+        <member name="P:SIE.MES.SpcFromMess.SpcFromMes.Ppk">
+            <summary>
+            PPK：过程性能指数，PPK = (X̄ - 标准下限LSL) / (3σ)，同CPL
+            </summary>
+        </member>
+        <member name="F:SIE.MES.SpcFromMess.SpcFromMes.CpkProperty">
+            <summary>
+            CPK = CPL值
+            </summary>
+        </member>
+        <member name="P:SIE.MES.SpcFromMess.SpcFromMes.Cpk">
+            <summary>
+            CPK：综合过程能力指数，CPK = CPL值
+            </summary>
+        </member>
+        <member name="M:SIE.MES.SpcFromMess.SpcFromMes.GetObservedValue(SIE.MES.SpcFromMesDetails.SpcFromMesDetail,System.Int32)">
+            <summary>
+            根据索引获取明细行中对应子组的观测值（ObservedValue1~30）
+            </summary>
+        </member>
+        <member name="M:SIE.MES.SpcFromMess.SpcFromMes.CalcXBar(SIE.Domain.EntityList{SIE.MES.SpcFromMesDetails.SpcFromMesDetail},System.Int32)">
+            <summary>
+            计算所有样本组的均值的平均值 X̄（X-bar）
+            公式：X̄ = Σ(每组观测值之和/子组大小) / 样本组数
+            用途：作为均值控制图的中心线（CL）
+            </summary>
+        </member>
+        <member name="M:SIE.MES.SpcFromMess.SpcFromMes.CalcRBar(SIE.Domain.EntityList{SIE.MES.SpcFromMesDetails.SpcFromMesDetail},System.Int32)">
+            <summary>
+            计算所有样本组的极差的平均值 R̄（R-bar）
+            公式：R̄ = Σ(每组最大值-最小值) / 样本组数
+            用途：作为极差控制图的中心线（CL）
+            </summary>
+        </member>
+        <member name="M:SIE.MES.SpcFromMess.SpcFromMes.CalcAverageUcl(SIE.Domain.EntityList{SIE.MES.SpcFromMesDetails.SpcFromMesDetail},System.Int32)">
+            <summary>
+            计算均值控制图上控制限（UCL）
+            公式：UCL = X̄ + A2 × R̄
+            </summary>
+        </member>
+        <member name="M:SIE.MES.SpcFromMess.SpcFromMes.CalcAverageLcl(SIE.Domain.EntityList{SIE.MES.SpcFromMesDetails.SpcFromMesDetail},System.Int32)">
+            <summary>
+            计算均值控制图下控制限（LCL）
+            公式：LCL = X̄ - A2 × R̄
+            </summary>
+        </member>
+        <member name="M:SIE.MES.SpcFromMess.SpcFromMes.CalcRangeUcl(SIE.Domain.EntityList{SIE.MES.SpcFromMesDetails.SpcFromMesDetail},System.Int32)">
+            <summary>
+            计算极差控制图上控制限（UCL）
+            公式：UCL = D4 × R̄
+            </summary>
+        </member>
+        <member name="M:SIE.MES.SpcFromMess.SpcFromMes.CalcRangeLcl(SIE.Domain.EntityList{SIE.MES.SpcFromMesDetails.SpcFromMesDetail},System.Int32)">
+            <summary>
+            计算极差控制图下控制限（LCL）
+            公式：LCL = D3 × R̄（当n&lt;7时D3=0，LCL为0）
+            </summary>
+        </member>
+        <member name="M:SIE.MES.SpcFromMess.SpcFromMes.CalcTotalSumX(SIE.Domain.EntityList{SIE.MES.SpcFromMesDetails.SpcFromMesDetail},System.Int32)">
+            <summary>
+            计算∑X(总)：所有样本组中前GroupCount个ObservedValue之和的总计
+            </summary>
+        </member>
+        <member name="M:SIE.MES.SpcFromMess.SpcFromMes.CalcTotalSumR(SIE.Domain.EntityList{SIE.MES.SpcFromMesDetails.SpcFromMesDetail},System.Int32)">
+            <summary>
+            计算∑R(总)：所有样本组极差之和
+            </summary>
+        </member>
+        <member name="M:SIE.MES.SpcFromMess.SpcFromMes.CalcSigma(System.Decimal,System.Int32)">
+            <summary>
+            计算σ = R̄ / d2
+            d2为SPC常数，按子组大小n查表（来源：GB/T 4091 / AIAG SPC手册）
+            </summary>
+        </member>
+        <member name="M:SIE.MES.SpcFromMess.SpcFromMes.CalcStdev(SIE.Domain.EntityList{SIE.MES.SpcFromMesDetails.SpcFromMesDetail},System.Int32)">
+            <summary>
+            计算STDEV：各样本组SumX的样本标准差
+            公式：STDEV = sqrt(Σ(xi - x̄)² / (n-1))
             </summary>
         </member>
         <member name="T:SIE.MES.SpcFromMess.SpcFromMesConfig">

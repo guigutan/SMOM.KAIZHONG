@@ -1,11 +1,5 @@
-﻿using DocumentFormat.OpenXml.Office2010.CustomUI;
-using SIE.MES.SpcFromMesDetails;
+﻿using SIE.MES.SpcFromMesDetails;
 using SIE.MetaModel.View;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SIE.Web.MES.SpcFromMesDetails
 {
@@ -50,20 +44,48 @@ namespace SIE.Web.MES.SpcFromMesDetails
 
         private void ConfigReadonlyView()
         {
-            View.UseCommands(WebCommandNames.Add, WebCommandNames.Edit, WebCommandNames.Delete);
+            View.ClearCommands();
+
+            //根据 GroupCount 动态显示/隐藏列的实现：
+            View.AddBehavior("SIE.Web.MES.SpcFromMesDetails.Behaviors.SpcFromMesDetailBehavior");
 
             using (View.OrderProperties())
             {
-                //View.AddBehavior(typeof(SpcFromMesDetailBehavior).FullName);
-               
-                View.Property(p => p.ObservedValue1).ShowInList(width: 150);
-                View.Property(p => p.ObservedValue2).ShowInList(width: 150);
-                View.Property(p => p.ObservedValue3).ShowInList(width: 150);
-                View.Property(p => p.ObservedValue4).ShowInList(width: 150);
+                View.Property(p => p.ObservedValue1).ShowInList(width: 60).Readonly();
+                View.Property(p => p.ObservedValue2).ShowInList(width: 60).Readonly();
+                View.Property(p => p.ObservedValue3).ShowInList(width: 60).Readonly();
+                View.Property(p => p.ObservedValue4).ShowInList(width: 60).Readonly();
+                View.Property(p => p.ObservedValue5).ShowInList(width: 60).Readonly();
+                View.Property(p => p.ObservedValue6).ShowInList(width: 60).Readonly();
+                View.Property(p => p.ObservedValue7).ShowInList(width: 60).Readonly();
+                View.Property(p => p.ObservedValue8).ShowInList(width: 60).Readonly();
+                View.Property(p => p.ObservedValue9).ShowInList(width: 60).Readonly();
+                View.Property(p => p.ObservedValue10).ShowInList(width: 60).Readonly();
+                View.Property(p => p.ObservedValue11).ShowInList(width: 60).Readonly();
+                View.Property(p => p.ObservedValue12).ShowInList(width: 60).Readonly();
+                View.Property(p => p.ObservedValue13).ShowInList(width: 60).Readonly();
+                View.Property(p => p.ObservedValue14).ShowInList(width: 60).Readonly();
+                View.Property(p => p.ObservedValue15).ShowInList(width: 60).Readonly();
+                View.Property(p => p.ObservedValue16).ShowInList(width: 60).Readonly();
+                View.Property(p => p.ObservedValue17).ShowInList(width: 60).Readonly();
+                View.Property(p => p.ObservedValue18).ShowInList(width: 60).Readonly();
+                View.Property(p => p.ObservedValue19).ShowInList(width: 60).Readonly();
+                View.Property(p => p.ObservedValue20).ShowInList(width: 60).Readonly();
+                View.Property(p => p.ObservedValue21).ShowInList(width: 60).Readonly();
+                View.Property(p => p.ObservedValue22).ShowInList(width: 60).Readonly();
+                View.Property(p => p.ObservedValue23).ShowInList(width: 60).Readonly();
+                View.Property(p => p.ObservedValue24).ShowInList(width: 60).Readonly();
+                View.Property(p => p.ObservedValue25).ShowInList(width: 60).Readonly();
+                View.Property(p => p.ObservedValue26).ShowInList(width: 60).Readonly();
+                View.Property(p => p.ObservedValue27).ShowInList(width: 60).Readonly();
+                View.Property(p => p.ObservedValue28).ShowInList(width: 60).Readonly();
+                View.Property(p => p.ObservedValue29).ShowInList(width: 60).Readonly();
+                View.Property(p => p.ObservedValue30).ShowInList(width: 60).Readonly();
 
 
-                // 这里不配置 ObservedValue 列，ObservedValue1、ObservedValue2...由行为动态添加
-                //View.AddBehavior(typeof(SpcFromMesDetailBehavior).FullName);
+                View.Property(p => p.SumX).ShowInList(width: 60).Readonly();
+                View.Property(p => p.AvgX).ShowInList(width: 60).Readonly();
+                View.Property(p => p.RangeX).ShowInList(width: 60).Readonly();
             }
 
 
@@ -75,21 +97,45 @@ namespace SIE.Web.MES.SpcFromMesDetails
             View.ReplaceCommands(WebCommandNames.Save, typeof(Commands.SpcFromMesDetailSaveCommand).FullName);
             View.UseCommands(WebCommandNames.Add, WebCommandNames.Edit, WebCommandNames.Delete);
 
-            //View.UseCommands(WebCommandNames.Add, WebCommandNames.Edit, WebCommandNames.Save, WebCommandNames.Delete);
-
+            View.AddBehavior("SIE.Web.MES.SpcFromMesDetails.Behaviors.SpcFromMesDetailBehavior");
 
             using (View.OrderProperties())
             {
-                //View.Property(p => p.RowNumber).Show(ShowInWhere.All).Readonly(p => p.PersistenceStatus != Domain.PersistenceStatus.New);
+                View.Property(p => p.ObservedValue1).ShowInList(width: 70);
+                View.Property(p => p.ObservedValue2).ShowInList(width: 70);
+                View.Property(p => p.ObservedValue3).ShowInList(width: 70);
+                View.Property(p => p.ObservedValue4).ShowInList(width: 70);
+                View.Property(p => p.ObservedValue5).ShowInList(width: 70);
+                View.Property(p => p.ObservedValue6).ShowInList(width: 70);
+                View.Property(p => p.ObservedValue7).ShowInList(width: 70);
+                View.Property(p => p.ObservedValue8).ShowInList(width: 70);
+                View.Property(p => p.ObservedValue9).ShowInList(width: 70);
+                View.Property(p => p.ObservedValue10).ShowInList(width: 70);
+                View.Property(p => p.ObservedValue11).ShowInList(width: 70);
+                View.Property(p => p.ObservedValue12).ShowInList(width: 70);
+                View.Property(p => p.ObservedValue13).ShowInList(width: 70);
+                View.Property(p => p.ObservedValue14).ShowInList(width: 70);
+                View.Property(p => p.ObservedValue15).ShowInList(width: 70);
+                View.Property(p => p.ObservedValue16).ShowInList(width: 70);
+                View.Property(p => p.ObservedValue17).ShowInList(width: 70);
+                View.Property(p => p.ObservedValue18).ShowInList(width: 70);
+                View.Property(p => p.ObservedValue19).ShowInList(width: 70);
+                View.Property(p => p.ObservedValue20).ShowInList(width: 70);
+                View.Property(p => p.ObservedValue21).ShowInList(width: 70);
+                View.Property(p => p.ObservedValue22).ShowInList(width: 70);
+                View.Property(p => p.ObservedValue23).ShowInList(width: 70);
+                View.Property(p => p.ObservedValue24).ShowInList(width: 70);
+                View.Property(p => p.ObservedValue25).ShowInList(width: 70);
+                View.Property(p => p.ObservedValue26).ShowInList(width: 70);
+                View.Property(p => p.ObservedValue27).ShowInList(width: 70);
+                View.Property(p => p.ObservedValue28).ShowInList(width: 70);
+                View.Property(p => p.ObservedValue29).ShowInList(width: 70);
+                View.Property(p => p.ObservedValue30).ShowInList(width: 70);
 
-                View.Property(p => p.ObservedValue1).ShowInList(width: 150);
-                View.Property(p => p.ObservedValue2).ShowInList(width: 150);
-                View.Property(p => p.ObservedValue3).ShowInList(width: 150);
-                View.Property(p => p.ObservedValue4).ShowInList(width: 150);
 
-
-                // 这里不配置 ObservedValue 列，ObservedValue1、ObservedValue2...由行为动态添加
-                //View.AddBehavior(typeof(SpcFromMesDetailBehavior).FullName);
+                View.Property(p => p.SumX).ShowInList(width: 70).Readonly();
+                View.Property(p => p.AvgX).ShowInList(width: 70).Readonly();
+                View.Property(p => p.RangeX).ShowInList(width: 70).Readonly();
             }
 
 
@@ -104,21 +150,46 @@ namespace SIE.Web.MES.SpcFromMesDetails
         {
             View.UseCommands(WebCommandNames.Add, WebCommandNames.Edit, WebCommandNames.Delete);
 
+            View.AddBehavior("SIE.Web.MES.SpcFromMesDetails.Behaviors.SpcFromMesDetailBehavior");
+
             using (View.OrderProperties())
             {
-                //View.AddBehavior(typeof(SpcFromMesDetailBehavior).FullName);
+                View.Property(p => p.ObservedValue1).ShowInList(width: 100);
+                View.Property(p => p.ObservedValue2).ShowInList(width: 100);
+                View.Property(p => p.ObservedValue3).ShowInList(width: 100);
+                View.Property(p => p.ObservedValue4).ShowInList(width: 100);
+                View.Property(p => p.ObservedValue5).ShowInList(width: 100);
+                View.Property(p => p.ObservedValue6).ShowInList(width: 100);
+                View.Property(p => p.ObservedValue7).ShowInList(width: 100);
+                View.Property(p => p.ObservedValue8).ShowInList(width: 100);
+                View.Property(p => p.ObservedValue9).ShowInList(width: 100);
+                View.Property(p => p.ObservedValue10).ShowInList(width: 100);
+                View.Property(p => p.ObservedValue11).ShowInList(width: 100);
+                View.Property(p => p.ObservedValue12).ShowInList(width: 100);
+                View.Property(p => p.ObservedValue13).ShowInList(width: 100);
+                View.Property(p => p.ObservedValue14).ShowInList(width: 100);
+                View.Property(p => p.ObservedValue15).ShowInList(width: 100);
+                View.Property(p => p.ObservedValue16).ShowInList(width: 100);
+                View.Property(p => p.ObservedValue17).ShowInList(width: 100);
+                View.Property(p => p.ObservedValue18).ShowInList(width: 100);
+                View.Property(p => p.ObservedValue19).ShowInList(width: 100);
+                View.Property(p => p.ObservedValue20).ShowInList(width: 100);
+                View.Property(p => p.ObservedValue21).ShowInList(width: 100);
+                View.Property(p => p.ObservedValue22).ShowInList(width: 100);
+                View.Property(p => p.ObservedValue23).ShowInList(width: 100);
+                View.Property(p => p.ObservedValue24).ShowInList(width: 100);
+                View.Property(p => p.ObservedValue25).ShowInList(width: 100);
+                View.Property(p => p.ObservedValue26).ShowInList(width: 100);
+                View.Property(p => p.ObservedValue27).ShowInList(width: 100);
+                View.Property(p => p.ObservedValue28).ShowInList(width: 100);
+                View.Property(p => p.ObservedValue29).ShowInList(width: 100);
+                View.Property(p => p.ObservedValue30).ShowInList(width: 100);
 
-                View.Property(p => p.ObservedValue1).ShowInList(width: 150);
-                View.Property(p => p.ObservedValue2).ShowInList(width: 150);
-                View.Property(p => p.ObservedValue3).ShowInList(width: 150);
-                View.Property(p => p.ObservedValue4).ShowInList(width: 150);
 
-
-                // 这里不配置 ObservedValue 列，ObservedValue1、ObservedValue2...由行为动态添加
-                //View.AddBehavior(typeof(SpcFromMesDetailBehavior).FullName);
+                View.Property(p => p.SumX).ShowInList(width: 100).Readonly();
+                View.Property(p => p.AvgX).ShowInList(width: 100).Readonly();
+                View.Property(p => p.RangeX).ShowInList(width: 100).Readonly();
             }
-
-
 
 
         }

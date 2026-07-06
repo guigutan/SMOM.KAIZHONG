@@ -198,6 +198,22 @@ namespace SIE.Wpf.MES.ConnectorPacking
         }
         #endregion
 
+        #region 验证码 VerifyCode
+        /// <summary>
+        /// 验证码
+        /// </summary>
+        [Label("验证码")]
+        public static readonly Property<string> VerifyCodeProperty = P<ConnectorSnPackingViewModel>.Register(e => e.VerifyCode);
+
+        /// <summary>
+        /// 验证码
+        /// </summary>
+        public string VerifyCode
+        {
+            get { return this.GetProperty(VerifyCodeProperty); }
+            set { this.SetProperty(VerifyCodeProperty, value); }
+        }
+        #endregion
 
         /// <summary>
         /// 走蓝标还是工序标
@@ -685,6 +701,7 @@ namespace SIE.Wpf.MES.ConnectorPacking
                     Error = "刻码SN已经存在!";
                     BoolBlue = 3;
                     Barcode = "";
+                    TcTs(Error);
                     return;
                 }
 
@@ -715,6 +732,7 @@ namespace SIE.Wpf.MES.ConnectorPacking
                         Error = "SN不存在工序参数数采记录，请检查!".L10N();
                         BoolBlue = 3;
                         Barcode = "";
+                        TcTs(Error);
                         return;
                     }
                     if (collect.QualityStatus == Core.Common.InspResult.NG)
@@ -722,6 +740,7 @@ namespace SIE.Wpf.MES.ConnectorPacking
                         Error = "产品质量不合格，请检查!".L10N();
                         BoolBlue = 3;
                         Barcode = "";
+                        TcTs(Error);
                         return;
                     }
                 }
@@ -1081,6 +1100,44 @@ namespace SIE.Wpf.MES.ConnectorPacking
             DeleteIdent = 0;
             //Reset(resetType: ResetType.CollectRestart);
             //FocuseBarcode();
+        }
+
+        /// <summary>
+        /// 弹出提示
+        /// </summary>
+        public void TcTs(string name)
+        {
+            VerifyCode = null;
+            var template = new DetailsUITemplate(typeof(ConnectorSnPackingViewModel), ConnectorSnPakcingModelViewConfig.VerifyCodeView);
+            var ui = template.CreateUI();
+            ui.MainView.Data = this;
+            var result = CRT.Workbench.ShowDialog(Guid.NewGuid().ToString(), ui.Control, w =>
+            {
+                w.Title = name.L10N();
+                w.Commands.Remove("取消");
+                w.Height = 200;
+                w.Width = 400;
+                w.Closing += (s, e) =>
+                {
+                    if (w.Result == 0)
+                    {
+                        if (RT.Service.Resolve<PackingQcController>().VerifyCode(VerifyCode))
+                        {
+                            Tips = "请输入SN标签!";
+                            Error = null;
+                        }
+                        else
+                        {
+                            CRT.MessageService.ShowError("验证码不正确!");
+                            e.Cancel = true;
+                        }
+                    }
+                    else
+                    {
+                        e.Cancel = true;
+                    }
+                };
+            });
         }
 
         /// <summary>

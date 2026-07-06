@@ -15,7 +15,6 @@ namespace SIE.MES.SpcFromMesDetails
     /// 统计过程控制明细表
     /// </summary>
     [ChildEntity, Serializable]
-    [ConditionQueryType(typeof(SpcFromMesCriteria))]
     [Label("统计过程控制明细表")]
     public class SpcFromMesDetail : DataEntity
     {
@@ -562,6 +561,165 @@ namespace SIE.MES.SpcFromMesDetails
             get { return this.GetProperty(ObservedValue30Property); }
             set { this.SetProperty(ObservedValue30Property, value); }
         }
+        #endregion
+
+        #region 子组合计 SumX------只读属性
+        /// <summary>
+        /// ∑X：子组大小GroupCount对应数量的ObservedValue之和
+        /// </summary>
+        [Label("∑X")]
+        public static readonly Property<decimal> SumXProperty = P<SpcFromMesDetail>.RegisterReadOnly(
+            e => e.SumX,
+            e => CalcSumX(e),
+            ObservedValue1Property, ObservedValue2Property, ObservedValue3Property, ObservedValue4Property, ObservedValue5Property,
+            ObservedValue6Property, ObservedValue7Property, ObservedValue8Property, ObservedValue9Property, ObservedValue10Property,
+            ObservedValue11Property, ObservedValue12Property, ObservedValue13Property, ObservedValue14Property, ObservedValue15Property,
+            ObservedValue16Property, ObservedValue17Property, ObservedValue18Property, ObservedValue19Property, ObservedValue20Property,
+            ObservedValue21Property, ObservedValue22Property, ObservedValue23Property, ObservedValue24Property, ObservedValue25Property,
+            ObservedValue26Property, ObservedValue27Property, ObservedValue28Property, ObservedValue29Property, ObservedValue30Property
+        );
+
+        /// <summary>
+        /// ∑X
+        /// </summary>
+        public decimal SumX
+        {
+            get { return this.GetProperty(SumXProperty); }
+        }
+        #endregion
+
+        #region 子组均值 AvgX------只读属性
+        /// <summary>
+        /// X̄：∑X / 子组大小GroupCount
+        /// </summary>
+        [Label("AvgX(x)")]
+        public static readonly Property<decimal> AvgXProperty = P<SpcFromMesDetail>.RegisterReadOnly(
+            e => e.AvgX,
+            e => CalcAvgX(e),
+            SumXProperty
+        );
+
+        /// <summary>
+        /// X̄
+        /// </summary>
+        public decimal AvgX
+        {
+            get { return this.GetProperty(AvgXProperty); }
+        }
+        #endregion
+
+        #region 子组极差 RangeX------只读属性
+        /// <summary>
+        /// R：子组大小GroupCount对应数量的ObservedValue最大值减最小值
+        /// </summary>
+        [Label("R")]
+        public static readonly Property<decimal> RangeXProperty = P<SpcFromMesDetail>.RegisterReadOnly(
+            e => e.RangeX,
+            e => CalcRangeX(e),
+            ObservedValue1Property, ObservedValue2Property, ObservedValue3Property, ObservedValue4Property, ObservedValue5Property,
+            ObservedValue6Property, ObservedValue7Property, ObservedValue8Property, ObservedValue9Property, ObservedValue10Property,
+            ObservedValue11Property, ObservedValue12Property, ObservedValue13Property, ObservedValue14Property, ObservedValue15Property,
+            ObservedValue16Property, ObservedValue17Property, ObservedValue18Property, ObservedValue19Property, ObservedValue20Property,
+            ObservedValue21Property, ObservedValue22Property, ObservedValue23Property, ObservedValue24Property, ObservedValue25Property,
+            ObservedValue26Property, ObservedValue27Property, ObservedValue28Property, ObservedValue29Property, ObservedValue30Property
+        );
+
+        /// <summary>
+        /// R
+        /// </summary>
+        public decimal RangeX
+        {
+            get { return this.GetProperty(RangeXProperty); }
+        }
+        #endregion
+
+        #region 计算方法
+
+        private static decimal GetObservedValue(SpcFromMesDetail detail, int index)
+        {
+            switch (index)
+            {
+                case 1: return detail.ObservedValue1;
+                case 2: return detail.ObservedValue2;
+                case 3: return detail.ObservedValue3;
+                case 4: return detail.ObservedValue4;
+                case 5: return detail.ObservedValue5;
+                case 6: return detail.ObservedValue6;
+                case 7: return detail.ObservedValue7;
+                case 8: return detail.ObservedValue8;
+                case 9: return detail.ObservedValue9;
+                case 10: return detail.ObservedValue10;
+                case 11: return detail.ObservedValue11;
+                case 12: return detail.ObservedValue12;
+                case 13: return detail.ObservedValue13;
+                case 14: return detail.ObservedValue14;
+                case 15: return detail.ObservedValue15;
+                case 16: return detail.ObservedValue16;
+                case 17: return detail.ObservedValue17;
+                case 18: return detail.ObservedValue18;
+                case 19: return detail.ObservedValue19;
+                case 20: return detail.ObservedValue20;
+                case 21: return detail.ObservedValue21;
+                case 22: return detail.ObservedValue22;
+                case 23: return detail.ObservedValue23;
+                case 24: return detail.ObservedValue24;
+                case 25: return detail.ObservedValue25;
+                case 26: return detail.ObservedValue26;
+                case 27: return detail.ObservedValue27;
+                case 28: return detail.ObservedValue28;
+                case 29: return detail.ObservedValue29;
+                case 30: return detail.ObservedValue30;
+                default: return 0m;
+            }
+        }
+
+        private static int GetGroupCount(SpcFromMesDetail detail)
+        {
+            var parent = detail.SpcFromMes;
+            return parent != null ? parent.GroupCount : 0;
+        }
+
+        /// <summary>
+        /// ∑X = ObservedValue1 + ... + ObservedValue[GroupCount]
+        /// </summary>
+        private static decimal CalcSumX(SpcFromMesDetail detail)
+        {
+            int groupCount = GetGroupCount(detail);
+            if (groupCount <= 0) return 0m;
+            decimal sum = 0m;
+            for (int i = 1; i <= groupCount; i++)
+                sum += GetObservedValue(detail, i);
+            return sum;
+        }
+
+        /// <summary>
+        /// X̄ = ∑X / GroupCount
+        /// </summary>
+        private static decimal CalcAvgX(SpcFromMesDetail detail)
+        {
+            int groupCount = GetGroupCount(detail);
+            if (groupCount <= 0) return 0m;
+            return Math.Round(detail.SumX / groupCount, 6);
+        }
+
+        /// <summary>
+        /// R = Max(ObservedValue1..N) - Min(ObservedValue1..N)，N=GroupCount
+        /// </summary>
+        private static decimal CalcRangeX(SpcFromMesDetail detail)
+        {
+            int groupCount = GetGroupCount(detail);
+            if (groupCount <= 0) return 0m;
+            decimal min = GetObservedValue(detail, 1);
+            decimal max = min;
+            for (int i = 2; i <= groupCount; i++)
+            {
+                decimal val = GetObservedValue(detail, i);
+                if (val < min) min = val;
+                if (val > max) max = val;
+            }
+            return max - min;
+        }
+
         #endregion
 
     }

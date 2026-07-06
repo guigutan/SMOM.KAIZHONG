@@ -411,7 +411,7 @@ namespace SIE.Web.MES
                 Label = "上料间隔时间"
             }, new WebModuleMeta()
             {
-                EntityType = typeof(SpcFromMes),               
+                EntityType = typeof(SpcFromMes),
                 Label = "统计过程控制"
             }, new WebModuleMeta()
             {

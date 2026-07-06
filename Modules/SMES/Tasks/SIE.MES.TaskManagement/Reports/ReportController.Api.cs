@@ -2449,6 +2449,9 @@ namespace SIE.MES.TaskManagement.Reports
             if (tasks.Count == 0)
                 return;
 
+            //中间工序未排产，后工序的报工不可以正常进行
+            ValidateNoScheduling(currTask, tasks);
+
             var taskPres = tasks.Where(p => p.Seq < currTask.Seq).ToList();  //前置工序
 
             //校验前置任务是否都有该标签的报工记录(如果是CS包装打印生成的直接跳过)
@@ -2499,6 +2502,24 @@ namespace SIE.MES.TaskManagement.Reports
             if (processList.Count > 0)
                 throw new ValidationException("对应工序标签[{0}]还未完成前工序[{1}]任务报工,请确认".L10nFormat(wipBatch.BatchNo, processList.Concat("、")));
 
+        }
+
+        /// <summary>
+        /// 中间工序未排产，后工序的报工不可以正常进行
+        /// </summary>
+        private void ValidateNoScheduling(DispatchTask currTask, EntityList<DispatchTask> tasks)
+        {
+            var woRoutings = Query<WorkOrderRoutingProcess>()
+                .Exists<ProcessPty>((a, y) => y.Where(b => a.ProcessId == b.ProcessId && b.Scheduling))
+                .Where(p => p.WorkOrderId == currTask.WorkOrderId && p.Index < currTask.Seq).ToList();
+            foreach (var woRouting in woRoutings.OrderBy(p => p.Index))
+            {
+                if (!tasks.Any(p => p.ProcessId == woRouting.ProcessId))
+                {
+                    throw new ValidationException("工单[{0}]的工序[{1}]还未导入排程，请先排产"
+                        .L10nFormat(currTask.WorkOrder?.No, woRouting.Process?.Code));
+                }
+            }
         }
 
         /// <summary>
@@ -2875,11 +2896,11 @@ namespace SIE.MES.TaskManagement.Reports
         public virtual EntityList<ReportWipBatch> GetReportWipBatchsByReportIds(List<double> reportRecordIds)
         {
             var reportWipBatches = reportRecordIds.SplitContains(ids =>
-             {
-                 var q = Query<ReportWipBatch>().Where(p => ids.Contains(p.ReportRecordId));
-                 var list = q.ToList(null, new EagerLoadOptions().LoadWithViewProperty());
-                 return list;
-             });
+            {
+                var q = Query<ReportWipBatch>().Where(p => ids.Contains(p.ReportRecordId));
+                var list = q.ToList(null, new EagerLoadOptions().LoadWithViewProperty());
+                return list;
+            });
             return reportWipBatches;
         }
 

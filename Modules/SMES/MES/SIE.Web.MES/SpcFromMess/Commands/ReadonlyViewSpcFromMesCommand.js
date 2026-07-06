@@ -1,19 +1,16 @@
-﻿SIE.defineCommand('SIE.Web.MES.SpcFromMess.Commands.ReadonlyViewSpcFromMesCommand', {
+SIE.defineCommand('SIE.Web.MES.SpcFromMess.Commands.ReadonlyViewSpcFromMesCommand', {
     extend: 'SIE.cmd.Edit',
-    meta: { text: "查看预览", group: "edit", iconCls: "icon-PageSearch icon-blue" },
+    meta: { text: "数据预览", group: "edit", iconCls: "icon-PageSearch icon-blue" },
 
     canExecute: function (view) {
-        if (!view) { console.log('视图不存在'); return false; }
+        if (!view) { return false; }
         if (view.getSelection && typeof view.getSelection === 'function') {
-            console.log('有 getSelection');
             return view.getSelection().length === 1;
         }
         return true;
     },
 
-    // 重写 execute 方法，直接调用 showView
     execute: function (view, source) {
-        console.log('execute 被调用了！'); 
         var selection = view.getSelection();
         if (selection && selection.length === 1) {
             this.showView(selection[0]);
@@ -23,17 +20,14 @@
     },
 
     showView: function (editEntity) {
-        console.log('已经进入showView:', editEntity);
-        if (!editEntity) {
-            console.log('请先选择一条记录');
-            return;
-        }
+        if (!editEntity) { return; }
         var me = this;
         CRT.Workbench.addPage({
+            tabId: 'spc_readonly_' + String(editEntity.getId()).replace(/[.|,]/g, ''),
             entityType: me.view.model,
             recordId: editEntity.getId(),
             viewGroup: "ReadonlyView",
-            title: Ext.String.format('查看预览-{0}'.L10N(), editEntity.getNo()),
+            title: Ext.String.format('数据预览-{0}'.L10N(), editEntity.getNo()),
             isDetail: true,
             params: {
                 token: me.view.token,

@@ -1,0 +1,215 @@
+34. 半客制化界面的实现示例
+34.1. 开发初衷
+标准 ViewConfig 配置无法满足复杂自定义布局、自定义交互逻辑场景，因此提供半客制化开发模式，在框架 AutoUI 基础上自定义页面布局与 JS 逻辑，保留实体、命令、权限等框架原有能力。
+34.2. 使用场景
+采集类界面、多控件混合复杂布局页面；
+原生列表 / 表单编辑器无法实现特殊排版、自定义按钮、联动逻辑；
+需要嵌入第三方图表、自定义输入组件，同时复用实体数据、框架增删改命令、权限体系。
+34.3. 实现说明
+34.3.1. 自定义布局文件
+新增自定义布局 js，自主划分页面区块（顶部查询区、中间数据区、底部明细 / 操作区），原生 Ext 布局容器（border/column/table 等）自由组合，不依赖框架自动生成布局规则。
+34.3.2.Module 指定 JS 类名
+客户端 Module 注册 WebModuleMeta 时，或 View 配置中指定自定义 UI JS 完整命名空间，告知框架加载自定义脚本替代默认 AutoUI 渲染逻辑。
+34.3.3.JS 的写法
+自定义 JS 继承SIE.ModuleRuntime，重写核心方法：
+constructor：初始化视图上下文、实体 token、命令绑定；
+createUI：核心布局构建方法，创建所有面板、输入框、表格、自定义按钮；
+绑定框架原生 store、实体数据、内置命令（新增 / 保存 / 导出等）；
+编写自定义联动、按钮点击、数据加载、查询交互逻辑；
+复用框架 API：view.reloadData()、SIE.Msg提示、权限判断、数据请求方法。
+34.3.4. 实现示例
+
+Ext.define('SIE.Web.Demo.CustomCollectModule',{
+    extend:'SIE.ModuleRuntime',
+    constructor:function(config){
+        this.callParent(arguments);
+        this.model = "SIE.Demo.CollectEntity";
+    },
+    createUI:function(){
+        var me = this;
+        //顶部查询面板
+        var queryPanel = Ext.create("Ext.form.Panel",{
+            region:'north',height:120,
+            items:[...]
+        });
+        //中间主表格
+        var mainGrid = Ext.create("Ext.grid.Panel",{
+            region:'center',
+            store:me.getStore(),
+            columns:[...]
+        });
+        var ui = Ext.create("Ext.container.Viewport",{
+            layout:'border',
+            items:[queryPanel,mainGrid]
+        });
+        return ui;
+    }
+});
+34.3.5. 半客制化界面注意事项
+实体、控制器、命令、权限配置仍遵循框架标准规范，仅页面渲染层自定义；
+JS 文件必须设置【嵌入的资源】生成操作；
+分页、排序、过滤需手动绑定 store 分页参数，框架自动分页不再生效；
+实体默认编辑器（下拉 / 日期 / 快码等）可手动引入使用，需手动绑定 value 字段；
+菜单、模块初始化、角色权限分配流程和标准界面完全一致；
+数据保存、删除等操作仍复用框架 Command，无需重写底层持久化逻辑；
+页面关闭、刷新、消息提示统一使用框架全局 JS API，禁止原生 Ext 弹窗混用。
+34.3.6. 通过 UIGenerator 实现采集布局前端示例
+调用SIE.AutoUI.getMeta、SIE.AutoUI.createView基础生成标准元数据，再手动覆盖布局容器，保留实体字段、编辑器配置，仅重排页面组件位置：
+获取实体元数据，加载默认字段、编辑器；
+拆分查询、列表、子表单三块组件；
+自定义 border/accordion 布局包裹原生组件；
+绑定原生 store 与事件，仅修改展示排版，数据逻辑复用框架。
+34.3.7. 通过行为实现采集布局的前端示例
+新增 Behavior 行为 JS，挂载到标准 ViewConfig：View.AddBehavior("命名空间.行为JS")
+重写行为beforeCreate生命周期方法；
+拦截框架默认 grid / 表单创建逻辑，替换自定义布局；
+保留原有字段、编辑器、命令、权限配置；
+适合小幅改造页面布局，完全自定义页面推荐使用 Module 半客制模式。
+35. 全客制化界面实现示例
+35.1. 说明
+完全脱离框架 AutoUI 自动渲染体系，自主编写全套 Ext 页面，仅复用框架数据请求 API、登录权限、Token、实体仓储接口；
+无默认 ViewConfig、自动编辑器、内置命令，所有组件、查询、保存、弹窗全部手动开发，适合高度定制化大屏、第三方嵌入页面、特殊业务操作台。
+35.2. 实现说明
+35.2.1. 菜单绑定
+后台模块 Module 注册自定义 WebModuleMeta；
+BS 模块定义界面新增对应模块，模块类型选 Web；
+菜单配置页面将模块拖拽至左侧菜单树，分配角色访问权限；
+自定义菜单 URL 模式可外链，全客制内置页面走框架内部路由。
+35.2.2.CustomUI 及其界面配置，子实体和子实体的界面
+新建 CustomUI 专用配置类，不继承 WebViewConfig；
+手动声明页面关联主实体、子实体类型；
+无 ConfigListView/ConfigDetails 等标准配置方法，仅做实体注册、权限标记；
+子实体列表、弹窗表单全部在自定义 JS 手动创建 Grid/Form。
+35.2.3. 子实体和子实体的界面
+主页面 JS 中手动创建子 Grid、子弹窗表单，手动绑定父子关联 ID（主表 Id 关联子表外键）；
+父子数据加载手动调用SIE.invokeDataQuery请求后台控制器，无框架自动子数据加载逻辑。
+35.2.4.CustomUIModuleRuntime.JS 的实现
+JS 基础模板：
+Ext.define('SIE.Web.Demo.FullCustomModuleRuntime',{
+    extend:'Ext.panel.Panel',
+    initComponent:function(){
+        var me = this;
+        me.callParent(arguments);
+        //全局token、登录用户上下文
+        var token = CRT.Context.getToken();
+        var userInfo = CRT.Context.GlobalContext.getContext('userInfo');
+        //自定义顶部查询栏
+        var queryForm = Ext.create('Ext.form.Panel',{
+            items:[
+                {xtype:'textfield',name:'Code',fieldLabel:'编码'}
+            ],
+            buttons:[{text:'查询',handler:me.doQuery.bind(me)}]
+        });
+        //自定义表格
+        var grid = Ext.create('Ext.grid.Panel',{
+            store:Ext.create('Ext.data.Store',{
+                fields:[],autoLoad:false
+            }),
+            columns:[],
+            tbar:[
+                {text:'新增',handler:me.showAddWin.bind(me)},
+                {text:'保存',handler:me.doSave.bind(me)}
+            ]
+        });
+        me.add(queryForm,grid);
+    },
+    //自定义查询
+    doQuery:function(){
+        var me = this;
+        var param = this.down('form').getValues();
+        SIE.invokeDataQuery({
+            type:"SIE.Demo.DemoDataQueryer",
+            method:"GetDataList",
+            params:[param],
+            success:function(res){
+                me.down('grid').getStore().loadData(res.Result);
+            }
+        });
+    },
+    //新增弹窗
+    showAddWin:function(){
+        var win = Ext.create("Ext.window.Window",{
+            items:[Ext.create('Ext.form.Panel')]
+        });
+        win.show();
+    },
+    //保存提交后台
+    doSave:function(){
+        //AJAX提交逻辑
+    }
+});
+核心要点：
+不依赖框架自动视图元数据，所有组件手动 new；
+数据交互统一使用SIE.invokeDataQuery、SIE.Ajax；
+权限手动判断：通过全局用户上下文判断按钮显隐；
+无框架内置编辑器，输入框、下拉全部原生 Ext 控件；
+分页、排序、过滤手写 store 逻辑，框架分页组件不可用；
+保存 / 删除无内置 Command，手动编写 AJAX 请求后端 Controller。
+36.BS 排序说明
+36.1. 启用前端（内存）排序
+视图配置添加View.UseClientOrder();
+作用：仅对当前页面已加载的数据做前端内存排序，不请求后台数据库；
+限制：分页场景下仅排序当前页，跨页数据无法参与排序，适合少量数据场景。
+36.2. 自定义查询实体支持后台
+自定义 Criteria 查询实体，重写控制器查询方法，接收前端排序字段、排序方向参数，拼接 SQL OrderBy 实现数据库层面排序，支持全量数据跨页排序。
+36.3. 附加子支持后台排序
+主从表子列表（ChildrenProperty）：
+子列表 ViewConfig 配置排序字段；
+加载子数据时传递排序参数至后台查询；
+后台关联查询语句增加对应 OrderBy，实现子表后台分页排序。
+36.4. 引用属性支持实体配置的 DisplayMember 排序
+引用实体标记[DisplayMember(nameof(属性))]后，列表点击该引用列表头，框架自动 JOIN 关联表，以 DisplayMember 对应字段做后台排序，无需手动写查询排序逻辑。
+36.5. 框架子表排序处理
+行内编辑子列表：默认前端内存排序，开启后台排序需在子视图配置排序规则；
+表单内嵌子表：加载子数据时携带排序参数，控制器查询拼接排序；
+主从复制、导入导出场景，子表排序统一读取视图配置的排序字段；
+若关联实体未配置 DisplayMember，引用列不支持表头点击排序，仅普通字段可排序。
+37. 界面权限问题及排查
+37.1. 说明
+BS 界面权限依托【模块初始化】+【角色菜单权限】+【命令按钮权限】三层控制；
+常见问题：菜单看不见、按钮灰化隐藏、无编辑 / 删除权限、数据行权限过滤、导出导入按钮不可用。
+37.2. 场景 1：新增实体菜单左侧模块列表找不到
+原因：
+客户端 Module 未添加对应 WebModuleMeta 实体注册代码；
+未执行【模块初始化】（模块定义页面 / 菜单页面按钮）；
+服务端、客户端工程未正确引用，编译缺失；
+实体标记异常（缺失 RootEntity 标签）；
+排查步骤：
+检查 Module.cs 是否添加实体 WebModuleMeta；
+进入模块定义，点击【模块初始化】，刷新左侧模块列表；
+重新生成解决方案，确认无编译报错；
+核对实体头部[RootEntity,Serializable]特性。
+37.3. 场景 2：菜单拖拽分配后登录不显示菜单
+原因：角色未分配对应菜单权限；
+操作：进入角色编辑界面，勾选对应菜单保存，退出浏览器重登刷新缓存。
+37. 场景 3：列表新增 / 修改 / 删除按钮灰色不可用
+原因 1：角色未分配对应命令权限；
+原因 2：实体状态控制（启用 / 禁用 IStateEntity），当前数据不满足按钮执行条件；
+原因 3：命令 canExecute 方法返回 false；
+排查：
+角色编辑 - 命令面板，勾选新增、修改、删除命令权限；
+检查实体是否实现 IStateEntity，数据 State 状态是否限制操作；
+查看自定义命令 JS 中 canExecute 判断逻辑。
+37.4. 场景 4：查询能看到数据，编辑弹窗空白 / 无字段
+权限：角色缺少【视图域】编辑权限；
+解决：角色编辑界面，勾选对应视图域权限，重启页面。
+37. 场景 5：部分人员只能看部分数据（数据行权限）
+框架多组织 / 库存组织隔离：实体开启Meta.EnableInvOrg();，登录用户仅能查看所属组织数据；
+排查：实体 ConfigMeta 是否启用库存组织，登录账号绑定 InvOrgId 是否匹配数据组织 Id。
+37. 场景 6：自定义按钮 / 导入导出按钮消失
+自定义命令未在 ViewConfig 注册View.UseCommands()；
+角色权限未勾选该自定义命令；
+JS 命令文件未设置【嵌入的资源】，框架未加载脚本；
+命令 meta 配置异常（换行、缺失 text 属性导致权限列表无命令名）。
+37. 场景 7：管理员账号正常，普通账号看不到报表 / 第三方外链菜单
+自定义外链菜单必须填写完整 http/https Url，模块初始化后，角色单独分配自定义模块权限，普通账号无模块权限则不展示。
+37.8. 权限问题的排查通用步骤
+基础校验：模块初始化→刷新模块列表→角色分配菜单 + 命令 + 视图域权限；
+缓存处理：关闭所有浏览器 Tab，清除缓存，重新登录；
+代码校验：
+Module 实体注册代码完整；
+命令 JS 嵌入资源、meta 单行规范；
+实体标签、ViewConfig 命令注册无遗漏；
+数据层校验：开启 InvOrg / 数据隔离实体，核对账号组织 Id；
+命令逻辑：打开对应 JS 查看 canExecute 执行条件；
+环境校验：服务端重启，清除服务端元数据缓存，重新升级数据库初始化实体规则。

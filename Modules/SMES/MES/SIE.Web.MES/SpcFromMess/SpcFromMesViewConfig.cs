@@ -1,4 +1,5 @@
-﻿using SIE.MES.SpcFromMess;
+﻿using DocumentFormat.OpenXml.Wordprocessing;
+using SIE.MES.SpcFromMess;
 using SIE.MetaModel.View;
 using SIE.Web.MES.SpcFromMesDetails;
 using SIE.Web.MES.SpcFromMess.Commands;
@@ -95,7 +96,7 @@ namespace SIE.Web.MES.SpcFromMess
         private void EditConfigView()
         {
             View.ClearCommands();
-           
+
             View.UseDetail(6);
 
             //注意排序
@@ -153,17 +154,59 @@ namespace SIE.Web.MES.SpcFromMess
         /// </summary>
         private void ReadonlyConfigView()
         {
-           
             View.ClearCommands();
-            View.UseDetail(4);    
-            
-            View.Property(p => p.No).Show(ShowInWhere.Detail).Readonly().HasOrderNo(10);
-            //View.Property(p => p.Name).Show(ShowInWhere.Detail).Readonly().HasOrderNo(20);
-            //View.Property(p => p.ItemName).Show(ShowInWhere.Detail).Readonly().HasOrderNo(30);
-            //View.Property(p => p.Project).Show(ShowInWhere.Detail).Readonly().HasOrderNo(40);           
-            //View.Property(p => p.StandardUsl).Show(ShowInWhere.Detail).Readonly().HasOrderNo(50);
-            //View.Property(p => p.StandardLsl).Show(ShowInWhere.Detail).Readonly().HasOrderNo(60);
+            View.HasDetailColumnsCount(4);
+            using (View.OrderProperties())
+            {
+                View.Property(p => p.GroupCount).Show(ShowInWhere.Detail).Readonly();
+                View.Property(p => p.StandardUsl).Show(ShowInWhere.Detail).Readonly();
+                View.Property(p => p.AverageUsl).Show(ShowInWhere.Detail).Readonly();
+                View.Property(p => p.RangeUsl).Show(ShowInWhere.Detail).Readonly();
 
+                View.Property(p => p.Qty).Show(ShowInWhere.Detail).Readonly();
+                View.Property(p => p.StandardSl).Show(ShowInWhere.Detail).Readonly();
+                View.Property(p => p.AverageSl).Show(ShowInWhere.Detail).Readonly();
+                View.Property(p => p.RangeSl).Show(ShowInWhere.Detail).Readonly();
+
+                View.Property(p => p.TotalQty).Show(ShowInWhere.Detail).Readonly();
+                View.Property(p => p.StandardLsl).Show(ShowInWhere.Detail).Readonly();
+                View.Property(p => p.AverageLsl).Show(ShowInWhere.Detail).Readonly();
+                View.Property(p => p.RangeLsl).Show(ShowInWhere.Detail).Readonly();
+
+
+                View.Property(p => p.No).ShowInDetail( width:"20%", columnSpan:4).Readonly();
+                View.Property(p => p.ItemName).ShowInDetail(width: "20%", columnSpan:4).Readonly();
+
+
+                View.Property(p => p.Project).ShowInDetail(width: "50%", columnSpan:2).Readonly();
+                View.Property(p => p.TotalSumX).Show(ShowInWhere.Detail).Readonly();
+                View.Property(p => p.Cpu).Show(ShowInWhere.Detail).Readonly();
+
+
+                View.Property(p => p.ProductionDept).ShowInDetail(width: "50%", columnSpan: 2).Readonly();
+                View.Property(p => p.TotalSumR).Show(ShowInWhere.Detail).Readonly();
+                View.Property(p => p.Cpl).Show(ShowInWhere.Detail).Readonly();
+
+
+                View.Property(p => p.ResourceName).ShowInDetail(width: "50%", columnSpan: 2).Readonly();
+                View.Property(p => p.TotalAvgX).Show(ShowInWhere.Detail).Readonly();
+                View.Property(p => p.Stdev).Show(ShowInWhere.Detail).Readonly();
+
+
+                View.Property(p => p.InspectorName).ShowInDetail(width: "50%", columnSpan: 2).Readonly();
+                View.Property(p => p.TotalAvgR).Show(ShowInWhere.Detail).Readonly();
+                View.Property(p => p.Cpk).Show(ShowInWhere.Detail).Readonly();
+
+
+                View.Property(p => p.UnitCode).ShowInDetail(width: "50%", columnSpan: 2).Readonly();
+                View.Property(p => p.Sigma).Show(ShowInWhere.Detail).Readonly();  
+                View.Property(p => p.Ppk).Show(ShowInWhere.Detail).Readonly();
+
+            }
+
+
+
+            View.ChildrenProperty(p => p.SpcDetailList).Show(ChildShowInWhere.All).UseViewGroup(SpcFromMesDetailViewConfig.ReadonlyView).HasOrderNo(1000);
         }
 
 

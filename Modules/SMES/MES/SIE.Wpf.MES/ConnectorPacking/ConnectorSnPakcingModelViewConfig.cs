@@ -1,21 +1,36 @@
 ﻿using SIE.Wpf.Common.Editors;
 using SIE.Wpf.MES.ConnectorPacking.Commands;
-using SIE.Wpf.MES.ConnectorPackings;
-using SIE.Wpf.MES.ConnectorPackings.Commands;
+using SIE.Wpf.MES.WIP;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SIE.Wpf.MES.ConnectorPacking
 {
+    /// <summary>
+    /// 连接器单体包装采集界面
+    /// </summary>
     public class ConnectorSnPakcingModelViewConfig : WPFViewConfig<ConnectorSnPackingViewModel>
     {
         /// <summary>
-        /// 默认视图配置
+        /// 验证码视图
+        /// </summary>
+        public const string VerifyCodeView = "VerifyCodeView";
+
+        /// <summary>
+        /// 配置视图
         /// </summary>
         protected override void ConfigView()
+        {
+            View.DeclareExtendViewGroup(VerifyCodeView);
+            if (ViewGroup == VerifyCodeView)
+                ConfigVerifyCodeView();
+            else if (ViewGroup == CollectionUITemplate.CollectionUIViewGroup)
+                ConfigDetailsView();
+        }
+
+        /// <summary>
+        /// 默认视图配置
+        /// </summary>
+        protected override void ConfigDetailsView()
         {
             View.UseCommands(typeof(ConnectorSnRestartCommand), typeof(ConnectorSnNormalCommand), typeof(ConnectorSnUnboxingCommand), typeof(ConnectorSnChangeCommand), typeof(ConnectorSnSubmitCommand), typeof(ConnectorDeleteCommand), typeof(ConnectorReplaceCommand));
             View.UseDetail(columnCount: 6);
@@ -48,6 +63,15 @@ namespace SIE.Wpf.MES.ConnectorPacking
                     //UseMemoEditor
                 }
             }
+        }
+
+        /// <summary>
+        /// 验证码视图
+        /// </summary>
+        protected void ConfigVerifyCodeView()
+        {
+            View.ClearCommands();
+            View.Property(p => p.VerifyCode).ShowInDetail().UsePasswordEditor();
         }
     }
 }

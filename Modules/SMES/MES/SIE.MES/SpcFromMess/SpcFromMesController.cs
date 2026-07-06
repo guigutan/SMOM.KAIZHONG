@@ -1,4 +1,5 @@
 ﻿using SIE.Domain;
+using SIE.MES.SpcFromMesDetails;
 using System.Linq;
 
 namespace SIE.MES.SpcFromMess
@@ -69,12 +70,9 @@ namespace SIE.MES.SpcFromMess
                 q.Where(p => p.CreateDate <= criteria.CreateTime.EndValue);
             }
 
-            //// 使用贪婪加载，一次性加载所有主表和子表数据
-            //var result = q.ToList(criteria.PagingInfo,
-            //    new EagerLoadOptions().LoadWith(SpcFromMes.SpcDetailListProperty));
-
-            // 执行查询，预加载视图属性
-            var result = q.ToList(criteria.PagingInfo, new EagerLoadOptions().LoadWithViewProperty());
+            var result = q.ToList(criteria.PagingInfo, new EagerLoadOptions()
+                .LoadWithViewProperty()
+                .LoadWith(SpcFromMes.SpcDetailListProperty));
 
             return result;
         }
